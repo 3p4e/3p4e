@@ -155,10 +155,33 @@ main{animation:panelIn .35s ease both}
   display:flex;align-items:flex-end;padding:14px 18px}
 .hero-baner::after{content:'';position:absolute;inset:0;
   background:linear-gradient(180deg,rgba(8,14,10,.15) 0%,rgba(8,14,10,.82) 100%)}
-.hero-baner .hero-tekst{position:relative;z-index:1;color:#eaf5ee;
-  font:800 17px Outfit,sans-serif;text-shadow:0 2px 10px rgba(0,0,0,.6)}
-.hero-baner .hero-pod{position:relative;z-index:1;color:#bfe3cb;
-  font:600 11px Inter,sans-serif;margin-top:2px}
+.hero-tekst{position:relative;z-index:1;color:#eaf5ee;
+  font:800 17px Outfit,sans-serif;text-shadow:0 2px 10px rgba(0,0,0,.75)}
+.hero-pod{position:relative;z-index:1;color:#cdead6;
+  font:600 11px Inter,sans-serif;margin-top:2px;text-shadow:0 1px 6px rgba(0,0,0,.7)}
+/* Банер за сушара/зреење — понизок од главниот херој-банер. */
+.scena-baner{position:relative;height:112px;border-radius:16px;overflow:hidden;
+  margin-bottom:14px;background-size:cover;background-position:center;
+  display:flex;align-items:flex-end;padding:12px 16px}
+.scena-baner::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(8,14,10,.15) 40%,rgba(8,14,10,.88) 100%)}
+.scena-baner>div{position:relative;z-index:1}
+/* Значка за оценка на квалитет. */
+.ocenka{display:inline-flex;align-items:center;justify-content:center;
+  min-width:38px;height:26px;padding:0 8px;border-radius:8px;color:#fff;
+  font:800 12px Outfit,sans-serif;letter-spacing:.3px;flex-shrink:0;
+  box-shadow:0 1px 3px rgba(0,0,0,.25)}
+/* Водич низ процесите. */
+.vodic-cekor{display:flex;gap:12px;padding:13px 0;
+  border-bottom:1px solid oklch(92% 0.02 90)}
+.vodic-cekor:last-child{border-bottom:none}
+.vodic-broj{width:26px;height:26px;border-radius:50%;flex-shrink:0;
+  background:oklch(60% 0.11 152);color:#fff;display:flex;align-items:center;
+  justify-content:center;font:800 11px Outfit,sans-serif}
+.vodic-telo b{display:block;font:700 12.5px Outfit,sans-serif;margin-bottom:2px}
+.vodic-telo span{font:500 11.5px Inter,sans-serif;color:oklch(48% 0.02 150);line-height:1.55}
+.vodic-cifra{display:inline-block;background:oklch(94% 0.04 152);color:oklch(35% 0.08 152);
+  border-radius:6px;padding:1px 6px;font:700 11px Inter,sans-serif;margin:0 1px}
 .rast-sjaj{position:absolute;left:50%;top:44%;width:120px;height:120px;
   transform:translate(-50%,-50%);border-radius:50%;transition:opacity .8s ease;
   animation:glowPulse 3s ease-in-out infinite}
@@ -448,6 +471,47 @@ const STR = {
     t_turn:'Гранките чекаат вртење.', t_packed:'Спакувано во тегли на {0}% влажност.',
     t_burp:'Теглите се проветрени.', t_turned:'Гранките се превртени.', t_vented:'Просторијата е проветрена.',
     t_mold_rm:'Мувлата е отстранета.', t_cured:'Зреењето заврши: {0} парчиња во залиха.',
+    // ── Клима, тегли, оценки, водич ──
+    nav_guide:'Водич',
+    clim_title:'Клима во сушарата', clim_temp:'Температура', clim_rh:'Влажност на воздух',
+    clim_now:'сега', clim_ideal:'идеално', clim_speed:'Брзина на сушење',
+    clim_equip:'Опрема', clim_stability:'стабилност', clim_upgrade:'Надгради опрема',
+    clim_good:'Одлични услови', clim_ok:'Прифатливо', clim_bad:'Лоши услови',
+    t_equip_bought:'Инсталирано: {0}.',
+    dry_tag:'Бавно сушење, зачувани терпени', cure_tag:'Теглите го градат вкусот',
+    jar_rh:'Влажност во теглата', jar_ideal:'идеално', jar_high:'превисоко',
+    jar_danger:'опасно — мувла', jar_low:'ниско', jar_dry:'пресушено',
+    quality:'Квалитет', grade:'Оценка',
+    t_jar_mold:'Мувла во теглата! Проветри веднаш.',
+    t_burp_ok:'Теглата е проветрена — влажност {0}%.',
+    t_burp_early:'Прерано проветрување — теглата беше веќе сува.',
+    t_cured_grade:'Зреењето заврши: {0} парчиња · оценка {1} ({2}/100).',
+    cure_peak_hint:'подолгото зреење носи повеќе терпени',
+    g_title:'Водич низ процесот', g_desc:'Целиот пат од семе до продажба, со точните бројки што ги користи играта.',
+    g_p1_title:'1 · Одгледување', g_p1_tag:'Од семе до зрело растение',
+    g_p1_s1:'Вода и храна', g_p1_s1d:'Ако водата или храната паднат под {0}%, здравјето почнува да опаѓа. Држи ги над {1}% за растението да напредува најбрзо.',
+    g_p1_s2:'Здравје = принос', g_p1_s2d:'Здравјето при берба директно го одредува приносот. Болно растение дава помалку и полош материјал.',
+    g_p1_s3:'Ламби и простории', g_p1_s3d:'Подобрите ламби скратуваат време и кревааат принос. Стаклената градина расте побрзо од стартовната соба.',
+    g_p2_title:'2 · Берба и кратење', g_p2_tag:'Како ја сечеш, така ќе се суши',
+    g_p2_s1:'Прецизно кратење', g_p2_s1d:'Прецизното кратење одзема околу {0} маса, но носи бонус на квалитет и подобра цена.',
+    g_p2_s2:'Брзо кратење', g_p2_s2d:'Ја задржува целата маса, но материјалот се суши понерамномерно и добива пониска оценка.',
+    g_p3_title:'3 · Сушење', g_p3_tag:'Најделикатната фаза',
+    g_p3_s1:'Постави клима', g_p3_s1d:'Целта е {0} и {1}. Во тој прозорец терпените остануваат, а сушењето тече рамномерно.',
+    g_p3_s2:'Топло и суво = брзо, но лошо', g_p3_s2d:'Високата температура суши побрзо, но го „изгорува“ вкусот и ја руши оценката. Ладно и влажно сушат бавно и носат мувла.',
+    g_p3_s3:'Вртење на гранките', g_p3_s3d:'На секои {0} дена гранките бараат вртење. Пропуштеното вртење остава влажни џебови.',
+    g_p3_s4:'Внимавај на мувла', g_p3_s4d:'Над {0} влажност во материјалот, мувлата може да се појави секој ден и јаде од приносот.',
+    g_p3_s5:'Кога да пакуваш', g_p3_s5d:'Најдобро е да спакуваш на {0} влажност. Над {1} теглите воопшто не се отвораат за пакување.',
+    g_p4_title:'4 · Зреење во тегли', g_p4_tag:'Тука се гради вкусот',
+    g_p4_s1:'Држи ја теглата на идеално', g_p4_s1d:'Идеалната влажност во теглата е {0}. Пупките испотуваат влага назад, па таа постојано се качува.',
+    g_p4_s2:'Проветрувај на време', g_p4_s2d:'Над {0} ризикуваш мувла и губиток. Едно проветрување ја спушта влагата и ја запира мувлата.',
+    g_p4_s3:'Не претерувај', g_p4_s3d:'Под {0} теглата е пресушена — проветрувањето тогаш само губи терпени и ја намалува оценката.',
+    g_p4_s4:'Време', g_p4_s4d:'Најрано можеш да завршиш на {0} дена, но врвот на терпените е околу {1} дена.',
+    g_grade_title:'Оценки и цена', g_grade_desc:'Оценката се пресметува од климата при сушење, режимот во теглата, должината на зреењето, ритамот на проветрување и грешките (мувла, губиток). Таа директно ја множи цената при продажба и при нарачки.',
+    g_grade_from:'од', g_grade_under:'сѐ под тоа',
+    g_p5_title:'5 · Продажба', g_p5_tag:'Каде се наплаќа трудот',
+    g_p5_s1:'Оценката е пари', g_p5_s1d:'Иста сорта со оценка AAA носи двојно повеќе од истата со оценка C. Квалитетот се памети по сорта во залихата.',
+    g_p5_s2:'Нарачки', g_p5_s2d:'Нарачките исто така се множат со оценката — исполни ги со добра стока.',
+    g_p5_s3:'Престиж', g_p5_s3d:'Секој престиж додава траен бонус на цената, но ја рестартира фармата.',
     tut:[
       ['Добредојде во Зелена Империја','Изгради одгледувачко царство од нула — сади, негувај, суши, зреј и продавај.'],
       ['Твоите ресурси','Парите и нивото се горе. Нивото ги отклучува нови сорти и простории.'],
@@ -513,6 +577,47 @@ const STR = {
     t_turn:'Branches are waiting to be turned.', t_packed:'Packed into jars at {0}% moisture.',
     t_burp:'Jars burped.', t_turned:'Branches turned.', t_vented:'Room ventilated.',
     t_mold_rm:'Mold removed.', t_cured:'Curing done: {0} units to inventory.',
+    // ── Climate, jars, grades, guide ──
+    nav_guide:'Guide',
+    clim_title:'Drying room climate', clim_temp:'Temperature', clim_rh:'Air humidity',
+    clim_now:'now', clim_ideal:'ideal', clim_speed:'Drying speed',
+    clim_equip:'Equipment', clim_stability:'stability', clim_upgrade:'Upgrade equipment',
+    clim_good:'Excellent conditions', clim_ok:'Acceptable', clim_bad:'Poor conditions',
+    t_equip_bought:'Installed: {0}.',
+    dry_tag:'Slow drying keeps the terpenes', cure_tag:'Jars build the flavour',
+    jar_rh:'Jar humidity', jar_ideal:'ideal', jar_high:'too high',
+    jar_danger:'danger — mold', jar_low:'low', jar_dry:'over-dried',
+    quality:'Quality', grade:'Grade',
+    t_jar_mold:'Mold in the jar! Burp it now.',
+    t_burp_ok:'Jar burped — humidity {0}%.',
+    t_burp_early:'Burped too early — the jar was already dry.',
+    t_cured_grade:'Curing done: {0} units · grade {1} ({2}/100).',
+    cure_peak_hint:'a longer cure builds more terpenes',
+    g_title:'Process guide', g_desc:'The whole path from seed to sale, with the exact numbers the game actually uses.',
+    g_p1_title:'1 · Cultivation', g_p1_tag:'From seed to a ripe plant',
+    g_p1_s1:'Water and nutrients', g_p1_s1d:'If water or nutrients drop below {0}%, health starts falling. Keep both above {1}% for the fastest growth.',
+    g_p1_s2:'Health = yield', g_p1_s2d:'Health at harvest directly sets the yield. A sick plant gives less, and worse material.',
+    g_p1_s3:'Lamps and rooms', g_p1_s3d:'Better lamps cut grow time and raise yield. The greenhouse grows faster than the starter room.',
+    g_p2_title:'2 · Harvest and trim', g_p2_tag:'How you cut is how it dries',
+    g_p2_s1:'Precision trim', g_p2_s1d:'A precision trim costs about {0} of the mass, but earns a quality bonus and a better price.',
+    g_p2_s2:'Quick trim', g_p2_s2d:'Keeps all the mass, but the material dries less evenly and grades lower.',
+    g_p3_title:'3 · Drying', g_p3_tag:'The most delicate stage',
+    g_p3_s1:'Set the climate', g_p3_s1d:'Aim for {0} and {1}. Inside that window the terpenes survive and drying stays even.',
+    g_p3_s2:'Hot and dry = fast but bad', g_p3_s2d:'High heat dries faster but burns off the flavour and sinks the grade. Cold and damp dries slowly and invites mold.',
+    g_p3_s3:'Turning the branches', g_p3_s3d:'Every {0} days the branches need turning. A missed turn leaves damp pockets.',
+    g_p3_s4:'Watch for mold', g_p3_s4d:'Above {0} moisture in the material, mold can appear any day and eats into the yield.',
+    g_p3_s5:'When to pack', g_p3_s5d:'Pack at {0} moisture for the best result. Above {1} the jars will not accept the batch at all.',
+    g_p4_title:'4 · Curing in jars', g_p4_tag:'Where the flavour is built',
+    g_p4_s1:'Hold the jar at ideal', g_p4_s1d:'Ideal jar humidity is {0}. The buds sweat moisture back out, so it climbs on its own.',
+    g_p4_s2:'Burp in time', g_p4_s2d:'Above {0} you risk mold and loss. One burp drops the humidity and stops the mold.',
+    g_p4_s3:'Do not overdo it', g_p4_s3d:'Below {0} the jar is over-dried — burping then only sheds terpenes and lowers the grade.',
+    g_p4_s4:'Timing', g_p4_s4d:'You can finish as early as {0} days, but terpenes peak around {1} days.',
+    g_grade_title:'Grades and price', g_grade_desc:'The grade is calculated from the drying climate, the jar regime, cure length, burping rhythm and mistakes (mold, loss). It multiplies the price directly, both on the market and on orders.',
+    g_grade_from:'from', g_grade_under:'anything below',
+    g_p5_title:'5 · Selling', g_p5_tag:'Where the work pays off',
+    g_p5_s1:'Grade is money', g_p5_s1d:'The same strain at grade AAA earns roughly double what grade C does. Quality is tracked per strain in your inventory.',
+    g_p5_s2:'Orders', g_p5_s2d:'Orders are multiplied by the grade too — fill them with good material.',
+    g_p5_s3:'Prestige', g_p5_s3d:'Each prestige adds a permanent price bonus, but resets the farm.',
     tut:[
       ['Welcome to Green Empire','Build a growing empire from nothing — plant, care, dry, cure, and sell.'],
       ['Your resources','Cash and level are up top. Leveling up unlocks new strains and rooms.'],
@@ -530,7 +635,7 @@ const STR = {
    2. КОНФИГУРАЦИЈА
    ═══════════════════════════════════════════════════════════════ */
 const KONFIG = {
-  POCETNI_PARI: 500, DEN_SEK: 120, KLUC_SEJV: 'zi_v2_save', VERZIJA: 2,
+  POCETNI_PARI: 500, DEN_SEK: 120, KLUC_SEJV: 'zi_v3_save', VERZIJA: 3,
   VODA_PAD: 100/45, HRANA_PAD: 100/75,               // по секунда
   // Сушење/зреење: 1 ден на сушење = 6 реални секунди
   SUSEN_DEN_SEK: 6, VLAGA_START: 75, VLAGA_PAD_DEN: 7.2, VLAGA_PAD_VLAZEN: 4.0,
@@ -538,7 +643,39 @@ const KONFIG = {
   MUVLA_PRAG: 60, MUVLA_SANSA_DEN: 0.10, MUVLA_ZAGUBA_DEN: 0.06, MUVLA_CISTENJE: 0.08,
   VLAZEN_SANSA_DEN: 0.10, VRTENJE_INTERVAL: 3, VRTENJE_ROK: 1,
   ZREENJE_MIN: 3, TRIM_MASA: 0.94,
+
+  // ── Клима во сушарата ──
+  // Бавното сушење на 18–20 °C и 55–62 % ги задржува терпените; топло и суво
+  // го „изгорува“ вкусот, ладно и влажно носи мувла.
+  TEMP_IDEAL_MIN: 18, TEMP_IDEAL_MAX: 20,
+  RH_IDEAL_MIN: 55, RH_IDEAL_MAX: 62,
+  TEMP_MIN: 14, TEMP_MAX: 30, RH_MIN: 35, RH_MAX: 75,
+  KLIMA_DRIFT: 0.55,          // колку климата бега од поставеното за ден
+
+  // ── Тегли за зреење ──
+  TEGLA_RH_IDEAL_MIN: 58, TEGLA_RH_IDEAL_MAX: 63,
+  TEGLA_RH_MUVLA: 68, TEGLA_RH_SUVO: 52,
+  TEGLA_POT: 1.9,             // колку влага се враќа во теглата на ден
+  BURP_PAD: 7.5,              // колку burp ја спушта влагата
+  ZREENJE_VRV: 14,            // ден кога терпенскиот бонус достигнува врв
+
+  // ── Оценки за квалитет ──
+  OCENKI: [
+    { prag: 88, kluc:'AAA', mnozitel: 1.55 },
+    { prag: 74, kluc:'AA',  mnozitel: 1.28 },
+    { prag: 58, kluc:'A',   mnozitel: 1.08 },
+    { prag: 40, kluc:'B',   mnozitel: 0.92 },
+    { prag: -1, kluc:'C',   mnozitel: 0.76 },
+  ],
 };
+
+// Опрема за сушарата — секое ниво држи поширок и постабилен опсег на клима.
+const OPREMA = [
+  { tier:0, imeMk:'Без опрема',        imeEn:'No equipment',    cena:0,    stabilnost:0.30, opseg:3 },
+  { tier:1, imeMk:'Вентилатор',        imeEn:'Fan',             cena:900,  stabilnost:0.55, opseg:5 },
+  { tier:2, imeMk:'Одвлажнувач',       imeEn:'Dehumidifier',    cena:2600, stabilnost:0.75, opseg:8 },
+  { tier:3, imeMk:'Климатска контрола',imeEn:'Climate control', cena:6800, stabilnost:0.94, opseg:12 },
+];
 
 /* ═══════════════════════════════════════════════════════════════
    3. СОСТОЈБА
@@ -559,7 +696,11 @@ function novaIgra(){
     sobi:{ starter:{otklucena:true, lampa:0}, greenhouse:{otklucena:false, lampa:0}, breeding_lab:{otklucena:false} },
     rastenija:[], sledenRastenieId:1,
     susara:[],                       // серии на сушење и зреење
+    // Сушара: играчот ја поставува целната клима, опремата одредува колку
+    // добро таа се држи. Вистинската клима бега кон целта и се ниша.
+    susilnica:{ opremaTier:0, celTemp:19, celRh:58, temp:19, rh:58 },
     zaliha:{},                       // strainId -> parcinja
+    kvalitet:{},                     // strainId -> {n, zbir} за просечна оценка
     hibridi:[], otkrieni:[],
     personal:{ waterer:false, feeder:false, harvester:false, trader:false },
     dostignuvanja:[],
@@ -771,7 +912,10 @@ function oberi(id, precizno){
     potkrateno:!!precizno, vrtenja:0, trebaVrtenje:false, vrtenjeRok:0,
     sledenoVrtenje:KONFIG.VRTENJE_INTERVAL,
     muvla:false, imalaMuvla:false, zaguba:0, vlazenDen:false,
-    tochnost:0, denoviZreenje:0, burpovi:0, burpDostapen:false });
+    tochnost:0, denoviZreenje:0, burpovi:0, burpDostapen:false,
+    klimaZbir:0, klimaDenovi:0,            // траг од климата во сушарата
+    teglaRh:0, teglaDobri:0, teglaLosi:0,  // режим во теглата при зреење
+    zdravjeBerba: Math.round(p.zdravje) });
 
   s.statistika.vkupnoBerbi++;
   s.statistika.berbiPoSorta[p.sorta] = (s.statistika.berbiPoSorta[p.sorta]||0)+1;
@@ -782,6 +926,93 @@ function oberi(id, precizno){
 }
 
 /* ── Сушење и зреење ── */
+/* ── Клима во сушарата ───────────────────────────────────────────────── */
+function opremaSusara(){ return OPREMA[(s.susilnica&&s.susilnica.opremaTier)||0]; }
+function tempo0(dt){ return dt / KONFIG.SUSEN_DEN_SEK; }
+
+// Вистинската клима се движи кон целта; послабата опрема ја држи полабаво
+// и остава поголемо талкање околу поставената вредност.
+function klimaTikni(tempo){
+  const k = s.susilnica; if (!k) return;
+  const op = opremaSusara();
+  const vlecha = Math.min(1, KONFIG.KLIMA_DRIFT * (0.4 + op.stabilnost) * tempo * 3);
+  const sum = (1 - op.stabilnost);
+  k.temp += (k.celTemp - k.temp) * vlecha + (Math.random()-0.5) * sum * 1.6 * tempo;
+  k.rh   += (k.celRh   - k.rh)   * vlecha + (Math.random()-0.5) * sum * 4.0 * tempo;
+  k.temp = stegni(k.temp, KONFIG.TEMP_MIN-4, KONFIG.TEMP_MAX+4);
+  k.rh   = stegni(k.rh,   KONFIG.RH_MIN-8,   KONFIG.RH_MAX+8);
+}
+
+// 0..1 — колку сегашната клима е блиску до идеалниот прозорец.
+function klimaOcena(){
+  const k = s.susilnica; if (!k) return 0.5;
+  const oddaleceno = (v, min, max, tolerancija) => {
+    if (v >= min && v <= max) return 0;
+    const d = v < min ? min - v : v - max;
+    return Math.min(1, d / tolerancija);
+  };
+  const dT = oddaleceno(k.temp, KONFIG.TEMP_IDEAL_MIN, KONFIG.TEMP_IDEAL_MAX, 7);
+  const dR = oddaleceno(k.rh,   KONFIG.RH_IDEAL_MIN,   KONFIG.RH_IDEAL_MAX,   18);
+  return stegni(1 - (dT*0.55 + dR*0.45), 0, 1);
+}
+
+// Топло/суво суши побрзо, ладно/влажно побавно.
+function brzinaSusenje(){
+  const k = s.susilnica; if (!k) return 1;
+  const t = (k.temp - 19) / 11;          // −1..+1 приближно
+  const r = (58 - k.rh) / 22;
+  return stegni(1 + t*0.55 + r*0.45, 0.35, 2.1);
+}
+
+/* ── Квалитет и оценки ───────────────────────────────────────────────── */
+// Собира сѐ што играчот направил со серијата во една оценка 0..100.
+function kvalitetSerija(b){
+  const klima = b.klimaDenovi ? (b.klimaZbir/b.klimaDenovi) : 0.5;      // клима при сушење
+  const tegla = (() => {                                                // режим во теглата
+    const dobri = b.teglaDobri||0, losi = b.teglaLosi||0;
+    if (!dobri && !losi) return 0.5;
+    return dobri/(dobri+losi);
+  })();
+  // Долгото зреење гради терпени, но со опаѓачки принос.
+  const zreenje = stegni((b.denoviZreenje||0)/KONFIG.ZREENJE_VRV, 0, 1);
+  const burpRitam = stegni((b.burpovi||0)/Math.max(1, Math.floor(b.denoviZreenje||0)+1), 0, 1);
+
+  const ocena =
+      klima * 34
+    + tegla * 22
+    + zreenje * 14
+    + burpRitam * 8
+    + (b.tochnost||0) * 12                       // влажност при пакување
+    + Math.min(b.vrtenja||0, 3)/3 * 6            // вртење на гранките
+    + (b.potkrateno ? 4 : 0)                     // прецизно кратење
+    - (b.imalaMuvla ? 14 : 0)
+    - stegni((b.zaguba||0)*40, 0, 16);
+  return stegni(Math.round(ocena), 0, 100);
+}
+
+function ocenkaZa(kvalitet){
+  return KONFIG.OCENKI.find(o => kvalitet > o.prag) || KONFIG.OCENKI[KONFIG.OCENKI.length-1];
+}
+
+// Просечен квалитет на залихата по сорта (пондериран по количина).
+function kvalitetZaliha(sortaId){
+  const z = s.kvalitet && s.kvalitet[sortaId];
+  if (!z || !z.n) return null;
+  return stegni(Math.round(z.zbir/z.n), 0, 100);
+}
+function dodadiKvalitet(sortaId, kvalitet, kolku){
+  if (!s.kvalitet) s.kvalitet = {};
+  const z = s.kvalitet[sortaId] || (s.kvalitet[sortaId] = {n:0, zbir:0});
+  z.n += kolku; z.zbir += kvalitet*kolku;
+}
+function trosiKvalitet(sortaId, kolku){
+  const z = s.kvalitet && s.kvalitet[sortaId];
+  if (!z || !z.n) return;
+  const sreden = z.zbir/z.n;
+  z.n = Math.max(0, z.n - kolku);
+  z.zbir = z.n>0 ? sreden*z.n : 0;
+}
+
 function najdiSerija(id){ return s.susara.find(x=>x.id===id); }
 function zavrtiGranki(id){
   const b = najdiSerija(id);
@@ -808,6 +1039,10 @@ function spakuvaj(id){
              : b.vlaga <= KONFIG.IDEAL_MAX+9 ? .85 : .65;
   b.faza='zreenje'; b.denoviZreenje=0; b.burpovi=0; b.burpDostapen=true;
   b.trebaVrtenje=false; b.vlazenDen=false; b.muvla=false;
+  // Влагата во пупките се израмнува во теглата — колку повлажни се спакувани,
+  // толку повисоко стартува теглата и толку повеќе burp-ови ќе бараат.
+  b.teglaRh = stegni(46 + b.vlaga*0.95, 48, 78);
+  b.teglaDobri = 0; b.teglaLosi = 0;
   poraka(sablon(T().t_packed, Math.round(b.vlaga)));
   sfx('achievement'); iscrtajSe(true);
 }
@@ -815,7 +1050,19 @@ function burpni(id){
   const b = najdiSerija(id);
   if (!b || b.faza!=='zreenje' || !b.burpDostapen) return;
   b.burpDostapen=false; b.burpovi++;
-  poraka(T().t_burp); sfx('feed'); iscrtajSe(true);
+
+  const pred = b.teglaRh||60;
+  b.teglaRh = Math.max(38, pred - KONFIG.BURP_PAD);
+
+  // Отворањето кога теглата е веќе сува само ги губи терпените.
+  if (pred < KONFIG.TEGLA_RH_IDEAL_MIN){
+    b.teglaLosi = (b.teglaLosi||0)+1;
+    poraka(T().t_burp_early, true);
+  } else {
+    if (pred > KONFIG.TEGLA_RH_MUVLA) b.muvla = false;   // проветрувањето ја запира мувлата
+    poraka(sablon(T().t_burp_ok, Math.round(b.teglaRh)));
+  }
+  sfx('feed'); iscrtajSe(true);
 }
 function zavrsiZreenje(id){
   const b = najdiSerija(id);
@@ -825,10 +1072,35 @@ function zavrsiZreenje(id){
     .55*b.tochnost + .15*Math.min(b.vrtenja,3)/3 + .2*Math.min(b.burpovi,6)/6
     + (b.potkrateno?.1:0) - (b.imalaMuvla?.12:0), 0, 1);
   const finalni = Math.max(1, Math.round(b.parcinja * (1-b.zaguba) * (0.7 + 0.45*nega)));
+
+  // Оценката ја носи цената подоцна на пазарот.
+  const kvalitet = kvalitetSerija(b);
+  const ocenka = ocenkaZa(kvalitet);
+  dodadiKvalitet(b.sorta, kvalitet, finalni);
+
   s.zaliha[b.sorta] = (s.zaliha[b.sorta]||0) + finalni;
   s.susara = s.susara.filter(x=>x.id!==id);
-  poraka(sablon(T().t_cured, finalni));
-  sfx('harvest'); iscrtajSe(true);
+  s.statistika.najdobraOcenka = Math.max(s.statistika.najdobraOcenka||0, kvalitet);
+  poraka(sablon(T().t_cured_grade, finalni, ocenka.kluc, kvalitet));
+  sfx('harvest'); proveriDostignuvanja(); iscrtajSe(true);
+}
+
+/* ── Опрема за сушарата ──────────────────────────────────────────────── */
+function nadgradiOprema(){
+  const sled = OPREMA[opremaSusara().tier+1];
+  if (!sled || s.pari < sled.cena){ sfx('error'); return; }
+  dodadiPari(-sled.cena);
+  s.susilnica.opremaTier = sled.tier;
+  poraka(sablon(T().t_equip_bought, s.jazik==='mk'?sled.imeMk:sled.imeEn));
+  sfx('achievement'); iscrtajSe(true);
+}
+function postaviKlima(polje, vrednost){
+  const k = s.susilnica; if (!k) return;
+  const v = Number(vrednost);
+  if (!Number.isFinite(v)) return;
+  if (polje==='temp') k.celTemp = stegni(v, KONFIG.TEMP_MIN, KONFIG.TEMP_MAX);
+  else k.celRh = stegni(v, KONFIG.RH_MIN, KONFIG.RH_MAX);
+  azurirajVoMesto();
 }
 
 /* ── Генетика ── */
@@ -868,9 +1140,12 @@ function prodaj(sortaId, kolku){
   kolku = Math.min(kolku, ima);
   if (kolku<=0) return;
   const x = sorta(sortaId);
+  // Оценката на серијата директно ја крева или урива цената.
+  const kv = kvalitetZaliha(sortaId);
+  const kvMult = kv===null ? 1 : ocenkaZa(kv).mnozitel;
   let vkupno = 0;
   for (let i=0;i<kolku;i++){
-    let m = 1 + s.prestiz*0.05;
+    let m = (1 + s.prestiz*0.05) * kvMult;
     if (s.prodazenBonus && s.prodazenBonus.preostanato>0){
       m *= s.prodazenBonus.mult; s.prodazenBonus.preostanato--;
     }
@@ -878,6 +1153,7 @@ function prodaj(sortaId, kolku){
   }
   if (s.prodazenBonus && s.prodazenBonus.preostanato<=0) s.prodazenBonus=null;
   s.zaliha[sortaId] = ima-kolku;
+  trosiKvalitet(sortaId, kolku);
   s.dnevno.prodadeno += kolku;
   dodadiPari(Math.round(vkupno));
   sfx('click'); iscrtajSe(true);
@@ -889,9 +1165,13 @@ function ispolniNaracka(id){
   const n = s.naracki.find(o=>o.id===id); if (!n) return;
   if ((s.zaliha[n.sorta]||0) < n.kolku){ sfx('error'); return; }
   s.zaliha[n.sorta] -= n.kolku;
+  // Купувачите плаќаат според оценката на стоката што ја испорачуваш.
+  const kv = kvalitetZaliha(n.sorta);
+  const kvMult = kv===null ? 1 : ocenkaZa(kv).mnozitel;
+  trosiKvalitet(n.sorta, n.kolku);
   s.naracki = s.naracki.filter(o=>o.id!==id);
   s.statistika.naracki++; s.dnevno.naracki++;
-  dodadiPari(n.pari); dodadiXp(n.xp);
+  dodadiPari(Math.round(n.pari*kvMult)); dodadiXp(n.xp);
   sfx('harvest'); proveriDostignuvanja(); iscrtajSe(true);
 }
 function moznaNaracka(){
@@ -1117,6 +1397,11 @@ function tikni(){
     if (p.voda>0 && p.hrana>0) p.napredok = Math.min(1, p.napredok + (dt/growSec)*stres);
   }
 
+  // ── Клима во сушарата ──
+  // Вистинската температура и влажност полека се движат кон поставената цел;
+  // послабата опрема пушта поголемо отстапување.
+  klimaTikni(tempo0(dt));
+
   // ── Сушење и зреење (1 ден на сушење = SUSEN_DEN_SEK секунди) ──
   const tempo = dt / KONFIG.SUSEN_DEN_SEK;
   for (const b of s.susara){
@@ -1124,8 +1409,12 @@ function tikni(){
       const preden = Math.floor(b.denovi);
       b.denovi += tempo;
       const novDen = Math.floor(b.denovi)!==preden;
-      const pad = b.vlazenDen ? KONFIG.VLAGA_PAD_VLAZEN : KONFIG.VLAGA_PAD_DEN;
+      // Топлата и сува сушара влече повеќе влага, ладната и влажна помалку.
+      const pad = (b.vlazenDen ? KONFIG.VLAGA_PAD_VLAZEN : KONFIG.VLAGA_PAD_DEN) * brzinaSusenje();
       b.vlaga = Math.max(KONFIG.VLAGA_MIN, b.vlaga - pad*tempo);
+      // Секој ден климата остава трага врз квалитетот на серијата.
+      b.klimaZbir = (b.klimaZbir||0) + klimaOcena()*tempo;
+      b.klimaDenovi = (b.klimaDenovi||0) + tempo;
       if (b.denovi >= b.sledenoVrtenje && !b.trebaVrtenje){
         b.trebaVrtenje=true; b.vrtenjeRok=b.denovi+KONFIG.VRTENJE_ROK;
         b.sledenoVrtenje += KONFIG.VRTENJE_INTERVAL;
@@ -1144,7 +1433,29 @@ function tikni(){
     } else {
       const preden = Math.floor(b.denoviZreenje);
       b.denoviZreenje += tempo;
-      if (Math.floor(b.denoviZreenje)!==preden) b.burpDostapen = true;
+      const novDen = Math.floor(b.denoviZreenje)!==preden;
+      if (novDen) b.burpDostapen = true;
+
+      // Пупките испотуваат влага назад во теглата; ако не се отвори, расте.
+      // Ефектот слабее како серијата се израмнува со текот на зреењето.
+      const jacina = Math.max(0.25, 1 - b.denoviZreenje/KONFIG.ZREENJE_VRV);
+      b.teglaRh = Math.min(85, (b.teglaRh||60) + KONFIG.TEGLA_POT*jacina*tempo);
+
+      if (novDen){
+        // Превисока влага во теглата носи мувла и губиток; пресува ги суши.
+        if (b.teglaRh > KONFIG.TEGLA_RH_MUVLA){
+          b.teglaLosi = (b.teglaLosi||0)+1;
+          if (!b.muvla && Math.random() < 0.28){
+            b.muvla = true; b.imalaMuvla = true;
+            b.zaguba = Math.min(.6, b.zaguba + 0.05);
+            poraka(T().t_jar_mold, true);
+          }
+        } else if (b.teglaRh < KONFIG.TEGLA_RH_SUVO){
+          b.teglaLosi = (b.teglaLosi||0)+1;
+        } else {
+          b.teglaDobri = (b.teglaDobri||0)+1;
+        }
+      }
     }
   }
 
@@ -1189,6 +1500,7 @@ const JAZICINJA = [
   { id:'staff', kluc:'nav_staff', ikona:'<circle cx="9" cy="8" r="3.2" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="9" r="2.6" stroke="currentColor" stroke-width="1.8"/><path d="M3 20c0-4 3-6 6-6s6 2 6 6M14.5 20c.3-3 1.8-5 4.7-5.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>' },
   { id:'achievements', kluc:'nav_achievements', ikona:'<path d="M7 4h10v5a5 5 0 0 1-10 0V4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M7 5H4v2a4 4 0 0 0 4 4M17 5h3v2a4 4 0 0 1-4 4M12 14v3m-3 3h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>' },
   { id:'prestige', kluc:'nav_prestige', ikona:'<path d="M3 8l4 3 5-6 5 6 4-3-2 11H5L3 8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M5 19h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>' },
+  { id:'guide', kluc:'nav_guide', ikona:'<path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11v18H6.5A2.5 2.5 0 0 1 4 18.5v-13Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H13v18h4.5a2.5 2.5 0 0 0 2.5-2.5v-13Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>' },
 ];
 
 function osveziNav(){
@@ -1231,6 +1543,30 @@ function osveziHud(){
    Ако артот недостига, се враќа на процедуралниот SVG подолу.        */
 const FAZI = ['seedling','veg','flower','harvest'];
 
+// Секоја сорта добива свој изглед во цветот: избор по бојата на сјајот,
+// така што и новите хибриди автоматски паѓаат во некое семејство.
+const IZGLEDI = ['frost','purple','orange','gold','pink'];
+const IZGLED_SORTA = {
+  ohrid_crystal:'frost',  pelister_frost:'frost',
+  vardar_gold:'gold',     skopje_haze:'purple',
+  bitola_kush:'frost',    shar_diesel:'frost',
+  galicica_dream:'purple', prespa_punch:'orange',
+  macedonian_royal:'gold', imperial_reserve:'pink',
+};
+
+function izgledZaSorta(x){
+  if (IZGLED_SORTA[x.id]) return IZGLED_SORTA[x.id];
+  // Хибрид: подреди го според нијансата на неговата боја.
+  const hex = (x.sjaj||'#86efac').replace('#','');
+  const r = parseInt(hex.slice(0,2),16), g = parseInt(hex.slice(2,4),16), b = parseInt(hex.slice(4,6),16);
+  const mx = Math.max(r,g,b), mn = Math.min(r,g,b);
+  if (mx-mn < 28) return 'frost';                     // безбојно/сребрено
+  if (r>=mx && b>g) return 'pink';
+  if (r>=mx && g>=b) return (r-g)>60 ? 'orange' : 'gold';
+  if (b>=mx) return 'purple';
+  return 'frost';
+}
+
 function fotoRastenie(p){
   const A = window.GE_ART;
   if (!A || !A.cut || !A.cut.harvest) return null;
@@ -1255,8 +1591,11 @@ function fotoRastenie(p){
 
   // Сликите се сечени од ист кадар, па саксијата се совпаѓа сама по себе —
   // затоа слоевите само се преклопуваат, без дополнително скалирање.
+  // Во цветот се вклучува изгледот на сортата (лилаво, златно, розово…),
+  // за да не изгледаат сите сорти исто кога ќе процветаат.
+  const izgled = izgledZaSorta(x);
   const sloj = (kluc, opac) => {
-    const src = A.cut[kluc];
+    const src = (kluc==='harvest' && A.looks && A.looks[izgled]) ? A.looks[izgled] : A.cut[kluc];
     if (!src) return '';
     return `<div class="sloj" style="background-image:url('${src}');opacity:${opac.toFixed(3)};
       filter:${filter}"></div>`;
@@ -1470,29 +1809,116 @@ function kartickaSerija(b){
   }
   const dZr = Math.floor(b.denoviZreenje);
   const gotovo = b.denoviZreenje >= KONFIG.ZREENJE_MIN;
+
+  // Влажност во теглата — најважниот показател при зреењето.
+  const rh = Math.round(b.teglaRh||60);
+  const rhBoja = rh > KONFIG.TEGLA_RH_MUVLA ? '#ef4444'
+               : rh > KONFIG.TEGLA_RH_IDEAL_MAX ? '#f59e0b'
+               : rh >= KONFIG.TEGLA_RH_IDEAL_MIN ? '#22c55e'
+               : rh >= KONFIG.TEGLA_RH_SUVO ? '#60a5fa' : '#a78bfa';
+  const rhStatus = rh > KONFIG.TEGLA_RH_MUVLA ? t.jar_danger
+                 : rh > KONFIG.TEGLA_RH_IDEAL_MAX ? t.jar_high
+                 : rh >= KONFIG.TEGLA_RH_IDEAL_MIN ? t.jar_ideal
+                 : rh >= KONFIG.TEGLA_RH_SUVO ? t.jar_low : t.jar_dry;
+
+  const kv = kvalitetSerija(b);
+  const oc = ocenkaZa(kv);
+
   return `<div class="kart" data-serija="${b.id}" style="display:flex;flex-direction:column;gap:8px">
     <div style="display:flex;justify-content:space-between;align-items:center;gap:6px">
       <span style="font:700 13px Outfit,sans-serif">${esc(imeSorta(x))}</span>
       <span class="pil">${masa} × · ${esc(t.in_jars)}</span></div>
+
+    <div class="tegla-red" style="display:flex;align-items:center;gap:8px">
+      <span class="ocenka" style="background:${bojaOcenka(oc.kluc)}">${esc(oc.kluc)}</span>
+      <span style="flex:1">
+        <span style="display:flex;justify-content:space-between;font:600 10px Inter,sans-serif;color:oklch(50% 0.02 150)">
+          <span>${esc(t.jar_rh)}</span><b style="color:${rhBoja}">${rh}% · ${esc(rhStatus)}</b></span>
+        <span class="zica" style="display:block;height:5px;background:oklch(92% 0.02 90);border-radius:3px;overflow:hidden;margin-top:3px">
+          <i style="display:block;height:100%;width:${stegni(rh,0,100)}%;background:${rhBoja}"></i></span>
+      </span>
+    </div>
+
     <div class="ser-info" style="font:600 11px Inter,sans-serif;color:oklch(50% 0.02 150)">
-      ${esc(sablon(t.cure_day, dZr))} · ${esc(t.packed_acc)} ${(b.tochnost*100).toFixed(0)}%<br>
+      ${esc(sablon(t.cure_day, dZr))} · ${esc(t.quality)} <b>${kv}</b>/100<br>
       ${esc(t.burps)}: ${b.burpovi} ${esc(sablon(t.of_possible, Math.max(dZr+1,1)))}</div>
     <div class="lenta-h"><i style="width:${stegni(b.denoviZreenje/KONFIG.ZREENJE_MIN*100,0,100)}%;background:oklch(60% 0.11 152)"></i></div>
     <div style="font:600 10px Inter,sans-serif;color:oklch(55% 0.02 150)">
       ${esc(t.sop)}: ${esc(b.potkrateno?t.trimmed:t.untrimmed)} · ${esc(t.turns)} ${b.vrtenja}
-      · ${esc(t.mold)}: ${esc(b.imalaMuvla?t.mold_had:t.mold_none)}</div>
+      · ${esc(t.mold)}: ${esc(b.imalaMuvla?t.mold_had:t.mold_none)}
+      ${b.denoviZreenje<KONFIG.ZREENJE_VRV?` · ${esc(t.cure_peak_hint)}`:''}</div>
     ${b.burpDostapen?`<button class="k-zlatno" onclick="burpni(${b.id})">${esc(t.burp)}</button>`:''}
     <button class="k-primarno" ${gotovo?'':'disabled'} onclick="zavrsiZreenje(${b.id})">
       ${esc(gotovo?t.finish_cure:sablon(t.cures_more, Math.max(0,Math.ceil(KONFIG.ZREENJE_MIN-b.denoviZreenje))))}</button>
   </div>`;
 }
 
+function bojaOcenka(kluc){
+  return kluc==='AAA' ? 'linear-gradient(135deg,#fbbf24,#d97706)'
+       : kluc==='AA'  ? 'linear-gradient(135deg,#34d399,#059669)'
+       : kluc==='A'   ? 'linear-gradient(135deg,#60a5fa,#2563eb)'
+       : kluc==='B'   ? 'linear-gradient(135deg,#a3a3a3,#737373)'
+       :                'linear-gradient(135deg,#f87171,#b91c1c)';
+}
+
+// Конзола за климата: целна температура и влажност, состојба во моментот
+// и оценка колку сушарата моментално ги чува терпените.
+function klimaKonzola(){
+  const t=T(), k=s.susilnica, op=opremaSusara(), sled=OPREMA[op.tier+1];
+  const oc = klimaOcena();
+  const bojaOc = oc>0.75 ? '#22c55e' : oc>0.45 ? '#f59e0b' : '#ef4444';
+  const status = oc>0.75 ? t.clim_good : oc>0.45 ? t.clim_ok : t.clim_bad;
+  const brzina = brzinaSusenje();
+
+  const lizgac = (polje, vred, min, max, korak, etiketa, edinica, sega, idMin, idMax) => `
+    <div style="flex:1;min-width:190px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:6px;margin-bottom:3px">
+        <span style="font:700 10.5px Inter,sans-serif;color:oklch(45% 0.02 150)">${esc(etiketa)}</span>
+        <span style="font:800 12px Outfit,sans-serif"><b id="cel-${polje}">${vred.toFixed(0)}</b>${esc(edinica)}
+          <span style="font:600 9.5px Inter,sans-serif;color:oklch(55% 0.02 150)">
+            · ${esc(t.clim_now)} <b id="sega-${polje}">${sega.toFixed(1)}</b>${esc(edinica)}</span></span>
+      </div>
+      <input type="range" min="${min}" max="${max}" step="${korak}" value="${vred}"
+        oninput="postaviKlima('${polje}', this.value)"
+        style="width:100%;accent-color:oklch(60% 0.11 152)">
+      <div style="font:600 9px Inter,sans-serif;color:oklch(60% 0.02 150);margin-top:1px">
+        ${esc(t.clim_ideal)} ${idMin}–${idMax}${esc(edinica)}</div>
+    </div>`;
+
+  return `<div class="kart" style="margin-bottom:16px;display:flex;flex-direction:column;gap:11px">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">
+      <div style="font:700 12px Outfit,sans-serif">${esc(t.clim_title)}</div>
+      <span class="badge" id="klima-ocena" style="background:${bojaOc}22;color:${bojaOc}">
+        ${esc(status)} · ${Math.round(oc*100)}%</span>
+    </div>
+    <div style="display:flex;gap:16px;flex-wrap:wrap">
+      ${lizgac('temp', k.celTemp, KONFIG.TEMP_MIN, KONFIG.TEMP_MAX, 1, t.clim_temp, '°C',
+        k.temp, KONFIG.TEMP_IDEAL_MIN, KONFIG.TEMP_IDEAL_MAX)}
+      ${lizgac('rh', k.celRh, KONFIG.RH_MIN, KONFIG.RH_MAX, 1, t.clim_rh, '%',
+        k.rh, KONFIG.RH_IDEAL_MIN, KONFIG.RH_IDEAL_MAX)}
+    </div>
+    <div style="font:600 10.5px Inter,sans-serif;color:oklch(50% 0.02 150)">
+      ${esc(t.clim_speed)}: <b id="klima-brzina">×${brzina.toFixed(2)}</b> · ${esc(t.clim_equip)}:
+      <b>${esc(s.jazik==='mk'?op.imeMk:op.imeEn)}</b> (${esc(t.clim_stability)} ${Math.round(op.stabilnost*100)}%)
+    </div>
+    <button class="k-primarno" ${sled?'':'disabled'} onclick="nadgradiOprema()"
+      style="${!sled||s.pari<sled.cena?'background:oklch(94% 0.015 90);color:oklch(60% 0.02 150)':''}">
+      ${sled ? esc(t.clim_upgrade)+' · '+esc(s.jazik==='mk'?sled.imeMk:sled.imeEn)+' · '+fmtK(sled.cena)
+             : esc(t.lamp_maxed)}</button>
+  </div>`;
+}
+
 function panelSusenje(){
   const t=T();
   const serii = s.susara.filter(b=>b.faza==='sushenje');
+  const A = window.GE_ART;
   return `<div class="panel tesen">
+    ${A&&A.dryRoom?`<div class="scena-baner" style="background-image:url('${A.dryRoom}')">
+      <div><div class="hero-tekst">${esc(t.dry_title)}</div>
+      <div class="hero-pod">${esc(t.dry_tag)}</div></div></div>`:''}
     <div class="naslov">${esc(t.dry_title)}</div>
     <div class="podnaslov">${esc(t.dry_desc)}</div>
+    ${klimaKonzola()}
     ${serii.length
       ? `<div class="kart-mreza" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr))">${serii.map(kartickaSerija).join('')}</div>`
       : `<div class="kart" style="border-style:dashed;padding:26px;text-align:center;color:oklch(55% 0.02 150);font:600 12px Inter,sans-serif">${esc(t.dry_empty)}</div>`}
@@ -1501,7 +1927,11 @@ function panelSusenje(){
 function panelZreenje(){
   const t=T();
   const serii = s.susara.filter(b=>b.faza==='zreenje');
+  const A = window.GE_ART;
   return `<div class="panel tesen">
+    ${A&&A.cureRoom?`<div class="scena-baner" style="background-image:url('${A.cureRoom}')">
+      <div><div class="hero-tekst">${esc(t.cure_title)}</div>
+      <div class="hero-pod">${esc(t.cure_tag)}</div></div></div>`:''}
     <div class="naslov">${esc(t.cure_title)}</div>
     <div class="podnaslov">${esc(t.cure_desc)}</div>
     ${serii.length
@@ -1569,12 +1999,17 @@ function panelPazar(){
     html += `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:26px">`;
     for (const id of redovi){
       const x = sorta(id), kolku = s.zaliha[id];
-      const cena = Math.round(x.cena * prodazenMult());
+      // Оценката на залихата ја крева или спушта цената по парче.
+      const kv = kvalitetZaliha(id);
+      const oc = kv===null ? null : ocenkaZa(kv);
+      const cena = Math.round(x.cena * prodazenMult() * (oc?oc.mnozitel:1));
       html += `<div class="kart" style="padding:10px 13px;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
         <span class="gtocka" style="background:${esc(x.sjaj)}"></span>
+        ${oc?`<span class="ocenka" style="background:${bojaOcenka(oc.kluc)}" title="${esc(t.quality)} ${kv}/100">${esc(oc.kluc)}</span>`:''}
         <div style="flex:1;min-width:110px">
           <div style="font:700 12px Outfit,sans-serif">${esc(imeSorta(x))}</div>
-          <div style="font:600 10px Inter,sans-serif;color:oklch(55% 0.02 150)">${kolku} × ${fmt(cena)} ден</div></div>
+          <div style="font:600 10px Inter,sans-serif;color:oklch(55% 0.02 150)">${kolku} × ${fmt(cena)} ден${
+            oc?` · ${esc(t.grade)} ${esc(oc.kluc)} ×${oc.mnozitel.toFixed(2)}`:''}</div></div>
         <div style="font:800 12.5px Outfit,sans-serif;color:oklch(38% 0.06 152);white-space:nowrap">${fmt(cena*kolku)} ден</div>
         <button class="k-sekundarno" style="padding:6px 11px;font-size:10px" onclick="prodaj('${esc(id)}',1)">${esc(t.sell_one)}</button>
         <button class="k-primarno" style="padding:6px 11px;font-size:10px" onclick="prodaj('${esc(id)}',${kolku})">${esc(t.sell_all)}</button>
@@ -1700,6 +2135,8 @@ function strukturenPotpis(){
       s.predizvici.map(c=>c.gotov)]);
   }
   if (j==='drying') return JSON.stringify(['drying', s.jazik,
+    s.susilnica.opremaTier,
+    s.pari >= ((OPREMA[s.susilnica.opremaTier+1]||{cena:Infinity}).cena),
     s.susara.filter(b=>b.faza==='sushenje').map(b=>[b.id, b.muvla, b.vlazenDen,
       b.trebaVrtenje, b.vlaga<=KONFIG.VLAGA_TEGLI_MAX])]);
   if (j==='curing') return JSON.stringify(['curing', s.jazik,
@@ -1707,6 +2144,8 @@ function strukturenPotpis(){
       b.denoviZreenje>=KONFIG.ZREENJE_MIN])]);
   if (j==='market') return JSON.stringify(['market', s.jazik,
     Object.entries(s.zaliha).filter(([,n])=>n>0), s.naracki.map(n=>n.id),
+    Object.keys(s.zaliha).filter(id=>s.zaliha[id]>0).map(id=>{
+      const kv = kvalitetZaliha(id); return kv===null?null:ocenkaZa(kv).kluc; }),
     s.prodazenBonus && s.prodazenBonus.preostanato, s.prestiz]);
   if (j==='achievements') return JSON.stringify(['ach', s.jazik, s.dostignuvanja.length,
     s.statistika.vkupnoBerbi, s.statistika.vkupnoZaraboteno, s.statistika.naracki,
@@ -1715,6 +2154,84 @@ function strukturenPotpis(){
   return JSON.stringify([j, s.jazik, s.nivo, s.prestiz,
     Object.values(s.personal), Object.values(s.sobi).map(r=>!!r.otklucena),
     izborVkrstuvanje, s.pari>=700]);
+}
+
+/* ── Водич низ процесот ──────────────────────────────────────────────────
+   Сите бројки се читаат директно од KONFIG, за да не се разминат со играта. */
+function panelVodic(){
+  const t=T(), A=window.GE_ART;
+  const c = n => `<span class="vodic-cifra">${esc(String(n))}</span>`;
+  const K = KONFIG;
+
+  const faza = (naslov, tag, slika, cekori) => `
+    <div class="kart" style="margin-bottom:14px;padding:0;overflow:hidden">
+      ${slika?`<div class="scena-baner" style="height:96px;margin:0;border-radius:0;background-image:url('${slika}')">
+        <div><div class="hero-tekst" style="font-size:15px">${esc(naslov)}</div>
+        <div class="hero-pod">${esc(tag)}</div></div></div>`
+      :`<div style="padding:14px 16px 0"><div style="font:800 15px Outfit,sans-serif">${esc(naslov)}</div>
+        <div style="font:600 11px Inter,sans-serif;color:oklch(52% 0.02 150);margin-top:2px">${esc(tag)}</div></div>`}
+      <div style="padding:4px 16px 14px">
+        ${cekori.map((k,i)=>`<div class="vodic-cekor">
+          <div class="vodic-broj">${i+1}</div>
+          <div class="vodic-telo"><b>${esc(k[0])}</b><span>${k[1]}</span></div>
+        </div>`).join('')}
+      </div>
+    </div>`;
+
+  const ocenkiTabela = `
+    <div class="kart" style="margin-bottom:14px">
+      <div style="font:800 14px Outfit,sans-serif;margin-bottom:3px">${esc(t.g_grade_title)}</div>
+      <div style="font:500 11.5px Inter,sans-serif;color:oklch(50% 0.02 150);line-height:1.55;margin-bottom:10px">
+        ${esc(t.g_grade_desc)}</div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        ${K.OCENKI.map(o=>`<div style="display:flex;align-items:center;gap:10px">
+          <span class="ocenka" style="background:${bojaOcenka(o.kluc)}">${esc(o.kluc)}</span>
+          <span style="flex:1;font:600 11px Inter,sans-serif;color:oklch(48% 0.02 150)">
+            ${o.prag<0 ? esc(t.g_grade_under) : esc(t.g_grade_from)+' '+(o.prag+1)}</span>
+          <b style="font:800 12px Outfit,sans-serif">×${o.mnozitel.toFixed(2)}</b>
+        </div>`).join('')}
+      </div>
+    </div>`;
+
+  return `<div class="panel tesen">
+    <div class="naslov">${esc(t.g_title)}</div>
+    <div class="podnaslov">${esc(t.g_desc)}</div>
+
+    ${faza(t.g_p1_title, t.g_p1_tag, A&&A.hero, [
+      [t.g_p1_s1, sablon(t.g_p1_s1d, c(20), c(50))],
+      [t.g_p1_s2, t.g_p1_s2d],
+      [t.g_p1_s3, t.g_p1_s3d],
+    ])}
+
+    ${faza(t.g_p2_title, t.g_p2_tag, A&&A.trimRoom, [
+      [t.g_p2_s1, sablon(t.g_p2_s1d, c(Math.round((1-K.TRIM_MASA)*100)+'%'))],
+      [t.g_p2_s2, t.g_p2_s2d],
+    ])}
+
+    ${faza(t.g_p3_title, t.g_p3_tag, A&&A.dryRoom, [
+      [t.g_p3_s1, sablon(t.g_p3_s1d, c(K.TEMP_IDEAL_MIN+'–'+K.TEMP_IDEAL_MAX+' °C'),
+        c(K.RH_IDEAL_MIN+'–'+K.RH_IDEAL_MAX+' %'))],
+      [t.g_p3_s2, t.g_p3_s2d],
+      [t.g_p3_s3, sablon(t.g_p3_s3d, c(K.VRTENJE_INTERVAL))],
+      [t.g_p3_s4, sablon(t.g_p3_s4d, c(K.MUVLA_PRAG+'%'))],
+      [t.g_p3_s5, sablon(t.g_p3_s5d, c(K.IDEAL_MIN+'–'+K.IDEAL_MAX+'%'), c(K.VLAGA_TEGLI_MAX+'%'))],
+    ])}
+
+    ${faza(t.g_p4_title, t.g_p4_tag, A&&A.cureRoom, [
+      [t.g_p4_s1, sablon(t.g_p4_s1d, c(K.TEGLA_RH_IDEAL_MIN+'–'+K.TEGLA_RH_IDEAL_MAX+'%'))],
+      [t.g_p4_s2, sablon(t.g_p4_s2d, c(K.TEGLA_RH_MUVLA+'%'))],
+      [t.g_p4_s3, sablon(t.g_p4_s3d, c(K.TEGLA_RH_SUVO+'%'))],
+      [t.g_p4_s4, sablon(t.g_p4_s4d, c(K.ZREENJE_MIN), c(K.ZREENJE_VRV))],
+    ])}
+
+    ${ocenkiTabela}
+
+    ${faza(t.g_p5_title, t.g_p5_tag, null, [
+      [t.g_p5_s1, t.g_p5_s1d],
+      [t.g_p5_s2, t.g_p5_s2d],
+      [t.g_p5_s3, t.g_p5_s3d],
+    ])}
+  </div>`;
 }
 
 function azurirajVoMesto(){
@@ -1760,6 +2277,22 @@ function azurirajVoMesto(){
   }
   if (j==='drying' || j==='curing'){
     const t=T();
+    if (j==='drying'){
+      // Живи отчитувања на климата, без повторно цртање на лизгачите.
+      const k=s.susilnica, oc=klimaOcena();
+      const set=(id,v)=>{ const el=document.getElementById(id); if(el) el.textContent=v; };
+      set('sega-temp', k.temp.toFixed(1));
+      set('sega-rh',   k.rh.toFixed(1));
+      set('cel-temp',  k.celTemp.toFixed(0));
+      set('cel-rh',    k.celRh.toFixed(0));
+      set('klima-brzina', '×'+brzinaSusenje().toFixed(2));
+      const oe=document.getElementById('klima-ocena');
+      if (oe){
+        const boja = oc>0.75?'#22c55e':oc>0.45?'#f59e0b':'#ef4444';
+        oe.textContent = (oc>0.75?t.clim_good:oc>0.45?t.clim_ok:t.clim_bad)+' · '+Math.round(oc*100)+'%';
+        oe.style.background = boja+'22'; oe.style.color = boja;
+      }
+    }
     document.querySelectorAll('[data-serija]').forEach(kart=>{
       const b = s.susara.find(x=>x.id===+kart.dataset.serija); if(!b) return;
       const info = kart.querySelector('.ser-info');
@@ -1779,9 +2312,29 @@ function azurirajVoMesto(){
           stegni((KONFIG.VLAGA_START-vlaga)/(KONFIG.VLAGA_START-KONFIG.VLAGA_MIN)*100,0,100)+'%';
       } else {
         const dZr = Math.floor(b.denoviZreenje);
-        if (info) info.innerHTML = `${esc(sablon(t.cure_day, dZr))} · ${esc(t.packed_acc)} ${(b.tochnost*100).toFixed(0)}%<br>`
+        const kv = kvalitetSerija(b);
+        if (info) info.innerHTML = `${esc(sablon(t.cure_day, dZr))} · ${esc(t.quality)} <b>${kv}</b>/100<br>`
           + `${esc(t.burps)}: ${b.burpovi} ${esc(sablon(t.of_possible, Math.max(dZr+1,1)))}`;
         if (lenta) lenta.style.width = stegni(b.denoviZreenje/KONFIG.ZREENJE_MIN*100,0,100)+'%';
+
+        // Влажност во теглата и тековната оценка.
+        const rh = Math.round(b.teglaRh||60);
+        const rhBoja = rh > KONFIG.TEGLA_RH_MUVLA ? '#ef4444'
+                     : rh > KONFIG.TEGLA_RH_IDEAL_MAX ? '#f59e0b'
+                     : rh >= KONFIG.TEGLA_RH_IDEAL_MIN ? '#22c55e'
+                     : rh >= KONFIG.TEGLA_RH_SUVO ? '#60a5fa' : '#a78bfa';
+        const rhStatus = rh > KONFIG.TEGLA_RH_MUVLA ? t.jar_danger
+                       : rh > KONFIG.TEGLA_RH_IDEAL_MAX ? t.jar_high
+                       : rh >= KONFIG.TEGLA_RH_IDEAL_MIN ? t.jar_ideal
+                       : rh >= KONFIG.TEGLA_RH_SUVO ? t.jar_low : t.jar_dry;
+        const red = kart.querySelector('.tegla-red');
+        if (red){
+          const b2 = red.querySelector('b'); const zica = red.querySelector('.zica>i');
+          const oz = red.querySelector('.ocenka');
+          if (b2){ b2.textContent = rh+'% · '+rhStatus; b2.style.color = rhBoja; }
+          if (zica){ zica.style.width = stegni(rh,0,100)+'%'; zica.style.background = rhBoja; }
+          if (oz){ const o=ocenkaZa(kv); oz.textContent=o.kluc; oz.style.background=bojaOcenka(o.kluc); }
+        }
       }
     });
     return;
@@ -1797,7 +2350,7 @@ function iscrtajSe(prisilno){
   osveziNav();
   const paneli = { grow:panelGrow, drying:panelSusenje, curing:panelZreenje,
     genetics:panelGenetika, market:panelPazar, staff:panelPersonal,
-    achievements:panelDostignuvanja, prestige:panelPrestiz };
+    achievements:panelDostignuvanja, prestige:panelPrestiz, guide:panelVodic };
   const potpis = strukturenPotpis();
   if (prisilno || potpis !== posledenPotpis){
     posledenPotpis = potpis;
@@ -1875,12 +2428,31 @@ function vchitaj(){
       muvla:!!b.muvla, imalaMuvla:!!b.imalaMuvla, zaguba:broj(b.zaguba,0,0,.6),
       vlazenDen:!!b.vlazenDen, tochnost:broj(b.tochnost,0,0,1),
       denoviZreenje:broj(b.denoviZreenje,0,0,1e4),
-      burpovi:Math.floor(broj(b.burpovi,0,0,999)), burpDostapen:!!b.burpDostapen })) : [];
+      burpovi:Math.floor(broj(b.burpovi,0,0,999)), burpDostapen:!!b.burpDostapen,
+      klimaZbir:broj(b.klimaZbir,0,0,1e5), klimaDenovi:broj(b.klimaDenovi,0,0,1e5),
+      teglaRh:broj(b.teglaRh,0,0,100),
+      teglaDobri:Math.floor(broj(b.teglaDobri,0,0,1e4)),
+      teglaLosi:Math.floor(broj(b.teglaLosi,0,0,1e4)),
+      zdravjeBerba:broj(b.zdravjeBerba,100,0,100) })) : [];
   sledenId = Math.max(Math.floor(broj(paket.sledenId,1,1,1e9)), ...s.susara.map(b=>b.id+1), 1);
   s.zaliha = {};
   if (z.zaliha) for (const [id,n] of Object.entries(z.zaliha))
     if (siteSorti().some(x=>x.id===id) && Number.isFinite(n) && n>0)
       s.zaliha[id] = Math.floor(stegni(n,0,1e9));
+  s.kvalitet = {};
+  if (z.kvalitet) for (const [id,v] of Object.entries(z.kvalitet))
+    if (siteSorti().some(x=>x.id===id) && v && Number.isFinite(v.n) && Number.isFinite(v.zbir) && v.n>0)
+      s.kvalitet[id] = { n: stegni(v.n,0,1e9), zbir: stegni(v.zbir,0,1e11) };
+  {
+    const k = z.susilnica || {};
+    s.susilnica = {
+      opremaTier: Math.floor(broj(k.opremaTier, 0, 0, OPREMA.length-1)),
+      celTemp: broj(k.celTemp, 19, KONFIG.TEMP_MIN, KONFIG.TEMP_MAX),
+      celRh:   broj(k.celRh,   58, KONFIG.RH_MIN,   KONFIG.RH_MAX),
+      temp:    broj(k.temp,    19, KONFIG.TEMP_MIN-4, KONFIG.TEMP_MAX+4),
+      rh:      broj(k.rh,      58, KONFIG.RH_MIN-8,   KONFIG.RH_MAX+8),
+    };
+  }
   for (const def of PERSONAL) s.personal[def.kluc] = !!(z.personal && z.personal[def.kluc]);
   s.dostignuvanja = Array.isArray(z.dostignuvanja)
     ? z.dostignuvanja.filter(id=>DOSTIGNUVANJA.some(a=>a.id===id)) : [];
@@ -1950,6 +2522,8 @@ window.__test = {
   zasadi, polej, nahrani, oberi, otvoriIzborTrim,
   zavrtiGranki, provetri, otstraniMuvla, spakuvaj, burpni, zavrsiZreenje,
   vkrsti, izberiZaVkrstuvanje, prodaj, prodajSe, ispolniNaracka,
+  kvalitetSerija, ocenkaZa, kvalitetZaliha, klimaOcena, brzinaSusenje,
+  nadgradiOprema, postaviKlima,
   vraboti, otklucSoba, nadgradiLampa, prerodiSe, resiNastan,
   zachuvaj, vchitaj, novaIgra,
   resetiraj(){ s = novaIgra(); s.tutorial=false; sledenId=1; izborVkrstuvanje=[];

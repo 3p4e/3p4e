@@ -76,13 +76,22 @@ async function toStage(file, roomB64, w, q) {
 const slugs = ['ohrid_crystal','pelister_frost','vardar_gold','skopje_haze','bitola_kush',
   'shar_diesel','galicica_dream','prespa_punch','macedonian_royal','imperial_reserve'];
 
-const art = { hero: null, room: null, cut: {}, strains: {} };
+const art = { hero: null, room: null, dryRoom: null, cureRoom: null, trimRoom: null,
+              cut: {}, looks: {}, strains: {} };
 art.hero = await toJpeg(RAW + '/hero.png', 760, 0.82);
 art.room = await toJpeg(RAW + '/room.jpg', 420, 0.78);
+art.dryRoom = await toJpeg(RAW + '/dry_room.jpg', 720, 0.78);
+art.cureRoom = await toJpeg(RAW + '/cure_room.jpg', 720, 0.78);
+art.trimRoom = await toJpeg(RAW + '/trim_room.jpg', 720, 0.78);
 const STAGES = [['seedling','stage_seedling'],['veg','stage_veg'],['flower','stage_flower'],['harvest','stage_harvest']];
 for (const [k, f] of STAGES) {
   // Plant matted onto the room at build time (see toStage).
   art.cut[k] = await toStage(RAW + '/' + f + '_black.png', art.room, 460, 0.84);
+}
+// Per-strain flowering looks: the same plant re-coloured, composited the same
+// way so a strain's mature plant reads as its own while the grow stays aligned.
+for (const look of ['frost','purple','orange','gold','pink']) {
+  art.looks[look] = await toStage(RAW + '/look_' + look + '.png', art.room, 460, 0.84);
 }
 for (let i = 0; i < 10; i++) art.strains[slugs[i]] = await toJpeg(RAW + '/strain_' + (i + 1) + '.png', 240, 0.82);
 
@@ -90,5 +99,7 @@ writeFileSync('/home/user/3p4e/green-empire/assets/art.js', 'window.GE_ART=' + J
 console.log('art.js written ~', (JSON.stringify(art).length / 1048576).toFixed(2), 'MB',
   '| hero', !!art.hero, '| room', !!art.room,
   '| cut', Object.entries(art.cut).map(([k,v])=>k+':'+(v?'ok':'MISS')).join(','),
+  '| looks', Object.values(art.looks).filter(Boolean).length+'/5',
+  '| rooms', [art.dryRoom,art.cureRoom,art.trimRoom].filter(Boolean).length+'/3',
   '| strains', Object.values(art.strains).filter(Boolean).length + '/10');
 await b.close();
