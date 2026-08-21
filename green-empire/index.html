@@ -130,15 +130,23 @@ main{animation:panelIn .35s ease both}
 .rast-scena svg{position:absolute;inset:0;width:100%;height:100%}
 
 /* ── Фото-растение (Higgsfield арт) ── */
-.foto-scena{position:absolute;inset:0;background:#181c1a}
-.foto-scena .sloj{position:absolute;inset:0;background-size:cover;
-  background-position:center 62%;background-repeat:no-repeat;
-  transform-origin:50% 88%;
-  transition:opacity .9s ease, transform .9s ease;will-change:opacity}
+.foto-scena{position:absolute;inset:0;background:#181c1a;overflow:hidden}
+/* Собата е само подлога — придушена е за растението да остане во фокус. */
+/* Собата е придушена и потемнета — растенијата се спојуваат со `screen`,
+   па светла позадина би ги измила. */
+.foto-scena .soba-poz{position:absolute;inset:0;z-index:0;background-size:cover;
+  background-position:center 40%;filter:brightness(.34) saturate(.5);
+  transform:scale(1.04)}
+/* Собата е веќе вкомпонирана во секоја фаза при градењето на артот, па
+   слоевите само се претопуваат еден во друг. */
+.foto-scena .sloj{position:absolute;inset:0;z-index:1;
+  background-size:contain;background-position:center bottom;background-repeat:no-repeat;
+  transition:opacity .9s ease;will-change:opacity}
 /* мека винјета за да се слее фотографијата со картичката */
 .foto-scena::after{content:'';position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(ellipse at 50% 55%,transparent 45%,rgba(10,14,12,.55) 100%)}
-.foto-scena .tint{position:absolute;inset:0;z-index:2;mix-blend-mode:soft-light;
+  background:radial-gradient(ellipse at 50% 55%,transparent 48%,rgba(10,14,12,.5) 100%)}
+/* Сјајот на сортата свети зад растението, не преку него. */
+.foto-scena .tint{position:absolute;inset:0;z-index:0;mix-blend-mode:screen;
   transition:opacity .9s ease;pointer-events:none}
 .strain-sl{width:34px;height:34px;border-radius:9px;background-size:cover;
   background-position:center;flex-shrink:0;box-shadow:0 1px 4px rgba(0,0,0,.25)}
@@ -1225,31 +1233,33 @@ const FAZI = ['seedling','veg','flower','harvest'];
 
 function fotoRastenie(p){
   const A = window.GE_ART;
-  if (!A || !A.stages || !A.stages.harvest) return null;
+  if (!A || !A.cut || !A.cut.harvest) return null;
   const x = sorta(p.sorta);
   const n = stegni(p.napredok, 0, 1);
 
-  // Позиција на скалата 0..3 (seedling→harvest) со мазен премин.
+  // Позиција на скалата 0..3 (seedling→harvest).
   const poz = n >= 1 ? 3 : n * 3;
   const dolen = Math.min(2, Math.floor(poz));
   const gornen = Math.min(3, dolen + 1);
-  const mesh = poz - dolen;                       // 0..1 премин меѓу двете фази
-
-  // Растението расте и во големина, не само во детали.
-  const skalaOd = 0.62 + dolen * 0.13;
-  const skalaDo = 0.62 + gornen * 0.13;
-  const skala = skalaOd + (skalaDo - skalaOd) * mesh;
+  const sirov = poz - dolen;
+  // Секоја фаза се држи јасна поголемиот дел од времето и се претопува
+  // дури пред крајот — инаку следната фаза се гледа како сенка пре рано.
+  const PRAG = 0.62;
+  const mesh = sirov <= PRAG ? 0 : (sirov - PRAG) / (1 - PRAG);
 
   const zdr = stegni(p.zdravje, 0, 100) / 100;
-  // Послабото здравје ја губи бојата и малку го спушта растението.
-  const filter = `saturate(${(0.45 + 0.75 * zdr).toFixed(2)}) brightness(${(0.72 + 0.34 * zdr).toFixed(2)})`;
+  // Здраво растение изгледа сочно; само болното бледнее и потемнува.
+  // Светлината се држи под 1 за да не се „изгори“ фотографијата.
+  const filter = `saturate(${(0.35 + 0.85 * zdr).toFixed(2)}) brightness(${(0.66 + 0.28 * zdr).toFixed(2)}) contrast(1.08)`;
   const zrelo = n >= 1;
 
-  const sloj = (kluc, opac, sk) => {
-    const src = A.stages[kluc];
+  // Сликите се сечени од ист кадар, па саксијата се совпаѓа сама по себе —
+  // затоа слоевите само се преклопуваат, без дополнително скалирање.
+  const sloj = (kluc, opac) => {
+    const src = A.cut[kluc];
     if (!src) return '';
     return `<div class="sloj" style="background-image:url('${src}');opacity:${opac.toFixed(3)};
-      transform:scale(${sk.toFixed(3)});filter:${filter}"></div>`;
+      filter:${filter}"></div>`;
   };
 
   // Кога преминот е завршен се црта само горната фаза, за да не
@@ -1257,10 +1267,10 @@ function fotoRastenie(p){
   const samoGorna = dolen === gornen || mesh >= 0.999;
 
   return `<div class="foto-scena">
-    ${samoGorna ? sloj(FAZI[gornen], 1, skala) : sloj(FAZI[dolen], 1, skala)}
-    ${samoGorna ? '' : sloj(FAZI[gornen], mesh, skala)}
-    <div class="tint" style="background:radial-gradient(circle at 50% 45%,${esc(x.sjaj)},transparent 68%);
-      opacity:${zrelo ? .55 : (.12 + .3 * mesh).toFixed(2)}"></div>
+    ${samoGorna ? sloj(FAZI[gornen], 1) : sloj(FAZI[dolen], 1)}
+    ${samoGorna ? '' : sloj(FAZI[gornen], mesh)}
+    <div class="tint" style="background:radial-gradient(circle at 50% 48%,${esc(x.sjaj)},transparent 62%);
+      opacity:${zrelo ? .34 : (.06 + .16 * mesh).toFixed(2)}"></div>
   </div>`;
 }
 
