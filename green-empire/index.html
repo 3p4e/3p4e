@@ -1,0 +1,2552 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Зелена Империја — Green Empire</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   ЗЕЛЕНА ИМПЕРИЈА — визуелен систем од Claude Design пакетот
+   (светла oklch тема · Outfit/Inter · SVG иконографија)
+   ═══════════════════════════════════════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:oklch(97% 0.015 95);font-family:Inter,system-ui,sans-serif;
+  color:oklch(27% 0.02 150);min-height:100vh}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+button:disabled{cursor:not-allowed}
+::-webkit-scrollbar{display:none}
+
+@keyframes leafSway{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
+@keyframes glowPulse{0%,100%{opacity:.5}50%{opacity:1}}
+@keyframes shimmerSweep{0%{transform:translateX(-160%)}100%{transform:translateX(220%)}}
+@keyframes floatUp{0%{opacity:1;transform:translate(-50%,0)}100%{opacity:0;transform:translate(-50%,-60px)}}
+@keyframes toastSlideIn{0%{opacity:0;transform:translateX(30px)}100%{opacity:1;transform:translateX(0)}}
+@keyframes modalPop{0%{opacity:0;transform:scale(.92)}100%{opacity:1;transform:scale(1)}}
+@keyframes ringPulse{0%,100%{opacity:.35}50%{opacity:1}}
+@keyframes spinPulse{0%,100%{opacity:.6;transform:scale(1)}50%{opacity:1;transform:scale(1.04)}}
+@keyframes dustDrift{0%{transform:translate(0,0)}100%{transform:translate(6px,-14px)}}
+@keyframes panelIn{0%{opacity:0;transform:translateY(6px)}100%{opacity:1;transform:translateY(0)}}
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:.01s !important;animation-iteration-count:1 !important}
+}
+
+/* ── Заглавие ── */
+.zaglavje{position:sticky;top:0;z-index:30;background:#fff;
+  border-bottom:1px solid oklch(90% 0.02 90);padding:10px 18px;
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.logo{font-family:Outfit,sans-serif;font-weight:800;font-size:18px;letter-spacing:.2px;
+  background:linear-gradient(90deg,oklch(38% 0.06 152),oklch(66% 0.15 55));
+  -webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
+.jazik{display:flex;gap:2px;background:oklch(94% 0.015 90);border-radius:20px;padding:3px}
+.jazik button{padding:4px 10px;border-radius:16px;font:700 10.5px Inter,sans-serif;
+  color:oklch(50% 0.02 150);transition:background .2s,color .2s}
+.jazik button.aktivno{background:oklch(60% 0.11 152);color:#fff}
+.hud{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-left:auto}
+.chip{display:flex;align-items:center;gap:6px;background:oklch(94% 0.015 90);
+  border-radius:12px;padding:6px 11px}
+.chip b{font:800 14px Outfit,sans-serif;line-height:1.1;white-space:nowrap}
+.chip small{font:600 8px Inter,sans-serif;color:oklch(60% 0.02 150);
+  text-transform:uppercase;letter-spacing:.4px;display:block}
+.chip svg{color:oklch(66% 0.15 55);flex-shrink:0}
+.chip.prestiz{background:linear-gradient(135deg,#16241c,#0c1310);
+  border:1px solid rgba(251,191,36,.4)}
+.chip.prestiz b{color:#fbbf24}
+.xp-lenta{height:4px;background:oklch(88% 0.02 90);border-radius:2px;margin-top:3px;
+  overflow:hidden;min-width:64px}
+.xp-lenta>i{display:block;height:100%;background:oklch(55% 0.14 320);transition:width .4s ease}
+.okrugla{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;background:oklch(94% 0.015 90);color:oklch(40% 0.02 150);flex-shrink:0}
+.okrugla:hover{background:oklch(90% 0.02 90)}
+
+/* ── Навигација ── */
+.navig{display:flex;justify-content:center;padding:7px 12px;background:#fff;
+  border-bottom:1px solid oklch(90% 0.02 90)}
+.navig-vnatre{display:flex;gap:4px;max-width:1000px;width:100%;overflow-x:auto}
+.navig button{flex:1;min-width:70px;display:flex;flex-direction:column;align-items:center;
+  gap:3px;padding:8px 5px;border-radius:12px;color:oklch(45% 0.02 150);
+  font:700 9.5px Inter,sans-serif;transition:background .2s,color .2s;white-space:nowrap;position:relative}
+.navig button.aktivno{background:oklch(60% 0.11 152);color:#fff}
+.navig .tocka{position:absolute;top:5px;right:9px;width:7px;height:7px;border-radius:50%;
+  background:#ef4444;display:none}
+.navig .tocka.vidliva{display:block}
+
+main{animation:panelIn .35s ease both}
+.panel{max-width:1120px;margin:0 auto;padding:16px 18px 50px}
+.panel.tesen{max-width:940px}
+.naslov{font:800 18px Outfit,sans-serif;margin-bottom:4px}
+.podnaslov{font:500 12.5px Inter,sans-serif;color:oklch(50% 0.02 150);
+  margin-bottom:16px;max-width:560px;line-height:1.6}
+.sekcija{font:700 12px Outfit,sans-serif;text-transform:uppercase;letter-spacing:.3px;margin:0 0 8px}
+
+/* ── Амбиент банер ── */
+.ambient{position:relative;overflow:hidden;border-radius:16px;padding:14px 18px;
+  margin-bottom:16px;display:flex;align-items:center;gap:10px;transition:background 2s ease;min-height:20px}
+.ambient .pravlivka{position:absolute;width:4px;height:4px;border-radius:50%;
+  background:rgba(255,255,255,.3)}
+.ambient span{position:relative;font:700 12px Inter,sans-serif;color:#e9f3ec}
+.ambient svg{position:relative;flex-shrink:0;transition:color 1.5s ease}
+
+/* ── Картички ── */
+.kart{background:#fff;border:1px solid oklch(90% 0.02 90);border-radius:14px;padding:14px}
+.kart-mreza{display:grid;gap:10px}
+.lenta-h{height:5px;background:oklch(92% 0.02 90);border-radius:3px;overflow:hidden}
+.lenta-h>i{display:block;height:100%;transition:width .4s ease}
+.badge{font:800 8.5px Inter,sans-serif;letter-spacing:.4px;padding:3px 8px;
+  border-radius:20px;white-space:nowrap}
+.pil{font:800 10px Inter,sans-serif;background:oklch(92% 0.06 152);
+  color:oklch(35% 0.08 152);padding:5px 11px;border-radius:20px}
+
+/* ── Копчиња ── */
+.k-primarno{padding:9px 14px;border-radius:10px;font:800 11px Outfit,sans-serif;
+  background:oklch(38% 0.06 152);color:#fff}
+.k-primarno:disabled{opacity:.55}
+.k-sekundarno{padding:8px;font:700 10.5px Inter,sans-serif;border-radius:9px;
+  background:oklch(94% 0.015 90);color:oklch(30% 0.02 150)}
+.k-voda{padding:8px;font:700 10.5px Inter,sans-serif;border-radius:9px;
+  background:oklch(93% 0.03 230);color:oklch(38% 0.08 230)}
+.k-voda:hover{background:oklch(89% 0.05 230)}
+.k-hrana{padding:8px;font:700 10.5px Inter,sans-serif;border-radius:9px;
+  background:oklch(92% 0.04 152);color:oklch(35% 0.07 152)}
+.k-hrana:hover{background:oklch(87% 0.06 152)}
+.k-zlatno{padding:10px;font:800 11.5px Outfit,sans-serif;border-radius:10px;
+  background:linear-gradient(135deg,oklch(70% 0.14 55),oklch(62% 0.15 40));color:#fff}
+.k-crveno{padding:9px;font:700 10.5px Inter,sans-serif;border-radius:10px;
+  background:oklch(93% 0.04 25);color:oklch(45% 0.15 25)}
+.k-crveno:hover{background:oklch(89% 0.06 25)}
+
+/* ── Растенија ── */
+.rast-mreza{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.rast-kart{background:#fff;border:1px solid oklch(90% 0.02 90);border-radius:16px;
+  overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.04),0 6px 18px rgba(0,0,0,.05);
+  transition:transform .2s ease,box-shadow .2s ease}
+.rast-kart:hover{transform:translateY(-3px);
+  box-shadow:0 6px 10px rgba(0,0,0,.06),0 16px 30px rgba(0,0,0,.09)}
+.rast-glava{padding:11px 12px 0;display:flex;justify-content:space-between;align-items:center;gap:6px}
+.rast-ime{font:700 11.5px Outfit,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rast-scena{margin:10px 12px 0;height:150px;border-radius:11px;overflow:hidden;position:relative;
+  background:linear-gradient(180deg,#16241c 0%,#0c1310 60%,#3d2717 60%,#20160c 100%)}
+.rast-scena svg{position:absolute;inset:0;width:100%;height:100%}
+
+/* ── Фото-растение (Higgsfield арт) ── */
+.foto-scena{position:absolute;inset:0;background:#181c1a;overflow:hidden}
+/* Собата е само подлога — придушена е за растението да остане во фокус. */
+/* Собата е придушена и потемнета — растенијата се спојуваат со `screen`,
+   па светла позадина би ги измила. */
+.foto-scena .soba-poz{position:absolute;inset:0;z-index:0;background-size:cover;
+  background-position:center 40%;filter:brightness(.34) saturate(.5);
+  transform:scale(1.04)}
+/* Собата е веќе вкомпонирана во секоја фаза при градењето на артот, па
+   слоевите само се претопуваат еден во друг. */
+.foto-scena .sloj{position:absolute;inset:0;z-index:1;
+  background-size:contain;background-position:center bottom;background-repeat:no-repeat;
+  transition:opacity .9s ease;will-change:opacity}
+/* мека винјета за да се слее фотографијата со картичката */
+.foto-scena::after{content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse at 50% 55%,transparent 48%,rgba(10,14,12,.5) 100%)}
+/* Сјајот на сортата свети зад растението, не преку него. */
+.foto-scena .tint{position:absolute;inset:0;z-index:0;mix-blend-mode:screen;
+  transition:opacity .9s ease;pointer-events:none}
+.strain-sl{width:34px;height:34px;border-radius:9px;background-size:cover;
+  background-position:center;flex-shrink:0;box-shadow:0 1px 4px rgba(0,0,0,.25)}
+.hero-baner{position:relative;height:150px;border-radius:16px;overflow:hidden;
+  margin-bottom:16px;background-size:cover;background-position:center;
+  display:flex;align-items:flex-end;padding:14px 18px}
+.hero-baner::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(8,14,10,.15) 0%,rgba(8,14,10,.82) 100%)}
+.hero-tekst{position:relative;z-index:1;color:#eaf5ee;
+  font:800 17px Outfit,sans-serif;text-shadow:0 2px 10px rgba(0,0,0,.75)}
+.hero-pod{position:relative;z-index:1;color:#cdead6;
+  font:600 11px Inter,sans-serif;margin-top:2px;text-shadow:0 1px 6px rgba(0,0,0,.7)}
+/* Банер за сушара/зреење — понизок од главниот херој-банер. */
+.scena-baner{position:relative;height:112px;border-radius:16px;overflow:hidden;
+  margin-bottom:14px;background-size:cover;background-position:center;
+  display:flex;align-items:flex-end;padding:12px 16px}
+.scena-baner::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(8,14,10,.15) 40%,rgba(8,14,10,.88) 100%)}
+.scena-baner>div{position:relative;z-index:1}
+/* Значка за оценка на квалитет. */
+.ocenka{display:inline-flex;align-items:center;justify-content:center;
+  min-width:38px;height:26px;padding:0 8px;border-radius:8px;color:#fff;
+  font:800 12px Outfit,sans-serif;letter-spacing:.3px;flex-shrink:0;
+  box-shadow:0 1px 3px rgba(0,0,0,.25)}
+/* Водич низ процесите. */
+.vodic-cekor{display:flex;gap:12px;padding:13px 0;
+  border-bottom:1px solid oklch(92% 0.02 90)}
+.vodic-cekor:last-child{border-bottom:none}
+.vodic-broj{width:26px;height:26px;border-radius:50%;flex-shrink:0;
+  background:oklch(60% 0.11 152);color:#fff;display:flex;align-items:center;
+  justify-content:center;font:800 11px Outfit,sans-serif}
+.vodic-telo b{display:block;font:700 12.5px Outfit,sans-serif;margin-bottom:2px}
+.vodic-telo span{font:500 11.5px Inter,sans-serif;color:oklch(48% 0.02 150);line-height:1.55}
+.vodic-cifra{display:inline-block;background:oklch(94% 0.04 152);color:oklch(35% 0.08 152);
+  border-radius:6px;padding:1px 6px;font:700 11px Inter,sans-serif;margin:0 1px}
+.rast-sjaj{position:absolute;left:50%;top:44%;width:120px;height:120px;
+  transform:translate(-50%,-50%);border-radius:50%;transition:opacity .8s ease;
+  animation:glowPulse 3s ease-in-out infinite}
+.rast-njise{transform-origin:50% 100%;animation:leafSway 6s ease-in-out infinite alternate}
+.rast-telo{transform-origin:50% 100%;transition:transform .8s ease}
+.rast-telo g{transition:opacity .8s ease}
+.vnimanie{position:absolute;inset:0;border-radius:11px;border:2px solid #ef4444;
+  animation:ringPulse 1.6s ease-in-out infinite;pointer-events:none}
+.plovka{position:absolute;left:50%;top:40%;transform:translateX(-50%);
+  font:800 15px Outfit,sans-serif;text-shadow:0 1px 3px rgba(0,0,0,.5);
+  animation:floatUp 1.3s ease-out forwards;pointer-events:none}
+.rast-lenti{padding:9px 12px 0;display:flex;flex-direction:column;gap:4px}
+.rast-lenta{display:flex;align-items:center;gap:6px;font:600 9.5px Inter,sans-serif;
+  color:oklch(55% 0.02 150)}
+.rast-lenta svg{flex-shrink:0}
+.rast-lenta .zica{flex:1;height:5px;background:oklch(92% 0.02 90);border-radius:3px;overflow:hidden}
+.rast-lenta .zica>i{display:block;height:100%;transition:width .4s ease,background .4s}
+.rast-lenta u{text-decoration:none;width:20px;text-align:right}
+.rast-akcii{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:10px 12px 12px}
+.berba-obvivka{grid-column:1/-1;position:relative;overflow:hidden;border-radius:10px}
+.berba-obvivka .svetkanje{position:absolute;top:0;left:0;width:36%;height:100%;
+  background:linear-gradient(115deg,transparent,rgba(255,255,255,.65),transparent);
+  animation:shimmerSweep 2.6s ease-in-out infinite;pointer-events:none}
+.k-berba{width:100%;padding:10px;font:800 11.5px Outfit,sans-serif;border-radius:10px}
+.prazen-slot{min-height:288px;border:2px dashed oklch(85% 0.02 90);border-radius:16px;
+  display:flex;align-items:center;justify-content:center;background:oklch(97% 0.01 95);
+  color:oklch(60% 0.02 150);font:700 12.5px Outfit,sans-serif;
+  transition:background .2s,border-color .2s,color .2s}
+.prazen-slot:hover{background:oklch(94% 0.04 152);border-color:oklch(60% 0.11 152);
+  color:oklch(38% 0.06 152)}
+
+/* ── Соби ── */
+.sobi{display:flex;gap:8px;margin-bottom:16px;overflow-x:auto;padding-bottom:2px}
+.soba{flex:none;display:flex;flex-direction:column;gap:3px;align-items:flex-start;
+  padding:10px 14px;border-radius:12px;min-width:160px;background:oklch(94% 0.015 90);
+  color:oklch(27% 0.02 150);transition:background .2s,color .2s;text-align:left}
+.soba.aktivna{background:oklch(38% 0.06 152);color:#fff}
+.soba.zakl{background:oklch(96% 0.01 90);color:oklch(55% 0.02 150);
+  border:1px dashed oklch(80% 0.02 90)}
+.soba b{font:700 12px Outfit,sans-serif}
+.soba span{font:600 10px Inter,sans-serif;opacity:.8;display:flex;align-items:center;gap:4px}
+
+/* ── Тостови и модали ── */
+.tostovi{position:fixed;top:64px;right:14px;z-index:60;display:flex;
+  flex-direction:column;gap:8px;max-width:290px}
+.tost{background:#16241c;color:#e9f3ec;border:1px solid rgba(251,191,36,.5);
+  border-radius:12px;padding:10px 14px;display:flex;align-items:center;gap:10px;
+  box-shadow:0 10px 30px rgba(0,0,0,.3);animation:toastSlideIn .4s ease both}
+.tost .zn{width:30px;height:30px;border-radius:50%;
+  background:linear-gradient(135deg,#fbbf24,#d97706);display:flex;align-items:center;
+  justify-content:center;flex-shrink:0}
+.tost small{font:700 8.5px Inter,sans-serif;text-transform:uppercase;
+  letter-spacing:.4px;color:#fbbf24;display:block}
+.tost b{font:700 12.5px Outfit,sans-serif}
+.tost.obicen{border-color:rgba(74,222,128,.4)}
+.tost.greska{border-color:rgba(239,68,68,.55)}
+
+.pokrivka{position:fixed;inset:0;background:rgba(10,15,12,.6);backdrop-filter:blur(3px);
+  z-index:80;display:none;align-items:center;justify-content:center;padding:20px}
+.pokrivka.otvorena{display:flex}
+.modal-bel{background:#fff;border-radius:20px;max-width:420px;width:100%;padding:26px;
+  animation:modalPop .3s ease both;box-shadow:0 30px 80px rgba(0,0,0,.4);
+  max-height:80vh;overflow-y:auto}
+.modal-temен,.modal-temen{background:linear-gradient(160deg,#16241c,#0c1310);border-radius:20px;
+  max-width:360px;width:100%;padding:28px;text-align:center;color:#e9f3ec;
+  animation:modalPop .35s ease both;box-shadow:0 30px 80px rgba(0,0,0,.4)}
+.modal-naslov{font:800 16px Outfit,sans-serif;margin-bottom:8px}
+.modal-telo{font:500 13px Inter,sans-serif;color:oklch(45% 0.02 150);
+  line-height:1.6;margin-bottom:18px}
+.izbor-red{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;
+  background:oklch(97% 0.01 95);text-align:left;width:100%;margin-bottom:7px}
+.izbor-red:hover{background:oklch(93% 0.04 152)}
+.gtocka{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+</style>
+</head>
+<body>
+
+<header class="zaglavje">
+  <div class="logo" id="h-logo">ЗЕЛЕНА ИМПЕРИЈА</div>
+  <div class="jazik">
+    <button id="jaz-mk" class="aktivno">MK</button>
+    <button id="jaz-en">EN</button>
+  </div>
+  <div class="hud">
+    <div class="chip">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v10M9.5 9.2c0-1.2 1.1-2.2 2.5-2.2s2.5 1 2.5 2.1c0 3-5 1.9-5 4.9 0 1.2 1.1 2.2 2.5 2.2s2.5-1 2.5-2.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <div><b id="h-pari">0</b><small id="h-pari-l">Денари</small></div>
+    </div>
+    <div class="chip"><div style="min-width:64px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:6px">
+        <b id="h-nivo">1</b><small id="h-nivo-l">Ниво</small></div>
+      <div class="xp-lenta"><i id="h-xp" style="width:2%"></i></div>
+    </div></div>
+    <div class="chip"><div><b id="h-den">1</b><small id="h-den-l">Ден</small></div></div>
+    <div class="chip prestiz" id="h-prestiz-chip" style="display:none">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" style="color:#fbbf24"><path d="M3 8l4 3 5-6 5 6 4-3-2 11H5L3 8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      <b id="h-prestiz">0</b>
+    </div>
+    <button class="okrugla" id="k-zvuk" title="звук">
+      <svg id="zvuk-on" width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M4 9v6h4l5 4V5L8 9H4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M17 8.5c1.2 1 1.2 5.9 0 7M19.5 6c2.3 2.2 2.3 9.7 0 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <svg id="zvuk-off" width="15" height="15" viewBox="0 0 24 24" fill="none" style="display:none"><path d="M4 9v6h4l5 4V5L8 9H4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M17 9l4 6M21 9l-4 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+    <button class="okrugla" id="k-tutorial" title="?">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.9.4-1.3.9-1.3 1.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="17" r=".9" fill="currentColor"/></svg>
+    </button>
+  </div>
+</header>
+
+<nav class="navig"><div class="navig-vnatre" id="navig"></div></nav>
+<main id="glavno"></main>
+<div class="tostovi" id="tostovi"></div>
+<div class="pokrivka" id="pokrivka"><div id="pokrivka-sodrzina" style="max-width:420px;width:100%"></div></div>
+
+<script src="./assets/art.js"></script>
+<script>
+"use strict";
+/* ═══════════════════════════════════════════════════════════════
+   1. ПОДАТОЦИ — буквално од дизајн-пакетот (game-data.js)
+   ═══════════════════════════════════════════════════════════════ */
+const SORTI = [
+  {id:'ohrid_crystal', imeMk:'Охридски Кристал', imeEn:'Ohrid Crystal', tier:1, growSec:55, prinos:6, cena:10, nivo:1, sjaj:'#fbbf24'},
+  {id:'pelister_frost', imeMk:'Пелистерски Мраз', imeEn:'Pelister Frost', tier:1, growSec:65, prinos:7, cena:11, nivo:1, sjaj:'#93c5fd'},
+  {id:'vardar_gold', imeMk:'Вардарско Злато', imeEn:'Vardar Gold', tier:2, growSec:90, prinos:9, cena:16, nivo:3, sjaj:'#fbbf24'},
+  {id:'skopje_haze', imeMk:'Скопска Измаглица', imeEn:'Skopje Haze', tier:2, growSec:100, prinos:8, cena:18, nivo:4, sjaj:'#c4b5fd'},
+  {id:'bitola_kush', imeMk:'Битолски Куш', imeEn:'Bitola Kush', tier:3, growSec:130, prinos:11, cena:26, nivo:6, sjaj:'#86efac'},
+  {id:'shar_diesel', imeMk:'Шарпланински Дизел', imeEn:'Shar Diesel', tier:3, growSec:140, prinos:10, cena:29, nivo:7, sjaj:'#60a5fa'},
+  {id:'galicica_dream', imeMk:'Галичица Сон', imeEn:'Galicica Dream', tier:4, growSec:170, prinos:13, cena:40, nivo:9, sjaj:'#c084fc'},
+  {id:'prespa_punch', imeMk:'Преспански Удар', imeEn:'Prespa Punch', tier:4, growSec:180, prinos:12, cena:44, nivo:10, sjaj:'#fb923c'},
+  {id:'macedonian_royal', imeMk:'Македонски Кралски', imeEn:'Macedonian Royal', tier:5, growSec:220, prinos:16, cena:60, nivo:13, sjaj:'#fbbf24'},
+  {id:'imperial_reserve', imeMk:'Империјална Резерва', imeEn:'Imperial Reserve', tier:5, growSec:240, prinos:15, cena:68, nivo:15, sjaj:'#f472b6'},
+];
+
+const POZNATI_HIBRIDI = {
+  'ohrid_crystal|vardar_gold': {imeMk:'Кристално Злато', imeEn:'Crystal Gold', sjaj:'#fbbf24'},
+  'bitola_kush|shar_diesel': {imeMk:'Планински Гром', imeEn:'Mountain Thunder', sjaj:'#60a5fa'},
+  'galicica_dream|macedonian_royal': {imeMk:'Кралски Сон', imeEn:'Royal Dream', sjaj:'#c084fc'},
+};
+const HIBRID_IMINJA = {
+  preMk:['Кристална','Планинска','Златна','Ноќна','Дивска','Империјална','Мистична','Сончева'],
+  sufMk:['Магија','Искра','Мечта','Бура','Роса','Круна','Тајна','Светлина'],
+  preEn:['Crystal','Mountain','Golden','Midnight','Wild','Imperial','Mystic','Solar'],
+  sufEn:['Magic','Spark','Dream','Storm','Dew','Crown','Secret','Glow'],
+};
+function napraviHibrid(a, b, seme){
+  const kluc = [a.id,b.id].sort().join('|');
+  const sig = POZNATI_HIBRIDI[kluc];
+  const prinos = Math.round(((a.prinos+b.prinos)/2)*1.15);
+  const cena = Math.round(((a.cena+b.cena)/2)*1.2);
+  const growSec = Math.round((a.growSec+b.growSec)/2);
+  const nivo = Math.max(a.nivo,b.nivo);
+  const tier = Math.min(5, Math.max(a.tier,b.tier));
+  if (sig) return {id:'hybrid_'+kluc, imeMk:sig.imeMk, imeEn:sig.imeEn, tier,
+    growSec:Math.round(growSec*0.92), prinos:prinos+2, cena:cena+6, nivo, sjaj:sig.sjaj, hibrid:true};
+  const pi = seme % HIBRID_IMINJA.preMk.length;
+  const si = (seme*7+3) % HIBRID_IMINJA.sufMk.length;
+  return {id:'hybrid_'+kluc+'_'+seme,
+    imeMk:HIBRID_IMINJA.preMk[pi]+' '+HIBRID_IMINJA.sufMk[si],
+    imeEn:HIBRID_IMINJA.preEn[pi]+' '+HIBRID_IMINJA.sufEn[si],
+    tier, growSec, prinos, cena, nivo, sjaj:'#c084fc', hibrid:true};
+}
+
+const SOBI = [
+  {id:'starter', imeMk:'Стартовна Соба', imeEn:'Starter Room', kapacitet:4, cenaOtklucuvanje:0, nivo:1},
+  {id:'greenhouse', imeMk:'Стаклена Градина', imeEn:'Greenhouse', kapacitet:8, cenaOtklucuvanje:3500, nivo:5, growMult:0.85},
+  {id:'breeding_lab', imeMk:'Лабораторија за Генетика', imeEn:'Genetics Lab', kapacitet:0, cenaOtklucuvanje:6000, nivo:8, laboratorija:true},
+];
+const LAMBI = [
+  {tier:0, imeMk:'LED Основна', imeEn:'LED Basic', cena:0, growMult:1, prinosMult:1},
+  {tier:1, imeMk:'LED Про', imeEn:'LED Pro', cena:1200, growMult:0.92, prinosMult:1.08},
+  {tier:2, imeMk:'Целосен Спектар', imeEn:'Full Spectrum', cena:3200, growMult:0.82, prinosMult:1.18},
+  {tier:3, imeMk:'Квантум Систем', imeEn:'Quantum System', cena:7500, growMult:0.7, prinosMult:1.32},
+];
+const PERSONAL = [
+  {kluc:'waterer', imeMk:'Наводнувач', imeEn:'Waterer', cena:800, plata:40, sekoi:15},
+  {kluc:'feeder', imeMk:'Хранител', imeEn:'Feeder', cena:1000, plata:50, sekoi:18},
+  {kluc:'harvester', imeMk:'Берач', imeEn:'Harvester', cena:2200, plata:90, sekoi:20},
+  {kluc:'trader', imeMk:'Трговец', imeEn:'Trader', cena:1800, plata:70, sekoi:30},
+];
+const DOSTIGNUVANJA = [
+  {id:'first_harvest', stat:'vkupnoBerbi', cel:1, xp:100, imeMk:'Прва Берба', imeEn:'First Harvest', opisMk:'Обери го првото растение', opisEn:'Harvest your first plant'},
+  {id:'harvest_10', stat:'vkupnoBerbi', cel:10, xp:200, imeMk:'Расте Бизнисот', imeEn:'Growing Business', opisMk:'Обери 10 растенија', opisEn:'Harvest 10 plants'},
+  {id:'harvest_50', stat:'vkupnoBerbi', cel:50, xp:500, imeMk:'Мастер Градинар', imeEn:'Master Grower', opisMk:'Обери 50 растенија', opisEn:'Harvest 50 plants'},
+  {id:'harvest_200', stat:'vkupnoBerbi', cel:200, xp:1200, imeMk:'Индустриска Берба', imeEn:'Industrial Harvest', opisMk:'Обери 200 растенија', opisEn:'Harvest 200 plants'},
+  {id:'earn_1000', stat:'vkupnoZaraboteno', cel:1000, xp:150, imeMk:'Прв Приход', imeEn:'First Income', opisMk:'Заработи 1.000 денари вкупно', opisEn:'Earn 1,000 total money'},
+  {id:'earn_10000', stat:'vkupnoZaraboteno', cel:10000, xp:400, imeMk:'Мал Претприемач', imeEn:'Small Entrepreneur', opisMk:'Заработи 10.000 денари вкупно', opisEn:'Earn 10,000 total money'},
+  {id:'earn_100000', stat:'vkupnoZaraboteno', cel:100000, xp:1500, imeMk:'Зелен Магнат', imeEn:'Green Tycoon', opisMk:'Заработи 100.000 денари вкупно', opisEn:'Earn 100,000 total money'},
+  {id:'level_5', stat:'nivo', cel:5, xp:200, imeMk:'Над Почетник', imeEn:'Past Beginner', opisMk:'Достигни ниво 5', opisEn:'Reach level 5'},
+  {id:'level_10', stat:'nivo', cel:10, xp:500, imeMk:'Искусен Одгледувач', imeEn:'Seasoned Grower', opisMk:'Достигни ниво 10', opisEn:'Reach level 10'},
+  {id:'level_20', stat:'nivo', cel:20, xp:1500, imeMk:'Легенда на Империјата', imeEn:'Empire Legend', opisMk:'Достигни ниво 20', opisEn:'Reach level 20'},
+  {id:'first_hybrid', stat:'hibridiOtkrieni', cel:1, xp:300, imeMk:'Генетски Пионер', imeEn:'Genetic Pioneer', opisMk:'Одгледај го првиот хибрид', opisEn:'Breed your first hybrid'},
+  {id:'hybrids_5', stat:'hibridiOtkrieni', cel:5, xp:800, imeMk:'Мајстор Генетичар', imeEn:'Master Geneticist', opisMk:'Одгледај 5 хибридни сорти', opisEn:'Discover 5 hybrid strains'},
+  {id:'hire_first_staff', stat:'vraboteni', cel:1, xp:150, imeMk:'Прв Вработен', imeEn:'First Hire', opisMk:'Вработи го првиот член на персонал', opisEn:'Hire your first staff member'},
+  {id:'hire_all_staff', stat:'vraboteni', cel:4, xp:600, imeMk:'Комплетен Тим', imeEn:'Full Team', opisMk:'Вработи ги сите видови персонал', opisEn:'Hire every staff type'},
+  {id:'unlock_greenhouse', stat:'staklenaOtklucena', cel:1, xp:400, imeMk:'Проширување', imeEn:'Expansion', opisMk:'Отклучи ја Стаклената Градина', opisEn:'Unlock the Greenhouse'},
+  {id:'unlock_lab', stat:'labOtklucena', cel:1, xp:400, imeMk:'Научен Пристап', imeEn:'Scientific Approach', opisMk:'Отклучи ја Лабораторијата за Генетика', opisEn:'Unlock the Genetics Lab'},
+  {id:'orders_10', stat:'naracki', cel:10, xp:500, imeMk:'Доверлив Добавувач', imeEn:'Trusted Supplier', opisMk:'Исполни 10 нарачки', opisEn:'Fulfill 10 customer orders'},
+  {id:'first_prestige', stat:'preradjanja', cel:1, xp:1000, imeMk:'Прераѓање', imeEn:'Rebirth', opisMk:'Направи го првото прераѓање', opisEn:'Complete your first rebirth'},
+];
+const PREDIZVICI_BAZEN = [
+  {id:'harvest_n', kluc:'berba', min:3, max:6, pari:400, xp:80, mk:n=>`Обери ${n} растенија`, en:n=>`Harvest ${n} plants`},
+  {id:'earn_n', kluc:'zaraboteno', min:500, max:1800, pari:300, xp:100, mk:n=>`Заработи ${n} денари`, en:n=>`Earn ${n} money`},
+  {id:'water_n', kluc:'voda', min:8, max:16, pari:250, xp:60, mk:n=>`Полеј ${n} пати`, en:n=>`Water plants ${n} times`},
+  {id:'feed_n', kluc:'hrana', min:8, max:16, pari:250, xp:60, mk:n=>`Нахрани ${n} пати`, en:n=>`Feed plants ${n} times`},
+  {id:'sell_n', kluc:'prodadeno', min:10, max:26, pari:350, xp:90, mk:n=>`Продај ${n} парчиња`, en:n=>`Sell ${n} units`},
+  {id:'orders_n', kluc:'naracki', min:1, max:2, pari:500, xp:150, mk:n=>`Исполни ${n} нарачки`, en:n=>`Fulfill ${n} orders`},
+];
+const NASTANI_BAZEN = [
+  {id:'inspector', mkT:'Изненадна Инспекција', enT:'Surprise Inspection',
+   mkO:'Локален инспектор бара да го „провери" вашиот погон.', enO:'A local inspector wants to "check" your operation.',
+   izbori:[{mk:'Плати поднамерение (−300)', en:'Pay a bribe (−300)', tip:'pari', min:-300, max:-300},
+           {mk:'Одбиј', en:'Refuse', tip:'pariRizik', min:-700, max:0}]},
+  {id:'trader', mkT:'Редок Трговец', enT:'Rare Seed Trader',
+   mkO:'Патувачки трговец нуди мистериозно семе за 500 денари.', enO:'A traveling trader offers a mystery seed for 500.',
+   izbori:[{mk:'Купи (−500)', en:'Buy (−500)', tip:'semka', cena:500},
+           {mk:'Одбиј', en:'Decline', tip:'nista'}]},
+  {id:'demand', mkT:'Бран на Побарувачка', enT:'Demand Surge',
+   mkO:'Цените се зголемени! Следните 3 продажби носат +30%.', enO:'Prices are up! Your next 3 sales earn +30%.',
+   izbori:[{mk:'Одлично!', en:'Great!', tip:'prodazenBonus', mult:1.3, broj:3}]},
+  {id:'pests', mkT:'Напад на Штетници', enT:'Pest Outbreak',
+   mkO:'Штетниците се појавуваат! Прскај сега или ризикувај здравје.', enO:'Pests appear! Spray now or risk plant health.',
+   izbori:[{mk:'Прскај (−150)', en:'Spray (−150)', tip:'pari', min:-150, max:-150},
+           {mk:'Ризикувај', en:'Risk it', tip:'zdravjeUdar', min:20, max:40}]},
+  {id:'donation', mkT:'Донација на Семиња', enT:'Seed Donation',
+   mkO:'Сосед подарува бесплатно семе за твојата колекција.', enO:'A neighbor gifts a free seed for your collection.',
+   izbori:[{mk:'Прифати', en:'Accept', tip:'semka', cena:0},
+           {mk:'Одбиј', en:'Decline', tip:'nista'}]},
+  {id:'buyer', mkT:'Ноќен Купувач', enT:'Late Night Buyer',
+   mkO:'Купувач сака да го земе целото твое тековно количество за +20%.', enO:'A buyer wants your entire current inventory for +20%.',
+   izbori:[{mk:'Продај сѐ', en:'Sell it all', tip:'prodajSe', mult:1.2},
+           {mk:'Задржи', en:'Keep inventory', tip:'nista'}]},
+];
+
+/* Текстови — MK/EN, вклучувајќи ги нашите фази за сушење и зреење. */
+const STR = {
+  mk: {
+    app_name:'Зелена Империја', stat_money:'Денари', stat_level:'Ниво', stat_day:'Ден',
+    nav_grow:'Одгледување', nav_drying:'Сушење', nav_curing:'Зреење', nav_genetics:'Генетика',
+    nav_market:'Пазар', nav_staff:'Персонал', nav_achievements:'Постигнувања', nav_prestige:'Престиж',
+    rooms_title:'Простории', room_cap:'Капацитет', room_unlock:'Отклучи',
+    lamp:'Ламба', lamp_upgrade:'Надгради', lamp_maxed:'Максимум',
+    challenges_title:'Дневни предизвици',
+    water:'Полеј', feed:'Ѓубри', harvest:'Обери', growing:'Расте',
+    badge:['СЕМЕ','НИКНЕ','РАСТЕ','ЦВЕТА','ЗРЕЛО'],
+    empty_slot:'+ Посади', picker_title:'Избери сорта за садење', close:'Затвори',
+    light_on:'Светлосен циклус: ВКЛУЧЕН', light_off:'Темен период',
+    gen_title:'Генетика и Сорти', gen_desc:'Разгледај ги твоите откриени сорти и мешај генетика во лабораторијата.',
+    discovered:'Откриени сорти', locked_at:'Отклучува на ниво',
+    breed_title:'Мешање на генетика', breed_hint:'Избери 2 откриени сорти за да создадеш нов хибрид.',
+    breed_btn:'Скрсти', breed_need_lab:'Отклучи ја Лабораторијата за Генетика за да мешаш сорти.',
+    breed_result:'Нова сорта откриена!', breed_cta:'Одлично',
+    market_title:'Пазар', inventory:'Залиха', inventory_empty:'Немаш залиха. Заврши зреење за да се појават тука.',
+    sell_one:'Продај 1', sell_all:'Продај сѐ', sell_all_inv:'Продај целата залиха',
+    orders:'Нарачки од купувачи', orders_empty:'Нема активни нарачки моментално.',
+    reward:'Награда', have:'Имаш', fulfill:'Исполни', not_enough:'Недоволно', expires:'Истекува ден',
+    staff_title:'Персонал', staff_desc:'Вработи персонал што автоматски работи наместо тебе.',
+    wage:'Плата/ден', hire:'Вработи', hired:'Вработен',
+    staff_opis:{waterer:'Автоматски полева растенија на секои 15с.', feeder:'Автоматски храни растенија на секои 18с.',
+      harvester:'Автоматски обира и пресадува зрели растенија.', trader:'Автоматски исполнува нарачки или продава залиха.'},
+    ach_title:'Постигнувања и Статистика', stats:'Твојата статистика',
+    st_harvests:'Вкупно берби', st_earned:'Вкупно заработено', st_playtime:'Време играно',
+    st_best:'Најдобра сорта', st_unlocked:'Отклучени', toast_ach:'Ново постигнување',
+    pr_title:'Престиж и Прераѓање',
+    pr_desc:'Прероди се за трајни бонуси на продажната цена. Ова ги ресетира парите, растенијата и персоналот.',
+    pr_points:'Поени на престиж', pr_mult:'Бонус на цена', pr_req:'Потребно ниво', pr_btn:'Прероди се',
+    pr_confirm_t:'Дали си сигурен?', pr_confirm_b:'Ова трајно ги ресетира парите, растенијата, просториите и персоналот во замена за трајни поени на престиж.',
+    pr_yes:'Да, прероди се', pr_no:'Откажи',
+    // Сушење и зреење
+    dry_title:'Сушење', dry_desc:'Свежата берба виси овде. Следи ја влажноста, врти ги гранките и чувај од мувла — потоа спакувај во тегли.',
+    dry_empty:'Нема ништо на сушење. Обери зрело растение за да почнеш.',
+    hygro:'Хигрометар', hum_danger:'опасно влажно — ризик од мувла', hum_wait:'се суши, почекај',
+    hum_early:'може во тегли, но рано е за идеално', hum_ideal:'ИДЕАЛНО за пакување!', hum_over:'пресушува — пакувај веднаш',
+    day_n:'Ден', pack_goal:'цел: спакувај на 10–16%', hangs:'виси', in_jars:'во тегли',
+    sop:'СОП', trimmed:'✓ подрежано', untrimmed:'✗ неподрежано', turns:'вртења', waiting:'(чека!)',
+    mold:'мувла', mold_active:'АКТИВНА', mold_removed:'отстранета', mold_none:'нема', mold_had:'имаше', loss:'загуба',
+    remove_mold:'Отстрани мувла', vent:'Проветри — влажен ден', turn_now:'Заврти ги гранките — сега!',
+    pack:'Спакувај во тегли → Зреење', pack_под:'Тегли под 40% влажност', pack_disabled:'Тегли под 40% влажност',
+    cure_title:'Зреење', cure_desc:'Теглите зреат овде. Бурпај еднаш дневно за арома и квалитет — по 3 дена производот оди во залиха.',
+    cure_empty:'Нема тегли на зреење. Спакувај исушена берба од јазичето „Сушење".',
+    cure_day:'Ден {0} од зреењето', packed_acc:'спакувано со точност', burps:'Бурпања', of_possible:'од {0} можни',
+    burp:'Бурпни ги теглите', finish_cure:'Заврши — во залиха', cures_more:'Зрее уште {0} ден(а)',
+    trim_q:'Како ќе ја подрежеш бербата?', trim_precise:'Прецизно подрежување',
+    trim_precise_d:'−6% принос, но позначително подобар квалитет на крај.', trim_fast:'Брзо кастрење',
+    trim_fast_d:'Целиот принос влегува во сушарата, без бонус.',
+    trim_do:'Подрежи прецизно', trim_skip:'Кастри брзо',
+    t_mold:'Мувла во сушарата! Отстрани ја пред да го изеде приносот.',
+    t_humid:'Влажен ден — сушењето успорува. Провери го Сушењето!',
+    t_turn:'Гранките чекаат вртење.', t_packed:'Спакувано во тегли на {0}% влажност.',
+    t_burp:'Теглите се проветрени.', t_turned:'Гранките се превртени.', t_vented:'Просторијата е проветрена.',
+    t_mold_rm:'Мувлата е отстранета.', t_cured:'Зреењето заврши: {0} парчиња во залиха.',
+    // ── Клима, тегли, оценки, водич ──
+    nav_guide:'Водич',
+    clim_title:'Клима во сушарата', clim_temp:'Температура', clim_rh:'Влажност на воздух',
+    clim_now:'сега', clim_ideal:'идеално', clim_speed:'Брзина на сушење',
+    clim_equip:'Опрема', clim_stability:'стабилност', clim_upgrade:'Надгради опрема',
+    clim_good:'Одлични услови', clim_ok:'Прифатливо', clim_bad:'Лоши услови',
+    t_equip_bought:'Инсталирано: {0}.',
+    dry_tag:'Бавно сушење, зачувани терпени', cure_tag:'Теглите го градат вкусот',
+    jar_rh:'Влажност во теглата', jar_ideal:'идеално', jar_high:'превисоко',
+    jar_danger:'опасно — мувла', jar_low:'ниско', jar_dry:'пресушено',
+    quality:'Квалитет', grade:'Оценка',
+    t_jar_mold:'Мувла во теглата! Проветри веднаш.',
+    t_burp_ok:'Теглата е проветрена — влажност {0}%.',
+    t_burp_early:'Прерано проветрување — теглата беше веќе сува.',
+    t_cured_grade:'Зреењето заврши: {0} парчиња · оценка {1} ({2}/100).',
+    cure_peak_hint:'подолгото зреење носи повеќе терпени',
+    g_title:'Водич низ процесот', g_desc:'Целиот пат од семе до продажба, со точните бројки што ги користи играта.',
+    g_p1_title:'1 · Одгледување', g_p1_tag:'Од семе до зрело растение',
+    g_p1_s1:'Вода и храна', g_p1_s1d:'Ако водата или храната паднат под {0}%, здравјето почнува да опаѓа. Држи ги над {1}% за растението да напредува најбрзо.',
+    g_p1_s2:'Здравје = принос', g_p1_s2d:'Здравјето при берба директно го одредува приносот. Болно растение дава помалку и полош материјал.',
+    g_p1_s3:'Ламби и простории', g_p1_s3d:'Подобрите ламби скратуваат време и кревааат принос. Стаклената градина расте побрзо од стартовната соба.',
+    g_p2_title:'2 · Берба и кратење', g_p2_tag:'Како ја сечеш, така ќе се суши',
+    g_p2_s1:'Прецизно кратење', g_p2_s1d:'Прецизното кратење одзема околу {0} маса, но носи бонус на квалитет и подобра цена.',
+    g_p2_s2:'Брзо кратење', g_p2_s2d:'Ја задржува целата маса, но материјалот се суши понерамномерно и добива пониска оценка.',
+    g_p3_title:'3 · Сушење', g_p3_tag:'Најделикатната фаза',
+    g_p3_s1:'Постави клима', g_p3_s1d:'Целта е {0} и {1}. Во тој прозорец терпените остануваат, а сушењето тече рамномерно.',
+    g_p3_s2:'Топло и суво = брзо, но лошо', g_p3_s2d:'Високата температура суши побрзо, но го „изгорува“ вкусот и ја руши оценката. Ладно и влажно сушат бавно и носат мувла.',
+    g_p3_s3:'Вртење на гранките', g_p3_s3d:'На секои {0} дена гранките бараат вртење. Пропуштеното вртење остава влажни џебови.',
+    g_p3_s4:'Внимавај на мувла', g_p3_s4d:'Над {0} влажност во материјалот, мувлата може да се појави секој ден и јаде од приносот.',
+    g_p3_s5:'Кога да пакуваш', g_p3_s5d:'Најдобро е да спакуваш на {0} влажност. Над {1} теглите воопшто не се отвораат за пакување.',
+    g_p4_title:'4 · Зреење во тегли', g_p4_tag:'Тука се гради вкусот',
+    g_p4_s1:'Држи ја теглата на идеално', g_p4_s1d:'Идеалната влажност во теглата е {0}. Пупките испотуваат влага назад, па таа постојано се качува.',
+    g_p4_s2:'Проветрувај на време', g_p4_s2d:'Над {0} ризикуваш мувла и губиток. Едно проветрување ја спушта влагата и ја запира мувлата.',
+    g_p4_s3:'Не претерувај', g_p4_s3d:'Под {0} теглата е пресушена — проветрувањето тогаш само губи терпени и ја намалува оценката.',
+    g_p4_s4:'Време', g_p4_s4d:'Најрано можеш да завршиш на {0} дена, но врвот на терпените е околу {1} дена.',
+    g_grade_title:'Оценки и цена', g_grade_desc:'Оценката се пресметува од климата при сушење, режимот во теглата, должината на зреењето, ритамот на проветрување и грешките (мувла, губиток). Таа директно ја множи цената при продажба и при нарачки.',
+    g_grade_from:'од', g_grade_under:'сѐ под тоа',
+    g_p5_title:'5 · Продажба', g_p5_tag:'Каде се наплаќа трудот',
+    g_p5_s1:'Оценката е пари', g_p5_s1d:'Иста сорта со оценка AAA носи двојно повеќе од истата со оценка C. Квалитетот се памети по сорта во залихата.',
+    g_p5_s2:'Нарачки', g_p5_s2d:'Нарачките исто така се множат со оценката — исполни ги со добра стока.',
+    g_p5_s3:'Престиж', g_p5_s3d:'Секој престиж додава траен бонус на цената, но ја рестартира фармата.',
+    tut:[
+      ['Добредојде во Зелена Империја','Изгради одгледувачко царство од нула — сади, негувај, суши, зреј и продавај.'],
+      ['Твоите ресурси','Парите и нивото се горе. Нивото ги отклучува нови сорти и простории.'],
+      ['Растенијата','Секое растение има вода, храна и здравје. Внимавај да не паднат премногу ниско.'],
+      ['Полевање и хранење','Кликни „Полеј" и „Ѓубри" редовно за здраво и брзо растење.'],
+      ['Берба, сушење, зреење','Зрелото растение се бере, се суши на идеална влажност, па зрее во тегли — грижата носи поголем принос.'],
+      ['Пазар','Продај ја залихата или исполни нарачки од купувачи за поголема награда.'],
+      ['Истражи понатаму','Генетика, персонал, постигнувања и престиж те чекаат. Успешно одгледување!'],
+    ],
+    tut_next:'Следно', tut_skip:'Прескокни', tut_done:'Започни',
+  },
+  en: {
+    app_name:'Green Empire', stat_money:'Cash', stat_level:'Level', stat_day:'Day',
+    nav_grow:'Grow Room', nav_drying:'Drying', nav_curing:'Curing', nav_genetics:'Genetics',
+    nav_market:'Market', nav_staff:'Staff', nav_achievements:'Achievements', nav_prestige:'Prestige',
+    rooms_title:'Rooms', room_cap:'Capacity', room_unlock:'Unlock',
+    lamp:'Lamp', lamp_upgrade:'Upgrade', lamp_maxed:'Maxed',
+    challenges_title:'Daily Challenges',
+    water:'Water', feed:'Feed', harvest:'Harvest', growing:'Growing',
+    badge:['SEED','SPROUT','VEG','FLOWER','MATURE'],
+    empty_slot:'+ Plant', picker_title:'Choose a strain to plant', close:'Close',
+    light_on:'Light cycle: ON', light_off:'Dark period',
+    gen_title:'Genetics & Strains', gen_desc:'Browse your discovered strains and breed new genetics in the lab.',
+    discovered:'Discovered strains', locked_at:'Unlocks at level',
+    breed_title:'Breed Genetics', breed_hint:'Select 2 discovered strains to create a new hybrid.',
+    breed_btn:'Breed', breed_need_lab:'Unlock the Genetics Lab to breed strains.',
+    breed_result:'New strain discovered!', breed_cta:'Awesome',
+    market_title:'Market', inventory:'Inventory', inventory_empty:'No inventory yet. Finish curing to fill it up.',
+    sell_one:'Sell 1', sell_all:'Sell all', sell_all_inv:'Sell entire inventory',
+    orders:'Customer Orders', orders_empty:'No active orders right now.',
+    reward:'Reward', have:'Have', fulfill:'Fulfill', not_enough:'Not enough', expires:'Expires day',
+    staff_title:'Staff', staff_desc:'Hire staff that automatically work for you.',
+    wage:'Wage/day', hire:'Hire', hired:'Hired',
+    staff_opis:{waterer:'Automatically waters plants every 15s.', feeder:'Automatically feeds plants every 18s.',
+      harvester:'Automatically harvests and replants mature plants.', trader:'Automatically fulfills orders or sells inventory.'},
+    ach_title:'Achievements & Stats', stats:'Your Stats',
+    st_harvests:'Total harvests', st_earned:'Total earned', st_playtime:'Time played',
+    st_best:'Best strain', st_unlocked:'Unlocked', toast_ach:'Achievement unlocked',
+    pr_title:'Prestige & Rebirth',
+    pr_desc:'Rebirth for a permanent boost to sell prices. This resets your money, plants, and staff.',
+    pr_points:'Prestige points', pr_mult:'Price bonus', pr_req:'Requires level', pr_btn:'Rebirth',
+    pr_confirm_t:'Are you sure?', pr_confirm_b:'This permanently resets your money, plants, rooms, and staff in exchange for permanent prestige points.',
+    pr_yes:'Yes, rebirth', pr_no:'Cancel',
+    dry_title:'Drying', dry_desc:'Fresh harvest hangs here. Watch the moisture, turn the branches, fight mold — then pack into jars.',
+    dry_empty:'Nothing drying. Harvest a mature plant to start.',
+    hygro:'Hygrometer', hum_danger:'dangerously humid — mold risk', hum_wait:'drying, wait',
+    hum_early:'jar-ready, but early for ideal', hum_ideal:'IDEAL for packing!', hum_over:'over-drying — pack now',
+    day_n:'Day', pack_goal:'goal: pack at 10–16%', hangs:'hanging', in_jars:'in jars',
+    sop:'SOP', trimmed:'✓ trimmed', untrimmed:'✗ untrimmed', turns:'turns', waiting:'(waiting!)',
+    mold:'mold', mold_active:'ACTIVE', mold_removed:'removed', mold_none:'none', mold_had:'had it', loss:'loss',
+    remove_mold:'Remove mold', vent:'Ventilate — humid day', turn_now:'Turn the branches — now!',
+    pack:'Pack into jars → Curing', pack_под:'Jars under 40% moisture', pack_disabled:'Jars under 40% moisture',
+    cure_title:'Curing', cure_desc:'Jars cure here. Burp once a day for aroma and quality — after 3 days the product moves to inventory.',
+    cure_empty:'No jars curing. Pack a dried batch from the Drying tab.',
+    cure_day:'Day {0} of curing', packed_acc:'packed at accuracy', burps:'Burps', of_possible:'of {0} possible',
+    burp:'Burp the jars', finish_cure:'Finish — to inventory', cures_more:'Cures {0} more day(s)',
+    trim_q:'How will you trim the harvest?', trim_precise:'Precise trim',
+    trim_precise_d:'−6% yield, but notably better final quality.', trim_fast:'Quick chop',
+    trim_fast_d:'The whole yield enters drying, no bonus.',
+    trim_do:'Trim precisely', trim_skip:'Chop quickly',
+    t_mold:'Mold in the drying room! Remove it before it eats the yield.',
+    t_humid:'Humid day — drying slows. Check the Drying tab!',
+    t_turn:'Branches are waiting to be turned.', t_packed:'Packed into jars at {0}% moisture.',
+    t_burp:'Jars burped.', t_turned:'Branches turned.', t_vented:'Room ventilated.',
+    t_mold_rm:'Mold removed.', t_cured:'Curing done: {0} units to inventory.',
+    // ── Climate, jars, grades, guide ──
+    nav_guide:'Guide',
+    clim_title:'Drying room climate', clim_temp:'Temperature', clim_rh:'Air humidity',
+    clim_now:'now', clim_ideal:'ideal', clim_speed:'Drying speed',
+    clim_equip:'Equipment', clim_stability:'stability', clim_upgrade:'Upgrade equipment',
+    clim_good:'Excellent conditions', clim_ok:'Acceptable', clim_bad:'Poor conditions',
+    t_equip_bought:'Installed: {0}.',
+    dry_tag:'Slow drying keeps the terpenes', cure_tag:'Jars build the flavour',
+    jar_rh:'Jar humidity', jar_ideal:'ideal', jar_high:'too high',
+    jar_danger:'danger — mold', jar_low:'low', jar_dry:'over-dried',
+    quality:'Quality', grade:'Grade',
+    t_jar_mold:'Mold in the jar! Burp it now.',
+    t_burp_ok:'Jar burped — humidity {0}%.',
+    t_burp_early:'Burped too early — the jar was already dry.',
+    t_cured_grade:'Curing done: {0} units · grade {1} ({2}/100).',
+    cure_peak_hint:'a longer cure builds more terpenes',
+    g_title:'Process guide', g_desc:'The whole path from seed to sale, with the exact numbers the game actually uses.',
+    g_p1_title:'1 · Cultivation', g_p1_tag:'From seed to a ripe plant',
+    g_p1_s1:'Water and nutrients', g_p1_s1d:'If water or nutrients drop below {0}%, health starts falling. Keep both above {1}% for the fastest growth.',
+    g_p1_s2:'Health = yield', g_p1_s2d:'Health at harvest directly sets the yield. A sick plant gives less, and worse material.',
+    g_p1_s3:'Lamps and rooms', g_p1_s3d:'Better lamps cut grow time and raise yield. The greenhouse grows faster than the starter room.',
+    g_p2_title:'2 · Harvest and trim', g_p2_tag:'How you cut is how it dries',
+    g_p2_s1:'Precision trim', g_p2_s1d:'A precision trim costs about {0} of the mass, but earns a quality bonus and a better price.',
+    g_p2_s2:'Quick trim', g_p2_s2d:'Keeps all the mass, but the material dries less evenly and grades lower.',
+    g_p3_title:'3 · Drying', g_p3_tag:'The most delicate stage',
+    g_p3_s1:'Set the climate', g_p3_s1d:'Aim for {0} and {1}. Inside that window the terpenes survive and drying stays even.',
+    g_p3_s2:'Hot and dry = fast but bad', g_p3_s2d:'High heat dries faster but burns off the flavour and sinks the grade. Cold and damp dries slowly and invites mold.',
+    g_p3_s3:'Turning the branches', g_p3_s3d:'Every {0} days the branches need turning. A missed turn leaves damp pockets.',
+    g_p3_s4:'Watch for mold', g_p3_s4d:'Above {0} moisture in the material, mold can appear any day and eats into the yield.',
+    g_p3_s5:'When to pack', g_p3_s5d:'Pack at {0} moisture for the best result. Above {1} the jars will not accept the batch at all.',
+    g_p4_title:'4 · Curing in jars', g_p4_tag:'Where the flavour is built',
+    g_p4_s1:'Hold the jar at ideal', g_p4_s1d:'Ideal jar humidity is {0}. The buds sweat moisture back out, so it climbs on its own.',
+    g_p4_s2:'Burp in time', g_p4_s2d:'Above {0} you risk mold and loss. One burp drops the humidity and stops the mold.',
+    g_p4_s3:'Do not overdo it', g_p4_s3d:'Below {0} the jar is over-dried — burping then only sheds terpenes and lowers the grade.',
+    g_p4_s4:'Timing', g_p4_s4d:'You can finish as early as {0} days, but terpenes peak around {1} days.',
+    g_grade_title:'Grades and price', g_grade_desc:'The grade is calculated from the drying climate, the jar regime, cure length, burping rhythm and mistakes (mold, loss). It multiplies the price directly, both on the market and on orders.',
+    g_grade_from:'from', g_grade_under:'anything below',
+    g_p5_title:'5 · Selling', g_p5_tag:'Where the work pays off',
+    g_p5_s1:'Grade is money', g_p5_s1d:'The same strain at grade AAA earns roughly double what grade C does. Quality is tracked per strain in your inventory.',
+    g_p5_s2:'Orders', g_p5_s2d:'Orders are multiplied by the grade too — fill them with good material.',
+    g_p5_s3:'Prestige', g_p5_s3d:'Each prestige adds a permanent price bonus, but resets the farm.',
+    tut:[
+      ['Welcome to Green Empire','Build a growing empire from nothing — plant, care, dry, cure, and sell.'],
+      ['Your resources','Cash and level are up top. Leveling up unlocks new strains and rooms.'],
+      ['Your plants','Every plant has water, food, and health. Keep them from dropping too low.'],
+      ['Water & feed','Click "Water" and "Feed" regularly for healthy, fast growth.'],
+      ['Harvest, dry, cure','Mature plants get harvested, dried to ideal moisture, then jar-cured — care means bigger yield.'],
+      ['Market','Sell your inventory or fulfill customer orders for a bigger reward.'],
+      ['Explore further','Genetics, staff, achievements, and prestige await. Happy growing!'],
+    ],
+    tut_next:'Next', tut_skip:'Skip', tut_done:'Start playing',
+  },
+};
+
+/* ═══════════════════════════════════════════════════════════════
+   2. КОНФИГУРАЦИЈА
+   ═══════════════════════════════════════════════════════════════ */
+const KONFIG = {
+  POCETNI_PARI: 500, DEN_SEK: 120, KLUC_SEJV: 'zi_v3_save', VERZIJA: 3,
+  VODA_PAD: 100/45, HRANA_PAD: 100/75,               // по секунда
+  // Сушење/зреење: 1 ден на сушење = 6 реални секунди
+  SUSEN_DEN_SEK: 6, VLAGA_START: 75, VLAGA_PAD_DEN: 7.2, VLAGA_PAD_VLAZEN: 4.0,
+  VLAGA_MIN: 6, VLAGA_TEGLI_MAX: 40, IDEAL_MIN: 10, IDEAL_MAX: 16,
+  MUVLA_PRAG: 60, MUVLA_SANSA_DEN: 0.10, MUVLA_ZAGUBA_DEN: 0.06, MUVLA_CISTENJE: 0.08,
+  VLAZEN_SANSA_DEN: 0.10, VRTENJE_INTERVAL: 3, VRTENJE_ROK: 1,
+  ZREENJE_MIN: 3, TRIM_MASA: 0.94,
+
+  // ── Клима во сушарата ──
+  // Бавното сушење на 18–20 °C и 55–62 % ги задржува терпените; топло и суво
+  // го „изгорува“ вкусот, ладно и влажно носи мувла.
+  TEMP_IDEAL_MIN: 18, TEMP_IDEAL_MAX: 20,
+  RH_IDEAL_MIN: 55, RH_IDEAL_MAX: 62,
+  TEMP_MIN: 14, TEMP_MAX: 30, RH_MIN: 35, RH_MAX: 75,
+  KLIMA_DRIFT: 0.55,          // колку климата бега од поставеното за ден
+
+  // ── Тегли за зреење ──
+  TEGLA_RH_IDEAL_MIN: 58, TEGLA_RH_IDEAL_MAX: 63,
+  TEGLA_RH_MUVLA: 68, TEGLA_RH_SUVO: 52,
+  TEGLA_POT: 1.9,             // колку влага се враќа во теглата на ден
+  BURP_PAD: 7.5,              // колку burp ја спушта влагата
+  ZREENJE_VRV: 14,            // ден кога терпенскиот бонус достигнува врв
+
+  // ── Оценки за квалитет ──
+  OCENKI: [
+    { prag: 88, kluc:'AAA', mnozitel: 1.55 },
+    { prag: 74, kluc:'AA',  mnozitel: 1.28 },
+    { prag: 58, kluc:'A',   mnozitel: 1.08 },
+    { prag: 40, kluc:'B',   mnozitel: 0.92 },
+    { prag: -1, kluc:'C',   mnozitel: 0.76 },
+  ],
+};
+
+// Опрема за сушарата — секое ниво држи поширок и постабилен опсег на клима.
+const OPREMA = [
+  { tier:0, imeMk:'Без опрема',        imeEn:'No equipment',    cena:0,    stabilnost:0.30, opseg:3 },
+  { tier:1, imeMk:'Вентилатор',        imeEn:'Fan',             cena:900,  stabilnost:0.55, opseg:5 },
+  { tier:2, imeMk:'Одвлажнувач',       imeEn:'Dehumidifier',    cena:2600, stabilnost:0.75, opseg:8 },
+  { tier:3, imeMk:'Климатска контрола',imeEn:'Climate control', cena:6800, stabilnost:0.94, opseg:12 },
+];
+
+/* ═══════════════════════════════════════════════════════════════
+   3. СОСТОЈБА
+   ═══════════════════════════════════════════════════════════════ */
+let s = novaIgra();
+let prikazPari = 500, prikazXp = 0;
+let sledenId = 1;
+let personalAkumulator = {};
+let sejvAkumulator = 0;
+let audioCtx = null;
+
+function novaIgra(){
+  return {
+    verzija: KONFIG.VERZIJA, jazik:'mk', zvuk:true,
+    aktivnoJazice:'grow', aktivnaSoba:'starter',
+    pari: KONFIG.POCETNI_PARI, xp:0, nivo:1, prestiz:0,
+    den:1, sekVoDen:0,
+    sobi:{ starter:{otklucena:true, lampa:0}, greenhouse:{otklucena:false, lampa:0}, breeding_lab:{otklucena:false} },
+    rastenija:[], sledenRastenieId:1,
+    susara:[],                       // серии на сушење и зреење
+    // Сушара: играчот ја поставува целната клима, опремата одредува колку
+    // добро таа се држи. Вистинската клима бега кон целта и се ниша.
+    susilnica:{ opremaTier:0, celTemp:19, celRh:58, temp:19, rh:58 },
+    zaliha:{},                       // strainId -> parcinja
+    kvalitet:{},                     // strainId -> {n, zbir} за просечна оценка
+    hibridi:[], otkrieni:[],
+    personal:{ waterer:false, feeder:false, harvester:false, trader:false },
+    dostignuvanja:[],
+    naracki:[], slednaNarackaId:1, nastanTajmer:60,
+    dnevno:{ berba:0, zaraboteno:0, voda:0, hrana:0, prodadeno:0, naracki:0 },
+    predizvici:[],
+    statistika:{ vkupnoBerbi:0, vkupnoZaraboteno:0, vkupnoPoleano:0, vkupnoNahraneto:0,
+      hibridiOtkrieni:0, vraboteni:0, naracki:0, preradjanja:0, sekundiIgrano:0, berbiPoSorta:{} },
+    aktivenNastan:null, prodazenBonus:null,
+    tutorial:true, tutorialCekor:0,
+  };
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   4. ПОМОШНИ
+   ═══════════════════════════════════════════════════════════════ */
+const stegni = (v,min,max)=>Math.min(max,Math.max(min,v));
+const esc = t => String(t).replace(/[&<>"']/g, c =>
+  ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt = n => { n=Math.round(n||0); return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.'); };
+const fmtK = n => { n=Math.round(n||0);
+  if(Math.abs(n)>=1e6) return (n/1e6).toFixed(1).replace(/\.0$/,'')+'M';
+  if(Math.abs(n)>=1e3) return (n/1e3).toFixed(1).replace(/\.0$/,'')+'K';
+  return String(n); };
+const xpZaNivo = nivo => Math.round(140*Math.pow(nivo,1.32));
+const bojaZaPct = p => p>=60 ? '#22c55e' : p>=30 ? '#f59e0b' : '#ef4444';
+const fmtVreme = sek => { sek=Math.round(sek||0);
+  const h=Math.floor(sek/3600), m=Math.floor((sek%3600)/60);
+  return h>0 ? h+'h '+m+'m' : m+'m'; };
+const T = () => STR[s.jazik] || STR.mk;
+const sablon = (t, ...args) => t.replace(/\{(\d)\}/g, (_,i)=>args[+i]);
+
+function siteSorti(){ return [...SORTI, ...s.hibridi]; }
+function sorta(id){ return siteSorti().find(x=>x.id===id) ||
+  {imeMk:'—',imeEn:'—',sjaj:'#999',cena:0,tier:1,prinos:1,growSec:60,nivo:1}; }
+function imeSorta(x){ return s.jazik==='mk' ? x.imeMk : x.imeEn; }
+function otklucenaSorta(x){ return s.nivo >= x.nivo; }
+function otkrieniSorti(){ return siteSorti().filter(x =>
+  otklucenaSorta(x) && (!x.hibrid || s.otkrieni.includes(x.id))); }
+function lampaNaSoba(id){ const rs=s.sobi[id]; return LAMBI[(rs&&rs.lampa)||0]; }
+function prodazenMult(){
+  let m = 1 + s.prestiz*0.05;
+  if (s.prodazenBonus && s.prodazenBonus.preostanato>0) m *= s.prodazenBonus.mult;
+  return m;
+}
+
+/* ── Звук (WebAudio, од дизајнот) ── */
+function sfx(vid){
+  if (!s.zvuk) return;
+  try{
+    if (!audioCtx) audioCtx = new (window.AudioContext||window.webkitAudioContext)();
+    if (audioCtx.state==='suspended') audioCtx.resume();
+  }catch(e){ return; }
+  if (!audioCtx) return;
+  const sekvenci = {
+    click:[[600,.06]], water:[[520,.07],[420,.09]], feed:[[660,.06],[780,.08]],
+    harvest:[[523,.09],[659,.09],[784,.09],[1046,.14]],
+    levelup:[[523,.12],[659,.12],[784,.22]],
+    achievement:[[784,.08],[988,.08],[1175,.2]],
+    error:[[160,.18]],
+  };
+  const seq = sekvenci[vid] || [[440,.08]];
+  let t = audioCtx.currentTime;
+  for (const [f,d] of seq){
+    const osc=audioCtx.createOscillator(), g=audioCtx.createGain();
+    osc.type = vid==='error' ? 'sawtooth' : 'sine';
+    osc.frequency.setValueAtTime(f,t);
+    g.gain.setValueAtTime(0,t);
+    g.gain.linearRampToValueAtTime(vid==='error'?.05:.08, t+.01);
+    g.gain.exponentialRampToValueAtTime(.001, t+d);
+    osc.connect(g); g.connect(audioCtx.destination);
+    osc.start(t); osc.stop(t+d+.02);
+    t += d*.85;
+  }
+}
+
+/* ── Тостови ── */
+function tost(naslov, ime, klasa){
+  const k = document.getElementById('tostovi');
+  const el = document.createElement('div');
+  el.className = 'tost' + (klasa ? ' '+klasa : '');
+  el.innerHTML = `<div class="zn"><svg width="14" height="14" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke="#2a1a00" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div>${naslov?`<small>${esc(naslov)}</small>`:''}<b>${esc(ime)}</b></div>`;
+  k.appendChild(el);
+  setTimeout(()=>el.remove(), 4200);
+}
+function porака(tekst, greska){ tost('', tekst, greska?'greska':'obicen'); }
+const poraka = porака;
+
+/* ── Пари и XP ── */
+function dodadiPari(iznos){
+  s.pari += iznos;
+  if (iznos > 0){ s.statistika.vkupnoZaraboteno += iznos; s.dnevno.zaraboteno += iznos; }
+  proveriDostignuvanja();
+}
+function dodadiXp(iznos){
+  if (!Number.isFinite(iznos) || iznos<=0) return;
+  s.xp += iznos;
+  let krena=false;
+  while (s.xp >= xpZaNivo(s.nivo)){ s.xp -= xpZaNivo(s.nivo); s.nivo++; krena=true; }
+  if (krena){ sfx('levelup'); osveziNav(); }
+  proveriDostignuvanja();
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   5. АКЦИИ — одгледување
+   ═══════════════════════════════════════════════════════════════ */
+function premestiJazice(id){
+  sfx('click');
+  s.aktivnoJazice = id;
+  iscrtajSe(true);
+}
+function premestiSoba(id){
+  const rs = s.sobi[id];
+  if (!rs || !rs.otklucena){ otklucSoba(id); return; }
+  sfx('click'); s.aktivnaSoba=id; iscrtajSe(true);
+}
+function otklucSoba(id){
+  const def = SOBI.find(r=>r.id===id);
+  if (s.nivo < def.nivo || s.pari < def.cenaOtklucuvanje){ sfx('error'); return; }
+  dodadiPari(-def.cenaOtklucuvanje);
+  s.sobi[id] = { otklucena:true, lampa:0 };
+  s.aktivnaSoba = id;
+  sfx('achievement'); proveriDostignuvanja(); iscrtajSe(true);
+}
+function nadgradiLampa(){
+  const rs = s.sobi[s.aktivnaSoba];
+  const sledna = LAMBI[rs.lampa+1];
+  if (!sledna || s.pari < sledna.cena){ sfx('error'); return; }
+  dodadiPari(-sledna.cena);
+  rs.lampa++;
+  sfx('achievement'); iscrtajSe(true);
+}
+function otvoriIzborSorta(sobaId){
+  sfx('click');
+  const t=T();
+  otvoriModal(`<div class="modal-bel">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+      <div style="font:800 15px Outfit,sans-serif">${esc(t.picker_title)}</div>
+      <button onclick="zatvoriModal()" style="font:700 11.5px Inter,sans-serif;color:oklch(55% 0.02 150)">${esc(t.close)}</button>
+    </div>
+    ${otkrieniSorti().map(x=>`
+      <button class="izbor-red" onclick="zasadi('${esc(sobaId)}','${esc(x.id)}')">
+        <span class="gtocka" style="background:${esc(x.sjaj)}"></span>
+        <span style="flex:1;font:700 12px Outfit,sans-serif">${esc(imeSorta(x))}</span>
+        <span style="font:700 9.5px Inter,sans-serif;color:oklch(55% 0.02 150)">T${x.tier}</span>
+      </button>`).join('')}
+  </div>`);
+}
+function zasadi(sobaId, sortaId){
+  zatvoriModal();
+  const def = SOBI.find(r=>r.id===sobaId);
+  if (!def || def.laboratorija) return;
+  if (s.rastenija.filter(p=>p.soba===sobaId).length >= def.kapacitet) return;
+  if (!otkrieniSorti().some(x=>x.id===sortaId)) return;
+  s.rastenija.push({ id:s.sledenRastenieId++, soba:sobaId, sorta:sortaId,
+    voda:100, hrana:100, zdravje:100, napredok:0, plovki:[] });
+  sfx('click'); iscrtajSe(true);
+}
+function plovka(rastenieId, tekst, boja){
+  const p = s.rastenija.find(x=>x.id===rastenieId);
+  if (!p) return;
+  p.plovki.push({ id:Math.random(), tekst, boja });
+  setTimeout(()=>{ const p2=s.rastenija.find(x=>x.id===rastenieId);
+    if (p2) p2.plovki.shift(); }, 1200);
+}
+function polej(id){
+  const p = s.rastenija.find(x=>x.id===id); if (!p) return;
+  p.voda = Math.min(100, p.voda+40);
+  s.statistika.vkupnoPoleano++; s.dnevno.voda++;
+  plovka(id, '+втр', '#60a5fa'); sfx('water'); proveriDostignuvanja();
+}
+function nahrani(id){
+  const p = s.rastenija.find(x=>x.id===id); if (!p) return;
+  p.hrana = Math.min(100, p.hrana+40);
+  s.statistika.vkupnoNahraneto++; s.dnevno.hrana++;
+  plovka(id, '+хрн', '#4ade80'); sfx('feed'); proveriDostignuvanja();
+}
+
+/* Берба → избор за подрежување → серија на сушење */
+function otvoriIzborTrim(id){
+  const p = s.rastenija.find(x=>x.id===id);
+  if (!p || p.napredok < 1) return;
+  const t=T();
+  otvoriModal(`<div class="modal-bel">
+    <div class="modal-naslov">${esc(t.trim_q)}</div>
+    <button class="izbor-red" onclick="oberi(${id},true)">
+      <div><div style="font:700 12.5px Outfit,sans-serif">${esc(t.trim_precise)}</div>
+      <div style="font:500 11px Inter,sans-serif;color:oklch(50% 0.02 150)">${esc(t.trim_precise_d)}</div></div>
+    </button>
+    <button class="izbor-red" onclick="oberi(${id},false)">
+      <div><div style="font:700 12.5px Outfit,sans-serif">${esc(t.trim_fast)}</div>
+      <div style="font:500 11px Inter,sans-serif;color:oklch(50% 0.02 150)">${esc(t.trim_fast_d)}</div></div>
+    </button>
+  </div>`);
+}
+function oberi(id, precizno){
+  zatvoriModal();
+  const p = s.rastenija.find(x=>x.id===id);
+  if (!p || p.napredok < 1) return;
+  const x = sorta(p.sorta);
+  const lampa = lampaNaSoba(p.soba);
+  const zdravMult = 0.5 + (p.zdravje/100)*0.5;
+  let parcinja = Math.max(1, Math.round(x.prinos * lampa.prinosMult * zdravMult));
+  if (precizno) parcinja = Math.max(1, Math.round(parcinja * KONFIG.TRIM_MASA));
+
+  s.susara.push({ id:sledenId++, sorta:p.sorta, parcinja,
+    faza:'sushenje', denovi:0, vlaga:KONFIG.VLAGA_START,
+    potkrateno:!!precizno, vrtenja:0, trebaVrtenje:false, vrtenjeRok:0,
+    sledenoVrtenje:KONFIG.VRTENJE_INTERVAL,
+    muvla:false, imalaMuvla:false, zaguba:0, vlazenDen:false,
+    tochnost:0, denoviZreenje:0, burpovi:0, burpDostapen:false,
+    klimaZbir:0, klimaDenovi:0,            // траг од климата во сушарата
+    teglaRh:0, teglaDobri:0, teglaLosi:0,  // режим во теглата при зреење
+    zdravjeBerba: Math.round(p.zdravje) });
+
+  s.statistika.vkupnoBerbi++;
+  s.statistika.berbiPoSorta[p.sorta] = (s.statistika.berbiPoSorta[p.sorta]||0)+1;
+  s.dnevno.berba++;
+  s.rastenija = s.rastenija.filter(r=>r.id!==id);
+  dodadiXp(Math.round(parcinja*3));
+  sfx('harvest'); proveriDostignuvanja(); iscrtajSe(true);
+}
+
+/* ── Сушење и зреење ── */
+/* ── Клима во сушарата ───────────────────────────────────────────────── */
+function opremaSusara(){ return OPREMA[(s.susilnica&&s.susilnica.opremaTier)||0]; }
+function tempo0(dt){ return dt / KONFIG.SUSEN_DEN_SEK; }
+
+// Вистинската клима се движи кон целта; послабата опрема ја држи полабаво
+// и остава поголемо талкање околу поставената вредност.
+function klimaTikni(tempo){
+  const k = s.susilnica; if (!k) return;
+  const op = opremaSusara();
+  const vlecha = Math.min(1, KONFIG.KLIMA_DRIFT * (0.4 + op.stabilnost) * tempo * 3);
+  const sum = (1 - op.stabilnost);
+  k.temp += (k.celTemp - k.temp) * vlecha + (Math.random()-0.5) * sum * 1.6 * tempo;
+  k.rh   += (k.celRh   - k.rh)   * vlecha + (Math.random()-0.5) * sum * 4.0 * tempo;
+  k.temp = stegni(k.temp, KONFIG.TEMP_MIN-4, KONFIG.TEMP_MAX+4);
+  k.rh   = stegni(k.rh,   KONFIG.RH_MIN-8,   KONFIG.RH_MAX+8);
+}
+
+// 0..1 — колку сегашната клима е блиску до идеалниот прозорец.
+function klimaOcena(){
+  const k = s.susilnica; if (!k) return 0.5;
+  const oddaleceno = (v, min, max, tolerancija) => {
+    if (v >= min && v <= max) return 0;
+    const d = v < min ? min - v : v - max;
+    return Math.min(1, d / tolerancija);
+  };
+  const dT = oddaleceno(k.temp, KONFIG.TEMP_IDEAL_MIN, KONFIG.TEMP_IDEAL_MAX, 7);
+  const dR = oddaleceno(k.rh,   KONFIG.RH_IDEAL_MIN,   KONFIG.RH_IDEAL_MAX,   18);
+  return stegni(1 - (dT*0.55 + dR*0.45), 0, 1);
+}
+
+// Множител на ризикот од мувла според воздухот во сушарата:
+// на идеални 58 % е ×1, суво го гуши до ×0.35, влажно го крева до ×2.6.
+function riziciMuvla(){
+  const k = s.susilnica; if (!k) return 1;
+  const d = (k.rh - KONFIG.RH_IDEAL_MAX) / 12;
+  if (k.rh <= KONFIG.RH_IDEAL_MIN) {
+    const suvo = (KONFIG.RH_IDEAL_MIN - k.rh) / 20;
+    return stegni(1 - suvo*0.65, 0.35, 1);
+  }
+  return stegni(1 + Math.max(0, d)*0.8, 1, 2.6);
+}
+
+// Топло/суво суши побрзо, ладно/влажно побавно.
+function brzinaSusenje(){
+  const k = s.susilnica; if (!k) return 1;
+  const t = (k.temp - 19) / 11;          // −1..+1 приближно
+  const r = (58 - k.rh) / 22;
+  return stegni(1 + t*0.55 + r*0.45, 0.35, 2.1);
+}
+
+/* ── Квалитет и оценки ───────────────────────────────────────────────── */
+// Собира сѐ што играчот направил со серијата во една оценка 0..100.
+function kvalitetSerija(b){
+  const klima = b.klimaDenovi ? (b.klimaZbir/b.klimaDenovi) : 0.5;      // клима при сушење
+  const tegla = (() => {                                                // режим во теглата
+    const dobri = b.teglaDobri||0, losi = b.teglaLosi||0;
+    if (!dobri && !losi) return 0.5;
+    return dobri/(dobri+losi);
+  })();
+  // Долгото зреење гради терпени, но со опаѓачки принос.
+  const zreenje = stegni((b.denoviZreenje||0)/KONFIG.ZREENJE_VRV, 0, 1);
+  const burpRitam = stegni((b.burpovi||0)/Math.max(1, Math.floor(b.denoviZreenje||0)+1), 0, 1);
+
+  const ocena =
+      klima * 34
+    + tegla * 22
+    + zreenje * 14
+    + burpRitam * 8
+    + (b.tochnost||0) * 12                       // влажност при пакување
+    + Math.min(b.vrtenja||0, 3)/3 * 6            // вртење на гранките
+    + (b.potkrateno ? 4 : 0)                     // прецизно кратење
+    - (b.imalaMuvla ? 14 : 0)
+    - stegni((b.zaguba||0)*40, 0, 16);
+  return stegni(Math.round(ocena), 0, 100);
+}
+
+function ocenkaZa(kvalitet){
+  return KONFIG.OCENKI.find(o => kvalitet > o.prag) || KONFIG.OCENKI[KONFIG.OCENKI.length-1];
+}
+
+// Просечен квалитет на залихата по сорта (пондериран по количина).
+function kvalitetZaliha(sortaId){
+  const z = s.kvalitet && s.kvalitet[sortaId];
+  if (!z || !z.n) return null;
+  return stegni(Math.round(z.zbir/z.n), 0, 100);
+}
+function dodadiKvalitet(sortaId, kvalitet, kolku){
+  if (!s.kvalitet) s.kvalitet = {};
+  const z = s.kvalitet[sortaId] || (s.kvalitet[sortaId] = {n:0, zbir:0});
+  z.n += kolku; z.zbir += kvalitet*kolku;
+}
+function trosiKvalitet(sortaId, kolku){
+  const z = s.kvalitet && s.kvalitet[sortaId];
+  if (!z || !z.n) return;
+  const sreden = z.zbir/z.n;
+  z.n = Math.max(0, z.n - kolku);
+  z.zbir = z.n>0 ? sreden*z.n : 0;
+}
+
+function najdiSerija(id){ return s.susara.find(x=>x.id===id); }
+function zavrtiGranki(id){
+  const b = najdiSerija(id);
+  if (!b || b.faza!=='sushenje' || !b.trebaVrtenje) return;
+  b.trebaVrtenje=false; b.vrtenja++;
+  poraka(T().t_turned); sfx('click'); iscrtajSe(true);
+}
+function provetri(id){
+  const b = najdiSerija(id);
+  if (!b || !b.vlazenDen) return;
+  b.vlazenDen=false; poraka(T().t_vented); sfx('click'); iscrtajSe(true);
+}
+function otstraniMuvla(id){
+  const b = najdiSerija(id);
+  if (!b || !b.muvla) return;
+  b.zaguba = Math.min(.6, b.zaguba + KONFIG.MUVLA_CISTENJE);
+  b.muvla=false; poraka(T().t_mold_rm); sfx('click'); iscrtajSe(true);
+}
+function spakuvaj(id){
+  const b = najdiSerija(id);
+  if (!b || b.faza!=='sushenje' || b.vlaga > KONFIG.VLAGA_TEGLI_MAX){ sfx('error'); return; }
+  b.tochnost = b.vlaga < KONFIG.IDEAL_MIN-3 ? .7
+             : b.vlaga <= KONFIG.IDEAL_MAX ? 1
+             : b.vlaga <= KONFIG.IDEAL_MAX+9 ? .85 : .65;
+  b.faza='zreenje'; b.denoviZreenje=0; b.burpovi=0; b.burpDostapen=true;
+  b.trebaVrtenje=false; b.vlazenDen=false; b.muvla=false;
+  // Влагата во пупките се израмнува во теглата — колку повлажни се спакувани,
+  // толку повисоко стартува теглата и толку повеќе burp-ови ќе бараат.
+  b.teglaRh = stegni(46 + b.vlaga*0.95, 48, 78);
+  b.teglaDobri = 0; b.teglaLosi = 0;
+  poraka(sablon(T().t_packed, Math.round(b.vlaga)));
+  sfx('achievement'); iscrtajSe(true);
+}
+function burpni(id){
+  const b = najdiSerija(id);
+  if (!b || b.faza!=='zreenje' || !b.burpDostapen) return;
+  b.burpDostapen=false; b.burpovi++;
+
+  const pred = b.teglaRh||60;
+  b.teglaRh = Math.max(38, pred - KONFIG.BURP_PAD);
+
+  // Отворањето кога теглата е веќе сува само ги губи терпените.
+  if (pred < KONFIG.TEGLA_RH_IDEAL_MIN){
+    b.teglaLosi = (b.teglaLosi||0)+1;
+    poraka(T().t_burp_early, true);
+  } else {
+    if (pred > KONFIG.TEGLA_RH_MUVLA) b.muvla = false;   // проветрувањето ја запира мувлата
+    poraka(sablon(T().t_burp_ok, Math.round(b.teglaRh)));
+  }
+  sfx('feed'); iscrtajSe(true);
+}
+function zavrsiZreenje(id){
+  const b = najdiSerija(id);
+  if (!b || b.faza!=='zreenje' || b.denoviZreenje < KONFIG.ZREENJE_MIN){ sfx('error'); return; }
+  // Квалитетот на негата станува множител на приносот: совршена нега ×1.15, лоша ×0.7.
+  const nega = stegni(
+    .55*b.tochnost + .15*Math.min(b.vrtenja,3)/3 + .2*Math.min(b.burpovi,6)/6
+    + (b.potkrateno?.1:0) - (b.imalaMuvla?.12:0), 0, 1);
+  const finalni = Math.max(1, Math.round(b.parcinja * (1-b.zaguba) * (0.7 + 0.45*nega)));
+
+  // Оценката ја носи цената подоцна на пазарот.
+  const kvalitet = kvalitetSerija(b);
+  const ocenka = ocenkaZa(kvalitet);
+  dodadiKvalitet(b.sorta, kvalitet, finalni);
+
+  s.zaliha[b.sorta] = (s.zaliha[b.sorta]||0) + finalni;
+  s.susara = s.susara.filter(x=>x.id!==id);
+  s.statistika.najdobraOcenka = Math.max(s.statistika.najdobraOcenka||0, kvalitet);
+  poraka(sablon(T().t_cured_grade, finalni, ocenka.kluc, kvalitet));
+  sfx('harvest'); proveriDostignuvanja(); iscrtajSe(true);
+}
+
+/* ── Опрема за сушарата ──────────────────────────────────────────────── */
+function nadgradiOprema(){
+  const sled = OPREMA[opremaSusara().tier+1];
+  if (!sled || s.pari < sled.cena){ sfx('error'); return; }
+  dodadiPari(-sled.cena);
+  s.susilnica.opremaTier = sled.tier;
+  poraka(sablon(T().t_equip_bought, s.jazik==='mk'?sled.imeMk:sled.imeEn));
+  sfx('achievement'); iscrtajSe(true);
+}
+function postaviKlima(polje, vrednost){
+  const k = s.susilnica; if (!k) return;
+  const v = Number(vrednost);
+  if (!Number.isFinite(v)) return;
+  if (polje==='temp') k.celTemp = stegni(v, KONFIG.TEMP_MIN, KONFIG.TEMP_MAX);
+  else k.celRh = stegni(v, KONFIG.RH_MIN, KONFIG.RH_MAX);
+  azurirajVoMesto();
+}
+
+/* ── Генетика ── */
+let izborVkrstuvanje = [];
+function izberiZaVkrstuvanje(id){
+  sfx('click');
+  if (izborVkrstuvanje.includes(id)) izborVkrstuvanje = izborVkrstuvanje.filter(x=>x!==id);
+  else { if (izborVkrstuvanje.length>=2) izborVkrstuvanje.shift(); izborVkrstuvanje.push(id); }
+  iscrtajSe(true);
+}
+function vkrsti(){
+  if (izborVkrstuvanje.length!==2 || s.pari<700){ sfx('error'); return; }
+  const a=sorta(izborVkrstuvanje[0]), b=sorta(izborVkrstuvanje[1]);
+  const hibrid = napraviHibrid(a, b, Math.floor(Math.random()*997));
+  dodadiPari(-700);
+  const postoi = siteSorti().some(x=>x.id===hibrid.id);
+  if (!postoi){
+    s.hibridi.push(hibrid);
+    s.otkrieni.push(hibrid.id);
+    s.statistika.hibridiOtkrieni++;
+  } else if (!s.otkrieni.includes(hibrid.id)) s.otkrieni.push(hibrid.id);
+  izborVkrstuvanje = [];
+  sfx('achievement'); proveriDostignuvanja();
+  const t=T();
+  otvoriModal(`<div class="modal-temen">
+    <div style="font:700 10.5px Inter,sans-serif;text-transform:uppercase;letter-spacing:.5px;color:#fbbf24;margin-bottom:12px">${esc(t.breed_result)}</div>
+    <div style="width:70px;height:70px;border-radius:50%;margin:0 auto 14px;background:radial-gradient(circle,${esc(hibrid.sjaj)},transparent 72%)"></div>
+    <div style="font:800 18px Outfit,sans-serif;margin-bottom:4px">${esc(imeSorta(hibrid))}</div>
+    <div style="font:600 11px Inter,sans-serif;color:rgba(233,243,236,.6);margin-bottom:22px">Tier ${hibrid.tier} · ${fmt(hibrid.cena)} ден</div>
+    <button onclick="zatvoriModal();iscrtajSe(true)" style="padding:11px 26px;border-radius:12px;font:800 12px Outfit,sans-serif;background:linear-gradient(135deg,#fbbf24,#d97706);color:#2a1a00">${esc(t.breed_cta)}</button>
+  </div>`);
+}
+
+/* ── Пазар ── */
+function prodaj(sortaId, kolku){
+  const ima = s.zaliha[sortaId]||0;
+  kolku = Math.min(kolku, ima);
+  if (kolku<=0) return;
+  const x = sorta(sortaId);
+  // Оценката на серијата директно ја крева или урива цената.
+  const kv = kvalitetZaliha(sortaId);
+  const kvMult = kv===null ? 1 : ocenkaZa(kv).mnozitel;
+  let vkupno = 0;
+  for (let i=0;i<kolku;i++){
+    let m = (1 + s.prestiz*0.05) * kvMult;
+    if (s.prodazenBonus && s.prodazenBonus.preostanato>0){
+      m *= s.prodazenBonus.mult; s.prodazenBonus.preostanato--;
+    }
+    vkupno += x.cena*m;
+  }
+  if (s.prodazenBonus && s.prodazenBonus.preostanato<=0) s.prodazenBonus=null;
+  s.zaliha[sortaId] = ima-kolku;
+  trosiKvalitet(sortaId, kolku);
+  s.dnevno.prodadeno += kolku;
+  dodadiPari(Math.round(vkupno));
+  sfx('click'); iscrtajSe(true);
+}
+function prodajSe(){
+  for (const id of Object.keys(s.zaliha)) if (s.zaliha[id]>0) prodaj(id, s.zaliha[id]);
+}
+function ispolniNaracka(id){
+  const n = s.naracki.find(o=>o.id===id); if (!n) return;
+  if ((s.zaliha[n.sorta]||0) < n.kolku){ sfx('error'); return; }
+  s.zaliha[n.sorta] -= n.kolku;
+  // Купувачите плаќаат според оценката на стоката што ја испорачуваш.
+  const kv = kvalitetZaliha(n.sorta);
+  const kvMult = kv===null ? 1 : ocenkaZa(kv).mnozitel;
+  trosiKvalitet(n.sorta, n.kolku);
+  s.naracki = s.naracki.filter(o=>o.id!==id);
+  s.statistika.naracki++; s.dnevno.naracki++;
+  dodadiPari(Math.round(n.pari*kvMult)); dodadiXp(n.xp);
+  sfx('harvest'); proveriDostignuvanja(); iscrtajSe(true);
+}
+function moznaNaracka(){
+  if (s.naracki.length>=3 || Math.random()>0.14) return;
+  const bazen = siteSorti().filter(x=>otklucenaSorta(x));
+  if (!bazen.length) return;
+  const x = bazen[Math.floor(Math.random()*bazen.length)];
+  const kolku = 5+Math.floor(Math.random()*15);
+  s.naracki.push({ id:s.slednaNarackaId++, sorta:x.id, kolku,
+    pari:Math.round(kolku*x.cena*1.4), xp:kolku*3,
+    istekuvaDen:s.den+2+Math.floor(Math.random()*2) });
+}
+
+/* ── Персонал ── */
+function vraboti(kluc){
+  const def = PERSONAL.find(p=>p.kluc===kluc);
+  if (s.personal[kluc] || s.pari<def.cena){ sfx('error'); return; }
+  dodadiPari(-def.cena);
+  s.personal[kluc]=true; s.statistika.vraboteni++;
+  sfx('achievement'); proveriDostignuvanja(); iscrtajSe(true);
+}
+function personalRaboti(dt){
+  for (const def of PERSONAL){
+    if (!s.personal[def.kluc]) continue;
+    personalAkumulator[def.kluc] = (personalAkumulator[def.kluc]||0)+dt;
+    if (personalAkumulator[def.kluc] < def.sekoi) continue;
+    personalAkumulator[def.kluc] = 0;
+    if (def.kluc==='waterer'){ const c=s.rastenija.find(p=>p.voda<50); if(c) polej(c.id); }
+    else if (def.kluc==='feeder'){ const c=s.rastenija.find(p=>p.hrana<50); if(c) nahrani(c.id); }
+    else if (def.kluc==='harvester'){
+      const c=s.rastenija.find(p=>p.napredok>=1);
+      if (c){ const soba=c.soba, sortaId=c.sorta; oberi(c.id, false);
+        // пресади иста сорта ако има место
+        const def2=SOBI.find(r=>r.id===soba);
+        if (def2 && s.rastenija.filter(p=>p.soba===soba).length < def2.kapacitet)
+          s.rastenija.push({ id:s.sledenRastenieId++, soba, sorta:sortaId,
+            voda:100, hrana:100, zdravje:100, napredok:0, plovki:[] });
+      }
+    }
+    else if (def.kluc==='trader'){
+      const n = s.naracki.find(o=>(s.zaliha[o.sorta]||0)>=o.kolku);
+      if (n) ispolniNaracka(n.id);
+      else { const k=Object.keys(s.zaliha).filter(x=>s.zaliha[x]>0); if(k.length) prodaj(k[0],1); }
+    }
+  }
+}
+
+/* ── Предизвици ── */
+function novPredizvikDen(){
+  const bazen = [...PREDIZVICI_BAZEN], izbor = [];
+  while (izbor.length<3 && bazen.length)
+    izbor.push(bazen.splice(Math.floor(Math.random()*bazen.length),1)[0]);
+  s.predizvici = izbor.map(p=>{
+    const cel = p.min+Math.floor(Math.random()*(p.max-p.min+1));
+    return { id:p.id, kluc:p.kluc, cel, pari:p.pari, xp:p.xp,
+      mk:p.mk(cel), en:p.en(cel), gotov:false, naplaten:false };
+  });
+  s.dnevno = { berba:0, zaraboteno:0, voda:0, hrana:0, prodadeno:0, naracki:0 };
+}
+function proveriPredizvici(){
+  for (const c of s.predizvici){
+    if (c.gotov) continue;
+    if ((s.dnevno[c.kluc]||0) >= c.cel){
+      c.gotov = true;
+      if (!c.naplaten){ c.naplaten=true; dodadiPari(c.pari); dodadiXp(c.xp); }
+    }
+  }
+}
+
+/* ── Достигнувања ── */
+function statVrednost(kluc){
+  if (kluc==='staklenaOtklucena') return s.sobi.greenhouse.otklucena?1:0;
+  if (kluc==='labOtklucena') return s.sobi.breeding_lab.otklucena?1:0;
+  if (kluc==='nivo') return s.nivo;
+  return s.statistika[kluc]||0;
+}
+let proverkaZakazana = false;
+function proveriDostignuvanja(){
+  if (proverkaZakazana) return;
+  proverkaZakazana = true;
+  setTimeout(()=>{
+    proverkaZakazana = false;
+    const novi = [];
+    for (const a of DOSTIGNUVANJA)
+      if (!s.dostignuvanja.includes(a.id) && statVrednost(a.stat)>=a.cel){
+        s.dostignuvanja.push(a.id); novi.push(a);
+      }
+    if (novi.length){
+      for (const a of novi) tost(T().toast_ach, s.jazik==='mk'?a.imeMk:a.imeEn);
+      sfx('achievement');
+      dodadiXp(novi.reduce((z,a)=>z+a.xp,0));
+    }
+    proveriPredizvici();
+  }, 0);
+}
+
+/* ── Настани ── */
+function pokreniNastan(){
+  const ev = NASTANI_BAZEN[Math.floor(Math.random()*NASTANI_BAZEN.length)];
+  s.aktivenNastan = ev.id;
+  s.nastanTajmer = 100+Math.floor(Math.random()*80);
+  const t = s.jazik;
+  otvoriModal(`<div class="modal-bel">
+    <div class="modal-naslov">${esc(t==='mk'?ev.mkT:ev.enT)}</div>
+    <div class="modal-telo">${esc(t==='mk'?ev.mkO:ev.enO)}</div>
+    ${ev.izbori.map((c,i)=>`<button class="izbor-red" onclick="resiNastan('${ev.id}',${i})">
+      <span style="font:700 12px Inter,sans-serif">${esc(t==='mk'?c.mk:c.en)}</span></button>`).join('')}
+  </div>`, true);
+}
+function resiNastan(evId, i){
+  const ev = NASTANI_BAZEN.find(e=>e.id===evId);
+  const c = ev && ev.izbori[i];
+  s.aktivenNastan = null;
+  zatvoriModal();
+  if (!c){ iscrtajSe(true); return; }
+  if (c.tip==='pari' || c.tip==='pariRizik')
+    dodadiPari(Math.round(c.min + Math.random()*(c.max-c.min)));
+  else if (c.tip==='prodazenBonus')
+    s.prodazenBonus = { mult:c.mult, preostanato:c.broj };
+  else if (c.tip==='zdravjeUdar'){
+    if (s.rastenija.length){
+      const p = s.rastenija[Math.floor(Math.random()*s.rastenija.length)];
+      p.zdravje = Math.max(0, p.zdravje - (c.min+Math.random()*(c.max-c.min)));
+    }
+  }
+  else if (c.tip==='semka'){
+    if (c.cena>0){ if (s.pari<c.cena){ sfx('error'); iscrtajSe(true); return; } dodadiPari(-c.cena); }
+    const zaklJucheni = siteSorti().filter(x=>!s.otkrieni.includes(x.id) && (x.hibrid || s.nivo < x.nivo));
+    if (zaklJucheni.length){
+      const izbor = zaklJucheni[Math.floor(Math.random()*zaklJucheni.length)];
+      s.otkrieni.push(izbor.id);
+    }
+  }
+  else if (c.tip==='prodajSe'){
+    let vkupno=0;
+    for (const id of Object.keys(s.zaliha))
+      vkupno += (s.zaliha[id]||0) * sorta(id).cena * c.mult * (1+s.prestiz*0.05);
+    s.zaliha={};
+    dodadiPari(Math.round(vkupno));
+  }
+  sfx('click'); iscrtajSe(true);
+}
+
+/* ── Престиж ── */
+function otvoriPrestizPotvrda(){
+  const t=T();
+  otvoriModal(`<div class="modal-bel">
+    <div class="modal-naslov">${esc(t.pr_confirm_t)}</div>
+    <div class="modal-telo">${esc(t.pr_confirm_b)}</div>
+    <div style="display:flex;gap:8px">
+      <button onclick="zatvoriModal()" style="flex:1;padding:11px;border-radius:10px;background:oklch(94% 0.015 90);color:oklch(30% 0.02 150);font:700 11.5px Inter,sans-serif">${esc(t.pr_no)}</button>
+      <button onclick="prerodiSe()" style="flex:1;padding:11px;border-radius:10px;background:linear-gradient(135deg,#fbbf24,#d97706);color:#2a1a00;font:800 11.5px Outfit,sans-serif">${esc(t.pr_yes)}</button>
+    </div>
+  </div>`);
+}
+function prerodiSe(){
+  zatvoriModal();
+  if (s.nivo < 10){ sfx('error'); return; }
+  const dobieno = Math.floor(s.nivo/2) + Math.floor(s.statistika.vkupnoZaraboteno/5000);
+  s.pari = KONFIG.POCETNI_PARI; prikazPari = s.pari;
+  s.xp = 0; prikazXp = 0; s.nivo = 1;
+  s.rastenija = []; s.susara = []; s.zaliha = {}; s.otkrieni = [];
+  s.sobi = { starter:{otklucena:true,lampa:0}, greenhouse:{otklucena:false,lampa:0}, breeding_lab:{otklucena:false} };
+  s.personal = { waterer:false, feeder:false, harvester:false, trader:false };
+  s.naracki = []; s.aktivnaSoba = 'starter';
+  s.prestiz += dobieno;
+  s.statistika.preradjanja++;
+  sfx('levelup'); proveriDostignuvanja(); iscrtajSe(true);
+}
+
+/* ── Туторијал ── */
+function tutorial(cekor){
+  const t=T();
+  const cekori = t.tut;
+  if (cekor >= cekori.length){
+    s.tutorial=false; dodadiPari(300); zatvoriModal(); iscrtajSe(true); return;
+  }
+  s.tutorialCekor = cekor;
+  const posleden = cekor === cekori.length-1;
+  otvoriModal(`<div class="modal-bel" style="align-self:flex-end;margin-bottom:24px">
+    <div style="display:flex;gap:5px;margin-bottom:16px">
+      ${cekori.map((_,i)=>`<div style="height:5px;flex:1;border-radius:3px;background:${i<=cekor?'oklch(60% 0.11 152)':'oklch(90% 0.02 90)'}"></div>`).join('')}
+    </div>
+    <div style="font:800 17px Outfit,sans-serif;margin-bottom:8px">${esc(cekori[cekor][0])}</div>
+    <div class="modal-telo">${esc(cekori[cekor][1])}</div>
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <button onclick="s.tutorial=false;zatvoriModal();iscrtajSe(true)" style="font:700 11px Inter,sans-serif;color:oklch(55% 0.02 150);padding:8px">${esc(t.tut_skip)}</button>
+      <button onclick="tutorial(${cekor+1})" class="k-primarno" style="padding:11px 24px;border-radius:12px;font:800 12px Outfit,sans-serif">${esc(posleden?t.tut_done:t.tut_next)}</button>
+    </div>
+  </div>`, true);
+}
+
+/* ── Модали ── */
+function otvoriModal(html, bezZatvoranje){
+  const p = document.getElementById('pokrivka');
+  document.getElementById('pokrivka-sodrzina').innerHTML = html;
+  p.classList.add('otvorena');
+  p.dataset.fiksno = bezZatvoranje ? '1' : '';
+  const prvo = p.querySelector('button');
+  if (prvo) prvo.focus();
+}
+function zatvoriModal(){
+  document.getElementById('pokrivka').classList.remove('otvorena');
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   6. МОТОР — тик од 1 секунда (како во дизајнот)
+   ═══════════════════════════════════════════════════════════════ */
+function tikni(){
+  const dt = 1;
+
+  // ── Раст на растенијата ──
+  for (const p of s.rastenija){
+    const x = sorta(p.sorta);
+    const lampa = lampaNaSoba(p.soba);
+    p.voda = Math.max(0, p.voda - KONFIG.VODA_PAD*dt);
+    p.hrana = Math.max(0, p.hrana - KONFIG.HRANA_PAD*dt);
+    if (p.voda<20 || p.hrana<20) p.zdravje = Math.max(0, p.zdravje-1.5*dt);
+    else if (p.voda>50 && p.hrana>50) p.zdravje = Math.min(100, p.zdravje+0.8*dt);
+    const stres = p.zdravje<40 ? 0.5 : 1;
+    const rokSoba = SOBI.find(r=>r.id===p.soba);
+    const growSec = Math.max(20, x.growSec * lampa.growMult * ((rokSoba&&rokSoba.growMult)||1));
+    if (p.voda>0 && p.hrana>0) p.napredok = Math.min(1, p.napredok + (dt/growSec)*stres);
+  }
+
+  // ── Клима во сушарата ──
+  // Вистинската температура и влажност полека се движат кон поставената цел;
+  // послабата опрема пушта поголемо отстапување.
+  klimaTikni(tempo0(dt));
+
+  // ── Сушење и зреење (1 ден на сушење = SUSEN_DEN_SEK секунди) ──
+  const tempo = dt / KONFIG.SUSEN_DEN_SEK;
+  for (const b of s.susara){
+    if (b.faza==='sushenje'){
+      const preden = Math.floor(b.denovi);
+      b.denovi += tempo;
+      const novDen = Math.floor(b.denovi)!==preden;
+      // Топлата и сува сушара влече повеќе влага, ладната и влажна помалку.
+      const pad = (b.vlazenDen ? KONFIG.VLAGA_PAD_VLAZEN : KONFIG.VLAGA_PAD_DEN) * brzinaSusenje();
+      b.vlaga = Math.max(KONFIG.VLAGA_MIN, b.vlaga - pad*tempo);
+      // Секој ден климата остава трага врз квалитетот на серијата.
+      b.klimaZbir = (b.klimaZbir||0) + klimaOcena()*tempo;
+      b.klimaDenovi = (b.klimaDenovi||0) + tempo;
+      if (b.denovi >= b.sledenoVrtenje && !b.trebaVrtenje){
+        b.trebaVrtenje=true; b.vrtenjeRok=b.denovi+KONFIG.VRTENJE_ROK;
+        b.sledenoVrtenje += KONFIG.VRTENJE_INTERVAL;
+        poraka(T().t_turn);
+      }
+      if (b.trebaVrtenje && b.denovi > b.vrtenjeRok) b.trebaVrtenje=false;
+      if (novDen){
+        // Подобрата опрема ги проредува и влажните денови.
+        if (!b.vlazenDen &&
+            Math.random() < KONFIG.VLAZEN_SANSA_DEN*(1-opremaSusara().stabilnost*0.7)*riziciMuvla()){
+          b.vlazenDen=true; poraka(T().t_humid, true);
+        }
+        // Ризикот од мувла зависи од собата: сува и проветрена сушара го гуши,
+        // влажната го умножува. Инаку климата немаше да значи ништо за загубите.
+        if (!b.muvla && b.vlaga>KONFIG.MUVLA_PRAG
+            && Math.random() < KONFIG.MUVLA_SANSA_DEN*riziciMuvla()){
+          b.muvla=true; b.imalaMuvla=true; poraka(T().t_mold, true);
+        }
+      }
+      if (b.muvla) b.zaguba = Math.min(.6, b.zaguba + KONFIG.MUVLA_ZAGUBA_DEN*tempo);
+    } else {
+      const preden = Math.floor(b.denoviZreenje);
+      b.denoviZreenje += tempo;
+      const novDen = Math.floor(b.denoviZreenje)!==preden;
+      if (novDen) b.burpDostapen = true;
+
+      // Пупките испотуваат влага назад во теглата; ако не се отвори, расте.
+      // Ефектот слабее како серијата се израмнува со текот на зреењето.
+      const jacina = Math.max(0.25, 1 - b.denoviZreenje/KONFIG.ZREENJE_VRV);
+      b.teglaRh = Math.min(85, (b.teglaRh||60) + KONFIG.TEGLA_POT*jacina*tempo);
+
+      if (novDen){
+        // Превисока влага во теглата носи мувла и губиток; пресува ги суши.
+        if (b.teglaRh > KONFIG.TEGLA_RH_MUVLA){
+          b.teglaLosi = (b.teglaLosi||0)+1;
+          if (!b.muvla && Math.random() < 0.28){
+            b.muvla = true; b.imalaMuvla = true;
+            b.zaguba = Math.min(.6, b.zaguba + 0.05);
+            poraka(T().t_jar_mold, true);
+          }
+        } else if (b.teglaRh < KONFIG.TEGLA_RH_SUVO){
+          b.teglaLosi = (b.teglaLosi||0)+1;
+        } else {
+          b.teglaDobri = (b.teglaDobri||0)+1;
+        }
+      }
+    }
+  }
+
+  personalRaboti(dt);
+
+  // ── Ден и предизвици ──
+  s.sekVoDen += dt;
+  if (s.sekVoDen >= KONFIG.DEN_SEK){
+    s.sekVoDen = 0; s.den++;
+    s.naracki = s.naracki.filter(o=>o.istekuvaDen>s.den);
+    // плати за персонал — дневен трошок
+    let plati = 0;
+    for (const def of PERSONAL) if (s.personal[def.kluc]) plati += def.plata;
+    if (plati>0) s.pari = Math.max(0, s.pari - plati);
+    novPredizvikDen();
+  }
+  s.statistika.sekundiIgrano += dt;
+
+  moznaNaracka();
+
+  if (!s.aktivenNastan && !s.tutorial){
+    s.nastanTajmer -= dt;
+    if (s.nastanTajmer<=0) pokreniNastan();
+  }
+
+  sejvAkumulator += dt;
+  if (sejvAkumulator>=8){ sejvAkumulator=0; zachuvaj(); }
+
+  proveriPredizvici();
+  iscrtajSe(false);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   7. ПРИКАЗ
+   ═══════════════════════════════════════════════════════════════ */
+const JAZICINJA = [
+  { id:'grow', kluc:'nav_grow', ikona:'<path d="M6 20C3 15 4 6 13 4c7-1.6 8 4 7 9-1.5 7.5-9 8-14 7Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M7 19C10 14 13 10 19 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>' },
+  { id:'drying', kluc:'nav_drying', ikona:'<path d="M4 4h16M8 4v5a4 4 0 0 0 8 0V4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M12 13v7m-3-3l3 3 3-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>' },
+  { id:'curing', kluc:'nav_curing', ikona:'<rect x="6" y="7" width="12" height="14" rx="2.5" stroke="currentColor" stroke-width="1.8"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M9 12h6M9 16h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>' },
+  { id:'genetics', kluc:'nav_genetics', ikona:'<path d="M7 3c0 5 10 5 10 9s-10 4-10 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M17 3c0 5-10 5-10 9s10 4 10 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M8 7h8M7.3 17h9.4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>' },
+  { id:'market', kluc:'nav_market', ikona:'<path d="M3 8l9-5 9 5-9 5-9-5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M3 8v9l9 5 9-5V8M12 13v9" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>' },
+  { id:'staff', kluc:'nav_staff', ikona:'<circle cx="9" cy="8" r="3.2" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="9" r="2.6" stroke="currentColor" stroke-width="1.8"/><path d="M3 20c0-4 3-6 6-6s6 2 6 6M14.5 20c.3-3 1.8-5 4.7-5.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>' },
+  { id:'achievements', kluc:'nav_achievements', ikona:'<path d="M7 4h10v5a5 5 0 0 1-10 0V4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M7 5H4v2a4 4 0 0 0 4 4M17 5h3v2a4 4 0 0 1-4 4M12 14v3m-3 3h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>' },
+  { id:'prestige', kluc:'nav_prestige', ikona:'<path d="M3 8l4 3 5-6 5 6 4-3-2 11H5L3 8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M5 19h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>' },
+  { id:'guide', kluc:'nav_guide', ikona:'<path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11v18H6.5A2.5 2.5 0 0 1 4 18.5v-13Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H13v18h4.5a2.5 2.5 0 0 0 2.5-2.5v-13Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>' },
+];
+
+function osveziNav(){
+  const t=T();
+  const n = document.getElementById('navig');
+  n.innerHTML = JAZICINJA.map(j=>{
+    const tocki = (j.id==='drying' && s.susara.some(b=>b.faza==='sushenje' && (b.trebaVrtenje||b.muvla||b.vlazenDen)))
+               || (j.id==='curing' && s.susara.some(b=>b.faza==='zreenje' && b.burpDostapen));
+    return `<button data-jaz="${j.id}" class="${s.aktivnoJazice===j.id?'aktivno':''}" onclick="premestiJazice('${j.id}')">
+      <span class="tocka ${tocki?'vidliva':''}"></span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">${j.ikona}</svg>
+      <span>${esc(t[j.kluc])}</span></button>`;
+  }).join('');
+}
+
+function osveziHud(){
+  const t=T();
+  document.getElementById('h-pari').textContent = fmt(prikazPari);
+  document.getElementById('h-pari-l').textContent = t.stat_money;
+  document.getElementById('h-nivo').textContent = s.nivo;
+  document.getElementById('h-nivo-l').textContent = t.stat_level;
+  document.getElementById('h-den').textContent = s.den;
+  document.getElementById('h-den-l').textContent = t.stat_day;
+  document.getElementById('h-xp').style.width =
+    Math.max(2, Math.min(100, prikazXp/xpZaNivo(s.nivo)*100))+'%';
+  const pc = document.getElementById('h-prestiz-chip');
+  pc.style.display = s.prestiz>0 ? '' : 'none';
+  document.getElementById('h-prestiz').textContent = s.prestiz;
+  document.getElementById('h-logo').textContent = t.app_name.toUpperCase();
+  document.getElementById('jaz-mk').classList.toggle('aktivno', s.jazik==='mk');
+  document.getElementById('jaz-en').classList.toggle('aktivno', s.jazik==='en');
+  document.getElementById('zvuk-on').style.display = s.zvuk?'':'none';
+  document.getElementById('zvuk-off').style.display = s.zvuk?'none':'';
+}
+
+/* — Растение: реалистичен палмест лист во сцена од дизајнот — */
+/* ── Фото-растение ──────────────────────────────────────────────
+   Четири фотографии од истото растение (Higgsfield) се преклопуваат
+   според напредокот, па растот тече непрекинато наместо во скокови.
+   Ако артот недостига, се враќа на процедуралниот SVG подолу.        */
+const FAZI = ['seedling','veg','flower','harvest'];
+
+// Секоја сорта добива свој изглед во цветот: избор по бојата на сјајот,
+// така што и новите хибриди автоматски паѓаат во некое семејство.
+const IZGLEDI = ['frost','purple','orange','gold','pink'];
+const IZGLED_SORTA = {
+  ohrid_crystal:'frost',  pelister_frost:'frost',
+  vardar_gold:'gold',     skopje_haze:'purple',
+  bitola_kush:'frost',    shar_diesel:'frost',
+  galicica_dream:'purple', prespa_punch:'orange',
+  macedonian_royal:'gold', imperial_reserve:'pink',
+};
+
+function izgledZaSorta(x){
+  if (IZGLED_SORTA[x.id]) return IZGLED_SORTA[x.id];
+  // Хибрид: подреди го според нијансата на неговата боја.
+  const hex = (x.sjaj||'#86efac').replace('#','');
+  const r = parseInt(hex.slice(0,2),16), g = parseInt(hex.slice(2,4),16), b = parseInt(hex.slice(4,6),16);
+  const mx = Math.max(r,g,b), mn = Math.min(r,g,b);
+  if (mx-mn < 28) return 'frost';                     // безбојно/сребрено
+  if (r>=mx && b>g) return 'pink';
+  if (r>=mx && g>=b) return (r-g)>60 ? 'orange' : 'gold';
+  if (b>=mx) return 'purple';
+  return 'frost';
+}
+
+function fotoRastenie(p){
+  const A = window.GE_ART;
+  if (!A || !A.cut || !A.cut.harvest) return null;
+  const x = sorta(p.sorta);
+  const n = stegni(p.napredok, 0, 1);
+
+  // Позиција на скалата 0..3 (seedling→harvest).
+  const poz = n >= 1 ? 3 : n * 3;
+  const dolen = Math.min(2, Math.floor(poz));
+  const gornen = Math.min(3, dolen + 1);
+  const sirov = poz - dolen;
+  // Секоја фаза се држи јасна поголемиот дел од времето и се претопува
+  // дури пред крајот — инаку следната фаза се гледа како сенка пре рано.
+  const PRAG = 0.62;
+  const mesh = sirov <= PRAG ? 0 : (sirov - PRAG) / (1 - PRAG);
+
+  const zdr = stegni(p.zdravje, 0, 100) / 100;
+  // Здраво растение изгледа сочно; само болното бледнее и потемнува.
+  // Светлината се држи под 1 за да не се „изгори“ фотографијата.
+  const filter = `saturate(${(0.35 + 0.85 * zdr).toFixed(2)}) brightness(${(0.66 + 0.28 * zdr).toFixed(2)}) contrast(1.08)`;
+  const zrelo = n >= 1;
+
+  // Сликите се сечени од ист кадар, па саксијата се совпаѓа сама по себе —
+  // затоа слоевите само се преклопуваат, без дополнително скалирање.
+  // Во цветот се вклучува изгледот на сортата (лилаво, златно, розово…),
+  // за да не изгледаат сите сорти исто кога ќе процветаат.
+  const izgled = izgledZaSorta(x);
+  const sloj = (kluc, opac) => {
+    const src = (kluc==='harvest' && A.looks && A.looks[izgled]) ? A.looks[izgled] : A.cut[kluc];
+    if (!src) return '';
+    return `<div class="sloj" style="background-image:url('${src}');opacity:${opac.toFixed(3)};
+      filter:${filter}"></div>`;
+  };
+
+  // Кога преминот е завршен се црта само горната фаза, за да не
+  // останува претходната слика видлива под неа.
+  const samoGorna = dolen === gornen || mesh >= 0.999;
+
+  return `<div class="foto-scena">
+    ${samoGorna ? sloj(FAZI[gornen], 1) : sloj(FAZI[dolen], 1)}
+    ${samoGorna ? '' : sloj(FAZI[gornen], mesh)}
+    <div class="tint" style="background:radial-gradient(circle at 50% 48%,${esc(x.sjaj)},transparent 62%);
+      opacity:${zrelo ? .34 : (.06 + .16 * mesh).toFixed(2)}"></div>
+  </div>`;
+}
+
+function svgRastenie(p){
+  const foto = fotoRastenie(p);
+  if (foto) return foto;
+  const x = sorta(p.sorta);
+  const stadium = p.napredok>=1 ? 4 : Math.min(3, Math.floor(p.napredok*4));
+  const skala = 0.45 + stadium*0.14;
+  const zdr = p.zdravje/100;
+  const nijansa = 25+85*zdr, zasit = 30+50*zdr, svetlo = 32+16*zdr;
+  const bojaList = `hsl(${nijansa.toFixed(0)} ${zasit.toFixed(0)}% ${svetlo.toFixed(0)}%)`;
+  const bojaCut = stadium>=4 ? x.sjaj : '#86efac';
+  const list = 'M0,0 L1.6,-2.2 L0.9,-4 L2.8,-6.4 L1.9,-8.2 L3.4,-10.8 L2.4,-12.6 L3.6,-15.4 L2.6,-17.2 L3.2,-19.8 L2.2,-21.4 L2.6,-24.2 L1.6,-25.6 L1.8,-28.4 L1,-29.8 L1,-32.8 L.5,-34 L0,-38 L-.5,-34 L-1,-32.8 L-1,-29.8 L-1.8,-28.4 L-1.6,-25.6 L-2.6,-24.2 L-2.2,-21.4 L-3.2,-19.8 L-2.6,-17.2 L-3.6,-15.4 L-2.4,-12.6 L-3.4,-10.8 L-1.9,-8.2 L-2.8,-6.4 L-.9,-4 L-1.6,-2.2 Z';
+  const perka = (y, sk, op) => `<g transform="translate(50,${y})" style="opacity:${op}">
+    ${[-64,-38,-14,14,38,64].map((a,i)=>{
+      const dol = [.6,.85,1,1,.85,.6][i];
+      return `<path d="${list}" fill="${bojaList}" transform="rotate(${a}) scale(${(sk*.9).toFixed(2)},${(sk*dol).toFixed(2)})"/>`;
+    }).join('')}</g>`;
+  return `<svg viewBox="0 0 100 120" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+    <path d="M32,120 L28,106 Q50,101 72,106 L68,120 Z" fill="#3d2717"/>
+    <ellipse cx="50" cy="106" rx="22" ry="4" fill="#20160c"/>
+    <g class="rast-njise"><g class="rast-telo" style="transform:scale(${skala})">
+      <path d="M48.9,118 L51.1,118 L50.6,40 L49.4,40 Z" fill="#4a3018"/>
+      ${perka(100, 1.05, stadium>=1?1:0)}
+      ${perka(74, .8, stadium>=2?1:0)}
+      <g transform="translate(50,36)" style="opacity:${stadium>=3?1:0}">
+        <g style="transform:scale(${stadium>=4?1:.55});transition:transform .8s ease">
+          <ellipse cx="0" cy="0" rx="7" ry="12" fill="${bojaCut}"/>
+          <ellipse cx="-7" cy="6" rx="5" ry="9" fill="${bojaCut}" opacity=".85"/>
+          <ellipse cx="7" cy="6" rx="5" ry="9" fill="${bojaCut}" opacity=".85"/>
+          <ellipse cx="0" cy="-9" rx="4" ry="8" fill="${bojaCut}" opacity=".9"/>
+        </g>
+      </g>
+    </g></g>
+  </svg>`;
+}
+
+function panelGrow(){
+  const t=T();
+  const casGame = (s.sekVoDen/KONFIG.DEN_SEK)*24;
+  const svetla = casGame < 18;
+  const ambBg = svetla ? 'linear-gradient(120deg,#2a1f3d 0%,#3d2350 45%,#4a2a3d 100%)'
+                       : 'linear-gradient(120deg,#0c1310 0%,#0a1512 60%,#0d1a14 100%)';
+  const ambIkona = svetla ? '#f9a8d4' : '#4b5563';
+  const ambTekst = (svetla?t.light_on:t.light_off)+' · '+Math.floor(casGame)+'h';
+
+  let html = `<div class="panel">`;
+
+  // Херој-банер (Higgsfield арт)
+  if (window.GE_ART && window.GE_ART.hero){
+    html += `<div class="hero-baner" style="background-image:url('${window.GE_ART.hero}')">
+      <div>
+        <div class="hero-tekst">${esc(s.jazik==='mk'?'ЗЕЛЕНА ИМПЕРИЈА':'GREEN EMPIRE')}</div>
+        <div class="hero-pod">${esc(s.jazik==='mk'
+          ? 'Сади · негувај · суши · зреј · продавај'
+          : 'Plant · nurture · dry · cure · sell')}</div>
+      </div>
+    </div>`;
+  }
+
+  html += `<div class="ambient" id="amb-banner" style="background:${ambBg}">
+      ${[[12,30,5],[28,65,7],[52,20,6],[71,55,8],[88,35,5.5]].map(([l,tp,d],i)=>
+        `<div class="pravlivka" style="left:${l}%;top:${tp}%;animation:dustDrift ${d}s ease-in-out infinite alternate${i%2?'-reverse':''}"></div>`).join('')}
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" id="amb-ikona" style="color:${ambIkona}"><circle cx="12" cy="10" r="6" stroke="currentColor" stroke-width="1.8"/><path d="M9.5 20h5M10 22h4M10.5 15.5l-1 2.5h5l-1-2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span id="amb-tekst">${esc(ambTekst)}</span>
+    </div>`;
+
+  // Дневни предизвици
+  html += `<div style="margin-bottom:18px">
+    <div class="sekcija">${esc(t.challenges_title)}</div>
+    <div class="kart-mreza" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+    ${s.predizvici.map(c=>{
+      const napr = Math.min(c.cel, s.dnevno[c.kluc]||0);
+      return `<div class="kart" data-predizvik="${esc(c.id)}" style="padding:10px 12px">
+        <div style="display:flex;justify-content:space-between;gap:6px;font:600 11.5px Inter,sans-serif;margin-bottom:5px">
+          <span>${esc(s.jazik==='mk'?c.mk:c.en)}</span>
+          <span class="pr-broj" style="color:oklch(50% 0.02 150);white-space:nowrap">${napr}/${c.cel}</span></div>
+        <div class="lenta-h"><i style="width:${Math.min(100,napr/c.cel*100)}%;background:${c.gotov?'oklch(60% 0.11 152)':'oklch(66% 0.15 55)'}"></i></div>
+      </div>`;}).join('')}
+    </div></div>`;
+
+  // Соби
+  html += `<div class="sobi">${SOBI.map(r=>{
+    const rs = s.sobi[r.id];
+    const akt = s.aktivnaSoba===r.id;
+    const kl = rs.otklucena ? (akt?'soba aktivna':'soba') : 'soba zakl';
+    return `<button class="${kl}" onclick="premestiSoba('${r.id}')">
+      <b>${esc(s.jazik==='mk'?r.imeMk:r.imeEn)}</b>
+      ${rs.otklucena
+        ? `<span>${esc(t.room_cap)}: ${r.laboratorija?'—':r.kapacitet}</span>`
+        : `<span><svg width="10" height="10" viewBox="0 0 24 24" fill="none"><rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4" stroke="currentColor" stroke-width="2"/></svg>${esc(t.room_unlock)} · ${fmtK(r.cenaOtklucuvanje)}</span>`}
+    </button>`;}).join('')}</div>`;
+
+  const sobaDef = SOBI.find(r=>r.id===s.aktivnaSoba);
+  if (sobaDef && sobaDef.laboratorija){
+    html += `<div class="kart" style="border-style:dashed;padding:30px;text-align:center;color:oklch(50% 0.02 150);font:600 12.5px Inter,sans-serif">
+      ${esc(t.breed_hint)} → ${esc(t.nav_genetics)}</div></div>`;
+    return html;
+  }
+
+  // Ламба
+  const lampa = lampaNaSoba(s.aktivnaSoba);
+  const slednaLampa = LAMBI[lampa.tier+1];
+  html += `<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;gap:10px;flex-wrap:wrap">
+    <div style="font:700 12.5px Outfit,sans-serif">${esc(t.lamp)}: ${esc(s.jazik==='mk'?lampa.imeMk:lampa.imeEn)}</div>
+    <button class="k-primarno" onclick="nadgradiLampa()" ${!slednaLampa?'disabled':''}
+      style="${!slednaLampa||s.pari<slednaLampa.cena?'background:oklch(94% 0.015 90);color:oklch(60% 0.02 150)':''}">
+      ${slednaLampa ? esc(t.lamp_upgrade)+' · '+fmtK(slednaLampa.cena) : esc(t.lamp_maxed)}</button>
+  </div>`;
+
+  // Растенија
+  const rastenija = s.rastenija.filter(p=>p.soba===s.aktivnaSoba);
+  html += `<div class="rast-mreza">`;
+  for (const p of rastenija){
+    const x = sorta(p.sorta);
+    const stadium = p.napredok>=1 ? 4 : Math.min(3, Math.floor(p.napredok*4));
+    const zrelo = p.napredok>=1;
+    const vnimanie = p.voda<25 || p.hrana<25 || p.zdravje<50;
+    const badge = t.badge[stadium];
+    const badgeBg = zrelo ? 'linear-gradient(135deg,#fbbf24,#d97706)'
+      : stadium>=2 ? 'oklch(92% 0.06 152)' : stadium===1 ? 'oklch(93% 0.03 230)' : 'oklch(94% 0.015 90)';
+    const badgeBoja = zrelo ? '#2a1a00'
+      : stadium>=2 ? 'oklch(35% 0.08 152)' : stadium===1 ? 'oklch(38% 0.08 230)' : 'oklch(50% 0.02 150)';
+    const slSorta = (window.GE_ART && window.GE_ART.strains) ? window.GE_ART.strains[x.id] : null;
+    html += `<div class="rast-kart" data-rast="${p.id}">
+      <div class="rast-glava">
+        <span style="display:flex;align-items:center;gap:7px;min-width:0">
+          ${slSorta?`<span class="strain-sl" style="background-image:url('${slSorta}')"></span>`:''}
+          <span class="rast-ime">${esc(imeSorta(x))}</span></span>
+        <span class="badge" style="background:${badgeBg};color:${badgeBoja}">${esc(badge)}</span></div>
+      <div class="rast-scena">
+        <div class="rast-sjaj" style="background:radial-gradient(circle,${esc(x.sjaj)},transparent 70%);opacity:${zrelo?.9:0}"></div>
+        ${svgRastenie(p)}
+        ${(p.plovki||[]).map(f=>`<div class="plovka" style="color:${esc(f.boja)}">${esc(f.tekst)}</div>`).join('')}
+        ${vnimanie?'<div class="vnimanie"></div>':''}
+      </div>
+      <div class="rast-lenti">
+        ${[['M12 3s7 8 7 13a7 7 0 1 1-14 0c0-5 7-13 7-13Z', p.voda],
+           ['M12 2c1 4-4 5-4 9a4 4 0 0 0 8 0c0-2-1-3-1-3s2 1 2 5a6 6 0 1 1-12 0C5 8 9 7 12 2Z', p.hrana],
+           ['M12 20s-7-4.5-9.5-9C1 8 2.5 4 6.5 4c2 0 3.5 1.2 4.5 2.5C12 5.2 13.5 4 15.5 4 19.5 4 21 8 19.5 11 17 15.5 12 20 12 20Z', p.zdravje]]
+          .map(([d,v])=>`<div class="rast-lenta">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="${d}" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+            <span class="zica"><i style="width:${Math.round(v)}%;background:${bojaZaPct(v)}"></i></span>
+            <u>${Math.round(v)}</u></div>`).join('')}
+      </div>
+      <div class="rast-akcii">
+        <button class="k-voda" onclick="polej(${p.id})">${esc(t.water)}</button>
+        <button class="k-hrana" onclick="nahrani(${p.id})">${esc(t.feed)}</button>
+        <div class="berba-obvivka">
+          <button class="k-berba" ${zrelo?'':'disabled'} onclick="otvoriIzborTrim(${p.id})"
+            style="background:${zrelo?'linear-gradient(135deg,oklch(70% 0.14 55),oklch(62% 0.15 40))':'oklch(92% 0.01 90)'};color:${zrelo?'#fff':'oklch(60% 0.02 150)'}">
+            ${esc(zrelo?t.harvest:t.growing)}</button>
+          ${zrelo?'<div class="svetkanje"></div>':''}
+        </div>
+      </div>
+    </div>`;
+  }
+  for (let i=rastenija.length; i<sobaDef.kapacitet; i++)
+    html += `<button class="prazen-slot" onclick="otvoriIzborSorta('${sobaDef.id}')">${esc(t.empty_slot)}</button>`;
+  html += `</div></div>`;
+  return html;
+}
+
+function kartickaSerija(b){
+  const t=T();
+  const x = sorta(b.sorta);
+  const masa = Math.max(1, Math.round(b.parcinja*(1-b.zaguba)));
+  if (b.faza==='sushenje'){
+    const vlaga = Math.round(b.vlaga);
+    const boja = vlaga>KONFIG.MUVLA_PRAG ? '#ef4444'
+               : vlaga>KONFIG.IDEAL_MAX ? '#f59e0b'
+               : vlaga>=KONFIG.IDEAL_MIN ? '#22c55e' : '#60a5fa';
+    const status = vlaga>KONFIG.MUVLA_PRAG ? t.hum_danger
+                 : vlaga>KONFIG.VLAGA_TEGLI_MAX ? t.hum_wait
+                 : vlaga>KONFIG.IDEAL_MAX ? t.hum_early
+                 : vlaga>=KONFIG.IDEAL_MIN ? t.hum_ideal : t.hum_over;
+    const mozе = b.vlaga<=KONFIG.VLAGA_TEGLI_MAX;
+    return `<div class="kart" data-serija="${b.id}" style="display:flex;flex-direction:column;gap:8px">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:6px">
+        <span style="font:700 13px Outfit,sans-serif">${esc(imeSorta(x))}</span>
+        <span class="pil">${masa} × · ${esc(t.hangs)}</span></div>
+      <div class="ser-info" style="font:600 11px Inter,sans-serif;color:oklch(50% 0.02 150)">
+        ${esc(t.hygro)}: <b style="color:${boja}">${vlaga}%</b> — ${esc(status)}<br>
+        ${esc(t.day_n)} ${Math.floor(b.denovi)} · ${esc(t.pack_goal)}</div>
+      <div class="lenta-h"><i style="width:${stegni((KONFIG.VLAGA_START-vlaga)/(KONFIG.VLAGA_START-KONFIG.VLAGA_MIN)*100,0,100)}%;background:oklch(66% 0.15 55)"></i></div>
+      <div style="font:600 10px Inter,sans-serif;color:oklch(55% 0.02 150)">
+        ${esc(t.sop)}: ${esc(b.potkrateno?t.trimmed:t.untrimmed)} · ${esc(t.turns)}: ${b.vrtenja}${b.trebaVrtenje?' '+esc(t.waiting):''}
+        · ${esc(t.mold)}: ${esc(b.muvla?t.mold_active:b.imalaMuvla?t.mold_removed:t.mold_none)}
+        ${b.zaguba>0?` · ${esc(t.loss)} ${Math.round(b.zaguba*100)}%`:''}</div>
+      ${b.muvla?`<button class="k-crveno" onclick="otstraniMuvla(${b.id})">${esc(t.remove_mold)} · −${Math.round(KONFIG.MUVLA_CISTENJE*100)}%</button>`:''}
+      ${b.vlazenDen?`<button class="k-crveno" onclick="provetri(${b.id})">${esc(t.vent)}</button>`:''}
+      ${b.trebaVrtenje?`<button class="k-zlatno" onclick="zavrtiGranki(${b.id})">${esc(t.turn_now)}</button>`:''}
+      <button class="k-primarno" ${mozе?'':'disabled'} onclick="spakuvaj(${b.id})">
+        ${esc(mozе?t.pack:t.pack_disabled)}</button>
+    </div>`;
+  }
+  const dZr = Math.floor(b.denoviZreenje);
+  const gotovo = b.denoviZreenje >= KONFIG.ZREENJE_MIN;
+
+  // Влажност во теглата — најважниот показател при зреењето.
+  const rh = Math.round(b.teglaRh||60);
+  const rhBoja = rh > KONFIG.TEGLA_RH_MUVLA ? '#ef4444'
+               : rh > KONFIG.TEGLA_RH_IDEAL_MAX ? '#f59e0b'
+               : rh >= KONFIG.TEGLA_RH_IDEAL_MIN ? '#22c55e'
+               : rh >= KONFIG.TEGLA_RH_SUVO ? '#60a5fa' : '#a78bfa';
+  const rhStatus = rh > KONFIG.TEGLA_RH_MUVLA ? t.jar_danger
+                 : rh > KONFIG.TEGLA_RH_IDEAL_MAX ? t.jar_high
+                 : rh >= KONFIG.TEGLA_RH_IDEAL_MIN ? t.jar_ideal
+                 : rh >= KONFIG.TEGLA_RH_SUVO ? t.jar_low : t.jar_dry;
+
+  const kv = kvalitetSerija(b);
+  const oc = ocenkaZa(kv);
+
+  return `<div class="kart" data-serija="${b.id}" style="display:flex;flex-direction:column;gap:8px">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:6px">
+      <span style="font:700 13px Outfit,sans-serif">${esc(imeSorta(x))}</span>
+      <span class="pil">${masa} × · ${esc(t.in_jars)}</span></div>
+
+    <div class="tegla-red" style="display:flex;align-items:center;gap:8px">
+      <span class="ocenka" style="background:${bojaOcenka(oc.kluc)}">${esc(oc.kluc)}</span>
+      <span style="flex:1">
+        <span style="display:flex;justify-content:space-between;font:600 10px Inter,sans-serif;color:oklch(50% 0.02 150)">
+          <span>${esc(t.jar_rh)}</span><b style="color:${rhBoja}">${rh}% · ${esc(rhStatus)}</b></span>
+        <span class="zica" style="display:block;height:5px;background:oklch(92% 0.02 90);border-radius:3px;overflow:hidden;margin-top:3px">
+          <i style="display:block;height:100%;width:${stegni(rh,0,100)}%;background:${rhBoja}"></i></span>
+      </span>
+    </div>
+
+    <div class="ser-info" style="font:600 11px Inter,sans-serif;color:oklch(50% 0.02 150)">
+      ${esc(sablon(t.cure_day, dZr))} · ${esc(t.quality)} <b>${kv}</b>/100<br>
+      ${esc(t.burps)}: ${b.burpovi} ${esc(sablon(t.of_possible, Math.max(dZr+1,1)))}</div>
+    <div class="lenta-h"><i style="width:${stegni(b.denoviZreenje/KONFIG.ZREENJE_MIN*100,0,100)}%;background:oklch(60% 0.11 152)"></i></div>
+    <div style="font:600 10px Inter,sans-serif;color:oklch(55% 0.02 150)">
+      ${esc(t.sop)}: ${esc(b.potkrateno?t.trimmed:t.untrimmed)} · ${esc(t.turns)} ${b.vrtenja}
+      · ${esc(t.mold)}: ${esc(b.imalaMuvla?t.mold_had:t.mold_none)}
+      ${b.denoviZreenje<KONFIG.ZREENJE_VRV?` · ${esc(t.cure_peak_hint)}`:''}</div>
+    ${b.burpDostapen?`<button class="k-zlatno" onclick="burpni(${b.id})">${esc(t.burp)}</button>`:''}
+    <button class="k-primarno" ${gotovo?'':'disabled'} onclick="zavrsiZreenje(${b.id})">
+      ${esc(gotovo?t.finish_cure:sablon(t.cures_more, Math.max(0,Math.ceil(KONFIG.ZREENJE_MIN-b.denoviZreenje))))}</button>
+  </div>`;
+}
+
+function bojaOcenka(kluc){
+  return kluc==='AAA' ? 'linear-gradient(135deg,#fbbf24,#d97706)'
+       : kluc==='AA'  ? 'linear-gradient(135deg,#34d399,#059669)'
+       : kluc==='A'   ? 'linear-gradient(135deg,#60a5fa,#2563eb)'
+       : kluc==='B'   ? 'linear-gradient(135deg,#a3a3a3,#737373)'
+       :                'linear-gradient(135deg,#f87171,#b91c1c)';
+}
+
+// Конзола за климата: целна температура и влажност, состојба во моментот
+// и оценка колку сушарата моментално ги чува терпените.
+function klimaKonzola(){
+  const t=T(), k=s.susilnica, op=opremaSusara(), sled=OPREMA[op.tier+1];
+  const oc = klimaOcena();
+  const bojaOc = oc>0.75 ? '#22c55e' : oc>0.45 ? '#f59e0b' : '#ef4444';
+  const status = oc>0.75 ? t.clim_good : oc>0.45 ? t.clim_ok : t.clim_bad;
+  const brzina = brzinaSusenje();
+
+  const lizgac = (polje, vred, min, max, korak, etiketa, edinica, sega, idMin, idMax) => `
+    <div style="flex:1;min-width:190px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:6px;margin-bottom:3px">
+        <span style="font:700 10.5px Inter,sans-serif;color:oklch(45% 0.02 150)">${esc(etiketa)}</span>
+        <span style="font:800 12px Outfit,sans-serif"><b id="cel-${polje}">${vred.toFixed(0)}</b>${esc(edinica)}
+          <span style="font:600 9.5px Inter,sans-serif;color:oklch(55% 0.02 150)">
+            · ${esc(t.clim_now)} <b id="sega-${polje}">${sega.toFixed(1)}</b>${esc(edinica)}</span></span>
+      </div>
+      <input type="range" min="${min}" max="${max}" step="${korak}" value="${vred}"
+        oninput="postaviKlima('${polje}', this.value)"
+        style="width:100%;accent-color:oklch(60% 0.11 152)">
+      <div style="font:600 9px Inter,sans-serif;color:oklch(60% 0.02 150);margin-top:1px">
+        ${esc(t.clim_ideal)} ${idMin}–${idMax}${esc(edinica)}</div>
+    </div>`;
+
+  return `<div class="kart" style="margin-bottom:16px;display:flex;flex-direction:column;gap:11px">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">
+      <div style="font:700 12px Outfit,sans-serif">${esc(t.clim_title)}</div>
+      <span class="badge" id="klima-ocena" style="background:${bojaOc}22;color:${bojaOc}">
+        ${esc(status)} · ${Math.round(oc*100)}%</span>
+    </div>
+    <div style="display:flex;gap:16px;flex-wrap:wrap">
+      ${lizgac('temp', k.celTemp, KONFIG.TEMP_MIN, KONFIG.TEMP_MAX, 1, t.clim_temp, '°C',
+        k.temp, KONFIG.TEMP_IDEAL_MIN, KONFIG.TEMP_IDEAL_MAX)}
+      ${lizgac('rh', k.celRh, KONFIG.RH_MIN, KONFIG.RH_MAX, 1, t.clim_rh, '%',
+        k.rh, KONFIG.RH_IDEAL_MIN, KONFIG.RH_IDEAL_MAX)}
+    </div>
+    <div style="font:600 10.5px Inter,sans-serif;color:oklch(50% 0.02 150)">
+      ${esc(t.clim_speed)}: <b id="klima-brzina">×${brzina.toFixed(2)}</b> · ${esc(t.clim_equip)}:
+      <b>${esc(s.jazik==='mk'?op.imeMk:op.imeEn)}</b> (${esc(t.clim_stability)} ${Math.round(op.stabilnost*100)}%)
+    </div>
+    <button class="k-primarno" ${sled?'':'disabled'} onclick="nadgradiOprema()"
+      style="${!sled||s.pari<sled.cena?'background:oklch(94% 0.015 90);color:oklch(60% 0.02 150)':''}">
+      ${sled ? esc(t.clim_upgrade)+' · '+esc(s.jazik==='mk'?sled.imeMk:sled.imeEn)+' · '+fmtK(sled.cena)
+             : esc(t.lamp_maxed)}</button>
+  </div>`;
+}
+
+function panelSusenje(){
+  const t=T();
+  const serii = s.susara.filter(b=>b.faza==='sushenje');
+  const A = window.GE_ART;
+  return `<div class="panel tesen">
+    ${A&&A.dryRoom?`<div class="scena-baner" style="background-image:url('${A.dryRoom}')">
+      <div><div class="hero-tekst">${esc(t.dry_title)}</div>
+      <div class="hero-pod">${esc(t.dry_tag)}</div></div></div>`:''}
+    <div class="naslov">${esc(t.dry_title)}</div>
+    <div class="podnaslov">${esc(t.dry_desc)}</div>
+    ${klimaKonzola()}
+    ${serii.length
+      ? `<div class="kart-mreza" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr))">${serii.map(kartickaSerija).join('')}</div>`
+      : `<div class="kart" style="border-style:dashed;padding:26px;text-align:center;color:oklch(55% 0.02 150);font:600 12px Inter,sans-serif">${esc(t.dry_empty)}</div>`}
+  </div>`;
+}
+function panelZreenje(){
+  const t=T();
+  const serii = s.susara.filter(b=>b.faza==='zreenje');
+  const A = window.GE_ART;
+  return `<div class="panel tesen">
+    ${A&&A.cureRoom?`<div class="scena-baner" style="background-image:url('${A.cureRoom}')">
+      <div><div class="hero-tekst">${esc(t.cure_title)}</div>
+      <div class="hero-pod">${esc(t.cure_tag)}</div></div></div>`:''}
+    <div class="naslov">${esc(t.cure_title)}</div>
+    <div class="podnaslov">${esc(t.cure_desc)}</div>
+    ${serii.length
+      ? `<div class="kart-mreza" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr))">${serii.map(kartickaSerija).join('')}</div>`
+      : `<div class="kart" style="border-style:dashed;padding:26px;text-align:center;color:oklch(55% 0.02 150);font:600 12px Inter,sans-serif">${esc(t.cure_empty)}</div>`}
+  </div>`;
+}
+
+function panelGenetika(){
+  const t=T();
+  const lab = s.sobi.breeding_lab.otklucena;
+  return `<div class="panel tesen">
+    <div class="naslov">${esc(t.gen_title)}</div>
+    <div class="podnaslov">${esc(t.gen_desc)}</div>
+    <div class="sekcija">${esc(t.discovered)}</div>
+    <div class="kart-mreza" style="grid-template-columns:repeat(auto-fill,minmax(200px,1fr));margin-bottom:24px">
+    ${siteSorti().map(x=>{
+      const otkl = otklucenaSorta(x) && (!x.hibrid || s.otkrieni.includes(x.id));
+      return `<div class="kart" style="padding:11px 13px;display:flex;flex-direction:column;gap:5px;opacity:${otkl?1:.55}">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:6px">
+          <span style="font:700 12px Outfit,sans-serif;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(imeSorta(x))}</span>
+          <span class="gtocka" style="background:${esc(x.sjaj)}"></span></div>
+        <span style="font:600 10px Inter,sans-serif;color:oklch(52% 0.02 150)">
+          ${otkl ? `Tier ${x.tier} · ${fmt(x.cena)} ден` : esc(t.locked_at)+' '+x.nivo}</span>
+      </div>`;}).join('')}
+    </div>
+    <div class="kart" style="padding:18px">
+      <div style="font:700 14px Outfit,sans-serif;margin-bottom:2px">${esc(t.breed_title)}</div>
+      ${lab ? `
+        <div style="font:500 11.5px Inter,sans-serif;color:oklch(50% 0.02 150);margin:4px 0 12px">${esc(t.breed_hint)}</div>
+        <div style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px">
+        ${otkrieniSorti().map(x=>{
+          const izbrano = izborVkrstuvanje.includes(x.id);
+          return `<button onclick="izberiZaVkrstuvanje('${esc(x.id)}')"
+            style="padding:7px 13px;border-radius:20px;font:700 10.5px Inter,sans-serif;
+            background:${izbrano?'oklch(38% 0.06 152)':'oklch(94% 0.015 90)'};
+            color:${izbrano?'#fff':'oklch(30% 0.02 150)'};
+            border:2px solid ${izbrano?'oklch(60% 0.11 152)':'transparent'}">${esc(imeSorta(x))}</button>`;}).join('')}
+        </div>
+        <button class="k-primarno" onclick="vkrsti()"
+          ${izborVkrstuvanje.length!==2||s.pari<700?'disabled':''}
+          style="padding:11px 22px;border-radius:12px;font:800 12px Outfit,sans-serif">
+          ${esc(t.breed_btn)} · 700 ден</button>`
+      : `<div style="display:flex;align-items:center;gap:8px;color:oklch(55% 0.02 150);font:600 11.5px Inter,sans-serif;background:oklch(96% 0.01 90);border-radius:10px;padding:13px;margin-top:6px">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="5" y="11" width="14" height="9" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4" stroke="currentColor" stroke-width="2"/></svg>
+          ${esc(t.breed_need_lab)}</div>`}
+    </div>
+  </div>`;
+}
+
+function panelPazar(){
+  const t=T();
+  const redovi = Object.keys(s.zaliha).filter(id=>s.zaliha[id]>0);
+  const bonus = s.prodazenBonus && s.prodazenBonus.preostanato>0;
+  let html = `<div class="panel tesen">
+    <div class="naslov">${esc(t.market_title)}</div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;gap:10px;flex-wrap:wrap">
+      <div class="sekcija" style="margin:0">${esc(t.inventory)}</div>
+      ${bonus?`<span style="font:700 10px Inter,sans-serif;background:linear-gradient(135deg,#fbbf24,#d97706);color:#2a1a00;padding:3px 9px;border-radius:20px">+${Math.round((s.prodazenBonus.mult-1)*100)}% × ${s.prodazenBonus.preostanato}</span>`:''}
+      <button class="k-primarno" onclick="prodajSe()">${esc(t.sell_all_inv)}</button>
+    </div>`;
+  if (!redovi.length)
+    html += `<div class="kart" style="border-style:dashed;padding:20px;text-align:center;color:oklch(55% 0.02 150);font:600 12px Inter,sans-serif;margin-bottom:22px">${esc(t.inventory_empty)}</div>`;
+  else {
+    html += `<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:26px">`;
+    for (const id of redovi){
+      const x = sorta(id), kolku = s.zaliha[id];
+      // Оценката на залихата ја крева или спушта цената по парче.
+      const kv = kvalitetZaliha(id);
+      const oc = kv===null ? null : ocenkaZa(kv);
+      const cena = Math.round(x.cena * prodazenMult() * (oc?oc.mnozitel:1));
+      html += `<div class="kart" style="padding:10px 13px;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+        <span class="gtocka" style="background:${esc(x.sjaj)}"></span>
+        ${oc?`<span class="ocenka" style="background:${bojaOcenka(oc.kluc)}" title="${esc(t.quality)} ${kv}/100">${esc(oc.kluc)}</span>`:''}
+        <div style="flex:1;min-width:110px">
+          <div style="font:700 12px Outfit,sans-serif">${esc(imeSorta(x))}</div>
+          <div style="font:600 10px Inter,sans-serif;color:oklch(55% 0.02 150)">${kolku} × ${fmt(cena)} ден${
+            oc?` · ${esc(t.grade)} ${esc(oc.kluc)} ×${oc.mnozitel.toFixed(2)}`:''}</div></div>
+        <div style="font:800 12.5px Outfit,sans-serif;color:oklch(38% 0.06 152);white-space:nowrap">${fmt(cena*kolku)} ден</div>
+        <button class="k-sekundarno" style="padding:6px 11px;font-size:10px" onclick="prodaj('${esc(id)}',1)">${esc(t.sell_one)}</button>
+        <button class="k-primarno" style="padding:6px 11px;font-size:10px" onclick="prodaj('${esc(id)}',${kolku})">${esc(t.sell_all)}</button>
+      </div>`;
+    }
+    html += `</div>`;
+  }
+  html += `<div class="sekcija">${esc(t.orders)}</div>`;
+  if (!s.naracki.length)
+    html += `<div class="kart" style="border-style:dashed;padding:20px;text-align:center;color:oklch(55% 0.02 150);font:600 12px Inter,sans-serif">${esc(t.orders_empty)}</div>`;
+  else {
+    html += `<div class="kart-mreza" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">`;
+    for (const n of s.naracki){
+      const x = sorta(n.sorta), ima = s.zaliha[n.sorta]||0, moze = ima>=n.kolku;
+      html += `<div class="kart">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px">
+          <span style="font:700 12.5px Outfit,sans-serif">${esc(imeSorta(x))}</span>
+          <span style="font:600 9.5px Inter,sans-serif;color:oklch(55% 0.02 150)">${esc(t.expires)} ${n.istekuvaDen}</span></div>
+        <div style="font:600 10.5px Inter,sans-serif;color:oklch(50% 0.02 150);margin-bottom:4px">${esc(t.have)} ${ima}/${n.kolku}</div>
+        <div class="lenta-h" style="margin-bottom:8px"><i style="width:${Math.min(100,ima/n.kolku*100)}%;background:oklch(60% 0.11 152)"></i></div>
+        <div style="font:700 11px Inter,sans-serif;color:oklch(38% 0.06 152);margin-bottom:10px">${esc(t.reward)}: ${fmt(n.pari)} ден · +${n.xp} XP</div>
+        <button class="k-primarno" style="width:100%" ${moze?'':'disabled'} onclick="ispolniNaracka(${n.id})">
+          ${esc(moze?t.fulfill:t.not_enough)}</button>
+      </div>`;
+    }
+    html += `</div>`;
+  }
+  return html + `</div>`;
+}
+
+function panelPersonal(){
+  const t=T();
+  return `<div class="panel tesen">
+    <div class="naslov">${esc(t.staff_title)}</div>
+    <div class="podnaslov">${esc(t.staff_desc)}</div>
+    <div class="kart-mreza" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
+    ${PERSONAL.map(def=>{
+      const vraboten = s.personal[def.kluc];
+      return `<div class="kart" style="padding:16px;display:flex;flex-direction:column;gap:8px">
+        <div style="font:700 13.5px Outfit,sans-serif">${esc(s.jazik==='mk'?def.imeMk:def.imeEn)}</div>
+        <div style="font:500 11px Inter,sans-serif;color:oklch(50% 0.02 150);line-height:1.5">${esc(t.staff_opis[def.kluc])}</div>
+        <div style="font:600 10.5px Inter,sans-serif;color:oklch(55% 0.02 150)">${esc(t.wage)}: ${fmt(def.plata)} ден</div>
+        ${vraboten
+          ? `<span class="pil" style="align-self:flex-start">✓ ${esc(t.hired)}</span>`
+          : `<button class="k-primarno" ${s.pari<def.cena?'disabled':''} onclick="vraboti('${def.kluc}')">${esc(t.hire)} · ${fmtK(def.cena)}</button>`}
+      </div>`;}).join('')}
+    </div>
+  </div>`;
+}
+
+function panelDostignuvanja(){
+  const t=T();
+  const najdobra = Object.entries(s.statistika.berbiPoSorta).sort((a,b)=>b[1]-a[1])[0];
+  const stat = (v,l)=>`<div class="kart" style="padding:12px"><div style="font:800 17px Outfit,sans-serif;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${v}</div><div style="font:600 9px Inter,sans-serif;color:oklch(55% 0.02 150);text-transform:uppercase;letter-spacing:.3px">${esc(l)}</div></div>`;
+  return `<div class="panel tesen">
+    <div class="naslov">${esc(t.ach_title)}</div>
+    <div class="kart-mreza" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin-bottom:22px">
+      ${stat(fmt(s.statistika.vkupnoBerbi), t.st_harvests)}
+      ${stat(fmt(s.statistika.vkupnoZaraboteno), t.st_earned)}
+      ${stat('<span id="st-playtime">'+fmtVreme(s.statistika.sekundiIgrano)+'</span>', t.st_playtime)}
+      ${stat(najdobra?esc(imeSorta(sorta(najdobra[0]))):'—', t.st_best)}
+      ${stat(s.dostignuvanja.length+'/'+DOSTIGNUVANJA.length, t.st_unlocked)}
+    </div>
+    <div class="kart-mreza" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
+    ${DOSTIGNUVANJA.map(a=>{
+      const otkl = s.dostignuvanja.includes(a.id);
+      const sega = Math.min(a.cel, statVrednost(a.stat));
+      return `<div class="kart" style="opacity:${otkl?1:.85}">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:6px;margin-bottom:4px">
+          <span style="font:700 12.5px Outfit,sans-serif">${esc(s.jazik==='mk'?a.imeMk:a.imeEn)}</span>
+          ${otkl?`<span style="width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#fbbf24,#d97706);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="12" height="12" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke="#2a1a00" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>`:''}
+        </div>
+        <div style="font:500 11px Inter,sans-serif;color:oklch(50% 0.02 150);margin-bottom:8px;line-height:1.5">${esc(s.jazik==='mk'?a.opisMk:a.opisEn)}</div>
+        ${otkl
+          ? `<div style="font:700 10px Inter,sans-serif;color:oklch(45% 0.09 152)">+${a.xp} XP</div>`
+          : `<div class="lenta-h" style="margin-bottom:4px"><i style="width:${Math.min(100,sega/a.cel*100)}%;background:oklch(66% 0.15 55)"></i></div>
+             <div style="font:600 9.5px Inter,sans-serif;color:oklch(58% 0.02 150)">${sega}/${a.cel}</div>`}
+      </div>`;}).join('')}
+    </div>
+  </div>`;
+}
+
+function panelPrestiz(){
+  const t=T();
+  const moze = s.nivo>=10;
+  return `<div class="panel" style="max-width:640px">
+    <div style="background:linear-gradient(160deg,#16241c 0%,#0c1310 70%);border-radius:20px;padding:32px 26px;color:#e9f3ec;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.25)">
+      <div style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#fbbf24,#d97706);display:flex;align-items:center;justify-content:center;margin:0 auto 16px">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" style="color:#2a1a00"><path d="M3 8l4 3 5-6 5 6 4-3-2 11H5L3 8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M5 19h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </div>
+      <div style="font:800 19px Outfit,sans-serif;margin-bottom:8px">${esc(t.pr_title)}</div>
+      <div style="font:500 12.5px Inter,sans-serif;color:rgba(233,243,236,.7);max-width:400px;margin:0 auto 20px;line-height:1.6">${esc(t.pr_desc)}</div>
+      <div style="display:flex;justify-content:center;gap:30px;margin-bottom:22px">
+        <div><div style="font:800 22px Outfit,sans-serif;color:#fbbf24">${s.prestiz}</div>
+          <div style="font:600 9px Inter,sans-serif;text-transform:uppercase;letter-spacing:.4px;color:rgba(233,243,236,.55)">${esc(t.pr_points)}</div></div>
+        <div><div style="font:800 22px Outfit,sans-serif;color:#fbbf24">+${s.prestiz*5}%</div>
+          <div style="font:600 9px Inter,sans-serif;text-transform:uppercase;letter-spacing:.4px;color:rgba(233,243,236,.55)">${esc(t.pr_mult)}</div></div>
+      </div>
+      ${moze
+        ? `<button onclick="otvoriPrestizPotvrda()" style="padding:13px 28px;border-radius:14px;font:800 13px Outfit,sans-serif;background:linear-gradient(135deg,#fbbf24,#d97706);color:#2a1a00">${esc(t.pr_btn)}</button>`
+        : `<div style="font:600 11.5px Inter,sans-serif;color:rgba(233,243,236,.5)">${esc(t.pr_req)} 10</div>`}
+    </div>
+  </div>`;
+}
+
+/**
+ * Прецртување: целосна замена на HTML САМО при структурна промена
+ * (нов елемент, ново копче, сменет badge...). Вредностите што се менуваат
+ * секоја секунда — ленти, проценти, SVG на растението — се ажурираат во
+ * место, за да не се голтне клик и да не трепка hover-состојбата.
+ */
+let posledenPotpis = '';
+function strukturenPotpis(){
+  const j = s.aktivnoJazice;
+  if (j==='grow'){
+    return JSON.stringify(['grow', s.jazik, s.aktivnaSoba,
+      SOBI.map(r=>[!!s.sobi[r.id].otklucena, s.sobi[r.id].lampa||0]),
+      s.pari >= ((LAMBI[(s.sobi[s.aktivnaSoba].lampa||0)+1]||{cena:Infinity}).cena),
+      s.rastenija.filter(p=>p.soba===s.aktivnaSoba).map(p=>{
+        const st = p.napredok>=1?4:Math.min(3,Math.floor(p.napredok*4));
+        return [p.id, st, p.voda<25||p.hrana<25||p.zdravje<50, (p.plovki||[]).length];
+      }),
+      s.predizvici.map(c=>c.gotov)]);
+  }
+  if (j==='drying') return JSON.stringify(['drying', s.jazik,
+    s.susilnica.opremaTier,
+    s.pari >= ((OPREMA[s.susilnica.opremaTier+1]||{cena:Infinity}).cena),
+    s.susara.filter(b=>b.faza==='sushenje').map(b=>[b.id, b.muvla, b.vlazenDen,
+      b.trebaVrtenje, b.vlaga<=KONFIG.VLAGA_TEGLI_MAX])]);
+  if (j==='curing') return JSON.stringify(['curing', s.jazik,
+    s.susara.filter(b=>b.faza==='zreenje').map(b=>[b.id, b.burpDostapen,
+      b.denoviZreenje>=KONFIG.ZREENJE_MIN])]);
+  if (j==='market') return JSON.stringify(['market', s.jazik,
+    Object.entries(s.zaliha).filter(([,n])=>n>0), s.naracki.map(n=>n.id),
+    Object.keys(s.zaliha).filter(id=>s.zaliha[id]>0).map(id=>{
+      const kv = kvalitetZaliha(id); return kv===null?null:ocenkaZa(kv).kluc; }),
+    s.prodazenBonus && s.prodazenBonus.preostanato, s.prestiz]);
+  if (j==='achievements') return JSON.stringify(['ach', s.jazik, s.dostignuvanja.length,
+    s.statistika.vkupnoBerbi, s.statistika.vkupnoZaraboteno, s.statistika.naracki,
+    s.statistika.hibridiOtkrieni, s.nivo]);
+  // genetics/staff/prestige: се цртаат при акции; јазикот е единствена тивка промена
+  return JSON.stringify([j, s.jazik, s.nivo, s.prestiz,
+    Object.values(s.personal), Object.values(s.sobi).map(r=>!!r.otklucena),
+    izborVkrstuvanje, s.pari>=700]);
+}
+
+/* ── Водич низ процесот ──────────────────────────────────────────────────
+   Сите бројки се читаат директно од KONFIG, за да не се разминат со играта. */
+function panelVodic(){
+  const t=T(), A=window.GE_ART;
+  const c = n => `<span class="vodic-cifra">${esc(String(n))}</span>`;
+  const K = KONFIG;
+
+  const faza = (naslov, tag, slika, cekori) => `
+    <div class="kart" style="margin-bottom:14px;padding:0;overflow:hidden">
+      ${slika?`<div class="scena-baner" style="height:96px;margin:0;border-radius:0;background-image:url('${slika}')">
+        <div><div class="hero-tekst" style="font-size:15px">${esc(naslov)}</div>
+        <div class="hero-pod">${esc(tag)}</div></div></div>`
+      :`<div style="padding:14px 16px 0"><div style="font:800 15px Outfit,sans-serif">${esc(naslov)}</div>
+        <div style="font:600 11px Inter,sans-serif;color:oklch(52% 0.02 150);margin-top:2px">${esc(tag)}</div></div>`}
+      <div style="padding:4px 16px 14px">
+        ${cekori.map((k,i)=>`<div class="vodic-cekor">
+          <div class="vodic-broj">${i+1}</div>
+          <div class="vodic-telo"><b>${esc(k[0])}</b><span>${k[1]}</span></div>
+        </div>`).join('')}
+      </div>
+    </div>`;
+
+  const ocenkiTabela = `
+    <div class="kart" style="margin-bottom:14px">
+      <div style="font:800 14px Outfit,sans-serif;margin-bottom:3px">${esc(t.g_grade_title)}</div>
+      <div style="font:500 11.5px Inter,sans-serif;color:oklch(50% 0.02 150);line-height:1.55;margin-bottom:10px">
+        ${esc(t.g_grade_desc)}</div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        ${K.OCENKI.map(o=>`<div style="display:flex;align-items:center;gap:10px">
+          <span class="ocenka" style="background:${bojaOcenka(o.kluc)}">${esc(o.kluc)}</span>
+          <span style="flex:1;font:600 11px Inter,sans-serif;color:oklch(48% 0.02 150)">
+            ${o.prag<0 ? esc(t.g_grade_under) : esc(t.g_grade_from)+' '+(o.prag+1)}</span>
+          <b style="font:800 12px Outfit,sans-serif">×${o.mnozitel.toFixed(2)}</b>
+        </div>`).join('')}
+      </div>
+    </div>`;
+
+  return `<div class="panel tesen">
+    <div class="naslov">${esc(t.g_title)}</div>
+    <div class="podnaslov">${esc(t.g_desc)}</div>
+
+    ${faza(t.g_p1_title, t.g_p1_tag, A&&A.hero, [
+      [t.g_p1_s1, sablon(t.g_p1_s1d, c(20), c(50))],
+      [t.g_p1_s2, t.g_p1_s2d],
+      [t.g_p1_s3, t.g_p1_s3d],
+    ])}
+
+    ${faza(t.g_p2_title, t.g_p2_tag, A&&A.trimRoom, [
+      [t.g_p2_s1, sablon(t.g_p2_s1d, c(Math.round((1-K.TRIM_MASA)*100)+'%'))],
+      [t.g_p2_s2, t.g_p2_s2d],
+    ])}
+
+    ${faza(t.g_p3_title, t.g_p3_tag, A&&A.dryRoom, [
+      [t.g_p3_s1, sablon(t.g_p3_s1d, c(K.TEMP_IDEAL_MIN+'–'+K.TEMP_IDEAL_MAX+' °C'),
+        c(K.RH_IDEAL_MIN+'–'+K.RH_IDEAL_MAX+' %'))],
+      [t.g_p3_s2, t.g_p3_s2d],
+      [t.g_p3_s3, sablon(t.g_p3_s3d, c(K.VRTENJE_INTERVAL))],
+      [t.g_p3_s4, sablon(t.g_p3_s4d, c(K.MUVLA_PRAG+'%'))],
+      [t.g_p3_s5, sablon(t.g_p3_s5d, c(K.IDEAL_MIN+'–'+K.IDEAL_MAX+'%'), c(K.VLAGA_TEGLI_MAX+'%'))],
+    ])}
+
+    ${faza(t.g_p4_title, t.g_p4_tag, A&&A.cureRoom, [
+      [t.g_p4_s1, sablon(t.g_p4_s1d, c(K.TEGLA_RH_IDEAL_MIN+'–'+K.TEGLA_RH_IDEAL_MAX+'%'))],
+      [t.g_p4_s2, sablon(t.g_p4_s2d, c(K.TEGLA_RH_MUVLA+'%'))],
+      [t.g_p4_s3, sablon(t.g_p4_s3d, c(K.TEGLA_RH_SUVO+'%'))],
+      [t.g_p4_s4, sablon(t.g_p4_s4d, c(K.ZREENJE_MIN), c(K.ZREENJE_VRV))],
+    ])}
+
+    ${ocenkiTabela}
+
+    ${faza(t.g_p5_title, t.g_p5_tag, null, [
+      [t.g_p5_s1, t.g_p5_s1d],
+      [t.g_p5_s2, t.g_p5_s2d],
+      [t.g_p5_s3, t.g_p5_s3d],
+    ])}
+  </div>`;
+}
+
+function azurirajVoMesto(){
+  const j = s.aktivnoJazice;
+  if (j==='grow'){
+    const casGame = (s.sekVoDen/KONFIG.DEN_SEK)*24;
+    const svetla = casGame < 18;
+    const t=T();
+    const amb = document.getElementById('amb-banner');
+    if (amb){
+      amb.style.background = svetla
+        ? 'linear-gradient(120deg,#2a1f3d 0%,#3d2350 45%,#4a2a3d 100%)'
+        : 'linear-gradient(120deg,#0c1310 0%,#0a1512 60%,#0d1a14 100%)';
+      document.getElementById('amb-ikona').style.color = svetla?'#f9a8d4':'#4b5563';
+      document.getElementById('amb-tekst').textContent =
+        (svetla?t.light_on:t.light_off)+' · '+Math.floor(casGame)+'h';
+    }
+    document.querySelectorAll('[data-predizvik]').forEach(el=>{
+      const c = s.predizvici.find(x=>x.id===el.dataset.predizvik); if(!c) return;
+      const napr = Math.min(c.cel, s.dnevno[c.kluc]||0);
+      el.querySelector('.pr-broj').textContent = napr+'/'+c.cel;
+      el.querySelector('.lenta-h>i').style.width = Math.min(100,napr/c.cel*100)+'%';
+    });
+    document.querySelectorAll('[data-rast]').forEach(kart=>{
+      const p = s.rastenija.find(x=>x.id===+kart.dataset.rast); if(!p) return;
+      const x = sorta(p.sorta);
+      const zrelo = p.napredok>=1;
+      const scena = kart.querySelector('.rast-scena');
+      if (scena) scena.innerHTML =
+        `<div class="rast-sjaj" style="background:radial-gradient(circle,${esc(x.sjaj)},transparent 70%);opacity:${zrelo?.9:0}"></div>`
+        + svgRastenie(p)
+        + (p.plovki||[]).map(f=>`<div class="plovka" style="color:${esc(f.boja)}">${esc(f.tekst)}</div>`).join('')
+        + ((p.voda<25||p.hrana<25||p.zdravje<50)?'<div class="vnimanie"></div>':'');
+      const lenti = kart.querySelectorAll('.rast-lenta');
+      [[p.voda],[p.hrana],[p.zdravje]].forEach(([v],i)=>{
+        const l = lenti[i]; if(!l) return;
+        l.querySelector('.zica>i').style.width = Math.round(v)+'%';
+        l.querySelector('.zica>i').style.background = bojaZaPct(v);
+        l.querySelector('u').textContent = Math.round(v);
+      });
+    });
+    return;
+  }
+  if (j==='drying' || j==='curing'){
+    const t=T();
+    if (j==='drying'){
+      // Живи отчитувања на климата, без повторно цртање на лизгачите.
+      const k=s.susilnica, oc=klimaOcena();
+      const set=(id,v)=>{ const el=document.getElementById(id); if(el) el.textContent=v; };
+      set('sega-temp', k.temp.toFixed(1));
+      set('sega-rh',   k.rh.toFixed(1));
+      set('cel-temp',  k.celTemp.toFixed(0));
+      set('cel-rh',    k.celRh.toFixed(0));
+      set('klima-brzina', '×'+brzinaSusenje().toFixed(2));
+      const oe=document.getElementById('klima-ocena');
+      if (oe){
+        const boja = oc>0.75?'#22c55e':oc>0.45?'#f59e0b':'#ef4444';
+        oe.textContent = (oc>0.75?t.clim_good:oc>0.45?t.clim_ok:t.clim_bad)+' · '+Math.round(oc*100)+'%';
+        oe.style.background = boja+'22'; oe.style.color = boja;
+      }
+    }
+    document.querySelectorAll('[data-serija]').forEach(kart=>{
+      const b = s.susara.find(x=>x.id===+kart.dataset.serija); if(!b) return;
+      const info = kart.querySelector('.ser-info');
+      const lenta = kart.querySelector('.lenta-h>i');
+      if (b.faza==='sushenje'){
+        const vlaga = Math.round(b.vlaga);
+        const boja = vlaga>KONFIG.MUVLA_PRAG ? '#ef4444'
+                   : vlaga>KONFIG.IDEAL_MAX ? '#f59e0b'
+                   : vlaga>=KONFIG.IDEAL_MIN ? '#22c55e' : '#60a5fa';
+        const status = vlaga>KONFIG.MUVLA_PRAG ? t.hum_danger
+                     : vlaga>KONFIG.VLAGA_TEGLI_MAX ? t.hum_wait
+                     : vlaga>KONFIG.IDEAL_MAX ? t.hum_early
+                     : vlaga>=KONFIG.IDEAL_MIN ? t.hum_ideal : t.hum_over;
+        if (info) info.innerHTML = `${esc(t.hygro)}: <b style="color:${boja}">${vlaga}%</b> — ${esc(status)}<br>`
+          + `${esc(t.day_n)} ${Math.floor(b.denovi)} · ${esc(t.pack_goal)}`;
+        if (lenta) lenta.style.width =
+          stegni((KONFIG.VLAGA_START-vlaga)/(KONFIG.VLAGA_START-KONFIG.VLAGA_MIN)*100,0,100)+'%';
+      } else {
+        const dZr = Math.floor(b.denoviZreenje);
+        const kv = kvalitetSerija(b);
+        if (info) info.innerHTML = `${esc(sablon(t.cure_day, dZr))} · ${esc(t.quality)} <b>${kv}</b>/100<br>`
+          + `${esc(t.burps)}: ${b.burpovi} ${esc(sablon(t.of_possible, Math.max(dZr+1,1)))}`;
+        if (lenta) lenta.style.width = stegni(b.denoviZreenje/KONFIG.ZREENJE_MIN*100,0,100)+'%';
+
+        // Влажност во теглата и тековната оценка.
+        const rh = Math.round(b.teglaRh||60);
+        const rhBoja = rh > KONFIG.TEGLA_RH_MUVLA ? '#ef4444'
+                     : rh > KONFIG.TEGLA_RH_IDEAL_MAX ? '#f59e0b'
+                     : rh >= KONFIG.TEGLA_RH_IDEAL_MIN ? '#22c55e'
+                     : rh >= KONFIG.TEGLA_RH_SUVO ? '#60a5fa' : '#a78bfa';
+        const rhStatus = rh > KONFIG.TEGLA_RH_MUVLA ? t.jar_danger
+                       : rh > KONFIG.TEGLA_RH_IDEAL_MAX ? t.jar_high
+                       : rh >= KONFIG.TEGLA_RH_IDEAL_MIN ? t.jar_ideal
+                       : rh >= KONFIG.TEGLA_RH_SUVO ? t.jar_low : t.jar_dry;
+        const red = kart.querySelector('.tegla-red');
+        if (red){
+          const b2 = red.querySelector('b'); const zica = red.querySelector('.zica>i');
+          const oz = red.querySelector('.ocenka');
+          if (b2){ b2.textContent = rh+'% · '+rhStatus; b2.style.color = rhBoja; }
+          if (zica){ zica.style.width = stegni(rh,0,100)+'%'; zica.style.background = rhBoja; }
+          if (oz){ const o=ocenkaZa(kv); oz.textContent=o.kluc; oz.style.background=bojaOcenka(o.kluc); }
+        }
+      }
+    });
+    return;
+  }
+  if (j==='achievements'){
+    const el = document.getElementById('st-playtime');
+    if (el) el.textContent = fmtVreme(s.statistika.sekundiIgrano);
+  }
+}
+
+function iscrtajSe(prisilno){
+  osveziHud();
+  osveziNav();
+  const paneli = { grow:panelGrow, drying:panelSusenje, curing:panelZreenje,
+    genetics:panelGenetika, market:panelPazar, staff:panelPersonal,
+    achievements:panelDostignuvanja, prestige:panelPrestiz, guide:panelVodic };
+  const potpis = strukturenPotpis();
+  if (prisilno || potpis !== posledenPotpis){
+    posledenPotpis = potpis;
+    const fn = paneli[s.aktivnoJazice] || panelGrow;
+    document.getElementById('glavno').innerHTML = fn();
+  } else {
+    azurirajVoMesto();
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   8. ЗАЧУВУВАЊЕ
+   ═══════════════════════════════════════════════════════════════ */
+function zachuvaj(){
+  try{
+    const kopija = {...s, tutorial:false, aktivenNastan:null};
+    localStorage.setItem(KONFIG.KLUC_SEJV, JSON.stringify({s:kopija, sledenId}));
+  }catch(e){}
+}
+function broj(v, def, min, max){
+  return Number.isFinite(Number(v)) ? stegni(Number(v), min, max) : def;
+}
+function vchitaj(){
+  let surovo;
+  try{ surovo = localStorage.getItem(KONFIG.KLUC_SEJV); }catch(e){ return false; }
+  if (!surovo) return false;
+  let paket;
+  try{ paket = JSON.parse(surovo); }catch(e){ return false; }
+  const z = paket && paket.s;
+  if (!z || typeof z!=='object' || z.verzija!==KONFIG.VERZIJA) return false;
+
+  const svez = novaIgra();
+  s = svez;
+  s.jazik = z.jazik==='en' ? 'en' : 'mk';
+  s.zvuk = z.zvuk!==false;
+  s.aktivnoJazice = JAZICINJA.some(j=>j.id===z.aktivnoJazice) ? z.aktivnoJazice : 'grow';
+  s.aktivnaSoba = SOBI.some(r=>r.id===z.aktivnaSoba) ? z.aktivnaSoba : 'starter';
+  s.pari = broj(z.pari, KONFIG.POCETNI_PARI, 0, 1e12);
+  s.xp = broj(z.xp, 0, 0, 1e12);
+  s.nivo = Math.floor(broj(z.nivo, 1, 1, 999));
+  s.prestiz = Math.floor(broj(z.prestiz, 0, 0, 1e6));
+  s.den = Math.floor(broj(z.den, 1, 1, 1e9));
+  s.sekVoDen = broj(z.sekVoDen, 0, 0, KONFIG.DEN_SEK);
+  for (const r of SOBI){
+    const zr = z.sobi && z.sobi[r.id];
+    s.sobi[r.id] = { otklucena: r.id==='starter' ? true : !!(zr&&zr.otklucena),
+      lampa: Math.floor(broj(zr&&zr.lampa, 0, 0, LAMBI.length-1)) };
+  }
+  // Хибриди: провери структура; имињата се екранизираат при цртање (esc)
+  s.hibridi = Array.isArray(z.hibridi) ? z.hibridi.filter(h =>
+    h && typeof h.id==='string' && Number.isFinite(h.cena) && Number.isFinite(h.prinos)
+    && Number.isFinite(h.growSec)).map(h => ({
+      id:h.id, imeMk:String(h.imeMk||'?'), imeEn:String(h.imeEn||'?'),
+      tier:Math.floor(broj(h.tier,1,1,5)), growSec:broj(h.growSec,60,20,600),
+      prinos:Math.floor(broj(h.prinos,1,1,99)), cena:Math.floor(broj(h.cena,1,1,999)),
+      nivo:Math.floor(broj(h.nivo,1,1,99)), sjaj:/^#[0-9a-fA-F]{6}$/.test(h.sjaj)?h.sjaj:'#c084fc',
+      hibrid:true })) : [];
+  s.otkrieni = Array.isArray(z.otkrieni) ? z.otkrieni.filter(id=>siteSorti().some(x=>x.id===id)) : [];
+  s.rastenija = Array.isArray(z.rastenija) ? z.rastenija.filter(p =>
+    p && siteSorti().some(x=>x.id===p.sorta) && SOBI.some(r=>r.id===p.soba)).map(p=>({
+      id:Math.floor(broj(p.id,1,1,1e9)), soba:p.soba, sorta:p.sorta,
+      voda:broj(p.voda,100,0,100), hrana:broj(p.hrana,100,0,100),
+      zdravje:broj(p.zdravje,100,0,100), napredok:broj(p.napredok,0,0,1), plovki:[] })) : [];
+  s.sledenRastenieId = Math.max(Math.floor(broj(z.sledenRastenieId,1,1,1e9)),
+    ...s.rastenija.map(p=>p.id+1), 1);
+  s.susara = Array.isArray(z.susara) ? z.susara.filter(b =>
+    b && siteSorti().some(x=>x.id===b.sorta)).map(b=>({
+      id:Math.floor(broj(b.id,1,1,1e9)), sorta:b.sorta,
+      parcinja:Math.floor(broj(b.parcinja,1,1,9999)),
+      faza:b.faza==='zreenje'?'zreenje':'sushenje',
+      denovi:broj(b.denovi,0,0,1e4), vlaga:broj(b.vlaga,KONFIG.VLAGA_START,KONFIG.VLAGA_MIN,KONFIG.VLAGA_START),
+      potkrateno:!!b.potkrateno, vrtenja:Math.floor(broj(b.vrtenja,0,0,999)),
+      trebaVrtenje:!!b.trebaVrtenje, vrtenjeRok:broj(b.vrtenjeRok,0,0,1e4),
+      sledenoVrtenje:broj(b.sledenoVrtenje,KONFIG.VRTENJE_INTERVAL,0,1e4),
+      muvla:!!b.muvla, imalaMuvla:!!b.imalaMuvla, zaguba:broj(b.zaguba,0,0,.6),
+      vlazenDen:!!b.vlazenDen, tochnost:broj(b.tochnost,0,0,1),
+      denoviZreenje:broj(b.denoviZreenje,0,0,1e4),
+      burpovi:Math.floor(broj(b.burpovi,0,0,999)), burpDostapen:!!b.burpDostapen,
+      klimaZbir:broj(b.klimaZbir,0,0,1e5), klimaDenovi:broj(b.klimaDenovi,0,0,1e5),
+      teglaRh:broj(b.teglaRh,0,0,100),
+      teglaDobri:Math.floor(broj(b.teglaDobri,0,0,1e4)),
+      teglaLosi:Math.floor(broj(b.teglaLosi,0,0,1e4)),
+      zdravjeBerba:broj(b.zdravjeBerba,100,0,100) })) : [];
+  sledenId = Math.max(Math.floor(broj(paket.sledenId,1,1,1e9)), ...s.susara.map(b=>b.id+1), 1);
+  s.zaliha = {};
+  if (z.zaliha) for (const [id,n] of Object.entries(z.zaliha))
+    if (siteSorti().some(x=>x.id===id) && Number.isFinite(n) && n>0)
+      s.zaliha[id] = Math.floor(stegni(n,0,1e9));
+  s.kvalitet = {};
+  if (z.kvalitet) for (const [id,v] of Object.entries(z.kvalitet))
+    if (siteSorti().some(x=>x.id===id) && v && Number.isFinite(v.n) && Number.isFinite(v.zbir) && v.n>0)
+      s.kvalitet[id] = { n: stegni(v.n,0,1e9), zbir: stegni(v.zbir,0,1e11) };
+  {
+    const k = z.susilnica || {};
+    s.susilnica = {
+      opremaTier: Math.floor(broj(k.opremaTier, 0, 0, OPREMA.length-1)),
+      celTemp: broj(k.celTemp, 19, KONFIG.TEMP_MIN, KONFIG.TEMP_MAX),
+      celRh:   broj(k.celRh,   58, KONFIG.RH_MIN,   KONFIG.RH_MAX),
+      temp:    broj(k.temp,    19, KONFIG.TEMP_MIN-4, KONFIG.TEMP_MAX+4),
+      rh:      broj(k.rh,      58, KONFIG.RH_MIN-8,   KONFIG.RH_MAX+8),
+    };
+  }
+  for (const def of PERSONAL) s.personal[def.kluc] = !!(z.personal && z.personal[def.kluc]);
+  s.dostignuvanja = Array.isArray(z.dostignuvanja)
+    ? z.dostignuvanja.filter(id=>DOSTIGNUVANJA.some(a=>a.id===id)) : [];
+  s.naracki = Array.isArray(z.naracki) ? z.naracki.filter(n =>
+    n && siteSorti().some(x=>x.id===n.sorta) && Number.isFinite(n.kolku) && Number.isFinite(n.pari)).map(n=>({
+      id:Math.floor(broj(n.id,1,1,1e9)), sorta:n.sorta, kolku:Math.floor(stegni(n.kolku,1,999)),
+      pari:Math.floor(stegni(n.pari,0,1e9)), xp:Math.floor(broj(n.xp,0,0,1e6)),
+      istekuvaDen:Math.floor(broj(n.istekuvaDen,s.den+1,1,1e9)) })) : [];
+  s.slednaNarackaId = Math.max(Math.floor(broj(z.slednaNarackaId,1,1,1e9)), ...s.naracki.map(n=>n.id+1), 1);
+  if (z.dnevno) for (const k of Object.keys(s.dnevno)) s.dnevno[k] = broj(z.dnevno[k],0,0,1e9);
+  s.predizvici = Array.isArray(z.predizvici) ? z.predizvici.filter(c =>
+    c && PREDIZVICI_BAZEN.some(p=>p.id===c.id) && Number.isFinite(c.cel)).map(c=>({
+      id:c.id, kluc:String(c.kluc||''), cel:Math.floor(stegni(c.cel,1,1e6)),
+      pari:Math.floor(broj(c.pari,0,0,1e6)), xp:Math.floor(broj(c.xp,0,0,1e6)),
+      mk:String(c.mk||''), en:String(c.en||''), gotov:!!c.gotov, naplaten:!!c.naplaten })) : [];
+  if (z.statistika) for (const k of Object.keys(s.statistika)){
+    if (k==='berbiPoSorta'){
+      s.statistika.berbiPoSorta = {};
+      if (z.statistika.berbiPoSorta)
+        for (const [id,n] of Object.entries(z.statistika.berbiPoSorta))
+          if (siteSorti().some(x=>x.id===id) && Number.isFinite(n))
+            s.statistika.berbiPoSorta[id] = Math.floor(stegni(n,0,1e9));
+    } else s.statistika[k] = broj(z.statistika[k], 0, 0, 1e12);
+  }
+  s.tutorial = false;
+  prikazPari = s.pari; prikazXp = s.xp;
+  return true;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   9. СТАРТ
+   ═══════════════════════════════════════════════════════════════ */
+document.getElementById('jaz-mk').addEventListener('click', ()=>{ s.jazik='mk'; sfx('click'); iscrtajSe(true); });
+document.getElementById('jaz-en').addEventListener('click', ()=>{ s.jazik='en'; sfx('click'); iscrtajSe(true); });
+document.getElementById('k-zvuk').addEventListener('click', ()=>{ s.zvuk=!s.zvuk; sfx('click'); osveziHud(); });
+document.getElementById('k-tutorial').addEventListener('click', ()=>{ s.tutorial=true; tutorial(0); });
+document.getElementById('pokrivka').addEventListener('click', e=>{
+  if (e.target.id==='pokrivka' && !e.currentTarget.dataset.fiksno) zatvoriModal();
+});
+document.addEventListener('keydown', e=>{
+  const p = document.getElementById('pokrivka');
+  if (e.key==='Escape' && p.classList.contains('otvorena') && !p.dataset.fiksno) zatvoriModal();
+});
+window.addEventListener('beforeunload', zachuvaj);
+
+const imaSejv = vchitaj();
+if (!imaSejv) novPredizvikDen();
+iscrtajSe(true);
+if (!imaSejv && s.tutorial) tutorial(0);
+
+setInterval(tikni, 1000);
+// мека анимација на бројачите за пари и XP
+(function tvin(){
+  let mrdna = false;
+  if (Math.abs(prikazPari-s.pari)>0.5){ prikazPari += (s.pari-prikazPari)*0.18; mrdna=true; }
+  else if (prikazPari!==s.pari){ prikazPari = s.pari; mrdna=true; }
+  if (Math.abs(prikazXp-s.xp)>0.5){ prikazXp += (s.xp-prikazXp)*0.18; mrdna=true; }
+  else if (prikazXp!==s.xp){ prikazXp = s.xp; mrdna=true; }
+  if (mrdna) osveziHud();
+  requestAnimationFrame(tvin);
+})();
+
+/* Кука за автоматска проверка. */
+window.__test = {
+  daj: ()=>s,
+  tikni, brzoNapred(n){ for(let i=0;i<n;i++) tikni(); },
+  zasadi, polej, nahrani, oberi, otvoriIzborTrim,
+  zavrtiGranki, provetri, otstraniMuvla, spakuvaj, burpni, zavrsiZreenje,
+  vkrsti, izberiZaVkrstuvanje, prodaj, prodajSe, ispolniNaracka,
+  kvalitetSerija, ocenkaZa, kvalitetZaliha, klimaOcena, brzinaSusenje,
+  nadgradiOprema, postaviKlima,
+  vraboti, otklucSoba, nadgradiLampa, prerodiSe, resiNastan,
+  zachuvaj, vchitaj, novaIgra,
+  resetiraj(){ s = novaIgra(); s.tutorial=false; sledenId=1; izborVkrstuvanje=[];
+    prikazPari=s.pari; prikazXp=s.xp; personalAkumulator={}; novPredizvikDen();
+    zatvoriModal(); iscrtajSe(true); }
+};
+</script>
+</body>
+</html>

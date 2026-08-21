@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Block Shooter — Red vs Blue</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <!--
+    Three.js is loaded via an import map. By default it comes from a CDN
+    (needs internet the first time the page loads). To play fully offline,
+    download it once and repoint the map at the local copy:
+        mkdir -p vendor
+        curl -L -o vendor/three.module.js \
+          https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js
+    then change the URL below to "./vendor/three.module.js".
+  -->
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+
+  <!-- HUD -->
+  <div id="hud">
+    <div id="crosshair">
+      <span class="ch h"></span>
+      <span class="ch v"></span>
+    </div>
+
+    <!-- Top scorebar -->
+    <div id="scorebar">
+      <div class="team red">
+        <span class="label">RED</span>
+        <span id="scoreRed" class="num">0</span>
+        <div class="bar"><div id="scoreRedBar" class="fill red"></div></div>
+      </div>
+      <div class="vs">first to 25</div>
+      <div class="team blue">
+        <div class="bar"><div id="scoreBlueBar" class="fill blue"></div></div>
+        <span id="scoreBlue" class="num">0</span>
+        <span class="label">BLUE</span>
+      </div>
+    </div>
+
+    <!-- Kill feed -->
+    <div id="killfeed"></div>
+
+    <!-- Bottom-left: health -->
+    <div id="healthWrap">
+      <div class="hlabel">HP</div>
+      <div class="hbar"><div id="healthFill"></div></div>
+      <div id="healthText">100</div>
+    </div>
+
+    <!-- Bottom-right: selected block -->
+    <div id="blockWrap">
+      <div id="blockSwatch"></div>
+      <div class="binfo">
+        <div id="blockName">White</div>
+        <div class="bhint">wheel / 1-9 to change</div>
+      </div>
+    </div>
+
+    <!-- Controls hint -->
+    <div id="controls">
+      <b>WASD</b> move · <b>Space</b> jump · <b>Shift</b> sprint · <b>Mouse</b> look<br />
+      <b>L-Click</b> shoot · <b>R-Click</b> place block · <b>Mid-Click / G</b> destroy · <b>Tab</b> scores
+    </div>
+  </div>
+
+  <!-- Overlays -->
+  <div id="respawn" class="overlay"><div class="rbox">Respawning in <span id="respawnText">3</span>…</div></div>
+
+  <div id="scoreboard"><div id="sbBody"></div></div>
+
+  <div id="start" class="overlay big">
+    <div class="panel">
+      <h1>BLOCK&nbsp;SHOOTER</h1>
+      <p class="sub"><span class="rc">RED</span> vs <span class="bc">BLUE</span> — build cover, break theirs, win the firefight.</p>
+      <div class="keys">
+        <div><b>WASD</b> Move</div><div><b>Space</b> Jump</div><div><b>Shift</b> Sprint</div>
+        <div><b>Left Click</b> Shoot</div><div><b>Right Click</b> Place block</div><div><b>Mid Click / G</b> Destroy block</div>
+        <div><b>Wheel / 1-9</b> Pick block</div><div><b>Tab</b> Scoreboard</div><div><b>Esc</b> Pause</div>
+      </div>
+      <div class="play">▶ Click to play</div>
+    </div>
+  </div>
+
+  <div id="win" class="overlay big">
+    <div class="panel">
+      <h1 id="winText">BLUE TEAM WINS</h1>
+      <p id="winSub" class="sub">Click to play again</p>
+    </div>
+  </div>
+
+  <div id="loaderr" class="overlay">
+    <div class="panel">
+      <h1 style="font-size:34px;color:#ef476f">Couldn't load the game engine</h1>
+      <p class="sub">Three.js failed to load from the CDN. Check your internet
+      connection and reload — or run fully offline by vendoring Three.js
+      locally (see the <b>Offline play</b> section of the README).</p>
+    </div>
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+  <script>
+    // Safety net: if the ES module (or its Three.js import) never runs,
+    // window.__game stays undefined — surface a helpful message.
+    setTimeout(function () {
+      if (!window.__game) {
+        var el = document.getElementById('loaderr');
+        if (el) el.style.display = 'flex';
+      }
+    }, 6000);
+  </script>
+</body>
+</html>
