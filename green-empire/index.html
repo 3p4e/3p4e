@@ -956,6 +956,18 @@ function klimaOcena(){
   return stegni(1 - (dT*0.55 + dR*0.45), 0, 1);
 }
 
+// Множител на ризикот од мувла според воздухот во сушарата:
+// на идеални 58 % е ×1, суво го гуши до ×0.35, влажно го крева до ×2.6.
+function riziciMuvla(){
+  const k = s.susilnica; if (!k) return 1;
+  const d = (k.rh - KONFIG.RH_IDEAL_MAX) / 12;
+  if (k.rh <= KONFIG.RH_IDEAL_MIN) {
+    const suvo = (KONFIG.RH_IDEAL_MIN - k.rh) / 20;
+    return stegni(1 - suvo*0.65, 0.35, 1);
+  }
+  return stegni(1 + Math.max(0, d)*0.8, 1, 2.6);
+}
+
 // Топло/суво суши побрзо, ладно/влажно побавно.
 function brzinaSusenje(){
   const k = s.susilnica; if (!k) return 1;
@@ -1422,10 +1434,15 @@ function tikni(){
       }
       if (b.trebaVrtenje && b.denovi > b.vrtenjeRok) b.trebaVrtenje=false;
       if (novDen){
-        if (!b.vlazenDen && Math.random()<KONFIG.VLAZEN_SANSA_DEN){
+        // Подобрата опрема ги проредува и влажните денови.
+        if (!b.vlazenDen &&
+            Math.random() < KONFIG.VLAZEN_SANSA_DEN*(1-opremaSusara().stabilnost*0.7)*riziciMuvla()){
           b.vlazenDen=true; poraka(T().t_humid, true);
         }
-        if (!b.muvla && b.vlaga>KONFIG.MUVLA_PRAG && Math.random()<KONFIG.MUVLA_SANSA_DEN){
+        // Ризикот од мувла зависи од собата: сува и проветрена сушара го гуши,
+        // влажната го умножува. Инаку климата немаше да значи ништо за загубите.
+        if (!b.muvla && b.vlaga>KONFIG.MUVLA_PRAG
+            && Math.random() < KONFIG.MUVLA_SANSA_DEN*riziciMuvla()){
           b.muvla=true; b.imalaMuvla=true; poraka(T().t_mold, true);
         }
       }
