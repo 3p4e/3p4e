@@ -1,0 +1,11 @@
+{
+  "name": "block-shooter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A block-world team shooter (Red vs Blue) — build cover, destroy blocks, and fight the enemy team in the browser.",
+  "type": "module",
+  "scripts": {
+    "start": "node serve.mjs",
+    "serve": "node serve.mjs"
+  }
+}
