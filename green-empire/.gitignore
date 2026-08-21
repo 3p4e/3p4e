@@ -1,3 +1,5 @@
 # Multi-MB raw generations; assets/art.js is the built bundle that ships.
 assets/raw/
+# Generated single-file builds (node assets/bundle.mjs).
+dist/
 node_modules/

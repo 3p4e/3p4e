@@ -13,6 +13,15 @@ framework). `assets/art.js` adds generated artwork on top of it.
 python3 -m http.server 8080     # then open http://localhost:8080/
 ```
 
+To get a single self-contained file instead (artwork inlined, no sibling
+files needed):
+
+```bash
+node assets/bundle.mjs          # writes dist/green-empire.html
+```
+
+`dist/` is generated and not committed — rebuild it with the command above.
+
 ## The plant art
 
 The centrepiece is the cultivation view, where a plant **visibly grows from
