@@ -61,6 +61,16 @@ else
   echo "code-server not found on PATH — skipping extensions"
 fi
 
+log "Ollama endpoint (Docker-network URL, when reachable)"
+OLLAMA_URL="http://ollama-bm3e-ollama-1:11434"
+if curl -sf -m 3 "$OLLAMA_URL/api/version" >/dev/null 2>&1; then
+  grep -q OLLAMA_HOST "$HOME/.bashrc" 2>/dev/null || \
+    echo "export OLLAMA_HOST=$OLLAMA_URL" >> "$HOME/.bashrc"
+  echo "OLLAMA_HOST=$OLLAMA_URL added to ~/.bashrc"
+else
+  echo "Ollama not reachable from this machine — skipping OLLAMA_HOST"
+fi
+
 log "Done"
 cat <<'EOF'
 
