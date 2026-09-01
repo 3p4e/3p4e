@@ -47,6 +47,46 @@
 | **firebase** | Platform | Firebase services |
 | **time** | Utility | Timezone-aware time operations |
 
+## Agency Agents Pack (258 agents)
+
+Installed via [`msitarzewski/agency-agents`](https://github.com/msitarzewski/agency-agents) — a community roster of specialized AI agent personas, added to the Claude Code agent directory alongside the 6 project-specific agents above.
+
+```bash
+git clone https://github.com/msitarzewski/agency-agents.git
+cd agency-agents
+./scripts/install.sh --tool claude-code
+```
+
+### Divisions
+
+| Division | Agents | Division | Agents |
+|----------|-------:|----------|-------:|
+| Engineering | 59 | Specialized | 58 |
+| Marketing | 36 | GIS | 13 |
+| Security | 12 | Design | 10 |
+| Sales | 9 | Testing | 9 |
+| Paid Media | 7 | Project Management | 7 |
+| Academic | 6 | Game Development | 6 |
+| Spatial Computing | 6 | Support | 6 |
+| Finance | 5 | Product | 5 |
+| Healthcare | 3 | Research | 1 |
+
+Activate any agent in a Claude Code session with a prompt like *"Hey Claude, activate Frontend Developer mode and help me build a React component."*
+
+## OpenMontage (agentic video production)
+
+Installed via [`calesthio/OpenMontage`](https://github.com/calesthio/OpenMontage) — an open-source, agentic video production system driven directly from AI coding assistants (Claude Code, Cursor, Copilot, Windsurf, Codex). It orchestrates research, scripting, asset generation, editing, and rendering through pipeline-driven skills, using free/local tools (Piper TTS, FFmpeg, Remotion/HyperFrames, Archive.org/NASA/Wikimedia footage) by default, with 60+ optional cloud provider integrations for paid generation.
+
+```bash
+git clone https://github.com/calesthio/OpenMontage.git
+cd OpenMontage
+make setup
+```
+
+Prerequisites: Python 3.10+, FFmpeg, Node.js 18+. API keys for cloud image/video/voice/music providers are optional and go in `.env` (see `.env.example`).
+
+Usage is prompt-driven from the coding assistant, e.g. *"Make a 60-second animated explainer about how neural networks learn."* Pipelines cover explainers, cinematic trailers, documentary montages, talking-head, avatar spokesperson, screen demos, localization/dub, and more — each following `research → proposal → script → scene_plan → assets → edit → compose`.
+
 ## Skills Inventory (49 skills)
 
 ### Kilo Global (46)
