@@ -47,6 +47,32 @@
 | **firebase** | Platform | Firebase services |
 | **time** | Utility | Timezone-aware time operations |
 
+## Agency Agents Pack (258 agents)
+
+Installed via [`msitarzewski/agency-agents`](https://github.com/msitarzewski/agency-agents) — a community roster of specialized AI agent personas, added to the Claude Code agent directory alongside the 6 project-specific agents above.
+
+```bash
+git clone https://github.com/msitarzewski/agency-agents.git
+cd agency-agents
+./scripts/install.sh --tool claude-code
+```
+
+### Divisions
+
+| Division | Agents | Division | Agents |
+|----------|-------:|----------|-------:|
+| Engineering | 59 | Specialized | 58 |
+| Marketing | 36 | GIS | 13 |
+| Security | 12 | Design | 10 |
+| Sales | 9 | Testing | 9 |
+| Paid Media | 7 | Project Management | 7 |
+| Academic | 6 | Game Development | 6 |
+| Spatial Computing | 6 | Support | 6 |
+| Finance | 5 | Product | 5 |
+| Healthcare | 3 | Research | 1 |
+
+Activate any agent in a Claude Code session with a prompt like *"Hey Claude, activate Frontend Developer mode and help me build a React component."*
+
 ## Skills Inventory (49 skills)
 
 ### Kilo Global (46)
