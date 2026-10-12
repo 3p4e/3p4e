@@ -12,9 +12,9 @@ PREFIX = {  # inline style tags; this model reads plain-English instructions alo
 def tts(text, voice, role):
     import time
     last = None
-    for rnd in range(6):
+    for rnd in range(2):
         if rnd:
-            time.sleep(20 * rnd)
+            time.sleep(30)
         try:
             return _tts(text, voice, role)
         except RuntimeError as e:
@@ -72,7 +72,7 @@ def render(fn, text, voice, role):
     os.remove(tmp)
     return model
 
-def take(fn, text, voice, role, tries=5):
+def take(fn, text, voice, role, tries=3):
     """Render and verify; accept a take only if the words match and the pace is natural."""
     n = max(len(words(text)), 1)
     best = (-9, None, None, None)
