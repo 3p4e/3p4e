@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="mk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abracadabra — Мени</title>
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<style>
+  :root {
+    --red: #e5262b; --orange: #f39a1e; --lime: #a8d82c; --yellow: #f5e31b;
+    --magenta: #ff2fb3; --green: #3fbf5a; --brown: #8a4b2a;
+    --bg: #0c0a16; --panel: rgba(20, 17, 36, .78); --text: #fff8ec; --muted: #c9c2d8;
+    --accent: var(--orange); --glow: rgba(243, 154, 30, .35);
+    --fs: 40px;                       /* item text size; auto-shrinks to fit */
+  }
+  body.night { --accent: var(--magenta); --glow: rgba(255, 47, 179, .45); --bg: #07050d; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 100%; height: 100%; overflow: hidden; background: #000; cursor: none; }
+  body { font-family: "Rubik", system-ui, sans-serif; color: var(--text); }
+
+  /* 1920x1080 stage, scaled to whatever the TV reports */
+  #stage { position: absolute; left: 50%; top: 50%; width: 1920px; height: 1080px;
+    transform-origin: center center; background: var(--bg); overflow: hidden; }
+  #bg { position: absolute; inset: 0; }
+  .glow { position: absolute; border-radius: 50%; filter: blur(120px); opacity: .55; }
+  .glow.a { width: 900px; height: 900px; left: -300px; top: -350px; background: var(--red); opacity: .22; }
+  .glow.b { width: 800px; height: 800px; right: -250px; bottom: -350px; background: var(--accent); opacity: .25; }
+  body.night .glow.a { background: var(--magenta); opacity: .18; }
+
+  header { position: absolute; left: 60px; right: 60px; top: 28px; height: 130px;
+    display: flex; align-items: center; gap: 28px; }
+  header img { height: 130px; width: 130px; object-fit: contain; filter: drop-shadow(0 0 18px var(--glow)); }
+  .wordmark { font-family: "Russo One", sans-serif; font-size: 104px; letter-spacing: 6px; line-height: 1;
+    background: linear-gradient(95deg, var(--red) 0%, var(--orange) 55%, var(--yellow) 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    filter: drop-shadow(0 4px 0 rgba(0,0,0,.45)); }
+  body.night .wordmark { background: none; color: #ffd6f2;
+    text-shadow: 0 0 10px var(--magenta), 0 0 28px var(--magenta), 0 0 60px rgba(255,47,179,.6); filter: none; }
+  .tag { margin-left: auto; text-align: right; font-family: "Russo One"; font-size: 34px; color: var(--muted); }
+  .tag b { display: block; font-size: 44px; color: var(--yellow); }
+  body.night .tag b { color: #ff9ee0; }
+
+  main { position: absolute; left: 60px; top: 182px; bottom: 96px; width: 1210px; display: flex; gap: 34px; }
+  main .col { flex: 1; min-width: 0; }
+  .cat { background: var(--panel); border-radius: 22px; margin-bottom: 26px;
+    overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,.35); border: 1px solid rgba(255,255,255,.06); }
+  .cat h2 { font-family: "Russo One"; font-weight: 400; font-size: calc(var(--fs) * 1.05);
+    padding: 12px 26px 10px; color: #1a1020; display: flex; align-items: baseline; gap: 14px;
+    clip-path: polygon(0 0, 100% 0, 97% 100%, 0 100%); }
+  .cat h2 small { font-size: .62em; opacity: .8; }
+  .cat h2 .cur { margin-left: auto; margin-right: 34px; font-family: "Rubik"; font-weight: 700; font-size: .6em; opacity: .75; }
+  .cat ul { list-style: none; padding: 10px 26px 14px; }
+  .cat li { display: flex; align-items: baseline; gap: 12px; font-size: var(--fs); font-weight: 500;
+    padding: calc(var(--fs) * .16) 0; }
+  .cat li .n { white-space: nowrap; }
+  body.wrap .cat li .n { white-space: normal; line-height: 1.1; }
+  .cat li .dots { flex: 1; border-bottom: 3px dotted rgba(255,255,255,.18); transform: translateY(-.25em); min-width: 20px; }
+  .cat li .p { font-family: "Russo One"; color: var(--yellow); font-size: calc(var(--fs) * 1.08); }
+  .cat li .p small { font-family: "Rubik"; font-size: .5em; color: var(--muted); margin-left: 4px; }
+  .badge { font-family: "Russo One"; font-size: calc(var(--fs) * .42); padding: 3px 10px 2px; border-radius: 30px;
+    color: #1a1020; background: var(--yellow); transform: translateY(-.35em); flex: none; }
+  .badge.ХИТ { background: linear-gradient(90deg, var(--red), var(--orange)); color: #fff; }
+  .badge.НОВО { background: var(--lime); }
+  .badge.ВЕГЕ { background: var(--green); color: #fff; }
+
+  .filler { display: flex; align-items: center; justify-content: center; gap: 26px; border-radius: 22px;
+    border: 2px dashed rgba(255,255,255,.12); padding: 18px; color: var(--muted); font-family: "Russo One"; }
+  .filler img { height: 100%; max-height: 210px; aspect-ratio: 1; animation: spin 30s linear infinite; }
+  .filler div { font-size: 34px; line-height: 1.15; }
+  .filler b { display: block; color: var(--yellow); font-weight: 400; font-size: 44px; }
+  body.night .filler b { color: #ff9ee0; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .c-red h2 { background: var(--red); color: #fff; } .c-orange h2 { background: var(--orange); }
+  .c-lime h2 { background: var(--lime); } .c-yellow h2 { background: var(--yellow); }
+  .c-magenta h2 { background: var(--magenta); color: #fff; } .c-green h2 { background: var(--green); color: #fff; }
+  .c-brown h2 { background: var(--brown); color: #fff; }
+
+  /* Featured / promo panel */
+  aside { position: absolute; right: 60px; top: 182px; bottom: 96px; width: 560px; border-radius: 30px;
+    background: radial-gradient(circle at 50% 38%, rgba(255,255,255,.10), rgba(255,255,255,0) 60%), var(--panel);
+    border: 2px solid rgba(255,255,255,.08); overflow: hidden; box-shadow: 0 0 60px var(--glow); }
+  aside { display: flex; flex-direction: column; align-items: center; padding: 22px 30px 34px; }
+  .mwrap { flex: 1; min-height: 0; width: 100%; display: flex; align-items: center; justify-content: center; }
+  #mascot { max-width: 92%; max-height: 100%; object-fit: contain;
+    animation: bob 3.2s ease-in-out infinite; filter: drop-shadow(0 18px 24px rgba(0,0,0,.5)); }
+  @keyframes bob { 0%,100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-14px) rotate(2deg); } }
+  .promo { width: 100%; text-align: center; transition: opacity .6s, transform .6s; min-height: 330px;
+    display: flex; flex-direction: column; justify-content: flex-end; }
+  .promo.out { opacity: 0; transform: translateY(30px); }
+  .promo .kicker { font-family: "Russo One"; font-size: 26px; letter-spacing: 3px; color: var(--accent); }
+  .promo h3 { font-family: "Russo One"; font-weight: 400; font-size: 54px; line-height: 1.05; margin: 8px 0 6px; }
+  .promo p { font-size: 28px; color: var(--muted); }
+  .promo .price { align-self: center; display: inline-block; margin-top: 16px; font-family: "Russo One"; font-size: 92px; color: #1a1020;
+    background: var(--yellow); padding: 4px 34px 0; border-radius: 22px; transform: rotate(-3deg);
+    box-shadow: 0 8px 0 rgba(0,0,0,.35); }
+  body.night .promo .price { background: var(--magenta); color: #fff; box-shadow: 0 0 34px var(--magenta); }
+  .promo .price small { font-size: .38em; margin-left: 6px; }
+
+  footer { position: absolute; left: 0; right: 0; bottom: 0; height: 72px; background: rgba(0,0,0,.55);
+    border-top: 3px solid var(--accent); overflow: hidden; display: flex; align-items: center; }
+  .ticker { white-space: nowrap; font-family: "Russo One"; font-size: 34px; color: var(--text);
+    animation: tick 40s linear infinite; padding-left: 100%; }
+  .ticker span { color: var(--accent); margin: 0 26px; }
+  @keyframes tick { from { transform: translateX(0); } to { transform: translateX(-100%); } }
+</style>
+</head>
+<body>
+<div id="stage">
+  <canvas id="bg"></canvas>
+  <div class="glow a"></div><div class="glow b"></div>
+  <header>
+    <img src="assets/logo.png" alt="" onerror="this.style.display='none'">
+    <div class="wordmark">ABRACADABRA</div>
+    <div class="tag" id="tag"></div>
+  </header>
+  <main id="menu"></main>
+  <aside>
+    <div class="mwrap"><img id="mascot" src="assets/mascot_day.png" alt=""></div>
+    <div class="promo" id="promo"></div>
+  </aside>
+  <footer><div class="ticker" id="ticker"></div></footer>
+</div>
+
+<script src="menu-data.js"></script>
+<script>
+(function () {
+  const q = new URLSearchParams(location.search);
+  const SCREEN = q.get("screen") === "2" ? 2 : 1;
+  const stage = document.getElementById("stage");
+
+  // ---------- scale the 1920x1080 stage to the display ----------
+  function fitStage() {
+    const s = Math.min(innerWidth / 1920, innerHeight / 1080);
+    stage.style.transform = `translate(-50%, -50%) scale(${s})`;
+  }
+  addEventListener("resize", fitStage); fitStage();
+
+  // ---------- data: built-in file, admin override on this device, or Google Sheet ----------
+  let DATA = window.MENU_DATA;
+  try {
+    const o = localStorage.getItem("abra_menu_override");
+    if (o) DATA = JSON.parse(o);
+  } catch (e) {}
+
+  function parseCSV(text) {
+    const rows = []; let row = [], cell = "", q = false;
+    for (let i = 0; i < text.length; i++) {
+      const c = text[i];
+      if (q) { if (c === '"') { if (text[i + 1] === '"') { cell += '"'; i++; } else q = false; } else cell += c; }
+      else if (c === '"') q = true;
+      else if (c === ",") { row.push(cell); cell = ""; }
+      else if (c === "\n" || c === "\r") { if (c === "\r" && text[i + 1] === "\n") i++; row.push(cell); rows.push(row); row = []; cell = ""; }
+      else cell += c;
+    }
+    if (cell || row.length) { row.push(cell); rows.push(row); }
+    return rows.filter(r => r.some(x => x.trim() !== ""));
+  }
+
+  // Sheet columns: category | name | price | available | badge
+  function applySheet(base, rows) {
+    const head = rows.shift().map(h => h.trim().toLowerCase());
+    const col = n => head.indexOf(n);
+    const cats = base.categories.map(c => ({ ...c, items: [] }));
+    for (const r of rows) {
+      const catKey = (r[col("category")] || "").trim();
+      let cat = cats.find(c => c.id === catKey || c.name.toLowerCase() === catKey.toLowerCase());
+      if (!cat) { cat = { id: catKey, name: catKey, screen: SCREEN, color: "orange", note: "", items: [] }; cats.push(cat); }
+      const pr = (r[col("price")] || "").replace(/[^\d.]/g, "");
+      const av = (r[col("available")] || "").trim().toLowerCase();
+      cat.items.push({ name: (r[col("name")] || "").trim(), price: pr ? Number(pr) : null,
+        available: !["no", "не", "false", "0", "x"].includes(av), badge: (r[col("badge")] || "").trim() });
+    }
+    return { ...base, categories: cats };
+  }
+
+  async function loadSheet() {
+    if (!DATA.sheetCsvUrl) return;
+    try {
+      const res = await fetch(DATA.sheetCsvUrl + (DATA.sheetCsvUrl.includes("?") ? "&" : "?") + "t=" + Date.now());
+      if (!res.ok) return;
+      DATA = applySheet(window.MENU_DATA, parseCSV(await res.text()));
+      render();
+    } catch (e) { /* offline: keep showing the last menu */ }
+  }
+
+  // ---------- render ----------
+  const esc = s => String(s).replace(/[&<>"]/g, m => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[m]));
+  const shown = it => it.price !== null && it.price !== undefined && it.price !== "" && it.available !== false;
+
+  function render() {
+    const cur = DATA.currency || "ден";
+    const cats = DATA.categories.filter(c => (c.screen || 1) === SCREEN && c.items.some(shown));
+    window.__cats = cats.map(c => `
+      <section class="cat c-${esc(c.color || "orange")}">
+        <h2>${esc(c.name)}${c.note ? `<small>${esc(c.note)}</small>` : ""}<span class="cur">${esc(cur)}</span></h2>
+        <ul>${c.items.filter(shown).map(it => `
+          <li><span class="n">${esc(it.name)}</span>${it.badge ? `<span class="badge ${esc(it.badge)}">${esc(it.badge)}</span>` : ""}
+          <span class="dots"></span><span class="p">${esc(it.price)}</span></li>`).join("")}
+        </ul>
+      </section>`);
+    autoFit();
+    document.getElementById("ticker").innerHTML = (DATA.ticker || [
+      "Сите бургери, сендвичи и тостови се со помфрит",
+      "Магијата е во вкусот!",
+      "Прашај за денешната понуда",
+      "Работиме до доцна — дојди и ноќе"
+    ]).map(t => esc(t)).join("<span>✦</span>") + "<span>✦</span>";
+  }
+
+  // Pick the largest text size where the categories, split into two balanced columns
+  // (in reading order), fit the menu area with no name cut off.
+  function autoFit() {
+    const m = document.getElementById("menu"), H = m.clientHeight, html = window.__cats || [];
+    const tryLayout = (fs, wrap) => {
+      document.documentElement.style.setProperty("--fs", fs + "px");
+      document.body.classList.toggle("wrap", wrap);
+      m.innerHTML = `<div class="col">${html.join("")}</div><div class="col"></div>`;
+      const secs = [...m.querySelectorAll(".cat")];
+      const h = secs.map(s => s.offsetHeight + 26);
+      let best = null;
+      for (let k = 0; k <= h.length; k++) {
+        const a = h.slice(0, k).reduce((x, y) => x + y, 0), b = h.slice(k).reduce((x, y) => x + y, 0);
+        const mx = Math.max(a, b);
+        if (!best || mx < best.mx) best = { k, mx };
+      }
+      m.innerHTML = `<div class="col">${html.slice(0, best.k).join("")}</div><div class="col">${html.slice(best.k).join("")}</div>`;
+      const cut = [...m.querySelectorAll(".n")].some(n => n.scrollWidth > n.clientWidth + 1 ||
+        n.parentElement.scrollWidth > n.parentElement.clientWidth + 1);
+      const bottom = m.getBoundingClientRect().bottom;
+      const tall = [...m.querySelectorAll(".cat")].some(c => c.getBoundingClientRect().bottom > bottom + 1);
+      return !cut && !tall;
+    };
+    let ok = false;
+    for (let fs = 46; fs >= 30 && !ok; fs--) ok = tryLayout(fs, false);
+    for (let fs = 40; fs >= 22 && !ok; fs--) ok = tryLayout(fs, true);
+    // fill a large empty gap at the bottom of a column with a brand card
+    const bottom = m.getBoundingClientRect().bottom, scale = m.getBoundingClientRect().height / m.clientHeight;
+    for (const col of m.querySelectorAll(".col")) {
+      const last = col.lastElementChild;
+      const free = (bottom - (last ? last.getBoundingClientRect().bottom : m.getBoundingClientRect().top)) / scale;
+      if (free > 200) col.insertAdjacentHTML("beforeend",
+        `<div class="filler" style="height:${Math.min(free - 30, 300)}px"><img src="assets/logo.png" alt="">
+         <div>${esc(DATA.slogan || "Магија во секој залак")}<b>ABRACADABRA</b></div></div>`);
+    }
+  }
+
+  // ---------- promo carousel (the two screens show different promos at the same time) ----------
+  let pi = SCREEN === 2 ? 1 : 0;
+  function showPromo() {
+    const list = (DATA.promos || []).filter(p => p.price !== null && p.price !== "");
+    if (!list.length) return;
+    const p = list[pi % list.length]; pi++;
+    const el = document.getElementById("promo");
+    el.classList.add("out");
+    setTimeout(() => {
+      el.innerHTML = `<div class="kicker">${night() ? "НОЌНА МАГИЈА" : "ПРЕПОРАКА"}</div>
+        <h3>${esc(p.title)}</h3><p>${esc(p.subtitle || "")}</p>
+        <div class="price">${esc(p.price)}<small>${esc(DATA.currency || "ден")}</small></div>`;
+      el.classList.remove("out");
+      burst();
+    }, 600);
+  }
+
+  // ---------- day / night ----------
+  function night() {
+    const m = q.get("mode"); if (m) return m === "night";
+    const h = new Date().getHours(), a = DATA.nightFrom ?? 19, b = DATA.nightTo ?? 6;
+    return a > b ? (h >= a || h < b) : (h >= a && h < b);
+  }
+  function applyMode() {
+    const n = night();
+    document.body.classList.toggle("night", n);
+    document.getElementById("mascot").src = n ? "assets/mascot_night.png" : "assets/mascot_day.png";
+    document.getElementById("tag").innerHTML = SCREEN === 1 ? "БУРГЕРИ · СЕНДВИЧИ · ТОСТОВИ<b>МАГИЈА ВО СЕКОЈ ЗАЛАК</b>"
+                                                             : "ВРАПОВИ · СКАРА · ДЕСЕРТИ<b>ЗА КРАЈ — СЛАТКА МАГИЈА</b>";
+  }
+
+  // ---------- animated triangle confetti (brand motif) ----------
+  const cv = document.getElementById("bg"), cx = cv.getContext("2d");
+  cv.width = 1920; cv.height = 1080;
+  const DAY = ["#e5262b", "#f39a1e", "#a8d82c", "#f5e31b"], NIGHT = ["#ff2fb3", "#ff6fd0", "#b14bff", "#ffd6f2"];
+  const shards = Array.from({ length: 70 }, () => newShard(true));
+  function newShard(any) {
+    return { x: Math.random() * 1920, y: any ? Math.random() * 1080 : 1100, s: 8 + Math.random() * 22,
+      r: Math.random() * 6.28, vr: (Math.random() - .5) * .01, vy: -(.15 + Math.random() * .45),
+      vx: (Math.random() - .5) * .2, c: Math.floor(Math.random() * 4), a: .15 + Math.random() * .35 };
+  }
+  let boost = 0;
+  function burst() { boost = 1; }
+  function draw() {
+    cx.clearRect(0, 0, 1920, 1080);
+    const pal = document.body.classList.contains("night") ? NIGHT : DAY;
+    for (const p of shards) {
+      p.x += p.vx * (1 + boost * 6); p.y += p.vy * (1 + boost * 6); p.r += p.vr * (1 + boost * 4);
+      if (p.y < -40) Object.assign(p, newShard(false));
+      cx.save(); cx.translate(p.x, p.y); cx.rotate(p.r); cx.globalAlpha = p.a; cx.fillStyle = pal[p.c];
+      cx.beginPath(); cx.moveTo(0, -p.s); cx.lineTo(p.s * .9, p.s * .7); cx.lineTo(-p.s * .9, p.s * .7); cx.closePath(); cx.fill();
+      cx.restore();
+    }
+    boost *= .96;
+    requestAnimationFrame(draw);
+  }
+
+  // ---------- anti burn-in: nudge the whole picture a few pixels every 3 minutes ----------
+  let shift = 0;
+  setInterval(() => { shift = (shift + 1) % 4; const d = [[0, 0], [4, 3], [-3, 4], [3, -4]][shift];
+    stage.style.marginLeft = d[0] + "px"; stage.style.marginTop = d[1] + "px"; }, 180000);
+
+  applyMode(); render(); showPromo(); draw(); loadSheet();
+  setInterval(showPromo, 8000);
+  setInterval(applyMode, 60000);
+  setInterval(loadSheet, (DATA.refreshMinutes || 5) * 60000);
+  // when hosted online, reload periodically so edited menu-data.js is picked up
+  if (location.protocol.startsWith("http")) setInterval(() => navigator.onLine && location.reload(), 30 * 60000);
+})();
+</script>
+</body>
+</html>
