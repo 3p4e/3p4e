@@ -9,36 +9,38 @@ same page with a different `screen` parameter:
 | Right | `index.html?screen=2` | Врапови, Скара, Салати, Десерти, Додатоци, Кафе, Пијалоци |
 | Editor | `admin.html` | Change prices, items, promos, ticker text |
 
-## Video board (motion made with Higgsfield)
-The menu text and prices stay live HTML, so they're always editable. Higgsfield video clips play
-underneath and around them:
+## Cinematic look (game main-menu style)
+The board is built like the main menu of a AAA game, not like a flat slideshow. The menu text and prices
+stay live HTML, so they are always editable. Everything around them is 3D, cinematic motion made with Higgsfield:
 
-| Layer | Clip (assets/video) | What it does |
+| Layer | Clip / effect | What it does |
 |---|---|---|
-| Background | `bg_day.mp4`, `bg_night.mp4` | A slowly turning vortex in brand colours (magenta neon at night), with floating triangle shards. It loops seamlessly. |
-| Mascot panel | `fox_idle_day.mp4`, `fox_idle_night.mp4` | Абра the fox idles: tips his hat and winks by day, does neon wand tricks and the "rock on" hand at night. |
-| Promo reveals | `fox_burger.mp4`, `fox_wrap.mp4`, `fox_waffle.mp4` | For each featured item, the fox performs a magic trick that produces the food. Pick the clip per promo in admin.html. |
-| Magic transition | `fx_swirl.mp4` | Every ~40 seconds the logo swirl explodes in triangle shards across the whole board, and the featured item changes. The two screens are offset so they never fire together. |
+| 3D environment | `bg_day.mp4`, `bg_night.mp4` (still fallback: `stage_day.jpg`, `stage_night.jpg`) | An arcane magician's stage that is also a burger kitchen. By day: velvet curtains, god rays, smoke, floating crystal shards, a glowing magic circle on a mirror floor. By night: the same stage in magenta and violet neon. A slow camera drift and seamless looping make it feel alive. |
+| Mascot portal | `wand_idle_day.mp4`, `wand_idle_night.mp4` | **Абра, the living magic wand**, floats inside a portal with two rotating rune rings. By day he adjusts his monocle and welcomes guests; by night he rocks out and draws neon spirals. |
+| Spell reveals | `wand_burger.mp4`, `wand_wrap.mp4`, `wand_waffle.mp4` | For each featured item, the wand casts a spell and the food materializes in a flash of light. Pick the clip per promo in admin.html. |
+| Wand-slash transition | `fx_slash.mp4` | Every ~40 seconds a blazing wand slash crosses the whole board and explodes into crystal shards, and the featured item changes. The two screens are offset so they never fire together. |
 
-Effects in the page itself: a light sweep across the category headers, a glow pulse on "ХИТ" items,
-prices that count up, drifting confetti, and a brightness "jolt" when the transition hits.
-All clips are H.264 without sound (about 13 MB total), which TV boxes play natively. If a clip is
-missing, the board falls back to the still mascot image.
+**Effects in the page itself:**
+- **Typography:** an extruded 3D gold wordmark with a light sweep, and prices rendered as glowing gold numerals.
+- **Panels:** gold-framed "inventory" panels with jewel icons, tilted in 3D perspective.
+- **Particles:** glowing embers and tumbling crystal shards at three depths.
+- **Atmosphere:** light rays, vignette, film grain and cinematic letterbox bars.
+- **Signature items:** a pulsing glow on "ХИТ" items.
 
-## Mascot: Абра the fox magician
-Research on long-running ad campaigns (System1 / IPA "Fluent Devices") shows that a **recurring,
-distinctive brand character** makes advertising much more effective. The character has to be ownable,
-though, and a burger is the most generic choice in the category. Criteria and decision:
-- **The link to the name:** "Abracadabra" means magic. The fox is the trickster of folk tales, and
-  "итрата лисица" is familiar from Macedonian children's stories.
-- **Brand colours:** orange and red fur matches the logo exactly.
-- **Brand mood:** foxes are night animals, which suits the late-night, neon, rock vibe.
-- **Ownership:** no major fast-food chain uses a fox.
-- **Rejected alternatives:**
-  - *Rabbit from a top hat:* the most classic magic symbol, but generic and close to the Trix and
-    Nesquik rabbits.
-  - *Black cat:* cool, but a bad-luck superstition in the Balkans.
-  - *A burger character:* not ownable.
+All clips are H.264 without sound (about 20 MB total), which TV boxes play natively. If a clip is missing,
+the board falls back to the still images.
+
+## Mascot: Абра, the living magic wand
+The wand is the one object everybody connects with "Abracadabra", and the brand's vintage wand sign already
+uses it. As a character it becomes **ownable**: no food chain has a wand mascot. Research on long-running ad
+campaigns (System1 / IPA "Fluent Devices") shows that a recurring, distinctive brand character makes advertising much more effective.
+
+- **Personality:** smart and witty. He wears a monocle, raises a confident eyebrow and has white magician's gloves.
+  He does not just stand there; he *makes* the food appear.
+- **Brand look:** a black lacquered body with gold rune bands, and a crystal tip glowing in the logo's red and
+  orange, surrounded by the logo's triangle confetti. At night the crystal turns neon magenta, matching the neon sign.
+- **Earlier concept:** an earlier version used Абра the fox. It was replaced by the wand on request; old menu
+  files that still name `fox_*` clips automatically play the wand clips.
 
 Sources: [System1 — The Seven Habits of Highly Effective Characters](https://system1group.com/blog/the-seven-habits-of-highly-effective-characters),
 [WARC — Identifying and measuring the Fluent Device](https://www.warc.com/en/article/identifying-and-measuring-the-fluent-device-96789122d7c54358bf1129c0c32d85ec),
@@ -46,13 +48,13 @@ Sources: [System1 — The Seven Habits of Highly Effective Characters](https://s
 [Quirk's — most memorable brand mascots](https://www.quirks.com/articles/mascot-matchup-the-most-memorable-brands).
 
 ## Features
-- **Brand look:** a video background, the logo's colours (red, orange, lime, yellow), triangle-confetti
-  motif, and the animated **Абра** fox with a rotating promo panel.
+- **Brand look:** a cinematic 3D stage, the logo's colours (red, orange, lime, yellow), triangle crystal
+  shards, and the animated **Абра** wand with a rotating promo panel.
 - **Day/night switching:** automatic. From 19:00 to 06:00 the screens use the magenta neon look of the
-  night sign and the night mascot. Test it with `&mode=night` or `&mode=day`.
+  night sign and the neon wand. Test it with `&mode=night` or `&mode=day`.
 - **Hidden items:** an empty price hides the item. A category with no prices disappears automatically.
 - **Auto-fit:** the layout fits itself. Text sizes adjust so everything fits on one line, the columns
-  balance, and any leftover space shows a spinning-logo brand card.
+  balance, and any leftover space shows a rotating-coin logo brand card.
 - **Panel and ticker:** the two TVs show different promos at the same time, and a ticker runs along the bottom.
 - **Built for 24/7 running:** the picture shifts a few pixels every 3 minutes (burn-in protection), and
   the page reloads periodically when hosted.
@@ -107,7 +109,8 @@ index.html        the player (both screens)
 admin.html        the editor
 menu-data.js      menu content (prices, items, promos, settings)
 assets/logo.png   clean redraw of the logo emblem
-assets/mascot_day.png / mascot_night.png   Абра the fox, still images (fallback)
-assets/video/     Higgsfield clips: backgrounds, fox loops and reveals, magic transition
+assets/mascot_day.png / mascot_night.png   Абра the wand, still images (fallback)
+assets/stage_day.jpg / stage_night.jpg     3D stage stills (fallback for the background video)
+assets/video/     Higgsfield clips: 3D stage loops, wand idles and spell reveals, wand-slash transition
 assets/fonts/     Russo One + Rubik (Cyrillic), bundled for offline use
 ```

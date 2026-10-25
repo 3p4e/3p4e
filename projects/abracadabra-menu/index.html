@@ -9,127 +9,198 @@
   :root {
     --red: #e5262b; --orange: #f39a1e; --lime: #a8d82c; --yellow: #f5e31b;
     --magenta: #ff2fb3; --green: #3fbf5a; --brown: #8a4b2a;
-    --bg: #0c0a16; --panel: rgba(20, 17, 36, .78); --text: #fff8ec; --muted: #c9c2d8;
-    --accent: var(--orange); --glow: rgba(243, 154, 30, .35);
+    --gold1: #fff1b8; --gold2: #f3c04a; --gold3: #a8661b;
+    --bg: #07050c; --text: #fff8ec; --muted: #d6cbe2;
+    --accent: var(--orange); --glow: rgba(243, 154, 30, .45); --rim: rgba(255, 196, 92, .9);
     --fs: 40px;                       /* item text size; auto-shrinks to fit */
   }
-  body.night { --accent: var(--magenta); --glow: rgba(255, 47, 179, .45); --bg: #07050d; }
+  body.night { --accent: var(--magenta); --glow: rgba(255, 47, 179, .55); --rim: rgba(255, 90, 210, .95);
+    --gold1: #ffe3f6; --gold2: #ff7bd6; --gold3: #7a1f8f; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { width: 100%; height: 100%; overflow: hidden; background: #000; cursor: none; }
   body { font-family: "Rubik", system-ui, sans-serif; color: var(--text); }
 
   /* 1920x1080 stage, scaled to whatever the TV reports */
   #stage { position: absolute; left: 50%; top: 50%; width: 1920px; height: 1080px;
-    transform-origin: center center; background: var(--bg); overflow: hidden; }
-  #bgv { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .75; }
-  .shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(8,6,14,.86) 0%, rgba(8,6,14,.7) 55%, rgba(8,6,14,.35) 100%); }
-  #bg { position: absolute; inset: 0; }
-  .glow { position: absolute; border-radius: 50%; filter: blur(120px); opacity: .55; }
-  .glow.a { width: 900px; height: 900px; left: -300px; top: -350px; background: var(--red); opacity: .22; }
-  .glow.b { width: 800px; height: 800px; right: -250px; bottom: -350px; background: var(--accent); opacity: .25; }
-  body.night .glow.a { background: var(--magenta); opacity: .18; }
+    transform-origin: center center; background: var(--bg); overflow: hidden; perspective: 1800px; }
 
-  header { position: absolute; left: 60px; right: 60px; top: 28px; height: 130px;
-    display: flex; align-items: center; gap: 28px; }
-  header img { height: 130px; width: 130px; object-fit: contain; filter: drop-shadow(0 0 18px var(--glow)); }
-  .wordmark { font-family: "Russo One", sans-serif; font-size: 104px; letter-spacing: 6px; line-height: 1;
-    background: linear-gradient(95deg, var(--red) 0%, var(--orange) 55%, var(--yellow) 100%);
-    -webkit-background-clip: text; background-clip: text; color: transparent;
-    filter: drop-shadow(0 4px 0 rgba(0,0,0,.45)); }
-  body.night .wordmark { background: none; color: #ffd6f2;
-    text-shadow: 0 0 10px var(--magenta), 0 0 28px var(--magenta), 0 0 60px rgba(255,47,179,.6); filter: none; }
-  .tag { margin-left: auto; text-align: right; font-family: "Russo One"; font-size: 34px; color: var(--muted); }
-  .tag b { display: block; font-size: 44px; color: var(--yellow); }
-  body.night .tag b { color: #ff9ee0; }
+  /* ---- cinematic environment: 3D stage video, slow camera drift, vignette, light rays ---- */
+  #bgv { position: absolute; inset: -3%; width: 106%; height: 106%; object-fit: cover;
+    animation: cam 40s ease-in-out infinite alternate; }
+  @keyframes cam { from { transform: scale(1) translate(0, 0); } to { transform: scale(1.06) translate(-1.2%, -1%); } }
+  .shade { position: absolute; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse 70% 60% at 62% 45%, transparent 30%, rgba(4,2,8,.55) 75%, rgba(2,1,4,.92) 100%),
+      linear-gradient(90deg, rgba(4,2,8,.62) 0%, rgba(4,2,8,.35) 45%, rgba(4,2,8,.15) 70%, rgba(4,2,8,.45) 100%); }
+  .rays { position: absolute; left: 30%; top: -30%; width: 60%; height: 120%; pointer-events: none; mix-blend-mode: screen; opacity: .35;
+    background: conic-gradient(from 180deg at 50% 0%, transparent 0deg, rgba(255,210,140,.35) 8deg, transparent 16deg,
+      transparent 24deg, rgba(255,210,140,.25) 30deg, transparent 38deg, transparent 50deg, rgba(255,210,140,.3) 56deg, transparent 64deg);
+    filter: blur(14px); animation: rays 14s ease-in-out infinite alternate; transform-origin: 50% 0; }
+  body.night .rays { background: conic-gradient(from 180deg at 50% 0%, transparent 0deg, rgba(255,60,200,.4) 8deg, transparent 16deg,
+      transparent 24deg, rgba(170,80,255,.3) 30deg, transparent 38deg, transparent 50deg, rgba(255,60,200,.3) 56deg, transparent 64deg); }
+  @keyframes rays { from { transform: rotate(-6deg); opacity: .22; } to { transform: rotate(6deg); opacity: .42; } }
+  #bg { position: absolute; inset: 0; pointer-events: none; z-index: 3; }
+  .grain { position: absolute; inset: 0; pointer-events: none; z-index: 60; opacity: .07; mix-blend-mode: overlay;
+    background-image: repeating-radial-gradient(circle at 17% 32%, #fff 0 1px, transparent 1px 3px); }
+  .letterbox { position: absolute; left: 0; right: 0; height: 18px; background: #000; z-index: 61; }
+  .letterbox.t { top: 0; } .letterbox.b { bottom: 0; }
 
-  main { position: absolute; left: 60px; top: 182px; bottom: 96px; width: 1210px; display: flex; gap: 34px; }
+  /* ---- title: extruded 3D gold wordmark with a light sweep ---- */
+  header { position: absolute; left: 56px; right: 56px; top: 30px; height: 132px; z-index: 5;
+    display: flex; align-items: center; gap: 26px; }
+  header img { height: 132px; width: 132px; object-fit: contain;
+    filter: drop-shadow(0 0 22px var(--glow)) drop-shadow(0 10px 14px rgba(0,0,0,.7)); animation: emblem 6s ease-in-out infinite; }
+  @keyframes emblem { 0%,100% { transform: rotateY(0) translateY(0); } 50% { transform: rotateY(18deg) translateY(-4px); } }
+  .wordmark { position: relative; font-family: "Russo One", sans-serif; font-size: 108px; letter-spacing: 6px; line-height: 1;
+    color: var(--gold2);
+    background: linear-gradient(180deg, var(--gold1) 0%, var(--gold2) 48%, var(--gold3) 52%, var(--gold2) 100%);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 1px 0 #6b3a0e) drop-shadow(0 2px 0 #5a2f0b) drop-shadow(0 3px 0 #4a2608) drop-shadow(0 4px 0 #3a1d06)
+            drop-shadow(0 6px 0 #2a1404) drop-shadow(0 14px 18px rgba(0,0,0,.75)) drop-shadow(0 0 30px var(--glow)); }
+  body.night .wordmark { filter: drop-shadow(0 1px 0 #6a1257) drop-shadow(0 2px 0 #5a0f4a) drop-shadow(0 3px 0 #4a0c3d)
+            drop-shadow(0 5px 0 #330828) drop-shadow(0 14px 18px rgba(0,0,0,.75)) drop-shadow(0 0 34px var(--magenta)); }
+  .wordmark::after { content: "ABRACADABRA"; position: absolute; inset: 0;
+    background: linear-gradient(100deg, transparent 40%, rgba(255,255,255,.95) 50%, transparent 60%) no-repeat;
+    background-size: 250% 100%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    animation: shine 7s ease-in-out infinite; }
+  @keyframes shine { 0%, 70% { background-position: 130% 0; } 100% { background-position: -30% 0; } }
+  .tag { margin-left: auto; text-align: right; font-family: "Russo One"; font-size: 30px; color: var(--muted);
+    text-shadow: 0 3px 8px #000; letter-spacing: 1px; }
+  .tag b { display: block; font-weight: 400; font-size: 42px; color: var(--gold1); text-shadow: 0 0 18px var(--glow), 0 3px 8px #000; }
+
+  /* ---- menu: game-inventory panels with metal frames, tilted in 3D ---- */
+  main { position: absolute; left: 56px; top: 184px; bottom: 98px; width: 1220px; display: flex; gap: 30px; z-index: 4;
+    transform-style: preserve-3d; transform: rotateY(5deg) translateZ(0); transform-origin: 0 50%; }
   main .col { flex: 1; min-width: 0; }
-  .cat { background: var(--panel); border-radius: 22px; margin-bottom: 26px;
-    overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,.35); border: 1px solid rgba(255,255,255,.06); }
-  .cat h2 { font-family: "Russo One"; font-weight: 400; font-size: calc(var(--fs) * 1.05);
-    padding: 12px 26px 10px; color: #1a1020; display: flex; align-items: baseline; gap: 14px;
-    clip-path: polygon(0 0, 100% 0, 97% 100%, 0 100%); }
-  .cat h2 small { font-size: .62em; opacity: .8; }
-  .cat h2 .cur { margin-left: auto; margin-right: 34px; font-family: "Rubik"; font-weight: 700; font-size: .6em; opacity: .75; }
-  .cat ul { list-style: none; padding: 10px 26px 14px; }
+  .cat { position: relative; margin-bottom: 24px; border-radius: 18px; overflow: hidden;
+    background:
+      linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,0) 38%),
+      linear-gradient(160deg, rgba(26,18,38,.9), rgba(10,7,16,.9));
+    box-shadow: 0 0 0 2px rgba(0,0,0,.6), 0 0 0 4px var(--frame, #b8892f), 0 0 0 5px rgba(255,240,200,.35),
+      inset 0 1px 0 rgba(255,255,255,.18), inset 0 0 40px rgba(0,0,0,.6),
+      0 22px 40px rgba(0,0,0,.65), 0 0 46px var(--glow); }
+  body.night .cat { --frame: #c04aa8; }
+  .cat::before { content: ""; position: absolute; inset: 0; pointer-events: none; border-radius: 18px;
+    background: radial-gradient(ellipse 60% 40% at 15% 0%, var(--tint, rgba(243,154,30,.22)), transparent 70%); }
+  .cat h2 { position: relative; overflow: hidden; font-family: "Russo One"; font-weight: 400; font-size: calc(var(--fs) * 1.05);
+    padding: 12px 26px 10px 74px; color: #fff; display: flex; align-items: baseline; gap: 14px;
+    background: linear-gradient(180deg, rgba(255,255,255,.35), rgba(255,255,255,0) 50%, rgba(0,0,0,.25)), var(--c, var(--orange));
+    text-shadow: 0 2px 0 rgba(0,0,0,.45), 0 0 14px rgba(0,0,0,.3);
+    box-shadow: inset 0 -3px 0 rgba(0,0,0,.35), inset 0 2px 0 rgba(255,255,255,.4); }
+  .cat h2::before { content: ""; position: absolute; left: 24px; top: 50%; width: 30px; height: 30px; margin-top: -15px;
+    transform: rotate(45deg); border-radius: 4px;
+    background: radial-gradient(circle at 35% 30%, #fff 0 12%, var(--gem, #fff3a8) 30%, rgba(0,0,0,.45) 100%);
+    box-shadow: 0 0 0 3px rgba(0,0,0,.35), 0 0 18px #fff, 0 0 30px var(--gem, #fff3a8); animation: gem 3s ease-in-out infinite; }
+  @keyframes gem { 0%,100% { filter: brightness(1); } 50% { filter: brightness(1.5); } }
+  .cat h2 small { font-size: .62em; opacity: .85; }
+  .cat h2 .cur { margin-left: auto; font-family: "Rubik"; font-weight: 700; font-size: .6em; opacity: .85; }
+  .cat ul { list-style: none; padding: 10px 26px 14px; position: relative; z-index: 0; }
   .cat li { display: flex; align-items: baseline; gap: 12px; font-size: var(--fs); font-weight: 500;
-    padding: calc(var(--fs) * .16) 0; }
+    padding: calc(var(--fs) * .16) 0; text-shadow: 0 2px 6px rgba(0,0,0,.8); }
+  .cat li + li { border-top: 1px solid rgba(255,255,255,.05); }
   .cat li .n { white-space: nowrap; }
   body.wrap .cat li .n { white-space: normal; line-height: 1.1; }
-  .cat li .dots { flex: 1; border-bottom: 3px dotted rgba(255,255,255,.18); transform: translateY(-.25em); min-width: 20px; }
-  .cat li .p { font-family: "Russo One"; color: var(--yellow); font-size: calc(var(--fs) * 1.08); }
-  .cat li .p small { font-family: "Rubik"; font-size: .5em; color: var(--muted); margin-left: 4px; }
-  .badge { font-family: "Russo One"; font-size: calc(var(--fs) * .42); padding: 3px 10px 2px; border-radius: 30px;
-    color: #1a1020; background: var(--yellow); transform: translateY(-.35em); flex: none; }
-  .badge.ХИТ { background: linear-gradient(90deg, var(--red), var(--orange)); color: #fff; }
+  .cat li .dots { flex: 1; height: 2px; transform: translateY(-.3em); min-width: 20px;
+    background: linear-gradient(90deg, rgba(255,255,255,.04), rgba(255,220,150,.28)); }
+  body.night .cat li .dots { background: linear-gradient(90deg, rgba(255,255,255,.04), rgba(255,120,220,.35)); }
+  .cat li .p { font-family: "Russo One"; font-size: calc(var(--fs) * 1.1);
+    background: linear-gradient(180deg, #fffbe0 0%, #ffd84a 45%, #e08a12 100%);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 0 #5a2c06) drop-shadow(0 0 10px rgba(255,190,60,.55)); }
+  body.night .cat li .p { background: linear-gradient(180deg, #fff 0%, #ffb3ec 45%, #ff2fb3 100%);
+    -webkit-background-clip: text; background-clip: text; filter: drop-shadow(0 2px 0 #4a0838) drop-shadow(0 0 12px rgba(255,47,179,.7)); }
+  .badge { font-family: "Russo One"; font-size: calc(var(--fs) * .42); padding: 3px 10px 2px; border-radius: 6px;
+    color: #1a1020; background: var(--yellow); transform: translateY(-.35em) skewX(-8deg); flex: none; text-shadow: none;
+    box-shadow: 0 0 14px rgba(255,255,255,.25), inset 0 1px 0 rgba(255,255,255,.6); }
+  .badge.ХИТ { background: linear-gradient(180deg, #ff8a3a, var(--red)); color: #fff; box-shadow: 0 0 18px rgba(255,70,30,.8); animation: gem 1.6s ease-in-out infinite; }
   .badge.НОВО { background: var(--lime); }
   .badge.ВЕГЕ { background: var(--green); color: #fff; }
 
-  .filler { display: flex; align-items: center; justify-content: center; gap: 26px; border-radius: 22px;
-    border: 2px dashed rgba(255,255,255,.12); padding: 18px; color: var(--muted); font-family: "Russo One"; }
-  .filler img { height: 100%; max-height: 210px; aspect-ratio: 1; animation: spin 30s linear infinite; }
+  .filler { display: flex; align-items: center; justify-content: center; gap: 26px; border-radius: 18px; padding: 18px;
+    color: var(--muted); font-family: "Russo One";
+    background: radial-gradient(ellipse at 30% 50%, var(--glow), transparent 70%);
+    box-shadow: 0 0 0 2px rgba(255,220,150,.18); }
+  .filler img { height: 100%; max-height: 210px; aspect-ratio: 1; animation: coin 8s linear infinite;
+    filter: drop-shadow(0 0 24px var(--glow)); }
+  @keyframes coin { to { transform: rotateY(360deg); } }
   .filler div { font-size: 34px; line-height: 1.15; }
-  .filler b { display: block; color: var(--yellow); font-weight: 400; font-size: 44px; }
-  body.night .filler b { color: #ff9ee0; }
-  @keyframes spin { to { transform: rotate(360deg); } }
-  .c-red h2 { background: var(--red); color: #fff; } .c-orange h2 { background: var(--orange); }
-  .c-lime h2 { background: var(--lime); } .c-yellow h2 { background: var(--yellow); }
-  .c-magenta h2 { background: var(--magenta); color: #fff; } .c-green h2 { background: var(--green); color: #fff; }
-  .c-brown h2 { background: var(--brown); color: #fff; }
+  .filler b { display: block; color: var(--gold1); font-weight: 400; font-size: 44px; text-shadow: 0 0 18px var(--glow); }
+  .c-red     { --c: var(--red);     --gem: #ffb199; --tint: rgba(229,38,43,.28); }
+  .c-orange  { --c: var(--orange);  --gem: #ffe0a0; --tint: rgba(243,154,30,.28); }
+  .c-lime    { --c: #7fb51d;        --gem: #eaffb0; --tint: rgba(168,216,44,.24); }
+  .c-yellow  { --c: #e0b40c;        --gem: #fffbd0; --tint: rgba(245,227,27,.22); }
+  .c-magenta { --c: var(--magenta); --gem: #ffd0f0; --tint: rgba(255,47,179,.28); }
+  .c-green   { --c: var(--green);   --gem: #c8ffd4; --tint: rgba(63,191,90,.24); }
+  .c-brown   { --c: var(--brown);   --gem: #ffd7b0; --tint: rgba(160,90,40,.3); }
 
-  /* Featured / promo panel */
-  aside { position: absolute; right: 60px; top: 182px; bottom: 96px; width: 560px; border-radius: 30px;
-    background: radial-gradient(circle at 50% 38%, rgba(255,255,255,.10), rgba(255,255,255,0) 60%), var(--panel);
-    border: 2px solid rgba(255,255,255,.08); overflow: hidden; box-shadow: 0 0 60px var(--glow); }
-  aside { display: flex; flex-direction: column; align-items: center; padding: 22px 30px 34px; background: #15121f; }
-  body.night aside { background: #0f0a16; }
-  #mv { position: absolute; left: 0; right: 0; top: 0; bottom: 320px; width: 100%; height: calc(100% - 320px); z-index: 0;
-    object-fit: contain; object-position: 50% 100%;
-    -webkit-mask-image: radial-gradient(ellipse 75% 70% at 50% 45%, #000 62%, transparent 100%);
-            mask-image: radial-gradient(ellipse 75% 70% at 50% 45%, #000 62%, transparent 100%); opacity: 0; transition: opacity .4s; }
+  /* ---- featured: an arcane portal with a rotating rune ring; the wand lives inside ---- */
+  aside { position: absolute; right: 50px; top: 170px; bottom: 90px; width: 580px; z-index: 6;
+    display: flex; flex-direction: column; align-items: center; padding: 0 26px 30px;
+    transform: rotateY(-7deg) translateZ(40px); transform-origin: 100% 50%; }
+  .portal { position: absolute; left: 10px; right: 10px; top: 0; height: 480px; border-radius: 50% 50% 46% 46% / 42% 42% 58% 58%;
+    background: radial-gradient(ellipse at 50% 55%, #1a1226 0%, #0e0a16 62%, rgba(14,10,22,0) 72%); }
+  body.night .portal { background: radial-gradient(ellipse at 50% 55%, #1a0e22 0%, #0e0a16 62%, rgba(14,10,22,0) 72%); }
+  .ring { position: absolute; left: 50%; top: 240px; width: 500px; height: 500px; margin: -250px 0 0 -250px; border-radius: 50%;
+    pointer-events: none; mix-blend-mode: screen;
+    background: conic-gradient(from 0deg, transparent 0 10%, var(--rim) 14%, transparent 22%, transparent 45%, var(--rim) 50%, transparent 58%, transparent 80%, var(--rim) 86%, transparent 94%);
+    -webkit-mask: radial-gradient(circle, transparent 64%, #000 65.5%, #000 67.5%, transparent 69%);
+            mask: radial-gradient(circle, transparent 64%, #000 65.5%, #000 67.5%, transparent 69%);
+    filter: drop-shadow(0 0 12px var(--rim)); animation: spin 12s linear infinite; }
+  .ring.r2 { width: 450px; height: 450px; margin: -225px 0 0 -225px; animation-duration: 20s; animation-direction: reverse; opacity: .6; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  #mv { position: absolute; left: 50%; top: 0; width: 360px; height: 480px; margin-left: -180px; z-index: 1;
+    object-fit: cover;
+    -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 70%, transparent 100%);
+            mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 70%, transparent 100%); opacity: 0; transition: opacity .4s; }
   aside.video #mv { opacity: 1; } aside.video #mascot { display: none; }
-  .mwrap { position: relative; }
-  .mwrap { flex: 1; min-height: 0; width: 100%; display: flex; align-items: center; justify-content: center; }
-  #mascot { max-width: 92%; max-height: 100%; object-fit: contain;
-    animation: bob 3.2s ease-in-out infinite; filter: drop-shadow(0 18px 24px rgba(0,0,0,.5)); }
-  @keyframes bob { 0%,100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-14px) rotate(2deg); } }
-  .promo { position: relative; z-index: 2; width: 100%; text-align: center; transition: opacity .6s, transform .6s; min-height: 300px;
-    display: flex; flex-direction: column; justify-content: flex-end; }
-  .promo.out { opacity: 0; transform: translateY(30px); }
-  .promo .kicker { font-family: "Russo One"; font-size: 26px; letter-spacing: 3px; color: var(--accent); }
-  .promo h3 { font-family: "Russo One"; font-weight: 400; font-size: 54px; line-height: 1.05; margin: 8px 0 6px; }
-  .promo p { font-size: 28px; color: var(--muted); }
-  .promo .price { align-self: center; display: inline-block; margin-top: 16px; font-family: "Russo One"; font-size: 92px; color: #1a1020;
-    background: var(--yellow); padding: 4px 34px 0; border-radius: 22px; transform: rotate(-3deg);
-    box-shadow: 0 8px 0 rgba(0,0,0,.35); }
-  body.night .promo .price { background: var(--magenta); color: #fff; box-shadow: 0 0 34px var(--magenta); }
-  .promo .price small { font-size: .38em; margin-left: 6px; }
+  .mwrap { position: relative; z-index: 1; height: 480px; flex: none; width: 100%; display: flex; align-items: center; justify-content: center; }
+  #mascot { max-width: 80%; max-height: 92%; object-fit: contain;
+    animation: bob 3.2s ease-in-out infinite; filter: drop-shadow(0 0 30px var(--glow)); }
+  @keyframes bob { 0%,100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-16px) rotate(3deg); } }
+  .promo { position: relative; z-index: 2; width: 100%; flex: 1; text-align: center; transition: opacity .6s, transform .6s, filter .6s;
+    display: flex; flex-direction: column; justify-content: flex-end; padding: 16px 22px 18px; border-radius: 18px; margin-top: -10px;
+    background: linear-gradient(180deg, rgba(20,14,30,.0), rgba(20,14,30,.88) 26%, rgba(10,7,16,.94));
+    box-shadow: 0 0 0 3px var(--frame, #b8892f), 0 0 0 4px rgba(255,240,200,.35), 0 24px 40px rgba(0,0,0,.7), 0 0 50px var(--glow); }
+  body.night .promo { --frame: #c04aa8; }
+  .promo.out { opacity: 0; transform: translateY(30px) scale(.96); filter: blur(6px); }
+  .promo .kicker { font-family: "Russo One"; font-size: 24px; letter-spacing: 6px; color: var(--accent); text-shadow: 0 0 14px var(--glow); }
+  .promo .kicker::before, .promo .kicker::after { content: "✦"; margin: 0 12px; }
+  .promo h3 { font-family: "Russo One"; font-weight: 400; font-size: 46px; line-height: 1.05; margin: 8px 0 6px;
+    text-shadow: 0 3px 0 rgba(0,0,0,.6), 0 0 22px var(--glow); }
+  .promo p { font-size: 27px; color: var(--muted); }
+  .promo .price { align-self: center; display: inline-block; margin-top: 8px; font-family: "Russo One"; font-size: 88px; line-height: 1.05;
+    background: linear-gradient(180deg, #fffbe0 0%, #ffd84a 45%, #e08a12 100%);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 3px 0 #5a2c06) drop-shadow(0 5px 0 #3a1c04) drop-shadow(0 0 24px rgba(255,190,60,.8)); }
+  body.night .promo .price { background: linear-gradient(180deg, #fff 0%, #ffb3ec 45%, #ff2fb3 100%);
+    -webkit-background-clip: text; background-clip: text; filter: drop-shadow(0 3px 0 #4a0838) drop-shadow(0 0 26px rgba(255,47,179,.9)); }
+  .promo .price small { font-size: .36em; margin-left: 8px; }
 
   /* full-screen magic transition (black = transparent via screen blend) */
   #fx { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; mix-blend-mode: screen;
-    pointer-events: none; opacity: 0; z-index: 50; transition: opacity .25s; }
+    pointer-events: none; opacity: 0; z-index: 50; transition: opacity .6s; }
   #fx.on { opacity: 1; }
-  #stage.flash main, #stage.flash aside { animation: jolt .6s ease-out; }
-  @keyframes jolt { 0% { transform: scale(1); filter: brightness(1); } 30% { transform: scale(1.015); filter: brightness(1.6); } 100% { transform: scale(1); filter: brightness(1); } }
+  #stage.flash main { animation: joltL .7s ease-out; } #stage.flash aside { animation: joltR .7s ease-out; }
+  @keyframes joltL { 0% { filter: brightness(1); } 30% { filter: brightness(1.7); transform: rotateY(5deg) translateZ(30px); } 100% { filter: brightness(1); } }
+  @keyframes joltR { 0% { filter: brightness(1); } 30% { filter: brightness(1.7); transform: rotateY(-7deg) translateZ(80px); } 100% { filter: brightness(1); } }
 
   /* light sweep across category headers */
-  .cat h2 { position: relative; overflow: hidden; }
   .cat h2::after { content: ""; position: absolute; top: 0; bottom: 0; width: 160px; left: -200px;
-    background: linear-gradient(100deg, transparent, rgba(255,255,255,.55), transparent);
+    background: linear-gradient(100deg, transparent, rgba(255,255,255,.6), transparent);
     animation: sweep 9s ease-in-out infinite; animation-delay: var(--d, 0s); }
   @keyframes sweep { 0%, 78% { left: -200px; } 92%, 100% { left: 110%; } }
   /* spotlight on signature items */
   .cat li.hit { position: relative; }
-  .cat li.hit::before { content: ""; position: absolute; inset: 0; border-radius: 12px; z-index: -1;
-    background: linear-gradient(90deg, rgba(243,154,30,.0), rgba(243,154,30,.28), rgba(243,154,30,.0));
+  .cat li.hit::before { content: ""; position: absolute; inset: 0; border-radius: 10px; z-index: -1;
+    background: linear-gradient(90deg, rgba(255,150,40,0), rgba(255,150,40,.35), rgba(255,150,40,0));
     animation: hit 6s ease-in-out infinite; }
-  body.night .cat li.hit::before { background: linear-gradient(90deg, transparent, rgba(255,47,179,.32), transparent); }
+  body.night .cat li.hit::before { background: linear-gradient(90deg, transparent, rgba(255,47,179,.38), transparent); }
   @keyframes hit { 0%, 60%, 100% { opacity: 0; } 75% { opacity: 1; } }
-  .cat ul { position: relative; z-index: 0; }
 
-  footer { position: absolute; left: 0; right: 0; bottom: 0; height: 72px; background: rgba(0,0,0,.55);
-    border-top: 3px solid var(--accent); overflow: hidden; display: flex; align-items: center; }
-  .ticker { white-space: nowrap; font-family: "Russo One"; font-size: 34px; color: var(--text);
+  footer { position: absolute; left: 0; right: 0; bottom: 18px; height: 64px; z-index: 7; overflow: hidden; display: flex; align-items: center;
+    background: linear-gradient(180deg, rgba(0,0,0,.2), rgba(0,0,0,.85));
+    box-shadow: inset 0 3px 0 var(--accent), 0 -10px 30px var(--glow); }
+  .ticker { white-space: nowrap; font-family: "Russo One"; font-size: 32px; color: var(--text); text-shadow: 0 0 12px var(--glow);
     animation: tick 40s linear infinite; padding-left: 100%; }
   .ticker span { color: var(--accent); margin: 0 26px; }
   @keyframes tick { from { transform: translateX(0); } to { transform: translateX(-100%); } }
@@ -138,9 +209,9 @@
 <body>
 <div id="stage">
   <video id="bgv" muted loop playsinline autoplay></video>
+  <div class="rays"></div>
   <div class="shade"></div>
   <canvas id="bg"></canvas>
-  <div class="glow a"></div><div class="glow b"></div>
   <header>
     <img src="assets/logo.png" alt="" onerror="this.style.display='none'">
     <div class="wordmark">ABRACADABRA</div>
@@ -148,12 +219,14 @@
   </header>
   <main id="menu"></main>
   <aside>
+    <div class="portal"></div><div class="ring"></div><div class="ring r2"></div>
     <video id="mv" muted playsinline></video>
     <div class="mwrap"><img id="mascot" src="assets/mascot_day.png" alt=""></div>
     <div class="promo" id="promo"></div>
   </aside>
   <footer><div class="ticker" id="ticker"></div></footer>
-  <video id="fx" muted playsinline src="assets/video/fx_swirl.mp4"></video>
+  <video id="fx" muted playsinline src="assets/video/fx_slash.mp4"></video>
+  <div class="grain"></div><div class="letterbox t"></div><div class="letterbox b"></div>
 </div>
 
 <script src="menu-data.js"></script>
@@ -286,8 +359,10 @@
   mv.addEventListener("playing", () => aside.classList.add("video"));
   mv.addEventListener("error", () => aside.classList.remove("video"));
   bgv.addEventListener("error", () => bgv.style.display = "none");
+  const IDLE = () => night() ? "wand_idle_night" : "wand_idle_day";
   function playMascot(name, loop) {
-    mv.loop = loop; mv.onended = loop ? null : () => playMascot(night() ? "fox_idle_night" : "fox_idle_day", true);
+    name = String(name).replace(/^fox_/, "wand_");      // older menu files still name the fox clips
+    mv.loop = loop; mv.onended = loop ? null : () => playMascot(IDLE(), true);
     if (!mv.src.endsWith(V(name))) mv.src = V(name);
     mv.currentTime = 0; mv.play().catch(() => {});
   }
@@ -297,10 +372,10 @@
     fx.currentTime = 0;
     fx.play().then(() => {
       fx.classList.add("on");
-      setTimeout(() => { stage.classList.add("flash"); burst(); then(); }, 1800);
-      setTimeout(() => stage.classList.remove("flash"), 2500);
+      setTimeout(() => { stage.classList.add("flash"); burst(); then(); }, 2450);   // the slash explodes at ~2.5 s
+      setTimeout(() => stage.classList.remove("flash"), 3200);
     }).catch(then);
-    fx.onended = () => fx.classList.remove("on");
+    fx.ontimeupdate = () => { if (fx.currentTime > fx.duration - .6) fx.classList.remove("on"); };
   }
 
   // price counts up to its value
@@ -329,9 +404,9 @@
         countUp(el.querySelector(".price"), p.price);
         burst();
       }, 500);
-      if (night()) playMascot("fox_idle_night", true);
+      if (night()) playMascot(IDLE(), true);
       else if (p.video) playMascot(p.video, false);
-      else playMascot("fox_idle_day", true);
+      else playMascot(IDLE(), true);
     };
     // every 4th change (offset per screen) the whole board does the magic transition
     if (++shown_n % 4 === (SCREEN === 2 ? 2 : 0)) magicTransition(swap); else swap();
@@ -348,30 +423,55 @@
     document.body.classList.toggle("night", n);
     document.getElementById("mascot").src = n ? "assets/mascot_night.png" : "assets/mascot_day.png";
     const want = V(n ? "bg_night" : "bg_day");
+    stage.style.background = `#07050c url(assets/stage_${n ? "night" : "day"}.jpg) center / cover`;
     if (!bgv.src.endsWith(want)) { bgv.src = want; bgv.play().catch(() => {}); }
     document.getElementById("tag").innerHTML = SCREEN === 1 ? "БУРГЕРИ · СЕНДВИЧИ · ТОСТОВИ<b>МАГИЈА ВО СЕКОЈ ЗАЛАК</b>"
                                                              : "ВРАПОВИ · СКАРА · ДЕСЕРТИ<b>ЗА КРАЈ — СЛАТКА МАГИЈА</b>";
   }
 
-  // ---------- animated triangle confetti (brand motif) ----------
+  // ---------- particles: rising embers and crystal shards at three depths (near ones are bigger, faster, blurred) ----------
   const cv = document.getElementById("bg"), cx = cv.getContext("2d");
   cv.width = 1920; cv.height = 1080;
   const DAY = ["#e5262b", "#f39a1e", "#a8d82c", "#f5e31b"], NIGHT = ["#ff2fb3", "#ff6fd0", "#b14bff", "#ffd6f2"];
-  const shards = Array.from({ length: 40 }, () => newShard(true));
+  const shards = Array.from({ length: 34 }, () => newShard(true));
+  const embers = Array.from({ length: 70 }, () => newEmber(true));
   function newShard(any) {
-    return { x: Math.random() * 1920, y: any ? Math.random() * 1080 : 1100, s: 8 + Math.random() * 22,
-      r: Math.random() * 6.28, vr: (Math.random() - .5) * .01, vy: -(.15 + Math.random() * .45),
-      vx: (Math.random() - .5) * .2, c: Math.floor(Math.random() * 4), a: .15 + Math.random() * .35 };
+    const z = Math.random() < .2 ? 2 : Math.random() < .5 ? 1 : 0;          // 0 far, 1 mid, 2 near
+    return { x: Math.random() * 1920, y: any ? Math.random() * 1080 : 1140, z, s: [7, 14, 34][z] * (.7 + Math.random() * .6),
+      r: Math.random() * 6.28, vr: (Math.random() - .5) * .012, vy: -[.18, .35, .8][z] * (.6 + Math.random() * .8),
+      vx: (Math.random() - .5) * .25, c: Math.floor(Math.random() * 4), a: [.35, .55, .5][z] };
   }
-  let boost = 0;
+  function newEmber(any) {
+    return { x: Math.random() * 1920, y: any ? Math.random() * 1080 : 1090, s: .8 + Math.random() * 2.6,
+      vy: -(.3 + Math.random() * 1.1), ph: Math.random() * 6.28, a: .3 + Math.random() * .6 };
+  }
+  let boost = 0, t = 0;
   function burst() { boost = 1; }
   function draw() {
+    t += .016;
     cx.clearRect(0, 0, 1920, 1080);
-    const pal = document.body.classList.contains("night") ? NIGHT : DAY;
+    const n = document.body.classList.contains("night"), pal = n ? NIGHT : DAY;
+    cx.globalCompositeOperation = "lighter";
+    for (const e of embers) {
+      e.y += e.vy * (1 + boost * 5); e.x += Math.sin(t * 1.3 + e.ph) * .4;
+      if (e.y < -10) Object.assign(e, newEmber(false));
+      const g = cx.createRadialGradient(e.x, e.y, 0, e.x, e.y, e.s * 4);
+      g.addColorStop(0, n ? "rgba(255,170,235," + e.a + ")" : "rgba(255,220,140," + e.a + ")");
+      g.addColorStop(1, "rgba(0,0,0,0)");
+      cx.fillStyle = g; cx.fillRect(e.x - e.s * 4, e.y - e.s * 4, e.s * 8, e.s * 8);
+    }
+    cx.globalCompositeOperation = "source-over";
     for (const p of shards) {
       p.x += p.vx * (1 + boost * 6); p.y += p.vy * (1 + boost * 6); p.r += p.vr * (1 + boost * 4);
-      if (p.y < -40) Object.assign(p, newShard(false));
-      cx.save(); cx.translate(p.x, p.y); cx.rotate(p.r); cx.globalAlpha = p.a; cx.fillStyle = pal[p.c];
+      if (p.y < -60) Object.assign(p, newShard(false));
+      cx.save(); cx.translate(p.x, p.y); cx.rotate(p.r);
+      cx.shadowColor = pal[p.c]; cx.shadowBlur = p.z === 0 ? 0 : 16;
+      cx.globalAlpha = p.a;
+      const sq = Math.abs(Math.cos(p.r * 1.7));                                // fake 3D tumble
+      cx.scale(1, .35 + .65 * sq);
+      const gr = cx.createLinearGradient(-p.s, -p.s, p.s, p.s);
+      gr.addColorStop(0, "#fff"); gr.addColorStop(.35, pal[p.c]); gr.addColorStop(1, "rgba(0,0,0,.6)");
+      cx.fillStyle = gr;
       cx.beginPath(); cx.moveTo(0, -p.s); cx.lineTo(p.s * .9, p.s * .7); cx.lineTo(-p.s * .9, p.s * .7); cx.closePath(); cx.fill();
       cx.restore();
     }
