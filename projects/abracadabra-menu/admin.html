@@ -74,6 +74,7 @@
     <label>Ноќен режим од (час) <input id="nightFrom" type="number" min="0" max="23"></label>
     <label>Ноќен режим до (час) <input id="nightTo" type="number" min="0" max="23"></label>
     <label>Освежување (минути) <input id="refreshMinutes" type="number" min="1"></label>
+    <label>Кинематика на секои (минути, 0 = исклучено) <input id="cinematicMinutes" type="number" min="0"></label>
     <label style="grid-column:1/-1">Google Sheet CSV линк (опционално)
       <input id="sheetCsvUrl" placeholder="https://docs.google.com/spreadsheets/d/e/.../pub?output=csv"></label>
     <label style="grid-column:1/-1">Лента долу (секој ред е една порака)
@@ -137,7 +138,7 @@
         <button class="danger" onclick="DATA.promos.splice(${pi},1);draw()">✕</button>
       </div></div>`).join("");
 
-    for (const k of ["currency", "slogan", "nightFrom", "nightTo", "refreshMinutes", "sheetCsvUrl"])
+    for (const k of ["currency", "slogan", "nightFrom", "nightTo", "refreshMinutes", "cinematicMinutes", "sheetCsvUrl"])
       document.getElementById(k).value = DATA[k] ?? "";
     document.getElementById("ticker").value = (DATA.ticker || []).join("\n");
   }
@@ -156,6 +157,7 @@
     DATA.nightFrom = +document.getElementById("nightFrom").value;
     DATA.nightTo = +document.getElementById("nightTo").value;
     DATA.refreshMinutes = +document.getElementById("refreshMinutes").value || 5;
+    DATA.cinematicMinutes = Math.max(0, +document.getElementById("cinematicMinutes").value || 0);
     DATA.sheetCsvUrl = document.getElementById("sheetCsvUrl").value.trim();
     DATA.ticker = document.getElementById("ticker").value.split("\n").map(s => s.trim()).filter(Boolean);
   }

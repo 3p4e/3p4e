@@ -18,6 +18,7 @@ stay live HTML, so they are always editable. Everything around them is 3D, cinem
 | 3D environment | `bg_day.mp4`, `bg_night.mp4` (still fallback: `stage_day.jpg`, `stage_night.jpg`) | An arcane magician's stage that is also a burger kitchen. By day: velvet curtains, god rays, smoke, floating crystal shards, a glowing magic circle on a mirror floor. By night: the same stage in magenta and violet neon. A slow camera drift and seamless looping make it feel alive. |
 | Mascot portal | `wand_idle_day.mp4`, `wand_idle_night.mp4` | **Абра, the living magic wand**, floats inside a portal with two rotating rune rings. By day he adjusts his monocle and welcomes guests; by night he rocks out and draws neon spirals. |
 | Spell reveals | `wand_burger.mp4`, `wand_wrap.mp4`, `wand_waffle.mp4` | For each featured item, the wand casts a spell and the food materializes in a flash of light. Pick the clip per promo in admin.html. |
+| **Blizzard-style cinematics** (full screen) | `cine_awakening_day.mp4`, `cine_summon_burger.mp4`, `cine_summon_waffle.mp4`, `cine_summon_wrap.mp4`, `cine_neon_night.mp4` | Every 2 minutes the wand takes over the whole TV for a 10-second game cinematic. By day it alternates: the wand **awakens** on its stone pedestal and ignites the arcane circle, or it **summons** the featured food (burger, waffle, wrap) out of a fire vortex like a legendary item, ending with the promo name and price over the video. At night it's the **neon storm**. The two screens are offset by a minute, so one always shows the menu. Set the interval (or 0 to turn it off) in admin.html under **Поставки → Кинематика**. |
 | Wand-slash transition | `fx_slash.mp4` | Every ~40 seconds a blazing wand slash crosses the whole board and explodes into crystal shards, and the featured item changes. The two screens are offset so they never fire together. |
 
 **Effects in the page itself:**
@@ -27,7 +28,7 @@ stay live HTML, so they are always editable. Everything around them is 3D, cinem
 - **Atmosphere:** light rays, vignette, film grain and cinematic letterbox bars.
 - **Signature items:** a pulsing glow on "ХИТ" items.
 
-All clips are H.264 without sound (about 20 MB total), which TV boxes play natively. If a clip is missing,
+All clips are H.264 without sound (about 65 MB total including the 1080p cinematics), which TV boxes play natively. If a clip is missing,
 the board falls back to the still images.
 
 ## Mascot: Абра, the living magic wand

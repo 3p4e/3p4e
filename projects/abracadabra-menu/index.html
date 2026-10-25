@@ -184,6 +184,25 @@
   @keyframes joltL { 0% { filter: brightness(1); } 30% { filter: brightness(1.7); transform: rotateY(5deg) translateZ(30px); } 100% { filter: brightness(1); } }
   @keyframes joltR { 0% { filter: brightness(1); } 30% { filter: brightness(1.7); transform: rotateY(-7deg) translateZ(80px); } 100% { filter: brightness(1); } }
 
+  /* full-screen Blizzard-style cinematic: the wand performs, then the board comes back */
+  #cine { position: absolute; inset: 0; z-index: 58; background: #000; opacity: 0; pointer-events: none; transition: opacity .8s; }
+  #cine.on { opacity: 1; }
+  #cine video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  #cine::after { content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse 80% 75% at 50% 50%, transparent 55%, rgba(0,0,0,.55) 100%); }
+  .cine-card { position: absolute; left: 50%; bottom: 120px; transform: translate(-50%, 30px); z-index: 2; text-align: center;
+    opacity: 0; transition: opacity .7s, transform .7s; padding: 18px 54px 22px; border-radius: 20px;
+    background: linear-gradient(180deg, rgba(20,14,30,.55), rgba(8,5,12,.88));
+    box-shadow: 0 0 0 3px #b8892f, 0 0 0 4px rgba(255,240,200,.35), 0 0 60px rgba(243,154,30,.55); }
+  .cine-card.on { opacity: 1; transform: translate(-50%, 0); }
+  .cine-card h4 { font-family: "Russo One"; font-weight: 400; font-size: 64px; line-height: 1.05; color: #fff;
+    text-shadow: 0 3px 0 rgba(0,0,0,.6), 0 0 24px rgba(243,154,30,.7); }
+  .cine-card .price { font-family: "Russo One"; font-size: 110px; line-height: 1.05;
+    background: linear-gradient(180deg, #fffbe0 0%, #ffd84a 45%, #e08a12 100%);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 4px 0 #5a2c06) drop-shadow(0 0 28px rgba(255,190,60,.85)); }
+  .cine-card .price small { font-size: .36em; margin-left: 8px; }
+
   /* light sweep across category headers */
   .cat h2::after { content: ""; position: absolute; top: 0; bottom: 0; width: 160px; left: -200px;
     background: linear-gradient(100deg, transparent, rgba(255,255,255,.6), transparent);
@@ -226,6 +245,7 @@
   </aside>
   <footer><div class="ticker" id="ticker"></div></footer>
   <video id="fx" muted playsinline src="assets/video/fx_slash.mp4"></video>
+  <div id="cine"><video id="cv" muted playsinline></video><div class="cine-card" id="cineCard"></div></div>
   <div class="grain"></div><div class="letterbox t"></div><div class="letterbox b"></div>
 </div>
 
@@ -478,6 +498,33 @@
     boost *= .96;
     requestAnimationFrame(draw);
   }
+
+  // ---------- full-screen cinematics: by day the wand awakens or summons the featured food, at night the neon storm ----------
+  const cine = document.getElementById("cine"), cineV = document.getElementById("cv"), cineCard = document.getElementById("cineCard");
+  const SUMMON = { wand_burger: "cine_summon_burger", wand_waffle: "cine_summon_waffle", wand_wrap: "cine_summon_wrap",
+                   fox_burger: "cine_summon_burger", fox_waffle: "cine_summon_waffle", fox_wrap: "cine_summon_wrap" };
+  let cineN = 0, cineBusy = false;
+  function playCinematic() {
+    if (cineBusy) return;
+    const promos = (DATA.promos || []).filter(p => p.price !== null && p.price !== "");
+    let name, promo = null;
+    if (night()) name = "cine_neon_night";
+    else if (cineN++ % 2 === 0) name = "cine_awakening_day";
+    else { const summonable = promos.filter(p => SUMMON[p.video]);       // rotate through the promos that have a summon clip
+           promo = summonable.length ? summonable[(cineN >> 1) % summonable.length] : null;
+           name = promo ? SUMMON[promo.video] : "cine_awakening_day"; }
+    cineBusy = true;
+    const done = () => { cine.classList.remove("on"); cineCard.classList.remove("on"); setTimeout(() => { cineBusy = false; burst(); }, 800); };
+    cineCard.classList.remove("on");
+    cineCard.innerHTML = promo ? `<h4>${esc(promo.title)}</h4><div class="price">${esc(promo.price)}<small>${esc(DATA.currency || "ден")}</small></div>` : "";
+    cineV.onended = done; cineV.onerror = done;
+    cineV.ontimeupdate = () => { if (promo && cineV.currentTime > cineV.duration - 3.6) cineCard.classList.add("on"); };
+    cineV.src = V(name);
+    cineV.play().then(() => cine.classList.add("on")).catch(done);
+  }
+  const cineMin = Number(q.get("cine") ?? DATA.cinematicMinutes ?? 2);   // &cine=0.5 for testing, 0 = off
+  if (cineMin > 0) setTimeout(() => { playCinematic(); setInterval(playCinematic, cineMin * 60000); },
+                              (SCREEN === 2 ? cineMin * 30000 : 0) + 20000);   // screen 2 runs half an interval later
 
   // ---------- anti burn-in: nudge the whole picture a few pixels every 3 minutes ----------
   let shift = 0;
