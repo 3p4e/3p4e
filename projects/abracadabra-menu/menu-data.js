@@ -7,6 +7,7 @@
   - available: false -> привремено скриен (пр. „нема денес“).
   - badge: "ХИТ" | "НОВО" | "ВЕГЕ" | "" -> мала ознака покрај името.
   - screen: на кој екран оди категоријата (1 = лев, 2 = десен).
+  - promos[].video: анимација на маскотата за таа промоција (fox_burger, fox_waffle, fox_wrap).
 */
 window.MENU_DATA = {
   currency: "ден",
@@ -19,10 +20,10 @@ window.MENU_DATA = {
   nightTo: 6,
 
   promos: [
-    { title: "АБРАКАДАБРА БУРГЕР", subtitle: "Нашиот магичен специјалитет + помфрит", price: 350 },
-    { title: "ДРПАН БУРГЕР", subtitle: "Сочно дрпано месо + помфрит", price: 250 },
-    { title: "АБРАКАДАБРА ВАФЛА", subtitle: "Слатка магија за крај", price: 130 },
-    { title: "ДРПАНО ЈУНЕШКО", subtitle: "Врап полн со вкус", price: 200 }
+    { title: "АБРАКАДАБРА БУРГЕР", subtitle: "Нашиот магичен специјалитет + помфрит", price: 350, video: "fox_burger" },
+    { title: "ДРПАН БУРГЕР", subtitle: "Сочно дрпано месо + помфрит", price: 250, video: "fox_burger" },
+    { title: "АБРАКАДАБРА ВАФЛА", subtitle: "Слатка магија за крај", price: 130, video: "fox_waffle" },
+    { title: "ДРПАНО ЈУНЕШКО", subtitle: "Врап полн со вкус", price: 200, video: "fox_wrap" }
   ],
 
   categories: [

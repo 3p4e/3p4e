@@ -97,6 +97,7 @@
 
   const COLORS = { red: "#e5262b", orange: "#f39a1e", lime: "#a8d82c", yellow: "#f5e31b", magenta: "#ff2fb3", green: "#3fbf5a", brown: "#8a4b2a" };
   const BADGES = ["", "ХИТ", "НОВО", "ВЕГЕ"];
+  const VIDEOS = [["", "🦊 Лисицата мавта"], ["fox_burger", "🦊 вади бургер"], ["fox_wrap", "🦊 вади врап"], ["fox_waffle", "🦊 вади вафла"]];
   const esc = s => String(s ?? "").replace(/[&<>"]/g, m => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[m]));
 
   function draw() {
@@ -131,6 +132,7 @@
         <input class="name" placeholder="Наслов" value="${esc(p.title)}" oninput="DATA.promos[${pi}].title=this.value">
         <input placeholder="Опис" value="${esc(p.subtitle)}" oninput="DATA.promos[${pi}].subtitle=this.value" style="flex:2 1 220px">
         <input inputmode="numeric" placeholder="цена" value="${esc(p.price)}" oninput="DATA.promos[${pi}].price=this.value.replace(/[^\\d]/g,'')" style="width:90px">
+        <select title="Анимација на маскотата" onchange="DATA.promos[${pi}].video=this.value">${VIDEOS.map(([v, l]) => `<option value="${v}" ${v === (p.video || "") ? "selected" : ""}>${l}</option>`).join("")}</select>
         <button onclick="move(DATA.promos,${pi},-1)">▲</button><button onclick="move(DATA.promos,${pi},1)">▼</button>
         <button class="danger" onclick="DATA.promos.splice(${pi},1);draw()">✕</button>
       </div></div>`).join("");

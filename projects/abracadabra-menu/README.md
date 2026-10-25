@@ -9,9 +9,45 @@ same page with a different `screen` parameter:
 | Right | `index.html?screen=2` | Врапови, Скара, Салати, Десерти, Додатоци, Кафе, Пијалоци |
 | Editor | `admin.html` | Change prices, items, promos, ticker text |
 
+## Video board (motion made with Higgsfield)
+The menu text and prices stay live HTML, so they're always editable. Higgsfield video clips play
+underneath and around them:
+
+| Layer | Clip (assets/video) | What it does |
+|---|---|---|
+| Background | `bg_day.mp4`, `bg_night.mp4` | A slowly turning vortex in brand colours (magenta neon at night), with floating triangle shards. It loops seamlessly. |
+| Mascot panel | `fox_idle_day.mp4`, `fox_idle_night.mp4` | Абра the fox idles: tips his hat and winks by day, does neon wand tricks and the "rock on" hand at night. |
+| Promo reveals | `fox_burger.mp4`, `fox_wrap.mp4`, `fox_waffle.mp4` | For each featured item, the fox performs a magic trick that produces the food. Pick the clip per promo in admin.html. |
+| Magic transition | `fx_swirl.mp4` | Every ~40 seconds the logo swirl explodes in triangle shards across the whole board, and the featured item changes. The two screens are offset so they never fire together. |
+
+Effects in the page itself: a light sweep across the category headers, a glow pulse on "ХИТ" items,
+prices that count up, drifting confetti, and a brightness "jolt" when the transition hits.
+All clips are H.264 without sound (about 13 MB total), which TV boxes play natively. If a clip is
+missing, the board falls back to the still mascot image.
+
+## Mascot: Абра the fox magician
+Research on long-running ad campaigns (System1 / IPA "Fluent Devices") shows that a **recurring,
+distinctive brand character** makes advertising much more effective. The character has to be ownable,
+though, and a burger is the most generic choice in the category. Criteria and decision:
+- **The link to the name:** "Abracadabra" means magic. The fox is the trickster of folk tales, and
+  "итрата лисица" is familiar from Macedonian children's stories.
+- **Brand colours:** orange and red fur matches the logo exactly.
+- **Brand mood:** foxes are night animals, which suits the late-night, neon, rock vibe.
+- **Ownership:** no major fast-food chain uses a fox.
+- **Rejected alternatives:**
+  - *Rabbit from a top hat:* the most classic magic symbol, but generic and close to the Trix and
+    Nesquik rabbits.
+  - *Black cat:* cool, but a bad-luck superstition in the Balkans.
+  - *A burger character:* not ownable.
+
+Sources: [System1 — The Seven Habits of Highly Effective Characters](https://system1group.com/blog/the-seven-habits-of-highly-effective-characters),
+[WARC — Identifying and measuring the Fluent Device](https://www.warc.com/en/article/identifying-and-measuring-the-fluent-device-96789122d7c54358bf1129c0c32d85ec),
+[Campaign — mascot study](https://campaignlive.com/article/starbucks-triumphs-mr-mucus-gets-battering-mascot-study/1593815),
+[Quirk's — most memorable brand mascots](https://www.quirks.com/articles/mascot-matchup-the-most-memorable-brands).
+
 ## Features
-- **Brand look:** dark background, the logo's colours (red, orange, lime, yellow), triangle-confetti
-  motif, and the animated **Абра** mascot with a rotating promo panel.
+- **Brand look:** a video background, the logo's colours (red, orange, lime, yellow), triangle-confetti
+  motif, and the animated **Абра** fox with a rotating promo panel.
 - **Day/night switching:** automatic. From 19:00 to 06:00 the screens use the magenta neon look of the
   night sign and the night mascot. Test it with `&mode=night` or `&mode=day`.
 - **Hidden items:** an empty price hides the item. A category with no prices disappears automatically.
@@ -71,6 +107,7 @@ index.html        the player (both screens)
 admin.html        the editor
 menu-data.js      menu content (prices, items, promos, settings)
 assets/logo.png   clean redraw of the logo emblem
-assets/mascot_day.png / mascot_night.png   the Абра mascot (day and neon-night versions)
+assets/mascot_day.png / mascot_night.png   Абра the fox, still images (fallback)
+assets/video/     Higgsfield clips: backgrounds, fox loops and reveals, magic transition
 assets/fonts/     Russo One + Rubik (Cyrillic), bundled for offline use
 ```
