@@ -1,0 +1,10 @@
+# Biometric data (GDPR Art. 9) and large binaries never go into git
+tools/models/
+faces/
+face_dataset/
+keyframes/
+*.onnx
+output/
+*.mp4
+*.wav
+*.mp3
