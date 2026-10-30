@@ -23,6 +23,7 @@ These work with Nano Banana Pro/2, GPT Image 2, Seedream 4.5/5 lite, Cinema Stud
 | Element | ID | Source keyframe | Use for |
 |---|---|---|---|
 | Blagoj-face | `319ccd19-46b7-4d9b-9d51-d74403161d64` | training photo | the hero's face (see [IDENTITY.md](IDENTITY.md)) |
+| **Blagoj-Base** | `f5e2e917-3a91-4213-a01a-ffbca43c7d4c` | neutral 4-view base from real selfies | **START HERE for every new character** (see [CHARACTER_SYSTEM.md](CHARACTER_SYSTEM.md)) |
 | **Azulon-Master** | `5b059323-b615-45c0-b3b6-16a38f295aa3` | authenticity-checked 4-view set | **FINAL MASTER HERO**: photoreal, WoW-style ears, no chin dimple |
 | Azulon-Canon (superseded) | `eaa589c5-b777-4e6a-90f2-e93b6fe9da4b` | 4-view lens-corrected turnaround | **MASTER HERO**, use this first |
 | Azulon-Celestial | `b59b6eb8-c814-47de-a273-63372793a15c` | real photos 08/03/05/11, edited | **DEFAULT HERO**: true likeness, hairless, elven ears, Selûne tattoo (see [AZULON_CANON.md](AZULON_CANON.md)) |
