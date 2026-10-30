@@ -23,7 +23,10 @@ These work with Nano Banana Pro/2, GPT Image 2, Seedream 4.5/5 lite, Cinema Stud
 | Element | ID | Source keyframe | Use for |
 |---|---|---|---|
 | Blagoj-face | `319ccd19-46b7-4d9b-9d51-d74403161d64` | training photo | the hero's face (see [IDENTITY.md](IDENTITY.md)) |
-| **Blagoj-shaven** | `454a359e-cf57-4a41-b088-6d85b15ed816` | authentic shaven edits A/B/C | **default hero face**: clean-shaven, hairless, true likeness; aasimar markers via prompt |
+| **Azulon-Celestial** | `b59b6eb8-c814-47de-a273-63372793a15c` | real photos 08/03/05/11, edited | **DEFAULT HERO**: true likeness, hairless, elven ears, Selûne tattoo (see [AZULON_CANON.md](AZULON_CANON.md)) |
+| Azulon-Radiant | `7b50aafd-bbcb-496c-9c80-92a437ced884` | super portrait + back | super mode |
+| Azulon-Body-Tattoo | `cbcca2cc-c2e9-4c5e-b380-ce8b7bb2c763` | turnaround | full-body tattoo map |
+| Blagoj-shaven | `454a359e-cf57-4a41-b088-6d85b15ed816` | authentic shaven edits A/B/C | **default hero face**: clean-shaven, hairless, true likeness; aasimar markers via prompt |
 | Azulon-Aasimar-shaven (demoted) | `e9e61b98-cf35-45d9-8d3e-0c1e9037299d` | shaven frontal edit | Radiant Soul look only; face drifted |
 | Azulon-Aasimar (superseded) | `287ac548-837e-4d95-bcc7-1c3488298958` | aasimar edits | archived: moustache version |
 | Azulon-Abolisher-armor | `136c4f9e-6a19-4189-9b39-af90c7f63c49` | 51 | hero costume; pair with Blagoj-face |
