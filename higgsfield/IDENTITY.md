@@ -7,6 +7,21 @@
 
 Higgsfield also auto-created an element named `Blagoj` (`8519f8e0-4e1e-4a62-89f3-21767456e5ec`) from one training photo. Prefer `Blagoj-face`: it was hand-picked as frontal, eyes open and evenly lit.
 
+## Mandatory prompt phrase (verified)
+
+The Soul fixes the face, not the head. Every prompt with this identity must contain:
+
+> **"completely shaved bald head, short ginger-brown moustache and light stubble, eyes open"**
+
+| Smoke test 2026-10-30 (soul_cinematic, 16:9, 2k) | Likeness (SFace cosine vs training set) | Head/hair |
+|---|---|---|
+| A, without phrase | 0.792 | short hair added ✗ |
+| B, without phrase | 0.740 | shoulder-length hair + earrings ✗ |
+| C, with phrase | 0.870 | correct ✓ |
+| D, with phrase | 0.863 | correct ✓ |
+
+Acceptance limit 0.50; same-person threshold 0.363. The face-embedding score **does not see hair**, so check head and hair by eye on every keyframe.
+
 ## Training set (provenance)
 
 - Source: 58 phone selfies (Viber-exported JPEG, 1202×1600), Google Drive, 2026-10-30.

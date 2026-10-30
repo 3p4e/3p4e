@@ -3,7 +3,7 @@
 **Hero:** Blagoj Nikolov (trained Soul Cinema identity)
 **Format:** 16:9, 4 shots per film, 5–8 s per shot, ~25–30 s per film, silent (score added in post)
 **Background reasoning:** see `01_REVIEW_gemini_chat.md`
-**Note:** the LOCK blocks deliberately say nothing about your age, hair colour or beard. The Soul identity supplies those. If you want a beard for Týr, add it after I've seen your photos.
+**Identity (verified 2026-10-30):** Soul Cinema `b3ba42a8-305b-465a-b867-83432e48687c`. The Soul fixes the **face** only. Without an explicit description it invented hair, including long hair and earrings. So every HERO LOCK must keep the phrase *"completely shaved bald head, short ginger-brown moustache and light stubble, eyes open"*. Smoke test with it: likeness 0.87 / 0.86 (without it: 0.79 / 0.74 and wrong hair). See `IDENTITY.md`.
 
 You can paste each block below into Claude Code as written. Block 0 runs once. Blocks 1–4 each produce one film.
 
@@ -30,7 +30,9 @@ The face is fixed in the **still image**, not in the video. So each shot is two 
 TASK: Train my Soul Cinema identity on Higgsfield and prepare the QC baseline.
 
 1. My photos are in ./faces/ (do NOT commit them; .gitignore covers it).
-   Run:  bash tools/fetch_models.sh
+   ALREADY DONE 2026-10-30: soul_id b3ba42a8-305b-465a-b867-83432e48687c (ready, smoke test passed).
+   Skip to the film blocks unless retraining. To retrain, run:
+   bash tools/fetch_models.sh
          python3 tools/face_qc.py dataset ./faces ./face_dataset
    Show me the QC report (face_dataset/qc_report.csv): every REJECT/SPARE with its reason,
    and the yaw spread. If fewer than 15 photos are SELECTED, stop and tell me what kind of
@@ -72,7 +74,7 @@ Rules for all later blocks:
 FILM 1 — THE PALADIN'S JUDGEMENT. Use my soul_id for every shot marked HERO.
 
 HERO LOCK (repeat verbatim in every HERO keyframe):
-"a broad-shouldered man, his own face and own hair, hair dusted with snow,
+"a broad-shouldered man, completely shaved bald head, short ginger-brown moustache and light stubble, eyes open, snow settling on his scalp,
 wearing heavy articulated silver plate armour with deep-etched flowing golden runes along
 the pauldrons and breastplate, a thick white wolf-fur mantle over the shoulders, a long
 weathered white tabard with a gold sunburst, a massive two-handed warhammer with a
@@ -141,8 +143,7 @@ that spirals away in the wind. The blizzard is pushed back by the shockwave."
 FILM 2 — GLEIPNIR: THE PLEDGE OF TÝR. Use my soul_id for every HERO shot.
 
 HERO LOCK:
-"a tall man, his own face and own hair, weathered skin, a few thin braided strands
-in his hair, wearing a dark iron-ringed mail shirt over blackened
+"a tall man, completely shaved bald head, short ginger-brown moustache and light stubble, eyes open, weathered skin, wearing a dark iron-ringed mail shirt over blackened
 leather stamped with interlaced Norse knotwork, a heavy brown bearskin cloak clasped with
 a bronze ring-brooch, no helmet, bare forearms with faded runic tattoos, calm grave eyes"
 
@@ -216,7 +217,7 @@ If I attached the seraph reference image: upload it and pass it as the image ref
 the hero keyframes.
 
 HERO LOCK:
-"a male seraph with his own human face and own hair, natural skin, serene gaze; from
+"a male seraph with his own human face, completely shaved bald head, short ginger-brown moustache and light stubble, eyes open, natural skin, serene gaze; from
 the neck down his entire body and armour are made of immaculate folded ivory parchment —
 crisp geometric origami plates forming pauldrons, breastplate and a long pleated robe;
 six enormous wings built from hundreds of layered folded-paper feathers, each with sharp
@@ -289,7 +290,7 @@ FILM 4 — THE LUNAR PURGE. Use my soul_id for every HERO shot. The two Shards a
 fictional; do NOT use my soul_id for them.
 
 HERO LOCK:
-"a man, his own face and own hair, wearing asymmetric armour of
+"a man, completely shaved bald head, short ginger-brown moustache and light stubble, eyes open, wearing asymmetric armour of
 opalescent circular silver scales that glow faintly with moonlight — a full scale-mail
 hauberk with a single sculpted crescent-moon pauldron on the left shoulder — over flowing
 layered silks of deep midnight blue shot through with tiny points of starlight; on his
