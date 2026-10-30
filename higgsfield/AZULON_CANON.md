@@ -69,3 +69,21 @@ That 15–20 % spread is perspective distortion from shooting at arm's length. T
 - The eyes render brown-hazel instead of grey-green.
 - The skin has a slight CGI smoothness.
 - Fix both in prompts with "grey-green eyes, unretouched photographic skin".
+
+## FINAL MASTER: `Azulon-Master` = `5b059323-b615-45c0-b3b6-16a38f295aa3` (supersedes Azulon-Canon)
+
+Changes requested by B. Nikolov: no CGI look, no chin dimple, World of Warcraft-style long ears. Each view was checked with `tools/authenticity_check.py` against all 20 real photos (mean SFace, pass ≥ 0.50).
+
+| View | Job | Mean | Max |
+|---|---|---|---|
+| Front | `deb13582-d9da-422a-bd9b-503aff2d73f4` | 0.626 | 0.747 |
+| ¾ | `8c1ced08-623d-493b-a21a-21f2100e3b8d` | 0.591 | 0.685 |
+| ¾ | `236b7200-b6a0-4dcb-bdcb-bf7ef59e270b` | 0.556 | 0.671 |
+| Right profile | `4f2eb2bb-e8c3-472f-bef3-1cb5b5821ef5` | 0.536 | 0.624 |
+
+**Ears (replaces the earlier ears block):** very long high-elf ears in the classic MMORPG high-elf style. They are long, narrow, tapering blades about as long as the distance from the ear to the top of the head. They sweep backward and upward at 30–40°, the tips extend beyond the skull outline, and there is a small natural earlobe.
+
+**Lessons recorded:**
+1. **Never pass another generated face as a reference image for a feature.** The edit model copies the face as well. A long-ear reference image dropped the front from 0.646 to 0.493. Describe features in text only.
+2. **Stacked edits accumulate drift.** A "correction" pass (shorten the lower face, fuller cheeks, younger) lowered the front from 0.646 to 0.513 and did not fix the geometry. Always edit from the highest-likeness base.
+3. **Known residual:** on the frontal view the nose-to-mouth distance stays about 24 % longer than in the real selfies. Part of this is measurement bias: in the real photos the moustache hides the mouth corners, so the landmark detector places them higher. It cannot be settled without a clean-shaven real photo.

@@ -23,7 +23,8 @@ These work with Nano Banana Pro/2, GPT Image 2, Seedream 4.5/5 lite, Cinema Stud
 | Element | ID | Source keyframe | Use for |
 |---|---|---|---|
 | Blagoj-face | `319ccd19-46b7-4d9b-9d51-d74403161d64` | training photo | the hero's face (see [IDENTITY.md](IDENTITY.md)) |
-| **Azulon-Canon** | `eaa589c5-b777-4e6a-90f2-e93b6fe9da4b` | 4-view lens-corrected turnaround | **MASTER HERO**, use this first |
+| **Azulon-Master** | `5b059323-b615-45c0-b3b6-16a38f295aa3` | authenticity-checked 4-view set | **FINAL MASTER HERO**: photoreal, WoW-style ears, no chin dimple |
+| Azulon-Canon (superseded) | `eaa589c5-b777-4e6a-90f2-e93b6fe9da4b` | 4-view lens-corrected turnaround | **MASTER HERO**, use this first |
 | Azulon-Celestial | `b59b6eb8-c814-47de-a273-63372793a15c` | real photos 08/03/05/11, edited | **DEFAULT HERO**: true likeness, hairless, elven ears, Selûne tattoo (see [AZULON_CANON.md](AZULON_CANON.md)) |
 | Azulon-Radiant | `7b50aafd-bbcb-496c-9c80-92a437ced884` | super portrait + back | super mode |
 | Azulon-Body-Tattoo | `cbcca2cc-c2e9-4c5e-b380-ce8b7bb2c763` | turnaround | full-body tattoo map |

@@ -29,7 +29,8 @@
   "Azulon-Celestial": "b59b6eb8-c814-47de-a273-63372793a15c",
   "Azulon-Radiant": "7b50aafd-bbcb-496c-9c80-92a437ced884",
   "Azulon-Body-Tattoo": "cbcca2cc-c2e9-4c5e-b380-ce8b7bb2c763",
-  "Azulon-Canon": "eaa589c5-b777-4e6a-90f2-e93b6fe9da4b"
+  "Azulon-Canon": "eaa589c5-b777-4e6a-90f2-e93b6fe9da4b",
+  "Azulon-Master": "5b059323-b615-45c0-b3b6-16a38f295aa3"
  },
  "voices": {
   "higgsfield_clones": {
@@ -184,6 +185,42 @@
    "34_left_cheek": "54a00dfb-e99d-40e6-a845-b6c5764af666",
    "34_right_cheek": "a576d961-67b2-4137-ad19-18b73491ac21",
    "profile_right": "89a731e1-4714-4aa5-be13-084d829fdd28"
+  },
+  "master": {
+   "front": "deb13582-d9da-422a-bd9b-503aff2d73f4",
+   "34_a": "8c1ced08-623d-493b-a21a-21f2100e3b8d",
+   "34_b": "236b7200-b6a0-4dcb-bdcb-bf7ef59e270b",
+   "profile": "4f2eb2bb-e8c3-472f-bef3-1cb5b5821ef5"
+  },
+  "rejected_iterations": {
+   "photoreal_v2": [
+    "7a519b29-36ef-4385-a61d-50680bdc36b5",
+    "b7b21717-90d7-4eb5-9c85-6811acfea407",
+    "581b7fa3-c7e7-4c4d-9db1-761a698c1198",
+    "0dd4998e-3df9-43cb-851b-bc5b6feb5559"
+   ],
+   "geometry_correction_v3": [
+    "552925ad-8a4c-4bd7-97a1-7f67c9d7717a",
+    "b0eadcb6-7442-4aa8-a6df-a725a2a2df3c",
+    "ed4f75ec-55c2-4d3d-96ce-d9f8dc7d0f26",
+    "2c212951-1915-4eae-9224-00ff58b360e1"
+   ],
+   "chin_v3b": [
+    "d6b63704-5e48-43e5-bbd4-66f6a51797e3",
+    "a15f96a0-30f7-4772-a4b7-361a70f4792d",
+    "f59601c3-0de4-410d-bbcd-9b8726f7c3d0",
+    "b04ea9f9-11de-4810-9cc7-71f5b96889ab"
+   ],
+   "ears_v4": [
+    "1bf26a8b-e50c-4738-a890-99986cec18a4",
+    "9652dfd5-3226-4c2f-b950-10a982841a79",
+    "7ebab997-b48d-4fb6-b924-8e88b33a4a6b"
+   ],
+   "contaminated_v5": [
+    "5472c013-ba9f-4f74-a277-3d40888a35b4",
+    "3d42575e-7229-4f91-adae-12e561ce91ff",
+    "47224b59-afec-4ad9-9f0d-53a266c0e0d4"
+   ]
   }
  }
 }
