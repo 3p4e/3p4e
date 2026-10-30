@@ -276,6 +276,8 @@ paper cranes" with "crystalline geometric shards".)
 
 ## BLOCK 4: *The Lunar Purge* (Forgotten Realms, faithful to canon)
 
+> **Superseded by `03_FILM4_REVIEW_AND_v2.md`.** The v1 stills showed the Soul putting the hero's face on every character. Use the v2 pipeline (Soul plate first, then a Nano Banana Pro edit) for any shot with more than one face, in all four films.
+
 **Lore spine (sourced in the review, R2–R9):**
 - The **Shards** are seven female planetars of Selûne, former high priestesses. They have long flowing blue hair, pearly-white skin, and wings they can show or dismiss, and they are formed of moonlight and fire.
 - **Shar** sometimes corrupts Shards into **angels of decay**. These are ~2.7 m winged undead that constantly rot and stream liquid corruption, which pools around them and rots living things. They **instinctively recognise a worshipper of their former deity**.
