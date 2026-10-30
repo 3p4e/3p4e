@@ -58,3 +58,25 @@ Azulon is a **Protector Aasimar**, a mortal with celestial blood guided by an an
 **Racial markers (keep identical in every shot):** luminous moon-silver irises; a silver crescent-moon birthmark on the left temple; fine silver celestial filigree tracing from the crescent over the scalp; a faint pearlescent skin sheen. For **Radiant Soul** moments, add white-glowing eyes and two translucent wings of moonlight.
 
 **Lesson learned:** Soul Cinema pulls everything back to the training face, so the racial markers come out too faint. The working pipeline is a Soul portrait first, then a Nano Banana Pro edit that adds the markers. In video, call `<<<287ac548-837e-4d95-bcc7-1c3488298958>>>`, or use one of the two edits as the Kling start frame.
+
+## Clean-shaven Azulon, added 2026-10-30 (current default)
+
+At B. Nikolov's request, Azulon has **no facial hair and no scalp hair**: no moustache, beard or stubble, and a smooth hairless head. The eyebrows are kept.
+
+| Asset | ID | Likeness |
+|---|---|---|
+| Element **`Azulon-Aasimar-shaven`** (use this) | `e9e61b98-cf35-45d9-8d3e-0c1e9037299d` | from the frontal edit |
+| Frontal edit (gambeson, gorget) | job `196fa55e-03dd-4a1b-ae8c-bc871d5a7510` | 0.750 PASS |
+| ¾ edit, rejected (jaw drift, heavier brows) | job `decb196f-fb1f-48f1-87b2-86ac31c4f7a4` | 0.473 WEAK |
+
+`Azulon-Aasimar` (`287ac548…`, with moustache) is **superseded**. It is kept only as an archived asset.
+
+**New mandatory phrase.** It replaces the moustache phrase above:
+
+> **"completely hairless smooth shaved head, clean-shaven face with no moustache, no beard and no stubble, eyebrows kept, eyes open, mouth closed, no earrings"**
+
+**Warning:** all 20 Soul training photos show a moustache, so the Soul (`b3ba42a8…`) will keep putting it back. Do not rely on Soul Cinema alone for this look:
+- Use the `Azulon-Aasimar-shaven` element, or the frontal edit as the start frame.
+- Or follow every Soul shot with a Nano Banana Pro shave edit.
+
+Likeness scores will also run lower, because the moustache was a strong identity cue. The 0.50 bar still applies. A lasting fix would be to retrain the Soul on clean-shaven photos.
