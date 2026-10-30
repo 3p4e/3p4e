@@ -46,3 +46,26 @@ The profile scores are low partly because SFace is weak on profiles. The source 
 | **Azulon-Body-Tattoo** | `cbcca2cc-c2e9-4c5e-b380-ce8b7bb2c763` | full-body tattoo map, front + back |
 
 Known flaw: the turnaround body came out as a sculpted, gym-built physique with a slightly CGI render look. It is not his real build. Use it for the tattoo layout only, never as the body type. Prompt: "lean wiry build, not muscular".
+
+## MASTER identity: `Azulon-Canon` = `eaa589c5-b777-4e6a-90f2-e93b6fe9da4b` (2026-10-30, supersedes Azulon-Celestial)
+
+The four views were generated from six references at once: real selfies 08, 14, 06, 03 and 11, plus the tattoo reference `b129f88f…`. The prompt asked for **lens correction** (85 mm at 2.5 m) and a celestial refinement of at most 5 %.
+
+| View | Job | Likeness |
+|---|---|---|
+| Front | `d09ff0e7-d9c7-4cce-8257-c57f730ea33a` | 0.742 |
+| ¾ (sees left cheek) | `54a00dfb-e99d-40e6-a845-b6c5764af666` | 0.734 |
+| ¾ (sees right cheek) | `a576d961-67b2-4137-ad19-18b73491ac21` | 0.722 |
+| Right profile, eye open | `89a731e1-4714-4aa5-be13-084d829fdd28` | 0.640 |
+
+**Selfie distortion, measured** (YuNet landmarks, ratio to inter-ocular distance across 6 selfies):
+- eye-to-nose 0.62–0.76;
+- nose-to-mouth 0.41–0.63;
+- face width 1.97–2.24.
+
+That 15–20 % spread is perspective distortion from shooting at arm's length. The most distant selfies (08, 14, 06) are the most faithful, so they were the primary references. In the canon set the dome is rounder and the ears sit at their true size.
+
+**Known deviations:**
+- The eyes render brown-hazel instead of grey-green.
+- The skin has a slight CGI smoothness.
+- Fix both in prompts with "grey-green eyes, unretouched photographic skin".
