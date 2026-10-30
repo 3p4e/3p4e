@@ -43,3 +43,18 @@ Acceptance limit 0.50; same-person threshold 0.363. The face-embedding score **d
 ## Data protection
 
 These photos are biometric data (GDPR Art. 4(14), Art. 9). They live in `faces/` and `face_dataset/`, which are excluded from git by `.gitignore`. Copies are held by Higgsfield (Soul training + uploads) and in the Google Drive folder, which is **publicly link-shared**. Restrict that folder to "Restricted" sharing now that the download is done.
+
+## Race: Aasimar (Protector), added 2026-10-30
+
+Azulon is a **Protector Aasimar**, a mortal with celestial blood guided by an angelic spirit. The race was chosen because it fits the story (a paladin of Selûne who restores her fallen celestial Shards) and because it keeps a human face, so the likeness survives.
+
+| Asset | ID | Likeness (SFace) |
+|---|---|---|
+| Element **`Azulon-Aasimar`** | `287ac548-837e-4d95-bcc7-1c3488298958` | built from the two edits below |
+| NB Pro edit, ¾ profile, cloak + pauldron | job `fb7c1ff6-b04a-482e-a99c-614690ce2030` | 0.725 |
+| NB Pro edit, frontal, gambeson + crescent gorget | job `2edbe5f7-3749-4a77-b8b2-ddc6495502fb` | 0.779 |
+| Soul tests (human-looking; traits too faint) | `504d8189…` 0.879 · `61a9fa83…` 0.741 (Radiant Soul: glowing eyes + spectral wings) · `0acdb460…` 0.722 · `0fefd826…` 0.848 | |
+
+**Racial markers (keep identical in every shot):** luminous moon-silver irises; a silver crescent-moon birthmark on the left temple; fine silver celestial filigree tracing from the crescent over the scalp; a faint pearlescent skin sheen. For **Radiant Soul** moments, add white-glowing eyes and two translucent wings of moonlight.
+
+**Lesson learned:** Soul Cinema pulls everything back to the training face, so the racial markers come out too faint. The working pipeline is a Soul portrait first, then a Nano Banana Pro edit that adds the markers. In video, call `<<<287ac548-837e-4d95-bcc7-1c3488298958>>>`, or use one of the two edits as the Kling start frame.

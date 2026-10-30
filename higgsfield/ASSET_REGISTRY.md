@@ -23,6 +23,7 @@ These work with Nano Banana Pro/2, GPT Image 2, Seedream 4.5/5 lite, Cinema Stud
 | Element | ID | Source keyframe | Use for |
 |---|---|---|---|
 | Blagoj-face | `319ccd19-46b7-4d9b-9d51-d74403161d64` | training photo | the hero's face (see [IDENTITY.md](IDENTITY.md)) |
+| **Azulon-Aasimar** | `287ac548-837e-4d95-bcc7-1c3488298958` | aasimar edits | **default hero from now on**: face + race markers |
 | Azulon-Abolisher-armor | `136c4f9e-6a19-4189-9b39-af90c7f63c49` | 51 | hero costume; pair with Blagoj-face |
 | Angel-of-Decay | `f9ae15c9-2d8b-48c7-82c0-b4ad4844aa1b` | c62 + e60 | corrupted Shard, full figure |
 | Angel-of-Decay-face | `d13c93f5-057c-4303-9496-dedc39e723d6` | c110 | corrupted Shard, close-up |
