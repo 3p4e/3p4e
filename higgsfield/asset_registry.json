@@ -1,0 +1,152 @@
+{
+ "higgsfield_project": {
+  "name": "Azulon Asset Library",
+  "project_id": "3aa118ac-52ba-4e84-9286-83e5b89ce16a",
+  "workspace_id": "bed6a21e-facf-4759-be68-02ac3d31594f",
+  "folders": {
+   "01_identity": "fd86a534-e2ee-4325-a511-d6cf7684c699",
+   "02_keyframes": "06f55c1a-01f1-4a0b-8a64-eea970662adf",
+   "03_video_clips": "474b4780-ad44-4fb6-aa5d-2a4d4f29ec78",
+   "04_audio_score_final": "9db6af67-ef5f-4b7d-b98b-0d4e4d6a9766",
+   "05_lunar_purge_v1_rejected": "c72fb19c-9fb9-4fb2-9a6d-644599b43364"
+  }
+ },
+ "identity": {
+  "soul_id": "b3ba42a8-305b-465a-b867-83432e48687c",
+  "element_blagoj_face": "319ccd19-46b7-4d9b-9d51-d74403161d64"
+ },
+ "reference_elements": {
+  "Azulon-Abolisher-armor": "136c4f9e-6a19-4189-9b39-af90c7f63c49",
+  "Angel-of-Decay": "f9ae15c9-2d8b-48c7-82c0-b4ad4844aa1b",
+  "Angel-of-Decay-face": "d13c93f5-057c-4303-9496-dedc39e723d6",
+  "Shard-of-Selune-restored": "7cfd68a7-8516-4cd4-89ed-a1fae894d38a",
+  "Moon-Shrine-set": "ce2b4019-89b3-435e-892d-828efaa6695a",
+  "Sanctum-of-Shar": "59721e8b-fcc3-447f-90ba-6f0f4c8f94c4",
+  "Selune-eclipse-sky": "dbd634f4-36d9-46e4-943f-9c2443a3fe6e"
+ },
+ "voices": {
+  "higgsfield_clones": {
+   "Azulon - The Abolisher": "7a859199-20c0-451e-a3a4-5a91b5aa4b35"
+  },
+  "elevenlabs_saved": {
+   "Azulon": "azvZ1e4ESkFJBQljyj23",
+   "Shar": "fVAgjfbrqAnDt9gAct91",
+   "Aelyra_fallen": "RiJ99IDOJaFRrr92IRbN"
+  },
+  "voice_sample_audio_inputs": {
+   "azulon": "742c537f-4851-412d-8614-3b92d44c8dbb",
+   "shar": "9c801227-2222-4bb3-81c1-1751d4b3e390",
+   "aelyra_fallen": "a59278fa-0ee3-4309-8133-8bf90dbaca3c",
+   "ysolde_fallen": "6083ea50-89cc-42f9-a068-3bcc1a730d04",
+   "ysolde_restored": "76ad304b-bd53-4f87-a3ac-34c64c8d8f14",
+   "selune": "eb18ed66-b6c8-4d9a-9714-9d43cca04097"
+  }
+ },
+ "audio": {
+  "score_audio_input": "3b010d2b-90e7-4b34-a145-c02e12d51937",
+  "elevenlabs_music_flow": "6Xoi7TYgNTCBKm8d2eik"
+ },
+ "final_film": {
+  "The_Remembering_v1_video_input": "afe3b6e4-0450-47ff-a8c2-8ad2ac15ec39",
+  "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3ICRWrtvpPxtZ4ZVzLAhLo7LK8T/afe3b6e4-0450-47ff-a8c2-8ad2ac15ec39.mp4"
+ },
+ "jobs": {
+  "keyframes": {
+   "10": "e53ab58d-18c2-4e73-adc4-cc4ef2a6112a",
+   "11": "2aa82c99-ef8d-4ce3-a7e0-6ea5b788c3f4",
+   "20": "e31769df-ea92-4ac8-93b3-b4e4bab94d9c",
+   "21": "022bdccc-7928-4229-a239-7f18ef349ad7",
+   "30": "b984881e-b080-44b5-ad48-37f523f88d9d",
+   "31": "c93def95-805f-49d3-a2b7-6135d78b5cce",
+   "40": "1cc17370-8195-4546-890f-6e3cd5167ec3",
+   "51": "e64426d6-10a1-46c3-b89a-23ce0d578667",
+   "50": "3dddeeb9-fc5c-442d-9103-506601bfb8dc",
+   "60": "df93faa4-56cf-4693-aeb7-9adec9afc86c",
+   "61": "7fb6127e-e209-4878-9843-fd9cb620aaaf",
+   "70": "bc44e274-c008-4dfd-a00a-37d292d14afe",
+   "71": "38a4bca8-7c9d-4999-a86f-5a148fb17084",
+   "80": "ed96fc70-1576-470d-bf82-88b97406fa4a",
+   "81": "adb8933a-c0d8-4edc-8584-8cfb18684c20",
+   "41": "d25b0f14-e9e5-44ee-8c1b-0f2ed3cf6035",
+   "90": "867a0292-b291-443a-8402-0933e9f1d260",
+   "91": "e2923e7b-4f7e-4c92-8d57-8658ba7c42d0",
+   "100": "00137717-0c59-4515-a25d-45061ff29107",
+   "101": "613ddce3-2757-4c00-9221-f548a1a83e2c",
+   "110": "efbd6b6c-4f6b-4973-85e6-92d8ae5d5751",
+   "111": "e9101a1c-7ec8-4839-9739-1afc2860b5ba",
+   "120": "153cce38-b69d-4f63-95c7-78de66c3b53f",
+   "121": "386e32fd-b82b-4095-81c6-9a896e921472",
+   "130": "5575291b-3cee-49ae-88fa-c771bda0846f",
+   "131": "7d8aac55-7fda-4eb9-a1d0-b2dd4091a322",
+   "150": "b363304c-d89b-423c-937a-df6f8e1dd804",
+   "151": "9b83314c-4cb5-445c-bc26-8bb26e2b4e9e",
+   "160": "9f59d80f-3df9-416b-9a45-1521c6595e09",
+   "141": "001256ad-8402-43a7-8611-df8ac53052e5",
+   "161": "1fe1191a-c996-4f2e-9c6c-d6fec9827929",
+   "170": "03d4287d-9ff6-4ff0-aa1a-a6e61599e636",
+   "171": "10f88412-ee69-494f-94ad-527a97486ee8",
+   "180": "8f4204bb-befa-4f23-938e-49ae6c6cae27",
+   "181": "89913037-2ccc-4185-a43a-f2287ce58d05",
+   "c220": "d8018fd7-2f15-40a4-ab79-50c774ad683f",
+   "c221": "d714453c-afe8-46c5-b4da-2145978bfe50",
+   "c110": "1d1201aa-afcf-465e-846e-3166433cbb89",
+   "c112": "15abfc07-ee60-4826-a71a-63ed10f5820a",
+   "c132": "69b97f14-7d62-4882-8c42-6828dfbbfa26",
+   "c133": "daa6c3cf-3163-4a7d-a2db-91d7b208c5c1",
+   "c62": "b2e83d85-f308-4e18-9129-07a8b3cac90d",
+   "c63": "a4bd1a71-61ce-4a76-942c-17017f2411c2",
+   "c134": "e8e13c4b-7591-4b77-9550-3a5a8a9682d0",
+   "c135": "da2227bb-46bc-42d2-9892-4563fa873eef",
+   "c300": "7dbb9d2e-1240-4b44-9096-f9a426ba3c36",
+   "c301": "062b1e03-cc74-42ee-91b2-ca02cab73ad2",
+   "e60": "08471c05-217d-4aaf-9333-ed207f197739",
+   "e61": "ba0eac5d-5829-4005-9c61-f2e72ce295a7",
+   "f300": "95df4e0d-9c57-429a-b71a-bb197ddba2bb",
+   "f301": "1254eedf-79b5-4363-8ec4-fcbf6ca37800",
+   "e14end_a": "49c75144-c2e1-49fb-9162-b7aa4bb8e742",
+   "e14end_b": "f4469f7c-da86-4376-b7e0-16ccc14fefce"
+  },
+  "videos": {
+   "01": "6fab07b4-404e-4797-9558-c55f103411b3",
+   "02_v1": "4b35352a-d5d5-48bb-87ed-e9dcfd2c9beb",
+   "03": "54d00df0-e8fe-409e-8af2-717a24fd501d",
+   "04": "5ea508bf-1586-4db3-8f5c-b7b0852fc40a",
+   "05": "af764c9b-6349-4639-b019-b2a9460d0c92",
+   "06_v1": "42191f29-a008-4aaf-9325-18f939885fb9",
+   "07": "783cd9af-eaf3-457c-a0de-fd8ee3cef1e4",
+   "14": "a1652677-b4fd-453f-9d23-3d67e9ec7b6e",
+   "08": "4cce82ff-bbf0-463d-8282-7c7ea7e336ad",
+   "09": "537d5ee5-e85b-4082-98ad-7e09748af947",
+   "10": "d2a3eab2-3b44-4828-8445-30a3e0c509da",
+   "11_v1": "405de0a4-6808-47d7-85ab-5fef806b2067",
+   "12": "c4c87670-50d7-48ae-94a1-4b2c729909ec",
+   "13_v1": "473c7bca-1781-46a8-a745-7be279f849a6",
+   "15": "397d0040-5cf7-4c52-8a4f-ca5494a700e5",
+   "16": "335de085-09a5-4f00-a217-0f4191efde7f",
+   "17": "b62b01e5-4323-488a-b256-deaeb21e2e3d",
+   "18": "b8546772-b439-4bb3-aadd-f94d1c325ed6",
+   "02": "b88e3f82-7f36-42fb-bb5c-bfac34bb8791",
+   "11": "55a63f0f-0f2b-4ac9-81b1-412d41c23261",
+   "13": "38c323ef-7f07-4b2f-95b3-6ff76be85fcf",
+   "06": "d31c6e92-9878-4481-850c-da61c9cacc36",
+   "F1": "156f0f85-42d6-4a59-99c7-bbdab2ebe7f5",
+   "B1": "4f544a2d-9d5a-473f-8363-b0e5e3c74cbd"
+  },
+  "smoke_tests": {
+   "A": "6e23d593-65e7-4dca-b88c-f508e0172dce",
+   "B": "00e10d33-45e2-4732-b306-198cca726b7d",
+   "C": "fa641afb-48fe-42be-b9b4-4e28114371f2",
+   "D": "fe89787f-13d1-4924-8c62-f193fc0e1877"
+  },
+  "lunar_purge_v1": {
+   "4.1_a": "816dabf9-3c87-4f62-8b78-995947609b70",
+   "4.1_b": "6c877abd-b93c-47d0-8753-f17be501baea",
+   "4.2_a": "6e691a55-407a-46b3-b7a0-59efee9ffb34",
+   "4.2_b": "fd42048f-2f26-4b47-b4d0-58efbef7cd98",
+   "4.3_b": "fd8224ff-abc6-400a-a890-6cb44118568e",
+   "4.4A_b": "377e4968-232d-43f1-a112-0ce673777121",
+   "4.4B_a": "387551c8-cad1-4604-89bd-a855ae25a098",
+   "4.4B_b": "ded203e1-f155-4cce-b524-417842cc44e0"
+  }
+ }
+}
