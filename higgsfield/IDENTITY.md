@@ -80,3 +80,21 @@ At B. Nikolov's request, Azulon has **no facial hair and no scalp hair**: no mou
 - Or follow every Soul shot with a Nano Banana Pro shave edit.
 
 Likeness scores will also run lower, because the moustache was a strong identity cue. The 0.50 bar still applies. A lasting fix would be to retrain the Soul on clean-shaven photos.
+
+## Authentic clean-shaven base, added 2026-10-30 (CURRENT DEFAULT)
+
+Requirement (B. Nikolov): it **must be the same real person** as in the photos. The glowing-eye version `Azulon-Aasimar-shaven` drifted (smoothed, younger skin, altered eyes), so it is **demoted**. The new method:
+- Edit only the hair, starting from the highest-likeness source.
+- Include the real frontal photo (`b6531e60…`) as a second identity reference.
+- Keep the natural eyes, the skin age and the facial proportions.
+
+| Asset | ID | Likeness |
+|---|---|---|
+| Element **`Blagoj-shaven`** (use this) | `454a359e-cf57-4a41-b088-6d85b15ed816` | 3 images below |
+| A: the real photo, shaved | job `5a95787b-dcd4-4afd-b4b0-f3e3fc9da9aa` | 0.806 |
+| B: frontal, gambeson + gorget | job `1fd0df86-7485-4b9d-816c-5ad5c458f09e` | 0.796 |
+| C: shrine, ¾ | job `33681019-b299-45cf-98b1-41acd06a052c` | 0.788 |
+
+**Aasimar markers are now prompt-only and minimal.** Use at most a small silver crescent on the temple. Keep natural grey-green eyes in all normal shots. Glowing eyes and wings are allowed **only** in Radiant Soul moments. Never smooth, beautify or rejuvenate the face.
+
+**Prompt rule for edits:** "use the real photo strictly as identity reference … change ONLY … do NOT smooth, beautify, slim or rejuvenate the face … unretouched".
