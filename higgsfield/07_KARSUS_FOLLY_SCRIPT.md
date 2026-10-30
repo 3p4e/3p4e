@@ -84,21 +84,28 @@ Compare the 3 previews per voice with `tools/voice_stats.py` (pitch, pace, brigh
 - **ENCLAVE LOCK:** `a city of white stone towers and gold-domed halls built on top of a gigantic inverted mountain, its rocky underside hanging like a stalactite, floating far above a sea of clouds, waterfalls spilling off its edges and dissolving into mist`
 - **STYLE LOCK:** `photorealistic AAA game cinematic, volumetric light, natural film grain, anamorphic 2.39 framing inside 16:9, deep shadows, no text`
 
-## 7. Models
-| Task | Model | Why |
+## 7. Pipeline (revised 2026-10-30 after the reference-reel workflow)
+
+**Principle: lock the look first, then animate between frames, then finish in FFmpeg. I direct; the generators render.**
+
+| Step | Model / tool | Notes |
 |---|---|---|
-| Hero keyframes | Nano Banana Pro + `<<<Blagoj-Base>>>` + KARSUS LOCK | Highest verified likeness from the base |
-| Environment keyframes (SP1, SP2, SP5) | Nano Banana Pro, no face | Cities and cloud seas |
-| Video | Kling 3.0 Pro, start + end frame, 11–15 s per clip, `declined_preset_id` set | Only model that gives both length and frame control on this account |
-| Voices | ElevenLabs Voice Design (eleven_ttv_v3) | As in *The Remembering* |
+| 1. Lock the look | **GPT Image 2.5** (`gpt_image_2_5`, quality high or max, 2k) with reference images: `Blagoj-Base` views, the Karsus costume sheet, the crown, the Enclave | **Must be tested against Nano Banana Pro first**: keep whichever scores higher on `authenticity_check.py` for the hero. Environments have no face, so GPT Image 2.5 can go straight ahead. |
+| 2. Animate | **Seedance 2.5, `omni_reference`, 4-30 s, 1080p**: one clip per set piece, with the keyframes, costume sheet and crown as image references | A 22 s set piece becomes **one** clip, **no seam**. Set `generate_audio: false` (we mix our own). |
+| 2b. Controlled moves | **Kling 3.0 Pro, start + end frame, 3-15 s** | For transitions that need an exact end frame (lit to dark blackout, the stone epitaph) and for the short inserts. |
+| 2c. Cheap iteration | Seedance 2.5 **`draft: true`** (480p), finalised at 1080p only if approved | Judge motion for a fraction of the cost. |
+| 3. Finish | **FFmpeg** (`tools/assemble_film.py`: trim, transcode, ducking, loudnorm, titles) | HyperFrames: I don't know that tool, and FFmpeg already does everything needed. |
+| Voices | ElevenLabs Voice Design (eleven_ttv_v3) | Karsus and Mystryl; 3 previews each |
 | Score | ElevenLabs Music v2.5 | As before |
-| QC | `tools/authenticity_check.py` on every hero keyframe (mean ≥ 0.50) | New rule |
+| QC | `tools/authenticity_check.py` on every hero keyframe (mean >= 0.50) | New rule |
+
+**Open test before the budget is final:** Seedance 2.5 may refuse or distort a real person's face in `omni_reference`, and its 1080p price per second is not yet known. A 480p draft of one set piece answers both questions for very little.
 
 ## 8. Budget (Higgsfield; balance 347.19 credits on 2026-10-30)
 | Item | Estimate |
 |---|---|
 | ~18 keyframes (start and end frames) × 2 cr | ~36 |
-| ~102 s of Kling Pro × 1.75 cr/s | ~179 |
+| ~100 s of video (Seedance 2.5 or Kling Pro; Seedance price to be quoted from a draft) | ~179 for Kling Pro; Seedance TBD |
 | Retake reserve: long clips fail more often (+30 %) | ~55 |
 | **Total** | **~270 credits** (leaves about 75) |
 
