@@ -25,8 +25,10 @@ SAME_PERSON = 0.363      # SFace published cosine threshold
 HERO_LIKENESS = 0.50     # stricter acceptance limit for generated frames
 DUPLICATE = 0.92         # near-identical shots add no information to training
 MIN_FACE_PX = 256        # face box shorter side
-MIN_SHARPNESS = 60.0     # variance of Laplacian on the face crop
+MIN_SHARPNESS = 60.0     # variance of Laplacian on the face crop resized to 256 px
 MAX_SOUL_IMAGES = 20     # Higgsfield Soul training accepts 5-20 images
+DETECT_MAX_SIDE = 640    # YuNet works best on inputs around its training scale
+YAW_BINS = [-0.3, -0.15, -0.05, 0.05, 0.15, 0.3]  # yaw index bin edges for angle diversity
 
 
 def load_models():
@@ -39,7 +41,10 @@ def load_models():
 
 def images(path):
     p = Path(path)
-    files = [p] if p.is_file() else sorted(f for f in p.rglob("*") if f.suffix.lower() in EXTS)
+    # Sub-folders starting with "_" (e.g. faces/_excluded) hold photos set aside by hand
+    files = [p] if p.is_file() else sorted(
+        f for f in p.rglob("*")
+        if f.suffix.lower() in EXTS and not any(part.startswith("_") for part in f.relative_to(p).parts))
     return files
 
 
@@ -48,8 +53,14 @@ def analyse(det, rec, file):
     if img is None:
         return {"file": file.name, "verdict": "REJECT", "reason": "unreadable"}, None, None
     h, w = img.shape[:2]
-    det.setInputSize((w, h))
-    _, faces = det.detect(img)
+    # YuNet misses large faces at full phone resolution: detect on a <=640 px copy, scale back
+    scale = min(1.0, DETECT_MAX_SIDE / max(h, w))
+    small = cv2.resize(img, (round(w * scale), round(h * scale)), interpolation=cv2.INTER_AREA)
+    det.setInputSize((small.shape[1], small.shape[0]))
+    _, faces = det.detect(small)
+    if faces is not None:
+        faces = faces.copy()
+        faces[:, :14] /= scale
     n = 0 if faces is None else len(faces)
     row = {"file": file.name, "width": w, "height": h, "faces": n}
     if n != 1:
@@ -58,7 +69,8 @@ def analyse(det, rec, file):
     face = faces[0]
     x, y, fw, fh = face[:4].astype(int)
     crop = img[max(y, 0):y + fh, max(x, 0):x + fw]
-    gray = cv2.cvtColor(crop, cv2.COLOR_BGR2GRAY)
+    # Sharpness on a fixed-size crop so the score does not depend on face size or resolution
+    gray = cv2.resize(cv2.cvtColor(crop, cv2.COLOR_BGR2GRAY), (256, 256), interpolation=cv2.INTER_AREA)
     # Eye line tilt and nose offset give a rough yaw/roll so we can keep angle diversity
     rx, ry, lx, ly, nx = face[4], face[5], face[6], face[7], face[8]
     roll = float(np.degrees(np.arctan2(ly - ry, lx - rx)))
@@ -121,9 +133,19 @@ def cmd_dataset(src, out):
                 if sim < SAME_PERSON + 0.1 and row["verdict"] == "PASS":
                     row.update(verdict="REJECT", reason="identity outlier (other person, heavy filter or old photo?)")
 
-    # Rank passes by quality, then drop near-duplicates so angles/expressions stay varied
-    passes = sorted((r for r in rows if r["verdict"] == "PASS"),
-                    key=lambda r: (r["identity_sim"], r["sharpness"]), reverse=True)
+    # Rank passes by sharpness inside head-angle bins and take the bins round-robin, so the set
+    # covers turned-left, frontal and turned-right views instead of piling up frontal selfies
+    bins = {}
+    for r in rows:
+        if r["verdict"] == "PASS":
+            bins.setdefault(int(np.digitize(r["yaw_index"], YAW_BINS)), []).append(r)
+    for b in bins.values():
+        b.sort(key=lambda r: r["sharpness"], reverse=True)
+    passes = []
+    while any(bins.values()):
+        for k in sorted(bins):
+            if bins[k]:
+                passes.append(bins[k].pop(0))
     chosen = []
     for r in passes:
         e = embs[r["file"]]
