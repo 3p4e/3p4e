@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="mk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abracadabra — Уредување мени</title>
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<style>
+  :root { --red:#e5262b; --orange:#f39a1e; --lime:#a8d82c; --yellow:#f5e31b; --bg:#14111f; --card:#1f1a30; --line:#342c4d; --text:#fff8ec; --muted:#b9b0cc; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Rubik", system-ui, sans-serif; background: var(--bg); color: var(--text); }
+  header { position: sticky; top: 0; z-index: 5; background: #0c0a16; border-bottom: 3px solid var(--orange);
+    padding: 12px 16px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  header h1 { font-family: "Russo One"; font-weight: 400; margin: 0 auto 0 0; font-size: 22px;
+    background: linear-gradient(90deg, var(--red), var(--orange), var(--yellow)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  button, .btn { font: inherit; font-weight: 700; border: 0; border-radius: 10px; padding: 9px 14px; cursor: pointer;
+    background: var(--line); color: var(--text); text-decoration: none; display: inline-block; }
+  .primary { background: var(--orange); color: #1a1020; } .danger { background: #5a1f2a; }
+  main { max-width: 980px; margin: 0 auto; padding: 16px; }
+  .note { color: var(--muted); font-size: 14px; line-height: 1.5; background: var(--card); border-radius: 12px; padding: 12px 14px; border: 1px solid var(--line); }
+  .cat { background: var(--card); border: 1px solid var(--line); border-radius: 14px; margin: 16px 0; overflow: hidden; }
+  .cat-head { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+  .cat-head .sw { width: 16px; height: 34px; border-radius: 6px; }
+  input, select { font: inherit; color: var(--text); background: #120f1d; border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; min-width: 0; }
+  input:focus, select:focus { outline: 2px solid var(--orange); }
+  .cat-head .name { font-family: "Russo One"; font-size: 18px; flex: 1 1 180px; }
+  table { width: 100%; border-collapse: collapse; }
+  td { padding: 6px 8px; border-top: 1px solid var(--line); vertical-align: middle; }
+  td.nm input { width: 100%; } td.pr input { width: 90px; text-align: right; }
+  td.sm { width: 1%; white-space: nowrap; }
+  tr.hidden td.nm input { opacity: .45; text-decoration: line-through; }
+  .hint { font-size: 13px; color: var(--muted); display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+  label.hint input { width: auto; margin: 0; }
+  .add { margin: 8px 12px 12px; }
+  h2 { font-family: "Russo One"; font-weight: 400; font-size: 20px; margin: 26px 0 8px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; }
+  label { display: block; font-size: 13px; color: var(--muted); }
+  label input, label select, label textarea { width: 100%; margin-top: 4px; }
+  textarea { font: inherit; color: var(--text); background: #120f1d; border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; min-height: 90px; }
+  #toast { position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%); background: var(--lime); color: #111; font-weight: 700;
+    padding: 10px 18px; border-radius: 30px; opacity: 0; transition: .3s; pointer-events: none; }
+  #toast.on { opacity: 1; }
+</style>
+</head>
+<body>
+<header>
+  <h1>ABRACADABRA · Мени</h1>
+  <button class="primary" onclick="save()">💾 Зачувај</button>
+  <a class="btn" href="index.html?screen=1" target="_blank">Екран 1 ▸</a>
+  <a class="btn" href="index.html?screen=2" target="_blank">Екран 2 ▸</a>
+  <button onclick="downloadJs()">⬇ menu-data.js</button>
+  <button onclick="downloadCsv()">⬇ CSV (Google Sheets)</button>
+  <button class="danger" onclick="resetAll()">Врати оригинал</button>
+</header>
+<main>
+  <p class="note">
+    <b>Како се користи:</b> смени цена → <b>Зачувај</b>. Празна цена = артиклот <b>не се прикажува</b> на екраните.
+    Отштиклирај „Има“ кога нешто привремено го нема.<br>
+    „Зачувај“ ги чува промените само <b>на овој уред/прелистувач</b> (пр. на TV-кутијата). За трајна промена на сите екрани
+    преземи <b>menu-data.js</b> и замени го фајлот, или поврзи <b>Google Sheet</b> подолу и менувај од телефон.
+  </p>
+
+  <div id="cats"></div>
+  <button onclick="addCat()">+ Нова категорија</button>
+
+  <h2>Промоции (десниот панел)</h2>
+  <div id="promos"></div>
+  <button onclick="DATA.promos.push({title:'',subtitle:'',price:''});draw()">+ Нова промоција</button>
+
+  <h2>Поставки</h2>
+  <div class="grid">
+    <label>Валута <input id="currency"></label>
+    <label>Слоган <input id="slogan" placeholder="Магија во секој залак"></label>
+    <label>Ноќен режим од (час) <input id="nightFrom" type="number" min="0" max="23"></label>
+    <label>Ноќен режим до (час) <input id="nightTo" type="number" min="0" max="23"></label>
+    <label>Освежување (минути) <input id="refreshMinutes" type="number" min="1"></label>
+    <label>Кинематика на секои (минути, 0 = исклучено) <input id="cinematicMinutes" type="number" min="0"></label>
+    <label style="grid-column:1/-1">Google Sheet CSV линк (опционално)
+      <input id="sheetCsvUrl" placeholder="https://docs.google.com/spreadsheets/d/e/.../pub?output=csv"></label>
+    <label style="grid-column:1/-1">Лента долу (секој ред е една порака)
+      <textarea id="ticker"></textarea></label>
+  </div>
+  <p class="note" style="margin-top:16px">
+    <b>Google Sheets:</b> кликни „⬇ CSV“, отвори го фајлот во Google Sheets, па <i>File → Share → Publish to web → CSV</i>
+    и залепи го линкот погоре. Колони: <code>category, name, price, available, badge</code>.
+    Екраните ја читаат табелата на секои неколку минути — менуваш цена од телефон и таа се појавува сама.
+  </p>
+</main>
+<div id="toast"></div>
+
+<script src="menu-data.js"></script>
+<script>
+  const ORIGINAL = JSON.parse(JSON.stringify(window.MENU_DATA));
+  let DATA;
+  try { DATA = JSON.parse(localStorage.getItem("abra_menu_override")) || null; } catch (e) {}
+  if (!DATA) DATA = JSON.parse(JSON.stringify(ORIGINAL));
+  DATA.promos = DATA.promos || [];
+
+  const COLORS = { red: "#e5262b", orange: "#f39a1e", lime: "#a8d82c", yellow: "#f5e31b", magenta: "#ff2fb3", green: "#3fbf5a", brown: "#8a4b2a" };
+  const BADGES = ["", "ХИТ", "НОВО", "ВЕГЕ"];
+  const VIDEOS = [["", "🪄 Стапчето мавта"], ["wand_burger", "🪄 создава бургер"], ["wand_wrap", "🪄 создава врап"], ["wand_waffle", "🪄 создава вафла"]];
+  const esc = s => String(s ?? "").replace(/[&<>"]/g, m => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[m]));
+
+  function draw() {
+    document.getElementById("cats").innerHTML = DATA.categories.map((c, ci) => `
+      <div class="cat">
+        <div class="cat-head">
+          <span class="sw" style="background:${COLORS[c.color] || "#888"}"></span>
+          <input class="name" value="${esc(c.name)}" oninput="DATA.categories[${ci}].name=this.value">
+          <input placeholder="белешка (+ помфрит)" value="${esc(c.note)}" oninput="DATA.categories[${ci}].note=this.value" style="width:150px">
+          <select onchange="DATA.categories[${ci}].color=this.value;draw()">${Object.keys(COLORS).map(k => `<option ${k === c.color ? "selected" : ""}>${k}</option>`).join("")}</select>
+          <select onchange="DATA.categories[${ci}].screen=+this.value">${[1, 2].map(s => `<option value="${s}" ${s === (c.screen || 1) ? "selected" : ""}>Екран ${s}</option>`).join("")}</select>
+          <button onclick="move(DATA.categories,${ci},-1)">▲</button><button onclick="move(DATA.categories,${ci},1)">▼</button>
+          <button class="danger" onclick="if(confirm('Избриши ја категоријата?')){DATA.categories.splice(${ci},1);draw()}">✕</button>
+        </div>
+        <table>${c.items.map((it, ii) => `
+          <tr class="${(it.price === null || it.price === "" || it.available === false) ? "hidden" : ""}">
+            <td class="nm"><input value="${esc(it.name)}" oninput="DATA.categories[${ci}].items[${ii}].name=this.value"></td>
+            <td class="pr sm"><input inputmode="numeric" placeholder="—" value="${esc(it.price)}"
+              oninput="setPrice(${ci},${ii},this)"></td>
+            <td class="sm"><label class="hint"><input type="checkbox" ${it.available !== false ? "checked" : ""}
+              onchange="DATA.categories[${ci}].items[${ii}].available=this.checked;draw()"> Има</label></td>
+            <td class="sm"><select onchange="DATA.categories[${ci}].items[${ii}].badge=this.value">${BADGES.map(b => `<option ${b === (it.badge || "") ? "selected" : ""} value="${b}">${b || "—"}</option>`).join("")}</select></td>
+            <td class="sm"><button onclick="move(DATA.categories[${ci}].items,${ii},-1)">▲</button><button onclick="move(DATA.categories[${ci}].items,${ii},1)">▼</button>
+              <button class="danger" onclick="DATA.categories[${ci}].items.splice(${ii},1);draw()">✕</button></td>
+          </tr>`).join("")}
+        </table>
+        <button class="add" onclick="DATA.categories[${ci}].items.push({name:'',price:null});draw()">+ Артикл</button>
+      </div>`).join("");
+
+    document.getElementById("promos").innerHTML = DATA.promos.map((p, pi) => `
+      <div class="cat"><div class="cat-head">
+        <input class="name" placeholder="Наслов" value="${esc(p.title)}" oninput="DATA.promos[${pi}].title=this.value">
+        <input placeholder="Опис" value="${esc(p.subtitle)}" oninput="DATA.promos[${pi}].subtitle=this.value" style="flex:2 1 220px">
+        <input inputmode="numeric" placeholder="цена" value="${esc(p.price)}" oninput="DATA.promos[${pi}].price=this.value.replace(/[^\\d]/g,'')" style="width:90px">
+        <select title="Анимација на маскотата" onchange="DATA.promos[${pi}].video=this.value">${VIDEOS.map(([v, l]) => `<option value="${v}" ${v === (p.video || "") ? "selected" : ""}>${l}</option>`).join("")}</select>
+        <button onclick="move(DATA.promos,${pi},-1)">▲</button><button onclick="move(DATA.promos,${pi},1)">▼</button>
+        <button class="danger" onclick="DATA.promos.splice(${pi},1);draw()">✕</button>
+      </div></div>`).join("");
+
+    for (const k of ["currency", "slogan", "nightFrom", "nightTo", "refreshMinutes", "cinematicMinutes", "sheetCsvUrl"])
+      document.getElementById(k).value = DATA[k] ?? "";
+    document.getElementById("ticker").value = (DATA.ticker || []).join("\n");
+  }
+
+  function setPrice(ci, ii, el) {
+    const v = el.value.replace(/[^\d]/g, ""); el.value = v;
+    DATA.categories[ci].items[ii].price = v === "" ? null : Number(v);
+    el.closest("tr").classList.toggle("hidden", v === "" || DATA.categories[ci].items[ii].available === false);
+  }
+  function move(arr, i, d) { const j = i + d; if (j < 0 || j >= arr.length) return; [arr[i], arr[j]] = [arr[j], arr[i]]; draw(); }
+  function addCat() { DATA.categories.push({ id: "kat" + Date.now(), name: "Нова категорија", screen: 2, color: "orange", note: "", items: [] }); draw(); }
+
+  function collectSettings() {
+    DATA.currency = document.getElementById("currency").value || "ден";
+    DATA.slogan = document.getElementById("slogan").value;
+    DATA.nightFrom = +document.getElementById("nightFrom").value;
+    DATA.nightTo = +document.getElementById("nightTo").value;
+    DATA.refreshMinutes = +document.getElementById("refreshMinutes").value || 5;
+    DATA.cinematicMinutes = Math.max(0, +document.getElementById("cinematicMinutes").value || 0);
+    DATA.sheetCsvUrl = document.getElementById("sheetCsvUrl").value.trim();
+    DATA.ticker = document.getElementById("ticker").value.split("\n").map(s => s.trim()).filter(Boolean);
+  }
+  function toast(t) { const el = document.getElementById("toast"); el.textContent = t; el.classList.add("on"); setTimeout(() => el.classList.remove("on"), 2200); }
+  function save() { collectSettings(); localStorage.setItem("abra_menu_override", JSON.stringify(DATA)); toast("Зачувано ✓ — екраните на овој уред се ажурирани"); }
+  function resetAll() { if (!confirm("Да се вратат оригиналните податоци од menu-data.js?")) return; localStorage.removeItem("abra_menu_override"); DATA = JSON.parse(JSON.stringify(ORIGINAL)); draw(); toast("Вратено"); }
+
+  function download(name, text, type) {
+    const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([text], { type })); a.download = name; a.click();
+  }
+  function downloadJs() {
+    collectSettings();
+    download("menu-data.js", "/* ABRACADABRA — податоци за менито (генерирано од admin.html) */\nwindow.MENU_DATA = " + JSON.stringify(DATA, null, 2) + ";\n", "text/javascript");
+  }
+  function downloadCsv() {
+    const q = s => `"${String(s ?? "").replace(/"/g, '""')}"`;
+    const rows = [["category", "name", "price", "available", "badge"]];
+    for (const c of DATA.categories) for (const it of c.items)
+      rows.push([c.id, it.name, it.price ?? "", it.available === false ? "не" : "да", it.badge || ""]);
+    download("abracadabra-meni.csv", "﻿" + rows.map(r => r.map(q).join(",")).join("\n"), "text/csv");
+  }
+  draw();
+</script>
+</body>
+</html>
