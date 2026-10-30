@@ -16,3 +16,13 @@
 
 ## What I need from you
 If you have a Karsus image you like (official art, a game, a painting), **send it**, and I will match it. Otherwise I take the proposal above into the KARSUS LOCK once you approve it.
+
+## Costume tests with Gemini `gemini-3-pro-image` (2026-10-30, local files in `keyframes/karsus/`, git-ignored)
+| File | What | Likeness (mean SFace) | Verdict |
+|---|---|---|---|
+| `k_gemini_BN_GEMINI_API.png` | first costume, large crown | 0.508 | crown too big, floated above the scalp; costume generic |
+| `k_crown_small.png` | same, crown shrunk to a fitted circlet | 0.455 | crown right; likeness fell |
+| `k_v2_A.png` | **Direction A, regal archmage-emperor**: indigo brocade, ivory-lined mantle, tall halo collar, one sculpted shoulder, spell-diagram on the chest, staff with an orbiting rune ring | 0.512 (nose-mouth +13.5 %) | grand, "ruler" reading |
+| `k_v2_B.png` | **Direction B, battle-archmage**: plate-and-mail, violet tabard, a big spell circle on the chest, orbiting rune ring above the hand, floating city behind | **0.557** (all geometry within ±10 % except eye-nose −9 %) | stronger action pose, better likeness |
+
+Runes are now one deliberate spell diagram (nested circles and straight lines) instead of text-like bands.
