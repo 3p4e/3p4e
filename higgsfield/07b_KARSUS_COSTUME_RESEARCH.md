@@ -54,3 +54,8 @@ Rejected: Direction B sheet (`sheet_*.png`): close-up 0.478 and front 0.498, bel
 - **No cuts** (scene detection). The hero faces the camera for the first ~8 s with the face clearly visible; **likeness in video: mean SFace 0.53-0.56** on frames at 0.5-4 s (limit 0.50).
 - Magic now reads: dozens of concentric glyph rings, hundreds of glowing runes rising in vertical streams, columns of light, a vortex, lightning converging on him.
 - Gaps: from ~12 s the camera retreats and he is small again; the face cannot be checked after ~6 s. The beat "other cities' lights dim and flow to him" is still not clear. His crown and chest diagram flicker slightly between frames; the mantle turned green-cream at 6 s (cloth colour drift).
+
+## Seedance 2.5 fresh 720p render of the draft-1 prompt (2026-10-31)
+- Job `a2776928-6948-420c-ba0a-529e63e575b3`, 720p, 22 s, same prompt and 3 references as draft 1, **154 credits** (balance 315.19 to 161.19). Local: `keyframes/karsus/video/sp3_720p.mp4`.
+- Finalising draft 1 exactly would have cost 352 credits (any draft finalisation renders at 1080p). A fresh generation is NOT the same take.
+- Result: no cuts, 1280x720, one continuous take, rings/vortex/city present. **It is a different take from draft 1**: the wizard becomes a speck by ~8 s and is absent from the frame from ~12 s; the lightning and the dimming beats are weaker than in draft 1; the glyph rings are thinner. Draft 1 (`1917adc1…`) remains the better scene; draft 2 (`e4e7bcaf…`) the better face and magic.
