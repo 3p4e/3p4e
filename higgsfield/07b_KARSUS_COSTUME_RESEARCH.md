@@ -26,3 +26,18 @@ If you have a Karsus image you like (official art, a game, a painting), **send i
 | `k_v2_B.png` | **Direction B, battle-archmage**: plate-and-mail, violet tabard, a big spell circle on the chest, orbiting rune ring above the hand, floating city behind | **0.557** (all geometry within ±10 % except eye-nose −9 %) | stronger action pose, better likeness |
 
 Runes are now one deliberate spell diagram (nested circles and straight lines) instead of text-like bands.
+
+## DECISION 2026-10-31: Direction A (regal archmage-emperor) is the Karsus costume
+The user chose the left image (A). Costume sheet generated with Gemini `gemini-3-pro-image`, face from `Blagoj-Base` views, costume from `k_v2_A.png`. Local files in `keyframes/karsus/` (git-ignored; upload to Higgsfield when the video step starts).
+
+| File | View | Mean SFace vs 20 real photos |
+|---|---|---|
+| `A_front.png` | full-length front | 0.519 |
+| `A_three_quarter.png` | full-length three-quarter | 0.572 |
+| `A_back.png` | full-length back (spell diagram on the back, train of the mantle) | n/a (no face) |
+| `A_bust.png` | close-up for face shots | **0.562** |
+| `A_crown.png` | the crown alone | n/a |
+
+Rejected: Direction B sheet (`sheet_*.png`): close-up 0.478 and front 0.498, below or at the limit. The three B close-up retries were interrupted by the user and never completed.
+
+**KARSUS LOCK (final, replaces section 6 of the script):** `the man from the Blagoj-Base reference, unmistakably the same real person, same face, eyes, nose, mouth, jaw and age; hairless shaved head, clean-shaven, light grey-green eyes, real unretouched skin; Karsus, archwizard of Netheril: heavy indigo-to-midnight brocade robe woven with silver geometric patterns, a long open ceremonial over-mantle with an ivory-silk lining and train, a tall flared stiff collar standing high behind the head like a halo, fine silver mail at the forearms and a mail gorget, one asymmetric sculpted steel shoulder piece on the left shoulder with gold scale inlay and pale blue glowing gems, a wide jewelled belt, a ruby brooch clasping the mantle, silver rings on every finger, a glowing cyan spell diagram (nested concentric circles and straight lines) over the chest and down the robe, a small slim fitted crown of mottled silver-steel with two small hooked horns, a short central spike, gold scale inlay and two rubies, a tall silver staff topped by a large pale blue gem with a ring of tiny glowing runes orbiting its head`
