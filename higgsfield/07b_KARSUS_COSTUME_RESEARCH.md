@@ -92,3 +92,11 @@ Seedance 2.0 Mini, 720p, audio off, all single takes (no cuts). Balance 70.19 to
 Likeness note: SFace scores drop when the expression is extreme or the face is small; they are not a fair measure of identity on i3 and the end of SP4.
 Rough cut v2 (`karsus_rough_cut_v2.mp4`, inserts trimmed to 2.5 s, no audio): order SP1, i1, SP2, SP3 (2.5 draft 1, 480p upscaled), i2, SP4 v2, i3, SP5a, SP5b, i4, SP6.
 Voice previews (ElevenLabs eleven_ttv_v3): Karsus `64Eyj3ChxBavO2dBqxph`, `eRZqsCTgtEziOSM3QNPu`, `C3iGAHaDHGjTzwrz19Lg`; Mystryl `8vxf9p6poKFmfutjUqSP`, `4PUebsnEIzT1IFq2xpVH`, `Q3LkydeY4oUZN16c5aMd`. Waiting for the user to choose.
+
+## Rework after user review of rough cut v2 (2026-10-31)
+Feedback: voices chosen **Karsus 2** (`eRZqsCTgtEziOSM3QNPu`) and **Mystryl 3** (`Q3LkydeY4oUZN16c5aMd`). Rough cut v2 0:15-0:16 (eyes close-up) and 0:53-1:10 (sigil close-up + apotheosis v2) rejected: "shows nothing", "I don't need face shots like that"; apotheosis must be a **violent surge of energy stolen from another god**; **prolific magic on screen the whole time anyone speaks**, never still images with a zoom.
+- Face inserts i1, i2, i3 and apotheosis v2 are **cut**. i4 (stone creeping over the hands) is kept at 2.5 s.
+- New apotheosis, job `e08c1657-f163-4ae6-86c4-f1c71ec7af5c`, Seedance 2.0 Mini 720p 15 s, 15 credits (balance 40.19 to 25.19): a goddess of white-gold light, ropes of energy torn from her and driven into the wizard, shockwaves, lightning, whiteout. Local `sp4_v3.mp4`.
+- Dialogue moved onto the magic: **Karsus** "They drink the land... the sky is silent." (film 0:31) and "Then I will stop asking." (0:44) over the ritual; **Mystryl** "Karsus. Put it down. You are holding everything." (0:50.3), **Karsus** "Only for a moment. Only long enough to save them." (0:56.8), **Mystryl** "A moment is all it takes." (1:02) over the theft of power. Sky cities, sand, blackout and fall are silent. The epitaph line "I only wanted to save them" was dropped because the chosen voice preview does not contain it.
+- Lines were cut from the chosen preview audio (word timestamps from faster-whisper); saved voice slots are full (3 of 3), so no new TTS was possible without deleting a saved voice.
+- Rough cut v3: 101.5 s with dialogue, no score yet. The ElevenLabs music request was refused as "busy", nothing charged; retry pending.
