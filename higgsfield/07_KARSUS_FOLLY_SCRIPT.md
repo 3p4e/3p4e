@@ -101,15 +101,22 @@ Compare the 3 previews per voice with `tools/voice_stats.py` (pitch, pace, brigh
 
 **Open test before the budget is final:** Seedance 2.5 may refuse or distort a real person's face in `omni_reference`, and its 1080p price per second is not yet known. A 480p draft of one set piece answers both questions for very little.
 
-## 8. Budget (Higgsfield; balance 347.19 credits on 2026-10-30)
-| Item | Estimate |
-|---|---|
-| ~18 keyframes (start and end frames) × 2 cr | ~36 |
-| ~100 s of video (Seedance 2.5 or Kling Pro; Seedance price to be quoted from a draft) | ~179 for Kling Pro; Seedance TBD |
-| Retake reserve: long clips fail more often (+30 %) | ~55 |
-| **Total** | **~270 credits** (leaves about 75) |
+## 8. Budget (Higgsfield; balance 347.19 credits on 2026-10-31; live price quotes)
 
-ElevenLabs voices and music are billed to the ElevenLabs plan, as before.
+| Model and setting | Price | Per second |
+|---|---|---|
+| Seedance 2.5, 22 s, **480p draft** | 66 cr | 3 |
+| Seedance 2.5, 22 s, 720p | 154 cr | 7 |
+| Seedance 2.5, 22 s, **1080p** | **352 cr** (more than the whole balance) | 16 |
+| Kling 3.0, 15 s | 30 cr | 2 |
+
+Whole film (~100 s of video):
+- Seedance 2.5 at 1080p: **about 1,600 credits**. Not feasible.
+- Seedance 2.5 at 720p: about 700 credits. Over budget.
+- Kling 3.0 (15 s clips, start/end frames): about **200 credits**. Feasible.
+- Mixed: Kling for most set pieces, Seedance 480p drafts only to test one long clip.
+
+Images and voices run outside Higgsfield (Gemini key; ElevenLabs).
 
 ## 9. Risks (the mentor part)
 1. **A 22 s continuous magic event is the hardest thing to make in AI video.** Two chained 11 s clips can show a seam where they join. Mitigation: the end frame of clip A is literally the start frame of clip B, and I check every join frame by frame. If a join shows, I hide it with a 2 s insert.
