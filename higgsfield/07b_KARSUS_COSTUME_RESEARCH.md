@@ -66,3 +66,16 @@ Rejected: Direction B sheet (`sheet_*.png`): close-up 0.478 and front 0.498, bel
 - Flaws: the skiffs read as small helicopters or drones in some frames; the wizard is too small at the end to check face or costume; the final tower is a lighthouse-like shaft rather than the grandest spire.
 - Price table for 15 s clips (quotes, 2026-10-31): Seedance 2.0 Mini 720p 15 cr (1 cr/s); Kling 3.0 30 cr (2 cr/s); MiniMax H3 Max 768p 37.5 cr; Seedance 2.0 720p 67.5 cr; Grok Video 1.5 720p 67.5 cr; Seedance 2.5 720p 154 cr for 22 s.
 - Plan: remaining about 71 s (SP2 13, SP4 14, SP5 22, SP6 12, inserts about 10) on the Mini would cost about 71 cr, about 92 cr with a 30 % reserve, against a balance of 146.19.
+
+## Stabilised-prompt batch on Seedance 2.0 Mini (2026-10-31)
+All 720p, audio off, no cuts (scene detection), prompts as in section 11 of the script. Balance 146.19 to 70.19 (76 credits).
+| Set piece | Job | Length | Notes |
+|---|---|---|---|
+| SP1 sky cities (v2) | `380b20ad-4552-48ce-8516-780abca40178` | 15 s | no helicopters or fish; cities hang still; the cities look partly sunk in cloud at 1 s; the wizard's face is visible at the end |
+| SP2 grey hunger | `e88c04d8-61ae-494e-9475-0e227b4a573b` | 13 s | forest, river and lake buried by a sand front; excellent |
+| SP4 apotheosis | `5c7446ce-3925-4793-b671-cc96aeb49918` | 14 s | face visible; web of cyan threads; woman-of-light outline; **likeness only 0.41-0.46 (limit 0.50)** |
+| SP5a lights go out | `c2e65285-6094-4fcb-86fe-e398eb0cd22b` | 8 s | start/end frames `116610c8…` (lit) and `ac5dc7ce…` (dark); exact blackout |
+| SP5b the fall | `b80cd11a-4ec7-428f-821a-a26a5863cd0d` | 14 s | city tumbles and breaks up through clouds; strong |
+| SP6 epitaph | `a59b8134-1297-44fa-bcbb-e9592dfab468` | 12 s | moss-covered statue in forest light, push-in to the stone face; excellent |
+SP3 is the Seedance 2.5 draft 1 (`1917adc1…`, 480p, upscaled). Rough cut `karsus_rough_cut_v1.mp4`, 98.3 s, no audio, local in `keyframes/karsus/video/`.
+Finding: the Mini keeps the costume but loses the face (0.41-0.46 vs 0.53-0.56 on Seedance 2.5). Plan: use a start image (the costume bust still) for the face-critical clips.
