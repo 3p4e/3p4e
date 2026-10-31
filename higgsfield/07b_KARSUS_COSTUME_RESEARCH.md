@@ -105,3 +105,8 @@ Feedback: voices chosen **Karsus 2** (`eRZqsCTgtEziOSM3QNPu`) and **Mystryl 3** 
 User: "the goddess is like a ghost". Cause: the prompt said "translucent woman made of light". Fix: "colossal solid goddess ... opaque glowing white-gold skin, long silver hair like rivers of stars, gown of heavy woven silver light, crown of blazing rays".
 - Job `fd558c3d-2a4a-4a62-aab9-9d1f93e12628`, Seedance 2.0 Mini 720p 15 s, 15 credits (balance 25.19 to 10.19). Local `sp4_v4.mp4`. No cuts. The goddess is solid and radiant for the first ~6 s, energy ropes drawn into the wizard, then the frame floods white.
 - Rough cut v4 (`karsus_rough_cut_v4.mp4`, 101.5 s, dialogue, no score) swaps this take in. Lesson for prompts: never use "translucent", "ghostly" or "outline" for a character who must look physical; say "solid, opaque".
+
+## Rough cut v5 (2026-10-31)
+User: use the ritual **draft 2** (`e4e7bcaf-e14f-46b9-9685-28515bf6806a`: front-facing, denser magic) instead of draft 1; the buildings at the beginning of the film are "total slop".
+- Ritual scene is now draft 2 (480p upscaled). Sky cities clip trimmed by its first 1.7 s, where the towers sit half-buried in cloud tops and look like they emerge. Timeline: sky cities 13.3 s, sand 13, ritual 22, apotheosis v4 15, blackout 8, fall 14, stone hands 2.5, epitaph 12 = 99.8 s.
+- Dialogue re-timed to the new cut: Karsus 0:29.3 and 0:42.3, Mystryl 0:48.6, Karsus 0:55.1, Mystryl 1:00.3. No score yet; credits left 10.19.
