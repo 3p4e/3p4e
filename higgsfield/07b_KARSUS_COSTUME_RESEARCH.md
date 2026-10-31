@@ -59,3 +59,10 @@ Rejected: Direction B sheet (`sheet_*.png`): close-up 0.478 and front 0.498, bel
 - Job `a2776928-6948-420c-ba0a-529e63e575b3`, 720p, 22 s, same prompt and 3 references as draft 1, **154 credits** (balance 315.19 to 161.19). Local: `keyframes/karsus/video/sp3_720p.mp4`.
 - Finalising draft 1 exactly would have cost 352 credits (any draft finalisation renders at 1080p). A fresh generation is NOT the same take.
 - Result: no cuts, 1280x720, one continuous take, rings/vortex/city present. **It is a different take from draft 1**: the wizard becomes a speck by ~8 s and is absent from the frame from ~12 s; the lightning and the dimming beats are weaker than in draft 1; the glyph rings are thinner. Draft 1 (`1917adc1…`) remains the better scene; draft 2 (`e4e7bcaf…`) the better face and magic.
+
+## Seedance 2.0 Mini test, Set Piece 1 sky cities (2026-10-31)
+- Job `3616a160-515f-4050-a599-882004cec20f`, `seedance_2_0_mini`, 720p, 15 s, audio off, 2 references (costume front and bust). **15 credits** (balance 161.19 to 146.19). Local: `keyframes/karsus/video/sp1_mini.mp4`.
+- Result: 1280x720, **no cuts**, a convincing dawn glide between floating white-stone cities on inverted mountains, waterfalls off the edges, god rays, golden skiffs, ending on a spire where the wizard stands tiny. Quality comparable to Seedance 2.5 at a seventh of the price.
+- Flaws: the skiffs read as small helicopters or drones in some frames; the wizard is too small at the end to check face or costume; the final tower is a lighthouse-like shaft rather than the grandest spire.
+- Price table for 15 s clips (quotes, 2026-10-31): Seedance 2.0 Mini 720p 15 cr (1 cr/s); Kling 3.0 30 cr (2 cr/s); MiniMax H3 Max 768p 37.5 cr; Seedance 2.0 720p 67.5 cr; Grok Video 1.5 720p 67.5 cr; Seedance 2.5 720p 154 cr for 22 s.
+- Plan: remaining about 71 s (SP2 13, SP4 14, SP5 22, SP6 12, inserts about 10) on the Mini would cost about 71 cr, about 92 cr with a 30 % reserve, against a balance of 146.19.
