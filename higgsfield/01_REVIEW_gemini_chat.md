@@ -98,4 +98,3 @@ Installed in this session: `opencv-python-headless` 5.0, `numpy`, YuNet + SFace 
 - **[R13]** Wu, W., Peng, H. & Yu, S. "YuNet: A Tiny Millisecond-level Face Detector." *Machine Intelligence Research* 20, 656–665 (2023). DOI: 10.1007/s11633-023-1423-y.
 - **[R14]** Zhong, Y., Deng, W., Hu, J., Zhao, D., Li, X. & Wen, D. "SFace: Sigmoid-Constrained Hypersphere Loss for Robust Face Recognition." *IEEE Transactions on Image Processing* 30, 2587–2598 (2021). DOI: 10.1109/TIP.2020.3048632. Cosine same-person threshold 0.363 per OpenCV Zoo model card.
 
-*Note on your standing instruction:* EU GMP, EudraLex, EMA and ICH guidance don't apply to creative video production, so none is cited here. The one EU regulation that does apply is the GDPR [R11].
