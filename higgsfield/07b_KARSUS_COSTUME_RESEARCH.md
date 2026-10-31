@@ -118,3 +118,9 @@ User: use the ritual **draft 2** (`e4e7bcaf-e14f-46b9-9685-28515bf6806a`: front-
 - Score: **Gemini Lyria 3 Pro** (`lyria-3-pro-preview`, BN_GEMINI_API key, 100.1 s), because ElevenLabs music refused twice ("free generations busy", nothing charged) and the ElevenLabs API key is also on the free plan. Mix: score x0.55, hard silence 63.3-71.3 s (verified by silencedetect: 8.02 s), sidechain ducking under dialogue (threshold 0.004, ratio 20), loudnorm. Whisper verification of the mix: all five lines transcribed.
 - Credits: Higgsfield 10.19 left. Total this film: about 337 Higgsfield credits across drafts, retakes and the final clips.
 - Known weaknesses: the ritual scene is 480p; the sky-cities buildings are still the weakest shot; the goddess leaves frame at about 7 s of the apotheosis; likeness drops when the face is small or expressive.
+
+## New endings, made free (2026-10-31)
+User: "the ending of the movie is horrible; make another combination of the assets we made so far without spending credits." Only existing clips, voice previews and score were reused (ffmpeg only; Higgsfield still 10.19 credits, no API calls).
+- **v2B (main):** ... apotheosis, blackout (silence 63.3-71.3 s), fall, epitaph (statue push-in) with a new last line: Karsus's own voice as an old echo, "Only long enough to save them." (cut from preview `eRZqsCTgtEziOSM3QNPu`, echo + low-pass), under a **reprise of the film's opening theme** (score 2-22 s) instead of the original dying-away; the stone-hands shot is removed; end card shortened to 6 s. 103.3 s.
+- **v2A (alternative):** same, but the stone-hands shot (4 s) sits right after the whiteout, before the blackout (silence 67.3-75.3 s): he turns to stone first, then magic dies, the cities fall, the statue remains. 107.3 s.
+- Verified by transcription: the echo line is audible in both. Files `keyframes/karsus/Karsus_Folly_v2B.mp4`, `Karsus_Folly_v2A.mp4` (copies in `output/`).
