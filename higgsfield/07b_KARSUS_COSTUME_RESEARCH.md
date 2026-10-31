@@ -100,3 +100,8 @@ Feedback: voices chosen **Karsus 2** (`eRZqsCTgtEziOSM3QNPu`) and **Mystryl 3** 
 - Dialogue moved onto the magic: **Karsus** "They drink the land... the sky is silent." (film 0:31) and "Then I will stop asking." (0:44) over the ritual; **Mystryl** "Karsus. Put it down. You are holding everything." (0:50.3), **Karsus** "Only for a moment. Only long enough to save them." (0:56.8), **Mystryl** "A moment is all it takes." (1:02) over the theft of power. Sky cities, sand, blackout and fall are silent. The epitaph line "I only wanted to save them" was dropped because the chosen voice preview does not contain it.
 - Lines were cut from the chosen preview audio (word timestamps from faster-whisper); saved voice slots are full (3 of 3), so no new TTS was possible without deleting a saved voice.
 - Rough cut v3: 101.5 s with dialogue, no score yet. The ElevenLabs music request was refused as "busy", nothing charged; retry pending.
+
+## Apotheosis v4: solid goddess (2026-10-31)
+User: "the goddess is like a ghost". Cause: the prompt said "translucent woman made of light". Fix: "colossal solid goddess ... opaque glowing white-gold skin, long silver hair like rivers of stars, gown of heavy woven silver light, crown of blazing rays".
+- Job `fd558c3d-2a4a-4a62-aab9-9d1f93e12628`, Seedance 2.0 Mini 720p 15 s, 15 credits (balance 25.19 to 10.19). Local `sp4_v4.mp4`. No cuts. The goddess is solid and radiant for the first ~6 s, energy ropes drawn into the wizard, then the frame floods white.
+- Rough cut v4 (`karsus_rough_cut_v4.mp4`, 101.5 s, dialogue, no score) swaps this take in. Lesson for prompts: never use "translucent", "ghostly" or "outline" for a character who must look physical; say "solid, opaque".
