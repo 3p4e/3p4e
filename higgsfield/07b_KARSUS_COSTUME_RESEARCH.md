@@ -79,3 +79,16 @@ All 720p, audio off, no cuts (scene detection), prompts as in section 11 of the 
 | SP6 epitaph | `a59b8134-1297-44fa-bcbb-e9592dfab468` | 12 s | moss-covered statue in forest light, push-in to the stone face; excellent |
 SP3 is the Seedance 2.5 draft 1 (`1917adc1…`, 480p, upscaled). Rough cut `karsus_rough_cut_v1.mp4`, 98.3 s, no audio, local in `keyframes/karsus/video/`.
 Finding: the Mini keeps the costume but loses the face (0.41-0.46 vs 0.53-0.56 on Seedance 2.5). Plan: use a start image (the costume bust still) for the face-critical clips.
+
+## Face inserts and apotheosis v2 with the costume close-up as start frame (2026-10-31)
+Seedance 2.0 Mini, 720p, audio off, all single takes (no cuts). Balance 70.19 to 40.19 (30 credits).
+| Clip | Job | Length | Result |
+|---|---|---|---|
+| SP4 apotheosis v2 (start image = bust) | `fbe3d007-3802-4aab-b749-a2a313e81afa` | 14 s | face locked at the start (0.50 at 1 s), drifts and shrinks as the camera pulls back; woman-of-light forms behind |
+| i1 eyes glow | `9413d684-2020-44e4-a69b-294471463965` | 4 s | face 0.53 to 0.46; eyes glow white-cyan |
+| i2 sigil ignites | `0124d4c4-f220-4e52-8d3c-a8887cfa5394` | 4 s | face 0.53 to 0.47; forehead sigil ignites |
+| i3 dread | `1972a133-1d5c-487b-901a-25d3f13a6539` | 4 s | strong expression; SFace falls to 0.39-0.47 because of the wide-eyed expression |
+| i4 stone spreads | `78492efb-20f2-4ac3-863e-d6dd42b56307` | 4 s | hands turn to grey stone; no face |
+Likeness note: SFace scores drop when the expression is extreme or the face is small; they are not a fair measure of identity on i3 and the end of SP4.
+Rough cut v2 (`karsus_rough_cut_v2.mp4`, inserts trimmed to 2.5 s, no audio): order SP1, i1, SP2, SP3 (2.5 draft 1, 480p upscaled), i2, SP4 v2, i3, SP5a, SP5b, i4, SP6.
+Voice previews (ElevenLabs eleven_ttv_v3): Karsus `64Eyj3ChxBavO2dBqxph`, `eRZqsCTgtEziOSM3QNPu`, `C3iGAHaDHGjTzwrz19Lg`; Mystryl `8vxf9p6poKFmfutjUqSP`, `4PUebsnEIzT1IFq2xpVH`, `Q3LkydeY4oUZN16c5aMd`. Waiting for the user to choose.
