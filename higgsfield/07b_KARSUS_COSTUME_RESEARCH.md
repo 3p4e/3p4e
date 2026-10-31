@@ -48,3 +48,9 @@ Rejected: Direction B sheet (`sheet_*.png`): close-up 0.478 and front 0.498, bel
 - Higgsfield again offered the preset "IN THE DARK"; declined with `declined_preset_id` 24bae836-2c4a-48e0-89b6-49fcc0b21612.
 - Result: scene detection found **no cuts** (one true continuous take). Floating cities, expanding cyan glyph rings, lightning, vortex all present.
 - Gaps: the face was never visible (small, from behind), so likeness in video is untested; the "lights of distant cities dim and stream towards him" beat did not read; the camera pull-back loses the wizard from about 16 s (he becomes a speck).
+
+## Seedance 2.5 draft 2, ritual set piece: front-facing, more explicit magic (2026-10-31)
+- Job `e4e7bcaf-e14f-46b9-9685-28515bf6806a`, same settings as draft 1 (480p draft, 22 s, 3 references, audio off), 66 credits. Local: `keyframes/karsus/video/sp3_draft2.mp4`.
+- **No cuts** (scene detection). The hero faces the camera for the first ~8 s with the face clearly visible; **likeness in video: mean SFace 0.53-0.56** on frames at 0.5-4 s (limit 0.50).
+- Magic now reads: dozens of concentric glyph rings, hundreds of glowing runes rising in vertical streams, columns of light, a vortex, lightning converging on him.
+- Gaps: from ~12 s the camera retreats and he is small again; the face cannot be checked after ~6 s. The beat "other cities' lights dim and flow to him" is still not clear. His crown and chest diagram flicker slightly between frames; the mantle turned green-cream at 6 s (cloth colour drift).
