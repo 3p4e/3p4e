@@ -10,12 +10,31 @@ say(){ m="[AUTORUN $(date -u +%H:%M:%S)] $*"; echo "$m" >> $LOG; echo "$m" > /pr
 stop_self(){ curl -s -X PUT -H "Authorization: Bearer $CONTAINER_API_KEY" -H "Content-Type: application/json" -d '{"state":"stopped"}' "https://console.vast.ai/api/v0/instances/$CONTAINER_ID/" >> $LOG 2>&1; }
 say "canary: autorun started on $(hostname); cap ${MAXMIN} min"
 ( sleep $((MAXMIN*60)); say "hard cap reached -> stopping instance"; stop_self ) &
+jobloop(){
+last=""
+while [ ! -e /workspace/STOP ]; do
+  lab=$(curl -s -m 15 -H "Authorization: Bearer $CONTAINER_API_KEY" https://console.vast.ai/api/v0/instances/ | python3 -c "
+import sys,json,os
+try:
+    d=json.load(sys.stdin); L=d.get('instances',[d]) if isinstance(d,dict) else d
+    for x in L:
+        if str(x.get('id'))==os.environ.get('CONTAINER_ID'): print(x.get('label') or ''); break
+except Exception: print('')" 2>/dev/null)
+  if echo "$lab" | grep -Eq '^job:[0-9a-f]{6,12}$' && [ "$lab" != "$last" ]; then
+    last="$lab"; say "JOB $lab"
+    curl -fsSL "$RAW/jobs/${lab#job:}.sh" -o /workspace/job.sh && bash /workspace/job.sh 2>&1 | head -c 400000 | while read -r l; do say "job: ${l:0:1500}"; done
+    say "JOB END $lab"
+  fi
+  sleep 20
+done
+}
 R=/workspace/ComfyUI_run
 if [ -f $R/models/diffusion_models/wan2.2_i2v_high_noise_14B_fp8_scaled.safetensors ]; then
   say "models present: starting ComfyUI only (no downloads, no tests)"
   (cd $R && setsid nohup /venv/main/bin/python main.py --listen 127.0.0.1 --port 8199 > /workspace/comfy_run.log 2>&1 &)
   for i in $(seq 1 90); do sleep 4; curl -s -m 3 http://127.0.0.1:8199/system_stats >/dev/null && { say "comfyui up"; break; }; done
-  say "READY for run_face_tests.sh"
+  say "READY for run_face_tests.sh; job channel active (label job:<hex>)"
+  jobloop
   exit 0
 fi
 nvidia-smi --query-gpu=name,memory.total --format=csv,noheader 2>&1 | while read l; do say "gpu: $l"; done
@@ -69,20 +88,4 @@ if [ "$UP" = 1 ]; then
 fi
 say "AUTORUN DONE (job channel active: set label to job:<hex> to run tools/vast/jobs/<hex>.sh)"
 
-# ---- 5) remote job channel: label "job:<hex>" -> run tools/vast/jobs/<hex>.sh from the public repo
-last=""
-while [ ! -e /workspace/STOP ]; do
-  lab=$(curl -s -m 15 -H "Authorization: Bearer $CONTAINER_API_KEY" https://console.vast.ai/api/v0/instances/ | python3 -c "
-import sys,json,os
-try:
-    d=json.load(sys.stdin); L=d.get('instances',[d]) if isinstance(d,dict) else d
-    for x in L:
-        if str(x.get('id'))==os.environ.get('CONTAINER_ID'): print(x.get('label') or ''); break
-except Exception: print('')" 2>/dev/null)
-  if echo "$lab" | grep -Eq '^job:[0-9a-f]{6,12}$' && [ "$lab" != "$last" ]; then
-    last="$lab"; say "JOB $lab"
-    curl -fsSL "$RAW/jobs/${lab#job:}.sh" -o /workspace/job.sh && bash /workspace/job.sh 2>&1 | head -c 400000 | while read -r l; do say "job: ${l:0:1500}"; done
-    say "JOB END $lab"
-  fi
-  sleep 20
-done
+jobloop
