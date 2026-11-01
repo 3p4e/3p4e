@@ -15,6 +15,8 @@ ap.add_argument("--w", type=int, default=832)
 ap.add_argument("--h", type=int, default=480)
 ap.add_argument("--frames", type=int, default=81)
 ap.add_argument("--seed", type=int, default=42)
+ap.add_argument("--imagefile", default=None, help="file name already inside ComfyUI input/ (skips download+upload)")
+ap.add_argument("--tag", default="test")
 ap.add_argument("--image", default="https://raw.githubusercontent.com/3p4e/3p4e/claude/elegant-thompson-uqhred/tools/vast/assets/city_lit_test.jpg")
 ap.add_argument("--prompt", default="The camera slowly pushes forward toward a single floating city on a rocky island above dark storm clouds, steady and smooth, no other moving objects.")
 ap.add_argument("--negative", default="blurry, distorted, extra objects, birds, helicopters, flickering, text, watermark, jitter")
@@ -24,12 +26,15 @@ def http(method, path, data=None, headers=None):
     req = urllib.request.Request(a.host + path, data=data, headers=headers or {}, method=method)
     return urllib.request.urlopen(req, timeout=120).read()
 
-# 1) put the start image into ComfyUI's input folder via its upload endpoint
-img_bytes = urllib.request.urlopen(a.image, timeout=60).read()
-name = "city_lit_test.jpg"
-b = uuid.uuid4().hex
-body = (f'--{b}\r\nContent-Disposition: form-data; name="image"; filename="{name}"\r\nContent-Type: image/jpeg\r\n\r\n').encode() + img_bytes + (f'\r\n--{b}\r\nContent-Disposition: form-data; name="overwrite"\r\n\r\ntrue\r\n--{b}--\r\n').encode()
-print("upload:", json.loads(http("POST", "/upload/image", body, {"Content-Type": f"multipart/form-data; boundary={b}"})))
+# 1) start image: a file already in ComfyUI's input folder, or download + upload the default test image
+if a.imagefile:
+    name = a.imagefile; b = uuid.uuid4().hex
+else:
+    img_bytes = urllib.request.urlopen(a.image, timeout=60).read()
+    name = "city_lit_test.jpg"
+    b = uuid.uuid4().hex
+    body = (f'--{b}\r\nContent-Disposition: form-data; name="image"; filename="{name}"\r\nContent-Type: image/jpeg\r\n\r\n').encode() + img_bytes + (f'\r\n--{b}\r\nContent-Disposition: form-data; name="overwrite"\r\n\r\ntrue\r\n--{b}--\r\n').encode()
+    print("upload:", json.loads(http("POST", "/upload/image", body, {"Content-Type": f"multipart/form-data; boundary={b}"})))
 
 H_UNET = "wan2.2_i2v_high_noise_14B_fp8_scaled.safetensors"
 L_UNET = "wan2.2_i2v_low_noise_14B_fp8_scaled.safetensors"
@@ -53,7 +58,7 @@ wf = {
  "14": {"class_type": "KSamplerAdvanced", "inputs": {"model": ["6", 0], "add_noise": "disable", "noise_seed": 0, "steps": 4, "cfg": 1.0, "sampler_name": "euler", "scheduler": "simple", "positive": ["12", 0], "negative": ["12", 1], "latent_image": ["13", 0], "start_at_step": 2, "end_at_step": 10000, "return_with_leftover_noise": "disable"}},
  "15": {"class_type": "VAEDecode", "inputs": {"samples": ["14", 0], "vae": ["8", 0]}},
  "16": {"class_type": "CreateVideo", "inputs": {"images": ["15", 0], "fps": 16.0}},
- "17": {"class_type": "SaveVideo", "inputs": {"video": ["16", 0], "filename_prefix": f"wan22_test_{a.w}x{a.h}", "format": "auto", "codec": "auto"}},
+ "17": {"class_type": "SaveVideo", "inputs": {"video": ["16", 0], "filename_prefix": f"wan22_{a.tag}_{a.w}x{a.h}", "format": "auto", "codec": "auto"}},
 }
 
 
