@@ -33,16 +33,16 @@ P = {
 }
 # (id, set piece, start still or 'prev', prompt key, end still)
 SEGS = [
- ("sp1a","sp1","k_sp1.png","sp1",None), ("sp1b","sp1","prev","sp1",None), ("sp1c","sp1","prev","sp1",None),
- ("sp2a","sp2","k_sp2.png","sp2a",None), ("sp2b","sp2","prev","sp2b",None), ("sp2c","sp2","prev","sp2c",None),
- ("sp3a","sp3","k_sp3.png","sp3a",None), ("sp3b","sp3","prev","sp3b",None), ("sp3c","sp3","prev","sp3c",None),
+ ("sp1a","sp1","k_sp1.jpg","sp1",None), ("sp1b","sp1","prev","sp1",None), ("sp1c","sp1","prev","sp1",None),
+ ("sp2a","sp2","k_sp2.jpg","sp2a",None), ("sp2b","sp2","prev","sp2b",None), ("sp2c","sp2","prev","sp2c",None),
+ ("sp3a","sp3","k_sp3.jpg","sp3a",None), ("sp3b","sp3","prev","sp3b",None), ("sp3c","sp3","prev","sp3c",None),
  ("sp3d","sp3","prev","sp3d",None), ("sp3e","sp3","prev","sp3e",None),
- ("sp4a","sp4","k_sp4.png","sp4a",None), ("sp4b","sp4","prev","sp4b",None), ("sp4c","sp4","prev","sp4c",None),
- ("sp4wa","sp4w","k_sp4w.png","sp4wa",None), ("sp4wb","sp4w","prev","sp4wb",None),
- ("sp5sa","sp5s","k_stone_a.png","sp5sa",None), ("sp5sb","sp5s","prev","sp5sb","k_stone_b.png"),
- ("sp5a","sp5a","k_sp5a_start.png","sp5a","k_sp5a_end.png"),
- ("sp5b1","sp5b","k_sp5a_end.png","sp5b",None), ("sp5b2","sp5b","prev","sp5b",None), ("sp5b3","sp5b","prev","sp5b",None),
- ("sp6a","sp6","k_sp6.png","sp6",None), ("sp6b","sp6","prev","sp6",None), ("sp6c","sp6","prev","sp6",None),
+ ("sp4a","sp4","k_sp4.jpg","sp4a",None), ("sp4b","sp4","prev","sp4b",None), ("sp4c","sp4","prev","sp4c",None),
+ ("sp4wa","sp4w","k_sp4w.jpg","sp4wa",None), ("sp4wb","sp4w","prev","sp4wb",None),
+ ("sp5sa","sp5s","k_stone_a.jpg","sp5sa",None), ("sp5sb","sp5s","prev","sp5sb","k_stone_b.jpg"),
+ ("sp5a","sp5a","k_sp5a_start.jpg","sp5a","k_sp5a_end.jpg"),
+ ("sp5b1","sp5b","k_sp5a_end.jpg","sp5b",None), ("sp5b2","sp5b","prev","sp5b",None), ("sp5b3","sp5b","prev","sp5b",None),
+ ("sp6a","sp6","k_sp6.jpg","sp6",None), ("sp6b","sp6","prev","sp6",None), ("sp6c","sp6","prev","sp6",None),
 ]
 def log(m):
     line = f"[BATCH {time.strftime('%H:%M:%S')}] {m}"; print(line, flush=True); open("/workspace/batch.log", "a").write(line + "\n")
