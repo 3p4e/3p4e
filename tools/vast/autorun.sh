@@ -68,6 +68,8 @@ for i in $(seq 1 90); do sleep 4; curl -s -m 3 http://127.0.0.1:8199/system_stat
 say "comfyui up=$UP after ~$((i*4)) s"
 [ "$UP" = 1 ] || { tail -25 /workspace/comfy_run.log | while read l; do say "comfy: $l"; done; }
 
+[ "$SKIP_TESTS" = 1 ] && { say "READY (SKIP_TESTS): comfyui up=$UP, models in place"; exit 0; }
+
 # ---- 3) returning a file: base64 blocks in the container log
 emit(){ f="$1"; n=$(basename "$f"); out=/workspace/send_$n
   if command -v ffmpeg >/dev/null 2>&1; then ffmpeg -y -loglevel error -i "$f" -c:v libx264 -crf 27 -preset veryfast -pix_fmt yuv420p "$out" || cp "$f" "$out"; else cp "$f" "$out"; fi
