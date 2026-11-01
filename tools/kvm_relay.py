@@ -12,7 +12,9 @@ def _token(allow_compose=False):
     t = os.environ.get("KVM4_RUNNER_TOKEN")
     if t and not allow_compose: return t
     h = {"Authorization": "Bearer " + os.environ["HOSTINGER_API_TOKEN"], "User-Agent": "curl/8"}  # Hostinger returns 403 for the default Python user agent
-    c = urllib.request.urlopen(urllib.request.Request("https://developers.hostinger.com/api/vps/v1/virtual-machines/" + os.environ["KVM4_VM_ID"] + "/docker/kvm4-runner", headers=h), timeout=30).read().decode()
+    raw = urllib.request.urlopen(urllib.request.Request("https://developers.hostinger.com/api/vps/v1/virtual-machines/" + os.environ["KVM4_VM_ID"] + "/docker/kvm4-runner", headers=h), timeout=30).read().decode()
+    d = json.loads(raw); c = d.get("contents") or d.get("content") or d.get("data") or raw   # parse the JSON first: raw text has escaped newlines
+    c = c if isinstance(c, str) else json.dumps(c)
     return re.search(r"RUNNER_TOKEN=([^\s\"']+)", c).group(1)
 T = _token("--allow-compose-token" in sys.argv)
 def sh(cmd, timeout=170):
