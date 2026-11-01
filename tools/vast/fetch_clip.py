@@ -4,7 +4,7 @@ Usage: fetch_clip.py <instance_id> [outdir]    (VASTAI_API env var must be set; 
 import os, sys, json, time, base64, hashlib, re, urllib.request
 iid = sys.argv[1]; out = sys.argv[2] if len(sys.argv) > 2 else "."
 H = {"Authorization": "Bearer " + os.environ["VASTAI_API"], "Content-Type": "application/json"}
-r = urllib.request.Request(f"https://console.vast.ai/api/v0/instances/request_logs/{iid}/", data=json.dumps({"tail": "60000"}).encode(), headers=H, method="PUT")
+r = urllib.request.Request(f"https://console.vast.ai/api/v0/instances/request_logs/{iid}/", data=json.dumps({"tail": "20000"}).encode(), headers=H, method="PUT")
 u = json.load(urllib.request.urlopen(r, timeout=60))["temp_download_url"]
 for _ in range(12):
     time.sleep(5)
