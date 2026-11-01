@@ -12,7 +12,9 @@ R = "/workspace/ComfyUI_run"; IN = f"{R}/input"; OUT = f"{R}/output"
 NEG = "blurry, distorted, extra objects, helicopters, birds, boats, flickering, text, watermark, jitter, morphing, extra people"
 P = {
  "sp1": "The camera glides slowly forward above a calm ocean of white clouds. Three white stone cities with gold domes hang motionless on huge inverted mountains of dark rock. The clouds stay flat and unchanged far below. Warm sunrise light.",
- "sp2": "Looking straight down from very high above. A smooth even front of grey sand spreads slowly from the right edge across the green forest, burying the trees and the river. Only the sand moves.",
+ "sp2a": "Pale scorpion-like monsters feed on glowing threads of magic that they pull out of the trees and the river. A pale desert spreads outward from them. The camera pushes slowly forward.",
+ "sp2b": "The monsters keep feeding. The green forest in front of them turns grey and collapses into sand. The camera holds steady.",
+ "sp2c": "More monsters pour out of the sand across the valley while the land behind them turns to desert. The camera rises slowly.",
  "sp3a": "The man stands with open arms. Concentric rings of glowing blue-white glyphs expand slowly outward across the clouds around him. The camera pushes slowly in.",
  "sp3b": "The sky slowly darkens into a vast vortex above the man while the glowing rings keep expanding across the clouds.",
  "sp3c": "Bolts of lightning fall from the dark vortex into the glowing rings around the man. The camera holds steady.",
@@ -21,6 +23,10 @@ P = {
  "sp4a": "White light streams from the vast golden goddess into the small man in the blue cloak. Lightning flickers in the dark clouds. The camera pushes slowly in.",
  "sp4b": "The man raises his arms and the beams of white light flow into him. The camera holds steady.",
  "sp4c": "A blinding white glow grows around the man until it fills the frame.",
+ "sp4wa": "Columns of white and golden magic fall from the sky across the desert and vaporise the swarm of monsters into light. The camera holds wide.",
+ "sp4wb": "Waves of golden fire sweep outward across the dunes and burn the remaining monsters to ash. The camera holds wide.",
+ "sp5sa": "A blinding white flash bursts and grey stone spreads from the fingertips over the hands and arms. The camera holds steady.",
+ "sp5sb": "The stone figure falls away through the clouds while the white glow fades. The camera follows the fall.",
  "sp5a": "Every light in the city goes out at once. The camera does not move.",
  "sp5b": "A vast white stone city on an inverted mountain tilts slowly and drops straight down through the sea of clouds. The camera follows the fall.",
  "sp6": "The camera pushes slowly in through a sunlit green forest clearing toward a moss-covered grey stone statue of a man with raised arms.",
@@ -28,10 +34,12 @@ P = {
 # (id, set piece, start still or 'prev', prompt key, end still)
 SEGS = [
  ("sp1a","sp1","k_sp1.png","sp1",None), ("sp1b","sp1","prev","sp1",None), ("sp1c","sp1","prev","sp1",None),
- ("sp2a","sp2","k_sp2.png","sp2",None), ("sp2b","sp2","prev","sp2",None), ("sp2c","sp2","prev","sp2",None),
+ ("sp2a","sp2","k_sp2.png","sp2a",None), ("sp2b","sp2","prev","sp2b",None), ("sp2c","sp2","prev","sp2c",None),
  ("sp3a","sp3","k_sp3.png","sp3a",None), ("sp3b","sp3","prev","sp3b",None), ("sp3c","sp3","prev","sp3c",None),
  ("sp3d","sp3","prev","sp3d",None), ("sp3e","sp3","prev","sp3e",None),
  ("sp4a","sp4","k_sp4.png","sp4a",None), ("sp4b","sp4","prev","sp4b",None), ("sp4c","sp4","prev","sp4c",None),
+ ("sp4wa","sp4w","k_sp4w.png","sp4wa",None), ("sp4wb","sp4w","prev","sp4wb",None),
+ ("sp5sa","sp5s","k_i4.png","sp5sa",None), ("sp5sb","sp5s","prev","sp5sb",None),
  ("sp5a","sp5a","k_sp5a_start.png","sp5a","k_sp5a_end.png"),
  ("sp5b1","sp5b","k_sp5a_end.png","sp5b",None), ("sp5b2","sp5b","prev","sp5b",None), ("sp5b3","sp5b","prev","sp5b",None),
  ("sp6a","sp6","k_sp6.png","sp6",None), ("sp6b","sp6","prev","sp6",None), ("sp6c","sp6","prev","sp6",None),

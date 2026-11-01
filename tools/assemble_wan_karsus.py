@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Assemble the Wan 2.2 Karsus's Folly film on the Seedance v3 timeline (102.1 s) so the existing mix fits.
+"""Assemble the Wan 2.2 Karsus's Folly film on the Seedance new story timeline (about 122 s).
   assemble_wan_karsus.py --clips DIR --audio aud_v3.wav --endcard endcard6.mp4 --out OUT.mp4
 Clips: DIR/wan22_<id>_832x480_*.mp4 (ids as in tools/vast/batch_karsus.py). 16 fps -> 24 fps, upscaled to 1280x720.
 """
@@ -10,6 +10,7 @@ ap.add_argument("--out", required=True); ap.add_argument("--xf", type=float, def
 a = ap.parse_args()
 SETS = [("sp1", ["sp1a","sp1b","sp1c"], 13.3), ("sp2", ["sp2a","sp2b","sp2c"], 13.0),
         ("sp3", ["sp3a","sp3b","sp3c","sp3d","sp3e"], 22.0), ("sp4", ["sp4a","sp4b","sp4c"], 15.0),
+        ("sp4w", ["sp4wa","sp4wb"], 10.0), ("sp5s", ["sp5sa","sp5sb"], 10.0),
         ("sp5a", ["sp5a"], 8.0), ("sp5b", ["sp5b1","sp5b2","sp5b3"], 14.0), ("sp6", ["sp6a","sp6b","sp6c"], 12.0)]
 def find(i):
     f = sorted(glob.glob(os.path.join(a.clips, f"wan22_{i}_*.mp4")) + glob.glob(os.path.join(a.clips, f"*{i}*.mp4")))
@@ -34,8 +35,8 @@ for name, ids, target in SETS:
     out = os.path.join(T, f"{name}.mp4")
     run(["ffmpeg","-v","error","-y",*ins,"-filter_complex",";".join(fc),"-map","[out]","-r","24","-c:v","libx264","-crf","16","-pix_fmt","yuv420p",out])
     parts[name] = out; print(f"{name}: raw {total:.2f}s -> {target}s")
-# head = sp1..sp5a hard cuts (71.3 s), then 1.2 s dissolve into sp5b, then sp6 and the end card
-lst = os.path.join(T, "head.txt"); open(lst, "w").write("".join(f"file '{parts[n]}'\n" for n in ["sp1","sp2","sp3","sp4","sp5a"]))
+# head = sp1..sp5a hard cuts (91.3 s), then 1.2 s dissolve into sp5b, then sp6 and the end card
+lst = os.path.join(T, "head.txt"); open(lst, "w").write("".join(f"file '{parts[n]}'\n" for n in ["sp1","sp2","sp3","sp4","sp4w","sp5s","sp5a"]))
 head = os.path.join(T, "head.mp4"); run(["ffmpeg","-v","error","-y","-f","concat","-safe","0","-i",lst,"-c:v","libx264","-crf","16","-pix_fmt","yuv420p","-r","24",head])
 tail = os.path.join(T, "tail.txt"); open(tail, "w").write(f"file '{parts['sp6']}'\nfile '{os.path.abspath(a.endcard)}'\n")
 tailv = os.path.join(T, "tail.mp4"); run(["ffmpeg","-v","error","-y","-f","concat","-safe","0","-i",tail,"-c:v","libx264","-crf","16","-pix_fmt","yuv420p","-r","24",tailv])
