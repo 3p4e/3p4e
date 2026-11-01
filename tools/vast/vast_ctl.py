@@ -12,7 +12,7 @@ def req(m, p, b=None):
 c = sys.argv[1] if len(sys.argv) > 1 else "status"
 if c == "status":
     for x in req("GET", "/instances/").get("instances", []):
-        print(x["id"], x.get("label"), x["actual_status"], x.get("cur_state"), f"${x['dph_total']:.3f}/h", x.get("gpu_name"), x["public_ipaddr"], x["ports"].get("22/tcp", [{}])[0].get("HostPort"))
+        print(x["id"], x.get("label"), x["actual_status"], x.get("cur_state"), f"${x['dph_total']:.3f}/h", x.get("gpu_name"), x.get("public_ipaddr"), ((x.get("ports") or {}).get("22/tcp") or [{}])[0].get("HostPort"))
     print("credit:", round(req("GET", "/users/current/")["credit"], 3))
 elif c in ("stop", "start"): print(req("PUT", f"/instances/{sys.argv[2]}/", {"state": "stopped" if c == "stop" else "running"}))
 elif c == "destroy":
