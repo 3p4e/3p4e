@@ -56,6 +56,23 @@ wf = {
  "17": {"class_type": "SaveVideo", "inputs": {"video": ["16", 0], "filename_prefix": f"wan22_test_{a.w}x{a.h}", "format": "auto", "codec": "auto"}},
 }
 
+
+# preflight: compare our graph with what this ComfyUI actually offers
+try:
+    oi = json.loads(http("GET", "/object_info"))
+    for nid, n in wf.items():
+        c = n["class_type"]
+        if c not in oi:
+            print(f"PREFLIGHT: node class missing on server: {c}"); continue
+        req_in = set(oi[c].get("input", {}).get("required", {}).keys())
+        given = set(n["inputs"].keys())
+        if req_in - given: print(f"PREFLIGHT: {c} missing required inputs {sorted(req_in - given)}")
+        opt = set(oi[c].get("input", {}).get("optional", {}).keys())
+        unk = given - req_in - opt
+        if unk: print(f"PREFLIGHT: {c} has inputs the server does not know {sorted(unk)}")
+except Exception as e:
+    print("PREFLIGHT skipped:", e)
+
 t0 = time.time()
 try:
     r = json.loads(http("POST", "/prompt", json.dumps({"prompt": wf, "client_id": b}).encode(), {"Content-Type": "application/json"}))
