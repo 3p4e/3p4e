@@ -10,8 +10,12 @@ for _ in range(12):
     time.sleep(5)
     try: txt = urllib.request.urlopen(u, timeout=60).read().decode(errors="replace"); break
     except Exception: txt = ""
-cur = None; parts = {}; meta = {}; log = []
+cur = None; parts = {}; meta = {}; log = []; c2 = {}; c2m = {}
 for ln in txt.splitlines():
+    m = re.search(r"C2META (\S+) (\d+) (\w+)", ln)
+    if m: c2m[m.group(1)] = (int(m.group(2)), m.group(3)); continue
+    m = re.search(r"C2 (\S+) (\d+) (\S+)$", ln.strip())
+    if m and not ln.strip().startswith("B64"): c2.setdefault(m.group(1), {})[int(m.group(2))] = m.group(3); continue
     m = re.search(r"B64BEGIN (\S+) (\d+) (\w+)", ln)
     if m: cur = m.group(1); meta[cur] = (int(m.group(2)), m.group(3)); parts[cur] = {}; continue
     if re.search(r"B64END", ln): cur = None; continue
@@ -25,3 +29,11 @@ for n, p in parts.items():
     ok = len(data) == meta[n][0] and hashlib.sha256(data).hexdigest() == meta[n][1]
     path = os.path.join(out, "vast_" + n); open(path, "wb").write(data)
     print(f"RECOVERED {path} {len(data)} bytes, checksum {'OK' if ok else 'MISMATCH'} ({len(p)} chunks)")
+
+for tag, p in c2.items():
+    if tag not in c2m: continue
+    idx = sorted(p); missing = [i for i in range(1, idx[-1] + 1) if i not in p]
+    data = base64.b64decode("".join(p[i] for i in idx))
+    ok = (not missing) and len(data) == c2m[tag][0] and hashlib.sha256(data).hexdigest() == c2m[tag][1]
+    path = os.path.join(out, f"vast_{tag}p_clip.mp4"); open(path, "wb").write(data)
+    print(f"C2 RECOVERED {path} {len(data)} bytes, missing chunks {len(missing)}, checksum {'OK' if ok else 'MISMATCH'}")
