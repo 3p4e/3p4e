@@ -17,14 +17,14 @@ df -h /workspace | tail -1 | while read l; do say "disk: $l"; done
 B=https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/resolve/main/split_files
 S=/workspace/stage; mkdir -p $S
 get(){ for i in 1 2 3 4; do wget -q -c -O "$S/$(basename $1)" "$B/$1" && { say "ok $(basename $1) $(stat -c%s $S/$(basename $1))"; return 0; }; sleep 5; done; say "FAIL $1"; return 1; }
-T0=$(date +%s)
-get diffusion_models/wan2.2_i2v_high_noise_14B_fp8_scaled.safetensors &
-get diffusion_models/wan2.2_i2v_low_noise_14B_fp8_scaled.safetensors &
-get loras/wan2.2_i2v_lightx2v_4steps_lora_v1_high_noise.safetensors &
-get loras/wan2.2_i2v_lightx2v_4steps_lora_v1_low_noise.safetensors &
-get text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors &
-get vae/wan_2.1_vae.safetensors &
-wait
+T0=$(date +%s); PIDS=()
+get diffusion_models/wan2.2_i2v_high_noise_14B_fp8_scaled.safetensors & PIDS+=($!)
+get diffusion_models/wan2.2_i2v_low_noise_14B_fp8_scaled.safetensors & PIDS+=($!)
+get loras/wan2.2_i2v_lightx2v_4steps_lora_v1_high_noise.safetensors & PIDS+=($!)
+get loras/wan2.2_i2v_lightx2v_4steps_lora_v1_low_noise.safetensors & PIDS+=($!)
+get text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors & PIDS+=($!)
+get vae/wan_2.1_vae.safetensors & PIDS+=($!)
+wait "${PIDS[@]}"
 say "downloads finished in $(( $(date +%s)-T0 )) s"
 
 # ---- 2) our own ComfyUI copy (does not touch the template's /workspace/ComfyUI)
