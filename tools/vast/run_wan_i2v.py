@@ -17,6 +17,7 @@ ap.add_argument("--frames", type=int, default=81)
 ap.add_argument("--seed", type=int, default=42)
 ap.add_argument("--imagefile", default=None, help="file name already inside ComfyUI input/ (skips download+upload)")
 ap.add_argument("--tag", default="test")
+ap.add_argument("--endimage", default=None, help="file in ComfyUI input/ to use as LAST frame (first-last-frame mode)")
 ap.add_argument("--image", default="https://raw.githubusercontent.com/3p4e/3p4e/claude/elegant-thompson-uqhred/tools/vast/assets/city_lit_test.jpg")
 ap.add_argument("--prompt", default="The camera slowly pushes forward toward a single floating city on a rocky island above dark storm clouds, steady and smooth, no other moving objects.")
 ap.add_argument("--negative", default="blurry, distorted, extra objects, birds, helicopters, flickering, text, watermark, jitter")
@@ -61,6 +62,10 @@ wf = {
  "17": {"class_type": "SaveVideo", "inputs": {"video": ["16", 0], "filename_prefix": f"wan22_{a.tag}_{a.w}x{a.h}", "format": "auto", "codec": "auto"}},
 }
 
+
+if a.endimage:
+    wf["18"] = {"class_type": "LoadImage", "inputs": {"image": a.endimage}}
+    wf["12"] = {"class_type": "WanFirstLastFrameToVideo", "inputs": {"positive": ["9", 0], "negative": ["10", 0], "vae": ["8", 0], "width": a.w, "height": a.h, "length": a.frames, "batch_size": 1, "start_image": ["11", 0], "end_image": ["18", 0]}}
 
 # preflight: compare our graph with what this ComfyUI actually offers
 try:
