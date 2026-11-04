@@ -26,11 +26,15 @@ def req(m, p, b=None):
 
 credit = req("GET", "/users/current/")["credit"]
 insts = req("GET", "/instances/").get("instances", [])
-print(f"credit ${credit:.4f} | instances {len(insts)}")
-if insts:
-    for z in insts:
+running = [z for z in insts if z.get("actual_status") == "running"]
+print(f"credit ${credit:.4f} | instances {len(insts)} | running {len(running)}")
+if running:
+    for z in running:
         print("  RUNNING:", z.get("id"), z.get("gpu_name"), z.get("label"), z.get("actual_status"))
     sys.exit("refusing: instances already running - clean up first")
+for z in insts:
+    if z.get("actual_status") != "running":
+        print("  stale (not billing):", z.get("id"), z.get("label"), z.get("actual_status"))
 
 q = {"num_gpus": {"eq": 1}, "rentable": {"eq": True}, "rented": {"eq": False},
      "verified": {"eq": True}, "gpu_ram": {"gte": MINVRAM}, "disk_space": {"gte": DISK},

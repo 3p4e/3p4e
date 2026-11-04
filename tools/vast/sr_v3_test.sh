@@ -7,6 +7,7 @@ cd /workspace
 export HF_HOME=/workspace/hf
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 export TOKENIZERS_PARALLELISM=false
+[ -f /workspace/.hfenv ] && set -a && . /workspace/.hfenv && set +a
 mkdir -p /workspace/refs /workspace/out
 
 pip install -q --no-input \
@@ -14,12 +15,16 @@ pip install -q --no-input \
   ftfy==6.3.1 imageio-ffmpeg==0.5.1 omegaconf==2.3.0 kornia easydict \
   pyloudnorm librosa moviepy==2.2.1 torchao==0.10.0 \
   "numpy<2" opencv-python-headless tqdm wget huggingface_hub hf_transfer \
-  2>&1 | tail -5
+  einops timm easydict 2>&1 | tail -5
 export HF_HUB_ENABLE_HF_TRANSFER=1
 python3 -c "import torch,diffusers,transformers;print('torch',torch.__version__,'cuda',torch.version.cuda)"
 
 [ -d SkyReels-V3 ] || git clone --depth 1 https://github.com/SkyworkAI/SkyReels-V3
 cd SkyReels-V3
+
+# repo requirements are the authoritative dep list
+python3 -m pip install -q -r requirements.txt 2>&1 | tail -5
+python3 -c "import einops, timm; print(\"RENDER_DEPS_OK\")"
 
 echo "DOWNLOAD_START $(date -u +%H:%M:%S)"
 python3 - <<'PY'

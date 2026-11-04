@@ -9,16 +9,19 @@ export TOKENIZERS_PARALLELISM=false
 # ---------- 1. python deps (NO flash_attn: single-GPU path does not need it) ----------
 pip install -q --no-input \
   diffusers==0.34.0 transformers==4.53.2 tokenizers==0.21.4 accelerate==1.8.1 \
-  ftfy==6.3.1 imageio-ffmpeg==0.5.1 omegaconf==2.3.0 kornia easydict \
+  ftfy==6.3.1 imageio-ffmpeg==0.5.1 omegaconf==2.3.0 kornia easydict av einops timm \
   pyloudnorm librosa moviepy==2.2.1 torchao==0.10.0 \
   "numpy<2" opencv-python-headless tqdm wget huggingface_hub hf_transfer \
   2>&1 | tail -5
 export HF_HUB_ENABLE_HF_TRANSFER=1
 python3 -c "import torch,diffusers,transformers;print('torch',torch.__version__,'cuda',torch.version.cuda,'diffusers',diffusers.__version__)"
 
-# ---------- 2. repo ----------
+# ---------- 2. repo + repo deps (einops/timm/av are required by skyreels_v3) ----------
 [ -d SkyReels-V3 ] || git clone --depth 1 https://github.com/SkyworkAI/SkyReels-V3
 cd SkyReels-V3
+python3 -m pip install -q -r requirements.txt 2>&1 | tail -5
+python3 -c "import einops, timm; print('RENDER_DEPS_OK')"
+cd /workspace
 
 # ---------- 3. weights (51.83 GB) ----------
 echo "DOWNLOAD_START $(date -u +%H:%M:%S)"

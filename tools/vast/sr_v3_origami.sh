@@ -6,6 +6,13 @@
 set -x
 cd /workspace
 export HF_HOME=/workspace/hf
+
+# ---------- deps (required: einops, timm, av; repo requirements is authoritative) ----------
+pip install -q --no-input einops timm av easydict omegaconf kornia ftfy 2>&1 | tail -3
+[ -d SkyReels-V3 ] || git clone --depth 1 https://github.com/SkyworkAI/SkyReels-V3
+( cd SkyReels-V3 && python3 -m pip install -q -r requirements.txt 2>&1 | tail -5 )
+python3 -c "import einops, timm, av; print('RENDER_DEPS_OK')" || { echo "FATAL: render deps missing"; exit 1; }
+
 ROOT=/workspace
 OUT=$ROOT/v3_out
 KEYFR=$ROOT/origami_keyframes
