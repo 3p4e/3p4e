@@ -27,7 +27,7 @@ ap.add_argument("--comfy-dir", default="/opt/workspace-internal/ComfyUI")
 ap.add_argument("--timeout", type=int, default=2400)
 a = ap.parse_args()
 
-UNET  = "qwen_image_fp8_e4m3fn.safetensors"
+UNET  = "qwen_image_2512_fp8_e4m3fn.safetensors"   # 2512 T2I (Apache-2.0, verified in Comfy-Org repo)
 CLIP  = "qwen_2.5_vl_7b_fp8_scaled.safetensors"
 VAE   = "qwen_image_vae.safetensors"
 SHIFT = 3.1

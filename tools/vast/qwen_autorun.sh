@@ -33,6 +33,7 @@ import os
 from huggingface_hub import hf_hub_download
 dm,te,va,lo=os.environ['DM'],os.environ['TE'],os.environ['VA'],os.environ['LO']
 jobs=[
+ ('Comfy-Org/Qwen-Image_ComfyUI','split_files/diffusion_models/qwen_image_2512_fp8_e4m3fn.safetensors',dm),
  ('Comfy-Org/Qwen-Image-Edit_ComfyUI','split_files/diffusion_models/qwen_image_edit_2511_fp8mixed.safetensors',dm),
  ('Comfy-Org/Qwen-Image_ComfyUI','split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors',te),
  ('Comfy-Org/Qwen-Image_ComfyUI','split_files/vae/qwen_image_vae.safetensors',va),
