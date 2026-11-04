@@ -12,6 +12,7 @@ ap.add_argument("--disk", type=int, default=120); ap.add_argument("--label", def
 ap.add_argument("--skip-tests", action="store_true", help="models + ComfyUI only (recommended for the batch)")
 ap.add_argument("--maxmin", type=int, default=150, help="self-stop after N minutes")
 ap.add_argument("--branch", default="claude/elegant-thompson-uqhred"); ap.add_argument("--dry-run", action="store_true")
+ap.add_argument("--id", type=int, default=0, help="rent this exact offer id, ignoring the price ranking")
 a = ap.parse_args()
 K = os.environ["VASTAI_API"]; H = {"Authorization": "Bearer " + K, "Content-Type": "application/json"}
 TEMPLATE = "2188dfd3e0a0b83691bb468ddae0a4e5"  # official vastai/comfy template
@@ -26,15 +27,25 @@ offers = req("POST", "/bundles/", {"num_gpus": {"eq": 1}, "rentable": {"eq": Tru
 bad = {"Tesla V100", "Q RTX 8000", "CMP 170HX", "Titan RTX", "Tesla P40"}
 c = [x for x in offers if x["dph_total"] <= a.max_price and x["gpu_name"] not in bad and x.get("cpu_ram", 0) / 1024 >= 48
      and (x.get("cpu_cores_effective") or 0) >= 8 and x.get("inet_down", 0) >= 500 and x.get("total_flops", 0) >= 50]
+if a.id:
+    exact = [x for x in offers if x["id"] == a.id]
+    if not exact: sys.exit(f"offer {a.id} not in the rentable list right now")
+    c = exact
 for x in c[:6]:
     print(f"cand id={x['id']} {x['gpu_name']} {x['gpu_ram']/1024:.0f}GB ${x['dph_total']:.3f}/h TF={x['total_flops']:.0f} down={int(x['inet_down'])}Mbps {x['geolocation']}")
 if not c or a.dry_run: sys.exit("no candidate" if not c else 0)
+# refuse to double-rent: an existing karsus-wan-v3 instance means we already paid
+_ex = [z for z in req("GET", "/instances/").get("instances", []) if z.get("label") == a.label]
+if _ex and not a.dry_run:
+    sys.exit(f"refusing: already have {a.label} -> {[z['id'] for z in _ex]}")
 x = c[0]
 raw = f"https://raw.githubusercontent.com/3p4e/3p4e/{a.branch}/tools/vast/autorun.sh?c={random.randint(1, 10**9)}"
 env = "SKIP_TESTS=1 " if a.skip_tests else ""
 onstart = f"#!/bin/bash\nmkdir -p /workspace\nnohup setsid bash -c 'curl -fsSL \"{raw}\" | {env}MAXMIN={a.maxmin} bash' >/workspace/onstart.out 2>&1 &\n"
 r = req("PUT", f"/asks/{x['id']}/", {"template_hash_id": TEMPLATE, "disk": a.disk, "label": a.label, "onstart": onstart})
 r.pop("instance_api_key", None); print("rent:", r)
+if not r.get("success") or not r.get("new_contract"):
+    sys.exit(f"RENT FAILED - no contract. response={r}")
 cid = r.get("new_contract")
 for _ in range(12):
     time.sleep(10)

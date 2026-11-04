@@ -1,0 +1,140 @@
+[
+  {
+    "tag": "or_01_corruption_revealed",
+    "seed": 800,
+    "prompt": "Wide low angle. the corrupted seraph, a colossal parchment thing rotted from the wing edges inward, six ragged wings stained black whose edges drip glossy tar-like black goo in long strands that pool beneath it, dark tide-lines soaked along the folds where blackletter script smears and bleeds, too many wing joints, and a head that is a blank folded paper mask with NO human face and no eyes, only two dark holes weeping black looms over a vast invisible plane in a starless black void bending under the released force, drifting loose parchment pages and dissolving blackletter fragments, faint cold white light far behind, goo dripping from six stained wing edges and pooling into a wide glossy black mirror beneath it. No human figure. Cinematic photorealistic film still, 16:9, dense maximalist composition filling the frame, soft key light from above, macro detail of paper fibre and wet tar, high contrast, shallow depth of field, ivory parchment against cold white flame and oily black corruption, volumetric light, ultra-detailed",
+    "negative": "blurry, deformed face, distorted eyes, extra limbs, extra fingers, melted armour, cartoon, illustration, plastic skin, text, watermark, low quality, low resolution, different face, moustache, beard, stubble, human hair, earrings, modern clothing, empty flat background, lone figure, sparse composition, duplicate face, human face on the second figure, smiling, fire consuming paper, cropped by frame edge, static pose, new scene, restarting",
+    "enter": "void_empty",
+    "out": "stain_revealed_dripping",
+    "kind": "monster",
+    "image1": "seraph_ref.png"
+  },
+  {
+    "tag": "or_02_hunter_descends",
+    "seed": 801,
+    "prompt": "Dynamic wide shot. Above the dripping Stain, Azulon as a clean seraph, hairless shaven head, clean-shaven face with no moustache no beard and no stubble, eyebrows kept, grey-green eyes, very long high-elf ears sweeping back, lean wiry build, unretouched photographic skin, a faded silver Selune crescent on his forehead; from the neck down his armour and six wings are immaculate folded ivory parchment, visible paper fibre, every feather edge burning with a cold white flame that does not consume the paper plummets out of the dark trailing a searing white streak, wings snapping open as cold flame races every edge, folded pages spiralling up around his raised hand. Far below, the corrupted seraph, a colossal parchment thing whose wing edges drip glossy black tar-goo and pool black beneath it, its head a blank folded paper mask with NO human face and no eyes, only two holes weeping black waits, unimpressed. He does not slow. a starless black void bending under the released force, drifting loose parchment pages and dissolving blackletter fragments, faint cold white light far behind. Cinematic photorealistic film still, 16:9, dense maximalist composition filling the frame, soft key light from above, macro detail of paper fibre and wet tar, high contrast, shallow depth of field, ivory parchment against cold white flame and oily black corruption, volumetric light, ultra-detailed",
+    "negative": "blurry, deformed face, distorted eyes, extra limbs, extra fingers, melted armour, cartoon, illustration, plastic skin, text, watermark, low quality, low resolution, different face, moustache, beard, stubble, human hair, earrings, modern clothing, empty flat background, lone figure, sparse composition, duplicate face, human face on the second figure, smiling, fire consuming paper, cropped by frame edge, static pose, new scene, restarting",
+    "enter": "stain_revealed_dripping",
+    "out": "hunter_above_wings_open",
+    "kind": "hero",
+    "image1": "A_bust.png",
+    "image2": "A_bust.png",
+    "image3": "sheet_front.png"
+  },
+  {
+    "tag": "or_03_thousand_cranes",
+    "seed": 802,
+    "prompt": "Explosive wide shot, massive release of force. Still falling, Azulon as a clean seraph, hairless shaven head, clean-shaven face with no moustache no beard and no stubble, eyebrows kept, grey-green eyes, very long high-elf ears sweeping back, lean wiry build, unretouched photographic skin, a faded silver Selune crescent on his forehead; from the neck down his armour and six wings are immaculate folded ivory parchment, visible paper fibre, every feather edge burning with a cold white flame that does not consume the paper fires his opening attack: thousands of folded paper cranes tear free from his outstretched wings, which stay six but are left ragged and thinned, and streak away as a comet storm of white fire filling the frame with burning motion streaks and shockwave rings. a starless black void bending under the released force, drifting loose parchment pages and dissolving blackletter fragments, faint cold white light far behind. Cinematic photorealistic film still, 16:9, dense maximalist composition filling the frame, soft key light from above, macro detail of paper fibre and wet tar, high contrast, shallow depth of field, ivory parchment against cold white flame and oily black corruption, volumetric light, ultra-detailed",
+    "negative": "blurry, deformed face, distorted eyes, extra limbs, extra fingers, melted armour, cartoon, illustration, plastic skin, text, watermark, low quality, low resolution, different face, moustache, beard, stubble, human hair, earrings, modern clothing, empty flat background, lone figure, sparse composition, duplicate face, human face on the second figure, smiling, fire consuming paper, cropped by frame edge, static pose, new scene, restarting",
+    "enter": "hunter_above_wings_open",
+    "out": "crane_swarm_descending_wings_ragged",
+    "kind": "hero",
+    "image1": "A_bust.png",
+    "image2": "A_bust.png",
+    "image3": "sheet_front.png"
+  },
+  {
+    "tag": "or_04_stain_devours",
+    "seed": 803,
+    "prompt": "Colossal wide shot. the corrupted seraph, a colossal parchment thing rotted from the wing edges inward, six ragged wings stained black whose edges drip glossy tar-like black goo in long strands that pool beneath it, dark tide-lines soaked along the folds where blackletter script smears and bleeds, too many wing joints, and a head that is a blank folded paper mask with NO human face and no eyes, only two dark holes weeping black does not dodge - its wings UNFOLD into a cathedral wall of stained parchment and swallow the incoming crane swarm whole, white fire drowning in black glossy goo that brightens as it feeds; thick tar tentacles snatch the last cranes mid-flight. It swells visibly larger, fed. a starless black void bending under the released force, drifting loose parchment pages and dissolving blackletter fragments, faint cold white light far behind. Cinematic photorealistic film still, 16:9, dense maximalist composition filling the frame, soft key light from above, macro detail of paper fibre and wet tar, high contrast, shallow depth of field, ivory parchment against cold white flame and oily black corruption, volumetric light, ultra-detailed",
+    "negative": "blurry, deformed face, distorted eyes, extra limbs, extra fingers, melted armour, cartoon, illustration, plastic skin, text, watermark, low quality, low resolution, different face, moustache, beard, stubble, human hair, earrings, modern clothing, empty flat background, lone figure, sparse composition, duplicate face, human face on the second figure, smiling, fire consuming paper, cropped by frame edge, static pose, new scene, restarting",
+    "enter": "crane_swarm_descending_wings_ragged",
+    "out": "stain_cathedral_wall_swarm_eaten",
+    "kind": "monster",
+    "image1": "seraph_ref.png"
+  },
+  {
+    "tag": "or_05_tar_tide",
+    "seed": 804,
+    "prompt": "Overwhelming wide shot, vast destructive release. The cathedral wall of the corrupted seraph, a colossal parchment thing whose wing edges drip glossy black tar-goo and pool black beneath it, its head a blank folded paper mask with NO human face and no eyes, only two holes weeping black COLLAPSES back into its wings, and from them a tidal ocean of glossy black tar erupts upward at Azulon as a clean seraph, hairless shaven head, clean-shaven face with no moustache no beard and no stubble, eyebrows kept, grey-green eyes, very long high-elf ears sweeping back, lean wiry build, unretouched photographic skin, a faded silver Selune crescent on his forehead; from the neck down his armour and six wings are immaculate folded ivory parchment, visible paper fibre, every feather edge burning with a cold white flame that does not consume the paper, taller than a cathedral, goo screaming off its crest; he hangs small and blazing white above it, six ragged wings spread, his flame reflected in the oncoming slick, unfrightened. Cinematic photorealistic film still, 16:9, dense maximalist composition filling the frame, soft key light from above, macro detail of paper fibre and wet tar, high contrast, shallow depth of field, ivory parchment against cold white flame and oily black corruption, volumetric light, ultra-detailed",
+    "negative": "blurry, deformed face, distorted eyes, extra limbs, extra fingers, melted armour, cartoon, illustration, plastic skin, text, watermark, low quality, low resolution, different face, moustache, beard, stubble, human hair, earrings, modern clothing, empty flat background, lone figure, sparse composition, duplicate face, human face on the second figure, smiling, fire consuming paper, cropped by frame edge, static pose, new scene, restarting",
+    "enter": "stain_cathedral_wall_swarm_eaten",
+    "out": "tar_ocean_surging",
+    "kind": "clash",
+    "image1": "A_bust.png",
+    "image2": "A_bust.png",
+    "image3": "sheet_front.png"
+  },
+  {
+    "tag": "or_06_blade_splits_tide",
+    "seed": 805,
+    "prompt": "Epic action shot. Azulon as a clean seraph, hairless shaven head, clean-shaven face with no moustache no beard and no stubble, eyebrows kept, grey-green eyes, very long high-elf ears sweeping back, lean wiry build, unretouched photographic skin, a faded silver Selune crescent on his forehead; from the neck down his armour and six wings are immaculate folded ivory parchment, visible paper fibre, every feather edge burning with a cold white flame that does not consume the paper has re-folded himself into a single elongated blade of ivory parchment and dives into the tar wave; the ocean of goo parts around him in a deep canyon whose walls scream into white steam, his edges blazing cold white, the whole tidal wall cut cleanly in half and collapsing on both sides behind him in sheets of black spray. a starless black void bending under the released force, drifting loose parchment pages and dissolving blackletter fragments, faint cold white light far behind. Cinematic photorealistic film still, 16:9, dense maximalist composition filling the frame, soft key light from above, macro detail of paper fibre and wet tar, high contrast, shallow depth of field, ivory parchment against cold white flame and oily black corruption, volumetric light, ultra-detailed",
+    "negative": "blurry, deformed face, distorted eyes, extra limbs, extra fingers, melted armour, cartoon, illustration, plastic skin, text, watermark, low quality, low resolution, different face, moustache, beard, stubble, human hair, earrings, modern clothing, empty flat background, lone figure, sparse composition, duplicate face, human face on the second figure, smiling, fire consuming paper, cropped by frame edge, static pose, new scene, restarting",
+    "enter": "tar_ocean_surging",
+    "out": "tide_cut_collapsing_hero_as_blade",
+    "kind": "hero",
+    "image1": "A_bust.png",
+    "image2": "A_bust.png",
+    "image3": "sheet_front.png"
+  },
+  {
+    "tag": "or_07_colossus_against_cathedral",
+    "seed": 806,
+    "prompt": "Titanic wide shot. Azulon as a clean seraph, hairless shaven head, clean-shaven face with no moustache no beard and no stubble, eyebrows kept, grey-green eyes, very long high-elf ears sweeping back, lean wiry build, unretouched photographic skin, a faded silver Selune crescent on his forehead; from the neck down his armour and six wings are immaculate folded ivory parchment, visible paper fibre, every feather edge burning with a cold white flame that does not consume the paper UNFOLDS from the blade into a towering colossus of angular ivory plates burning cold white, while the corrupted seraph, a colossal parchment thing whose wing edges drip glossy black tar-goo and pool black beneath it, its head a blank folded paper mask with NO human face and no eyes, only two holes weeping black unfolds into an ever-growing mass of stained dripping pages dwarfing mountains; goo drips from one, white fire pours off the other. Cinematic photorealistic film still, 16:9, dense maximalist composition filling the frame, soft key light from above, macro detail of paper fibre and wet tar, high contrast, shallow depth of field, ivory parchment against cold white flame and oily black corruption, volumetric light, ultra-detailed",
+    "negative": "blurry, deformed face, distorted eyes, extra limbs, extra fingers, melted armour, cartoon, illustration, plastic skin, text, watermark, low quality, low resolution, different face, moustache, beard, stubble, human hair, earrings, modern clothing, empty flat background, lone figure, sparse composition, duplicate face, human face on the second figure, smiling, fire consuming paper, cropped by frame edge, static pose, new scene, restarting",
+    "enter": "tide_cut_collapsing_hero_as_blade",
+    "out": "both_colossal_facing",
+    "kind": "clash",
+    "image1": "A_bust.png",
+    "image2": "A_bust.png",
+    "image3": "sheet_front.png"
+  },
+  {
+    "tag": "or_08_sphere_of_annihilation",
+    "seed": 807,
+    "prompt": "The largest release of force so far. The two titans slam together at frame centre and white flame meets black tar in a blinding sphere of annihilation - a searing core with concentric shockwave rings blasting outward, parchment pages shredded to confetti, lens bloom, the void visibly bowing under the detonation. Azulon as a clean seraph, hairless shaven head, clean-shaven face with no moustache no beard and no stubble, eyebrows kept, grey-green eyes, very long high-elf ears sweeping back, lean wiry build, unretouched photographic skin, a faded silver Selune crescent on his forehead; from the neck down his armour and six wings are immaculate folded ivory parchment, visible paper fibre, every feather edge burning with a cold white flame that does not consume the paper and the corrupted seraph, a colossal parchment thing whose wing edges drip glossy black tar-goo and pool black beneath it, its head a blank folded paper mask with NO human face and no eyes, only two holes weeping black are locked as silhouettes inside the blast. Cinematic photorealistic film still, 16:9, dense maximalist composition filling the frame, soft key light from above, macro detail of paper fibre and wet tar, high contrast, shallow depth of field, ivory parchment against cold white flame and oily black corruption, volumetric light, ultra-detailed",
+    "negative": "blurry, deformed face, distorted eyes, extra limbs, extra fingers, melted armour, cartoon, illustration, plastic skin, text, watermark, low quality, low resolution, different face, moustache, beard, stubble, human hair, earrings, modern clothing, empty flat background, lone figure, sparse composition, duplicate face, human face on the second figure, smiling, fire consuming paper, cropped by frame edge, static pose, new scene, restarting",
+    "enter": "both_colossal_facing",
+    "out": "collision_sphere_burning",
+    "kind": "clash",
+    "image1": "A_bust.png",
+    "image2": "A_bust.png",
+    "image3": "sheet_front.png"
+  },
+  {
+    "tag": "or_09_thousandfold_dawn",
+    "seed": 808,
+    "prompt": "Azulon bursts OUT of that burning sphere - not a fresh attack but the continuation of the collision. Azulon as a clean seraph, hairless shaven head, clean-shaven face with no moustache no beard and no stubble, eyebrows kept, grey-green eyes, very long high-elf ears sweeping back, lean wiry build, unretouched photographic skin, a faded silver Selune crescent on his forehead; from the neck down his armour and six wings are immaculate folded ivory parchment, visible paper fibre, every feather edge burning with a cold white flame that does not consume the paper with all six wings detonating into uncountable folded paper blades edged in cold white fire, thousands of burning edges spiralling outward in every direction at once, a radial star of white light shredding the void as he breaks free, his face lit from beneath. Cinematic photorealistic film still, 16:9, dense maximalist composition filling the frame, soft key light from above, macro detail of paper fibre and wet tar, high contrast, shallow depth of field, ivory parchment against cold white flame and oily black corruption, volumetric light, ultra-detailed",
+    "negative": "blurry, deformed face, distorted eyes, extra limbs, extra fingers, melted armour, cartoon, illustration, plastic skin, text, watermark, low quality, low resolution, different face, moustache, beard, stubble, human hair, earrings, modern clothing, empty flat background, lone figure, sparse composition, duplicate face, human face on the second figure, smiling, fire consuming paper, cropped by frame edge, static pose, new scene, restarting",
+    "enter": "collision_sphere_burning",
+    "out": "blade_storm_expanding",
+    "kind": "hero",
+    "image1": "A_bust.png",
+    "image2": "A_bust.png",
+    "image3": "sheet_front.png"
+  },
+  {
+    "tag": "or_10_final_unfold",
+    "seed": 809,
+    "prompt": "Grotesque colossal shot. Cornered, the corrupted seraph, a colossal parchment thing rotted from the wing edges inward, six ragged wings stained black whose edges drip glossy tar-like black goo in long strands that pool beneath it, dark tide-lines soaked along the folds where blackletter script smears and bleeds, too many wing joints, and a head that is a blank folded paper mask with NO human face and no eyes, only two dark holes weeping black unfolds COMPLETELY into a cathedral-sized nest of stained pages and writhing black tar tentacles and EATS the blade storm, swallowing it whole as fast as it arrives, swelling far beyond the frame with black goo cascading off it in curtains - but the burning white blades are now glowing faintly from INSIDE its body. No human figure. a starless black void bending under the released force, drifting loose parchment pages and dissolving blackletter fragments, faint cold white light far behind. Cinematic photorealistic film still, 16:9, dense maximalist composition filling the frame, soft key light from above, macro detail of paper fibre and wet tar, high contrast, shallow depth of field, ivory parchment against cold white flame and oily black corruption, volumetric light, ultra-detailed",
+    "negative": "blurry, deformed face, distorted eyes, extra limbs, extra fingers, melted armour, cartoon, illustration, plastic skin, text, watermark, low quality, low resolution, different face, moustache, beard, stubble, human hair, earrings, modern clothing, empty flat background, lone figure, sparse composition, duplicate face, human face on the second figure, smiling, fire consuming paper, cropped by frame edge, static pose, new scene, restarting",
+    "enter": "blade_storm_expanding",
+    "out": "stain_unfolded_blades_inside",
+    "kind": "monster",
+    "image1": "seraph_ref.png"
+  },
+  {
+    "tag": "or_11_spear_pierce",
+    "seed": 810,
+    "prompt": "Decisive action shot. Azulon as a clean seraph, hairless shaven head, clean-shaven face with no moustache no beard and no stubble, eyebrows kept, grey-green eyes, very long high-elf ears sweeping back, lean wiry build, unretouched photographic skin, a faded silver Selune crescent on his forehead; from the neck down his armour and six wings are immaculate folded ivory parchment, visible paper fibre, every feather edge burning with a cold white flame that does not consume the paper has compressed into a single folded white dart of pure cold flame and dives straight through the gorged black mass; a thin perfect pencil-line of white light punches in one side and out the other, the entry and exit holes rimmed with burning white and spraying black vapour, and white fire already glowing up inside the body it entered. Wings folded flat, eyes fixed. a starless black void bending under the released force, drifting loose parchment pages and dissolving blackletter fragments, faint cold white light far behind. Cinematic photorealistic film still, 16:9, dense maximalist composition filling the frame, soft key light from above, macro detail of paper fibre and wet tar, high contrast, shallow depth of field, ivory parchment against cold white flame and oily black corruption, volumetric light, ultra-detailed",
+    "negative": "blurry, deformed face, distorted eyes, extra limbs, extra fingers, melted armour, cartoon, illustration, plastic skin, text, watermark, low quality, low resolution, different face, moustache, beard, stubble, human hair, earrings, modern clothing, empty flat background, lone figure, sparse composition, duplicate face, human face on the second figure, smiling, fire consuming paper, cropped by frame edge, static pose, new scene, restarting",
+    "enter": "stain_unfolded_blades_inside",
+    "out": "hole_punched_fire_igniting_inside",
+    "kind": "hero",
+    "image1": "A_bust.png",
+    "image2": "A_bust.png",
+    "image3": "sheet_front.png"
+  },
+  {
+    "tag": "or_12_annihilation_ascension",
+    "seed": 811,
+    "prompt": "Wide shot, the payoff. The swallowed blade storm DETONATES INSIDE it - white fire erupts out through its body, the corrupted seraph, a colossal parchment thing whose wing edges drip glossy black tar-goo and pool black beneath it, its head a blank folded paper mask with NO human face and no eyes, only two holes weeping black burning from within as its tar boils to vapour and its paper body crumbles into glowing dust and clean white cranes rise through the wreckage; Azulon as a clean seraph, hairless shaven head, clean-shaven face with no moustache no beard and no stubble, eyebrows kept, grey-green eyes, very long high-elf ears sweeping back, lean wiry build, unretouched photographic skin, a faded silver Selune crescent on his forehead; from the neck down his armour and six wings are immaculate folded ivory parchment, visible paper fibre, every feather edge burning with a cold white flame that does not consume the paper lands in the foreground, wings folding, edges smoking white, lit by his enemy's dying fire. Cinematic photorealistic film still, 16:9, dense maximalist composition filling the frame, soft key light from above, macro detail of paper fibre and wet tar, high contrast, shallow depth of field, ivory parchment against cold white flame and oily black corruption, volumetric light, ultra-detailed",
+    "negative": "blurry, deformed face, distorted eyes, extra limbs, extra fingers, melted armour, cartoon, illustration, plastic skin, text, watermark, low quality, low resolution, different face, moustache, beard, stubble, human hair, earrings, modern clothing, empty flat background, lone figure, sparse composition, duplicate face, human face on the second figure, smiling, fire consuming paper, cropped by frame edge, static pose, new scene, restarting",
+    "enter": "hole_punched_fire_igniting_inside",
+    "out": "stain_destroyed_hero_lands_void_empty",
+    "kind": "clash",
+    "image1": "A_bust.png",
+    "image2": "A_bust.png",
+    "image3": "sheet_front.png"
+  }
+]

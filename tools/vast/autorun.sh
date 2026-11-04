@@ -9,7 +9,7 @@ MAXMIN=${MAXMIN:-100}
 say(){ m="[AUTORUN $(date -u +%H:%M:%S)] $*"; echo "$m" >> $LOG; echo "$m" > /proc/1/fd/1 2>/dev/null || true; }
 stop_self(){ curl -s -X PUT -H "Authorization: Bearer $CONTAINER_API_KEY" -H "Content-Type: application/json" -d '{"state":"stopped"}' "https://console.vast.ai/api/v0/instances/$CONTAINER_ID/" >> $LOG 2>&1; }
 say "canary: autorun started on $(hostname); cap ${MAXMIN} min"
-( sleep $((MAXMIN*60)); say "hard cap reached -> stopping instance"; stop_self ) &
+( if sleep $((MAXMIN*60)); then say "hard cap reached -> stopping instance"; stop_self; else say "watchdog disarmed (sleep killed) - NOT stopping"; fi ) &
 jobloop(){
 last=""
 while [ ! -e /workspace/STOP ]; do
