@@ -28,8 +28,10 @@ Karsus deliverable (previously cited as the "working bar" — WRONG)
   clips     832x480 @ 16 fps (81 frames), upscaled to 1280x720 @ 24 fps
   film      karsus_v3_FULL.mp4   118.0 s
 
-Accepted reference
-  Paladin teaser: the only film the user accepted.
+References
+  No self-made deliverable (including the Paladin teaser) may be cited as a
+  reference or benchmark. The only legitimate references are the source material
+  and researched external cinematic sources (Diablo 2 / WoW / StarCraft).
 ```
 
 ---
@@ -46,7 +48,7 @@ film.
 ### 1.2 "it is not the model's problem... your ignorant prompts and your inability to create a proper scenario"
 **Verdict: Valid.** The model rendered exactly what the inputs described. The defect
 was authored before the model ever ran: a 6-beat outline, one still per beat, and a
-style spec that contradicted the accepted reference.
+style spec that contradicted the project's photoreal doctrine.
 
 ### 1.3 "what kind of story did you tell in 6 beats with somewhat minimal motions, no actual movie features whatsoever"
 **Verdict: Valid.** A story is told by *depicting action and consequence*. Six brief
@@ -227,8 +229,9 @@ A deliverable is a film only if it passes all of these:
    reads as a held still.
 5. **Narration anchoring** — every narration line maps to a shot that visibly
    performs it.
-6. **Style kit** matches the user-accepted Paladin reference; rejected deliverables
-   are never a style or density benchmark.
+6. **Style kit** matches the project's photoreal doctrine, validated against researched
+   external cinematic references (Diablo 2 / WoW / StarCraft); no self-made deliverable
+   is ever a style or density benchmark.
 7. **Visual-first** — the on-screen action alone must convey the story; mute the
    audio and it must still make sense.
 
@@ -238,7 +241,8 @@ A deliverable is a film only if it passes all of these:
 
 1. **Scope:** proof-first (one scene) or full film? I recommend proof-first.
 2. **Budget:** how much above the ~$2.05 Vast credit for the full 40–60-shot run?
-3. **Format:** landscape 1280×720, matching the Paladin teaser?
+3. **Format:** landscape 1280×720, per the photoreal doctrine (no self-made
+   deliverable sets the format reference)?
 4. **Music:** include the soft folk bed the script calls for?
 5. **Source material:** which story expands to the 40–60-shot treatment —
    rework Susanoo, or start a new title under the corrected pipeline?

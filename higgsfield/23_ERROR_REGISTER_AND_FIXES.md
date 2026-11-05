@@ -91,19 +91,21 @@
 
 ### C2. Executed the wrong style spec
 - **What went wrong:** `story.md` §1 read “cel-shaded watercolor storybook”, so every
-  keyframe and clip carried it — while the Paladin teaser, the one film the user praised, used
+  keyframe and clip carried it — while the project's photoreal doctrine calls for
   “photorealistic cinematic still”. I rendered the wrong spec without challenging it.
 - **Fix:** Rebuilt all six keyframes photoreal (photorealistic cinematic, 35mm, real skin,
   film grain; cartoon/watercolor/illustration in negatives).
-- **Prevention:** Diff a new story's style kit against the two reference films the user already
-  approved; flag any mismatch before rendering.
+- **Prevention:** A new story's style kit must match the photoreal doctrine (and be validated
+  against researched external cinematic references — Diablo 2, WoW, StarCraft) — never
+  against any self-made deliverable, none of which qualifies as a reference.
 
 ### C3. Shot the outline, not the coverage
 - **What went wrong:** Six 5-second beats for 45s of narration. A real film is 40–60 shots,
   each with start+end keyframes.
 - **Fix (planned):** Full shot-by-shot storyboard with start+end keyframe pairs, 40–60 shots.
-- **Prevention:** Minimum shot density is a hard requirement, not a soft suggestion. A
-  deliverable is measured against the accepted reference only.
+- **Prevention:** Minimum shot density is a hard requirement, not a soft suggestion. Shot
+  count is judged against the researched external cinematic standard (Diablo 2 / WoW /
+  StarCraft), never against any self-made deliverable.
 
 ### C4. Cited Karsus as the working standard when it was the same failure
 - **What went wrong:** Register entry C3 and the critique report called Karsus the project's
@@ -114,9 +116,21 @@
   single-reference generation). It shipped at 16 fps, 480p upscaled to 720p, and the user
   had already rejected it as "terrible."
 - **Fix:** Corrected both documents. Karsus is recorded as a failed deliverable, not a
-  benchmark. The only user-accepted reference is the Paladin teaser.
-- **Prevention:** Only a user-accepted film, produced by the approved technique, may serve
-  as a benchmark. Never cite a rejected deliverable as evidence of correct method.
+  benchmark.
+- **Prevention:** Never cite a rejected deliverable as evidence of correct method. See C5
+  for the wider rule.
+
+### C5. Cited any self-made deliverable (incl. Paladin) as a reference
+- **What went wrong:** After the user rejected Karsus, I pivoted to citing the Paladin
+  teaser as "the user-accepted reference" for style, format and quality. That was the same
+  error one level shallower. The user's rule is absolute: **no self-made deliverable may be
+  cited as a reference or benchmark at all** — including Paladin.
+- **Fix:** Removed every self-deliverable citation from the register and the critique
+  report. The only legitimate references are researched external cinematic sources
+  (Diablo 2 / WoW / StarCraft, per the production doctrine) and the source material itself.
+- **Prevention:** A reference is external by definition. Any sentence that treats one of
+  our own outputs as a quality or style benchmark is wrong and must be flagged before it
+  ships.
 
 ---
 
@@ -248,8 +262,9 @@
    the only paid step.
 4. **Shot grammar is a requirement, not a preference.** FLF (start+end keyframes), multiple
    shots per beat, camera moves, 40–60 shots for a real film.
-5. **Style kit must match the approved reference.** Diff against the user-accepted Paladin
-   teaser before rendering. Karsus was rejected and is not a reference.
+5. **Style kit must match the project's photoreal doctrine, validated against researched
+   external cinematic references (Diablo 2 / WoW / StarCraft).** No self-made deliverable
+   is ever a style reference.
 6. **Billing truth:** only DESTROY stops Vast billing; stopped instances still bill disk.
 7. **Verify live state from the provider**, never from notes or hashes: credit, instances,
    volumes, balance.
