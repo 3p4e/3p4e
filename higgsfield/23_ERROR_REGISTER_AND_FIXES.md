@@ -91,7 +91,7 @@
 
 ### C2. Executed the wrong style spec
 - **What went wrong:** `story.md` §1 read “cel-shaded watercolor storybook”, so every
-  keyframe and clip carried it — while Paladin and Karsus, which the user praised, used
+  keyframe and clip carried it — while the Paladin teaser, the one film the user praised, used
   “photorealistic cinematic still”. I rendered the wrong spec without challenging it.
 - **Fix:** Rebuilt all six keyframes photoreal (photorealistic cinematic, 35mm, real skin,
   film grain; cartoon/watercolor/illustration in negatives).
@@ -99,12 +99,24 @@
   approved; flag any mismatch before rendering.
 
 ### C3. Shot the outline, not the coverage
-- **What went wrong:** Six 5-second beats for 45s of narration. Karsus — the project's own
-  working bar — used 24 shots for ~2 minutes. The user is right that a real film is 40–60
-  shots.
+- **What went wrong:** Six 5-second beats for 45s of narration. A real film is 40–60 shots,
+  each with start+end keyframes.
 - **Fix (planned):** Full shot-by-shot storyboard with start+end keyframe pairs, 40–60 shots.
-- **Prevention:** Minimum shot density is a hard requirement, benchmarked against Karsus
-  (~24 shots / 2 min), not a soft suggestion.
+- **Prevention:** Minimum shot density is a hard requirement, not a soft suggestion. A
+  deliverable is measured against the accepted reference only.
+
+### C4. Cited Karsus as the working standard when it was the same failure
+- **What went wrong:** Register entry C3 and the critique report called Karsus the project's
+  working bar — "24 shots / ~2 minutes", "working photoreal 118 s film". That was false.
+  Karsus was built by the same single-reference still-animation method: of its 25 segments,
+  only `sp5a` set an `--endimage`; the other 24 had `end=None`, so each clip animated one
+  still (`prev` chaining fed the previous clip's last frame as the next start still — still
+  single-reference generation). It shipped at 16 fps, 480p upscaled to 720p, and the user
+  had already rejected it as "terrible."
+- **Fix:** Corrected both documents. Karsus is recorded as a failed deliverable, not a
+  benchmark. The only user-accepted reference is the Paladin teaser.
+- **Prevention:** Only a user-accepted film, produced by the approved technique, may serve
+  as a benchmark. Never cite a rejected deliverable as evidence of correct method.
 
 ---
 
@@ -236,8 +248,8 @@
    the only paid step.
 4. **Shot grammar is a requirement, not a preference.** FLF (start+end keyframes), multiple
    shots per beat, camera moves, 40–60 shots for a real film.
-5. **Style kit must match the approved reference films.** Diff against Paladin/Karsus before
-   rendering.
+5. **Style kit must match the approved reference.** Diff against the user-accepted Paladin
+   teaser before rendering. Karsus was rejected and is not a reference.
 6. **Billing truth:** only DESTROY stops Vast billing; stopped instances still bill disk.
 7. **Verify live state from the provider**, never from notes or hashes: credit, instances,
    volumes, balance.
