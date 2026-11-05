@@ -206,6 +206,55 @@ STEP 3  FULL RUN — approved shots under an explicit hard cap
 
 ---
 
+## Production workflow doctrine (user-specified)
+
+These requirements govern how source material is turned into a film, from first read
+to final named prompts. They supersede any prior shortcut that skipped research or
+treated narration as the whole story.
+
+### 1. Research the source material first
+Read and study the provided text that serves as the subject before any image or video
+work begins.
+
+### 2. Assess whether the text needs enhancement
+Decide whether the original material should be improved or expanded before it is worked
+into a film.
+
+### 3. Split the material into narration and dialogue
+Determine which parts will be spoken as narration (voice-over) and which parts will
+become actual dialogue — potentially delivered by actors.
+
+### 4. Do not copy the text verbatim
+The narration and dialogue do not need to be reproduced exactly from the source
+description; adapt them freely for film.
+
+### 5. Design the visual / motion-graphics layer
+Plan what the video will actually show: what is depicted, what movements and actions
+appear on screen, and what plays in the background during both the narration and the
+dialogue.
+
+### 6. Treat narration as a filler, not the whole message
+The narration should be present, but the video must convey far more than what is said:
+
+- the video should show much more content than the narration or dialogue states;
+- not every part of the movie needs narration or dialogue, because much of the story is
+  carried by the on-screen action itself.
+
+### 7. Research the subject in depth on the internet
+This includes, for reference and analytical breakdown, the cinematics of major game
+franchises such as **Diablo 2**, **World of Warcraft**, and **StarCraft**.
+
+### 8. Use a professional, researched workflow and pipeline
+After analyzing the provided material:
+
+1. create the script and scenario;
+2. construct prompt sets for the many keyframe images that will be used across the
+   sequences to portray the action;
+3. write suitable prompts for the specific AI model we are using; and
+4. name those prompts appropriately.
+
+---
+
 ## Comments / open questions for the user
 
 1. **Scope:** proof-first (one scene) or full film first? I recommend proof-first.
