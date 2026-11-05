@@ -90,7 +90,9 @@ DD SUIT base    "demon-hunter plate suit card"  hooded, head covered;
 DD SUIT ult     "Glacier Form suit card"  hood down, full Glacier Form,
                 Immortal wings wide, snowstorm, hair white-blue bloom + teal rings
 
-AZULON FACE     Azulon-Master 5b059323… (existing)                    → primary
+AZULON FACE     Azulon-Master 5b059323… (REMOTE ONLY — Higgsfield "Azulon
+                Asset Library" UUID; NOT present on local disk. Must be
+                retrieved and centroid-gated before any suit card or keyframe) → primary
 AZULON SUIT     "paladin plate suit card"  full helm (head covered);
   base          two-handed greatsword; one-sided molten-gold rune tattoo, subtle
                 ember-gold on the exposed neck/arms
