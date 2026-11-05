@@ -27,11 +27,28 @@ built on that triangle — ice locks, fire consumes, light judges — and on the
 | **Мал‘гарот — Господарот на Пепелта (boss)** | AI-default | molten whip-arm, forge-core, ember-lever form | fire/ash demon, 3 phase-forms, no real face | original (§3) |
 
 **DD COLD/ARCANE identity (the defining look):**
-- Palettes: white ice, glacier-cyan, neon teal; vapour breath; frost rimes; drifting snow-motes.
+- Palettes: white ice, glacier-cyan (arcane azure blue), neon teal; vapour breath; frost rimes;
+  drifting snow-motes.
 - Hair: glows blue→teal neon, perpetually weightless, flowing and waving exactly like hair under
   water, even in dry wind — a signature of his arcane-ice attunement. Never static, never clipped
   by physics; it must read as *enchanted*, not wet.
-- Weapon glow: crossbow bolts are crystalline frost-arrows with an arcane-violet core.
+- Weapon glow: crossbow bolts are crystalline frost-arrows with an arcane-violet core; the bolt
+  core colour follows the same state machine as the hair below.
+
+**DD GLACIAL COLOUR SYSTEM (two-colour interchange + patterns):**
+Two colours share his magic — **arcane azure blue** and **neon teal** — and they are never
+static: they interchange and draw *patterns* as his power state changes.
+
+| State | Hair colour behaviour | Magic pattern |
+|---|---|---|
+| **Idle** | blue→teal gradient along the strands (azure at the roots, teal at the tips); slow tide-shift, blue-dominant ⇄ teal-dominant | faint drifting snow-motes; no sigils |
+| **Charging** | gradient brightens; alternating blue and teal bands ripple along the hair length like a travelling pulse | frost-rune sigils glow on skin/armour; breath becomes visible vapour |
+| **Cast** | a single white-blue pulse travels root→tip, then settles back to gradient | the ability's sigil flares once; orbiting rune-rings |
+| **Ultimate (Glacier Form)** | full white-blue bloom; teal sigil rings orbit the head | sheets of frost; Immortal wings blue-tipped; snowstorm |
+
+This mirrors **Azulon's tattoo surge** so both heroes share one readable "power signature"
+language: the paladin reads his skills from his skin, the demon hunter from his hair and runes.
+Every ability description in §2 names its colour state.
 
 **AZULON rune-tattoo (the defining look):**
 - A single **one-sided** flowing calligraphic rune-maze: it crosses the eye, along the cheek,
@@ -44,6 +61,52 @@ built on that triangle — ice locks, fire consumes, light judges — and on the
   maze ignite from gold to blazing white-gold and flood with glowing energy, travelling along the
   lines; the whole tattoo never lights at once — only the pathways matching the technique surge,
   so the viewer can read the skill from his skin.
+
+### §1b — Composable character-card system (adopted)
+
+Adopted per user direction: a hero is no longer one flat image. Identity and look are **two
+cards composed per shot**, because the past failures were always a costume/head leaking into a
+face render or a face reference outvoting the prompt.
+
+```
+FACE CARD    identity, locked to the real person, centroid-gated (already exist)
+SUIT CARD    look: full body, armor, weapons, hair-magic, wing/tattoo FX —
+             deliberately WITHOUT an assigned head
+COMPOSITION  per shot: Qwen-Image-Edit multi-reference =
+             1 FACE card  +  1 SUIT card  (+ ULTIMATE variant)  +  scene
+```
+
+**Best-practice decision (as proposed and accepted):** SUIT cards are **hooded/helmed** — the
+head is covered by the gear itself, eliminating both the random-head seam and the neck-fill
+artefact. Hair and tattoo belong to the SUIT (they are gear), not the face.
+
+**Card inventory to build (zero-cost renders before any video):**
+
+```
+DD FACE         faces/dd_cards_final/  (existing, 9 cards, enrolled)   → primary
+DD SUIT base    "demon-hunter plate suit card"  hooded, head covered;
+                dual infernal crossbows; Immortal frost wings (blue-tipped);
+                under-water-waving blue-to-teal neon hair spilling from the hood
+DD SUIT ult     "Glacier Form suit card"  hood down, full Glacier Form,
+                Immortal wings wide, snowstorm, hair white-blue bloom + teal rings
+
+AZULON FACE     Azulon-Master 5b059323… (existing)                    → primary
+AZULON SUIT     "paladin plate suit card"  full helm (head covered);
+  base          two-handed greatsword; one-sided molten-gold rune tattoo, subtle
+                ember-gold on the exposed neck/arms
+AZULON SUIT     "Avenging Wrath suit card"  helm OFF (he is bare-headed here
+  ult           so the face + full tattoo read); rune maze surged white-gold;
+                translucent golden wings; eyes white
+```
+
+**Composition rule (rigid):** each keyframe prompt names exactly **one FACE + one SUIT** (+ the
+U1 ultimate suit where the beat calls for it) **+ one scene**. A shot must never accept a
+second face reference; the face card is the only identity input, always primary.
+
+**Face-visible shots:** DD keeps his hood on through the whole fight — his face is on the FACE
+card only in the epilogue insert (#49, hood lowered). Azulon's face is visible **only** in his
+Avenging Wrath ultimate (#39/#42/#45), where the helm-off variant is used; everywhere else he
+is helmed. The boss remains face-free (AI-default).
 
 ---
 
