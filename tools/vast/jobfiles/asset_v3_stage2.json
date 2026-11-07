@@ -1,0 +1,64 @@
+[
+ {
+  "tag": "dd_turnaround_v2",
+  "refs": [
+   "dd_fused_glacier_v2.png"
+  ],
+  "prompt": "Four-view character turnaround sheet of the exact same fantasy demon hunter from image 1, on a plain grey studio background: front view, back view, left profile, right profile, consistent design and palette across all four views, full body, consistent scale. Her head remains completely BARE \u2014 no helmet, no hood on the head; the cowl stays on her back; her glowing teal-to-blue underwater-wave hair fully visible from every angle. Twin ice-crystal hand crossbows on her back and in hand. Photoreal, no text. Appearance, texture and color reference ONLY; ignore the reference's background and lighting. Grey studio background never appears in output.",
+  "negative": "helmet, hood on head, headwear, bandana, mask, blurry, deformed face, distorted eyes, extra limbs, extra fingers, melted or smudged armour, cartoon, illustration, plastic skin, text, watermark, low quality, different person, wrong identity",
+  "steps": 50,
+  "seed": 8306,
+  "stage": 2,
+  "id": "dd_turnaround_v2",
+  "width": 1024,
+  "height": 1024,
+  "cfg": 4.0
+ },
+ {
+  "tag": "az_fused_idle_w",
+  "refs": [
+   "az_fused_idle.png",
+   "greatsword_sheet_v1.png"
+  ],
+  "prompt": "Full-body character reference sheet of a fantasy retribution paladin on a plain grey studio background: the EXACT same paladin from image 1 \u2014 same face, same armour \u2014 now HOLDING the legendary two-handed greatsword from image 2 planted upright beside him, one gauntleted hand resting on its pommel, molten-gold runes glowing along the blade. Front view, full body, photoreal, no text. Appearance, texture and color reference ONLY; ignore the reference's background and lighting. Grey studio background never appears in output.",
+  "negative": "blurry, deformed face, distorted eyes, extra limbs, extra fingers, melted or smudged armour, cartoon, illustration, plastic skin, text, watermark, low quality, different person, wrong identity",
+  "steps": 50,
+  "seed": 8307,
+  "stage": 2,
+  "id": "az_fused_idle_w",
+  "width": 1024,
+  "height": 1024,
+  "cfg": 4.0
+ },
+ {
+  "tag": "az_fused_wrath_w",
+  "refs": [
+   "az_fused_wrath.png",
+   "greatsword_sheet_v1.png"
+  ],
+  "prompt": "Full-body character reference sheet of a fantasy retribution paladin in his wrath state on a plain grey studio background: the EXACT same paladin from image 1 \u2014 same face, same armour, gold rune tattoo blazing \u2014 now WIELDING the legendary two-handed greatsword from image 2 raised in both hands, molten-gold runes on the blade surging in sync with his tattoo. Front three-quarter view, full body, photoreal, no text. Appearance, texture and color reference ONLY; ignore the reference's background and lighting. Grey studio background never appears in output.",
+  "negative": "blurry, deformed face, distorted eyes, extra limbs, extra fingers, melted or smudged armour, cartoon, illustration, plastic skin, text, watermark, low quality, different person, wrong identity",
+  "steps": 50,
+  "seed": 8308,
+  "stage": 2,
+  "id": "az_fused_wrath_w",
+  "width": 1024,
+  "height": 1024,
+  "cfg": 4.0
+ },
+ {
+  "tag": "az_turnaround_w",
+  "refs": [
+   "az_fused_wrath_w.png"
+  ],
+  "prompt": "Four-view character turnaround sheet of the exact same wrath-state paladin from image 1 holding his legendary two-handed greatsword, on a plain grey studio background: front, back, left profile, right profile, consistent armour, tattoo, and sword across all four views, full body, consistent scale, photoreal, no text. Appearance, texture and color reference ONLY; ignore the reference's background and lighting. Grey studio background never appears in output.",
+  "negative": "blurry, deformed face, distorted eyes, extra limbs, extra fingers, melted or smudged armour, cartoon, illustration, plastic skin, text, watermark, low quality, different person, wrong identity",
+  "steps": 50,
+  "seed": 8309,
+  "stage": 2,
+  "id": "az_turnaround_w",
+  "width": 1024,
+  "height": 1024,
+  "cfg": 4.0
+ }
+]

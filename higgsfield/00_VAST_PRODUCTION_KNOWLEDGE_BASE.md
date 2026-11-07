@@ -354,3 +354,24 @@ FAIL ANY -> re-render (~$0.10). PASS -> P2 shot grammar.
 The proof job references: real-photo face card (image1 = likeness source),
 fused master (image2 = body/armour lock), weapon sheet (image3 = weapon lock).
 Close-up scale fills the frame with head-and-shoulders; face >=160px.
+
+## 16 OPERATIONAL LESSONS — 2026-11-07 P2 PREP
+
+16.1 PROMPT-CANON SYNC AUDIT. Every time a director correction lands,
+     RE-AUDIT every existing prompt that character/prop appears in.
+     Corrections changed the assets but the 100 P2 job prompts still
+     carried pre-correction text (male DD, hood up, faceless boss) —
+     text that contradicts the references fights them and silently
+     poisons batches. Caught and fixed 146 stale descriptions before
+     the P2 render. USE FROM NOW ON.
+16.2 READ BEFORE FLAGGING. A flagged defect ('insert prompts generic')
+     was wrong on full read — the Action lines were specific; only the
+     shared prefix was generic. Always read the FULL prompt before
+     raising a defect against it.
+16.3 HOST SELECTION. A California node sat in 'loading' 13+ min with
+     SSH timing out — destroyed ($0, loading does not bill) and
+     re-rented the China 4090 cluster that provisioned in 3-5 min
+     every time tonight. Prefer recently-proven hosts over the
+     nominally-cheapest unfamiliar node.
+16.4 STALE FILE PROBES. scp can fail silently; always confirm pulled
+     files exist with byte counts before reporting them delivered.
