@@ -81,6 +81,8 @@ Full dialogue lock (from `26 v2 §5`, 7 lines):
 4. **Beat spine** — 52 shots / 3 phases / 3 combos / 7 dialogue lines. *(26_v2 §4–§5)*
 5. **Identity gates** — DD ≥ 0.50 vs `dd` centroid; Paladin ≥ 0.50 vs `Blagoj-shaven` centroid; boss = 0 faces. *(26_v2 §8)*
 6. **DD look** — glowing blue→teal → weightless under-water-waving hair (never static), SUIT is hooded. *(26_v2 §1)*
+6a. **BARE HEAD (absolute)** — DD never wears helmet, hood, bandana, mask, or ANY head/face covering. Reason: the hair IS the signature — teal→blue, magically glowing, waving as if underwater with every move — and it must stay visible in every frame and every asset. Headwear of any kind hides the one feature that makes DD read as DD. (director standing order 2026-11-07)
+6b. **Immortal wings** — Diablo-Immortal-style Immortal wings on the hunter, rendered in his own cold/arcane magic energy color (blue→teal), matching the hair and the entire ICE style system. Present in combat states; scale/wing language per Diablo Immortal Immortal-wing reference (internet-sourced prop reference, CC0/PB).
 7. **Azulon look** — bald, one-sided molten-gold rune-tattoo maze that surges per ability (SUIT helmed; helm OFF only in Avenging Wrath). *(26_v2 §1, §1b)*
 8. **Format** — 1280×720 landscape · 24 fps · photoreal · FLF start+end, single-reference jobs rejected. *(26_v2 §7–§8)*
 9. **Audio** — Macedonian-only dialogue; spatial SFX; restrained score. No narrator. *(26_v2 §5–§6)*
@@ -118,3 +120,22 @@ Open questions carried over from `26_v2 §10` (still pending user):
 - [ ] D3 „Светлината не се гаси." and a dedicated Combo #2 „Hoarfrost Judgement" beat — **deferred to the 52-shot expansion** (they belong to full-film density, not the 20-shot proof board).
 
 *DEFINE-ONLY. No GPU rented; nothing spends until the §2 open questions are confirmed and an itemized P6 estimate is approved per run.*
+
+## BARE HEAD MANDATE (director standing order, 2026-11-07)
+
+DD NEVER wears a helmet, hood, bandana, mask, or ANY head/face covering —
+bare head and face in every shot, every state, every asset. No exceptions.
+- Applies to: all keyframes, all look cards, all fused masters, all
+  turnarounds, all video frames, all states (idle + glacier).
+- Asset rule: any DD reference card or render showing headwear is REJECTED
+  and must be re-rendered before use downstream.
+- Prompt rule: every DD prompt must carry 'bare head, no helmet, no hood,
+  no bandana, no mask' and every DD negative must carry 'helmet, hood,
+  bandana, mask, head covering'.
+
+## BACK-PIECE RULE (director, 2026-11-07)
+DD may wear a hood ONLY as a back piece — a cowl/cape resting on the
+shoulders and back. NEVER a cap, hood, bandana, mask, or any head/face
+covering. The head stays bare at all times so the glowing teal-blue
+underwater hair is fully visible. Reject and re-render any DD asset
+showing headwear.

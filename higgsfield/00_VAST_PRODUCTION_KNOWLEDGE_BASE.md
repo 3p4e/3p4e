@@ -227,3 +227,130 @@ research/STUDY_DIGEST.md               Higgsfield 11-tutorial digest
 research/minimax/                      MiniMax H3 sources + format guides
 research/*.txt                         full tutorial texts (11 files)
 ```
+
+---
+
+# §13 DIRECTOR CORRECTIONS — 2026-11-07 — USE FROM NOW ON
+
+These override and extend everything above. Every asset and keyframe
+from this date forward is judged against this section.
+
+## 13.1 DD HEADWEAR — BACK-PIECE RULE
+DD wears NO cap, hood, bandana, or mask on the head. A hood is allowed
+ONLY as a back piece — a cowl resting on the shoulders/back like a cape.
+The head is always bare so the glowing teal-blue underwater-wave hair
+is fully visible in every asset and every frame. Any DD render with
+head/face covering = REJECT.
+
+## 13.2 BOTH WEAPONS ARE LEGENDARY GRADE — AND MUST APPEAR
+DD: twin legendary HAND crossbows (Frostbite-class) — ice-blue arcane
+crystal limbs, frost runes, string of frozen light, teal-blue glow.
+AZ: legendary TWO-HANDED greatsword (Dawnbreaker-class) — pale sunsteel
+blade, molten-gold runes, golden holy fire on the edge, sunburst crossguard.
+Weapons are part of the character's identity: hero asset sheets and hero
+keyframes must SHOW the legendary weapon in the hero's hands. A hero
+sheet with no weapon is INCOMPLETE (director verdict on az_fused_idle,
+az_fused_wrath, az_turnaround: armour good, weapon missing).
+
+## 13.3 WEAPON SHEETS — ANTI-SLOP LAW
+Weapon reference sheets are mandatory Elements. Every sheet:
+- one weapon per sheet, grey studio background, 6 orthographic views
+  (front-3/4, side, top, rear-3/4, head detail, grip detail)
+- FANTASY CONSTRUCTION ONLY: a crossbow has a bowstring and limbs and
+  fires bolts — it must NEVER read as a firearm. Any barrel, magazine,
+  gun stock, Uzi/SMG/machinegun silhouette = total slop = REJECT.
+- anti-slop negatives always appended: "firearm, gun, machinegun, Uzi,
+  barrel, magazine, ammo clip, muzzle, modern weapon"
+- canonical prompt pack for ANY platform (self-contained): higgsfield/
+  jobpacks/33_WEAPON_SHEET_PROMPT_PACK_EXTERNAL.md
+
+## 13.4 BOSS FACE
+Mal'garot HAS a face, invented by us: a prolific molten-lava face —
+lava dripping and running everywhere, drops falling to the ground.
+(Faceless boss sheets are superseded.)
+
+## 13.5 LOCATION BRIGHTNESS FLOOR
+Environment plates must read clearly: no murk-dark grades. Minimum
+exposure floor: subjects and terrain silhouette-readable at thumbnail
+size. loc_canyon_plate v1 failed (too dark); v2 must lift exposure.
+
+## 13.6 VERDICT LOG (asset library v4, 2026-11-07)
+REJECT:  dd_fused_glacier, dd_turnaround   (headwear violation)
+REJECT:  crossbow_sheet_v2                  (firearm silhouette + slop row)
+REJECT:  boss_sheet_v2                      (wrong design: faceless)
+REJECT:  loc_canyon_plate                   (too dark)
+ACCEPT:  az_fused_idle, az_fused_wrath, az_turnaround
+         (armour approved — RE-ISSUE with greatsword per §13.2)
+ACCEPT:  dd_fused_idle (bare head confirmed by director)
+
+
+## 14 P0 ASSET LIBRARY — COMPLETE AND ACCEPTED (2026-11-07)
+
+The P0 deliverable for the Demonhunter-Paladin boss fight rendered, corrected,
+sha256-verified, and DIRECTOR-ACCEPTED this date.
+
+### The 12 accepted sheets (media/dhpf_assets_v4/)
+
+```
+DD  (bare head, back-cowl only, glowing teal-blue underwater hair):
+  dd_fused_idle.png            idle master (face+outfit fused)
+  dd_fused_glacier_v2.png      glacier master (headwear defect fixed)
+  dd_turnaround_v2.png         4-view turnaround, bare head
+AZ  (accepted armour, legendary greatsword added):
+  az_fused_idle.png / az_fused_wrath.png      accepted masters
+  az_fused_idle_w.png / az_fused_wrath_w.png  re-issued WITH greatsword
+  az_turnaround_w.png                         turnaround + greatsword
+WEAPONS/BOSS/LOCATION:
+  crossbow_sheet_v3.png        anti-firearm legendary twin hand crossbows
+  greatsword_sheet_v1.png      NEW legendary paladin greatsword
+  boss_sheet_v3.png            molten-lava face, dripping
+  loc_canyon_plate_v2.png      brightened canyon
+```
+
+### Rules derived from the P0 work — USE FROM NOW ON
+
+1. **Fusion is mandatory.** A face card + a look card are NOT enough. Every
+   hero needs the Higgsfield 3-step: face → outfit → fused master. The fused
+   master is the asset every keyframe references.
+2. **Headwear is a defect for DD.** Bare head at all times. A hood may exist
+   only as a BACK PIECE (cowl on shoulders/back). Any cap, hood on head,
+   bandana, or mask = automatic reject and re-render.
+3. **Weapons must appear in hero sheets.** Both heroes carry legendary-grade
+   weapons. A hero sheet without the weapon is incomplete.
+4. **Weapon sheets carry the anti-slop law.** One clearly readable weapon per
+   view, no merged/duplicated/rescaled props, same design from every angle,
+   NO firearm silhouette (barrel/magazine/stock/machinegun). Reference-class
+   assets may be sourced from the internet under CC0/CC-BY, logged.
+5. **Boss needs a face reference sheet.** Mal'garot renders reference-less
+   and drifts — his multi-view sheet (boss_sheet_v3.png) is now the locked
+   image1 for all boss shots.
+6. **Location plates need a brightness floor.** Judge the plate at final
+   display size; if the set reads too dark, re-render brighter before any
+   keyframe uses it.
+7. **Stage sequencing.** Stage-1 renders (no dependencies) can batch
+   immediately. Stage-2 renders (turnarounds) condition on stage-1 outputs;
+   the runner must copy stage-1 outputs into ComfyUI input/ BEFORE the
+   dependent job starts. A missed chain copy fails the job — verify refs in
+   input/ before launch.
+8. **Idle look cards live locally too.** dhpf_looks/ holds the accepted
+   idle look cards; never assume they are only on a rented box.
+
+## 15 P1 IDENTITY PROOF — RUNNING STANDARD
+
+P1 is the single-figure close-up that proves the fusion method at scale.
+The acceptance contract (all gates on ONE image):
+
+```
+1  face >=160px box (gate floor 120, target 160)
+2  SFace sim vs enrolled centroid >= 0.50 (advisory only)
+3  DIRECTOR'S EYES = final likeness call (SFace demoted to batch detector)
+4  bare head, hair visible, no headwear
+5  armour matches the fused master
+6  weapon reads as the sheet's weapon, not a firearm
+7  photoreal cinematic, no cartoon wash
+FAIL ANY -> re-render (~$0.10). PASS -> P2 shot grammar.
+```
+
+The proof job references: real-photo face card (image1 = likeness source),
+fused master (image2 = body/armour lock), weapon sheet (image3 = weapon lock).
+Close-up scale fills the frame with head-and-shoulders; face >=160px.

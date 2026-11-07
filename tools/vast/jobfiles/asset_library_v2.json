@@ -1,38 +1,125 @@
 [
- {"tag":"dd_fused_glacier","phase":"P0-A3","depends":[],
-  "refs":["ddface_a.jpg","dd_look_glacier_v3.png"],
-  "w":1024,"h":1024,"steps":50,
-  "prompt":"The character from image 1 wearing the outfit and gear from image 2. Full body, front-facing, standing neutral pose. White studio background, soft even cinematic lighting, photorealistic, high-end fashion-photography quality. Keep the face 100% identical to image 1 and the outfit, twin hand crossbows, hood and armour 100% identical to image 2."},
- {"tag":"dd_fused_idle","phase":"P0-A3","depends":[],
-  "refs":["ddface_a.jpg","dd_look_idle.png"],
-  "w":1024,"h":1024,"steps":50,
-  "prompt":"The character from image 1 wearing the outfit and gear from image 2. Full body, front-facing, standing neutral pose. White studio background, soft even cinematic lighting, photorealistic. Face identical to image 1, outfit and twin hand crossbows identical to image 2."},
- {"tag":"az_fused_wrath","phase":"P0-A3","depends":[],
-  "refs":["azface_a.jpg","az_look_wrath_v2.png"],
-  "w":1024,"h":1024,"steps":50,
-  "prompt":"The character from image 1 wearing the armour and gear from image 2, helm off. Full body, front-facing, standing neutral pose. White studio background, soft even cinematic lighting, photorealistic. Face identical to image 1; the one-sided molten-gold rune tattoo maze on the body identical to image 2."},
- {"tag":"az_fused_idle","phase":"P0-A3","depends":[],
-  "refs":["azface_a.jpg","az_look_idle.png"],
-  "w":1024,"h":1024,"steps":50,
-  "prompt":"The character from image 1 wearing the armour and gear from image 2, helmed. Full body, front-facing, standing neutral pose. White studio background, soft even cinematic lighting, photorealistic. Face identical to image 1, armour identical to image 2."},
- {"tag":"dd_turnaround","phase":"P0-A4","depends":["dd_fused_glacier"],
-  "refs":["dd_fused_glacier.png"],
-  "w":1536,"h":640,"steps":50,
-  "prompt":"Character turnaround sheet of the exact character from image 1, shown in four views side by side: front view, back view, left profile, right profile. Identical face, hood, twin hand crossbows and armour in every view. Neutral standing pose in each, consistent scale and height across all four views. Plain grey studio background, soft even lighting, photorealistic. No text labels."},
- {"tag":"az_turnaround","phase":"P0-A4","depends":["az_fused_wrath"],
-  "refs":["az_fused_wrath.png"],
-  "w":1536,"h":640,"steps":50,
-  "prompt":"Character turnaround sheet of the exact character from image 1, shown in four views side by side: front view, back view, left profile, right profile. Identical face, one-sided molten-gold rune tattoo maze and armour in every view. Neutral standing pose in each, consistent scale and height. Plain grey studio background, soft even lighting, photorealistic. No text labels."},
- {"tag":"crossbow_sheet_v2","phase":"P0-A5","depends":[],
-  "refs":["crossbow_prop_sheet.png"],
-  "w":1536,"h":640,"steps":50,
-  "prompt":"Weapon reference sheet of the exact twin hand crossbows from image 1, shown as six orthographic views arranged in a grid: front three-quarter, right lateral, top, rear, bottom, left lateral. Identical design, proportions and frost-metal texture in every view. Object only, no hands, no figure. Plain grey studio background, soft even product-photography lighting, photorealistic. No text."},
- {"tag":"boss_sheet_v2","phase":"P0-B1","depends":[],
-  "refs":["malgarot_look_card.png"],
-  "w":1536,"h":640,"steps":50,
-  "prompt":"Character turnaround sheet of the exact demon from image 1, shown in four views side by side: front, back, left profile, right profile. Identical faceless forge-core body, molten whip-arm and cracked obsidian hide in every view. No human face anywhere. Neutral menacing stance, consistent scale. Plain grey studio background, soft even lighting, photorealistic. No text."},
- {"tag":"loc_canyon_plate","phase":"P0-L1","depends":[],
-  "refs":[],
-  "w":1280,"h":720,"steps":50,
-  "prompt":"A wide establishing shot of a vast charred volcanic gorge at dusk: blackened basalt cliffs, rivers of cooling lava in the deep floor, drifting ash and embers in the air, a broken stone bridge spanning the gorge. Empty of all people and creatures. Fixed light direction: low warm glow from the lava below, cold pale sky above. Palette of charcoal black, burnt umber, ember orange, ash grey. Cinematic large-format still, photorealistic, fine film grain."}
+ {
+  "tag": "dd_fused_glacier",
+  "phase": "P0-A3",
+  "depends": [],
+  "refs": [
+   "ddface_a.jpg",
+   "dd_look_glacier_v3.png"
+  ],
+  "w": 1024,
+  "h": 1024,
+  "steps": 50,
+  "prompt": "The character from image 1 wearing the outfit and gear from image 2. Full body, front-facing, standing neutral pose. White studio background, soft even cinematic lighting, photorealistic, high-end fashion-photography quality. Keep the face 100% identical to image 1 and the outfit, twin hand crossbows, hood and armour 100% identical to image 2.",
+  "seed": 8101
+ },
+ {
+  "tag": "dd_fused_idle",
+  "phase": "P0-A3",
+  "depends": [],
+  "refs": [
+   "ddface_a.jpg",
+   "dd_look_idle.png"
+  ],
+  "w": 1024,
+  "h": 1024,
+  "steps": 50,
+  "prompt": "The character from image 1 wearing the outfit and gear from image 2 . Full body, front-facing, standing neutral pose. White studio background, soft even cinematic lighting, photorealistic. Face identical to image 1, outfit and twin hand crossbows identical to image 2.",
+  "seed": 8102
+ },
+ {
+  "tag": "az_fused_wrath",
+  "phase": "P0-A3",
+  "depends": [],
+  "refs": [
+   "azface_a.jpg",
+   "az_look_wrath_v2.png"
+  ],
+  "w": 1024,
+  "h": 1024,
+  "steps": 50,
+  "prompt": "The character from image 1 wearing the armour and gear from image 2, helm off. Full body, front-facing, standing neutral pose. White studio background, soft even cinematic lighting, photorealistic. Face identical to image 1; the one-sided molten-gold rune tattoo maze on the body identical to image 2.",
+  "seed": 8103
+ },
+ {
+  "tag": "az_fused_idle",
+  "phase": "P0-A3",
+  "depends": [],
+  "refs": [
+   "azface_a.jpg",
+   "az_look_idle.png"
+  ],
+  "w": 1024,
+  "h": 1024,
+  "steps": 50,
+  "prompt": "The character from image 1 wearing the armour and gear from image 2, helmed. Full body, front-facing, standing neutral pose. White studio background, soft even cinematic lighting, photorealistic. Face identical to image 1, armour identical to image 2.",
+  "seed": 8104
+ },
+ {
+  "tag": "dd_turnaround",
+  "phase": "P0-A4",
+  "depends": [
+   "dd_fused_glacier"
+  ],
+  "refs": [
+   "dd_fused_glacier.png"
+  ],
+  "w": 1536,
+  "h": 640,
+  "steps": 50,
+  "prompt": "Character turnaround sheet of the exact character from image 1, shown in four views side by side: front view, back view, left profile, right profile. Identical face, hood, twin hand crossbows and armour in every view. Neutral standing pose in each, consistent scale and height across all four views. Plain grey studio background, soft even lighting, photorealistic. No text labels.",
+  "seed": 8108
+ },
+ {
+  "tag": "az_turnaround",
+  "phase": "P0-A4",
+  "depends": [
+   "az_fused_wrath"
+  ],
+  "refs": [
+   "az_fused_wrath.png"
+  ],
+  "w": 1536,
+  "h": 640,
+  "steps": 50,
+  "prompt": "Character turnaround sheet of the exact character from image 1, shown in four views side by side: front view, back view, left profile, right profile. Identical face, one-sided molten-gold rune tattoo maze and armour in every view. Neutral standing pose in each, consistent scale and height. Plain grey studio background, soft even lighting, photorealistic. No text labels.",
+  "seed": 8109
+ },
+ {
+  "tag": "crossbow_sheet_v2",
+  "phase": "P0-A5",
+  "depends": [],
+  "refs": [
+   "crossbow_prop_sheet.png"
+  ],
+  "w": 1536,
+  "h": 640,
+  "steps": 50,
+  "prompt": "Weapon reference sheet of the exact twin hand crossbows from image 1, shown as six orthographic views arranged in a grid: front three-quarter, right lateral, top, rear, bottom, left lateral. Identical design, proportions and frost-metal texture in every view. Object only, no hands, no figure. Plain grey studio background, soft even product-photography lighting, photorealistic. No text.",
+  "seed": 8106
+ },
+ {
+  "tag": "boss_sheet_v2",
+  "phase": "P0-B1",
+  "depends": [],
+  "refs": [
+   "malgarot_look_card.png"
+  ],
+  "w": 1536,
+  "h": 640,
+  "steps": 50,
+  "prompt": "Character turnaround sheet of the exact demon from image 1, shown in four views side by side: front, back, left profile, right profile. Identical faceless forge-core body, molten whip-arm and cracked obsidian hide in every view. No human face anywhere. Neutral menacing stance, consistent scale. Plain grey studio background, soft even lighting, photorealistic. No text.",
+  "seed": 8107
+ },
+ {
+  "tag": "loc_canyon_plate",
+  "phase": "P0-L1",
+  "depends": [],
+  "refs": [],
+  "w": 1280,
+  "h": 720,
+  "steps": 50,
+  "prompt": "A wide establishing shot of a vast charred volcanic gorge at dusk: blackened basalt cliffs, rivers of cooling lava in the deep floor, drifting ash and embers in the air, a broken stone bridge spanning the gorge. Empty of all people and creatures. Fixed light direction: low warm glow from the lava below, cold pale sky above. Palette of charcoal black, burnt umber, ember orange, ash grey. Cinematic large-format still, photorealistic, fine film grain.",
+  "seed": 8105
+ }
 ]

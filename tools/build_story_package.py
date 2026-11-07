@@ -30,6 +30,7 @@ def validate(data):
     if not spec.get("flf"): errs.append("spec.flf must be true (first-last-frame)")
     if spec.get("style","").lower() != "photoreal": errs.append("spec.style must be 'photoreal'")
     if spec.get("shot_floor", 0) < 40: errs.append("spec.shot_floor must be >= 40")
+    if "Wan" not in spec.get("model",""): errs.append(f"spec.model should be Wan2.1-FLF2V-14B-720P per KB §9 (got: {spec.get('model','?')})")
     if not data.get("cast"): errs.append("cast must be non-empty")
     acts = data.get("acts")
     if not acts:
@@ -37,16 +38,28 @@ def validate(data):
     else:
         if len(acts) < 2: errs.append("need at least 2 acts")
         total = 0
+        SHOT_REQ = ("id","shot_type","size","angle","move","dur","clip_s",
+                    "face_floor_px","asset_refs","ref_scope","screen_dir",
+                    "positive_locks","beat_timeline",
+                    "kf_first","kf_last","narration_mk","dialogue_mk",
+                    "continuity","motion")
         for a in acts:
+            for k in ("location_ref","global_locks","palette","light_direction","time_of_day"):
+                if k not in a:
+                    errs.append(f"act {a.get('id','?')} missing §8.2 scene field: {k}")
             if not a.get("id") or not a.get("title") or not a.get("color"):
                 errs.append(f"act missing id/title/color: {a.get('id','?')}")
             for i, s in enumerate(a.get("shots", [])):
                 total += 1
-                for f in ("id","size","angle","move","dur","clip_s","kf_first","kf_last"):
-                    if not s.get(f):
-                        errs.append(f"{a.get('id')} shot#{i} missing field: {f}")
-                if "narration_mk" not in s and "dialogue_mk" not in s:
-                    errs.append(f"{a.get('id')} shot {s.get('id','?')}: needs narration_mk and/or dialogue_mk key (may be empty string)")
+                for f in SHOT_REQ:
+                    if f not in s:
+                        errs.append(f"{a.get('id')} shot#{i} missing §8.1 field: {f}")
+                if not s.get("kf_first") or not s.get("kf_last"):
+                    errs.append(f"{a.get('id')} shot {s.get('id','?')}: kf_first/kf_last must be non-empty")
+                if not isinstance(s.get("beat_timeline"), list) or not s["beat_timeline"]:
+                    errs.append(f"{a.get('id')} shot {s.get('id','?')}: beat_timeline must be [[t0,t1,beat],...]")
+                if not s.get("positive_locks"):
+                    errs.append(f"{a.get('id')} shot {s.get('id','?')}: positive_locks must be non-empty")
         if total < 40:
             errs.append(f"total shots {total} < 40 (doctrine floor, need 40-60)")
     return errs
@@ -168,6 +181,24 @@ def build_spec_md(data):
     a("")
     a("---")
     a("")
+    dc = data.get("director_corrections")
+    if dc:
+        a("")
+        a("---")
+        a("")
+        a("## 5b. Director corrections (KB §13 — binding from 2026-11-07)")
+        a("")
+        a(f"*{esc(dc.get('source',''))} · issued {esc(dc.get('issued',''))}*")
+        a("")
+        a("| # | Rule |")
+        a("|---|---|")
+        for i, r in enumerate(dc.get("rules", []), 1):
+            a(f"| {i} | {esc(r)} |")
+        a("")
+        a(f"**Anti-slop negatives (always appended):** `{esc(dc.get('anti_slop_negatives',''))}`")
+        a("")
+        a(f"> {esc(dc.get('applies_when',''))}")
+        a("")
     a("## 6. Pipeline note")
     a("")
     a("```")
@@ -196,7 +227,9 @@ def main():
         print("VALIDATION FAILED:")
         for e in errs: print("  -", e)
         sys.exit(1)
-    slug = slugify(data["num"], data["title_en"])
+    # Canonical slug = the INPUT filename stem (never re-derive from title_en,
+    # which may contain apostrophes/alternate spellings that respawn duplicates).
+    slug = src.stem.replace("_data", "")
     for d in (DATA_DIR, SPEC_DIR, SB_DIR):
         d.mkdir(parents=True, exist_ok=True)
     # canonical copy
