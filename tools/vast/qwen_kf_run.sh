@@ -39,8 +39,8 @@ PY
 say "weights done"; ls -lh $DM $TE $VA >> $LOG
 
 # ---- refs into ComfyUI input/ (LoadImage resolves bare filenames there) ----
-cp /workspace/A_bust.png /workspace/sheet_front.png /workspace/seraph_ref.png $CDIR/input/
-say "refs staged"; sha256sum $CDIR/input/A_bust.png $CDIR/input/sheet_front.png $CDIR/input/seraph_ref.png >> $LOG
+cp /workspace/refs/*.png $CDIR/input/ 2>/dev/null; cp /workspace/*.png $CDIR/input/ 2>/dev/null
+say "refs staged"; sha256sum $CDIR/input/*.png >> $LOG
 
 # ---- start ComfyUI ----
 say "starting ComfyUI"
@@ -66,7 +66,7 @@ say "node preflight pass"
 # ---- render the 12 keyframes ----
 say "running keyframe jobs"
 cd /workspace
-$P run_qwen_edit_full.py --host http://127.0.0.1:8188 --jobs /workspace/origami_jobs.json --out /workspace/out --comfy-dir $CDIR 2>&1 | tee -a /workspace/qwen_kf.log
+$P run_qwen_edit_full.py --host http://127.0.0.1:8188 --jobs ${JOBS:-/workspace/origami_jobs.json} --out /workspace/out --steps ${STEPS:-50} --comfy-dir $CDIR 2>&1 | tee -a /workspace/qwen_kf.log
 say "jobs exit=${PIPESTATUS[0]:-$?}"
 ls -lh /workspace/out >> $LOG
 say "QWEN_KF_DONE"

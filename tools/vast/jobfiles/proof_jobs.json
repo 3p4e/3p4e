@@ -1,0 +1,86 @@
+[
+ {
+  "id": "bf_03_start",
+  "tag": "kf_03_start",
+  "shot": 3,
+  "phase": "start",
+  "cast": [
+   "dd"
+  ],
+  "prompt": "Blocking: 3/4 side cam, low 24mm, never frontal. DD+Azulon torso+head at boss, weapons to boss; Azulon half-step back. Boss faces them centre-right, clear silhouette. Sightlines converge, no body faces lens. first frame of a photoreal cinematic shot in charred obsidian gorge at dusk, cracked black rock, burnt dead trees, ash falling upward on an ember wind, distant heat shimmer, photoreal cinematic still. Present: DD the demon hunter: lean male warrior in frost-rimed demon-hunter plate, hood up and face shadowed, short cropped cyan-teal hair with shaved sides and a swept top, twin infernal hand crossbows, glacial blue-white frost and violet-arcane glow about the armor. Action: extreme close insert on DD's gauntleted hand cocking a crossbow, frost crystals on the knuckles. Camera/motion: insert, frost spreading across metal. Style: photoreal, anamorphic, high detail, 1280x720. Appearance, texture and color reference ONLY; ignore the reference's background and lighting.",
+  "negative": "duplicate face, extra face, second head, deformed hands, fused fingers, extra limbs, text, watermark, logo, cartoon, illustration, cel-shaded, low detail",
+  "refs": [
+   "dd_look_glacier_v3.png",
+   "ddface_a.jpg"
+  ],
+  "width": 1280,
+  "height": 720,
+  "steps": 50,
+  "cfg": 4.0,
+  "seed": 190006
+ },
+ {
+  "id": "bf_03_end",
+  "tag": "kf_03_end",
+  "shot": 3,
+  "phase": "end",
+  "cast": [
+   "dd"
+  ],
+  "prompt": "Blocking: 3/4 side cam, low 24mm, never frontal. DD+Azulon torso+head at boss, weapons to boss; Azulon half-step back. Boss faces them centre-right, clear silhouette. Sightlines converge, no body faces lens. final frame of a photoreal cinematic shot in charred obsidian gorge at dusk, cracked black rock, burnt dead trees, ash falling upward on an ember wind, distant heat shimmer, photoreal cinematic still. Present: DD the demon hunter: lean male warrior in frost-rimed demon-hunter plate, hood up and face shadowed, short cropped cyan-teal hair with shaved sides and a swept top, twin infernal hand crossbows, glacial blue-white frost and violet-arcane glow about the armor. Action: a crystalline frost-arrow has fully formed in the crossbow groove, rime spreading outward. Camera/motion: insert, frost spreading across metal. Style: photoreal, anamorphic, high detail, 1280x720. Appearance, texture and color reference ONLY; ignore the reference's background and lighting.",
+  "negative": "duplicate face, extra face, second head, deformed hands, fused fingers, extra limbs, text, watermark, logo, cartoon, illustration, cel-shaded, low detail",
+  "refs": [
+   "dd_look_glacier_v3.png",
+   "ddface_a.jpg"
+  ],
+  "width": 1280,
+  "height": 720,
+  "steps": 50,
+  "cfg": 4.0,
+  "seed": 190007
+ },
+ {
+  "id": "bf_19_start",
+  "tag": "kf_19_start",
+  "shot": 19,
+  "phase": "start",
+  "cast": [
+   "az",
+   "boss",
+   "dd"
+  ],
+  "prompt": "Blocking: 3/4 side cam, low 24mm, never frontal. DD+Azulon torso+head at boss, weapons to boss; Azulon half-step back. Boss faces them centre-right, clear silhouette. Sightlines converge, no body faces lens. first frame of a photoreal cinematic shot in charred obsidian gorge at dusk, cracked black rock, burnt dead trees, ash falling upward on an ember wind, distant heat shimmer, photoreal cinematic still. Present: DD the demon hunter: lean male warrior in frost-rimed demon-hunter plate, hood up and face shadowed, short cropped cyan-teal hair with shaved sides and a swept top, twin infernal hand crossbows, glacial blue-white frost and violet-arcane glow about the armor Azulon the retribution paladin: bald clean-shaven strong-jawed man, a single molten-gold rune tattoo running from one brow across one eye and down the cheek to the jaw, bare head with no helmet, gold-trimmed plate, two-handed auric greatsword, gold-white holy light Mal'garot the Ash Lord: colossal ember demon with a molten whip-arm, an exposed incandescent forge-core in the chest, a crown of dead coals, obsidian plating, swirling ash and fire, no human face and no recognizable features. Action: wide shot of the Ash Lord's whip-arm mid-swing with DD's rime beam locking onto it, Azulon closing in. Camera/motion: tracking sh Appearance, texture and color reference ONLY; ignore the reference's background and lighting.",
+  "negative": "duplicate face, extra face, second head, deformed hands, fused fingers, extra limbs, text, watermark, logo, cartoon, illustration, cel-shaded, low detail, laser beam from eye, glowing eye beam",
+  "refs": [
+   "dd_look_glacier_v3.png",
+   "az_look_wrath_v2.png"
+  ],
+  "width": 1280,
+  "height": 720,
+  "steps": 50,
+  "cfg": 4.0,
+  "seed": 190038
+ },
+ {
+  "id": "bf_19_end",
+  "tag": "kf_19_end",
+  "shot": 19,
+  "phase": "end",
+  "cast": [
+   "az",
+   "boss",
+   "dd"
+  ],
+  "prompt": "Blocking: 3/4 side cam, low 24mm, never frontal. DD+Azulon torso+head at boss, weapons to boss; Azulon half-step back. Boss faces them centre-right, clear silhouette. Sightlines converge, no body faces lens. final frame of a photoreal cinematic shot in charred obsidian gorge at dusk, cracked black rock, burnt dead trees, ash falling upward on an ember wind, distant heat shimmer, photoreal cinematic still. Present: DD the demon hunter: lean male warrior in frost-rimed demon-hunter plate, hood up and face shadowed, short cropped cyan-teal hair with shaved sides and a swept top, twin infernal hand crossbows, glacial blue-white frost and violet-arcane glow about the armor Azulon the retribution paladin: bald clean-shaven strong-jawed man, a single molten-gold rune tattoo running from one brow across one eye and down the cheek to the jaw, bare head with no helmet, gold-trimmed plate, two-handed auric greatsword, gold-white holy light Mal'garot the Ash Lord: colossal ember demon with a molten whip-arm, an exposed incandescent forge-core in the chest, a crown of dead coals, obsidian plating, swirling ash and fire, no human face and no recognizable features. Action: the whip-arm has shattered, golden shockwave tearing through the ice and spraying frozen fragments wide. Camera/motion: tracking Appearance, texture and color reference ONLY; ignore the reference's background and lighting.",
+  "negative": "duplicate face, extra face, second head, deformed hands, fused fingers, extra limbs, text, watermark, logo, cartoon, illustration, cel-shaded, low detail, laser beam from eye, glowing eye beam",
+  "refs": [
+   "dd_look_glacier_v3.png",
+   "az_look_wrath_v2.png"
+  ],
+  "width": 1280,
+  "height": 720,
+  "steps": 50,
+  "cfg": 4.0,
+  "seed": 190039
+ }
+]

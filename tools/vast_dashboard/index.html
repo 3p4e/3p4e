@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VAST · Vast.ai Telemetry</title>
+<style>
+  :root {
+    --bg: #0c0e13;
+    --panel: #141821;
+    --panel2: #1a1f2b;
+    --line: #242b3a;
+    --text: #e6e9f0;
+    --muted: #8b93a7;
+    --accent: #4f8cff;
+    --good: #34d399;
+    --warn: #fbbf24;
+    --bad: #f87171;
+    --purple: #a78bfa;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  header {
+    padding: 18px 22px; border-bottom: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    position: sticky; top: 0; background: rgba(12,14,19,.92); backdrop-filter: blur(6px); z-index: 10;
+  }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .logo {
+    width: 30px; height: 30px; border-radius: 8px;
+    background: linear-gradient(135deg, var(--accent), var(--purple));
+    display: grid; place-items: center; font-weight: 800;
+  }
+  h1 { font-size: 16px; margin: 0; letter-spacing: .3px; }
+  .sub { color: var(--muted); font-size: 12px; }
+  .pulse { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--good); margin-right: 6px; }
+  .pulse.off { background: var(--bad); }
+  main { padding: 20px 22px; max-width: 1200px; margin: 0 auto; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+  .stat {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px;
+  }
+  .stat .k { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .8px; margin-bottom: 6px; }
+  .stat .v { font-size: 22px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .stat .d { color: var(--muted); font-size: 12px; margin-top: 3px; }
+  .good { color: var(--good); } .warn { color: var(--warn); } .bad { color: var(--bad); }
+  section { margin-top: 22px; }
+  .sec-title { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin: 0; }
+  .card {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px; margin-bottom: 12px;
+  }
+  .card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+  .label { font-size: 15px; font-weight: 650; }
+  .id { color: var(--muted); font-size: 12px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .status {
+    font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px;
+    padding: 4px 10px; border-radius: 999px; border: 1px solid;
+  }
+  .status.running { color: var(--good); border-color: var(--good); background: rgba(52,211,153,.08); }
+  .status.stopped { color: var(--warn); border-color: var(--warn); background: rgba(251,191,36,.08); }
+  .status.exited, .status.offline { color: var(--bad); border-color: var(--bad); background: rgba(248,113,113,.08); }
+  .status.loading, .status.openport, .status.pending { color: var(--accent); border-color: var(--accent); background: rgba(79,140,255,.08); }
+  .specs { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 12px 0 4px; color: var(--muted); font-size: 13px; }
+  .spec b { color: var(--text); font-weight: 600; }
+  .actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+  button {
+    font: inherit; cursor: pointer; border-radius: 9px; padding: 8px 14px; border: 1px solid var(--line);
+    background: var(--panel2); color: var(--text); transition: all .15s;
+  }
+  button:hover { border-color: var(--accent); }
+  button.stop { color: var(--warn); border-color: var(--warn); }
+  button.stop:hover { background: rgba(251,191,36,.12); }
+  button.destroy { color: var(--bad); border-color: var(--bad); }
+  button.destroy:hover { background: rgba(248,113,113,.12); }
+  button:disabled { opacity: .45; cursor: not-allowed; }
+  .confirm { margin-top: 12px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .confirm input {
+    background: var(--panel2); border: 1px solid var(--line); color: var(--text); border-radius: 8px;
+    padding: 8px 10px; font: inherit;
+  }
+  .logbox { background: #05070b; border: 1px solid var(--line); border-radius: 10px; padding: 12px; margin-top: 12px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; white-space: pre-wrap;
+    max-height: 340px; overflow: auto; display: none; color: #c9d1d9;
+  }
+  .toast {
+    position: fixed; bottom: 20px; right: 20px; z-index: 50; background: var(--panel2);
+    border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 10px;
+    padding: 12px 16px; font-size: 13px; display: none; max-width: 380px; box-shadow: 0 8px 30px rgba(0,0,0,.45);
+  }
+  .toast.err { border-left-color: var(--bad); } .toast.ok { border-left-color: var(--good); }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+  th { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .6px; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .empty { color: var(--muted); padding: 26px; text-align: center; border: 1px dashed var(--line); border-radius: 12px; }
+  a { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="logo">V</div>
+    <div>
+      <h1>VAST · Vast.ai Telemetry</h1>
+      <div class="sub"><span class="pulse" id="pulse"></span><span id="lastupd">connecting…</span></div>
+    </div>
+  </div>
+  <div class="sub" id="acct"></div>
+</header>
+
+<main>
+  <div class="grid" id="stats"></div>
+
+  <section>
+    <div class="sec-title"><h2>Instances</h2><span class="sub" id="icount"></span></div>
+    <div id="instances"></div>
+  </section>
+
+  <section id="offersSec">
+    <div class="sec-title"><h2>Market offers (cheapest verified on-demand)</h2>
+      <button id="offersBtn">Load offers</button></div>
+    <div id="offers"></div>
+  </section>
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const $ = (s) => document.querySelector(s);
+let REFRESH = 10000;
+
+function toast(msg, kind) {
+  const t = $("#toast");
+  t.textContent = msg;
+  t.className = "toast " + (kind || "");
+  t.style.display = "block";
+  clearTimeout(t._h);
+  t._h = setTimeout(() => t.style.display = "none", 5000);
+}
+
+function fmtUptime(s) {
+  if (s == null) return "—";
+  const d = Math.floor(s / 86400), h = Math.floor(s % 86400 / 3600), m = Math.floor(s % 3600 / 60);
+  if (d > 0) return d + "d " + h + "h";
+  if (h > 0) return h + "h " + m + "m";
+  return m + "m";
+}
+function gb(mb) { return mb ? (mb / 1024).toFixed(0) + " GB" : "—"; }
+
+function cssStatus(s) {
+  s = (s || "unknown").toLowerCase();
+  if (["running"].includes(s)) return "running";
+  if (["stopped", "exited", "offline", "rebooting"].includes(s)) return "stopped";
+  return "loading";
+}
+
+async function api(path, opts) {
+  const r = await fetch(path, opts);
+  const d = await r.json();
+  return { ok: r.ok, status: r.status, data: d };
+}
+
+function renderStats(s) {
+  const burn = s.burn_hours;
+  const burnCls = burn == null ? "" : (burn < 24 ? "bad" : (burn < 72 ? "warn" : "good"));
+  const acct = s.email || s.username || "";
+  $("#acct").textContent = acct ? acct + " · threshold " + (s.balance_threshold ?? "—") : "";
+  $("#stats").innerHTML = `
+    <div class="stat"><div class="k">Credit</div><div class="v">$${s.credit ?? "—"}</div><div class="d">available spend</div></div>
+    <div class="stat"><div class="k">Running</div><div class="v">${s.running ?? 0}</div><div class="d">instances billing</div></div>
+    <div class="stat"><div class="k">Rate</div><div class="v">$${(s.total_dph ?? 0).toFixed(3)}/h</div><div class="d">combined burn</div></div>
+    <div class="stat"><div class="k">Burn time</div><div class="v ${burnCls}">${burn == null ? "∞" : burn + " h"}</div><div class="d">credit ÷ rate</div></div>
+    <div class="stat"><div class="k">Total spend</div><div class="v">$${Math.abs(s.total_spend ?? 0).toFixed(2)}</div><div class="d">lifetime</div></div>
+  `;
+}
+
+function renderInstances(list) {
+  const box = $("#instances");
+  $("#icount").textContent = list.length ? list.length + " instance(s)" : "";
+  if (!list.length) {
+    box.innerHTML = `<div class="empty">No instances — nothing is billing right now.</div>`;
+    return;
+  }
+  box.innerHTML = list.map(i => {
+    const st = cssStatus(i.actual_status);
+    const ssh = (i.ssh_host && i.ssh_port) ? `${i.ssh_host}:${i.ssh_port}` : "—";
+    return `
+    <div class="card" id="inst-${i.id}">
+      <div class="card-top">
+        <div>
+          <div class="label">${escapeHtml(i.label || "(unnamed)")}</div>
+          <div class="id">#${i.id} · ${escapeHtml(String(i.actual_status || ""))}</div>
+        </div>
+        <span class="status ${st}">${escapeHtml(i.actual_status || "unknown")}</span>
+      </div>
+      <div class="specs">
+        <span>GPU <b>${escapeHtml(String(i.gpu_name || "—"))}</b></span>
+        <span>VRAM <b>${gb(i.gpu_ram_mb)}</b></span>
+        <span>RAM <b>${gb(i.cpu_ram_mb)}</b></span>
+        <span>Cores <b>${i.cpu_cores ?? "—"}</b></span>
+        <span>Disk <b>${i.disk_gb ? i.disk_gb + " GB" : "—"}</b></span>
+        <span>$/h <b>$${(i.dph_total ?? 0).toFixed(3)}</b></span>
+        <span>Uptime <b>${fmtUptime(i.uptime_s)}</b></span>
+        <span>IP <b>${escapeHtml(i.public_ip || "—")}</b></span>
+        <span>SSH <b>${escapeHtml(ssh)}</b></span>
+        <span>Where <b>${escapeHtml(i.geolocation || "—")}</b></span>
+      </div>
+      <div class="actions">
+        <button onclick="doAction(${i.id},'stop')" class="stop">Stop</button>
+        <button onclick="askStart(${i.id})" ${st === "running" ? "disabled" : ""}>Start</button>
+        <button onclick="askDestroy(${i.id})" class="destroy">Destroy</button>
+        <button onclick="showLogs(${i.id})">Logs</button>
+      </div>
+      <div class="confirm" id="confirm-${i.id}" style="display:none"></div>
+      <div class="logbox" id="log-${i.id}"></div>
+    </div>`;
+  }).join("");
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" }[c]));
+}
+
+async function doAction(id, action) {
+  const r = await api("/api/action", {
+    method: "POST", headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({ action, id, confirm: true })
+  });
+  if (r.ok) {
+    toast(`${action} #${id} → HTTP ${r.data.status}`, "ok");
+  } else {
+    toast(`${action} failed: ${r.data.error || r.data.result?.error || "unknown"}`, "err");
+  }
+  refresh();
+}
+
+function askDestroy(id) {
+  const c = $(`#confirm-${id}`);
+  c.style.display = "flex";
+  c.innerHTML = `Destroy deletes the instance <b>and its disk</b>. Type <b>DESTROY ${id}</b> to confirm:
+    <input id="destroy-in-${id}" placeholder="DESTROY ${id}">
+    <button class="destroy" onclick="confirmDestroy(${id})">Confirm destroy</button>
+    <button onclick="this.closest('.confirm').style.display='none'">Cancel</button>`;
+}
+
+function confirmDestroy(id) {
+  const v = $(`#destroy-in-${id}`).value.trim();
+  if (v !== `DESTROY ${id}`) { toast("Type exactly: DESTROY " + id, "err"); return; }
+  doAction(id, "destroy");
+}
+
+function askStart(id) {
+  doAction(id, "start");
+}
+
+async function showLogs(id) {
+  const box = $(`#log-${id}`);
+  box.style.display = "block";
+  box.textContent = "fetching logs…";
+  const r = await api(`/api/logs?id=${id}`);
+  if (r.ok && r.data.logs) box.textContent = r.data.logs;
+  else box.textContent = "logs unavailable: " + JSON.stringify(r.data);
+}
+
+async function loadOffers() {
+  const box = $("#offers");
+  box.innerHTML = `<div class="empty">loading…</div>`;
+  const r = await api("/api/offers?limit=40");
+  const offers = (r.data && r.data.offers) || [];
+  if (!offers.length) { box.innerHTML = `<div class="empty">No offers returned.</div>`; return; }
+  const rows = offers.slice(0, 30).map(o => `
+    <tr>
+      <td>${escapeHtml(o.gpu_name)}</td>
+      <td>${Math.round((o.gpu_ram || 0) / 1024)} GB</td>
+      <td class="num">$${(o.dph_total ?? 0).toFixed(3)}/h</td>
+      <td class="num">${Math.round((o.cpu_ram || 0) / 1024)} GB</td>
+      <td class="num">${o.cpu_cores_effective ?? "—"}</td>
+      <td class="num">${o.disk_space ?? "—"} GB</td>
+      <td>${escapeHtml(o.geolocation || "")}</td>
+      <td class="num">${o.total_flops ?? "—"}</td>
+    </tr>`).join("");
+  box.innerHTML = `<table><thead><tr><th>GPU</th><th>VRAM</th><th class="num">Price</th><th class="num">RAM</th><th class="num">Cores</th><th class="num">Disk</th><th>Location</th><th class="num">FLOPs</th></tr></thead><tbody>${rows}</tbody></table>`;
+}
+
+async function refresh() {
+  try {
+    const r = await api("/api/summary");
+    if (!r.data.ok) {
+      $("#pulse").className = "pulse off";
+      $("#lastupd").textContent = "API error — check key/network";
+      toast("Vast.ai API error: " + JSON.stringify(r.data.user_error || r.data.instances_error || r.data), "err");
+      return;
+    }
+    $("#pulse").className = "pulse";
+    $("#lastupd").textContent = "live · " + new Date().toLocaleTimeString();
+    renderStats(r.data);
+    renderInstances(r.data.instances || []);
+  } catch (e) {
+    $("#pulse").className = "pulse off";
+    $("#lastupd").textContent = "connection error";
+  }
+}
+
+$("#offersBtn").onclick = loadOffers;
+refresh();
+setInterval(refresh, REFRESH);
+</script>
+</body>
+</html>

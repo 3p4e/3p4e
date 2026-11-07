@@ -1,0 +1,7 @@
+# real secrets — never commit
+.env
+
+# runtime noise
+__pycache__/
+*.pyc
+*.log

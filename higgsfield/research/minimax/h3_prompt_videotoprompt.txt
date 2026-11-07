@@ -1,0 +1,146 @@
+Hailuo H3 Prompt Guide: How to Write Prompts for MiniMax's New Video Model (With Examples)
+VideoToPrompt
+Features
+Tools
+Pricing
+Trending
+Blog
+English
+Try Now
+Sign In
+VideoToPrompt
+AI Video Prompts Blog - Tutorials, Tips & Guides
+Hailuo H3 Prompt Guide: How to Write Prompts for MiniMax's New Video Model (With Examples)
+VideoToPrompt
+2 months ago
+min read
+MiniMax launched Hailuo H3 in 2026 as a new generation of its AI video model. Like earlier Hailuo releases, H3 can generate short videos from text or animate a supplied reference image. Its most useful strengths are convincing motion, physical interactions, expressive human action, and dynamic camera movement.
+A strong
+Hailuo H3 prompt
+should therefore describe more than the appearance of a scene. It should explain what changes over time: how a person moves, what causes an object to react, where the camera travels, and how the shot ends.
+This guide presents five practical prompting principles and six reusable examples for different production styles.
+A Practical Hailuo H3 Prompt Structure
+A reliable starting formula is:
+Subject + action sequence + environment reaction + camera movement + lighting and style + ending state
+For example:
+A cyclist accelerates through a wet city intersection, tires spraying water behind her, while the camera tracks beside the bicycle at street level. Cool morning light, realistic commercial cinematography. She brakes beside a red traffic light and looks toward the camera.
+This structure gives H3 information about both the visual composition and the clip’s timeline.
+1. Describe Motion as a Sequence
+Avoid treating an action as a static label. “A man jumping” identifies an activity, but it does not explain how the body should move. Divide important movement into two or three chronological beats.
+Instead of:
+A skateboarder performs a trick.
+Write:
+A skateboarder approaches the rail, crouches, pops the board upward, slides along the rail, then lands with both knees bending naturally.
+Sequential language—such as “first,” “then,” “as,” and “finally”—helps define the order of events. Keep the sequence achievable within the selected clip duration. A short generation should normally contain one primary action rather than an entire narrative.
+2. State the Physical Cause and Effect
+Hailuo models are particularly useful for scenes involving water, fabric, hair, particles, impacts, and changes in momentum. Prompt the cause and its visible consequence explicitly.
+For example:
+A boot steps into a shallow puddle, pushing water outward in a low circular splash; droplets fall back onto the pavement.
+That is more actionable than simply requesting “realistic water physics.” Concrete relationships tell the model which object initiates the event and which materials should respond.
+Use physical terms only when they clarify the shot: weight shifts, fabric trails behind motion, branches bend in the wind, a glass rolls after an impact, or dust rises beneath a landing. Avoid stacking unrelated effects merely to make the prompt sound detailed.
+3. Give Human Actions Anatomical Detail
+For human movement, specify posture, direction, hand use, gaze, and balance. These cues matter when the subject turns, lifts something, dances, runs, or interacts with another object.
+Compare these instructions:
+Weak: “A woman opens a door dramatically.”
+Better: “A woman grips the metal handle with her right hand, pulls the heavy door toward her, steps backward, and looks through the opening.”
+The improved version anchors both hands and body position while establishing a logical interaction. For dialogue-like UGC shots, include modest facial behavior—blinking, a brief eyebrow lift, or a natural smile—but do not prescribe several expressions every second.
+4. Use One Clear Camera Path
+Camera instructions should support the action rather than compete with it. Choose one dominant movement: dolly in, tracking shot, orbit, crane up, handheld follow, slow push-in, or static locked-off framing.
+A useful camera description includes:
+Shot size: close-up, medium shot, full-body shot, or wide shot
+Camera path: moves forward, tracks left, circles clockwise, or follows behind
+Pace: slow, steady, rapid, or lightly handheld
+Relationship to the subject: stays at eye level, maintains distance, or reveals the background
+Do not combine a drone dive, whip pan, orbit, zoom, and rack focus in one short clip. Conflicting directions often produce unstable framing. If you are matching an existing shot, a
+video to prompt
+tool can help identify its subject movement, camera path, lighting, and visual style before you rewrite those elements for H3.
+5. Define Constraints and the Final Frame
+End-state instructions can make a prompt easier to interpret. Tell H3 where the subject finishes, what remains visible, or when the camera stops.
+Useful constraints include:
+The product label remains facing the camera.
+The subject stays centered throughout the shot.
+The camera stops when the doors open.
+No cuts; one continuous take.
+The character’s clothing and facial features remain consistent.
+Phrase constraints positively when possible. “The bottle remains upright” is usually clearer than a long negative list covering every failure that might occur.
+Six Hailuo H3 Prompt Examples
+1. Cinematic Scene
+Wide cinematic shot of a lone traveler crossing a windswept desert at sunset. He leans forward against the wind while his coat and scarf stream naturally behind him; fine sand curls around his boots with each step. The camera performs a slow lateral tracking move at waist height, maintaining his profile. Warm backlight, long shadows, restrained teal-and-orange grade. One continuous shot ending as he stops on the ridge and sees a distant city.
+2. Product Advertisement
+Macro product shot of a chilled citrus drink can standing upright on black stone. A thin stream of water strikes the surface beside it, producing a controlled splash that wraps around the base while condensation beads slide down the aluminum. The camera makes a slow 30-degree clockwise orbit, keeping the logo sharp and facing forward. Crisp studio rim lighting, dark premium commercial style. End with the splash settled and the can centered.
+3. UGC-Style Video
+Vertical smartphone video of a woman in a bright apartment demonstrating a compact handheld vacuum. She looks into the lens, raises the product with her right hand, points to its nozzle with her left index finger, then bends slightly and cleans crumbs from the sofa in one smooth pass. Natural blinking and conversational expression. Light handheld camera movement, soft window light, authentic creator-review style, no cuts.
+4. Anime Sequence
+Anime-style medium-wide shot of a teenage swordswoman sprinting across rain-soaked rooftops at night. Her feet push off each tile in sequence, loose roof fragments slide behind her, and her coat follows the direction of motion. The camera tracks parallel at full-body distance, then gradually moves ahead as she leaps across a narrow alley. Bold linework, dramatic blue moonlight, rain streaks, controlled motion blur. She lands in a balanced crouch.
+5. Nature Documentary
+Low-angle wildlife documentary shot beside a shallow forest stream. A red fox steps cautiously onto a wet rock, shifts its weight forward, then jumps to the opposite bank; its paws displace moss and small droplets on landing. Ferns move gently in the breeze and the stream flows consistently around stones. The camera remains mostly static with a subtle natural telephoto adjustment. Overcast morning light, realistic color and detail.
+6. Action Shot
+Full-body action shot of a stunt performer running through an abandoned warehouse. He clears a wooden barrier, lands with bent knees, rolls over one shoulder, and rises into a sprint without pausing. Dust lifts from the floor at the landing and trails briefly behind him. A stabilized handheld camera follows from three meters back at chest height. Hard side light through industrial windows, realistic momentum, one continuous take.
+For more tested concepts and variations across genres, browse
+trending MiniMax Hailuo prompts
+and study how successful prompts connect action, camera movement, and environmental response.
+Hailuo H3 vs. Kling and Sora Prompting
+Hailuo H3 prompting benefits from direct, chronological action language. It is a good fit for prompts built around body mechanics, momentum, impacts, and reactive materials.
+Kling prompts often benefit from similarly precise motion instructions, but creators may place more emphasis on controlling composition and maintaining the appearance established by an input image. Sora prompting can support broader scene descriptions and narrative context, although a concise shot plan is still more dependable than an overloaded screenplay.
+Do not simply copy the same prompt into every model. For H3, prioritize a readable action chain and explicit physical relationships. For any platform, test one variable at a time: first action, then camera movement, then styling.
+FAQ
+How long should a Hailuo H3 prompt be?
+Use enough detail to define the subject, main action, physical response, camera, and look. Most shots do not require a long paragraph. Roughly 50–120 words is a practical range, although clarity matters more than word count.
+Should I use negative prompts with Hailuo H3?
+Use negative instructions sparingly. A few targeted constraints may help, but long lists can dilute the main action. Positive directions such as “both hands remain visible” or “the package stays upright” are usually easier to interpret.
+Is Hailuo H3 better for text-to-video or image-to-video?
+Use text-to-video when exploring compositions and concepts. Use image-to-video when the first frame, character design, product appearance, or art direction is already established. In both modes, describe movement rather than repeating visual details that the reference image already supplies.
+Table of Contents
+A Practical Hailuo H3 Prompt Structure
+1. Describe Motion as a Sequence
+2. State the Physical Cause and Effect
+3. Give Human Actions Anatomical Detail
+4. Use One Clear Camera Path
+5. Define Constraints and the Final Frame
+Six Hailuo H3 Prompt Examples
+1. Cinematic Scene
+2. Product Advertisement
+3. UGC-Style Video
+4. Anime Sequence
+5. Nature Documentary
+6. Action Shot
+Hailuo H3 vs. Kling and Sora Prompting
+FAQ
+How long should a Hailuo H3 prompt be?
+Should I use negative prompts with Hailuo H3?
+Is Hailuo H3 better for text-to-video or image-to-video?
+Related Articles
+MiniMax H3 Just Got 3-5x Faster: What Changed in One Week
+Open weights landed August 3 and local clips took 25-45 minutes. Six days later: distilled LoRAs, Sol-Attn, native ComfyUI. What actually works now.
+MiniMax H3 GGUF on a 12GB RTX 3060: Quant Sizes, Real VRAM Numbers, Six Traps
+We ran MiniMax H3 on a 12GB RTX 3060 with 16GB of RAM. It works: 25 minutes per 5-second clip, 4.7GB VRAM peak. Includes GGUF quant sizes (Q4_K_M 19.86GB, Q3_K_M 15.57GB), the exact files and flags used, and six traps that waste your afternoon.
+MiniMax H3 Open Weights Are Out — And There Are Three Catches
+The H3 weights landed on Hugging Face on August 3, 2026. The license excludes the US, UK, EU and South Korea, the base model outputs 768p rather than 2K, and one pipeline is about 144GB. Here is what actually shipped.
+VideoToPrompt
+Transform videos into AI prompts with the power of artificial intelligence.
+Product
+Features
+Pricing
+Blog
+Company
+About
+Blog
+Contact
+Tools
+MiniMax H3 Prompt Generator
+Video to H3 Prompt
+Video to Prompt Converter
+YouTube to Prompt Generator
+Video Prompt Extractor
+Legal
+Privacy Policy
+Terms of Service
+Acceptable Use
+Refund Policy
+VideoToPrompt is an independent product and is not affiliated with, endorsed by, or sponsored by OpenAI, Runway ML, Pika Labs, Stability AI, or any other AI model provider. All product names, logos, and brands are property of their respective owners.
+© 2024 VideoToPrompt. All rights reserved.
+powered by VideoToPrompt
+Privacy Policy
+Terms of Service
+Acceptable Use
+Refund Policy

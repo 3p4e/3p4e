@@ -182,6 +182,15 @@ def cmd_dataset(src, out):
             print(f"  {r['verdict']:8} {r['file']}: {r['reason']}")
 
 
+def detect_faces_fullres(det, img):
+    """YuNet at the image's native size — the <=640px path in analyse() shrinks
+    mid/wide hero faces below detector reach and is dataset-only."""
+    h, w = img.shape[:2]
+    det.setInputSize((w, h))
+    _, faces = det.detect(img)
+    return faces
+
+
 def cmd_verify(ref_dir, frames):
     det, rec = load_models()
     refs = []
@@ -194,13 +203,25 @@ def cmd_verify(ref_dir, frames):
     centre = np.mean(np.stack(refs), axis=0)
     centre /= np.linalg.norm(centre)
     for f in images(frames):
-        row, data, _ = analyse(det, rec, f)
-        if data is None:
+        img = cv2.imread(str(f))
+        if img is None:
+            print(f"UNREADABLE  {f.name}")
+            continue
+        faces = detect_faces_fullres(det, img)
+        if faces is None or len(faces) == 0:
             print(f"NO FACE  {f.name}")
             continue
-        sim = float(data[0] @ centre)
-        verdict = "PASS" if sim >= HERO_LIKENESS else "WEAK" if sim >= SAME_PERSON else "FAIL"
-        print(f"{verdict:8} {sim:.3f}  {f.name}")
+        # Score every detected face; a hero shot may legitimately contain a
+        # crowd. The likeness of the shot is the best match, not the first box.
+        best_sim, best_px = -1.0, 0.0
+        for face in faces:
+            emb = rec.feature(rec.alignCrop(img, face)).flatten()
+            emb = emb / np.linalg.norm(emb)
+            sim = float(emb @ centre)
+            if sim > best_sim:
+                best_sim, best_px = sim, float(min(face[2], face[3]))
+        verdict = "PASS" if best_sim >= HERO_LIKENESS else "WEAK" if best_sim >= SAME_PERSON else "FAIL"
+        print(f"{verdict:8} {best_sim:.3f}  {f.name}  (face {int(best_px)}px)")
 
 
 if __name__ == "__main__":
