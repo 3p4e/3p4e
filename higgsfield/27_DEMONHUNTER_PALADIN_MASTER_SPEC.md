@@ -139,3 +139,14 @@ shoulders and back. NEVER a cap, hood, bandana, mask, or any head/face
 covering. The head stays bare at all times so the glowing teal-blue
 underwater hair is fully visible. Reject and re-render any DD asset
 showing headwear.
+
+## DIRECTION CHANGE (director, 2026-11-08)
+Full redesign round: NEW armor designs for DD and AZ (design constants
+stand: DD bare head + glowing teal-blue underwater hair + cold arcane;
+AZ two-handed greatsword + gold holy fire + visible face). Boss replaced:
+'The Hollow Bloom' — plant/vine aberration with corrupting blight.
+Setting replaced: fungal marsh (Zangarmarsh-style) or deep magical
+forest; the boss arena is a patch of grey corruption spreading from the
+monster. Director generates base designs on external platforms from
+higgsfield/jobpacks/34_FULL_REDESIGN_PROMPT_PACK_EXTERNAL.md, picks,
+and the pipeline rebuilds face-first from the picks.

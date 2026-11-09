@@ -375,3 +375,187 @@ Close-up scale fills the frame with head-and-shoulders; face >=160px.
      nominally-cheapest unfamiliar node.
 16.4 STALE FILE PROBES. scp can fail silently; always confirm pulled
      files exist with byte counts before reporting them delivered.
+
+## §17 Unsupervised-burn incident (2026-11-08) — structural rules
+
+Incident: Wan-FLF batch on instance 59683562 launched at ~09:19 CET with a direct
+`flf_batch.py` launch (bypassing the rent script's autorun watchdog), no supervision
+loop, and no copy-home step. The agent reported progress at 09:28 and then did not
+check the box for ~6.5 hours. vast.ai billed at $0.41/h until credit hit $0 and the
+instance EXITED. 0 of 35 rendered clips were copied home — total loss of the rental.
+
+Hard rules that now apply to every GPU run:
+
+1. **No launch without a live watchdog.** Every batch runner must call `watchdog()`
+   with a ceiling at-or-below the user's approved cap hours, and must exit on
+   `SERVER DEAD` (ComfyUI unreachable) instead of looping.
+2. **Supervision cadence is part of the job.** A running GPU requires a poll at least
+   every 20 minutes while the agent is active, and the render must be launched only
+   when the agent can actually poll. If the agent must step away, stop the box first.
+3. **Copy-home is incremental, never end-of-batch.** Every finished clip is scp'd
+   home and sha256-verified the moment it lands; the batch never holds all output
+   hostage on a billing box.
+4. **Cap = watchdog.** The watchdog seconds are derived from the approved dollar cap
+   at rent time, not a fixed default.
+5. **Credit-exhaustion = exit = data loss.** Treat any 'exited' state as potential
+   total loss of everything not yet copied home; report it that way.
+
+---
+
+## §18 No batch renders before a measured-motion proof gate (2026-11-08)
+
+Two failed video attempts tonight (see §19, §20) burned real credit producing
+unusable output. The common failure: a batch or near-batch run was attempted
+before ONE proof clip had passed an objective motion check.
+
+Hard rules that now apply to every video batch:
+
+1. **Proof clip first, always.** One clip (typically kf_01), rendered with the
+   exact batch parameters, must exist and pass all gates before any further
+   clip is queued.
+2. **The motion gate is MEASURED, not eyeballed.** Compute a frame-difference
+   score (mean absolute pixel diff between consecutive decoded frames).
+   Slideshow/crossfade degenerate output scores ~2.0; real motion scores >8.0.
+   The proof clip must score above the gate before the batch proceeds.
+3. **The fidelity gate is separate.** Face/armor match to the start frame
+   (SFace or equivalent > 0.40) plus a human review for freeze/morph/crossfade.
+4. **A failed proof stops the line.** Report honestly; do not scale a failing
+   recipe. SkyReels-V3 14B at 720p with identity conditioning remains the
+   known-good fallback tier.
+
+---
+
+## §19 Wan-FLF without its lightx2v LoRA degenerates to crossfade (2026-11-08)
+
+Incident: Wan2.1-FLF2V-14B was launched with 12 plain steps because the
+4-step lightx2v distillation LoRA (Kijai's
+`Wan21_T2V_14B_lightx2v_cfg_step_distill_lora_rank32.safetensors`, 302 MB)
+returned HF 404 from the auto-downloader at that moment. The run completed
+but produced a degenerate crossfade — the user verdict: "powerpoint slide
+show of 2 images". The clip (media/dhpf_hb_clips/vp_01.mp4) is kept as
+FAILED / REFERENCE-ONLY.
+
+Hard rules:
+
+1. **Never run plain steps on the distilled FLF graph.** Wan-FLF with lightx2v
+   expects ~8 steps at cfg ~1.0; plain steps at cfg >1 silently degrade into
+   a crossfade between the two keyframes.
+2. **Resolve the LoRA before renting.** Confirm the LoRA file resolves live
+   (HTTP 200, correct size ~302 MB) as part of zero-cost preflight, the same
+   way the checkpoint itself is verified. A 404 on the LoRA is a BLOCKER,
+   not a warning — fix the download URL or use a different revision.
+3. **Degenerate output is still billed.** The slideshow clip consumed GPU time
+   at full rate. Do not treat a technically-successful exit code as a passed
+   test — the motion gate in §18 is the arbiter.
+
+---
+
+## §20 vast.ai template boxes with autorun watchdogs reap tenant processes (2026-11-08)
+
+Incident: two rental boxes (59730020 "lemon", then 59734990) shipped a
+template whose autorun script reaped any process it did not start and wiped
+/workspace on a schedule. Two carefully prepared ComfyUI + weights deploys
+were destroyed mid-setup. Both boxes were destroyed; ~$1.10 of credit churned
+on setup alone.
+
+Hard rules:
+
+1. **Prefer plain pytorch templates** (or templates with a documented, passive
+   autorun) over marketplace "one-click" templates with active watchdogs.
+2. **If a template box must be used, work within the autorun window**: either
+   hook your work into the template's own startup path, or disable/patch the
+   autorun before it fires (tools/vast/edit_autorun.sh exists for this).
+3. **Detect early, destroy fast.** If /workspace vanishes or processes die
+   unexpectedly minutes after launch, do not retry into the same template —
+   destroy and re-rent a plain image. Two strikes on one template class is
+   enough.
+4. **Setup cost is real cost.** Weight download time is inside the billed
+   window (existing rule, now restated): a box destroyed during setup has
+   burned provisioning + download + teardown with zero output.
+
+---
+
+## §21 LTX 2B/2.3 wiring reference — the exact working node chain (2026-11-08)
+
+After ~400 wiring iterations on box 59773014 the correct ComfyUI graph for
+LTX 2B v0.9.5 + T5-fp8 was established. This chain is canonical; do not
+substitute node names from other ComfyUI-LTXVideo forks without re-proofing.
+
+```
+CheckpointLoaderSimple        -> MODEL + VAE           (ltx-2.1-2b-distilled or 2.3 ckpt)
+LTXVGemmaCLIPModelLoader      -> CLIP                  (REQUIRES FULL Gemma HF layout:
+                                                          config.json + tokenizer files +
+                                                          processor files; safetensors alone
+                                                          is INSUFFICIENT — loader fails
+                                                          with tokenizer/processor errors)
+CLIPTextEncode                -> positive + negative CONDITIONING  (T5 text)
+LTXVConditioning              -> combines CONDITIONING + width + height + length + fps
+BasicGuider                   -> GUIDER                (conditioning + model)
+KSamplerSelect                -> SAMPLER               (euler / dpmpp_2m)
+LTXVScheduler                 -> SIGMAS                (simple / normal; LTX-specific)
+RandomNoise                   -> NOISE
+LoadImage                     -> start-frame IMAGE
+LTXVImgToVideo                -> LATENT                (image + positive cond + negative cond)
+LTXVBaseSampler               -> samples LATENT -> LATENT (guider+sampler+sigmas+noise)
+VAEDecode                     -> IMAGE
+CreateVideo                   -> VIDEO                 (frames -> video container)
+SaveVideo                     -> save VIDEO input, format video/h264
+```
+
+Parameter contract (2B v0.9.5, no step-distill LoRA exists for 2B):
+
+- frames = 8k + 1 (65 / 81 / 121 / 257); 97 is invalid
+- width/height multiples of 32; primary 1216x704; NOT 1280x720 (720 % 32 != 0)
+- fps 24 via LTXVConditioning
+- steps 30, guidance 3.0 (NOT cfg 1.0 — that is Wan-lightx2v lore)
+- sampler euler / dpmpp_2m, scheduler simple / normal
+- 4-step LoRA applies ONLY to the 22B distilled variant (ltx-2.3-22b-distilled-1.1)
+
+Proof status at handover: graph correct, kf_01 proof clip PENDING on box
+59773014. See higgsfield/39_2026-11-08_LTX_DEPLOY_HANDOVER.md and
+higgsfield/38_LTX_VIDEO_GENERATION_SPEC.md.
+
+---
+
+## Armor-sheet naming convention (FINAL, 2026-11-08)
+
+After a ~60+ rename cycle during tonight's consistency pass, the canonical
+armor/character-card names for the Hollow Bloom (Shup liviot Cvet) design
+settle as:
+
+```
+media/dhpf_design_v5/dd_armor_base.jpg   (Demon Hunter — complete character card)
+media/dhpf_design_v5/az_armor_base.jpg   (Azulon Paladin — complete character card)
+```
+
+`_base` = the complete, hash-locked character card for that hero.
+Sibling state/base variants keep their stable names: dd_armor_state.jpg,
+az_armor_state_a.jpg, az_armor_state_b.jpg, dd_armor_base.jpg, az_armor_base.jpg.
+
+Hard rules:
+
+1. **All references resolve by content hash, never by filename.** Every prompt
+   pack, spec, job file and registry entry references the SHA256 of the sheet,
+   so renames do not break the look-lock. Renaming is safe; re-hashing is not.
+2. **These two names are canon from now on.** Do not introduce a third naming
+   scheme for the same sheets. New states get new stable suffixes
+   (`_state_c`, `_wounded`, etc.), never a rename of the `_base` card.
+3. **Record the convention in ASSET_REGISTRY.md + asset_registry.json** so
+   external generators receive the same names.
+
+---
+
+## Credit ledger — 2026-11-08 session
+
+```
+2026-11-08 16:00-22:40 CET session:
+  start balance   ~$4.87
+  Wan2.1-FLF 12-step no-LoRA attempt (slideshow)      ~part of spend
+  Wan-FLF 8-step lightx2v lemon box 59730020 + 59734990  ~$1.10 setup churn
+  LTX 2B box 59773014 provisioning (still in progress at handover)
+  total spent     ~$2.4
+  end balance     ~$1.79-2.60 (verify: /opt/venv/bin/python tools/vast.py balance)
+```
+
+Live balance must be verified with the vast.ai API before the next spend
+decision; do not quote this table as current.
