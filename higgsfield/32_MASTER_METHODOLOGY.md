@@ -133,3 +133,78 @@ OVERRIDDEN:
 KEPT (proven): FLF motion @ 8 steps, blocking law (into-the-fight energy
 through weapon/body line, not by hiding faces), enrolled centroids,
 Macedonian TTS stack, EU-legal open stack, phase-gate discipline.
+
+---
+
+# §21 THE 2026-11-10 CORRECTED DOCTRINE (read-the-docs pass)
+
+> Trigger: the 22B proofs (v1 motion-16 + face morph; v2 same; v3 strength-0.5 face-held + motion-dead)
+> exposed that renders were being tuned blind. This section consolidates the
+> full documentation pass: 11 Higgsfield tutorials + the official LTX-2
+> prompting guide + the LTX-2.3 model card. Sources in higgsfield/research/.
+
+## 21.1 THE ONE LESSON (verbatim across every tutorial)
+**A text description is NOT a lock. An image reference IS a lock.**
+Identity, weapons, wardrobe, locations must exist ONCE as frozen reference
+images, attached to every generation that uses them. Text alone guarantees
+drift. (soul_id_guide; consistent_characters_locations; elements master guide)
+
+## 21.2 THE FIVE FAILURE MODES (why_generations_fail.txt) — our mapping
+| Failure mode | What we saw | Their fix |
+|---|---|---|
+| 1 Facial/identity drift | male→female morph, Lara Croft creep | fixed face reference attached per generation; multi-angle |
+| 2 Unnatural physics | (not primary yet) | describe physical behavior literally; load-before-action |
+| 3 Prompt misread | guards re-read as repeated subject descriptions → re-render | ONE flowing narrative; no restated identity clauses |
+| 4 Temporal inconsistency | hair short→long mid-clip | shorter simpler shots; explicit key details |
+| 5 Weak/mismatched reference | single start-frame only | reference matched to scene; sharper; more anchors |
+
+## 21.3 THE CHARACTER PIPELINE WE SKIPPED (zephyr_kpop 3-step)
+1. Build the FACE (run one identity prompt until the right face appears).
+2. Build the OUTFIT separately (every belt/bandage written explicitly).
+3. FUSE into ONE MASTER ASSET: 'The character from image 1 wearing this
+   outfit from image 2. Full body shot, white studio background, soft
+   cinematic lighting, realistic.' — the fused sheet is what the video
+   model checks against EVERY TIME.
+WE NEVER BUILT THE FUSED MASTER ASSETS for DD/AZ. That is the structural
+identity hole the 22B could not paper over.
+
+## 21.4 THE PROMPT TEMPLATE (cinema_studio 4.0 + beginners_guide)
+SCENE CONTEXT → ACTIVE REFERENCES (scoped, per-image clause:
+  '@image2: the single source of truth for DD — 100% identical in every
+   shot: face, short hair, outfit, twin crossbows [explicit list]. Its
+   white studio background never appears.') → SCALE → SHOT-BY-SHOT
+  (timestamps, camera position, body position, screen direction) →
+  CAMERA LANGUAGE → LIGHTING → PHYSICS (load-before-action, cause-effect) →
+  AUDIO → POSITIVE LOCKS (5-6 must-holds) + Continuity clause
+  ('identical in every cut and exactly as in @image1... No identity drift,
+   no morphing').
+
+## 21.5 OFFICIAL LTX-2 PROMPTING RULES (ltx.video/blog/how-to-prompt-for-ltx-2)
+- ONE flowing paragraph; the story flows beginning→end.
+- 4-8 descriptive sentences total.
+- Present-tense verbs for movement.
+- Match detail to shot scale (closeups get more detail).
+- Say how subjects look AFTER camera moves ('gives the model a better
+  idea of how to finish the motion').
+- Camera vocabulary: follows, tracks, pans, circles, tilts, pushes in,
+  pulls back, overhead, handheld, over-the-shoulder, wide establishing,
+  static frame.
+- Name style EARLY (photoreal/analog film/etc.).
+- LTX-2's strength: single-subject emotion, subtle gesture, facial nuance.
+- Audio maps to motion (rhythm/energy/timing).
+- Iterate on SHORT LOW-RES tests first; scale only after review.
+
+## 21.6 WHAT CHANGES IN OUR STACK
+1. BUILD THE FUSED MASTER ASSETS (DD/AZ: face card + armor + weapon → one
+   full-body sheet each). Zero GPU if done with Qwen-Image-Edit from
+   existing canon, else one cheap box pass.
+2. REWRITE all 50 prompts: LTX official narrative style (4-8 sentences,
+   flowing, present-tense) + Higgsfield reference-scope clause pointing at
+   the fused master asset + Continuity lock. NO stacked identity-guard
+   clauses (they cause failure mode #3).
+3. I2V ANCHORS: attach the fused master asset as a reference image where
+   the node graph allows (multi-image conditioning), not just the keyframe.
+4. STRENGTH: revisit AFTER 1-3 land. The 1.0-vs-0.5 ladder was measuring
+   a mis-prompted model.
+5. TEST DISCIPLINE: short, low-res, single proof → review → scale. Never
+   three full 1216×704 proofs of an unvalidated recipe.
