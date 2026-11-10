@@ -37,7 +37,36 @@ close-up — lit from below by the teal water-glow, expression cold and
 focused, spore-mist drifting past her shoulders. Crossbow strings hum,
 boots compress the grey veined ground, and the luminous spores near her
 freeze and sink as the glow around her hair brightens. She holds the
-stance to the last frame, face unchanged from media/dhpf_master_sheets/dd_master_sheet.jpg. No identity
+stance to the last frame, face unchanged from media/dhpf_master_sheets/dd_master_sheet.jpg. ## OFFICIAL-PIPELINE ALIGNMENT (2026-11-10, proven)
+
+The standard above is written for ComfyUI phrasing; the PROVEN render path is the
+official `ltx_pipelines.distilled` (see 38_LTX_VIDEO_GENERATION_SPEC.md §0). For that
+pipeline the prompt keeps the SAME discipline (one flowing present-tense paragraph,
+identity once, camera vocabulary, post-motion endpoints) with these adjustments:
+
+1 **MODEL ASSIGNMENT PER SHOT** — the distilled 8-step model loses 60-98% of
+   high-frequency detail after f000; DD's glowing teal-blue hair dies first.
+   -> HERO closeups / identity-critical shots: **DEV model (30-step)** + hair-guard.
+   -> violent action / boss shots: distilled is fine (drift is characterful).
+2 **HAIR-GUARD CLAUSE (DD, on hero shots):**
+   + 'her glowing teal-blue hair shines, individual luminous strands waving weightlessly'
+   - 'matted hair, dull hair, hair covering face, grey hair'
+3 **MOTION CALIBRATION = the real anchor lever (NOT strength).** Gentle camera +
+   static subject holds corr +0.30 at f120; violent action drifts (~+0.10). Write the
+   prompt's motion to match how much the anchor can bear: a closeup gets 'the camera
+   dollies in slowly', an action beat gets the thrash — and accept the deliberate drift.
+4 **AUDIO IS NATIVE** — the pipeline adds sound; write SFX intent into the prompt's
+   motion lines (strings hum, ice cracks, water churns) so the vocoder has signal.
+5 **STRENGTH 0.7** (the --image STRENGTH arg) — 0.9 measured identical; keep 0.7.
+
+## TRANSFORM-BEAT CANON (the DD->monster mutation, owned)
+
+The violent-shot identity morph (DD dissolving toward the boss) appears only on
+high-motion boss anchors. Canonized as a DELIBERATE story beat: DD looses a volley
+of ice arrows -> the scene snaps/transforms -> the Hollow Bloom takes the hits and
+recoils. Use it as a transition; never let it leak onto a hero closeup.
+
+No identity
 drift, no morphing.
 
 (6 sentences, present tense, one identity statement, endpoint described,

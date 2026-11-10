@@ -5,6 +5,34 @@
 > archived as the ash-titan draft; only the pipeline methodology carries forward.
 > Design canon = the director's Grok design pack, installed at `media/dhpf_design_v5/`.
 > Compiled 2026-11-08.
+> **PIPELINE + RENDER REALITY (2026-11-10):** video renders via the OFFICIAL
+> `ltx_pipelines.distilled` (Lightricks/LTX-2 repo), NOT ComfyUI — recipe +
+> measured findings in 38_LTX_VIDEO_GENERATION_SPEC.md §0. Per-shot model
+> assignment + the transform beat below are now canon.
+
+---
+
+## 0A. RENDER ASSIGNMENT (per shot — from the 2026-11-10 proofs)
+
+Every shot is assigned a model by its content, because the 8-step distilled model
+loses 60-98% of high-frequency detail after the first frame (DD's glowing hair dies
+first), while violent-action drift is characterful:
+
+| Shot content | Model | Why |
+|---|---|---|
+| **DD / AZ hero closeup, identity-critical** | **DEV (ltx-2.3-22b-dev, 30-step)** + hair-guard prompt | finest detail; holds the glowing teal-blue hair + face |
+| **Violent action, boss thrash, wide chaos** | **DISTILLED (8-step)** | fast; the deliberate drift/mutation reads as energy |
+| **Transform beat (the arrow-snap)** | **DISTILLED** | the DD→monster morph IS the effect here |
+
+All shots: faithful verb-first motion-only prompt (39_CORRECTED_PROMPT_STANDARD.md),
+--image strength 0.7, full 24GB gemma, 1216×704, 121 frames @ 24fps, native audio.
+
+### THE TRANSFORM BEAT (canon — director-approved)
+
+Where the fight turns, DD looses a volley of **ice arrows**; the scene **snaps/transforms**
+and the **Hollow Bloom takes the hits**, ice blooming across its vines as it recoils.
+This owns the violent-shot identity morph as a deliberate transition (DD → ice-mist →
+the struck boss). It is a TRANSITION, never a hero-closeup leak.
 
 ---
 
