@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="mk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abracadabra — Мени</title>
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<style>
+  :root {
+    --red: #e5262b; --orange: #f39a1e; --lime: #a8d82c; --yellow: #f5e31b;
+    --magenta: #ff2fb3; --green: #3fbf5a; --brown: #8a4b2a;
+    --gold1: #fff1b8; --gold2: #f3c04a; --gold3: #a8661b;
+    --bg: #07050c; --text: #fff8ec; --muted: #d6cbe2;
+    --accent: var(--orange); --glow: rgba(243, 154, 30, .45); --rim: rgba(255, 196, 92, .9);
+    --fs: 40px;                       /* item text size; auto-shrinks to fit */
+  }
+  body.night { --accent: var(--magenta); --glow: rgba(255, 47, 179, .55); --rim: rgba(255, 90, 210, .95);
+    --gold1: #ffe3f6; --gold2: #ff7bd6; --gold3: #7a1f8f; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 100%; height: 100%; overflow: hidden; background: #000; cursor: none; }
+  body { font-family: "Rubik", system-ui, sans-serif; color: var(--text); }
+
+  /* 1920x1080 stage, scaled to whatever the TV reports */
+  #stage { position: absolute; left: 50%; top: 50%; width: 1920px; height: 1080px;
+    transform-origin: center center; background: var(--bg); overflow: hidden; perspective: 1800px; }
+
+  /* ---- cinematic environment: 3D stage video, slow camera drift, vignette, light rays ---- */
+  #bgv { position: absolute; inset: -3%; width: 106%; height: 106%; object-fit: cover;
+    animation: cam 40s ease-in-out infinite alternate; }
+  @keyframes cam { from { transform: scale(1) translate(0, 0); } to { transform: scale(1.06) translate(-1.2%, -1%); } }
+  .shade { position: absolute; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse 70% 60% at 62% 45%, transparent 30%, rgba(4,2,8,.55) 75%, rgba(2,1,4,.92) 100%),
+      linear-gradient(90deg, rgba(4,2,8,.62) 0%, rgba(4,2,8,.35) 45%, rgba(4,2,8,.15) 70%, rgba(4,2,8,.45) 100%); }
+  .rays { position: absolute; left: 30%; top: -30%; width: 60%; height: 120%; pointer-events: none; mix-blend-mode: screen; opacity: .35;
+    background: conic-gradient(from 180deg at 50% 0%, transparent 0deg, rgba(255,210,140,.35) 8deg, transparent 16deg,
+      transparent 24deg, rgba(255,210,140,.25) 30deg, transparent 38deg, transparent 50deg, rgba(255,210,140,.3) 56deg, transparent 64deg);
+    filter: blur(14px); animation: rays 14s ease-in-out infinite alternate; transform-origin: 50% 0; }
+  body.night .rays { background: conic-gradient(from 180deg at 50% 0%, transparent 0deg, rgba(255,60,200,.4) 8deg, transparent 16deg,
+      transparent 24deg, rgba(170,80,255,.3) 30deg, transparent 38deg, transparent 50deg, rgba(255,60,200,.3) 56deg, transparent 64deg); }
+  @keyframes rays { from { transform: rotate(-6deg); opacity: .22; } to { transform: rotate(6deg); opacity: .42; } }
+  #bg { position: absolute; inset: 0; pointer-events: none; z-index: 3; }
+  .grain { position: absolute; inset: 0; pointer-events: none; z-index: 60; opacity: .07; mix-blend-mode: overlay;
+    background-image: repeating-radial-gradient(circle at 17% 32%, #fff 0 1px, transparent 1px 3px); }
+  .letterbox { position: absolute; left: 0; right: 0; height: 18px; background: #000; z-index: 61; }
+  .letterbox.t { top: 0; } .letterbox.b { bottom: 0; }
+
+  /* ---- title: extruded 3D gold wordmark with a light sweep ---- */
+  header { position: absolute; left: 56px; right: 56px; top: 30px; height: 132px; z-index: 5;
+    display: flex; align-items: center; gap: 26px; }
+  header img { height: 132px; width: 132px; object-fit: contain;
+    filter: drop-shadow(0 0 22px var(--glow)) drop-shadow(0 10px 14px rgba(0,0,0,.7)); animation: emblem 6s ease-in-out infinite; }
+  @keyframes emblem { 0%,100% { transform: rotateY(0) translateY(0); } 50% { transform: rotateY(18deg) translateY(-4px); } }
+  .wordmark { position: relative; font-family: "Russo One", sans-serif; font-size: 108px; letter-spacing: 6px; line-height: 1;
+    color: var(--gold2);
+    background: linear-gradient(180deg, var(--gold1) 0%, var(--gold2) 48%, var(--gold3) 52%, var(--gold2) 100%);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 1px 0 #6b3a0e) drop-shadow(0 2px 0 #5a2f0b) drop-shadow(0 3px 0 #4a2608) drop-shadow(0 4px 0 #3a1d06)
+            drop-shadow(0 6px 0 #2a1404) drop-shadow(0 14px 18px rgba(0,0,0,.75)) drop-shadow(0 0 30px var(--glow)); }
+  body.night .wordmark { filter: drop-shadow(0 1px 0 #6a1257) drop-shadow(0 2px 0 #5a0f4a) drop-shadow(0 3px 0 #4a0c3d)
+            drop-shadow(0 5px 0 #330828) drop-shadow(0 14px 18px rgba(0,0,0,.75)) drop-shadow(0 0 34px var(--magenta)); }
+  .wordmark::after { content: "ABRACADABRA"; position: absolute; inset: 0;
+    background: linear-gradient(100deg, transparent 40%, rgba(255,255,255,.95) 50%, transparent 60%) no-repeat;
+    background-size: 250% 100%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    animation: shine 7s ease-in-out infinite; }
+  @keyframes shine { 0%, 70% { background-position: 130% 0; } 100% { background-position: -30% 0; } }
+  .tag { margin-left: auto; text-align: right; font-family: "Russo One"; font-size: 30px; color: var(--muted);
+    text-shadow: 0 3px 8px #000; letter-spacing: 1px; }
+  .tag b { display: block; font-weight: 400; font-size: 42px; color: var(--gold1); text-shadow: 0 0 18px var(--glow), 0 3px 8px #000; }
+
+  /* ---- menu: game-inventory panels with metal frames, tilted in 3D ---- */
+  main { position: absolute; left: 56px; top: 184px; bottom: 98px; width: 1220px; display: flex; gap: 30px; z-index: 4;
+    transform-style: preserve-3d; transform: rotateY(5deg) translateZ(0); transform-origin: 0 50%; }
+  main .col { flex: 1; min-width: 0; }
+  .cat { position: relative; margin-bottom: 24px; border-radius: 18px; overflow: hidden;
+    background:
+      linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,0) 38%),
+      linear-gradient(160deg, rgba(26,18,38,.9), rgba(10,7,16,.9));
+    box-shadow: 0 0 0 2px rgba(0,0,0,.6), 0 0 0 4px var(--frame, #b8892f), 0 0 0 5px rgba(255,240,200,.35),
+      inset 0 1px 0 rgba(255,255,255,.18), inset 0 0 40px rgba(0,0,0,.6),
+      0 22px 40px rgba(0,0,0,.65), 0 0 46px var(--glow); }
+  body.night .cat { --frame: #c04aa8; }
+  .cat::before { content: ""; position: absolute; inset: 0; pointer-events: none; border-radius: 18px;
+    background: radial-gradient(ellipse 60% 40% at 15% 0%, var(--tint, rgba(243,154,30,.22)), transparent 70%); }
+  .cat h2 { position: relative; overflow: hidden; font-family: "Russo One"; font-weight: 400; font-size: calc(var(--fs) * 1.05);
+    padding: 12px 26px 10px 74px; color: #fff; display: flex; align-items: baseline; gap: 14px;
+    background: linear-gradient(180deg, rgba(255,255,255,.35), rgba(255,255,255,0) 50%, rgba(0,0,0,.25)), var(--c, var(--orange));
+    text-shadow: 0 2px 0 rgba(0,0,0,.45), 0 0 14px rgba(0,0,0,.3);
+    box-shadow: inset 0 -3px 0 rgba(0,0,0,.35), inset 0 2px 0 rgba(255,255,255,.4); }
+  .cat h2::before { content: ""; position: absolute; left: 24px; top: 50%; width: 30px; height: 30px; margin-top: -15px;
+    transform: rotate(45deg); border-radius: 4px;
+    background: radial-gradient(circle at 35% 30%, #fff 0 12%, var(--gem, #fff3a8) 30%, rgba(0,0,0,.45) 100%);
+    box-shadow: 0 0 0 3px rgba(0,0,0,.35), 0 0 18px #fff, 0 0 30px var(--gem, #fff3a8); animation: gem 3s ease-in-out infinite; }
+  @keyframes gem { 0%,100% { filter: brightness(1); } 50% { filter: brightness(1.5); } }
+  .cat h2 small { font-size: .62em; opacity: .85; }
+  .cat h2 .cur { margin-left: auto; font-family: "Rubik"; font-weight: 700; font-size: .6em; opacity: .85; }
+  .cat ul { list-style: none; padding: 10px 26px 14px; position: relative; z-index: 0; }
+  .cat li { display: flex; align-items: baseline; gap: 12px; font-size: var(--fs); font-weight: 500;
+    padding: calc(var(--fs) * .16) 0; text-shadow: 0 2px 6px rgba(0,0,0,.8); }
+  .cat li + li { border-top: 1px solid rgba(255,255,255,.05); }
+  .cat li .n { white-space: nowrap; }
+  body.wrap .cat li .n { white-space: normal; line-height: 1.1; }
+  .cat li .dots { flex: 1; height: 2px; transform: translateY(-.3em); min-width: 20px;
+    background: linear-gradient(90deg, rgba(255,255,255,.04), rgba(255,220,150,.28)); }
+  body.night .cat li .dots { background: linear-gradient(90deg, rgba(255,255,255,.04), rgba(255,120,220,.35)); }
+  .cat li .p { font-family: "Russo One"; font-size: calc(var(--fs) * 1.1);
+    background: linear-gradient(180deg, #fffbe0 0%, #ffd84a 45%, #e08a12 100%);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 0 #5a2c06) drop-shadow(0 0 10px rgba(255,190,60,.55)); }
+  body.night .cat li .p { background: linear-gradient(180deg, #fff 0%, #ffb3ec 45%, #ff2fb3 100%);
+    -webkit-background-clip: text; background-clip: text; filter: drop-shadow(0 2px 0 #4a0838) drop-shadow(0 0 12px rgba(255,47,179,.7)); }
+  .badge { font-family: "Russo One"; font-size: calc(var(--fs) * .42); padding: 3px 10px 2px; border-radius: 6px;
+    color: #1a1020; background: var(--yellow); transform: translateY(-.35em) skewX(-8deg); flex: none; text-shadow: none;
+    box-shadow: 0 0 14px rgba(255,255,255,.25), inset 0 1px 0 rgba(255,255,255,.6); }
+  .badge.ХИТ { background: linear-gradient(180deg, #ff8a3a, var(--red)); color: #fff; box-shadow: 0 0 18px rgba(255,70,30,.8); animation: gem 1.6s ease-in-out infinite; }
+  .badge.НОВО { background: var(--lime); }
+  .badge.ВЕГЕ { background: var(--green); color: #fff; }
+
+  .filler { display: flex; align-items: center; justify-content: center; gap: 26px; border-radius: 18px; padding: 18px;
+    color: var(--muted); font-family: "Russo One";
+    background: radial-gradient(ellipse at 30% 50%, var(--glow), transparent 70%);
+    box-shadow: 0 0 0 2px rgba(255,220,150,.18); }
+  .filler img { height: 100%; max-height: 210px; aspect-ratio: 1; animation: coin 8s linear infinite;
+    filter: drop-shadow(0 0 24px var(--glow)); }
+  @keyframes coin { to { transform: rotateY(360deg); } }
+  .filler div { font-size: 34px; line-height: 1.15; }
+  .filler b { display: block; color: var(--gold1); font-weight: 400; font-size: 44px; text-shadow: 0 0 18px var(--glow); }
+  .c-red     { --c: var(--red);     --gem: #ffb199; --tint: rgba(229,38,43,.28); }
+  .c-orange  { --c: var(--orange);  --gem: #ffe0a0; --tint: rgba(243,154,30,.28); }
+  .c-lime    { --c: #7fb51d;        --gem: #eaffb0; --tint: rgba(168,216,44,.24); }
+  .c-yellow  { --c: #e0b40c;        --gem: #fffbd0; --tint: rgba(245,227,27,.22); }
+  .c-magenta { --c: var(--magenta); --gem: #ffd0f0; --tint: rgba(255,47,179,.28); }
+  .c-green   { --c: var(--green);   --gem: #c8ffd4; --tint: rgba(63,191,90,.24); }
+  .c-brown   { --c: var(--brown);   --gem: #ffd7b0; --tint: rgba(160,90,40,.3); }
+
+  /* ---- featured: an arcane portal with a rotating rune ring; the wand lives inside ---- */
+  aside { position: absolute; right: 50px; top: 170px; bottom: 90px; width: 580px; z-index: 6;
+    display: flex; flex-direction: column; align-items: center; padding: 0 26px 30px;
+    transform: rotateY(-7deg) translateZ(40px); transform-origin: 100% 50%; }
+  .portal { position: absolute; left: 10px; right: 10px; top: 0; height: 480px; border-radius: 50% 50% 46% 46% / 42% 42% 58% 58%;
+    background: radial-gradient(ellipse at 50% 55%, #1a1226 0%, #0e0a16 62%, rgba(14,10,22,0) 72%); }
+  body.night .portal { background: radial-gradient(ellipse at 50% 55%, #1a0e22 0%, #0e0a16 62%, rgba(14,10,22,0) 72%); }
+  .ring { position: absolute; left: 50%; top: 240px; width: 500px; height: 500px; margin: -250px 0 0 -250px; border-radius: 50%;
+    pointer-events: none; mix-blend-mode: screen;
+    background: conic-gradient(from 0deg, transparent 0 10%, var(--rim) 14%, transparent 22%, transparent 45%, var(--rim) 50%, transparent 58%, transparent 80%, var(--rim) 86%, transparent 94%);
+    -webkit-mask: radial-gradient(circle, transparent 64%, #000 65.5%, #000 67.5%, transparent 69%);
+            mask: radial-gradient(circle, transparent 64%, #000 65.5%, #000 67.5%, transparent 69%);
+    filter: drop-shadow(0 0 12px var(--rim)); animation: spin 12s linear infinite; }
+  .ring.r2 { width: 450px; height: 450px; margin: -225px 0 0 -225px; animation-duration: 20s; animation-direction: reverse; opacity: .6; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  #mv { position: absolute; left: 50%; top: 0; width: 360px; height: 480px; margin-left: -180px; z-index: 1;
+    object-fit: cover;
+    -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 70%, transparent 100%);
+            mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 70%, transparent 100%); opacity: 0; transition: opacity .4s; }
+  aside.video #mv { opacity: 1; } aside.video #mascot { display: none; }
+  .mwrap { position: relative; z-index: 1; height: 480px; flex: none; width: 100%; display: flex; align-items: center; justify-content: center; }
+  #mascot { max-width: 80%; max-height: 92%; object-fit: contain;
+    animation: bob 3.2s ease-in-out infinite; filter: drop-shadow(0 0 30px var(--glow)); }
+  @keyframes bob { 0%,100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-16px) rotate(3deg); } }
+  .promo { position: relative; z-index: 2; width: 100%; flex: 1; text-align: center; transition: opacity .6s, transform .6s, filter .6s;
+    display: flex; flex-direction: column; justify-content: flex-end; padding: 16px 22px 18px; border-radius: 18px; margin-top: -10px;
+    background: linear-gradient(180deg, rgba(20,14,30,.0), rgba(20,14,30,.88) 26%, rgba(10,7,16,.94));
+    box-shadow: 0 0 0 3px var(--frame, #b8892f), 0 0 0 4px rgba(255,240,200,.35), 0 24px 40px rgba(0,0,0,.7), 0 0 50px var(--glow); }
+  body.night .promo { --frame: #c04aa8; }
+  .promo.out { opacity: 0; transform: translateY(30px) scale(.96); filter: blur(6px); }
+  .promo .kicker { font-family: "Russo One"; font-size: 24px; letter-spacing: 6px; color: var(--accent); text-shadow: 0 0 14px var(--glow); }
+  .promo .kicker::before, .promo .kicker::after { content: "✦"; margin: 0 12px; }
+  .promo h3 { font-family: "Russo One"; font-weight: 400; font-size: 46px; line-height: 1.05; margin: 8px 0 6px;
+    text-shadow: 0 3px 0 rgba(0,0,0,.6), 0 0 22px var(--glow); }
+  .promo p { font-size: 27px; color: var(--muted); }
+  .promo .price { align-self: center; display: inline-block; margin-top: 8px; font-family: "Russo One"; font-size: 88px; line-height: 1.05;
+    background: linear-gradient(180deg, #fffbe0 0%, #ffd84a 45%, #e08a12 100%);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 3px 0 #5a2c06) drop-shadow(0 5px 0 #3a1c04) drop-shadow(0 0 24px rgba(255,190,60,.8)); }
+  body.night .promo .price { background: linear-gradient(180deg, #fff 0%, #ffb3ec 45%, #ff2fb3 100%);
+    -webkit-background-clip: text; background-clip: text; filter: drop-shadow(0 3px 0 #4a0838) drop-shadow(0 0 26px rgba(255,47,179,.9)); }
+  .promo .price small { font-size: .36em; margin-left: 8px; }
+
+  /* full-screen magic transition (black = transparent via screen blend) */
+  #fx { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; mix-blend-mode: screen;
+    pointer-events: none; opacity: 0; z-index: 50; transition: opacity .6s; }
+  #fx.on { opacity: 1; }
+  #stage.flash main { animation: joltL .7s ease-out; } #stage.flash aside { animation: joltR .7s ease-out; }
+  @keyframes joltL { 0% { filter: brightness(1); } 30% { filter: brightness(1.7); transform: rotateY(5deg) translateZ(30px); } 100% { filter: brightness(1); } }
+  @keyframes joltR { 0% { filter: brightness(1); } 30% { filter: brightness(1.7); transform: rotateY(-7deg) translateZ(80px); } 100% { filter: brightness(1); } }
+
+  /* full-screen Blizzard-style cinematic: the wand performs, then the board comes back */
+  #cine { position: absolute; inset: 0; z-index: 58; background: #000; opacity: 0; pointer-events: none; transition: opacity .8s; }
+  #cine.on { opacity: 1; }
+  #cine video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  #cine::after { content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse 80% 75% at 50% 50%, transparent 55%, rgba(0,0,0,.55) 100%); }
+  .cine-card { position: absolute; left: 50%; bottom: 120px; transform: translate(-50%, 30px); z-index: 2; text-align: center;
+    opacity: 0; transition: opacity .7s, transform .7s; padding: 18px 54px 22px; border-radius: 20px;
+    background: linear-gradient(180deg, rgba(20,14,30,.55), rgba(8,5,12,.88));
+    box-shadow: 0 0 0 3px #b8892f, 0 0 0 4px rgba(255,240,200,.35), 0 0 60px rgba(243,154,30,.55); }
+  .cine-card.on { opacity: 1; transform: translate(-50%, 0); }
+  .cine-card h4 { font-family: "Russo One"; font-weight: 400; font-size: 64px; line-height: 1.05; color: #fff;
+    text-shadow: 0 3px 0 rgba(0,0,0,.6), 0 0 24px rgba(243,154,30,.7); }
+  .cine-card .price { font-family: "Russo One"; font-size: 110px; line-height: 1.05;
+    background: linear-gradient(180deg, #fffbe0 0%, #ffd84a 45%, #e08a12 100%);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 4px 0 #5a2c06) drop-shadow(0 0 28px rgba(255,190,60,.85)); }
+  .cine-card .price small { font-size: .36em; margin-left: 8px; }
+
+  /* light sweep across category headers */
+  .cat h2::after { content: ""; position: absolute; top: 0; bottom: 0; width: 160px; left: -200px;
+    background: linear-gradient(100deg, transparent, rgba(255,255,255,.6), transparent);
+    animation: sweep 9s ease-in-out infinite; animation-delay: var(--d, 0s); }
+  @keyframes sweep { 0%, 78% { left: -200px; } 92%, 100% { left: 110%; } }
+  /* spotlight on signature items */
+  .cat li.hit { position: relative; }
+  .cat li.hit::before { content: ""; position: absolute; inset: 0; border-radius: 10px; z-index: -1;
+    background: linear-gradient(90deg, rgba(255,150,40,0), rgba(255,150,40,.35), rgba(255,150,40,0));
+    animation: hit 6s ease-in-out infinite; }
+  body.night .cat li.hit::before { background: linear-gradient(90deg, transparent, rgba(255,47,179,.38), transparent); }
+  @keyframes hit { 0%, 60%, 100% { opacity: 0; } 75% { opacity: 1; } }
+
+  footer { position: absolute; left: 0; right: 0; bottom: 18px; height: 64px; z-index: 7; overflow: hidden; display: flex; align-items: center;
+    background: linear-gradient(180deg, rgba(0,0,0,.2), rgba(0,0,0,.85));
+    box-shadow: inset 0 3px 0 var(--accent), 0 -10px 30px var(--glow); }
+  .ticker { white-space: nowrap; font-family: "Russo One"; font-size: 32px; color: var(--text); text-shadow: 0 0 12px var(--glow);
+    animation: tick 40s linear infinite; padding-left: 100%; }
+  .ticker span { color: var(--accent); margin: 0 26px; }
+  @keyframes tick { from { transform: translateX(0); } to { transform: translateX(-100%); } }
+</style>
+</head>
+<body>
+<div id="stage">
+  <video id="bgv" muted loop playsinline autoplay></video>
+  <div class="rays"></div>
+  <div class="shade"></div>
+  <canvas id="bg"></canvas>
+  <header>
+    <img src="assets/logo.png" alt="" onerror="this.style.display='none'">
+    <div class="wordmark">ABRACADABRA</div>
+    <div class="tag" id="tag"></div>
+  </header>
+  <main id="menu"></main>
+  <aside>
+    <div class="portal"></div><div class="ring"></div><div class="ring r2"></div>
+    <video id="mv" muted playsinline></video>
+    <div class="mwrap"><img id="mascot" src="assets/mascot_day.png" alt=""></div>
+    <div class="promo" id="promo"></div>
+  </aside>
+  <footer><div class="ticker" id="ticker"></div></footer>
+  <video id="fx" muted playsinline src="assets/video/fx_slash.mp4"></video>
+  <div id="cine"><video id="cv" muted playsinline></video><div class="cine-card" id="cineCard"></div></div>
+  <div class="grain"></div><div class="letterbox t"></div><div class="letterbox b"></div>
+</div>
+
+<script src="menu-data.js"></script>
+<script>
+(function () {
+  const q = new URLSearchParams(location.search);
+  const SCREEN = q.get("screen") === "2" ? 2 : 1;
+  const stage = document.getElementById("stage");
+
+  // ---------- scale the 1920x1080 stage to the display ----------
+  function fitStage() {
+    const s = Math.min(innerWidth / 1920, innerHeight / 1080);
+    stage.style.transform = `translate(-50%, -50%) scale(${s})`;
+  }
+  addEventListener("resize", fitStage); fitStage();
+
+  // ---------- data: built-in file, admin override on this device, or Google Sheet ----------
+  let DATA = window.MENU_DATA;
+  try {
+    const o = localStorage.getItem("abra_menu_override");
+    if (o) DATA = JSON.parse(o);
+  } catch (e) {}
+
+  function parseCSV(text) {
+    const rows = []; let row = [], cell = "", q = false;
+    for (let i = 0; i < text.length; i++) {
+      const c = text[i];
+      if (q) { if (c === '"') { if (text[i + 1] === '"') { cell += '"'; i++; } else q = false; } else cell += c; }
+      else if (c === '"') q = true;
+      else if (c === ",") { row.push(cell); cell = ""; }
+      else if (c === "\n" || c === "\r") { if (c === "\r" && text[i + 1] === "\n") i++; row.push(cell); rows.push(row); row = []; cell = ""; }
+      else cell += c;
+    }
+    if (cell || row.length) { row.push(cell); rows.push(row); }
+    return rows.filter(r => r.some(x => x.trim() !== ""));
+  }
+
+  // Sheet columns: category | name | price | available | badge
+  function applySheet(base, rows) {
+    const head = rows.shift().map(h => h.trim().toLowerCase());
+    const col = n => head.indexOf(n);
+    const cats = base.categories.map(c => ({ ...c, items: [] }));
+    for (const r of rows) {
+      const catKey = (r[col("category")] || "").trim();
+      let cat = cats.find(c => c.id === catKey || c.name.toLowerCase() === catKey.toLowerCase());
+      if (!cat) { cat = { id: catKey, name: catKey, screen: SCREEN, color: "orange", note: "", items: [] }; cats.push(cat); }
+      const pr = (r[col("price")] || "").replace(/[^\d.]/g, "");
+      const av = (r[col("available")] || "").trim().toLowerCase();
+      cat.items.push({ name: (r[col("name")] || "").trim(), price: pr ? Number(pr) : null,
+        available: !["no", "не", "false", "0", "x"].includes(av), badge: (r[col("badge")] || "").trim() });
+    }
+    return { ...base, categories: cats };
+  }
+
+  async function loadSheet() {
+    if (!DATA.sheetCsvUrl) return;
+    try {
+      const res = await fetch(DATA.sheetCsvUrl + (DATA.sheetCsvUrl.includes("?") ? "&" : "?") + "t=" + Date.now());
+      if (!res.ok) return;
+      DATA = applySheet(window.MENU_DATA, parseCSV(await res.text()));
+      render();
+    } catch (e) { /* offline: keep showing the last menu */ }
+  }
+
+  // ---------- render ----------
+  const esc = s => String(s).replace(/[&<>"]/g, m => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[m]));
+  const shown = it => it.price !== null && it.price !== undefined && it.price !== "" && it.available !== false;
+
+  function render() {
+    const cur = DATA.currency || "ден";
+    const cats = DATA.categories.filter(c => (c.screen || 1) === SCREEN && c.items.some(shown));
+    window.__cats = cats.map((c, ci) => `
+      <section class="cat c-${esc(c.color || "orange")}" style="--d:${(ci * 1.3).toFixed(1)}s">
+        <h2>${esc(c.name)}${c.note ? `<small>${esc(c.note)}</small>` : ""}<span class="cur">${esc(cur)}</span></h2>
+        <ul>${c.items.filter(shown).map(it => `
+          <li class="${it.badge === "ХИТ" ? "hit" : ""}"><span class="n">${esc(it.name)}</span>${it.badge ? `<span class="badge ${esc(it.badge)}">${esc(it.badge)}</span>` : ""}
+          <span class="dots"></span><span class="p">${esc(it.price)}</span></li>`).join("")}
+        </ul>
+      </section>`);
+    autoFit();
+    document.getElementById("ticker").innerHTML = (DATA.ticker || [
+      "Сите бургери, сендвичи и тостови се со помфрит",
+      "Магијата е во вкусот!",
+      "Прашај за денешната понуда",
+      "Работиме до доцна — дојди и ноќе"
+    ]).map(t => esc(t)).join("<span>✦</span>") + "<span>✦</span>";
+  }
+
+  // Pick the largest text size where the categories, split into two balanced columns
+  // (in reading order), fit the menu area with no name cut off.
+  function autoFit() {
+    const m = document.getElementById("menu"), H = m.clientHeight, html = window.__cats || [];
+    const tryLayout = (fs, wrap) => {
+      document.documentElement.style.setProperty("--fs", fs + "px");
+      document.body.classList.toggle("wrap", wrap);
+      m.innerHTML = `<div class="col">${html.join("")}</div><div class="col"></div>`;
+      const secs = [...m.querySelectorAll(".cat")];
+      const h = secs.map(s => s.offsetHeight + 26);
+      let best = null;
+      for (let k = 0; k <= h.length; k++) {
+        const a = h.slice(0, k).reduce((x, y) => x + y, 0), b = h.slice(k).reduce((x, y) => x + y, 0);
+        const mx = Math.max(a, b);
+        if (!best || mx < best.mx) best = { k, mx };
+      }
+      m.innerHTML = `<div class="col">${html.slice(0, best.k).join("")}</div><div class="col">${html.slice(best.k).join("")}</div>`;
+      const cut = [...m.querySelectorAll(".n")].some(n => n.scrollWidth > n.clientWidth + 1 ||
+        n.parentElement.scrollWidth > n.parentElement.clientWidth + 1);
+      const bottom = m.getBoundingClientRect().bottom;
+      const tall = [...m.querySelectorAll(".cat")].some(c => c.getBoundingClientRect().bottom > bottom + 1);
+      return !cut && !tall;
+    };
+    let ok = false;
+    for (let fs = 46; fs >= 30 && !ok; fs--) ok = tryLayout(fs, false);
+    for (let fs = 40; fs >= 22 && !ok; fs--) ok = tryLayout(fs, true);
+    // fill a large empty gap at the bottom of a column with a brand card
+    const bottom = m.getBoundingClientRect().bottom, scale = m.getBoundingClientRect().height / m.clientHeight;
+    for (const col of m.querySelectorAll(".col")) {
+      const last = col.lastElementChild;
+      const free = (bottom - (last ? last.getBoundingClientRect().bottom : m.getBoundingClientRect().top)) / scale;
+      if (free > 200) col.insertAdjacentHTML("beforeend",
+        `<div class="filler" style="height:${Math.min(free - 30, 300)}px"><img src="assets/logo.png" alt="">
+         <div>${esc(DATA.slogan || "Магија во секој залак")}<b>ABRACADABRA</b></div></div>`);
+    }
+  }
+
+  // ---------- video layers (Higgsfield clips in assets/video; the page still works without them) ----------
+  const V = n => `assets/video/${n}.mp4`;
+  const mv = document.getElementById("mv"), aside = document.querySelector("aside");
+  const bgv = document.getElementById("bgv"), fx = document.getElementById("fx");
+  mv.addEventListener("playing", () => aside.classList.add("video"));
+  mv.addEventListener("error", () => aside.classList.remove("video"));
+  bgv.addEventListener("error", () => bgv.style.display = "none");
+  const IDLE = () => night() ? "wand_idle_night" : "wand_idle_day";
+  function playMascot(name, loop) {
+    name = String(name).replace(/^fox_/, "wand_");      // older menu files still name the fox clips
+    mv.loop = loop; mv.onended = loop ? null : () => playMascot(IDLE(), true);
+    if (!mv.src.endsWith(V(name))) mv.src = V(name);
+    mv.currentTime = 0; mv.play().catch(() => {});
+  }
+
+  // full-screen magic transition: logo swirl bursts into shards over the whole board
+  function magicTransition(then) {
+    fx.currentTime = 0;
+    fx.play().then(() => {
+      fx.classList.add("on");
+      setTimeout(() => { stage.classList.add("flash"); burst(); then(); }, 2450);   // the slash explodes at ~2.5 s
+      setTimeout(() => stage.classList.remove("flash"), 3200);
+    }).catch(then);
+    fx.ontimeupdate = () => { if (fx.currentTime > fx.duration - .6) fx.classList.remove("on"); };
+  }
+
+  // price counts up to its value
+  function countUp(el, to) {
+    const t0 = performance.now(), n = Number(to);
+    if (!n) { el.firstChild.textContent = to; return; }
+    (function step(t) { const k = Math.min(1, (t - t0) / 700);
+      el.firstChild.textContent = Math.round(n * (1 - Math.pow(1 - k, 3)));
+      if (k < 1) requestAnimationFrame(step); })(t0);
+  }
+
+  // ---------- promo carousel (the two screens show different promos at the same time) ----------
+  let pi = SCREEN === 2 ? 1 : 0, shown_n = 0;
+  function showPromo() {
+    const list = (DATA.promos || []).filter(p => p.price !== null && p.price !== "");
+    if (!list.length) return;
+    const p = list[pi % list.length]; pi++;
+    const swap = () => {
+      const el = document.getElementById("promo");
+      el.classList.add("out");
+      setTimeout(() => {
+        el.innerHTML = `<div class="kicker">${night() ? "НОЌНА МАГИЈА" : "ПРЕПОРАКА"}</div>
+          <h3>${esc(p.title)}</h3><p>${esc(p.subtitle || "")}</p>
+          <div class="price">${esc(p.price)}<small>${esc(DATA.currency || "ден")}</small></div>`;
+        el.classList.remove("out");
+        countUp(el.querySelector(".price"), p.price);
+        burst();
+      }, 500);
+      if (night()) playMascot(IDLE(), true);
+      else if (p.video) playMascot(p.video, false);
+      else playMascot(IDLE(), true);
+    };
+    // every 4th change (offset per screen) the whole board does the magic transition
+    if (++shown_n % 4 === (SCREEN === 2 ? 2 : 0)) magicTransition(swap); else swap();
+  }
+
+  // ---------- day / night ----------
+  function night() {
+    const m = q.get("mode"); if (m) return m === "night";
+    const h = new Date().getHours(), a = DATA.nightFrom ?? 19, b = DATA.nightTo ?? 6;
+    return a > b ? (h >= a || h < b) : (h >= a && h < b);
+  }
+  function applyMode() {
+    const n = night();
+    document.body.classList.toggle("night", n);
+    document.getElementById("mascot").src = n ? "assets/mascot_night.png" : "assets/mascot_day.png";
+    const want = V(n ? "bg_night" : "bg_day");
+    stage.style.background = `#07050c url(assets/stage_${n ? "night" : "day"}.jpg) center / cover`;
+    if (!bgv.src.endsWith(want)) { bgv.src = want; bgv.play().catch(() => {}); }
+    document.getElementById("tag").innerHTML = SCREEN === 1 ? "БУРГЕРИ · СЕНДВИЧИ · ТОСТОВИ<b>МАГИЈА ВО СЕКОЈ ЗАЛАК</b>"
+                                                             : "ВРАПОВИ · СКАРА · ДЕСЕРТИ<b>ЗА КРАЈ — СЛАТКА МАГИЈА</b>";
+  }
+
+  // ---------- particles: rising embers and crystal shards at three depths (near ones are bigger, faster, blurred) ----------
+  const cv = document.getElementById("bg"), cx = cv.getContext("2d");
+  cv.width = 1920; cv.height = 1080;
+  const DAY = ["#e5262b", "#f39a1e", "#a8d82c", "#f5e31b"], NIGHT = ["#ff2fb3", "#ff6fd0", "#b14bff", "#ffd6f2"];
+  const shards = Array.from({ length: 34 }, () => newShard(true));
+  const embers = Array.from({ length: 70 }, () => newEmber(true));
+  function newShard(any) {
+    const z = Math.random() < .2 ? 2 : Math.random() < .5 ? 1 : 0;          // 0 far, 1 mid, 2 near
+    return { x: Math.random() * 1920, y: any ? Math.random() * 1080 : 1140, z, s: [7, 14, 34][z] * (.7 + Math.random() * .6),
+      r: Math.random() * 6.28, vr: (Math.random() - .5) * .012, vy: -[.18, .35, .8][z] * (.6 + Math.random() * .8),
+      vx: (Math.random() - .5) * .25, c: Math.floor(Math.random() * 4), a: [.35, .55, .5][z] };
+  }
+  function newEmber(any) {
+    return { x: Math.random() * 1920, y: any ? Math.random() * 1080 : 1090, s: .8 + Math.random() * 2.6,
+      vy: -(.3 + Math.random() * 1.1), ph: Math.random() * 6.28, a: .3 + Math.random() * .6 };
+  }
+  let boost = 0, t = 0;
+  function burst() { boost = 1; }
+  function draw() {
+    t += .016;
+    cx.clearRect(0, 0, 1920, 1080);
+    const n = document.body.classList.contains("night"), pal = n ? NIGHT : DAY;
+    cx.globalCompositeOperation = "lighter";
+    for (const e of embers) {
+      e.y += e.vy * (1 + boost * 5); e.x += Math.sin(t * 1.3 + e.ph) * .4;
+      if (e.y < -10) Object.assign(e, newEmber(false));
+      const g = cx.createRadialGradient(e.x, e.y, 0, e.x, e.y, e.s * 4);
+      g.addColorStop(0, n ? "rgba(255,170,235," + e.a + ")" : "rgba(255,220,140," + e.a + ")");
+      g.addColorStop(1, "rgba(0,0,0,0)");
+      cx.fillStyle = g; cx.fillRect(e.x - e.s * 4, e.y - e.s * 4, e.s * 8, e.s * 8);
+    }
+    cx.globalCompositeOperation = "source-over";
+    for (const p of shards) {
+      p.x += p.vx * (1 + boost * 6); p.y += p.vy * (1 + boost * 6); p.r += p.vr * (1 + boost * 4);
+      if (p.y < -60) Object.assign(p, newShard(false));
+      cx.save(); cx.translate(p.x, p.y); cx.rotate(p.r);
+      cx.shadowColor = pal[p.c]; cx.shadowBlur = p.z === 0 ? 0 : 16;
+      cx.globalAlpha = p.a;
+      const sq = Math.abs(Math.cos(p.r * 1.7));                                // fake 3D tumble
+      cx.scale(1, .35 + .65 * sq);
+      const gr = cx.createLinearGradient(-p.s, -p.s, p.s, p.s);
+      gr.addColorStop(0, "#fff"); gr.addColorStop(.35, pal[p.c]); gr.addColorStop(1, "rgba(0,0,0,.6)");
+      cx.fillStyle = gr;
+      cx.beginPath(); cx.moveTo(0, -p.s); cx.lineTo(p.s * .9, p.s * .7); cx.lineTo(-p.s * .9, p.s * .7); cx.closePath(); cx.fill();
+      cx.restore();
+    }
+    boost *= .96;
+    requestAnimationFrame(draw);
+  }
+
+  // ---------- full-screen cinematics: by day the wand awakens or summons the featured food, at night the neon storm ----------
+  const cine = document.getElementById("cine"), cineV = document.getElementById("cv"), cineCard = document.getElementById("cineCard");
+  const SUMMON = { wand_burger: "cine_summon_burger", wand_waffle: "cine_summon_waffle", wand_wrap: "cine_summon_wrap",
+                   fox_burger: "cine_summon_burger", fox_waffle: "cine_summon_waffle", fox_wrap: "cine_summon_wrap" };
+  let cineN = 0, cineBusy = false;
+  function playCinematic() {
+    if (cineBusy) return;
+    const promos = (DATA.promos || []).filter(p => p.price !== null && p.price !== "");
+    let name, promo = null;
+    if (night()) name = "cine_neon_night";
+    else if (cineN++ % 2 === 0) name = "cine_awakening_day";
+    else { const summonable = promos.filter(p => SUMMON[p.video]);       // rotate through the promos that have a summon clip
+           promo = summonable.length ? summonable[(cineN >> 1) % summonable.length] : null;
+           name = promo ? SUMMON[promo.video] : "cine_awakening_day"; }
+    cineBusy = true;
+    const done = () => { cine.classList.remove("on"); cineCard.classList.remove("on"); setTimeout(() => { cineBusy = false; burst(); }, 800); };
+    cineCard.classList.remove("on");
+    cineCard.innerHTML = promo ? `<h4>${esc(promo.title)}</h4><div class="price">${esc(promo.price)}<small>${esc(DATA.currency || "ден")}</small></div>` : "";
+    cineV.onended = done; cineV.onerror = done;
+    cineV.ontimeupdate = () => { if (promo && cineV.currentTime > cineV.duration - 3.6) cineCard.classList.add("on"); };
+    cineV.src = V(name);
+    cineV.play().then(() => cine.classList.add("on")).catch(done);
+  }
+  const cineMin = Number(q.get("cine") ?? DATA.cinematicMinutes ?? 2);   // &cine=0.5 for testing, 0 = off
+  if (cineMin > 0) setTimeout(() => { playCinematic(); setInterval(playCinematic, cineMin * 60000); },
+                              (SCREEN === 2 ? cineMin * 30000 : 0) + 20000);   // screen 2 runs half an interval later
+
+  // ---------- anti burn-in: nudge the whole picture a few pixels every 3 minutes ----------
+  let shift = 0;
+  setInterval(() => { shift = (shift + 1) % 4; const d = [[0, 0], [4, 3], [-3, 4], [3, -4]][shift];
+    stage.style.marginLeft = d[0] + "px"; stage.style.marginTop = d[1] + "px"; }, 180000);
+
+  applyMode(); render(); showPromo(); draw(); loadSheet();
+  setInterval(showPromo, 10000);
+  setInterval(applyMode, 60000);
+  setInterval(loadSheet, (DATA.refreshMinutes || 5) * 60000);
+  // when hosted online, reload periodically so edited menu-data.js is picked up
+  if (location.protocol.startsWith("http")) setInterval(() => navigator.onLine && location.reload(), 30 * 60000);
+})();
+</script>
+</body>
+</html>
