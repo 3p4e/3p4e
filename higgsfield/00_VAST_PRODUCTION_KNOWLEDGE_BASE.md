@@ -586,9 +586,9 @@ were churned and ~$4.4 burned on this misdiagnosis.
 
 ---
 
-## §19 THE 100-CLIP START-FRAME-ONLY MODEL (all keyframes = start frames) — director-authored (2026-11-11)
+## §19 THE N-CLIP START-FRAME-ONLY MODEL (all keyframes = start frames; N = keyframe count) — director-authored (2026-11-11)
 
-**The principle.** Render 100 keyframes (50 shots × `kf_NN_start` + `kf_NN_end`). Run **ALL 100 as individual START frames → 100 clips**. The 50 END keyframes are NOT discarded — each is the start of its own continuation clip. This REPLACES the start→end (FLF) pair model wherever the end-frame lock is unreliable or the model is start-image-only.
+**The principle.** Render N keyframes for the storyboard (typically 2 per shot: `kf_NN_start` + `kf_NN_end`; N = 2 × shot count, any keyframe set works). Run **ALL N as individual START frames → N clips**. The END keyframes are NOT discarded — each is the start of its own continuation clip. **N is NOT a fixed number — it follows the shot list** (a 23-shot storyboard → 46 keyframes → 46 clips; the current Hollow Bloom board is 50 shots → 100 keyframes → 100 clips). This REPLACES the start→end (FLF) pair model wherever the end-frame lock is unreliable or the model is start-image-only.
 
 **Why it wins.**
 - Kills the end-lock failure. Wan-FLF measured corr-to-end collapsing to ~0 at f120; LTX-2.3 / K6 / SkyReels-V3 / Mochi-1 are start-image-only by spec. No end frame to reach = no end-lock problem.

@@ -82,7 +82,7 @@ Zero GPU. ~30-45 min of authoring.
 - checksums: media/dhpf_master_sheets/SHA256SUMS.txt
 These are the fused master assets every keyframe/clip references (§21.3).
 
-## THE 100-CLIP START-FRAME-ONLY MODEL (all keyframes = start frames)
+## THE N-CLIP START-FRAME-ONLY MODEL (all keyframes = start frames; N = keyframe count)
 
 > Director-authored strategy (2026-11-11), generator-agnostic. Replaces the
 > start->end (first-last-frame) pair model wherever the end-frame lock is
@@ -90,11 +90,14 @@ These are the fused master assets every keyframe/clip references (§21.3).
 > start-image-only (LTX-2.3 I2V, K6, SkyReels-V3 R2V, Mochi-1 — all accept
 > ONE start image, no end frame).
 
-**THE PRINCIPLE** — every keyframe is a START frame. We render 100 keyframes
-(50 shots x `kf_NN_start` + `kf_NN_end`). Instead of consuming them as 50
-start->end PAIRS inside the model (which needs a reliable end-lock), we run
-**ALL 100 as individual START frames** -> **100 clips**. The 50 END keyframes
-are NOT discarded — each is the start of its own continuation clip.
+**THE PRINCIPLE** — every keyframe is a START frame. Render N keyframes for the
+storyboard (typically 2 per shot: `kf_NN_start` + `kf_NN_end`; N = 2 × shot
+count, but any keyframe set works). Instead of consuming them as start->end
+PAIRS inside the model (which needs a reliable end-lock), run **ALL N as
+individual START frames -> N clips**. N is NOT fixed — it follows the shot list
+(a 23-shot storyboard -> 46 keyframes -> 46 clips; the current Hollow Bloom board
+is 50 shots -> 100 keyframes -> 100 clips). The END keyframes are NOT discarded
+— each is the start of its own continuation clip.
 
 **WHY**
 - Kills the end-lock failure. Wan-FLF measured corr-to-end collapsing to ~0
