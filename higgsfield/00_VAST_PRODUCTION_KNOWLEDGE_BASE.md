@@ -559,3 +559,27 @@ Hard rules:
 
 Live balance must be verified with the vast.ai API before the next spend
 decision; do not quote this table as current.
+
+---
+
+## §18 ALWAYS rent with the onstart SSH-key-injection script — and let the boot finish (2026-11-11)
+
+**Rule.** Every rental MUST be made with a `rent_k6.py`-style **`onstart` script
+that injects the SSH public key directly into the box** at boot:
+`echo '<PUBKEY>' > /root/.ssh/authorized_keys` + enable
+`PermitRootLogin yes` + `PubkeyAuthentication yes` + restart sshd. This
+**bypasses the Vast account SSH gateway entirely** — the box gets the key
+locally, so SSH works regardless of gateway key-provisioning issues.
+
+**Why.** On 2026-11-11 a run of fresh rentals all returned
+"Connection closed" on SSH. The key WAS registered and correct. Root cause was
+NOT an outage: the boxes were simply **still booting** (the `onstart` script
+had not finished installing the key yet), and the boxes were **destroyed after
+only ~2 minutes / 6-8 SSH attempts** — before `onstart` completed. ~6 boxes
+were churned and ~$4.4 burned on this misdiagnosis.
+
+**Standing practice.**
+1. Rent via `tools/vast/rent_k6.py` (or replicate its `onstart` body) — never a bare rental that relies on gateway key propagation.
+2. **Let the box boot.** `rent_k6.py` self-waits for `SSH_OK` (its log shows the handshake). Do NOT destroy a box on early "Connection closed" — that is the normal mid-boot state. Wait the full ~3-4 minutes.
+3. Only destroy a box after `SSH_OK` was reached AND a real fault is confirmed, or after a genuinely long (≥10 min) unreachable window.
+4. "The user said the key is fine" is a signal to re-examine the boot/patience assumption, not to re-explain key registration.

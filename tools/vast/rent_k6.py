@@ -33,13 +33,15 @@ q = {"num_gpus": {"eq": 1}, "rentable": {"eq": True}, "rented": {"eq": False},
      "reliability2": {"gte": 0.95}, "type": "ondemand", "limit": 300,
      "order": [["dph_total", "asc"]]}
 offers = req("POST", "/bundles/", q).get("offers", [])
+BROKEN_HOSTS = {"32.196.117.67"}
 bad = {"Tesla V100", "Q RTX 8000", "CMP 170HX", "Titan RTX", "Tesla P40", "Tesla P100"}
 c = [x for x in offers
      if x["dph_total"] <= MAXPRICE and x["gpu_name"] not in bad
      and (x.get("cpu_ram") or 0) / 1024 >= 32
      and (x.get("cpu_cores_effective") or 0) >= 8
      and (x.get("inet_down") or 0) >= 2000
-     and (x.get("total_flops") or 0) >= 30]
+     and (x.get("total_flops") or 0) >= 30
+     and str(x.get("ssh_host") or x.get("public_ipaddr") or "") not in BROKEN_HOSTS]
 for x in c[:8]:
     print(f"cand {x['id']} {x['gpu_name']} {x['gpu_ram']/1024:.0f}GB ${x['dph_total']:.3f}/h "
           f"rel={x.get('reliability2'):.2f} down={int(x.get('inet_down') or 0)}Mbps {x.get('geolocation')}")
