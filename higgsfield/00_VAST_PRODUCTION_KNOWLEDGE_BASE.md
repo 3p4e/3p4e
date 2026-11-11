@@ -611,7 +611,7 @@ Edit = concat clip_001..clip_100 in order. No in-prompt transition; the cut IS t
 
 **Model routing (proven ledger).**
 - Wan-FLF: only native FLF option; run START-ONLY under this model until the end-lock is proven fixed (16-step untried).
-- LTX-2.3 22B distilled: start-only native; renders via official `ltx_pipelines.distilled` (38 spec). Nanobind-native-crash on some box classes (42 note) — verify on the actual box.
+- LTX-2.3 22B distilled: start-only native; renders via official `ltx_pipelines.distilled` (38 spec). **NOT dead — the 2026-11-11 "dead" verdict (42) is RETRACTED.** The nanobind crash was a torch-pin mismatch (fix = the repo's own `uv sync`, never hand-pip torch); the grey-mush was ComfyUI's half-loaded fp8 Gemma (fix = FULL `gemma-3-12b-it` dir). The official route rendered user-rated top-tier. ~2-3 min/clip on 48GB, no offload — the fast high-quality lane.
 - K6 / SkyReels-V3 / Mochi-1: start-only by spec.
 
 ---

@@ -154,6 +154,7 @@ start-image model; only the render command differs per model.
 - Wan-FLF: the ONLY native first-last-frame option; run START-ONLY (this model)
   until/unless the end-lock is proven fixed (16-step untried).
 - LTX-2.3 22B distilled: start-only native; renders via the official
-  ltx_pipelines.distilled (38 spec). NOTE: nanobind-native-crash on some rented
-  box classes (42 note) — verify on the actual box before a batch.
+  ltx_pipelines.distilled (38 spec). **NOT dead — the 42 "dead" verdict is RETRACTED**
+  (torch-pin fix = the repo's own `uv sync`; grey-mush fix = FULL `gemma-3-12b-it` dir).
+  The official route rendered user-rated top-tier; ~2-3 min/clip on 48GB, no offload.
 - K6 / SkyReels-V3 / Mochi-1: start-only by spec.
