@@ -583,3 +583,47 @@ were churned and ~$4.4 burned on this misdiagnosis.
 2. **Let the box boot.** `rent_k6.py` self-waits for `SSH_OK` (its log shows the handshake). Do NOT destroy a box on early "Connection closed" — that is the normal mid-boot state. Wait the full ~3-4 minutes.
 3. Only destroy a box after `SSH_OK` was reached AND a real fault is confirmed, or after a genuinely long (≥10 min) unreachable window.
 4. "The user said the key is fine" is a signal to re-examine the boot/patience assumption, not to re-explain key registration.
+
+---
+
+## §19 THE 100-CLIP START-FRAME-ONLY MODEL (all keyframes = start frames) — director-authored (2026-11-11)
+
+**The principle.** Render 100 keyframes (50 shots × `kf_NN_start` + `kf_NN_end`). Run **ALL 100 as individual START frames → 100 clips**. The 50 END keyframes are NOT discarded — each is the start of its own continuation clip. This REPLACES the start→end (FLF) pair model wherever the end-frame lock is unreliable or the model is start-image-only.
+
+**Why it wins.**
+- Kills the end-lock failure. Wan-FLF measured corr-to-end collapsing to ~0 at f120; LTX-2.3 / K6 / SkyReels-V3 / Mochi-1 are start-image-only by spec. No end frame to reach = no end-lock problem.
+- Uses every rendered keyframe (the 50 end-frames cost the same as the starts; discarding them wastes half the identity-locked art).
+- Cuts carry continuity. Continuity lives in the KEYFRAME CHAIN (`kf_NN_end` matches `kf_(N+1)_start`, authored as a board), NOT in any single clip reaching a target. A hard cut from clip N (anchored at `kf_NN_end`) to clip N+1 (anchored at `kf_(N+1)_start`) reads as continuous motion because the keyframes already match.
+
+**The clip chain.**
+```
+clip_001  start=kf_01_start.png   → continues SHOT 01's opening pose
+clip_002  start=kf_01_end.png     → continues SHOT 01's end (now the start)
+clip_003  start=kf_02_start.png   → SHOT 02 opens ...
+clip_004  start=kf_02_end.png     → ... and continues
+  ... 100 clips, one per keyframe, in keyframe order.
+```
+Edit = concat clip_001..clip_100 in order. No in-prompt transition; the cut IS the transition.
+
+**The prompt (one per keyframe, ~400-850 chars)** — see `39_CORRECTED_PROMPT_STANDARD.md` (100-CLIP section) + `tools/vast/jobfiles/ltx_jobs_100.json`. Rules: ONE present-tense narrative paragraph; CONTINUATION not scene-change (extend the frozen moment, never teleport); MOTION FIRST; IDENTITY STATED ONCE (restatement = morph); HOLD-ANCHORS for carried props (twin crossbows, greatsword) as a held subject, never a guard/clamp; NO ENDPOINT FRAME (describe the motion's end in words); motion calibrated to the shot (gentle for hero closeup, thrash for boss).
+
+**Job file.** `tools/vast/jobfiles/ltx_jobs_100.json` — 100 continuation prompts, one per keyframe, generator-agnostic. The SAME prompts drive Wan-FLF (start-only), LTX-2.3, K6, or any start-image model; only the render command differs.
+
+**Model routing (proven ledger).**
+- Wan-FLF: only native FLF option; run START-ONLY under this model until the end-lock is proven fixed (16-step untried).
+- LTX-2.3 22B distilled: start-only native; renders via official `ltx_pipelines.distilled` (38 spec). Nanobind-native-crash on some box classes (42 note) — verify on the actual box.
+- K6 / SkyReels-V3 / Mochi-1: start-only by spec.
+
+---
+
+## §20 USE THE TEMPLATE'S PRE-INSTALLED COMFYUI — never pip-reinstall torch (2026-11-11)
+
+**Rule.** Vast's `vastai/comfy_v0.44.0-*` template images ship **ComfyUI + a working torch already installed** (in the image or a venv). On rental, FIND and USE that existing install. Do NOT clone a fresh ComfyUI and `pip install -r requirements.txt` into the system python — that reinstalls torch (~35 min stuck, several GB) and is the single biggest setup-time/cost waste observed.
+
+**Why.** On 2026-11-11 a box burned ~$6.9 (2.3× a $3 cap) largely because the setup cloned a fresh ComfyUI and a `pip install torch` into the system env hung for ~35 min. The template's torch was already there. The redundant reinstall was the whole stall.
+
+**Standing practice.**
+1. Rent a ComfyUI template image (`vastai/comfy_v0.44.0-*`).
+2. On SSH, look for the existing install first: `ls -d /opt/ComfyUI /workspace/ComfyUI /ComfyUI /opt/workspace-internal/ComfyUI`, and check `python -c 'import torch; print(torch.__version__)'` in any venv. USE IT.
+3. Only the MODEL WEIGHTS + the model's LoRA need downloading (~23 GB, ~5 min at 4.7 Gbps) — not the framework.
+4. If a dependency is genuinely missing, install just that package (pin torch to the template's existing version), never a blanket requirements reinstall.
