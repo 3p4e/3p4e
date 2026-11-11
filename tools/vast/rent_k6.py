@@ -33,7 +33,7 @@ q = {"num_gpus": {"eq": 1}, "rentable": {"eq": True}, "rented": {"eq": False},
      "reliability2": {"gte": 0.95}, "type": "ondemand", "limit": 300,
      "order": [["dph_total", "asc"]]}
 offers = req("POST", "/bundles/", q).get("offers", [])
-BROKEN_HOSTS = {"32.196.117.67"}
+BROKEN_HOSTS = {"32.196.117.67", "3.87.100.167", "23.158.136.85", "32.200.23.213", "54.82.210.84"}
 bad = {"Tesla V100", "Q RTX 8000", "CMP 170HX", "Titan RTX", "Tesla P40", "Tesla P100"}
 c = [x for x in offers
      if x["dph_total"] <= MAXPRICE and x["gpu_name"] not in bad
@@ -50,11 +50,13 @@ if not c:
 
 x = c[0]
 PUB = open("/root/.ssh/vast_karsus.pub").read().strip()
+PUB2 = open("/root/.ssh/vast_rsa.pub").read().strip()
 onstart = (
     "#!/bin/bash\n"
     "mkdir -p /root/.ssh /workspace/out /workspace/stills /workspace/hf\n"
     "chmod 700 /root/.ssh\n"
     f"echo '{PUB}' > /root/.ssh/authorized_keys\n"
+    f"echo '{PUB2}' >> /root/.ssh/authorized_keys\n"
     "chmod 600 /root/.ssh/authorized_keys\n"
     "sed -i 's/^#*PermitRootLogin.*/PermitRootLogin yes/' /etc/ssh/sshd_config 2>/dev/null\n"
     "sed -i 's/^#*PubkeyAuthentication.*/PubkeyAuthentication yes/' /etc/ssh/sshd_config 2>/dev/null\n"
