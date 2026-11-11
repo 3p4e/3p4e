@@ -1,0 +1,2586 @@
+{
+  "num": "25",
+  "title_mk": "Артур и Екскалибур",
+  "title_en": "Arthur and Excalibur",
+  "genre": "Брешонска легенда · епска акција",
+  "logline": "Младиот штитоносец Артур го извлекува волшебниот меч Екскалибур од карпата и станува крал, враќајќи го мирот во кралството.",
+  "spec": {
+    "aspect": "16:9",
+    "resolution": "1216x704",
+    "fps": 24,
+    "model": "model-agnostic (chosen at generation)",
+    "style": "photoreal",
+    "flf": true,
+    "language": "mk",
+    "shot_floor": 40,
+    "shot_max": 60,
+    "seed_policy": "fixed-per-shot (same seed → reproducible shot; re-roll per shot id)",
+    "style_anchor": [
+      "Diablo 2 cinematic",
+      "World of Warcraft cinematic",
+      "StarCraft cinematic"
+    ],
+    "negative_prompt": "deformed, extra limbs, morphing, watermark, text, static frame, blurry, low quality, cropped head, cut-off face",
+    "frames": 121,
+    "frames_fallback": 81,
+    "routes": [
+      {
+        "model": "Wan2.1-FLF2V-14B-720P",
+        "input": "start+end native (run START-ONLY)",
+        "status": "WORKING (lead for 14B quality)"
+      },
+      {
+        "model": "Kandinsky 6.0 Lite/Pro",
+        "input": "start-image-only",
+        "status": "WORKING (Pro-distill untested at scale)"
+      },
+      {
+        "model": "SkyReels-V3 R2V-14B",
+        "input": "start-image-only",
+        "status": "WORKING (fallback)"
+      },
+      {
+        "model": "LTX-Video 2B v0.9.5",
+        "input": "start-image-only",
+        "status": "WORKING (small/fast, low ceiling)"
+      },
+      {
+        "model": "Mochi-1",
+        "input": "start-image-only",
+        "status": "untested here"
+      },
+      {
+        "model": "LTX-2.3 22B distilled",
+        "input": "start-image-only",
+        "status": "DEAD (nanobind native-crash, 42 note)"
+      }
+    ],
+    "model_note": "Model chosen per story at generation (43 §4). Keyframes + continuation prompts are generator-agnostic; only the render command differs per model."
+  },
+  "cast": [
+    {
+      "role": "Артур / Arthur",
+      "trait": "Млад штитоносец; срдечен, вреден и храбар момче",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Мерлин / Merlin",
+      "trait": "Стар, мудар волшебник со вештерски оган",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Кај / Kay",
+      "trait": "Млад благородник, син на господарот на имотот",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Крал Утер / King Uther",
+      "trait": "Стар крал чија смрт го покренува судирот",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Благородници / Nobles",
+      "trait": "Моќници кои се борат за тронот",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    }
+  ],
+  "acts": [
+    {
+      "id": "act1",
+      "num": "Act I",
+      "title": "Заложба",
+      "color": "#2dd4bf",
+      "pct": 30,
+      "synopsis": "Младиот Артур расте под закрила на волшебникот Мерлин, потоа оди да живее кај благородничко семејство, каде станува вреден штитоносец и се спријателува со Кај.",
+      "shots": [
+        {
+          "id": "S01",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "realm_env_A5_prop"
+          ],
+          "ref_scope": "image1: the misty medieval Breton realm of green hills and stone castles under grey sky - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "crane down over the misty Breton realm at dawn"
+            ],
+            [
+              1.8,
+              3.5,
+              "reveal a lone stone tower with a warm window on a hilltop"
+            ]
+          ],
+          "narration_mk": "Далеку, во древна земја под сиво небо, живееше момче чие име ќе ја промени судбината на кралството.",
+          "dialogue_mk": "",
+          "kf_first": "Aerial high-angle wide establishing shot of a misty medieval Breton realm at dawn, stone castles on green hills, torn clouds, photoreal Diablo 2 cinematic grade, 1216x704",
+          "kf_last": "Crane-down toward a lone stone tower with a warm window glowing on a hilltop, wind stirring grass",
+          "continuity": "Cold dawn palette, mist, pre-industrial medieval land",
+          "motion": "slow crane-down toward the tower",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: aerial high-angle wide establishing shot of a misty medieval Breton realm at dawn, stone castles on green hills, torn clouds, photoreal Diablo 2 cinematic grade then crane down over the misty Breton realm at dawn, then reveal a lone stone tower with a warm window on a hilltop the camera crane-down settling into crane-down toward a lone stone tower with a warm window glowing on a hilltop, wind stirring grass continuity held: Cold dawn palette, mist, pre-industrial medieval land",
+          "image_prompt_start": "photoreal cinematic: wide establishing shot of a misty medieval Breton realm at dawn, stone castles on green hills, torn clouds, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: toward a lone stone tower with a warm window glowing on a hilltop, wind stirring grass.",
+          "video_prompt_start": "Crane down over the misty Breton realm at dawn. reveal a lone stone tower with a warm window on a hilltop. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Cold dawn palette, mist, pre-industrial medieval land.",
+          "video_prompt_end": "Crane down over the misty Breton realm at dawn. reveal a lone stone tower with a warm window on a hilltop. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Cold dawn palette, mist, pre-industrial medieval land.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S02",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "workshop_env_A1_prop"
+          ],
+          "ref_scope": "image1: Merlin's cluttered wizard workshop lit by candles and amber firelight, shelves of books and vials - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "wide of the candlelit wizard workshop, shelves stocked"
+            ],
+            [
+              1.5,
+              3.0,
+              "amber light settles over the quiet room"
+            ]
+          ],
+          "narration_mk": "Во работилницата на волшебникот Мерлин, секој ден беше чудо.",
+          "dialogue_mk": "",
+          "kf_first": "Wide interior of Merlin's cluttered wizard workshop, wooden shelves of books, vials and candles, warm amber light, photoreal World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Light settles on a small boy standing among the shelves, eyes wide with wonder",
+          "continuity": "Warm amber candlelight; tower interior from S01",
+          "motion": "gentle light drift; dust motes floating",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide interior of Merlin's cluttered wizard workshop, wooden shelves of books, vials and candles, warm amber light, photoreal World of Warcraft cinematic grade then wide of the candlelit wizard workshop, shelves stocked, then amber light settles over the quiet room the camera static settling into light settles on a small boy standing among the shelves, eyes wide with wonder continuity held: Warm amber candlelight; tower interior from S01",
+          "image_prompt_start": "photoreal cinematic: interior of Merlin's cluttered wizard workshop, wooden shelves of books, vials and candles, warm amber light.",
+          "image_prompt_end": "photoreal cinematic: Light on a small boy standing among the shelves, eyes wide with wonder.",
+          "video_prompt_start": "Wide of the candlelit wizard workshop, shelves stocked. amber light settles over the quiet room. The camera static. The beat resolves into the next matching frame. Continuity held: Warm amber candlelight; tower interior from S01.",
+          "video_prompt_end": "Wide of the candlelit wizard workshop, shelves stocked. amber light settles over the quiet room. The camera static. The beat resolves into the next matching frame. Continuity held: Warm amber candlelight; tower interior from S01.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S03",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "arthur_A1_fused",
+            "merlin_A2_fused",
+            "workshop_env_A1_prop"
+          ],
+          "ref_scope": "image1: the fused master of Arthur - a young squire, warm-hearted and brave, with tousled hair in simple linen clothes - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Merlin - an old wise wizard with a long white beard, robes and a staff - 100% identical; studio bg/pose/light NOT used; image3: Merlin's cluttered wizard workshop lit by candles and amber firelight, shelves of books and vials - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "medium of young Arthur standing before Merlin among the vials"
+            ],
+            [
+              1.8,
+              3.5,
+              "Merlin gestures warmly as he speaks to the boy"
+            ]
+          ],
+          "narration_mk": "Младиот Артур остана со Мерлин неколку години.",
+          "dialogue_mk": "Мерлин: „Дојди, момче. Ќе те научам тајните на светот.“",
+          "kf_first": "Medium shot of young Arthur in simple peasant clothes entering the workshop, Merlin the old bearded wizard beckoning from his desk",
+          "kf_last": "Push-in on Arthur's curious young face lit by candlelight",
+          "continuity": "Same amber workshop; Arthur's simple tunic; Merlin's long beard and staff",
+          "motion": "slow push-in on Arthur's face",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium shot of young Arthur in simple peasant clothes entering the workshop, Merlin the old bearded wizard beckoning from his desk Arthur slender, hero, in linen tunic, cloak, carrying excalibur, wreathed in golden glow Merlin slender, wizard, in robes, cloak, carrying staff, book, wreathed in magic sparkles, teal glow then medium of young Arthur standing before Merlin among the vials, then Merlin gestures warmly as he speaks to the boy the camera push-in settling into push-in on Arthur's curious young face lit by candlelight with a low radiant hum, arcane energy crackles a voice speaks in Macedonian: \"Мерлин: „Дојди, момче. Ќе те научам тајните на светот.“\" continuity held: Same amber workshop; Arthur's simple tunic; Merlin's long beard and staff",
+          "image_prompt_start": "photoreal cinematic: shot of young Arthur in simple peasant clothes entering the workshop, Merlin the old bearded wizard beckoning from his desk.",
+          "image_prompt_end": "photoreal cinematic: on Arthur's curious young face lit by candlelight.",
+          "video_prompt_start": "Medium of young Arthur standing before Merlin among the vials. Merlin gestures warmly as he speaks to the boy. The camera push-in. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Мерлин: „Дојди, момче. Ќе те научам тајните на светот.“\" Continuity held: Same amber workshop; Arthur's simple tunic; Merlin's long beard and staff.",
+          "video_prompt_end": "Medium of young Arthur standing before Merlin among the vials. Merlin gestures warmly as he speaks to the boy. The camera push-in. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Мерлин: „Дојди, момче. Ќе те научам тајните на светот.“\" Continuity held: Same amber workshop; Arthur's simple tunic; Merlin's long beard and staff.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S04",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "workshop_env_A1_prop"
+          ],
+          "ref_scope": "image1: Merlin's cluttered wizard workshop lit by candles and amber firelight, shelves of books and vials - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "macro of trick sparkles and vials in the workshop"
+            ],
+            [
+              1.5,
+              3.0,
+              "light glints as the enchanted objects settle"
+            ]
+          ],
+          "narration_mk": "Во таа работилница научи неверојатни волшебнички трикови.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of child's hands carefully pouring glowing blue liquid into a brass vial, sparks rising",
+          "kf_last": "The potion swirls and glows brighter, reflecting in the glass",
+          "continuity": "Workshop props from S03; tiny hands, warm key light",
+          "motion": "liquid swirling, sparks rising",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of child's hands carefully pouring glowing blue liquid into a brass vial, sparks rising then macro of trick sparkles and vials in the workshop, then light glints as the enchanted objects settle the camera static settling into the potion swirls and glows brighter, reflecting in the glass continuity held: Workshop props from S03; tiny hands, warm key light",
+          "image_prompt_start": "photoreal cinematic: Macro insert of child's hands carefully pouring glowing blue liquid into a brass vial, sparks rising.",
+          "image_prompt_end": "photoreal cinematic: The potion swirls and glows brighter, reflecting in the glass.",
+          "video_prompt_start": "Macro of trick sparkles and vials in the workshop. light glints as the enchanted objects settle. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Workshop props from S03; tiny hands, warm key light.",
+          "video_prompt_end": "Macro of trick sparkles and vials in the workshop. light glints as the enchanted objects settle. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Workshop props from S03; tiny hands, warm key light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S05",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "arthur_A1_fused",
+            "merlin_A2_fused",
+            "workshop_env_A1_prop"
+          ],
+          "ref_scope": "image1: the fused master of Arthur - a young squire, warm-hearted and brave, with tousled hair in simple linen clothes - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Merlin - an old wise wizard with a long white beard, robes and a staff - 100% identical; studio bg/pose/light NOT used; image3: Merlin's cluttered wizard workshop lit by candles and amber firelight, shelves of books and vials - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "medium of Arthur fumbling a trick while Merlin watches"
+            ],
+            [
+              1.8,
+              3.5,
+              "Merlin steps in and gently sets it right"
+            ]
+          ],
+          "narration_mk": "Понекогаш грешеше поради младоста, но Мерлин секогаш беше таму да поправи сѐ.",
+          "dialogue_mk": "",
+          "kf_first": "Medium shot of a small magical mishap — a puff of green smoke bursting from a cauldron, Arthur stepping back startled",
+          "kf_last": "Merlin calmly waves his staff, the smoke folding back into order",
+          "continuity": "Workshop set; Arthur now slightly older; Merlin's staff glowing",
+          "motion": "smoke burst, then folding back",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium shot of a small magical mishap — a puff of green smoke bursting from a cauldron, Arthur stepping back startled Arthur slender, hero, in linen tunic, cloak, carrying excalibur, wreathed in golden glow Merlin slender, wizard, in robes, cloak, carrying staff, book, wreathed in magic sparkles, teal glow then medium of Arthur fumbling a trick while Merlin watches, then Merlin steps in and gently sets it right the camera static settling into merlin calmly waves his staff, the smoke folding back into order with a low radiant hum, arcane energy crackles continuity held: Workshop set; Arthur now slightly older; Merlin's staff glowing",
+          "image_prompt_start": "photoreal cinematic: shot of a small magical mishap — a puff of green smoke bursting from a cauldron, Arthur stepping back startled.",
+          "image_prompt_end": "photoreal cinematic: Merlin calmly waves his staff, the smoke folding back into order.",
+          "video_prompt_start": "Medium of Arthur fumbling a trick while Merlin watches. Merlin steps in and gently sets it right. The camera static. The beat resolves into the next matching frame. Continuity held: Workshop set; Arthur now slightly older; Merlin's staff glowing.",
+          "video_prompt_end": "Medium of Arthur fumbling a trick while Merlin watches. Merlin steps in and gently sets it right. The camera static. The beat resolves into the next matching frame. Continuity held: Workshop set; Arthur now slightly older; Merlin's staff glowing.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S06",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "arthur_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Arthur - a young squire, warm-hearted and brave, with tousled hair in simple linen clothes - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "close on young Arthur, growing taller and sharper"
+            ],
+            [
+              1.8,
+              3.5,
+              "push-in as his features firm into a strong, clever boy"
+            ]
+          ],
+          "narration_mk": "Годините минуваа, а момчето растеше во силно и умно момче.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of young Arthur's face in candlelight, subtly older, jaw set with quiet confidence",
+          "kf_last": "Push-in as candle flames gleam in his steady eyes",
+          "continuity": "Arthur's face aging; consistent candlelight from workshop",
+          "motion": "slow push-in on the eyes; flicker of flame",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of young Arthur's face in candlelight, subtly older, jaw set with quiet confidence Arthur slender, hero, in linen tunic, cloak, carrying excalibur, wreathed in golden glow then close on young Arthur, growing taller and sharper, then push-in as his features firm into a strong, clever boy settling into push-in as candle flames gleam in his steady eyes with a low radiant hum continuity held: Arthur's face aging; consistent candlelight from workshop",
+          "image_prompt_start": "photoreal cinematic: of young Arthur's face in candlelight, subtly older, jaw set with quiet confidence.",
+          "image_prompt_end": "photoreal cinematic: as candle flames gleam in his steady eyes.",
+          "video_prompt_start": "Close on young Arthur, growing taller and sharper. push-in as his features firm into a strong, clever boy. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Arthur's face aging; consistent candlelight from workshop.",
+          "video_prompt_end": "Close on young Arthur, growing taller and sharper. push-in as his features firm into a strong, clever boy. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Arthur's face aging; consistent candlelight from workshop.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S07",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "arthur_A1_fused",
+            "merlin_A2_fused",
+            "workshop_env_A1_prop"
+          ],
+          "ref_scope": "image1: the fused master of Arthur - a young squire, warm-hearted and brave, with tousled hair in simple linen clothes - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Merlin - an old wise wizard with a long white beard, robes and a staff - 100% identical; studio bg/pose/light NOT used; image3: Merlin's cluttered wizard workshop lit by candles and amber firelight, shelves of books and vials - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "low-angle medium of Merlin speaking gravely to the boy"
+            ],
+            [
+              1.8,
+              3.5,
+              "Arthur listens, resolve settling in his eyes"
+            ]
+          ],
+          "narration_mk": "Еден ден, Мерлин му рече дека е време да оди понатаму.",
+          "dialogue_mk": "Мерлин: „Време ти е да живееш со благородничко семејство и да научиш како да бидеш доблестен крал.“",
+          "kf_first": "Low-angle medium of Merlin standing over a now-teenage Arthur in the doorway, his robes lit from behind",
+          "kf_last": "Merlin's hand resting on Arthur's shoulder, both framed by morning light",
+          "continuity": "Teenage Arthur; Merlin's robes and staff; doorway into daylight",
+          "motion": "morning light strengthening",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Merlin standing over a now-teenage Arthur in the doorway, his robes lit from behind Arthur slender, hero, in linen tunic, cloak, carrying excalibur, wreathed in golden glow Merlin slender, wizard, in robes, cloak, carrying staff, book, wreathed in magic sparkles, teal glow then low-angle medium of Merlin speaking gravely to the boy, then Arthur listens, resolve settling in his eyes the camera static settling into merlin's hand resting on Arthur's shoulder, both framed by morning light with a low radiant hum, arcane energy crackles a voice speaks in Macedonian: \"Мерлин: „Време ти е да живееш со благородничко семејство и да научиш како да бидеш доблестен крал.“\" continuity held: Teenage Arthur; Merlin's robes and staff; doorway into daylight",
+          "image_prompt_start": "photoreal cinematic: medium of Merlin standing over a now-teenage Arthur in the doorway, his robes lit from behind.",
+          "image_prompt_end": "photoreal cinematic: Merlin's hand resting on Arthur's shoulder, both framed by morning light.",
+          "video_prompt_start": "Low-angle medium of Merlin speaking gravely to the boy. Arthur listens, resolve settling in his eyes. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Мерлин: „Време ти е да живееш со благородничко семејство и да научиш како да бидеш доблестен крал.“\" Continuity held: Teenage Arthur; Merlin's robes and staff; doorway into daylight.",
+          "video_prompt_end": "Low-angle medium of Merlin speaking gravely to the boy. Arthur listens, resolve settling in his eyes. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Мерлин: „Време ти е да живееш со благородничко семејство и да научиш како да бидеш доблестен крал.“\" Continuity held: Teenage Arthur; Merlin's robes and staff; doorway into daylight.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S08",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "arthur_A1_fused",
+            "realm_env_A5_prop"
+          ],
+          "ref_scope": "image1: the fused master of Arthur - a young squire, warm-hearted and brave, with tousled hair in simple linen clothes - 100% identical; studio bg/pose/light NOT used; image2: the misty medieval Breton realm of green hills and stone castles under grey sky - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "track of Arthur walking the road to the nobleman's estate"
+            ],
+            [
+              1.8,
+              3.5,
+              "the green realm rolls past as the manor grows near"
+            ]
+          ],
+          "narration_mk": "Така, Артур тргна да живее во домот на еден благородник.",
+          "dialogue_mk": "",
+          "kf_first": "Wide tracking shot of Arthur walking a dirt road toward a distant stone manor estate, rolling green fields",
+          "kf_last": "He passes through the manor gates, dogs barking a welcome",
+          "continuity": "Teenage Arthur traveling; daylight green estate palette",
+          "motion": "track alongside Arthur; dogs running",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide tracking shot of Arthur walking a dirt road toward a distant stone manor estate, rolling green fields Arthur slender, hero, in linen tunic, cloak, carrying excalibur, wreathed in golden glow then track of Arthur walking the road to the nobleman's estate, then the green realm rolls past as the manor grows near settling into he passes through the manor gates, dogs barking a welcome with a low radiant hum continuity held: Teenage Arthur traveling; daylight green estate palette",
+          "image_prompt_start": "photoreal cinematic: of Arthur walking a dirt road toward a distant stone manor estate, rolling green fields.",
+          "image_prompt_end": "photoreal cinematic: He passes through the manor gates, dogs barking a welcome.",
+          "video_prompt_start": "Track of Arthur walking the road to the nobleman's estate. the green realm rolls past as the manor grows near. The beat resolves into the next matching frame. Continuity held: Teenage Arthur traveling; daylight green estate palette.",
+          "video_prompt_end": "Track of Arthur walking the road to the nobleman's estate. the green realm rolls past as the manor grows near. The beat resolves into the next matching frame. Continuity held: Teenage Arthur traveling; daylight green estate palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S09",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "arthur_A1_fused",
+            "kay_A3_fused",
+            "manor_env_A2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Arthur - a young squire, warm-hearted and brave, with tousled hair in simple linen clothes - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Kay - a young nobleman, son of the lord, in fine riding clothes - 100% identical; studio bg/pose/light NOT used; image3: the nobleman's manor with warm stone walls, stables and a courtyard - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "medium of Arthur greeting Kay in the manor courtyard"
+            ],
+            [
+              1.8,
+              3.5,
+              "Kay grins and claps Arthur on the shoulder"
+            ]
+          ],
+          "narration_mk": "Таму започна да работи како штитоносец и се спријатели со Кај.",
+          "dialogue_mk": "Кај: „Јас сум Кај. Ако ќе живееш овде, ќе бидеме другари!“",
+          "kf_first": "Medium shot of Arthur meeting Kay, the lord's young son, in the estate courtyard, both smiling",
+          "kf_last": "The two clasp forearms in friendship, stable hands and armor gleaming nearby",
+          "continuity": "Manor courtyard; Arthur's squire tunic; Kay's fine clothes",
+          "motion": "hands clasping; armor glint",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium shot of Arthur meeting Kay, the lord's young son, in the estate courtyard, both smiling Arthur slender, hero, in linen tunic, cloak, carrying excalibur, wreathed in golden glow Kay lean, noble, in riding clothes, cloak, carrying armor, shield then medium of Arthur greeting Kay in the manor courtyard, then Kay grins and claps Arthur on the shoulder the camera static settling into the two clasp forearms in friendship, stable hands and armor gleaming nearby with a low radiant hum, the shield clangs a voice speaks in Macedonian: \"Кај: „Јас сум Кај. Ако ќе живееш овде, ќе бидеме другари!“\" continuity held: Manor courtyard; Arthur's squire tunic; Kay's fine clothes",
+          "image_prompt_start": "photoreal cinematic: shot of Arthur meeting Kay, the lord's young son, in the estate courtyard, both smiling.",
+          "image_prompt_end": "photoreal cinematic: The two clasp forearms in friendship, stable hands and armor gleaming nearby.",
+          "video_prompt_start": "Medium of Arthur greeting Kay in the manor courtyard. Kay grins and claps Arthur on the shoulder. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Кај: „Јас сум Кај. Ако ќе живееш овде, ќе бидеме другари!“\" Continuity held: Manor courtyard; Arthur's squire tunic; Kay's fine clothes.",
+          "video_prompt_end": "Medium of Arthur greeting Kay in the manor courtyard. Kay grins and claps Arthur on the shoulder. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Кај: „Јас сум Кај. Ако ќе живееш овде, ќе бидеме другари!“\" Continuity held: Manor courtyard; Arthur's squire tunic; Kay's fine clothes.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S10",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "arthur_A1_fused",
+            "manor_env_A2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Arthur - a young squire, warm-hearted and brave, with tousled hair in simple linen clothes - 100% identical; studio bg/pose/light NOT used; image2: the nobleman's manor with warm stone walls, stables and a courtyard - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "track of Arthur tending the horses in the stable"
+            ],
+            [
+              1.5,
+              3.0,
+              "he works steadily through his chores"
+            ]
+          ],
+          "narration_mk": "Артур вредно ги извршуваше сите задачи: ги тимареше коњите.",
+          "dialogue_mk": "",
+          "kf_first": "Wide shot of Arthur brushing a chestnut horse in the stable, hay dust floating in sunbeams",
+          "kf_last": "The horse nuzzles his shoulder as he finishes",
+          "continuity": "Stable interior; Arthur's squire garb; warm stable light",
+          "motion": "brushing motion; hay dust drifting",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide shot of Arthur brushing a chestnut horse in the stable, hay dust floating in sunbeams Arthur slender, hero, in linen tunic, cloak, carrying excalibur, wreathed in golden glow then track of Arthur tending the horses in the stable, then he works steadily through his chores settling into the horse nuzzles his shoulder as he finishes with a low radiant hum continuity held: Stable interior; Arthur's squire garb; warm stable light",
+          "image_prompt_start": "photoreal cinematic: shot of Arthur brushing a chestnut horse in the stable, hay dust floating in sunbeams.",
+          "image_prompt_end": "photoreal cinematic: The horse nuzzles his shoulder as he finishes.",
+          "video_prompt_start": "Track of Arthur tending the horses in the stable. he works steadily through his chores. The beat resolves into the next matching frame. Continuity held: Stable interior; Arthur's squire garb; warm stable light.",
+          "video_prompt_end": "Track of Arthur tending the horses in the stable. he works steadily through his chores. The beat resolves into the next matching frame. Continuity held: Stable interior; Arthur's squire garb; warm stable light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S11",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "manor_env_A2_prop"
+          ],
+          "ref_scope": "image1: the nobleman's manor with warm stone walls, stables and a courtyard - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "macro of armor being polished and weapons sharpened"
+            ],
+            [
+              1.5,
+              3.0,
+              "blades gleam to a mirror shine under his hands"
+            ]
+          ],
+          "narration_mk": "Го чистеше оклопот и ги остреше оружјата додека не светнеа.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of Arthur's hands polishing a steel breastplate with a cloth, revealing a bright shine",
+          "kf_last": "He runs a whetstone along a blade, sparks glinting",
+          "continuity": "Squire hands; armor of the estate; forge-like micro light",
+          "motion": "polishing circles; sparks from sharpening",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of Arthur's hands polishing a steel breastplate with a cloth, revealing a bright shine then macro of armor being polished and weapons sharpened, then blades gleam to a mirror shine under his hands the camera static settling into he runs a whetstone along a blade, sparks glinting continuity held: Squire hands; armor of the estate; forge-like micro light",
+          "image_prompt_start": "photoreal cinematic: Macro insert of Arthur's hands polishing a steel breastplate with a cloth, revealing a bright shine.",
+          "image_prompt_end": "photoreal cinematic: He a whetstone along a blade, sparks glinting.",
+          "video_prompt_start": "Macro of armor being polished and weapons sharpened. blades gleam to a mirror shine under his hands. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Squire hands; armor of the estate; forge-like micro light.",
+          "video_prompt_end": "Macro of armor being polished and weapons sharpened. blades gleam to a mirror shine under his hands. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Squire hands; armor of the estate; forge-like micro light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S12",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "arthur_A1_fused",
+            "kay_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of Arthur - a young squire, warm-hearted and brave, with tousled hair in simple linen clothes - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Kay - a young nobleman, son of the lord, in fine riding clothes - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "track of Arthur and Kay laughing together"
+            ],
+            [
+              1.5,
+              3.0,
+              "the two friends share a moment of easy play"
+            ]
+          ],
+          "narration_mk": "Сепак, тој и Кај понекогаш наоѓаа време за игра и за муабет.",
+          "dialogue_mk": "",
+          "kf_first": "Medium shot of Arthur and Kay sparring playfully with wooden swords in the courtyard, laughing",
+          "kf_last": "They pause, watching the sunset over the estate walls",
+          "continuity": "Courtyard; Arthur and Kay's friendship; evening light",
+          "motion": "playful sparring, then stillness at sunset",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium shot of Arthur and Kay sparring playfully with wooden swords in the courtyard, laughing Arthur slender, hero, in linen tunic, cloak, carrying excalibur, wreathed in golden glow Kay lean, noble, in riding clothes, cloak, carrying armor, shield then track of Arthur and Kay laughing together, then the two friends share a moment of easy play settling into they pause, watching the sunset over the estate walls with a low radiant hum, the shield clangs continuity held: Courtyard; Arthur and Kay's friendship; evening light",
+          "image_prompt_start": "photoreal cinematic: shot of Arthur and Kay sparring playfully with wooden swords in the courtyard, laughing.",
+          "image_prompt_end": "photoreal cinematic: They pause, watching the sunset over the estate walls.",
+          "video_prompt_start": "Track of Arthur and Kay laughing together. the two friends share a moment of easy play. The beat resolves into the next matching frame. Continuity held: Courtyard; Arthur and Kay's friendship; evening light.",
+          "video_prompt_end": "Track of Arthur and Kay laughing together. the two friends share a moment of easy play. The beat resolves into the next matching frame. Continuity held: Courtyard; Arthur and Kay's friendship; evening light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S13",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "arthur_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Arthur - a young squire, warm-hearted and brave, with tousled hair in simple linen clothes - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "close on Arthur as grim news reaches him"
+            ],
+            [
+              1.8,
+              3.5,
+              "push-in as his expression clouds with worry"
+            ]
+          ],
+          "narration_mk": "Но еден тажен ден, низ кралството се рашири црна вест.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of Arthur's peaceful face at rest, then a flicker of shadow crosses it",
+          "kf_last": "Push-in as his expression turns grave, hearing distant bells toll",
+          "continuity": "Arthur's face; evening turning to shadow",
+          "motion": "slow push-in; shadow crossing the face",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of Arthur's peaceful face at rest, then a flicker of shadow crosses it Arthur slender, hero, in linen tunic, cloak, carrying excalibur, wreathed in golden glow then close on Arthur as grim news reaches him, then push-in as his expression clouds with worry settling into push-in as his expression turns grave, hearing distant bells toll with a low radiant hum continuity held: Arthur's face; evening turning to shadow",
+          "image_prompt_start": "photoreal cinematic: of Arthur's peaceful face at rest, then a flicker of shadow crosses it.",
+          "image_prompt_end": "photoreal cinematic: as his expression grave, hearing distant bells toll.",
+          "video_prompt_start": "Close on Arthur as grim news reaches him. push-in as his expression clouds with worry. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Arthur's face; evening turning to shadow.",
+          "video_prompt_end": "Close on Arthur as grim news reaches him. push-in as his expression clouds with worry. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Arthur's face; evening turning to shadow.",
+          "motion_intensity": "gentle"
+        }
+      ],
+      "location_ref": "merlin_workshop_and_noble_manor",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class",
+        "screen_dir"
+      ],
+      "palette": [
+        "#1f2937",
+        "#d4af37",
+        "#2dd4bf"
+      ],
+      "light_direction": "key light from screen-left, warm candlelight of the wizard workshop softening into manor daylight",
+      "time_of_day": "dawn"
+    },
+    {
+      "id": "act2",
+      "num": "Act II",
+      "title": "Судир за тронот",
+      "color": "#f59e0b",
+      "pct": 50,
+      "synopsis": "Кралот Утер умира, а благородниците почнуваат судири за власта. На турнирот Кај го заборава мечот, па Артур го наоѓа Екскалибур во карпата и го извлекува.",
+      "shots": [
+        {
+          "id": "S14",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "uther_A4_fused",
+            "realm_env_A5_prop"
+          ],
+          "ref_scope": "image1: the fused master of King Uther - an aging king with a grey beard and royal mantle - 100% identical; studio bg/pose/light NOT used; image2: the misty medieval Breton realm of green hills and stone castles under grey sky - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "wide of the realm under a heavy sky, the old king fallen"
+            ],
+            [
+              1.5,
+              3.0,
+              "a hush spreads as word of the king's passing settles"
+            ]
+          ],
+          "narration_mk": "Кралот Утер умре, а со тоа започна немир во кралството.",
+          "dialogue_mk": "",
+          "kf_first": "Wide shot of a great castle under grey storm clouds, black banners lowered, bells sounding from the tower, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "Crows scatter from the battlements as the sky darkens",
+          "continuity": "Storm palette; the realm's castle from S01",
+          "motion": "bells ringing; crows scattering",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide shot of a great castle under grey storm clouds, black banners lowered, bells sounding from the tower, photoreal StarCraft cinematic grade then wide of the realm under a heavy sky, the old king fallen, then a hush spreads as word of the king's passing settles the camera static settling into crows scatter from the battlements as the sky darkens continuity held: Storm palette; the realm's castle from S01",
+          "image_prompt_start": "photoreal cinematic: shot of a great castle under grey storm clouds, black banners lowered, bells sounding from the tower.",
+          "image_prompt_end": "photoreal cinematic: Crows scatter from the battlements as the sky darkens.",
+          "video_prompt_start": "Wide of the realm under a heavy sky, the old king fallen. a hush spreads as word of the king's passing settles. The camera static. The beat resolves into the next matching frame. Continuity held: Storm palette; the realm's castle from S01.",
+          "video_prompt_end": "Wide of the realm under a heavy sky, the old king fallen. a hush spreads as word of the king's passing settles. The camera static. The beat resolves into the next matching frame. Continuity held: Storm palette; the realm's castle from S01.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S15",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "high-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "uther_A4_fused"
+          ],
+          "ref_scope": "image1: the fused master of King Uther - an aging king with a grey beard and royal mantle - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "high-angle medium of the late king at rest, no heir named"
+            ],
+            [
+              1.8,
+              3.5,
+              "the light dims over the silent chamber"
+            ]
+          ],
+          "narration_mk": "Стариот крал почина без наследник кој сите би го познале.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle medium of an empty throne hall, the grand stone throne draped in shadow, a crown lying on a cushion",
+          "kf_last": "Light fades from a high window, leaving the crown in darkness",
+          "continuity": "Castle interior; crown and throne props",
+          "motion": "light fading; dust settling",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle medium of an empty throne hall, the grand stone throne draped in shadow, a crown lying on a cushion then high-angle medium of the late king at rest, no heir named, then the light dims over the silent chamber the camera static settling into light fades from a high window, leaving the crown in darkness continuity held: Castle interior; crown and throne props",
+          "image_prompt_start": "photoreal cinematic: medium of an empty throne hall, the grand stone throne draped in shadow, a crown lying on a cushion.",
+          "image_prompt_end": "photoreal cinematic: Light fades from a high window, leaving the crown in darkness.",
+          "video_prompt_start": "High-angle medium of the late king at rest, no heir named. the light dims over the silent chamber. The camera static. The beat resolves into the next matching frame. Continuity held: Castle interior; crown and throne props.",
+          "video_prompt_end": "High-angle medium of the late king at rest, no heir named. the light dims over the silent chamber. The camera static. The beat resolves into the next matching frame. Continuity held: Castle interior; crown and throne props.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S16",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-right",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "nobles_A5_fused",
+            "realm_env_A5_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Nobles - powerful lords in rich cloaks with fur and gold trim - 100% identical; studio bg/pose/light NOT used; image2: the misty medieval Breton realm of green hills and stone castles under grey sky - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "pan-right as the nobles gather, each eyeing the throne"
+            ],
+            [
+              1.8,
+              3.5,
+              "the lords close in, hungry for power"
+            ]
+          ],
+          "narration_mk": "Благородниците се собраа, секој сакајќи го тронот за себе.",
+          "dialogue_mk": "",
+          "kf_first": "Wide shot of a great hall filled with armored nobles arguing beneath torchlight, fists raised",
+          "kf_last": "Pan-right across their furious faces and clenched gauntlets",
+          "continuity": "Hall interior; torchlight; noble heraldry",
+          "motion": "pan-right across the crowd",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide shot of a great hall filled with armored nobles arguing beneath torchlight, fists raised then pan-right as the nobles gather, each eyeing the throne, then the lords close in, hungry for power settling into pan-right across their furious faces and clenched gauntlets continuity held: Hall interior; torchlight; noble heraldry",
+          "image_prompt_start": "photoreal cinematic: shot of a great hall filled with armored nobles arguing beneath torchlight, fists raised.",
+          "image_prompt_end": "photoreal cinematic: -right across their furious faces and clenched gauntlets.",
+          "video_prompt_start": "Pan-right as the nobles gather, each eyeing the throne. the lords close in, hungry for power. The beat resolves into the next matching frame. Continuity held: Hall interior; torchlight; noble heraldry.",
+          "video_prompt_end": "Pan-right as the nobles gather, each eyeing the throne. the lords close in, hungry for power. The beat resolves into the next matching frame. Continuity held: Hall interior; torchlight; noble heraldry.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S17",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "nobles_A5_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Nobles - powerful lords in rich cloaks with fur and gold trim - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "low-angle medium of quarreling lords shouting"
+            ],
+            [
+              1.8,
+              3.5,
+              "a noble jabs a finger, claiming the throne as his"
+            ]
+          ],
+          "narration_mk": "Жестоки кавги избија меѓу моќниците.",
+          "dialogue_mk": "Благородник: „Тронот му припаѓа мене!“",
+          "kf_first": "Low-angle medium of two noble lords glaring at each other nose to nose, banners behind them",
+          "kf_last": "One slams a gauntlet onto the stone table, goblets rattling",
+          "continuity": "Dueling lords; hall banners and table",
+          "motion": "gauntlet slam; goblets rattling",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of two noble lords glaring at each other nose to nose, banners behind them then low-angle medium of quarreling lords shouting, then a noble jabs a finger, claiming the throne as his the camera static settling into one slams a gauntlet onto the stone table, goblets rattling a voice speaks in Macedonian: \"Благородник: „Тронот му припаѓа мене!“\" continuity held: Dueling lords; hall banners and table",
+          "image_prompt_start": "photoreal cinematic: medium of two noble lords glaring at each other nose to nose, banners behind them.",
+          "image_prompt_end": "photoreal cinematic: One slams a gauntlet onto the stone table, goblets rattling.",
+          "video_prompt_start": "Low-angle medium of quarreling lords shouting. a noble jabs a finger, claiming the throne as his. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Благородник: „Тронот му припаѓа мене!“\" Continuity held: Dueling lords; hall banners and table.",
+          "video_prompt_end": "Low-angle medium of quarreling lords shouting. a noble jabs a finger, claiming the throne as his. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Благородник: „Тронот му припаѓа мене!“\" Continuity held: Dueling lords; hall banners and table.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S18",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "pan-left",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "nobles_A5_fused",
+            "realm_env_A5_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Nobles - powerful lords in rich cloaks with fur and gold trim - 100% identical; studio bg/pose/light NOT used; image2: the misty medieval Breton realm of green hills and stone castles under grey sky - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "high-angle pan-left over the noble clashes"
+            ],
+            [
+              1.8,
+              3.5,
+              "the struggle for the crown turns fierce"
+            ]
+          ],
+          "narration_mk": "Заради тронот, меѓу благородниците започнаа жестоки судири.",
+          "dialogue_mk": "",
+          "kf_first": "Wide high-angle shot of a field skirmish — knights in muddied colors clashing, banners whipping, no blood, stylized, photoreal StarCraft cinematic lighting, 1216x704",
+          "kf_last": "Pan-left as dust rises and a herald's horn sounds over the field",
+          "continuity": "Storm field; noble banners; no gore",
+          "motion": "pan-left; dust rising; horn sound",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide high-angle shot of a field skirmish — knights in muddied colors clashing, banners whipping, no blood, stylized, photoreal StarCraft cinematic lighting then high-angle pan-left over the noble clashes, then the struggle for the crown turns fierce settling into pan-left as dust rises and a herald's horn sounds over the field continuity held: Storm field; noble banners; no gore",
+          "image_prompt_start": "photoreal cinematic: high-angle shot of a field skirmish — knights in muddied colors clashing, banners whipping, no blood, stylized, photoreal StarCraft cinematic lighting.",
+          "image_prompt_end": "photoreal cinematic: -left as dust and a herald's horn sounds over the field.",
+          "video_prompt_start": "High-angle pan-left over the noble clashes. the struggle for the crown turns fierce. The beat resolves into the next matching frame. Continuity held: Storm field; noble banners; no gore.",
+          "video_prompt_end": "High-angle pan-left over the noble clashes. the struggle for the crown turns fierce. The beat resolves into the next matching frame. Continuity held: Storm field; noble banners; no gore.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S19",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "excalibur_B1_sheet"
+          ],
+          "ref_scope": "image1: the enchanted sword Excalibur with a gleaming silver blade and ornate golden hilt - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "macro of the ancient legend of a magic sword"
+            ],
+            [
+              1.5,
+              3.0,
+              "the motif of Excalibur glows faintly"
+            ]
+          ],
+          "narration_mk": "Но постоеше древна легенда за еден волшебен меч.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of an old illuminated manuscript page, an inked drawing of a sword in a stone",
+          "kf_last": "A finger traces the drawing as candlelight flickers over the ancient words",
+          "continuity": "Manuscript prop; candlelight",
+          "motion": "finger tracing; candle flicker",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of an old illuminated manuscript page, an inked drawing of a sword in a stone then macro of the ancient legend of a magic sword, then the motif of Excalibur glows faintly the camera static settling into a finger traces the drawing as candlelight flickers over the ancient words continuity held: Manuscript prop; candlelight",
+          "image_prompt_start": "photoreal cinematic: Macro insert of an old illuminated manuscript page, an inked drawing of a sword in a stone.",
+          "image_prompt_end": "photoreal cinematic: A finger traces the drawing as candlelight flickers over the ancient words.",
+          "video_prompt_start": "Macro of the ancient legend of a magic sword. the motif of Excalibur glows faintly. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Manuscript prop; candlelight.",
+          "video_prompt_end": "Macro of the ancient legend of a magic sword. the motif of Excalibur glows faintly. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Manuscript prop; candlelight.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S20",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "excalibur_B1_sheet",
+            "stone_env_A4_prop"
+          ],
+          "ref_scope": "image1: the enchanted sword Excalibur with a gleaming silver blade and ornate golden hilt - 100% identical; studio bg/pose/light NOT used; image2: the ancient stone of choosing in a clearing, with Excalibur waiting in its cleft - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "low-angle wide of Excalibur standing in the stone"
+            ],
+            [
+              2.0,
+              4.0,
+              "the majestic sword waits for the true king"
+            ]
+          ],
+          "narration_mk": "Величествениот Екскалибур беше забоден во карпа, чекајќи го вистинскиот крал.",
+          "dialogue_mk": "",
+          "kf_first": "Wide low-angle shot of the legendary sword Excalibur thrust deep into a weathered stone in a misty clearing, light breaking through trees",
+          "kf_last": "A shaft of sunlight falls on the jeweled hilt, dew glistening",
+          "continuity": "Misty clearing; the sword in the stone as the central prop",
+          "motion": "light shaft moving; dew glistening",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide low-angle shot of the legendary sword Excalibur thrust deep into a weathered stone in a misty clearing, light breaking through trees then low-angle wide of Excalibur standing in the stone, then the majestic sword waits for the true king the camera static settling into a shaft of sunlight falls on the jeweled hilt, dew glistening continuity held: Misty clearing; the sword in the stone as the central prop",
+          "image_prompt_start": "photoreal cinematic: low-angle shot of the legendary sword Excalibur thrust deep into a weathered stone in a misty clearing, light breaking through trees.",
+          "image_prompt_end": "photoreal cinematic: A shaft of sunlight falls on the jeweled hilt, dew glistening.",
+          "video_prompt_start": "Low-angle wide of Excalibur standing in the stone. the majestic sword waits for the true king. The camera static. The beat resolves into the next matching frame. Continuity held: Misty clearing; the sword in the stone as the central prop.",
+          "video_prompt_end": "Low-angle wide of Excalibur standing in the stone. the majestic sword waits for the true king. The camera static. The beat resolves into the next matching frame. Continuity held: Misty clearing; the sword in the stone as the central prop.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S21",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "nobles_A5_fused",
+            "excalibur_B1_sheet",
+            "stone_env_A4_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Nobles - powerful lords in rich cloaks with fur and gold trim - 100% identical; studio bg/pose/light NOT used; image2: the enchanted sword Excalibur with a gleaming silver blade and ornate golden hilt - 100% identical; studio bg/pose/light NOT used; image3: the ancient stone of choosing in a clearing, with Excalibur waiting in its cleft - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "wide of many nobles straining to pull the sword"
+            ],
+            [
+              1.8,
+              3.5,
+              "each fails and steps back, defeated"
+            ]
+          ],
+          "narration_mk": "Многумина се обидоа да го извлечат, но безуспешно.",
+          "dialogue_mk": "",
+          "kf_first": "Wide shot of a line of robed and armored men each trying to pull the sword from the stone, straining",
+          "kf_last": "The sword does not move; the stone stands silent and unmoved",
+          "continuity": "Stone and sword; failed suitors varied costumes",
+          "motion": "straining figures; unmoving sword",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide shot of a line of robed and armored men each trying to pull the sword from the stone, straining then wide of many nobles straining to pull the sword, then each fails and steps back, defeated the camera static settling into the sword does not move; the stone stands silent and unmoved continuity held: Stone and sword; failed suitors varied costumes",
+          "image_prompt_start": "photoreal cinematic: shot of a line of robed and armored men each trying to pull the sword from the stone, straining.",
+          "image_prompt_end": "photoreal cinematic: The sword does not move; the stone stands silent and unmoved.",
+          "video_prompt_start": "Wide of many nobles straining to pull the sword. each fails and steps back, defeated. The camera static. The beat resolves into the next matching frame. Continuity held: Stone and sword; failed suitors varied costumes.",
+          "video_prompt_end": "Wide of many nobles straining to pull the sword. each fails and steps back, defeated. The camera static. The beat resolves into the next matching frame. Continuity held: Stone and sword; failed suitors varied costumes.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S22",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "nobles_A5_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Nobles - powerful lords in rich cloaks with fur and gold trim - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close on a noble's disappointed face"
+            ],
+            [
+              1.5,
+              3.0,
+              "none of them is worthy"
+            ]
+          ],
+          "narration_mk": "Ниту еден од нив не беше достоен.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of a strong knight's hand slipping from the hilt, his face falling in frustration",
+          "kf_last": "The hilt shines untouched, dew dropping from the crossguard",
+          "continuity": "Hilt close-up; frustration without gore",
+          "motion": "hand slipping; dew drop",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of a strong knight's hand slipping from the hilt, his face falling in frustration then close on a noble's disappointed face, then none of them is worthy the camera static settling into the hilt shines untouched, dew dropping from the crossguard continuity held: Hilt close-up; frustration without gore",
+          "image_prompt_start": "photoreal cinematic: of a strong knight's hand slipping from the hilt, his face falling in frustration.",
+          "image_prompt_end": "photoreal cinematic: The hilt shines untouched, dew dropping from the crossguard.",
+          "video_prompt_start": "Close on a noble's disappointed face. none of them is worthy. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Hilt close-up; frustration without gore.",
+          "video_prompt_end": "Close on a noble's disappointed face. none of them is worthy. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Hilt close-up; frustration without gore.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S23",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "nobles_A5_fused",
+            "tournament_env_A3_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Nobles - powerful lords in rich cloaks with fur and gold trim - 100% identical; studio bg/pose/light NOT used; image2: the great tournament field with banners, lists and a crowd of lords - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "crane-down over the great tournament field"
+            ],
+            [
+              1.8,
+              3.5,
+              "a group of lords announces a mighty tournament"
+            ]
+          ],
+          "narration_mk": "Тогаш една група моќници организираше голем турнир.",
+          "dialogue_mk": "",
+          "kf_first": "Wide high-angle of a tournament field being prepared — colorful pavilions, banners raised, crowd streaming in",
+          "kf_last": "Crane-down onto the jousting lists and the royal viewing stand",
+          "continuity": "Tournament field; festive palette contrasting the storm",
+          "motion": "crane-down; crowd streaming",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide high-angle of a tournament field being prepared — colorful pavilions, banners raised, crowd streaming in then crane-down over the great tournament field, then a group of lords announces a mighty tournament settling into crane-down onto the jousting lists and the royal viewing stand continuity held: Tournament field; festive palette contrasting the storm",
+          "image_prompt_start": "photoreal cinematic: high-angle of a tournament field being prepared — colorful pavilions, banners raised, crowd streaming in.",
+          "image_prompt_end": "photoreal cinematic: onto the jousting lists and the royal viewing stand.",
+          "video_prompt_start": "Crane-down over the great tournament field. a group of lords announces a mighty tournament. The beat resolves into the next matching frame. Continuity held: Tournament field; festive palette contrasting the storm.",
+          "video_prompt_end": "Crane-down over the great tournament field. a group of lords announces a mighty tournament. The beat resolves into the next matching frame. Continuity held: Tournament field; festive palette contrasting the storm.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S24",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "kay_A3_fused",
+            "arthur_A1_fused",
+            "tournament_env_A3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Kay - a young nobleman, son of the lord, in fine riding clothes - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Arthur - a young squire, warm-hearted and brave, with tousled hair in simple linen clothes - 100% identical; studio bg/pose/light NOT used; image3: the great tournament field with banners, lists and a crowd of lords - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "push-in as Kay vows to fight for the crown"
+            ],
+            [
+              1.5,
+              3.0,
+              "Kay beckons Arthur to follow as his squire"
+            ]
+          ],
+          "narration_mk": "Кај реши да учествува и го поведе Артур со себе како свој штитоносец.",
+          "dialogue_mk": "Кај: „Артур, дојди! Денес ќе се борам за круната!“",
+          "kf_first": "Medium shot of Kay fastening his armor, resolute, while Arthur helps buckle the straps",
+          "kf_last": "Push-in on Kay's confident grin as he takes his helm",
+          "continuity": "Kay in armor; Arthur as squire helping",
+          "motion": "strap buckling; push-in on helm",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium shot of Kay fastening his armor, resolute, while Arthur helps buckle the straps Kay lean, noble, in riding clothes, cloak, carrying armor, shield Arthur slender, hero, in linen tunic, cloak, carrying excalibur, wreathed in golden glow then push-in as Kay vows to fight for the crown, then Kay beckons Arthur to follow as his squire settling into push-in on Kay's confident grin as he takes his helm with the shield clangs, a low radiant hum a voice speaks in Macedonian: \"Кај: „Артур, дојди! Денес ќе се борам за круната!“\" continuity held: Kay in armor; Arthur as squire helping",
+          "image_prompt_start": "photoreal cinematic: shot of Kay fastening his armor, resolute, while Arthur helps buckle the straps.",
+          "image_prompt_end": "photoreal cinematic: on Kay's confident grin as he takes his helm.",
+          "video_prompt_start": "Push-in as Kay vows to fight for the crown. Kay beckons Arthur to follow as his squire. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Кај: „Артур, дојди! Денес ќе се борам за круната!“\" Continuity held: Kay in armor; Arthur as squire helping.",
+          "video_prompt_end": "Push-in as Kay vows to fight for the crown. Kay beckons Arthur to follow as his squire. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Кај: „Артур, дојди! Денес ќе се борам за круната!“\" Continuity held: Kay in armor; Arthur as squire helping.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S25",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "arthur_A1_fused",
+            "kay_A3_fused",
+            "tournament_env_A3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Arthur - a young squire, warm-hearted and brave, with tousled hair in simple linen clothes - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Kay - a young nobleman, son of the lord, in fine riding clothes - 100% identical; studio bg/pose/light NOT used; image3: the great tournament field with banners, lists and a crowd of lords - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "track of Arthur and Kay riding toward the tournament"
+            ],
+            [
+              1.8,
+              3.5,
+              "excitement rises as the field nears"
+            ]
+          ],
+          "narration_mk": "Двајцата јаваа кон турнирот, а возбудата растеше.",
+          "dialogue_mk": "",
+          "kf_first": "Medium tracking shot of Kay and Arthur riding side by side toward the tournament, banners and crowd in the distance",
+          "kf_last": "The horses crest a hill, the tournament seen below, trumpets sounding",
+          "continuity": "Horses; Kay armored, Arthur squire attire",
+          "motion": "tracking ride; trumpets",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium tracking shot of Kay and Arthur riding side by side toward the tournament, banners and crowd in the distance Arthur slender, hero, in linen tunic, cloak, carrying excalibur, wreathed in golden glow Kay lean, noble, in riding clothes, cloak, carrying armor, shield then track of Arthur and Kay riding toward the tournament, then excitement rises as the field nears settling into the horses crest a hill, the tournament seen below, trumpets sounding with a low radiant hum, the shield clangs continuity held: Horses; Kay armored, Arthur squire attire",
+          "image_prompt_start": "photoreal cinematic: of Kay and Arthur riding side by side toward the tournament, banners and crowd in the distance.",
+          "image_prompt_end": "photoreal cinematic: The horses crest a hill, the tournament seen below, trumpets sounding.",
+          "video_prompt_start": "Track of Arthur and Kay riding toward the tournament. excitement rises as the field nears. The beat resolves into the next matching frame. Continuity held: Horses; Kay armored, Arthur squire attire.",
+          "video_prompt_end": "Track of Arthur and Kay riding toward the tournament. excitement rises as the field nears. The beat resolves into the next matching frame. Continuity held: Horses; Kay armored, Arthur squire attire.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S26",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "kay_A3_fused",
+            "arthur_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Kay - a young nobleman, son of the lord, in fine riding clothes - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Arthur - a young squire, warm-hearted and brave, with tousled hair in simple linen clothes - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close on Kay's panic as the truth strikes"
+            ],
+            [
+              1.5,
+              3.0,
+              "Kay cries that he forgot his sword at home"
+            ]
+          ],
+          "narration_mk": "Но кога дојде време да се бори, се случи несреќа.",
+          "dialogue_mk": "Кај: „Артур! Го заборавив мечот дома!“",
+          "kf_first": "Close-up of Kay's alarmed face inside his raised helm, eyes wide with panic",
+          "kf_last": "His empty scabbard swings as he turns, no sword at his side",
+          "continuity": "Kay's helm and armor; empty scabbard",
+          "motion": "helm raising; scabbard swinging empty",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of Kay's alarmed face inside his raised helm, eyes wide with panic Kay lean, noble, in riding clothes, cloak, carrying armor, shield Arthur slender, hero, in linen tunic, cloak, carrying excalibur, wreathed in golden glow then close on Kay's panic as the truth strikes, then Kay cries that he forgot his sword at home the camera static settling into his empty scabbard swings as he turns, no sword at his side with the shield clangs, a low radiant hum a voice speaks in Macedonian: \"Кај: „Артур! Го заборавив мечот дома!“\" continuity held: Kay's helm and armor; empty scabbard",
+          "image_prompt_start": "photoreal cinematic: of Kay's alarmed face inside his raised helm, eyes wide with panic.",
+          "image_prompt_end": "photoreal cinematic: His empty scabbard swings as he , no sword at his side.",
+          "video_prompt_start": "Close on Kay's panic as the truth strikes. Kay cries that he forgot his sword at home. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Кај: „Артур! Го заборавив мечот дома!“\" Continuity held: Kay's helm and armor; empty scabbard.",
+          "video_prompt_end": "Close on Kay's panic as the truth strikes. Kay cries that he forgot his sword at home. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Кај: „Артур! Го заборавив мечот дома!“\" Continuity held: Kay's helm and armor; empty scabbard.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S27",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "pan-left",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "arthur_A1_fused",
+            "tournament_env_A3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Arthur - a young squire, warm-hearted and brave, with tousled hair in simple linen clothes - 100% identical; studio bg/pose/light NOT used; image2: the great tournament field with banners, lists and a crowd of lords - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "pan-left as Arthur hurries to find a sword"
+            ],
+            [
+              1.8,
+              3.5,
+              "he searches the field without pause"
+            ]
+          ],
+          "narration_mk": "Немаше време да оди по него, па Артур веднаш почна да бара меч наоколу.",
+          "dialogue_mk": "",
+          "kf_first": "Medium shot of Arthur darting through the busy tournament camp, searching among tents and stacked gear",
+          "kf_last": "Pan-left as he pushes past a tent flap into a quiet clearing",
+          "continuity": "Tournament camp; Arthur's squire garb",
+          "motion": "pan-left; Arthur darting",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium shot of Arthur darting through the busy tournament camp, searching among tents and stacked gear Arthur slender, hero, in linen tunic, cloak, carrying excalibur, wreathed in golden glow then pan-left as Arthur hurries to find a sword, then he searches the field without pause settling into pan-left as he pushes past a tent flap into a quiet clearing with a low radiant hum continuity held: Tournament camp; Arthur's squire garb",
+          "image_prompt_start": "photoreal cinematic: shot of Arthur darting through the busy tournament camp, searching among tents and stacked gear.",
+          "image_prompt_end": "photoreal cinematic: -left as he pushes past a tent flap into a quiet clearing.",
+          "video_prompt_start": "Pan-left as Arthur hurries to find a sword. he searches the field without pause. The beat resolves into the next matching frame. Continuity held: Tournament camp; Arthur's squire garb.",
+          "video_prompt_end": "Pan-left as Arthur hurries to find a sword. he searches the field without pause. The beat resolves into the next matching frame. Continuity held: Tournament camp; Arthur's squire garb.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S28",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "excalibur_B1_sheet",
+            "stone_env_A4_prop"
+          ],
+          "ref_scope": "image1: the enchanted sword Excalibur with a gleaming silver blade and ornate golden hilt - 100% identical; studio bg/pose/light NOT used; image2: the ancient stone of choosing in a clearing, with Excalibur waiting in its cleft - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "wide as something glints among the trees"
+            ],
+            [
+              1.8,
+              3.5,
+              "there stands Excalibur in its stone"
+            ]
+          ],
+          "narration_mk": "Одеднаш, нешто светна меѓу дрвјата — тоа беше Екскалибур.",
+          "dialogue_mk": "",
+          "kf_first": "Wide shot of Arthur emerging from the trees, the sword in the stone glinting in a beam of light ahead",
+          "kf_last": "He stands still, transfixed by the shining hilt",
+          "continuity": "Misty clearing and stone from S20; Arthur facing it",
+          "motion": "light glinting; Arthur stopping",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide shot of Arthur emerging from the trees, the sword in the stone glinting in a beam of light ahead then wide as something glints among the trees, then there stands Excalibur in its stone the camera static settling into he stands still, transfixed by the shining hilt continuity held: Misty clearing and stone from S20; Arthur facing it",
+          "image_prompt_start": "photoreal cinematic: shot of Arthur emerging from the trees, the sword in the stone glinting in a beam of light ahead.",
+          "image_prompt_end": "photoreal cinematic: He stands still, transfixed by the shining hilt.",
+          "video_prompt_start": "Wide as something glints among the trees. there stands Excalibur in its stone. The camera static. The beat resolves into the next matching frame. Continuity held: Misty clearing and stone from S20; Arthur facing it.",
+          "video_prompt_end": "Wide as something glints among the trees. there stands Excalibur in its stone. The camera static. The beat resolves into the next matching frame. Continuity held: Misty clearing and stone from S20; Arthur facing it.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S29",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "arthur_A1_fused",
+            "excalibur_B1_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Arthur - a young squire, warm-hearted and brave, with tousled hair in simple linen clothes - 100% identical; studio bg/pose/light NOT used; image2: the enchanted sword Excalibur with a gleaming silver blade and ornate golden hilt - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "close on Arthur's wondering face"
+            ],
+            [
+              1.8,
+              3.5,
+              "push-in as he assumes a knight left it behind"
+            ]
+          ],
+          "narration_mk": "„Сигурно некој витез го оставил!“ — си помисли Артур.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of Arthur's thoughtful face as he approaches the stone, the sword reflected in his eyes",
+          "kf_last": "Push-in on his determined expression, hand reaching forward",
+          "continuity": "Arthur's face; sword reflection",
+          "motion": "push-in; hand reaching",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of Arthur's thoughtful face as he approaches the stone, the sword reflected in his eyes Arthur slender, hero, in linen tunic, cloak, carrying excalibur, wreathed in golden glow then close on Arthur's wondering face, then push-in as he assumes a knight left it behind settling into push-in on his determined expression, hand reaching forward with a low radiant hum continuity held: Arthur's face; sword reflection",
+          "image_prompt_start": "photoreal cinematic: of Arthur's thoughtful face as he approaches the stone, the sword reflected in his eyes.",
+          "image_prompt_end": "photoreal cinematic: on his determined expression, hand reaching forward.",
+          "video_prompt_start": "Close on Arthur's wondering face. push-in as he assumes a knight left it behind. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Arthur's face; sword reflection.",
+          "video_prompt_end": "Close on Arthur's wondering face. push-in as he assumes a knight left it behind. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Arthur's face; sword reflection.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S30",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "arthur_A1_fused",
+            "excalibur_B1_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Arthur - a young squire, warm-hearted and brave, with tousled hair in simple linen clothes - 100% identical; studio bg/pose/light NOT used; image2: the enchanted sword Excalibur with a gleaming silver blade and ornate golden hilt - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "macro of Arthur's hand closing on the hilt"
+            ],
+            [
+              1.5,
+              3.0,
+              "a strange power stirs at his touch"
+            ]
+          ],
+          "narration_mk": "Само што ја зграпчи дршката, почувствува нешто посебно.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of Arthur's fingers wrapping around the sword hilt, light radiating from the grip",
+          "kf_last": "The hilt warms and glows faintly, dust shivering on the stone",
+          "continuity": "Hilt and stone; Arthur's hand",
+          "motion": "fingers closing; hilt glowing",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of Arthur's fingers wrapping around the sword hilt, light radiating from the grip Arthur slender, hero, in linen tunic, cloak, carrying excalibur, wreathed in golden glow then macro of Arthur's hand closing on the hilt, then a strange power stirs at his touch the camera static settling into the hilt warms and glows faintly, dust shivering on the stone with a low radiant hum continuity held: Hilt and stone; Arthur's hand",
+          "image_prompt_start": "photoreal cinematic: Macro insert of Arthur's fingers wrapping around the sword hilt, light radiating from the grip.",
+          "image_prompt_end": "photoreal cinematic: The hilt warms and glows faintly, dust shivering on the stone.",
+          "video_prompt_start": "Macro of Arthur's hand closing on the hilt. a strange power stirs at his touch. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Hilt and stone; Arthur's hand.",
+          "video_prompt_end": "Macro of Arthur's hand closing on the hilt. a strange power stirs at his touch. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Hilt and stone; Arthur's hand.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S31",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "arthur_A1_fused",
+            "excalibur_B1_sheet",
+            "stone_env_A4_prop"
+          ],
+          "ref_scope": "image1: the fused master of Arthur - a young squire, warm-hearted and brave, with tousled hair in simple linen clothes - 100% identical; studio bg/pose/light NOT used; image2: the enchanted sword Excalibur with a gleaming silver blade and ornate golden hilt - 100% identical; studio bg/pose/light NOT used; image3: the ancient stone of choosing in a clearing, with Excalibur waiting in its cleft - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "low-angle medium of Arthur pulling with all his strength"
+            ],
+            [
+              1.8,
+              3.5,
+              "the sword slides free of the stone"
+            ]
+          ],
+          "narration_mk": "Повлече со сета своја сила, и мечот излезе од карпата.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of Arthur pulling the sword upward with all his strength, muscles straining, light bursting around him",
+          "kf_last": "The sword slides free from the stone in a cascade of golden light",
+          "continuity": "Arthur's figure; sword and stone; golden light burst",
+          "motion": "upward pull; light burst",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Arthur pulling the sword upward with all his strength, muscles straining, light bursting around him Arthur slender, hero, in linen tunic, cloak, carrying excalibur, wreathed in golden glow then low-angle medium of Arthur pulling with all his strength, then the sword slides free of the stone the camera static settling into the sword slides free from the stone in a cascade of golden light with a low radiant hum continuity held: Arthur's figure; sword and stone; golden light burst",
+          "image_prompt_start": "photoreal cinematic: medium of Arthur pulling the sword upward with all his strength, muscles straining, light bursting around him.",
+          "image_prompt_end": "photoreal cinematic: The sword slides free from the stone in a cascade of golden light.",
+          "video_prompt_start": "Low-angle medium of Arthur pulling with all his strength. the sword slides free of the stone. The camera static. The beat resolves into the next matching frame. Continuity held: Arthur's figure; sword and stone; golden light burst.",
+          "video_prompt_end": "Low-angle medium of Arthur pulling with all his strength. the sword slides free of the stone. The camera static. The beat resolves into the next matching frame. Continuity held: Arthur's figure; sword and stone; golden light burst.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S32",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "excalibur_B1_sheet"
+          ],
+          "ref_scope": "image1: the enchanted sword Excalibur with a gleaming silver blade and ornate golden hilt - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close on Excalibur free and shining in the sun"
+            ],
+            [
+              1.5,
+              3.0,
+              "the blade gleams bright"
+            ]
+          ],
+          "narration_mk": "Екскалибур беше слободен, сјаејќи на сонцето.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the gleaming blade raised against the sun, water droplets and dust sparkling like stars",
+          "kf_last": "The sky clears, a single beam crowning the sword's tip",
+          "continuity": "Gleaming blade; sunlight",
+          "motion": "light crowning the tip; sky clearing",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the gleaming blade raised against the sun, water droplets and dust sparkling like stars then close on Excalibur free and shining in the sun, then the blade gleams bright the camera static settling into the sky clears, a single beam crowning the sword's tip continuity held: Gleaming blade; sunlight",
+          "image_prompt_start": "photoreal cinematic: of the gleaming blade raised against the sun, water droplets and dust sparkling like stars.",
+          "image_prompt_end": "photoreal cinematic: The sky clears, a single beam crowning the sword's tip.",
+          "video_prompt_start": "Close on Excalibur free and shining in the sun. the blade gleams bright. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Gleaming blade; sunlight.",
+          "video_prompt_end": "Close on Excalibur free and shining in the sun. the blade gleams bright. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Gleaming blade; sunlight.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S33",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "arthur_A1_fused",
+            "kay_A3_fused",
+            "excalibur_B1_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Arthur - a young squire, warm-hearted and brave, with tousled hair in simple linen clothes - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Kay - a young nobleman, son of the lord, in fine riding clothes - 100% identical; studio bg/pose/light NOT used; image3: the enchanted sword Excalibur with a gleaming silver blade and ornate golden hilt - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "crane-up as Arthur sprints back with the sword"
+            ],
+            [
+              1.8,
+              3.5,
+              "he offers Excalibur to Kay"
+            ]
+          ],
+          "narration_mk": "Артур истрча назад и му го подаде мечот на Кај.",
+          "dialogue_mk": "",
+          "kf_first": "Wide shot of Arthur sprinting from the trees toward Kay in the tournament camp, sword held high",
+          "kf_last": "Crane-up as he thrusts the shining sword into Kay's startled hands",
+          "continuity": "Arthur carrying Excalibur; Kay in camp",
+          "motion": "crane-up; sprint; handoff",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide shot of Arthur sprinting from the trees toward Kay in the tournament camp, sword held high Arthur slender, hero, in linen tunic, cloak, carrying excalibur, wreathed in golden glow Kay lean, noble, in riding clothes, cloak, carrying armor, shield then crane-up as Arthur sprints back with the sword, then he offers Excalibur to Kay settling into crane-up as he thrusts the shining sword into Kay's startled hands with a low radiant hum, the shield clangs continuity held: Arthur carrying Excalibur; Kay in camp",
+          "image_prompt_start": "photoreal cinematic: shot of Arthur sprinting from the trees toward Kay in the tournament camp, sword held high.",
+          "image_prompt_end": "photoreal cinematic: as he thrusts the shining sword into Kay's startled hands.",
+          "video_prompt_start": "Crane-up as Arthur sprints back with the sword. he offers Excalibur to Kay. The beat resolves into the next matching frame. Continuity held: Arthur carrying Excalibur; Kay in camp.",
+          "video_prompt_end": "Crane-up as Arthur sprints back with the sword. he offers Excalibur to Kay. The beat resolves into the next matching frame. Continuity held: Arthur carrying Excalibur; Kay in camp.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S34",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "over-shoulder",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "kay_A3_fused",
+            "arthur_A1_fused",
+            "excalibur_B1_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Kay - a young nobleman, son of the lord, in fine riding clothes - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Arthur - a young squire, warm-hearted and brave, with tousled hair in simple linen clothes - 100% identical; studio bg/pose/light NOT used; image3: the enchanted sword Excalibur with a gleaming silver blade and ornate golden hilt - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "over-shoulder of Kay stammering in shock"
+            ],
+            [
+              1.5,
+              3.0,
+              "Kay asks where the sword came from"
+            ]
+          ],
+          "narration_mk": "Витезот го праша од каде го најде.",
+          "dialogue_mk": "Кај: „Од каде ја доби оваа... ова? Од каде?“",
+          "kf_first": "Over-shoulder medium of Kay staring at the radiant sword in his hands, Arthur before him",
+          "kf_last": "Kay lowers the blade, his eyes searching Arthur's face",
+          "continuity": "Kay and Arthur; the radiant sword",
+          "motion": "sword lowering; glance exchange",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: over-shoulder medium of Kay staring at the radiant sword in his hands, Arthur before him Kay lean, noble, in riding clothes, cloak, carrying armor, shield Arthur slender, hero, in linen tunic, cloak, carrying excalibur, wreathed in golden glow then over-shoulder of Kay stammering in shock, then Kay asks where the sword came from the camera static settling into kay lowers the blade, his eyes searching Arthur's face with the shield clangs, a low radiant hum a voice speaks in Macedonian: \"Кај: „Од каде ја доби оваа... ова? Од каде?“\" continuity held: Kay and Arthur; the radiant sword",
+          "image_prompt_start": "photoreal cinematic: Over-shoulder medium of Kay staring at the radiant sword in his hands, Arthur before him.",
+          "image_prompt_end": "photoreal cinematic: Kay lowers the blade, his eyes searching Arthur's face.",
+          "video_prompt_start": "Over-shoulder of Kay stammering in shock. Kay asks where the sword came from. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Кај: „Од каде ја доби оваа... ова? Од каде?“\" Continuity held: Kay and Arthur; the radiant sword.",
+          "video_prompt_end": "Over-shoulder of Kay stammering in shock. Kay asks where the sword came from. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Кај: „Од каде ја доби оваа... ова? Од каде?“\" Continuity held: Kay and Arthur; the radiant sword.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S35",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "arthur_A1_fused",
+            "stone_env_A4_prop"
+          ],
+          "ref_scope": "image1: the fused master of Arthur - a young squire, warm-hearted and brave, with tousled hair in simple linen clothes - 100% identical; studio bg/pose/light NOT used; image2: the ancient stone of choosing in a clearing, with Excalibur waiting in its cleft - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close on Arthur pointing calmly to the stone"
+            ],
+            [
+              1.5,
+              3.0,
+              "he shows them the place without hesitation"
+            ]
+          ],
+          "narration_mk": "Артур, без двоумење, покажа кон карпата.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of Arthur's calm face as he points toward the distant stone in the clearing",
+          "kf_last": "His arm extends, the stone and empty gash in the rock visible behind him",
+          "continuity": "Arthur and the stone; empty gash",
+          "motion": "arm extending; focus to stone",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of Arthur's calm face as he points toward the distant stone in the clearing Arthur slender, hero, in linen tunic, cloak, carrying excalibur, wreathed in golden glow then close on Arthur pointing calmly to the stone, then he shows them the place without hesitation the camera static settling into his arm extends, the stone and empty gash in the rock visible behind him with a low radiant hum continuity held: Arthur and the stone; empty gash",
+          "image_prompt_start": "photoreal cinematic: of Arthur's calm face as he points toward the distant stone in the clearing.",
+          "image_prompt_end": "photoreal cinematic: His arm extends, the stone and empty gash in the rock visible behind him.",
+          "video_prompt_start": "Close on Arthur pointing calmly to the stone. he shows them the place without hesitation. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Arthur and the stone; empty gash.",
+          "video_prompt_end": "Close on Arthur pointing calmly to the stone. he shows them the place without hesitation. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Arthur and the stone; empty gash.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S36",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-right",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "nobles_A5_fused",
+            "arthur_A1_fused",
+            "excalibur_B1_sheet"
+          ],
+          "ref_scope": "image1: the fused master of the Nobles - powerful lords in rich cloaks with fur and gold trim - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Arthur - a young squire, warm-hearted and brave, with tousled hair in simple linen clothes - 100% identical; studio bg/pose/light NOT used; image3: the enchanted sword Excalibur with a gleaming silver blade and ornate golden hilt - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "pan-right as a gasp spreads through the crowd"
+            ],
+            [
+              1.8,
+              3.5,
+              "astonishment ripples among those present"
+            ]
+          ],
+          "narration_mk": "Здив на чудење се рашири меѓу присутните.",
+          "dialogue_mk": "",
+          "kf_first": "Wide shot of the tournament crowd turning, murmuring, eyes fixed on the boy and the glowing sword",
+          "kf_last": "Pan-right across astonished faces and whispered words spreading like wind",
+          "continuity": "Tournament crowd; the glowing sword center",
+          "motion": "pan-right; murmur rippling",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide shot of the tournament crowd turning, murmuring, eyes fixed on the boy and the glowing sword Arthur slender, hero, in linen tunic, cloak, carrying excalibur, wreathed in golden glow then pan-right as a gasp spreads through the crowd, then astonishment ripples among those present settling into pan-right across astonished faces and whispered words spreading like wind with a low radiant hum continuity held: Tournament crowd; the glowing sword center",
+          "image_prompt_start": "photoreal cinematic: shot of the tournament crowd turning, murmuring, eyes fixed on the boy and the glowing sword.",
+          "image_prompt_end": "photoreal cinematic: -right across astonished faces and whispered words spreading like wind.",
+          "video_prompt_start": "Pan-right as a gasp spreads through the crowd. astonishment ripples among those present. The beat resolves into the next matching frame. Continuity held: Tournament crowd; the glowing sword center.",
+          "video_prompt_end": "Pan-right as a gasp spreads through the crowd. astonishment ripples among those present. The beat resolves into the next matching frame. Continuity held: Tournament crowd; the glowing sword center.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "breton_realm_tournament_and_stone",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class",
+        "screen_dir"
+      ],
+      "palette": [
+        "#7f1d1d",
+        "#b45309",
+        "#d4af37"
+      ],
+      "light_direction": "key light from screen-right, cold day over the tournament field",
+      "time_of_day": "day"
+    },
+    {
+      "id": "act3",
+      "num": "Act III",
+      "title": "Враќањето на мирот",
+      "color": "#fbbf24",
+      "pct": 20,
+      "synopsis": "Веста се шири, а сомнежите се смируваат кога Артур повторно го извлекува мечот пред сите. Народот го прогласува за крал и мирот се враќа.",
+      "shots": [
+        {
+          "id": "S37",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "nobles_A5_fused",
+            "arthur_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Nobles - powerful lords in rich cloaks with fur and gold trim - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Arthur - a young squire, warm-hearted and brave, with tousled hair in simple linen clothes - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "track as word spreads like wildfire through the people"
+            ],
+            [
+              1.5,
+              3.0,
+              "the news races from mouth to mouth"
+            ]
+          ],
+          "narration_mk": "Веста дека едно момче го извлече Екскалибур се рашири како оган.",
+          "dialogue_mk": "",
+          "kf_first": "Medium shot of riders galloping through the camp shouting the news, banners streaming",
+          "kf_last": "The news leaps from mouth to mouth, a crowd gathering fast",
+          "continuity": "Tournament camp; riders and crowd",
+          "motion": "tracking gallop; crowd gathering",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium shot of riders galloping through the camp shouting the news, banners streaming Arthur slender, hero, in linen tunic, cloak, carrying excalibur, wreathed in golden glow then track as word spreads like wildfire through the people, then the news races from mouth to mouth settling into the news leaps from mouth to mouth, a crowd gathering fast with a low radiant hum continuity held: Tournament camp; riders and crowd",
+          "image_prompt_start": "photoreal cinematic: shot of riders galloping through the camp shouting the news, banners streaming.",
+          "image_prompt_end": "photoreal cinematic: The news leaps from mouth to mouth, a crowd gathering fast.",
+          "video_prompt_start": "Track as word spreads like wildfire through the people. the news races from mouth to mouth. The beat resolves into the next matching frame. Continuity held: Tournament camp; riders and crowd.",
+          "video_prompt_end": "Track as word spreads like wildfire through the people. the news races from mouth to mouth. The beat resolves into the next matching frame. Continuity held: Tournament camp; riders and crowd.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S38",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "nobles_A5_fused",
+            "arthur_A1_fused",
+            "realm_env_A5_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Nobles - powerful lords in rich cloaks with fur and gold trim - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Arthur - a young squire, warm-hearted and brave, with tousled hair in simple linen clothes - 100% identical; studio bg/pose/light NOT used; image3: the misty medieval Breton realm of green hills and stone castles under grey sky - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "high-angle wide of the crowd pressing to see the boy"
+            ],
+            [
+              1.8,
+              3.5,
+              "all want to witness him with their own eyes"
+            ]
+          ],
+          "narration_mk": "Сите сакаа со свои очи да го видат момчето.",
+          "dialogue_mk": "",
+          "kf_first": "Wide high-angle of a growing crowd pressing toward the sword stone in the clearing, Arthur at its center",
+          "kf_last": "The crowd forms a ring around him, faces eager and doubtful",
+          "continuity": "Clearing and stone; Arthur; crowd",
+          "motion": "crowd pressing; ring forming",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide high-angle of a growing crowd pressing toward the sword stone in the clearing, Arthur at its center Arthur slender, hero, in linen tunic, cloak, carrying excalibur, wreathed in golden glow then high-angle wide of the crowd pressing to see the boy, then all want to witness him with their own eyes the camera static settling into the crowd forms a ring around him, faces eager and doubtful with a low radiant hum continuity held: Clearing and stone; Arthur; crowd",
+          "image_prompt_start": "photoreal cinematic: high-angle of a growing crowd pressing toward the sword stone in the clearing, Arthur at its center.",
+          "image_prompt_end": "photoreal cinematic: The crowd forms a ring around him, faces eager and doubtful.",
+          "video_prompt_start": "High-angle wide of the crowd pressing to see the boy. all want to witness him with their own eyes. The camera static. The beat resolves into the next matching frame. Continuity held: Clearing and stone; Arthur; crowd.",
+          "video_prompt_end": "High-angle wide of the crowd pressing to see the boy. all want to witness him with their own eyes. The camera static. The beat resolves into the next matching frame. Continuity held: Clearing and stone; Arthur; crowd.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S39",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "nobles_A5_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Nobles - powerful lords in rich cloaks with fur and gold trim - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close on a disappointed noble's face"
+            ],
+            [
+              1.5,
+              3.0,
+              "he scoffs that the boy is only a squire"
+            ]
+          ],
+          "narration_mk": "Но некои, разочарано, велеа дека тој е само штитоносец.",
+          "dialogue_mk": "Благородник: „Ама... тој е само штитоносец!“",
+          "kf_first": "Close-up of a skeptical noble frowning, arms crossed, smoke rising from an unseen fire",
+          "kf_last": "His doubts darken his face as others murmur behind him",
+          "continuity": "Skeptical noble; crowd murmur",
+          "motion": "frown deepening; murmur",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of a skeptical noble frowning, arms crossed, smoke rising from an unseen fire then close on a disappointed noble's face, then he scoffs that the boy is only a squire the camera static settling into his doubts darken his face as others murmur behind him a voice speaks in Macedonian: \"Благородник: „Ама... тој е само штитоносец!“\" continuity held: Skeptical noble; crowd murmur",
+          "image_prompt_start": "photoreal cinematic: of a skeptical noble frowning, arms crossed, smoke rising from an unseen fire.",
+          "image_prompt_end": "photoreal cinematic: His doubts darken his face as others murmur behind him.",
+          "video_prompt_start": "Close on a disappointed noble's face. he scoffs that the boy is only a squire. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Благородник: „Ама... тој е само штитоносец!“\" Continuity held: Skeptical noble; crowd murmur.",
+          "video_prompt_end": "Close on a disappointed noble's face. he scoffs that the boy is only a squire. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Благородник: „Ама... тој е само штитоносец!“\" Continuity held: Skeptical noble; crowd murmur.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S40",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "kay_A3_fused",
+            "nobles_A5_fused",
+            "arthur_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Kay - a young nobleman, son of the lord, in fine riding clothes - 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Nobles - powerful lords in rich cloaks with fur and gold trim - 100% identical; studio bg/pose/light NOT used; image3: the fused master of Arthur - a young squire, warm-hearted and brave, with tousled hair in simple linen clothes - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "medium of Kay stepping before them"
+            ],
+            [
+              1.8,
+              3.5,
+              "Kay demands Arthur draw the sword again before all"
+            ]
+          ],
+          "narration_mk": "Тогаш побараа од Артур да го повтори подвигот, тука, пред сите.",
+          "dialogue_mk": "Кај: „Нека покаже! Нека го извлече повторно пред нас!“",
+          "kf_first": "Medium shot of Kay stepping forward, gesturing toward the stone, the crowd parting for Arthur",
+          "kf_last": "Arthur nods calmly and walks toward the stone alone",
+          "continuity": "Kay gesturing; crowd parting; Arthur calm",
+          "motion": "crowd parting; Arthur walking",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium shot of Kay stepping forward, gesturing toward the stone, the crowd parting for Arthur Kay lean, noble, in riding clothes, cloak, carrying armor, shield Arthur slender, hero, in linen tunic, cloak, carrying excalibur, wreathed in golden glow then medium of Kay stepping before them, then Kay demands Arthur draw the sword again before all the camera static settling into arthur nods calmly and walks toward the stone alone with the shield clangs, a low radiant hum a voice speaks in Macedonian: \"Кај: „Нека покаже! Нека го извлече повторно пред нас!“\" continuity held: Kay gesturing; crowd parting; Arthur calm",
+          "image_prompt_start": "photoreal cinematic: shot of Kay stepping forward, gesturing toward the stone, the crowd parting for Arthur.",
+          "image_prompt_end": "photoreal cinematic: Arthur nods calmly and toward the stone alone.",
+          "video_prompt_start": "Medium of Kay stepping before them. Kay demands Arthur draw the sword again before all. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Кај: „Нека покаже! Нека го извлече повторно пред нас!“\" Continuity held: Kay gesturing; crowd parting; Arthur calm.",
+          "video_prompt_end": "Medium of Kay stepping before them. Kay demands Arthur draw the sword again before all. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Кај: „Нека покаже! Нека го извлече повторно пред нас!“\" Continuity held: Kay gesturing; crowd parting; Arthur calm.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S41",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "arthur_A1_fused",
+            "stone_env_A4_prop"
+          ],
+          "ref_scope": "image1: the fused master of Arthur - a young squire, warm-hearted and brave, with tousled hair in simple linen clothes - 100% identical; studio bg/pose/light NOT used; image2: the ancient stone of choosing in a clearing, with Excalibur waiting in its cleft - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "wide of Arthur standing before the stone"
+            ],
+            [
+              1.8,
+              3.5,
+              "the crowd falls silent around him"
+            ]
+          ],
+          "narration_mk": "Пред очите на сите, Артур застана пред карпата.",
+          "dialogue_mk": "",
+          "kf_first": "Wide shot of Arthur standing before the sword in the stone, the dense crowd hushed behind him",
+          "kf_last": "He reaches for the hilt, the clearing falling silent",
+          "continuity": "Arthur, stone and sword, hushed crowd",
+          "motion": "reaching; crowd hush",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide shot of Arthur standing before the sword in the stone, the dense crowd hushed behind him Arthur slender, hero, in linen tunic, cloak, carrying excalibur, wreathed in golden glow then wide of Arthur standing before the stone, then the crowd falls silent around him the camera static settling into he reaches for the hilt, the clearing falling silent with a low radiant hum continuity held: Arthur, stone and sword, hushed crowd",
+          "image_prompt_start": "photoreal cinematic: shot of Arthur standing before the sword in the stone, the dense crowd hushed behind him.",
+          "image_prompt_end": "photoreal cinematic: He reaches for the hilt, the clearing falling silent.",
+          "video_prompt_start": "Wide of Arthur standing before the stone. the crowd falls silent around him. The camera static. The beat resolves into the next matching frame. Continuity held: Arthur, stone and sword, hushed crowd.",
+          "video_prompt_end": "Wide of Arthur standing before the stone. the crowd falls silent around him. The camera static. The beat resolves into the next matching frame. Continuity held: Arthur, stone and sword, hushed crowd.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S42",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "arthur_A1_fused",
+            "excalibur_B1_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Arthur - a young squire, warm-hearted and brave, with tousled hair in simple linen clothes - 100% identical; studio bg/pose/light NOT used; image2: the enchanted sword Excalibur with a gleaming silver blade and ornate golden hilt - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "macro of Arthur gripping the hilt again"
+            ],
+            [
+              1.5,
+              3.0,
+              "one pull and the sword comes out easily"
+            ]
+          ],
+          "narration_mk": "Го зграпчи мечот и повлече — уште еднаш излезе лесно.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of Arthur's hand closing around the hilt, light flaring from the stone's crevice",
+          "kf_last": "The blade glides out smoothly, trailing radiant light",
+          "continuity": "Hilt and stone; Arthur's hand; radiant light",
+          "motion": "blade gliding; light trailing",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of Arthur's hand closing around the hilt, light flaring from the stone's crevice Arthur slender, hero, in linen tunic, cloak, carrying excalibur, wreathed in golden glow then macro of Arthur gripping the hilt again, then one pull and the sword comes out easily the camera static settling into the blade glides out smoothly, trailing radiant light with a low radiant hum continuity held: Hilt and stone; Arthur's hand; radiant light",
+          "image_prompt_start": "photoreal cinematic: Macro insert of Arthur's hand closing around the hilt, light flaring from the stone's crevice.",
+          "image_prompt_end": "photoreal cinematic: The blade glides out smoothly, trailing radiant light.",
+          "video_prompt_start": "Macro of Arthur gripping the hilt again. one pull and the sword comes out easily. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Hilt and stone; Arthur's hand; radiant light.",
+          "video_prompt_end": "Macro of Arthur gripping the hilt again. one pull and the sword comes out easily. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Hilt and stone; Arthur's hand; radiant light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S43",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "arthur_A1_fused",
+            "excalibur_B1_sheet",
+            "stone_env_A4_prop"
+          ],
+          "ref_scope": "image1: the fused master of Arthur - a young squire, warm-hearted and brave, with tousled hair in simple linen clothes - 100% identical; studio bg/pose/light NOT used; image2: the enchanted sword Excalibur with a gleaming silver blade and ornate golden hilt - 100% identical; studio bg/pose/light NOT used; image3: the ancient stone of choosing in a clearing, with Excalibur waiting in its cleft - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "low-angle wide of Excalibur raised high"
+            ],
+            [
+              1.8,
+              3.5,
+              "the blade shines like the sun above him"
+            ]
+          ],
+          "narration_mk": "Екскалибур се издигна високо, сјаен како сонце.",
+          "dialogue_mk": "",
+          "kf_first": "Wide low-angle of Arthur lifting Excalibur above his head, a column of sunlight breaking over him",
+          "kf_last": "The crowd gasps, lit by the sword's glow against the sky",
+          "continuity": "Arthur and sword; sunlight column; crowd",
+          "motion": "sword lifted; light breaking",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide low-angle of Arthur lifting Excalibur above his head, a column of sunlight breaking over him Arthur slender, hero, in linen tunic, cloak, carrying excalibur, wreathed in golden glow then low-angle wide of Excalibur raised high, then the blade shines like the sun above him the camera static settling into the crowd gasps, lit by the sword's glow against the sky with a low radiant hum continuity held: Arthur and sword; sunlight column; crowd",
+          "image_prompt_start": "photoreal cinematic: low-angle of Arthur lifting Excalibur above his head, a column of sunlight breaking over him.",
+          "image_prompt_end": "photoreal cinematic: The crowd gasps, lit by the sword's glow against the sky.",
+          "video_prompt_start": "Low-angle wide of Excalibur raised high. the blade shines like the sun above him. The camera static. The beat resolves into the next matching frame. Continuity held: Arthur and sword; sunlight column; crowd.",
+          "video_prompt_end": "Low-angle wide of Excalibur raised high. the blade shines like the sun above him. The camera static. The beat resolves into the next matching frame. Continuity held: Arthur and sword; sunlight column; crowd.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S44",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "arthur_A1_fused",
+            "excalibur_B1_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Arthur - a young squire, warm-hearted and brave, with tousled hair in simple linen clothes - 100% identical; studio bg/pose/light NOT used; image2: the enchanted sword Excalibur with a gleaming silver blade and ornate golden hilt - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "medium of Arthur drawing the sword again and again"
+            ],
+            [
+              1.5,
+              3.0,
+              "each time it comes free without effort"
+            ]
+          ],
+          "narration_mk": "Потоа го повтори уште еднаш, па уште еднаш, без напор.",
+          "dialogue_mk": "",
+          "kf_first": "Medium shot of Arthur sliding the sword back into the stone and drawing it again with ease",
+          "kf_last": "He lifts it a final time, his face serene and sure",
+          "continuity": "Arthur, stone and sword; serene face",
+          "motion": "slide and draw; final lift",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium shot of Arthur sliding the sword back into the stone and drawing it again with ease Arthur slender, hero, in linen tunic, cloak, carrying excalibur, wreathed in golden glow then medium of Arthur drawing the sword again and again, then each time it comes free without effort the camera static settling into he lifts it a final time, his face serene and sure with a low radiant hum continuity held: Arthur, stone and sword; serene face",
+          "image_prompt_start": "photoreal cinematic: shot of Arthur sliding the sword back into the stone and drawing it again with ease.",
+          "image_prompt_end": "photoreal cinematic: He lifts it a final time, his face serene and sure.",
+          "video_prompt_start": "Medium of Arthur drawing the sword again and again. each time it comes free without effort. The camera static. The beat resolves into the next matching frame. Continuity held: Arthur, stone and sword; serene face.",
+          "video_prompt_end": "Medium of Arthur drawing the sword again and again. each time it comes free without effort. The camera static. The beat resolves into the next matching frame. Continuity held: Arthur, stone and sword; serene face.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S45",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-left",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "nobles_A5_fused",
+            "arthur_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Nobles - powerful lords in rich cloaks with fur and gold trim - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Arthur - a young squire, warm-hearted and brave, with tousled hair in simple linen clothes - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "pan-left as the doubts vanish"
+            ],
+            [
+              2.0,
+              4.0,
+              "every head bows before him"
+            ]
+          ],
+          "narration_mk": "Гледајќи го тоа, сомнежите исчезнаа и сите спуштија глави.",
+          "dialogue_mk": "",
+          "kf_first": "Wide shot of the assembled nobles and knights kneeling one by one around Arthur, heads bowed",
+          "kf_last": "Pan-left across the crowd as every knee touches the earth in the evening light",
+          "continuity": "Crowd kneeling; Arthur with sword; evening light",
+          "motion": "pan-left; kneeling cascade",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide shot of the assembled nobles and knights kneeling one by one around Arthur, heads bowed Arthur slender, hero, in linen tunic, cloak, carrying excalibur, wreathed in golden glow then pan-left as the doubts vanish, then every head bows before him settling into pan-left across the crowd as every knee touches the earth in the evening light with a low radiant hum continuity held: Crowd kneeling; Arthur with sword; evening light",
+          "image_prompt_start": "photoreal cinematic: shot of the assembled nobles and knights kneeling one by one around Arthur, heads bowed.",
+          "image_prompt_end": "photoreal cinematic: -left across the crowd as every knee touches the earth in the evening light.",
+          "video_prompt_start": "Pan-left as the doubts vanish. every head bows before him. The beat resolves into the next matching frame. Continuity held: Crowd kneeling; Arthur with sword; evening light.",
+          "video_prompt_end": "Pan-left as the doubts vanish. every head bows before him. The beat resolves into the next matching frame. Continuity held: Crowd kneeling; Arthur with sword; evening light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S46",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "arthur_A1_fused",
+            "nobles_A5_fused"
+          ],
+          "ref_scope": "image1: the fused master of Arthur - a young squire, warm-hearted and brave, with tousled hair in simple linen clothes - 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Nobles - powerful lords in rich cloaks with fur and gold trim - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "low-angle medium as Arthur is proclaimed king"
+            ],
+            [
+              1.8,
+              3.5,
+              "the people raise their voices in acclaim"
+            ]
+          ],
+          "narration_mk": "Артур беше прогласен за крал на целиот тој народ.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of Arthur standing with Excalibur before the kneeling crowd, a crown offered on a cushion",
+          "kf_last": "A hand places the crown upon his head as he gazes forward",
+          "continuity": "Arthur, crown, kneeling crowd, Excalibur",
+          "motion": "crown placed; gaze forward",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Arthur standing with Excalibur before the kneeling crowd, a crown offered on a cushion Arthur slender, hero, in linen tunic, cloak, carrying excalibur, wreathed in golden glow then low-angle medium as Arthur is proclaimed king, then the people raise their voices in acclaim the camera static settling into a hand places the crown upon his head as he gazes forward with a low radiant hum continuity held: Arthur, crown, kneeling crowd, Excalibur",
+          "image_prompt_start": "photoreal cinematic: medium of Arthur standing with Excalibur before the kneeling crowd, a crown offered on a cushion.",
+          "image_prompt_end": "photoreal cinematic: A hand places the crown upon his head as he gazes forward.",
+          "video_prompt_start": "Low-angle medium as Arthur is proclaimed king. the people raise their voices in acclaim. The camera static. The beat resolves into the next matching frame. Continuity held: Arthur, crown, kneeling crowd, Excalibur.",
+          "video_prompt_end": "Low-angle medium as Arthur is proclaimed king. the people raise their voices in acclaim. The camera static. The beat resolves into the next matching frame. Continuity held: Arthur, crown, kneeling crowd, Excalibur.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S47",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "nobles_A5_fused",
+            "realm_env_A5_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Nobles - powerful lords in rich cloaks with fur and gold trim - 100% identical; studio bg/pose/light NOT used; image2: the misty medieval Breton realm of green hills and stone castles under grey sky - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "crane-up as the fighting for the crown ends"
+            ],
+            [
+              2.0,
+              4.0,
+              "peace settles over the kingdom"
+            ]
+          ],
+          "narration_mk": "Од тој миг, борбите за тронот запреа.",
+          "dialogue_mk": "",
+          "kf_first": "Wide high-angle of the realm at peace — banners hung calm, swords sheathed, soldiers returning home",
+          "kf_last": "Crane-up over green fields and a quiet castle bathed in golden dawn",
+          "continuity": "Realm and castle; peaceful golden light",
+          "motion": "crane-up; calm banners",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide high-angle of the realm at peace — banners hung calm, swords sheathed, soldiers returning home then crane-up as the fighting for the crown ends, then peace settles over the kingdom settling into crane-up over green fields and a quiet castle bathed in golden dawn continuity held: Realm and castle; peaceful golden light",
+          "image_prompt_start": "photoreal cinematic: high-angle of the realm at peace — banners hung calm, swords sheathed, soldiers returning home.",
+          "image_prompt_end": "photoreal cinematic: over green fields and a quiet castle bathed in golden dawn.",
+          "video_prompt_start": "Crane-up as the fighting for the crown ends. peace settles over the kingdom. The beat resolves into the next matching frame. Continuity held: Realm and castle; peaceful golden light.",
+          "video_prompt_end": "Crane-up as the fighting for the crown ends. peace settles over the kingdom. The beat resolves into the next matching frame. Continuity held: Realm and castle; peaceful golden light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S48",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "arthur_A1_fused",
+            "excalibur_B1_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Arthur - a young squire, warm-hearted and brave, with tousled hair in simple linen clothes - 100% identical; studio bg/pose/light NOT used; image2: the enchanted sword Excalibur with a gleaming silver blade and ornate golden hilt - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "close as the young king holds Excalibur with honor"
+            ],
+            [
+              2.0,
+              4.0,
+              "push-in on his steadfast eyes as peace returns"
+            ]
+          ],
+          "narration_mk": "Мирот конечно се врати во кралството, а младиот крал го држеше Екскалибур со чест.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of King Arthur's resolved face, crown glinting, Excalibur resting across his chest",
+          "kf_last": "Push-in on his eyes as golden sunlight warms the scene, peace in his gaze",
+          "continuity": "Arthur crowned; Excalibur; golden light",
+          "motion": "push-in on eyes; warm light",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of King Arthur's resolved face, crown glinting, Excalibur resting across his chest Arthur slender, hero, in linen tunic, cloak, carrying excalibur, wreathed in golden glow then close as the young king holds Excalibur with honor, then push-in on his steadfast eyes as peace returns settling into push-in on his eyes as golden sunlight warms the scene, peace in his gaze with a low radiant hum continuity held: Arthur crowned; Excalibur; golden light",
+          "image_prompt_start": "photoreal cinematic: of King Arthur's resolved face, crown glinting, Excalibur resting across his chest.",
+          "image_prompt_end": "photoreal cinematic: on his eyes as golden sunlight warms the scene, peace in his gaze.",
+          "video_prompt_start": "Close as the young king holds Excalibur with honor. push-in on his steadfast eyes as peace returns. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Arthur crowned; Excalibur; golden light.",
+          "video_prompt_end": "Close as the young king holds Excalibur with honor. push-in on his steadfast eyes as peace returns. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Arthur crowned; Excalibur; golden light.",
+          "motion_intensity": "gentle"
+        }
+      ],
+      "location_ref": "stone_of_choosing_courtyard",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class",
+        "screen_dir"
+      ],
+      "palette": [
+        "#052e1a",
+        "#d4af37",
+        "#fbbf24"
+      ],
+      "light_direction": "key light from screen-left, golden dawn over the stone of choosing",
+      "time_of_day": "dawn"
+    }
+  ],
+  "director_corrections": {
+    "issued": "2026-11-07",
+    "source": "KB §13 DIRECTOR CORRECTIONS — overrides all prior asset/keyframe guidance",
+    "rules": [
+      "DD HEADWEAR: no cap/hood/bandana/mask on head; hood = back-cowl only (cape-like); bare head + teal-blue glowing hair always visible; any head/face covering = REJECT",
+      "LEGENDARY WEAPONS MUST APPEAR: DD = twin Frostbite-class hand crossbows (ice-blue arcane crystal limbs, frost runes, frozen-light string, teal-blue glow); AZ = Dawnbreaker-class greatsword (pale sunsteel, molten-gold runes, golden holy fire edge, sunburst crossguard); hero sheet/keyframe without weapon = INCOMPLETE",
+      "WEAPON ANTI-SLOP: fantasy construction only; crossbow must NEVER read as firearm (no barrel/magazine/stock/Uzi/SMG silhouette = REJECT); anti-slop negatives always appended",
+      "BOSS FACE: Mal'garot HAS a prolific molten-lava face (lava dripping/running, drops falling to ground); faceless boss sheets SUPERSEDED",
+      "LOCATION BRIGHTNESS FLOOR: environment plates silhouette-readable at thumbnail; no murk-dark grades"
+    ],
+    "applies_when": "Activates when face_lock changes from AI-default to an enrolled identity (DD/AZ). AI-default packages carry this as a forward constraint, not a current defect.",
+    "anti_slop_negatives": "firearm, gun, machinegun, Uzi, barrel, magazine, ammo clip, muzzle, modern weapon"
+  },
+  "character_designs": {
+    "arthur": {
+      "archetype": "hero",
+      "build": "slender",
+      "scale": "human",
+      "palette": {
+        "primary": "#b8874a",
+        "secondary": "#f5e6c8",
+        "glow": "#f2c14e"
+      },
+      "costume": [
+        "linen_tunic",
+        "cloak"
+      ],
+      "props": [
+        "excalibur"
+      ],
+      "fx": [
+        "golden_glow"
+      ]
+    },
+    "merlin": {
+      "archetype": "wizard",
+      "build": "slender",
+      "scale": "human",
+      "palette": {
+        "primary": "#2b3a5c",
+        "secondary": "#8a9ac0",
+        "glow": "#2dd4bf"
+      },
+      "costume": [
+        "robes",
+        "cloak"
+      ],
+      "props": [
+        "staff",
+        "book"
+      ],
+      "fx": [
+        "magic_sparkles",
+        "teal_glow"
+      ]
+    },
+    "kay": {
+      "archetype": "noble",
+      "build": "lean",
+      "scale": "human",
+      "palette": {
+        "primary": "#5f7a4a",
+        "secondary": "#8a5a2b",
+        "glow": "#f2c14e"
+      },
+      "costume": [
+        "riding_clothes",
+        "cloak"
+      ],
+      "props": [
+        "armor",
+        "shield"
+      ],
+      "fx": []
+    },
+    "king_uther": {
+      "archetype": "king",
+      "build": "broad",
+      "scale": "human",
+      "palette": {
+        "primary": "#7f1d1d",
+        "secondary": "#d4af37",
+        "glow": "#b45309"
+      },
+      "costume": [
+        "royal_mantle",
+        "crown"
+      ],
+      "props": [
+        "scepter"
+      ],
+      "fx": []
+    }
+  }
+}

@@ -1,0 +1,2350 @@
+{
+  "num": "24",
+  "title_mk": "Виленикот и волшебната книга",
+  "title_en": "The Elf and the Magic Book",
+  "genre": "Бајка · фантазија",
+  "logline": "Ситен виленик од бакалница следи еден студент и открива дека стара скината книга крие волшебно дрво од светлина — и мора да избере меѓу вкусниот оброк и поголемото богатство.",
+  "spec": {
+    "aspect": "16:9",
+    "resolution": "1216x704",
+    "fps": 24,
+    "model": "model-agnostic (chosen at generation)",
+    "style": "photoreal",
+    "flf": true,
+    "language": "mk",
+    "shot_floor": 40,
+    "shot_max": 60,
+    "seed_policy": "fixed-per-shot (same seed → reproducible shot; re-roll per shot id)",
+    "style_anchor": [
+      "Diablo 2 cinematic",
+      "World of Warcraft cinematic",
+      "StarCraft cinematic"
+    ],
+    "negative_prompt": "deformed, extra limbs, morphing, watermark, text, static frame, blurry, low quality, cropped head, cut-off face",
+    "frames": 121,
+    "frames_fallback": 81,
+    "routes": [
+      {
+        "model": "Wan2.1-FLF2V-14B-720P",
+        "input": "start+end native (run START-ONLY)",
+        "status": "WORKING (lead for 14B quality)"
+      },
+      {
+        "model": "Kandinsky 6.0 Lite/Pro",
+        "input": "start-image-only",
+        "status": "WORKING (Pro-distill untested at scale)"
+      },
+      {
+        "model": "SkyReels-V3 R2V-14B",
+        "input": "start-image-only",
+        "status": "WORKING (fallback)"
+      },
+      {
+        "model": "LTX-Video 2B v0.9.5",
+        "input": "start-image-only",
+        "status": "WORKING (small/fast, low ceiling)"
+      },
+      {
+        "model": "Mochi-1",
+        "input": "start-image-only",
+        "status": "untested here"
+      },
+      {
+        "model": "LTX-2.3 22B distilled",
+        "input": "start-image-only",
+        "status": "DEAD (nanobind native-crash, 42 note)"
+      }
+    ],
+    "model_note": "Model chosen per story at generation (43 §4). Keyframes + continuation prompts are generator-agnostic; only the render command differs per model."
+  },
+  "cast": [
+    {
+      "role": "Виленикот / The Elf",
+      "trait": "ситен, милолик, љубопитен; земјени бои, зашилени уши",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Бакалот / The Grocer",
+      "trait": "округлест, добродушен трговец со престилка и топла насмевка",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Студентот / The Student",
+      "trait": "млад, љубезен, зачудувачки читател со торбичка со книги",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    }
+  ],
+  "acts": [
+    {
+      "id": "act1",
+      "num": "Act I",
+      "title": "Заложба",
+      "color": "#2dd4bf",
+      "pct": 30,
+      "synopsis": "Во топлата бакалница ситниот виленик живее од чинијата ориз и путер на добриот бакалот. Една вечер студент влегува и ја купува старата скината книга со која бакалот го завиткувал кашкавалот.",
+      "shots": [
+        {
+          "id": "S01",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "shop_E2_prop"
+          ],
+          "ref_scope": "image1: the grocery-shop design — old-European corner shop, wooden shelves, warm lantern light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "slow crane-down toward the door"
+            ],
+            [
+              1.93,
+              3.5,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Во еден стар европски град, под калдрмата, тивко стоеше една мала бакалница.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide establishing shot of a cobblestone old-European street at dusk, a small warmly lit corner grocery shop, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Crane-down toward the shop's wooden door as lanterns flicker and the shop sign swings gently",
+          "continuity": "Dusk palette, warm lantern glow",
+          "motion": "slow crane-down toward the door",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide establishing shot of a cobblestone old-European street at dusk, a small warmly lit corner grocery shop then slow crane-down toward the door, then resolve settling into crane-down toward the shop's wooden door as lanterns flicker and the shop sign swings gently continuity held: Dusk palette, warm lantern glow",
+          "image_prompt_start": "photoreal cinematic: wide establishing shot of a cobblestone old-European street at dusk, a small warmly lit corner grocery shop.",
+          "image_prompt_end": "photoreal cinematic: toward the shop's wooden door as lanterns flicker and the shop sign swings gently.",
+          "video_prompt_start": "Slow crane-down toward the door. resolve. The beat resolves into the next matching frame. Continuity held: Dusk palette, warm lantern glow.",
+          "video_prompt_end": "Slow crane-down toward the door. resolve. The beat resolves into the next matching frame. Continuity held: Dusk palette, warm lantern glow.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S02",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "shop_E2_prop"
+          ],
+          "ref_scope": "image1: the grocery-shop design — old-European corner shop, wooden shelves, warm lantern light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "slow push-in through the shop"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Внатре, меѓу рафтовите со намирници, беше топло и мирисаше на зачини.",
+          "dialogue_mk": "",
+          "kf_first": "Medium interior of a cozy old grocery shop, wooden shelves stacked with jars, cheeses and spices, warm oil-lamp glow, photoreal cinematic",
+          "kf_last": "Push-in past the shelves toward a shadowed alcove in the corner",
+          "continuity": "Warm interior palette from S01",
+          "motion": "slow push-in through the shop",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium interior of a cozy old grocery shop, wooden shelves stacked with jars, cheeses and spices, warm oil-lamp glow, photoreal cinematic then slow push-in through the shop, then resolve settling into push-in past the shelves toward a shadowed alcove in the corner continuity held: Warm interior palette from S01",
+          "image_prompt_start": "photoreal cinematic: interior of a cozy old grocery shop, wooden shelves stacked with jars, cheeses and spices, warm oil-lamp glow, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: past the shelves toward a shadowed alcove in the corner.",
+          "video_prompt_start": "Slow push-in through the shop. resolve. The beat resolves into the next matching frame. Continuity held: Warm interior palette from S01.",
+          "video_prompt_end": "Slow push-in through the shop. resolve. The beat resolves into the next matching frame. Continuity held: Warm interior palette from S01.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S03",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "elf_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Elf — small, gentle, curious; earthy tunic, pointed ears — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "subtle push-in on the elf's eyes"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Таму, во едно ковче, живееше ситниот виленик.",
+          "dialogue_mk": "",
+          "kf_first": "Close shot of a tiny elf peeking from a small alcove behind sacks of grain, large bright curious eyes, photoreal cinematic",
+          "kf_last": "Push-in on the elf's gentle face as he blinks in the lamplight",
+          "continuity": "Elf identity: small, earthy tunic and pointed ears",
+          "motion": "subtle push-in on the elf's eyes",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close shot of a tiny elf peeking from a small alcove behind sacks of grain, large bright curious eyes, photoreal cinematic Elf slender, trickster then subtle push-in on the elf's eyes, then resolve settling into push-in on the elf's gentle face as he blinks in the lamplight continuity held: Elf identity: small, earthy tunic and pointed ears",
+          "image_prompt_start": "photoreal cinematic: shot of a tiny elf peeking from a small alcove behind sacks of grain, large bright curious eyes, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: on the elf's gentle face as he blinks in the lamplight.",
+          "video_prompt_start": "Subtle push-in on the elf's eyes. resolve. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Elf identity: small, earthy tunic and pointed ears.",
+          "video_prompt_end": "Subtle push-in on the elf's eyes. resolve. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Elf identity: small, earthy tunic and pointed ears.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S04",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "grocer_A2_fused",
+            "rice_bowl_K1_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Grocer — round, kind face, apron, warm smile — 100% identical; studio bg/pose/light NOT used; image2: the rice-bowl design — steamed rice with a melting knob of golden butter — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "grocer moves toward the elf's corner"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "А добриот бакалот секој ден му носеше чинија ориз со путер.",
+          "dialogue_mk": "",
+          "kf_first": "Medium shot of the round kind grocer carrying a small bowl, steam rising, warm lantern light, photoreal cinematic",
+          "kf_last": "He sets the bowl down gently before the elf's corner",
+          "continuity": "Grocer identity: round, apron, kind smile; warm palette",
+          "motion": "grocer moves toward the elf's corner",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium shot of the round kind grocer carrying a small bowl, steam rising, warm lantern light, photoreal cinematic Grocer hulking, elder then grocer moves toward the elf's corner, then resolve the camera static settling into he sets the bowl down gently before the elf's corner continuity held: Grocer identity: round, apron, kind smile; warm palette",
+          "image_prompt_start": "photoreal cinematic: shot of the round kind grocer carrying a small bowl, steam rising, warm lantern light, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: He sets the bowl down gently before the elf's corner.",
+          "video_prompt_start": "Grocer moves toward the elf's corner. resolve. The camera static. The beat resolves into the next matching frame. Continuity held: Grocer identity: round, apron, kind smile; warm palette.",
+          "video_prompt_end": "Grocer moves toward the elf's corner. resolve. The camera static. The beat resolves into the next matching frame. Continuity held: Grocer identity: round, apron, kind smile; warm palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S05",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "macro",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "rice_bowl_K1_prop"
+          ],
+          "ref_scope": "image1: the rice-bowl design — steamed rice with a melting knob of golden butter — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "steam drift"
+            ],
+            [
+              1.65,
+              3.0,
+              "elf's hand enters"
+            ]
+          ],
+          "narration_mk": "Тоа беше навистина вкусен оброк!",
+          "dialogue_mk": "",
+          "kf_first": "Macro close-up of a bowl of steamed rice with a melting knob of golden butter, steam curling, photoreal cinematic",
+          "kf_last": "The elf's small hand reaches in and takes a warm bite",
+          "continuity": "Bowl and butter from S04",
+          "motion": "steam drift; elf's hand enters",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro close-up of a bowl of steamed rice with a melting knob of golden butter, steam curling, photoreal cinematic then steam drift, then elf's hand enters the camera static settling into the elf's small hand reaches in and takes a warm bite continuity held: Bowl and butter from S04",
+          "image_prompt_start": "photoreal cinematic: Macro close-up of a bowl of steamed rice with a melting knob of golden butter, steam curling, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The elf's small hand reaches in and takes a warm bite.",
+          "video_prompt_start": "Steam drift. elf's hand enters. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Bowl and butter from S04.",
+          "video_prompt_end": "Steam drift. elf's hand enters. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Bowl and butter from S04.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S06",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "elf_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Elf — small, gentle, curious; earthy tunic, pointed ears — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.38,
+              "small satisfied nod"
+            ],
+            [
+              1.38,
+              2.5,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Виленик: „Ммм, навистина вкусно!“",
+          "kf_first": "Close-up of the elf's delighted face, cheeks full, eyes closed in contentment, photoreal cinematic",
+          "kf_last": "He opens his eyes and smiles warmly at the grocer",
+          "continuity": "Elf identity; warm bowl light",
+          "motion": "small satisfied nod",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the elf's delighted face, cheeks full, eyes closed in contentment, photoreal cinematic Elf slender, trickster then small satisfied nod, then resolve the camera static settling into he opens his eyes and smiles warmly at the grocer a voice speaks in Macedonian: \"Виленик: „Ммм, навистина вкусно!“\" continuity held: Elf identity; warm bowl light",
+          "image_prompt_start": "photoreal cinematic: of the elf's delighted face, cheeks full, eyes closed in contentment, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: He opens his eyes and smiles warmly at the grocer.",
+          "video_prompt_start": "Small satisfied nod. resolve. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Виленик: „Ммм, навистина вкусно!“\" Continuity held: Elf identity; warm bowl light.",
+          "video_prompt_end": "Small satisfied nod. resolve. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Виленик: „Ммм, навистина вкусно!“\" Continuity held: Elf identity; warm bowl light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S07",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "slow track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "elf_A1_fused",
+            "grocer_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Elf — small, gentle, curious; earthy tunic, pointed ears — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Grocer — round, kind face, apron, warm smile — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "gentle lateral track"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Така си живееја двајцата — во мир и тишина.",
+          "dialogue_mk": "",
+          "kf_first": "Wide shot of the tiny elf and the large grocer side by side in the cozy shop, warm lamplight, photoreal cinematic",
+          "kf_last": "The camera tracks slowly past the shelves as evening settles outside the window",
+          "continuity": "Both identities; warm palette",
+          "motion": "gentle lateral track",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide shot of the tiny elf and the large grocer side by side in the cozy shop, warm lamplight, photoreal cinematic Elf slender, trickster Grocer hulking, elder then gentle lateral track, then resolve the camera slow track settling into the camera tracks slowly past the shelves as evening settles outside the window continuity held: Both identities; warm palette",
+          "image_prompt_start": "photoreal cinematic: shot of the tiny elf and the large grocer side by side in the cozy shop, warm lamplight, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The tracks slowly past the shelves as evening outside the window.",
+          "video_prompt_start": "Gentle lateral track. resolve. The camera slow track. The beat resolves into the next matching frame. Continuity held: Both identities; warm palette.",
+          "video_prompt_end": "Gentle lateral track. resolve. The camera slow track. The beat resolves into the next matching frame. Continuity held: Both identities; warm palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S08",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "student_A3_fused",
+            "shop_E2_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Student — young, kind reader with a satchel of books — 100% identical; studio bg/pose/light NOT used; image2: the grocery-shop design — old-European corner shop, wooden shelves, warm lantern light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "student walks to counter"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Една вечер вратата се отвори и влезе еден студент.",
+          "dialogue_mk": "",
+          "kf_first": "Medium shot of the shop door opening at night, a young student entering with a satchel, cold blue moonlight spilling in, photoreal cinematic",
+          "kf_last": "The student steps into the warm lamplight and approaches the counter",
+          "continuity": "Cool exterior night vs warm interior",
+          "motion": "student walks to counter",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium shot of the shop door opening at night, a young student entering with a satchel, cold blue moonlight spilling in, photoreal cinematic Student slender, child, wreathed in golden glow then student walks to counter, then resolve the camera static settling into the student steps into the warm lamplight and approaches the counter with a low radiant hum continuity held: Cool exterior night vs warm interior",
+          "image_prompt_start": "photoreal cinematic: shot of the shop door opening at night, a young student entering with a satchel, cold blue moonlight spilling in, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The student steps into the warm lamplight and approaches the counter.",
+          "video_prompt_start": "Student walks to counter. resolve. The camera static. The beat resolves into the next matching frame. Continuity held: Cool exterior night vs warm interior.",
+          "video_prompt_end": "Student walks to counter. resolve. The camera static. The beat resolves into the next matching frame. Continuity held: Cool exterior night vs warm interior.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S09",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "student_A3_fused",
+            "grocer_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Student — young, kind reader with a satchel of books — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Grocer — round, kind face, apron, warm smile — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "grocer turns to fetch cheese"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Студент: „Добар вечер. Едно парче кашкавал, ве молам.“",
+          "kf_first": "Medium shot of the student at the wooden counter speaking politely to the grocer, photoreal cinematic",
+          "kf_last": "The grocer reaches for a wheel of cheese behind him",
+          "continuity": "Counter, both identities",
+          "motion": "grocer turns to fetch cheese",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium shot of the student at the wooden counter speaking politely to the grocer, photoreal cinematic Student slender, child, wreathed in golden glow Grocer hulking, elder then grocer turns to fetch cheese, then resolve the camera static settling into the grocer reaches for a wheel of cheese behind him with a low radiant hum a voice speaks in Macedonian: \"Студент: „Добар вечер. Едно парче кашкавал, ве молам.“\" continuity held: Counter, both identities",
+          "image_prompt_start": "photoreal cinematic: shot of the student at the wooden counter speaking politely to the grocer, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The grocer reaches for a wheel of cheese behind him.",
+          "video_prompt_start": "Grocer turns to fetch cheese. resolve. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Студент: „Добар вечер. Едно парче кашкавал, ве молам.“\" Continuity held: Counter, both identities.",
+          "video_prompt_end": "Grocer turns to fetch cheese. resolve. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Студент: „Добар вечер. Едно парче кашкавал, ве молам.“\" Continuity held: Counter, both identities.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S10",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "grocer_A2_fused",
+            "old_book_K2_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Grocer — round, kind face, apron, warm smile — 100% identical; studio bg/pose/light NOT used; image2: the old-book design — aged leather binding, torn yellowed pages with faded ink — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "deliberate tearing"
+            ],
+            [
+              1.65,
+              3.0,
+              "folding of paper"
+            ]
+          ],
+          "narration_mk": "Но студентот забележа дека бакалот го завиткува кашкавалот во страници скинати од стара книга.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of the grocer's hands tearing aged yellowed pages from an old leather-bound book and wrapping cheese in them, photoreal cinematic",
+          "kf_last": "A torn page with faded ink is folded around the cheese",
+          "continuity": "Old book prop, grocery counter",
+          "motion": "deliberate tearing and folding of paper",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of the grocer's hands tearing aged yellowed pages from an old leather-bound book and wrapping cheese in them, photoreal cinematic Grocer hulking, elder then deliberate tearing, then folding of paper the camera static settling into a torn page with faded ink is folded around the cheese continuity held: Old book prop, grocery counter",
+          "image_prompt_start": "photoreal cinematic: Macro insert of the grocer's hands tearing aged yellowed pages from an old leather-bound book and wrapping cheese in them, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: A torn page with faded ink is folded around the cheese.",
+          "video_prompt_start": "Deliberate tearing. folding of paper. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Old book prop, grocery counter.",
+          "video_prompt_end": "Deliberate tearing. folding of paper. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Old book prop, grocery counter.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S11",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "student_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Student — young, kind reader with a satchel of books — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.38,
+              "slow push-in"
+            ],
+            [
+              1.38,
+              2.5,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Студент: „Што правите со таа книга? Побарајте... да ја купам целата.“",
+          "kf_first": "Close-up of the student's concerned, curious face, eyes fixed on the torn book, photoreal cinematic",
+          "kf_last": "Push-in on his earnest eyes",
+          "continuity": "Student identity; book on counter",
+          "motion": "slow push-in",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the student's concerned, curious face, eyes fixed on the torn book, photoreal cinematic Student slender, child, wreathed in golden glow then slow push-in, then resolve settling into push-in on his earnest eyes with a low radiant hum a voice speaks in Macedonian: \"Студент: „Што правите со таа книга? Побарајте... да ја купам целата.“\" continuity held: Student identity; book on counter",
+          "image_prompt_start": "photoreal cinematic: of the student's concerned, curious face, eyes fixed on the torn book, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: on his earnest eyes.",
+          "video_prompt_start": "Slow push-in. resolve. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Студент: „Што правите со таа книга? Побарајте... да ја купам целата.“\" Continuity held: Student identity; book on counter.",
+          "video_prompt_end": "Slow push-in. resolve. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Студент: „Што правите со таа книга? Побарајте... да ја купам целата.“\" Continuity held: Student identity; book on counter.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S12",
+          "shot_type": "CLOSE-UP",
+          "size": "SHOT-REVERSE",
+          "angle": "over-shoulder",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "grocer_A2_fused",
+            "student_A3_fused",
+            "old_book_K2_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Grocer — round, kind face, apron, warm smile — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Student — young, kind reader with a satchel of books — 100% identical; studio bg/pose/light NOT used; image3: the old-book design — aged leather binding, torn yellowed pages with faded ink — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "handing over the book"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Бакалот: „Се разбира! И онака не ми треба.“",
+          "kf_first": "Over-shoulder reverse of the grocer shrugging warmly as he hands the remaining book to the student, photoreal cinematic",
+          "kf_last": "The book passes from his hands into the student's",
+          "continuity": "Old book, counter light",
+          "motion": "handing over the book",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: over-shoulder reverse of the grocer shrugging warmly as he hands the remaining book to the student, photoreal cinematic Grocer hulking, elder Student slender, child, wreathed in golden glow then handing over the book, then resolve the camera static settling into the book passes from his hands into the student's with a low radiant hum a voice speaks in Macedonian: \"Бакалот: „Се разбира! И онака не ми треба.“\" continuity held: Old book, counter light",
+          "image_prompt_start": "photoreal cinematic: Over-shoulder reverse of the grocer shrugging warmly as he hands the remaining book to the student, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The book passes from his hands into the student's.",
+          "video_prompt_start": "Handing over the book. resolve. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Бакалот: „Се разбира! И онака не ми треба.“\" Continuity held: Old book, counter light.",
+          "video_prompt_end": "Handing over the book. resolve. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Бакалот: „Се разбира! И онака не ми треба.“\" Continuity held: Old book, counter light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S13",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "high-angle",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "student_A3_fused",
+            "grocer_A2_fused",
+            "old_book_K2_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Student — young, kind reader with a satchel of books — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Grocer — round, kind face, apron, warm smile — 100% identical; studio bg/pose/light NOT used; image3: the old-book design — aged leather binding, torn yellowed pages with faded ink — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "book tucked away"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Момчето се насмеа: „Сигурен сум дека не ти треба.“",
+          "dialogue_mk": "",
+          "kf_first": "High-angle close-up of the grocer's and student's hands exchanging the book, the student smiling faintly, photoreal cinematic",
+          "kf_last": "The student tucks the book carefully into his satchel",
+          "continuity": "Book and hands",
+          "motion": "book tucked away",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle close-up of the grocer's and student's hands exchanging the book, the student smiling faintly, photoreal cinematic Student slender, child, wreathed in golden glow Grocer hulking, elder then book tucked away, then resolve the camera static settling into the student tucks the book carefully into his satchel with a low radiant hum continuity held: Book and hands",
+          "image_prompt_start": "photoreal cinematic: close-up of the grocer's and student's hands exchanging the book, the student smiling faintly, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The student tucks the book carefully into his satchel.",
+          "video_prompt_start": "Book tucked away. resolve. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Book and hands.",
+          "video_prompt_end": "Book tucked away. resolve. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Book and hands.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S14",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "elf_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Elf — small, gentle, curious; earthy tunic, pointed ears — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "push-in on the elf's face"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "А виленикот се налути — помисли дека студентот е дрзок со неговиот заштитник.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle close-up of the elf scowling from his corner, arms crossed, eyes narrowed at the student, photoreal cinematic",
+          "kf_last": "Push-in on the elf's determined, mischievous glare",
+          "continuity": "Elf identity; warm corner",
+          "motion": "push-in on the elf's face",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle close-up of the elf scowling from his corner, arms crossed, eyes narrowed at the student, photoreal cinematic Elf slender, trickster then push-in on the elf's face, then resolve settling into push-in on the elf's determined, mischievous glare continuity held: Elf identity; warm corner",
+          "image_prompt_start": "photoreal cinematic: close-up of the elf scowling from his corner, arms crossed, eyes narrowed at the student, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: on the elf's determined, mischievous glare.",
+          "video_prompt_start": "Push-in on the elf's face. resolve. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Elf identity; warm corner.",
+          "video_prompt_end": "Push-in on the elf's face. resolve. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Elf identity; warm corner.",
+          "motion_intensity": "gentle"
+        }
+      ],
+      "location_ref": "grocers_shop_interior_and_exterior",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#f2c14e",
+        "#8a5a2b",
+        "#2b3a5c"
+      ],
+      "light_direction": "key light from screen-left, warm lantern glow with cool dusk exterior",
+      "time_of_day": "dusk"
+    },
+    {
+      "id": "act2",
+      "num": "Act II",
+      "title": "Волшебната книга",
+      "color": "#f59e0b",
+      "pct": 50,
+      "synopsis": "Налутен, виленикот го следи студентот до неговата соба и гледа како од книгата излегува зрак светлина што се претвора во прекрасно дрво со цветови и овошја сјајни како ѕвезди.",
+      "shots": [
+        {
+          "id": "S15",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "pull-back",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "student_A3_fused",
+            "elf_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Student — young, kind reader with a satchel of books — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Elf — small, gentle, curious; earthy tunic, pointed ears — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "pull-back revealing the elf"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "И така, реши да го следи, за да си поигра мајтап со него.",
+          "dialogue_mk": "",
+          "kf_first": "Medium shot of the student stepping out of the shop into the cold blue night, book in satchel, photoreal cinematic",
+          "kf_last": "Pull-back to reveal the tiny elf slipping through the door crack behind him",
+          "continuity": "Night palette; student and elf identities",
+          "motion": "pull-back revealing the elf",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium shot of the student stepping out of the shop into the cold blue night, book in satchel, photoreal cinematic Student slender, child, wreathed in golden glow Elf slender, trickster then pull-back revealing the elf, then resolve settling into pull-back to reveal the tiny elf slipping through the door crack behind him with a low radiant hum continuity held: Night palette; student and elf identities",
+          "image_prompt_start": "photoreal cinematic: shot of the student stepping out of the shop into the cold blue night, book in satchel, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: to reveal the tiny elf slipping through the door crack behind him.",
+          "video_prompt_start": "Pull-back revealing the elf. resolve. The beat resolves into the next matching frame. Continuity held: Night palette; student and elf identities.",
+          "video_prompt_end": "Pull-back revealing the elf. resolve. The beat resolves into the next matching frame. Continuity held: Night palette; student and elf identities.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S16",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "student_A3_fused",
+            "elf_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Student — young, kind reader with a satchel of books — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Elf — small, gentle, curious; earthy tunic, pointed ears — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "lateral track following the pair"
+            ],
+            [
+              1.93,
+              3.5,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Тивко го следеше низ улиците.",
+          "dialogue_mk": "",
+          "kf_first": "Wide tracking shot of the student walking down a moonlit cobblestone street, the tiny elf darting between shadows, photoreal cinematic",
+          "kf_last": "Track continues as the elf hops from barrel to doorstep",
+          "continuity": "Night street, moonlit blue palette",
+          "motion": "lateral track following the pair",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide tracking shot of the student walking down a moonlit cobblestone street, the tiny elf darting between shadows, photoreal cinematic Student slender, child, wreathed in golden glow Elf slender, trickster then lateral track following the pair, then resolve settling into track continues as the elf hops from barrel to doorstep with a low radiant hum continuity held: Night street, moonlit blue palette",
+          "image_prompt_start": "photoreal cinematic: of the student walking down a moonlit cobblestone street, the tiny elf darting between shadows, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: continues as the elf hops from barrel to doorstep.",
+          "video_prompt_start": "Lateral track following the pair. resolve. The beat resolves into the next matching frame. Continuity held: Night street, moonlit blue palette.",
+          "video_prompt_end": "Lateral track following the pair. resolve. The beat resolves into the next matching frame. Continuity held: Night street, moonlit blue palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S17",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "room_E3_prop"
+          ],
+          "ref_scope": "image1: the student-room design — modest desk, single bed, candle, stacked books — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "student enters room"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Дури до неговата скромна соба.",
+          "dialogue_mk": "",
+          "kf_first": "Wide shot of a modest student's room at night: single bed, desk, a flickering candle, books stacked, photoreal cinematic",
+          "kf_last": "The student enters and sets his satchel on the desk",
+          "continuity": "Night interior, candlelight",
+          "motion": "student enters room",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide shot of a modest student's room at night: single bed, desk, a flickering candle, books stacked, photoreal cinematic then student enters room, then resolve the camera static settling into the student enters and sets his satchel on the desk continuity held: Night interior, candlelight",
+          "image_prompt_start": "photoreal cinematic: shot of a modest student's room at night: single bed, desk, a flickering candle, books stacked, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The student enters and sets his satchel on the desk.",
+          "video_prompt_start": "Student enters room. resolve. The camera static. The beat resolves into the next matching frame. Continuity held: Night interior, candlelight.",
+          "video_prompt_end": "Student enters room. resolve. The camera static. The beat resolves into the next matching frame. Continuity held: Night interior, candlelight.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S18",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "student_A3_fused",
+            "room_E3_prop",
+            "old_book_K2_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Student — young, kind reader with a satchel of books — 100% identical; studio bg/pose/light NOT used; image2: the student-room design — modest desk, single bed, candle, stacked books — 100% identical; studio bg/pose/light NOT used; image3: the old-book design — aged leather binding, torn yellowed pages with faded ink — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "book opens"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Студентот ја извади скинатата книга и ја отвори.",
+          "dialogue_mk": "",
+          "kf_first": "Medium shot of the student at his desk opening the worn, torn book under candlelight, photoreal cinematic",
+          "kf_last": "The pages fall open to a spread of faded ink",
+          "continuity": "Old book prop, candlelight",
+          "motion": "book opens",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium shot of the student at his desk opening the worn, torn book under candlelight, photoreal cinematic Student slender, child, wreathed in golden glow then book opens, then resolve the camera static settling into the pages fall open to a spread of faded ink with a low radiant hum continuity held: Old book prop, candlelight",
+          "image_prompt_start": "photoreal cinematic: shot of the student at his desk opening the worn, torn book under candlelight, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The pages fall open to a spread of faded ink.",
+          "video_prompt_start": "Book opens. resolve. The camera static. The beat resolves into the next matching frame. Continuity held: Old book prop, candlelight.",
+          "video_prompt_end": "Book opens. resolve. The camera static. The beat resolves into the next matching frame. Continuity held: Old book prop, candlelight.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S19",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "old_book_K2_prop"
+          ],
+          "ref_scope": "image1: the old-book design — aged leather binding, torn yellowed pages with faded ink — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "light grows"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Тогаш, од страниците излезе зрак светлина.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of a thin beam of golden light beginning to emerge from between the book's torn pages, photoreal cinematic",
+          "kf_last": "The beam widens and brightens, washing the page in light",
+          "continuity": "Book; matching golden light",
+          "motion": "light grows",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of a thin beam of golden light beginning to emerge from between the book's torn pages, photoreal cinematic then light grows, then resolve the camera static settling into the beam widens and brightens, washing the page in light continuity held: Book; matching golden light",
+          "image_prompt_start": "photoreal cinematic: Macro insert of a thin beam of golden light beginning to emerge from between the book's torn pages, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The beam widens and brightens, washing the page in light.",
+          "video_prompt_start": "Light grows. resolve. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Book; matching golden light.",
+          "video_prompt_end": "Light grows. resolve. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Book; matching golden light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S20",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "student_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Student — young, kind reader with a satchel of books — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.38,
+              "slow push-in"
+            ],
+            [
+              1.38,
+              2.5,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Студент: „Што е ова...?“, шепоти зачуено.",
+          "kf_first": "Close-up of the student's amazed face lit from below by golden light, eyes wide, photoreal cinematic",
+          "kf_last": "Push-in on his glimmering eyes reflecting the glow",
+          "continuity": "Golden light on face",
+          "motion": "slow push-in",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the student's amazed face lit from below by golden light, eyes wide, photoreal cinematic Student slender, child, wreathed in golden glow then slow push-in, then resolve settling into push-in on his glimmering eyes reflecting the glow with a low radiant hum a voice speaks in Macedonian: \"Студент: „Што е ова...?“, шепоти зачуено.\" continuity held: Golden light on face",
+          "image_prompt_start": "photoreal cinematic: of the student's amazed face lit from below by golden light, eyes wide, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: on his glimmering eyes reflecting the glow.",
+          "video_prompt_start": "Slow push-in. resolve. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Студент: „Што е ова...?“, шепоти зачуено.\" Continuity held: Golden light on face.",
+          "video_prompt_end": "Slow push-in. resolve. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Студент: „Што е ова...?“, шепоти зачуено.\" Continuity held: Golden light on face.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S21",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "old_book_K2_prop",
+            "room_E3_prop"
+          ],
+          "ref_scope": "image1: the old-book design — aged leather binding, torn yellowed pages with faded ink — 100% identical; studio bg/pose/light NOT used; image2: the student-room design — modest desk, single bed, candle, stacked books — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "crane-up through the light"
+            ],
+            [
+              1.93,
+              3.5,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Светлината растеше, придружена со милозвучна музика.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide shot of the golden light beam rising from the book toward the ceiling, the room flooding with glow, photoreal cinematic",
+          "kf_last": "Crane-up as the beam expands, light particles dancing with a faint melodic shimmer",
+          "continuity": "Golden light, room",
+          "motion": "crane-up through the light",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide shot of the golden light beam rising from the book toward the ceiling, the room flooding with glow, photoreal cinematic then crane-up through the light, then resolve settling into crane-up as the beam expands, light particles dancing with a faint melodic shimmer continuity held: Golden light, room",
+          "image_prompt_start": "photoreal cinematic: wide shot of the golden light beam rising from the book toward the ceiling, the room flooding with glow, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: as the beam expands, light particles dancing with a faint melodic shimmer.",
+          "video_prompt_start": "Crane-up through the light. resolve. The beat resolves into the next matching frame. Continuity held: Golden light, room.",
+          "video_prompt_end": "Crane-up through the light. resolve. The beat resolves into the next matching frame. Continuity held: Golden light, room.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S22",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "light_tree_E1_prop"
+          ],
+          "ref_scope": "image1: the light-tree design — luminous trunk and branches, star-like blossoms and glowing fruit — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "tree grows"
+            ],
+            [
+              1.65,
+              3.0,
+              "branches spread"
+            ]
+          ],
+          "narration_mk": "И зракот полека се претвори во дрво.",
+          "dialogue_mk": "",
+          "kf_first": "Wide shot of the beam of light beginning to coalesce into the glowing trunk and branches of a tree, photoreal cinematic",
+          "kf_last": "The tree grows taller, branches spreading across the room",
+          "continuity": "Golden light tree",
+          "motion": "tree grows and branches spread",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide shot of the beam of light beginning to coalesce into the glowing trunk and branches of a tree, photoreal cinematic then tree grows, then branches spread the camera static settling into the tree grows taller, branches spreading across the room continuity held: Golden light tree",
+          "image_prompt_start": "photoreal cinematic: shot of the beam of light beginning to coalesce into the glowing trunk and branches of a tree, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The tree grows taller, branches spreading across the room.",
+          "video_prompt_start": "Tree grows. branches spread. The camera static. The beat resolves into the next matching frame. Continuity held: Golden light tree.",
+          "video_prompt_end": "Tree grows. branches spread. The camera static. The beat resolves into the next matching frame. Continuity held: Golden light tree.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S23",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "light_tree_E1_prop"
+          ],
+          "ref_scope": "image1: the light-tree design — luminous trunk and branches, star-like blossoms and glowing fruit — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "push-in"
+            ],
+            [
+              1.65,
+              3.0,
+              "flowers open"
+            ]
+          ],
+          "narration_mk": "Дрво на кое натежнуваа цветови и овошја.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of the luminous tree's trunk as blossoms begin to bud along its branches, photoreal cinematic",
+          "kf_last": "Push-in as flowers open one by one, petals glowing",
+          "continuity": "Tree of light",
+          "motion": "push-in; flowers open",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of the luminous tree's trunk as blossoms begin to bud along its branches, photoreal cinematic then push-in, then flowers open settling into push-in as flowers open one by one, petals glowing continuity held: Tree of light",
+          "image_prompt_start": "photoreal cinematic: medium of the luminous tree's trunk as blossoms begin to bud along its branches, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: as flowers open one by one, petals glowing.",
+          "video_prompt_start": "Push-in. flowers open. The beat resolves into the next matching frame. Continuity held: Tree of light.",
+          "video_prompt_end": "Push-in. flowers open. The beat resolves into the next matching frame. Continuity held: Tree of light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S24",
+          "shot_type": "CLOSE-UP",
+          "size": "MACRO",
+          "angle": "macro",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "light_tree_E1_prop"
+          ],
+          "ref_scope": "image1: the light-tree design — luminous trunk and branches, star-like blossoms and glowing fruit — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "petals unfold"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Сјајни како ѕвезди.",
+          "dialogue_mk": "",
+          "kf_first": "Macro of a single glowing blossom unfolding, light shimmering like starlight on its petals, photoreal cinematic",
+          "kf_last": "The bloom fully opens, a soft star-like glint at its heart",
+          "continuity": "Blossom from S23",
+          "motion": "petals unfold",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro of a single glowing blossom unfolding, light shimmering like starlight on its petals, photoreal cinematic then petals unfold, then resolve the camera static settling into the bloom fully opens, a soft star-like glint at its heart continuity held: Blossom from S23",
+          "image_prompt_start": "photoreal cinematic: Macro of a single glowing blossom unfolding, light shimmering like starlight on its petals, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The bloom fully opens, a soft star-like glint at its heart.",
+          "video_prompt_start": "Petals unfold. resolve. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Blossom from S23.",
+          "video_prompt_end": "Petals unfold. resolve. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Blossom from S23.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S25",
+          "shot_type": "CLOSE-UP",
+          "size": "MACRO",
+          "angle": "macro",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "light_tree_E1_prop"
+          ],
+          "ref_scope": "image1: the light-tree design — luminous trunk and branches, star-like blossoms and glowing fruit — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "gentle pulsing light"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "",
+          "kf_first": "Macro of a luminous fruit among the branches, its skin softly pulsing with inner light like a star, photoreal cinematic",
+          "kf_last": "The fruit glows brighter, tiny sparkles drifting off its surface",
+          "continuity": "Tree of light",
+          "motion": "gentle pulsing light",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro of a luminous fruit among the branches, its skin softly pulsing with inner light like a star, photoreal cinematic then gentle pulsing light, then resolve the camera static settling into the fruit glows brighter, tiny sparkles drifting off its surface continuity held: Tree of light",
+          "image_prompt_start": "photoreal cinematic: Macro of a luminous fruit among the branches, its skin softly pulsing with inner light like a star, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The fruit glows brighter, tiny sparkles drifting off its surface.",
+          "video_prompt_start": "Gentle pulsing light. resolve. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Tree of light.",
+          "video_prompt_end": "Gentle pulsing light. resolve. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Tree of light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S26",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "student_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Student — young, kind reader with a satchel of books — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.38,
+              "push-in"
+            ],
+            [
+              1.38,
+              2.5,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Студентот гледаше во чудото.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the student standing beneath the light tree, face upturned in wonder, golden glow on his skin, photoreal cinematic",
+          "kf_last": "Push-in on his awestruck expression",
+          "continuity": "Student; tree glow",
+          "motion": "push-in",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the student standing beneath the light tree, face upturned in wonder, golden glow on his skin, photoreal cinematic Student slender, child, wreathed in golden glow then push-in, then resolve settling into push-in on his awestruck expression with a low radiant hum continuity held: Student; tree glow",
+          "image_prompt_start": "photoreal cinematic: of the student standing beneath the light tree, face upturned in wonder, golden glow on his skin, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: on his awestruck expression.",
+          "video_prompt_start": "Push-in. resolve. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Student; tree glow.",
+          "video_prompt_end": "Push-in. resolve. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Student; tree glow.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S27",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "elf_A1_fused",
+            "light_tree_E1_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Elf — small, gentle, curious; earthy tunic, pointed ears — 100% identical; studio bg/pose/light NOT used; image2: the light-tree design — luminous trunk and branches, star-like blossoms and glowing fruit — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "elf leans in"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "А од сенките, виленикот гледаше вчудовидено.",
+          "dialogue_mk": "",
+          "kf_first": "Medium shot of the tiny elf peeking out from behind a stack of books, eyes huge with wonder at the glowing tree, photoreal cinematic",
+          "kf_last": "He leans forward, one hand on his cheek, entranced",
+          "continuity": "Elf identity; tree glow",
+          "motion": "elf leans in",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium shot of the tiny elf peeking out from behind a stack of books, eyes huge with wonder at the glowing tree, photoreal cinematic Elf slender, trickster then elf leans in, then resolve the camera static settling into he leans forward, one hand on his cheek, entranced continuity held: Elf identity; tree glow",
+          "image_prompt_start": "photoreal cinematic: shot of the tiny elf peeking out from behind a stack of books, eyes huge with wonder at the glowing tree, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: He leans forward, one hand on his cheek, entranced.",
+          "video_prompt_start": "Elf leans in. resolve. The camera static. The beat resolves into the next matching frame. Continuity held: Elf identity; tree glow.",
+          "video_prompt_end": "Elf leans in. resolve. The camera static. The beat resolves into the next matching frame. Continuity held: Elf identity; tree glow.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S28",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "light_tree_E1_prop",
+            "room_E3_prop"
+          ],
+          "ref_scope": "image1: the light-tree design — luminous trunk and branches, star-like blossoms and glowing fruit — 100% identical; studio bg/pose/light NOT used; image2: the student-room design — modest desk, single bed, candle, stacked books — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "crane-down"
+            ],
+            [
+              1.93,
+              3.5,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Целата соба се претвори во волшебна градина.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of the whole room transformed: the radiant tree at its center, blossoms and fruit glowing, light and petals drifting, photoreal cinematic",
+          "kf_last": "Crane-down closer to the tree's canopy of luminous fruit",
+          "continuity": "Tree of light, room",
+          "motion": "crane-down",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of the whole room transformed: the radiant tree at its center, blossoms and fruit glowing, light and petals drifting, photoreal cinematic then crane-down, then resolve settling into crane-down closer to the tree's canopy of luminous fruit continuity held: Tree of light, room",
+          "image_prompt_start": "photoreal cinematic: wide of the whole room transformed: the radiant tree at its center, blossoms and fruit glowing, light and petals drifting, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: closer to the tree's canopy of luminous fruit.",
+          "video_prompt_start": "Crane-down. resolve. The beat resolves into the next matching frame. Continuity held: Tree of light, room.",
+          "video_prompt_end": "Crane-down. resolve. The beat resolves into the next matching frame. Continuity held: Tree of light, room.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S29",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "elf_A1_fused",
+            "light_tree_E1_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Elf — small, gentle, curious; earthy tunic, pointed ears — 100% identical; studio bg/pose/light NOT used; image2: the light-tree design — luminous trunk and branches, star-like blossoms and glowing fruit — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "push-in"
+            ],
+            [
+              1.65,
+              3.0,
+              "hand reaches"
+            ]
+          ],
+          "narration_mk": "Виленикот пријде поблиску, не можеше да одолее.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the elf stepping timidly toward the tree, golden light reflected in his wide eyes, photoreal cinematic",
+          "kf_last": "Push-in as he reaches a small hand toward a low flower",
+          "continuity": "Elf and tree",
+          "motion": "push-in; hand reaches",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the elf stepping timidly toward the tree, golden light reflected in his wide eyes, photoreal cinematic Elf slender, trickster then push-in, then hand reaches settling into push-in as he reaches a small hand toward a low flower continuity held: Elf and tree",
+          "image_prompt_start": "photoreal cinematic: of the elf stepping timidly toward the tree, golden light reflected in his wide eyes, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: as he reaches a small hand toward a low flower.",
+          "video_prompt_start": "Push-in. hand reaches. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Elf and tree.",
+          "video_prompt_end": "Push-in. hand reaches. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Elf and tree.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S30",
+          "shot_type": "CLOSE-UP",
+          "size": "MACRO",
+          "angle": "macro",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "elf_A1_fused",
+            "light_tree_E1_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Elf — small, gentle, curious; earthy tunic, pointed ears — 100% identical; studio bg/pose/light NOT used; image2: the light-tree design — luminous trunk and branches, star-like blossoms and glowing fruit — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "gentle contact"
+            ],
+            [
+              1.65,
+              3.0,
+              "light sparks"
+            ]
+          ],
+          "narration_mk": "Секој цвет светеше како мала ѕвезда.",
+          "dialogue_mk": "",
+          "kf_first": "Macro of the elf's tiny fingers brushing a star-like blossom, faint sparks of light rising, photoreal cinematic",
+          "kf_last": "The flower glows warmly at his touch",
+          "continuity": "Elf hand, blossom",
+          "motion": "gentle contact, light sparks",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro of the elf's tiny fingers brushing a star-like blossom, faint sparks of light rising, photoreal cinematic Elf slender, trickster then gentle contact, then light sparks the camera static settling into the flower glows warmly at his touch continuity held: Elf hand, blossom",
+          "image_prompt_start": "photoreal cinematic: Macro of the elf's tiny fingers brushing a star-like blossom, faint sparks of light rising, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The flower glows warmly at his touch.",
+          "video_prompt_start": "Gentle contact. light sparks. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Elf hand, blossom.",
+          "video_prompt_end": "Gentle contact. light sparks. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Elf hand, blossom.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S31",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "elf_A1_fused",
+            "light_tree_E1_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Elf — small, gentle, curious; earthy tunic, pointed ears — 100% identical; studio bg/pose/light NOT used; image2: the light-tree design — luminous trunk and branches, star-like blossoms and glowing fruit — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "elf gazes upward"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Виленик: „Сакам да останам тука засекогаш...“",
+          "kf_first": "Low-angle wide of the elf standing small before the towering radiant tree, arms slightly open, bathed in golden light, photoreal cinematic",
+          "kf_last": "He looks up into the glowing canopy, spellbound",
+          "continuity": "Tree and elf",
+          "motion": "elf gazes upward",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of the elf standing small before the towering radiant tree, arms slightly open, bathed in golden light, photoreal cinematic Elf slender, trickster then elf gazes upward, then resolve the camera static settling into he looks up into the glowing canopy, spellbound a voice speaks in Macedonian: \"Виленик: „Сакам да останам тука засекогаш...“\" continuity held: Tree and elf",
+          "image_prompt_start": "photoreal cinematic: wide of the elf standing small before the towering radiant tree, arms slightly open, bathed in golden light, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: He looks up into the glowing canopy, spellbound.",
+          "video_prompt_start": "Elf gazes upward. resolve. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Виленик: „Сакам да останам тука засекогаш...“\" Continuity held: Tree and elf.",
+          "video_prompt_end": "Elf gazes upward. resolve. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Виленик: „Сакам да останам тука засекогаш...“\" Continuity held: Tree and elf.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S32",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "elf_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Elf — small, gentle, curious; earthy tunic, pointed ears — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.38,
+              "subtle head tilt down"
+            ],
+            [
+              1.38,
+              2.5,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Виленик: „...ама момчето не ми дава ориз и путер!“",
+          "kf_first": "Close-up of the elf's face torn between longing and loyalty, golden light on one side, cold doubt on the other, photoreal cinematic",
+          "kf_last": "He lowers his gaze thoughtfully",
+          "continuity": "Elf face",
+          "motion": "subtle head tilt down",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the elf's face torn between longing and loyalty, golden light on one side, cold doubt on the other, photoreal cinematic Elf slender, trickster then subtle head tilt down, then resolve the camera static settling into he lowers his gaze thoughtfully a voice speaks in Macedonian: \"Виленик: „...ама момчето не ми дава ориз и путер!“\" continuity held: Elf face",
+          "image_prompt_start": "photoreal cinematic: of the elf's face torn between longing and loyalty, golden light on one side, cold doubt on the other, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: He lowers his gaze thoughtfully.",
+          "video_prompt_start": "Subtle head tilt down. resolve. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Виленик: „...ама момчето не ми дава ориз и путер!“\" Continuity held: Elf face.",
+          "video_prompt_end": "Subtle head tilt down. resolve. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Виленик: „...ама момчето не ми дава ориз и путер!“\" Continuity held: Elf face.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S33",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pull-back",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "light_tree_E1_prop",
+            "elf_A1_fused",
+            "student_A3_fused"
+          ],
+          "ref_scope": "image1: the light-tree design — luminous trunk and branches, star-like blossoms and glowing fruit — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Elf — small, gentle, curious; earthy tunic, pointed ears — 100% identical; studio bg/pose/light NOT used; image3: the fused master of the Student — young, kind reader with a satchel of books — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "pull-back"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Но дрвото блескаше поубаво од се.“",
+          "dialogue_mk": "",
+          "kf_first": "Wide of the full glowing tree and the tiny elf before it, light music swelling in the air, photoreal cinematic",
+          "kf_last": "Pull-back to show the student and elf on opposite sides of the same radiant tree",
+          "continuity": "Tree, room",
+          "motion": "pull-back",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide of the full glowing tree and the tiny elf before it, light music swelling in the air, photoreal cinematic Elf slender, trickster Student slender, child, wreathed in golden glow then pull-back, then resolve settling into pull-back to show the student and elf on opposite sides of the same radiant tree with a low radiant hum continuity held: Tree, room",
+          "image_prompt_start": "photoreal cinematic: of the full glowing tree and the tiny elf before it, light music swelling in the air, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: to show the student and elf on opposite sides of the same radiant tree.",
+          "video_prompt_start": "Pull-back. resolve. The beat resolves into the next matching frame. Continuity held: Tree, room.",
+          "video_prompt_end": "Pull-back. resolve. The beat resolves into the next matching frame. Continuity held: Tree, room.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S34",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "student_A3_fused",
+            "light_tree_E1_prop",
+            "old_book_K2_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Student — young, kind reader with a satchel of books — 100% identical; studio bg/pose/light NOT used; image2: the light-tree design — luminous trunk and branches, star-like blossoms and glowing fruit — 100% identical; studio bg/pose/light NOT used; image3: the old-book design — aged leather binding, torn yellowed pages with faded ink — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "light notes float"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Музиката се разлеваше низ собата.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the student reading the open book as the light tree shines above, the melody visible as soft shimmering air, photoreal cinematic",
+          "kf_last": "Light notes drift like fireflies around him",
+          "continuity": "Student, tree, music-light",
+          "motion": "light notes float",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the student reading the open book as the light tree shines above, the melody visible as soft shimmering air, photoreal cinematic Student slender, child, wreathed in golden glow then light notes float, then resolve the camera static settling into light notes drift like fireflies around him with a low radiant hum continuity held: Student, tree, music-light",
+          "image_prompt_start": "photoreal cinematic: of the student reading the open book as the light tree shines above, the melody visible as soft shimmering air, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: Light notes drift like fireflies around him.",
+          "video_prompt_start": "Light notes float. resolve. The camera static. The beat resolves into the next matching frame. Continuity held: Student, tree, music-light.",
+          "video_prompt_end": "Light notes float. resolve. The camera static. The beat resolves into the next matching frame. Continuity held: Student, tree, music-light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S35",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "elf_A1_fused",
+            "light_tree_E1_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Elf — small, gentle, curious; earthy tunic, pointed ears — 100% identical; studio bg/pose/light NOT used; image2: the light-tree design — luminous trunk and branches, star-like blossoms and glowing fruit — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "elf turns to leave"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Виленик: „Сепак, ќе дојдам уште еднаш...“",
+          "kf_first": "Close-up of the elf at the threshold of the room, glancing back at the shining tree with a soft smile, photoreal cinematic",
+          "kf_last": "He slips out into the cool night",
+          "continuity": "Elf, door, tree glow",
+          "motion": "elf turns to leave",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the elf at the threshold of the room, glancing back at the shining tree with a soft smile, photoreal cinematic Elf slender, trickster then elf turns to leave, then resolve the camera static settling into he slips out into the cool night a voice speaks in Macedonian: \"Виленик: „Сепак, ќе дојдам уште еднаш...“\" continuity held: Elf, door, tree glow",
+          "image_prompt_start": "photoreal cinematic: of the elf at the threshold of the room, glancing back at the shining tree with a soft smile, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: He slips out into the cool night.",
+          "video_prompt_start": "Elf turns to leave. resolve. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Виленик: „Сепак, ќе дојдам уште еднаш...“\" Continuity held: Elf, door, tree glow.",
+          "video_prompt_end": "Elf turns to leave. resolve. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Виленик: „Сепак, ќе дојдам уште еднаш...“\" Continuity held: Elf, door, tree glow.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S36",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "shop_E2_prop"
+          ],
+          "ref_scope": "image1: the grocery-shop design — old-European corner shop, wooden shelves, warm lantern light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static dawn light"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "И така, утрото се врати дома.",
+          "dialogue_mk": "",
+          "kf_first": "Wide shot of dawn light rising over the small grocery shop, the sky soft pink and gold, photoreal cinematic",
+          "kf_last": "The shop's lantern dims as first sunlight touches the door",
+          "continuity": "Shop exterior, dawn palette",
+          "motion": "static dawn light",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide shot of dawn light rising over the small grocery shop, the sky soft pink and gold, photoreal cinematic then static dawn light, then resolve settling into the shop's lantern dims as first sunlight touches the door continuity held: Shop exterior, dawn palette",
+          "image_prompt_start": "photoreal cinematic: shot of dawn light rising over the small grocery shop, the sky soft pink and gold, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The shop's lantern dims as first sunlight touches the door.",
+          "video_prompt_start": "Static dawn light. resolve. The beat resolves into the next matching frame. Continuity held: Shop exterior, dawn palette.",
+          "video_prompt_end": "Static dawn light. resolve. The beat resolves into the next matching frame. Continuity held: Shop exterior, dawn palette.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "students_room_with_light_tree",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#f6c445",
+        "#7a4a1a",
+        "#1a2a4a"
+      ],
+      "light_direction": "key light from screen-right, warm candlelight and radiant golden tree light",
+      "time_of_day": "night"
+    },
+    {
+      "id": "act3",
+      "num": "Act III",
+      "title": "Поголемото богатство",
+      "color": "#a78bfa",
+      "pct": 20,
+      "synopsis": "Виленикот не може да живее без храната на бакалот, но секоја вечер се враќа кај волшебното дрво — зашто прекрасната книга е поголемо богатство.",
+      "shots": [
+        {
+          "id": "S37",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "grocer_A2_fused",
+            "rice_bowl_K1_prop",
+            "elf_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Grocer — round, kind face, apron, warm smile — 100% identical; studio bg/pose/light NOT used; image2: the rice-bowl design — steamed rice with a melting knob of golden butter — 100% identical; studio bg/pose/light NOT used; image3: the fused master of the Elf — small, gentle, curious; earthy tunic, pointed ears — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "grocer places bowl"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Бакалот, како и секој ден, му приготви чинија ориз со путер.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the grocer setting a fresh steaming bowl down for the elf in the morning light, photoreal cinematic",
+          "kf_last": "The elf appears in his corner, eyes soft and sleepy",
+          "continuity": "Grocer, bowl, elf",
+          "motion": "grocer places bowl",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the grocer setting a fresh steaming bowl down for the elf in the morning light, photoreal cinematic Grocer hulking, elder Elf slender, trickster then grocer places bowl, then resolve the camera static settling into the elf appears in his corner, eyes soft and sleepy continuity held: Grocer, bowl, elf",
+          "image_prompt_start": "photoreal cinematic: of the grocer setting a fresh steaming bowl down for the elf in the morning light, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The elf appears in his corner, eyes soft and sleepy.",
+          "video_prompt_start": "Grocer places bowl. resolve. The camera static. The beat resolves into the next matching frame. Continuity held: Grocer, bowl, elf.",
+          "video_prompt_end": "Grocer places bowl. resolve. The camera static. The beat resolves into the next matching frame. Continuity held: Grocer, bowl, elf.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S38",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "elf_A1_fused",
+            "rice_bowl_K1_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Elf — small, gentle, curious; earthy tunic, pointed ears — 100% identical; studio bg/pose/light NOT used; image2: the rice-bowl design — steamed rice with a melting knob of golden butter — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "warm bite"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Виленик: „Фала, бакале. Не можам без оваа храна.“",
+          "kf_first": "Close-up of the elf cradling the warm bowl, smiling gratefully, photoreal cinematic",
+          "kf_last": "He dips his hand in and eats contentedly",
+          "continuity": "Bowl and butter",
+          "motion": "warm bite",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the elf cradling the warm bowl, smiling gratefully, photoreal cinematic Elf slender, trickster then warm bite, then resolve the camera static settling into he dips his hand in and eats contentedly a voice speaks in Macedonian: \"Виленик: „Фала, бакале. Не можам без оваа храна.“\" continuity held: Bowl and butter",
+          "image_prompt_start": "photoreal cinematic: of the elf cradling the warm bowl, smiling gratefully, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: He dips his hand in and eats contentedly.",
+          "video_prompt_start": "Warm bite. resolve. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Виленик: „Фала, бакале. Не можам без оваа храна.“\" Continuity held: Bowl and butter.",
+          "video_prompt_end": "Warm bite. resolve. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Виленик: „Фала, бакале. Не можам без оваа храна.“\" Continuity held: Bowl and butter.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S39",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "crossfade",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "elf_A1_fused",
+            "shop_E2_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Elf — small, gentle, curious; earthy tunic, pointed ears — 100% identical; studio bg/pose/light NOT used; image2: the grocery-shop design — old-European corner shop, wooden shelves, warm lantern light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "elf hurries along"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Но од тој ден, секоја вечер се враќаше кај студентот.",
+          "dialogue_mk": "",
+          "kf_first": "Wide shot of the elf slipping out of the shop at dusk, glancing down the moonlit street, photoreal cinematic",
+          "kf_last": "Crossfade to the same street later, the elf hurrying toward the student's home",
+          "continuity": "Night street, elf",
+          "motion": "elf hurries along",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide shot of the elf slipping out of the shop at dusk, glancing down the moonlit street, photoreal cinematic Elf slender, trickster then elf hurries along, then resolve the camera crossfade settling into crossfade to the same street later, the elf hurrying toward the student's home continuity held: Night street, elf",
+          "image_prompt_start": "photoreal cinematic: shot of the elf slipping out of the shop at dusk, glancing down the moonlit street, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: Crossfade to the same street later, the elf hurrying toward the student's home.",
+          "video_prompt_start": "Elf hurries along. resolve. The camera crossfade. The beat resolves into the next matching frame. Continuity held: Night street, elf.",
+          "video_prompt_end": "Elf hurries along. resolve. The camera crossfade. The beat resolves into the next matching frame. Continuity held: Night street, elf.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S40",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "elf_A1_fused",
+            "rice_bowl_K1_prop",
+            "light_tree_E1_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Elf — small, gentle, curious; earthy tunic, pointed ears — 100% identical; studio bg/pose/light NOT used; image2: the rice-bowl design — steamed rice with a melting knob of golden butter — 100% identical; studio bg/pose/light NOT used; image3: the light-tree design — luminous trunk and branches, star-like blossoms and glowing fruit — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "gentle dissolve"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Не можеше да живее без храната на бакалот, но прекрасната книга беше поголемо богатство.",
+          "dialogue_mk": "",
+          "kf_first": "Wide of the elf's evening ritual repeated: rice bowl at the shop fading into the radiant tree in the student's room, photoreal cinematic",
+          "kf_last": "A soft split-light shows both the warm bowl and the golden tree",
+          "continuity": "Dual motifs: bowl and tree",
+          "motion": "gentle dissolve",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide of the elf's evening ritual repeated: rice bowl at the shop fading into the radiant tree in the student's room, photoreal cinematic Elf slender, trickster then gentle dissolve, then resolve the camera static settling into a soft split-light shows both the warm bowl and the golden tree continuity held: Dual motifs: bowl and tree",
+          "image_prompt_start": "photoreal cinematic: of the elf's evening ritual repeated: rice bowl at the shop fading into the radiant tree in the student's room, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: A soft split-light shows both the warm bowl and the golden tree.",
+          "video_prompt_start": "Gentle dissolve. resolve. The camera static. The beat resolves into the next matching frame. Continuity held: Dual motifs: bowl and tree.",
+          "video_prompt_end": "Gentle dissolve. resolve. The camera static. The beat resolves into the next matching frame. Continuity held: Dual motifs: bowl and tree.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S41",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "light_tree_E1_prop"
+          ],
+          "ref_scope": "image1: the light-tree design — luminous trunk and branches, star-like blossoms and glowing fruit — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "crane-up"
+            ],
+            [
+              1.93,
+              3.5,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Секоја вечер го чекаше дрвото од светлина.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of the radiant tree glowing in the student's room at night, light music returning, photoreal cinematic",
+          "kf_last": "Crane-up through the luminous canopy, blossoms like stars",
+          "continuity": "Tree of light",
+          "motion": "crane-up",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of the radiant tree glowing in the student's room at night, light music returning, photoreal cinematic then crane-up, then resolve settling into crane-up through the luminous canopy, blossoms like stars continuity held: Tree of light",
+          "image_prompt_start": "photoreal cinematic: medium of the radiant tree glowing in the student's room at night, light music returning, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: through the luminous canopy, blossoms like stars.",
+          "video_prompt_start": "Crane-up. resolve. The beat resolves into the next matching frame. Continuity held: Tree of light.",
+          "video_prompt_end": "Crane-up. resolve. The beat resolves into the next matching frame. Continuity held: Tree of light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S42",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "elf_A1_fused",
+            "light_tree_E1_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Elf — small, gentle, curious; earthy tunic, pointed ears — 100% identical; studio bg/pose/light NOT used; image2: the light-tree design — luminous trunk and branches, star-like blossoms and glowing fruit — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "slow push-in"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "И со него, малиот виленик — среќен.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the elf sitting beneath the tree, face lifted in quiet joy, golden light dancing in his eyes, photoreal cinematic",
+          "kf_last": "Push-in on his peaceful smile",
+          "continuity": "Elf, tree glow",
+          "motion": "slow push-in",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the elf sitting beneath the tree, face lifted in quiet joy, golden light dancing in his eyes, photoreal cinematic Elf slender, trickster then slow push-in, then resolve settling into push-in on his peaceful smile continuity held: Elf, tree glow",
+          "image_prompt_start": "photoreal cinematic: of the elf sitting beneath the tree, face lifted in quiet joy, golden light dancing in his eyes, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: on his peaceful smile.",
+          "video_prompt_start": "Slow push-in. resolve. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Elf, tree glow.",
+          "video_prompt_end": "Slow push-in. resolve. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Elf, tree glow.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S43",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "elf_A1_fused",
+            "student_A3_fused",
+            "light_tree_E1_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Elf — small, gentle, curious; earthy tunic, pointed ears — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Student — young, kind reader with a satchel of books — 100% identical; studio bg/pose/light NOT used; image3: the light-tree design — luminous trunk and branches, star-like blossoms and glowing fruit — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "crane-up pull away"
+            ],
+            [
+              1.93,
+              3.5,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Зашто некои богатства не се јадат — но го хранат срцето.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of the tiny elf and the student together beneath the enormous radiant tree, light snowing softly down, photoreal cinematic",
+          "kf_last": "Crane-up and away as the room's glow fills the frame",
+          "continuity": "Tree, room, both characters",
+          "motion": "crane-up pull away",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of the tiny elf and the student together beneath the enormous radiant tree, light snowing softly down, photoreal cinematic Elf slender, trickster Student slender, child, wreathed in golden glow then crane-up pull away, then resolve settling into crane-up and away as the room's glow fills the frame with a low radiant hum continuity held: Tree, room, both characters",
+          "image_prompt_start": "photoreal cinematic: wide of the tiny elf and the student together beneath the enormous radiant tree, light snowing softly down, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: and away as the room's glow fills the frame.",
+          "video_prompt_start": "Crane-up pull away. resolve. The beat resolves into the next matching frame. Continuity held: Tree, room, both characters.",
+          "video_prompt_end": "Crane-up pull away. resolve. The beat resolves into the next matching frame. Continuity held: Tree, room, both characters.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S44",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pull-back",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "shop_E2_prop"
+          ],
+          "ref_scope": "image1: the grocery-shop design — old-European corner shop, wooden shelves, warm lantern light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "pull-back"
+            ],
+            [
+              1.93,
+              3.5,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Крај.",
+          "dialogue_mk": "",
+          "kf_first": "Wide final shot of the little grocery shop at dawn, warm and still, the first light catching its window, photoreal cinematic",
+          "kf_last": "Pull-back down the cobblestone street until the shop is small and gentle in the morning",
+          "continuity": "Shop exterior, dawn",
+          "motion": "pull-back",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide final shot of the little grocery shop at dawn, warm and still, the first light catching its window, photoreal cinematic then pull-back, then resolve settling into pull-back down the cobblestone street until the shop is small and gentle in the morning continuity held: Shop exterior, dawn",
+          "image_prompt_start": "photoreal cinematic: final shot of the little grocery shop at dawn, warm and still, the first light catching its window, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: down the cobblestone street until the shop is small and gentle in the morning.",
+          "video_prompt_start": "Pull-back. resolve. The beat resolves into the next matching frame. Continuity held: Shop exterior, dawn.",
+          "video_prompt_end": "Pull-back. resolve. The beat resolves into the next matching frame. Continuity held: Shop exterior, dawn.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "grocers_shop_and_students_room",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#f2d48b",
+        "#e8a2c0",
+        "#7a5a1a"
+      ],
+      "light_direction": "radiant warm light from above, soft dawn glow",
+      "time_of_day": "dawn"
+    }
+  ],
+  "director_corrections": {
+    "issued": "2026-11-07",
+    "source": "KB §13 DIRECTOR CORRECTIONS — overrides all prior asset/keyframe guidance",
+    "rules": [
+      "DD HEADWEAR: no cap/hood/bandana/mask on head; hood = back-cowl only (cape-like); bare head + teal-blue glowing hair always visible; any head/face covering = REJECT",
+      "LEGENDARY WEAPONS MUST APPEAR: DD = twin Frostbite-class hand crossbows (ice-blue arcane crystal limbs, frost runes, frozen-light string, teal-blue glow); AZ = Dawnbreaker-class greatsword (pale sunsteel, molten-gold runes, golden holy fire edge, sunburst crossguard); hero sheet/keyframe without weapon = INCOMPLETE",
+      "WEAPON ANTI-SLOP: fantasy construction only; crossbow must NEVER read as firearm (no barrel/magazine/stock/Uzi/SMG silhouette = REJECT); anti-slop negatives always appended",
+      "BOSS FACE: Mal'garot HAS a prolific molten-lava face (lava dripping/running, drops falling to ground); faceless boss sheets SUPERSEDED",
+      "LOCATION BRIGHTNESS FLOOR: environment plates silhouette-readable at thumbnail; no murk-dark grades"
+    ],
+    "applies_when": "Activates when face_lock changes from AI-default to an enrolled identity (DD/AZ). AI-default packages carry this as a forward constraint, not a current defect.",
+    "anti_slop_negatives": "firearm, gun, machinegun, Uzi, barrel, magazine, ammo clip, muzzle, modern weapon"
+  },
+  "character_designs": {
+    "elf": {
+      "archetype": "trickster",
+      "build": "slender",
+      "scale": "human",
+      "palette": {
+        "primary": "#7a5a3a",
+        "secondary": "#5f7a4a",
+        "glow": "#f2c14e"
+      },
+      "costume": [],
+      "props": [],
+      "fx": []
+    },
+    "grocer": {
+      "archetype": "elder",
+      "build": "hulking",
+      "scale": "human",
+      "palette": {
+        "primary": "#8a5a2b",
+        "secondary": "#e8a04a",
+        "glow": "#f2c14e"
+      },
+      "costume": [],
+      "props": [],
+      "fx": []
+    },
+    "student": {
+      "archetype": "child",
+      "build": "slender",
+      "scale": "human",
+      "palette": {
+        "primary": "#2b3a5c",
+        "secondary": "#8a9ac0",
+        "glow": "#f6c445"
+      },
+      "costume": [],
+      "props": [],
+      "fx": [
+        "golden_glow"
+      ]
+    },
+    "shop_E2_prop": {
+      "motif": "hall",
+      "tone": "#f2c14e"
+    },
+    "room_E3_prop": {
+      "motif": "hall",
+      "tone": "#f6c445"
+    },
+    "light_tree_E1_prop": {
+      "motif": "forest",
+      "tone": "#ffd166"
+    }
+  }
+}

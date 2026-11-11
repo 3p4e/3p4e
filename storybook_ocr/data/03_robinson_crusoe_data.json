@@ -1,0 +1,2667 @@
+{
+  "num": "03",
+  "title_mk": "Островот на Робинсон Крусо",
+  "title_en": "Robinson Crusoe",
+  "genre": "Авантура · морска сага",
+  "logline": "A young Englishman shipwrecked on a deserted island survives alone, befriends a castaway native he names Friday, and together they outwit mutineers to sail home.",
+  "spec": {
+    "aspect": "16:9",
+    "resolution": "1216x704",
+    "fps": 24,
+    "model": "model-agnostic (chosen at generation)",
+    "style": "photoreal",
+    "flf": true,
+    "language": "mk",
+    "shot_floor": 40,
+    "shot_max": 60,
+    "seed_policy": "fixed-per-shot (same seed → reproducible shot; re-roll per shot id)",
+    "style_anchor": [
+      "Diablo 2 cinematic",
+      "World of Warcraft cinematic",
+      "StarCraft cinematic"
+    ],
+    "negative_prompt": "deformed, extra limbs, morphing, watermark, text, static frame, blurry, low quality, cropped head, cut-off face",
+    "frames": 121,
+    "frames_fallback": 81,
+    "routes": [
+      {
+        "model": "Wan2.1-FLF2V-14B-720P",
+        "input": "start+end native (run START-ONLY)",
+        "status": "WORKING (lead for 14B quality)"
+      },
+      {
+        "model": "Kandinsky 6.0 Lite/Pro",
+        "input": "start-image-only",
+        "status": "WORKING (Pro-distill untested at scale)"
+      },
+      {
+        "model": "SkyReels-V3 R2V-14B",
+        "input": "start-image-only",
+        "status": "WORKING (fallback)"
+      },
+      {
+        "model": "LTX-Video 2B v0.9.5",
+        "input": "start-image-only",
+        "status": "WORKING (small/fast, low ceiling)"
+      },
+      {
+        "model": "Mochi-1",
+        "input": "start-image-only",
+        "status": "untested here"
+      },
+      {
+        "model": "LTX-2.3 22B distilled",
+        "input": "start-image-only",
+        "status": "DEAD (nanobind native-crash, 42 note)"
+      }
+    ],
+    "model_note": "Model chosen per story at generation (43 §4). Keyframes + continuation prompts are generator-agnostic; only the render command differs per model."
+  },
+  "cast": [
+    {
+      "role": "Робинсон Крусо",
+      "trait": "Млад Англичанец, упорен, снаодлив и храбар",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Петко",
+      "trait": "Спасен домородец, верен и благодарен пријател",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Капетанот",
+      "trait": "Капетан на британскиот брод, праведен водач",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    }
+  ],
+  "acts": [
+    {
+      "id": "act1",
+      "num": "Act I",
+      "title": "Заложба",
+      "color": "#2dd4bf",
+      "pct": 30,
+      "synopsis": "Робинсон Крусо запловува во потрага по авантури, но страшна бура го потонува бродот и тој завршува сам на далечен остров.",
+      "shots": [
+        {
+          "id": "S01",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Младиот Англичанец Робинсон Крусо сонуваше за далечни мориња и големи авантури.",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal cinematic wide shot of a young 18th-century Englishman standing on a stone harbor quay, gazing at a tall sailing ship, golden morning light, sea breeze, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "He steps forward toward the ship, resolve on his face, rigging and masts silhouetted against bright sky",
+          "continuity": "Establishing hero look: brown tricorn vest, linen shirt, young face",
+          "motion": "slow push toward the hero then he steps forward",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "robinson_A1_fused",
+            "ship_A4_prop"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical; image2: period sailing ship design — 100% identical",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "Crusoe stands on the deck staring at the horizon"
+            ],
+            [
+              1.75,
+              3.5,
+              "the ship cuts through morning waves"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal cinematic wide shot of a young 18th-century Englishman standing on a stone harbor quay, gazing at a tall sailing ship, golden morning light, sea breeze Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air then Crusoe stands on the deck staring at the horizon, then the ship cuts through morning waves the camera static settling into he steps forward toward the ship, resolve on his face, rigging and masts silhouetted against bright sky with waves wash against the shore continuity held: Establishing hero look: brown tricorn vest, linen shirt, young face",
+          "image_prompt_start": "photoreal cinematic: Photoreal cinematic wide shot of a young 18th-century Englishman standing on a stone harbor quay, gazing at a tall sailing ship, golden morning light, sea breeze.",
+          "image_prompt_end": "photoreal cinematic: He steps forward toward the ship, resolve on his face, rigging and masts silhouetted against bright sky.",
+          "video_prompt_start": "Crusoe stands on the deck staring at the horizon. the ship cuts through morning waves. The camera static. The beat resolves into the next matching frame. Continuity held: Establishing hero look: brown tricorn vest, linen shirt, young face.",
+          "video_prompt_end": "Crusoe stands on the deck staring at the horizon. the ship cuts through morning waves. The camera static. The beat resolves into the next matching frame. Continuity held: Establishing hero look: brown tricorn vest, linen shirt, young face.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S02",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "",
+          "dialogue_mk": "Робинсон: „Еј! Отпловувам во потрага по авантури!“",
+          "kf_first": "Low-angle medium of Robinson waving from the ship rail, harbor cottages behind, joyful expression, photoreal cinematic, 1216x704",
+          "kf_last": "Push-in on his beaming face as the ship begins to pull away from the dock",
+          "continuity": "Same Robinson costume and ship from S01",
+          "motion": "push-in on face; ship gently rocking",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "robinson_A1_fused"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "he raises a fist in excitement"
+            ],
+            [
+              1.5,
+              3.0,
+              "he turns to shout to the crew"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Robinson waving from the ship rail, harbor cottages behind, joyful expression, photoreal cinematic Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air then he raises a fist in excitement, then he turns to shout to the crew the camera push-in settling into push-in on his beaming face as the ship begins to pull away from the dock with waves wash against the shore a voice speaks in Macedonian: \"Робинсон: „Еј! Отпловувам во потрага по авантури!“\" continuity held: Same Robinson costume and ship from S01",
+          "image_prompt_start": "photoreal cinematic: medium of Robinson waving from the ship rail, harbor cottages behind, joyful expression, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: on his beaming face as the ship begins to pull away from the dock.",
+          "video_prompt_start": "He raises a fist in excitement. he turns to shout to the crew. The camera push-in. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Робинсон: „Еј! Отпловувам во потрага по авантури!“\" Continuity held: Same Robinson costume and ship from S01.",
+          "video_prompt_end": "He raises a fist in excitement. he turns to shout to the crew. The camera push-in. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Робинсон: „Еј! Отпловувам во потрага по авантури!“\" Continuity held: Same Robinson costume and ship from S01.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S03",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Првите денови на море беа мирни, небото чисто и водата спокојна.",
+          "dialogue_mk": "",
+          "kf_first": "High aerial wide of a wooden sailing ship cutting through calm turquoise open ocean under clear skies, white sails full, photoreal cinematic, 1216x704",
+          "kf_last": "Crane-down to deck level where Robinson leans on the rail, relaxed",
+          "continuity": "Same ship; bright daylight palette",
+          "motion": "crane-down from sky to deck",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "robinson_A1_fused",
+            "ship_A4_prop"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical; image2: period sailing ship design — 100% identical",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "calm sea with sails full of wind"
+            ],
+            [
+              1.75,
+              3.5,
+              "the ship glides under a clear sky"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high aerial wide of a wooden sailing ship cutting through calm turquoise open ocean under clear skies, white sails full, photoreal cinematic Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air then calm sea with sails full of wind, then the ship glides under a clear sky the camera crane-down settling into crane-down to deck level where Robinson leans on the rail, relaxed with waves wash against the shore continuity held: Same ship; bright daylight palette",
+          "image_prompt_start": "photoreal cinematic: High wide of a wooden sailing ship cutting through calm turquoise open ocean under clear skies, white sails full, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: to deck level where Robinson leans on the rail, relaxed.",
+          "video_prompt_start": "Calm sea with sails full of wind. the ship glides under a clear sky. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Same ship; bright daylight palette.",
+          "video_prompt_end": "Calm sea with sails full of wind. the ship glides under a clear sky. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Same ship; bright daylight palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S04",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Но наеднаш, небото се затемни и брановите пораснаа.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of a darkening storm sky over the ship, heavy charcoal clouds rolling in, sea turning grey, photoreal cinematic, 1216x704",
+          "kf_last": "Waves swell higher around the hull as first rain streaks begin",
+          "continuity": "Same ship; palette shifts to storm grey",
+          "motion": "clouds boil; waves heave",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "ship_A4_prop"
+          ],
+          "ref_scope": "image1: period sailing ship design — 100% identical",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "environment",
+            "framing"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "clouds gather and the surface darkens"
+            ],
+            [
+              1.5,
+              3.0,
+              "the first swells rock the hull"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of a darkening storm sky over the ship, heavy charcoal clouds rolling in, sea turning grey, photoreal cinematic then clouds gather and the surface darkens, then the first swells rock the hull the camera static settling into waves swell higher around the hull as first rain streaks begin continuity held: Same ship; palette shifts to storm grey",
+          "image_prompt_start": "photoreal cinematic: wide of a darkening storm sky over the ship, heavy charcoal clouds rolling in, sea turning grey, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: Waves swell higher around the hull as first rain streaks begin.",
+          "video_prompt_start": "Clouds gather and the surface darkens. the first swells rock the hull. The camera static. The beat resolves into the next matching frame. Continuity held: Same ship; palette shifts to storm grey.",
+          "video_prompt_end": "Clouds gather and the surface darkens. the first swells rock the hull. The camera static. The beat resolves into the next matching frame. Continuity held: Same ship; palette shifts to storm grey.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S05",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Страшна бура го зафати бродот со големи бранови и силни ветришта.",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal wide of the ship pitching violently, huge wave crashing over the deck, spray and wind, sailors clinging to ropes, 1216x704",
+          "kf_last": "The hull tilts steeply as another massive breaker slams the bow",
+          "continuity": "Same ship, storm palette from S04",
+          "motion": "tracking shot following the rolling deck",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "robinson_A1_fused",
+            "ship_A4_prop"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical; image2: period sailing ship design — 100% identical",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "huge waves slam the deck"
+            ],
+            [
+              1.75,
+              3.5,
+              "the wind tears at the rigging"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal wide of the ship pitching violently, huge wave crashing over the deck, spray and wind, sailors clinging to ropes Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air then huge waves slam the deck, then the wind tears at the rigging the camera track settling into the hull tilts steeply as another massive breaker slams the bow with waves wash against the shore continuity held: Same ship, storm palette from S04",
+          "image_prompt_start": "photoreal cinematic: Photoreal wide of the ship pitching violently, huge wave crashing over the deck, spray and wind, sailors clinging to ropes.",
+          "image_prompt_end": "photoreal cinematic: The hull tilts steeply as another massive breaker slams the bow.",
+          "video_prompt_start": "Huge waves slam the deck. the wind tears at the rigging. The camera track. The beat resolves into the next matching frame. Continuity held: Same ship, storm palette from S04.",
+          "video_prompt_end": "Huge waves slam the deck. the wind tears at the rigging. The camera track. The beat resolves into the next matching frame. Continuity held: Same ship, storm palette from S04.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S06",
+          "size": "INSERT",
+          "angle": "high-angle",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "narration_mk": "Со татнеж, јарболот се скрши.",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal insert of the main mast splintering and snapping, ropes whipping, wooden shards flying in storm wind, 1216x704",
+          "kf_last": "The broken mast topples toward the deck in slow collapse",
+          "continuity": "Storm lighting; same ship materials",
+          "motion": "mast cracks and falls; rope snap",
+          "shot_type": "CLOSE-UP",
+          "face_floor_px": 200,
+          "asset_refs": [
+            "ship_mast_A10_prop"
+          ],
+          "ref_scope": "image1: wooden ship mast design — 100% identical",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "environment",
+            "framing"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.25,
+              "the mast groans and timbers splinter"
+            ],
+            [
+              1.25,
+              2.5,
+              "the mast snaps and drops toward the deck"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal insert of the main mast splintering and snapping, ropes whipping, wooden shards flying in storm wind then the mast groans and timbers splinter, then the mast snaps and drops toward the deck the camera static settling into the broken mast topples toward the deck in slow collapse continuity held: Storm lighting; same ship materials",
+          "image_prompt_start": "photoreal cinematic: Photoreal insert of the main mast splintering and snapping, ropes whipping, wooden shards flying in storm wind.",
+          "image_prompt_end": "photoreal cinematic: The broken mast topples toward the deck in slow collapse.",
+          "video_prompt_start": "The mast groans and timbers splinter. the mast snaps and drops toward the deck. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Storm lighting; same ship materials.",
+          "video_prompt_end": "The mast groans and timbers splinter. the mast snaps and drops toward the deck. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Storm lighting; same ship materials.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S07",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Бродот потона во бурата, а Робинсон остана единствениот преживеан.",
+          "dialogue_mk": "",
+          "kf_first": "Wide photoreal of the sinking ship tilting into dark churning water, broken mast, waves swallowing the stern, 1216x704",
+          "kf_last": "The ship slides below the surface, leaving swirling foam and debris",
+          "continuity": "Same ship and storm palette",
+          "motion": "crane-down as the ship sinks under water",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "robinson_A1_fused",
+            "ship_A4_prop"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical; image2: period sailing ship design — 100% identical",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "the hull tilts into the sea"
+            ],
+            [
+              1.75,
+              3.5,
+              "Crusoe fights to surface alone"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide photoreal of the sinking ship tilting into dark churning water, broken mast, waves swallowing the stern Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air then the hull tilts into the sea, then Crusoe fights to surface alone the camera crane-down settling into the ship slides below the surface, leaving swirling foam and debris with waves wash against the shore continuity held: Same ship and storm palette",
+          "image_prompt_start": "photoreal cinematic: photoreal of the sinking ship tilting into dark churning water, broken mast, waves swallowing the stern.",
+          "image_prompt_end": "photoreal cinematic: The ship slides below the surface, leaving swirling foam and debris.",
+          "video_prompt_start": "The hull tilts into the sea. Crusoe fights to surface alone. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Same ship and storm palette.",
+          "video_prompt_end": "The hull tilts into the sea. Crusoe fights to surface alone. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Same ship and storm palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S08",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Држејќи се за парче дрво, тој се предаде на струјата.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of Robinson's exhausted, salt-soaked face just above stormy water, arms wrapped around a wooden plank, 1216x704",
+          "kf_last": "Push-in on his half-closed eyes as a wave rolls past",
+          "continuity": "Damaged wet costume from storm; watery palette",
+          "motion": "push-in on face; water bobs",
+          "shot_type": "CLOSE-UP",
+          "face_floor_px": 200,
+          "asset_refs": [
+            "robinson_A1_fused"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "he grips a floating piece of timber"
+            ],
+            [
+              1.5,
+              3.0,
+              "he surrenders to the current"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of Robinson's exhausted, salt-soaked face just above stormy water, arms wrapped around a wooden plank Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air then he grips a floating piece of timber, then he surrenders to the current the camera push-in settling into push-in on his half-closed eyes as a wave rolls past with waves wash against the shore continuity held: Damaged wet costume from storm; watery palette",
+          "image_prompt_start": "photoreal cinematic: of Robinson's exhausted, salt-soaked face just above stormy water, arms wrapped around a wooden plank.",
+          "image_prompt_end": "photoreal cinematic: on his half-closed eyes as a wave rolls past.",
+          "video_prompt_start": "He grips a floating piece of timber. he surrenders to the current. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Damaged wet costume from storm; watery palette.",
+          "video_prompt_end": "He grips a floating piece of timber. he surrenders to the current. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Damaged wet costume from storm; watery palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S09",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Струјата го носеше кон еден далечен остров среде океанот.",
+          "dialogue_mk": "",
+          "kf_first": "High aerial wide of Robinson drifting on a plank in grey-blue ocean, a small green island rising on the horizon, 1216x704",
+          "kf_last": "Crane-up reveals the full island: white beach ring and dense green jungle interior",
+          "continuity": "Plank and wet hero from S08",
+          "motion": "crane-up to reveal the island",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "robinson_A1_fused"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "the current carries him far from the wreck"
+            ],
+            [
+              1.75,
+              3.5,
+              "a distant island appears on the water"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high aerial wide of Robinson drifting on a plank in grey-blue ocean, a small green island rising on the horizon Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air then the current carries him far from the wreck, then a distant island appears on the water the camera crane-up settling into crane-up reveals the full island: white beach ring and dense green jungle interior with waves wash against the shore continuity held: Plank and wet hero from S08",
+          "image_prompt_start": "photoreal cinematic: High wide of Robinson drifting on a plank in grey-blue ocean, a small green island rising on the horizon.",
+          "image_prompt_end": "photoreal cinematic: reveals the full island: white beach ring and dense green jungle interior.",
+          "video_prompt_start": "The current carries him far from the wreck. a distant island appears on the water. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Plank and wet hero from S08.",
+          "video_prompt_end": "The current carries him far from the wreck. a distant island appears on the water. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Plank and wet hero from S08.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S10",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Кога се разбуди, лежеше на една осамен плажа.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of Robinson's face on wet sand, eyes blinking open, gentle waves lapping at his feet, dawn light, 1216x704",
+          "kf_last": "He stirs, lifting his head, seaweed in his hair",
+          "continuity": "Same wet hero; now on beach",
+          "motion": "static; he stirs awake",
+          "shot_type": "CLOSE-UP",
+          "face_floor_px": 200,
+          "asset_refs": [
+            "robinson_A1_fused"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "he wakes lying face-down on the sand"
+            ],
+            [
+              1.5,
+              3.0,
+              "he lifts his head, dazed"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of Robinson's face on wet sand, eyes blinking open, gentle waves lapping at his feet, dawn light Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air then he wakes lying face-down on the sand, then he lifts his head, dazed the camera static settling into he stirs, lifting his head, seaweed in his hair with waves wash against the shore continuity held: Same wet hero; now on beach",
+          "image_prompt_start": "photoreal cinematic: of Robinson's face on wet sand, eyes blinking open, gentle waves lapping at his feet, dawn light.",
+          "image_prompt_end": "photoreal cinematic: He stirs, lifting his head, seaweed in his hair.",
+          "video_prompt_start": "He wakes lying face-down on the sand. he lifts his head, dazed. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same wet hero; now on beach.",
+          "video_prompt_end": "He wakes lying face-down on the sand. he lifts his head, dazed. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same wet hero; now on beach.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S11",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-right",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Околу него немаше никој — само растенија и дрвја.",
+          "dialogue_mk": "",
+          "kf_first": "Wide of Robinson standing alone on an empty palm-lined beach, scanning left and right, tropical plants and tall trees behind, 1216x704",
+          "kf_last": "Pan-right ends on dense jungle foliage and no sign of people",
+          "continuity": "Island palette from S09-S10",
+          "motion": "slow pan-right across the empty beach",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "robinson_A1_fused",
+            "island_env_A5"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical; image2: tropical island shore environment — 100% identical",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "he scans the empty shoreline"
+            ],
+            [
+              1.75,
+              3.5,
+              "dense plants and trees frame him"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide of Robinson standing alone on an empty palm-lined beach, scanning left and right, tropical plants and tall trees behind Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air then he scans the empty shoreline, then dense plants and trees frame him the camera pan-right settling into pan-right ends on dense jungle foliage and no sign of people with waves wash against the shore continuity held: Island palette from S09-S10",
+          "image_prompt_start": "photoreal cinematic: of Robinson standing alone on an empty palm-lined beach, scanning left and right, tropical plants and tall trees behind.",
+          "image_prompt_end": "photoreal cinematic: -right ends on dense jungle foliage and no sign of people.",
+          "video_prompt_start": "He scans the empty shoreline. dense plants and trees frame him. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Island palette from S09-S10.",
+          "video_prompt_end": "He scans the empty shoreline. dense plants and trees frame him. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Island palette from S09-S10.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S12",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "pull-back",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Сепак, Робинсон не се предаде — реши да преживее.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of Robinson looking up at towering tropical forest, jaw set with determination, dappled sunlight, 1216x704",
+          "kf_last": "Pull-back frames his small figure against huge trees, alone but resolved",
+          "continuity": "Same hero; island palette",
+          "motion": "pull-back to emphasize isolation",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "robinson_A1_fused"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "he clenches his fists"
+            ],
+            [
+              1.5,
+              3.0,
+              "a resolved look settles on his face"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Robinson looking up at towering tropical forest, jaw set with determination, dappled sunlight Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air then he clenches his fists, then a resolved look settles on his face the camera pull-back settling into pull-back frames his small figure against huge trees, alone but resolved with waves wash against the shore continuity held: Same hero; island palette",
+          "image_prompt_start": "photoreal cinematic: medium of Robinson looking up at towering tropical forest, jaw set with determination, dappled sunlight.",
+          "image_prompt_end": "photoreal cinematic: frames his small figure against huge trees, alone but resolved.",
+          "video_prompt_start": "He clenches his fists. a resolved look settles on his face. The camera pull-back. The beat resolves into the next matching frame. Continuity held: Same hero; island palette.",
+          "video_prompt_end": "He clenches his fists. a resolved look settles on his face. The camera pull-back. The beat resolves into the next matching frame. Continuity held: Same hero; island palette.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "ship_at_sea",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#0b3d5c",
+        "#1e6f8f",
+        "#c9a86a"
+      ],
+      "light_direction": "key light from screen-left, cool storm overcast",
+      "time_of_day": "day"
+    },
+    {
+      "id": "act2",
+      "num": "Act II",
+      "title": "Опасноста и пријателството",
+      "color": "#f59e0b",
+      "pct": 45,
+      "synopsis": "На островот, Робинсон открива човечки траги, го спасува врзаниот Петко и тие стануваат неразделни пријатели, чекајќи спас.",
+      "shots": [
+        {
+          "id": "S13",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-left",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Си направи колиба додека чекаше да дојде некој да го спаси.",
+          "dialogue_mk": "",
+          "kf_first": "Wide of Robinson hauling branches and palm fronds toward a half-built hut on the beach, afternoon light, 1216x704",
+          "kf_last": "Pan-left shows the growing wooden frame as he lays another branch",
+          "continuity": "Island palette; Robinson in weathered clothes",
+          "motion": "pan-left following his work",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "robinson_A1_fused",
+            "island_env_A5"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical; image2: tropical island shore environment — 100% identical",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "he gathers branches for a hut"
+            ],
+            [
+              1.75,
+              3.5,
+              "he sets the first frame of the shelter"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide of Robinson hauling branches and palm fronds toward a half-built hut on the beach, afternoon light Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air then he gathers branches for a hut, then he sets the first frame of the shelter the camera pan-left settling into pan-left shows the growing wooden frame as he lays another branch with waves wash against the shore continuity held: Island palette; Robinson in weathered clothes",
+          "image_prompt_start": "photoreal cinematic: of Robinson hauling branches and palm fronds toward a half-built hut on the beach, afternoon light.",
+          "image_prompt_end": "photoreal cinematic: -left shows the growing wooden frame as he lays another branch.",
+          "video_prompt_start": "He gathers branches for a hut. he sets the first frame of the shelter. The camera pan-left. The beat resolves into the next matching frame. Continuity held: Island palette; Robinson in weathered clothes.",
+          "video_prompt_end": "He gathers branches for a hut. he sets the first frame of the shelter. The camera pan-left. The beat resolves into the next matching frame. Continuity held: Island palette; Robinson in weathered clothes.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S14",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "narration_mk": "Од гранки и лисја го крена својот дом.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of Robinson's hands tying vine knots around wooden hut poles, tightly woven palm leaves, 1216x704",
+          "kf_last": "He pulls a vine tight, the knot cinching firm",
+          "continuity": "Same hut materials",
+          "motion": "hands tighten the knot",
+          "shot_type": "CLOSE-UP",
+          "face_floor_px": 200,
+          "asset_refs": [
+            "robinson_A1_fused"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.25,
+              "his hands weave branches and leaves"
+            ],
+            [
+              1.25,
+              2.5,
+              "the wall of the hut takes shape"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of Robinson's hands tying vine knots around wooden hut poles, tightly woven palm leaves Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air then his hands weave branches and leaves, then the wall of the hut takes shape the camera static settling into he pulls a vine tight, the knot cinching firm with waves wash against the shore continuity held: Same hut materials",
+          "image_prompt_start": "photoreal cinematic: Macro insert of Robinson's hands tying vine knots around wooden hut poles, tightly woven palm leaves.",
+          "image_prompt_end": "photoreal cinematic: He pulls a vine tight, the knot cinching firm.",
+          "video_prompt_start": "His hands weave branches and leaves. the wall of the hut takes shape. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same hut materials.",
+          "video_prompt_end": "His hands weave branches and leaves. the wall of the hut takes shape. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same hut materials.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S15",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Деновите минуваа, а тој чекаше спас.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of the finished palm hut on the beach at golden sunset, smoke from a small fire, peaceful, 1216x704",
+          "kf_last": "Crane-up reveals the hut as a small refuge beside the vast quiet ocean",
+          "continuity": "Hut from S13-S14; sunset palette",
+          "motion": "crane-up over the hut",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "robinson_A1_fused",
+            "island_env_A5"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical; image2: tropical island shore environment — 100% identical",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "the sun arcs over the finished hut"
+            ],
+            [
+              1.75,
+              3.5,
+              "days pass in waiting"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of the finished palm hut on the beach at golden sunset, smoke from a small fire, peaceful Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air then the sun arcs over the finished hut, then days pass in waiting the camera crane-up settling into crane-up reveals the hut as a small refuge beside the vast quiet ocean with waves wash against the shore continuity held: Hut from S13-S14; sunset palette",
+          "image_prompt_start": "photoreal cinematic: wide of the finished palm hut on the beach at golden sunset, smoke from a small fire, peaceful.",
+          "image_prompt_end": "photoreal cinematic: reveals the hut as a small refuge beside the vast quiet ocean.",
+          "video_prompt_start": "The sun arcs over the finished hut. days pass in waiting. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Hut from S13-S14; sunset palette.",
+          "video_prompt_end": "The sun arcs over the finished hut. days pass in waiting. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Hut from S13-S14; sunset palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S16",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Во колибата, тој ги бележеше деновите и чекаше.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of Robinson sitting inside the dim hut, carving notches into a wooden post by firelight, thoughtful, 1216x704",
+          "kf_last": "He turns his gaze toward the open doorway and the sea beyond",
+          "continuity": "Hut interior; firelight palette",
+          "motion": "static; he carves and glances out",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "robinson_A1_fused"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "he carves a notch into the wall"
+            ],
+            [
+              1.5,
+              3.0,
+              "he counts the passing days"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Robinson sitting inside the dim hut, carving notches into a wooden post by firelight, thoughtful Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air then he carves a notch into the wall, then he counts the passing days the camera static settling into he turns his gaze toward the open doorway and the sea beyond with waves wash against the shore continuity held: Hut interior; firelight palette",
+          "image_prompt_start": "photoreal cinematic: of Robinson sitting inside the dim hut, carving notches into a wooden post by firelight, thoughtful.",
+          "image_prompt_end": "photoreal cinematic: He his gaze toward the open doorway and the sea beyond.",
+          "video_prompt_start": "He carves a notch into the wall. he counts the passing days. The camera static. The beat resolves into the next matching frame. Continuity held: Hut interior; firelight palette.",
+          "video_prompt_end": "He carves a notch into the wall. he counts the passing days. The camera static. The beat resolves into the next matching frame. Continuity held: Hut interior; firelight palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S17",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-right",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Едно утро, шетајќи по плажата, виде нешто чудно.",
+          "dialogue_mk": "",
+          "kf_first": "Wide of Robinson walking along the wet shoreline scanning the sand, early morning, mist over the beach, 1216x704",
+          "kf_last": "Pan-right follows his steps until he stops abruptly, staring down",
+          "continuity": "Island beach palette; morning mist",
+          "motion": "pan-right; he halts",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "robinson_A1_fused"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "he walks the shoreline at dawn"
+            ],
+            [
+              1.75,
+              3.5,
+              "he spots something strange ahead"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide of Robinson walking along the wet shoreline scanning the sand, early morning, mist over the beach Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air then he walks the shoreline at dawn, then he spots something strange ahead the camera pan-right settling into pan-right follows his steps until he stops abruptly, staring down with waves wash against the shore continuity held: Island beach palette; morning mist",
+          "image_prompt_start": "photoreal cinematic: of Robinson walking along the wet shoreline scanning the sand, early morning, mist over the beach.",
+          "image_prompt_end": "photoreal cinematic: -right his steps until he stops abruptly, staring down.",
+          "video_prompt_start": "He walks the shoreline at dawn. he spots something strange ahead. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Island beach palette; morning mist.",
+          "video_prompt_end": "He walks the shoreline at dawn. he spots something strange ahead. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Island beach palette; morning mist.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S18",
+          "size": "INSERT",
+          "angle": "high-angle",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "narration_mk": "Отпечаток од човечко стапало — поголемо од неговото.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle insert of a huge bare human footprint pressed deep in the wet sand, 1216x704",
+          "kf_last": "A second matching footprint revealed beside it as foam recedes",
+          "continuity": "Beach sand; morning light",
+          "motion": "static; water recedes revealing print",
+          "shot_type": "CLOSE-UP",
+          "face_floor_px": 200,
+          "asset_refs": [
+            "footprint_insert_A6"
+          ],
+          "ref_scope": "image1: oversized human footprint reference — 100% identical",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "environment",
+            "framing"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.25,
+              "a large footprint lies in the sand"
+            ],
+            [
+              1.25,
+              2.5,
+              "the print dwarfs his own foot"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle insert of a huge bare human footprint pressed deep in the wet sand then a large footprint lies in the sand, then the print dwarfs his own foot the camera static settling into a second matching footprint revealed beside it as foam recedes continuity held: Beach sand; morning light",
+          "image_prompt_start": "photoreal cinematic: insert of a huge bare human footprint pressed deep in the wet sand.",
+          "image_prompt_end": "photoreal cinematic: A second matching footprint revealed beside it as foam recedes.",
+          "video_prompt_start": "A large footprint lies in the sand. the print dwarfs his own foot. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Beach sand; morning light.",
+          "video_prompt_end": "A large footprint lies in the sand. the print dwarfs his own foot. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Beach sand; morning light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S19",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Срцето му чукаше силно — не беше сам на островот.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of Robinson's startled face as he looks down at the footprint, eyes wide, 1216x704",
+          "kf_last": "Push-in on his alarmed eyes as he realizes someone else is here",
+          "continuity": "Same hero; tense palette",
+          "motion": "push-in on eyes",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "robinson_A1_fused"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "his breath quickens in fear"
+            ],
+            [
+              1.5,
+              3.0,
+              "he realizes he is not alone on the island"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Robinson's startled face as he looks down at the footprint, eyes wide Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air then his breath quickens in fear, then he realizes he is not alone on the island the camera push-in settling into push-in on his alarmed eyes as he realizes someone else is here with waves wash against the shore continuity held: Same hero; tense palette",
+          "image_prompt_start": "photoreal cinematic: medium of Robinson's startled face as he looks down at the footprint, eyes wide.",
+          "image_prompt_end": "photoreal cinematic: on his alarmed eyes as he realizes someone else is here.",
+          "video_prompt_start": "His breath quickens in fear. he realizes he is not alone on the island. The camera push-in. The beat resolves into the next matching frame. Continuity held: Same hero; tense palette.",
+          "video_prompt_end": "His breath quickens in fear. he realizes he is not alone on the island. The camera push-in. The beat resolves into the next matching frame. Continuity held: Same hero; tense palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S20",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Потоа слушна гласови и сфати дека не беше единствениот човек на островот.",
+          "dialogue_mk": "",
+          "kf_first": "Wide of Robinson moving cautiously along the jungle edge, then freezing as distant voices echo through the trees, 1216x704",
+          "kf_last": "He crouches low, peering toward the sound through dense leaves",
+          "continuity": "Island palette; tense mood",
+          "motion": "track following his stealth movement",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "robinson_A1_fused"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "voices carry over the dunes"
+            ],
+            [
+              1.75,
+              3.5,
+              "he crouches low to listen"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide of Robinson moving cautiously along the jungle edge, then freezing as distant voices echo through the trees Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air then voices carry over the dunes, then he crouches low to listen the camera track settling into he crouches low, peering toward the sound through dense leaves with waves wash against the shore continuity held: Island palette; tense mood",
+          "image_prompt_start": "photoreal cinematic: of Robinson moving cautiously along the jungle edge, then freezing as distant voices echo through the trees.",
+          "image_prompt_end": "photoreal cinematic: He crouches low, peering toward the sound through dense leaves.",
+          "video_prompt_start": "Voices carry over the dunes. he crouches low to listen. The camera track. The beat resolves into the next matching frame. Continuity held: Island palette; tense mood.",
+          "video_prompt_end": "Voices carry over the dunes. he crouches low to listen. The camera track. The beat resolves into the next matching frame. Continuity held: Island palette; tense mood.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S21",
+          "size": "MEDIUM",
+          "angle": "over-shoulder",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Се сокри зад грмушки и погледна.",
+          "dialogue_mk": "",
+          "kf_first": "Over-shoulder medium of Robinson hidden behind green bushes, parting leaves to peer out, 1216x704",
+          "kf_last": "His view widens through the leaves to reveal figures on the beach",
+          "continuity": "Robinson's silhouette; jungle edge",
+          "motion": "static; leaves part",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "robinson_A1_fused"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "he hides behind the bushes"
+            ],
+            [
+              1.5,
+              3.0,
+              "he peers out through the leaves"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: over-shoulder medium of Robinson hidden behind green bushes, parting leaves to peer out Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air then he hides behind the bushes, then he peers out through the leaves the camera static settling into his view widens through the leaves to reveal figures on the beach with waves wash against the shore continuity held: Robinson's silhouette; jungle edge",
+          "image_prompt_start": "photoreal cinematic: Over-shoulder medium of Robinson hidden behind green bushes, parting leaves to peer out.",
+          "image_prompt_end": "photoreal cinematic: His view widens through the leaves to reveal figures on the beach.",
+          "video_prompt_start": "He hides behind the bushes. he peers out through the leaves. The camera static. The beat resolves into the next matching frame. Continuity held: Robinson's silhouette; jungle edge.",
+          "video_prompt_end": "He hides behind the bushes. he peers out through the leaves. The camera static. The beat resolves into the next matching frame. Continuity held: Robinson's silhouette; jungle edge.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S22",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-left",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Виде неколку домородци како врзаа еден друг домородец.",
+          "dialogue_mk": "",
+          "kf_first": "Wide of several island natives on the beach binding the wrists of a lone kneeling man, tropical midday light, 1216x704",
+          "kf_last": "Pan-left settles on the bound prisoner, rope tight around his wrists",
+          "continuity": "New cast: natives and prisoner; beach palette",
+          "motion": "pan-left to the prisoner",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "robinson_A1_fused",
+            "natives_A8_group",
+            "petko_A2_fused"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical; image2: islander group costume — 100% identical; image3: fused master of Петко — 100% identical",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "natives drag a bound man toward the shore"
+            ],
+            [
+              1.75,
+              3.5,
+              "they tie Petko to a stake"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide of several island natives on the beach binding the wrists of a lone kneeling man, tropical midday light Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air Petko athletic, companion, in cloth tunic, wreathed in warm glow then natives drag a bound man toward the shore, then they tie Petko to a stake the camera pan-left settling into pan-left settles on the bound prisoner, rope tight around his wrists with waves wash against the shore continuity held: New cast: natives and prisoner; beach palette",
+          "image_prompt_start": "photoreal cinematic: of several island natives on the beach binding the wrists of a lone kneeling man, tropical midday light.",
+          "image_prompt_end": "photoreal cinematic: -left on the bound prisoner, rope tight around his wrists.",
+          "video_prompt_start": "Natives drag a bound man toward the shore. they tie Petko to a stake. The camera pan-left. The beat resolves into the next matching frame. Continuity held: New cast: natives and prisoner; beach palette.",
+          "video_prompt_end": "Natives drag a bound man toward the shore. they tie Petko to a stake. The camera pan-left. The beat resolves into the next matching frame. Continuity held: New cast: natives and prisoner; beach palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S23",
+          "size": "CLOSE",
+          "angle": "over-shoulder",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Го оставија самиот, беспомошен, и си заминаа.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up over the shoulder of the bound man left alone in the sand, rough rope on wrists, face downcast, 1216x704",
+          "kf_last": "Push-in on his helpless eyes as the last native disappears into the jungle",
+          "continuity": "Prisoner and bindings from S22",
+          "motion": "push-in on eyes",
+          "shot_type": "CLOSE-UP",
+          "face_floor_px": 200,
+          "asset_refs": [
+            "petko_A2_fused"
+          ],
+          "ref_scope": "image1: fused master of Петко — 100% identical",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "he is left alone and helpless"
+            ],
+            [
+              1.5,
+              3.0,
+              "the captors walk away"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up over the shoulder of the bound man left alone in the sand, rough rope on wrists, face downcast Petko athletic, companion, in cloth tunic, wreathed in warm glow then he is left alone and helpless, then the captors walk away the camera push-in settling into push-in on his helpless eyes as the last native disappears into the jungle continuity held: Prisoner and bindings from S22",
+          "image_prompt_start": "photoreal cinematic: over the shoulder of the bound man left alone in the sand, rough rope on wrists, face downcast.",
+          "image_prompt_end": "photoreal cinematic: on his helpless eyes as the last native disappears into the jungle.",
+          "video_prompt_start": "He is left alone and helpless. the captors walk away. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Prisoner and bindings from S22.",
+          "video_prompt_end": "He is left alone and helpless. the captors walk away. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Prisoner and bindings from S22.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S24",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Кога заминаа, Робинсон се приближи до него.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of Robinson stepping out from the bushes and approaching the bound man carefully, hand raised reassuringly, 1216x704",
+          "kf_last": "He kneels beside the prisoner and reaches for the ropes",
+          "continuity": "Robinson and prisoner; beach palette",
+          "motion": "track toward the bound man",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "robinson_A1_fused",
+            "petko_A2_fused"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical; image2: fused master of Петко — 100% identical",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "Crusoe steps out of hiding"
+            ],
+            [
+              1.5,
+              3.0,
+              "he approaches the captive"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Robinson stepping out from the bushes and approaching the bound man carefully, hand raised reassuringly Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air Petko athletic, companion, in cloth tunic, wreathed in warm glow then Crusoe steps out of hiding, then he approaches the captive the camera track settling into he kneels beside the prisoner and reaches for the ropes with waves wash against the shore continuity held: Robinson and prisoner; beach palette",
+          "image_prompt_start": "photoreal cinematic: of Robinson stepping out from the bushes and approaching the bound man carefully, hand raised reassuringly.",
+          "image_prompt_end": "photoreal cinematic: He kneels beside the prisoner and reaches for the ropes.",
+          "video_prompt_start": "Crusoe steps out of hiding. he approaches the captive. The camera track. The beat resolves into the next matching frame. Continuity held: Robinson and prisoner; beach palette.",
+          "video_prompt_end": "Crusoe steps out of hiding. he approaches the captive. The camera track. The beat resolves into the next matching frame. Continuity held: Robinson and prisoner; beach palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S25",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "narration_mk": "Внимателно го одврза.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of Robinson's hands untying the coarse rope from the man's wrists, careful fingers, 1216x704",
+          "kf_last": "The rope falls loose into the sand",
+          "continuity": "Bindings from S23",
+          "motion": "hands untie; rope drops",
+          "shot_type": "CLOSE-UP",
+          "face_floor_px": 200,
+          "asset_refs": [
+            "robinson_A1_fused",
+            "petko_A2_fused"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical; image2: fused master of Петко — 100% identical",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.25,
+              "his hands work the ropes"
+            ],
+            [
+              1.25,
+              2.5,
+              "the bindings fall away"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of Robinson's hands untying the coarse rope from the man's wrists, careful fingers Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air Petko athletic, companion, in cloth tunic, wreathed in warm glow then his hands work the ropes, then the bindings fall away the camera static settling into the rope falls loose into the sand with waves wash against the shore continuity held: Bindings from S23",
+          "image_prompt_start": "photoreal cinematic: Macro insert of Robinson's hands untying the coarse rope from the man's wrists, careful fingers.",
+          "image_prompt_end": "photoreal cinematic: The rope falls loose into the sand.",
+          "video_prompt_start": "His hands work the ropes. the bindings fall away. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Bindings from S23.",
+          "video_prompt_end": "His hands work the ropes. the bindings fall away. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Bindings from S23.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S26",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "shot-reverse",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "",
+          "dialogue_mk": "Робинсон: „Ќе те викам Петко.“",
+          "kf_first": "Medium of Robinson smiling warmly at the freed man, offering his hand, warm afternoon light, 1216x704",
+          "kf_last": "Reverse medium of the freed man looking up, beginning to smile",
+          "continuity": "Both characters; freed wrists",
+          "motion": "shot-reverse between the two",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "robinson_A1_fused",
+            "petko_A2_fused"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical; image2: fused master of Петко — 100% identical",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "Crusoe smiles and speaks to him"
+            ],
+            [
+              1.75,
+              3.5,
+              "Petko looks up in gratitude"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Robinson smiling warmly at the freed man, offering his hand, warm afternoon light Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air Petko athletic, companion, in cloth tunic, wreathed in warm glow then Crusoe smiles and speaks to him, then Petko looks up in gratitude the camera shot-reverse settling into reverse medium of the freed man looking up, beginning to smile with waves wash against the shore a voice speaks in Macedonian: \"Робинсон: „Ќе те викам Петко.“\" continuity held: Both characters; freed wrists",
+          "image_prompt_start": "photoreal cinematic: of Robinson smiling warmly at the freed man, offering his hand, warm afternoon light.",
+          "image_prompt_end": "photoreal cinematic: Reverse medium of the freed man looking up, beginning to smile.",
+          "video_prompt_start": "Crusoe smiles and speaks to him. Petko looks up in gratitude. The camera shot-reverse. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Робинсон: „Ќе те викам Петко.“\" Continuity held: Both characters; freed wrists.",
+          "video_prompt_end": "Crusoe smiles and speaks to him. Petko looks up in gratitude. The camera shot-reverse. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Робинсон: „Ќе те викам Петко.“\" Continuity held: Both characters; freed wrists.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S27",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Од тој ден, тие станаа неразделни пријатели.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of Petko's smiling, relieved face, gratitude in his eyes, soft golden light, 1216x704",
+          "kf_last": "Push-in on his warm smile as he grips Robinson's offered hand",
+          "continuity": "Petko's face, freed wrists",
+          "motion": "push-in on smile",
+          "shot_type": "CLOSE-UP",
+          "face_floor_px": 200,
+          "asset_refs": [
+            "robinson_A1_fused",
+            "petko_A2_fused"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical; image2: fused master of Петко — 100% identical",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "two faces sit side by side"
+            ],
+            [
+              1.5,
+              3.0,
+              "a bond of trust forms between them"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of Petko's smiling, relieved face, gratitude in his eyes, soft golden light Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air Petko athletic, companion, in cloth tunic, wreathed in warm glow then two faces sit side by side, then a bond of trust forms between them the camera push-in settling into push-in on his warm smile as he grips Robinson's offered hand with waves wash against the shore continuity held: Petko's face, freed wrists",
+          "image_prompt_start": "photoreal cinematic: of Petko's smiling, relieved face, gratitude in his eyes, soft golden light.",
+          "image_prompt_end": "photoreal cinematic: on his warm smile as he grips Robinson's offered hand.",
+          "video_prompt_start": "Two faces sit side by side. a bond of trust forms between them. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Petko's face, freed wrists.",
+          "video_prompt_end": "Two faces sit side by side. a bond of trust forms between them. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Petko's face, freed wrists.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S28",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Тие делеа работа, храна и надеж.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of Robinson and Petko standing side by side on the beach at dawn, facing the sea together, 1216x704",
+          "kf_last": "Crane-up frames the two friends beneath a brightening sky, a journey ahead",
+          "continuity": "Both characters; island palette",
+          "motion": "crane-up over the pair",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "robinson_A1_fused",
+            "petko_A2_fused"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical; image2: fused master of Петко — 100% identical",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "they split the day’s work"
+            ],
+            [
+              1.75,
+              3.5,
+              "they share food and hope"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of Robinson and Petko standing side by side on the beach at dawn, facing the sea together Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air Petko athletic, companion, in cloth tunic, wreathed in warm glow then they split the day’s work, then they share food and hope the camera crane-up settling into crane-up frames the two friends beneath a brightening sky, a journey ahead with waves wash against the shore continuity held: Both characters; island palette",
+          "image_prompt_start": "photoreal cinematic: wide of Robinson and Petko standing side by side on the beach at dawn, facing the sea together.",
+          "image_prompt_end": "photoreal cinematic: frames the two friends beneath a brightening sky, a journey ahead.",
+          "video_prompt_start": "They split the day’s work. they share food and hope. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Both characters; island palette.",
+          "video_prompt_end": "They split the day’s work. they share food and hope. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Both characters; island palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S29",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "pan-left",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Заедно ловеа, рибареа и се смееја.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of Robinson and Petko laughing as they pull a woven fish trap from the shallows, splashing water, 1216x704",
+          "kf_last": "Pan-left shows them wading back to shore with their catch, grinning",
+          "continuity": "Both characters; bright daylight",
+          "motion": "pan-left following their joy",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "robinson_A1_fused",
+            "petko_A2_fused"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical; image2: fused master of Петко — 100% identical",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "they hunt and fish together"
+            ],
+            [
+              1.75,
+              3.5,
+              "they laugh in the surf"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Robinson and Petko laughing as they pull a woven fish trap from the shallows, splashing water Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air Petko athletic, companion, in cloth tunic, wreathed in warm glow then they hunt and fish together, then they laugh in the surf the camera pan-left settling into pan-left shows them wading back to shore with their catch, grinning with waves wash against the shore continuity held: Both characters; bright daylight",
+          "image_prompt_start": "photoreal cinematic: of Robinson and Petko laughing as they pull a woven fish trap from the shallows, splashing water.",
+          "image_prompt_end": "photoreal cinematic: -left shows them wading back to shore with their catch, grinning.",
+          "video_prompt_start": "They hunt and fish together. they laugh in the surf. The camera pan-left. The beat resolves into the next matching frame. Continuity held: Both characters; bright daylight.",
+          "video_prompt_end": "They hunt and fish together. they laugh in the surf. The camera pan-left. The beat resolves into the next matching frame. Continuity held: Both characters; bright daylight.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S30",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Годините минуваа полека.",
+          "dialogue_mk": "",
+          "kf_first": "Wide of the island beach transitioning through seasons, sky and foliage shifting slowly, time-lapse feel, 1216x704",
+          "kf_last": "The same beach under a different season, waves unchanged",
+          "continuity": "Island palette; passage of time",
+          "motion": "static; lighting shifts with seasons",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "robinson_A1_fused",
+            "petko_A2_fused"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical; image2: fused master of Петко — 100% identical",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "seasons turn over the island"
+            ],
+            [
+              1.75,
+              3.5,
+              "years pass quietly"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide of the island beach transitioning through seasons, sky and foliage shifting slowly, time-lapse feel Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air Petko athletic, companion, in cloth tunic, wreathed in warm glow then seasons turn over the island, then years pass quietly the camera static settling into the same beach under a different season, waves unchanged with waves wash against the shore continuity held: Island palette; passage of time",
+          "image_prompt_start": "photoreal cinematic: of the island beach transitioning through seasons, sky and foliage shifting slowly, time-lapse feel.",
+          "image_prompt_end": "photoreal cinematic: The same beach under a different season, waves unchanged.",
+          "video_prompt_start": "Seasons turn over the island. years pass quietly. The camera static. The beat resolves into the next matching frame. Continuity held: Island palette; passage of time.",
+          "video_prompt_end": "Seasons turn over the island. years pass quietly. The camera static. The beat resolves into the next matching frame. Continuity held: Island palette; passage of time.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S31",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "pan-right",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Робинсон никогаш не престана да гледа кон хоризонтот.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of an older Robinson's weathered face, lines of time, gazing out to sea with longing, 1216x704",
+          "kf_last": "Pan-right follows his gaze toward the empty horizon",
+          "continuity": "Older Robinson; weathered look",
+          "motion": "pan-right to the sea",
+          "shot_type": "CLOSE-UP",
+          "face_floor_px": 200,
+          "asset_refs": [
+            "robinson_A1_fused"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "his eyes fix on the horizon"
+            ],
+            [
+              1.5,
+              3.0,
+              "he never stops hoping for rescue"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of an older Robinson's weathered face, lines of time, gazing out to sea with longing Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air then his eyes fix on the horizon, then he never stops hoping for rescue the camera pan-right settling into pan-right follows his gaze toward the empty horizon with waves wash against the shore continuity held: Older Robinson; weathered look",
+          "image_prompt_start": "photoreal cinematic: of an older Robinson's weathered face, lines of time, gazing out to sea with longing.",
+          "image_prompt_end": "photoreal cinematic: -right his gaze toward the empty horizon.",
+          "video_prompt_start": "His eyes fix on the horizon. he never stops hoping for rescue. The camera pan-right. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Older Robinson; weathered look.",
+          "video_prompt_end": "His eyes fix on the horizon. he never stops hoping for rescue. The camera pan-right. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Older Robinson; weathered look.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S32",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "И едно утро, конечно...",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of Robinson and Petko standing watch on a rocky headland, shading their eyes, scanning the sea, 1216x704",
+          "kf_last": "Push-in on both faces as their eyes go wide in recognition",
+          "continuity": "Both older; watchful mood",
+          "motion": "push-in as they spot something",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "robinson_A1_fused"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "a new morning breaks over the island"
+            ],
+            [
+              1.5,
+              3.0,
+              "he squints at the distance"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Robinson and Petko standing watch on a rocky headland, shading their eyes, scanning the sea Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air then a new morning breaks over the island, then he squints at the distance the camera push-in settling into push-in on both faces as their eyes go wide in recognition with waves wash against the shore continuity held: Both older; watchful mood",
+          "image_prompt_start": "photoreal cinematic: medium of Robinson and Petko standing watch on a rocky headland, shading their eyes, scanning the sea.",
+          "image_prompt_end": "photoreal cinematic: on both faces as their eyes go wide in recognition.",
+          "video_prompt_start": "A new morning breaks over the island. he squints at the distance. The camera push-in. The beat resolves into the next matching frame. Continuity held: Both older; watchful mood.",
+          "video_prompt_end": "A new morning breaks over the island. he squints at the distance. The camera push-in. The beat resolves into the next matching frame. Continuity held: Both older; watchful mood.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S33",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "",
+          "dialogue_mk": "Робинсон: „Брод! Гледај, Петко — брод!“",
+          "kf_first": "Wide of a distant sailing ship appearing on the bright horizon, sails glowing in morning light, 1216x704",
+          "kf_last": "Track pushes toward the ship as it grows larger against the sky",
+          "continuity": "New ship; hopeful palette",
+          "motion": "track toward the ship",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "robinson_A1_fused",
+            "petko_A2_fused"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical; image2: fused master of Петко — 100% identical",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "a sail rises on the water"
+            ],
+            [
+              1.75,
+              3.5,
+              "they shout and point at it"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide of a distant sailing ship appearing on the bright horizon, sails glowing in morning light Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air Petko athletic, companion, in cloth tunic, wreathed in warm glow then a sail rises on the water, then they shout and point at it the camera track settling into track pushes toward the ship as it grows larger against the sky with waves wash against the shore a voice speaks in Macedonian: \"Робинсон: „Брод! Гледај, Петко — брод!“\" continuity held: New ship; hopeful palette",
+          "image_prompt_start": "photoreal cinematic: of a distant sailing ship appearing on the bright horizon, sails glowing in morning light.",
+          "image_prompt_end": "photoreal cinematic: pushes toward the ship as it grows larger against the sky.",
+          "video_prompt_start": "A sail rises on the water. they shout and point at it. The camera track. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Робинсон: „Брод! Гледај, Петко — брод!“\" Continuity held: New ship; hopeful palette.",
+          "video_prompt_end": "A sail rises on the water. they shout and point at it. The camera track. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Робинсон: „Брод! Гледај, Петко — брод!“\" Continuity held: New ship; hopeful palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S34",
+          "size": "INSERT",
+          "angle": "high-angle",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "narration_mk": "Имаше британско знаме.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle insert of a British flag fluttering at the ship's mast, Union colours vivid against blue sky, 1216x704",
+          "kf_last": "The flag snaps in the wind",
+          "continuity": "Ship from S33",
+          "motion": "flag waves",
+          "shot_type": "CLOSE-UP",
+          "face_floor_px": 200,
+          "asset_refs": [
+            "british_flag_A7"
+          ],
+          "ref_scope": "image1: British union flag design — 100% identical",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "environment",
+            "framing"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.25,
+              "the British flag unfurls at the mast"
+            ],
+            [
+              1.25,
+              2.5,
+              "red and white snap in the wind"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle insert of a British flag fluttering at the ship's mast, Union colours vivid against blue sky then the British flag unfurls at the mast, then red and white snap in the wind the camera static settling into the flag snaps in the wind continuity held: Ship from S33",
+          "image_prompt_start": "photoreal cinematic: insert of a British flag fluttering at the ship's mast, Union colours vivid against blue sky.",
+          "image_prompt_end": "photoreal cinematic: The flag snaps in the wind.",
+          "video_prompt_start": "The British flag unfurls at the mast. red and white snap in the wind. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Ship from S33.",
+          "video_prompt_end": "The British flag unfurls at the mast. red and white snap in the wind. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Ship from S33.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S35",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "",
+          "dialogue_mk": "Робинсон: „Ќе можам да се вратам дома!“",
+          "kf_first": "Close-up of Robinson's overjoyed, tearful face, hope blazing in his eyes, 1216x704",
+          "kf_last": "Push-in on his radiant smile as he shouts toward the ship",
+          "continuity": "Older Robinson; emotional peak",
+          "motion": "push-in on joy",
+          "shot_type": "CLOSE-UP",
+          "face_floor_px": 200,
+          "asset_refs": [
+            "robinson_A1_fused"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "his face lights up with hope"
+            ],
+            [
+              1.5,
+              3.0,
+              "he exclaims that he can go home"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of Robinson's overjoyed, tearful face, hope blazing in his eyes Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air then his face lights up with hope, then he exclaims that he can go home the camera push-in settling into push-in on his radiant smile as he shouts toward the ship with waves wash against the shore a voice speaks in Macedonian: \"Робинсон: „Ќе можам да се вратам дома!“\" continuity held: Older Robinson; emotional peak",
+          "image_prompt_start": "photoreal cinematic: of Robinson's overjoyed, tearful face, hope blazing in his eyes.",
+          "image_prompt_end": "photoreal cinematic: on his radiant smile as he shouts toward the ship.",
+          "video_prompt_start": "His face lights up with hope. he exclaims that he can go home. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Робинсон: „Ќе можам да се вратам дома!“\" Continuity held: Older Robinson; emotional peak.",
+          "video_prompt_end": "His face lights up with hope. he exclaims that he can go home. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Робинсон: „Ќе можам да се вратам дома!“\" Continuity held: Older Robinson; emotional peak.",
+          "motion_intensity": "gentle"
+        }
+      ],
+      "location_ref": "island_hut_and_beach",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#2f5d3a",
+        "#8a6b3a",
+        "#d9c58b"
+      ],
+      "light_direction": "key light from screen-right, warm tropical day",
+      "time_of_day": "day"
+    },
+    {
+      "id": "act3",
+      "num": "Act III",
+      "title": "Спасение",
+      "color": "#3b82f6",
+      "pct": 25,
+      "synopsis": "Британски брод пристигнува, но морнарите се побуниле. Робинсон и Петко му помагаат на капетанот да си го врати бродот и заминуваат кон дома.",
+      "shots": [
+        {
+          "id": "S36",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-left",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Веднаш се упатија кон плажата.",
+          "dialogue_mk": "",
+          "kf_first": "Wide of Robinson and Petko sprinting along the shoreline toward the beach, sand kicking up, eager faces, 1216x704",
+          "kf_last": "Pan-left follows their urgent run as the ship anchors offshore",
+          "continuity": "Both characters; urgent mood",
+          "motion": "pan-left tracking their run",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "robinson_A1_fused",
+            "petko_A2_fused"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical; image2: fused master of Петко — 100% identical",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "they race toward the beach"
+            ],
+            [
+              1.5,
+              3.0,
+              "they wave at the shoreline"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide of Robinson and Petko sprinting along the shoreline toward the beach, sand kicking up, eager faces Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air Petko athletic, companion, in cloth tunic, wreathed in warm glow then they race toward the beach, then they wave at the shoreline the camera pan-left settling into pan-left follows their urgent run as the ship anchors offshore with waves wash against the shore continuity held: Both characters; urgent mood",
+          "image_prompt_start": "photoreal cinematic: of Robinson and Petko sprinting along the shoreline toward the beach, sand kicking up, eager faces.",
+          "image_prompt_end": "photoreal cinematic: -left their urgent run as the ship anchors offshore.",
+          "video_prompt_start": "They race toward the beach. they wave at the shoreline. The camera pan-left. The beat resolves into the next matching frame. Continuity held: Both characters; urgent mood.",
+          "video_prompt_end": "They race toward the beach. they wave at the shoreline. The camera pan-left. The beat resolves into the next matching frame. Continuity held: Both characters; urgent mood.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S37",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Таму видоа морнари кои оставија тројца врзани офицери на песокот и заминаа во густежот.",
+          "dialogue_mk": "",
+          "kf_first": "Wide of sailors dragging three bound officers onto the sand and walking away toward the jungle, tense daylight, 1216x704",
+          "kf_last": "The sailors vanish into the foliage, leaving the officers tied on the beach",
+          "continuity": "Beach palette; new cast",
+          "motion": "static; figures move and depart",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "captain_A3_fused"
+          ],
+          "ref_scope": "image1: fused master of Капетанот — 100% identical",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "sailors leave three bound officers on the sand"
+            ],
+            [
+              1.75,
+              3.5,
+              "the captain kneels among them"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide of sailors dragging three bound officers onto the sand and walking away toward the jungle, tense daylight Captain athletic, leader, in naval coat, captain hat, carrying telescope, wreathed in sea salt air then sailors leave three bound officers on the sand, then the captain kneels among them the camera static settling into the sailors vanish into the foliage, leaving the officers tied on the beach with waves wash against the shore continuity held: Beach palette; new cast",
+          "image_prompt_start": "photoreal cinematic: of sailors dragging three bound officers onto the sand and walking away toward the jungle, tense daylight.",
+          "image_prompt_end": "photoreal cinematic: The sailors vanish into the foliage, leaving the officers tied on the beach.",
+          "video_prompt_start": "Sailors leave three bound officers on the sand. the captain kneels among them. The camera static. The beat resolves into the next matching frame. Continuity held: Beach palette; new cast.",
+          "video_prompt_end": "Sailors leave three bound officers on the sand. the captain kneels among them. The camera static. The beat resolves into the next matching frame. Continuity held: Beach palette; new cast.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S38",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "",
+          "dialogue_mk": "Капетанот: „Јас сум капетанот на бродот. Моите морнари се побунија.“",
+          "kf_first": "Medium of Robinson and Petko untying the three officers, one older man in a torn naval coat speaking, 1216x704",
+          "kf_last": "The captain looks up at Robinson, grateful but weary",
+          "continuity": "Bound officers freed; naval costume",
+          "motion": "track across the rescue",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "captain_A3_fused"
+          ],
+          "ref_scope": "image1: fused master of Капетанот — 100% identical",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the captain speaks through his bonds"
+            ],
+            [
+              1.5,
+              3.0,
+              "he asks them for help"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Robinson and Petko untying the three officers, one older man in a torn naval coat speaking Captain athletic, leader, in naval coat, captain hat, carrying telescope, wreathed in sea salt air then the captain speaks through his bonds, then he asks them for help the camera track settling into the captain looks up at Robinson, grateful but weary with waves wash against the shore a voice speaks in Macedonian: \"Капетанот: „Јас сум капетанот на бродот. Моите морнари се побунија.“\" continuity held: Bound officers freed; naval costume",
+          "image_prompt_start": "photoreal cinematic: of Robinson and Petko untying the three officers, one older man in a torn naval coat speaking.",
+          "image_prompt_end": "photoreal cinematic: The captain looks up at Robinson, grateful but weary.",
+          "video_prompt_start": "The captain speaks through his bonds. he asks them for help. The camera track. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Капетанот: „Јас сум капетанот на бродот. Моите морнари се побунија.“\" Continuity held: Bound officers freed; naval costume.",
+          "video_prompt_end": "The captain speaks through his bonds. he asks them for help. The camera track. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Капетанот: „Јас сум капетанот на бродот. Моите морнари се побунија.“\" Continuity held: Bound officers freed; naval costume.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S39",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "",
+          "dialogue_mk": "Робинсон: „Ќе ви помогнеме да си го вратите бродот!“",
+          "kf_first": "Low-angle medium of Robinson standing tall, determined, clenching a fist, sea wind in his hair, 1216x704",
+          "kf_last": "His resolute face settles as the captain nods",
+          "continuity": "Robinson; heroic stance",
+          "motion": "static; wind; resolve",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "robinson_A1_fused"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "Crusoe steps forward"
+            ],
+            [
+              1.5,
+              3.0,
+              "he vows to help retake the ship"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Robinson standing tall, determined, clenching a fist, sea wind in his hair Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air then Crusoe steps forward, then he vows to help retake the ship the camera static settling into his resolute face settles as the captain nods with waves wash against the shore a voice speaks in Macedonian: \"Робинсон: „Ќе ви помогнеме да си го вратите бродот!“\" continuity held: Robinson; heroic stance",
+          "image_prompt_start": "photoreal cinematic: medium of Robinson standing tall, determined, clenching a fist, sea wind in his hair.",
+          "image_prompt_end": "photoreal cinematic: His resolute face as the captain nods.",
+          "video_prompt_start": "Crusoe steps forward. he vows to help retake the ship. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Робинсон: „Ќе ви помогнеме да си го вратите бродот!“\" Continuity held: Robinson; heroic stance.",
+          "video_prompt_end": "Crusoe steps forward. he vows to help retake the ship. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Робинсон: „Ќе ви помогнеме да си го вратите бродот!“\" Continuity held: Robinson; heroic stance.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S40",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Во текот на ноќта, Робинсон и Петко допливаа до бродот.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of a dark night sea, two silhouettes swimming quietly toward the anchored ship under moonlight, 1216x704",
+          "kf_last": "Crane-down to the waterline as the two reach the ship's hull in shadow",
+          "continuity": "Night palette; both characters",
+          "motion": "crane-down; moonlit swim",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "robinson_A1_fused",
+            "petko_A2_fused",
+            "ship_A4_prop"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical; image2: fused master of Петко — 100% identical; image3: period sailing ship design — 100% identical",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "under cover of night they swim toward the ship"
+            ],
+            [
+              1.75,
+              3.5,
+              "they reach the hull unseen"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of a dark night sea, two silhouettes swimming quietly toward the anchored ship under moonlight Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air Petko athletic, companion, in cloth tunic, wreathed in warm glow then under cover of night they swim toward the ship, then they reach the hull unseen the camera crane-down settling into crane-down to the waterline as the two reach the ship's hull in shadow with waves wash against the shore continuity held: Night palette; both characters",
+          "image_prompt_start": "photoreal cinematic: wide of a dark night sea, two silhouettes swimming quietly toward the anchored ship under moonlight.",
+          "image_prompt_end": "photoreal cinematic: to the waterline as the two reach the ship's hull in shadow.",
+          "video_prompt_start": "Under cover of night they swim toward the ship. they reach the hull unseen. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Night palette; both characters.",
+          "video_prompt_end": "Under cover of night they swim toward the ship. they reach the hull unseen. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Night palette; both characters.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S41",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Се прикрадоа на него незабележани.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of Robinson and Petko climbing over the rail onto the dark deck, silent and low, 1216x704",
+          "kf_last": "They crouch into shadow, scanning the dim deck",
+          "continuity": "Night palette; ship deck",
+          "motion": "track as they slip aboard",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "robinson_A1_fused",
+            "petko_A2_fused"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical; image2: fused master of Петко — 100% identical",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "they climb up onto the deck"
+            ],
+            [
+              1.5,
+              3.0,
+              "they slip aboard unnoticed"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Robinson and Petko climbing over the rail onto the dark deck, silent and low Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air Petko athletic, companion, in cloth tunic, wreathed in warm glow then they climb up onto the deck, then they slip aboard unnoticed the camera track settling into they crouch into shadow, scanning the dim deck with waves wash against the shore continuity held: Night palette; ship deck",
+          "image_prompt_start": "photoreal cinematic: of Robinson and Petko climbing over the rail onto the dark deck, silent and low.",
+          "image_prompt_end": "photoreal cinematic: They crouch into shadow, scanning the dim deck.",
+          "video_prompt_start": "They climb up onto the deck. they slip aboard unnoticed. The camera track. The beat resolves into the next matching frame. Continuity held: Night palette; ship deck.",
+          "video_prompt_end": "They climb up onto the deck. they slip aboard unnoticed. The camera track. The beat resolves into the next matching frame. Continuity held: Night palette; ship deck.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S42",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "pan-right",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Бунтовниците шетаа по палубата без да знаат.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of mutineers patrolling the moonlit deck, unaware, lantern light flickering, 1216x704",
+          "kf_last": "Pan-right reveals Robinson and Petko hidden behind barrels, watching",
+          "continuity": "Mutineers; night deck",
+          "motion": "pan-right to reveal the hidden pair",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "mutineers_A9_group",
+            "ship_A4_prop"
+          ],
+          "ref_scope": "image1: ragged crew costume — 100% identical; image2: period sailing ship design — 100% identical",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "environment",
+            "framing"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "mutineers pace the deck"
+            ],
+            [
+              1.5,
+              3.0,
+              "they suspect nothing"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of mutineers patrolling the moonlit deck, unaware, lantern light flickering then mutineers pace the deck, then they suspect nothing the camera pan-right settling into pan-right reveals Robinson and Petko hidden behind barrels, watching continuity held: Mutineers; night deck",
+          "image_prompt_start": "photoreal cinematic: wide of mutineers patrolling the moonlit deck, unaware, lantern light flickering.",
+          "image_prompt_end": "photoreal cinematic: -right reveals Robinson and Petko hidden behind barrels, watching.",
+          "video_prompt_start": "Mutineers pace the deck. they suspect nothing. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Mutineers; night deck.",
+          "video_prompt_end": "Mutineers pace the deck. they suspect nothing. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Mutineers; night deck.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S43",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "shot-reverse",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Еден по еден, ги фаќаа бунтовниците.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of Robinson stepping out and grabbing a mutineer from behind in the dark, hand over mouth, 1216x704",
+          "kf_last": "Reverse medium of Petko binding the captured man's arms",
+          "continuity": "Mutineers; night palette",
+          "motion": "shot-reverse; swift capture",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "robinson_A1_fused",
+            "petko_A2_fused",
+            "mutineers_A9_group"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical; image2: fused master of Петко — 100% identical; image3: ragged crew costume — 100% identical",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "one by one they seize the mutineers"
+            ],
+            [
+              1.5,
+              3.0,
+              "the mutineers are bound"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Robinson stepping out and grabbing a mutineer from behind in the dark, hand over mouth Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air Petko athletic, companion, in cloth tunic, wreathed in warm glow then one by one they seize the mutineers, then the mutineers are bound the camera shot-reverse settling into reverse medium of Petko binding the captured man's arms with waves wash against the shore continuity held: Mutineers; night palette",
+          "image_prompt_start": "photoreal cinematic: of Robinson stepping out and grabbing a mutineer from behind in the dark, hand over mouth.",
+          "image_prompt_end": "photoreal cinematic: Reverse medium of Petko binding the captured man's arms.",
+          "video_prompt_start": "One by one they seize the mutineers. the mutineers are bound. The camera shot-reverse. The beat resolves into the next matching frame. Continuity held: Mutineers; night palette.",
+          "video_prompt_end": "One by one they seize the mutineers. the mutineers are bound. The camera shot-reverse. The beat resolves into the next matching frame. Continuity held: Mutineers; night palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S44",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Ги заклучуваа во делот за товар.",
+          "dialogue_mk": "",
+          "kf_first": "Wide of the captured mutineers being marched into the cargo hold, lantern-lit bulkheads, 1216x704",
+          "kf_last": "The heavy hold door swings shut and is barred",
+          "continuity": "Mutineers; below-deck palette",
+          "motion": "static; door closes",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "robinson_A1_fused",
+            "petko_A2_fused"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical; image2: fused master of Петко — 100% identical",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "they drag the mutineers below"
+            ],
+            [
+              1.5,
+              3.0,
+              "the hold hatch bolts shut"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide of the captured mutineers being marched into the cargo hold, lantern-lit bulkheads Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air Petko athletic, companion, in cloth tunic, wreathed in warm glow then they drag the mutineers below, then the hold hatch bolts shut the camera static settling into the heavy hold door swings shut and is barred with waves wash against the shore continuity held: Mutineers; below-deck palette",
+          "image_prompt_start": "photoreal cinematic: of the captured mutineers being marched into the cargo hold, lantern-lit bulkheads.",
+          "image_prompt_end": "photoreal cinematic: The heavy hold door swings shut and is barred.",
+          "video_prompt_start": "They drag the mutineers below. the hold hatch bolts shut. The camera static. The beat resolves into the next matching frame. Continuity held: Mutineers; below-deck palette.",
+          "video_prompt_end": "They drag the mutineers below. the hold hatch bolts shut. The camera static. The beat resolves into the next matching frame. Continuity held: Mutineers; below-deck palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S45",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Капетанот повторно ја презеде командата.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of the captain gripping the ship's wheel at dawn, authority in his posture, 1216x704",
+          "kf_last": "Push-in on his steady eyes as the ship turns toward open sea",
+          "continuity": "Captain; dawn palette",
+          "motion": "push-in on his command",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "captain_A3_fused"
+          ],
+          "ref_scope": "image1: fused master of Капетанот — 100% identical",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the captain takes the wheel"
+            ],
+            [
+              1.5,
+              3.0,
+              "he retakes command of the ship"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of the captain gripping the ship's wheel at dawn, authority in his posture Captain athletic, leader, in naval coat, captain hat, carrying telescope, wreathed in sea salt air then the captain takes the wheel, then he retakes command of the ship the camera push-in settling into push-in on his steady eyes as the ship turns toward open sea with waves wash against the shore continuity held: Captain; dawn palette",
+          "image_prompt_start": "photoreal cinematic: medium of the captain gripping the ship's wheel at dawn, authority in his posture.",
+          "image_prompt_end": "photoreal cinematic: on his steady eyes as the ship toward open sea.",
+          "video_prompt_start": "The captain takes the wheel. he retakes command of the ship. The camera push-in. The beat resolves into the next matching frame. Continuity held: Captain; dawn palette.",
+          "video_prompt_end": "The captain takes the wheel. he retakes command of the ship. The camera push-in. The beat resolves into the next matching frame. Continuity held: Captain; dawn palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S46",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "shot-reverse",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "",
+          "dialogue_mk": "Робинсон: „Мораме да се збогуваме, Петко.“ Петко: „Доаѓам со тебе во Англија!“",
+          "kf_first": "Close-up of Robinson and Petko facing each other, about to part, emotion in their eyes, 1216x704",
+          "kf_last": "Reverse close-up of Petko's resolute face as he refuses to leave",
+          "continuity": "Both characters; farewell mood",
+          "motion": "shot-reverse; shared decision",
+          "shot_type": "CLOSE-UP",
+          "face_floor_px": 200,
+          "asset_refs": [
+            "robinson_A1_fused",
+            "petko_A2_fused"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical; image2: fused master of Петко — 100% identical",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "they exchange a long goodbye"
+            ],
+            [
+              1.75,
+              3.5,
+              "Petko vows to come along"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of Robinson and Petko facing each other, about to part, emotion in their eyes Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air Petko athletic, companion, in cloth tunic, wreathed in warm glow then they exchange a long goodbye, then Petko vows to come along the camera shot-reverse settling into reverse close-up of Petko's resolute face as he refuses to leave with waves wash against the shore a voice speaks in Macedonian: \"Робинсон: „Мораме да се збогуваме, Петко.“ Петко: „Доаѓам со тебе во Англија!“\" continuity held: Both characters; farewell mood",
+          "image_prompt_start": "photoreal cinematic: of Robinson and Petko facing each other, about to part, emotion in their eyes.",
+          "image_prompt_end": "photoreal cinematic: Reverse close-up of Petko's resolute face as he refuses to leave.",
+          "video_prompt_start": "They exchange a long goodbye. Petko vows to come along. The camera shot-reverse. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Робинсон: „Мораме да се збогуваме, Петко.“ Петко: „Доаѓам со тебе во Англија!“\" Continuity held: Both characters; farewell mood.",
+          "video_prompt_end": "They exchange a long goodbye. Petko vows to come along. The camera shot-reverse. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Робинсон: „Мораме да се збогуваме, Петко.“ Петко: „Доаѓам со тебе во Англија!“\" Continuity held: Both characters; farewell mood.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S47",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-left",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "По неколку седмици на море, копното се појави.",
+          "dialogue_mk": "",
+          "kf_first": "Wide of the ship sailing toward a distant English coastline at dawn, seagulls wheeling, 1216x704",
+          "kf_last": "Pan-left reveals the white cliffs and a harbor town ahead",
+          "continuity": "Ship; hopeful dawn palette",
+          "motion": "pan-left to the coast",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "robinson_A1_fused",
+            "petko_A2_fused",
+            "captain_A3_fused",
+            "ship_A4_prop"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical; image2: fused master of Петко — 100% identical; image3: fused master of Капетанот — 100% identical; image4: period sailing ship design — 100% identical",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "land falls away behind them"
+            ],
+            [
+              1.75,
+              3.5,
+              "weeks pass on open water"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide of the ship sailing toward a distant English coastline at dawn, seagulls wheeling Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air Petko athletic, companion, in cloth tunic, wreathed in warm glow Captain athletic, leader, in naval coat, captain hat, carrying telescope, wreathed in sea salt air then land falls away behind them, then weeks pass on open water the camera pan-left settling into pan-left reveals the white cliffs and a harbor town ahead with waves wash against the shore continuity held: Ship; hopeful dawn palette",
+          "image_prompt_start": "photoreal cinematic: of the ship sailing toward a distant English coastline at dawn, seagulls wheeling.",
+          "image_prompt_end": "photoreal cinematic: -left reveals the white cliffs and a harbor town ahead.",
+          "video_prompt_start": "Land falls away behind them. weeks pass on open water. The camera pan-left. The beat resolves into the next matching frame. Continuity held: Ship; hopeful dawn palette.",
+          "video_prompt_end": "Land falls away behind them. weeks pass on open water. The camera pan-left. The beat resolves into the next matching frame. Continuity held: Ship; hopeful dawn palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S48",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Облечени во нови алишта, слегоа на пристаништето.",
+          "dialogue_mk": "",
+          "kf_first": "Wide of Robinson and Petko, now dressed in Western clothes, stepping onto a busy stone harbor quay, clear day, 1216x704",
+          "kf_last": "They pause at the dock, taking in the town together",
+          "continuity": "Both in new western clothes",
+          "motion": "static; they step ashore",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "robinson_A1_fused",
+            "petko_A2_fused",
+            "captain_A3_fused"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical; image2: fused master of Петко — 100% identical; image3: fused master of Капетанот — 100% identical",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the ship docks at the quay"
+            ],
+            [
+              1.5,
+              3.0,
+              "they step onto land in new clothes"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide of Robinson and Petko, now dressed in Western clothes, stepping onto a busy stone harbor quay, clear day Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air Petko athletic, companion, in cloth tunic, wreathed in warm glow Captain athletic, leader, in naval coat, captain hat, carrying telescope, wreathed in sea salt air then the ship docks at the quay, then they step onto land in new clothes the camera static settling into they pause at the dock, taking in the town together with waves wash against the shore continuity held: Both in new western clothes",
+          "image_prompt_start": "photoreal cinematic: of Robinson and Petko, now dressed in Western clothes, stepping onto a busy stone harbor quay, clear day.",
+          "image_prompt_end": "photoreal cinematic: They pause at the dock, taking in the town together.",
+          "video_prompt_start": "The ship docks at the quay. they step onto land in new clothes. The camera static. The beat resolves into the next matching frame. Continuity held: Both in new western clothes.",
+          "video_prompt_end": "The ship docks at the quay. they step onto land in new clothes. The camera static. The beat resolves into the next matching frame. Continuity held: Both in new western clothes.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S49",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "pull-back",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "И останаа пријатели засекогаш.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of Robinson and Petko walking side by side into the English town, arms relaxed, content smiles, 1216x704",
+          "kf_last": "Pull-back frames the two friends together, bound by a lifetime of friendship",
+          "continuity": "Both characters; warm closing palette",
+          "motion": "pull-back to close the story",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "robinson_A1_fused",
+            "petko_A2_fused"
+          ],
+          "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical; image2: fused master of Петко — 100% identical",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "they walk side by side"
+            ],
+            [
+              1.75,
+              3.5,
+              "their friendship endures forever"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Robinson and Petko walking side by side into the English town, arms relaxed, content smiles Robinson slender, explorer, in tricorn, carrying wooden plank, wreathed in sea salt air Petko athletic, companion, in cloth tunic, wreathed in warm glow then they walk side by side, then their friendship endures forever the camera pull-back settling into pull-back frames the two friends together, bound by a lifetime of friendship with waves wash against the shore continuity held: Both characters; warm closing palette",
+          "image_prompt_start": "photoreal cinematic: of Robinson and Petko walking side by side into the English town, arms relaxed, content smiles.",
+          "image_prompt_end": "photoreal cinematic: frames the two friends together, bound by a lifetime of friendship.",
+          "video_prompt_start": "They walk side by side. their friendship endures forever. The camera pull-back. The beat resolves into the next matching frame. Continuity held: Both characters; warm closing palette.",
+          "video_prompt_end": "They walk side by side. their friendship endures forever. The camera pull-back. The beat resolves into the next matching frame. Continuity held: Both characters; warm closing palette.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "island_beach_and_ship",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#1b2a4a",
+        "#3a5a7a",
+        "#c49a5a"
+      ],
+      "light_direction": "key light from screen-left, dusk over the harbor",
+      "time_of_day": "dusk"
+    }
+  ],
+  "director_corrections": {
+    "issued": "2026-11-07",
+    "source": "KB §13 DIRECTOR CORRECTIONS — overrides all prior asset/keyframe guidance",
+    "rules": [
+      "DD HEADWEAR: no cap/hood/bandana/mask on head; hood = back-cowl only (cape-like); bare head + teal-blue glowing hair always visible; any head/face covering = REJECT",
+      "LEGENDARY WEAPONS MUST APPEAR: DD = twin Frostbite-class hand crossbows (ice-blue arcane crystal limbs, frost runes, frozen-light string, teal-blue glow); AZ = Dawnbreaker-class greatsword (pale sunsteel, molten-gold runes, golden holy fire edge, sunburst crossguard); hero sheet/keyframe without weapon = INCOMPLETE",
+      "WEAPON ANTI-SLOP: fantasy construction only; crossbow must NEVER read as firearm (no barrel/magazine/stock/Uzi/SMG silhouette = REJECT); anti-slop negatives always appended",
+      "BOSS FACE: Mal'garot HAS a prolific molten-lava face (lava dripping/running, drops falling to ground); faceless boss sheets SUPERSEDED",
+      "LOCATION BRIGHTNESS FLOOR: environment plates silhouette-readable at thumbnail; no murk-dark grades"
+    ],
+    "applies_when": "Activates when face_lock changes from AI-default to an enrolled identity (DD/AZ). AI-default packages carry this as a forward constraint, not a current defect.",
+    "anti_slop_negatives": "firearm, gun, machinegun, Uzi, barrel, magazine, ammo clip, muzzle, modern weapon"
+  },
+  "character_designs": {
+    "robinson": {
+      "archetype": "explorer",
+      "build": "slender",
+      "scale": "human",
+      "palette": {
+        "primary": "#8a6040",
+        "secondary": "#2e3a4a",
+        "glow": "#f2d48b"
+      },
+      "costume": [
+        "tricorn"
+      ],
+      "props": [
+        "wooden_plank"
+      ],
+      "fx": [
+        "sea_salt_air"
+      ]
+    },
+    "petko": {
+      "archetype": "companion",
+      "build": "athletic",
+      "scale": "human",
+      "palette": {
+        "primary": "#9a6038",
+        "secondary": "#d9c58b",
+        "glow": "#f2e0a0"
+      },
+      "costume": [
+        "cloth_tunic"
+      ],
+      "props": [],
+      "fx": [
+        "warm_glow"
+      ]
+    },
+    "captain": {
+      "archetype": "leader",
+      "build": "athletic",
+      "scale": "human",
+      "palette": {
+        "primary": "#1b3a5c",
+        "secondary": "#3a5a7a",
+        "glow": "#c49a5a"
+      },
+      "costume": [
+        "naval_coat",
+        "captain_hat"
+      ],
+      "props": [
+        "telescope"
+      ],
+      "fx": [
+        "sea_salt_air"
+      ]
+    },
+    "mutineers": {
+      "archetype": "rebel",
+      "build": "athletic",
+      "scale": "human",
+      "palette": {
+        "primary": "#4a3a2e",
+        "secondary": "#2a2218",
+        "glow": "#8affc1"
+      },
+      "costume": [
+        "ragged_shirt",
+        "trousers"
+      ],
+      "props": [
+        "rope",
+        "lantern"
+      ],
+      "fx": [
+        "shadow_smoke"
+      ]
+    },
+    "natives": {
+      "archetype": "islander",
+      "build": "athletic",
+      "scale": "human",
+      "palette": {
+        "primary": "#8a6038",
+        "secondary": "#5b4a2e",
+        "glow": "#f2c46a"
+      },
+      "costume": [
+        "grass_skirt"
+      ],
+      "props": [
+        "spear",
+        "rope"
+      ],
+      "fx": [
+        "fire_wisps"
+      ]
+    },
+    "harbor_env_A1_prop": {
+      "motif": "shore",
+      "tone": "#c9a86a"
+    },
+    "ship_env_A1_prop": {
+      "motif": "seafaring",
+      "tone": "#1e6f8f"
+    },
+    "island_env_A2_prop": {
+      "motif": "forest",
+      "tone": "#2f5d3a"
+    },
+    "beach_env_A2_prop": {
+      "motif": "shore",
+      "tone": "#d9c58b"
+    },
+    "ship_deck_env_A3_prop": {
+      "motif": "deck",
+      "tone": "#1b2a4a"
+    }
+  }
+}

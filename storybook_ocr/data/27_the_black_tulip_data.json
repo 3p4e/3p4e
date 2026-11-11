@@ -1,0 +1,2636 @@
+{
+  "num": "27",
+  "title_mk": "Црното лале",
+  "title_en": "The Black Tulip",
+  "genre": "Авантура · историска драма",
+  "logline": "In 17th-century Haarlem, a flower grower framed for treason escapes prison with his beloved's help and, disguised as the Black Tulip, reclaims his stolen bulbs, his freedom and his love.",
+  "spec": {
+    "aspect": "16:9",
+    "resolution": "1216x704",
+    "fps": 24,
+    "model": "model-agnostic (chosen at generation)",
+    "style": "photoreal",
+    "flf": true,
+    "language": "mk",
+    "shot_floor": 40,
+    "shot_max": 60,
+    "seed_policy": "fixed-per-shot (same seed → reproducible shot; re-roll per shot id)",
+    "style_anchor": [
+      "Diablo 2 cinematic",
+      "World of Warcraft cinematic",
+      "StarCraft cinematic"
+    ],
+    "negative_prompt": "deformed, extra limbs, morphing, watermark, text, static frame, blurry, low quality, cropped head, cut-off face",
+    "frames": 121,
+    "frames_fallback": 81,
+    "routes": [
+      {
+        "model": "Wan2.1-FLF2V-14B-720P",
+        "input": "start+end native (run START-ONLY)",
+        "status": "WORKING (lead for 14B quality)"
+      },
+      {
+        "model": "Kandinsky 6.0 Lite/Pro",
+        "input": "start-image-only",
+        "status": "WORKING (Pro-distill untested at scale)"
+      },
+      {
+        "model": "SkyReels-V3 R2V-14B",
+        "input": "start-image-only",
+        "status": "WORKING (fallback)"
+      },
+      {
+        "model": "LTX-Video 2B v0.9.5",
+        "input": "start-image-only",
+        "status": "WORKING (small/fast, low ceiling)"
+      },
+      {
+        "model": "Mochi-1",
+        "input": "start-image-only",
+        "status": "untested here"
+      },
+      {
+        "model": "LTX-2.3 22B distilled",
+        "input": "start-image-only",
+        "status": "DEAD (nanobind native-crash, 42 note)"
+      }
+    ],
+    "model_note": "Model chosen per story at generation (43 §4). Keyframes + continuation prompts are generator-agnostic; only the render command differs per model."
+  },
+  "cast": [
+    {
+      "role": "Корнелиј / Cornelius",
+      "trait": "Млад одгледувач на цвеќиња, смирен, вреден и добар; во облека од лен со кожна престилка",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Роза / Rosa",
+      "trait": "Неговата љубена — храбра, умна и верна; долга коса и шал преку глава",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Бокстел / Boxtel",
+      "trait": "Злобниот и завидлив сосед; светла кожа, тесно лице со љубоморни очи",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Кралските стражари / The Royal Guards",
+      "trait": "Војници во сини палта и челични шлемови со долги палки",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    }
+  ],
+  "acts": [
+    {
+      "id": "act1",
+      "num": "Act I",
+      "title": "Заложбата",
+      "color": "#2dd4bf",
+      "pct": 29,
+      "synopsis": "Во Харлем, Корнелиј одгледува ретко црно лале вредно богатство, додека завидливиот сосед Бокстел го шпионира, краде луковиците и му потметнува лажни документи за велепредавство.",
+      "shots": [
+        {
+          "id": "S01",
+          "shot_type": "BOSS-ONLY",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "haarlem_E1_prop"
+          ],
+          "ref_scope": "image1: the 17th-century-Haarlem design - Dutch canals, windmills and tulip merchants' houses — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "slow crane-down from sky to rooftops"
+            ],
+            [
+              1.93,
+              3.5,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Во Харлем — градот на лалињата — во седумнаесеттиот век, цветаат илјадници разнобојни цвеќиња.",
+          "dialogue_mk": "",
+          "kf_first": "High wide aerial crane-down over 17th-century Haarlem at golden dawn, Dutch canals and windmills, endless tulip fields in bloom, misty light, photoreal WoW cinematic grade, 1216x704",
+          "kf_last": "Crane settles over red tiled rooftops toward a single modest house with a glowing garden",
+          "continuity": "Establish golden-dawn palette and Dutch-era Haarlem for Act I",
+          "motion": "slow crane-down from sky to rooftops",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high wide aerial crane-down over 17th-century Haarlem at golden dawn, Dutch canals and windmills, endless tulip fields in bloom, misty light, photoreal WoW cinematic grade then slow crane-down from sky to rooftops, then resolve settling into crane settles over red tiled rooftops toward a single modest house with a glowing garden continuity held: Establish golden-dawn palette and Dutch-era Haarlem for Act I",
+          "image_prompt_start": "photoreal cinematic: High wide over 17th-century Haarlem at golden dawn, Dutch canals and windmills, endless tulip fields in bloom, misty light, photoreal WoW cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: Crane over red tiled rooftops toward a single modest house with a glowing garden.",
+          "video_prompt_start": "Slow crane-down from sky to rooftops. resolve. The action plays out at full force and lands in a held, readable end pose. Continuity held: Establish golden-dawn palette and Dutch-era Haarlem for Act I.",
+          "video_prompt_end": "Slow crane-down from sky to rooftops. resolve. The action plays out at full force and lands in a held, readable end pose. Continuity held: Establish golden-dawn palette and Dutch-era Haarlem for Act I.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S02",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "cornelius_A1_fused",
+            "garden_E2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Cornelius - young gentle flower-grower, calm and kind; linen clothes with a leather apron — 100% identical; studio bg/pose/light NOT used; image2: the flower-garden design - Cornelius lush tulip garden — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "gentle tending motion"
+            ]
+          ],
+          "narration_mk": "Во тој град живее Корнелиј, млад човек чие срце е полно со цвеќиња.",
+          "dialogue_mk": "",
+          "kf_first": "Medium eye-level of young Cornelius kneeling in a lush garden, tending tulip stems with a soft cloth, gentle morning light, 17th-century Dutch linen attire, photoreal",
+          "kf_last": "He leans back to admire a pot of dark buds, smiling quietly at his work",
+          "continuity": "Introduce Cornelius — linen shirt, leather apron; golden light from S01",
+          "motion": "static; gentle tending motion",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level of young Cornelius kneeling in a lush garden, tending tulip stems with a soft cloth, gentle morning light, 17th-century Dutch linen attire, photoreal Cornelius slender, florist, in linen, apron, carrying bulb, wreathed in golden glow then static, then gentle tending motion settling into he leans back to admire a pot of dark buds, smiling quietly at his work with a low radiant hum, leaves stir continuity held: Introduce Cornelius — linen shirt, leather apron; golden light from S01",
+          "image_prompt_start": "photoreal cinematic: eye-level of young Cornelius kneeling in a lush garden, tending tulip stems with a soft cloth, gentle morning light, 17th-century Dutch linen attire, photoreal.",
+          "image_prompt_end": "photoreal cinematic: He leans back to admire a pot of dark buds, smiling quietly at his work.",
+          "video_prompt_start": "Static. gentle tending motion. The beat resolves into the next matching frame. Continuity held: Introduce Cornelius — linen shirt, leather apron; golden light from S01.",
+          "video_prompt_end": "Static. gentle tending motion. The beat resolves into the next matching frame. Continuity held: Introduce Cornelius — linen shirt, leather apron; golden light from S01.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S03",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "macro",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "cornelius_A1_fused",
+            "bulb_K2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Cornelius - young gentle flower-grower, calm and kind; linen clothes with a leather apron — 100% identical; studio bg/pose/light NOT used; image2: the tulip-bulb design - a round golden-brown tulip bulb — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.38,
+              "static"
+            ],
+            [
+              1.38,
+              2.5,
+              "thumb brushing the shoot"
+            ]
+          ],
+          "narration_mk": "Неговите раце знаеја како да го одгледаат и најреткото цвеќе.",
+          "dialogue_mk": "",
+          "kf_first": "Macro close of Cornelius's careful hands cradling a round tulip bulb, soil on fingertips, soft window light, photoreal detail",
+          "kf_last": "His thumb brushes a dark shoot emerging from the bulb",
+          "continuity": "Cornelius hands and garden from S02; macro sharpness",
+          "motion": "static; thumb brushing the shoot",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro close of Cornelius's careful hands cradling a round tulip bulb, soil on fingertips, soft window light, photoreal detail Cornelius slender, florist, in linen, apron, carrying bulb, wreathed in golden glow then static, then thumb brushing the shoot settling into his thumb brushes a dark shoot emerging from the bulb with a low radiant hum continuity held: Cornelius hands and garden from S02; macro sharpness",
+          "image_prompt_start": "photoreal cinematic: Macro close of Cornelius's careful hands cradling a round tulip bulb, soil on fingertips, soft window light, photoreal detail.",
+          "image_prompt_end": "photoreal cinematic: His thumb brushes a dark shoot emerging from the bulb.",
+          "video_prompt_start": "Static. thumb brushing the shoot. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Cornelius hands and garden from S02; macro sharpness.",
+          "video_prompt_end": "Static. thumb brushing the shoot. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Cornelius hands and garden from S02; macro sharpness.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S04",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "cornelius_A1_fused",
+            "black_tulip_K1_prop"
+          ],
+          "ref_scope": "image1: the fused master of Cornelius - young gentle flower-grower, calm and kind; linen clothes with a leather apron — 100% identical; studio bg/pose/light NOT used; image2: the black-tulip design - a rare near-black tulip with deep violet undertones — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "slow push-in"
+            ],
+            [
+              1.93,
+              3.5,
+              "light beam on bloom"
+            ]
+          ],
+          "narration_mk": "Денови и ноќи работел, сè додека не создаде нешто невидено — црно лале.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of Cornelius holding up a single black tulip, its petals deep ebony with a velvet sheen, greenhouse glow behind him, photoreal",
+          "kf_last": "Push-in on the flower as a beam of light touches the black bloom",
+          "continuity": "Cornelius costume; black tulip introduced — the story's central prop",
+          "motion": "slow push-in; light beam on bloom",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Cornelius holding up a single black tulip, its petals deep ebony with a velvet sheen, greenhouse glow behind him, photoreal Cornelius slender, florist, in linen, apron, carrying bulb, wreathed in golden glow then slow push-in, then light beam on bloom settling into push-in on the flower as a beam of light touches the black bloom with a low radiant hum continuity held: Cornelius costume; black tulip introduced — the story's central prop",
+          "image_prompt_start": "photoreal cinematic: medium of Cornelius holding up a single black tulip, its petals deep ebony with a velvet sheen, greenhouse glow behind him, photoreal.",
+          "image_prompt_end": "photoreal cinematic: on the flower as a beam of light touches the black bloom.",
+          "video_prompt_start": "Slow push-in. light beam on bloom. The beat resolves into the next matching frame. Continuity held: Cornelius costume; black tulip introduced — the story's central prop.",
+          "video_prompt_end": "Slow push-in. light beam on bloom. The beat resolves into the next matching frame. Continuity held: Cornelius costume; black tulip introduced — the story's central prop.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S05",
+          "shot_type": "BOSS-ONLY",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "black_tulip_K1_prop"
+          ],
+          "ref_scope": "image1: the black-tulip design - a rare near-black tulip with deep violet undertones — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.38,
+              "static"
+            ],
+            [
+              1.38,
+              2.5,
+              "dewdrop rolling"
+            ]
+          ],
+          "narration_mk": "Црното лале, чија вредност би му донела огромно богатство.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of the black tulip fully open, near-black petals with deep violet undertones, a single dewdrop rolling down, photoreal luxury detail",
+          "kf_last": "The dewdrop slides off the petal edge and vanishes into the dark bloom",
+          "continuity": "Black tulip from S04; dewdrop detail",
+          "motion": "static; dewdrop rolling",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of the black tulip fully open, near-black petals with deep violet undertones, a single dewdrop rolling down, photoreal luxury detail then static, then dewdrop rolling settling into the dewdrop slides off the petal edge and vanishes into the dark bloom continuity held: Black tulip from S04; dewdrop detail",
+          "image_prompt_start": "photoreal cinematic: Macro insert of the black tulip fully open, near-black petals with deep violet undertones, a single dewdrop rolling down, photoreal luxury detail.",
+          "image_prompt_end": "photoreal cinematic: The dewdrop slides off the petal edge and vanishes into the dark bloom.",
+          "video_prompt_start": "Static. dewdrop rolling. The action plays out at full force and lands in a held, readable end pose. Continuity held: Black tulip from S04; dewdrop detail.",
+          "video_prompt_end": "Static. dewdrop rolling. The action plays out at full force and lands in a held, readable end pose. Continuity held: Black tulip from S04; dewdrop detail.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S06",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-right",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "boxtel_B1_sheet",
+            "boxtel_house_E4_prop"
+          ],
+          "ref_scope": "image1: the villain sheet of Boxtel - the envious neighbor; pale skin, narrow face with jealous eyes — 100% identical; studio bg/pose/light NOT used; image2: the neighbor-house design - Boxtel's dark narrow house — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "subject identity",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "pan-right revealing the spying window"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Но сè тоа време, некој го набљудуваше од соседната куќа.",
+          "dialogue_mk": "",
+          "kf_first": "Wide eye-level pan across the narrow yard to the neighboring house, a silhouette half-hidden behind a lace curtain, photoreal uneasy mood",
+          "kf_last": "Pan-right settles on the neighbor's window where a pale face peers out",
+          "continuity": "Neighboring house introduces Boxtel's watch; same Dutch setting",
+          "motion": "pan-right revealing the spying window",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide eye-level pan across the narrow yard to the neighboring house, a silhouette half-hidden behind a lace curtain, photoreal uneasy mood then pan-right revealing the spying window, then resolve settling into pan-right settles on the neighbor's window where a pale face peers out continuity held: Neighboring house introduces Boxtel's watch; same Dutch setting",
+          "image_prompt_start": "photoreal cinematic: eye-level across the narrow yard to the neighboring house, a silhouette half-hidden behind a lace curtain, photoreal uneasy mood.",
+          "image_prompt_end": "photoreal cinematic: -right on the neighbor's window where a pale face peers out.",
+          "video_prompt_start": "Pan-right revealing the spying window. resolve. The beat resolves into the next matching frame. Continuity held: Neighboring house introduces Boxtel's watch; same Dutch setting.",
+          "video_prompt_end": "Pan-right revealing the spying window. resolve. The beat resolves into the next matching frame. Continuity held: Neighboring house introduces Boxtel's watch; same Dutch setting.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S07",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "boxtel_B1_sheet"
+          ],
+          "ref_scope": "image1: the villain sheet of Boxtel - the envious neighbor; pale skin, narrow face with jealous eyes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "subject identity",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "slow push-in on the eyes"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Неговиот сосед Бокстел — човек воден од завист.",
+          "dialogue_mk": "",
+          "kf_first": "Close eye-level of Boxtel's face behind the window, thinning hair, narrow jealous eyes fixed on Cornelius's garden, photoreal",
+          "kf_last": "Push-in on his squinting eyes as his lips press into a thin, bitter line",
+          "continuity": "Boxtel introduced; curtain/window from S06",
+          "motion": "slow push-in on the eyes",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close eye-level of Boxtel's face behind the window, thinning hair, narrow jealous eyes fixed on Cornelius's garden, photoreal then slow push-in on the eyes, then resolve settling into push-in on his squinting eyes as his lips press into a thin, bitter line continuity held: Boxtel introduced; curtain/window from S06",
+          "image_prompt_start": "photoreal cinematic: eye-level of Boxtel's face behind the window, thinning hair, narrow jealous eyes fixed on Cornelius's garden, photoreal.",
+          "image_prompt_end": "photoreal cinematic: on his squinting eyes as his lips press into a thin, bitter line.",
+          "video_prompt_start": "Slow push-in on the eyes. resolve. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Boxtel introduced; curtain/window from S06.",
+          "video_prompt_end": "Slow push-in on the eyes. resolve. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Boxtel introduced; curtain/window from S06.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S08",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "boxtel_B1_sheet",
+            "garden_E2_prop"
+          ],
+          "ref_scope": "image1: the villain sheet of Boxtel - the envious neighbor; pale skin, narrow face with jealous eyes — 100% identical; studio bg/pose/light NOT used; image2: the flower-garden design - Cornelius lush tulip garden — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "subject identity",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "stealthy shifting"
+            ]
+          ],
+          "narration_mk": "Ноќе, Бокстел ја прескокнуваше оградата и шпионираше.",
+          "dialogue_mk": "",
+          "kf_first": "Medium eye-level of Boxtel crouched behind the garden fence, peering through the slats at Cornelius's tulip bed, moonlight, photoreal stealth",
+          "kf_last": "He shifts weight, hands gripping the fence, a mean glint in his eye",
+          "continuity": "Boxtel identity; fence links yards from S06",
+          "motion": "static; stealthy shifting",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level of Boxtel crouched behind the garden fence, peering through the slats at Cornelius's tulip bed, moonlight, photoreal stealth then static, then stealthy shifting settling into he shifts weight, hands gripping the fence, a mean glint in his eye with leaves stir continuity held: Boxtel identity; fence links yards from S06",
+          "image_prompt_start": "photoreal cinematic: eye-level of Boxtel crouched behind the garden fence, peering through the slats at Cornelius's tulip bed, moonlight, photoreal stealth.",
+          "image_prompt_end": "photoreal cinematic: He weight, hands gripping the fence, a mean glint in his eye.",
+          "video_prompt_start": "Static. stealthy shifting. The beat resolves into the next matching frame. Continuity held: Boxtel identity; fence links yards from S06.",
+          "video_prompt_end": "Static. stealthy shifting. The beat resolves into the next matching frame. Continuity held: Boxtel identity; fence links yards from S06.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S09",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "boxtel_B1_sheet",
+            "sack_K4_prop",
+            "garden_E2_prop"
+          ],
+          "ref_scope": "image1: the villain sheet of Boxtel - the envious neighbor; pale skin, narrow face with jealous eyes — 100% identical; studio bg/pose/light NOT used; image2: the cloth-sack design - a dark cloth sack — 100% identical; studio bg/pose/light NOT used; image3: the flower-garden design - Cornelius lush tulip garden — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "subject identity",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "lateral track following the creeping figure"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Дојде ноќта кога реши да ги украде ретките луковици.",
+          "dialogue_mk": "",
+          "kf_first": "Wide eye-level of Boxtel creeping through the moonlit yard, a dark cloth sack in hand, long shadows stretching, photoreal tension",
+          "kf_last": "Track follows him to the garden workshop door as he tests the latch",
+          "continuity": "Boxtel and sack; moonlit palette for the theft",
+          "motion": "lateral track following the creeping figure",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide eye-level of Boxtel creeping through the moonlit yard, a dark cloth sack in hand, long shadows stretching, photoreal tension then lateral track following the creeping figure, then resolve settling into track follows him to the garden workshop door as he tests the latch with leaves stir continuity held: Boxtel and sack; moonlit palette for the theft",
+          "image_prompt_start": "photoreal cinematic: eye-level of Boxtel creeping through the moonlit yard, a dark cloth sack in hand, long shadows stretching, photoreal tension.",
+          "image_prompt_end": "photoreal cinematic: him to the garden workshop door as he tests the latch.",
+          "video_prompt_start": "Lateral track following the creeping figure. resolve. The beat resolves into the next matching frame. Continuity held: Boxtel and sack; moonlit palette for the theft.",
+          "video_prompt_end": "Lateral track following the creeping figure. resolve. The beat resolves into the next matching frame. Continuity held: Boxtel and sack; moonlit palette for the theft.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S10",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "boxtel_B1_sheet",
+            "workshop_E3_prop"
+          ],
+          "ref_scope": "image1: the villain sheet of Boxtel - the envious neighbor; pale skin, narrow face with jealous eyes — 100% identical; studio bg/pose/light NOT used; image2: the flower-workshop design - Cornelius modest house and workroom — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "subject identity",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.2,
+              "static"
+            ],
+            [
+              1.2,
+              2.4,
+              "door easing"
+            ],
+            [
+              2.4,
+              3.0,
+              "closing"
+            ]
+          ],
+          "narration_mk": "Тивко ја отвори вратата и влезе во куќата на Корнелиј.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of Boxtel easing the workshop door open, lamplight spilling out onto his face, conspiratorial, photoreal",
+          "kf_last": "He slips inside, the door closing softly behind him",
+          "continuity": "Boxtel, sack, and door from S09; lamplight interior",
+          "motion": "static; door easing and closing",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Boxtel easing the workshop door open, lamplight spilling out onto his face, conspiratorial, photoreal then static, then door easing, then closing settling into he slips inside, the door closing softly behind him continuity held: Boxtel, sack, and door from S09; lamplight interior",
+          "image_prompt_start": "photoreal cinematic: medium of Boxtel easing the workshop door open, lamplight spilling out onto his face, conspiratorial, photoreal.",
+          "image_prompt_end": "photoreal cinematic: He slips inside, the door closing softly behind him.",
+          "video_prompt_start": "Static. door easing. closing. The beat resolves into the next matching frame. Continuity held: Boxtel, sack, and door from S09; lamplight interior.",
+          "video_prompt_end": "Static. door easing. closing. The beat resolves into the next matching frame. Continuity held: Boxtel, sack, and door from S09; lamplight interior.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S11",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "boxtel_B1_sheet",
+            "bulb_K2_prop",
+            "sack_K4_prop"
+          ],
+          "ref_scope": "image1: the villain sheet of Boxtel - the envious neighbor; pale skin, narrow face with jealous eyes — 100% identical; studio bg/pose/light NOT used; image2: the tulip-bulb design - a round golden-brown tulip bulb — 100% identical; studio bg/pose/light NOT used; image3: the cloth-sack design - a dark cloth sack — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "subject identity",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.38,
+              "static"
+            ],
+            [
+              1.38,
+              2.5,
+              "bulbs dropping into sack"
+            ]
+          ],
+          "narration_mk": "Ги зеде луковиците — она по што дошол.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of gloved hands lifting three round tulip bulbs from a wooden case lined with cloth, photoreal detail",
+          "kf_last": "The bulbs drop into the dark sack, the case left empty",
+          "continuity": "Bulbs from S03; sack from S09",
+          "motion": "static; bulbs dropping into sack",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of gloved hands lifting three round tulip bulbs from a wooden case lined with cloth, photoreal detail then static, then bulbs dropping into sack settling into the bulbs drop into the dark sack, the case left empty continuity held: Bulbs from S03; sack from S09",
+          "image_prompt_start": "photoreal cinematic: Macro insert of gloved hands lifting three round tulip bulbs from a wooden case lined with cloth, photoreal detail.",
+          "image_prompt_end": "photoreal cinematic: The bulbs drop into the dark sack, the case left empty.",
+          "video_prompt_start": "Static. bulbs dropping into sack. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Bulbs from S03; sack from S09.",
+          "video_prompt_end": "Static. bulbs dropping into sack. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Bulbs from S03; sack from S09.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S12",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "boxtel_B1_sheet",
+            "documents_K3_prop",
+            "workshop_E3_prop"
+          ],
+          "ref_scope": "image1: the villain sheet of Boxtel - the envious neighbor; pale skin, narrow face with jealous eyes — 100% identical; studio bg/pose/light NOT used; image2: the forged-documents design - folded false papers — 100% identical; studio bg/pose/light NOT used; image3: the flower-workshop design - Cornelius modest house and workroom — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "subject identity",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "drawer sliding shut"
+            ]
+          ],
+          "narration_mk": "И остави нешто зад себе — лажни документи.",
+          "dialogue_mk": "",
+          "kf_first": "Medium eye-level of Boxtel sliding folded papers into the drawer of Cornelius's desk, a forged wax-sealed document, candlelight, photoreal",
+          "kf_last": "He eases the drawer shut, leaving the false proof in place",
+          "continuity": "Boxtel; interior desk setting; candlelight palette",
+          "motion": "static; drawer sliding shut",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level of Boxtel sliding folded papers into the drawer of Cornelius's desk, a forged wax-sealed document, candlelight, photoreal then static, then drawer sliding shut settling into he eases the drawer shut, leaving the false proof in place continuity held: Boxtel; interior desk setting; candlelight palette",
+          "image_prompt_start": "photoreal cinematic: eye-level of Boxtel sliding folded papers into the drawer of Cornelius's desk, a forged wax-sealed document, candlelight, photoreal.",
+          "image_prompt_end": "photoreal cinematic: He eases the drawer shut, leaving the false proof in place.",
+          "video_prompt_start": "Static. drawer sliding shut. The beat resolves into the next matching frame. Continuity held: Boxtel; interior desk setting; candlelight palette.",
+          "video_prompt_end": "Static. drawer sliding shut. The beat resolves into the next matching frame. Continuity held: Boxtel; interior desk setting; candlelight palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S13",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "boxtel_B1_sheet",
+            "sack_K4_prop"
+          ],
+          "ref_scope": "image1: the villain sheet of Boxtel - the envious neighbor; pale skin, narrow face with jealous eyes — 100% identical; studio bg/pose/light NOT used; image2: the cloth-sack design - a dark cloth sack — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "subject identity",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "track"
+            ],
+            [
+              1.65,
+              3.0,
+              "fleeing into shadow"
+            ]
+          ],
+          "narration_mk": "Потоа исчезна во ноќта, цврсто држејќи ја торбата.",
+          "dialogue_mk": "",
+          "kf_first": "Medium eye-level of Boxtel hurrying back across the moonlit yard, sack clutched to his chest, glancing over his shoulder, photoreal",
+          "kf_last": "Track follows as he melts into the deep shadows past the fence",
+          "continuity": "Boxtel, sack, bulbs; moonlight continuity",
+          "motion": "track; fleeing into shadow",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level of Boxtel hurrying back across the moonlit yard, sack clutched to his chest, glancing over his shoulder, photoreal then track, then fleeing into shadow settling into track follows as he melts into the deep shadows past the fence continuity held: Boxtel, sack, bulbs; moonlight continuity",
+          "image_prompt_start": "photoreal cinematic: eye-level of Boxtel hurrying back across the moonlit yard, sack clutched to his chest, glancing over his shoulder, photoreal.",
+          "image_prompt_end": "photoreal cinematic: as he melts into the deep shadows past the fence.",
+          "video_prompt_start": "Track. fleeing into shadow. The beat resolves into the next matching frame. Continuity held: Boxtel, sack, bulbs; moonlight continuity.",
+          "video_prompt_end": "Track. fleeing into shadow. The beat resolves into the next matching frame. Continuity held: Boxtel, sack, bulbs; moonlight continuity.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S14",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "guards_B2_sheet",
+            "garden_E2_prop"
+          ],
+          "ref_scope": "image1: the royal-guards sheet - soldiers in blue coats and steel helmets with long batons — 100% identical; studio bg/pose/light NOT used; image2: the flower-garden design - Cornelius lush tulip garden — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "subject identity",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "slow crane-down to the door"
+            ],
+            [
+              1.93,
+              3.5,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Утрината, пред вратата на Корнелиј застанаа кралски стражари.",
+          "dialogue_mk": "",
+          "kf_first": "High wide crane-down at morning as a column of royal guards in blue coats and steel helmets marches down the cobbled street to Cornelius's house, photoreal",
+          "kf_last": "Crane settles on the guards forming up at the door, a captain stepping forward with papers",
+          "continuity": "Haarlem street from S01; guards introduce authority conflict",
+          "motion": "slow crane-down to the door",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high wide crane-down at morning as a column of royal guards in blue coats and steel helmets marches down the cobbled street to Cornelius's house, photoreal then slow crane-down to the door, then resolve settling into crane settles on the guards forming up at the door, a captain stepping forward with papers with leaves stir continuity held: Haarlem street from S01; guards introduce authority conflict",
+          "image_prompt_start": "photoreal cinematic: High wide at morning as a column of royal guards in blue coats and steel helmets marches down the cobbled street to Cornelius's house, photoreal.",
+          "image_prompt_end": "photoreal cinematic: Crane on the guards forming up at the door, a captain stepping forward with papers.",
+          "video_prompt_start": "Slow crane-down to the door. resolve. The beat resolves into the next matching frame. Continuity held: Haarlem street from S01; guards introduce authority conflict.",
+          "video_prompt_end": "Slow crane-down to the door. resolve. The beat resolves into the next matching frame. Continuity held: Haarlem street from S01; guards introduce authority conflict.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "haarlem_garden_workshop",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#2dd4bf",
+        "#f2c14e",
+        "#1a2a4a"
+      ],
+      "light_direction": "key light from screen-left, golden dawn over the garden and rooftops",
+      "time_of_day": "dawn"
+    },
+    {
+      "id": "act2",
+      "num": "Act II",
+      "title": "Обвинението и бегството",
+      "color": "#f59e0b",
+      "pct": 54,
+      "synopsis": "Корнелиј е уапсен и осуден на доживотна робија поради лажни докази. Роза му помага да избега во црна облека на црн коњ, па како „Црното Лале“ влегува кај Бокстел, ги враќа луковиците и доказите и го совладува непријателот.",
+      "shots": [
+        {
+          "id": "S15",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "guards_B2_sheet",
+            "workshop_E3_prop"
+          ],
+          "ref_scope": "image1: the royal-guards sheet - soldiers in blue coats and steel helmets with long batons — 100% identical; studio bg/pose/light NOT used; image2: the flower-workshop design - Cornelius modest house and workroom — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "subject identity",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "repeated knocking"
+            ]
+          ],
+          "narration_mk": "Тешки тупаници затропаа на дрвената врата.",
+          "dialogue_mk": "",
+          "kf_first": "Medium eye-level of the captain's gauntleted fist pounding on the wooden door, three guards behind him in crisp blue coats, morning light, photoreal",
+          "kf_last": "The fist pauses, then knocks once more, harder",
+          "continuity": "Guards from S14; door of Cornelius's house",
+          "motion": "static; repeated knocking",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level of the captain's gauntleted fist pounding on the wooden door, three guards behind him in crisp blue coats, morning light, photoreal then static, then repeated knocking settling into the fist pauses, then knocks once more, harder continuity held: Guards from S14; door of Cornelius's house",
+          "image_prompt_start": "photoreal cinematic: eye-level of the captain's gauntleted fist pounding on the wooden door, three guards behind him in crisp blue coats, morning light, photoreal.",
+          "image_prompt_end": "photoreal cinematic: The fist pauses, then knocks once more, harder.",
+          "video_prompt_start": "Static. repeated knocking. The beat resolves into the next matching frame. Continuity held: Guards from S14; door of Cornelius's house.",
+          "video_prompt_end": "Static. repeated knocking. The beat resolves into the next matching frame. Continuity held: Guards from S14; door of Cornelius's house.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S16",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "cornelius_A1_fused",
+            "guards_B2_sheet",
+            "workshop_E3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Cornelius - young gentle flower-grower, calm and kind; linen clothes with a leather apron — 100% identical; studio bg/pose/light NOT used; image2: the royal-guards sheet - soldiers in blue coats and steel helmets with long batons — 100% identical; studio bg/pose/light NOT used; image3: the flower-workshop design - Cornelius modest house and workroom — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "subject identity",
+            "prop design",
+            "palette",
+            "light direction"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "slow push-in"
+            ],
+            [
+              1.65,
+              3.0,
+              "dawning alarm"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Корнелиј: „Кој е? Што се случува?“",
+          "kf_first": "Close eye-level of Cornelius's confused face as he opens the door, squinting into the light, still in his nightshirt and cap, photoreal",
+          "kf_last": "Push-in on his startled eyes as he sees the guards",
+          "continuity": "Cornelius face and home from Act I",
+          "motion": "slow push-in; dawning alarm",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close eye-level of Cornelius's confused face as he opens the door, squinting into the light, still in his nightshirt and cap, photoreal Cornelius slender, florist, in linen, apron, carrying bulb, wreathed in golden glow then slow push-in, then dawning alarm settling into push-in on his startled eyes as he sees the guards with a low radiant hum a voice speaks in Macedonian: \"Корнелиј: „Кој е? Што се случува?“\" continuity held: Cornelius face and home from Act I",
+          "image_prompt_start": "photoreal cinematic: eye-level of Cornelius's confused face as he opens the door, squinting into the light, still in his nightshirt and cap, photoreal.",
+          "image_prompt_end": "photoreal cinematic: on his startled eyes as he sees the guards.",
+          "video_prompt_start": "Slow push-in. dawning alarm. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Корнелиј: „Кој е? Што се случува?“\" Continuity held: Cornelius face and home from Act I.",
+          "video_prompt_end": "Slow push-in. dawning alarm. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Корнелиј: „Кој е? Што се случува?“\" Continuity held: Cornelius face and home from Act I.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S17",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "cornelius_A1_fused",
+            "guards_B2_sheet",
+            "chains_K5_prop"
+          ],
+          "ref_scope": "image1: the fused master of Cornelius - young gentle flower-grower, calm and kind; linen clothes with a leather apron — 100% identical; studio bg/pose/light NOT used; image2: the royal-guards sheet - soldiers in blue coats and steel helmets with long batons — 100% identical; studio bg/pose/light NOT used; image3: the shackles-and-chains design - iron shackles and chains — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "subject identity",
+            "prop design",
+            "palette",
+            "light direction"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "brief struggle then stillness"
+            ]
+          ],
+          "narration_mk": "Стражарите го фатија за рацете.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of two guards seizing Cornelius by the arms, chains glinting, his bare feet on the threshold, photoreal",
+          "kf_last": "Cornelius struggles once, then goes still as the grip tightens",
+          "continuity": "Guards and Cornelius from S15-S16",
+          "motion": "static; brief struggle then stillness",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of two guards seizing Cornelius by the arms, chains glinting, his bare feet on the threshold, photoreal Cornelius slender, florist, in linen, apron, carrying bulb, wreathed in golden glow then static, then brief struggle then stillness settling into cornelius struggles once, then goes still as the grip tightens with a low radiant hum continuity held: Guards and Cornelius from S15-S16",
+          "image_prompt_start": "photoreal cinematic: medium of two guards seizing Cornelius by the arms, chains glinting, his bare feet on the threshold, photoreal.",
+          "image_prompt_end": "photoreal cinematic: Cornelius struggles once, then goes still as the grip tightens.",
+          "video_prompt_start": "Static. brief struggle then stillness. The beat resolves into the next matching frame. Continuity held: Guards and Cornelius from S15-S16.",
+          "video_prompt_end": "Static. brief struggle then stillness. The beat resolves into the next matching frame. Continuity held: Guards and Cornelius from S15-S16.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S18",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "cornelius_A1_fused",
+            "guards_B2_sheet",
+            "haarlem_E1_prop"
+          ],
+          "ref_scope": "image1: the fused master of Cornelius - young gentle flower-grower, calm and kind; linen clothes with a leather apron — 100% identical; studio bg/pose/light NOT used; image2: the royal-guards sheet - soldiers in blue coats and steel helmets with long batons — 100% identical; studio bg/pose/light NOT used; image3: the 17th-century-Haarlem design - Dutch canals, windmills and tulip merchants' houses — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "subject identity",
+            "prop design",
+            "palette",
+            "light direction"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.2,
+              "track"
+            ],
+            [
+              1.2,
+              2.4,
+              "crowd watches"
+            ],
+            [
+              2.4,
+              3.0,
+              "prisoner led away"
+            ]
+          ],
+          "narration_mk": "„Обвинети сте за велепредавство!“ — грмеа гласовите.",
+          "dialogue_mk": "",
+          "kf_first": "High wide of Cornelius dragged into the street, neighbors gathering and whispering, while in the far background Boxtel watches with a faint smirk, photoreal",
+          "kf_last": "Track across the crowd as the guards lead Cornelius away, the papers brandished",
+          "continuity": "Street crowd; Boxtel smirk reveals his plot; guards",
+          "motion": "track; crowd watches, prisoner led away",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high wide of Cornelius dragged into the street, neighbors gathering and whispering, while in the far background Boxtel watches with a faint smirk, photoreal Cornelius slender, florist, in linen, apron, carrying bulb, wreathed in golden glow then track, then crowd watches, then prisoner led away settling into track across the crowd as the guards lead Cornelius away, the papers brandished with a low radiant hum continuity held: Street crowd; Boxtel smirk reveals his plot; guards",
+          "image_prompt_start": "photoreal cinematic: High wide of Cornelius dragged into the street, neighbors gathering and whispering, while in the far background Boxtel watches with a faint smirk, photoreal.",
+          "image_prompt_end": "photoreal cinematic: across the crowd as the guards lead Cornelius away, the papers brandished.",
+          "video_prompt_start": "Track. crowd watches. prisoner led away. The beat resolves into the next matching frame. Continuity held: Street crowd; Boxtel smirk reveals his plot; guards.",
+          "video_prompt_end": "Track. crowd watches. prisoner led away. The beat resolves into the next matching frame. Continuity held: Street crowd; Boxtel smirk reveals his plot; guards.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S19",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "cornelius_A1_fused",
+            "court_E6_prop",
+            "chains_K5_prop"
+          ],
+          "ref_scope": "image1: the fused master of Cornelius - young gentle flower-grower, calm and kind; linen clothes with a leather apron — 100% identical; studio bg/pose/light NOT used; image2: the courtroom design - a stern 17th-century court — 100% identical; studio bg/pose/light NOT used; image3: the shackles-and-chains design - iron shackles and chains — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "gavel dropping"
+            ]
+          ],
+          "narration_mk": "Поради лажните докази, судот го осуди на доживотна робија.",
+          "dialogue_mk": "",
+          "kf_first": "Medium eye-level of Cornelius standing before a stern court, iron shackles on his wrists, the forged documents laid on a table before a judge, photoreal",
+          "kf_last": "The judge's gavel drops, sealing the verdict in cold lamplight",
+          "continuity": "Courtroom; Cornelius; forged papers from S12",
+          "motion": "static; gavel dropping",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level of Cornelius standing before a stern court, iron shackles on his wrists, the forged documents laid on a table before a judge, photoreal Cornelius slender, florist, in linen, apron, carrying bulb, wreathed in golden glow then static, then gavel dropping settling into the judge's gavel drops, sealing the verdict in cold lamplight with a low radiant hum continuity held: Courtroom; Cornelius; forged papers from S12",
+          "image_prompt_start": "photoreal cinematic: eye-level of Cornelius standing before a stern court, iron shackles on his wrists, the forged documents laid on a table before a judge, photoreal.",
+          "image_prompt_end": "photoreal cinematic: The judge's gavel drops, sealing the verdict in cold lamplight.",
+          "video_prompt_start": "Static. gavel dropping. The beat resolves into the next matching frame. Continuity held: Courtroom; Cornelius; forged papers from S12.",
+          "video_prompt_end": "Static. gavel dropping. The beat resolves into the next matching frame. Continuity held: Courtroom; Cornelius; forged papers from S12.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S20",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "cornelius_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Cornelius - young gentle flower-grower, calm and kind; linen clothes with a leather apron — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "slow push-in"
+            ],
+            [
+              1.65,
+              3.0,
+              "downcast gaze"
+            ]
+          ],
+          "narration_mk": "Корнелиј ја слушна пресудата со неверување.",
+          "dialogue_mk": "",
+          "kf_first": "Close eye-level of Cornelius's stricken face as the sentence is read, eyes hollow, jaw tight, photoreal",
+          "kf_last": "Push-in on his downcast eyes as the word 'life' lands like a blow",
+          "continuity": "Cornelius face; courtroom lighting",
+          "motion": "slow push-in; downcast gaze",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close eye-level of Cornelius's stricken face as the sentence is read, eyes hollow, jaw tight, photoreal Cornelius slender, florist, in linen, apron, carrying bulb, wreathed in golden glow then slow push-in, then downcast gaze settling into push-in on his downcast eyes as the word 'life' lands like a blow with a low radiant hum continuity held: Cornelius face; courtroom lighting",
+          "image_prompt_start": "photoreal cinematic: eye-level of Cornelius's stricken face as the sentence is read, eyes hollow, jaw tight, photoreal.",
+          "image_prompt_end": "photoreal cinematic: on his downcast eyes as the word 'life' lands like a blow.",
+          "video_prompt_start": "Slow push-in. downcast gaze. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Cornelius face; courtroom lighting.",
+          "video_prompt_end": "Slow push-in. downcast gaze. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Cornelius face; courtroom lighting.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S21",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "cornelius_A1_fused",
+            "prison_E5_prop"
+          ],
+          "ref_scope": "image1: the fused master of Cornelius - young gentle flower-grower, calm and kind; linen clothes with a leather apron — 100% identical; studio bg/pose/light NOT used; image2: the prison design - a grim stone prison with bars and a great gate — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "crane-up"
+            ],
+            [
+              1.93,
+              3.5,
+              "gate closing"
+            ]
+          ],
+          "narration_mk": "Тешката порта на затворот се затвори зад него.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of the great prison gate grinding shut against a grey sky, Cornelius a small silhouette being led into the dark, photoreal",
+          "kf_last": "Crane-up reveals the hulking stone walls and barred windows swallowing him",
+          "continuity": "Prison setting; grey palette shift from Act I",
+          "motion": "crane-up; gate closing",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of the great prison gate grinding shut against a grey sky, Cornelius a small silhouette being led into the dark, photoreal Cornelius slender, florist, in linen, apron, carrying bulb, wreathed in golden glow then crane-up, then gate closing settling into crane-up reveals the hulking stone walls and barred windows swallowing him with a low radiant hum continuity held: Prison setting; grey palette shift from Act I",
+          "image_prompt_start": "photoreal cinematic: wide of the great prison gate grinding shut against a grey sky, Cornelius a small silhouette being led into the dark, photoreal.",
+          "image_prompt_end": "photoreal cinematic: reveals the hulking stone walls and barred windows swallowing him.",
+          "video_prompt_start": "Crane-up. gate closing. The beat resolves into the next matching frame. Continuity held: Prison setting; grey palette shift from Act I.",
+          "video_prompt_end": "Crane-up. gate closing. The beat resolves into the next matching frame. Continuity held: Prison setting; grey palette shift from Act I.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S22",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "cornelius_A1_fused",
+            "prison_E5_prop"
+          ],
+          "ref_scope": "image1: the fused master of Cornelius - young gentle flower-grower, calm and kind; linen clothes with a leather apron — 100% identical; studio bg/pose/light NOT used; image2: the prison design - a grim stone prison with bars and a great gate — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "light slowly dimming"
+            ]
+          ],
+          "narration_mk": "Во студена ќелија, сè изгледаше изгубено.",
+          "dialogue_mk": "",
+          "kf_first": "Medium eye-level of Cornelius sitting on a stone bench in a cold cell, a thin bar of daylight falling across the floor, photoreal despair",
+          "kf_last": "He stays motionless, the light slowly dimming",
+          "continuity": "Prison cell; Cornelius; grey palette",
+          "motion": "static; light slowly dimming",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level of Cornelius sitting on a stone bench in a cold cell, a thin bar of daylight falling across the floor, photoreal despair Cornelius slender, florist, in linen, apron, carrying bulb, wreathed in golden glow then static, then light slowly dimming settling into he stays motionless, the light slowly dimming with a low radiant hum continuity held: Prison cell; Cornelius; grey palette",
+          "image_prompt_start": "photoreal cinematic: eye-level of Cornelius sitting on a stone bench in a cold cell, a thin bar of daylight falling across the floor, photoreal despair.",
+          "image_prompt_end": "photoreal cinematic: He stays motionless, the light slowly dimming.",
+          "video_prompt_start": "Static. light slowly dimming. The beat resolves into the next matching frame. Continuity held: Prison cell; Cornelius; grey palette.",
+          "video_prompt_end": "Static. light slowly dimming. The beat resolves into the next matching frame. Continuity held: Prison cell; Cornelius; grey palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S23",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "cornelius_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Cornelius - young gentle flower-grower, calm and kind; linen clothes with a leather apron — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "slow push-in"
+            ],
+            [
+              1.65,
+              3.0,
+              "eyes opening"
+            ]
+          ],
+          "narration_mk": "Но тој мислеше само на едно име — Роза.",
+          "dialogue_mk": "",
+          "kf_first": "Close eye-level of Cornelius's face in shadow, eyes closed, a faint tender edge softening his jaw, photoreal",
+          "kf_last": "Push-in as he opens his eyes, a spark of hope igniting behind them",
+          "continuity": "Cornelius face; cell shadow; hope returning",
+          "motion": "slow push-in; eyes opening",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close eye-level of Cornelius's face in shadow, eyes closed, a faint tender edge softening his jaw, photoreal Cornelius slender, florist, in linen, apron, carrying bulb, wreathed in golden glow then slow push-in, then eyes opening settling into push-in as he opens his eyes, a spark of hope igniting behind them with a low radiant hum continuity held: Cornelius face; cell shadow; hope returning",
+          "image_prompt_start": "photoreal cinematic: eye-level of Cornelius's face in shadow, eyes closed, a faint tender edge softening his jaw, photoreal.",
+          "image_prompt_end": "photoreal cinematic: as he opens his eyes, a spark of hope igniting behind them.",
+          "video_prompt_start": "Slow push-in. eyes opening. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Cornelius face; cell shadow; hope returning.",
+          "video_prompt_end": "Slow push-in. eyes opening. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Cornelius face; cell shadow; hope returning.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S24",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "rosa_A2_fused",
+            "prison_E5_prop"
+          ],
+          "ref_scope": "image1: the fused master of Rosa - brave, clever and loyal; long hair with a scarf over her head — 100% identical; studio bg/pose/light NOT used; image2: the prison design - a grim stone prison with bars and a great gate — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "track following Rosa"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Роза, неговата љубена, не го остави сама.",
+          "dialogue_mk": "",
+          "kf_first": "Wide eye-level of Rosa walking alone up the prison road, a scarf over her hair, a cloth bundle in her arms, determined stride, photoreal",
+          "kf_last": "Track follows her as the prison gate looms ahead",
+          "continuity": "Introduce Rosa; prison exterior from S21",
+          "motion": "track following Rosa",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide eye-level of Rosa walking alone up the prison road, a scarf over her hair, a cloth bundle in her arms, determined stride, photoreal Rosa slender, heroine, in scarf then track following Rosa, then resolve settling into track follows her as the prison gate looms ahead continuity held: Introduce Rosa; prison exterior from S21",
+          "image_prompt_start": "photoreal cinematic: eye-level of Rosa walking alone up the prison road, a scarf over her hair, a cloth bundle in her arms, determined stride, photoreal.",
+          "image_prompt_end": "photoreal cinematic: her as the prison gate looms ahead.",
+          "video_prompt_start": "Track following Rosa. resolve. The beat resolves into the next matching frame. Continuity held: Introduce Rosa; prison exterior from S21.",
+          "video_prompt_end": "Track following Rosa. resolve. The beat resolves into the next matching frame. Continuity held: Introduce Rosa; prison exterior from S21.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S25",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "rosa_A2_fused",
+            "guards_B2_sheet",
+            "prison_E5_prop"
+          ],
+          "ref_scope": "image1: the fused master of Rosa - brave, clever and loyal; long hair with a scarf over her head — 100% identical; studio bg/pose/light NOT used; image2: the royal-guards sheet - soldiers in blue coats and steel helmets with long batons — 100% identical; studio bg/pose/light NOT used; image3: the prison design - a grim stone prison with bars and a great gate — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "subject identity",
+            "prop design",
+            "palette",
+            "light direction"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "guards turning away"
+            ]
+          ],
+          "narration_mk": "Таа им го одвлече вниманието на стражарите со една приказна.",
+          "dialogue_mk": "",
+          "kf_first": "Medium eye-level of Rosa speaking warmly to the guards at the gate, gesturing with her free hand, drawing their eyes away, photoreal",
+          "kf_last": "The guards laugh and turn their backs, captivated, as Rosa glances toward the window",
+          "continuity": "Rosa; guards; gate from S24",
+          "motion": "static; guards turning away",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level of Rosa speaking warmly to the guards at the gate, gesturing with her free hand, drawing their eyes away, photoreal Rosa slender, heroine, in scarf then static, then guards turning away settling into the guards laugh and turn their backs, captivated, as Rosa glances toward the window continuity held: Rosa; guards; gate from S24",
+          "image_prompt_start": "photoreal cinematic: eye-level of Rosa speaking warmly to the guards at the gate, gesturing with her free hand, drawing their eyes away, photoreal.",
+          "image_prompt_end": "photoreal cinematic: The guards laugh and turn their backs, captivated, as Rosa glances toward the window.",
+          "video_prompt_start": "Static. guards turning away. The beat resolves into the next matching frame. Continuity held: Rosa; guards; gate from S24.",
+          "video_prompt_end": "Static. guards turning away. The beat resolves into the next matching frame. Continuity held: Rosa; guards; gate from S24.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S26",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "rosa_A2_fused",
+            "black_clothes_K9_prop",
+            "prison_E5_prop"
+          ],
+          "ref_scope": "image1: the fused master of Rosa - brave, clever and loyal; long hair with a scarf over her head — 100% identical; studio bg/pose/light NOT used; image2: the black-riding-clothes design - dark riding clothes and cloak — 100% identical; studio bg/pose/light NOT used; image3: the prison design - a grim stone prison with bars and a great gate — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "slow push-in"
+            ],
+            [
+              1.65,
+              3.0,
+              "bundle passing through bars"
+            ]
+          ],
+          "narration_mk": "Низ решетките, таа му подаде црна облека.",
+          "dialogue_mk": "",
+          "kf_first": "Close eye-level of Rosa pushing a bundle of dark fabric through the iron bars, her fingers brushing the cold metal, photoreal",
+          "kf_last": "Push-in on the bundle slipping into Cornelius's waiting hands",
+          "continuity": "Rosa hands; prison bars; dark fabric prop",
+          "motion": "slow push-in; bundle passing through bars",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close eye-level of Rosa pushing a bundle of dark fabric through the iron bars, her fingers brushing the cold metal, photoreal Rosa slender, heroine, in scarf then slow push-in, then bundle passing through bars settling into push-in on the bundle slipping into Cornelius's waiting hands continuity held: Rosa hands; prison bars; dark fabric prop",
+          "image_prompt_start": "photoreal cinematic: eye-level of Rosa pushing a bundle of dark fabric through the iron bars, her fingers brushing the cold metal, photoreal.",
+          "image_prompt_end": "photoreal cinematic: on the bundle slipping into Cornelius's waiting hands.",
+          "video_prompt_start": "Slow push-in. bundle passing through bars. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Rosa hands; prison bars; dark fabric prop.",
+          "video_prompt_end": "Slow push-in. bundle passing through bars. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Rosa hands; prison bars; dark fabric prop.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S27",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "black_horse_K7_prop"
+          ],
+          "ref_scope": "image1: the black-horse design - a magnificent black horse — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.38,
+              "static"
+            ],
+            [
+              1.38,
+              2.5,
+              "mane rippling"
+            ]
+          ],
+          "narration_mk": "И прекрасен црн коњ, како што ѝ беше побарал.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of a black horse's polished hoof striking the cobbles, moonlight on the dark coat, steam from its nostrils, photoreal",
+          "kf_last": "The horse tosses its head, black mane rippling, ready to ride",
+          "continuity": "Black horse introduced; night palette; escape prop",
+          "motion": "static; mane rippling",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of a black horse's polished hoof striking the cobbles, moonlight on the dark coat, steam from its nostrils, photoreal then static, then mane rippling settling into the horse tosses its head, black mane rippling, ready to ride continuity held: Black horse introduced; night palette; escape prop",
+          "image_prompt_start": "photoreal cinematic: Macro insert of a black horse's polished hoof striking the cobbles, moonlight on the dark coat, steam from its nostrils, photoreal.",
+          "image_prompt_end": "photoreal cinematic: The horse tosses its head, black mane rippling, ready to ride.",
+          "video_prompt_start": "Static. mane rippling. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Black horse introduced; night palette; escape prop.",
+          "video_prompt_end": "Static. mane rippling. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Black horse introduced; night palette; escape prop.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S28",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "cornelius_A1_fused",
+            "black_hat_K8_prop",
+            "black_clothes_K9_prop"
+          ],
+          "ref_scope": "image1: the fused master of Cornelius - young gentle flower-grower, calm and kind; linen clothes with a leather apron — 100% identical; studio bg/pose/light NOT used; image2: the black-hat design - a wide-brimmed black hat — 100% identical; studio bg/pose/light NOT used; image3: the black-riding-clothes design - dark riding clothes and cloak — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "hat lowered"
+            ]
+          ],
+          "narration_mk": "Облечен во црно, Корнелиј ја стави црната капа.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of Cornelius in black riding clothes pulling a wide black hat low over his face, the black horse behind him, photoreal",
+          "kf_last": "His face disappears beneath the hat brim, only his determined mouth visible",
+          "continuity": "Black clothes from S26; black horse from S27",
+          "motion": "static; hat lowered",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Cornelius in black riding clothes pulling a wide black hat low over his face, the black horse behind him, photoreal Cornelius slender, florist, in linen, apron, carrying bulb, wreathed in golden glow then static, then hat lowered settling into his face disappears beneath the hat brim, only his determined mouth visible with a low radiant hum continuity held: Black clothes from S26; black horse from S27",
+          "image_prompt_start": "photoreal cinematic: medium of Cornelius in black riding clothes pulling a wide black hat low over his face, the black horse behind him, photoreal.",
+          "image_prompt_end": "photoreal cinematic: His face disappears beneath the hat brim, only his determined mouth visible.",
+          "video_prompt_start": "Static. hat lowered. The beat resolves into the next matching frame. Continuity held: Black clothes from S26; black horse from S27.",
+          "video_prompt_end": "Static. hat lowered. The beat resolves into the next matching frame. Continuity held: Black clothes from S26; black horse from S27.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S29",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "cornelius_A1_fused",
+            "black_horse_K7_prop",
+            "night_road_E8_prop"
+          ],
+          "ref_scope": "image1: the fused master of Cornelius - young gentle flower-grower, calm and kind; linen clothes with a leather apron — 100% identical; studio bg/pose/light NOT used; image2: the black-horse design - a magnificent black horse — 100% identical; studio bg/pose/light NOT used; image3: the night-road design - moonlit roads and yards — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "lateral track"
+            ],
+            [
+              1.93,
+              3.5,
+              "galloping"
+            ]
+          ],
+          "narration_mk": "Како „Црното Лале“, тој се упати низ ноќта.",
+          "dialogue_mk": "",
+          "kf_first": "Wide eye-level of the rider in black galloping down a moonlit road, cloak streaming behind, hooves kicking up dust, photoreal Diablo2 cinematic motion",
+          "kf_last": "Track beside the galloping horse as it rounds a bend toward the town",
+          "continuity": "Black tulip disguise; black horse; moonlit road",
+          "motion": "lateral track; galloping",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide eye-level of the rider in black galloping down a moonlit road, cloak streaming behind, hooves kicking up dust, photoreal Diablo2 cinematic motion Cornelius slender, florist, in linen, apron, carrying bulb, wreathed in golden glow then lateral track, then galloping settling into track beside the galloping horse as it rounds a bend toward the town with a low radiant hum continuity held: Black tulip disguise; black horse; moonlit road",
+          "image_prompt_start": "photoreal cinematic: eye-level of the rider in black galloping down a moonlit road, cloak streaming behind, hooves kicking up dust, photoreal Diablo2 cinematic motion.",
+          "image_prompt_end": "photoreal cinematic: beside the galloping horse as it rounds a bend toward the town.",
+          "video_prompt_start": "Lateral track. galloping. The beat resolves into the next matching frame. Continuity held: Black tulip disguise; black horse; moonlit road.",
+          "video_prompt_end": "Lateral track. galloping. The beat resolves into the next matching frame. Continuity held: Black tulip disguise; black horse; moonlit road.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S30",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "cornelius_A1_fused",
+            "black_hat_K8_prop"
+          ],
+          "ref_scope": "image1: the fused master of Cornelius - young gentle flower-grower, calm and kind; linen clothes with a leather apron — 100% identical; studio bg/pose/light NOT used; image2: the black-hat design - a wide-brimmed black hat — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "slow push-in"
+            ],
+            [
+              1.65,
+              3.0,
+              "wind-blown hat"
+            ]
+          ],
+          "narration_mk": "Под капата, неговите очи гореа со одлучност.",
+          "dialogue_mk": "",
+          "kf_first": "Close eye-level just beneath the wide brim, Cornelius's eyes sharp and blazing in the moonlight, wind pulling at the hat, photoreal",
+          "kf_last": "Push-in on the steely gaze fixed on the road ahead",
+          "continuity": "Disguise and moonlight from S29",
+          "motion": "slow push-in; wind-blown hat",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close eye-level just beneath the wide brim, Cornelius's eyes sharp and blazing in the moonlight, wind pulling at the hat, photoreal Cornelius slender, florist, in linen, apron, carrying bulb, wreathed in golden glow then slow push-in, then wind-blown hat settling into push-in on the steely gaze fixed on the road ahead with a low radiant hum continuity held: Disguise and moonlight from S29",
+          "image_prompt_start": "photoreal cinematic: eye-level just beneath the wide brim, Cornelius's eyes sharp and blazing in the moonlight, wind pulling at the hat, photoreal.",
+          "image_prompt_end": "photoreal cinematic: on the steely gaze fixed on the road ahead.",
+          "video_prompt_start": "Slow push-in. wind-blown hat. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Disguise and moonlight from S29.",
+          "video_prompt_end": "Slow push-in. wind-blown hat. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Disguise and moonlight from S29.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S31",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "cornelius_A1_fused",
+            "black_horse_K7_prop",
+            "boxtel_house_E4_prop"
+          ],
+          "ref_scope": "image1: the fused master of Cornelius - young gentle flower-grower, calm and kind; linen clothes with a leather apron — 100% identical; studio bg/pose/light NOT used; image2: the black-horse design - a magnificent black horse — 100% identical; studio bg/pose/light NOT used; image3: the neighbor-house design - Boxtel's dark narrow house — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "rider dismounting"
+            ]
+          ],
+          "narration_mk": "Црното Лале влезе во куќата на својот непријател.",
+          "dialogue_mk": "",
+          "kf_first": "High wide of the black-clad rider dismounting silently before Boxtel's dark house, the horse tethered, moon casting long shadows, photoreal",
+          "kf_last": "The rider slips toward the door, coat flowing like a shadow",
+          "continuity": "Black tulip disguise; Boxtel's house from Act I",
+          "motion": "static; rider dismounting",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high wide of the black-clad rider dismounting silently before Boxtel's dark house, the horse tethered, moon casting long shadows, photoreal Cornelius slender, florist, in linen, apron, carrying bulb, wreathed in golden glow then static, then rider dismounting settling into the rider slips toward the door, coat flowing like a shadow with a low radiant hum continuity held: Black tulip disguise; Boxtel's house from Act I",
+          "image_prompt_start": "photoreal cinematic: High wide of the black-clad rider dismounting silently before Boxtel's dark house, the horse tethered, moon casting long shadows, photoreal.",
+          "image_prompt_end": "photoreal cinematic: The rider slips toward the door, coat flowing like a shadow.",
+          "video_prompt_start": "Static. rider dismounting. The beat resolves into the next matching frame. Continuity held: Black tulip disguise; Boxtel's house from Act I.",
+          "video_prompt_end": "Static. rider dismounting. The beat resolves into the next matching frame. Continuity held: Black tulip disguise; Boxtel's house from Act I.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S32",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "cornelius_A1_fused",
+            "boxtel_house_E4_prop"
+          ],
+          "ref_scope": "image1: the fused master of Cornelius - young gentle flower-grower, calm and kind; linen clothes with a leather apron — 100% identical; studio bg/pose/light NOT used; image2: the neighbor-house design - Boxtel's dark narrow house — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "figure listening"
+            ]
+          ],
+          "narration_mk": "Тивко како сенка, влезе внатре.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of the door swinging inward, the black figure stepping across the threshold into dim lamplight, photoreal",
+          "kf_last": "The figure pauses, listening in the quiet hall",
+          "continuity": "Boxtel's house interior; black disguise",
+          "motion": "static; figure listening",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of the door swinging inward, the black figure stepping across the threshold into dim lamplight, photoreal Cornelius slender, florist, in linen, apron, carrying bulb, wreathed in golden glow then static, then figure listening settling into the figure pauses, listening in the quiet hall with a low radiant hum continuity held: Boxtel's house interior; black disguise",
+          "image_prompt_start": "photoreal cinematic: medium of the door swinging inward, the black figure stepping across the threshold into dim lamplight, photoreal.",
+          "image_prompt_end": "photoreal cinematic: The figure pauses, listening in the quiet hall.",
+          "video_prompt_start": "Static. figure listening. The beat resolves into the next matching frame. Continuity held: Boxtel's house interior; black disguise.",
+          "video_prompt_end": "Static. figure listening. The beat resolves into the next matching frame. Continuity held: Boxtel's house interior; black disguise.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S33",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "cornelius_A1_fused",
+            "bulb_K2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Cornelius - young gentle flower-grower, calm and kind; linen clothes with a leather apron — 100% identical; studio bg/pose/light NOT used; image2: the tulip-bulb design - a round golden-brown tulip bulb — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.38,
+              "static"
+            ],
+            [
+              1.38,
+              2.5,
+              "hands closing over bulbs"
+            ]
+          ],
+          "narration_mk": "Ги најде — луковиците од реткото лале.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of the black-gloved hands lifting the three stolen bulbs from Boxtel's hidden shelf, lamplight glinting on them, photoreal",
+          "kf_last": "The bulbs settle safely into the cloth as the hands close around them",
+          "continuity": "Bulbs from S11; black coat; lamplight interior",
+          "motion": "static; hands closing over bulbs",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of the black-gloved hands lifting the three stolen bulbs from Boxtel's hidden shelf, lamplight glinting on them, photoreal Cornelius slender, florist, in linen, apron, carrying bulb, wreathed in golden glow then static, then hands closing over bulbs settling into the bulbs settle safely into the cloth as the hands close around them with a low radiant hum continuity held: Bulbs from S11; black coat; lamplight interior",
+          "image_prompt_start": "photoreal cinematic: Macro insert of the black-gloved hands lifting the three stolen bulbs from Boxtel's hidden shelf, lamplight glinting on them, photoreal.",
+          "image_prompt_end": "photoreal cinematic: The bulbs safely into the cloth as the hands close around them.",
+          "video_prompt_start": "Static. hands closing over bulbs. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Bulbs from S11; black coat; lamplight interior.",
+          "video_prompt_end": "Static. hands closing over bulbs. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Bulbs from S11; black coat; lamplight interior.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S34",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "cornelius_A1_fused",
+            "documents_K3_prop",
+            "boxtel_house_E4_prop"
+          ],
+          "ref_scope": "image1: the fused master of Cornelius - young gentle flower-grower, calm and kind; linen clothes with a leather apron — 100% identical; studio bg/pose/light NOT used; image2: the forged-documents design - folded false papers — 100% identical; studio bg/pose/light NOT used; image3: the neighbor-house design - Boxtel's dark narrow house — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "papers folding away"
+            ]
+          ],
+          "narration_mk": "И доказите кои ќе го ослободат од сите обвиненија.",
+          "dialogue_mk": "",
+          "kf_first": "Medium eye-level of the black figure pulling the forged documents from a drawer, holding them up to the lamplight, photoreal",
+          "kf_last": "The papers fold away into the coat, secured as proof",
+          "continuity": "Forged documents from S12; black disguise",
+          "motion": "static; papers folding away",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level of the black figure pulling the forged documents from a drawer, holding them up to the lamplight, photoreal Cornelius slender, florist, in linen, apron, carrying bulb, wreathed in golden glow then static, then papers folding away settling into the papers fold away into the coat, secured as proof with a low radiant hum continuity held: Forged documents from S12; black disguise",
+          "image_prompt_start": "photoreal cinematic: eye-level of the black figure pulling the forged documents from a drawer, holding them up to the lamplight, photoreal.",
+          "image_prompt_end": "photoreal cinematic: The papers fold away into the coat, secured as proof.",
+          "video_prompt_start": "Static. papers folding away. The beat resolves into the next matching frame. Continuity held: Forged documents from S12; black disguise.",
+          "video_prompt_end": "Static. papers folding away. The beat resolves into the next matching frame. Continuity held: Forged documents from S12; black disguise.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S35",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "boxtel_B1_sheet"
+          ],
+          "ref_scope": "image1: the villain sheet of Boxtel - the envious neighbor; pale skin, narrow face with jealous eyes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "subject identity",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "slow push-in"
+            ],
+            [
+              1.65,
+              3.0,
+              "recognition to fear"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Бокстел: „Ти?! Невозможно!“",
+          "kf_first": "Close eye-level of Boxtel's face snapping around in shock, eyes bulging, a candle guttering beside him, photoreal",
+          "kf_last": "Push-in on his trembling lips as recognition dawns into fear",
+          "continuity": "Boxtel face; interior candlelight",
+          "motion": "slow push-in; recognition to fear",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close eye-level of Boxtel's face snapping around in shock, eyes bulging, a candle guttering beside him, photoreal then slow push-in, then recognition to fear settling into push-in on his trembling lips as recognition dawns into fear a voice speaks in Macedonian: \"Бокстел: „Ти?! Невозможно!“\" continuity held: Boxtel face; interior candlelight",
+          "image_prompt_start": "photoreal cinematic: eye-level of Boxtel's face snapping around in shock, eyes bulging, a candle guttering beside him, photoreal.",
+          "image_prompt_end": "photoreal cinematic: on his trembling lips as recognition dawns into fear.",
+          "video_prompt_start": "Slow push-in. recognition to fear. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Бокстел: „Ти?! Невозможно!“\" Continuity held: Boxtel face; interior candlelight.",
+          "video_prompt_end": "Slow push-in. recognition to fear. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Бокстел: „Ти?! Невозможно!“\" Continuity held: Boxtel face; interior candlelight.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S36",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "shot-reverse",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "cornelius_A1_fused",
+            "boxtel_B1_sheet",
+            "boxtel_house_E4_prop"
+          ],
+          "ref_scope": "image1: the fused master of Cornelius - young gentle flower-grower, calm and kind; linen clothes with a leather apron — 100% identical; studio bg/pose/light NOT used; image2: the villain sheet of Boxtel - the envious neighbor; pale skin, narrow face with jealous eyes — 100% identical; studio bg/pose/light NOT used; image3: the neighbor-house design - Boxtel's dark narrow house — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "subject identity",
+            "prop design",
+            "palette",
+            "light direction"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "shot-reverse"
+            ],
+            [
+              1.93,
+              3.5,
+              "Boxtel backing away"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Корнелиј: „Ги зеде моите лалиња. Сега ќе ми ги вратиш.“",
+          "kf_first": "Medium eye-level shot of the masked Cornelius facing Boxtel across the room, calm but tall, the bulbs in one hand, photoreal confrontation",
+          "kf_last": "Reverse shot: Boxtel backing against the table, raising his hands",
+          "continuity": "Both men in Boxtel's study; bulbs, candlelight",
+          "motion": "shot-reverse; Boxtel backing away",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level shot of the masked Cornelius facing Boxtel across the room, calm but tall, the bulbs in one hand, photoreal confrontation Cornelius slender, florist, in linen, apron, carrying bulb, wreathed in golden glow then shot-reverse, then Boxtel backing away settling into reverse shot: Boxtel backing against the table, raising his hands with a low radiant hum a voice speaks in Macedonian: \"Корнелиј: „Ги зеде моите лалиња. Сега ќе ми ги вратиш.“\" continuity held: Both men in Boxtel's study; bulbs, candlelight",
+          "image_prompt_start": "photoreal cinematic: eye-level shot of the masked Cornelius facing Boxtel across the room, calm but tall, the bulbs in one hand, photoreal confrontation.",
+          "image_prompt_end": "photoreal cinematic: Reverse shot: Boxtel backing against the table, raising his hands.",
+          "video_prompt_start": "Shot-reverse. Boxtel backing away. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Корнелиј: „Ги зеде моите лалиња. Сега ќе ми ги вратиш.“\" Continuity held: Both men in Boxtel's study; bulbs, candlelight.",
+          "video_prompt_end": "Shot-reverse. Boxtel backing away. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Корнелиј: „Ги зеде моите лалиња. Сега ќе ми ги вратиш.“\" Continuity held: Both men in Boxtel's study; bulbs, candlelight.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S37",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "cornelius_A1_fused",
+            "boxtel_B1_sheet",
+            "boxtel_house_E4_prop"
+          ],
+          "ref_scope": "image1: the fused master of Cornelius - young gentle flower-grower, calm and kind; linen clothes with a leather apron — 100% identical; studio bg/pose/light NOT used; image2: the villain sheet of Boxtel - the envious neighbor; pale skin, narrow face with jealous eyes — 100% identical; studio bg/pose/light NOT used; image3: the neighbor-house design - Boxtel's dark narrow house — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "subject identity",
+            "prop design",
+            "palette",
+            "light direction"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "slow push-in"
+            ],
+            [
+              1.65,
+              3.0,
+              "Boxtel collapsing"
+            ]
+          ],
+          "narration_mk": "Со два тешки удари, својот непријател го порази.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of the black figure striking forward, a fist connecting, photoreal kinetic action framed child-safely at medium distance",
+          "kf_last": "Push-in as Boxtel crumples against the chair, defeated and dazed",
+          "continuity": "Confrontation from S36; child-safe — no gore, defeat shown as falling",
+          "motion": "slow push-in; Boxtel collapsing",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of the black figure striking forward, a fist connecting, photoreal kinetic action framed child-safely at medium distance Cornelius slender, florist, in linen, apron, carrying bulb, wreathed in golden glow then slow push-in, then Boxtel collapsing settling into push-in as Boxtel crumples against the chair, defeated and dazed with a low radiant hum continuity held: Confrontation from S36; child-safe — no gore, defeat shown as falling",
+          "image_prompt_start": "photoreal cinematic: medium of the black figure striking forward, a fist connecting, photoreal kinetic action framed child-safely at medium distance.",
+          "image_prompt_end": "photoreal cinematic: as Boxtel crumples against the chair, defeated and dazed.",
+          "video_prompt_start": "Slow push-in. Boxtel collapsing. The beat resolves into the next matching frame. Continuity held: Confrontation from S36; child-safe — no gore, defeat shown as falling.",
+          "video_prompt_end": "Slow push-in. Boxtel collapsing. The beat resolves into the next matching frame. Continuity held: Confrontation from S36; child-safe — no gore, defeat shown as falling.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S38",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "boxtel_B1_sheet",
+            "boxtel_house_E4_prop"
+          ],
+          "ref_scope": "image1: the villain sheet of Boxtel - the envious neighbor; pale skin, narrow face with jealous eyes — 100% identical; studio bg/pose/light NOT used; image2: the neighbor-house design - Boxtel's dark narrow house — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "subject identity",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "rider turning away"
+            ]
+          ],
+          "narration_mk": "И го остави врзан за столот.",
+          "dialogue_mk": "",
+          "kf_first": "Wide eye-level of Boxtel bound to a chair by his wrists, the black rider straightening above him, the bulbs safe in the coat, photoreal",
+          "kf_last": "The rider turns toward the door, leaving Boxtel struggling weakly",
+          "continuity": "Boxtel and chair; black disguise; bulbs",
+          "motion": "static; rider turning away",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide eye-level of Boxtel bound to a chair by his wrists, the black rider straightening above him, the bulbs safe in the coat, photoreal then static, then rider turning away settling into the rider turns toward the door, leaving Boxtel struggling weakly continuity held: Boxtel and chair; black disguise; bulbs",
+          "image_prompt_start": "photoreal cinematic: eye-level of Boxtel bound to a chair by his wrists, the black rider straightening above him, the bulbs safe in the coat, photoreal.",
+          "image_prompt_end": "photoreal cinematic: The rider toward the door, leaving Boxtel struggling weakly.",
+          "video_prompt_start": "Static. rider turning away. The beat resolves into the next matching frame. Continuity held: Boxtel and chair; black disguise; bulbs.",
+          "video_prompt_end": "Static. rider turning away. The beat resolves into the next matching frame. Continuity held: Boxtel and chair; black disguise; bulbs.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S39",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "cornelius_A1_fused",
+            "bulb_K2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Cornelius - young gentle flower-grower, calm and kind; linen clothes with a leather apron — 100% identical; studio bg/pose/light NOT used; image2: the tulip-bulb design - a round golden-brown tulip bulb — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.38,
+              "slow push-in"
+            ],
+            [
+              1.38,
+              2.5,
+              "bulbs gleaming"
+            ]
+          ],
+          "narration_mk": "Корнелиј ги крена луковиците кон светлината.",
+          "dialogue_mk": "",
+          "kf_first": "Close eye-level of the bulbs held aloft, lamplight glowing through the dark cloth, the black-gloved hand steady, photoreal",
+          "kf_last": "Push-in on the bulbs as they gleam — the prize reclaimed",
+          "continuity": "Bulbs culminate the quest; warm lamplight",
+          "motion": "slow push-in; bulbs gleaming",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close eye-level of the bulbs held aloft, lamplight glowing through the dark cloth, the black-gloved hand steady, photoreal Cornelius slender, florist, in linen, apron, carrying bulb, wreathed in golden glow then slow push-in, then bulbs gleaming settling into push-in on the bulbs as they gleam — the prize reclaimed with a low radiant hum continuity held: Bulbs culminate the quest; warm lamplight",
+          "image_prompt_start": "photoreal cinematic: eye-level of the bulbs held aloft, lamplight glowing through the dark cloth, the black-gloved hand steady, photoreal.",
+          "image_prompt_end": "photoreal cinematic: on the bulbs as they gleam — the prize reclaimed.",
+          "video_prompt_start": "Slow push-in. bulbs gleaming. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Bulbs culminate the quest; warm lamplight.",
+          "video_prompt_end": "Slow push-in. bulbs gleaming. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Bulbs culminate the quest; warm lamplight.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S40",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "cornelius_A1_fused",
+            "black_horse_K7_prop",
+            "boxtel_house_E4_prop"
+          ],
+          "ref_scope": "image1: the fused master of Cornelius - young gentle flower-grower, calm and kind; linen clothes with a leather apron — 100% identical; studio bg/pose/light NOT used; image2: the black-horse design - a magnificent black horse — 100% identical; studio bg/pose/light NOT used; image3: the neighbor-house design - Boxtel's dark narrow house — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.4,
+              "track"
+            ],
+            [
+              1.4,
+              2.8,
+              "mounting"
+            ],
+            [
+              2.8,
+              3.5,
+              "riding off"
+            ]
+          ],
+          "narration_mk": "Со доказите и лалињата, Црното Лале излезе во ноќта.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of the black rider emerging from Boxtel's house, cloak swirling, moon behind the rooftops, photoreal triumphant exit",
+          "kf_last": "Track as he swings onto the black horse and rides toward the rising dawn",
+          "continuity": "Black disguise, horse; night-to-dawn transition",
+          "motion": "track; mounting and riding off",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of the black rider emerging from Boxtel's house, cloak swirling, moon behind the rooftops, photoreal triumphant exit Cornelius slender, florist, in linen, apron, carrying bulb, wreathed in golden glow then track, then mounting, then riding off settling into track as he swings onto the black horse and rides toward the rising dawn with a low radiant hum continuity held: Black disguise, horse; night-to-dawn transition",
+          "image_prompt_start": "photoreal cinematic: wide of the black rider emerging from Boxtel's house, cloak swirling, moon behind the rooftops, photoreal triumphant exit.",
+          "image_prompt_end": "photoreal cinematic: as he swings onto the black horse and rides toward the rising dawn.",
+          "video_prompt_start": "Track. mounting. riding off. The beat resolves into the next matching frame. Continuity held: Black disguise, horse; night-to-dawn transition.",
+          "video_prompt_end": "Track. mounting. riding off. The beat resolves into the next matching frame. Continuity held: Black disguise, horse; night-to-dawn transition.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "court_prison_night_roads",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#1e3a8a",
+        "#f2c14e",
+        "#1a1a2e"
+      ],
+      "light_direction": "key light from screen-right, cold moonlight with warm candle accents",
+      "time_of_day": "night"
+    },
+    {
+      "id": "act3",
+      "num": "Act III",
+      "title": "Слобода и цветови",
+      "color": "#a78bfa",
+      "pct": 17,
+      "synopsis": "Вистината излегува на виделина, Корнелиј е ослободен, заработува богатство од своите лалиња, им помага на сиромашните, се жени за Роза и живее во куќа полна со прекрасни цвеќиња.",
+      "shots": [
+        {
+          "id": "S41",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "cornelius_A1_fused",
+            "documents_K3_prop",
+            "court_E6_prop"
+          ],
+          "ref_scope": "image1: the fused master of Cornelius - young gentle flower-grower, calm and kind; linen clothes with a leather apron — 100% identical; studio bg/pose/light NOT used; image2: the forged-documents design - folded false papers — 100% identical; studio bg/pose/light NOT used; image3: the courtroom design - a stern 17th-century court — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "crane-up"
+            ],
+            [
+              1.93,
+              3.5,
+              "chains removed"
+            ]
+          ],
+          "narration_mk": "Вистината излезе на виделина.",
+          "dialogue_mk": "",
+          "kf_first": "High wide crane-up in the courtroom as the true documents are laid before the judge, sunlight streaming through tall windows, Cornelius freed of his chains, photoreal",
+          "kf_last": "Crane rises over the court as the charges are lifted and the crowd sighs with relief",
+          "continuity": "Courtroom from S19; documents; Cornelius freed",
+          "motion": "crane-up; chains removed",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high wide crane-up in the courtroom as the true documents are laid before the judge, sunlight streaming through tall windows, Cornelius freed of his chains, photoreal Cornelius slender, florist, in linen, apron, carrying bulb, wreathed in golden glow then crane-up, then chains removed settling into crane rises over the court as the charges are lifted and the crowd sighs with relief with a low radiant hum continuity held: Courtroom from S19; documents; Cornelius freed",
+          "image_prompt_start": "photoreal cinematic: High wide in the courtroom as the true documents are laid before the judge, sunlight streaming through tall windows, Cornelius freed of his chains, photoreal.",
+          "image_prompt_end": "photoreal cinematic: Crane over the court as the charges are lifted and the crowd sighs with relief.",
+          "video_prompt_start": "Crane-up. chains removed. The beat resolves into the next matching frame. Continuity held: Courtroom from S19; documents; Cornelius freed.",
+          "video_prompt_end": "Crane-up. chains removed. The beat resolves into the next matching frame. Continuity held: Courtroom from S19; documents; Cornelius freed.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S42",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "cornelius_A1_fused",
+            "black_tulip_K1_prop",
+            "market_E7_prop"
+          ],
+          "ref_scope": "image1: the fused master of Cornelius - young gentle flower-grower, calm and kind; linen clothes with a leather apron — 100% identical; studio bg/pose/light NOT used; image2: the black-tulip design - a rare near-black tulip with deep violet undertones — 100% identical; studio bg/pose/light NOT used; image3: the flower-market design - a bright flower market stall — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "coins changing hands"
+            ]
+          ],
+          "narration_mk": "Благодарение на своите скапоцени лалиња, заработи многу пари.",
+          "dialogue_mk": "",
+          "kf_first": "Medium eye-level of Cornelius at a flower market stall, black tulips arranged in a wooden crate, coins changing hands under warm daylight, photoreal",
+          "kf_last": "A customer smiles and pays, more coins glinting in Cornelius's palm",
+          "continuity": "Black tulips; market palette; Cornelius free",
+          "motion": "static; coins changing hands",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level of Cornelius at a flower market stall, black tulips arranged in a wooden crate, coins changing hands under warm daylight, photoreal Cornelius slender, florist, in linen, apron, carrying bulb, wreathed in golden glow then static, then coins changing hands settling into a customer smiles and pays, more coins glinting in Cornelius's palm with a low radiant hum continuity held: Black tulips; market palette; Cornelius free",
+          "image_prompt_start": "photoreal cinematic: eye-level of Cornelius at a flower market stall, black tulips arranged in a wooden crate, coins changing hands under warm daylight, photoreal.",
+          "image_prompt_end": "photoreal cinematic: A customer smiles and pays, more coins glinting in Cornelius's palm.",
+          "video_prompt_start": "Static. coins changing hands. The beat resolves into the next matching frame. Continuity held: Black tulips; market palette; Cornelius free.",
+          "video_prompt_end": "Static. coins changing hands. The beat resolves into the next matching frame. Continuity held: Black tulips; market palette; Cornelius free.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S43",
+          "shot_type": "BOSS-ONLY",
+          "size": "CLOSE",
+          "angle": "macro",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "coin_K6_prop",
+            "bulb_K2_prop"
+          ],
+          "ref_scope": "image1: the golden-coins design - piled gold coins — 100% identical; studio bg/pose/light NOT used; image2: the tulip-bulb design - a round golden-brown tulip bulb — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.38,
+              "static"
+            ],
+            [
+              1.38,
+              2.5,
+              "coin spinning to rest"
+            ]
+          ],
+          "narration_mk": "Златото и лалињата се насобраа во изобилство.",
+          "dialogue_mk": "",
+          "kf_first": "Macro close of golden coins piled beside dark tulip bulbs, soft focus petals behind, photoreal abundance",
+          "kf_last": "A coin spins and settles atop the pile, reflecting warm light",
+          "continuity": "Bulbs, coins; warm wealth palette",
+          "motion": "static; coin spinning to rest",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro close of golden coins piled beside dark tulip bulbs, soft focus petals behind, photoreal abundance then static, then coin spinning to rest settling into a coin spins and settles atop the pile, reflecting warm light continuity held: Bulbs, coins; warm wealth palette",
+          "image_prompt_start": "photoreal cinematic: Macro close of golden coins piled beside dark tulip bulbs, soft focus petals behind, photoreal abundance.",
+          "image_prompt_end": "photoreal cinematic: A coin spins and atop the pile, reflecting warm light.",
+          "video_prompt_start": "Static. coin spinning to rest. The action plays out at full force and lands in a held, readable end pose. Continuity held: Bulbs, coins; warm wealth palette.",
+          "video_prompt_end": "Static. coin spinning to rest. The action plays out at full force and lands in a held, readable end pose. Continuity held: Bulbs, coins; warm wealth palette.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S44",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-right",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "cornelius_A1_fused",
+            "coin_K6_prop",
+            "haarlem_E1_prop"
+          ],
+          "ref_scope": "image1: the fused master of Cornelius - young gentle flower-grower, calm and kind; linen clothes with a leather apron — 100% identical; studio bg/pose/light NOT used; image2: the golden-coins design - piled gold coins — 100% identical; studio bg/pose/light NOT used; image3: the 17th-century-Haarlem design - Dutch canals, windmills and tulip merchants' houses — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "pan-right across the grateful crowd"
+            ],
+            [
+              1.93,
+              3.5,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Па, дел од тоа богатство им го подари на сиромашните.",
+          "dialogue_mk": "",
+          "kf_first": "Wide eye-level of Cornelius handing coins and warm bread to a crowd of poor townsfolk gathered in the square, grateful faces, photoreal generosity",
+          "kf_last": "Pan-right across smiling children and elders receiving his gifts",
+          "continuity": "Town square; Cornelius; generous spirit",
+          "motion": "pan-right across the grateful crowd",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide eye-level of Cornelius handing coins and warm bread to a crowd of poor townsfolk gathered in the square, grateful faces, photoreal generosity Cornelius slender, florist, in linen, apron, carrying bulb, wreathed in golden glow then pan-right across the grateful crowd, then resolve settling into pan-right across smiling children and elders receiving his gifts with a low radiant hum continuity held: Town square; Cornelius; generous spirit",
+          "image_prompt_start": "photoreal cinematic: eye-level of Cornelius handing coins and warm bread to a crowd of poor townsfolk gathered in the square, grateful faces, photoreal generosity.",
+          "image_prompt_end": "photoreal cinematic: -right across smiling children and elders receiving his gifts.",
+          "video_prompt_start": "Pan-right across the grateful crowd. resolve. The beat resolves into the next matching frame. Continuity held: Town square; Cornelius; generous spirit.",
+          "video_prompt_end": "Pan-right across the grateful crowd. resolve. The beat resolves into the next matching frame. Continuity held: Town square; Cornelius; generous spirit.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S45",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "cornelius_A1_fused",
+            "rosa_A2_fused",
+            "garden_E2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Cornelius - young gentle flower-grower, calm and kind; linen clothes with a leather apron — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Rosa - brave, clever and loyal; long hair with a scarf over her head — 100% identical; studio bg/pose/light NOT used; image3: the flower-garden design - Cornelius lush tulip garden — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "shared laugh"
+            ]
+          ],
+          "narration_mk": "И се ожени за својата сакана Роза.",
+          "dialogue_mk": "",
+          "kf_first": "Medium eye-level of Cornelius and Rosa standing together at a bright wedding, flowers woven in her hair, his hand holding hers, photoreal tender joy",
+          "kf_last": "They turn to each other and Rosa laughs, radiant with happiness",
+          "continuity": "Cornelius and Rosa; flower motif; bright palette",
+          "motion": "static; shared laugh",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level of Cornelius and Rosa standing together at a bright wedding, flowers woven in her hair, his hand holding hers, photoreal tender joy Cornelius slender, florist, in linen, apron, carrying bulb, wreathed in golden glow Rosa slender, heroine, in scarf then static, then shared laugh settling into they turn to each other and Rosa laughs, radiant with happiness with a low radiant hum, leaves stir continuity held: Cornelius and Rosa; flower motif; bright palette",
+          "image_prompt_start": "photoreal cinematic: eye-level of Cornelius and Rosa standing together at a bright wedding, flowers woven in her hair, his hand holding hers, photoreal tender joy.",
+          "image_prompt_end": "photoreal cinematic: They turn to each other and Rosa laughs, radiant with happiness.",
+          "video_prompt_start": "Static. shared laugh. The beat resolves into the next matching frame. Continuity held: Cornelius and Rosa; flower motif; bright palette.",
+          "video_prompt_end": "Static. shared laugh. The beat resolves into the next matching frame. Continuity held: Cornelius and Rosa; flower motif; bright palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S46",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "rosa_A2_fused",
+            "black_tulip_K1_prop"
+          ],
+          "ref_scope": "image1: the fused master of Rosa - brave, clever and loyal; long hair with a scarf over her head — 100% identical; studio bg/pose/light NOT used; image2: the black-tulip design - a rare near-black tulip with deep violet undertones — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "slow push-in"
+            ],
+            [
+              1.93,
+              3.5,
+              "smile to smile"
+            ]
+          ],
+          "narration_mk": "Нивните лица зрачеа од среќа.",
+          "dialogue_mk": "",
+          "kf_first": "Close eye-level of Rosa's joyful face, eyes shining, a single tulip tucked at her ear, photoreal",
+          "kf_last": "Push-in shifts to Cornelius smiling at her, contentment in his gaze",
+          "continuity": "Rosa and Cornelius; wedding; tulip motif",
+          "motion": "slow push-in; smile to smile",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close eye-level of Rosa's joyful face, eyes shining, a single tulip tucked at her ear, photoreal Rosa slender, heroine, in scarf then slow push-in, then smile to smile settling into push-in shifts to Cornelius smiling at her, contentment in his gaze continuity held: Rosa and Cornelius; wedding; tulip motif",
+          "image_prompt_start": "photoreal cinematic: eye-level of Rosa's joyful face, eyes shining, a single tulip tucked at her ear, photoreal.",
+          "image_prompt_end": "photoreal cinematic: to Cornelius smiling at her, contentment in his gaze.",
+          "video_prompt_start": "Slow push-in. smile to smile. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Rosa and Cornelius; wedding; tulip motif.",
+          "video_prompt_end": "Slow push-in. smile to smile. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Rosa and Cornelius; wedding; tulip motif.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S47",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "cornelius_A1_fused",
+            "rosa_A2_fused",
+            "garden_E2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Cornelius - young gentle flower-grower, calm and kind; linen clothes with a leather apron — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Rosa - brave, clever and loyal; long hair with a scarf over her head — 100% identical; studio bg/pose/light NOT used; image3: the flower-garden design - Cornelius lush tulip garden — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "crane-up revealing the flower-filled house"
+            ],
+            [
+              1.93,
+              3.5,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "И живееја во куќа полна со прекрасни цвеќиња.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of their new house surrounded by a blooming garden, tulips of every color lining the windows and path, warm golden light, photoreal",
+          "kf_last": "Crane-up reveals the full garden bursting with flowers and the black tulip at its center",
+          "continuity": "House and garden; the black tulip as centerpiece",
+          "motion": "crane-up revealing the flower-filled house",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of their new house surrounded by a blooming garden, tulips of every color lining the windows and path, warm golden light, photoreal Cornelius slender, florist, in linen, apron, carrying bulb, wreathed in golden glow Rosa slender, heroine, in scarf then crane-up revealing the flower-filled house, then resolve settling into crane-up reveals the full garden bursting with flowers and the black tulip at its center with a low radiant hum, leaves stir continuity held: House and garden; the black tulip as centerpiece",
+          "image_prompt_start": "photoreal cinematic: wide of their new house surrounded by a blooming garden, tulips of every color lining the windows and path, warm golden light, photoreal.",
+          "image_prompt_end": "photoreal cinematic: reveals the full garden bursting with flowers and the black tulip at its center.",
+          "video_prompt_start": "Crane-up revealing the flower-filled house. resolve. The beat resolves into the next matching frame. Continuity held: House and garden; the black tulip as centerpiece.",
+          "video_prompt_end": "Crane-up revealing the flower-filled house. resolve. The beat resolves into the next matching frame. Continuity held: House and garden; the black tulip as centerpiece.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S48",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "cornelius_A1_fused",
+            "rosa_A2_fused",
+            "black_tulip_K1_prop",
+            "garden_E2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Cornelius - young gentle flower-grower, calm and kind; linen clothes with a leather apron — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Rosa - brave, clever and loyal; long hair with a scarf over her head — 100% identical; studio bg/pose/light NOT used; image3: the black-tulip design - a rare near-black tulip with deep violet undertones — 100% identical; studio bg/pose/light NOT used; image4: the flower-garden design - Cornelius lush tulip garden — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "slow crane-down"
+            ],
+            [
+              1.93,
+              3.5,
+              "settle on the black tulip"
+            ]
+          ],
+          "narration_mk": "А црното лале — симболот на нивната победа — цветаше вечно.",
+          "dialogue_mk": "",
+          "kf_first": "Wide eye-level of the garden in full bloom at sunset, Cornelius and Rosa standing hand in hand before their flower-filled home, photoreal closing warmth",
+          "kf_last": "Crane-down settles on the black tulip glowing in the last light, the story's emblem, as the frame gently rests",
+          "continuity": "Full cast and garden; black tulip emblem",
+          "motion": "slow crane-down; settle on the black tulip",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide eye-level of the garden in full bloom at sunset, Cornelius and Rosa standing hand in hand before their flower-filled home, photoreal closing warmth Cornelius slender, florist, in linen, apron, carrying bulb, wreathed in golden glow Rosa slender, heroine, in scarf then slow crane-down, then settle on the black tulip settling into crane-down settles on the black tulip glowing in the last light, the story's emblem, as the frame gently rests with a low radiant hum, leaves stir continuity held: Full cast and garden; black tulip emblem",
+          "image_prompt_start": "photoreal cinematic: eye-level of the garden in full bloom at sunset, Cornelius and Rosa standing hand in hand before their flower-filled home, photoreal closing warmth.",
+          "image_prompt_end": "photoreal cinematic: on the black tulip glowing in the last light, the story's emblem, as the frame gently rests.",
+          "video_prompt_start": "Slow crane-down. settle on the black tulip. The beat resolves into the next matching frame. Continuity held: Full cast and garden; black tulip emblem.",
+          "video_prompt_end": "Slow crane-down. settle on the black tulip. The beat resolves into the next matching frame. Continuity held: Full cast and garden; black tulip emblem.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "court_market_home_garden",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#fbbf24",
+        "#e11d48",
+        "#14532d"
+      ],
+      "light_direction": "radiant day then golden sunset, key light from screen-left over the garden",
+      "time_of_day": "day"
+    }
+  ],
+  "director_corrections": {
+    "issued": "2026-11-07",
+    "source": "KB §13 DIRECTOR CORRECTIONS — overrides all prior asset/keyframe guidance",
+    "rules": [
+      "DD HEADWEAR: no cap/hood/bandana/mask on head; hood = back-cowl only (cape-like); bare head + teal-blue glowing hair always visible; any head/face covering = REJECT",
+      "LEGENDARY WEAPONS MUST APPEAR: DD = twin Frostbite-class hand crossbows (ice-blue arcane crystal limbs, frost runes, frozen-light string, teal-blue glow); AZ = Dawnbreaker-class greatsword (pale sunsteel, molten-gold runes, golden holy fire edge, sunburst crossguard); hero sheet/keyframe without weapon = INCOMPLETE",
+      "WEAPON ANTI-SLOP: fantasy construction only; crossbow must NEVER read as firearm (no barrel/magazine/stock/Uzi/SMG silhouette = REJECT); anti-slop negatives always appended",
+      "BOSS FACE: Mal'garot HAS a prolific molten-lava face (lava dripping/running, drops falling to ground); faceless boss sheets SUPERSEDED",
+      "LOCATION BRIGHTNESS FLOOR: environment plates silhouette-readable at thumbnail; no murk-dark grades"
+    ],
+    "applies_when": "Activates when face_lock changes from AI-default to an enrolled identity (DD/AZ). AI-default packages carry this as a forward constraint, not a current defect.",
+    "anti_slop_negatives": "firearm, gun, machinegun, Uzi, barrel, magazine, ammo clip, muzzle, modern weapon"
+  },
+  "character_designs": {
+    "cornelius": {
+      "archetype": "florist",
+      "build": "slender",
+      "scale": "human",
+      "palette": {
+        "primary": "#c8a15a",
+        "secondary": "#ede3cf",
+        "glow": "#f2c14e"
+      },
+      "costume": [
+        "linen",
+        "apron"
+      ],
+      "props": [
+        "bulb"
+      ],
+      "fx": [
+        "golden_glow"
+      ]
+    },
+    "rosa": {
+      "archetype": "heroine",
+      "build": "slender",
+      "scale": "human",
+      "palette": {
+        "primary": "#6b4a3a",
+        "secondary": "#c9b27a",
+        "glow": "#f2c14e"
+      },
+      "costume": [
+        "scarf"
+      ],
+      "props": [],
+      "fx": []
+    },
+    "boxtel": {
+      "archetype": "villain",
+      "build": "lanky",
+      "scale": "human",
+      "palette": {
+        "primary": "#3a3730",
+        "secondary": "#8a7a70",
+        "glow": "#c94c4c"
+      },
+      "costume": [
+        "cloak",
+        "hat"
+      ],
+      "props": [
+        "sack"
+      ],
+      "fx": [
+        "shadow_smoke"
+      ]
+    },
+    "haarlem_E1_prop": {
+      "motif": "canals",
+      "tone": "#2dd4bf"
+    },
+    "garden_E2_prop": {
+      "motif": "garden",
+      "tone": "#f2c14e"
+    },
+    "workshop_E3_prop": {
+      "motif": "house",
+      "tone": "#1a2a4a"
+    },
+    "boxtel_house_E4_prop": {
+      "motif": "house",
+      "tone": "#4b5563"
+    },
+    "prison_E5_prop": {
+      "motif": "dungeon",
+      "tone": "#1e3a8a"
+    },
+    "court_E6_prop": {
+      "motif": "hall",
+      "tone": "#8a6a3a"
+    },
+    "market_E7_prop": {
+      "motif": "market",
+      "tone": "#fbbf24"
+    },
+    "night_road_E8_prop": {
+      "motif": "road",
+      "tone": "#1a1a2e"
+    }
+  }
+}

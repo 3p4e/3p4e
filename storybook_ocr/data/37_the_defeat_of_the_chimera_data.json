@@ -1,0 +1,2529 @@
+{
+  "num": "37",
+  "title_mk": "Поразот на Химера",
+  "title_en": "The Defeat of the Chimera",
+  "genre": "Стагрчки мит · епска акција",
+  "logline": "Младиот јунак Белерофон, јавајќи го крилестиот Пегаз, се соочува со огнената Химера на карпеста планина — и со итрина на место со меч, го победува чудовиштето што никој не го преживеал.",
+  "spec": {
+    "aspect": "16:9",
+    "resolution": "1216x704",
+    "fps": 24,
+    "model": "model-agnostic (chosen at generation)",
+    "style": "photoreal",
+    "flf": true,
+    "language": "mk",
+    "shot_floor": 40,
+    "shot_max": 60,
+    "seed_policy": "fixed-per-shot (same seed → reproducible shot; re-roll per shot id)",
+    "style_anchor": [
+      "Diablo 2 cinematic",
+      "World of Warcraft cinematic",
+      "StarCraft cinematic"
+    ],
+    "negative_prompt": "deformed, extra limbs, morphing, watermark, text, static frame, blurry, low quality, cropped head, cut-off face",
+    "frames": 121,
+    "frames_fallback": 81,
+    "routes": [
+      {
+        "model": "Wan2.1-FLF2V-14B-720P",
+        "input": "start+end native (run START-ONLY)",
+        "status": "WORKING (lead for 14B quality)"
+      },
+      {
+        "model": "Kandinsky 6.0 Lite/Pro",
+        "input": "start-image-only",
+        "status": "WORKING (Pro-distill untested at scale)"
+      },
+      {
+        "model": "SkyReels-V3 R2V-14B",
+        "input": "start-image-only",
+        "status": "WORKING (fallback)"
+      },
+      {
+        "model": "LTX-Video 2B v0.9.5",
+        "input": "start-image-only",
+        "status": "WORKING (small/fast, low ceiling)"
+      },
+      {
+        "model": "Mochi-1",
+        "input": "start-image-only",
+        "status": "untested here"
+      },
+      {
+        "model": "LTX-2.3 22B distilled",
+        "input": "start-image-only",
+        "status": "DEAD (nanobind native-crash, 42 note)"
+      }
+    ],
+    "model_note": "Model chosen per story at generation (43 §4). Keyframes + continuation prompts are generator-agnostic; only the render command differs per model."
+  },
+  "cast": [
+    {
+      "role": "Белерофон / Bellerophon",
+      "trait": "Храбар и снаодлив млад јунак; отфрлен гостин кој станува победник.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Пегаз / Pegasus",
+      "trait": "Снежно-бел крилест коњ, верен неразделен пријател на Белерофон.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Химера / Chimera",
+      "trait": "Огнено чудовиште со лавовска глава, козјо тело и змиска опашка; блуе оган.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Кралот Прет / King Proetus",
+      "trait": "Владетел на Тиринт, растргнат меѓу светиот закон на гостите и молбата на сопругата.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Кралицата Стенебеја / Queen Stheneboea",
+      "trait": "Навредена и лута кралица што сака одмазда.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    }
+  ],
+  "acts": [
+    {
+      "id": "act1",
+      "num": "Act I",
+      "title": "Заложба во палатата",
+      "color": "#2dd4bf",
+      "pct": 30,
+      "synopsis": "Во палатата во Тиринт, навредената кралица Стенебеја бара Белерофон да плати со живот. Кралот Прет одбива да го повреди гостинот, но смислува невозможна задача — борба со Химера, од која никој не преживеал.",
+      "location_ref": "palace_tiryns_hall",
+      "global_locks": [
+        "palette — marble dawn and bronze",
+        "light — warm interior torchlight",
+        "lens — wide and medium emphasis"
+      ],
+      "palette": [
+        "#f5c06b",
+        "#8a5a2b",
+        "#2dd4bf"
+      ],
+      "light_direction": "key light from screen-left, warm torch and dawn",
+      "time_of_day": "dawn",
+      "shots": [
+        {
+          "id": "S01",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [],
+          "ref_scope": "image1: Tiryns palace exterior establishing — cyclopean stone walls above a coastal plain",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "palette",
+            "light direction",
+            "stone architecture",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "camera descends over the massive stone citadel of Tiryns at dawn"
+            ],
+            [
+              2.0,
+              3.5,
+              "morning haze drifts over the coastal plain beyond the walls"
+            ]
+          ],
+          "narration_mk": "Во градот Тиринт, зад ѕидови од огромен камен, живееше една стара лутина.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle establishing of the ancient Greek citadel of Tiryns at dawn, massive cyclopean stone walls above a hazy coastal plain, photoreal Diablo 2 cinematic grade, 1216x704",
+          "kf_last": "Crane down through morning mist toward the torchlit megaron hall within the walls",
+          "continuity": "Palace exterior palette with dawn haze and bronze stone",
+          "motion": "slow crane-down descent; mist drift over stone",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle establishing of the ancient Greek citadel of Tiryns at dawn, massive cyclopean stone walls above a hazy coastal plain, photoreal Diablo 2 cinematic grade then camera descends over the massive stone citadel of Tiryns at dawn, then morning haze drifts over the coastal plain beyond the walls the camera crane-down settling into crane down through morning mist toward the torchlit megaron hall within the walls continuity held: Palace exterior palette with dawn haze and bronze stone",
+          "image_prompt_start": "photoreal cinematic: establishing of the ancient Greek citadel of Tiryns at dawn, massive cyclopean stone walls above a hazy coastal plain, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: through morning mist toward the torchlit megaron hall within the walls.",
+          "video_prompt_start": "Camera descends over the massive stone citadel of Tiryns at dawn. morning haze drifts over the coastal plain beyond the walls. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Palace exterior palette with dawn haze and bronze stone.",
+          "video_prompt_end": "Camera descends over the massive stone citadel of Tiryns at dawn. morning haze drifts over the coastal plain beyond the walls. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Palace exterior palette with dawn haze and bronze stone.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S02",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "stheneboea_A4_fused"
+          ],
+          "ref_scope": "image1: queen Stheneboea fused master — pacing in her chamber",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the queen paces in her torchlit chamber, garments trailing"
+            ],
+            [
+              1.5,
+              3.0,
+              "her hands ball into fists, face twisted with wounded pride"
+            ]
+          ],
+          "narration_mk": "Кралицата Стенебеја не можеше да заспие од навредата.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of an ancient Greek queen pacing a torchlit stone chamber, her face dark with wounded pride, silken peplos trailing, photoreal cinematic, 1216x704",
+          "kf_last": "She stops, fists clenched, as torch flame shudders across her angry face",
+          "continuity": "Queen identity; warm interior torch palette from S01",
+          "motion": "near-static hold; pacing stops and hands clench",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of an ancient Greek queen pacing a torchlit stone chamber, her face dark with wounded pride, silken peplos trailing, photoreal cinematic then the queen paces in her torchlit chamber, garments trailing, then her hands ball into fists, face twisted with wounded pride the camera static settling into she stops, fists clenched, as torch flame shudders across her angry face continuity held: Queen identity; warm interior torch palette from S01",
+          "image_prompt_start": "photoreal cinematic: medium of an ancient Greek queen pacing a torchlit stone chamber, her face dark with wounded pride, silken peplos trailing, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: She stops, fists clenched, as torch flame shudders across her angry face.",
+          "video_prompt_start": "The queen paces in her torchlit chamber, garments trailing. her hands ball into fists, face twisted with wounded pride. The camera static. The beat resolves into the next matching frame. Continuity held: Queen identity; warm interior torch palette from S01.",
+          "video_prompt_end": "The queen paces in her torchlit chamber, garments trailing. her hands ball into fists, face twisted with wounded pride. The camera static. The beat resolves into the next matching frame. Continuity held: Queen identity; warm interior torch palette from S01.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S03",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "stheneboea_A4_fused"
+          ],
+          "ref_scope": "image1: queen Stheneboea fused master face card — burning resentment",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "her eyes narrow with cold fury"
+            ],
+            [
+              1.5,
+              3.0,
+              "a hard smile curves without warmth"
+            ]
+          ],
+          "narration_mk": "За неа тоа беше непростливо — а гостинот мораше да плати.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the queen's face in torchlight, eyes narrowing with cold fury, a hard smile curving without warmth, photoreal cinematic, 1216x704",
+          "kf_last": "The firelight deepens the lines of her resentment",
+          "continuity": "Queen face identity; torch palette from S02",
+          "motion": "slow push-in on the face; eye narrowing",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the queen's face in torchlight, eyes narrowing with cold fury, a hard smile curving without warmth, photoreal cinematic then her eyes narrow with cold fury, then a hard smile curves without warmth the camera push-in settling into the firelight deepens the lines of her resentment continuity held: Queen face identity; torch palette from S02",
+          "image_prompt_start": "photoreal cinematic: of the queen's face in torchlight, eyes narrowing with cold fury, a hard smile curving without warmth, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The firelight deepens the lines of her resentment.",
+          "video_prompt_start": "Her eyes narrow with cold fury. a hard smile curves without warmth. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Queen face identity; torch palette from S02.",
+          "video_prompt_end": "Her eyes narrow with cold fury. a hard smile curves without warmth. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Queen face identity; torch palette from S02.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S04",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "stheneboea_A4_fused",
+            "proetus_A3_fused"
+          ],
+          "ref_scope": "image1: queen fused master; image2: king fused master — pleading in the hall",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the queen pleads before the king, arms extended"
+            ],
+            [
+              1.5,
+              3.5,
+              "her voice rises, sharp and insistent"
+            ]
+          ],
+          "narration_mk": "Утрото, таа го преколнуваше сопругот да ѝ ја исполни желбата.",
+          "dialogue_mk": "Стенебеја: „Сакам неговата крв! Отстрани го Белерофон!“",
+          "kf_first": "Medium of the queen pleading before the seated king in a torchlit megaron, arms extended, her face urgent and bitter, photoreal cinematic, 1216x704",
+          "kf_last": "She leans forward, voice rising as the two royal figures frame the shot",
+          "continuity": "Queen and king identities; torchlit hall palette from S03",
+          "motion": "near-static hold; leaning forward and gesturing",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the queen pleading before the seated king in a torchlit megaron, arms extended, her face urgent and bitter, photoreal cinematic then the queen pleads before the king, arms extended, then her voice rises, sharp and insistent the camera static settling into she leans forward, voice rising as the two royal figures frame the shot a voice speaks in Macedonian: \"Стенебеја: „Сакам неговата крв! Отстрани го Белерофон!“\" continuity held: Queen and king identities; torchlit hall palette from S03",
+          "image_prompt_start": "photoreal cinematic: of the queen pleading before the seated king in a torchlit megaron, arms extended, her face urgent and bitter, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: She leans forward, voice rising as the two royal figures frame the shot.",
+          "video_prompt_start": "The queen pleads before the king, arms extended. her voice rises, sharp and insistent. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Стенебеја: „Сакам неговата крв! Отстрани го Белерофон!“\" Continuity held: Queen and king identities; torchlit hall palette from S03.",
+          "video_prompt_end": "The queen pleads before the king, arms extended. her voice rises, sharp and insistent. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Стенебеја: „Сакам неговата крв! Отстрани го Белерофон!“\" Continuity held: Queen and king identities; torchlit hall palette from S03.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S05",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "over-shoulder",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "stheneboea_A4_fused"
+          ],
+          "ref_scope": "image1: queen fused master face card — demanding",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "over the king's shoulder, the queen's face fills with demand"
+            ],
+            [
+              1.5,
+              3.0,
+              "she points fiercely toward the doors"
+            ]
+          ],
+          "narration_mk": "Нејзиниот збор беше како кама — остар и брз.",
+          "dialogue_mk": "Стенебеја: „Не смее да остане жив!“",
+          "kf_first": "Over-shoulder close-up of the queen demanding justice, her face fierce as she points toward the hall doors, photoreal cinematic, 1216x704",
+          "kf_last": "Her pointing arm holds steady, face set with resolve",
+          "continuity": "Queen face identity; torch palette from S04",
+          "motion": "near-static hold; fierce pointing gesture",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: over-shoulder close-up of the queen demanding justice, her face fierce as she points toward the hall doors, photoreal cinematic then over the king's shoulder, the queen's face fills with demand, then she points fiercely toward the doors the camera static settling into her pointing arm holds steady, face set with resolve a voice speaks in Macedonian: \"Стенебеја: „Не смее да остане жив!“\" continuity held: Queen face identity; torch palette from S04",
+          "image_prompt_start": "photoreal cinematic: Over-shoulder close-up of the queen demanding justice, her face fierce as she points toward the hall doors, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: Her pointing arm holds steady, face set with resolve.",
+          "video_prompt_start": "Over the king's shoulder, the queen's face fills with demand. she points fiercely toward the doors. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Стенебеја: „Не смее да остане жив!“\" Continuity held: Queen face identity; torch palette from S04.",
+          "video_prompt_end": "Over the king's shoulder, the queen's face fills with demand. she points fiercely toward the doors. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Стенебеја: „Не смее да остане жив!“\" Continuity held: Queen face identity; torch palette from S04.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S06",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "proetus_A3_fused"
+          ],
+          "ref_scope": "image1: king Proetus fused master — refusing firmly",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the king rises, his hand raised in refusal"
+            ],
+            [
+              1.5,
+              3.5,
+              "he shakes his head, voice calm but final"
+            ]
+          ],
+          "narration_mk": "Но кралот знаеше дека гостинот е свет и недопирлив.",
+          "dialogue_mk": "Прет: „Не можам. Боговите ни забрануваат да го повредиме нашиот гостин.“",
+          "kf_first": "Medium of the king rising from his throne, hand raised in calm refusal, his face grave but resolute, photoreal cinematic, 1216x704",
+          "kf_last": "He shakes his head slowly, the torchlight steady on his features",
+          "continuity": "King identity; megaron interior palette from S05",
+          "motion": "near-static hold; rising and slow head-shake",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the king rising from his throne, hand raised in calm refusal, his face grave but resolute, photoreal cinematic then the king rises, his hand raised in refusal, then he shakes his head, voice calm but final the camera static settling into he shakes his head slowly, the torchlight steady on his features a voice speaks in Macedonian: \"Прет: „Не можам. Боговите ни забрануваат да го повредиме нашиот гостин.“\" continuity held: King identity; megaron interior palette from S05",
+          "image_prompt_start": "photoreal cinematic: of the king rising from his throne, hand raised in calm refusal, his face grave but resolute, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: He shakes his head slowly, the torchlight steady on his features.",
+          "video_prompt_start": "The king rises, his hand raised in refusal. he shakes his head, voice calm but final. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Прет: „Не можам. Боговите ни забрануваат да го повредиме нашиот гостин.“\" Continuity held: King identity; megaron interior palette from S05.",
+          "video_prompt_end": "The king rises, his hand raised in refusal. he shakes his head, voice calm but final. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Прет: „Не можам. Боговите ни забрануваат да го повредиме нашиот гостин.“\" Continuity held: King identity; megaron interior palette from S05.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S07",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "proetus_A3_fused"
+          ],
+          "ref_scope": "image1: king Proetus fused master face card — firm duty",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the king's eyes are steady with sacred duty"
+            ],
+            [
+              1.5,
+              3.0,
+              "a shadow of weariness settles on his brow"
+            ]
+          ],
+          "narration_mk": "Законот на гостите беше постар и посилен од секој гнев.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the king's face, eyes steady with sacred duty, torchlight catching the creases of weariness, photoreal cinematic, 1216x704",
+          "kf_last": "His expression hardens into quiet authority",
+          "continuity": "King face identity; torch palette from S06",
+          "motion": "near-static hold; brow settling into authority",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the king's face, eyes steady with sacred duty, torchlight catching the creases of weariness, photoreal cinematic then the king's eyes are steady with sacred duty, then a shadow of weariness settles on his brow the camera static settling into his expression hardens into quiet authority continuity held: King face identity; torch palette from S06",
+          "image_prompt_start": "photoreal cinematic: of the king's face, eyes steady with sacred duty, torchlight catching the creases of weariness, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: His expression hardens into quiet authority.",
+          "video_prompt_start": "The king's eyes are steady with sacred duty. a shadow of weariness settles on his brow. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: King face identity; torch palette from S06.",
+          "video_prompt_end": "The king's eyes are steady with sacred duty. a shadow of weariness settles on his brow. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: King face identity; torch palette from S06.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S08",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "proetus_A3_fused"
+          ],
+          "ref_scope": "image1: king Proetus fused master — pacing as he thinks",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the king paces slowly before the hearth"
+            ],
+            [
+              1.5,
+              3.5,
+              "a new thought sharpens in his mind"
+            ]
+          ],
+          "narration_mk": "Тогаш, во него се роди една подмолна смисла.",
+          "dialogue_mk": "",
+          "kf_first": "Wide track of the king pacing slowly before a great stone hearth, his shadow long across the floor, a scheme forming, photoreal cinematic, 1216x704",
+          "kf_last": "He halts, a sharp gleam of decision entering his eyes",
+          "continuity": "King identity; hearth and torch palette from S07",
+          "motion": "lateral track following his pacing; shadow shift",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide track of the king pacing slowly before a great stone hearth, his shadow long across the floor, a scheme forming, photoreal cinematic then the king paces slowly before the hearth, then a new thought sharpens in his mind the camera track settling into he halts, a sharp gleam of decision entering his eyes continuity held: King identity; hearth and torch palette from S07",
+          "image_prompt_start": "photoreal cinematic: of the king pacing slowly before a great stone hearth, his shadow long across the floor, a scheme forming, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: He halts, a sharp gleam of decision entering his eyes.",
+          "video_prompt_start": "The king paces slowly before the hearth. a new thought sharpens in his mind. The camera track. The beat resolves into the next matching frame. Continuity held: King identity; hearth and torch palette from S07.",
+          "video_prompt_end": "The king paces slowly before the hearth. a new thought sharpens in his mind. The camera track. The beat resolves into the next matching frame. Continuity held: King identity; hearth and torch palette from S07.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S09",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "proetus_A3_fused"
+          ],
+          "ref_scope": "image1: king Proetus fused master face card — the idea dawns",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "pupil detail",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the king's gaze grows distant, calculating"
+            ],
+            [
+              1.5,
+              3.0,
+              "a grim half-smile forms at the corner of his mouth"
+            ]
+          ],
+          "narration_mk": "Ќе го прати онаму каде никој не се враќа.",
+          "dialogue_mk": "",
+          "kf_first": "Insert macro of the king's eyes as a cold calculation dawns, a grim half-smile at the corner of his mouth, photoreal cinematic, 1216x704",
+          "kf_last": "The flame in his iris flickers with the shape of his plan",
+          "continuity": "King face identity; warm hearth light from S08",
+          "motion": "macro push-in on the eyes; subtle smile forming",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: insert macro of the king's eyes as a cold calculation dawns, a grim half-smile at the corner of his mouth, photoreal cinematic then the king's gaze grows distant, calculating, then a grim half-smile forms at the corner of his mouth the camera push-in settling into the flame in his iris flickers with the shape of his plan continuity held: King face identity; warm hearth light from S08",
+          "image_prompt_start": "photoreal cinematic: Insert macro of the king's eyes as a cold calculation dawns, a grim half-smile at the corner of his mouth, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The flame in his iris flickers with the shape of his plan.",
+          "video_prompt_start": "The king's gaze grows distant, calculating. a grim half-smile forms at the corner of his mouth. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: King face identity; warm hearth light from S08.",
+          "video_prompt_end": "The king's gaze grows distant, calculating. a grim half-smile forms at the corner of his mouth. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: King face identity; warm hearth light from S08.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S10",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "proetus_A3_fused"
+          ],
+          "ref_scope": "image1: king Proetus fused master — issuing the impossible task",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the king stands tall before the throne, voice carrying"
+            ],
+            [
+              1.5,
+              3.5,
+              "he names the task, slow and deliberate"
+            ]
+          ],
+          "narration_mk": "На гостинот му назначи задача од која нема враќање.",
+          "dialogue_mk": "Прет: „Ќе одиш против Химера. Никој никогаш не преживеал.“",
+          "kf_first": "Low-angle medium of the king standing tall before his throne, pronouncing a decree with slow authority, torchlight on bronze, photoreal cinematic, 1216x704",
+          "kf_last": "His words hang heavy as the hall grows still",
+          "continuity": "King identity; megaron palette from S09",
+          "motion": "near-static hold; authoritative posture",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of the king standing tall before his throne, pronouncing a decree with slow authority, torchlight on bronze, photoreal cinematic then the king stands tall before the throne, voice carrying, then he names the task, slow and deliberate the camera static settling into his words hang heavy as the hall grows still a voice speaks in Macedonian: \"Прет: „Ќе одиш против Химера. Никој никогаш не преживеал.“\" continuity held: King identity; megaron palette from S09",
+          "image_prompt_start": "photoreal cinematic: medium of the king standing tall before his throne, pronouncing a decree with slow authority, torchlight on bronze, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: His words hang heavy as the hall grows still.",
+          "video_prompt_start": "The king stands tall before the throne, voice carrying. he names the task, slow and deliberate. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Прет: „Ќе одиш против Химера. Никој никогаш не преживеал.“\" Continuity held: King identity; megaron palette from S09.",
+          "video_prompt_end": "The king stands tall before the throne, voice carrying. he names the task, slow and deliberate. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Прет: „Ќе одиш против Химера. Никој никогаш не преживеал.“\" Continuity held: King identity; megaron palette from S09.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S11",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "bellerophon_A1_fused"
+          ],
+          "ref_scope": "image1: Bellerophon fused master — standing in the sunlit courtyard",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the young hero stands in a bright courtyard, cloak stirring"
+            ],
+            [
+              1.5,
+              3.5,
+              "he turns toward the palace as if called"
+            ]
+          ],
+          "narration_mk": "А во дворот, под раното сонце, чекаше младиот гостин.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of a young Greek hero standing in a sunlit stone courtyard, his cloak stirring in the dawn breeze, photoreal cinematic, 1216x704",
+          "kf_last": "He turns toward the palace, straightening with quiet resolve",
+          "continuity": "Bellerophon identity introduced; cool dawn courtyard palette",
+          "motion": "slow push-in; cloak stir and turn",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of a young Greek hero standing in a sunlit stone courtyard, his cloak stirring in the dawn breeze, photoreal cinematic Bellerophon athletic, hero, in armor, cloak, carrying sword, golden bridle, wreathed in golden glow then the young hero stands in a bright courtyard, cloak stirring, then he turns toward the palace as if called the camera push-in settling into he turns toward the palace, straightening with quiet resolve with steel rings, a low radiant hum continuity held: Bellerophon identity introduced; cool dawn courtyard palette",
+          "image_prompt_start": "photoreal cinematic: wide of a young Greek hero standing in a sunlit stone courtyard, his cloak stirring in the dawn breeze, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: He toward the palace, straightening with quiet resolve.",
+          "video_prompt_start": "The young hero stands in a bright courtyard, cloak stirring. he turns toward the palace as if called. The camera push-in. The beat resolves into the next matching frame. Continuity held: Bellerophon identity introduced; cool dawn courtyard palette.",
+          "video_prompt_end": "The young hero stands in a bright courtyard, cloak stirring. he turns toward the palace as if called. The camera push-in. The beat resolves into the next matching frame. Continuity held: Bellerophon identity introduced; cool dawn courtyard palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S12",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "bellerophon_A1_fused"
+          ],
+          "ref_scope": "image1: Bellerophon fused master — receiving the task",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "a herald gestures the task toward Bellerophon"
+            ],
+            [
+              1.5,
+              3.0,
+              "the hero listens, face unreadable"
+            ]
+          ],
+          "narration_mk": "Задачата му пристигна како тешка, студена клетва.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the young hero listening as a robed herald gestures toward the distant mountains, the hero's face calm and unreadable, photoreal cinematic, 1216x704",
+          "kf_last": "He does not flinch at the name of the monster",
+          "continuity": "Bellerophon identity from S11; courtyard palette",
+          "motion": "near-static hold; subtle shift of stance",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the young hero listening as a robed herald gestures toward the distant mountains, the hero's face calm and unreadable, photoreal cinematic Bellerophon athletic, hero, in armor, cloak, carrying sword, golden bridle, wreathed in golden glow then a herald gestures the task toward Bellerophon, then the hero listens, face unreadable the camera static settling into he does not flinch at the name of the monster with steel rings, a low radiant hum continuity held: Bellerophon identity from S11; courtyard palette",
+          "image_prompt_start": "photoreal cinematic: of the young hero listening as a robed herald gestures toward the distant mountains, the hero's face calm and unreadable, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: He does not flinch at the name of the monster.",
+          "video_prompt_start": "A herald gestures the task toward Bellerophon. the hero listens, face unreadable. The camera static. The beat resolves into the next matching frame. Continuity held: Bellerophon identity from S11; courtyard palette.",
+          "video_prompt_end": "A herald gestures the task toward Bellerophon. the hero listens, face unreadable. The camera static. The beat resolves into the next matching frame. Continuity held: Bellerophon identity from S11; courtyard palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S13",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "bellerophon_A1_fused"
+          ],
+          "ref_scope": "image1: Bellerophon fused master face card — steady resolve",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "pupil detail",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "his jaw sets, eyes hardening with decision"
+            ],
+            [
+              1.5,
+              3.0,
+              "a small, fearless nod"
+            ]
+          ],
+          "narration_mk": "Стравот немаше да го запре — само ќе го изостри.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the young hero's face as his jaw sets and his eyes harden with decision, dawn light sharp on his features, photoreal cinematic, 1216x704",
+          "kf_last": "A small fearless nod as he accepts what lies ahead",
+          "continuity": "Bellerophon face identity; dawn palette from S12",
+          "motion": "slow push-in; jaw set and nod",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the young hero's face as his jaw sets and his eyes harden with decision, dawn light sharp on his features, photoreal cinematic Bellerophon athletic, hero, in armor, cloak, carrying sword, golden bridle, wreathed in golden glow then his jaw sets, eyes hardening with decision, then a small, fearless nod the camera push-in settling into a small fearless nod as he accepts what lies ahead with steel rings, a low radiant hum continuity held: Bellerophon face identity; dawn palette from S12",
+          "image_prompt_start": "photoreal cinematic: of the young hero's face as his jaw sets and his eyes harden with decision, dawn light sharp on his features, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: A small fearless nod as he accepts what lies ahead.",
+          "video_prompt_start": "His jaw sets, eyes hardening with decision. a small, fearless nod. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Bellerophon face identity; dawn palette from S12.",
+          "video_prompt_end": "His jaw sets, eyes hardening with decision. a small, fearless nod. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Bellerophon face identity; dawn palette from S12.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S14",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "bellerophon_A1_fused",
+            "pegasus_A2_fused"
+          ],
+          "ref_scope": "image1: Bellerophon fused master; image2: Pegasus fused master — mounting and taking flight",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "pegasus design",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "the hero climbs onto the white winged horse"
+            ],
+            [
+              2.0,
+              3.5,
+              "Pegasus launches skyward, wings unfurling"
+            ]
+          ],
+          "narration_mk": "Со својот верен Пегаз, Белерофон се крена во небото.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of the hero mounting a snow-white winged horse in a stone courtyard, wings unfurling as it launches into the dawn sky, photoreal cinematic, 1216x704",
+          "kf_last": "Crane-up as Pegasus climbs, the citadel shrinking far below",
+          "continuity": "Bellerophon and Pegasus identities; dawn sky palette",
+          "motion": "crane-up with lift-off; wings beating and dust rising",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of the hero mounting a snow-white winged horse in a stone courtyard, wings unfurling as it launches into the dawn sky, photoreal cinematic Bellerophon athletic, hero, in armor, cloak, carrying sword, golden bridle, wreathed in golden glow Pegasus equine, steed, in wings, mane, carrying golden bridle, wreathed in lightning aura, holy aura then the hero climbs onto the white winged horse, then Pegasus launches skyward, wings unfurling the camera crane-up settling into crane-up as Pegasus climbs, the citadel shrinking far below with steel rings, a low radiant hum continuity held: Bellerophon and Pegasus identities; dawn sky palette",
+          "image_prompt_start": "photoreal cinematic: wide of the hero mounting a snow-white winged horse in a stone courtyard, wings unfurling as it launches into the dawn sky, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: as Pegasus climbs, the citadel shrinking far below.",
+          "video_prompt_start": "The hero climbs onto the white winged horse. Pegasus launches skyward, wings unfurling. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Bellerophon and Pegasus identities; dawn sky palette.",
+          "video_prompt_end": "The hero climbs onto the white winged horse. Pegasus launches skyward, wings unfurling. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Bellerophon and Pegasus identities; dawn sky palette.",
+          "motion_intensity": "moderate"
+        }
+      ]
+    },
+    {
+      "id": "act2",
+      "num": "Act II",
+      "title": "Планината и битката",
+      "color": "#f97316",
+      "pct": 50,
+      "synopsis": "Белерофон и Пегаз летаат кон карпестата планина каде се крие Химера. Чудовиштето излегува блуејќи оган; Белерофон сфаќа дека само еден е начинот да ги изгасне пламените — со итрина: стопува оловни грутки и, побрз од огнот, го истура во устата на Химера, каде зацврснува и го победува чудовиштето.",
+      "location_ref": "mountains_chimera_lair",
+      "global_locks": [
+        "palette — smoke grey and fire orange",
+        "light — volcanic ember against cold stone",
+        "lens — wide and macro emphasis for the creature"
+      ],
+      "palette": [
+        "#f97316",
+        "#57534e",
+        "#1f2937"
+      ],
+      "light_direction": "key light from screen-right, ember glow against cold stone",
+      "time_of_day": "day to dusk",
+      "shots": [
+        {
+          "id": "S15",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "bellerophon_A1_fused",
+            "pegasus_A2_fused"
+          ],
+          "ref_scope": "image1: Bellerophon fused master; image2: Pegasus fused master — flying over wilderness",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "pegasus design",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the winged horse glides high over a wild, rocky land"
+            ],
+            [
+              1.5,
+              3.5,
+              "clouds part as the warm coast falls behind"
+            ]
+          ],
+          "narration_mk": "Летаа над диви предели, кон местото каде што никој не оди.",
+          "dialogue_mk": "",
+          "kf_first": "Wide track of the hero on a white winged horse gliding high over a wild rocky landscape, clouds parting as the coast falls behind, photoreal cinematic, 1216x704",
+          "kf_last": "The terrain below roughens into grey stone as they press onward",
+          "continuity": "Bellerophon and Pegasus identities; aerial daylight palette",
+          "motion": "lateral track through air; cloud drift and wing beats",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide track of the hero on a white winged horse gliding high over a wild rocky landscape, clouds parting as the coast falls behind, photoreal cinematic Bellerophon athletic, hero, in armor, cloak, carrying sword, golden bridle, wreathed in golden glow Pegasus equine, steed, in wings, mane, carrying golden bridle, wreathed in lightning aura, holy aura then the winged horse glides high over a wild, rocky land, then clouds part as the warm coast falls behind the camera track settling into the terrain below roughens into grey stone as they press onward with steel rings, a low radiant hum continuity held: Bellerophon and Pegasus identities; aerial daylight palette",
+          "image_prompt_start": "photoreal cinematic: of the hero on a white winged horse gliding high over a wild rocky landscape, clouds parting as the coast falls behind, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The terrain below roughens into grey stone as they press onward.",
+          "video_prompt_start": "The winged horse glides high over a wild, rocky land. clouds part as the warm coast falls behind. The camera track. The beat resolves into the next matching frame. Continuity held: Bellerophon and Pegasus identities; aerial daylight palette.",
+          "video_prompt_end": "The winged horse glides high over a wild, rocky land. clouds part as the warm coast falls behind. The camera track. The beat resolves into the next matching frame. Continuity held: Bellerophon and Pegasus identities; aerial daylight palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S16",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "bellerophon_A1_fused"
+          ],
+          "ref_scope": "image1: Bellerophon fused master — scanning the horizon in flight",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the hero grips the mane, eyes scanning the distance"
+            ],
+            [
+              1.5,
+              3.0,
+              "wind whips his hair as his focus sharpens"
+            ]
+          ],
+          "narration_mk": "Белерофон гледаше напред — и знаеше дека не смее да згреши.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the hero astride the winged horse, gripping the mane as he scans the horizon, wind whipping his hair, photoreal cinematic, 1216x704",
+          "kf_last": "His focus sharpens as grey peaks loom ahead",
+          "continuity": "Bellerophon identity; aerial light from S15",
+          "motion": "slow push-in; wind through hair and mane",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the hero astride the winged horse, gripping the mane as he scans the horizon, wind whipping his hair, photoreal cinematic Bellerophon athletic, hero, in armor, cloak, carrying sword, golden bridle, wreathed in golden glow then the hero grips the mane, eyes scanning the distance, then wind whips his hair as his focus sharpens the camera push-in settling into his focus sharpens as grey peaks loom ahead with steel rings, a low radiant hum continuity held: Bellerophon identity; aerial light from S15",
+          "image_prompt_start": "photoreal cinematic: of the hero astride the winged horse, gripping the mane as he scans the horizon, wind whipping his hair, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: His focus sharpens as grey peaks loom ahead.",
+          "video_prompt_start": "The hero grips the mane, eyes scanning the distance. wind whips his hair as his focus sharpens. The camera push-in. The beat resolves into the next matching frame. Continuity held: Bellerophon identity; aerial light from S15.",
+          "video_prompt_end": "The hero grips the mane, eyes scanning the distance. wind whips his hair as his focus sharpens. The camera push-in. The beat resolves into the next matching frame. Continuity held: Bellerophon identity; aerial light from S15.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S17",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "pan-right",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "bellerophon_A1_fused",
+            "pegasus_A2_fused"
+          ],
+          "ref_scope": "image1: Bellerophon fused master; image2: Pegasus fused master — approaching the smoking mountain",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "pegasus design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "a jagged peak rises, thin smoke curling from its flank"
+            ],
+            [
+              1.5,
+              3.5,
+              "the pair sweep closer to the dark lair"
+            ]
+          ],
+          "narration_mk": "Таму, над една напукната планина, се креваше чад како предупредување.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of a jagged mountain peak with thin smoke curling from its flank, the hero and winged horse sweeping closer, photoreal cinematic, 1216x704",
+          "kf_last": "Pan-right to the dark mouth of a lair in the rock face",
+          "continuity": "Bellerophon and Pegasus identities; grey-and-ember mountain palette",
+          "motion": "slow pan-right; smoke curl and wing glide",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of a jagged mountain peak with thin smoke curling from its flank, the hero and winged horse sweeping closer, photoreal cinematic Bellerophon athletic, hero, in armor, cloak, carrying sword, golden bridle, wreathed in golden glow Pegasus equine, steed, in wings, mane, carrying golden bridle, wreathed in lightning aura, holy aura then a jagged peak rises, thin smoke curling from its flank, then the pair sweep closer to the dark lair the camera pan-right settling into pan-right to the dark mouth of a lair in the rock face with steel rings, a low radiant hum continuity held: Bellerophon and Pegasus identities; grey-and-ember mountain palette",
+          "image_prompt_start": "photoreal cinematic: wide of a jagged mountain peak with thin smoke curling from its flank, the hero and winged horse sweeping closer, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: -right to the dark mouth of a lair in the rock face.",
+          "video_prompt_start": "A jagged peak rises, thin smoke curling from its flank. the pair sweep closer to the dark lair. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Bellerophon and Pegasus identities; grey-and-ember mountain palette.",
+          "video_prompt_end": "A jagged peak rises, thin smoke curling from its flank. the pair sweep closer to the dark lair. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Bellerophon and Pegasus identities; grey-and-ember mountain palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S18",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "chimera_B1_sheet"
+          ],
+          "ref_scope": "image1: Chimera sheet — emerging from the lair mouth",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "chimera design",
+            "fiery glow",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "from the black lair, a great shape stirs"
+            ],
+            [
+              1.5,
+              3.5,
+              "the Chimera steps out, fire licking from its jaws"
+            ]
+          ],
+          "narration_mk": "Тогаш, од темнината излезе суштеството кое не можеше да се опише со зборови.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of a monstrous lion-headed, goat-bodied, serpent-tailed creature stepping from a dark lair, fire licking from its jaws, photoreal cinematic, 1216x704",
+          "kf_last": "The Chimera stands revealed on the ledge, ember light outlining its silhouette",
+          "continuity": "Chimera design introduced; smoke-and-ember palette from S17",
+          "motion": "near-static hold; fire flicker and sway of the serpent tail",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of a monstrous lion-headed, goat-bodied, serpent-tailed creature stepping from a dark lair, fire licking from its jaws, photoreal cinematic then from the black lair, a great shape stirs, then the Chimera steps out, fire licking from its jaws the camera static settling into the Chimera stands revealed on the ledge, ember light outlining its silhouette continuity held: Chimera design introduced; smoke-and-ember palette from S17",
+          "image_prompt_start": "photoreal cinematic: wide of a monstrous lion-headed, goat-bodied, serpent-tailed creature stepping from a dark lair, fire licking from its jaws, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The Chimera stands revealed on the ledge, ember light outlining its silhouette.",
+          "video_prompt_start": "From the black lair, a great shape stirs. the Chimera steps out, fire licking from its jaws. The camera static. The beat resolves into the next matching frame. Continuity held: Chimera design introduced; smoke-and-ember palette from S17.",
+          "video_prompt_end": "From the black lair, a great shape stirs. the Chimera steps out, fire licking from its jaws. The camera static. The beat resolves into the next matching frame. Continuity held: Chimera design introduced; smoke-and-ember palette from S17.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S19",
+          "shot_type": "BOSS-ONLY",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "chimera_B1_sheet"
+          ],
+          "ref_scope": "image1: the Chimera sheet — full unsettling reveal",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "chimera design",
+            "fiery glow",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "the creature rears, its three natures shifting at once"
+            ],
+            [
+              2.0,
+              3.5,
+              "flames pulse along its mane and tail"
+            ]
+          ],
+          "narration_mk": "Лавовска глава, козјо тело и опашка од змија — сè во едно.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide full reveal of the Chimera as it rears, lion head, goat body and serpent tail surging as flames pulse along its hide, photoreal cinematic, 1216x704",
+          "kf_last": "Crane-up as the creature towers over the ledge, fire crowning its form",
+          "continuity": "Chimera design; ember glow from S18",
+          "motion": "slow crane-up; rearing body and flame pulse",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide full reveal of the Chimera as it rears, lion head, goat body and serpent tail surging as flames pulse along its hide, photoreal cinematic then the creature rears, its three natures shifting at once, then flames pulse along its mane and tail the camera crane-up settling into crane-up as the creature towers over the ledge, fire crowning its form continuity held: Chimera design; ember glow from S18",
+          "image_prompt_start": "photoreal cinematic: wide full reveal of the Chimera as it rears, lion head, goat body and serpent tail surging as flames pulse along its hide, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: as the creature towers over the ledge, fire crowning its form.",
+          "video_prompt_start": "The creature rears, its three natures shifting at once. flames pulse along its mane and tail. The camera crane-up. The action plays out at full force and lands in a held, readable end pose. Continuity held: Chimera design; ember glow from S18.",
+          "video_prompt_end": "The creature rears, its three natures shifting at once. flames pulse along its mane and tail. The camera crane-up. The action plays out at full force and lands in a held, readable end pose. Continuity held: Chimera design; ember glow from S18.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S20",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "chimera_B1_sheet"
+          ],
+          "ref_scope": "image1: Chimera sheet — lion head roaring fire",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "chimera design",
+            "eye detail",
+            "fiery glow",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the lion head snarls, embers spilling from its maw"
+            ],
+            [
+              1.5,
+              3.0,
+              "a guttural roar builds, heat shimmering the air"
+            ]
+          ],
+          "narration_mk": "Нејзината муцка беше печка, а очите — две жарчиња.",
+          "dialogue_mk": "",
+          "kf_first": "Macro close-up of the Chimera's snarling lion head, embers spilling from its maw as heat shimmers the air, photoreal cinematic, 1216x704",
+          "kf_last": "Its roar builds, throat glowing like a furnace",
+          "continuity": "Chimera head design; ember close-up palette from S19",
+          "motion": "macro push-in; snarl and rising heat shimmer",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro close-up of the Chimera's snarling lion head, embers spilling from its maw as heat shimmers the air, photoreal cinematic then the lion head snarls, embers spilling from its maw, then a guttural roar builds, heat shimmering the air the camera push-in settling into its roar builds, throat glowing like a furnace continuity held: Chimera head design; ember close-up palette from S19",
+          "image_prompt_start": "photoreal cinematic: Macro close-up of the Chimera's snarling lion head, embers spilling from its maw as heat shimmers the air, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: Its roar builds, throat glowing like a furnace.",
+          "video_prompt_start": "The lion head snarls, embers spilling from its maw. a guttural roar builds, heat shimmering the air. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Chimera head design; ember close-up palette from S19.",
+          "video_prompt_end": "The lion head snarls, embers spilling from its maw. a guttural roar builds, heat shimmering the air. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Chimera head design; ember close-up palette from S19.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S21",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "bellerophon_A1_fused"
+          ],
+          "ref_scope": "image1: Bellerophon fused master face card — measuring the foe",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the hero's eyes trace the monster without fear"
+            ],
+            [
+              1.5,
+              3.0,
+              "his breath steadies, mind turning to a plan"
+            ]
+          ],
+          "narration_mk": "Белерофон не трепна — тој мереше, а не се плашеше.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the hero's face as he studies the beast from above, eyes sharp and unafraid, wind and ember light, photoreal cinematic, 1216x704",
+          "kf_last": "His breath steadies as a plan begins to form behind his gaze",
+          "continuity": "Bellerophon face identity; aerial ember light from S20",
+          "motion": "near-static hold; steadying breath",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the hero's face as he studies the beast from above, eyes sharp and unafraid, wind and ember light, photoreal cinematic Bellerophon athletic, hero, in armor, cloak, carrying sword, golden bridle, wreathed in golden glow then the hero's eyes trace the monster without fear, then his breath steadies, mind turning to a plan the camera static settling into his breath steadies as a plan begins to form behind his gaze with steel rings, a low radiant hum continuity held: Bellerophon face identity; aerial ember light from S20",
+          "image_prompt_start": "photoreal cinematic: of the hero's face as he studies the beast from above, eyes sharp and unafraid, wind and ember light, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: His breath steadies as a plan begins to form behind his gaze.",
+          "video_prompt_start": "The hero's eyes trace the monster without fear. his breath steadies, mind turning to a plan. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Bellerophon face identity; aerial ember light from S20.",
+          "video_prompt_end": "The hero's eyes trace the monster without fear. his breath steadies, mind turning to a plan. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Bellerophon face identity; aerial ember light from S20.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S22",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "bellerophon_A1_fused",
+            "pegasus_A2_fused"
+          ],
+          "ref_scope": "image1: Bellerophon fused master; image2: Pegasus fused master — urging the steed",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "pegasus design",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the hero leans forward, urging Pegasus onward"
+            ],
+            [
+              1.5,
+              3.5,
+              "the winged horse banks and turns toward the mountain"
+            ]
+          ],
+          "narration_mk": "Не му требаше меч — туку ладнокрвна глава.",
+          "dialogue_mk": "",
+          "kf_first": "Medium track of the hero leaning forward on the winged horse, urging it toward the mountain, mane and cloak streaming, photoreal cinematic, 1216x704",
+          "kf_last": "Pegasus banks into a steep turn, closing the distance",
+          "continuity": "Bellerophon and Pegasus identities; motion from S21",
+          "motion": "lateral track then bank; stream of mane and cloak",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium track of the hero leaning forward on the winged horse, urging it toward the mountain, mane and cloak streaming, photoreal cinematic Bellerophon athletic, hero, in armor, cloak, carrying sword, golden bridle, wreathed in golden glow Pegasus equine, steed, in wings, mane, carrying golden bridle, wreathed in lightning aura, holy aura then the hero leans forward, urging Pegasus onward, then the winged horse banks and turns toward the mountain the camera track settling into pegasus banks into a steep turn, closing the distance with steel rings, a low radiant hum continuity held: Bellerophon and Pegasus identities; motion from S21",
+          "image_prompt_start": "photoreal cinematic: of the hero leaning forward on the winged horse, urging it toward the mountain, mane and cloak streaming, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: Pegasus banks into a steep turn, closing the distance.",
+          "video_prompt_start": "The hero leans forward, urging Pegasus onward. the winged horse banks and turns toward the mountain. The camera track. The beat resolves into the next matching frame. Continuity held: Bellerophon and Pegasus identities; motion from S21.",
+          "video_prompt_end": "The hero leans forward, urging Pegasus onward. the winged horse banks and turns toward the mountain. The camera track. The beat resolves into the next matching frame. Continuity held: Bellerophon and Pegasus identities; motion from S21.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S23",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "chimera_B1_sheet",
+            "bellerophon_A1_fused",
+            "pegasus_A2_fused"
+          ],
+          "ref_scope": "image1: Chimera sheet airborne; image2: Bellerophon fused master; image3: Pegasus fused master — first attack",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "chimera design",
+            "face identity",
+            "pegasus design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the Chimera launches from the ledge, wings of smoke and fire"
+            ],
+            [
+              1.5,
+              3.5,
+              "it dives at the pair, a jet of flame pouring ahead"
+            ]
+          ],
+          "narration_mk": "Чудовиштето полета кон нив, носејќи оган како копје.",
+          "dialogue_mk": "",
+          "kf_first": "Wide track of the Chimera launching from the ledge and diving at the hero and winged horse, a jet of flame pouring ahead of it, photoreal cinematic, 1216x704",
+          "kf_last": "The two riders veer aside as the fire cuts through the air beside them",
+          "continuity": "Chimera, Bellerophon and Pegasus identities; battle sky palette",
+          "motion": "lateral track of the dive; flame jet and evasive veer",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide track of the Chimera launching from the ledge and diving at the hero and winged horse, a jet of flame pouring ahead of it, photoreal cinematic Bellerophon athletic, hero, in armor, cloak, carrying sword, golden bridle, wreathed in golden glow Pegasus equine, steed, in wings, mane, carrying golden bridle, wreathed in lightning aura, holy aura then the Chimera launches from the ledge, wings of smoke and fire, then it dives at the pair, a jet of flame pouring ahead the camera track settling into the two riders veer aside as the fire cuts through the air beside them with steel rings, a low radiant hum continuity held: Chimera, Bellerophon and Pegasus identities; battle sky palette",
+          "image_prompt_start": "photoreal cinematic: of the Chimera launching from the ledge and diving at the hero and winged horse, a jet of flame pouring ahead of it, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The two riders veer aside as the fire cuts through the air beside them.",
+          "video_prompt_start": "The Chimera launches from the ledge, wings of smoke and fire. it dives at the pair, a jet of flame pouring ahead. The camera track. The beat resolves into the next matching frame. Continuity held: Chimera, Bellerophon and Pegasus identities; battle sky palette.",
+          "video_prompt_end": "The Chimera launches from the ledge, wings of smoke and fire. it dives at the pair, a jet of flame pouring ahead. The camera track. The beat resolves into the next matching frame. Continuity held: Chimera, Bellerophon and Pegasus identities; battle sky palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S24",
+          "shot_type": "BOSS-ONLY",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "chimera_B1_sheet"
+          ],
+          "ref_scope": "image1: Chimera sheet — breathing fire mid-air",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "chimera design",
+            "fiery breath",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the beast rears in the air, inhaling"
+            ],
+            [
+              1.5,
+              3.0,
+              "it exhales a roaring column of flame"
+            ]
+          ],
+          "narration_mk": "Од градите ѝ се крена бран од оган.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of the Chimera rearing mid-air and exhaling a roaring column of flame, silhouetted against the smoke, photoreal cinematic, 1216x704",
+          "kf_last": "The flame column widens, briefly turning the sky orange",
+          "continuity": "Chimera design; fiery breath from S23",
+          "motion": "rearing inhale and flame burst expansion",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of the Chimera rearing mid-air and exhaling a roaring column of flame, silhouetted against the smoke, photoreal cinematic then the beast rears in the air, inhaling, then it exhales a roaring column of flame the camera static settling into the flame column widens, briefly turning the sky orange continuity held: Chimera design; fiery breath from S23",
+          "image_prompt_start": "photoreal cinematic: wide of the Chimera rearing mid-air and exhaling a roaring column of flame, silhouetted against the smoke, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The flame column widens, briefly turning the sky orange.",
+          "video_prompt_start": "The beast rears in the air, inhaling. it exhales a roaring column of flame. The camera static. The action plays out at full force and lands in a held, readable end pose. Continuity held: Chimera design; fiery breath from S23.",
+          "video_prompt_end": "The beast rears in the air, inhaling. it exhales a roaring column of flame. The camera static. The action plays out at full force and lands in a held, readable end pose. Continuity held: Chimera design; fiery breath from S23.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S25",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "bellerophon_A1_fused"
+          ],
+          "ref_scope": "image1: Bellerophon fused master — eyes catching the solution",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "pupil detail",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the hero's eyes dart to the rocky ground far below"
+            ],
+            [
+              1.5,
+              3.0,
+              "a realization ignites there, sharp and bright"
+            ]
+          ],
+          "narration_mk": "И тогаш — блесок. Само така ќе ги изгаси пламените.",
+          "dialogue_mk": "",
+          "kf_first": "Insert macro of the hero's eyes darting toward the ground far below, a sharp realization igniting in them, ember-lit, photoreal cinematic, 1216x704",
+          "kf_last": "The glint of an idea firms into resolve",
+          "continuity": "Bellerophon face identity; ember close-up from S24",
+          "motion": "macro push-in; eyes dart then steady",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: insert macro of the hero's eyes darting toward the ground far below, a sharp realization igniting in them, ember-lit, photoreal cinematic Bellerophon athletic, hero, in armor, cloak, carrying sword, golden bridle, wreathed in golden glow then the hero's eyes dart to the rocky ground far below, then a realization ignites there, sharp and bright the camera push-in settling into the glint of an idea firms into resolve with steel rings, a low radiant hum continuity held: Bellerophon face identity; ember close-up from S24",
+          "image_prompt_start": "photoreal cinematic: Insert macro of the hero's eyes darting toward the ground far below, a sharp realization igniting in them, ember-lit, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The glint of an idea firms into resolve.",
+          "video_prompt_start": "The hero's eyes dart to the rocky ground far below. a realization ignites there, sharp and bright. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Bellerophon face identity; ember close-up from S24.",
+          "video_prompt_end": "The hero's eyes dart to the rocky ground far below. a realization ignites there, sharp and bright. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Bellerophon face identity; ember close-up from S24.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S26",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "bellerophon_A1_fused",
+            "pegasus_A2_fused"
+          ],
+          "ref_scope": "image1: Bellerophon fused master; image2: Pegasus fused master — diving to earth",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "pegasus design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the hero guides Pegasus into a dive toward the rocky earth"
+            ],
+            [
+              1.5,
+              3.5,
+              "they plunge past smoke and crags"
+            ]
+          ],
+          "narration_mk": "Со еден замав, раздвоија небото и се спуштија кон земјата.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of the hero and winged horse diving steeply toward a rocky earth below, smoke and crags rushing past, photoreal cinematic, 1216x704",
+          "kf_last": "They level off just above a stony patch of ground",
+          "continuity": "Bellerophon and Pegasus identities; battle-sky palette from S25",
+          "motion": "crane-down dive; crag rush and level-off",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of the hero and winged horse diving steeply toward a rocky earth below, smoke and crags rushing past, photoreal cinematic Bellerophon athletic, hero, in armor, cloak, carrying sword, golden bridle, wreathed in golden glow Pegasus equine, steed, in wings, mane, carrying golden bridle, wreathed in lightning aura, holy aura then the hero guides Pegasus into a dive toward the rocky earth, then they plunge past smoke and crags the camera crane-down settling into they level off just above a stony patch of ground with steel rings, a low radiant hum continuity held: Bellerophon and Pegasus identities; battle-sky palette from S25",
+          "image_prompt_start": "photoreal cinematic: wide of the hero and winged horse diving steeply toward a rocky earth below, smoke and crags rushing past, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: They level off just above a stony patch of ground.",
+          "video_prompt_start": "The hero guides Pegasus into a dive toward the rocky earth. they plunge past smoke and crags. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Bellerophon and Pegasus identities; battle-sky palette from S25.",
+          "video_prompt_end": "The hero guides Pegasus into a dive toward the rocky earth. they plunge past smoke and crags. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Bellerophon and Pegasus identities; battle-sky palette from S25.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S27",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "bellerophon_A1_fused"
+          ],
+          "ref_scope": "image1: Bellerophon fused master — gathering lead from the earth",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the hero drives the tip of his spear into the stony earth"
+            ],
+            [
+              1.5,
+              3.5,
+              "he pries free several dull grey lumps of lead"
+            ]
+          ],
+          "narration_mk": "Со острицата извади неколку тешки, сиви грутки од земјата.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the hero driving a spear tip into stony earth and prying free dull grey lumps of lead, dust in the air, photoreal cinematic, 1216x704",
+          "kf_last": "He gathers the metal into a pouch, eyes already on the sky",
+          "continuity": "Bellerophon identity; rocky ground palette from S26",
+          "motion": "near-static hold; spear strike and metal gathering",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the hero driving a spear tip into stony earth and prying free dull grey lumps of lead, dust in the air, photoreal cinematic Bellerophon athletic, hero, in armor, cloak, carrying sword, golden bridle, wreathed in golden glow then the hero drives the tip of his spear into the stony earth, then he pries free several dull grey lumps of lead the camera static settling into he gathers the metal into a pouch, eyes already on the sky with steel rings, a low radiant hum continuity held: Bellerophon identity; rocky ground palette from S26",
+          "image_prompt_start": "photoreal cinematic: of the hero driving a spear tip into stony earth and prying free dull grey lumps of lead, dust in the air, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: He gathers the metal into a pouch, eyes already on the sky.",
+          "video_prompt_start": "The hero drives the tip of his spear into the stony earth. he pries free several dull grey lumps of lead. The camera static. The beat resolves into the next matching frame. Continuity held: Bellerophon identity; rocky ground palette from S26.",
+          "video_prompt_end": "The hero drives the tip of his spear into the stony earth. he pries free several dull grey lumps of lead. The camera static. The beat resolves into the next matching frame. Continuity held: Bellerophon identity; rocky ground palette from S26.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S28",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [],
+          "ref_scope": "image1: lead lumps melting over ember heat — object shot",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "molten metal",
+            "heat shimmer",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the grey lumps glow and begin to soften"
+            ],
+            [
+              1.5,
+              3.0,
+              "they melt into a shining molten pool"
+            ]
+          ],
+          "narration_mk": "Од жештината, оловото се стопи во течен, сјаен метал.",
+          "dialogue_mk": "",
+          "kf_first": "Insert macro of dull grey lead lumps glowing and melting into a shining pool of molten metal, heat shimmer above, photoreal cinematic, 1216x704",
+          "kf_last": "The molten metal pools bright, rippling with reflected ember light",
+          "continuity": "Lead object; ember heat palette from S27",
+          "motion": "macro push-in; melting and molten ripple",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: insert macro of dull grey lead lumps glowing and melting into a shining pool of molten metal, heat shimmer above, photoreal cinematic then the grey lumps glow and begin to soften, then they melt into a shining molten pool the camera push-in settling into the molten metal pools bright, rippling with reflected ember light continuity held: Lead object; ember heat palette from S27",
+          "image_prompt_start": "photoreal cinematic: Insert macro of dull grey lead lumps glowing and melting into a shining pool of molten metal, heat shimmer above, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The molten metal pools bright, rippling with reflected ember light.",
+          "video_prompt_start": "The grey lumps glow and begin to soften. they melt into a shining molten pool. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Lead object; ember heat palette from S27.",
+          "video_prompt_end": "The grey lumps glow and begin to soften. they melt into a shining molten pool. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Lead object; ember heat palette from S27.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S29",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "bellerophon_A1_fused",
+            "pegasus_A2_fused"
+          ],
+          "ref_scope": "image1: Bellerophon fused master; image2: Pegasus fused master — ascending to the clouds",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "pegasus design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "the hero urges Pegasus upward into the smoke-streaked clouds"
+            ],
+            [
+              2.0,
+              3.5,
+              "they climb toward the circling beast above"
+            ]
+          ],
+          "narration_mk": "Повторно се кренаа, носијќи го течниот метал како тајно оружје.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of the hero and winged horse climbing steeply into smoke-streaked clouds, the molten lead held ready, photoreal cinematic, 1216x704",
+          "kf_last": "Crane-up as they rise toward the Chimera circling overhead",
+          "continuity": "Bellerophon and Pegasus identities; ascent palette from S28",
+          "motion": "crane-up climb; cloud rush and wing beats",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of the hero and winged horse climbing steeply into smoke-streaked clouds, the molten lead held ready, photoreal cinematic Bellerophon athletic, hero, in armor, cloak, carrying sword, golden bridle, wreathed in golden glow Pegasus equine, steed, in wings, mane, carrying golden bridle, wreathed in lightning aura, holy aura then the hero urges Pegasus upward into the smoke-streaked clouds, then they climb toward the circling beast above the camera crane-up settling into crane-up as they rise toward the Chimera circling overhead with steel rings, a low radiant hum continuity held: Bellerophon and Pegasus identities; ascent palette from S28",
+          "image_prompt_start": "photoreal cinematic: wide of the hero and winged horse climbing steeply into smoke-streaked clouds, the molten lead held ready, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: as they rise toward the Chimera circling overhead.",
+          "video_prompt_start": "The hero urges Pegasus upward into the smoke-streaked clouds. they climb toward the circling beast above. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Bellerophon and Pegasus identities; ascent palette from S28.",
+          "video_prompt_end": "The hero urges Pegasus upward into the smoke-streaked clouds. they climb toward the circling beast above. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Bellerophon and Pegasus identities; ascent palette from S28.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S30",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "bellerophon_A1_fused"
+          ],
+          "ref_scope": "image1: Bellerophon fused master — steadying the molten load",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "molten metal",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the hero leans forward, shielding the molten metal"
+            ],
+            [
+              1.5,
+              3.0,
+              "he fixes his gaze on the monster's approaching maw"
+            ]
+          ],
+          "narration_mk": "Сè беше готово — остана само вистинскиот миг.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the hero steadying a vessel of glowing molten lead as he leans forward in flight, eyes fixed on the monster ahead, photoreal cinematic, 1216x704",
+          "kf_last": "The approaching maw of the Chimera looms into the frame",
+          "continuity": "Bellerophon identity; molten glow from S29",
+          "motion": "slow push-in; steadying hold and forward lean",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the hero steadying a vessel of glowing molten lead as he leans forward in flight, eyes fixed on the monster ahead, photoreal cinematic Bellerophon athletic, hero, in armor, cloak, carrying sword, golden bridle, wreathed in golden glow then the hero leans forward, shielding the molten metal, then he fixes his gaze on the monster's approaching maw the camera push-in settling into the approaching maw of the Chimera looms into the frame with steel rings, a low radiant hum continuity held: Bellerophon identity; molten glow from S29",
+          "image_prompt_start": "photoreal cinematic: of the hero steadying a vessel of glowing molten lead as he leans forward in flight, eyes fixed on the monster ahead, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The approaching maw of the Chimera looms into the frame.",
+          "video_prompt_start": "The hero leans forward, shielding the molten metal. he fixes his gaze on the monster's approaching maw. The camera push-in. The beat resolves into the next matching frame. Continuity held: Bellerophon identity; molten glow from S29.",
+          "video_prompt_end": "The hero leans forward, shielding the molten metal. he fixes his gaze on the monster's approaching maw. The camera push-in. The beat resolves into the next matching frame. Continuity held: Bellerophon identity; molten glow from S29.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S31",
+          "shot_type": "BOSS-ONLY",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "chimera_B1_sheet"
+          ],
+          "ref_scope": "image1: Chimera sheet — opening its mouth to burn",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "chimera design",
+            "gaping maw",
+            "fiery glow",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the Chimera wheels and drops its jaw wide"
+            ],
+            [
+              1.5,
+              3.0,
+              "flame gathers deep in its throat, ready to unleash"
+            ]
+          ],
+          "narration_mk": "Химера ја отвори устата за да го проголта со оган.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of the Chimera wheeling and dropping its jaw wide, flame gathering deep in its glowing throat, photoreal cinematic, 1216x704",
+          "kf_last": "The maw gapes wide, embers churning as the breath builds",
+          "continuity": "Chimera design; fiery maw from S30",
+          "motion": "jaw drop and gathering fire in the throat",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of the Chimera wheeling and dropping its jaw wide, flame gathering deep in its glowing throat, photoreal cinematic then the Chimera wheels and drops its jaw wide, then flame gathers deep in its throat, ready to unleash the camera static settling into the maw gapes wide, embers churning as the breath builds continuity held: Chimera design; fiery maw from S30",
+          "image_prompt_start": "photoreal cinematic: wide of the Chimera wheeling and dropping its jaw wide, flame gathering deep in its glowing throat, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The maw gapes wide, embers churning as the breath builds.",
+          "video_prompt_start": "The Chimera wheels and drops its jaw wide. flame gathers deep in its throat, ready to unleash. The camera static. The action plays out at full force and lands in a held, readable end pose. Continuity held: Chimera design; fiery maw from S30.",
+          "video_prompt_end": "The Chimera wheels and drops its jaw wide. flame gathers deep in its throat, ready to unleash. The camera static. The action plays out at full force and lands in a held, readable end pose. Continuity held: Chimera design; fiery maw from S30.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S32",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "chimera_B1_sheet"
+          ],
+          "ref_scope": "image1: Chimera sheet — gaping fiery maw close",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "chimera design",
+            "fiery maw",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the blazing interior of the mouth looms huge"
+            ],
+            [
+              1.5,
+              3.0,
+              "sparks shower from between the fangs"
+            ]
+          ],
+          "narration_mk": "Таа зјапаше како отворена печка на небото.",
+          "dialogue_mk": "",
+          "kf_first": "Macro close-up of the Chimera's gaping maw, its blazing interior looming huge as sparks shower between the fangs, photoreal cinematic, 1216x704",
+          "kf_last": "The flames inside surge, casting wild light across the fangs",
+          "continuity": "Chimera maw design; intense fire palette from S31",
+          "motion": "macro push-in; spark shower and flame surge",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro close-up of the Chimera's gaping maw, its blazing interior looming huge as sparks shower between the fangs, photoreal cinematic then the blazing interior of the mouth looms huge, then sparks shower from between the fangs the camera push-in settling into the flames inside surge, casting wild light across the fangs continuity held: Chimera maw design; intense fire palette from S31",
+          "image_prompt_start": "photoreal cinematic: Macro close-up of the Chimera's gaping maw, its blazing interior looming huge as sparks shower between the fangs, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The flames inside surge, casting wild light across the fangs.",
+          "video_prompt_start": "The blazing interior of the mouth looms huge. sparks shower from between the fangs. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Chimera maw design; intense fire palette from S31.",
+          "video_prompt_end": "The blazing interior of the mouth looms huge. sparks shower from between the fangs. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Chimera maw design; intense fire palette from S31.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S33",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "bellerophon_A1_fused",
+            "pegasus_A2_fused"
+          ],
+          "ref_scope": "image1: Bellerophon fused master; image2: Pegasus fused master — closing in faster",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "pegasus design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the hero spurs Pegasus forward with sudden speed"
+            ],
+            [
+              1.5,
+              3.5,
+              "they close the gap before the beast can exhale"
+            ]
+          ],
+          "narration_mk": "Но Белерофон беше побрз од самиот оган.",
+          "dialogue_mk": "",
+          "kf_first": "Medium track of the hero spurring the winged horse forward with sudden speed as they streak toward the open maw, photoreal cinematic, 1216x704",
+          "kf_last": "They close the gap, the molten load tipping forward",
+          "continuity": "Bellerophon and Pegasus identities; high-speed close from S32",
+          "motion": "lateral track with a burst of speed; molten tipping forward",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium track of the hero spurring the winged horse forward with sudden speed as they streak toward the open maw, photoreal cinematic Bellerophon athletic, hero, in armor, cloak, carrying sword, golden bridle, wreathed in golden glow Pegasus equine, steed, in wings, mane, carrying golden bridle, wreathed in lightning aura, holy aura then the hero spurs Pegasus forward with sudden speed, then they close the gap before the beast can exhale the camera track settling into they close the gap, the molten load tipping forward with steel rings, a low radiant hum continuity held: Bellerophon and Pegasus identities; high-speed close from S32",
+          "image_prompt_start": "photoreal cinematic: of the hero spurring the winged horse forward with sudden speed as they streak toward the open maw, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: They close the gap, the molten load tipping forward.",
+          "video_prompt_start": "The hero spurs Pegasus forward with sudden speed. they close the gap before the beast can exhale. The camera track. The beat resolves into the next matching frame. Continuity held: Bellerophon and Pegasus identities; high-speed close from S32.",
+          "video_prompt_end": "The hero spurs Pegasus forward with sudden speed. they close the gap before the beast can exhale. The camera track. The beat resolves into the next matching frame. Continuity held: Bellerophon and Pegasus identities; high-speed close from S32.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S34",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "bellerophon_A1_fused"
+          ],
+          "ref_scope": "image1: Bellerophon fused master — pouring the molten lead",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "molten metal",
+            "hand detail",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the hero lunges and tips the vessel forward"
+            ],
+            [
+              1.5,
+              3.0,
+              "the molten lead pours in a bright stream"
+            ]
+          ],
+          "narration_mk": "И во последниот миг, го истури оловото точно во отворената уста.",
+          "dialogue_mk": "",
+          "kf_first": "Insert macro of the hero's hand tipping a vessel as molten lead pours out in a bright glowing stream toward the gaping maw, photoreal cinematic, 1216x704",
+          "kf_last": "The stream arcs into the beast's open mouth, light flaring on contact",
+          "continuity": "Molten lead object; hero hand identity; fire palette from S33",
+          "motion": "macro push-in; pour and glowing arc",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: insert macro of the hero's hand tipping a vessel as molten lead pours out in a bright glowing stream toward the gaping maw, photoreal cinematic Bellerophon athletic, hero, in armor, cloak, carrying sword, golden bridle, wreathed in golden glow then the hero lunges and tips the vessel forward, then the molten lead pours in a bright stream the camera push-in settling into the stream arcs into the beast's open mouth, light flaring on contact with steel rings, a low radiant hum continuity held: Molten lead object; hero hand identity; fire palette from S33",
+          "image_prompt_start": "photoreal cinematic: Insert macro of the hero's hand tipping a vessel as molten lead pours out in a bright glowing stream toward the gaping maw, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The stream arcs into the beast's open mouth, light flaring on contact.",
+          "video_prompt_start": "The hero lunges and tips the vessel forward. the molten lead pours in a bright stream. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Molten lead object; hero hand identity; fire palette from S33.",
+          "video_prompt_end": "The hero lunges and tips the vessel forward. the molten lead pours in a bright stream. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Molten lead object; hero hand identity; fire palette from S33.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S35",
+          "shot_type": "BOSS-ONLY",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "chimera_B1_sheet"
+          ],
+          "ref_scope": "image1: Chimera sheet — seizing as the lead hardens",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "chimera design",
+            "hardening light",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the beast convulses mid-air as the metal takes hold"
+            ],
+            [
+              1.5,
+              3.5,
+              "its flames gutter and die, the great form stiffening"
+            ]
+          ],
+          "narration_mk": "Металот за миг се стврдна — и чудовиштето замолкна.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of the Chimera convulsing mid-air as molten lead hardens inside it, its flames guttering out, photoreal cinematic, 1216x704",
+          "kf_last": "The great form stiffens, ember light dying along its hide",
+          "continuity": "Chimera design; dying-fire palette from S34",
+          "motion": "convulsion then stiffening; flame guttering out",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of the Chimera convulsing mid-air as molten lead hardens inside it, its flames guttering out, photoreal cinematic then the beast convulses mid-air as the metal takes hold, then its flames gutter and die, the great form stiffening the camera static settling into the great form stiffens, ember light dying along its hide continuity held: Chimera design; dying-fire palette from S34",
+          "image_prompt_start": "photoreal cinematic: wide of the Chimera convulsing mid-air as molten lead hardens inside it, its flames guttering out, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The great form stiffens, ember light dying along its hide.",
+          "video_prompt_start": "The beast convulses mid-air as the metal takes hold. its flames gutter and die, the great form stiffening. The camera static. The action plays out at full force and lands in a held, readable end pose. Continuity held: Chimera design; dying-fire palette from S34.",
+          "video_prompt_end": "The beast convulses mid-air as the metal takes hold. its flames gutter and die, the great form stiffening. The camera static. The action plays out at full force and lands in a held, readable end pose. Continuity held: Chimera design; dying-fire palette from S34.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S36",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "chimera_B1_sheet"
+          ],
+          "ref_scope": "image1: Chimera sheet — hardened lead within the mouth",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "chimera design",
+            "hardened metal",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "within the closing maw, the molten metal cools"
+            ],
+            [
+              1.5,
+              3.0,
+              "it sets into solid grey, sealing the fire away"
+            ]
+          ],
+          "narration_mk": "Оловото се зацврсти и го згасна огнот одвнатре.",
+          "dialogue_mk": "",
+          "kf_first": "Insert macro of molten lead cooling and hardening within the Chimera's closing mouth, setting into solid grey, photoreal cinematic, 1216x704",
+          "kf_last": "The hardened metal gleams dully, sealing the fire away",
+          "continuity": "Chimera maw; hardened-lead object from S35",
+          "motion": "macro push-in; cooling and setting",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: insert macro of molten lead cooling and hardening within the Chimera's closing mouth, setting into solid grey, photoreal cinematic then within the closing maw, the molten metal cools, then it sets into solid grey, sealing the fire away the camera push-in settling into the hardened metal gleams dully, sealing the fire away continuity held: Chimera maw; hardened-lead object from S35",
+          "image_prompt_start": "photoreal cinematic: Insert macro of molten lead cooling and hardening within the Chimera's closing mouth, setting into solid grey, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The hardened metal gleams dully, sealing the fire away.",
+          "video_prompt_start": "Within the closing maw, the molten metal cools. it sets into solid grey, sealing the fire away. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Chimera maw; hardened-lead object from S35.",
+          "video_prompt_end": "Within the closing maw, the molten metal cools. it sets into solid grey, sealing the fire away. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Chimera maw; hardened-lead object from S35.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S37",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "chimera_B1_sheet"
+          ],
+          "ref_scope": "image1: Chimera sheet — falling defeated",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "chimera design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "the defeated beast plummets from the sky, limp and dark"
+            ],
+            [
+              2.0,
+              3.5,
+              "it crashes onto the rocky slope far below"
+            ]
+          ],
+          "narration_mk": "И така, чудовиштето од кое сите бегаа — падна.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of the defeated Chimera plummeting from the sky, limp and dark, toward the rocky slope far below, photoreal cinematic, 1216x704",
+          "kf_last": "Crane-down as the great form settles still on the stones",
+          "continuity": "Chimera design; cold dusk palette from S36",
+          "motion": "crane-down follow of the fall; final settling",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of the defeated Chimera plummeting from the sky, limp and dark, toward the rocky slope far below, photoreal cinematic then the defeated beast plummets from the sky, limp and dark, then it crashes onto the rocky slope far below the camera crane-down settling into crane-down as the great form settles still on the stones continuity held: Chimera design; cold dusk palette from S36",
+          "image_prompt_start": "photoreal cinematic: wide of the defeated Chimera plummeting from the sky, limp and dark, toward the rocky slope far below, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: as the great form still on the stones.",
+          "video_prompt_start": "The defeated beast plummets from the sky, limp and dark. it crashes onto the rocky slope far below. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Chimera design; cold dusk palette from S36.",
+          "video_prompt_end": "The defeated beast plummets from the sky, limp and dark. it crashes onto the rocky slope far below. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Chimera design; cold dusk palette from S36.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S38",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "pull-back",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "bellerophon_A1_fused",
+            "pegasus_A2_fused"
+          ],
+          "ref_scope": "image1: Bellerophon fused master; image2: Pegasus fused master — victorious above",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "pegasus design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the hero levels out, drawing a deep breath"
+            ],
+            [
+              1.5,
+              3.5,
+              "he glances back at the fallen beast, then to the horizon"
+            ]
+          ],
+          "narration_mk": "Горе остана само победникот и неговиот неразделен пријател.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the hero leveling out on the winged horse, drawing a deep breath as smoke trails behind, photoreal cinematic, 1216x704",
+          "kf_last": "Pull-back as he glances at the fallen beast, then turns toward the horizon",
+          "continuity": "Bellerophon and Pegasus identities; victory sky palette from S37",
+          "motion": "slow pull-back; breath and horizon turn",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the hero leveling out on the winged horse, drawing a deep breath as smoke trails behind, photoreal cinematic Bellerophon athletic, hero, in armor, cloak, carrying sword, golden bridle, wreathed in golden glow Pegasus equine, steed, in wings, mane, carrying golden bridle, wreathed in lightning aura, holy aura then the hero levels out, drawing a deep breath, then he glances back at the fallen beast, then to the horizon the camera pull-back settling into pull-back as he glances at the fallen beast, then turns toward the horizon with steel rings, a low radiant hum continuity held: Bellerophon and Pegasus identities; victory sky palette from S37",
+          "image_prompt_start": "photoreal cinematic: of the hero leveling out on the winged horse, drawing a deep breath as smoke trails behind, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: as he glances at the fallen beast, then toward the horizon.",
+          "video_prompt_start": "The hero levels out, drawing a deep breath. he glances back at the fallen beast, then to the horizon. The camera pull-back. The beat resolves into the next matching frame. Continuity held: Bellerophon and Pegasus identities; victory sky palette from S37.",
+          "video_prompt_end": "The hero levels out, drawing a deep breath. he glances back at the fallen beast, then to the horizon. The camera pull-back. The beat resolves into the next matching frame. Continuity held: Bellerophon and Pegasus identities; victory sky palette from S37.",
+          "motion_intensity": "moderate"
+        }
+      ]
+    },
+    {
+      "id": "act3",
+      "num": "Act III",
+      "title": "Простувањето и новиот пат",
+      "color": "#a78bfa",
+      "pct": 20,
+      "synopsis": "Белерофон се враќа во Тиринт како победник. Кралот Прет го пречекува со почит и простува. Белерофон и Пегаз остануваат заедно, подготвени за многу нови авантури.",
+      "location_ref": "palace_mountain_sky",
+      "global_locks": [
+        "palette — dawn rose and victory gold",
+        "light — warm dawn returning to the citadel",
+        "lens — wide and medium emphasis for homecoming"
+      ],
+      "palette": [
+        "#a78bfa",
+        "#f5c06b",
+        "#2dd4bf"
+      ],
+      "light_direction": "key light from screen-left, warm dawn over the citadel",
+      "time_of_day": "dawn",
+      "shots": [
+        {
+          "id": "S39",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "pan-right",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "chimera_B1_sheet"
+          ],
+          "ref_scope": "image1: Chimera sheet — still on the rocky slope at dawn",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "chimera design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "dawn light falls over the rocky slope"
+            ],
+            [
+              1.5,
+              3.5,
+              "the still form of the beast rests among the stones"
+            ]
+          ],
+          "narration_mk": "Утрото ја покри планината со мирна, розова светлина.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of dawn light falling over a rocky mountain slope, the still form of the Chimera resting among the stones, photoreal cinematic, 1216x704",
+          "kf_last": "Pan-right as the horizon glows with the new day",
+          "continuity": "Chimera design; dawn palette from S38",
+          "motion": "slow pan-right; dawn light warming the slope",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of dawn light falling over a rocky mountain slope, the still form of the Chimera resting among the stones, photoreal cinematic then dawn light falls over the rocky slope, then the still form of the beast rests among the stones the camera pan-right settling into pan-right as the horizon glows with the new day continuity held: Chimera design; dawn palette from S38",
+          "image_prompt_start": "photoreal cinematic: wide of dawn light falling over a rocky mountain slope, the still form of the Chimera resting among the stones, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: -right as the horizon glows with the new day.",
+          "video_prompt_start": "Dawn light falls over the rocky slope. the still form of the beast rests among the stones. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Chimera design; dawn palette from S38.",
+          "video_prompt_end": "Dawn light falls over the rocky slope. the still form of the beast rests among the stones. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Chimera design; dawn palette from S38.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S40",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "bellerophon_A1_fused",
+            "pegasus_A2_fused"
+          ],
+          "ref_scope": "image1: Bellerophon fused master; image2: Pegasus fused master — landing at the citadel",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "pegasus design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the hero and winged horse touch down in the stone courtyard"
+            ],
+            [
+              1.5,
+              3.0,
+              "Pegasus folds its wings as dawn dust settles"
+            ]
+          ],
+          "narration_mk": "Со полно сонце, Белерофон слета пред ѕидовите на Тиринт.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the hero and winged horse touching down in a stone courtyard at dawn, wings folding as dust settles, photoreal cinematic, 1216x704",
+          "kf_last": "They stand still, the hero lifting his head with quiet pride",
+          "continuity": "Bellerophon and Pegasus identities; courtyard dawn palette",
+          "motion": "landing and wing-fold; dust settling",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the hero and winged horse touching down in a stone courtyard at dawn, wings folding as dust settles, photoreal cinematic Bellerophon athletic, hero, in armor, cloak, carrying sword, golden bridle, wreathed in golden glow Pegasus equine, steed, in wings, mane, carrying golden bridle, wreathed in lightning aura, holy aura then the hero and winged horse touch down in the stone courtyard, then Pegasus folds its wings as dawn dust settles the camera static settling into they stand still, the hero lifting his head with quiet pride with steel rings, a low radiant hum continuity held: Bellerophon and Pegasus identities; courtyard dawn palette",
+          "image_prompt_start": "photoreal cinematic: of the hero and winged horse touching down in a stone courtyard at dawn, wings folding as dust , photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: They stand still, the hero lifting his head with quiet pride.",
+          "video_prompt_start": "The hero and winged horse touch down in the stone courtyard. Pegasus folds its wings as dawn dust settles. The camera static. The beat resolves into the next matching frame. Continuity held: Bellerophon and Pegasus identities; courtyard dawn palette.",
+          "video_prompt_end": "The hero and winged horse touch down in the stone courtyard. Pegasus folds its wings as dawn dust settles. The camera static. The beat resolves into the next matching frame. Continuity held: Bellerophon and Pegasus identities; courtyard dawn palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S41",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "bellerophon_A1_fused"
+          ],
+          "ref_scope": "image1: Bellerophon fused master face card — tired triumph",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "his face carries weariness and quiet triumph"
+            ],
+            [
+              1.5,
+              3.0,
+              "a calm, earned smile settles there"
+            ]
+          ],
+          "narration_mk": "Во неговите очи се мешаа умор и заслужена гордост.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the hero's face carrying weariness and quiet triumph, a calm earned smile settling, dawn light, photoreal cinematic, 1216x704",
+          "kf_last": "The smile softens into peace as he regards the palace",
+          "continuity": "Bellerophon face identity; dawn palette from S40",
+          "motion": "slow push-in; earned smile settling",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the hero's face carrying weariness and quiet triumph, a calm earned smile settling, dawn light, photoreal cinematic Bellerophon athletic, hero, in armor, cloak, carrying sword, golden bridle, wreathed in golden glow then his face carries weariness and quiet triumph, then a calm, earned smile settles there the camera push-in settling into the smile softens into peace as he regards the palace with steel rings, a low radiant hum continuity held: Bellerophon face identity; dawn palette from S40",
+          "image_prompt_start": "photoreal cinematic: of the hero's face carrying weariness and quiet triumph, a calm earned smile settling, dawn light, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The smile softens into peace as he regards the palace.",
+          "video_prompt_start": "His face carries weariness and quiet triumph. a calm, earned smile settles there. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Bellerophon face identity; dawn palette from S40.",
+          "video_prompt_end": "His face carries weariness and quiet triumph. a calm, earned smile settles there. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Bellerophon face identity; dawn palette from S40.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S42",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "bellerophon_A1_fused",
+            "proetus_A3_fused"
+          ],
+          "ref_scope": "image1: Bellerophon fused master; image2: king Proetus fused master — the return",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the hero walks into the torchlit megaron"
+            ],
+            [
+              1.5,
+              3.5,
+              "the king rises from his throne, astonishment on his face"
+            ]
+          ],
+          "narration_mk": "Пред кралот, стоеше жив — доказ дека постои и невозможен пат.",
+          "dialogue_mk": "",
+          "kf_first": "Wide track of the hero walking into the torchlit megaron as the king rises from his throne in astonishment, photoreal cinematic, 1216x704",
+          "kf_last": "The two face each other across the hearthlight",
+          "continuity": "Bellerophon and king identities; megaron palette from S41",
+          "motion": "lateral track of the walk; king rising",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide track of the hero walking into the torchlit megaron as the king rises from his throne in astonishment, photoreal cinematic Bellerophon athletic, hero, in armor, cloak, carrying sword, golden bridle, wreathed in golden glow then the hero walks into the torchlit megaron, then the king rises from his throne, astonishment on his face the camera track settling into the two face each other across the hearthlight with steel rings, a low radiant hum continuity held: Bellerophon and king identities; megaron palette from S41",
+          "image_prompt_start": "photoreal cinematic: of the hero walking into the torchlit megaron as the king from his throne in astonishment, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The two face each other across the hearthlight.",
+          "video_prompt_start": "The hero walks into the torchlit megaron. the king rises from his throne, astonishment on his face. The camera track. The beat resolves into the next matching frame. Continuity held: Bellerophon and king identities; megaron palette from S41.",
+          "video_prompt_end": "The hero walks into the torchlit megaron. the king rises from his throne, astonishment on his face. The camera track. The beat resolves into the next matching frame. Continuity held: Bellerophon and king identities; megaron palette from S41.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S43",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "proetus_A3_fused"
+          ],
+          "ref_scope": "image1: king Proetus fused master — granting forgiveness",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the king's sternness softens into respect"
+            ],
+            [
+              1.5,
+              3.5,
+              "he extends an open hand in welcome"
+            ]
+          ],
+          "narration_mk": "Гневот во палатата се стопи како мраз на сонце.",
+          "dialogue_mk": "Прет: „Сè е простено. Ти донесе победа на нашиот град.“",
+          "kf_first": "Medium of the king's sternness softening into respect as he extends an open hand in welcome, photoreal cinematic, 1216x704",
+          "kf_last": "The gesture hangs open, a quiet offer of peace",
+          "continuity": "King identity; warm megaron light from S42",
+          "motion": "near-static hold; hand extending",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the king's sternness softening into respect as he extends an open hand in welcome, photoreal cinematic then the king's sternness softens into respect, then he extends an open hand in welcome the camera static settling into the gesture hangs open, a quiet offer of peace a voice speaks in Macedonian: \"Прет: „Сè е простено. Ти донесе победа на нашиот град.“\" continuity held: King identity; warm megaron light from S42",
+          "image_prompt_start": "photoreal cinematic: of the king's sternness softening into respect as he extends an open hand in welcome, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The gesture hangs open, a quiet offer of peace.",
+          "video_prompt_start": "The king's sternness softens into respect. he extends an open hand in welcome. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Прет: „Сè е простено. Ти донесе победа на нашиот град.“\" Continuity held: King identity; warm megaron light from S42.",
+          "video_prompt_end": "The king's sternness softens into respect. he extends an open hand in welcome. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Прет: „Сè е простено. Ти донесе победа на нашиот град.“\" Continuity held: King identity; warm megaron light from S42.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S44",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "proetus_A3_fused"
+          ],
+          "ref_scope": "image1: king Proetus fused master face card — forgiveness",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the king's eyes warm with genuine gratitude"
+            ],
+            [
+              1.5,
+              3.0,
+              "a faint, honest smile touches his mouth"
+            ]
+          ],
+          "narration_mk": "Никогаш порано не погледнал така — со благодарност.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the king's face, eyes warming with genuine gratitude, a faint honest smile, photoreal cinematic, 1216x704",
+          "kf_last": "The smile lingers as he lowers his head slightly in honor",
+          "continuity": "King face identity; warm light from S43",
+          "motion": "near-static hold; warming expression",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the king's face, eyes warming with genuine gratitude, a faint honest smile, photoreal cinematic then the king's eyes warm with genuine gratitude, then a faint, honest smile touches his mouth the camera static settling into the smile lingers as he lowers his head slightly in honor continuity held: King face identity; warm light from S43",
+          "image_prompt_start": "photoreal cinematic: of the king's face, eyes warming with genuine gratitude, a faint honest smile, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The smile lingers as he lowers his head slightly in honor.",
+          "video_prompt_start": "The king's eyes warm with genuine gratitude. a faint, honest smile touches his mouth. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: King face identity; warm light from S43.",
+          "video_prompt_end": "The king's eyes warm with genuine gratitude. a faint, honest smile touches his mouth. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: King face identity; warm light from S43.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S45",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "bellerophon_A1_fused"
+          ],
+          "ref_scope": "image1: Bellerophon fused master — bowing in grace",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the hero bows his head in measured respect"
+            ],
+            [
+              1.5,
+              3.0,
+              "he lifts his gaze, steady and calm"
+            ]
+          ],
+          "narration_mk": "Белерофон се поклони — не од потчинетост, туку од мир.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the hero bowing his head in measured respect, then lifting a steady calm gaze, photoreal cinematic, 1216x704",
+          "kf_last": "He straightens, unburdened at last",
+          "continuity": "Bellerophon identity; megaron light from S44",
+          "motion": "near-static hold; bow and straighten",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the hero bowing his head in measured respect, then lifting a steady calm gaze, photoreal cinematic Bellerophon athletic, hero, in armor, cloak, carrying sword, golden bridle, wreathed in golden glow then the hero bows his head in measured respect, then he lifts his gaze, steady and calm the camera static settling into he straightens, unburdened at last with steel rings, a low radiant hum continuity held: Bellerophon identity; megaron light from S44",
+          "image_prompt_start": "photoreal cinematic: of the hero bowing his head in measured respect, then lifting a steady calm gaze, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: He straightens, unburdened at last.",
+          "video_prompt_start": "The hero bows his head in measured respect. he lifts his gaze, steady and calm. The camera static. The beat resolves into the next matching frame. Continuity held: Bellerophon identity; megaron light from S44.",
+          "video_prompt_end": "The hero bows his head in measured respect. he lifts his gaze, steady and calm. The camera static. The beat resolves into the next matching frame. Continuity held: Bellerophon identity; megaron light from S44.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S46",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "bellerophon_A1_fused",
+            "proetus_A3_fused"
+          ],
+          "ref_scope": "image1: Bellerophon fused master; image2: king Proetus fused master — shared blessing",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "king and hero stand side by side before the hearth"
+            ],
+            [
+              1.5,
+              3.5,
+              "the court gathers around them in quiet honor"
+            ]
+          ],
+          "narration_mk": "Палатата, некогаш студена, сега светеше од помиреност.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of the king and hero standing side by side before the great hearth as the court gathers in quiet honor, photoreal cinematic, 1216x704",
+          "kf_last": "Crane-up as the hall fills with warm, reconciled light",
+          "continuity": "Bellerophon and king identities; hearth palette from S45",
+          "motion": "slow crane-up; warm light flooding the hall",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of the king and hero standing side by side before the great hearth as the court gathers in quiet honor, photoreal cinematic Bellerophon athletic, hero, in armor, cloak, carrying sword, golden bridle, wreathed in golden glow then king and hero stand side by side before the hearth, then the court gathers around them in quiet honor the camera crane-up settling into crane-up as the hall fills with warm, reconciled light with steel rings, a low radiant hum continuity held: Bellerophon and king identities; hearth palette from S45",
+          "image_prompt_start": "photoreal cinematic: wide of the king and hero standing side by side before the great hearth as the court gathers in quiet honor, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: as the hall fills with warm, reconciled light.",
+          "video_prompt_start": "King and hero stand side by side before the hearth. the court gathers around them in quiet honor. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Bellerophon and king identities; hearth palette from S45.",
+          "video_prompt_end": "King and hero stand side by side before the hearth. the court gathers around them in quiet honor. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Bellerophon and king identities; hearth palette from S45.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S47",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "bellerophon_A1_fused",
+            "pegasus_A2_fused"
+          ],
+          "ref_scope": "image1: Bellerophon fused master; image2: Pegasus fused master — together again",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "pegasus design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "in the courtyard, the hero reunites with Pegasus"
+            ],
+            [
+              1.5,
+              3.5,
+              "he rests a hand on the warm, winged neck"
+            ]
+          ],
+          "narration_mk": "А надвор, го чекаше неговиот крилест пријател.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the hero reuniting with the white winged horse in the courtyard, resting a hand on its warm neck, photoreal cinematic, 1216x704",
+          "kf_last": "Push-in on the bond between them, man and steed in soft dawn",
+          "continuity": "Bellerophon and Pegasus identities; courtyard dawn from S46",
+          "motion": "slow push-in; hand on neck and soft nudge",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the hero reuniting with the white winged horse in the courtyard, resting a hand on its warm neck, photoreal cinematic Bellerophon athletic, hero, in armor, cloak, carrying sword, golden bridle, wreathed in golden glow Pegasus equine, steed, in wings, mane, carrying golden bridle, wreathed in lightning aura, holy aura then in the courtyard, the hero reunites with Pegasus, then he rests a hand on the warm, winged neck the camera push-in settling into push-in on the bond between them, man and steed in soft dawn with steel rings, a low radiant hum continuity held: Bellerophon and Pegasus identities; courtyard dawn from S46",
+          "image_prompt_start": "photoreal cinematic: of the hero reuniting with the white winged horse in the courtyard, resting a hand on its warm neck, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: on the bond between them, man and steed in soft dawn.",
+          "video_prompt_start": "In the courtyard, the hero reunites with Pegasus. he rests a hand on the warm, winged neck. The camera push-in. The beat resolves into the next matching frame. Continuity held: Bellerophon and Pegasus identities; courtyard dawn from S46.",
+          "video_prompt_end": "In the courtyard, the hero reunites with Pegasus. he rests a hand on the warm, winged neck. The camera push-in. The beat resolves into the next matching frame. Continuity held: Bellerophon and Pegasus identities; courtyard dawn from S46.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S48",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "pull-back",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "bellerophon_A1_fused",
+            "pegasus_A2_fused"
+          ],
+          "ref_scope": "image1: Bellerophon fused master; image2: Pegasus fused master — riding toward new adventures",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "pegasus design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "man and steed rise into the brightening sky"
+            ],
+            [
+              2.0,
+              4.0,
+              "they fly toward a wide, open horizon of new adventures"
+            ]
+          ],
+          "narration_mk": "И заедно, полетаа кон уште многу нови авантури.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of the hero and white winged horse rising into a brightening dawn sky, silhouettes against gold light, photoreal cinematic, 1216x704",
+          "kf_last": "Pull-back as they shrink toward a wide open horizon, the tale closing",
+          "continuity": "Bellerophon and Pegasus identities; closing dawn palette",
+          "motion": "slow pull-back; ascent and horizon open",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of the hero and white winged horse rising into a brightening dawn sky, silhouettes against gold light, photoreal cinematic Bellerophon athletic, hero, in armor, cloak, carrying sword, golden bridle, wreathed in golden glow Pegasus equine, steed, in wings, mane, carrying golden bridle, wreathed in lightning aura, holy aura then man and steed rise into the brightening sky, then they fly toward a wide, open horizon of new adventures the camera pull-back settling into pull-back as they shrink toward a wide open horizon, the tale closing with steel rings, a low radiant hum continuity held: Bellerophon and Pegasus identities; closing dawn palette",
+          "image_prompt_start": "photoreal cinematic: wide of the hero and white winged horse rising into a brightening dawn sky, silhouettes against gold light, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: as they shrink toward a wide open horizon, the tale closing.",
+          "video_prompt_start": "Man and steed rise into the brightening sky. they fly toward a wide, open horizon of new adventures. The camera pull-back. The beat resolves into the next matching frame. Continuity held: Bellerophon and Pegasus identities; closing dawn palette.",
+          "video_prompt_end": "Man and steed rise into the brightening sky. they fly toward a wide, open horizon of new adventures. The camera pull-back. The beat resolves into the next matching frame. Continuity held: Bellerophon and Pegasus identities; closing dawn palette.",
+          "motion_intensity": "moderate"
+        }
+      ]
+    }
+  ],
+  "director_corrections": {
+    "issued": "2026-11-07",
+    "source": "KB §13 DIRECTOR CORRECTIONS — overrides all prior asset/keyframe guidance",
+    "rules": [
+      "DD HEADWEAR: no cap/hood/bandana/mask on head; hood = back-cowl only (cape-like); bare head + teal-blue glowing hair always visible; any head/face covering = REJECT",
+      "LEGENDARY WEAPONS MUST APPEAR: DD = twin Frostbite-class hand crossbows (ice-blue arcane crystal limbs, frost runes, frozen-light string, teal-blue glow); AZ = Dawnbreaker-class greatsword (pale sunsteel, molten-gold runes, golden holy fire edge, sunburst crossguard); hero sheet/keyframe without weapon = INCOMPLETE",
+      "WEAPON ANTI-SLOP: fantasy construction only; crossbow must NEVER read as firearm (no barrel/magazine/stock/Uzi/SMG silhouette = REJECT); anti-slop negatives always appended",
+      "BOSS FACE: Mal'garot HAS a prolific molten-lava face (lava dripping/running, drops falling to ground); faceless boss sheets SUPERSEDED",
+      "LOCATION BRIGHTNESS FLOOR: environment plates silhouette-readable at thumbnail; no murk-dark grades"
+    ],
+    "applies_when": "Activates when face_lock changes from AI-default to an enrolled identity (DD/AZ). AI-default packages carry this as a forward constraint, not a current defect.",
+    "anti_slop_negatives": "firearm, gun, machinegun, Uzi, barrel, magazine, ammo clip, muzzle, modern weapon"
+  },
+  "character_designs": {
+    "bellerophon": {
+      "archetype": "hero",
+      "build": "athletic",
+      "scale": "human",
+      "palette": {
+        "primary": "#1e3a8a",
+        "secondary": "#b45309",
+        "glow": "#fbbf24"
+      },
+      "costume": [
+        "armor",
+        "cloak"
+      ],
+      "props": [
+        "sword",
+        "golden_bridle"
+      ],
+      "fx": [
+        "golden_glow"
+      ]
+    },
+    "pegasus": {
+      "archetype": "steed",
+      "build": "equine",
+      "scale": "large",
+      "palette": {
+        "primary": "#f8fafc",
+        "secondary": "#d4af37",
+        "glow": "#7dd3fc"
+      },
+      "costume": [
+        "wings",
+        "mane"
+      ],
+      "props": [
+        "golden_bridle"
+      ],
+      "fx": [
+        "lightning_aura",
+        "holy_aura"
+      ]
+    },
+    "chimera": {
+      "archetype": "monster",
+      "build": "hulking",
+      "scale": "huge",
+      "palette": {
+        "primary": "#7f1d1d",
+        "secondary": "#4d7c0f",
+        "glow": "#f97316"
+      },
+      "costume": [
+        "scales",
+        "mane",
+        "horns"
+      ],
+      "props": [],
+      "fx": [
+        "fire_breath",
+        "shadow_smoke"
+      ]
+    },
+    "king_proetus": {
+      "archetype": "monarch",
+      "build": "robed",
+      "scale": "human",
+      "palette": {
+        "primary": "#7c2d12",
+        "secondary": "#1e3a8a",
+        "glow": "#fbbf24"
+      },
+      "costume": [
+        "crown",
+        "royal_robes",
+        "beard"
+      ],
+      "props": [],
+      "fx": []
+    }
+  }
+}

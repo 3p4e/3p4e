@@ -117,6 +117,32 @@
   <div class="grid" id="stats"></div>
 
   <section>
+    <div class="sec-title"><h2>Pipeline standard — 43 model-agnostic · two-prompt</h2></div>
+    <div class="card">
+      <div class="label">Two-prompt model (3a image-gen + 3b video-gen)</div>
+      <div class="specs">
+        <span><b>3a</b> image-gen keyframe prompt — still (subject/pose/setting/lighting/camera/style, no motion verbs)</span>
+        <span><b>3b</b> video-gen continuation prompt — motion-first, continuation-not-scene-change, no endpoint frame</span>
+        <span><b>clip model</b> N-clip start-frame-only</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="label">Model routes — chosen per story at generation (43 §4)</div>
+      <table>
+        <thead><tr><th>Model</th><th>Input</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Wan2.1-FLF2V-14B-720P</td><td>start+end native (run START-ONLY)</td><td>WORKING — lead for 14B quality</td></tr>
+          <tr><td>Kandinsky 6.0 Lite/Pro</td><td>start-image-only</td><td>WORKING (Pro-distill untested at scale)</td></tr>
+          <tr><td>SkyReels-V3 R2V-14B</td><td>start-image-only</td><td>WORKING (fallback)</td></tr>
+          <tr><td>LTX-Video 2B v0.9.5</td><td>start-image-only</td><td>WORKING (small/fast, low ceiling)</td></tr>
+          <tr><td>Mochi-1</td><td>start-image-only</td><td>untested here</td></tr>
+          <tr><td>LTX-2.3 22B distilled</td><td>start-image-only</td><td>DEAD (nanobind native-crash, 42 note)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
     <div class="sec-title"><h2>Instances</h2><span class="sub" id="icount"></span></div>
     <div id="instances"></div>
   </section>

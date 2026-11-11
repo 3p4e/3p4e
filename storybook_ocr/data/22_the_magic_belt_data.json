@@ -1,0 +1,2610 @@
+{
+  "num": "22",
+  "title_mk": "Волшебниот појас",
+  "title_en": "The Magic Belt",
+  "genre": "Легенда · епска акција",
+  "logline": "Sir Gawain keeps a year-old vow and faces the Green Knight's three sword blows at the Green Chapel, winning honor and a magic green belt that becomes the emblem of Camelot.",
+  "spec": {
+    "aspect": "16:9",
+    "resolution": "1216x704",
+    "fps": 24,
+    "model": "model-agnostic (chosen at generation)",
+    "style": "photoreal",
+    "flf": true,
+    "language": "mk",
+    "shot_floor": 40,
+    "shot_max": 60,
+    "seed_policy": "fixed-per-shot (same seed → reproducible shot; re-roll per shot id)",
+    "style_anchor": [
+      "Diablo 2 cinematic",
+      "World of Warcraft cinematic",
+      "StarCraft cinematic"
+    ],
+    "negative_prompt": "deformed, extra limbs, morphing, watermark, text, static frame, blurry, low quality, cropped head, cut-off face",
+    "frames": 121,
+    "frames_fallback": 81,
+    "routes": [
+      {
+        "model": "Wan2.1-FLF2V-14B-720P",
+        "input": "start+end native (run START-ONLY)",
+        "status": "WORKING (lead for 14B quality)"
+      },
+      {
+        "model": "Kandinsky 6.0 Lite/Pro",
+        "input": "start-image-only",
+        "status": "WORKING (Pro-distill untested at scale)"
+      },
+      {
+        "model": "SkyReels-V3 R2V-14B",
+        "input": "start-image-only",
+        "status": "WORKING (fallback)"
+      },
+      {
+        "model": "LTX-Video 2B v0.9.5",
+        "input": "start-image-only",
+        "status": "WORKING (small/fast, low ceiling)"
+      },
+      {
+        "model": "Mochi-1",
+        "input": "start-image-only",
+        "status": "untested here"
+      },
+      {
+        "model": "LTX-2.3 22B distilled",
+        "input": "start-image-only",
+        "status": "DEAD (nanobind native-crash, 42 note)"
+      }
+    ],
+    "model_note": "Model chosen per story at generation (43 §4). Keyframes + continuation prompts are generator-agnostic; only the render command differs per model."
+  },
+  "cast": [
+    {
+      "role": "Сер Гавејн / Sir Gawain",
+      "trait": "Млад витез со темна коса и сребрен оклоп, ја носи зелената волшебна појасна лента околу струкот",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Господарот на замокот / The Lord of the Castle (The Green Knight)",
+      "trait": "Наметлив, исправен витез во зелена облека и темен оклоп, мирна но силна појава, носи долг меч",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Кралот Артур / King Arthur",
+      "trait": "Достоинствен крал со златна круна и пурпурна наметка, строг но добронамерен",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Витезите од Камелот / The Knights of Camelot",
+      "trait": "Благородни витези во сјајни оклопи со шарени наметки, средновековен двор",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    }
+  ],
+  "acts": [
+    {
+      "id": "act1",
+      "num": "Act I",
+      "title": "Патот кон предизвикот",
+      "color": "#2dd4bf",
+      "pct": 30,
+      "synopsis": "Сер Гавејн, една година по дадениот збор, патува низ маглив брешонски предел кон Зелената црква, со волшебниот зелен појас врзан околу струкот.",
+      "shots": [
+        {
+          "id": "S01",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "forest_env_A1_prop",
+            "chapel_env_A2_prop"
+          ],
+          "ref_scope": "image1: the misty grey-green Breton forest — 100% identical; studio bg/pose/light NOT used; image2: the ivy-strangled Green Chapel glowing with faint green light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "crane down over the misty forest toward the green light of the distant chapel"
+            ],
+            [
+              1.8,
+              3.5,
+              "settle just above the treetops as the chapel glow pulses in the fog"
+            ]
+          ],
+          "narration_mk": "Пред една година, сер Гавејн дал збор — и сега дошол денот да го исполни.",
+          "dialogue_mk": "",
+          "kf_first": "High wide crane-down over a misty Breton forest at grey dawn, a lone stone chapel glowing faintly green in a clearing far below, photoreal Diablo 2 cinematic grade, 1216x704",
+          "kf_last": "Crane settles just above the treetops, the chapel's green light pulsing like a heartbeat in the fog",
+          "continuity": "Establish misty grey-green palette and the remote Green Chapel motif for Act I",
+          "motion": "slow crane-down from sky to treetops",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high wide crane-down over a misty Breton forest at grey dawn, a lone stone chapel glowing faintly green in a clearing far below, photoreal Diablo 2 cinematic grade then crane down over the misty forest toward the green light of the distant chapel, then settle just above the treetops as the chapel glow pulses in the fog the camera crane-down settling into crane settles just above the treetops, the chapel's green light pulsing like a heartbeat in the fog with leaves rustle continuity held: Establish misty grey-green palette and the remote Green Chapel motif for Act I",
+          "image_prompt_start": "photoreal cinematic: High wide over a misty Breton forest at grey dawn, a lone stone chapel glowing faintly green in a clearing far below, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: Crane just above the treetops, the chapel's green light pulsing like a heartbeat in the fog.",
+          "video_prompt_start": "Crane down over the misty forest toward the green light of the distant chapel. settle just above the treetops as the chapel glow pulses in the fog. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Establish misty grey-green palette and the remote Green Chapel motif for Act I.",
+          "video_prompt_end": "Crane down over the misty forest toward the green light of the distant chapel. settle just above the treetops as the chapel glow pulses in the fog. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Establish misty grey-green palette and the remote Green Chapel motif for Act I.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S02",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "belt_B1_prop",
+            "forest_env_A1_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used; image2: the green magic belt with a shimmering emerald weave — 100% identical; studio bg/pose/light NOT used; image3: the misty grey-green Breton forest — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "track Gawain walking alone along the misty forest path"
+            ],
+            [
+              1.5,
+              3.0,
+              "the green belt sways as the fog parts around his shoulders"
+            ]
+          ],
+          "narration_mk": "Витезот чекорел сам низ маглата, со сопствена волја кон својата судбина.",
+          "dialogue_mk": "",
+          "kf_first": "Medium eye-level tracking a young knight in silver armor walking alone along a misty forest path, a vivid green sash cinched at his waist, photoreal",
+          "kf_last": "He strides forward, the green belt swaying gently, fog parting around his shoulders",
+          "continuity": "Introduce Gawain — dark hair, silver armor, green sash; grey-green palette from S01",
+          "motion": "steady forward track alongside the knight",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level tracking a young knight in silver armor walking alone along a misty forest path, a vivid green sash cinched at his waist, photoreal Gawain armored, warrior, in armor, carrying sword, wreathed in rune ring then track Gawain walking alone along the misty forest path, then the green belt sways as the fog parts around his shoulders settling into he strides forward, the green belt swaying gently, fog parting around his shoulders with steel rings, magic sizzles continuity held: Introduce Gawain — dark hair, silver armor, green sash; grey-green palette from S01",
+          "image_prompt_start": "photoreal cinematic: eye-level a young knight in silver armor walking alone along a misty forest path, a vivid green sash cinched at his waist, photoreal.",
+          "image_prompt_end": "photoreal cinematic: He strides forward, the green belt swaying gently, fog parting around his shoulders.",
+          "video_prompt_start": "Track Gawain walking alone along the misty forest path. the green belt sways as the fog parts around his shoulders. The beat resolves into the next matching frame. Continuity held: Introduce Gawain — dark hair, silver armor, green sash; grey-green palette from S01.",
+          "video_prompt_end": "Track Gawain walking alone along the misty forest path. the green belt sways as the fog parts around his shoulders. The beat resolves into the next matching frame. Continuity held: Introduce Gawain — dark hair, silver armor, green sash; grey-green palette from S01.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S03",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "gawain_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "push-in on Gawain's worried face beneath his steel helm"
+            ],
+            [
+              1.5,
+              3.0,
+              "resolve slowly overcomes the worry in his eyes"
+            ]
+          ],
+          "narration_mk": "Бил малку загрижен, но не покажувал страв.",
+          "dialogue_mk": "",
+          "kf_first": "Close eye-level on Gawain's worried face beneath his steel helm, brows drawn, breath misting in the cold air, photoreal",
+          "kf_last": "Push-in on his eyes as resolve slowly overcomes the worry",
+          "continuity": "Gawain face and silver helm from S02; cold mist breath",
+          "motion": "slow push-in on the eyes",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close eye-level on Gawain's worried face beneath his steel helm, brows drawn, breath misting in the cold air, photoreal Gawain armored, warrior, in armor, carrying sword, wreathed in rune ring then push-in on Gawain's worried face beneath his steel helm, then resolve slowly overcomes the worry in his eyes settling into push-in on his eyes as resolve slowly overcomes the worry with steel rings, magic sizzles continuity held: Gawain face and silver helm from S02; cold mist breath",
+          "image_prompt_start": "photoreal cinematic: eye-level on Gawain's worried face beneath his steel helm, brows drawn, breath misting in the cold air, photoreal.",
+          "image_prompt_end": "photoreal cinematic: on his eyes as resolve slowly overcomes the worry.",
+          "video_prompt_start": "Push-in on Gawain's worried face beneath his steel helm. resolve slowly overcomes the worry in his eyes. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Gawain face and silver helm from S02; cold mist breath.",
+          "video_prompt_end": "Push-in on Gawain's worried face beneath his steel helm. resolve slowly overcomes the worry in his eyes. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Gawain face and silver helm from S02; cold mist breath.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S04",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "belt_B1_prop"
+          ],
+          "ref_scope": "image1: the green magic belt with a shimmering emerald weave — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.2,
+              "macro of the green belt knotted tight at his waist"
+            ],
+            [
+              1.2,
+              2.5,
+              "a soft pulse of green light travels along the weave"
+            ]
+          ],
+          "narration_mk": "Околу струкот, цврсто врзан, го носел појасот кој го штитеше од секаква опасност.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of the green silk belt knotted tight at Gawain's waist, its weave shimmering with faint emerald light, photoreal macro detail",
+          "kf_last": "A soft pulse of green light travels along the belt's threads",
+          "continuity": "The green belt prop from S02; emerald glow establishes its magic",
+          "motion": "static with a faint light pulse along the weave",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of the green silk belt knotted tight at Gawain's waist, its weave shimmering with faint emerald light, photoreal macro detail then macro of the green belt knotted tight at his waist, then a soft pulse of green light travels along the weave the camera static settling into a soft pulse of green light travels along the belt's threads continuity held: The green belt prop from S02; emerald glow establishes its magic",
+          "image_prompt_start": "photoreal cinematic: Macro insert of the green silk belt knotted tight at Gawain's waist, its weave shimmering with faint emerald light, photoreal macro detail.",
+          "image_prompt_end": "photoreal cinematic: A soft pulse of green light travels along the belt's threads.",
+          "video_prompt_start": "Macro of the green belt knotted tight at his waist. a soft pulse of green light travels along the weave. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: The green belt prop from S02; emerald glow establishes its magic.",
+          "video_prompt_end": "Macro of the green belt knotted tight at his waist. a soft pulse of green light travels along the weave. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: The green belt prop from S02; emerald glow establishes its magic.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S05",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "pan-right",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "lord_A2_fused",
+            "axe_B4_prop",
+            "camelot_hall_env_A4_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Lord of the Castle, the Green Knight — an imposing knight in green cloth and dark bronze armor with a long sword — 100% identical; studio bg/pose/light NOT used; image2: the great axe slammed into the round table — 100% identical; studio bg/pose/light NOT used; image3: Camelot's great hall with banners and golden light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "low-angle flashback of the Green Knight slamming the axe into the round table"
+            ],
+            [
+              1.5,
+              3.0,
+              "pan right following the axe blade swinging down as the court reels"
+            ]
+          ],
+          "narration_mk": "Година порано, истиот противник му го донел овој предизвик.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium flashback of a towering green-clad knight slamming a great axe into a round table, splinters spraying in torchlight, photoreal",
+          "kf_last": "Pan follows the axe blade swinging down, the court reeling in shock",
+          "continuity": "Introduce the Green Knight silhouette in flashback; torchlit amber-green contrast",
+          "motion": "pan-right following the axe blow",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium flashback of a towering green-clad knight slamming a great axe into a round table, splinters spraying in torchlight, photoreal Lord armored, warrior, in hood, cloak, armor, carrying greatsword, wreathed in shadow smoke then low-angle flashback of the Green Knight slamming the axe into the round table, then pan right following the axe blade swinging down as the court reels the camera pan-right settling into pan follows the axe blade swinging down, the court reeling in shock with steel rings, shadows whisper continuity held: Introduce the Green Knight silhouette in flashback; torchlit amber-green contrast",
+          "image_prompt_start": "photoreal cinematic: medium flashback of a towering green-clad knight slamming a great axe into a round table, splinters spraying in torchlight, photoreal.",
+          "image_prompt_end": "photoreal cinematic: the axe blade swinging down, the court reeling in shock.",
+          "video_prompt_start": "Low-angle flashback of the Green Knight slamming the axe into the round table. pan right following the axe blade swinging down as the court reels. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Introduce the Green Knight silhouette in flashback; torchlit amber-green contrast.",
+          "video_prompt_end": "Low-angle flashback of the Green Knight slamming the axe into the round table. pan right following the axe blade swinging down as the court reels. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Introduce the Green Knight silhouette in flashback; torchlit amber-green contrast.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S06",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "chapel_env_A2_prop",
+            "forest_env_A1_prop"
+          ],
+          "ref_scope": "image1: the ivy-strangled Green Chapel glowing with faint green light — 100% identical; studio bg/pose/light NOT used; image2: the misty grey-green Breton forest — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "wide of the Green Chapel revealed through drifting fog"
+            ],
+            [
+              1.5,
+              3.0,
+              "fog rolls aside exposing the looming ivy-strangled facade"
+            ]
+          ],
+          "narration_mk": "Пред него, од маглата, изникна Зелената црква.",
+          "dialogue_mk": "",
+          "kf_first": "Wide eye-level of the Green Chapel revealed through drifting fog, ivy-strangled stone walls and a dark archway, green light seeping from within, photoreal",
+          "kf_last": "Fog rolls aside, fully exposing the chapel's looming facade",
+          "continuity": "Green Chapel from S01 now at ground level; same grey-green palette",
+          "motion": "static with fog parting reveal",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide eye-level of the Green Chapel revealed through drifting fog, ivy-strangled stone walls and a dark archway, green light seeping from within, photoreal then wide of the Green Chapel revealed through drifting fog, then fog rolls aside exposing the looming ivy-strangled facade the camera static settling into fog rolls aside, fully exposing the chapel's looming facade with leaves rustle continuity held: Green Chapel from S01 now at ground level; same grey-green palette",
+          "image_prompt_start": "photoreal cinematic: eye-level of the Green Chapel revealed through drifting fog, ivy-strangled stone walls and a dark archway, green light seeping from within, photoreal.",
+          "image_prompt_end": "photoreal cinematic: Fog rolls aside, fully exposing the chapel's looming facade.",
+          "video_prompt_start": "Wide of the Green Chapel revealed through drifting fog. fog rolls aside exposing the looming ivy-strangled facade. The camera static. The beat resolves into the next matching frame. Continuity held: Green Chapel from S01 now at ground level; same grey-green palette.",
+          "video_prompt_end": "Wide of the Green Chapel revealed through drifting fog. fog rolls aside exposing the looming ivy-strangled facade. The camera static. The beat resolves into the next matching frame. Continuity held: Green Chapel from S01 now at ground level; same grey-green palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S07",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "belt_B1_prop",
+            "chapel_env_A2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used; image2: the green magic belt with a shimmering emerald weave — 100% identical; studio bg/pose/light NOT used; image3: the ivy-strangled Green Chapel glowing with faint green light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "medium of Gawain approaching the chapel arch, hand on his sword hilt"
+            ],
+            [
+              1.5,
+              3.0,
+              "push-in toward the dark arch as he steps closer"
+            ]
+          ],
+          "narration_mk": "Гавејн забавил чекор, но не застанал.",
+          "dialogue_mk": "",
+          "kf_first": "Medium eye-level of Gawain approaching the chapel archway, hand resting on his sword hilt, the green belt bright against his armor, photoreal",
+          "kf_last": "Push-in toward the dark arch as he steps closer",
+          "continuity": "Gawain costume and belt continuity; chapel facade from S06",
+          "motion": "slow push-in toward the arch",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level of Gawain approaching the chapel archway, hand resting on his sword hilt, the green belt bright against his armor, photoreal Gawain armored, warrior, in armor, carrying sword, wreathed in rune ring then medium of Gawain approaching the chapel arch, hand on his sword hilt, then push-in toward the dark arch as he steps closer with steel rings, magic sizzles continuity held: Gawain costume and belt continuity; chapel facade from S06",
+          "image_prompt_start": "photoreal cinematic: eye-level of Gawain approaching the chapel archway, hand resting on his sword hilt, the green belt bright against his armor, photoreal.",
+          "image_prompt_end": "photoreal cinematic: toward the dark arch as he steps closer.",
+          "video_prompt_start": "Medium of Gawain approaching the chapel arch, hand on his sword hilt. push-in toward the dark arch as he steps closer. The beat resolves into the next matching frame. Continuity held: Gawain costume and belt continuity; chapel facade from S06.",
+          "video_prompt_end": "Medium of Gawain approaching the chapel arch, hand on his sword hilt. push-in toward the dark arch as he steps closer. The beat resolves into the next matching frame. Continuity held: Gawain costume and belt continuity; chapel facade from S06.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S08",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "over-shoulder",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "sword_B2_prop",
+            "chapel_env_A2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used; image2: Gawain's silver sword with a firm hilt — 100% identical; studio bg/pose/light NOT used; image3: the ivy-strangled Green Chapel glowing with faint green light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.2,
+              "over-shoulder close of his gauntleted hand tightening on the sword hilt"
+            ],
+            [
+              1.2,
+              2.5,
+              "knuckles whiten as his grip firms"
+            ]
+          ],
+          "narration_mk": "Прстите му се стегнаа врз балчакот на мечот.",
+          "dialogue_mk": "",
+          "kf_first": "Over-shoulder close of Gawain's gauntleted hand tightening on his sword hilt, the chapel arch looming beyond, mist curling, photoreal",
+          "kf_last": "Knuckles whiten as his grip firms, a slow exhale fogging the steel",
+          "continuity": "Gawain gauntlet and sword; over-shoulder angle toward chapel arch",
+          "motion": "static grip tightening",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: over-shoulder close of Gawain's gauntleted hand tightening on his sword hilt, the chapel arch looming beyond, mist curling, photoreal Gawain armored, warrior, in armor, carrying sword, wreathed in rune ring then over-shoulder close of his gauntleted hand tightening on the sword hilt, then knuckles whiten as his grip firms the camera static settling into knuckles whiten as his grip firms, a slow exhale fogging the steel with steel rings, magic sizzles continuity held: Gawain gauntlet and sword; over-shoulder angle toward chapel arch",
+          "image_prompt_start": "photoreal cinematic: Over-shoulder close of Gawain's gauntleted hand tightening on his sword hilt, the chapel arch looming beyond, mist curling, photoreal.",
+          "image_prompt_end": "photoreal cinematic: Knuckles whiten as his grip firms, a slow exhale fogging the steel.",
+          "video_prompt_start": "Over-shoulder close of his gauntleted hand tightening on the sword hilt. knuckles whiten as his grip firms. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Gawain gauntlet and sword; over-shoulder angle toward chapel arch.",
+          "video_prompt_end": "Over-shoulder close of his gauntleted hand tightening on the sword hilt. knuckles whiten as his grip firms. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Gawain gauntlet and sword; over-shoulder angle toward chapel arch.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S09",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "crane-up",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "chapel_env_A2_prop"
+          ],
+          "ref_scope": "image1: the ivy-strangled Green Chapel glowing with faint green light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "low-angle crane-up along the chapel's weathered stone front"
+            ],
+            [
+              1.5,
+              3.0,
+              "crane rises to reveal the jagged roofline against the grey sky"
+            ]
+          ],
+          "narration_mk": "Црквата била стара и немо сурова.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide crane-up along the chapel's weathered stone front, moss and ivy crawling over carved green veins, photoreal WoW cinematic grade",
+          "kf_last": "Crane rises to reveal the chapel's jagged roofline against a churning grey sky",
+          "continuity": "Chapel stonework from S06; low-angle reveals its scale",
+          "motion": "slow crane-up along the facade",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide crane-up along the chapel's weathered stone front, moss and ivy crawling over carved green veins, photoreal WoW cinematic grade then low-angle crane-up along the chapel's weathered stone front, then crane rises to reveal the jagged roofline against the grey sky settling into crane rises to reveal the chapel's jagged roofline against a churning grey sky continuity held: Chapel stonework from S06; low-angle reveals its scale",
+          "image_prompt_start": "photoreal cinematic: wide along the chapel's weathered stone front, moss and ivy crawling over carved green veins, photoreal WoW cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: Crane to reveal the chapel's jagged roofline against a churning grey sky.",
+          "video_prompt_start": "Low-angle crane-up along the chapel's weathered stone front. crane rises to reveal the jagged roofline against the grey sky. The beat resolves into the next matching frame. Continuity held: Chapel stonework from S06; low-angle reveals its scale.",
+          "video_prompt_end": "Low-angle crane-up along the chapel's weathered stone front. crane rises to reveal the jagged roofline against the grey sky. The beat resolves into the next matching frame. Continuity held: Chapel stonework from S06; low-angle reveals its scale.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S10",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "belt_B1_prop",
+            "clearing_env_A3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used; image2: the green magic belt with a shimmering emerald weave — 100% identical; studio bg/pose/light NOT used; image3: the misty clearing before the chapel bathed in green light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "track Gawain stepping into the misty clearing before the chapel"
+            ],
+            [
+              1.5,
+              3.0,
+              "he halts, shoulders squared, gaze lifted to the arch"
+            ]
+          ],
+          "narration_mk": "Тој влезе на празното зеленило пред вратата.",
+          "dialogue_mk": "",
+          "kf_first": "Medium eye-level of Gawain stepping into the misty clearing before the chapel, gravel crunching, green light washing over his armor, photoreal",
+          "kf_last": "He halts in the open space, shoulders squared, gaze lifted to the arch",
+          "continuity": "Gawain full figure; clearing green light carries from S06",
+          "motion": "forward track to a halt",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level of Gawain stepping into the misty clearing before the chapel, gravel crunching, green light washing over his armor, photoreal Gawain armored, warrior, in armor, carrying sword, wreathed in rune ring then track Gawain stepping into the misty clearing before the chapel, then he halts, shoulders squared, gaze lifted to the arch settling into he halts in the open space, shoulders squared, gaze lifted to the arch with steel rings, magic sizzles continuity held: Gawain full figure; clearing green light carries from S06",
+          "image_prompt_start": "photoreal cinematic: eye-level of Gawain stepping into the misty clearing before the chapel, gravel crunching, green light washing over his armor, photoreal.",
+          "image_prompt_end": "photoreal cinematic: He halts in the open space, shoulders squared, gaze lifted to the arch.",
+          "video_prompt_start": "Track Gawain stepping into the misty clearing before the chapel. he halts, shoulders squared, gaze lifted to the arch. The beat resolves into the next matching frame. Continuity held: Gawain full figure; clearing green light carries from S06.",
+          "video_prompt_end": "Track Gawain stepping into the misty clearing before the chapel. he halts, shoulders squared, gaze lifted to the arch. The beat resolves into the next matching frame. Continuity held: Gawain full figure; clearing green light carries from S06.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S11",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "gawain_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.2,
+              "close of Gawain's resolved face, green light flickering in his eyes"
+            ],
+            [
+              1.2,
+              2.5,
+              "his expression hardens into calm acceptance"
+            ]
+          ],
+          "narration_mk": "Лицето му беше решено.",
+          "dialogue_mk": "",
+          "kf_first": "Close eye-level of Gawain's resolved face, jaw set, green light flickering in his eyes, photoreal StarCraft cinematic intensity",
+          "kf_last": "His expression hardens into calm acceptance",
+          "continuity": "Gawain face from S03; green flicker ties to the chapel",
+          "motion": "static resolve",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close eye-level of Gawain's resolved face, jaw set, green light flickering in his eyes, photoreal StarCraft cinematic intensity Gawain armored, warrior, in armor, carrying sword, wreathed in rune ring then close of Gawain's resolved face, green light flickering in his eyes, then his expression hardens into calm acceptance the camera static with steel rings, magic sizzles continuity held: Gawain face from S03; green flicker ties to the chapel",
+          "image_prompt_start": "photoreal cinematic: eye-level of Gawain's resolved face, jaw set, green light flickering in his eyes, photoreal StarCraft cinematic intensity.",
+          "image_prompt_end": "photoreal cinematic: His expression hardens into calm acceptance.",
+          "video_prompt_start": "Close of Gawain's resolved face, green light flickering in his eyes. his expression hardens into calm acceptance. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Gawain face from S03; green flicker ties to the chapel.",
+          "video_prompt_end": "Close of Gawain's resolved face, green light flickering in his eyes. his expression hardens into calm acceptance. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Gawain face from S03; green flicker ties to the chapel.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S12",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-left",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "lord_A2_fused",
+            "chapel_env_A2_prop",
+            "clearing_env_A3_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Lord of the Castle, the Green Knight — an imposing knight in green cloth and dark bronze armor with a long sword — 100% identical; studio bg/pose/light NOT used; image2: the ivy-strangled Green Chapel glowing with faint green light — 100% identical; studio bg/pose/light NOT used; image3: the misty clearing before the chapel bathed in green light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "pan-left as the Lord of the Castle emerges from the dark arch"
+            ],
+            [
+              1.8,
+              3.5,
+              "he steps fully into the green light, shadow stretching toward Gawain"
+            ]
+          ],
+          "narration_mk": "Од внатрешноста на Зелената црква излезе господарот на замокот.",
+          "dialogue_mk": "",
+          "kf_first": "Wide eye-level pan-left as the Lord of the Castle emerges from the chapel's dark arch, green-clad and bronze-armored, mist swirling at his boots, photoreal",
+          "kf_last": "He steps fully into the green light, his shadow stretching toward Gawain",
+          "continuity": "Introduce the Lord — green cloth, dark bronze armor; chapel arch from S07",
+          "motion": "pan-left following his emergence",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide eye-level pan-left as the Lord of the Castle emerges from the chapel's dark arch, green-clad and bronze-armored, mist swirling at his boots, photoreal Lord armored, warrior, in hood, cloak, armor, carrying greatsword, wreathed in shadow smoke then pan-left as the Lord of the Castle emerges from the dark arch, then he steps fully into the green light, shadow stretching toward Gawain settling into he steps fully into the green light, his shadow stretching toward Gawain with steel rings, shadows whisper continuity held: Introduce the Lord — green cloth, dark bronze armor; chapel arch from S07",
+          "image_prompt_start": "photoreal cinematic: eye-level -left as the Lord of the Castle emerges from the chapel's dark arch, green-clad and bronze-armored, mist swirling at his boots, photoreal.",
+          "image_prompt_end": "photoreal cinematic: He steps fully into the green light, his shadow stretching toward Gawain.",
+          "video_prompt_start": "Pan-left as the Lord of the Castle emerges from the dark arch. he steps fully into the green light, shadow stretching toward Gawain. The beat resolves into the next matching frame. Continuity held: Introduce the Lord — green cloth, dark bronze armor; chapel arch from S07.",
+          "video_prompt_end": "Pan-left as the Lord of the Castle emerges from the dark arch. he steps fully into the green light, shadow stretching toward Gawain. The beat resolves into the next matching frame. Continuity held: Introduce the Lord — green cloth, dark bronze armor; chapel arch from S07.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S13",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "lord_A2_fused",
+            "lord_sword_B3_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Lord of the Castle, the Green Knight — an imposing knight in green cloth and dark bronze armor with a long sword — 100% identical; studio bg/pose/light NOT used; image2: the Green Knight's long sword glowing with cold green light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "low-angle push-in on the Green Knight's imposing figure"
+            ],
+            [
+              1.5,
+              3.0,
+              "push-in on his calm unreadable face beneath the hood"
+            ]
+          ],
+          "narration_mk": "Неговата појава беше мирна, а наметлива.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium push-in on the Green Knight's imposing figure, broad shoulders, long sword at his hip, green cloak rippling, photoreal",
+          "kf_last": "Push-in on his calm, unreadable face beneath the dark green hood",
+          "continuity": "Lord costume from S12; low-angle makes him taller",
+          "motion": "slow push-in on the face",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium push-in on the Green Knight's imposing figure, broad shoulders, long sword at his hip, green cloak rippling, photoreal Lord armored, warrior, in hood, cloak, armor, carrying greatsword, wreathed in shadow smoke then low-angle push-in on the Green Knight's imposing figure, then push-in on his calm unreadable face beneath the hood settling into push-in on his calm, unreadable face beneath the dark green hood with steel rings, shadows whisper continuity held: Lord costume from S12; low-angle makes him taller",
+          "image_prompt_start": "photoreal cinematic: medium on the Green Knight's imposing figure, broad shoulders, long sword at his hip, green cloak rippling, photoreal.",
+          "image_prompt_end": "photoreal cinematic: on his calm, unreadable face beneath the dark green hood.",
+          "video_prompt_start": "Low-angle push-in on the Green Knight's imposing figure. push-in on his calm unreadable face beneath the hood. The beat resolves into the next matching frame. Continuity held: Lord costume from S12; low-angle makes him taller.",
+          "video_prompt_end": "Low-angle push-in on the Green Knight's imposing figure. push-in on his calm unreadable face beneath the hood. The beat resolves into the next matching frame. Continuity held: Lord costume from S12; low-angle makes him taller.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S14",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "lord_A2_fused",
+            "clearing_env_A3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Lord of the Castle, the Green Knight — an imposing knight in green cloth and dark bronze armor with a long sword — 100% identical; studio bg/pose/light NOT used; image3: the misty clearing before the chapel bathed in green light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.2,
+              "close of the two knights facing each other across the clearing"
+            ],
+            [
+              1.2,
+              2.5,
+              "a long beat of stillness as green light bridges the gap"
+            ]
+          ],
+          "narration_mk": "Двајцата се соочија во тишина.",
+          "dialogue_mk": "",
+          "kf_first": "Close eye-level of the two knights facing each other across the clearing, Gawain tense and the Lord still, mist threading between them, photoreal",
+          "kf_last": "A long beat of stillness, green light bridging the gap between them",
+          "continuity": "Both leads in frame; green light continuity",
+          "motion": "static standoff",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close eye-level of the two knights facing each other across the clearing, Gawain tense and the Lord still, mist threading between them, photoreal Gawain armored, warrior, in armor, carrying sword, wreathed in rune ring Lord armored, warrior, in hood, cloak, armor, carrying greatsword, wreathed in shadow smoke then close of the two knights facing each other across the clearing, then a long beat of stillness as green light bridges the gap the camera static settling into a long beat of stillness, green light bridging the gap between them with steel rings, magic sizzles continuity held: Both leads in frame; green light continuity",
+          "image_prompt_start": "photoreal cinematic: eye-level of the two knights facing each other across the clearing, Gawain tense and the Lord still, mist threading between them, photoreal.",
+          "image_prompt_end": "photoreal cinematic: A long beat of stillness, green light bridging the gap between them.",
+          "video_prompt_start": "Close of the two knights facing each other across the clearing. a long beat of stillness as green light bridges the gap. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Both leads in frame; green light continuity.",
+          "video_prompt_end": "Close of the two knights facing each other across the clearing. a long beat of stillness as green light bridges the gap. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Both leads in frame; green light continuity.",
+          "motion_intensity": "gentle"
+        }
+      ],
+      "location_ref": "misty_breton_forest_and_green_chapel",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class",
+        "screen_dir"
+      ],
+      "palette": [
+        "#1e3a2f",
+        "#4a6b5d",
+        "#9fe0b0"
+      ],
+      "light_direction": "key light from screen-left, cool grey dawn with faint green light",
+      "time_of_day": "dawn"
+    },
+    {
+      "id": "act2",
+      "num": "Act II",
+      "title": "Трите замави",
+      "color": "#34d399",
+      "pct": 50,
+      "synopsis": "Пред Зелената црква господарот на замокот замавнува трипати со мечот; Гавејн поминува низ стравот, го добива зелениот појас како награда и му се открива смислата на предизвикот.",
+      "shots": [
+        {
+          "id": "S15",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "over-shoulder",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "lord_A2_fused",
+            "chapel_env_A2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Lord of the Castle, the Green Knight — an imposing knight in green cloth and dark bronze armor with a long sword — 100% identical; studio bg/pose/light NOT used; image3: the ivy-strangled Green Chapel glowing with faint green light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "over-shoulder of the Green Knight speaking, pointing at the ground"
+            ],
+            [
+              1.5,
+              3.0,
+              "his arm lowers, indicating where Gawain must kneel"
+            ]
+          ],
+          "narration_mk": "Господарот проговори со длабок глас.",
+          "dialogue_mk": "Господарот: \"Си го одржа зборот. Сега клекни и чекај го мојот меч!\"",
+          "kf_first": "Medium over-shoulder of the Green Knight speaking, pointing a gauntleted hand at Gawain, the chapel glowing behind, photoreal",
+          "kf_last": "His arm lowers, indicating the ground where Gawain must kneel",
+          "continuity": "Lord costume from S13; over Gawain's shoulder toward the Lord",
+          "motion": "static with the pointing gesture",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium over-shoulder of the Green Knight speaking, pointing a gauntleted hand at Gawain, the chapel glowing behind, photoreal Gawain armored, warrior, in armor, carrying sword, wreathed in rune ring Lord armored, warrior, in hood, cloak, armor, carrying greatsword, wreathed in shadow smoke then over-shoulder of the Green Knight speaking, pointing at the ground, then his arm lowers, indicating where Gawain must kneel the camera static settling into his arm lowers, indicating the ground where Gawain must kneel with steel rings, magic sizzles a voice speaks in Macedonian: \"Господарот: \"Си го одржа зборот. Сега клекни и чекај го мојот меч!\"\" continuity held: Lord costume from S13; over Gawain's shoulder toward the Lord",
+          "image_prompt_start": "photoreal cinematic: over-shoulder of the Green Knight speaking, pointing a gauntleted hand at Gawain, the chapel glowing behind, photoreal.",
+          "image_prompt_end": "photoreal cinematic: His arm lowers, indicating the ground where Gawain must kneel.",
+          "video_prompt_start": "Over-shoulder of the Green Knight speaking, pointing at the ground. his arm lowers, indicating where Gawain must kneel. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Господарот: \"Си го одржа зборот. Сега клекни и чекај го мојот меч!\"\" Continuity held: Lord costume from S13; over Gawain's shoulder toward the Lord.",
+          "video_prompt_end": "Over-shoulder of the Green Knight speaking, pointing at the ground. his arm lowers, indicating where Gawain must kneel. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Господарот: \"Си го одржа зборот. Сега клекни и чекај го мојот меч!\"\" Continuity held: Lord costume from S13; over Gawain's shoulder toward the Lord.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S16",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "gawain_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.2,
+              "push-in on Gawain's face as fear flickers across it"
+            ],
+            [
+              1.2,
+              2.5,
+              "his pupils widen, a muscle twitching in his jaw"
+            ]
+          ],
+          "narration_mk": "Гавејн почувствува студ.",
+          "dialogue_mk": "",
+          "kf_first": "Close eye-level push-in on Gawain's face as fear flickers across it, breath catching, green light in his eyes, photoreal",
+          "kf_last": "His pupils widen, a muscle in his jaw twitching",
+          "continuity": "Gawain face from S11; fear rising",
+          "motion": "slow push-in on the eyes",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close eye-level push-in on Gawain's face as fear flickers across it, breath catching, green light in his eyes, photoreal Gawain armored, warrior, in armor, carrying sword, wreathed in rune ring then push-in on Gawain's face as fear flickers across it, then his pupils widen, a muscle twitching in his jaw settling into his pupils widen, a muscle in his jaw twitching with steel rings, magic sizzles continuity held: Gawain face from S11; fear rising",
+          "image_prompt_start": "photoreal cinematic: eye-level on Gawain's face as fear flickers across it, breath catching, green light in his eyes, photoreal.",
+          "image_prompt_end": "photoreal cinematic: His pupils widen, a muscle in his jaw twitching.",
+          "video_prompt_start": "Push-in on Gawain's face as fear flickers across it. his pupils widen, a muscle twitching in his jaw. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Gawain face from S11; fear rising.",
+          "video_prompt_end": "Push-in on Gawain's face as fear flickers across it. his pupils widen, a muscle twitching in his jaw. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Gawain face from S11; fear rising.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S17",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "lord_A2_fused",
+            "lord_sword_B3_prop",
+            "clearing_env_A3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Lord of the Castle, the Green Knight — an imposing knight in green cloth and dark bronze armor with a long sword — 100% identical; studio bg/pose/light NOT used; image3: the Green Knight's long sword glowing with cold green light — 100% identical; studio bg/pose/light NOT used; image4: the misty clearing before the chapel bathed in green light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "crane-down as Gawain kneels on the stony ground, head bowed"
+            ],
+            [
+              1.5,
+              3.0,
+              "crane settles as his silver armor catches the green glow"
+            ]
+          ],
+          "narration_mk": "Тој клекна на студената земја.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide crane-down as Gawain kneels on the stony ground, head bowed, the Green Knight towering over him with the long sword, photoreal",
+          "kf_last": "Crane settles, Gawain's silver armor catching the green glow from above",
+          "continuity": "Both leads blocked as in S14; high-angle raises the tension",
+          "motion": "slow crane-down to the kneeling figure",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide crane-down as Gawain kneels on the stony ground, head bowed, the Green Knight towering over him with the long sword, photoreal Gawain armored, warrior, in armor, carrying sword, wreathed in rune ring Lord armored, warrior, in hood, cloak, armor, carrying greatsword, wreathed in shadow smoke then crane-down as Gawain kneels on the stony ground, head bowed, then crane settles as his silver armor catches the green glow settling into crane settles, Gawain's silver armor catching the green glow from above with steel rings, magic sizzles continuity held: Both leads blocked as in S14; high-angle raises the tension",
+          "image_prompt_start": "photoreal cinematic: wide as Gawain kneels on the stony ground, head bowed, the Green Knight towering over him with the long sword, photoreal.",
+          "image_prompt_end": "photoreal cinematic: Crane , Gawain's silver armor catching the green glow from above.",
+          "video_prompt_start": "Crane-down as Gawain kneels on the stony ground, head bowed. crane settles as his silver armor catches the green glow. The beat resolves into the next matching frame. Continuity held: Both leads blocked as in S14; high-angle raises the tension.",
+          "video_prompt_end": "Crane-down as Gawain kneels on the stony ground, head bowed. crane settles as his silver armor catches the green glow. The beat resolves into the next matching frame. Continuity held: Both leads blocked as in S14; high-angle raises the tension.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S18",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "lord_A2_fused",
+            "lord_sword_B3_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Lord of the Castle, the Green Knight — an imposing knight in green cloth and dark bronze armor with a long sword — 100% identical; studio bg/pose/light NOT used; image2: the Green Knight's long sword glowing with cold green light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.2,
+              "low-angle of the Green Knight raising his great sword high"
+            ],
+            [
+              1.2,
+              2.5,
+              "the sword reaches its apex, held steady in the mist"
+            ]
+          ],
+          "narration_mk": "Господарот го крена мечот.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of the Green Knight raising his great sword high, the blade slicing through the mist, green light glinting, photoreal",
+          "kf_last": "The sword reaches its apex, held steady",
+          "continuity": "Long sword from S13; low-angle emphasizes the threat",
+          "motion": "static with the sword raised",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of the Green Knight raising his great sword high, the blade slicing through the mist, green light glinting, photoreal Lord armored, warrior, in hood, cloak, armor, carrying greatsword, wreathed in shadow smoke then low-angle of the Green Knight raising his great sword high, then the sword reaches its apex, held steady in the mist the camera static with steel rings, shadows whisper continuity held: Long sword from S13; low-angle emphasizes the threat",
+          "image_prompt_start": "photoreal cinematic: medium of the Green Knight raising his great sword high, the blade slicing through the mist, green light glinting, photoreal.",
+          "image_prompt_end": "photoreal cinematic: The sword reaches its apex, held steady.",
+          "video_prompt_start": "Low-angle of the Green Knight raising his great sword high. the sword reaches its apex, held steady in the mist. The camera static. The beat resolves into the next matching frame. Continuity held: Long sword from S13; low-angle emphasizes the threat.",
+          "video_prompt_end": "Low-angle of the Green Knight raising his great sword high. the sword reaches its apex, held steady in the mist. The camera static. The beat resolves into the next matching frame. Continuity held: Long sword from S13; low-angle emphasizes the threat.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S19",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "lord_sword_B3_prop"
+          ],
+          "ref_scope": "image1: the Green Knight's long sword glowing with cold green light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.2,
+              "macro of the sword blade gleaming with cold green light"
+            ],
+            [
+              1.2,
+              2.5,
+              "a bead of mist rolls off the blade's edge"
+            ]
+          ],
+          "narration_mk": "Сечилото засветли.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of the sword blade gleaming with cold green light, moisture beading on its steel edge, photoreal macro",
+          "kf_last": "A bead of mist rolls off the blade's edge",
+          "continuity": "Sword from S18; macro on the cutting edge",
+          "motion": "static with a droplet rolling off",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of the sword blade gleaming with cold green light, moisture beading on its steel edge, photoreal macro then macro of the sword blade gleaming with cold green light, then a bead of mist rolls off the blade's edge the camera static continuity held: Sword from S18; macro on the cutting edge",
+          "image_prompt_start": "photoreal cinematic: Macro insert of the sword blade gleaming with cold green light, moisture beading on its steel edge, photoreal macro.",
+          "image_prompt_end": "photoreal cinematic: A bead of mist rolls off the blade's edge.",
+          "video_prompt_start": "Macro of the sword blade gleaming with cold green light. a bead of mist rolls off the blade's edge. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Sword from S18; macro on the cutting edge.",
+          "video_prompt_end": "Macro of the sword blade gleaming with cold green light. a bead of mist rolls off the blade's edge. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Sword from S18; macro on the cutting edge.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S20",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "lord_A2_fused",
+            "lord_sword_B3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Lord of the Castle, the Green Knight — an imposing knight in green cloth and dark bronze armor with a long sword — 100% identical; studio bg/pose/light NOT used; image3: the Green Knight's long sword glowing with cold green light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "track the first swing descending toward Gawain's bared neck"
+            ],
+            [
+              1.5,
+              3.0,
+              "the blade arcs down in a blur as Gawain squeezes his eyes shut"
+            ]
+          ],
+          "narration_mk": "Првиот замав се спушти кон неговиот врат.",
+          "dialogue_mk": "",
+          "kf_first": "Medium eye-level of the first sword swing descending toward Gawain's bared neck, Gawain stiffening, mist parting behind the blade, photoreal",
+          "kf_last": "The blade arcs down in a blur, Gawain squeezing his eyes shut",
+          "continuity": "Sword and Gawain from S19/S17; tracking the swing",
+          "motion": "track following the descending swing",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level of the first sword swing descending toward Gawain's bared neck, Gawain stiffening, mist parting behind the blade, photoreal Gawain armored, warrior, in armor, carrying sword, wreathed in rune ring Lord armored, warrior, in hood, cloak, armor, carrying greatsword, wreathed in shadow smoke then track the first swing descending toward Gawain's bared neck, then the blade arcs down in a blur as Gawain squeezes his eyes shut settling into the blade arcs down in a blur, Gawain squeezing his eyes shut with steel rings, magic sizzles continuity held: Sword and Gawain from S19/S17; tracking the swing",
+          "image_prompt_start": "photoreal cinematic: eye-level of the first sword swing descending toward Gawain's bared neck, Gawain stiffening, mist parting behind the blade, photoreal.",
+          "image_prompt_end": "photoreal cinematic: The blade arcs down in a blur, Gawain squeezing his eyes shut.",
+          "video_prompt_start": "Track the first swing descending toward Gawain's bared neck. the blade arcs down in a blur as Gawain squeezes his eyes shut. The beat resolves into the next matching frame. Continuity held: Sword and Gawain from S19/S17; tracking the swing.",
+          "video_prompt_end": "Track the first swing descending toward Gawain's bared neck. the blade arcs down in a blur as Gawain squeezes his eyes shut. The beat resolves into the next matching frame. Continuity held: Sword and Gawain from S19/S17; tracking the swing.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S21",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "gawain_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.0,
+              "close of Gawain flinching, head jerking slightly to the side"
+            ],
+            [
+              1.0,
+              2.0,
+              "his body tenses, eyes snapping open"
+            ]
+          ],
+          "narration_mk": "Гавејн се исплаши и се помрдна.",
+          "dialogue_mk": "",
+          "kf_first": "Close eye-level of Gawain flinching, head jerking slightly to the side as the blade hisses past, photoreal",
+          "kf_last": "His body tenses and shifts a fraction, eyes snapping open",
+          "continuity": "Gawain face from S16; the flinch is the beat",
+          "motion": "static flinch",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close eye-level of Gawain flinching, head jerking slightly to the side as the blade hisses past, photoreal Gawain armored, warrior, in armor, carrying sword, wreathed in rune ring then close of Gawain flinching, head jerking slightly to the side, then his body tenses, eyes snapping open the camera static settling into his body tenses and shifts a fraction, eyes snapping open with steel rings, magic sizzles continuity held: Gawain face from S16; the flinch is the beat",
+          "image_prompt_start": "photoreal cinematic: eye-level of Gawain flinching, head jerking slightly to the side as the blade hisses past, photoreal.",
+          "image_prompt_end": "photoreal cinematic: His body tenses and a fraction, eyes snapping open.",
+          "video_prompt_start": "Close of Gawain flinching, head jerking slightly to the side. his body tenses, eyes snapping open. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Gawain face from S16; the flinch is the beat.",
+          "video_prompt_end": "Close of Gawain flinching, head jerking slightly to the side. his body tenses, eyes snapping open. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Gawain face from S16; the flinch is the beat.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S22",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "lord_A2_fused",
+            "lord_sword_B3_prop",
+            "clearing_env_A3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Lord of the Castle, the Green Knight — an imposing knight in green cloth and dark bronze armor with a long sword — 100% identical; studio bg/pose/light NOT used; image3: the Green Knight's long sword glowing with cold green light — 100% identical; studio bg/pose/light NOT used; image4: the misty clearing before the chapel bathed in green light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.2,
+              "wide of the first swing missing Gawain's neck, blade halted short"
+            ],
+            [
+              1.2,
+              2.5,
+              "green light ripples down the stalled blade"
+            ]
+          ],
+          "narration_mk": "Мечот промаши.",
+          "dialogue_mk": "",
+          "kf_first": "Wide eye-level of the first swing missing Gawain's neck, the blade stopping short in the air beside him, photoreal",
+          "kf_last": "Green light ripples down the stalled blade",
+          "continuity": "Blocking from S17; the miss is visible in frame",
+          "motion": "static with the blade halting short",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide eye-level of the first swing missing Gawain's neck, the blade stopping short in the air beside him, photoreal Gawain armored, warrior, in armor, carrying sword, wreathed in rune ring Lord armored, warrior, in hood, cloak, armor, carrying greatsword, wreathed in shadow smoke then wide of the first swing missing Gawain's neck, blade halted short, then green light ripples down the stalled blade the camera static with steel rings, magic sizzles continuity held: Blocking from S17; the miss is visible in frame",
+          "image_prompt_start": "photoreal cinematic: eye-level of the first swing missing Gawain's neck, the blade stopping short in the air beside him, photoreal.",
+          "image_prompt_end": "photoreal cinematic: Green light ripples down the stalled blade.",
+          "video_prompt_start": "Wide of the first swing missing Gawain's neck, blade halted short. green light ripples down the stalled blade. The camera static. The beat resolves into the next matching frame. Continuity held: Blocking from S17; the miss is visible in frame.",
+          "video_prompt_end": "Wide of the first swing missing Gawain's neck, blade halted short. green light ripples down the stalled blade. The camera static. The beat resolves into the next matching frame. Continuity held: Blocking from S17; the miss is visible in frame.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S23",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "lord_A2_fused",
+            "lord_sword_B3_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Lord of the Castle, the Green Knight — an imposing knight in green cloth and dark bronze armor with a long sword — 100% identical; studio bg/pose/light NOT used; image2: the Green Knight's long sword glowing with cold green light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.2,
+              "medium of the Green Knight raising the sword a second time"
+            ],
+            [
+              1.2,
+              2.5,
+              "the blade levels high again, perfectly controlled"
+            ]
+          ],
+          "narration_mk": "Господарот повторно го крена мечот.",
+          "dialogue_mk": "",
+          "kf_first": "Medium eye-level of the Green Knight raising the sword a second time, unperturbed, his green cloak settling, photoreal",
+          "kf_last": "The blade levels high again, perfectly controlled",
+          "continuity": "Lord from S18; same controlled raise",
+          "motion": "static raise",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level of the Green Knight raising the sword a second time, unperturbed, his green cloak settling, photoreal Lord armored, warrior, in hood, cloak, armor, carrying greatsword, wreathed in shadow smoke then medium of the Green Knight raising the sword a second time, then the blade levels high again, perfectly controlled the camera static with steel rings, shadows whisper continuity held: Lord from S18; same controlled raise",
+          "image_prompt_start": "photoreal cinematic: eye-level of the Green Knight raising the sword a second time, unperturbed, his green cloak settling, photoreal.",
+          "image_prompt_end": "photoreal cinematic: The blade levels high again, perfectly controlled.",
+          "video_prompt_start": "Medium of the Green Knight raising the sword a second time. the blade levels high again, perfectly controlled. The camera static. The beat resolves into the next matching frame. Continuity held: Lord from S18; same controlled raise.",
+          "video_prompt_end": "Medium of the Green Knight raising the sword a second time. the blade levels high again, perfectly controlled. The camera static. The beat resolves into the next matching frame. Continuity held: Lord from S18; same controlled raise.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S24",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "over-shoulder",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "lord_A2_fused",
+            "lord_sword_B3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Lord of the Castle, the Green Knight — an imposing knight in green cloth and dark bronze armor with a long sword — 100% identical; studio bg/pose/light NOT used; image3: the Green Knight's long sword glowing with cold green light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "over-shoulder close of the second swing arcing down toward Gawain"
+            ],
+            [
+              1.5,
+              3.0,
+              "the blade descends true and straight"
+            ]
+          ],
+          "narration_mk": "Вториот замав беше уште поодлучен.",
+          "dialogue_mk": "",
+          "kf_first": "Over-shoulder close of the second sword swing arcing down toward Gawain, the Green Knight's hand steady on the grip, photoreal",
+          "kf_last": "The blade descends true and straight",
+          "continuity": "Over-shoulder from S15; blade and grip in frame",
+          "motion": "static with the descending arc",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: over-shoulder close of the second sword swing arcing down toward Gawain, the Green Knight's hand steady on the grip, photoreal Gawain armored, warrior, in armor, carrying sword, wreathed in rune ring Lord armored, warrior, in hood, cloak, armor, carrying greatsword, wreathed in shadow smoke then over-shoulder close of the second swing arcing down toward Gawain, then the blade descends true and straight the camera static with steel rings, magic sizzles continuity held: Over-shoulder from S15; blade and grip in frame",
+          "image_prompt_start": "photoreal cinematic: Over-shoulder close of the second sword swing arcing down toward Gawain, the Green Knight's hand steady on the grip, photoreal.",
+          "image_prompt_end": "photoreal cinematic: The blade descends true and straight.",
+          "video_prompt_start": "Over-shoulder close of the second swing arcing down toward Gawain. the blade descends true and straight. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Over-shoulder from S15; blade and grip in frame.",
+          "video_prompt_end": "Over-shoulder close of the second swing arcing down toward Gawain. the blade descends true and straight. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Over-shoulder from S15; blade and grip in frame.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S25",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "belt_B1_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used; image2: the green magic belt with a shimmering emerald weave — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.0,
+              "medium of Gawain forcing himself still, muscles locked"
+            ],
+            [
+              1.0,
+              2.0,
+              "only a faint tremble runs through his shoulders"
+            ]
+          ],
+          "narration_mk": "Гавејн се напрегна да не мрдне.",
+          "dialogue_mk": "",
+          "kf_first": "Medium eye-level of Gawain forcing himself still, muscles locked, eyes shut tight, the green sash bright over his heart, photoreal",
+          "kf_last": "Only a faint tremble runs through his shoulders",
+          "continuity": "Gawain full figure from S22; sash continuity",
+          "motion": "static with a held tremble",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level of Gawain forcing himself still, muscles locked, eyes shut tight, the green sash bright over his heart, photoreal Gawain armored, warrior, in armor, carrying sword, wreathed in rune ring then medium of Gawain forcing himself still, muscles locked, then only a faint tremble runs through his shoulders the camera static with steel rings, magic sizzles continuity held: Gawain full figure from S22; sash continuity",
+          "image_prompt_start": "photoreal cinematic: eye-level of Gawain forcing himself still, muscles locked, eyes shut tight, the green sash bright over his heart, photoreal.",
+          "image_prompt_end": "photoreal cinematic: Only a faint tremble through his shoulders.",
+          "video_prompt_start": "Medium of Gawain forcing himself still, muscles locked. only a faint tremble runs through his shoulders. The camera static. The beat resolves into the next matching frame. Continuity held: Gawain full figure from S22; sash continuity.",
+          "video_prompt_end": "Medium of Gawain forcing himself still, muscles locked. only a faint tremble runs through his shoulders. The camera static. The beat resolves into the next matching frame. Continuity held: Gawain full figure from S22; sash continuity.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S26",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "lord_sword_B3_prop"
+          ],
+          "ref_scope": "image1: the Green Knight's long sword glowing with cold green light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.2,
+              "macro of the sword edge halting centimeters from his neck"
+            ],
+            [
+              1.2,
+              2.5,
+              "the blade rests motionless, impossibly close"
+            ]
+          ],
+          "narration_mk": "Сечилото застана на само неколку сантиметри од вратот.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of the sword edge halting centimeters from Gawain's exposed neck, a single hair lifting in the blade's wake, photoreal macro",
+          "kf_last": "The blade rests motionless, impossibly close",
+          "continuity": "Sword and neck from S24; macro spacing",
+          "motion": "static, the gap held",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of the sword edge halting centimeters from Gawain's exposed neck, a single hair lifting in the blade's wake, photoreal macro then macro of the sword edge halting centimeters from his neck, then the blade rests motionless, impossibly close the camera static continuity held: Sword and neck from S24; macro spacing",
+          "image_prompt_start": "photoreal cinematic: Macro insert of the sword edge halting centimeters from Gawain's exposed neck, a single hair lifting in the blade's wake, photoreal macro.",
+          "image_prompt_end": "photoreal cinematic: The blade rests motionless, impossibly close.",
+          "video_prompt_start": "Macro of the sword edge halting centimeters from his neck. the blade rests motionless, impossibly close. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Sword and neck from S24; macro spacing.",
+          "video_prompt_end": "Macro of the sword edge halting centimeters from his neck. the blade rests motionless, impossibly close. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Sword and neck from S24; macro spacing.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S27",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "crane-up",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "lord_A2_fused",
+            "lord_sword_B3_prop",
+            "clearing_env_A3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Lord of the Castle, the Green Knight — an imposing knight in green cloth and dark bronze armor with a long sword — 100% identical; studio bg/pose/light NOT used; image3: the Green Knight's long sword glowing with cold green light — 100% identical; studio bg/pose/light NOT used; image4: the misty clearing before the chapel bathed in green light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "crane-up as the Green Knight swings a third time, mist exploding"
+            ],
+            [
+              1.5,
+              3.0,
+              "the third strike lands, a thin red line on Gawain's neck"
+            ]
+          ],
+          "narration_mk": "Потоа, замавна и трет пат.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide crane-up as the Green Knight swings a third time, the blade whistling in a full arc, mist exploding around him, photoreal",
+          "kf_last": "The third strike lands, a thin red line appearing on Gawain's neck",
+          "continuity": "Choreography from S23; third and final blow",
+          "motion": "crane-up following the third swing",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide crane-up as the Green Knight swings a third time, the blade whistling in a full arc, mist exploding around him, photoreal Gawain armored, warrior, in armor, carrying sword, wreathed in rune ring Lord armored, warrior, in hood, cloak, armor, carrying greatsword, wreathed in shadow smoke then crane-up as the Green Knight swings a third time, mist exploding, then the third strike lands, a thin red line on Gawain's neck settling into the third strike lands, a thin red line appearing on Gawain's neck with steel rings, magic sizzles continuity held: Choreography from S23; third and final blow",
+          "image_prompt_start": "photoreal cinematic: wide as the Green Knight swings a third time, the blade whistling in a full arc, mist exploding around him, photoreal.",
+          "image_prompt_end": "photoreal cinematic: The third strike lands, a thin red line appearing on Gawain's neck.",
+          "video_prompt_start": "Crane-up as the Green Knight swings a third time, mist exploding. the third strike lands, a thin red line on Gawain's neck. The beat resolves into the next matching frame. Continuity held: Choreography from S23; third and final blow.",
+          "video_prompt_end": "Crane-up as the Green Knight swings a third time, mist exploding. the third strike lands, a thin red line on Gawain's neck. The beat resolves into the next matching frame. Continuity held: Choreography from S23; third and final blow.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S28",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.2,
+              "medium of Gawain after the blow, a small cut on his neck"
+            ],
+            [
+              1.2,
+              2.5,
+              "a single drop of blood wells and rolls down his collarbone"
+            ]
+          ],
+          "narration_mk": "Витезот беше само малку повреден.",
+          "dialogue_mk": "",
+          "kf_first": "Medium eye-level of Gawain after the blow, a small cut on his neck, a single drop of blood welling, photoreal",
+          "kf_last": "The drop swells and rolls down his collarbone",
+          "continuity": "Gawain from S25; the wound is minimal",
+          "motion": "static with the blood drop",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level of Gawain after the blow, a small cut on his neck, a single drop of blood welling, photoreal Gawain armored, warrior, in armor, carrying sword, wreathed in rune ring then medium of Gawain after the blow, a small cut on his neck, then a single drop of blood wells and rolls down his collarbone the camera static settling into the drop swells and rolls down his collarbone with steel rings, magic sizzles continuity held: Gawain from S25; the wound is minimal",
+          "image_prompt_start": "photoreal cinematic: eye-level of Gawain after the blow, a small cut on his neck, a single drop of blood welling, photoreal.",
+          "image_prompt_end": "photoreal cinematic: The drop swells and rolls down his collarbone.",
+          "video_prompt_start": "Medium of Gawain after the blow, a small cut on his neck. a single drop of blood wells and rolls down his collarbone. The camera static. The beat resolves into the next matching frame. Continuity held: Gawain from S25; the wound is minimal.",
+          "video_prompt_end": "Medium of Gawain after the blow, a small cut on his neck. a single drop of blood wells and rolls down his collarbone. The camera static. The beat resolves into the next matching frame. Continuity held: Gawain from S25; the wound is minimal.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S29",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "gawain_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.2,
+              "macro push-in on the thin cut, a crimson drop sliding over armor"
+            ],
+            [
+              1.2,
+              2.5,
+              "the drop slides off the gorget and splashes on the stone"
+            ]
+          ],
+          "narration_mk": "Малку крв потече, но тој остана на нозе.",
+          "dialogue_mk": "",
+          "kf_first": "Macro close push-in on the thin cut on Gawain's neck, a crimson drop sliding over silver armor, photoreal macro, child-safe",
+          "kf_last": "The drop slides off the gorget and splashes onto the stone",
+          "continuity": "Neck wound from S28; child-safe blood",
+          "motion": "slow push-in on the cut",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro close push-in on the thin cut on Gawain's neck, a crimson drop sliding over silver armor, photoreal macro, child-safe Gawain armored, warrior, in armor, carrying sword, wreathed in rune ring then macro push-in on the thin cut, a crimson drop sliding over armor, then the drop slides off the gorget and splashes on the stone settling into the drop slides off the gorget and splashes onto the stone with steel rings, magic sizzles continuity held: Neck wound from S28; child-safe blood",
+          "image_prompt_start": "photoreal cinematic: Macro close on the thin cut on Gawain's neck, a crimson drop sliding over silver armor, photoreal macro, child-safe.",
+          "image_prompt_end": "photoreal cinematic: The drop slides off the gorget and splashes onto the stone.",
+          "video_prompt_start": "Macro push-in on the thin cut, a crimson drop sliding over armor. the drop slides off the gorget and splashes on the stone. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Neck wound from S28; child-safe blood.",
+          "video_prompt_end": "Macro push-in on the thin cut, a crimson drop sliding over armor. the drop slides off the gorget and splashes on the stone. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Neck wound from S28; child-safe blood.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S30",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "sword_B2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used; image2: Gawain's silver sword with a firm hilt — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "track Gawain rising fast, sword drawn, ready to fight"
+            ],
+            [
+              1.5,
+              3.0,
+              "he settles into a fighting stance, blade leveled at the Lord"
+            ]
+          ],
+          "narration_mk": "Гавејн скокна, готов да се бори.",
+          "dialogue_mk": "",
+          "kf_first": "Medium eye-level of Gawain rising fast, sword drawn, ready to fight, green light flaring on his armor, photoreal",
+          "kf_last": "He settles into a fighting stance, blade leveled at the Lord",
+          "continuity": "Gawain with his own sword; defiance replaces fear",
+          "motion": "fast rising track into a stance",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level of Gawain rising fast, sword drawn, ready to fight, green light flaring on his armor, photoreal Gawain armored, warrior, in armor, carrying sword, wreathed in rune ring then track Gawain rising fast, sword drawn, ready to fight, then he settles into a fighting stance, blade leveled at the Lord with steel rings, magic sizzles continuity held: Gawain with his own sword; defiance replaces fear",
+          "image_prompt_start": "photoreal cinematic: eye-level of Gawain rising fast, sword drawn, ready to fight, green light flaring on his armor, photoreal.",
+          "image_prompt_end": "photoreal cinematic: He into a fighting stance, blade leveled at the Lord.",
+          "video_prompt_start": "Track Gawain rising fast, sword drawn, ready to fight. he settles into a fighting stance, blade leveled at the Lord. The beat resolves into the next matching frame. Continuity held: Gawain with his own sword; defiance replaces fear.",
+          "video_prompt_end": "Track Gawain rising fast, sword drawn, ready to fight. he settles into a fighting stance, blade leveled at the Lord. The beat resolves into the next matching frame. Continuity held: Gawain with his own sword; defiance replaces fear.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S31",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "lord_A2_fused",
+            "lord_sword_B3_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Lord of the Castle, the Green Knight — an imposing knight in green cloth and dark bronze armor with a long sword — 100% identical; studio bg/pose/light NOT used; image2: the Green Knight's long sword glowing with cold green light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.2,
+              "close of the Green Knight smiling warmly, lowering his sword"
+            ],
+            [
+              1.2,
+              2.5,
+              "the smile deepens, calm and kind"
+            ]
+          ],
+          "narration_mk": "Но противникот не го нападна — се насмевна.",
+          "dialogue_mk": "",
+          "kf_first": "Close eye-level of the Green Knight smiling warmly, lowering his sword, no hostility in his eyes, photoreal",
+          "kf_last": "The smile deepens, calm and kind",
+          "continuity": "Lord face from S13; the smile is the reveal",
+          "motion": "static smile",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close eye-level of the Green Knight smiling warmly, lowering his sword, no hostility in his eyes, photoreal Lord armored, warrior, in hood, cloak, armor, carrying greatsword, wreathed in shadow smoke then close of the Green Knight smiling warmly, lowering his sword, then the smile deepens, calm and kind the camera static with steel rings, shadows whisper continuity held: Lord face from S13; the smile is the reveal",
+          "image_prompt_start": "photoreal cinematic: eye-level of the Green Knight smiling warmly, lowering his sword, no hostility in his eyes, photoreal.",
+          "image_prompt_end": "photoreal cinematic: The smile deepens, calm and kind.",
+          "video_prompt_start": "Close of the Green Knight smiling warmly, lowering his sword. the smile deepens, calm and kind. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Lord face from S13; the smile is the reveal.",
+          "video_prompt_end": "Close of the Green Knight smiling warmly, lowering his sword. the smile deepens, calm and kind. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Lord face from S13; the smile is the reveal.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S32",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "lord_A2_fused",
+            "chapel_env_A2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Lord of the Castle, the Green Knight — an imposing knight in green cloth and dark bronze armor with a long sword — 100% identical; studio bg/pose/light NOT used; image3: the ivy-strangled Green Chapel glowing with faint green light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "medium of the Green Knight speaking, hand over his heart"
+            ],
+            [
+              1.8,
+              3.5,
+              "he gestures toward Camelot far beyond the mist"
+            ]
+          ],
+          "narration_mk": "Господарот ја објасни вистинската смисла на предизвикот.",
+          "dialogue_mk": "Господарот: \"Моргана ле Феј, Артуровата полусестра, го смисли овој предизвик.\"",
+          "kf_first": "Medium eye-level of the Green Knight speaking, one hand over his heart, the other resting his sword on the ground, photoreal",
+          "kf_last": "He gestures toward Camelot far beyond the mist",
+          "continuity": "Lord from S31; dialogue beat",
+          "motion": "static with the gesture",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level of the Green Knight speaking, one hand over his heart, the other resting his sword on the ground, photoreal Gawain armored, warrior, in armor, carrying sword, wreathed in rune ring Lord armored, warrior, in hood, cloak, armor, carrying greatsword, wreathed in shadow smoke then medium of the Green Knight speaking, hand over his heart, then he gestures toward Camelot far beyond the mist the camera static with steel rings, magic sizzles a voice speaks in Macedonian: \"Господарот: \"Моргана ле Феј, Артуровата полусестра, го смисли овој предизвик.\"\" continuity held: Lord from S31; dialogue beat",
+          "image_prompt_start": "photoreal cinematic: eye-level of the Green Knight speaking, one hand over his heart, the other resting his sword on the ground, photoreal.",
+          "image_prompt_end": "photoreal cinematic: He gestures toward Camelot far beyond the mist.",
+          "video_prompt_start": "Medium of the Green Knight speaking, hand over his heart. he gestures toward Camelot far beyond the mist. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Господарот: \"Моргана ле Феј, Артуровата полусестра, го смисли овој предизвик.\"\" Continuity held: Lord from S31; dialogue beat.",
+          "video_prompt_end": "Medium of the Green Knight speaking, hand over his heart. he gestures toward Camelot far beyond the mist. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Господарот: \"Моргана ле Феј, Артуровата полусестра, го смисли овој предизвик.\"\" Continuity held: Lord from S31; dialogue beat.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S33",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "lord_A2_fused",
+            "belt_B1_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Lord of the Castle, the Green Knight — an imposing knight in green cloth and dark bronze armor with a long sword — 100% identical; studio bg/pose/light NOT used; image3: the green magic belt with a shimmering emerald weave — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "medium of the Lord holding out the green belt toward Gawain"
+            ],
+            [
+              1.5,
+              3.0,
+              "Gawain's hand reaches slowly toward the belt"
+            ]
+          ],
+          "narration_mk": "Тој му соопшти дека храброста му донела награда.",
+          "dialogue_mk": "Господарот: \"Ти се докажа дека си храбар, па затоа како награда ти го дадов овој зелен појас кој ми припаѓаше мене.\"",
+          "kf_first": "Medium eye-level of the Lord holding out the green belt toward Gawain, the sash glowing brighter than ever, photoreal",
+          "kf_last": "Gawain's hand reaches slowly toward the belt",
+          "continuity": "Green belt from S04; the Lord now bestows it",
+          "motion": "static with the offering",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level of the Lord holding out the green belt toward Gawain, the sash glowing brighter than ever, photoreal Gawain armored, warrior, in armor, carrying sword, wreathed in rune ring Lord armored, warrior, in hood, cloak, armor, carrying greatsword, wreathed in shadow smoke then medium of the Lord holding out the green belt toward Gawain, then Gawain's hand reaches slowly toward the belt the camera static with steel rings, magic sizzles a voice speaks in Macedonian: \"Господарот: \"Ти се докажа дека си храбар, па затоа како награда ти го дадов овој зелен појас кој ми припаѓаше мене.\"\" continuity held: Green belt from S04; the Lord now bestows it",
+          "image_prompt_start": "photoreal cinematic: eye-level of the Lord holding out the green belt toward Gawain, the sash glowing brighter than ever, photoreal.",
+          "image_prompt_end": "photoreal cinematic: Gawain's hand reaches slowly toward the belt.",
+          "video_prompt_start": "Medium of the Lord holding out the green belt toward Gawain. Gawain's hand reaches slowly toward the belt. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Господарот: \"Ти се докажа дека си храбар, па затоа како награда ти го дадов овој зелен појас кој ми припаѓаше мене.\"\" Continuity held: Green belt from S04; the Lord now bestows it.",
+          "video_prompt_end": "Medium of the Lord holding out the green belt toward Gawain. Gawain's hand reaches slowly toward the belt. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Господарот: \"Ти се докажа дека си храбар, па затоа како награда ти го дадов овој зелен појас кој ми припаѓаше мене.\"\" Continuity held: Green belt from S04; the Lord now bestows it.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S34",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "macro",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "lord_A2_fused",
+            "belt_B1_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Lord of the Castle, the Green Knight — an imposing knight in green cloth and dark bronze armor with a long sword — 100% identical; studio bg/pose/light NOT used; image3: the green magic belt with a shimmering emerald weave — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.2,
+              "macro of the belt passing from the Lord's hand into Gawain's"
+            ],
+            [
+              1.2,
+              2.5,
+              "the belt glows as their hands meet"
+            ]
+          ],
+          "narration_mk": "Појасот премина од рака на рака.",
+          "dialogue_mk": "",
+          "kf_first": "Macro close of the green belt passing from the Lord's gauntleted hand into Gawain's, threads shimmering with magic light, photoreal macro",
+          "kf_last": "The belt glows as their hands meet",
+          "continuity": "Belt and hands from S33; macro on the transfer",
+          "motion": "static handoff",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro close of the green belt passing from the Lord's gauntleted hand into Gawain's, threads shimmering with magic light, photoreal macro Gawain armored, warrior, in armor, carrying sword, wreathed in rune ring Lord armored, warrior, in hood, cloak, armor, carrying greatsword, wreathed in shadow smoke then macro of the belt passing from the Lord's hand into Gawain's, then the belt glows as their hands meet the camera static with steel rings, magic sizzles continuity held: Belt and hands from S33; macro on the transfer",
+          "image_prompt_start": "photoreal cinematic: Macro close of the green belt passing from the Lord's gauntleted hand into Gawain's, threads shimmering with magic light, photoreal macro.",
+          "image_prompt_end": "photoreal cinematic: The belt glows as their hands meet.",
+          "video_prompt_start": "Macro of the belt passing from the Lord's hand into Gawain's. the belt glows as their hands meet. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Belt and hands from S33; macro on the transfer.",
+          "video_prompt_end": "Macro of the belt passing from the Lord's hand into Gawain's. the belt glows as their hands meet. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Belt and hands from S33; macro on the transfer.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S35",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "belt_B1_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used; image2: the green magic belt with a shimmering emerald weave — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "low-angle push-in on Gawain fastening the belt over his armor"
+            ],
+            [
+              1.5,
+              3.0,
+              "the light pulses once then settles, the belt now his"
+            ]
+          ],
+          "narration_mk": "Гавејн го прими подарокот.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium push-in on Gawain fastening the green belt over his armor, the sash flaring with light, photoreal",
+          "kf_last": "The light pulses once then settles, the belt now his",
+          "continuity": "Gawain from S30; belt from S34 now worn",
+          "motion": "slow push-in as he ties it",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium push-in on Gawain fastening the green belt over his armor, the sash flaring with light, photoreal Gawain armored, warrior, in armor, carrying sword, wreathed in rune ring then low-angle push-in on Gawain fastening the belt over his armor, then the light pulses once then settles, the belt now his with steel rings, magic sizzles continuity held: Gawain from S30; belt from S34 now worn",
+          "image_prompt_start": "photoreal cinematic: medium on Gawain fastening the green belt over his armor, the sash flaring with light, photoreal.",
+          "image_prompt_end": "photoreal cinematic: The light pulses once then , the belt now his.",
+          "video_prompt_start": "Low-angle push-in on Gawain fastening the belt over his armor. the light pulses once then settles, the belt now his. The beat resolves into the next matching frame. Continuity held: Gawain from S30; belt from S34 now worn.",
+          "video_prompt_end": "Low-angle push-in on Gawain fastening the belt over his armor. the light pulses once then settles, the belt now his. The beat resolves into the next matching frame. Continuity held: Gawain from S30; belt from S34 now worn.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S36",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "crane-up",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "lord_A2_fused",
+            "clearing_env_A3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Lord of the Castle, the Green Knight — an imposing knight in green cloth and dark bronze armor with a long sword — 100% identical; studio bg/pose/light NOT used; image3: the misty clearing before the chapel bathed in green light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "crane-up on the two knights clasping forearms in the clearing"
+            ],
+            [
+              1.5,
+              3.0,
+              "golden dawn light spills over them as the mist lifts"
+            ]
+          ],
+          "narration_mk": "Двајцата се поздравија како рамни.",
+          "dialogue_mk": "",
+          "kf_first": "Wide crane-up of the two knights clasping forearms in the clearing, dawn light breaking through the fog, the chapel fading behind, photoreal",
+          "kf_last": "Golden light spills over them as the mist lifts",
+          "continuity": "Both leads from S35; dawn palette shift to hope",
+          "motion": "slow crane-up on the clasp",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide crane-up of the two knights clasping forearms in the clearing, dawn light breaking through the fog, the chapel fading behind, photoreal Gawain armored, warrior, in armor, carrying sword, wreathed in rune ring Lord armored, warrior, in hood, cloak, armor, carrying greatsword, wreathed in shadow smoke then crane-up on the two knights clasping forearms in the clearing, then golden dawn light spills over them as the mist lifts the camera static settling into golden light spills over them as the mist lifts with steel rings, magic sizzles continuity held: Both leads from S35; dawn palette shift to hope",
+          "image_prompt_start": "photoreal cinematic: of the two knights clasping forearms in the clearing, dawn light breaking through the fog, the chapel fading behind, photoreal.",
+          "image_prompt_end": "photoreal cinematic: Golden light spills over them as the mist lifts.",
+          "video_prompt_start": "Crane-up on the two knights clasping forearms in the clearing. golden dawn light spills over them as the mist lifts. The camera static. The beat resolves into the next matching frame. Continuity held: Both leads from S35; dawn palette shift to hope.",
+          "video_prompt_end": "Crane-up on the two knights clasping forearms in the clearing. golden dawn light spills over them as the mist lifts. The camera static. The beat resolves into the next matching frame. Continuity held: Both leads from S35; dawn palette shift to hope.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S37",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "horse_B5_prop",
+            "belt_B1_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used; image2: Gawain's loyal grey horse — 100% identical; studio bg/pose/light NOT used; image3: the green magic belt with a shimmering emerald weave — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "track Gawain riding away on a grey horse through sunlit woodland"
+            ],
+            [
+              1.5,
+              3.0,
+              "he rides with ease, no longer burdened"
+            ]
+          ],
+          "narration_mk": "Гавејн тргна назад, кон Камелот.",
+          "dialogue_mk": "",
+          "kf_first": "Medium eye-level tracking Gawain riding away on a grey horse through sunlit woodland, the green belt bright on his waist, photoreal",
+          "kf_last": "He rides with ease, no longer burdened",
+          "continuity": "Gawain on his horse; green belt visible",
+          "motion": "forward track beside the horse",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level tracking Gawain riding away on a grey horse through sunlit woodland, the green belt bright on his waist, photoreal Gawain armored, warrior, in armor, carrying sword, wreathed in rune ring then track Gawain riding away on a grey horse through sunlit woodland, then he rides with ease, no longer burdened with steel rings, magic sizzles continuity held: Gawain on his horse; green belt visible",
+          "image_prompt_start": "photoreal cinematic: eye-level Gawain riding away on a grey horse through sunlit woodland, the green belt bright on his waist, photoreal.",
+          "image_prompt_end": "photoreal cinematic: He rides with ease, no longer burdened.",
+          "video_prompt_start": "Track Gawain riding away on a grey horse through sunlit woodland. he rides with ease, no longer burdened. The beat resolves into the next matching frame. Continuity held: Gawain on his horse; green belt visible.",
+          "video_prompt_end": "Track Gawain riding away on a grey horse through sunlit woodland. he rides with ease, no longer burdened. The beat resolves into the next matching frame. Continuity held: Gawain on his horse; green belt visible.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S38",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "countryside_env_A5_prop",
+            "forest_env_A1_prop"
+          ],
+          "ref_scope": "image1: the sunlit Breton countryside and the road toward Camelot — 100% identical; studio bg/pose/light NOT used; image2: the misty grey-green Breton forest — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "high-angle wide of the countryside opening toward distant Camelot"
+            ],
+            [
+              1.5,
+              3.0,
+              "the road stretches toward the shining spires"
+            ]
+          ],
+          "narration_mk": "Пределот се отвораше пред него.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of the Breton countryside opening toward a distant white city on a hill — Camelot — under golden sun, photoreal",
+          "kf_last": "The road stretches toward the shining spires",
+          "continuity": "New daylight palette; Camelot introduced in the distance",
+          "motion": "static establishing the return route",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of the Breton countryside opening toward a distant white city on a hill — Camelot — under golden sun, photoreal then high-angle wide of the countryside opening toward distant Camelot, then the road stretches toward the shining spires the camera static with leaves rustle continuity held: New daylight palette; Camelot introduced in the distance",
+          "image_prompt_start": "photoreal cinematic: wide of the Breton countryside opening toward a distant white city on a hill — Camelot — under golden sun, photoreal.",
+          "image_prompt_end": "photoreal cinematic: The road stretches toward the shining spires.",
+          "video_prompt_start": "High-angle wide of the countryside opening toward distant Camelot. the road stretches toward the shining spires. The camera static. The beat resolves into the next matching frame. Continuity held: New daylight palette; Camelot introduced in the distance.",
+          "video_prompt_end": "High-angle wide of the countryside opening toward distant Camelot. the road stretches toward the shining spires. The camera static. The beat resolves into the next matching frame. Continuity held: New daylight palette; Camelot introduced in the distance.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S39",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "belt_B1_prop"
+          ],
+          "ref_scope": "image1: the green magic belt with a shimmering emerald weave — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.2,
+              "close of the green belt glowing softly on Gawain's waist"
+            ],
+            [
+              1.2,
+              2.5,
+              "the glow pulses gently, a token of honor won"
+            ]
+          ],
+          "narration_mk": "Неговиот зелен појас светеше.",
+          "dialogue_mk": "",
+          "kf_first": "Close eye-level of the green belt glowing softly on Gawain's waist as he rides, sunlight catching its weave, photoreal",
+          "kf_last": "The glow pulses gently, a token of honor won",
+          "continuity": "Belt from S35 in daylight",
+          "motion": "static glowing belt",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close eye-level of the green belt glowing softly on Gawain's waist as he rides, sunlight catching its weave, photoreal then close of the green belt glowing softly on Gawain's waist, then the glow pulses gently, a token of honor won the camera static continuity held: Belt from S35 in daylight",
+          "image_prompt_start": "photoreal cinematic: eye-level of the green belt glowing softly on Gawain's waist as he rides, sunlight catching its weave, photoreal.",
+          "image_prompt_end": "photoreal cinematic: The glow pulses gently, a token of honor won.",
+          "video_prompt_start": "Close of the green belt glowing softly on Gawain's waist. the glow pulses gently, a token of honor won. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Belt from S35 in daylight.",
+          "video_prompt_end": "Close of the green belt glowing softly on Gawain's waist. the glow pulses gently, a token of honor won. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Belt from S35 in daylight.",
+          "motion_intensity": "gentle"
+        }
+      ],
+      "location_ref": "green_chapel_clearing_of_three_blows",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class",
+        "screen_dir"
+      ],
+      "palette": [
+        "#0f3d2e",
+        "#1f5e47",
+        "#6fce94"
+      ],
+      "light_direction": "key light from screen-right, cold green sword glow over the clearing",
+      "time_of_day": "dawn"
+    },
+    {
+      "id": "act3",
+      "num": "Act III",
+      "title": "Честа на Камелот",
+      "color": "#f472b6",
+      "pct": 20,
+      "synopsis": "Гавејн се враќа во Камелот, раскажува сè вклучително и својот миг на слабост, а Артур порачува сите витези да носат зелен појас во спомен на авантурата.",
+      "shots": [
+        {
+          "id": "S40",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-left",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "arthur_A3_fused",
+            "knights_A4_fused",
+            "camelot_hall_env_A4_prop"
+          ],
+          "ref_scope": "image1: the fused master of King Arthur — a dignified king with a golden crown and purple mantle — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Knights of Camelot — noble knights in shining armor with colorful mantles — 100% identical; studio bg/pose/light NOT used; image3: Camelot's great hall with banners and golden light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "pan-left across Camelot's great hall, knights gathered in welcome"
+            ],
+            [
+              1.8,
+              3.5,
+              "the pan settles on Arthur on his throne"
+            ]
+          ],
+          "narration_mk": "Камелот го пречека со сјај.",
+          "dialogue_mk": "",
+          "kf_first": "Wide eye-level pan-left across Camelot's great hall, banners and golden light, knights gathered in welcome, photoreal WoW cinematic grade",
+          "kf_last": "The pan settles on Arthur on his throne",
+          "continuity": "Camelot interior; establish court light — warm gold",
+          "motion": "pan-left across the hall",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide eye-level pan-left across Camelot's great hall, banners and golden light, knights gathered in welcome, photoreal WoW cinematic grade Arthur robed, monarch, in crown, cloak, wreathed in golden glow Knights armored, warrior, in armor, cloak, carrying sword then pan-left across Camelot's great hall, knights gathered in welcome, then the pan settles on Arthur on his throne with a low radiant hum, steel rings continuity held: Camelot interior; establish court light — warm gold",
+          "image_prompt_start": "photoreal cinematic: eye-level -left across Camelot's great hall, banners and golden light, knights gathered in welcome, photoreal WoW cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: The on Arthur on his throne.",
+          "video_prompt_start": "Pan-left across Camelot's great hall, knights gathered in welcome. the pan settles on Arthur on his throne. The beat resolves into the next matching frame. Continuity held: Camelot interior; establish court light — warm gold.",
+          "video_prompt_end": "Pan-left across Camelot's great hall, knights gathered in welcome. the pan settles on Arthur on his throne. The beat resolves into the next matching frame. Continuity held: Camelot interior; establish court light — warm gold.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S41",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "knights_A4_fused",
+            "camelot_hall_env_A4_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Knights of Camelot — noble knights in shining armor with colorful mantles — 100% identical; studio bg/pose/light NOT used; image3: Camelot's great hall with banners and golden light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "track knights embracing Gawain, clapping his shoulders"
+            ],
+            [
+              1.5,
+              3.0,
+              "the crowd parts to let him approach the throne"
+            ]
+          ],
+          "narration_mk": "Пријателите достојно го пречекаа.",
+          "dialogue_mk": "",
+          "kf_first": "Medium eye-level of knights embracing Gawain, clapping his shoulders, the green belt catching their admiring eyes, photoreal",
+          "kf_last": "The crowd parts to let him approach the throne",
+          "continuity": "Knights of Camelot cast; Gawain in armor",
+          "motion": "track through the welcome",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level of knights embracing Gawain, clapping his shoulders, the green belt catching their admiring eyes, photoreal Gawain armored, warrior, in armor, carrying sword, wreathed in rune ring Knights armored, warrior, in armor, cloak, carrying sword then track knights embracing Gawain, clapping his shoulders, then the crowd parts to let him approach the throne with steel rings, magic sizzles continuity held: Knights of Camelot cast; Gawain in armor",
+          "image_prompt_start": "photoreal cinematic: eye-level of knights embracing Gawain, clapping his shoulders, the green belt catching their admiring eyes, photoreal.",
+          "image_prompt_end": "photoreal cinematic: The crowd parts to let him approach the throne.",
+          "video_prompt_start": "Track knights embracing Gawain, clapping his shoulders. the crowd parts to let him approach the throne. The beat resolves into the next matching frame. Continuity held: Knights of Camelot cast; Gawain in armor.",
+          "video_prompt_end": "Track knights embracing Gawain, clapping his shoulders. the crowd parts to let him approach the throne. The beat resolves into the next matching frame. Continuity held: Knights of Camelot cast; Gawain in armor.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S42",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "arthur_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of King Arthur — a dignified king with a golden crown and purple mantle — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.2,
+              "close of King Arthur on his throne, warm but solemn"
+            ],
+            [
+              1.2,
+              2.5,
+              "he leans slightly forward, listening"
+            ]
+          ],
+          "narration_mk": "Кралот Артур го дочека.",
+          "dialogue_mk": "",
+          "kf_first": "Close eye-level of King Arthur on his throne, golden crown and purple mantle, a warm but solemn gaze, photoreal",
+          "kf_last": "He leans slightly forward, listening",
+          "continuity": "Introduce Arthur; throne light continuity",
+          "motion": "static regal pose",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close eye-level of King Arthur on his throne, golden crown and purple mantle, a warm but solemn gaze, photoreal Arthur robed, monarch, in crown, cloak, wreathed in golden glow then close of King Arthur on his throne, warm but solemn, then he leans slightly forward, listening the camera static with a low radiant hum continuity held: Introduce Arthur; throne light continuity",
+          "image_prompt_start": "photoreal cinematic: eye-level of King Arthur on his throne, golden crown and purple mantle, a warm but solemn gaze, photoreal.",
+          "image_prompt_end": "photoreal cinematic: He leans slightly forward, listening.",
+          "video_prompt_start": "Close of King Arthur on his throne, warm but solemn. he leans slightly forward, listening. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Introduce Arthur; throne light continuity.",
+          "video_prompt_end": "Close of King Arthur on his throne, warm but solemn. he leans slightly forward, listening. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Introduce Arthur; throne light continuity.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S43",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "arthur_A3_fused",
+            "camelot_hall_env_A4_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used; image2: the fused master of King Arthur — a dignified king with a golden crown and purple mantle — 100% identical; studio bg/pose/light NOT used; image3: Camelot's great hall with banners and golden light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "medium of Gawain kneeling before Arthur, head bowed"
+            ],
+            [
+              1.5,
+              3.0,
+              "Arthur gestures for him to rise and speak"
+            ]
+          ],
+          "narration_mk": "Гавејн клекна пред својот крал.",
+          "dialogue_mk": "",
+          "kf_first": "Medium eye-level of Gawain kneeling before Arthur, head bowed, the green belt visible against his armor, court rising around them, photoreal",
+          "kf_last": "Arthur gestures for him to rise and speak",
+          "continuity": "Gawain and Arthur framed together",
+          "motion": "static kneel",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level of Gawain kneeling before Arthur, head bowed, the green belt visible against his armor, court rising around them, photoreal Gawain armored, warrior, in armor, carrying sword, wreathed in rune ring Arthur robed, monarch, in crown, cloak, wreathed in golden glow then medium of Gawain kneeling before Arthur, head bowed, then Arthur gestures for him to rise and speak the camera static with steel rings, magic sizzles continuity held: Gawain and Arthur framed together",
+          "image_prompt_start": "photoreal cinematic: eye-level of Gawain kneeling before Arthur, head bowed, the green belt visible against his armor, court rising around them, photoreal.",
+          "image_prompt_end": "photoreal cinematic: Arthur gestures for him to rise and speak.",
+          "video_prompt_start": "Medium of Gawain kneeling before Arthur, head bowed. Arthur gestures for him to rise and speak. The camera static. The beat resolves into the next matching frame. Continuity held: Gawain and Arthur framed together.",
+          "video_prompt_end": "Medium of Gawain kneeling before Arthur, head bowed. Arthur gestures for him to rise and speak. The camera static. The beat resolves into the next matching frame. Continuity held: Gawain and Arthur framed together.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S44",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "gawain_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "push-in on Gawain's face as he confesses the moment of fear"
+            ],
+            [
+              1.5,
+              3.0,
+              "his eyes glisten, but he does not look away"
+            ]
+          ],
+          "narration_mk": "Тој му раскажа сè, дури и мигот на страв.",
+          "dialogue_mk": "",
+          "kf_first": "Close eye-level push-in on Gawain's face as he confesses the moment fear overcame him, honest and humbled, photoreal",
+          "kf_last": "His eyes glisten, but he does not look away",
+          "continuity": "Gawain face; emotional truth on display",
+          "motion": "slow push-in on the face",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close eye-level push-in on Gawain's face as he confesses the moment fear overcame him, honest and humbled, photoreal Gawain armored, warrior, in armor, carrying sword, wreathed in rune ring then push-in on Gawain's face as he confesses the moment of fear, then his eyes glisten, but he does not look away with steel rings, magic sizzles continuity held: Gawain face; emotional truth on display",
+          "image_prompt_start": "photoreal cinematic: eye-level on Gawain's face as he confesses the moment fear overcame him, honest and humbled, photoreal.",
+          "image_prompt_end": "photoreal cinematic: His eyes glisten, but he does not look away.",
+          "video_prompt_start": "Push-in on Gawain's face as he confesses the moment of fear. his eyes glisten, but he does not look away. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Gawain face; emotional truth on display.",
+          "video_prompt_end": "Push-in on Gawain's face as he confesses the moment of fear. his eyes glisten, but he does not look away. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Gawain face; emotional truth on display.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S45",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "arthur_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of King Arthur — a dignified king with a golden crown and purple mantle — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "low-angle of Arthur rising from his throne, mantle sweeping"
+            ],
+            [
+              1.5,
+              3.0,
+              "he descends a step toward Gawain"
+            ]
+          ],
+          "narration_mk": "Артур стана од престолот.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of Arthur rising from his throne, mantle sweeping, court falling silent, photoreal",
+          "kf_last": "He descends a step toward Gawain",
+          "continuity": "Arthur from S42; low-angle for authority",
+          "motion": "static rise",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Arthur rising from his throne, mantle sweeping, court falling silent, photoreal Arthur robed, monarch, in crown, cloak, wreathed in golden glow then low-angle of Arthur rising from his throne, mantle sweeping, then he descends a step toward Gawain the camera static with a low radiant hum continuity held: Arthur from S42; low-angle for authority",
+          "image_prompt_start": "photoreal cinematic: medium of Arthur rising from his throne, mantle sweeping, court falling silent, photoreal.",
+          "image_prompt_end": "photoreal cinematic: He descends a step toward Gawain.",
+          "video_prompt_start": "Low-angle of Arthur rising from his throne, mantle sweeping. he descends a step toward Gawain. The camera static. The beat resolves into the next matching frame. Continuity held: Arthur from S42; low-angle for authority.",
+          "video_prompt_end": "Low-angle of Arthur rising from his throne, mantle sweeping. he descends a step toward Gawain. The camera static. The beat resolves into the next matching frame. Continuity held: Arthur from S42; low-angle for authority.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S46",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "arthur_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used; image2: the fused master of King Arthur — a dignified king with a golden crown and purple mantle — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close of Arthur speaking, warm and proud, hand on Gawain's shoulder"
+            ],
+            [
+              1.5,
+              3.0,
+              "his expression softens with respect"
+            ]
+          ],
+          "narration_mk": "Кралот го пофали.",
+          "dialogue_mk": "Артур: \"Тој момент на слабост бил твојата сила!\"",
+          "kf_first": "Close eye-level of Arthur speaking to Gawain, warm and proud, hand on the young knight's shoulder, photoreal",
+          "kf_last": "His expression softens with respect",
+          "continuity": "Arthur face from S42; the sage words land",
+          "motion": "static with the shoulder touch",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close eye-level of Arthur speaking to Gawain, warm and proud, hand on the young knight's shoulder, photoreal Gawain armored, warrior, in armor, carrying sword, wreathed in rune ring Arthur robed, monarch, in crown, cloak, wreathed in golden glow then close of Arthur speaking, warm and proud, hand on Gawain's shoulder, then his expression softens with respect the camera static with steel rings, magic sizzles a voice speaks in Macedonian: \"Артур: \"Тој момент на слабост бил твојата сила!\"\" continuity held: Arthur face from S42; the sage words land",
+          "image_prompt_start": "photoreal cinematic: eye-level of Arthur speaking to Gawain, warm and proud, hand on the young knight's shoulder, photoreal.",
+          "image_prompt_end": "photoreal cinematic: His expression softens with respect.",
+          "video_prompt_start": "Close of Arthur speaking, warm and proud, hand on Gawain's shoulder. his expression softens with respect. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Артур: \"Тој момент на слабост бил твојата сила!\"\" Continuity held: Arthur face from S42; the sage words land.",
+          "video_prompt_end": "Close of Arthur speaking, warm and proud, hand on Gawain's shoulder. his expression softens with respect. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Артур: \"Тој момент на слабост бил твојата сила!\"\" Continuity held: Arthur face from S42; the sage words land.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S47",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-right",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "knights_A4_fused",
+            "belt_B1_prop",
+            "camelot_hall_env_A4_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Knights of Camelot — noble knights in shining armor with colorful mantles — 100% identical; studio bg/pose/light NOT used; image2: the green magic belt with a shimmering emerald weave — 100% identical; studio bg/pose/light NOT used; image3: Camelot's great hall with banners and golden light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "pan-right as knights raise green sashes high, the court erupting"
+            ],
+            [
+              1.8,
+              3.5,
+              "a sea of green belts raised toward the light"
+            ]
+          ],
+          "narration_mk": "Утре, сите витези ќе носат зелен појас.",
+          "dialogue_mk": "",
+          "kf_first": "Wide eye-level of the knights raising green sashes high, the court erupting in cheers, Arthur reinstating the pledge, photoreal",
+          "kf_last": "Pan settles on a sea of green belts raised toward the light",
+          "continuity": "Knights of Camelot; green belt becomes the symbol",
+          "motion": "pan-right across the celebration",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide eye-level of the knights raising green sashes high, the court erupting in cheers, Arthur reinstating the pledge, photoreal Knights armored, warrior, in armor, cloak, carrying sword then pan-right as knights raise green sashes high, the court erupting, then a sea of green belts raised toward the light settling into pan settles on a sea of green belts raised toward the light with steel rings, stone groans continuity held: Knights of Camelot; green belt becomes the symbol",
+          "image_prompt_start": "photoreal cinematic: eye-level of the knights raising green sashes high, the court erupting in cheers, Arthur reinstating the pledge, photoreal.",
+          "image_prompt_end": "photoreal cinematic: on a sea of green belts raised toward the light.",
+          "video_prompt_start": "Pan-right as knights raise green sashes high, the court erupting. a sea of green belts raised toward the light. The beat resolves into the next matching frame. Continuity held: Knights of Camelot; green belt becomes the symbol.",
+          "video_prompt_end": "Pan-right as knights raise green sashes high, the court erupting. a sea of green belts raised toward the light. The beat resolves into the next matching frame. Continuity held: Knights of Camelot; green belt becomes the symbol.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S48",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "knights_A4_fused",
+            "belt_B1_prop",
+            "camelot_hall_env_A4_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Knights of Camelot — noble knights in shining armor with colorful mantles — 100% identical; studio bg/pose/light NOT used; image3: the green magic belt with a shimmering emerald weave — 100% identical; studio bg/pose/light NOT used; image4: Camelot's great hall with banners and golden light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "crane-down on Gawain standing tall among his brothers"
+            ],
+            [
+              1.8,
+              3.5,
+              "camera lowers to the belt, green light pulsing one final time"
+            ]
+          ],
+          "narration_mk": "Во спомен на оваа авантура, зелениот појас засекогаш остана.",
+          "dialogue_mk": "",
+          "kf_first": "Medium crane-down on Gawain standing tall among his brothers, the green belt gleaming at his waist, golden light pouring through the hall windows, photoreal",
+          "kf_last": "Camera lowers to the belt, its green light pulsing one final time",
+          "continuity": "Closing emblem — Gawain and the belt; warm gold finale",
+          "motion": "slow crane-down to the belt",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium crane-down on Gawain standing tall among his brothers, the green belt gleaming at his waist, golden light pouring through the hall windows, photoreal Gawain armored, warrior, in armor, carrying sword, wreathed in rune ring Knights armored, warrior, in armor, cloak, carrying sword then crane-down on Gawain standing tall among his brothers, then camera lowers to the belt, green light pulsing one final time settling into camera lowers to the belt, its green light pulsing one final time with steel rings, magic sizzles continuity held: Closing emblem — Gawain and the belt; warm gold finale",
+          "image_prompt_start": "photoreal cinematic: on Gawain standing tall among his brothers, the green belt gleaming at his waist, golden light pouring through the hall windows, photoreal.",
+          "image_prompt_end": "photoreal cinematic: lowers to the belt, its green light pulsing one final time.",
+          "video_prompt_start": "Crane-down on Gawain standing tall among his brothers. camera lowers to the belt, green light pulsing one final time. The beat resolves into the next matching frame. Continuity held: Closing emblem — Gawain and the belt; warm gold finale.",
+          "video_prompt_end": "Crane-down on Gawain standing tall among his brothers. camera lowers to the belt, green light pulsing one final time. The beat resolves into the next matching frame. Continuity held: Closing emblem — Gawain and the belt; warm gold finale.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "camelot_great_hall",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class",
+        "screen_dir"
+      ],
+      "palette": [
+        "#c9a227",
+        "#7a5aa0",
+        "#f0d890"
+      ],
+      "light_direction": "key light from screen-left, warm golden hall light",
+      "time_of_day": "day"
+    }
+  ],
+  "director_corrections": {
+    "issued": "2026-11-07",
+    "source": "KB §13 DIRECTOR CORRECTIONS — overrides all prior asset/keyframe guidance",
+    "rules": [
+      "DD HEADWEAR: no cap/hood/bandana/mask on head; hood = back-cowl only (cape-like); bare head + teal-blue glowing hair always visible; any head/face covering = REJECT",
+      "LEGENDARY WEAPONS MUST APPEAR: DD = twin Frostbite-class hand crossbows (ice-blue arcane crystal limbs, frost runes, frozen-light string, teal-blue glow); AZ = Dawnbreaker-class greatsword (pale sunsteel, molten-gold runes, golden holy fire edge, sunburst crossguard); hero sheet/keyframe without weapon = INCOMPLETE",
+      "WEAPON ANTI-SLOP: fantasy construction only; crossbow must NEVER read as firearm (no barrel/magazine/stock/Uzi/SMG silhouette = REJECT); anti-slop negatives always appended",
+      "BOSS FACE: Mal'garot HAS a prolific molten-lava face (lava dripping/running, drops falling to ground); faceless boss sheets SUPERSEDED",
+      "LOCATION BRIGHTNESS FLOOR: environment plates silhouette-readable at thumbnail; no murk-dark grades"
+    ],
+    "applies_when": "Activates when face_lock changes from AI-default to an enrolled identity (DD/AZ). AI-default packages carry this as a forward constraint, not a current defect.",
+    "anti_slop_negatives": "firearm, gun, machinegun, Uzi, barrel, magazine, ammo clip, muzzle, modern weapon"
+  },
+  "character_designs": {
+    "gawain": {
+      "archetype": "warrior",
+      "build": "armored",
+      "scale": "human",
+      "palette": {
+        "primary": "#c0c8d0",
+        "secondary": "#2f3a3f",
+        "glow": "#4ade80"
+      },
+      "costume": [
+        "armor"
+      ],
+      "props": [
+        "sword"
+      ],
+      "fx": [
+        "rune_ring"
+      ]
+    },
+    "lord": {
+      "archetype": "warrior",
+      "build": "armored",
+      "scale": "human",
+      "palette": {
+        "primary": "#2d6a4f",
+        "secondary": "#3d2e1a",
+        "glow": "#6fce94"
+      },
+      "costume": [
+        "hood",
+        "cloak",
+        "armor"
+      ],
+      "props": [
+        "greatsword"
+      ],
+      "fx": [
+        "shadow_smoke"
+      ]
+    },
+    "arthur": {
+      "archetype": "monarch",
+      "build": "robed",
+      "scale": "human",
+      "palette": {
+        "primary": "#c9a227",
+        "secondary": "#7a5aa0",
+        "glow": "#f0d890"
+      },
+      "costume": [
+        "crown",
+        "cloak"
+      ],
+      "props": [],
+      "fx": [
+        "golden_glow"
+      ]
+    },
+    "knights": {
+      "archetype": "warrior",
+      "build": "armored",
+      "scale": "human",
+      "palette": {
+        "primary": "#d8dce4",
+        "secondary": "#7a5aa0",
+        "glow": "#f0d890"
+      },
+      "costume": [
+        "armor",
+        "cloak"
+      ],
+      "props": [
+        "sword"
+      ],
+      "fx": []
+    },
+    "forest_env_A1_prop": {
+      "motif": "forest",
+      "tone": "#1e3a2f"
+    },
+    "chapel_env_A2_prop": {
+      "motif": "spires",
+      "tone": "#4a6b5d"
+    },
+    "clearing_env_A3_prop": {
+      "motif": "forest",
+      "tone": "#0f3d2e"
+    },
+    "camelot_hall_env_A4_prop": {
+      "motif": "hall",
+      "tone": "#c9a227"
+    },
+    "countryside_env_A5_prop": {
+      "motif": "peaks",
+      "tone": "#f0d890"
+    }
+  }
+}

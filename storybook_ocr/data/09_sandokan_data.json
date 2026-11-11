@@ -1,0 +1,2499 @@
+{
+  "num": "09",
+  "title_mk": "Сандокан",
+  "title_en": "Sandokan",
+  "genre": "Авантура · епска акција · романса",
+  "logline": "Малезискиот Тигар, пиратот Сандокан, се заколнува на одмазда против британските поробувачи — но една средба со англиската девојка Маријана го претвора ловецот во вљубен човек.",
+  "spec": {
+    "aspect": "16:9",
+    "resolution": "1216x704",
+    "fps": 24,
+    "model": "model-agnostic (chosen at generation)",
+    "style": "photoreal",
+    "flf": true,
+    "language": "mk",
+    "shot_floor": 40,
+    "shot_max": 60,
+    "seed_policy": "fixed-per-shot (same seed → reproducible shot; re-roll per shot id)",
+    "style_anchor": [
+      "Diablo 2 cinematic",
+      "World of Warcraft cinematic",
+      "StarCraft cinematic"
+    ],
+    "negative_prompt": "deformed, extra limbs, morphing, watermark, text, static frame, blurry, low quality, cropped head, cut-off face",
+    "frames": 121,
+    "frames_fallback": 81,
+    "routes": [
+      {
+        "model": "Wan2.1-FLF2V-14B-720P",
+        "input": "start+end native (run START-ONLY)",
+        "status": "WORKING (lead for 14B quality)"
+      },
+      {
+        "model": "Kandinsky 6.0 Lite/Pro",
+        "input": "start-image-only",
+        "status": "WORKING (Pro-distill untested at scale)"
+      },
+      {
+        "model": "SkyReels-V3 R2V-14B",
+        "input": "start-image-only",
+        "status": "WORKING (fallback)"
+      },
+      {
+        "model": "LTX-Video 2B v0.9.5",
+        "input": "start-image-only",
+        "status": "WORKING (small/fast, low ceiling)"
+      },
+      {
+        "model": "Mochi-1",
+        "input": "start-image-only",
+        "status": "untested here"
+      },
+      {
+        "model": "LTX-2.3 22B distilled",
+        "input": "start-image-only",
+        "status": "DEAD (nanobind native-crash, 42 note)"
+      }
+    ],
+    "model_note": "Model chosen per story at generation (43 §4). Keyframes + continuation prompts are generator-agnostic; only the render command differs per model."
+  },
+  "cast": [
+    {
+      "role": "Сандокан / Sandokan",
+      "trait": "Харизматичен пират-водач, наречен Малезискиот Тигар, храбар и решителен, со црвен турбан",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Маријана / Marianna",
+      "trait": "Убава и нежна внука на лордот Гилонк, вљубена во Сандокан",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Лорд Џејмс Гилонк / Lord James Gillock",
+      "trait": "Англиски благородник, благороден и доверлив домаќин",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Јанез / Yanez",
+      "trait": "Верната десна рака на Сандокан, лукав и храбар пријател",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Британски војници / British soldiers",
+      "trait": "Непријателски војници во црвени униформи што ги гонат пиратите",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    }
+  ],
+  "character_designs": {
+    "sandokan": {
+      "archetype": "warrior",
+      "build": "athletic",
+      "scale": "human",
+      "palette": {
+        "primary": "#8c1f2f",
+        "secondary": "#1f3a52",
+        "glow": "#e8873a"
+      },
+      "costume": [
+        "beard",
+        "cloak"
+      ],
+      "props": [
+        "sword"
+      ],
+      "fx": []
+    },
+    "marianna": {
+      "archetype": "heroine",
+      "build": "slender",
+      "scale": "human",
+      "palette": {
+        "primary": "#c9a7e0",
+        "secondary": "#e8e0f0",
+        "glow": "#f5d76a"
+      },
+      "costume": [
+        "dress"
+      ],
+      "props": [],
+      "fx": [
+        "petals"
+      ]
+    },
+    "gillock": {
+      "archetype": "elder",
+      "build": "robed",
+      "scale": "human",
+      "palette": {
+        "primary": "#4a4a5a",
+        "secondary": "#2c2c3a",
+        "glow": "#e8c06a"
+      },
+      "costume": [
+        "beard"
+      ],
+      "props": [],
+      "fx": []
+    },
+    "yanez": {
+      "archetype": "trickster",
+      "build": "athletic",
+      "scale": "human",
+      "palette": {
+        "primary": "#3e6b4a",
+        "secondary": "#153026",
+        "glow": "#f0c040"
+      },
+      "costume": [
+        "cloak"
+      ],
+      "props": [
+        "sword"
+      ],
+      "fx": []
+    },
+    "soldiers": {
+      "archetype": "warrior",
+      "build": "athletic",
+      "scale": "human",
+      "palette": {
+        "primary": "#b03a2e",
+        "secondary": "#e8e0d0",
+        "glow": "#ffd166"
+      },
+      "costume": [
+        "armor"
+      ],
+      "props": [
+        "crossbow"
+      ],
+      "fx": []
+    },
+    "cannoncrew": {
+      "archetype": "warrior",
+      "build": "athletic",
+      "scale": "human",
+      "palette": {
+        "primary": "#5a4a3a",
+        "secondary": "#2c2218",
+        "glow": "#ffb347"
+      },
+      "costume": [
+        "beard"
+      ],
+      "props": [],
+      "fx": [
+        "fire_wisps"
+      ]
+    },
+    "servants": {
+      "archetype": "servant",
+      "build": "slender",
+      "scale": "human",
+      "palette": {
+        "primary": "#e8e4d8",
+        "secondary": "#b8b0a0",
+        "glow": "#f5e8c8"
+      },
+      "costume": [],
+      "props": [],
+      "fx": []
+    },
+    "crewmom": {
+      "archetype": "warrior",
+      "build": "athletic",
+      "scale": "human",
+      "palette": {
+        "primary": "#1f3a52",
+        "secondary": "#0e1c28",
+        "glow": "#e8873a"
+      },
+      "costume": [
+        "cloak"
+      ],
+      "props": [
+        "sword"
+      ],
+      "fx": []
+    },
+    "ship_env": {
+      "motif": "ocean",
+      "tone": "#2a6a8a"
+    },
+    "sea_env": {
+      "motif": "ocean",
+      "tone": "#1f5a7a"
+    },
+    "beach_env": {
+      "motif": "ocean",
+      "tone": "#d8b890"
+    },
+    "estate_env": {
+      "motif": "hall",
+      "tone": "#e8e0c8"
+    },
+    "bedroom_env": {
+      "motif": "hall",
+      "tone": "#e8d8b0"
+    },
+    "jungle_env": {
+      "motif": "forest",
+      "tone": "#3e6b4a"
+    },
+    "dungeon_env": {
+      "motif": "cavern",
+      "tone": "#241a2e"
+    },
+    "ballroom_env": {
+      "motif": "hall",
+      "tone": "#d4a017"
+    },
+    "mompracem_env": {
+      "motif": "forest",
+      "tone": "#2e6a4a"
+    },
+    "garden_env": {
+      "motif": "forest",
+      "tone": "#6a5a7a"
+    }
+  },
+  "acts": [
+    {
+      "id": "act1",
+      "num": "Act I",
+      "title": "Заложба",
+      "color": "#2dd4bf",
+      "pct": 30,
+      "synopsis": "Го запознаваме Сандокан, Малезискиот Тигар, неговата заклетва за одмазда, потопувањето на бродот и спасоносниот брег во Лабуан.",
+      "shots": [
+        {
+          "id": "S01",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "sandokan_A1_fused",
+            "ship_env_A1_prop",
+            "sea_env_A2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image2: the black-sailed pirate schooner on tropical sea — 100% identical; studio bg/pose/light NOT used; image3: the churning tropical sea and storm sky — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "crane down over the tropical sea toward the black-sailed schooner"
+            ],
+            [
+              2.0,
+              4.0,
+              "settle on the lone crimson-turbaned figure at the bow"
+            ]
+          ],
+          "narration_mk": "На далечните мориња на Малезија, еден човек го знаеја како Малезискиот Тигар.",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal cinematic high-angle wide crane-down over a tropical Southeast-Asian sea at dusk, a black-sailed pirate schooner cutting through emerald waves, storm light on the horizon, photoreal World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Crane settles toward the ship's deck where a lone figure in a crimson turban stands at the bow",
+          "continuity": "Establish the tropical sea and the pirate ship; teal-and-ember dusk palette",
+          "motion": "slow crane-down; waves rolling",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal cinematic high-angle wide crane-down over a tropical Southeast-Asian sea at dusk, a black-sailed pirate schooner cutting through emerald waves, storm light on the horizon, photoreal World of Warcraft cinematic grade Sandokan athletic, warrior, in beard, cloak, carrying sword then crane down over the tropical sea toward the black-sailed schooner, then settle on the lone crimson-turbaned figure at the bow the camera crane-down settling into crane settles toward the ship's deck where a lone figure in a crimson turban stands at the bow with steel rings, water churns and surges continuity held: Establish the tropical sea and the pirate ship; teal-and-ember dusk palette",
+          "image_prompt_start": "photoreal cinematic: Photoreal cinematic high-angle wide over a tropical Southeast-Asian sea at dusk, a black-sailed pirate schooner cutting through emerald waves, storm light on the horizon.",
+          "image_prompt_end": "photoreal cinematic: Crane toward the ship's deck where a lone figure in a crimson turban stands at the bow.",
+          "video_prompt_start": "Crane down over the tropical sea toward the black-sailed schooner. settle on the lone crimson-turbaned figure at the bow. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Establish the tropical sea and the pirate ship; teal-and-ember dusk palette.",
+          "video_prompt_end": "Crane down over the tropical sea toward the black-sailed schooner. settle on the lone crimson-turbaned figure at the bow. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Establish the tropical sea and the pirate ship; teal-and-ember dusk palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S02",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "sandokan_A1_fused",
+            "sea_env_A2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image2: the churning tropical sea and storm sky — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "low-angle push-in on the fierce bearded pirate in his crimson turban"
+            ],
+            [
+              1.8,
+              3.5,
+              "lightning cracks behind his turban as his eyes burn"
+            ]
+          ],
+          "narration_mk": "Тој беше Сандокан, пират чија храброст втеруваше страв во срцата на непријателите.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle close on Sandokan, fierce bearded pirate with a crimson turban, sea-spray on his scarred face, storm sky behind him, photoreal Diablo 2 cinematic grade, 1216x704",
+          "kf_last": "Push-in on his burning eyes as lightning cracks behind his turban",
+          "continuity": "Same crimson turban and weathered face from S01; storm palette",
+          "motion": "slow push-in; lightning flash",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle close on Sandokan, fierce bearded pirate with a crimson turban, sea-spray on his scarred face, storm sky behind him, photoreal Diablo 2 cinematic grade Sandokan athletic, warrior, in beard, cloak, carrying sword then low-angle push-in on the fierce bearded pirate in his crimson turban, then lightning cracks behind his turban as his eyes burn settling into push-in on his burning eyes as lightning cracks behind his turban with steel rings, water churns and surges continuity held: Same crimson turban and weathered face from S01; storm palette",
+          "image_prompt_start": "photoreal cinematic: close on Sandokan, fierce bearded pirate with a crimson turban, sea-spray on his scarred face, storm sky behind him, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: on his burning eyes as lightning cracks behind his turban.",
+          "video_prompt_start": "Low-angle push-in on the fierce bearded pirate in his crimson turban. lightning cracks behind his turban as his eyes burn. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same crimson turban and weathered face from S01; storm palette.",
+          "video_prompt_end": "Low-angle push-in on the fierce bearded pirate in his crimson turban. lightning cracks behind his turban as his eyes burn. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same crimson turban and weathered face from S01; storm palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S03",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "sandokan_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close as Sandokan raises his curved blade to the sky in a vow"
+            ],
+            [
+              1.5,
+              3.0,
+              "his fist tightens as the blade glints, resolve hardening"
+            ]
+          ],
+          "narration_mk": "Откако непријателот му го одзеде семејството, Сандокан се заколна на одмазда.",
+          "dialogue_mk": "Сандокан: „Ќе се борам до крај со поробувачите!“",
+          "kf_first": "Eye-level close of Sandokan raising his curved blade to the sky, fierce vow on his lips, ember wind snapping his turban, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "His blade glints as his fist tightens, resolve hardening in his eyes",
+          "continuity": "Same Sandokan; blade introduced here; ember-and-storm palette",
+          "motion": "static; turban snapping in wind",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level close of Sandokan raising his curved blade to the sky, fierce vow on his lips, ember wind snapping his turban, photoreal StarCraft cinematic grade Sandokan athletic, warrior, in beard, cloak, carrying sword then close as Sandokan raises his curved blade to the sky in a vow, then his fist tightens as the blade glints, resolve hardening the camera static settling into his blade glints as his fist tightens, resolve hardening in his eyes with steel rings a voice speaks in Macedonian: \"Сандокан: „Ќе се борам до крај со поробувачите!“\" continuity held: Same Sandokan; blade introduced here; ember-and-storm palette",
+          "image_prompt_start": "photoreal cinematic: close of Sandokan raising his curved blade to the sky, fierce vow on his lips, ember wind snapping his turban.",
+          "image_prompt_end": "photoreal cinematic: His blade glints as his fist tightens, resolve hardening in his eyes.",
+          "video_prompt_start": "Close as Sandokan raises his curved blade to the sky in a vow. his fist tightens as the blade glints, resolve hardening. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Сандокан: „Ќе се борам до крај со поробувачите!“\" Continuity held: Same Sandokan; blade introduced here; ember-and-storm palette.",
+          "video_prompt_end": "Close as Sandokan raises his curved blade to the sky in a vow. his fist tightens as the blade glints, resolve hardening. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Сандокан: „Ќе се борам до крај со поробувачите!“\" Continuity held: Same Sandokan; blade introduced here; ember-and-storm palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S04",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "sandokan_A1_fused",
+            "crewmom_A9_fused",
+            "ship_env_A1_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image2: the loyal pirate crew of Mompracem — 100% identical; studio bg/pose/light NOT used; image3: the black-sailed pirate schooner on tropical sea — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "track across the torchlit deck as Sandokan rallies his loyal crew"
+            ],
+            [
+              2.0,
+              4.0,
+              "the crew raises weapons in a roaring cheer"
+            ]
+          ],
+          "narration_mk": "Така направи: собра верна дружина што ќе го следи до крајот на светот.",
+          "dialogue_mk": "",
+          "kf_first": "Wide tracking shot of Sandokan standing before a crowd of loyal pirate crew on the torchlit deck at night, raised blade, photoreal World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "The crew raises their weapons in a roaring cheer, torches blazing",
+          "continuity": "Sandokan's blade and outfit; crew introduced here; torchlight night palette",
+          "motion": "slow track across the deck; torches flickering",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide tracking shot of Sandokan standing before a crowd of loyal pirate crew on the torchlit deck at night, raised blade, photoreal World of Warcraft cinematic grade Sandokan athletic, warrior, in beard, cloak, carrying sword then track across the torchlit deck as Sandokan rallies his loyal crew, then the crew raises weapons in a roaring cheer settling into the crew raises their weapons in a roaring cheer, torches blazing with steel rings continuity held: Sandokan's blade and outfit; crew introduced here; torchlight night palette",
+          "image_prompt_start": "photoreal cinematic: of Sandokan standing before a crowd of loyal pirate crew on the torchlit deck at night, raised blade.",
+          "image_prompt_end": "photoreal cinematic: The crew raises their weapons in a roaring cheer, torches blazing.",
+          "video_prompt_start": "Track across the torchlit deck as Sandokan rallies his loyal crew. the crew raises weapons in a roaring cheer. The beat resolves into the next matching frame. Continuity held: Sandokan's blade and outfit; crew introduced here; torchlight night palette.",
+          "video_prompt_end": "Track across the torchlit deck as Sandokan rallies his loyal crew. the crew raises weapons in a roaring cheer. The beat resolves into the next matching frame. Continuity held: Sandokan's blade and outfit; crew introduced here; torchlight night palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S05",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "pan-left",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "ship_env_A1_prop",
+            "sea_env_A2_prop"
+          ],
+          "ref_scope": "image1: the black-sailed pirate schooner on tropical sea — 100% identical; studio bg/pose/light NOT used; image2: the churning tropical sea and storm sky — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "high-angle wide of the schooner surging in pursuit of a British frigate"
+            ],
+            [
+              1.8,
+              3.5,
+              "pan left as the gap closes and enemy sails fill frame"
+            ]
+          ],
+          "narration_mk": "Неговиот брод ги гонеше непријателските бродови преку бескрајната вода.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of the black-sailed schooner surging across open sea in pursuit of a distant British frigate, white wake churning, photoreal Diablo 2 cinematic grade, 1216x704",
+          "kf_last": "Pan left as the gap closes and the enemy ship's sails fill the frame",
+          "continuity": "Same ship from S01; bright day sea palette",
+          "motion": "pan-left; ship cutting through waves",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of the black-sailed schooner surging across open sea in pursuit of a distant British frigate, white wake churning, photoreal Diablo 2 cinematic grade then high-angle wide of the schooner surging in pursuit of a British frigate, then pan left as the gap closes and enemy sails fill frame the camera pan-left settling into pan left as the gap closes and the enemy ship's sails fill the frame with water churns and surges continuity held: Same ship from S01; bright day sea palette",
+          "image_prompt_start": "photoreal cinematic: wide of the black-sailed schooner surging across open sea in pursuit of a distant British frigate, white wake churning, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: left as the gap closes and the enemy ship's sails fill the frame.",
+          "video_prompt_start": "High-angle wide of the schooner surging in pursuit of a British frigate. pan left as the gap closes and enemy sails fill frame. The camera pan-left. The beat resolves into the next matching frame. Continuity held: Same ship from S01; bright day sea palette.",
+          "video_prompt_end": "High-angle wide of the schooner surging in pursuit of a British frigate. pan left as the gap closes and enemy sails fill frame. The camera pan-left. The beat resolves into the next matching frame. Continuity held: Same ship from S01; bright day sea palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S06",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "cannoncrew_A7_fused",
+            "ship_env_A1_prop",
+            "cannonball_A6_prop"
+          ],
+          "ref_scope": "image1: the pirate cannon crew — 100% identical; studio bg/pose/light NOT used; image2: the black-sailed pirate schooner on tropical sea — 100% identical; studio bg/pose/light NOT used; image3: the heavy iron cannonball — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "medium of the pirate cannon crew firing in smoke"
+            ],
+            [
+              1.5,
+              3.0,
+              "the enemy mast cracks and hull slides under"
+            ]
+          ],
+          "narration_mk": "Топовите грмеа, а непријателскиот брод тонеше под црното знаме.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of a pirate cannon crew firing, smoke blasting across the deck, sea spray in the air, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "Smoke clears to reveal the enemy mast cracking and the hull sliding under",
+          "continuity": "Same pirate ship and crew; smoke-and-steel battle palette",
+          "motion": "static; cannon smoke billowing",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of a pirate cannon crew firing, smoke blasting across the deck, sea spray in the air, photoreal StarCraft cinematic grade Cannoncrew athletic, warrior, in beard, wreathed in fire wisps then medium of the pirate cannon crew firing in smoke, then the enemy mast cracks and hull slides under the camera static settling into smoke clears to reveal the enemy mast cracking and the hull sliding under with flames crackle continuity held: Same pirate ship and crew; smoke-and-steel battle palette",
+          "image_prompt_start": "photoreal cinematic: of a pirate cannon crew firing, smoke blasting across the deck, sea spray in the air.",
+          "image_prompt_end": "photoreal cinematic: Smoke clears to reveal the enemy mast cracking and the hull sliding under.",
+          "video_prompt_start": "Medium of the pirate cannon crew firing in smoke. the enemy mast cracks and hull slides under. The camera static. The beat resolves into the next matching frame. Continuity held: Same pirate ship and crew; smoke-and-steel battle palette.",
+          "video_prompt_end": "Medium of the pirate cannon crew firing in smoke. the enemy mast cracks and hull slides under. The camera static. The beat resolves into the next matching frame. Continuity held: Same pirate ship and crew; smoke-and-steel battle palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S07",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-right",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "ship_env_A1_prop",
+            "sea_env_A2_prop"
+          ],
+          "ref_scope": "image1: the black-sailed pirate schooner on tropical sea — 100% identical; studio bg/pose/light NOT used; image2: the churning tropical sea and storm sky — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "wide of the lone schooner ringed by enemy warships"
+            ],
+            [
+              1.8,
+              3.5,
+              "pan right as every gun barrel turns toward the ship"
+            ]
+          ],
+          "narration_mk": "Но надојде нерамноправна битка: цела флота ги опколи.",
+          "dialogue_mk": "",
+          "kf_first": "Wide shot of the pirate schooner surrounded by a ring of enemy warships, their cannons aimed, dark clouds gathering, photoreal Diablo 2 cinematic grade, 1216x704",
+          "kf_last": "Pan right across the enemy fleet as every gun barrel turns toward the lone ship",
+          "continuity": "Same enemy ships; ominous grey fleet palette",
+          "motion": "pan-right; clouds thickening",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide shot of the pirate schooner surrounded by a ring of enemy warships, their cannons aimed, dark clouds gathering, photoreal Diablo 2 cinematic grade then wide of the lone schooner ringed by enemy warships, then pan right as every gun barrel turns toward the ship the camera pan-right settling into pan right across the enemy fleet as every gun barrel turns toward the lone ship with water churns and surges continuity held: Same enemy ships; ominous grey fleet palette",
+          "image_prompt_start": "photoreal cinematic: shot of the pirate schooner surrounded by a ring of enemy warships, their cannons aimed, dark clouds gathering, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: right across the enemy fleet as every gun barrel toward the lone ship.",
+          "video_prompt_start": "Wide of the lone schooner ringed by enemy warships. pan right as every gun barrel turns toward the ship. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Same enemy ships; ominous grey fleet palette.",
+          "video_prompt_end": "Wide of the lone schooner ringed by enemy warships. pan right as every gun barrel turns toward the ship. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Same enemy ships; ominous grey fleet palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S08",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "cannonball_A6_prop",
+            "ship_env_A1_prop"
+          ],
+          "ref_scope": "image1: the heavy iron cannonball — 100% identical; studio bg/pose/light NOT used; image2: the black-sailed pirate schooner on tropical sea — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.2,
+              "macro insert of the cannonball smashing the wooden deck"
+            ],
+            [
+              1.2,
+              2.5,
+              "the deck buckles and flame erupts from below"
+            ]
+          ],
+          "narration_mk": "Едно топовско ѓуле ја погоди палубата и бродот почна да се крши.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of a heavy iron cannonball smashing through the wooden deck, splinters erupting in slow motion, photoreal World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "The deck buckles and flame erupts from below",
+          "continuity": "Same ship deck; fire-and-splinter palette begins here",
+          "motion": "static; splinters flying",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of a heavy iron cannonball smashing through the wooden deck, splinters erupting in slow motion, photoreal World of Warcraft cinematic grade then macro insert of the cannonball smashing the wooden deck, then the deck buckles and flame erupts from below the camera static continuity held: Same ship deck; fire-and-splinter palette begins here",
+          "image_prompt_start": "photoreal cinematic: Macro insert of a heavy iron cannonball smashing through the wooden deck, splinters erupting in slow motion.",
+          "image_prompt_end": "photoreal cinematic: The deck buckles and flame erupts from below.",
+          "video_prompt_start": "Macro insert of the cannonball smashing the wooden deck. the deck buckles and flame erupts from below. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same ship deck; fire-and-splinter palette begins here.",
+          "video_prompt_end": "Macro insert of the cannonball smashing the wooden deck. the deck buckles and flame erupts from below. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same ship deck; fire-and-splinter palette begins here.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S09",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "ship_env_A1_prop",
+            "sea_env_A2_prop"
+          ],
+          "ref_scope": "image1: the black-sailed pirate schooner on tropical sea — 100% identical; studio bg/pose/light NOT used; image2: the churning tropical sea and storm sky — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "high-angle crane-up as the schooner tips and sinks"
+            ],
+            [
+              2.0,
+              4.0,
+              "the stern slips beneath the churning water"
+            ]
+          ],
+          "narration_mk": "Бродот на Тигарот се наведна и потона во разбеснетото море.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle crane-up wide of the pirate schooner tipping and sinking, mast toppling, crew leaping into the waves, smoke and fire, photoreal Diablo 2 cinematic grade, 1216x704",
+          "kf_last": "Crane rises as the stern slips beneath the churning water",
+          "continuity": "Same sinking ship; fire-and-dark-sea palette",
+          "motion": "crane-up; ship sinking",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle crane-up wide of the pirate schooner tipping and sinking, mast toppling, crew leaping into the waves, smoke and fire, photoreal Diablo 2 cinematic grade then high-angle crane-up as the schooner tips and sinks, then the stern slips beneath the churning water settling into crane rises as the stern slips beneath the churning water with water churns and surges continuity held: Same sinking ship; fire-and-dark-sea palette",
+          "image_prompt_start": "photoreal cinematic: wide of the pirate schooner tipping and sinking, mast toppling, crew leaping into the waves, smoke and fire, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: Crane as the stern slips beneath the churning water.",
+          "video_prompt_start": "High-angle crane-up as the schooner tips and sinks. the stern slips beneath the churning water. The beat resolves into the next matching frame. Continuity held: Same sinking ship; fire-and-dark-sea palette.",
+          "video_prompt_end": "High-angle crane-up as the schooner tips and sinks. the stern slips beneath the churning water. The beat resolves into the next matching frame. Continuity held: Same sinking ship; fire-and-dark-sea palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S10",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "sandokan_A1_fused",
+            "sea_env_A2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image2: the churning tropical sea and storm sky — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "track beside wounded Sandokan swimming through stormy waves"
+            ],
+            [
+              1.8,
+              3.5,
+              "he fights through a crest toward faint land ahead"
+            ]
+          ],
+          "narration_mk": "Ранетиот Сандокан ги собра сите сили и заплива низ брановите.",
+          "dialogue_mk": "",
+          "kf_first": "Medium tracking shot of wounded Sandokan swimming through stormy waves, crimson turban trailing, determination on his face, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "He fights through a cresting wave, head above water, land faint ahead",
+          "continuity": "Same wounded Sandokan; sea-storm palette",
+          "motion": "track alongside him; waves crashing",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium tracking shot of wounded Sandokan swimming through stormy waves, crimson turban trailing, determination on his face, photoreal StarCraft cinematic grade Sandokan athletic, warrior, in beard, cloak, carrying sword then track beside wounded Sandokan swimming through stormy waves, then he fights through a crest toward faint land ahead settling into he fights through a cresting wave, head above water, land faint ahead with steel rings, water churns and surges continuity held: Same wounded Sandokan; sea-storm palette",
+          "image_prompt_start": "photoreal cinematic: of wounded Sandokan swimming through stormy waves, crimson turban trailing, determination on his face.",
+          "image_prompt_end": "photoreal cinematic: He fights through a cresting wave, head above water, land faint ahead.",
+          "video_prompt_start": "Track beside wounded Sandokan swimming through stormy waves. he fights through a crest toward faint land ahead. The beat resolves into the next matching frame. Continuity held: Same wounded Sandokan; sea-storm palette.",
+          "video_prompt_end": "Track beside wounded Sandokan swimming through stormy waves. he fights through a crest toward faint land ahead. The beat resolves into the next matching frame. Continuity held: Same wounded Sandokan; sea-storm palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S11",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "sandokan_A1_fused",
+            "beach_env_A3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image2: the pale tropical beach of Labuan at dawn — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "low-angle wide of dawn as Sandokan crawls onto the Labuan beach"
+            ],
+            [
+              1.8,
+              3.5,
+              "he goes still on the sand under warm first sunbeams"
+            ]
+          ],
+          "narration_mk": "До зори доплива до плажата во Лабуан и се струполи на песокот.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of dawn on a pale tropical beach on Labuan, Sandokan crawling out of the surf and collapsing onto the wet sand, photoreal World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "He goes still on the sand as the first sunbeams warm the shore",
+          "continuity": "Same Sandokan; dawn-gold beach palette",
+          "motion": "static; tide receding",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of dawn on a pale tropical beach on Labuan, Sandokan crawling out of the surf and collapsing onto the wet sand, photoreal World of Warcraft cinematic grade Sandokan athletic, warrior, in beard, cloak, carrying sword then low-angle wide of dawn as Sandokan crawls onto the Labuan beach, then he goes still on the sand under warm first sunbeams the camera static settling into he goes still on the sand as the first sunbeams warm the shore with steel rings continuity held: Same Sandokan; dawn-gold beach palette",
+          "image_prompt_start": "photoreal cinematic: wide of dawn on a pale tropical beach on Labuan, Sandokan crawling out of the surf and collapsing onto the wet sand.",
+          "image_prompt_end": "photoreal cinematic: He goes still on the sand as the first sunbeams warm the shore.",
+          "video_prompt_start": "Low-angle wide of dawn as Sandokan crawls onto the Labuan beach. he goes still on the sand under warm first sunbeams. The camera static. The beat resolves into the next matching frame. Continuity held: Same Sandokan; dawn-gold beach palette.",
+          "video_prompt_end": "Low-angle wide of dawn as Sandokan crawls onto the Labuan beach. he goes still on the sand under warm first sunbeams. The camera static. The beat resolves into the next matching frame. Continuity held: Same Sandokan; dawn-gold beach palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S12",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "servants_A8_fused",
+            "sandokan_A1_fused",
+            "beach_env_A3_prop"
+          ],
+          "ref_scope": "image1: the two servants in white cloth — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image3: the pale tropical beach of Labuan at dawn — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "high-angle medium of the two servants lifting the unconscious Sandokan"
+            ],
+            [
+              1.8,
+              3.5,
+              "crane-down as they carry him toward the white villa"
+            ]
+          ],
+          "narration_mk": "Некои слуги го најдоа онесвестен на плажата и го кренаа на раце.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle medium of two servants in white cloth bending over the unconscious Sandokan on the beach, lifting him gently, photoreal Diablo 2 cinematic grade, 1216x704",
+          "kf_last": "Crane-down as they carry him toward a white colonial villa in the jungle distance",
+          "continuity": "Same beach and Sandokan; serve figures introduced; morning palette",
+          "motion": "crane-down; servants lifting",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle medium of two servants in white cloth bending over the unconscious Sandokan on the beach, lifting him gently, photoreal Diablo 2 cinematic grade Servants slender, servant Sandokan athletic, warrior, in beard, cloak, carrying sword then high-angle medium of the two servants lifting the unconscious Sandokan, then crane-down as they carry him toward the white villa settling into crane-down as they carry him toward a white colonial villa in the jungle distance with steel rings continuity held: Same beach and Sandokan; serve figures introduced; morning palette",
+          "image_prompt_start": "photoreal cinematic: medium of two servants in white cloth bending over the unconscious Sandokan on the beach, lifting him gently, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: as they carry him toward a white colonial villa in the jungle distance.",
+          "video_prompt_start": "High-angle medium of the two servants lifting the unconscious Sandokan. crane-down as they carry him toward the white villa. The beat resolves into the next matching frame. Continuity held: Same beach and Sandokan; serve figures introduced; morning palette.",
+          "video_prompt_end": "High-angle medium of the two servants lifting the unconscious Sandokan. crane-down as they carry him toward the white villa. The beat resolves into the next matching frame. Continuity held: Same beach and Sandokan; serve figures introduced; morning palette.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "tropical_sea_pirate_ship_and_labuan_beach",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class",
+        "screen_dir"
+      ],
+      "palette": [
+        "#12707c",
+        "#1f3a52",
+        "#e8873a"
+      ],
+      "light_direction": "key light from screen-left, storm dusk over tropical sea then dawn on Labuan beach",
+      "time_of_day": "dusk"
+    },
+    {
+      "id": "act2",
+      "num": "Act II",
+      "title": "Ловот, занданата и враќањето",
+      "color": "#f59e0b",
+      "pct": 45,
+      "synopsis": "Во куќата на лордот Гилонк, Сандокан се претставува како бродоломен принц и ја запознава Маријана; ловот на тигри го разоткрива, но Јанез го спасува — а љубовта го влече назад.",
+      "shots": [
+        {
+          "id": "S13",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "sandokan_A1_fused",
+            "bedroom_env_A5_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image2: the sunlit colonial bedroom interior — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "medium of Sandokan waking in the sunlit colonial bedroom"
+            ],
+            [
+              1.8,
+              3.5,
+              "he sits upright, scanning the unfamiliar room"
+            ]
+          ],
+          "narration_mk": "Кога се разбуди, Сандокан виде дека лежи на мека постела, во туѓа куќа.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of Sandokan waking in a sunlit colonial bedroom, fine linen sheets, confusion on his bandaged face, photoreal World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "He pushes himself up slowly, scanning the unfamiliar elegant room",
+          "continuity": "Same Sandokan, bandage added; warm interior daylight palette",
+          "motion": "static; he sits upright",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Sandokan waking in a sunlit colonial bedroom, fine linen sheets, confusion on his bandaged face, photoreal World of Warcraft cinematic grade Sandokan athletic, warrior, in beard, cloak, carrying sword then medium of Sandokan waking in the sunlit colonial bedroom, then he sits upright, scanning the unfamiliar room the camera static settling into he pushes himself up slowly, scanning the unfamiliar elegant room with steel rings continuity held: Same Sandokan, bandage added; warm interior daylight palette",
+          "image_prompt_start": "photoreal cinematic: of Sandokan waking in a sunlit colonial bedroom, fine linen sheets, confusion on his bandaged face.",
+          "image_prompt_end": "photoreal cinematic: He pushes himself up slowly, scanning the unfamiliar elegant room.",
+          "video_prompt_start": "Medium of Sandokan waking in the sunlit colonial bedroom. he sits upright, scanning the unfamiliar room. The camera static. The beat resolves into the next matching frame. Continuity held: Same Sandokan, bandage added; warm interior daylight palette.",
+          "video_prompt_end": "Medium of Sandokan waking in the sunlit colonial bedroom. he sits upright, scanning the unfamiliar room. The camera static. The beat resolves into the next matching frame. Continuity held: Same Sandokan, bandage added; warm interior daylight palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S14",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "sandokan_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.2,
+              "close push-in on Sandokan blinking eyes, blurred room reflected"
+            ],
+            [
+              1.2,
+              2.5,
+              "focus sharpens as a face appears beside the bed"
+            ]
+          ],
+          "narration_mk": "Сè му беше матно, но знаеше дека мора да го скрие своето вистинско име.",
+          "dialogue_mk": "",
+          "kf_first": "Close on Sandokan's eyes blinking open, blurred elegant room reflected in them, photoreal Diablo 2 cinematic grade, 1216x704",
+          "kf_last": "Focus sharpens as a face appears beside the bed",
+          "continuity": "Same Sandokan face; soft morning palette",
+          "motion": "push-in on the eyes",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close on Sandokan's eyes blinking open, blurred elegant room reflected in them, photoreal Diablo 2 cinematic grade Sandokan athletic, warrior, in beard, cloak, carrying sword then close push-in on Sandokan blinking eyes, blurred room reflected, then focus sharpens as a face appears beside the bed with steel rings continuity held: Same Sandokan face; soft morning palette",
+          "image_prompt_start": "photoreal cinematic: on Sandokan's eyes blinking open, blurred elegant room reflected in them, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: Focus sharpens as a face appears beside the bed.",
+          "video_prompt_start": "Close push-in on Sandokan blinking eyes, blurred room reflected. focus sharpens as a face appears beside the bed. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same Sandokan face; soft morning palette.",
+          "video_prompt_end": "Close push-in on Sandokan blinking eyes, blurred room reflected. focus sharpens as a face appears beside the bed. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same Sandokan face; soft morning palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S15",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "marianna_A2_fused",
+            "bedroom_env_A5_prop"
+          ],
+          "ref_scope": "image1: the fused master of Marianna — graceful young English woman, soft curls, lavender gown — 100% identical; studio bg/pose/light NOT used; image2: the sunlit colonial bedroom interior — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "medium of Marianna leaning gently over the bedside"
+            ],
+            [
+              1.8,
+              3.5,
+              "she places a cool cloth on his brow with kind eyes"
+            ]
+          ],
+          "narration_mk": "Покрај него стоеше убавата Маријана, внуката на лордот Гилонк.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of a graceful young English woman, Marianna, with soft curls and a lavender gown, leaning gently over the bedside with a smile of relief, photoreal World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "She places a cool cloth on his brow, kindness in her eyes",
+          "continuity": "Marianna costume introduced; warm daylight palette from S13",
+          "motion": "static; gentle gesture",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of a graceful young English woman, Marianna, with soft curls and a lavender gown, leaning gently over the bedside with a smile of relief, photoreal World of Warcraft cinematic grade Marianna slender, heroine, in dress, wreathed in petals then medium of Marianna leaning gently over the bedside, then she places a cool cloth on his brow with kind eyes the camera static settling into she places a cool cloth on his brow, kindness in her eyes with petals swirl and rustle continuity held: Marianna costume introduced; warm daylight palette from S13",
+          "image_prompt_start": "photoreal cinematic: of a graceful young English woman, Marianna, with soft curls and a lavender gown, leaning gently over the bedside with a smile of relief.",
+          "image_prompt_end": "photoreal cinematic: She places a cool cloth on his brow, kindness in her eyes.",
+          "video_prompt_start": "Medium of Marianna leaning gently over the bedside. she places a cool cloth on his brow with kind eyes. The camera static. The beat resolves into the next matching frame. Continuity held: Marianna costume introduced; warm daylight palette from S13.",
+          "video_prompt_end": "Medium of Marianna leaning gently over the bedside. she places a cool cloth on his brow with kind eyes. The camera static. The beat resolves into the next matching frame. Continuity held: Marianna costume introduced; warm daylight palette from S13.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S16",
+          "shot_type": "CLOSE-UP",
+          "size": "OVER",
+          "angle": "over-shoulder",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "sandokan_A1_fused",
+            "marianna_A2_fused",
+            "bedroom_env_A5_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Marianna — graceful young English woman, soft curls, lavender gown — 100% identical; studio bg/pose/light NOT used; image3: the sunlit colonial bedroom interior — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "over-shoulder toward Marianna and the bright window, Sandokan tense"
+            ],
+            [
+              1.5,
+              3.0,
+              "his fingers grip the blanket tighter"
+            ]
+          ],
+          "narration_mk": "Ако го откриеја неговиот вистински идентитет, Англичаните ќе го затвореа.",
+          "dialogue_mk": "",
+          "kf_first": "Over-shoulder from behind Sandokan's head toward Marianna and the bright colonial window, his tense profile in the edge of frame, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "His fingers grip the blanket tighter, the moment of silent danger",
+          "continuity": "Same bedside scene; tension in the light",
+          "motion": "static; grip tightening",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: over-shoulder from behind Sandokan's head toward Marianna and the bright colonial window, his tense profile in the edge of frame, photoreal StarCraft cinematic grade Sandokan athletic, warrior, in beard, cloak, carrying sword Marianna slender, heroine, in dress, wreathed in petals then over-shoulder toward Marianna and the bright window, Sandokan tense, then his fingers grip the blanket tighter the camera static settling into his fingers grip the blanket tighter, the moment of silent danger with steel rings, petals swirl and rustle continuity held: Same bedside scene; tension in the light",
+          "image_prompt_start": "photoreal cinematic: Over-shoulder from behind Sandokan's head toward Marianna and the bright colonial window, his tense profile in the edge of frame.",
+          "image_prompt_end": "photoreal cinematic: His fingers grip the blanket tighter, the moment of silent danger.",
+          "video_prompt_start": "Over-shoulder toward Marianna and the bright window, Sandokan tense. his fingers grip the blanket tighter. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same bedside scene; tension in the light.",
+          "video_prompt_end": "Over-shoulder toward Marianna and the bright window, Sandokan tense. his fingers grip the blanket tighter. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same bedside scene; tension in the light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S17",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "shot-reverse",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "sandokan_A1_fused",
+            "marianna_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Marianna — graceful young English woman, soft curls, lavender gown — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "shot-reverse of Sandokan telling his shipwreck story"
+            ],
+            [
+              1.8,
+              3.5,
+              "Marianna softens with belief"
+            ]
+          ],
+          "narration_mk": "И ја кажа приказната: дека е малезиски принц што преживеал бродолом.",
+          "dialogue_mk": "Сандокан: „Јас сум принц чиј брод го проголта морето.“",
+          "kf_first": "Medium shot-reverse of Sandokan speaking earnestly to Marianna, his turban absent, his story measured and calm, photoreal Diablo 2 cinematic grade, 1216x704",
+          "kf_last": "Marianna listens, her expression softening with belief",
+          "continuity": "Same two-shot bedside; warm palette; Sandokan without turban introduced",
+          "motion": "shot-reverse; soft head turns",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium shot-reverse of Sandokan speaking earnestly to Marianna, his turban absent, his story measured and calm, photoreal Diablo 2 cinematic grade Sandokan athletic, warrior, in beard, cloak, carrying sword Marianna slender, heroine, in dress, wreathed in petals then shot-reverse of Sandokan telling his shipwreck story, then Marianna softens with belief settling into marianna listens, her expression softening with belief with steel rings, petals swirl and rustle a voice speaks in Macedonian: \"Сандокан: „Јас сум принц чиј брод го проголта морето.“\" continuity held: Same two-shot bedside; warm palette; Sandokan without turban introduced",
+          "image_prompt_start": "photoreal cinematic: shot-reverse of Sandokan speaking earnestly to Marianna, his turban absent, his story measured and calm, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: Marianna listens, her expression softening with belief.",
+          "video_prompt_start": "Shot-reverse of Sandokan telling his shipwreck story. Marianna softens with belief. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Сандокан: „Јас сум принц чиј брод го проголта морето.“\" Continuity held: Same two-shot bedside; warm palette; Sandokan without turban introduced.",
+          "video_prompt_end": "Shot-reverse of Sandokan telling his shipwreck story. Marianna softens with belief. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Сандокан: „Јас сум принц чиј брод го проголта морето.“\" Continuity held: Same two-shot bedside; warm palette; Sandokan without turban introduced.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S18",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gillock_A3_fused",
+            "sandokan_A1_fused",
+            "marianna_A2_fused",
+            "bedroom_env_A5_prop"
+          ],
+          "ref_scope": "image1: the fused master of Lord James Gillock — distinguished grey-haired nobleman, waistcoat — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Marianna — graceful young English woman, soft curls, lavender gown — 100% identical; studio bg/pose/light NOT used; image4: the sunlit colonial bedroom interior — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "wide of Lord Gillock extending a welcoming hand"
+            ],
+            [
+              1.8,
+              3.5,
+              "Sandokan accepts with a guarded nod"
+            ]
+          ],
+          "narration_mk": "Дојде лордот Гилонк, поверува на приказната и му понуди да остане додека не закрепне.",
+          "dialogue_mk": "Лорд Гилонк: „Бидете ми гостин, господине.“",
+          "kf_first": "Wide of Lord Gillock, a distinguished grey-haired English nobleman in a waistcoat, extending a welcoming hand to Sandokan in the sunlit room, Marianna beside them, photoreal World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Sandokan accepts with a small, guarded nod",
+          "continuity": "Gillock costume introduced; same room palette; Marianna present",
+          "motion": "static; handshake nod",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide of Lord Gillock, a distinguished grey-haired English nobleman in a waistcoat, extending a welcoming hand to Sandokan in the sunlit room, Marianna beside them, photoreal World of Warcraft cinematic grade Gillock robed, elder, in beard Sandokan athletic, warrior, in beard, cloak, carrying sword Marianna slender, heroine, in dress, wreathed in petals then wide of Lord Gillock extending a welcoming hand, then Sandokan accepts with a guarded nod the camera static settling into sandokan accepts with a small, guarded nod with steel rings, petals swirl and rustle a voice speaks in Macedonian: \"Лорд Гилонк: „Бидете ми гостин, господине.“\" continuity held: Gillock costume introduced; same room palette; Marianna present",
+          "image_prompt_start": "photoreal cinematic: of Lord Gillock, a distinguished grey-haired English nobleman in a waistcoat, extending a welcoming hand to Sandokan in the sunlit room, Marianna beside them.",
+          "image_prompt_end": "photoreal cinematic: Sandokan accepts with a small, guarded nod.",
+          "video_prompt_start": "Wide of Lord Gillock extending a welcoming hand. Sandokan accepts with a guarded nod. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Лорд Гилонк: „Бидете ми гостин, господине.“\" Continuity held: Gillock costume introduced; same room palette; Marianna present.",
+          "video_prompt_end": "Wide of Lord Gillock extending a welcoming hand. Sandokan accepts with a guarded nod. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Лорд Гилонк: „Бидете ми гостин, господине.“\" Continuity held: Gillock costume introduced; same room palette; Marianna present.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S19",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "bedroom_env_A5_prop"
+          ],
+          "ref_scope": "image1: the sunlit colonial bedroom interior — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.2,
+              "macro insert of sunlight sliding across the window ledge"
+            ],
+            [
+              1.2,
+              2.5,
+              "the light angle shifts, marking days passing"
+            ]
+          ],
+          "narration_mk": "Поминаа денови, и Сандокан полека закрепна.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of sunlight sliding across a colonial window ledge, dust motes drifting, a healing bandage resting on the sill, photoreal Diablo 2 cinematic grade, 1216x704",
+          "kf_last": "The light changes angle, marking the passage of days",
+          "continuity": "Same interior; passage-of-time montage palette",
+          "motion": "static; light shifting",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of sunlight sliding across a colonial window ledge, dust motes drifting, a healing bandage resting on the sill, photoreal Diablo 2 cinematic grade then macro insert of sunlight sliding across the window ledge, then the light angle shifts, marking days passing the camera static settling into the light changes angle, marking the passage of days continuity held: Same interior; passage-of-time montage palette",
+          "image_prompt_start": "photoreal cinematic: Macro insert of sunlight sliding across a colonial window ledge, dust motes drifting, a healing bandage resting on the sill, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: The light changes angle, marking the passage of days.",
+          "video_prompt_start": "Macro insert of sunlight sliding across the window ledge. the light angle shifts, marking days passing. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same interior; passage-of-time montage palette.",
+          "video_prompt_end": "Macro insert of sunlight sliding across the window ledge. the light angle shifts, marking days passing. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same interior; passage-of-time montage palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S20",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "soldiers_A5_fused",
+            "sandokan_A1_fused",
+            "estate_env_A4_prop"
+          ],
+          "ref_scope": "image1: the fused master of the British soldiers — red-coated enemy soldiers, white trousers — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image3: the white colonial villa and estate grounds — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "high-angle crane-down over the estate yard with red-coated soldiers"
+            ],
+            [
+              2.0,
+              4.0,
+              "settle on Sandokan watching warily"
+            ]
+          ],
+          "narration_mk": "На имотот се подготвуваше лов на тигри, со британски војници.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle crane-down wide of a colonial estate front yard where red-coated British soldiers and hunters prepare rifles and a tiger cage, morning mist in the jungle beyond, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "Crane settles on Sandokan standing apart, watching the soldiers warily",
+          "continuity": "Estate introduced; soldiers' red coats; misty morning palette",
+          "motion": "crane-down; hunters moving",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle crane-down wide of a colonial estate front yard where red-coated British soldiers and hunters prepare rifles and a tiger cage, morning mist in the jungle beyond, photoreal StarCraft cinematic grade Soldiers athletic, warrior, in armor, carrying crossbow Sandokan athletic, warrior, in beard, cloak, carrying sword then high-angle crane-down over the estate yard with red-coated soldiers, then settle on Sandokan watching warily settling into crane settles on Sandokan standing apart, watching the soldiers warily with crossbow strings hum, steel rings continuity held: Estate introduced; soldiers' red coats; misty morning palette",
+          "image_prompt_start": "photoreal cinematic: wide of a colonial estate front yard where red-coated British soldiers and hunters prepare rifles and a tiger cage, morning mist in the jungle beyond.",
+          "image_prompt_end": "photoreal cinematic: Crane on Sandokan standing apart, watching the soldiers warily.",
+          "video_prompt_start": "High-angle crane-down over the estate yard with red-coated soldiers. settle on Sandokan watching warily. The beat resolves into the next matching frame. Continuity held: Estate introduced; soldiers' red coats; misty morning palette.",
+          "video_prompt_end": "High-angle crane-down over the estate yard with red-coated soldiers. settle on Sandokan watching warily. The beat resolves into the next matching frame. Continuity held: Estate introduced; soldiers' red coats; misty morning palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S21",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "sandokan_A1_fused",
+            "jungle_env_A6_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image2: the dense green jungle — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "track through the jungle as Sandokan cuts vines with his machete"
+            ],
+            [
+              1.8,
+              3.5,
+              "he pauses, sensing something large ahead"
+            ]
+          ],
+          "narration_mk": "Сандокан влезе сам во шумата, длабоко до срцето на џунглата.",
+          "dialogue_mk": "",
+          "kf_first": "Medium tracking shot of Sandokan moving alone through dense jungle, machete cutting vines, shafts of green light, photoreal World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "He pauses, senses something large in the shadows ahead",
+          "continuity": "Same Sandokan; jungle green palette",
+          "motion": "track through the jungle",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium tracking shot of Sandokan moving alone through dense jungle, machete cutting vines, shafts of green light, photoreal World of Warcraft cinematic grade Sandokan athletic, warrior, in beard, cloak, carrying sword then track through the jungle as Sandokan cuts vines with his machete, then he pauses, sensing something large ahead settling into he pauses, senses something large in the shadows ahead with steel rings continuity held: Same Sandokan; jungle green palette",
+          "image_prompt_start": "photoreal cinematic: of Sandokan moving alone through dense jungle, machete cutting vines, shafts of green light.",
+          "image_prompt_end": "photoreal cinematic: He pauses, senses something large in the shadows ahead.",
+          "video_prompt_start": "Track through the jungle as Sandokan cuts vines with his machete. he pauses, sensing something large ahead. The beat resolves into the next matching frame. Continuity held: Same Sandokan; jungle green palette.",
+          "video_prompt_end": "Track through the jungle as Sandokan cuts vines with his machete. he pauses, sensing something large ahead. The beat resolves into the next matching frame. Continuity held: Same Sandokan; jungle green palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S22",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "tiger_B1_sheet",
+            "jungle_env_A6_prop"
+          ],
+          "ref_scope": "image1: the reference sheet of the Bengal tiger — massive striped beast — 100% identical; studio bg/pose/light NOT used; image2: the dense green jungle — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "low-angle wide of the Bengal tiger crouched on a jungle rock"
+            ],
+            [
+              1.8,
+              3.5,
+              "the tail lashes, ready to spring"
+            ]
+          ],
+          "narration_mk": "Одеднаш, лице в лице се најде со страшниот тигар.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of a massive Bengal tiger crouched on a jungle rock, eyes locked on Sandokan, muscles tense, photoreal Diablo 2 cinematic grade, 1216x704",
+          "kf_last": "The tiger's tail lashes, ready to spring",
+          "continuity": "Tiger introduced; dark jungle palette",
+          "motion": "static; tension before the pounce",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of a massive Bengal tiger crouched on a jungle rock, eyes locked on Sandokan, muscles tense, photoreal Diablo 2 cinematic grade then low-angle wide of the Bengal tiger crouched on a jungle rock, then the tail lashes, ready to spring the camera static settling into the tiger's tail lashes, ready to spring continuity held: Tiger introduced; dark jungle palette",
+          "image_prompt_start": "photoreal cinematic: wide of a massive Bengal tiger crouched on a jungle rock, eyes locked on Sandokan, muscles tense, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: The tiger's tail lashes, ready to spring.",
+          "video_prompt_start": "Low-angle wide of the Bengal tiger crouched on a jungle rock. the tail lashes, ready to spring. The camera static. The beat resolves into the next matching frame. Continuity held: Tiger introduced; dark jungle palette.",
+          "video_prompt_end": "Low-angle wide of the Bengal tiger crouched on a jungle rock. the tail lashes, ready to spring. The camera static. The beat resolves into the next matching frame. Continuity held: Tiger introduced; dark jungle palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S23",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "sandokan_A1_fused",
+            "tiger_B1_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image2: the reference sheet of the Bengal tiger — massive striped beast — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "low-angle medium of Sandokan leaping with his war cry"
+            ],
+            [
+              1.5,
+              3.0,
+              "push-in as man and tiger collide mid-motion"
+            ]
+          ],
+          "narration_mk": "Сандокан го нападна со својот препознатлив воен крик.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of Sandokan leaping forward with his blade, mouth open in his famous war cry, the tiger lunging in the same frame, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "Push-in on the clash as man and tiger collide mid-motion",
+          "continuity": "Same Sandokan and tiger; chaotic jungle palette",
+          "motion": "push-in; kinetic clash",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Sandokan leaping forward with his blade, mouth open in his famous war cry, the tiger lunging in the same frame, photoreal StarCraft cinematic grade Sandokan athletic, warrior, in beard, cloak, carrying sword then low-angle medium of Sandokan leaping with his war cry, then push-in as man and tiger collide mid-motion settling into push-in on the clash as man and tiger collide mid-motion with steel rings continuity held: Same Sandokan and tiger; chaotic jungle palette",
+          "image_prompt_start": "photoreal cinematic: medium of Sandokan leaping forward with his blade, mouth open in his famous war cry, the tiger lunging in the same frame.",
+          "image_prompt_end": "photoreal cinematic: on the clash as man and tiger collide mid-motion.",
+          "video_prompt_start": "Low-angle medium of Sandokan leaping with his war cry. push-in as man and tiger collide mid-motion. The beat resolves into the next matching frame. Continuity held: Same Sandokan and tiger; chaotic jungle palette.",
+          "video_prompt_end": "Low-angle medium of Sandokan leaping with his war cry. push-in as man and tiger collide mid-motion. The beat resolves into the next matching frame. Continuity held: Same Sandokan and tiger; chaotic jungle palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S24",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "soldiers_A5_fused",
+            "jungle_env_A6_prop"
+          ],
+          "ref_scope": "image1: the fused master of the British soldiers — red-coated enemy soldiers, white trousers — 100% identical; studio bg/pose/light NOT used; image2: the dense green jungle — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close of a red-coated soldier pointing in recognition"
+            ],
+            [
+              1.5,
+              3.0,
+              "more soldiers burst in with rifles raised"
+            ]
+          ],
+          "narration_mk": "Но неговиот крик го слушнаа војниците што се беа бореле со него.",
+          "dialogue_mk": "Војници: „Те препознавме, пирату!“",
+          "kf_first": "Close of a red-coated British soldier pointing sharply through the jungle undergrowth, recognition dawning in his eyes, photoreal World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "More soldiers burst into frame behind him, rifles raised",
+          "continuity": "Same soldiers from S20; jungle palette; tense recognition",
+          "motion": "static; soldiers advancing",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close of a red-coated British soldier pointing sharply through the jungle undergrowth, recognition dawning in his eyes, photoreal World of Warcraft cinematic grade Soldiers athletic, warrior, in armor, carrying crossbow then close of a red-coated soldier pointing in recognition, then more soldiers burst in with rifles raised the camera static settling into more soldiers burst into frame behind him, rifles raised with crossbow strings hum a voice speaks in Macedonian: \"Војници: „Те препознавме, пирату!“\" continuity held: Same soldiers from S20; jungle palette; tense recognition",
+          "image_prompt_start": "photoreal cinematic: of a red-coated British soldier pointing sharply through the jungle undergrowth, recognition dawning in his eyes.",
+          "image_prompt_end": "photoreal cinematic: More soldiers burst into frame behind him, rifles raised.",
+          "video_prompt_start": "Close of a red-coated soldier pointing in recognition. more soldiers burst in with rifles raised. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Војници: „Те препознавме, пирату!“\" Continuity held: Same soldiers from S20; jungle palette; tense recognition.",
+          "video_prompt_end": "Close of a red-coated soldier pointing in recognition. more soldiers burst in with rifles raised. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Војници: „Те препознавме, пирату!“\" Continuity held: Same soldiers from S20; jungle palette; tense recognition.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S25",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "soldiers_A5_fused",
+            "sandokan_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the British soldiers — red-coated enemy soldiers, white trousers — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "track of Sandokan seized and dragged by three soldiers"
+            ],
+            [
+              1.5,
+              3.0,
+              "he is pulled out of the jungle toward the gates"
+            ]
+          ],
+          "narration_mk": "Војниците го заробија и го одвлекоа низ шумата.",
+          "dialogue_mk": "",
+          "kf_first": "Medium tracking shot of Sandokan being seized and dragged by three red-coated soldiers, arms bound, his blade knocked to the ground, photoreal Diablo 2 cinematic grade, 1216x704",
+          "kf_last": "He is pulled out of the jungle toward the estate gates",
+          "continuity": "Same capture scene; jungle-to-estate light",
+          "motion": "track; struggle",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium tracking shot of Sandokan being seized and dragged by three red-coated soldiers, arms bound, his blade knocked to the ground, photoreal Diablo 2 cinematic grade Soldiers athletic, warrior, in armor, carrying crossbow Sandokan athletic, warrior, in beard, cloak, carrying sword then track of Sandokan seized and dragged by three soldiers, then he is pulled out of the jungle toward the gates settling into he is pulled out of the jungle toward the estate gates with crossbow strings hum, steel rings continuity held: Same capture scene; jungle-to-estate light",
+          "image_prompt_start": "photoreal cinematic: of Sandokan being seized and dragged by three red-coated soldiers, arms bound, his blade knocked to the ground, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: He is pulled out of the jungle toward the estate gates.",
+          "video_prompt_start": "Track of Sandokan seized and dragged by three soldiers. he is pulled out of the jungle toward the gates. The beat resolves into the next matching frame. Continuity held: Same capture scene; jungle-to-estate light.",
+          "video_prompt_end": "Track of Sandokan seized and dragged by three soldiers. he is pulled out of the jungle toward the gates. The beat resolves into the next matching frame. Continuity held: Same capture scene; jungle-to-estate light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S26",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "sandokan_A1_fused",
+            "dungeon_env_A7_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image2: the dim stone dungeon cell — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "high-angle wide of Sandokan thrown onto the dungeon floor"
+            ],
+            [
+              1.5,
+              3.0,
+              "the iron door clangs shut in shadow"
+            ]
+          ],
+          "narration_mk": "Го фрлија во мрачната зандана на лордовиот имот.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of Sandokan being thrown onto the stone floor of a dim dungeon cell, iron grate closing above, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "The heavy iron door clangs shut, sealing him in shadow",
+          "continuity": "Dungeon introduced; cold stone palette",
+          "motion": "static; door slamming",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of Sandokan being thrown onto the stone floor of a dim dungeon cell, iron grate closing above, photoreal StarCraft cinematic grade Sandokan athletic, warrior, in beard, cloak, carrying sword then high-angle wide of Sandokan thrown onto the dungeon floor, then the iron door clangs shut in shadow the camera static settling into the heavy iron door clangs shut, sealing him in shadow with steel rings continuity held: Dungeon introduced; cold stone palette",
+          "image_prompt_start": "photoreal cinematic: wide of Sandokan being thrown onto the stone floor of a dim dungeon cell, iron grate closing above.",
+          "image_prompt_end": "photoreal cinematic: The heavy iron door clangs shut, sealing him in shadow.",
+          "video_prompt_start": "High-angle wide of Sandokan thrown onto the dungeon floor. the iron door clangs shut in shadow. The camera static. The beat resolves into the next matching frame. Continuity held: Dungeon introduced; cold stone palette.",
+          "video_prompt_end": "High-angle wide of Sandokan thrown onto the dungeon floor. the iron door clangs shut in shadow. The camera static. The beat resolves into the next matching frame. Continuity held: Dungeon introduced; cold stone palette.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S27",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "sandokan_A1_fused",
+            "dungeon_env_A7_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image2: the dim stone dungeon cell — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close of chained Sandokan, a sliver of moonlight on his face"
+            ],
+            [
+              1.5,
+              3.0,
+              "he lifts his chin with a faint smile"
+            ]
+          ],
+          "narration_mk": "Во окови, во темнина, Сандокан не го загуби својот пркос.",
+          "dialogue_mk": "",
+          "kf_first": "Close of Sandokan in chains against a stone wall, a sliver of moonlight on his defiant face, eyes unbroken, photoreal Diablo 2 cinematic grade, 1216x704",
+          "kf_last": "He lifts his chin, a faint smile of resolve",
+          "continuity": "Same dungeon cell; moonlight palette",
+          "motion": "static; chin lifting",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close of Sandokan in chains against a stone wall, a sliver of moonlight on his defiant face, eyes unbroken, photoreal Diablo 2 cinematic grade Sandokan athletic, warrior, in beard, cloak, carrying sword then close of chained Sandokan, a sliver of moonlight on his face, then he lifts his chin with a faint smile the camera static settling into he lifts his chin, a faint smile of resolve with steel rings continuity held: Same dungeon cell; moonlight palette",
+          "image_prompt_start": "photoreal cinematic: of Sandokan in chains against a stone wall, a sliver of moonlight on his defiant face, eyes unbroken, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: He lifts his chin, a faint smile of resolve.",
+          "video_prompt_start": "Close of chained Sandokan, a sliver of moonlight on his face. he lifts his chin with a faint smile. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same dungeon cell; moonlight palette.",
+          "video_prompt_end": "Close of chained Sandokan, a sliver of moonlight on his face. he lifts his chin with a faint smile. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same dungeon cell; moonlight palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S28",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "ballroom_env_A8_prop"
+          ],
+          "ref_scope": "image1: the grand colonial ballroom at night — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "high-angle crane-down over the grand ballroom at night"
+            ],
+            [
+              2.0,
+              4.0,
+              "settle on the entrance where a tartan stranger arrives"
+            ]
+          ],
+          "narration_mk": "Таа ноќ, во палатата на Гилонк засветлеа свеќите на големиот бал.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle crane-down wide of a grand colonial ballroom at night, chandeliers blazing, dancers in elegant gowns and coats swirling, photoreal World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Crane settles toward the entrance where a tall stranger in Scottish tartan arrives",
+          "continuity": "Ballroom introduced; warm candlelight palette",
+          "motion": "crane-down; dancers swirling",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle crane-down wide of a grand colonial ballroom at night, chandeliers blazing, dancers in elegant gowns and coats swirling, photoreal World of Warcraft cinematic grade then high-angle crane-down over the grand ballroom at night, then settle on the entrance where a tartan stranger arrives settling into crane settles toward the entrance where a tall stranger in Scottish tartan arrives continuity held: Ballroom introduced; warm candlelight palette",
+          "image_prompt_start": "photoreal cinematic: wide of a grand colonial ballroom at night, chandeliers blazing, dancers in elegant gowns and coats swirling.",
+          "image_prompt_end": "photoreal cinematic: Crane toward the entrance where a tall stranger in Scottish tartan arrives.",
+          "video_prompt_start": "High-angle crane-down over the grand ballroom at night. settle on the entrance where a tartan stranger arrives. The beat resolves into the next matching frame. Continuity held: Ballroom introduced; warm candlelight palette.",
+          "video_prompt_end": "High-angle crane-down over the grand ballroom at night. settle on the entrance where a tartan stranger arrives. The beat resolves into the next matching frame. Continuity held: Ballroom introduced; warm candlelight palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S29",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "yanez_A4_fused",
+            "ballroom_env_A8_prop"
+          ],
+          "ref_scope": "image1: the fused master of Yanez — tall cunning friend, green-black Scottish tartan kilt and jacket — 100% identical; studio bg/pose/light NOT used; image2: the grand colonial ballroom at night — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "medium of Yanez in tartan stepping into the ballroom"
+            ],
+            [
+              1.8,
+              3.5,
+              "he adjusts his sash and slips to a shadowed corridor"
+            ]
+          ],
+          "narration_mk": "Тој странец беше Јанез, верната десна рака на Сандокан, преправен како шкотски лорд.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of Yanez, a tall man in a green and black Scottish kilt and jacket, stepping into the ballroom, scanning the crowd with sharp eyes, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "He adjusts his tartan sash and slips toward a shadowed corridor",
+          "continuity": "Yanez costume introduced; ballroom palette from S28",
+          "motion": "static; Yanez moving aside",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Yanez, a tall man in a green and black Scottish kilt and jacket, stepping into the ballroom, scanning the crowd with sharp eyes, photoreal StarCraft cinematic grade Yanez athletic, trickster, in cloak, carrying sword then medium of Yanez in tartan stepping into the ballroom, then he adjusts his sash and slips to a shadowed corridor the camera static settling into he adjusts his tartan sash and slips toward a shadowed corridor with steel rings continuity held: Yanez costume introduced; ballroom palette from S28",
+          "image_prompt_start": "photoreal cinematic: of Yanez, a tall man in a green and black Scottish kilt and jacket, stepping into the ballroom, scanning the crowd with sharp eyes.",
+          "image_prompt_end": "photoreal cinematic: He adjusts his tartan sash and slips toward a shadowed corridor.",
+          "video_prompt_start": "Medium of Yanez in tartan stepping into the ballroom. he adjusts his sash and slips to a shadowed corridor. The camera static. The beat resolves into the next matching frame. Continuity held: Yanez costume introduced; ballroom palette from S28.",
+          "video_prompt_end": "Medium of Yanez in tartan stepping into the ballroom. he adjusts his sash and slips to a shadowed corridor. The camera static. The beat resolves into the next matching frame. Continuity held: Yanez costume introduced; ballroom palette from S28.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S30",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "shot-reverse",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "yanez_A4_fused",
+            "sandokan_A1_fused",
+            "dungeon_env_A7_prop"
+          ],
+          "ref_scope": "image1: the fused master of Yanez — tall cunning friend, green-black Scottish tartan kilt and jacket — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image3: the dim stone dungeon cell — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "shot-reverse of Yanez facing the chained Sandokan"
+            ],
+            [
+              1.5,
+              3.0,
+              "Sandokan steps free as the chains fall away"
+            ]
+          ],
+          "narration_mk": "Јанез го најде својот пријател во занданата и скрши еден катанец.",
+          "dialogue_mk": "Јанез: „Дојди, Тигаре. Тие пеат горе.“",
+          "kf_first": "Medium shot-reverse in the dungeon corridor: Yanez in tartan facing the chained Sandokan, a broken lock in his hand, moonlight through a grate, photoreal Diablo 2 cinematic grade, 1216x704",
+          "kf_last": "Sandokan steps free as the chains fall away",
+          "continuity": "Same dungeon and chains; Yanez present; torch-and-moonlight palette",
+          "motion": "shot-reverse; chains falling",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium shot-reverse in the dungeon corridor: Yanez in tartan facing the chained Sandokan, a broken lock in his hand, moonlight through a grate, photoreal Diablo 2 cinematic grade Yanez athletic, trickster, in cloak, carrying sword Sandokan athletic, warrior, in beard, cloak, carrying sword then shot-reverse of Yanez facing the chained Sandokan, then Sandokan steps free as the chains fall away with steel rings a voice speaks in Macedonian: \"Јанез: „Дојди, Тигаре. Тие пеат горе.“\" continuity held: Same dungeon and chains; Yanez present; torch-and-moonlight palette",
+          "image_prompt_start": "photoreal cinematic: shot-reverse in the dungeon corridor: Yanez in tartan facing the chained Sandokan, a broken lock in his hand, moonlight through a grate, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: Sandokan steps free as the chains fall away.",
+          "video_prompt_start": "Shot-reverse of Yanez facing the chained Sandokan. Sandokan steps free as the chains fall away. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Јанез: „Дојди, Тигаре. Тие пеат горе.“\" Continuity held: Same dungeon and chains; Yanez present; torch-and-moonlight palette.",
+          "video_prompt_end": "Shot-reverse of Yanez facing the chained Sandokan. Sandokan steps free as the chains fall away. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Јанез: „Дојди, Тигаре. Тие пеат горе.“\" Continuity held: Same dungeon and chains; Yanez present; torch-and-moonlight palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S31",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "sandokan_A1_fused",
+            "yanez_A4_fused",
+            "garden_env_A10_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Yanez — tall cunning friend, green-black Scottish tartan kilt and jacket — 100% identical; studio bg/pose/light NOT used; image3: the moonlit colonial garden — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "wide track of the two slipping through moonlit corridors"
+            ],
+            [
+              1.8,
+              3.5,
+              "they vanish into the dark garden beyond the gate"
+            ]
+          ],
+          "narration_mk": "Двајцата се лизнаа како сенки низ палатата и избегаа во ноќта.",
+          "dialogue_mk": "",
+          "kf_first": "Wide tracking shot of Sandokan and Yanez slipping through moonlit palace corridors and out a side door, music and candlelight faint behind them, photoreal World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "They vanish into the dark garden beyond the gate",
+          "continuity": "Same two men and palace; night-escape palette",
+          "motion": "track; shadowy escape",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide tracking shot of Sandokan and Yanez slipping through moonlit palace corridors and out a side door, music and candlelight faint behind them, photoreal World of Warcraft cinematic grade Sandokan athletic, warrior, in beard, cloak, carrying sword Yanez athletic, trickster, in cloak, carrying sword then wide track of the two slipping through moonlit corridors, then they vanish into the dark garden beyond the gate with steel rings, leaves stir continuity held: Same two men and palace; night-escape palette",
+          "image_prompt_start": "photoreal cinematic: of Sandokan and Yanez slipping through moonlit palace corridors and out a side door, music and candlelight faint behind them.",
+          "image_prompt_end": "photoreal cinematic: They vanish into the dark garden beyond the gate.",
+          "video_prompt_start": "Wide track of the two slipping through moonlit corridors. they vanish into the dark garden beyond the gate. The beat resolves into the next matching frame. Continuity held: Same two men and palace; night-escape palette.",
+          "video_prompt_end": "Wide track of the two slipping through moonlit corridors. they vanish into the dark garden beyond the gate. The beat resolves into the next matching frame. Continuity held: Same two men and palace; night-escape palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S32",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "mompracem_env_A9_prop",
+            "sandokan_A1_fused",
+            "yanez_A4_fused"
+          ],
+          "ref_scope": "image1: the hidden pirate cove on the jungle island of Mompracem — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Yanez — tall cunning friend, green-black Scottish tartan kilt and jacket — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "high-angle crane-up over the fiery pirate cove of Mompracem"
+            ],
+            [
+              2.0,
+              4.0,
+              "Sandokan turns and stares at the open sea"
+            ]
+          ],
+          "narration_mk": "На островот Момпрачем, во скривалиштето, Тигарот доби слобода — но не и мир.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle crane-up wide over a hidden pirate cove on the jungle island of Mompracem, fires glowing, the schooner anchored, Sandokan and Yanez arriving, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "Crane rises as Sandokan turns and stares out at the open sea",
+          "continuity": "Mompracem hideout introduced; fiery cove palette",
+          "motion": "crane-up; cove fires flickering",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle crane-up wide over a hidden pirate cove on the jungle island of Mompracem, fires glowing, the schooner anchored, Sandokan and Yanez arriving, photoreal StarCraft cinematic grade Sandokan athletic, warrior, in beard, cloak, carrying sword Yanez athletic, trickster, in cloak, carrying sword then high-angle crane-up over the fiery pirate cove of Mompracem, then Sandokan turns and stares at the open sea settling into crane rises as Sandokan turns and stares out at the open sea with steel rings continuity held: Mompracem hideout introduced; fiery cove palette",
+          "image_prompt_start": "photoreal cinematic: wide over a hidden pirate cove on the jungle island of Mompracem, fires glowing, the schooner anchored, Sandokan and Yanez arriving.",
+          "image_prompt_end": "photoreal cinematic: Crane as Sandokan and stares out at the open sea.",
+          "video_prompt_start": "High-angle crane-up over the fiery pirate cove of Mompracem. Sandokan turns and stares at the open sea. The beat resolves into the next matching frame. Continuity held: Mompracem hideout introduced; fiery cove palette.",
+          "video_prompt_end": "High-angle crane-up over the fiery pirate cove of Mompracem. Sandokan turns and stares at the open sea. The beat resolves into the next matching frame. Continuity held: Mompracem hideout introduced; fiery cove palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S33",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "sandokan_A1_fused",
+            "mompracem_env_A9_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image2: the hidden pirate cove on the jungle island of Mompracem — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "medium of Sandokan at the cove edge at dusk, hand over heart"
+            ],
+            [
+              1.8,
+              3.5,
+              "push-in as his resolve turns tender"
+            ]
+          ],
+          "narration_mk": "Сандокан беше вљубен во Маријана и не можеше да ја заборави.",
+          "dialogue_mk": "Сандокан: „Ќе се вратам по тебе, Маријана.“",
+          "kf_first": "Medium of Sandokan at the cove's edge at dusk, a rare softness on his face, his hand over his heart, the sea and a fading landmass on the horizon, photoreal Diablo 2 cinematic grade, 1216x704",
+          "kf_last": "Push-in as his resolve turns tender and certain",
+          "continuity": "Same Sandokan and Mompracem; dusk-romance palette begins",
+          "motion": "push-in; dusk light softening",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Sandokan at the cove's edge at dusk, a rare softness on his face, his hand over his heart, the sea and a fading landmass on the horizon, photoreal Diablo 2 cinematic grade Sandokan athletic, warrior, in beard, cloak, carrying sword then medium of Sandokan at the cove edge at dusk, hand over heart, then push-in as his resolve turns tender settling into push-in as his resolve turns tender and certain with steel rings a voice speaks in Macedonian: \"Сандокан: „Ќе се вратам по тебе, Маријана.“\" continuity held: Same Sandokan and Mompracem; dusk-romance palette begins",
+          "image_prompt_start": "photoreal cinematic: of Sandokan at the cove's edge at dusk, a rare softness on his face, his hand over his heart, the sea and a fading landmass on the horizon, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: as his resolve tender and certain.",
+          "video_prompt_start": "Medium of Sandokan at the cove edge at dusk, hand over heart. push-in as his resolve turns tender. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Сандокан: „Ќе се вратам по тебе, Маријана.“\" Continuity held: Same Sandokan and Mompracem; dusk-romance palette begins.",
+          "video_prompt_end": "Medium of Sandokan at the cove edge at dusk, hand over heart. push-in as his resolve turns tender. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Сандокан: „Ќе се вратам по тебе, Маријана.“\" Continuity held: Same Sandokan and Mompracem; dusk-romance palette begins.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S34",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "crewmom_A9_fused",
+            "ship_env_A1_prop"
+          ],
+          "ref_scope": "image1: the loyal pirate crew of Mompracem — 100% identical; studio bg/pose/light NOT used; image2: the black-sailed pirate schooner on tropical sea — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "wide track along the deck as the Tigers ready the ship"
+            ],
+            [
+              2.0,
+              4.0,
+              "the sails snap full and the prow swings to sea"
+            ]
+          ],
+          "narration_mk": "И така, со своите верни „тигри“, го подготви бродот за враќање.",
+          "dialogue_mk": "",
+          "kf_first": "Wide tracking shot along the deck of the schooner at night as Sandokan's crew, the Tigers, haul ropes and raise the black sails by torchlight, photoreal World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "The sails snap full and the prow swings toward the open sea",
+          "continuity": "Same ship and crew; night departure palette",
+          "motion": "track; sails rising",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide tracking shot along the deck of the schooner at night as Sandokan's crew, the Tigers, haul ropes and raise the black sails by torchlight, photoreal World of Warcraft cinematic grade then wide track along the deck as the Tigers ready the ship, then the sails snap full and the prow swings to sea settling into the sails snap full and the prow swings toward the open sea continuity held: Same ship and crew; night departure palette",
+          "image_prompt_start": "photoreal cinematic: along the deck of the schooner at night as Sandokan's crew, the Tigers, haul ropes and raise the black sails by torchlight.",
+          "image_prompt_end": "photoreal cinematic: The sails snap full and the prow swings toward the open sea.",
+          "video_prompt_start": "Wide track along the deck as the Tigers ready the ship. the sails snap full and the prow swings to sea. The beat resolves into the next matching frame. Continuity held: Same ship and crew; night departure palette.",
+          "video_prompt_end": "Wide track along the deck as the Tigers ready the ship. the sails snap full and the prow swings to sea. The beat resolves into the next matching frame. Continuity held: Same ship and crew; night departure palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S36",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "sandokan_A1_fused",
+            "garden_env_A10_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image2: the moonlit colonial garden — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "medium of Sandokan crouched behind bushes at the garden edge"
+            ],
+            [
+              1.5,
+              3.0,
+              "he parts the leaves, watching for the moment"
+            ]
+          ],
+          "narration_mk": "На брегот, Сандокан се скри меѓу грмушките покрај градината.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of Sandokan crouched behind dark bushes at the edge of a moonlit colonial garden, peering toward the villa's lit windows, photoreal World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "He parts the leaves, watching for the right moment",
+          "continuity": "Same Sandokan; night-garden palette",
+          "motion": "static; leaves parting",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Sandokan crouched behind dark bushes at the edge of a moonlit colonial garden, peering toward the villa's lit windows, photoreal World of Warcraft cinematic grade Sandokan athletic, warrior, in beard, cloak, carrying sword then medium of Sandokan crouched behind bushes at the garden edge, then he parts the leaves, watching for the moment the camera static settling into he parts the leaves, watching for the right moment with steel rings, leaves stir continuity held: Same Sandokan; night-garden palette",
+          "image_prompt_start": "photoreal cinematic: of Sandokan crouched behind dark bushes at the edge of a moonlit colonial garden, peering toward the villa's lit windows.",
+          "image_prompt_end": "photoreal cinematic: He parts the leaves, watching for the right moment.",
+          "video_prompt_start": "Medium of Sandokan crouched behind bushes at the garden edge. he parts the leaves, watching for the moment. The camera static. The beat resolves into the next matching frame. Continuity held: Same Sandokan; night-garden palette.",
+          "video_prompt_end": "Medium of Sandokan crouched behind bushes at the garden edge. he parts the leaves, watching for the moment. The camera static. The beat resolves into the next matching frame. Continuity held: Same Sandokan; night-garden palette.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "estate_bedroom_jungle_dungeon_ballroom_mompracem",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class",
+        "screen_dir"
+      ],
+      "palette": [
+        "#3e6b4a",
+        "#5a4a3e",
+        "#e8a33d"
+      ],
+      "light_direction": "key light from screen-right, warm interior daylight then jungle green and cold dungeon moonlight",
+      "time_of_day": "day"
+    },
+    {
+      "id": "act3",
+      "num": "Act III",
+      "title": "Љубовта победува",
+      "color": "#ec4899",
+      "pct": 25,
+      "synopsis": "Сандокан се враќа по Маријана, двајцата бегаат со бродот и се венчаат на Момпрачем на зајдисонце.",
+      "shots": [
+        {
+          "id": "S35",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "ship_env_A1_prop",
+            "sea_env_A2_prop"
+          ],
+          "ref_scope": "image1: the black-sailed pirate schooner on tropical sea — 100% identical; studio bg/pose/light NOT used; image2: the churning tropical sea and storm sky — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "high-angle crane-down of the schooner under a full moon"
+            ],
+            [
+              2.0,
+              4.0,
+              "settle level with the bow as a lantern glints at the helm"
+            ]
+          ],
+          "narration_mk": "Бродот на Малезискиот Тигар пресече низ ноќта кон Лабуан.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide crane-down of the black-sailed schooner sailing under a full moon across calm dark waters, its wake silver, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "Crane settles level with the bow as a lantern glints at the helm",
+          "continuity": "Same ship; moonlit-night voyage palette",
+          "motion": "crane-down; moonlit sailing",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide crane-down of the black-sailed schooner sailing under a full moon across calm dark waters, its wake silver, photoreal StarCraft cinematic grade then high-angle crane-down of the schooner under a full moon, then settle level with the bow as a lantern glints at the helm settling into crane settles level with the bow as a lantern glints at the helm with water churns and surges continuity held: Same ship; moonlit-night voyage palette",
+          "image_prompt_start": "photoreal cinematic: wide of the black-sailed schooner sailing under a full moon across calm dark waters, its wake silver.",
+          "image_prompt_end": "photoreal cinematic: Crane level with the bow as a lantern glints at the helm.",
+          "video_prompt_start": "High-angle crane-down of the schooner under a full moon. settle level with the bow as a lantern glints at the helm. The beat resolves into the next matching frame. Continuity held: Same ship; moonlit-night voyage palette.",
+          "video_prompt_end": "High-angle crane-down of the schooner under a full moon. settle level with the bow as a lantern glints at the helm. The beat resolves into the next matching frame. Continuity held: Same ship; moonlit-night voyage palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S37",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "sandokan_A1_fused",
+            "garden_env_A10_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image2: the moonlit colonial garden — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "wide track of Sandokan slipping through the moonlit garden"
+            ],
+            [
+              1.8,
+              3.5,
+              "he steps into the open, moonlight on his face"
+            ]
+          ],
+          "narration_mk": "Тивко се провлече во градината и застана во сенката.",
+          "dialogue_mk": "",
+          "kf_first": "Wide tracking shot of Sandokan slipping through the moonlit garden, past flower beds and a marble fountain, toward the center lawn, photoreal Diablo 2 cinematic grade, 1216x704",
+          "kf_last": "He steps into the open, moonlight falling on his face",
+          "continuity": "Same garden; moonlit palette",
+          "motion": "track; stealthy approach",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide tracking shot of Sandokan slipping through the moonlit garden, past flower beds and a marble fountain, toward the center lawn, photoreal Diablo 2 cinematic grade Sandokan athletic, warrior, in beard, cloak, carrying sword then wide track of Sandokan slipping through the moonlit garden, then he steps into the open, moonlight on his face settling into he steps into the open, moonlight falling on his face with steel rings, leaves stir continuity held: Same garden; moonlit palette",
+          "image_prompt_start": "photoreal cinematic: of Sandokan slipping through the moonlit garden, past flower beds and a marble fountain, toward the center lawn, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: He steps into the open, moonlight falling on his face.",
+          "video_prompt_start": "Wide track of Sandokan slipping through the moonlit garden. he steps into the open, moonlight on his face. The beat resolves into the next matching frame. Continuity held: Same garden; moonlit palette.",
+          "video_prompt_end": "Wide track of Sandokan slipping through the moonlit garden. he steps into the open, moonlight on his face. The beat resolves into the next matching frame. Continuity held: Same garden; moonlit palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S38",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "marianna_A2_fused",
+            "sandokan_A1_fused",
+            "garden_env_A10_prop"
+          ],
+          "ref_scope": "image1: the fused master of Marianna — graceful young English woman, soft curls, lavender gown — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image3: the moonlit colonial garden — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "medium of Marianna running across the lawn, arms open"
+            ],
+            [
+              1.5,
+              3.0,
+              "she throws her arms around him"
+            ]
+          ],
+          "narration_mk": "Само што го виде, Маријана се стрча кон него и го прегрна.",
+          "dialogue_mk": "Маријана: „Се врати! Знаев дека ќе дојдеш.“",
+          "kf_first": "Medium of Marianna in a white nightgown running across the moonlit lawn, arms open, joy on her face, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "She throws her arms around Sandokan and he holds her close",
+          "continuity": "Marianna and Sandokan together; moonlit romance palette",
+          "motion": "static; embrace",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Marianna in a white nightgown running across the moonlit lawn, arms open, joy on her face, photoreal StarCraft cinematic grade Marianna slender, heroine, in dress, wreathed in petals Sandokan athletic, warrior, in beard, cloak, carrying sword then medium of Marianna running across the lawn, arms open, then she throws her arms around him the camera static settling into she throws her arms around Sandokan and he holds her close with petals swirl and rustle, steel rings a voice speaks in Macedonian: \"Маријана: „Се врати! Знаев дека ќе дојдеш.“\" continuity held: Marianna and Sandokan together; moonlit romance palette",
+          "image_prompt_start": "photoreal cinematic: of Marianna in a white nightgown running across the moonlit lawn, arms open, joy on her face.",
+          "image_prompt_end": "photoreal cinematic: She throws her arms around Sandokan and he holds her close.",
+          "video_prompt_start": "Medium of Marianna running across the lawn, arms open. she throws her arms around him. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Маријана: „Се врати! Знаев дека ќе дојдеш.“\" Continuity held: Marianna and Sandokan together; moonlit romance palette.",
+          "video_prompt_end": "Medium of Marianna running across the lawn, arms open. she throws her arms around him. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Маријана: „Се врати! Знаев дека ќе дојдеш.“\" Continuity held: Marianna and Sandokan together; moonlit romance palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S39",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "sandokan_A1_fused",
+            "marianna_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Marianna — graceful young English woman, soft curls, lavender gown — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close of the two forehead to forehead in moonlight"
+            ],
+            [
+              1.5,
+              3.0,
+              "push-in on their clasped hands as they turn to run"
+            ]
+          ],
+          "narration_mk": "И таа го сакаше. Мораа да побегнат пред да сване.",
+          "dialogue_mk": "",
+          "kf_first": "Close on Sandokan and Marianna forehead to forehead in the moonlight, both smiling through tears, the garden soft around them, photoreal World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Push-in on their clasped hands as they turn to run",
+          "continuity": "Same couple; tender moonlit palette",
+          "motion": "push-in; hands clasping",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close on Sandokan and Marianna forehead to forehead in the moonlight, both smiling through tears, the garden soft around them, photoreal World of Warcraft cinematic grade Sandokan athletic, warrior, in beard, cloak, carrying sword Marianna slender, heroine, in dress, wreathed in petals then close of the two forehead to forehead in moonlight, then push-in on their clasped hands as they turn to run with steel rings, petals swirl and rustle continuity held: Same couple; tender moonlit palette",
+          "image_prompt_start": "photoreal cinematic: on Sandokan and Marianna forehead to forehead in the moonlight, both smiling through tears, the garden soft around them.",
+          "image_prompt_end": "photoreal cinematic: on their clasped hands as they turn to run.",
+          "video_prompt_start": "Close of the two forehead to forehead in moonlight. push-in on their clasped hands as they turn to run. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same couple; tender moonlit palette.",
+          "video_prompt_end": "Close of the two forehead to forehead in moonlight. push-in on their clasped hands as they turn to run. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same couple; tender moonlit palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S40",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "sandokan_A1_fused",
+            "marianna_A2_fused",
+            "garden_env_A10_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Marianna — graceful young English woman, soft curls, lavender gown — 100% identical; studio bg/pose/light NOT used; image3: the moonlit colonial garden — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "wide track of the two running hand in hand through the garden"
+            ],
+            [
+              1.8,
+              3.5,
+              "they slip into the shore shadow line"
+            ]
+          ],
+          "narration_mk": "Двајцата побегнаа низ градината кон брегот, рака под рака.",
+          "dialogue_mk": "",
+          "kf_first": "Wide tracking shot of Sandokan and Marianna running hand in hand through the moonlit garden toward the dark sea, her white gown trailing, photoreal Diablo 2 cinematic grade, 1216x704",
+          "kf_last": "They reach the bushes and slip into the shadow line of the shore",
+          "continuity": "Same couple and garden; night-flight palette",
+          "motion": "track; running together",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide tracking shot of Sandokan and Marianna running hand in hand through the moonlit garden toward the dark sea, her white gown trailing, photoreal Diablo 2 cinematic grade Sandokan athletic, warrior, in beard, cloak, carrying sword Marianna slender, heroine, in dress, wreathed in petals then wide track of the two running hand in hand through the garden, then they slip into the shore shadow line settling into they reach the bushes and slip into the shadow line of the shore with steel rings, petals swirl and rustle continuity held: Same couple and garden; night-flight palette",
+          "image_prompt_start": "photoreal cinematic: of Sandokan and Marianna running hand in hand through the moonlit garden toward the dark sea, her white gown trailing, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: They reach the bushes and slip into the shadow line of the shore.",
+          "video_prompt_start": "Wide track of the two running hand in hand through the garden. they slip into the shore shadow line. The beat resolves into the next matching frame. Continuity held: Same couple and garden; night-flight palette.",
+          "video_prompt_end": "Wide track of the two running hand in hand through the garden. they slip into the shore shadow line. The beat resolves into the next matching frame. Continuity held: Same couple and garden; night-flight palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S41",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "sandokan_A1_fused",
+            "marianna_A2_fused",
+            "ship_env_A1_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Marianna — graceful young English woman, soft curls, lavender gown — 100% identical; studio bg/pose/light NOT used; image3: the black-sailed pirate schooner on tropical sea — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "high-angle crane-up of the two boarding the schooner"
+            ],
+            [
+              2.0,
+              4.0,
+              "the black sails fill and the island shrinks"
+            ]
+          ],
+          "narration_mk": "Чекаше бродот на Тигарот, и тие се качија и испловија на полно море.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle crane-up wide of Sandokan and Marianna boarding the schooner in the shallows, the crew hauling them aboard as the ship begins to move, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "Crane rises as the black sails fill and the island shrinks behind them",
+          "continuity": "Same ship and crew; moonlit sea palette",
+          "motion": "crane-up; ship pulling away",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle crane-up wide of Sandokan and Marianna boarding the schooner in the shallows, the crew hauling them aboard as the ship begins to move, photoreal StarCraft cinematic grade Sandokan athletic, warrior, in beard, cloak, carrying sword Marianna slender, heroine, in dress, wreathed in petals then high-angle crane-up of the two boarding the schooner, then the black sails fill and the island shrinks settling into crane rises as the black sails fill and the island shrinks behind them with steel rings, petals swirl and rustle continuity held: Same ship and crew; moonlit sea palette",
+          "image_prompt_start": "photoreal cinematic: wide of Sandokan and Marianna boarding the schooner in the shallows, the crew hauling them aboard as the ship begins to move.",
+          "image_prompt_end": "photoreal cinematic: Crane as the black sails fill and the island shrinks behind them.",
+          "video_prompt_start": "High-angle crane-up of the two boarding the schooner. the black sails fill and the island shrinks. The beat resolves into the next matching frame. Continuity held: Same ship and crew; moonlit sea palette.",
+          "video_prompt_end": "High-angle crane-up of the two boarding the schooner. the black sails fill and the island shrinks. The beat resolves into the next matching frame. Continuity held: Same ship and crew; moonlit sea palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S42",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "sandokan_A1_fused",
+            "marianna_A2_fused",
+            "ship_env_A1_prop",
+            "sea_env_A2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Marianna — graceful young English woman, soft curls, lavender gown — 100% identical; studio bg/pose/light NOT used; image3: the black-sailed pirate schooner on tropical sea — 100% identical; studio bg/pose/light NOT used; image4: the churning tropical sea and storm sky — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "medium of the two at the stern rail watching Labuan fade"
+            ],
+            [
+              1.8,
+              3.5,
+              "Marianna rests her head on his shoulder"
+            ]
+          ],
+          "narration_mk": "Лабуан остана далеку зад нив, само сенка на вода.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of Sandokan and Marianna at the stern rail, watching the fading island of Labuan on the horizon, wind in her hair, photoreal World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Marianna rests her head on his shoulder as the ship sails on",
+          "continuity": "Same couple and ship; dawn-approaching sea palette",
+          "motion": "static; wind in her hair",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Sandokan and Marianna at the stern rail, watching the fading island of Labuan on the horizon, wind in her hair, photoreal World of Warcraft cinematic grade Sandokan athletic, warrior, in beard, cloak, carrying sword Marianna slender, heroine, in dress, wreathed in petals then medium of the two at the stern rail watching Labuan fade, then Marianna rests her head on his shoulder the camera static settling into marianna rests her head on his shoulder as the ship sails on with steel rings, petals swirl and rustle continuity held: Same couple and ship; dawn-approaching sea palette",
+          "image_prompt_start": "photoreal cinematic: of Sandokan and Marianna at the stern rail, watching the fading island of Labuan on the horizon, wind in her hair.",
+          "image_prompt_end": "photoreal cinematic: Marianna rests her head on his shoulder as the ship sails on.",
+          "video_prompt_start": "Medium of the two at the stern rail watching Labuan fade. Marianna rests her head on his shoulder. The camera static. The beat resolves into the next matching frame. Continuity held: Same couple and ship; dawn-approaching sea palette.",
+          "video_prompt_end": "Medium of the two at the stern rail watching Labuan fade. Marianna rests her head on his shoulder. The camera static. The beat resolves into the next matching frame. Continuity held: Same couple and ship; dawn-approaching sea palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S43",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "sandokan_A1_fused",
+            "marianna_A2_fused",
+            "mompracem_env_A9_prop"
+          ],
+          "ref_scope": "image1: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Marianna — graceful young English woman, soft curls, lavender gown — 100% identical; studio bg/pose/light NOT used; image3: the hidden pirate cove on the jungle island of Mompracem — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "low-angle wide of the sunset wedding on the Mompracem beach"
+            ],
+            [
+              2.0,
+              4.0,
+              "the sun dips, bathing the scene in gold and rose"
+            ]
+          ],
+          "narration_mk": "И на Момпрачем, на зајдисонце, се венчаа пред своите верни тигри.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of a sunset wedding on the beach of Mompracem, Sandokan and Marianna beneath an arch of palm fronds, the crew of Tigers celebrating with raised torches, photoreal Diablo 2 cinematic grade, 1216x704",
+          "kf_last": "The sun dips low, bathing the scene in gold and rose light",
+          "continuity": "Wedding introduced; sunset-gold palette",
+          "motion": "static; sunset glow deepening",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of a sunset wedding on the beach of Mompracem, Sandokan and Marianna beneath an arch of palm fronds, the crew of Tigers celebrating with raised torches, photoreal Diablo 2 cinematic grade Sandokan athletic, warrior, in beard, cloak, carrying sword Marianna slender, heroine, in dress, wreathed in petals then low-angle wide of the sunset wedding on the Mompracem beach, then the sun dips, bathing the scene in gold and rose the camera static settling into the sun dips low, bathing the scene in gold and rose light with steel rings, petals swirl and rustle continuity held: Wedding introduced; sunset-gold palette",
+          "image_prompt_start": "photoreal cinematic: wide of a sunset wedding on the beach of Mompracem, Sandokan and Marianna beneath an arch of palm fronds, the crew of Tigers celebrating with raised torches, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: The sun dips low, bathing the scene in gold and rose light.",
+          "video_prompt_start": "Low-angle wide of the sunset wedding on the Mompracem beach. the sun dips, bathing the scene in gold and rose. The camera static. The beat resolves into the next matching frame. Continuity held: Wedding introduced; sunset-gold palette.",
+          "video_prompt_end": "Low-angle wide of the sunset wedding on the Mompracem beach. the sun dips, bathing the scene in gold and rose. The camera static. The beat resolves into the next matching frame. Continuity held: Wedding introduced; sunset-gold palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S44",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "sandokan_A1_fused",
+            "marianna_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Marianna — graceful young English woman, soft curls, lavender gown — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "close of the two smiling in profile against the sunset"
+            ],
+            [
+              1.8,
+              3.5,
+              "push-in as the last sunbeam crowns them"
+            ]
+          ],
+          "narration_mk": "Така Тигарот на морето го најде својот дом — во срцето на Маријана.",
+          "dialogue_mk": "",
+          "kf_first": "Close on Sandokan and Marianna smiling at one another in profile against the burning sunset sea, their hands joined, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "Push-in as the last sunbeam crowns them both in warm light",
+          "continuity": "Same couple and sunset; farewell-gold palette",
+          "motion": "slow push-in; sun setting",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close on Sandokan and Marianna smiling at one another in profile against the burning sunset sea, their hands joined, photoreal StarCraft cinematic grade Sandokan athletic, warrior, in beard, cloak, carrying sword Marianna slender, heroine, in dress, wreathed in petals then close of the two smiling in profile against the sunset, then push-in as the last sunbeam crowns them settling into push-in as the last sunbeam crowns them both in warm light with steel rings, petals swirl and rustle continuity held: Same couple and sunset; farewell-gold palette",
+          "image_prompt_start": "photoreal cinematic: on Sandokan and Marianna smiling at one another in profile against the burning sunset sea, their hands joined.",
+          "image_prompt_end": "photoreal cinematic: as the last sunbeam crowns them both in warm light.",
+          "video_prompt_start": "Close of the two smiling in profile against the sunset. push-in as the last sunbeam crowns them. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same couple and sunset; farewell-gold palette.",
+          "video_prompt_end": "Close of the two smiling in profile against the sunset. push-in as the last sunbeam crowns them. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same couple and sunset; farewell-gold palette.",
+          "motion_intensity": "gentle"
+        }
+      ],
+      "location_ref": "moonlit_garden_schooner_and_mompracem_sunset",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class",
+        "screen_dir"
+      ],
+      "palette": [
+        "#2b2240",
+        "#8b5cf6",
+        "#f5d76a"
+      ],
+      "light_direction": "key light from screen-left, cool moonlight fading to warm sunset on Mompracem",
+      "time_of_day": "night"
+    }
+  ],
+  "director_corrections": {
+    "issued": "2026-11-07",
+    "source": "KB §13 DIRECTOR CORRECTIONS — overrides all prior asset/keyframe guidance",
+    "rules": [
+      "DD HEADWEAR: no cap/hood/bandana/mask on head; hood = back-cowl only (cape-like); bare head + teal-blue glowing hair always visible; any head/face covering = REJECT",
+      "LEGENDARY WEAPONS MUST APPEAR: DD = twin Frostbite-class hand crossbows (ice-blue arcane crystal limbs, frost runes, frozen-light string, teal-blue glow); AZ = Dawnbreaker-class greatsword (pale sunsteel, molten-gold runes, golden holy fire edge, sunburst crossguard); hero sheet/keyframe without weapon = INCOMPLETE",
+      "WEAPON ANTI-SLOP: fantasy construction only; crossbow must NEVER read as firearm (no barrel/magazine/stock/Uzi/SMG silhouette = REJECT); anti-slop negatives always appended",
+      "BOSS FACE: Mal'garot HAS a prolific molten-lava face (lava dripping/running, drops falling to ground); faceless boss sheets SUPERSEDED",
+      "LOCATION BRIGHTNESS FLOOR: environment plates silhouette-readable at thumbnail; no murk-dark grades"
+    ],
+    "applies_when": "Activates when face_lock changes from AI-default to an enrolled identity (DD/AZ). AI-default packages carry this as a forward constraint, not a current defect.",
+    "anti_slop_negatives": "firearm, gun, machinegun, Uzi, barrel, magazine, ammo clip, muzzle, modern weapon"
+  }
+}

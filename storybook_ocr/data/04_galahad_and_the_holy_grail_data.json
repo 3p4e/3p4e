@@ -1,0 +1,2462 @@
+{
+  "num": "04",
+  "title_mk": "Галахад и Светиот грал",
+  "title_en": "Galahad and the Holy Grail",
+  "genre": "Легенда · епска акција",
+  "logline": "Младиот витез Галахад го наоѓа Светиот грал и му носи исцеление и мир на својот болен дедо, кралот Пелес.",
+  "spec": {
+    "aspect": "16:9",
+    "resolution": "1216x704",
+    "fps": 24,
+    "model": "model-agnostic (chosen at generation)",
+    "style": "photoreal",
+    "flf": true,
+    "language": "mk",
+    "shot_floor": 40,
+    "shot_max": 60,
+    "seed_policy": "fixed-per-shot (same seed → reproducible shot; re-roll per shot id)",
+    "style_anchor": [
+      "Diablo 2 cinematic",
+      "World of Warcraft cinematic",
+      "StarCraft cinematic"
+    ],
+    "negative_prompt": "deformed, extra limbs, morphing, watermark, text, static frame, blurry, low quality, cropped head, cut-off face",
+    "frames": 121,
+    "frames_fallback": 81,
+    "routes": [
+      {
+        "model": "Wan2.1-FLF2V-14B-720P",
+        "input": "start+end native (run START-ONLY)",
+        "status": "WORKING (lead for 14B quality)"
+      },
+      {
+        "model": "Kandinsky 6.0 Lite/Pro",
+        "input": "start-image-only",
+        "status": "WORKING (Pro-distill untested at scale)"
+      },
+      {
+        "model": "SkyReels-V3 R2V-14B",
+        "input": "start-image-only",
+        "status": "WORKING (fallback)"
+      },
+      {
+        "model": "LTX-Video 2B v0.9.5",
+        "input": "start-image-only",
+        "status": "WORKING (small/fast, low ceiling)"
+      },
+      {
+        "model": "Mochi-1",
+        "input": "start-image-only",
+        "status": "untested here"
+      },
+      {
+        "model": "LTX-2.3 22B distilled",
+        "input": "start-image-only",
+        "status": "DEAD (nanobind native-crash, 42 note)"
+      }
+    ],
+    "model_note": "Model chosen per story at generation (43 §4). Keyframes + continuation prompts are generator-agnostic; only the render command differs per model."
+  },
+  "cast": [
+    {
+      "role": "Галахад / Galahad",
+      "trait": "Млад благороден витез со сребрен оклоп и бело наметало",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Крал Артур / King Arthur",
+      "trait": "Мудар крал на Камелот со златна круна и темноцрвен плашт",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Кралот Пелес / King Pelles",
+      "trait": "Стари благородник прикован за постелата, исцрпен и блед",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Витезите на Тркалезната маса / Round Table Knights",
+      "trait": "Група витези во разнобојни оклопи и плаштови",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    }
+  ],
+  "character_designs": {
+    "galahad": {
+      "archetype": "knight",
+      "build": "athletic",
+      "scale": "human",
+      "palette": {
+        "primary": "#d7e3ef",
+        "secondary": "#7e93a8",
+        "glow": "#eaf6ff"
+      },
+      "costume": [
+        "plate_armor",
+        "white_cloak",
+        "tunic"
+      ],
+      "props": [
+        "sword",
+        "shield"
+      ],
+      "fx": [
+        "holy_aura",
+        "grail_light"
+      ]
+    },
+    "arthur": {
+      "archetype": "monarch",
+      "build": "robed",
+      "scale": "human",
+      "palette": {
+        "primary": "#8a2432",
+        "secondary": "#3a1018",
+        "glow": "#ffd166"
+      },
+      "costume": [
+        "crown",
+        "cloak",
+        "robe"
+      ],
+      "props": [
+        "scepter"
+      ],
+      "fx": [
+        "royal_aura"
+      ]
+    },
+    "pelles": {
+      "archetype": "sage",
+      "build": "frail",
+      "scale": "human",
+      "palette": {
+        "primary": "#d8d2c6",
+        "secondary": "#9a9385",
+        "glow": "#f5c76a"
+      },
+      "costume": [
+        "robes",
+        "beard"
+      ],
+      "props": [],
+      "fx": [
+        "healing_aura"
+      ]
+    },
+    "camelot_env_A1_prop": {
+      "motif": "castle",
+      "tone": "#f0b45e"
+    },
+    "round_table_env_A1_prop": {
+      "motif": "hall",
+      "tone": "#a8863c"
+    },
+    "road_env_A2_prop": {
+      "motif": "road",
+      "tone": "#5b7f9e"
+    },
+    "wilderness_env_A2_prop": {
+      "motif": "forest",
+      "tone": "#3a2f2a"
+    },
+    "carbonek_env_A2_prop": {
+      "motif": "castle",
+      "tone": "#c9a227"
+    },
+    "grail_chamber_env_A3_prop": {
+      "motif": "chamber",
+      "tone": "#e8b04b"
+    }
+  },
+  "acts": [
+    {
+      "id": "act1",
+      "num": "Act I",
+      "title": "Заложба",
+      "color": "#2dd4bf",
+      "pct": 30,
+      "synopsis": "Галахад пристигнува во Камелот, седнува на пророчкото празно место на Тркалезната маса и пред него се појавува Светиот грал.",
+      "shots": [
+        {
+          "id": "S01",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "narration_mk": "Во зори, пред капиите на блескавиот Камелот, пристигна самотник на бел коњ.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of Camelot's golden gates at dawn, a lone rider in silver armor on a white horse approaching through morning mist, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Crane-down closer to the rider as the great gates slowly open, warm torchlight spilling out",
+          "continuity": "Silver-armored rider, white horse; dawn mist and golden stone palette",
+          "motion": "slow crane-down; gates parting; mist drifting",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "galahad_A1_fused",
+            "horse_B1_sheet"
+          ],
+          "ref_scope": "image1: galahad_A1_fused fused master 100% identical; image2: face card; studio bg/pose/light NOT used; image2: horse_B1_sheet reference sheet 100% identical",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "Galahad face identity",
+            "silver armor + white cloak",
+            "white horse design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "lone rider in silver armor on white horse approaches Camelot gates in dawn mist"
+            ],
+            [
+              2.0,
+              4.0,
+              "great gates slowly open, warm torchlight spilling out"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of Camelot's golden gates at dawn, a lone rider in silver armor on a white horse approaching through morning mist Galahad athletic, knight, in plate armor, white cloak, tunic, carrying sword, shield, wreathed in holy aura, grail light then lone rider in silver armor on white horse approaches Camelot gates in dawn mist, then great gates slowly open, warm torchlight spilling out the camera crane-down settling into crane-down closer to the rider as the great gates slowly open, warm torchlight spilling out with steel rings, the shield clangs continuity held: Silver-armored rider, white horse; dawn mist and golden stone palette",
+          "image_prompt_start": "photoreal cinematic: wide of Camelot's golden gates at dawn, a lone rider in silver armor on a white horse approaching through morning mist.",
+          "image_prompt_end": "photoreal cinematic: closer to the rider as the great gates slowly open, warm torchlight spilling out.",
+          "video_prompt_start": "Lone rider in silver armor on white horse approaches Camelot gates in dawn mist. great gates slowly open, warm torchlight spilling out. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Silver-armored rider, white horse; dawn mist and golden stone palette.",
+          "video_prompt_end": "Lone rider in silver armor on white horse approaches Camelot gates in dawn mist. great gates slowly open, warm torchlight spilling out. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Silver-armored rider, white horse; dawn mist and golden stone palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S02",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Се велеше дека тој е синот на славниот Ланселот.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of the young knight Galahad dismounting his white horse in the castle courtyard, white cloak settling, photoreal StarCraft cinematic lighting, 1216x704",
+          "kf_last": "Tracking shot as he steps forward, squires and banners drifting out of focus behind him",
+          "continuity": "Same silver armor and white cloak; courtyard torchlight",
+          "motion": "lateral track following his step; cloak sway",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "galahad_A1_fused",
+            "horse_B1_sheet"
+          ],
+          "ref_scope": "image1: galahad_A1_fused fused master 100% identical; image2: face card; studio bg/pose/light NOT used; image2: horse_B1_sheet reference sheet 100% identical",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "Galahad face identity",
+            "silver armor + white cloak",
+            "white horse design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "Galahad dismounts his white horse in the courtyard, white cloak settling"
+            ],
+            [
+              1.5,
+              3.0,
+              "he steps forward, squires and banners drifting out of focus"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of the young knight Galahad dismounting his white horse in the castle courtyard, white cloak settling, photoreal StarCraft cinematic lighting Galahad athletic, knight, in plate armor, white cloak, tunic, carrying sword, shield, wreathed in holy aura, grail light then Galahad dismounts his white horse in the courtyard, white cloak settling, then he steps forward, squires and banners drifting out of focus the camera track settling into tracking shot as he steps forward, squires and banners drifting out of focus behind him with steel rings, the shield clangs continuity held: Same silver armor and white cloak; courtyard torchlight",
+          "image_prompt_start": "photoreal cinematic: medium of the young knight Galahad dismounting his white horse in the castle courtyard, white cloak settling, photoreal StarCraft cinematic lighting.",
+          "image_prompt_end": "photoreal cinematic: as he steps forward, squires and banners drifting out of focus behind him.",
+          "video_prompt_start": "Galahad dismounts his white horse in the courtyard, white cloak settling. he steps forward, squires and banners drifting out of focus. The camera track. The beat resolves into the next matching frame. Continuity held: Same silver armor and white cloak; courtyard torchlight.",
+          "video_prompt_end": "Galahad dismounts his white horse in the courtyard, white cloak settling. he steps forward, squires and banners drifting out of focus. The camera track. The beat resolves into the next matching frame. Continuity held: Same silver armor and white cloak; courtyard torchlight.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S03",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "На престолот го чекаше кралот Артур.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of King Arthur seated on his throne, golden crown and dark red mantle, warm hearth light and tapestries, photoreal WoW cinematic grade, 1216x704",
+          "kf_last": "His calm gaze lowered toward the hall entrance, firelight flickering across his face",
+          "continuity": "Throne hall palette; King Arthur costume",
+          "motion": "flicker of firelight; subtle breathe",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "arthur_A2_fused"
+          ],
+          "ref_scope": "image1: arthur_A2_fused fused master 100% identical; image2: face card; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "Arthur face identity",
+            "golden crown + dark red mantle",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "King Arthur seated on his throne, crown and dark red mantle in hearth light"
+            ],
+            [
+              1.5,
+              3.0,
+              "his calm gaze lowers toward the hall entrance"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of King Arthur seated on his throne, golden crown and dark red mantle, warm hearth light and tapestries, photoreal WoW cinematic grade Arthur robed, monarch, in crown, cloak, robe, carrying scepter, wreathed in royal aura then King Arthur seated on his throne, crown and dark red mantle in hearth light, then his calm gaze lowers toward the hall entrance the camera static settling into his calm gaze lowered toward the hall entrance, firelight flickering across his face with a low radiant hum continuity held: Throne hall palette; King Arthur costume",
+          "image_prompt_start": "photoreal cinematic: medium of King Arthur seated on his throne, golden crown and dark red mantle, warm hearth light and tapestries, photoreal WoW cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: His calm gaze lowered toward the hall entrance, firelight flickering across his face.",
+          "video_prompt_start": "King Arthur seated on his throne, crown and dark red mantle in hearth light. his calm gaze lowers toward the hall entrance. The camera static. The beat resolves into the next matching frame. Continuity held: Throne hall palette; King Arthur costume.",
+          "video_prompt_end": "King Arthur seated on his throne, crown and dark red mantle in hearth light. his calm gaze lowers toward the hall entrance. The camera static. The beat resolves into the next matching frame. Continuity held: Throne hall palette; King Arthur costume.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S04",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Во салата стоеше големата Тркалезна маса, исполнета со витези.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide of the great Round Table hall, knights in varied armor seated around the ring, banners and candlelight, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "The camera holds as one empty chair stands out among the occupied seats",
+          "continuity": "Round Table hall lighting; knight group costumes",
+          "motion": "candle glow; subtle banner sway",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "knights_A4_fused"
+          ],
+          "ref_scope": "image1: knights_A4_fused fused master 100% identical; image2: face card; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "knight group costumes",
+            "varied armor",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "knights in varied armor seated around the Round Table ring"
+            ],
+            [
+              1.8,
+              3.5,
+              "one empty chair stands out among the occupied seats"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide of the great Round Table hall, knights in varied armor seated around the ring, banners and candlelight, photoreal Diablo2 cinematic then knights in varied armor seated around the Round Table ring, then one empty chair stands out among the occupied seats the camera static settling into the camera holds as one empty chair stands out among the occupied seats continuity held: Round Table hall lighting; knight group costumes",
+          "image_prompt_start": "photoreal cinematic: wide of the great Round Table hall, knights in varied armor seated around the ring, banners and candlelight.",
+          "image_prompt_end": "photoreal cinematic: The holds as one empty chair stands out among the occupied seats.",
+          "video_prompt_start": "Knights in varied armor seated around the Round Table ring. one empty chair stands out among the occupied seats. The camera static. The beat resolves into the next matching frame. Continuity held: Round Table hall lighting; knight group costumes.",
+          "video_prompt_end": "Knights in varied armor seated around the Round Table ring. one empty chair stands out among the occupied seats. The camera static. The beat resolves into the next matching frame. Continuity held: Round Table hall lighting; knight group costumes.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S05",
+          "size": "MEDIUM",
+          "angle": "over-shoulder",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "",
+          "dialogue_mk": "Крал Артур: „Седни со нас на Тркалезната маса.“",
+          "kf_first": "Over-shoulder medium of King Arthur gesturing toward the Round Table, Galahad in the foreground listening, photoreal cinematic, 1216x704",
+          "kf_last": "Arthur's hand lowers toward the empty seat while Galahad's expression steadies",
+          "continuity": "King Arthur and Galahad costumes; hall palette",
+          "motion": "Arthur's arm gesture; Galahad's slight nod",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "arthur_A2_fused",
+            "galahad_A1_fused"
+          ],
+          "ref_scope": "image1: arthur_A2_fused fused master 100% identical; image2: face card; studio bg/pose/light NOT used; image2: galahad_A1_fused fused master 100% identical; image3: face card; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "Arthur face identity",
+            "golden crown + dark red mantle",
+            "Galahad face identity",
+            "silver armor + white cloak",
+            "palette",
+            "light direction"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "Arthur gestures toward the Round Table, Galahad listening"
+            ],
+            [
+              1.8,
+              3.5,
+              "Arthur's hand lowers toward the empty seat, Galahad nods"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: over-shoulder medium of King Arthur gesturing toward the Round Table, Galahad in the foreground listening, photoreal cinematic Arthur robed, monarch, in crown, cloak, robe, carrying scepter, wreathed in royal aura Galahad athletic, knight, in plate armor, white cloak, tunic, carrying sword, shield, wreathed in holy aura, grail light then Arthur gestures toward the Round Table, Galahad listening, then Arthur's hand lowers toward the empty seat, Galahad nods the camera static settling into arthur's hand lowers toward the empty seat while Galahad's expression steadies with a low radiant hum, steel rings a voice speaks in Macedonian: \"Крал Артур: „Седни со нас на Тркалезната маса.“\" continuity held: King Arthur and Galahad costumes; hall palette",
+          "image_prompt_start": "photoreal cinematic: Over-shoulder medium of King Arthur gesturing toward the Round Table, Galahad in the foreground listening, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: Arthur's hand lowers toward the empty seat while Galahad's expression steadies.",
+          "video_prompt_start": "Arthur gestures toward the Round Table, Galahad listening. Arthur's hand lowers toward the empty seat, Galahad nods. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Крал Артур: „Седни со нас на Тркалезната маса.“\" Continuity held: King Arthur and Galahad costumes; hall palette.",
+          "video_prompt_end": "Arthur gestures toward the Round Table, Galahad listening. Arthur's hand lowers toward the empty seat, Galahad nods. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Крал Артур: „Седни со нас на Тркалезната маса.“\" Continuity held: King Arthur and Galahad costumes; hall palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S06",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-right",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Сите погледи се свртеа кон едно празно, судбоносно место.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide as the assembled knights turn their heads toward a single empty chair at the Round Table, photoreal WoW cinematic, 1216x704",
+          "kf_last": "Pan-right settles on the empty seat, candlelight making its carved back gleam",
+          "continuity": "Knight group; Round Table hall",
+          "motion": "slow pan-right; heads turning",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "knights_A4_fused"
+          ],
+          "ref_scope": "image1: knights_A4_fused fused master 100% identical; image2: face card; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "knight group costumes",
+            "varied armor",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "assembled knights turn their heads toward a single empty chair"
+            ],
+            [
+              1.8,
+              3.5,
+              "pan settles on the empty seat, carved back gleaming"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide as the assembled knights turn their heads toward a single empty chair at the Round Table, photoreal WoW cinematic then assembled knights turn their heads toward a single empty chair, then pan settles on the empty seat, carved back gleaming the camera pan-right settling into pan-right settles on the empty seat, candlelight making its carved back gleam continuity held: Knight group; Round Table hall",
+          "image_prompt_start": "photoreal cinematic: wide as the assembled knights turn their heads toward a single empty chair at the Round Table, photoreal WoW cinematic.",
+          "image_prompt_end": "photoreal cinematic: -right on the empty seat, candlelight making its carved back gleam.",
+          "video_prompt_start": "Assembled knights turn their heads toward a single empty chair. pan settles on the empty seat, carved back gleaming. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Knight group; Round Table hall.",
+          "video_prompt_end": "Assembled knights turn their heads toward a single empty chair. pan settles on the empty seat, carved back gleaming. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Knight group; Round Table hall.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S07",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Пророштвото велеше: тоа место е наменето само за најблагородниот и најчесниот.",
+          "dialogue_mk": "",
+          "kf_first": "Close on the empty prophesied seat of the Round Table, ornate carved wood, candlelight rim, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "Push-in reveals fine dust suspended in the light above the seat",
+          "continuity": "Empty seat detail; warm candlelight",
+          "motion": "slow push-in; dust motes drifting",
+          "shot_type": "CLOSE-UP",
+          "face_floor_px": 200,
+          "asset_refs": [
+            "seat_B3_sheet"
+          ],
+          "ref_scope": "image1: seat_B3_sheet reference sheet 100% identical",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prophesied seat design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close on the empty prophesied seat, ornate carved wood"
+            ],
+            [
+              1.5,
+              3.0,
+              "fine dust suspended in candlelight above the seat"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close on the empty prophesied seat of the Round Table, ornate carved wood, candlelight rim, photoreal Diablo2 cinematic then close on the empty prophesied seat, ornate carved wood, then fine dust suspended in candlelight above the seat the camera push-in settling into push-in reveals fine dust suspended in the light above the seat with water churns and surges continuity held: Empty seat detail; warm candlelight",
+          "image_prompt_start": "photoreal cinematic: on the empty prophesied seat of the Round Table, ornate carved wood, candlelight rim.",
+          "image_prompt_end": "photoreal cinematic: reveals fine dust suspended in the light above the seat.",
+          "video_prompt_start": "Close on the empty prophesied seat, ornate carved wood. fine dust suspended in candlelight above the seat. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Empty seat detail; warm candlelight.",
+          "video_prompt_end": "Close on the empty prophesied seat, ornate carved wood. fine dust suspended in candlelight above the seat. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Empty seat detail; warm candlelight.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S08",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Галахад зачекори кон тоа место без страв.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of Galahad walking steadily toward the empty seat, white cloak flowing, knights watching in the shadowed background, photoreal, 1216x704",
+          "kf_last": "Push-in on his calm face as he nears the chair",
+          "continuity": "Galahad costume; hall palette; knight observers",
+          "motion": "push-in; cloak flowing; footfalls",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "galahad_A1_fused",
+            "knights_A4_fused"
+          ],
+          "ref_scope": "image1: galahad_A1_fused fused master 100% identical; image2: face card; studio bg/pose/light NOT used; image2: knights_A4_fused fused master 100% identical; image3: face card; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "Galahad face identity",
+            "silver armor + white cloak",
+            "knight group costumes",
+            "varied armor",
+            "palette",
+            "light direction"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "Galahad walks steadily toward the empty seat, knights watching"
+            ],
+            [
+              1.8,
+              3.5,
+              "his calm face nears the chair"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of Galahad walking steadily toward the empty seat, white cloak flowing, knights watching in the shadowed background, photoreal Galahad athletic, knight, in plate armor, white cloak, tunic, carrying sword, shield, wreathed in holy aura, grail light then Galahad walks steadily toward the empty seat, knights watching, then his calm face nears the chair the camera push-in settling into push-in on his calm face as he nears the chair with steel rings, the shield clangs continuity held: Galahad costume; hall palette; knight observers",
+          "image_prompt_start": "photoreal cinematic: medium of Galahad walking steadily toward the empty seat, white cloak flowing, knights watching in the shadowed background, photoreal.",
+          "image_prompt_end": "photoreal cinematic: on his calm face as he nears the chair.",
+          "video_prompt_start": "Galahad walks steadily toward the empty seat, knights watching. his calm face nears the chair. The camera push-in. The beat resolves into the next matching frame. Continuity held: Galahad costume; hall palette; knight observers.",
+          "video_prompt_end": "Galahad walks steadily toward the empty seat, knights watching. his calm face nears the chair. The camera push-in. The beat resolves into the next matching frame. Continuity held: Galahad costume; hall palette; knight observers.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S09",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "narration_mk": "Застана, а потоа седна.",
+          "dialogue_mk": "",
+          "kf_first": "Close on Galahad's hand resting on the carved arm of the seat, then his face in profile, photoreal cinematic, 1216x704",
+          "kf_last": "He lowers into the chair, his posture settling with quiet certainty",
+          "continuity": "Galahad armor and cloak; seat detail",
+          "motion": "sitting motion; slight dust rise",
+          "shot_type": "CLOSE-UP",
+          "face_floor_px": 200,
+          "asset_refs": [
+            "galahad_A1_fused",
+            "seat_B3_sheet"
+          ],
+          "ref_scope": "image1: galahad_A1_fused fused master 100% identical; image2: face card; studio bg/pose/light NOT used; image2: seat_B3_sheet reference sheet 100% identical",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "Galahad face identity",
+            "silver armor + white cloak",
+            "prophesied seat design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.2,
+              "hand rests on the carved arm of the seat, face in profile"
+            ],
+            [
+              1.2,
+              2.5,
+              "he lowers into the chair with quiet certainty"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close on Galahad's hand resting on the carved arm of the seat, then his face in profile, photoreal cinematic Galahad athletic, knight, in plate armor, white cloak, tunic, carrying sword, shield, wreathed in holy aura, grail light then hand rests on the carved arm of the seat, face in profile, then he lowers into the chair with quiet certainty the camera static settling into he lowers into the chair, his posture settling with quiet certainty with steel rings, the shield clangs continuity held: Galahad armor and cloak; seat detail",
+          "image_prompt_start": "photoreal cinematic: on Galahad's hand resting on the carved arm of the seat, then his face in profile, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: He lowers into the chair, his posture settling with quiet certainty.",
+          "video_prompt_start": "Hand rests on the carved arm of the seat, face in profile. he lowers into the chair with quiet certainty. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Galahad armor and cloak; seat detail.",
+          "video_prompt_end": "Hand rests on the carved arm of the seat, face in profile. he lowers into the chair with quiet certainty. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Galahad armor and cloak; seat detail.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S10",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Затаи дишењето — сите знаеја дека недостојните умирале на тоа место.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of the Round Table hall frozen in silence, knights leaning back in dread, Galahad seated at the prophesied place, photoreal StarCraft cinematic, 1216x704",
+          "kf_last": "Tension holds, candlelight steady, every face turned toward Galahad",
+          "continuity": "Hall and knight group; Galahad seated",
+          "motion": "held stillness; faint candle flicker",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "knights_A4_fused",
+            "galahad_A1_fused"
+          ],
+          "ref_scope": "image1: knights_A4_fused fused master 100% identical; image2: face card; studio bg/pose/light NOT used; image2: galahad_A1_fused fused master 100% identical; image3: face card; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "knight group costumes",
+            "varied armor",
+            "Galahad face identity",
+            "silver armor + white cloak",
+            "palette",
+            "light direction"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "hall frozen in silence, knights leaning back in dread"
+            ],
+            [
+              1.5,
+              3.0,
+              "every face turned toward Galahad at the prophesied place"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of the Round Table hall frozen in silence, knights leaning back in dread, Galahad seated at the prophesied place, photoreal StarCraft cinematic Galahad athletic, knight, in plate armor, white cloak, tunic, carrying sword, shield, wreathed in holy aura, grail light then hall frozen in silence, knights leaning back in dread, then every face turned toward Galahad at the prophesied place the camera static settling into tension holds, candlelight steady, every face turned toward Galahad with steel rings, the shield clangs continuity held: Hall and knight group; Galahad seated",
+          "image_prompt_start": "photoreal cinematic: wide of the Round Table hall frozen in silence, knights leaning back in dread, Galahad seated at the prophesied place.",
+          "image_prompt_end": "photoreal cinematic: Tension holds, candlelight steady, every face turned toward Galahad.",
+          "video_prompt_start": "Hall frozen in silence, knights leaning back in dread. every face turned toward Galahad at the prophesied place. The camera static. The beat resolves into the next matching frame. Continuity held: Hall and knight group; Galahad seated.",
+          "video_prompt_end": "Hall frozen in silence, knights leaning back in dread. every face turned toward Galahad at the prophesied place. The camera static. The beat resolves into the next matching frame. Continuity held: Hall and knight group; Galahad seated.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S11",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Но Галахад остана здрав и жив, на чудење на сите.",
+          "dialogue_mk": "",
+          "kf_first": "Close on Galahad seated, fully alive and composed, a faint serene glow beginning on his features, photoreal, 1216x704",
+          "kf_last": "His eyes lift as astonished murmurs ripple off-screen",
+          "continuity": "Galahad face; hall atmosphere",
+          "motion": "gentle lift of gaze; emerging glow",
+          "shot_type": "CLOSE-UP",
+          "face_floor_px": 200,
+          "asset_refs": [
+            "galahad_A1_fused"
+          ],
+          "ref_scope": "image1: galahad_A1_fused fused master 100% identical; image2: face card; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "Galahad face identity",
+            "silver armor + white cloak",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "Galahad seated, fully alive and composed, serene glow beginning"
+            ],
+            [
+              1.5,
+              3.0,
+              "his eyes lift as astonished murmurs ripple off-screen"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close on Galahad seated, fully alive and composed, a faint serene glow beginning on his features, photoreal Galahad athletic, knight, in plate armor, white cloak, tunic, carrying sword, shield, wreathed in holy aura, grail light then Galahad seated, fully alive and composed, serene glow beginning, then his eyes lift as astonished murmurs ripple off-screen the camera static with steel rings, the shield clangs continuity held: Galahad face; hall atmosphere",
+          "image_prompt_start": "photoreal cinematic: on Galahad seated, fully alive and composed, a faint serene glow beginning on his features, photoreal.",
+          "image_prompt_end": "photoreal cinematic: His eyes lift as astonished murmurs ripple off-screen.",
+          "video_prompt_start": "Galahad seated, fully alive and composed, serene glow beginning. his eyes lift as astonished murmurs ripple off-screen. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Galahad face; hall atmosphere.",
+          "video_prompt_end": "Galahad seated, fully alive and composed, serene glow beginning. his eyes lift as astonished murmurs ripple off-screen. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Galahad face; hall atmosphere.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S12",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "crane-down",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "narration_mk": "Тогаш, пред него, се појави сјаен пехар.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide of the Round Table hall as a brilliant light erupts above the table, knights shielding their eyes, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "Crane-down toward a radiant chalice materializing in the air before Galahad",
+          "continuity": "Hall and knight group; light burst palette",
+          "motion": "crane-down; light expanding; knights recoiling",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "knights_A4_fused",
+            "galahad_A1_fused",
+            "grail_B2_sheet"
+          ],
+          "ref_scope": "image1: knights_A4_fused fused master 100% identical; image2: face card; studio bg/pose/light NOT used; image2: galahad_A1_fused fused master 100% identical; image3: face card; studio bg/pose/light NOT used; image3: grail_B2_sheet reference sheet 100% identical",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "knight group costumes",
+            "varied armor",
+            "Galahad face identity",
+            "silver armor + white cloak",
+            "Grail prop design",
+            "golden radiance"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "brilliant light erupts above the table, knights shielding eyes"
+            ],
+            [
+              2.0,
+              4.0,
+              "radiant chalice materializes before Galahad"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide of the Round Table hall as a brilliant light erupts above the table, knights shielding their eyes, photoreal Diablo2 cinematic Galahad athletic, knight, in plate armor, white cloak, tunic, carrying sword, shield, wreathed in holy aura, grail light then brilliant light erupts above the table, knights shielding eyes, then radiant chalice materializes before Galahad the camera crane-down settling into crane-down toward a radiant chalice materializing in the air before Galahad with steel rings, the shield clangs continuity held: Hall and knight group; light burst palette",
+          "image_prompt_start": "photoreal cinematic: wide of the Round Table hall as a brilliant light erupts above the table, knights shielding their eyes.",
+          "image_prompt_end": "photoreal cinematic: toward a radiant chalice materializing in the air before Galahad.",
+          "video_prompt_start": "Brilliant light erupts above the table, knights shielding eyes. radiant chalice materializes before Galahad. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Hall and knight group; light burst palette.",
+          "video_prompt_end": "Brilliant light erupts above the table, knights shielding eyes. radiant chalice materializes before Galahad. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Hall and knight group; light burst palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S13",
+          "size": "MACRO",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Тоа беше Светиот грал — пехарот што даваше бесмртност на оној што ќе се напиеше од него.",
+          "dialogue_mk": "",
+          "kf_first": "Macro on the Holy Grail appearing, an ornate luminous cup throwing soft refractions, photoreal cinematic, 1216x704",
+          "kf_last": "Push-in on its glowing surface as motes of light spiral around it",
+          "continuity": "Grail object; radiant light palette",
+          "motion": "slow push-in; light spiraling",
+          "shot_type": "CLOSE-UP",
+          "face_floor_px": 200,
+          "asset_refs": [
+            "grail_B2_sheet"
+          ],
+          "ref_scope": "image1: grail_B2_sheet reference sheet 100% identical",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "Grail prop design",
+            "golden radiance",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the Holy Grail appears, an ornate luminous cup throwing refractions"
+            ],
+            [
+              1.5,
+              3.0,
+              "light spirals around its glowing surface"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro on the Holy Grail appearing, an ornate luminous cup throwing soft refractions, photoreal cinematic then the Holy Grail appears, an ornate luminous cup throwing refractions, then light spirals around its glowing surface the camera push-in settling into push-in on its glowing surface as motes of light spiral around it continuity held: Grail object; radiant light palette",
+          "image_prompt_start": "photoreal cinematic: Macro on the Holy Grail appearing, an ornate luminous cup throwing soft refractions, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: on its glowing surface as motes of light spiral around it.",
+          "video_prompt_start": "The Holy Grail appears, an ornate luminous cup throwing refractions. light spirals around its glowing surface. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Grail object; radiant light palette.",
+          "video_prompt_end": "The Holy Grail appears, an ornate luminous cup throwing refractions. light spirals around its glowing surface. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Grail object; radiant light palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S14",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "shot-reverse",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "narration_mk": "Кога пехарот исчезна, Галахад се заколна дека ќе тргне да го најде.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of Galahad staring at the empty air where the Grail vanished, knights in stunned silence behind, photoreal, 1216x704",
+          "kf_last": "Shot-reverse to his resolved face as he rises, determination burning in his eyes",
+          "continuity": "Galahad; hall afterglow; knight group",
+          "motion": "shot-reverse cut; rising motion",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "galahad_A1_fused",
+            "knights_A4_fused"
+          ],
+          "ref_scope": "image1: galahad_A1_fused fused master 100% identical; image2: face card; studio bg/pose/light NOT used; image2: knights_A4_fused fused master 100% identical; image3: face card; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "Galahad face identity",
+            "silver armor + white cloak",
+            "knight group costumes",
+            "varied armor",
+            "palette",
+            "light direction"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "Galahad stares at the empty air where the Grail vanished"
+            ],
+            [
+              2.0,
+              4.0,
+              "he rises, determination burning in his eyes"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of Galahad staring at the empty air where the Grail vanished, knights in stunned silence behind, photoreal Galahad athletic, knight, in plate armor, white cloak, tunic, carrying sword, shield, wreathed in holy aura, grail light then Galahad stares at the empty air where the Grail vanished, then he rises, determination burning in his eyes the camera shot-reverse settling into shot-reverse to his resolved face as he rises, determination burning in his eyes with steel rings, the shield clangs continuity held: Galahad; hall afterglow; knight group",
+          "image_prompt_start": "photoreal cinematic: medium of Galahad staring at the empty air where the Grail vanished, knights in stunned silence behind, photoreal.",
+          "image_prompt_end": "photoreal cinematic: Shot-reverse to his resolved face as he , determination burning in his eyes.",
+          "video_prompt_start": "Galahad stares at the empty air where the Grail vanished. he rises, determination burning in his eyes. The camera shot-reverse. The beat resolves into the next matching frame. Continuity held: Galahad; hall afterglow; knight group.",
+          "video_prompt_end": "Galahad stares at the empty air where the Grail vanished. he rises, determination burning in his eyes. The camera shot-reverse. The beat resolves into the next matching frame. Continuity held: Galahad; hall afterglow; knight group.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "Camelot castle and Round Table hall",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#f0b45e",
+        "#a8863c",
+        "#2b2240"
+      ],
+      "light_direction": "key light from screen-left, warm dawn then hearth fire",
+      "time_of_day": "dawn"
+    },
+    {
+      "id": "act2",
+      "num": "Act II",
+      "title": "Патот",
+      "color": "#e0b341",
+      "pct": 50,
+      "synopsis": "Галахад го напушта Камелот и по долго талкање пристигнува во замокот Карбонек, каде што неговиот болен дедо, кралот Пелес, лежи прикован за постелата.",
+      "shots": [
+        {
+          "id": "S15",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "narration_mk": "Со зората, Галахад го напушти Камелот.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of Galahad riding out through the castle gates at sunrise, white cloak catching the wind, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "Crane-up revealing the road stretching into misty distance before him",
+          "continuity": "Galahad, white horse; dawn palette",
+          "motion": "crane-up; riding motion away",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "galahad_A1_fused",
+            "horse_B1_sheet"
+          ],
+          "ref_scope": "image1: galahad_A1_fused fused master 100% identical; image2: face card; studio bg/pose/light NOT used; image2: horse_B1_sheet reference sheet 100% identical",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "Galahad face identity",
+            "silver armor + white cloak",
+            "white horse design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "Galahad rides out through the castle gates at sunrise, cloak in the wind"
+            ],
+            [
+              2.0,
+              4.0,
+              "road stretches into misty distance before him"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of Galahad riding out through the castle gates at sunrise, white cloak catching the wind, photoreal Diablo2 cinematic Galahad athletic, knight, in plate armor, white cloak, tunic, carrying sword, shield, wreathed in holy aura, grail light then Galahad rides out through the castle gates at sunrise, cloak in the wind, then road stretches into misty distance before him the camera crane-up settling into crane-up revealing the road stretching into misty distance before him with steel rings, the shield clangs continuity held: Galahad, white horse; dawn palette",
+          "image_prompt_start": "photoreal cinematic: wide of Galahad riding out through the castle gates at sunrise, white cloak catching the wind.",
+          "image_prompt_end": "photoreal cinematic: revealing the road stretching into misty distance before him.",
+          "video_prompt_start": "Galahad rides out through the castle gates at sunrise, cloak in the wind. road stretches into misty distance before him. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Galahad, white horse; dawn palette.",
+          "video_prompt_end": "Galahad rides out through the castle gates at sunrise, cloak in the wind. road stretches into misty distance before him. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Galahad, white horse; dawn palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S16",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-right",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Денови на пат низ стари шуми и отворени полиња.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide of Galahad riding through a dense ancient forest, shafts of sunlight through the canopy, photoreal WoW cinematic, 1216x704",
+          "kf_last": "Pan-right as he emerges toward bright open fields beyond the tree line",
+          "continuity": "Galahad and horse; forest palette shifting to field",
+          "motion": "pan-right; riding forward",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "galahad_A1_fused",
+            "horse_B1_sheet"
+          ],
+          "ref_scope": "image1: galahad_A1_fused fused master 100% identical; image2: face card; studio bg/pose/light NOT used; image2: horse_B1_sheet reference sheet 100% identical",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "Galahad face identity",
+            "silver armor + white cloak",
+            "white horse design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "Galahad rides through a dense ancient forest, shafts of sunlight"
+            ],
+            [
+              1.8,
+              3.5,
+              "he emerges toward bright open fields beyond the tree line"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide of Galahad riding through a dense ancient forest, shafts of sunlight through the canopy, photoreal WoW cinematic Galahad athletic, knight, in plate armor, white cloak, tunic, carrying sword, shield, wreathed in holy aura, grail light then Galahad rides through a dense ancient forest, shafts of sunlight, then he emerges toward bright open fields beyond the tree line the camera pan-right settling into pan-right as he emerges toward bright open fields beyond the tree line with steel rings, the shield clangs continuity held: Galahad and horse; forest palette shifting to field",
+          "image_prompt_start": "photoreal cinematic: wide of Galahad riding through a dense ancient forest, shafts of sunlight through the canopy, photoreal WoW cinematic.",
+          "image_prompt_end": "photoreal cinematic: -right as he emerges toward bright open fields beyond the tree line.",
+          "video_prompt_start": "Galahad rides through a dense ancient forest, shafts of sunlight. he emerges toward bright open fields beyond the tree line. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Galahad and horse; forest palette shifting to field.",
+          "video_prompt_end": "Galahad rides through a dense ancient forest, shafts of sunlight. he emerges toward bright open fields beyond the tree line. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Galahad and horse; forest palette shifting to field.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S17",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Минуваше реки и планински предели, секогаш натаму.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of Galahad fording a shallow silver river at dusk, water splashing around the horse, photoreal StarCraft cinematic, 1216x704",
+          "kf_last": "Tracking shot as he climbs the far bank toward dark mountain slopes",
+          "continuity": "Galahad and horse; dusk river palette",
+          "motion": "track across the ford; water splash",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "galahad_A1_fused",
+            "horse_B1_sheet"
+          ],
+          "ref_scope": "image1: galahad_A1_fused fused master 100% identical; image2: face card; studio bg/pose/light NOT used; image2: horse_B1_sheet reference sheet 100% identical",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "Galahad face identity",
+            "silver armor + white cloak",
+            "white horse design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "Galahad fords a shallow silver river at dusk, water splashing"
+            ],
+            [
+              1.8,
+              3.5,
+              "he climbs the far bank toward dark mountain slopes"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of Galahad fording a shallow silver river at dusk, water splashing around the horse, photoreal StarCraft cinematic Galahad athletic, knight, in plate armor, white cloak, tunic, carrying sword, shield, wreathed in holy aura, grail light then Galahad fords a shallow silver river at dusk, water splashing, then he climbs the far bank toward dark mountain slopes the camera track settling into tracking shot as he climbs the far bank toward dark mountain slopes with steel rings, the shield clangs continuity held: Galahad and horse; dusk river palette",
+          "image_prompt_start": "photoreal cinematic: wide of Galahad fording a shallow silver river at dusk, water splashing around the horse.",
+          "image_prompt_end": "photoreal cinematic: as he climbs the far bank toward dark mountain slopes.",
+          "video_prompt_start": "Galahad fords a shallow silver river at dusk, water splashing. he climbs the far bank toward dark mountain slopes. The camera track. The beat resolves into the next matching frame. Continuity held: Galahad and horse; dusk river palette.",
+          "video_prompt_end": "Galahad fords a shallow silver river at dusk, water splashing. he climbs the far bank toward dark mountain slopes. The camera track. The beat resolves into the next matching frame. Continuity held: Galahad and horse; dusk river palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S18",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Ноќите ги минуваше покрај оган, сам со својата клетва.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of Galahad seated by a small campfire at night, his face half-lit by warm flame, stars above, photoreal cinematic, 1216x704",
+          "kf_last": "He gazes into the fire, the orange glow reflecting in his eyes",
+          "continuity": "Galahad face; night-fire palette",
+          "motion": "flickering firelight; steady gaze",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "galahad_A1_fused"
+          ],
+          "ref_scope": "image1: galahad_A1_fused fused master 100% identical; image2: face card; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "Galahad face identity",
+            "silver armor + white cloak",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "Galahad seated by a small campfire at night, face half-lit"
+            ],
+            [
+              1.5,
+              3.0,
+              "he gazes into the fire, orange glow in his eyes"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of Galahad seated by a small campfire at night, his face half-lit by warm flame, stars above, photoreal cinematic Galahad athletic, knight, in plate armor, white cloak, tunic, carrying sword, shield, wreathed in holy aura, grail light then Galahad seated by a small campfire at night, face half-lit, then he gazes into the fire, orange glow in his eyes the camera static settling into he gazes into the fire, the orange glow reflecting in his eyes with steel rings, the shield clangs continuity held: Galahad face; night-fire palette",
+          "image_prompt_start": "photoreal cinematic: medium of Galahad seated by a small campfire at night, his face half-lit by warm flame, stars above, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: He gazes into the fire, the orange glow reflecting in his eyes.",
+          "video_prompt_start": "Galahad seated by a small campfire at night, face half-lit. he gazes into the fire, orange glow in his eyes. The camera static. The beat resolves into the next matching frame. Continuity held: Galahad face; night-fire palette.",
+          "video_prompt_end": "Galahad seated by a small campfire at night, face half-lit. he gazes into the fire, orange glow in his eyes. The camera static. The beat resolves into the next matching frame. Continuity held: Galahad face; night-fire palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S19",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Патот го водеше сè повисоко, низ ветар и магла.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of Galahad leading his horse along a narrow mountain path, wind whipping the cloak, grey mist below, photoreal WoW cinematic, 1216x704",
+          "kf_last": "Crane-down closer as the mist thins to reveal a distant silhouette",
+          "continuity": "Galahad and horse; mountain mist palette",
+          "motion": "crane-down; cloak in wind",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "galahad_A1_fused",
+            "horse_B1_sheet"
+          ],
+          "ref_scope": "image1: galahad_A1_fused fused master 100% identical; image2: face card; studio bg/pose/light NOT used; image2: horse_B1_sheet reference sheet 100% identical",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "Galahad face identity",
+            "silver armor + white cloak",
+            "white horse design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "Galahad leads his horse along a narrow mountain path, cloak in wind"
+            ],
+            [
+              1.8,
+              3.5,
+              "mist thins to reveal a distant silhouette"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of Galahad leading his horse along a narrow mountain path, wind whipping the cloak, grey mist below, photoreal WoW cinematic Galahad athletic, knight, in plate armor, white cloak, tunic, carrying sword, shield, wreathed in holy aura, grail light then Galahad leads his horse along a narrow mountain path, cloak in wind, then mist thins to reveal a distant silhouette the camera crane-down settling into crane-down closer as the mist thins to reveal a distant silhouette with steel rings, the shield clangs continuity held: Galahad and horse; mountain mist palette",
+          "image_prompt_start": "photoreal cinematic: wide of Galahad leading his horse along a narrow mountain path, wind whipping the cloak, grey mist below, photoreal WoW cinematic.",
+          "image_prompt_end": "photoreal cinematic: closer as the mist thins to reveal a distant silhouette.",
+          "video_prompt_start": "Galahad leads his horse along a narrow mountain path, cloak in wind. mist thins to reveal a distant silhouette. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Galahad and horse; mountain mist palette.",
+          "video_prompt_end": "Galahad leads his horse along a narrow mountain path, cloak in wind. mist thins to reveal a distant silhouette. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Galahad and horse; mountain mist palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S20",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "narration_mk": "Конечно, пред него од маглата излезе замокот Карбонек.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide of the castle of Carbonek emerging from thick mist on a hill, dark stone towers and a single lit window, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "Push-in toward the great gate as the mist curls away",
+          "continuity": "Castle Carbonek establishing; mist palette",
+          "motion": "push-in; mist parting",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "carbonek_B4_sheet"
+          ],
+          "ref_scope": "image1: carbonek_B4_sheet reference sheet 100% identical",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "Carbonek castle design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "the castle of Carbonek emerges from thick mist on a hill"
+            ],
+            [
+              2.0,
+              4.0,
+              "push toward the great gate as mist curls away"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide of the castle of Carbonek emerging from thick mist on a hill, dark stone towers and a single lit window, photoreal Diablo2 cinematic then the castle of Carbonek emerges from thick mist on a hill, then push toward the great gate as mist curls away the camera push-in settling into push-in toward the great gate as the mist curls away continuity held: Castle Carbonek establishing; mist palette",
+          "image_prompt_start": "photoreal cinematic: wide of the castle of Carbonek emerging from thick mist on a hill, dark stone towers and a single lit window.",
+          "image_prompt_end": "photoreal cinematic: toward the great gate as the mist curls away.",
+          "video_prompt_start": "The castle of Carbonek emerges from thick mist on a hill. push toward the great gate as mist curls away. The camera push-in. The beat resolves into the next matching frame. Continuity held: Castle Carbonek establishing; mist palette.",
+          "video_prompt_end": "The castle of Carbonek emerges from thick mist on a hill. push toward the great gate as mist curls away. The camera push-in. The beat resolves into the next matching frame. Continuity held: Castle Carbonek establishing; mist palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S21",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Портата беше тешка, а дворот тивок.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of Galahad standing before the massive castle gate, rain-worn stone, photoreal StarCraft cinematic, 1216x704",
+          "kf_last": "Crane-up along the gate as it groans open, torchlight glowing within",
+          "continuity": "Galahad; castle gate; overcast palette",
+          "motion": "crane-up; gate opening",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "galahad_A1_fused"
+          ],
+          "ref_scope": "image1: galahad_A1_fused fused master 100% identical; image2: face card; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "Galahad face identity",
+            "silver armor + white cloak",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "Galahad stands before the massive castle gate, rain-worn stone"
+            ],
+            [
+              1.8,
+              3.5,
+              "gate groans open, torchlight glowing within"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Galahad standing before the massive castle gate, rain-worn stone, photoreal StarCraft cinematic Galahad athletic, knight, in plate armor, white cloak, tunic, carrying sword, shield, wreathed in holy aura, grail light then Galahad stands before the massive castle gate, rain-worn stone, then gate groans open, torchlight glowing within the camera crane-up settling into crane-up along the gate as it groans open, torchlight glowing within with steel rings, the shield clangs continuity held: Galahad; castle gate; overcast palette",
+          "image_prompt_start": "photoreal cinematic: medium of Galahad standing before the massive castle gate, rain-worn stone.",
+          "image_prompt_end": "photoreal cinematic: along the gate as it groans open, torchlight glowing within.",
+          "video_prompt_start": "Galahad stands before the massive castle gate, rain-worn stone. gate groans open, torchlight glowing within. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Galahad; castle gate; overcast palette.",
+          "video_prompt_end": "Galahad stands before the massive castle gate, rain-worn stone. gate groans open, torchlight glowing within. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Galahad; castle gate; overcast palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S22",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-left",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Внатре владееше полумрак, само трепкаа факели.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide of the dim castle interior, torch-lit stone corridors and hanging banners, photoreal WoW cinematic, 1216x704",
+          "kf_last": "Pan-left down a long hall where shadows stretch along the walls",
+          "continuity": "Castle interior palette; torchlight",
+          "motion": "pan-left; flickering torchlight",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "carbonek_B4_sheet"
+          ],
+          "ref_scope": "image1: carbonek_B4_sheet reference sheet 100% identical",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "Carbonek castle design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "dim castle interior, torch-lit stone corridors and banners"
+            ],
+            [
+              1.8,
+              3.5,
+              "pan down a long hall where shadows stretch"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide of the dim castle interior, torch-lit stone corridors and hanging banners, photoreal WoW cinematic then dim castle interior, torch-lit stone corridors and banners, then pan down a long hall where shadows stretch the camera pan-left settling into pan-left down a long hall where shadows stretch along the walls continuity held: Castle interior palette; torchlight",
+          "image_prompt_start": "photoreal cinematic: wide of the dim castle interior, torch-lit stone corridors and hanging banners, photoreal WoW cinematic.",
+          "image_prompt_end": "photoreal cinematic: -left down a long hall where shadows stretch along the walls.",
+          "video_prompt_start": "Dim castle interior, torch-lit stone corridors and banners. pan down a long hall where shadows stretch. The camera pan-left. The beat resolves into the next matching frame. Continuity held: Castle interior palette; torchlight.",
+          "video_prompt_end": "Dim castle interior, torch-lit stone corridors and banners. pan down a long hall where shadows stretch. The camera pan-left. The beat resolves into the next matching frame. Continuity held: Castle interior palette; torchlight.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S23",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Галахад чекореше по ходниците, воден од некоја внатрешна сила.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of Galahad walking through the shadowed castle hall, torch flames bowing as he passes, photoreal, 1216x704",
+          "kf_last": "Tracking shot following him as he turns toward a narrow stair",
+          "continuity": "Galahad; dark hall palette",
+          "motion": "track following; torch flames bowing",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "galahad_A1_fused"
+          ],
+          "ref_scope": "image1: galahad_A1_fused fused master 100% identical; image2: face card; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "Galahad face identity",
+            "silver armor + white cloak",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "Galahad walks through the shadowed castle hall, torch flames bowing"
+            ],
+            [
+              1.8,
+              3.5,
+              "he turns toward a narrow stair"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of Galahad walking through the shadowed castle hall, torch flames bowing as he passes, photoreal Galahad athletic, knight, in plate armor, white cloak, tunic, carrying sword, shield, wreathed in holy aura, grail light then Galahad walks through the shadowed castle hall, torch flames bowing, then he turns toward a narrow stair the camera track settling into tracking shot following him as he turns toward a narrow stair with steel rings, the shield clangs continuity held: Galahad; dark hall palette",
+          "image_prompt_start": "photoreal cinematic: medium of Galahad walking through the shadowed castle hall, torch flames bowing as he passes, photoreal.",
+          "image_prompt_end": "photoreal cinematic: him as he toward a narrow stair.",
+          "video_prompt_start": "Galahad walks through the shadowed castle hall, torch flames bowing. he turns toward a narrow stair. The camera track. The beat resolves into the next matching frame. Continuity held: Galahad; dark hall palette.",
+          "video_prompt_end": "Galahad walks through the shadowed castle hall, torch flames bowing. he turns toward a narrow stair. The camera track. The beat resolves into the next matching frame. Continuity held: Galahad; dark hall palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S24",
+          "size": "MEDIUM",
+          "angle": "over-shoulder",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "На крајот стигна до одајата на кралот.",
+          "dialogue_mk": "",
+          "kf_first": "Over-shoulder medium of Galahad's hand on a heavy iron door handle, warm candlelight leaking from behind the door, photoreal cinematic, 1216x704",
+          "kf_last": "The door swings open onto a candlelit sick chamber",
+          "continuity": "Galahad; transition to chamber",
+          "motion": "door opening; light spilling",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "galahad_A1_fused"
+          ],
+          "ref_scope": "image1: galahad_A1_fused fused master 100% identical; image2: face card; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "Galahad face identity",
+            "silver armor + white cloak",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "Galahad hand on a heavy iron door handle, candlelight behind"
+            ],
+            [
+              1.5,
+              3.0,
+              "door swings open onto a candlelit sick chamber"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: over-shoulder medium of Galahad's hand on a heavy iron door handle, warm candlelight leaking from behind the door, photoreal cinematic Galahad athletic, knight, in plate armor, white cloak, tunic, carrying sword, shield, wreathed in holy aura, grail light then Galahad hand on a heavy iron door handle, candlelight behind, then door swings open onto a candlelit sick chamber the camera static settling into the door swings open onto a candlelit sick chamber with steel rings, the shield clangs continuity held: Galahad; transition to chamber",
+          "image_prompt_start": "photoreal cinematic: Over-shoulder medium of Galahad's hand on a heavy iron door handle, warm candlelight leaking from behind the door, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The door swings open onto a candlelit sick chamber.",
+          "video_prompt_start": "Galahad hand on a heavy iron door handle, candlelight behind. door swings open onto a candlelit sick chamber. The camera static. The beat resolves into the next matching frame. Continuity held: Galahad; transition to chamber.",
+          "video_prompt_end": "Galahad hand on a heavy iron door handle, candlelight behind. door swings open onto a candlelit sick chamber. The camera static. The beat resolves into the next matching frame. Continuity held: Galahad; transition to chamber.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S25",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "На постелата лежеше стариот крал Пелес, блед и немоќен.",
+          "dialogue_mk": "",
+          "kf_first": "Close on the pale, fragile face of elderly King Pelles lying on a grand sickbed, candlelight and faded tapestries, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "His eyes are closed, chest rising weakly beneath heavy blankets",
+          "continuity": "King Pelles design; sick chamber palette",
+          "motion": "faint breathing; candle flicker",
+          "shot_type": "CLOSE-UP",
+          "face_floor_px": 200,
+          "asset_refs": [
+            "pelles_A3_fused"
+          ],
+          "ref_scope": "image1: pelles_A3_fused fused master 100% identical; image2: face card; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "Pelles face identity",
+            "pale elder features",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "pale, fragile face of elderly King Pelles on a grand sickbed"
+            ],
+            [
+              1.5,
+              3.0,
+              "eyes closed, chest rising weakly beneath blankets"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close on the pale, fragile face of elderly King Pelles lying on a grand sickbed, candlelight and faded tapestries, photoreal Diablo2 cinematic Pelles frail, sage, in robes, beard, wreathed in healing aura then pale, fragile face of elderly King Pelles on a grand sickbed, then eyes closed, chest rising weakly beneath blankets the camera static settling into his eyes are closed, chest rising weakly beneath heavy blankets with a low radiant hum continuity held: King Pelles design; sick chamber palette",
+          "image_prompt_start": "photoreal cinematic: on the pale, fragile face of elderly King Pelles lying on a grand sickbed, candlelight and faded tapestries.",
+          "image_prompt_end": "photoreal cinematic: His eyes are closed, chest rising weakly beneath heavy blankets.",
+          "video_prompt_start": "Pale, fragile face of elderly King Pelles on a grand sickbed. eyes closed, chest rising weakly beneath blankets. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: King Pelles design; sick chamber palette.",
+          "video_prompt_end": "Pale, fragile face of elderly King Pelles on a grand sickbed. eyes closed, chest rising weakly beneath blankets. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: King Pelles design; sick chamber palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S26",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Ниту еден лекар долго време не можеше да му најде лек.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide of the sick chamber, empty jars and scattered herbs on tables, the bedridden king at center, photoreal WoW cinematic, 1216x704",
+          "kf_last": "The camera holds on the muted, hopeless stillness of the room",
+          "continuity": "Sick chamber; King Pelles bedridden",
+          "motion": "held atmosphere; faint dust",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "pelles_A3_fused"
+          ],
+          "ref_scope": "image1: pelles_A3_fused fused master 100% identical; image2: face card; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "Pelles face identity",
+            "pale elder features",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "sick chamber, empty jars and scattered herbs, bedridden king at center"
+            ],
+            [
+              1.8,
+              3.5,
+              "muted, hopeless stillness of the room"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide of the sick chamber, empty jars and scattered herbs on tables, the bedridden king at center, photoreal WoW cinematic Pelles frail, sage, in robes, beard, wreathed in healing aura then sick chamber, empty jars and scattered herbs, bedridden king at center, then muted, hopeless stillness of the room the camera static settling into the camera holds on the muted, hopeless stillness of the room with a low radiant hum continuity held: Sick chamber; King Pelles bedridden",
+          "image_prompt_start": "photoreal cinematic: wide of the sick chamber, empty jars and scattered herbs on tables, the bedridden king at center, photoreal WoW cinematic.",
+          "image_prompt_end": "photoreal cinematic: The holds on the muted, hopeless stillness of the room.",
+          "video_prompt_start": "Sick chamber, empty jars and scattered herbs, bedridden king at center. muted, hopeless stillness of the room. The camera static. The beat resolves into the next matching frame. Continuity held: Sick chamber; King Pelles bedridden.",
+          "video_prompt_end": "Sick chamber, empty jars and scattered herbs, bedridden king at center. muted, hopeless stillness of the room. The camera static. The beat resolves into the next matching frame. Continuity held: Sick chamber; King Pelles bedridden.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S27",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Неговата кожа беше како восок, а очите затворени.",
+          "dialogue_mk": "",
+          "kf_first": "Close on King Pelles' waxen face, deep shadows around his closed eyes, photoreal cinematic, 1216x704",
+          "kf_last": "Push-in on his still features as a single candle glints on his brow",
+          "continuity": "King Pelles face; candlelit palette",
+          "motion": "slow push-in; candle glint",
+          "shot_type": "CLOSE-UP",
+          "face_floor_px": 200,
+          "asset_refs": [
+            "pelles_A3_fused"
+          ],
+          "ref_scope": "image1: pelles_A3_fused fused master 100% identical; image2: face card; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "Pelles face identity",
+            "pale elder features",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "King Pelles waxen face, deep shadows around his closed eyes"
+            ],
+            [
+              1.5,
+              3.0,
+              "single candle glints on his brow"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close on King Pelles' waxen face, deep shadows around his closed eyes, photoreal cinematic Pelles frail, sage, in robes, beard, wreathed in healing aura then King Pelles waxen face, deep shadows around his closed eyes, then single candle glints on his brow the camera push-in settling into push-in on his still features as a single candle glints on his brow with a low radiant hum continuity held: King Pelles face; candlelit palette",
+          "image_prompt_start": "photoreal cinematic: on King Pelles' waxen face, deep shadows around his closed eyes, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: on his still features as a single candle glints on his brow.",
+          "video_prompt_start": "King Pelles waxen face, deep shadows around his closed eyes. single candle glints on his brow. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: King Pelles face; candlelit palette.",
+          "video_prompt_end": "King Pelles waxen face, deep shadows around his closed eyes. single candle glints on his brow. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: King Pelles face; candlelit palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S28",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Галахад тивко му пристапи на постелата.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of Galahad stepping softly toward the grand sickbed, his face gentle with concern, photoreal StarCraft cinematic, 1216x704",
+          "kf_last": "Push-in closer as he kneels beside the bed, white cloak pooling on the floor",
+          "continuity": "Galahad; sickbed; warm candle palette",
+          "motion": "push-in; kneeling motion",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "galahad_A1_fused",
+            "pelles_A3_fused"
+          ],
+          "ref_scope": "image1: galahad_A1_fused fused master 100% identical; image2: face card; studio bg/pose/light NOT used; image2: pelles_A3_fused fused master 100% identical; image3: face card; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "Galahad face identity",
+            "silver armor + white cloak",
+            "Pelles face identity",
+            "pale elder features",
+            "palette",
+            "light direction"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "Galahad steps softly toward the grand sickbed, face gentle"
+            ],
+            [
+              1.8,
+              3.5,
+              "he kneels beside the bed, white cloak pooling"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of Galahad stepping softly toward the grand sickbed, his face gentle with concern, photoreal StarCraft cinematic Galahad athletic, knight, in plate armor, white cloak, tunic, carrying sword, shield, wreathed in holy aura, grail light Pelles frail, sage, in robes, beard, wreathed in healing aura then Galahad steps softly toward the grand sickbed, face gentle, then he kneels beside the bed, white cloak pooling the camera push-in settling into push-in closer as he kneels beside the bed, white cloak pooling on the floor with steel rings, the shield clangs continuity held: Galahad; sickbed; warm candle palette",
+          "image_prompt_start": "photoreal cinematic: medium of Galahad stepping softly toward the grand sickbed, his face gentle with concern.",
+          "image_prompt_end": "photoreal cinematic: closer as he kneels beside the bed, white cloak pooling on the floor.",
+          "video_prompt_start": "Galahad steps softly toward the grand sickbed, face gentle. he kneels beside the bed, white cloak pooling. The camera push-in. The beat resolves into the next matching frame. Continuity held: Galahad; sickbed; warm candle palette.",
+          "video_prompt_end": "Galahad steps softly toward the grand sickbed, face gentle. he kneels beside the bed, white cloak pooling. The camera push-in. The beat resolves into the next matching frame. Continuity held: Galahad; sickbed; warm candle palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S29",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Пред него лежеше неговиот дедо, кралот на Карбонек.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of Galahad kneeling at the bedside, the frail old king lying still above him, soft light, photoreal cinematic, 1216x704",
+          "kf_last": "Galahad reaches toward his grandfather's hand, tenderness in the gesture",
+          "continuity": "Galahad kneeling; King Pelles; chamber",
+          "motion": "reaching hand; gentle motion",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "galahad_A1_fused",
+            "pelles_A3_fused"
+          ],
+          "ref_scope": "image1: galahad_A1_fused fused master 100% identical; image2: face card; studio bg/pose/light NOT used; image2: pelles_A3_fused fused master 100% identical; image3: face card; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "Galahad face identity",
+            "silver armor + white cloak",
+            "Pelles face identity",
+            "pale elder features",
+            "palette",
+            "light direction"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "Galahad kneeling at the bedside, frail old king lying still"
+            ],
+            [
+              1.8,
+              3.5,
+              "he reaches toward his grandfather hand with tenderness"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Galahad kneeling at the bedside, the frail old king lying still above him, soft light, photoreal cinematic Galahad athletic, knight, in plate armor, white cloak, tunic, carrying sword, shield, wreathed in holy aura, grail light Pelles frail, sage, in robes, beard, wreathed in healing aura then Galahad kneeling at the bedside, frail old king lying still, then he reaches toward his grandfather hand with tenderness the camera static settling into galahad reaches toward his grandfather's hand, tenderness in the gesture with steel rings, the shield clangs continuity held: Galahad kneeling; King Pelles; chamber",
+          "image_prompt_start": "photoreal cinematic: medium of Galahad kneeling at the bedside, the frail old king lying still above him, soft light, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: Galahad reaches toward his grandfather's hand, tenderness in the gesture.",
+          "video_prompt_start": "Galahad kneeling at the bedside, frail old king lying still. he reaches toward his grandfather hand with tenderness. The camera static. The beat resolves into the next matching frame. Continuity held: Galahad kneeling; King Pelles; chamber.",
+          "video_prompt_end": "Galahad kneeling at the bedside, frail old king lying still. he reaches toward his grandfather hand with tenderness. The camera static. The beat resolves into the next matching frame. Continuity held: Galahad kneeling; King Pelles; chamber.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S30",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "И само што се доближи, неговите раце почнаа да светат.",
+          "dialogue_mk": "",
+          "kf_first": "Close on Galahad's open hands beginning to glow with a soft golden light, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "The glow intensifies, tiny sparks of light rising from his palms",
+          "continuity": "Galahad hands; emerging light palette",
+          "motion": "light blooming; sparks rising",
+          "shot_type": "CLOSE-UP",
+          "face_floor_px": 200,
+          "asset_refs": [
+            "galahad_A1_fused"
+          ],
+          "ref_scope": "image1: galahad_A1_fused fused master 100% identical; image2: face card; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "Galahad face identity",
+            "silver armor + white cloak",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "Galahad open hands begin to glow with soft golden light"
+            ],
+            [
+              1.5,
+              3.0,
+              "glow intensifies, sparks rising from his palms"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close on Galahad's open hands beginning to glow with a soft golden light, photoreal Diablo2 cinematic Galahad athletic, knight, in plate armor, white cloak, tunic, carrying sword, shield, wreathed in holy aura, grail light then Galahad open hands begin to glow with soft golden light, then glow intensifies, sparks rising from his palms the camera static settling into the glow intensifies, tiny sparks of light rising from his palms with steel rings, the shield clangs continuity held: Galahad hands; emerging light palette",
+          "image_prompt_start": "photoreal cinematic: on Galahad's open hands beginning to glow with a soft golden light.",
+          "image_prompt_end": "photoreal cinematic: The glow intensifies, tiny sparks of light rising from his palms.",
+          "video_prompt_start": "Galahad open hands begin to glow with soft golden light. glow intensifies, sparks rising from his palms. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Galahad hands; emerging light palette.",
+          "video_prompt_end": "Galahad open hands begin to glow with soft golden light. glow intensifies, sparks rising from his palms. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Galahad hands; emerging light palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S31",
+          "size": "MACRO",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Во неговите дланки се појави Светиот грал.",
+          "dialogue_mk": "",
+          "kf_first": "Macro on the Holy Grail materializing in Galahad's cupped hands, radiant golden light, photoreal cinematic, 1216x704",
+          "kf_last": "Push-in on the luminous cup settling into place, light dissolving the shadows",
+          "continuity": "Holy Grail object; golden light palette",
+          "motion": "materialization glow; push-in",
+          "shot_type": "CLOSE-UP",
+          "face_floor_px": 200,
+          "asset_refs": [
+            "grail_B2_sheet",
+            "galahad_A1_fused"
+          ],
+          "ref_scope": "image1: grail_B2_sheet reference sheet 100% identical; image2: galahad_A1_fused fused master 100% identical; image3: face card; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "Grail prop design",
+            "golden radiance",
+            "Galahad face identity",
+            "silver armor + white cloak",
+            "palette",
+            "light direction"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the Holy Grail materializes in Galahad cupped hands, radiant light"
+            ],
+            [
+              1.5,
+              3.0,
+              "luminous cup settles into place, light dissolving shadows"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro on the Holy Grail materializing in Galahad's cupped hands, radiant golden light, photoreal cinematic Galahad athletic, knight, in plate armor, white cloak, tunic, carrying sword, shield, wreathed in holy aura, grail light then the Holy Grail materializes in Galahad cupped hands, radiant light, then luminous cup settles into place, light dissolving shadows the camera push-in settling into push-in on the luminous cup settling into place, light dissolving the shadows with steel rings, the shield clangs continuity held: Holy Grail object; golden light palette",
+          "image_prompt_start": "photoreal cinematic: Macro on the Holy Grail materializing in Galahad's cupped hands, radiant golden light, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: on the luminous cup settling into place, light dissolving the shadows.",
+          "video_prompt_start": "The Holy Grail materializes in Galahad cupped hands, radiant light. luminous cup settles into place, light dissolving shadows. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Holy Grail object; golden light palette.",
+          "video_prompt_end": "The Holy Grail materializes in Galahad cupped hands, radiant light. luminous cup settles into place, light dissolving shadows. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Holy Grail object; golden light palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S32",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Галахад го крена пехарот, а светлината се прошири низ одајата.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of Galahad lifting the glowing Holy Grail, warm light washing over the dark chamber, photoreal WoW cinematic, 1216x704",
+          "kf_last": "The light spreads, illuminating the tapestries and the old king's face",
+          "continuity": "Grail and Galahad; expanding light",
+          "motion": "light spreading; lifting motion",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "galahad_A1_fused",
+            "grail_B2_sheet"
+          ],
+          "ref_scope": "image1: galahad_A1_fused fused master 100% identical; image2: face card; studio bg/pose/light NOT used; image2: grail_B2_sheet reference sheet 100% identical",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "Galahad face identity",
+            "silver armor + white cloak",
+            "Grail prop design",
+            "golden radiance",
+            "palette",
+            "light direction"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "Galahad lifts the glowing Holy Grail, light washing the chamber"
+            ],
+            [
+              1.5,
+              3.0,
+              "light spreads, illuminating tapestries and the king face"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of Galahad lifting the glowing Holy Grail, warm light washing over the dark chamber, photoreal WoW cinematic Galahad athletic, knight, in plate armor, white cloak, tunic, carrying sword, shield, wreathed in holy aura, grail light then Galahad lifts the glowing Holy Grail, light washing the chamber, then light spreads, illuminating tapestries and the king face the camera static settling into the light spreads, illuminating the tapestries and the old king's face with steel rings, the shield clangs continuity held: Grail and Galahad; expanding light",
+          "image_prompt_start": "photoreal cinematic: medium of Galahad lifting the glowing Holy Grail, warm light washing over the dark chamber, photoreal WoW cinematic.",
+          "image_prompt_end": "photoreal cinematic: The light spreads, illuminating the tapestries and the old king's face.",
+          "video_prompt_start": "Galahad lifts the glowing Holy Grail, light washing the chamber. light spreads, illuminating tapestries and the king face. The camera static. The beat resolves into the next matching frame. Continuity held: Grail and Galahad; expanding light.",
+          "video_prompt_end": "Galahad lifts the glowing Holy Grail, light washing the chamber. light spreads, illuminating tapestries and the king face. The camera static. The beat resolves into the next matching frame. Continuity held: Grail and Galahad; expanding light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S33",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "",
+          "dialogue_mk": "Галахад: „Еве, дедо, испиј го ова.“",
+          "kf_first": "Close on Galahad's tender face as he speaks, the Grail's glow reflecting in his eyes, photoreal cinematic, 1216x704",
+          "kf_last": "He tilts the cup gently toward the old king",
+          "continuity": "Galahad face; Grail glow",
+          "motion": "subtle tilt of the cup",
+          "shot_type": "CLOSE-UP",
+          "face_floor_px": 200,
+          "asset_refs": [
+            "galahad_A1_fused",
+            "grail_B2_sheet"
+          ],
+          "ref_scope": "image1: galahad_A1_fused fused master 100% identical; image2: face card; studio bg/pose/light NOT used; image2: grail_B2_sheet reference sheet 100% identical",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "Galahad face identity",
+            "silver armor + white cloak",
+            "Grail prop design",
+            "golden radiance",
+            "palette",
+            "light direction"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "Galahad tender face as he speaks, Grail glow in his eyes"
+            ],
+            [
+              1.5,
+              3.0,
+              "he tilts the cup gently toward the old king"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close on Galahad's tender face as he speaks, the Grail's glow reflecting in his eyes, photoreal cinematic Galahad athletic, knight, in plate armor, white cloak, tunic, carrying sword, shield, wreathed in holy aura, grail light then Galahad tender face as he speaks, Grail glow in his eyes, then he tilts the cup gently toward the old king the camera static with steel rings, the shield clangs a voice speaks in Macedonian: \"Галахад: „Еве, дедо, испиј го ова.“\" continuity held: Galahad face; Grail glow",
+          "image_prompt_start": "photoreal cinematic: on Galahad's tender face as he speaks, the Grail's glow reflecting in his eyes, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: He tilts the cup gently toward the old king.",
+          "video_prompt_start": "Galahad tender face as he speaks, Grail glow in his eyes. he tilts the cup gently toward the old king. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Галахад: „Еве, дедо, испиј го ова.“\" Continuity held: Galahad face; Grail glow.",
+          "video_prompt_end": "Galahad tender face as he speaks, Grail glow in his eyes. he tilts the cup gently toward the old king. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Галахад: „Еве, дедо, испиј го ова.“\" Continuity held: Galahad face; Grail glow.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S34",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Го потпре пехарот кон усните на старецот.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of Galahad bringing the glowing cup to King Pelles' lips, the king's head slightly raised, photoreal StarCraft cinematic, 1216x704",
+          "kf_last": "The rim of the cup meets his lips, a single drop gleaming",
+          "continuity": "Grail; King Pelles; Galahad",
+          "motion": "careful tilting motion",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "galahad_A1_fused",
+            "grail_B2_sheet",
+            "pelles_A3_fused"
+          ],
+          "ref_scope": "image1: galahad_A1_fused fused master 100% identical; image2: face card; studio bg/pose/light NOT used; image2: grail_B2_sheet reference sheet 100% identical; image3: pelles_A3_fused fused master 100% identical; image4: face card; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "Galahad face identity",
+            "silver armor + white cloak",
+            "Grail prop design",
+            "golden radiance",
+            "Pelles face identity",
+            "pale elder features"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "Galahad brings the glowing cup to King Pelles lips"
+            ],
+            [
+              1.5,
+              3.0,
+              "rim of the cup meets his lips, a single drop gleaming"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of Galahad bringing the glowing cup to King Pelles' lips, the king's head slightly raised, photoreal StarCraft cinematic Galahad athletic, knight, in plate armor, white cloak, tunic, carrying sword, shield, wreathed in holy aura, grail light Pelles frail, sage, in robes, beard, wreathed in healing aura then Galahad brings the glowing cup to King Pelles lips, then rim of the cup meets his lips, a single drop gleaming the camera static settling into the rim of the cup meets his lips, a single drop gleaming with steel rings, the shield clangs continuity held: Grail; King Pelles; Galahad",
+          "image_prompt_start": "photoreal cinematic: medium of Galahad bringing the glowing cup to King Pelles' lips, the king's head slightly raised.",
+          "image_prompt_end": "photoreal cinematic: The rim of the cup meets his lips, a single drop gleaming.",
+          "video_prompt_start": "Galahad brings the glowing cup to King Pelles lips. rim of the cup meets his lips, a single drop gleaming. The camera static. The beat resolves into the next matching frame. Continuity held: Grail; King Pelles; Galahad.",
+          "video_prompt_end": "Galahad brings the glowing cup to King Pelles lips. rim of the cup meets his lips, a single drop gleaming. The camera static. The beat resolves into the next matching frame. Continuity held: Grail; King Pelles; Galahad.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S35",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Кралот Пелес се напи една голтка од чудотворната вода.",
+          "dialogue_mk": "",
+          "kf_first": "Close on King Pelles drinking a sip from the Holy Grail, the luminous water touching his lips, photoreal cinematic, 1216x704",
+          "kf_last": "He swallows, a soft glow spreading down his throat",
+          "continuity": "King Pelles; Grail glow",
+          "motion": "swallowing; glow spreading",
+          "shot_type": "CLOSE-UP",
+          "face_floor_px": 200,
+          "asset_refs": [
+            "pelles_A3_fused",
+            "grail_B2_sheet"
+          ],
+          "ref_scope": "image1: pelles_A3_fused fused master 100% identical; image2: face card; studio bg/pose/light NOT used; image2: grail_B2_sheet reference sheet 100% identical",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "Pelles face identity",
+            "pale elder features",
+            "Grail prop design",
+            "golden radiance",
+            "palette",
+            "light direction"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "King Pelles drinks a sip from the Holy Grail, luminous water"
+            ],
+            [
+              1.5,
+              3.0,
+              "he swallows, a soft glow spreading down his throat"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close on King Pelles drinking a sip from the Holy Grail, the luminous water touching his lips, photoreal cinematic Pelles frail, sage, in robes, beard, wreathed in healing aura then King Pelles drinks a sip from the Holy Grail, luminous water, then he swallows, a soft glow spreading down his throat the camera static with a low radiant hum continuity held: King Pelles; Grail glow",
+          "image_prompt_start": "photoreal cinematic: on King Pelles drinking a sip from the Holy Grail, the luminous water touching his lips, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: He swallows, a soft glow spreading down his throat.",
+          "video_prompt_start": "King Pelles drinks a sip from the Holy Grail, luminous water. he swallows, a soft glow spreading down his throat. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: King Pelles; Grail glow.",
+          "video_prompt_end": "King Pelles drinks a sip from the Holy Grail, luminous water. he swallows, a soft glow spreading down his throat. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: King Pelles; Grail glow.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S36",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "И во истиот миг, бојата почна да му се враќа на лицето.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of the old king as color returns to his cheeks, his breathing deepening, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "Push-in on his face as vitality blooms, life returning to his eyes",
+          "continuity": "King Pelles recovering; warm light",
+          "motion": "push-in; color and breath returning",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "pelles_A3_fused"
+          ],
+          "ref_scope": "image1: pelles_A3_fused fused master 100% identical; image2: face card; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "Pelles face identity",
+            "pale elder features",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "color returns to the old king cheeks, breathing deepening"
+            ],
+            [
+              1.8,
+              3.5,
+              "vitality blooms, life returning to his eyes"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of the old king as color returns to his cheeks, his breathing deepening, photoreal Diablo2 cinematic Pelles frail, sage, in robes, beard, wreathed in healing aura then color returns to the old king cheeks, breathing deepening, then vitality blooms, life returning to his eyes the camera push-in settling into push-in on his face as vitality blooms, life returning to his eyes with a low radiant hum continuity held: King Pelles recovering; warm light",
+          "image_prompt_start": "photoreal cinematic: medium of the old king as color returns to his cheeks, his breathing deepening.",
+          "image_prompt_end": "photoreal cinematic: on his face as vitality blooms, life returning to his eyes.",
+          "video_prompt_start": "Color returns to the old king cheeks, breathing deepening. vitality blooms, life returning to his eyes. The camera push-in. The beat resolves into the next matching frame. Continuity held: King Pelles recovering; warm light.",
+          "video_prompt_end": "Color returns to the old king cheeks, breathing deepening. vitality blooms, life returning to his eyes. The camera push-in. The beat resolves into the next matching frame. Continuity held: King Pelles recovering; warm light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S37",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "crane-up",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "narration_mk": "Светлината го исполни целиот замок.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide of the sick chamber flooded with radiant golden light, Galahad and the king at center, photoreal WoW cinematic, 1216x704",
+          "kf_last": "Crane-up as the light bursts outward through windows and doors into the castle",
+          "continuity": "Chamber; healing light expanding",
+          "motion": "crane-up; light bursting outward",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "galahad_A1_fused",
+            "pelles_A3_fused"
+          ],
+          "ref_scope": "image1: galahad_A1_fused fused master 100% identical; image2: face card; studio bg/pose/light NOT used; image2: pelles_A3_fused fused master 100% identical; image3: face card; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "Galahad face identity",
+            "silver armor + white cloak",
+            "Pelles face identity",
+            "pale elder features",
+            "palette",
+            "light direction"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "sick chamber flooded with radiant golden light, both at center"
+            ],
+            [
+              2.0,
+              4.0,
+              "light bursts outward through windows and doors"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide of the sick chamber flooded with radiant golden light, Galahad and the king at center, photoreal WoW cinematic Galahad athletic, knight, in plate armor, white cloak, tunic, carrying sword, shield, wreathed in holy aura, grail light Pelles frail, sage, in robes, beard, wreathed in healing aura then sick chamber flooded with radiant golden light, both at center, then light bursts outward through windows and doors the camera crane-up settling into crane-up as the light bursts outward through windows and doors into the castle with steel rings, the shield clangs continuity held: Chamber; healing light expanding",
+          "image_prompt_start": "photoreal cinematic: wide of the sick chamber flooded with radiant golden light, Galahad and the king at center, photoreal WoW cinematic.",
+          "image_prompt_end": "photoreal cinematic: as the light bursts outward through windows and doors into the castle.",
+          "video_prompt_start": "Sick chamber flooded with radiant golden light, both at center. light bursts outward through windows and doors. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Chamber; healing light expanding.",
+          "video_prompt_end": "Sick chamber flooded with radiant golden light, both at center. light bursts outward through windows and doors. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Chamber; healing light expanding.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "Roads, wilderness, and Carbonek castle",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#5b7f9e",
+        "#3a2f2a",
+        "#c9a227"
+      ],
+      "light_direction": "key light from screen-right, shifting dusk to night to candlelight",
+      "time_of_day": "day"
+    },
+    {
+      "id": "act3",
+      "num": "Act III",
+      "title": "Исполнување",
+      "color": "#8b5cf6",
+      "pct": 20,
+      "synopsis": "Кралот Пелес оздравува, пророштвото се исполнува и Галахад му носи мир на светот, спасувајќи го Карбонек од страдањето.",
+      "shots": [
+        {
+          "id": "S38",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Старецот ги отвори очите, бистри и полни со живот.",
+          "dialogue_mk": "",
+          "kf_first": "Close on King Pelles' eyes opening wide and clear, vitality restored, soft golden light on his face, photoreal cinematic, 1216x704",
+          "kf_last": "His gaze focuses on Galahad, a faint grateful smile forming",
+          "continuity": "King Pelles healed; warm light",
+          "motion": "eyes opening; smile forming",
+          "shot_type": "CLOSE-UP",
+          "face_floor_px": 200,
+          "asset_refs": [
+            "pelles_A3_fused"
+          ],
+          "ref_scope": "image1: pelles_A3_fused fused master 100% identical; image2: face card; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "Pelles face identity",
+            "pale elder features",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "King Pelles eyes open wide and clear, vitality restored"
+            ],
+            [
+              1.5,
+              3.0,
+              "his gaze focuses on Galahad, a grateful smile forming"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close on King Pelles' eyes opening wide and clear, vitality restored, soft golden light on his face, photoreal cinematic Pelles frail, sage, in robes, beard, wreathed in healing aura then King Pelles eyes open wide and clear, vitality restored, then his gaze focuses on Galahad, a grateful smile forming the camera static settling into his gaze focuses on Galahad, a faint grateful smile forming with a low radiant hum continuity held: King Pelles healed; warm light",
+          "image_prompt_start": "photoreal cinematic: on King Pelles' eyes opening wide and clear, vitality restored, soft golden light on his face, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: His gaze focuses on Galahad, a faint grateful smile forming.",
+          "video_prompt_start": "King Pelles eyes open wide and clear, vitality restored. his gaze focuses on Galahad, a grateful smile forming. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: King Pelles healed; warm light.",
+          "video_prompt_end": "King Pelles eyes open wide and clear, vitality restored. his gaze focuses on Galahad, a grateful smile forming. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: King Pelles healed; warm light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S39",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Кралот Пелес се подигна од постелата, силен како некогаш.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of King Pelles sitting up and rising from the sickbed, renewed strength in his frame, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "He stands upright, blankets falling away, the light crowning him",
+          "continuity": "King Pelles restored; healing light",
+          "motion": "rising motion; blankets falling",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "pelles_A3_fused"
+          ],
+          "ref_scope": "image1: pelles_A3_fused fused master 100% identical; image2: face card; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "Pelles face identity",
+            "pale elder features",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "King Pelles sits up and rises from the sickbed, renewed strength"
+            ],
+            [
+              1.8,
+              3.5,
+              "he stands upright, blankets falling, light crowning him"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of King Pelles sitting up and rising from the sickbed, renewed strength in his frame, photoreal Diablo2 cinematic Pelles frail, sage, in robes, beard, wreathed in healing aura then King Pelles sits up and rises from the sickbed, renewed strength, then he stands upright, blankets falling, light crowning him the camera static settling into he stands upright, blankets falling away, the light crowning him with a low radiant hum continuity held: King Pelles restored; healing light",
+          "image_prompt_start": "photoreal cinematic: medium of King Pelles sitting up and rising from the sickbed, renewed strength in his frame.",
+          "image_prompt_end": "photoreal cinematic: He stands upright, blankets falling away, the light crowning him.",
+          "video_prompt_start": "King Pelles sits up and rises from the sickbed, renewed strength. he stands upright, blankets falling, light crowning him. The camera static. The beat resolves into the next matching frame. Continuity held: King Pelles restored; healing light.",
+          "video_prompt_end": "King Pelles sits up and rises from the sickbed, renewed strength. he stands upright, blankets falling, light crowning him. The camera static. The beat resolves into the next matching frame. Continuity held: King Pelles restored; healing light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S40",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "crane-down",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "narration_mk": "Одајата веќе не беше темна — стана дом на светлина.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide of the transformed chamber, golden light in every corner, the standing king and kneeling Galahad, photoreal WoW cinematic, 1216x704",
+          "kf_last": "Crane-down as warmth fills the room, tapestries vivid again",
+          "continuity": "Chamber transformed; golden palette",
+          "motion": "crane-down; light settling",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "galahad_A1_fused",
+            "pelles_A3_fused"
+          ],
+          "ref_scope": "image1: galahad_A1_fused fused master 100% identical; image2: face card; studio bg/pose/light NOT used; image2: pelles_A3_fused fused master 100% identical; image3: face card; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "Galahad face identity",
+            "silver armor + white cloak",
+            "Pelles face identity",
+            "pale elder features",
+            "palette",
+            "light direction"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "transformed chamber, golden light in every corner, king and Galahad"
+            ],
+            [
+              2.0,
+              4.0,
+              "warmth fills the room, tapestries vivid again"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide of the transformed chamber, golden light in every corner, the standing king and kneeling Galahad, photoreal WoW cinematic Galahad athletic, knight, in plate armor, white cloak, tunic, carrying sword, shield, wreathed in holy aura, grail light Pelles frail, sage, in robes, beard, wreathed in healing aura then transformed chamber, golden light in every corner, king and Galahad, then warmth fills the room, tapestries vivid again the camera crane-down settling into crane-down as warmth fills the room, tapestries vivid again with steel rings, the shield clangs continuity held: Chamber transformed; golden palette",
+          "image_prompt_start": "photoreal cinematic: wide of the transformed chamber, golden light in every corner, the standing king and kneeling Galahad, photoreal WoW cinematic.",
+          "image_prompt_end": "photoreal cinematic: as warmth fills the room, tapestries vivid again.",
+          "video_prompt_start": "Transformed chamber, golden light in every corner, king and Galahad. warmth fills the room, tapestries vivid again. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Chamber transformed; golden palette.",
+          "video_prompt_end": "Transformed chamber, golden light in every corner, king and Galahad. warmth fills the room, tapestries vivid again. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Chamber transformed; golden palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S41",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "shot-reverse",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Дедо и внук се прегрнаа.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of Galahad rising to embrace his grandfather, both wrapped in warm light, photoreal cinematic, 1216x704",
+          "kf_last": "Shot-reverse framing them in close embrace, the Grail still glowing softly",
+          "continuity": "Galahad and King Pelles; Grail glow",
+          "motion": "embrace; soft glow",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "galahad_A1_fused",
+            "pelles_A3_fused"
+          ],
+          "ref_scope": "image1: galahad_A1_fused fused master 100% identical; image2: face card; studio bg/pose/light NOT used; image2: pelles_A3_fused fused master 100% identical; image3: face card; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "Galahad face identity",
+            "silver armor + white cloak",
+            "Pelles face identity",
+            "pale elder features",
+            "palette",
+            "light direction"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "Galahad rises to embrace his grandfather, wrapped in warm light"
+            ],
+            [
+              1.8,
+              3.5,
+              "close embrace, the Grail still glowing softly"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of Galahad rising to embrace his grandfather, both wrapped in warm light, photoreal cinematic Galahad athletic, knight, in plate armor, white cloak, tunic, carrying sword, shield, wreathed in holy aura, grail light Pelles frail, sage, in robes, beard, wreathed in healing aura then Galahad rises to embrace his grandfather, wrapped in warm light, then close embrace, the Grail still glowing softly the camera shot-reverse settling into shot-reverse framing them in close embrace, the Grail still glowing softly with steel rings, the shield clangs continuity held: Galahad and King Pelles; Grail glow",
+          "image_prompt_start": "photoreal cinematic: medium of Galahad rising to embrace his grandfather, both wrapped in warm light, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: Shot-reverse framing them in close embrace, the Grail still glowing softly.",
+          "video_prompt_start": "Galahad rises to embrace his grandfather, wrapped in warm light. close embrace, the Grail still glowing softly. The camera shot-reverse. The beat resolves into the next matching frame. Continuity held: Galahad and King Pelles; Grail glow.",
+          "video_prompt_end": "Galahad rises to embrace his grandfather, wrapped in warm light. close embrace, the Grail still glowing softly. The camera shot-reverse. The beat resolves into the next matching frame. Continuity held: Galahad and King Pelles; Grail glow.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S42",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "crane-up",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "narration_mk": "Страдањето го напушти Карбонек.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of the castle of Carbonek, banners lifting, warm light streaming from every window, photoreal StarCraft cinematic, 1216x704",
+          "kf_last": "Crane-up over the towers as the mist clears and sky turns golden",
+          "continuity": "Castle Carbonek; clearing sky",
+          "motion": "crane-up; mist clearing; banners lifting",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "carbonek_B4_sheet"
+          ],
+          "ref_scope": "image1: carbonek_B4_sheet reference sheet 100% identical",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "Carbonek castle design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "castle of Carbonek, banners lifting, warm light from every window"
+            ],
+            [
+              2.0,
+              4.0,
+              "crane over the towers as mist clears and sky turns golden"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of the castle of Carbonek, banners lifting, warm light streaming from every window, photoreal StarCraft cinematic then castle of Carbonek, banners lifting, warm light from every window, then crane over the towers as mist clears and sky turns golden the camera crane-up settling into crane-up over the towers as the mist clears and sky turns golden continuity held: Castle Carbonek; clearing sky",
+          "image_prompt_start": "photoreal cinematic: wide of the castle of Carbonek, banners lifting, warm light streaming from every window.",
+          "image_prompt_end": "photoreal cinematic: over the towers as the mist clears and sky golden.",
+          "video_prompt_start": "Castle of Carbonek, banners lifting, warm light from every window. crane over the towers as mist clears and sky turns golden. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Castle Carbonek; clearing sky.",
+          "video_prompt_end": "Castle of Carbonek, banners lifting, warm light from every window. crane over the towers as mist clears and sky turns golden. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Castle Carbonek; clearing sky.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S43",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "narration_mk": "И над целата земја засвета мир.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of the land around the castle bathed in gentle sunlight, fields and rivers at peace, photoreal WoW cinematic, 1216x704",
+          "kf_last": "Crane-down over a valley where light sweeps across calm fields",
+          "continuity": "Landscape at peace; golden daylight",
+          "motion": "crane-down; light sweeping",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "carbonek_B4_sheet"
+          ],
+          "ref_scope": "image1: carbonek_B4_sheet reference sheet 100% identical",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "Carbonek castle design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "land around the castle bathed in gentle sunlight, fields and rivers"
+            ],
+            [
+              2.0,
+              4.0,
+              "light sweeps across calm fields"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of the land around the castle bathed in gentle sunlight, fields and rivers at peace, photoreal WoW cinematic then land around the castle bathed in gentle sunlight, fields and rivers, then light sweeps across calm fields the camera crane-down settling into crane-down over a valley where light sweeps across calm fields continuity held: Landscape at peace; golden daylight",
+          "image_prompt_start": "photoreal cinematic: wide of the land around the castle bathed in gentle sunlight, fields and rivers at peace, photoreal WoW cinematic.",
+          "image_prompt_end": "photoreal cinematic: over a valley where light sweeps across calm fields.",
+          "video_prompt_start": "Land around the castle bathed in gentle sunlight, fields and rivers. light sweeps across calm fields. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Landscape at peace; golden daylight.",
+          "video_prompt_end": "Land around the castle bathed in gentle sunlight, fields and rivers. light sweeps across calm fields. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Landscape at peace; golden daylight.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S44",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Галахад гледаше кон хоризонтот, смирен.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of Galahad standing on the castle walls, gazing toward the horizon, white cloak in the breeze, photoreal cinematic, 1216x704",
+          "kf_last": "His expression is serene, the golden sky reflected in his eyes",
+          "continuity": "Galahad; golden sky palette",
+          "motion": "cloak in breeze; steady gaze",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "galahad_A1_fused"
+          ],
+          "ref_scope": "image1: galahad_A1_fused fused master 100% identical; image2: face card; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "Galahad face identity",
+            "silver armor + white cloak",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "Galahad stands on the castle walls, gazing toward the horizon"
+            ],
+            [
+              1.5,
+              3.0,
+              "serene expression, golden sky reflected in his eyes"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of Galahad standing on the castle walls, gazing toward the horizon, white cloak in the breeze, photoreal cinematic Galahad athletic, knight, in plate armor, white cloak, tunic, carrying sword, shield, wreathed in holy aura, grail light then Galahad stands on the castle walls, gazing toward the horizon, then serene expression, golden sky reflected in his eyes the camera static settling into his expression is serene, the golden sky reflected in his eyes with steel rings, the shield clangs continuity held: Galahad; golden sky palette",
+          "image_prompt_start": "photoreal cinematic: medium of Galahad standing on the castle walls, gazing toward the horizon, white cloak in the breeze, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: His expression is serene, the golden sky reflected in his eyes.",
+          "video_prompt_start": "Galahad stands on the castle walls, gazing toward the horizon. serene expression, golden sky reflected in his eyes. The camera static. The beat resolves into the next matching frame. Continuity held: Galahad; golden sky palette.",
+          "video_prompt_end": "Galahad stands on the castle walls, gazing toward the horizon. serene expression, golden sky reflected in his eyes. The camera static. The beat resolves into the next matching frame. Continuity held: Galahad; golden sky palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S45",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Пророштвото се исполни.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide of Galahad holding the Holy Grail aloft on the battlements, its light radiating over the land, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "Push-in toward the glowing Grail as its light washes over everything",
+          "continuity": "Galahad and Grail; radiant finale",
+          "motion": "push-in; light radiating",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "galahad_A1_fused",
+            "grail_B2_sheet"
+          ],
+          "ref_scope": "image1: galahad_A1_fused fused master 100% identical; image2: face card; studio bg/pose/light NOT used; image2: grail_B2_sheet reference sheet 100% identical",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "Galahad face identity",
+            "silver armor + white cloak",
+            "Grail prop design",
+            "golden radiance",
+            "palette",
+            "light direction"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "Galahad holds the Holy Grail aloft on the battlements, light radiating"
+            ],
+            [
+              1.8,
+              3.5,
+              "push toward the glowing Grail as light washes over everything"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide of Galahad holding the Holy Grail aloft on the battlements, its light radiating over the land, photoreal Diablo2 cinematic Galahad athletic, knight, in plate armor, white cloak, tunic, carrying sword, shield, wreathed in holy aura, grail light then Galahad holds the Holy Grail aloft on the battlements, light radiating, then push toward the glowing Grail as light washes over everything the camera push-in settling into push-in toward the glowing Grail as its light washes over everything with steel rings, the shield clangs continuity held: Galahad and Grail; radiant finale",
+          "image_prompt_start": "photoreal cinematic: wide of Galahad holding the Holy Grail aloft on the battlements, its light radiating over the land.",
+          "image_prompt_end": "photoreal cinematic: toward the glowing Grail as its light washes over everything.",
+          "video_prompt_start": "Galahad holds the Holy Grail aloft on the battlements, light radiating. push toward the glowing Grail as light washes over everything. The camera push-in. The beat resolves into the next matching frame. Continuity held: Galahad and Grail; radiant finale.",
+          "video_prompt_end": "Galahad holds the Holy Grail aloft on the battlements, light radiating. push toward the glowing Grail as light washes over everything. The camera push-in. The beat resolves into the next matching frame. Continuity held: Galahad and Grail; radiant finale.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S46",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 4.5,
+          "clip_s": 5.04,
+          "narration_mk": "Така Галахад му донесе мир на светот и го спаси Карбонек од страдањето.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of the castle and peaceful countryside glowing beneath a golden sky, photoreal WoW cinematic, 1216x704",
+          "kf_last": "Crane-down into the serene landscape as the light gently fades to a warm horizon",
+          "continuity": "Peaceful world; golden finale palette",
+          "motion": "crane-down; light fading to horizon",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "carbonek_B4_sheet"
+          ],
+          "ref_scope": "image1: carbonek_B4_sheet reference sheet 100% identical",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "Carbonek castle design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.2,
+              "castle and peaceful countryside glowing beneath a golden sky"
+            ],
+            [
+              2.2,
+              4.5,
+              "light gently fades to a warm horizon"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of the castle and peaceful countryside glowing beneath a golden sky, photoreal WoW cinematic then castle and peaceful countryside glowing beneath a golden sky, then light gently fades to a warm horizon the camera crane-down settling into crane-down into the serene landscape as the light gently fades to a warm horizon continuity held: Peaceful world; golden finale palette",
+          "image_prompt_start": "photoreal cinematic: wide of the castle and peaceful countryside glowing beneath a golden sky, photoreal WoW cinematic.",
+          "image_prompt_end": "photoreal cinematic: into the serene landscape as the light gently fades to a warm horizon.",
+          "video_prompt_start": "Castle and peaceful countryside glowing beneath a golden sky. light gently fades to a warm horizon. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Peaceful world; golden finale palette.",
+          "video_prompt_end": "Castle and peaceful countryside glowing beneath a golden sky. light gently fades to a warm horizon. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Peaceful world; golden finale palette.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "Carbonek castle and surrounding lands",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#f5c76a",
+        "#e8b04b",
+        "#8b5cf6"
+      ],
+      "light_direction": "key light from screen-center, radiant golden healing glow",
+      "time_of_day": "day"
+    }
+  ],
+  "director_corrections": {
+    "issued": "2026-11-07",
+    "source": "KB §13 DIRECTOR CORRECTIONS — overrides all prior asset/keyframe guidance",
+    "rules": [
+      "DD HEADWEAR: no cap/hood/bandana/mask on head; hood = back-cowl only (cape-like); bare head + teal-blue glowing hair always visible; any head/face covering = REJECT",
+      "LEGENDARY WEAPONS MUST APPEAR: DD = twin Frostbite-class hand crossbows (ice-blue arcane crystal limbs, frost runes, frozen-light string, teal-blue glow); AZ = Dawnbreaker-class greatsword (pale sunsteel, molten-gold runes, golden holy fire edge, sunburst crossguard); hero sheet/keyframe without weapon = INCOMPLETE",
+      "WEAPON ANTI-SLOP: fantasy construction only; crossbow must NEVER read as firearm (no barrel/magazine/stock/Uzi/SMG silhouette = REJECT); anti-slop negatives always appended",
+      "BOSS FACE: Mal'garot HAS a prolific molten-lava face (lava dripping/running, drops falling to ground); faceless boss sheets SUPERSEDED",
+      "LOCATION BRIGHTNESS FLOOR: environment plates silhouette-readable at thumbnail; no murk-dark grades"
+    ],
+    "applies_when": "Activates when face_lock changes from AI-default to an enrolled identity (DD/AZ). AI-default packages carry this as a forward constraint, not a current defect.",
+    "anti_slop_negatives": "firearm, gun, machinegun, Uzi, barrel, magazine, ammo clip, muzzle, modern weapon"
+  }
+}

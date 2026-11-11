@@ -1,0 +1,2627 @@
+{
+  "num": "33",
+  "title_mk": "Слегувањето на Иштар",
+  "title_en": "The Descent of Ishtar",
+  "genre": "Легенда · епска акција",
+  "logline": "Моќната божица на љубовта Иштар слегува во подземјето за да ја види сестра си Ерешкигал, но останува заробена — и само замена со сопствениот неверен маж ѝ го враќа престолот над Земјата.",
+  "spec": {
+    "aspect": "16:9",
+    "resolution": "1216x704",
+    "fps": 24,
+    "model": "model-agnostic (chosen at generation)",
+    "style": "photoreal",
+    "flf": true,
+    "language": "mk",
+    "shot_floor": 40,
+    "shot_max": 60,
+    "seed_policy": "fixed-per-shot (same seed → reproducible shot; re-roll per shot id)",
+    "style_anchor": [
+      "Diablo 2 cinematic",
+      "World of Warcraft cinematic",
+      "StarCraft cinematic"
+    ],
+    "negative_prompt": "deformed, extra limbs, morphing, watermark, text, static frame, blurry, low quality, cropped head, cut-off face",
+    "frames": 121,
+    "frames_fallback": 81,
+    "routes": [
+      {
+        "model": "Wan2.1-FLF2V-14B-720P",
+        "input": "start+end native (run START-ONLY)",
+        "status": "WORKING (lead for 14B quality)"
+      },
+      {
+        "model": "Kandinsky 6.0 Lite/Pro",
+        "input": "start-image-only",
+        "status": "WORKING (Pro-distill untested at scale)"
+      },
+      {
+        "model": "SkyReels-V3 R2V-14B",
+        "input": "start-image-only",
+        "status": "WORKING (fallback)"
+      },
+      {
+        "model": "LTX-Video 2B v0.9.5",
+        "input": "start-image-only",
+        "status": "WORKING (small/fast, low ceiling)"
+      },
+      {
+        "model": "Mochi-1",
+        "input": "start-image-only",
+        "status": "untested here"
+      },
+      {
+        "model": "LTX-2.3 22B distilled",
+        "input": "start-image-only",
+        "status": "DEAD (nanobind native-crash, 42 note)"
+      }
+    ],
+    "model_note": "Model chosen per story at generation (43 §4). Keyframes + continuation prompts are generator-agnostic; only the render command differs per model."
+  },
+  "cast": [
+    {
+      "role": "Иштар / Ishtar",
+      "trait": "Божица на љубовта и војната — убава, моќна и горда, златна и лапис-лазулна облека",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Ерешкигал / Ereshkigal",
+      "trait": "Владетелка на подземјето Иркала, сестра на Иштар — темна, строга кралица во обсидијан",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Тамуз / Tammuz",
+      "trait": "Мажот на Иштар, пастирски бог — рамнодушен, занесен во себе",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Вратар / Gatekeeper",
+      "trait": "Исплашен чувар на портата на подземјето",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Гласник / Messenger",
+      "trait": "Пратеник на луѓето — смирен, храбар молбеник",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    }
+  ],
+  "acts": [
+    {
+      "id": "act1",
+      "num": "Act I",
+      "title": "Заложба",
+      "color": "#2dd4bf",
+      "pct": 31,
+      "synopsis": "Иштар, божицата на љубовта, одлучува да слезе во Иркала кај сестра си Ерешкигал. Го разбива отпорот на портата и влегува пред темната кралица, која ја прогласува за заточеничка.",
+      "shots": [
+        {
+          "id": "S01",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "crane-down",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "irkala_env_A1_prop"
+          ],
+          "ref_scope": "image1: the Irkala environment - dark underworld of obsidian caverns, ember torches and shadow corridors — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "slow crane-down"
+            ],
+            [
+              1.93,
+              3.5,
+              "ember light sputter"
+            ]
+          ],
+          "narration_mk": "Многу одамна, во срцето на Земјата, лежеше Иркала — мрачно царство на мртвите.",
+          "dialogue_mk": "",
+          "kf_first": "Vast Mesopotamian underworld Irkala, obsidian cavern lit by pale ember torches, rivers of shadow, distant bone-pale architecture, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Crane down into the dark heart of the realm, torches flaring as the camera descends toward a colossal gate",
+          "continuity": "Establishing palette: obsidian black, indigo shadow, cold ember teal",
+          "motion": "slow crane-down; ember light sputter",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: vast Mesopotamian underworld Irkala, obsidian cavern lit by pale ember torches, rivers of shadow, distant bone-pale architecture then slow crane-down, then ember light sputter settling into crane down into the dark heart of the realm, torches flaring as the camera descends toward a colossal gate continuity held: Establishing palette: obsidian black, indigo shadow, cold ember teal",
+          "image_prompt_start": "photoreal cinematic: Vast Mesopotamian underworld Irkala, obsidian cavern lit by pale ember torches, rivers of shadow, distant bone-pale architecture.",
+          "image_prompt_end": "photoreal cinematic: into the dark heart of the realm, torches flaring as the descends toward a colossal gate.",
+          "video_prompt_start": "Slow crane-down. ember light sputter. The beat resolves into the next matching frame. Continuity held: Establishing palette: obsidian black, indigo shadow, cold ember teal.",
+          "video_prompt_end": "Slow crane-down. ember light sputter. The beat resolves into the next matching frame. Continuity held: Establishing palette: obsidian black, indigo shadow, cold ember teal.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S02",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-left",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "ishtar_A1_fused",
+            "palace_env_A4_prop"
+          ],
+          "ref_scope": "image1: the fused master of Ishtar - goddess of love and war, golden crown, lapis necklace, radiant golden-and-lapis robes — 100% identical; studio bg/pose/light NOT used; image2: the celestial palace - golden ziggurat terraces, lapis mosaics and marble terrace — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "smooth pan-left"
+            ],
+            [
+              1.65,
+              3.0,
+              "silk robes flutter"
+            ]
+          ],
+          "narration_mk": "А над Земјата, горе, живееше Иштар — убавата и моќна божица на љубовта.",
+          "dialogue_mk": "",
+          "kf_first": "Radiant celestial palace of the goddess Ishtar, golden ziggurat terraces, lapis lazuli mosaics, warm dawn light, photoreal Mesopotamian epic cinematic",
+          "kf_last": "Pan left across the golden palace to reveal Ishtar standing on a marble terrace, wind in her robes",
+          "continuity": "Contrast palette: warm gold and lapis vs underworld dark",
+          "motion": "smooth pan-left; silk robes flutter",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: radiant celestial palace of the goddess Ishtar, golden ziggurat terraces, lapis lazuli mosaics, warm dawn light, photoreal Mesopotamian epic cinematic Ishtar slender, monarch, in crown, dress, wreathed in golden glow, divine glow then smooth pan-left, then silk robes flutter settling into pan left across the golden palace to reveal Ishtar standing on a marble terrace, wind in her robes with a low radiant hum, stone groans continuity held: Contrast palette: warm gold and lapis vs underworld dark",
+          "image_prompt_start": "photoreal cinematic: Radiant celestial palace of the goddess Ishtar, golden ziggurat terraces, lapis lazuli mosaics, warm dawn light, photoreal Mesopotamian epic cinematic.",
+          "image_prompt_end": "photoreal cinematic: left across the golden palace to reveal Ishtar standing on a marble terrace, wind in her robes.",
+          "video_prompt_start": "Smooth pan-left. silk robes flutter. The beat resolves into the next matching frame. Continuity held: Contrast palette: warm gold and lapis vs underworld dark.",
+          "video_prompt_end": "Smooth pan-left. silk robes flutter. The beat resolves into the next matching frame. Continuity held: Contrast palette: warm gold and lapis vs underworld dark.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S03",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "ishtar_A1_fused",
+            "palace_env_A4_prop"
+          ],
+          "ref_scope": "image1: the fused master of Ishtar - goddess of love and war, golden crown, lapis necklace, radiant golden-and-lapis robes — 100% identical; studio bg/pose/light NOT used; image2: the celestial palace - golden ziggurat terraces, lapis mosaics and marble terrace — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "slow push-in"
+            ],
+            [
+              1.93,
+              3.5,
+              "determined eye glint"
+            ]
+          ],
+          "narration_mk": "Мислата за сестра ѝ Ерешкигал не ѝ даваше мир, и таа посака да слезе кај неа по секоја цена.",
+          "dialogue_mk": "",
+          "kf_first": "Ishtar the goddess of love on a palace terrace, golden crown and lapis necklace, gazing down with longing resolve, photoreal WoW cinematic grade",
+          "kf_last": "Push in on her face as longing hardens into decision, eyes narrowing toward the earth below",
+          "continuity": "Same Ishtar costume: gold crown, lapis jewel, azure robe; warm key light",
+          "motion": "slow push-in; determined eye glint",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: ishtar the goddess of love on a palace terrace, golden crown and lapis necklace, gazing down with longing resolve, photoreal WoW cinematic grade Ishtar slender, monarch, in crown, dress, wreathed in golden glow, divine glow then slow push-in, then determined eye glint settling into push in on her face as longing hardens into decision, eyes narrowing toward the earth below with a low radiant hum, stone groans continuity held: Same Ishtar costume: gold crown, lapis jewel, azure robe; warm key light",
+          "image_prompt_start": "photoreal cinematic: Ishtar the goddess of love on a palace terrace, golden crown and lapis necklace, gazing down with longing resolve, photoreal WoW cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: on her face as longing hardens into decision, eyes narrowing toward the earth below.",
+          "video_prompt_start": "Slow push-in. determined eye glint. The beat resolves into the next matching frame. Continuity held: Same Ishtar costume: gold crown, lapis jewel, azure robe; warm key light.",
+          "video_prompt_end": "Slow push-in. determined eye glint. The beat resolves into the next matching frame. Continuity held: Same Ishtar costume: gold crown, lapis jewel, azure robe; warm key light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S04",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "high-angle",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "ishtar_A1_fused",
+            "stair_env_A6_prop"
+          ],
+          "ref_scope": "image1: the fused master of Ishtar - goddess of love and war, golden crown, lapis necklace, radiant golden-and-lapis robes — 100% identical; studio bg/pose/light NOT used; image2: the great underworld stair - spiraling stone stair descending into a dark chasm — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "tracking descent"
+            ],
+            [
+              1.93,
+              3.5,
+              "light dims"
+            ]
+          ],
+          "narration_mk": "И така, гордата божица го напушти небото и тргна надолу, кон подземјето.",
+          "dialogue_mk": "",
+          "kf_first": "Ishtar descending a spiraling stone stair into a dark chasm, her golden robes glowing against encroaching shadow, photoreal epic cinematic",
+          "kf_last": "Track with her descent as the warm light fades behind and cold indigo shadow rises ahead",
+          "continuity": "Ishtar continuity; light transitions from gold to indigo",
+          "motion": "tracking descent; light dims",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: ishtar descending a spiraling stone stair into a dark chasm, her golden robes glowing against encroaching shadow, photoreal epic cinematic Ishtar slender, monarch, in crown, dress, wreathed in golden glow, divine glow then tracking descent, then light dims settling into track with her descent as the warm light fades behind and cold indigo shadow rises ahead with a low radiant hum continuity held: Ishtar continuity; light transitions from gold to indigo",
+          "image_prompt_start": "photoreal cinematic: Ishtar descending a spiraling stone stair into a dark chasm, her golden robes glowing against encroaching shadow, photoreal epic cinematic.",
+          "image_prompt_end": "photoreal cinematic: with her descent as the warm light fades behind and cold indigo shadow ahead.",
+          "video_prompt_start": "Tracking descent. light dims. The beat resolves into the next matching frame. Continuity held: Ishtar continuity; light transitions from gold to indigo.",
+          "video_prompt_end": "Tracking descent. light dims. The beat resolves into the next matching frame. Continuity held: Ishtar continuity; light transitions from gold to indigo.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S05",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "underworld_gate_env_A3_prop",
+            "ishtar_A1_fused"
+          ],
+          "ref_scope": "image1: the underworld gate - colossal black-bronze and bone gate with green flame braziers — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Ishtar - goddess of love and war, golden crown, lapis necklace, radiant golden-and-lapis robes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.38,
+              "static"
+            ],
+            [
+              1.38,
+              2.5,
+              "flame flare"
+            ]
+          ],
+          "narration_mk": "Пред неа се издигна порта на подземјето — висока до небото, студена и застрашувачка.",
+          "dialogue_mk": "",
+          "kf_first": "Colossal underworld gate of black bronze and bone, towering into darkness, Ishtar a small radiant figure at its closed brazen doors, photoreal Diablo2 cinematic",
+          "kf_last": "Hold on the gate as green flame braziers flare, emphasizing its immense scale against Ishtar",
+          "continuity": "Ishtar now small against gate; cold teal-green flare palette",
+          "motion": "static; flame flare",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: colossal underworld gate of black bronze and bone, towering into darkness, Ishtar a small radiant figure at its closed brazen doors, photoreal Diablo2 cinematic Ishtar slender, monarch, in crown, dress, wreathed in golden glow, divine glow then static, then flame flare settling into hold on the gate as green flame braziers flare, emphasizing its immense scale against Ishtar with a low radiant hum continuity held: Ishtar now small against gate; cold teal-green flare palette",
+          "image_prompt_start": "photoreal cinematic: Colossal underworld gate of black bronze and bone, towering into darkness, Ishtar a small radiant figure at its closed brazen doors.",
+          "image_prompt_end": "photoreal cinematic: Hold on the gate as green flame braziers flare, emphasizing its immense scale against Ishtar.",
+          "video_prompt_start": "Static. flame flare. The beat resolves into the next matching frame. Continuity held: Ishtar now small against gate; cold teal-green flare palette.",
+          "video_prompt_end": "Static. flame flare. The beat resolves into the next matching frame. Continuity held: Ishtar now small against gate; cold teal-green flare palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S06",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "ishtar_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Ishtar - goddess of love and war, golden crown, lapis necklace, radiant golden-and-lapis robes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.38,
+              "slow push-in on eyes"
+            ],
+            [
+              1.38,
+              2.5,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Но Иштар не знаеше за страв.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of Ishtar's face, gold eyes burning, jaw set, wind lifting her dark hair, photoreal cinematic skin detail",
+          "kf_last": "Push in on her eyes as her expression turns to iron will",
+          "continuity": "Ishtar identity lock: gold eyes, dark hair, lapis crown",
+          "motion": "slow push-in on eyes",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of Ishtar's face, gold eyes burning, jaw set, wind lifting her dark hair, photoreal cinematic skin detail Ishtar slender, monarch, in crown, dress, wreathed in golden glow, divine glow then slow push-in on eyes, then resolve settling into push in on her eyes as her expression turns to iron will with a low radiant hum continuity held: Ishtar identity lock: gold eyes, dark hair, lapis crown",
+          "image_prompt_start": "photoreal cinematic: of Ishtar's face, gold eyes burning, jaw set, wind lifting her dark hair, photoreal cinematic skin detail.",
+          "image_prompt_end": "photoreal cinematic: on her eyes as her expression to iron will.",
+          "video_prompt_start": "Slow push-in on eyes. resolve. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Ishtar identity lock: gold eyes, dark hair, lapis crown.",
+          "video_prompt_end": "Slow push-in on eyes. resolve. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Ishtar identity lock: gold eyes, dark hair, lapis crown.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S07",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "ishtar_A1_fused",
+            "underworld_gate_env_A3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Ishtar - goddess of love and war, golden crown, lapis necklace, radiant golden-and-lapis robes — 100% identical; studio bg/pose/light NOT used; image2: the underworld gate - colossal black-bronze and bone gate with green flame braziers — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.0,
+              "static"
+            ],
+            [
+              1.0,
+              2.0,
+              "fist strike"
+            ],
+            [
+              2.0,
+              2.5,
+              "spark burst"
+            ]
+          ],
+          "narration_mk": "Таа застана пред портата и крена рака да тропне.",
+          "dialogue_mk": "",
+          "kf_first": "Ishtar raising her fist to the bronze gate, her golden sleeve catching ember light, photoreal epic cinematic",
+          "kf_last": "Her fist strikes the gate, a deep boom ringing with green sparks",
+          "continuity": "Ishtar costume continuity; ember/green flare lighting",
+          "motion": "static; fist strike, spark burst",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: ishtar raising her fist to the bronze gate, her golden sleeve catching ember light, photoreal epic cinematic Ishtar slender, monarch, in crown, dress, wreathed in golden glow, divine glow then static, then fist strike, then spark burst settling into her fist strikes the gate, a deep boom ringing with green sparks with a low radiant hum continuity held: Ishtar costume continuity; ember/green flare lighting",
+          "image_prompt_start": "photoreal cinematic: Ishtar raising her fist to the bronze gate, her golden sleeve catching ember light, photoreal epic cinematic.",
+          "image_prompt_end": "photoreal cinematic: Her fist strikes the gate, a deep boom ringing with green sparks.",
+          "video_prompt_start": "Static. fist strike. spark burst. The beat resolves into the next matching frame. Continuity held: Ishtar costume continuity; ember/green flare lighting.",
+          "video_prompt_end": "Static. fist strike. spark burst. The beat resolves into the next matching frame. Continuity held: Ishtar costume continuity; ember/green flare lighting.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S08",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "ishtar_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Ishtar - goddess of love and war, golden crown, lapis necklace, radiant golden-and-lapis robes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.2,
+              "static"
+            ],
+            [
+              1.2,
+              2.4,
+              "dust ripple"
+            ],
+            [
+              2.4,
+              3.0,
+              "flame flatten"
+            ]
+          ],
+          "narration_mk": "И извика со глас што го стресе каменот.",
+          "dialogue_mk": "Иштар: „Отвори, или ќе ја скршам портава!“",
+          "kf_first": "Low-angle close of Ishtar shouting at the colossal gate, her voice's force rippling dust from stone, photoreal cinematic",
+          "kf_last": "Hold as torch flames flatten from her shout, cracks spreading across the brazen door",
+          "continuity": "Ishtar identity; gate continuity; green sparks",
+          "motion": "static; dust ripple, flame flatten",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle close of Ishtar shouting at the colossal gate, her voice's force rippling dust from stone, photoreal cinematic Ishtar slender, monarch, in crown, dress, wreathed in golden glow, divine glow then static, then dust ripple, then flame flatten settling into hold as torch flames flatten from her shout, cracks spreading across the brazen door with a low radiant hum a voice speaks in Macedonian: \"Иштар: „Отвори, или ќе ја скршам портава!“\" continuity held: Ishtar identity; gate continuity; green sparks",
+          "image_prompt_start": "photoreal cinematic: close of Ishtar shouting at the colossal gate, her voice's force rippling dust from stone, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: Hold as torch flames flatten from her shout, cracks spreading across the brazen door.",
+          "video_prompt_start": "Static. dust ripple. flame flatten. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Иштар: „Отвори, или ќе ја скршам портава!“\" Continuity held: Ishtar identity; gate continuity; green sparks.",
+          "video_prompt_end": "Static. dust ripple. flame flatten. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Иштар: „Отвори, или ќе ја скршам портава!“\" Continuity held: Ishtar identity; gate continuity; green sparks.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S09",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gatekeeper_A4_fused",
+            "underworld_gate_env_A3_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Gatekeeper - frightened underworld gate guard in tattered dark robes — 100% identical; studio bg/pose/light NOT used; image2: the underworld gate - colossal black-bronze and bone gate with green flame braziers — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.0,
+              "static"
+            ],
+            [
+              1.0,
+              2.0,
+              "tremble"
+            ],
+            [
+              2.0,
+              2.5,
+              "dust fall"
+            ]
+          ],
+          "narration_mk": "Од другата страна, исплашен вратар слушаше и трепереше.",
+          "dialogue_mk": "",
+          "kf_first": "Frightened underworld gatekeeper in tattered dark robes crouched behind the gate, trembling, photoreal cinematic character detail",
+          "kf_last": "He flattens against the wall as the door booms again, dust falling on his shoulders",
+          "continuity": "New character: gatekeeper, pale gaunt face, tattered robe",
+          "motion": "static; tremble, dust fall",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: frightened underworld gatekeeper in tattered dark robes crouched behind the gate, trembling, photoreal cinematic character detail Gatekeeper slender, warrior, in hood, cloak, carrying staff, wreathed in shadow smoke then static, then tremble, then dust fall settling into he flattens against the wall as the door booms again, dust falling on his shoulders with arcane energy crackles, shadows whisper continuity held: New character: gatekeeper, pale gaunt face, tattered robe",
+          "image_prompt_start": "photoreal cinematic: Frightened underworld gatekeeper in tattered dark robes crouched behind the gate, trembling, photoreal cinematic character detail.",
+          "image_prompt_end": "photoreal cinematic: He flattens against the wall as the door booms again, dust falling on his shoulders.",
+          "video_prompt_start": "Static. tremble. dust fall. The beat resolves into the next matching frame. Continuity held: New character: gatekeeper, pale gaunt face, tattered robe.",
+          "video_prompt_end": "Static. tremble. dust fall. The beat resolves into the next matching frame. Continuity held: New character: gatekeeper, pale gaunt face, tattered robe.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S10",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gatekeeper_A4_fused",
+            "ishtar_A1_fused",
+            "underworld_gate_env_A3_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Gatekeeper - frightened underworld gate guard in tattered dark robes — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Ishtar - goddess of love and war, golden crown, lapis necklace, radiant golden-and-lapis robes — 100% identical; studio bg/pose/light NOT used; image3: the underworld gate - colossal black-bronze and bone gate with green flame braziers — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.2,
+              "static"
+            ],
+            [
+              1.2,
+              2.4,
+              "gate opens"
+            ],
+            [
+              2.4,
+              3.0,
+              "light spill"
+            ]
+          ],
+          "narration_mk": "Тој не се осмели да спори — и ја отвори тешката порта.",
+          "dialogue_mk": "",
+          "kf_first": "The gatekeeper straining to pull open the immense black-bronze gate, green light spilling through the widening crack, photoreal epic cinematic",
+          "kf_last": "The gate swings open revealing Ishtar framed in amber light against the dark gateway",
+          "continuity": "Gate and gatekeeper continuity; Ishtar silhouette in doorway",
+          "motion": "static; gate opens, light spill",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: the gatekeeper straining to pull open the immense black-bronze gate, green light spilling through the widening crack, photoreal epic cinematic Gatekeeper slender, warrior, in hood, cloak, carrying staff, wreathed in shadow smoke Ishtar slender, monarch, in crown, dress, wreathed in golden glow, divine glow then static, then gate opens, then light spill settling into the gate swings open revealing Ishtar framed in amber light against the dark gateway with arcane energy crackles, shadows whisper continuity held: Gate and gatekeeper continuity; Ishtar silhouette in doorway",
+          "image_prompt_start": "photoreal cinematic: The gatekeeper straining to pull open the immense black-bronze gate, green light spilling through the widening crack, photoreal epic cinematic.",
+          "image_prompt_end": "photoreal cinematic: The gate swings open revealing Ishtar framed in amber light against the dark gateway.",
+          "video_prompt_start": "Static. gate opens. light spill. The beat resolves into the next matching frame. Continuity held: Gate and gatekeeper continuity; Ishtar silhouette in doorway.",
+          "video_prompt_end": "Static. gate opens. light spill. The beat resolves into the next matching frame. Continuity held: Gate and gatekeeper continuity; Ishtar silhouette in doorway.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S11",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "over-shoulder",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gatekeeper_A4_fused",
+            "ishtar_A1_fused",
+            "irkala_env_A1_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Gatekeeper - frightened underworld gate guard in tattered dark robes — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Ishtar - goddess of love and war, golden crown, lapis necklace, radiant golden-and-lapis robes — 100% identical; studio bg/pose/light NOT used; image3: the Irkala environment - dark underworld of obsidian caverns, ember torches and shadow corridors — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "tracking shot"
+            ],
+            [
+              1.93,
+              3.5,
+              "torch flicker"
+            ]
+          ],
+          "narration_mk": "Вратарот ја поведе низ темни ходници, сè подлабоко во Иркала.",
+          "dialogue_mk": "",
+          "kf_first": "Over-shoulder of the gatekeeper leading Ishtar through a torch-lit underworld corridor, shadows writhing on carved walls, photoreal cinematic",
+          "kf_last": "Track through the corridor as they pass silent shades and green braziers, descending deeper",
+          "continuity": "Gatekeeper + Ishtar; corridor palette indigo and green",
+          "motion": "tracking shot; torch flicker",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: over-shoulder of the gatekeeper leading Ishtar through a torch-lit underworld corridor, shadows writhing on carved walls, photoreal cinematic Gatekeeper slender, warrior, in hood, cloak, carrying staff, wreathed in shadow smoke Ishtar slender, monarch, in crown, dress, wreathed in golden glow, divine glow then tracking shot, then torch flicker settling into track through the corridor as they pass silent shades and green braziers, descending deeper with arcane energy crackles, shadows whisper continuity held: Gatekeeper + Ishtar; corridor palette indigo and green",
+          "image_prompt_start": "photoreal cinematic: Over-shoulder of the gatekeeper leading Ishtar through a torch-lit underworld corridor, shadows writhing on carved walls, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: through the corridor as they pass silent shades and green braziers, descending deeper.",
+          "video_prompt_start": "Tracking shot. torch flicker. The beat resolves into the next matching frame. Continuity held: Gatekeeper + Ishtar; corridor palette indigo and green.",
+          "video_prompt_end": "Tracking shot. torch flicker. The beat resolves into the next matching frame. Continuity held: Gatekeeper + Ishtar; corridor palette indigo and green.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S12",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "throne_hall_env_A2_prop"
+          ],
+          "ref_scope": "image1: the throne hall environment - vast obsidian throne hall lined with green flame braziers — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "braziers flicker"
+            ]
+          ],
+          "narration_mk": "Длабоко во царството ги чекаше престолната сала на Ерешкигал.",
+          "dialogue_mk": "",
+          "kf_first": "Vast underworld throne hall of Ereshkigal, obsidian columns, green flame braziers, a shadow-shrouded throne on a raised dais, photoreal Diablo2 cinematic",
+          "kf_last": "Hold as Ishtar and the gatekeeper enter at the far end, tiny against the monstrous hall",
+          "continuity": "Throne hall palette: obsidian, bone, cold green",
+          "motion": "static; braziers flicker",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: vast underworld throne hall of Ereshkigal, obsidian columns, green flame braziers, a shadow-shrouded throne on a raised dais, photoreal Diablo2 cinematic then static, then braziers flicker settling into hold as Ishtar and the gatekeeper enter at the far end, tiny against the monstrous hall with stone groans continuity held: Throne hall palette: obsidian, bone, cold green",
+          "image_prompt_start": "photoreal cinematic: Vast underworld throne hall of Ereshkigal, obsidian columns, green flame braziers, a shadow-shrouded throne on a raised dais.",
+          "image_prompt_end": "photoreal cinematic: Hold as Ishtar and the gatekeeper enter at the far end, tiny against the monstrous hall.",
+          "video_prompt_start": "Static. braziers flicker. The beat resolves into the next matching frame. Continuity held: Throne hall palette: obsidian, bone, cold green.",
+          "video_prompt_end": "Static. braziers flicker. The beat resolves into the next matching frame. Continuity held: Throne hall palette: obsidian, bone, cold green.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S13",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "ereshkigal_A2_fused",
+            "throne_hall_env_A2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Ereshkigal - dark queen of the underworld, pale skin, black bone crown, obsidian robes — 100% identical; studio bg/pose/light NOT used; image2: the throne hall environment - vast obsidian throne hall lined with green flame braziers — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "slow push-in on face"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "А на престолот седеше самата Ерешкигал — темната кралица на мртвите.",
+          "dialogue_mk": "",
+          "kf_first": "Ereshkigal the dark queen on her obsidian throne, pale skin, black crown of bone, eyes cold as still water, photoreal WoW cinematic grade",
+          "kf_last": "Push in on her regal, severe face as she regards the approaching goddess",
+          "continuity": "New character: Ereshkigal, obsidian-black attire, bone crown",
+          "motion": "slow push-in on face",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: ereshkigal the dark queen on her obsidian throne, pale skin, black crown of bone, eyes cold as still water, photoreal WoW cinematic grade Ereshkigal robed, monarch, in crown, cloak, dress, wreathed in shadow smoke, divine glow then slow push-in on face, then resolve settling into push in on her regal, severe face as she regards the approaching goddess with shadows whisper, a low radiant hum continuity held: New character: Ereshkigal, obsidian-black attire, bone crown",
+          "image_prompt_start": "photoreal cinematic: Ereshkigal the dark queen on her obsidian throne, pale skin, black crown of bone, eyes cold as still water, photoreal WoW cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: on her regal, severe face as she regards the approaching goddess.",
+          "video_prompt_start": "Slow push-in on face. resolve. The beat resolves into the next matching frame. Continuity held: New character: Ereshkigal, obsidian-black attire, bone crown.",
+          "video_prompt_end": "Slow push-in on face. resolve. The beat resolves into the next matching frame. Continuity held: New character: Ereshkigal, obsidian-black attire, bone crown.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S14",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "over-shoulder",
+          "move": "shot-reverse",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "ereshkigal_A2_fused",
+            "ishtar_A1_fused",
+            "throne_hall_env_A2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Ereshkigal - dark queen of the underworld, pale skin, black bone crown, obsidian robes — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Ishtar - goddess of love and war, golden crown, lapis necklace, radiant golden-and-lapis robes — 100% identical; studio bg/pose/light NOT used; image3: the throne hall environment - vast obsidian throne hall lined with green flame braziers — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "shot-reverse"
+            ],
+            [
+              1.93,
+              3.5,
+              "Ishtar freezes"
+            ]
+          ],
+          "narration_mk": "Ерешкигал ја погледна сестра си, а прашањето ѝ падна како ладен камен.",
+          "dialogue_mk": "Ерешкигал: „Ако ти си тука, тогаш кој ја шири љубовта на Земјата?“",
+          "kf_first": "Over-shoulder from Ereshkigal toward Ishtar standing below the throne, Ishtar's confident stance wavering, photoreal cinematic",
+          "kf_last": "Shot-reverse to Ishtar's face as she opens her mouth but finds no words",
+          "continuity": "Ereshkigal and Ishtar continuity; cold hall lighting",
+          "motion": "shot-reverse; Ishtar freezes",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: over-shoulder from Ereshkigal toward Ishtar standing below the throne, Ishtar's confident stance wavering, photoreal cinematic Ereshkigal robed, monarch, in crown, cloak, dress, wreathed in shadow smoke, divine glow Ishtar slender, monarch, in crown, dress, wreathed in golden glow, divine glow then shot-reverse, then Ishtar freezes settling into shot-reverse to Ishtar's face as she opens her mouth but finds no words with shadows whisper, a low radiant hum a voice speaks in Macedonian: \"Ерешкигал: „Ако ти си тука, тогаш кој ја шири љубовта на Земјата?“\" continuity held: Ereshkigal and Ishtar continuity; cold hall lighting",
+          "image_prompt_start": "photoreal cinematic: Over-shoulder from Ereshkigal toward Ishtar standing below the throne, Ishtar's confident stance wavering, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: Shot-reverse to Ishtar's face as she opens her mouth but finds no words.",
+          "video_prompt_start": "Shot-reverse. Ishtar freezes. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Ерешкигал: „Ако ти си тука, тогаш кој ја шири љубовта на Земјата?“\" Continuity held: Ereshkigal and Ishtar continuity; cold hall lighting.",
+          "video_prompt_end": "Shot-reverse. Ishtar freezes. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Ерешкигал: „Ако ти си тука, тогаш кој ја шири љубовта на Земјата?“\" Continuity held: Ereshkigal and Ishtar continuity; cold hall lighting.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S15",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "ishtar_A1_fused",
+            "chains_prop_B1_prop",
+            "throne_hall_env_A2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Ishtar - goddess of love and war, golden crown, lapis necklace, radiant golden-and-lapis robes — 100% identical; studio bg/pose/light NOT used; image2: the green light-chains - translucent green chains that bind Ishtar — 100% identical; studio bg/pose/light NOT used; image3: the throne hall environment - vast obsidian throne hall lined with green flame braziers — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "slow push-in"
+            ],
+            [
+              1.93,
+              3.5,
+              "chains rise"
+            ]
+          ],
+          "narration_mk": "Иштар немаше одговор. А сестра ѝ ја изрече пресудата.",
+          "dialogue_mk": "Ерешкигал: „Сакаше да го посетиш моето царство, а сега ќе станеш моја заточеничка!“",
+          "kf_first": "Close-up of Ishtar's fallen expression, gold eyes searching, shadow creeping over her face, photoreal cinematic",
+          "kf_last": "Push in as green chains of light rise in the dark behind her, sealing her fate",
+          "continuity": "Ishtar identity; green light chains motif",
+          "motion": "slow push-in; chains rise",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of Ishtar's fallen expression, gold eyes searching, shadow creeping over her face, photoreal cinematic Ishtar slender, monarch, in crown, dress, wreathed in golden glow, divine glow then slow push-in, then chains rise settling into push in as green chains of light rise in the dark behind her, sealing her fate with a low radiant hum, stone groans a voice speaks in Macedonian: \"Ерешкигал: „Сакаше да го посетиш моето царство, а сега ќе станеш моја заточеничка!“\" continuity held: Ishtar identity; green light chains motif",
+          "image_prompt_start": "photoreal cinematic: of Ishtar's fallen expression, gold eyes searching, shadow creeping over her face, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: as green chains of light rise in the dark behind her, sealing her fate.",
+          "video_prompt_start": "Slow push-in. chains rise. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Ерешкигал: „Сакаше да го посетиш моето царство, а сега ќе станеш моја заточеничка!“\" Continuity held: Ishtar identity; green light chains motif.",
+          "video_prompt_end": "Slow push-in. chains rise. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Ерешкигал: „Сакаше да го посетиш моето царство, а сега ќе станеш моја заточеничка!“\" Continuity held: Ishtar identity; green light chains motif.",
+          "motion_intensity": "gentle"
+        }
+      ],
+      "location_ref": "celestial_palace_descending_to_irkala_throne_hall",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#fbbf24",
+        "#0f172a",
+        "#16a34a"
+      ],
+      "light_direction": "key light from screen-left, warm dawn gold fading into cold green underworld ember",
+      "time_of_day": "dawn"
+    },
+    {
+      "id": "act2",
+      "num": "Act II",
+      "title": "Заробеништво",
+      "color": "#f59e0b",
+      "pct": 48,
+      "synopsis": "Без Иштар, Земјата венее — плодовите не зреат и луѓето престануваат да се љубат. Гласник на луѓето ја моли Ерешкигал, која прифаќа да ја ослободи, но само ако некој друг дојде на нејзино место.",
+      "shots": [
+        {
+          "id": "S16",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "ishtar_A1_fused",
+            "chains_prop_B1_prop",
+            "irkala_env_A1_prop"
+          ],
+          "ref_scope": "image1: the fused master of Ishtar - goddess of love and war, golden crown, lapis necklace, radiant golden-and-lapis robes — 100% identical; studio bg/pose/light NOT used; image2: the green light-chains - translucent green chains that bind Ishtar — 100% identical; studio bg/pose/light NOT used; image3: the Irkala environment - dark underworld of obsidian caverns, ember torches and shadow corridors — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "crane-down"
+            ],
+            [
+              1.65,
+              3.0,
+              "chains pulse"
+            ]
+          ],
+          "narration_mk": "И така, гордоста на Иштар остана окована во подземјето.",
+          "dialogue_mk": "",
+          "kf_first": "Ishtar bound by translucent green light-chains in a dark underworld chamber, kneeling, her golden robes now dimmed, photoreal cinematic",
+          "kf_last": "Crane down from high angle as the chains tighten gently and her glow fades",
+          "continuity": "Ishtar identity; green chains from S15; dimmed gold",
+          "motion": "crane-down; chains pulse",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: ishtar bound by translucent green light-chains in a dark underworld chamber, kneeling, her golden robes now dimmed, photoreal cinematic Ishtar slender, monarch, in crown, dress, wreathed in golden glow, divine glow then crane-down, then chains pulse settling into crane down from high angle as the chains tighten gently and her glow fades with a low radiant hum continuity held: Ishtar identity; green chains from S15; dimmed gold",
+          "image_prompt_start": "photoreal cinematic: Ishtar bound by translucent green light-chains in a dark underworld chamber, kneeling, her golden robes now dimmed, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: from high angle as the chains tighten gently and her glow fades.",
+          "video_prompt_start": "Crane-down. chains pulse. The beat resolves into the next matching frame. Continuity held: Ishtar identity; green chains from S15; dimmed gold.",
+          "video_prompt_end": "Crane-down. chains pulse. The beat resolves into the next matching frame. Continuity held: Ishtar identity; green chains from S15; dimmed gold.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S17",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "ishtar_A1_fused",
+            "cuffs_prop_B2_prop",
+            "chains_prop_B1_prop"
+          ],
+          "ref_scope": "image1: the fused master of Ishtar - goddess of love and war, golden crown, lapis necklace, radiant golden-and-lapis robes — 100% identical; studio bg/pose/light NOT used; image2: the gold bracelets - ornate gold cuffs on Ishtar wrists — 100% identical; studio bg/pose/light NOT used; image3: the green light-chains - translucent green chains that bind Ishtar — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.38,
+              "macro push-in"
+            ],
+            [
+              1.38,
+              2.5,
+              "glint fades"
+            ]
+          ],
+          "narration_mk": "Нејзините златни нараквици веќе не светеа како порано.",
+          "dialogue_mk": "",
+          "kf_first": "Macro of Ishtar's bound wrists, ornate gold cuffs losing luster beneath green light-chains, photoreal macro detail",
+          "kf_last": "Push in as the last warm glint dies on the metal",
+          "continuity": "Ishtar's cuffs continuity; light drained to green-gray",
+          "motion": "macro push-in; glint fades",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro of Ishtar's bound wrists, ornate gold cuffs losing luster beneath green light-chains, photoreal macro detail Ishtar slender, monarch, in crown, dress, wreathed in golden glow, divine glow then macro push-in, then glint fades settling into push in as the last warm glint dies on the metal with a low radiant hum continuity held: Ishtar's cuffs continuity; light drained to green-gray",
+          "image_prompt_start": "photoreal cinematic: Macro of Ishtar's bound wrists, ornate gold cuffs losing luster beneath green light-chains, photoreal macro detail.",
+          "image_prompt_end": "photoreal cinematic: as the last warm glint dies on the metal.",
+          "video_prompt_start": "Macro push-in. glint fades. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Ishtar's cuffs continuity; light drained to green-gray.",
+          "video_prompt_end": "Macro push-in. glint fades. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Ishtar's cuffs continuity; light drained to green-gray.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S18",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-right",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "earth_env_A5_prop"
+          ],
+          "ref_scope": "image1: the earth environment - Mesopotamian fields, orchards, dusty village and stone plaza — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "slow pan-right"
+            ],
+            [
+              1.93,
+              3.5,
+              "leaves curl"
+            ]
+          ],
+          "narration_mk": "А горе, на Земјата, нешто почнуваше да се гаси.",
+          "dialogue_mk": "",
+          "kf_first": "Aerial wide of parched Mesopotamian fields and orchards under a hazy pale sky, colors desaturating, photoreal cinematic landscape",
+          "kf_last": "Pan right across the withering land as leaves curl and wells run dry",
+          "continuity": "Earth palette turning gray-green; no characters",
+          "motion": "slow pan-right; leaves curl",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: aerial wide of parched Mesopotamian fields and orchards under a hazy pale sky, colors desaturating, photoreal cinematic landscape then slow pan-right, then leaves curl settling into pan right across the withering land as leaves curl and wells run dry continuity held: Earth palette turning gray-green; no characters",
+          "image_prompt_start": "photoreal cinematic: of parched Mesopotamian fields and orchards under a hazy pale sky, colors desaturating, photoreal cinematic landscape.",
+          "image_prompt_end": "photoreal cinematic: right across the withering land as leaves curl and wells run dry.",
+          "video_prompt_start": "Slow pan-right. leaves curl. The beat resolves into the next matching frame. Continuity held: Earth palette turning gray-green; no characters.",
+          "video_prompt_end": "Slow pan-right. leaves curl. The beat resolves into the next matching frame. Continuity held: Earth palette turning gray-green; no characters.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S19",
+          "shot_type": "CLOSE-UP",
+          "size": "MACRO",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "fruit_prop_B3_prop"
+          ],
+          "ref_scope": "image1: the fruit - fruit shriveling then ripening on a branch — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.38,
+              "macro push-in"
+            ],
+            [
+              1.38,
+              2.5,
+              "wither"
+            ]
+          ],
+          "narration_mk": "Плодовите престанаа да зреат.",
+          "dialogue_mk": "",
+          "kf_first": "Macro of fruit shriveling on a branch, skin wrinkling from gold to brown, photoreal macro botanical detail",
+          "kf_last": "Push in as the fruit withers and a leaf crumbles in the still air",
+          "continuity": "Withering orchard continuity",
+          "motion": "macro push-in; wither",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro of fruit shriveling on a branch, skin wrinkling from gold to brown, photoreal macro botanical detail then macro push-in, then wither settling into push in as the fruit withers and a leaf crumbles in the still air continuity held: Withering orchard continuity",
+          "image_prompt_start": "photoreal cinematic: Macro of fruit shriveling on a branch, skin wrinkling from gold to brown, photoreal macro botanical detail.",
+          "image_prompt_end": "photoreal cinematic: as the fruit withers and a leaf crumbles in the still air.",
+          "video_prompt_start": "Macro push-in. wither. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Withering orchard continuity.",
+          "video_prompt_end": "Macro push-in. wither. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Withering orchard continuity.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S20",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "earth_env_A5_prop"
+          ],
+          "ref_scope": "image1: the earth environment - Mesopotamian fields, orchards, dusty village and stone plaza — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "they turn away"
+            ]
+          ],
+          "narration_mk": "Мажите и жените веќе не се вљубуваа едни во други.",
+          "dialogue_mk": "",
+          "kf_first": "A man and woman standing apart in a dusty village street, eyes downcast, hands not touching, desaturated light, photoreal cinematic",
+          "kf_last": "Hold as they turn away from each other, their faces empty of warmth",
+          "continuity": "Earth withering palette; costume: plain linen tunics",
+          "motion": "static; they turn away",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: a man and woman standing apart in a dusty village street, eyes downcast, hands not touching, desaturated light, photoreal cinematic then static, then they turn away settling into hold as they turn away from each other, their faces empty of warmth continuity held: Earth withering palette; costume: plain linen tunics",
+          "image_prompt_start": "photoreal cinematic: A man and woman standing apart in a dusty village street, eyes downcast, hands not touching, desaturated light, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: Hold as they turn away from each other, their faces empty of warmth.",
+          "video_prompt_start": "Static. they turn away. The beat resolves into the next matching frame. Continuity held: Earth withering palette; costume: plain linen tunics.",
+          "video_prompt_end": "Static. they turn away. The beat resolves into the next matching frame. Continuity held: Earth withering palette; costume: plain linen tunics.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S21",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "earth_env_A5_prop"
+          ],
+          "ref_scope": "image1: the earth environment - Mesopotamian fields, orchards, dusty village and stone plaza — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "crane-up reveal"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Целиот свет молчеше во тага.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of a grieving crowd gathered in a stone plaza, heads bowed, pale dust haze, photoreal cinematic",
+          "kf_last": "Crane up to reveal the whole saddened city under a colorless sky",
+          "continuity": "Earth palette; crowd costume continuity",
+          "motion": "crane-up reveal",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of a grieving crowd gathered in a stone plaza, heads bowed, pale dust haze, photoreal cinematic then crane-up reveal, then resolve settling into crane up to reveal the whole saddened city under a colorless sky continuity held: Earth palette; crowd costume continuity",
+          "image_prompt_start": "photoreal cinematic: wide of a grieving crowd gathered in a stone plaza, heads bowed, pale dust haze, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: to reveal the whole saddened city under a colorless sky.",
+          "video_prompt_start": "Crane-up reveal. resolve. The beat resolves into the next matching frame. Continuity held: Earth palette; crowd costume continuity.",
+          "video_prompt_end": "Crane-up reveal. resolve. The beat resolves into the next matching frame. Continuity held: Earth palette; crowd costume continuity.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S22",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "flower_prop_B4_prop"
+          ],
+          "ref_scope": "image1: the desert flower - a single wilting flower shedding a petal — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.38,
+              "macro push-in"
+            ],
+            [
+              1.38,
+              2.5,
+              "petal fall"
+            ]
+          ],
+          "narration_mk": "Дури и најубавиот цвет свена и падна.",
+          "dialogue_mk": "",
+          "kf_first": "Insert macro of a single desert flower wilting and shedding a petal, muted colors, photoreal macro detail",
+          "kf_last": "Push in as the petal detaches and drifts to the dust",
+          "continuity": "Symbolic wither motif; muted earth palette",
+          "motion": "macro push-in; petal fall",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: insert macro of a single desert flower wilting and shedding a petal, muted colors, photoreal macro detail then macro push-in, then petal fall settling into push in as the petal detaches and drifts to the dust continuity held: Symbolic wither motif; muted earth palette",
+          "image_prompt_start": "photoreal cinematic: Insert macro of a single desert flower wilting and shedding a petal, muted colors, photoreal macro detail.",
+          "image_prompt_end": "photoreal cinematic: as the petal detaches and drifts to the dust.",
+          "video_prompt_start": "Macro push-in. petal fall. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Symbolic wither motif; muted earth palette.",
+          "video_prompt_end": "Macro push-in. petal fall. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Symbolic wither motif; muted earth palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S23",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "messenger_A5_fused",
+            "earth_env_A5_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Messenger - lean, calm, brave pleader in a plain traveling cloak — 100% identical; studio bg/pose/light NOT used; image2: the earth environment - Mesopotamian fields, orchards, dusty village and stone plaza — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "slow push-in on eyes"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Тогаш еден гласник на луѓето излезе напред.",
+          "dialogue_mk": "",
+          "kf_first": "A lean messenger in a plain traveling cloak stepping forward from the grieving crowd, face set with purpose, photoreal cinematic",
+          "kf_last": "Push in on his steady eyes as the crowd parts behind him",
+          "continuity": "New character: messenger, earth-tone cloak",
+          "motion": "slow push-in on eyes",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: a lean messenger in a plain traveling cloak stepping forward from the grieving crowd, face set with purpose, photoreal cinematic Messenger slender, elder, in cloak, carrying staff, wreathed in holy aura then slow push-in on eyes, then resolve settling into push in on his steady eyes as the crowd parts behind him with arcane energy crackles, a low radiant hum continuity held: New character: messenger, earth-tone cloak",
+          "image_prompt_start": "photoreal cinematic: A lean messenger in a plain traveling cloak stepping forward from the grieving crowd, face set with purpose, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: on his steady eyes as the crowd parts behind him.",
+          "video_prompt_start": "Slow push-in on eyes. resolve. The beat resolves into the next matching frame. Continuity held: New character: messenger, earth-tone cloak.",
+          "video_prompt_end": "Slow push-in on eyes. resolve. The beat resolves into the next matching frame. Continuity held: New character: messenger, earth-tone cloak.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S24",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "high-angle",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "messenger_A5_fused",
+            "stair_env_A6_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Messenger - lean, calm, brave pleader in a plain traveling cloak — 100% identical; studio bg/pose/light NOT used; image2: the great underworld stair - spiraling stone stair descending into a dark chasm — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "tracking descent"
+            ],
+            [
+              1.93,
+              3.5,
+              "light dims"
+            ]
+          ],
+          "narration_mk": "Тој тргна по патот надолу, кон Иркала, да моли за Иштар.",
+          "dialogue_mk": "",
+          "kf_first": "The messenger descending a narrow stone stair into the earth, torch in hand, warm light swallowed by cold shadow, photoreal cinematic",
+          "kf_last": "Track his descent as amber torchlight gives way to indigo underworld gloom",
+          "continuity": "Messenger continuity; light transition warmth→cold",
+          "motion": "tracking descent; light dims",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: the messenger descending a narrow stone stair into the earth, torch in hand, warm light swallowed by cold shadow, photoreal cinematic Messenger slender, elder, in cloak, carrying staff, wreathed in holy aura then tracking descent, then light dims settling into track his descent as amber torchlight gives way to indigo underworld gloom with arcane energy crackles, a low radiant hum continuity held: Messenger continuity; light transition warmth→cold",
+          "image_prompt_start": "photoreal cinematic: The messenger descending a narrow stone stair into the earth, torch in hand, warm light swallowed by cold shadow, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: his descent as amber torchlight gives way to indigo underworld gloom.",
+          "video_prompt_start": "Tracking descent. light dims. The beat resolves into the next matching frame. Continuity held: Messenger continuity; light transition warmth→cold.",
+          "video_prompt_end": "Tracking descent. light dims. The beat resolves into the next matching frame. Continuity held: Messenger continuity; light transition warmth→cold.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S25",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "messenger_A5_fused",
+            "ereshkigal_A2_fused",
+            "throne_hall_env_A2_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Messenger - lean, calm, brave pleader in a plain traveling cloak — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Ereshkigal - dark queen of the underworld, pale skin, black bone crown, obsidian robes — 100% identical; studio bg/pose/light NOT used; image3: the throne hall environment - vast obsidian throne hall lined with green flame braziers — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "shadow stretch"
+            ]
+          ],
+          "narration_mk": "И застана пред престолот на Ерешкигал, мал пред бескрајната темнина.",
+          "dialogue_mk": "",
+          "kf_first": "Wide of the messenger kneeling small before Ereshkigal's towering obsidian throne, green braziers lining the hall, photoreal cinematic",
+          "kf_last": "Hold as Ereshkigal leans forward, her shadow swallowing the kneeling man",
+          "continuity": "Ereshkigal + messenger; throne hall palette",
+          "motion": "static; shadow stretch",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide of the messenger kneeling small before Ereshkigal's towering obsidian throne, green braziers lining the hall, photoreal cinematic Messenger slender, elder, in cloak, carrying staff, wreathed in holy aura Ereshkigal robed, monarch, in crown, cloak, dress, wreathed in shadow smoke, divine glow then static, then shadow stretch settling into hold as Ereshkigal leans forward, her shadow swallowing the kneeling man with arcane energy crackles, a low radiant hum continuity held: Ereshkigal + messenger; throne hall palette",
+          "image_prompt_start": "photoreal cinematic: of the messenger kneeling small before Ereshkigal's towering obsidian throne, green braziers lining the hall, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: Hold as Ereshkigal leans forward, her shadow swallowing the kneeling man.",
+          "video_prompt_start": "Static. shadow stretch. The beat resolves into the next matching frame. Continuity held: Ereshkigal + messenger; throne hall palette.",
+          "video_prompt_end": "Static. shadow stretch. The beat resolves into the next matching frame. Continuity held: Ereshkigal + messenger; throne hall palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S26",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "messenger_A5_fused",
+            "throne_hall_env_A2_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Messenger - lean, calm, brave pleader in a plain traveling cloak — 100% identical; studio bg/pose/light NOT used; image2: the throne hall environment - vast obsidian throne hall lined with green flame braziers — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "static"
+            ],
+            [
+              1.93,
+              3.5,
+              "echo dust"
+            ]
+          ],
+          "narration_mk": "Со мир, но со молба, гласникот зборуваше.",
+          "dialogue_mk": "Гласник: „Поштеди ја Иштар, господарке, зашто Земјата венее без неа.“",
+          "kf_first": "The messenger pleading before the throne, hands open, torchlight on his earnest face, photoreal cinematic",
+          "kf_last": "Hold as his earnest words echo through the cold hall",
+          "continuity": "Messenger identity; Ereshkigal listening above",
+          "motion": "static; echo dust",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: the messenger pleading before the throne, hands open, torchlight on his earnest face, photoreal cinematic Messenger slender, elder, in cloak, carrying staff, wreathed in holy aura then static, then echo dust settling into hold as his earnest words echo through the cold hall with arcane energy crackles, a low radiant hum a voice speaks in Macedonian: \"Гласник: „Поштеди ја Иштар, господарке, зашто Земјата венее без неа.“\" continuity held: Messenger identity; Ereshkigal listening above",
+          "image_prompt_start": "photoreal cinematic: The messenger pleading before the throne, hands open, torchlight on his earnest face, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: Hold as his earnest words echo through the cold hall.",
+          "video_prompt_start": "Static. echo dust. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Гласник: „Поштеди ја Иштар, господарке, зашто Земјата венее без неа.“\" Continuity held: Messenger identity; Ereshkigal listening above.",
+          "video_prompt_end": "Static. echo dust. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Гласник: „Поштеди ја Иштар, господарке, зашто Земјата венее без неа.“\" Continuity held: Messenger identity; Ereshkigal listening above.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S27",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "ereshkigal_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of Ereshkigal - dark queen of the underworld, pale skin, black bone crown, obsidian robes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "slow push-in"
+            ],
+            [
+              1.65,
+              3.0,
+              "eyes shift"
+            ]
+          ],
+          "narration_mk": "Ерешкигал размисли — и во очите ѝ блесна студено сочувство.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of Ereshkigal's cold face softening almost imperceptibly, green torchlight flickering on bone crown, photoreal cinematic",
+          "kf_last": "Push in as her eyes narrow in calculation, then relax",
+          "continuity": "Ereshkigal identity; green light",
+          "motion": "slow push-in; eyes shift",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of Ereshkigal's cold face softening almost imperceptibly, green torchlight flickering on bone crown, photoreal cinematic Ereshkigal robed, monarch, in crown, cloak, dress, wreathed in shadow smoke, divine glow then slow push-in, then eyes shift settling into push in as her eyes narrow in calculation, then relax with shadows whisper, a low radiant hum continuity held: Ereshkigal identity; green light",
+          "image_prompt_start": "photoreal cinematic: of Ereshkigal's cold face softening almost imperceptibly, green torchlight flickering on bone crown, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: as her eyes narrow in calculation, then relax.",
+          "video_prompt_start": "Slow push-in. eyes shift. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Ereshkigal identity; green light.",
+          "video_prompt_end": "Slow push-in. eyes shift. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Ereshkigal identity; green light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S28",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "ereshkigal_A2_fused",
+            "throne_hall_env_A2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Ereshkigal - dark queen of the underworld, pale skin, black bone crown, obsidian robes — 100% identical; studio bg/pose/light NOT used; image2: the throne hall environment - vast obsidian throne hall lined with green flame braziers — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "static"
+            ],
+            [
+              1.93,
+              3.5,
+              "flame rise"
+            ]
+          ],
+          "narration_mk": "И темната кралица даде одговор.",
+          "dialogue_mk": "Ерешкигал: „Во ред, ќе ја ослободам — но само ако некој друг дојде на нејзино место.“",
+          "kf_first": "Low-angle medium of Ereshkigal rising from her throne, declaring her condition, photoreal cinematic",
+          "kf_last": "Hold as the words hang in the air and green flame rises behind her",
+          "continuity": "Ereshkigal continuity; green flame accent",
+          "motion": "static; flame rise",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Ereshkigal rising from her throne, declaring her condition, photoreal cinematic Ereshkigal robed, monarch, in crown, cloak, dress, wreathed in shadow smoke, divine glow then static, then flame rise settling into hold as the words hang in the air and green flame rises behind her with shadows whisper, a low radiant hum a voice speaks in Macedonian: \"Ерешкигал: „Во ред, ќе ја ослободам — но само ако некој друг дојде на нејзино место.“\" continuity held: Ereshkigal continuity; green flame accent",
+          "image_prompt_start": "photoreal cinematic: medium of Ereshkigal rising from her throne, declaring her condition, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: Hold as the words hang in the air and green flame behind her.",
+          "video_prompt_start": "Static. flame rise. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Ерешкигал: „Во ред, ќе ја ослободам — но само ако некој друг дојде на нејзино место.“\" Continuity held: Ereshkigal continuity; green flame accent.",
+          "video_prompt_end": "Static. flame rise. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Ерешкигал: „Во ред, ќе ја ослободам — но само ако некој друг дојде на нејзино место.“\" Continuity held: Ereshkigal continuity; green flame accent.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S29",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "messenger_A5_fused",
+            "ishtar_A1_fused",
+            "throne_hall_env_A2_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Messenger - lean, calm, brave pleader in a plain traveling cloak — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Ishtar - goddess of love and war, golden crown, lapis necklace, radiant golden-and-lapis robes — 100% identical; studio bg/pose/light NOT used; image3: the throne hall environment - vast obsidian throne hall lined with green flame braziers — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.38,
+              "static"
+            ],
+            [
+              1.38,
+              2.5,
+              "glance"
+            ]
+          ],
+          "narration_mk": "Условот беше јасен: некој мора да го заземе нејзиното место.",
+          "dialogue_mk": "",
+          "kf_first": "The messenger processing the weight of the condition, Ishtar's dim form visible chained in the chamber beyond, photoreal cinematic",
+          "kf_last": "Hold as the messenger's gaze shifts toward the chained goddess",
+          "continuity": "Chains motif; messenger + distant Ishtar",
+          "motion": "static; glance",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: the messenger processing the weight of the condition, Ishtar's dim form visible chained in the chamber beyond, photoreal cinematic Messenger slender, elder, in cloak, carrying staff, wreathed in holy aura Ishtar slender, monarch, in crown, dress, wreathed in golden glow, divine glow then static, then glance settling into hold as the messenger's gaze shifts toward the chained goddess with arcane energy crackles, a low radiant hum continuity held: Chains motif; messenger + distant Ishtar",
+          "image_prompt_start": "photoreal cinematic: The messenger processing the weight of the condition, Ishtar's dim form visible chained in the chamber beyond, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: Hold as the messenger's gaze toward the chained goddess.",
+          "video_prompt_start": "Static. glance. The beat resolves into the next matching frame. Continuity held: Chains motif; messenger + distant Ishtar.",
+          "video_prompt_end": "Static. glance. The beat resolves into the next matching frame. Continuity held: Chains motif; messenger + distant Ishtar.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S30",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "ishtar_A1_fused",
+            "chains_prop_B1_prop",
+            "irkala_env_A1_prop"
+          ],
+          "ref_scope": "image1: the fused master of Ishtar - goddess of love and war, golden crown, lapis necklace, radiant golden-and-lapis robes — 100% identical; studio bg/pose/light NOT used; image2: the green light-chains - translucent green chains that bind Ishtar — 100% identical; studio bg/pose/light NOT used; image3: the Irkala environment - dark underworld of obsidian caverns, ember torches and shadow corridors — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "chains dissolve"
+            ]
+          ],
+          "narration_mk": "И тогаш, за прв пат по долго време, оковите на Иштар паднаа.",
+          "dialogue_mk": "",
+          "kf_first": "Ishtar's green light-chains dissolving into sparks as she rises, her golden glow returning, photoreal cinematic",
+          "kf_last": "The chains crumble to embers, her radiance flooding back into her robes",
+          "continuity": "Ishtar identity restored; chains motif releasing",
+          "motion": "static; chains dissolve",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: ishtar's green light-chains dissolving into sparks as she rises, her golden glow returning, photoreal cinematic Ishtar slender, monarch, in crown, dress, wreathed in golden glow, divine glow then static, then chains dissolve settling into the chains crumble to embers, her radiance flooding back into her robes with a low radiant hum continuity held: Ishtar identity restored; chains motif releasing",
+          "image_prompt_start": "photoreal cinematic: Ishtar's green light-chains dissolving into sparks as she , her golden glow returning, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The chains crumble to embers, her radiance flooding back into her robes.",
+          "video_prompt_start": "Static. chains dissolve. The beat resolves into the next matching frame. Continuity held: Ishtar identity restored; chains motif releasing.",
+          "video_prompt_end": "Static. chains dissolve. The beat resolves into the next matching frame. Continuity held: Ishtar identity restored; chains motif releasing.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S31",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "ishtar_A1_fused",
+            "stair_env_A6_prop"
+          ],
+          "ref_scope": "image1: the fused master of Ishtar - goddess of love and war, golden crown, lapis necklace, radiant golden-and-lapis robes — 100% identical; studio bg/pose/light NOT used; image2: the great underworld stair - spiraling stone stair descending into a dark chasm — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "tracking ascent"
+            ],
+            [
+              1.93,
+              3.5,
+              "light grows"
+            ]
+          ],
+          "narration_mk": "Слободна, Иштар тргна по долгите скали нагоре.",
+          "dialogue_mk": "",
+          "kf_first": "Ishtar ascending the great underworld stair, golden light growing with each step, indigo dark behind her, photoreal cinematic",
+          "kf_last": "Track her rise as warm light spills down the stairway to meet her",
+          "continuity": "Ishtar continuity; light transition cold→warm",
+          "motion": "tracking ascent; light grows",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: ishtar ascending the great underworld stair, golden light growing with each step, indigo dark behind her, photoreal cinematic Ishtar slender, monarch, in crown, dress, wreathed in golden glow, divine glow then tracking ascent, then light grows settling into track her rise as warm light spills down the stairway to meet her with a low radiant hum continuity held: Ishtar continuity; light transition cold→warm",
+          "image_prompt_start": "photoreal cinematic: Ishtar ascending the great underworld stair, golden light growing with each step, indigo dark behind her, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: her rise as warm light spills down the stairway to meet her.",
+          "video_prompt_start": "Tracking ascent. light grows. The beat resolves into the next matching frame. Continuity held: Ishtar continuity; light transition cold→warm.",
+          "video_prompt_end": "Tracking ascent. light grows. The beat resolves into the next matching frame. Continuity held: Ishtar continuity; light transition cold→warm.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S32",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "crane-up",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "ishtar_A1_fused",
+            "underworld_gate_env_A3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Ishtar - goddess of love and war, golden crown, lapis necklace, radiant golden-and-lapis robes — 100% identical; studio bg/pose/light NOT used; image2: the underworld gate - colossal black-bronze and bone gate with green flame braziers — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "crane-up"
+            ],
+            [
+              1.93,
+              3.5,
+              "bloom burst"
+            ]
+          ],
+          "narration_mk": "И конечно, одново го виде сонцето.",
+          "dialogue_mk": "",
+          "kf_first": "Ishtar emerging from a shadowed gateway into blinding golden daylight, arms opening to the sky, photoreal epic cinematic",
+          "kf_last": "Crane up as she steps into the light and the whole valley blooms around her",
+          "continuity": "Ishtar + Earth palette restored to warm gold",
+          "motion": "crane-up; bloom burst",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: ishtar emerging from a shadowed gateway into blinding golden daylight, arms opening to the sky, photoreal epic cinematic Ishtar slender, monarch, in crown, dress, wreathed in golden glow, divine glow then crane-up, then bloom burst settling into crane up as she steps into the light and the whole valley blooms around her with a low radiant hum continuity held: Ishtar + Earth palette restored to warm gold",
+          "image_prompt_start": "photoreal cinematic: Ishtar emerging from a shadowed gateway into blinding golden daylight, arms opening to the sky, photoreal epic cinematic.",
+          "image_prompt_end": "photoreal cinematic: as she steps into the light and the whole valley blooms around her.",
+          "video_prompt_start": "Crane-up. bloom burst. The beat resolves into the next matching frame. Continuity held: Ishtar + Earth palette restored to warm gold.",
+          "video_prompt_end": "Crane-up. bloom burst. The beat resolves into the next matching frame. Continuity held: Ishtar + Earth palette restored to warm gold.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S33",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "earth_env_A5_prop"
+          ],
+          "ref_scope": "image1: the earth environment - Mesopotamian fields, orchards, dusty village and stone plaza — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "color flood"
+            ]
+          ],
+          "narration_mk": "Земјата почна повторно да живее.",
+          "dialogue_mk": "",
+          "kf_first": "Wide of fields and orchards blooming anew, green returning, golden light washing the land, photoreal cinematic landscape",
+          "kf_last": "Hold as color floods back into the landscape like a wave",
+          "continuity": "Earth renewal palette: green + gold",
+          "motion": "static; color flood",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide of fields and orchards blooming anew, green returning, golden light washing the land, photoreal cinematic landscape then static, then color flood settling into hold as color floods back into the landscape like a wave continuity held: Earth renewal palette: green + gold",
+          "image_prompt_start": "photoreal cinematic: of fields and orchards blooming anew, green returning, golden light washing the land, photoreal cinematic landscape.",
+          "image_prompt_end": "photoreal cinematic: Hold as color floods back into the landscape like a wave.",
+          "video_prompt_start": "Static. color flood. The beat resolves into the next matching frame. Continuity held: Earth renewal palette: green + gold.",
+          "video_prompt_end": "Static. color flood. The beat resolves into the next matching frame. Continuity held: Earth renewal palette: green + gold.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S34",
+          "shot_type": "CLOSE-UP",
+          "size": "MACRO",
+          "angle": "macro",
+          "move": "pull-back",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "fruit_prop_B3_prop"
+          ],
+          "ref_scope": "image1: the fruit - fruit shriveling then ripening on a branch — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.38,
+              "macro pull-back"
+            ],
+            [
+              1.38,
+              2.5,
+              "ripen"
+            ]
+          ],
+          "narration_mk": "И плодовите одново созреваа.",
+          "dialogue_mk": "",
+          "kf_first": "Macro of fresh fruit ripening from green to gold on a revived branch, dewdrops glittering, photoreal macro detail",
+          "kf_last": "Pull back as the whole branch bursts with ripe fruit",
+          "continuity": "Revived orchard continuity",
+          "motion": "macro pull-back; ripen",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro of fresh fruit ripening from green to gold on a revived branch, dewdrops glittering, photoreal macro detail then macro pull-back, then ripen settling into pull back as the whole branch bursts with ripe fruit continuity held: Revived orchard continuity",
+          "image_prompt_start": "photoreal cinematic: Macro of fresh fruit ripening from green to gold on a revived branch, dewdrops glittering, photoreal macro detail.",
+          "image_prompt_end": "photoreal cinematic: as the whole branch bursts with ripe fruit.",
+          "video_prompt_start": "Macro pull-back. ripen. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Revived orchard continuity.",
+          "video_prompt_end": "Macro pull-back. ripen. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Revived orchard continuity.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S35",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "earth_env_A5_prop"
+          ],
+          "ref_scope": "image1: the earth environment - Mesopotamian fields, orchards, dusty village and stone plaza — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "embrace"
+            ]
+          ],
+          "narration_mk": "Мажите и жените повторно се погледнаа со љубов.",
+          "dialogue_mk": "",
+          "kf_first": "The same man and woman from before now embracing, warm light on their faces, love returned, photoreal cinematic",
+          "kf_last": "Hold as they lean close, eyes meeting with warmth",
+          "continuity": "Same couple continuity; warm palette returned",
+          "motion": "static; embrace",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: the same man and woman from before now embracing, warm light on their faces, love returned, photoreal cinematic then static, then embrace settling into hold as they lean close, eyes meeting with warmth continuity held: Same couple continuity; warm palette returned",
+          "image_prompt_start": "photoreal cinematic: The same man and woman from before now embracing, warm light on their faces, love returned, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: Hold as they lean close, eyes meeting with warmth.",
+          "video_prompt_start": "Static. embrace. The beat resolves into the next matching frame. Continuity held: Same couple continuity; warm palette returned.",
+          "video_prompt_end": "Static. embrace. The beat resolves into the next matching frame. Continuity held: Same couple continuity; warm palette returned.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S36",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "crane-up",
+          "move": "crane-up",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "earth_env_A5_prop"
+          ],
+          "ref_scope": "image1: the earth environment - Mesopotamian fields, orchards, dusty village and stone plaza — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "crane-up"
+            ],
+            [
+              1.65,
+              3.0,
+              "celebration"
+            ]
+          ],
+          "narration_mk": "Целиот свет повторно пееше од среќа.",
+          "dialogue_mk": "",
+          "kf_first": "Wide crane-up of the awakened city and land, music and color restored, golden hour light, photoreal epic cinematic",
+          "kf_last": "Crane up over the celebrating land toward the bright sky",
+          "continuity": "Renewed world palette",
+          "motion": "crane-up; celebration",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide crane-up of the awakened city and land, music and color restored, golden hour light, photoreal epic cinematic then crane-up, then celebration settling into crane up over the celebrating land toward the bright sky continuity held: Renewed world palette",
+          "image_prompt_start": "photoreal cinematic: of the awakened city and land, music and color restored, golden hour light, photoreal epic cinematic.",
+          "image_prompt_end": "photoreal cinematic: over the celebrating land toward the bright sky.",
+          "video_prompt_start": "Crane-up. celebration. The beat resolves into the next matching frame. Continuity held: Renewed world palette.",
+          "video_prompt_end": "Crane-up. celebration. The beat resolves into the next matching frame. Continuity held: Renewed world palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S37",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "ishtar_A1_fused",
+            "palace_env_A4_prop"
+          ],
+          "ref_scope": "image1: the fused master of Ishtar - goddess of love and war, golden crown, lapis necklace, radiant golden-and-lapis robes — 100% identical; studio bg/pose/light NOT used; image2: the celestial palace - golden ziggurat terraces, lapis mosaics and marble terrace — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "tracking walk"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "А Иштар, слободна, тргна кон својот дом.",
+          "dialogue_mk": "",
+          "kf_first": "Ishtar walking a sunlit palace road toward her grand home, robes radiant, head high, photoreal cinematic",
+          "kf_last": "Track with her stride as the palace gate draws near",
+          "continuity": "Ishtar restored; golden road",
+          "motion": "tracking walk",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: ishtar walking a sunlit palace road toward her grand home, robes radiant, head high, photoreal cinematic Ishtar slender, monarch, in crown, dress, wreathed in golden glow, divine glow then tracking walk, then resolve settling into track with her stride as the palace gate draws near with a low radiant hum, stone groans continuity held: Ishtar restored; golden road",
+          "image_prompt_start": "photoreal cinematic: Ishtar walking a sunlit palace road toward her grand home, robes radiant, head high, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: with her stride as the palace gate draws near.",
+          "video_prompt_start": "Tracking walk. resolve. The beat resolves into the next matching frame. Continuity held: Ishtar restored; golden road.",
+          "video_prompt_end": "Tracking walk. resolve. The beat resolves into the next matching frame. Continuity held: Ishtar restored; golden road.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S38",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "ishtar_A1_fused",
+            "palace_env_A4_prop"
+          ],
+          "ref_scope": "image1: the fused master of Ishtar - goddess of love and war, golden crown, lapis necklace, radiant golden-and-lapis robes — 100% identical; studio bg/pose/light NOT used; image2: the celestial palace - golden ziggurat terraces, lapis mosaics and marble terrace — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.38,
+              "static"
+            ],
+            [
+              1.38,
+              2.5,
+              "door opens"
+            ]
+          ],
+          "narration_mk": "Таа се качи по скалите на палатата и влезе.",
+          "dialogue_mk": "",
+          "kf_first": "Ishtar climbing the bright palace steps, hand on the door of polished cedar and gold, photoreal cinematic",
+          "kf_last": "Hold as the door opens inward to a warm interior",
+          "continuity": "Ishtar + palace continuity",
+          "motion": "static; door opens",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: ishtar climbing the bright palace steps, hand on the door of polished cedar and gold, photoreal cinematic Ishtar slender, monarch, in crown, dress, wreathed in golden glow, divine glow then static, then door opens settling into hold as the door opens inward to a warm interior with a low radiant hum, stone groans continuity held: Ishtar + palace continuity",
+          "image_prompt_start": "photoreal cinematic: Ishtar climbing the bright palace steps, hand on the door of polished cedar and gold, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: Hold as the door opens inward to a warm interior.",
+          "video_prompt_start": "Static. door opens. The beat resolves into the next matching frame. Continuity held: Ishtar + palace continuity.",
+          "video_prompt_end": "Static. door opens. The beat resolves into the next matching frame. Continuity held: Ishtar + palace continuity.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "irkala_chained_chamber_and_withered_earth",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#94a3b8",
+        "#0b1026",
+        "#22c55e"
+      ],
+      "light_direction": "key light from screen-right, dimming daylight to pale haze, green chain-glow and torchlight",
+      "time_of_day": "dusk"
+    },
+    {
+      "id": "act3",
+      "num": "Act III",
+      "title": "Разрешница",
+      "color": "#8b5cf6",
+      "pct": 21,
+      "synopsis": "Иштар се враќа дома и открива дека Тамуз ни не забележал дека ја немало. Разгневена, го праќа него на своето место во Иркала и повторно завладува со Земјата.",
+      "shots": [
+        {
+          "id": "S39",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "ishtar_A1_fused",
+            "chamber_env_A7_prop"
+          ],
+          "ref_scope": "image1: the fused master of Ishtar - goddess of love and war, golden crown, lapis necklace, radiant golden-and-lapis robes — 100% identical; studio bg/pose/light NOT used; image2: the gilded chamber - Ishtar palace room with cushioned bench and cedar-and-gold door — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "tracking"
+            ],
+            [
+              1.65,
+              3.0,
+              "searching gaze"
+            ]
+          ],
+          "narration_mk": "Но дома ја чекаше нешто што не го очекуваше.",
+          "dialogue_mk": "",
+          "kf_first": "Ishtar entering her gilded chamber, tentatively looking around an empty room, photoreal cinematic",
+          "kf_last": "Track with her as her eyes search the quiet room for welcome",
+          "continuity": "Ishtar identity; warm room light",
+          "motion": "tracking; searching gaze",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: ishtar entering her gilded chamber, tentatively looking around an empty room, photoreal cinematic Ishtar slender, monarch, in crown, dress, wreathed in golden glow, divine glow then tracking, then searching gaze settling into track with her as her eyes search the quiet room for welcome with a low radiant hum continuity held: Ishtar identity; warm room light",
+          "image_prompt_start": "photoreal cinematic: Ishtar entering her gilded chamber, tentatively looking around an empty room, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: with her as her eyes search the quiet room for welcome.",
+          "video_prompt_start": "Tracking. searching gaze. The beat resolves into the next matching frame. Continuity held: Ishtar identity; warm room light.",
+          "video_prompt_end": "Tracking. searching gaze. The beat resolves into the next matching frame. Continuity held: Ishtar identity; warm room light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S40",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "tammuz_A3_fused",
+            "chamber_env_A7_prop"
+          ],
+          "ref_scope": "image1: the fused master of Tammuz - the self-absorbed shepherd god reclining on a cushioned bench — 100% identical; studio bg/pose/light NOT used; image2: the gilded chamber - Ishtar palace room with cushioned bench and cedar-and-gold door — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "oblivious glance away"
+            ]
+          ],
+          "narration_mk": "Тамуз, нејзиниот маж, седеше занесен во себе — како да не забележал ништо.",
+          "dialogue_mk": "",
+          "kf_first": "Tammuz lounging on a cushioned bench, picking at grapes, entirely absorbed in himself, photoreal cinematic character detail",
+          "kf_last": "Hold on his oblivious face, not once glancing up at his returned wife",
+          "continuity": "New character: Tammuz, shepherd-god robes, relaxed",
+          "motion": "static; oblivious glance away",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: tammuz lounging on a cushioned bench, picking at grapes, entirely absorbed in himself, photoreal cinematic character detail Tammuz slender, divine, in cloak, wreathed in golden glow then static, then oblivious glance away settling into hold on his oblivious face, not once glancing up at his returned wife with a low radiant hum continuity held: New character: Tammuz, shepherd-god robes, relaxed",
+          "image_prompt_start": "photoreal cinematic: Tammuz lounging on a cushioned bench, picking at grapes, entirely absorbed in himself, photoreal cinematic character detail.",
+          "image_prompt_end": "photoreal cinematic: Hold on his oblivious face, not once glancing up at his returned wife.",
+          "video_prompt_start": "Static. oblivious glance away. The beat resolves into the next matching frame. Continuity held: New character: Tammuz, shepherd-god robes, relaxed.",
+          "video_prompt_end": "Static. oblivious glance away. The beat resolves into the next matching frame. Continuity held: New character: Tammuz, shepherd-god robes, relaxed.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S41",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "tammuz_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of Tammuz - the self-absorbed shepherd god reclining on a cushioned bench — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.38,
+              "slow push-in"
+            ],
+            [
+              1.38,
+              2.5,
+              "vacant gaze"
+            ]
+          ],
+          "narration_mk": "Тој воопшто не ни примети дека ја немало толку долго.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of Tammuz, eyes dreamy and elsewhere, a faint smile on his lips, photoreal cinematic",
+          "kf_last": "Push in on his vacant, self-satisfied gaze",
+          "continuity": "Tammuz identity lock",
+          "motion": "slow push-in; vacant gaze",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of Tammuz, eyes dreamy and elsewhere, a faint smile on his lips, photoreal cinematic Tammuz slender, divine, in cloak, wreathed in golden glow then slow push-in, then vacant gaze settling into push in on his vacant, self-satisfied gaze with a low radiant hum continuity held: Tammuz identity lock",
+          "image_prompt_start": "photoreal cinematic: of Tammuz, eyes dreamy and elsewhere, a faint smile on his lips, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: on his vacant, self-satisfied gaze.",
+          "video_prompt_start": "Slow push-in. vacant gaze. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Tammuz identity lock.",
+          "video_prompt_end": "Slow push-in. vacant gaze. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Tammuz identity lock.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S42",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "ishtar_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Ishtar - goddess of love and war, golden crown, lapis necklace, radiant golden-and-lapis robes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "slow push-in"
+            ],
+            [
+              1.65,
+              3.0,
+              "fury flash"
+            ]
+          ],
+          "narration_mk": "А во градите на Иштар, празнината се претвори во гнев.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of Ishtar's face, disbelief hardening into fury, golden eyes flashing, photoreal cinematic",
+          "kf_last": "Push in as her expression darkens and her jaw tightens",
+          "continuity": "Ishtar identity; anger build",
+          "motion": "slow push-in; fury flash",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of Ishtar's face, disbelief hardening into fury, golden eyes flashing, photoreal cinematic Ishtar slender, monarch, in crown, dress, wreathed in golden glow, divine glow then slow push-in, then fury flash settling into push in as her expression darkens and her jaw tightens with a low radiant hum continuity held: Ishtar identity; anger build",
+          "image_prompt_start": "photoreal cinematic: of Ishtar's face, disbelief hardening into fury, golden eyes flashing, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: as her expression darkens and her jaw tightens.",
+          "video_prompt_start": "Slow push-in. fury flash. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Ishtar identity; anger build.",
+          "video_prompt_end": "Slow push-in. fury flash. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Ishtar identity; anger build.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S43",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "ishtar_A1_fused",
+            "tammuz_A3_fused",
+            "chamber_env_A7_prop"
+          ],
+          "ref_scope": "image1: the fused master of Ishtar - goddess of love and war, golden crown, lapis necklace, radiant golden-and-lapis robes — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Tammuz - the self-absorbed shepherd god reclining on a cushioned bench — 100% identical; studio bg/pose/light NOT used; image3: the gilded chamber - Ishtar palace room with cushioned bench and cedar-and-gold door — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "static"
+            ],
+            [
+              1.93,
+              3.5,
+              "air ripple"
+            ]
+          ],
+          "narration_mk": "И разгневената божица ја изрече пресудата.",
+          "dialogue_mk": "Иштар: „Еве кој ќе оди на моето место!“",
+          "kf_first": "Low-angle medium of Ishtar pointing accusingly at Tammuz, her voice shaking the room, photoreal cinematic",
+          "kf_last": "Hold as the force of her words makes the air ripple and the lamps gutter",
+          "continuity": "Ishtar + Tammuz; warm room light flaring",
+          "motion": "static; air ripple",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Ishtar pointing accusingly at Tammuz, her voice shaking the room, photoreal cinematic Ishtar slender, monarch, in crown, dress, wreathed in golden glow, divine glow Tammuz slender, divine, in cloak, wreathed in golden glow then static, then air ripple settling into hold as the force of her words makes the air ripple and the lamps gutter with a low radiant hum a voice speaks in Macedonian: \"Иштар: „Еве кој ќе оди на моето место!“\" continuity held: Ishtar + Tammuz; warm room light flaring",
+          "image_prompt_start": "photoreal cinematic: medium of Ishtar pointing accusingly at Tammuz, her voice shaking the room, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: Hold as the force of her words makes the air ripple and the lamps gutter.",
+          "video_prompt_start": "Static. air ripple. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Иштар: „Еве кој ќе оди на моето место!“\" Continuity held: Ishtar + Tammuz; warm room light flaring.",
+          "video_prompt_end": "Static. air ripple. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Иштар: „Еве кој ќе оди на моето место!“\" Continuity held: Ishtar + Tammuz; warm room light flaring.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S44",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "tammuz_A3_fused",
+            "chamber_env_A7_prop"
+          ],
+          "ref_scope": "image1: the fused master of Tammuz - the self-absorbed shepherd god reclining on a cushioned bench — 100% identical; studio bg/pose/light NOT used; image2: the gilded chamber - Ishtar palace room with cushioned bench and cedar-and-gold door — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.38,
+              "static"
+            ],
+            [
+              1.38,
+              2.5,
+              "shadows emerge"
+            ]
+          ],
+          "narration_mk": "И во истиот миг, слугите на Ерешкигал се појавија од сенките.",
+          "dialogue_mk": "",
+          "kf_first": "Shadowy underworld servants emerging from dark corners of the bright room, green-eyed and hooded, photoreal cinematic",
+          "kf_last": "Hold as they close silently around the startled Tammuz",
+          "continuity": "Underworld servant motif; green light accents",
+          "motion": "static; shadows emerge",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: shadowy underworld servants emerging from dark corners of the bright room, green-eyed and hooded, photoreal cinematic Tammuz slender, divine, in cloak, wreathed in golden glow then static, then shadows emerge settling into hold as they close silently around the startled Tammuz with a low radiant hum continuity held: Underworld servant motif; green light accents",
+          "image_prompt_start": "photoreal cinematic: Shadowy underworld servants emerging from dark corners of the bright room, green-eyed and hooded, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: Hold as they close silently around the startled Tammuz.",
+          "video_prompt_start": "Static. shadows emerge. The beat resolves into the next matching frame. Continuity held: Underworld servant motif; green light accents.",
+          "video_prompt_end": "Static. shadows emerge. The beat resolves into the next matching frame. Continuity held: Underworld servant motif; green light accents.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S45",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "tammuz_A3_fused",
+            "underworld_gate_env_A3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Tammuz - the self-absorbed shepherd god reclining on a cushioned bench — 100% identical; studio bg/pose/light NOT used; image2: the underworld gate - colossal black-bronze and bone gate with green flame braziers — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "tracking"
+            ],
+            [
+              1.65,
+              3.0,
+              "struggle"
+            ]
+          ],
+          "narration_mk": "Тие го зграпчија Тамуз и го повлекоа кон портата на Иркала.",
+          "dialogue_mk": "",
+          "kf_first": "Tammuz seized by hooded servants, wide-eyed at last, dragged toward a yawning shadow gateway, photoreal cinematic",
+          "kf_last": "Track as they haul him struggling toward the dark opening",
+          "continuity": "Tammuz + servants; gateway motif",
+          "motion": "tracking; struggle",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: tammuz seized by hooded servants, wide-eyed at last, dragged toward a yawning shadow gateway, photoreal cinematic Tammuz slender, divine, in cloak, wreathed in golden glow then tracking, then struggle settling into track as they haul him struggling toward the dark opening with a low radiant hum continuity held: Tammuz + servants; gateway motif",
+          "image_prompt_start": "photoreal cinematic: Tammuz seized by hooded servants, wide-eyed at last, dragged toward a yawning shadow gateway, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: as they haul him struggling toward the dark opening.",
+          "video_prompt_start": "Tracking. struggle. The beat resolves into the next matching frame. Continuity held: Tammuz + servants; gateway motif.",
+          "video_prompt_end": "Tracking. struggle. The beat resolves into the next matching frame. Continuity held: Tammuz + servants; gateway motif.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S46",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "tammuz_A3_fused",
+            "stair_env_A6_prop"
+          ],
+          "ref_scope": "image1: the fused master of Tammuz - the self-absorbed shepherd god reclining on a cushioned bench — 100% identical; studio bg/pose/light NOT used; image2: the great underworld stair - spiraling stone stair descending into a dark chasm — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "crane-down descent"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "И го одведоа надолу, во царството на мртвите.",
+          "dialogue_mk": "",
+          "kf_first": "Wide high-angle of Tammuz dragged down stone steps into the green-lit underworld, arms reaching back despairingly, photoreal epic cinematic",
+          "kf_last": "Crane down following his descent as the dark swallows him",
+          "continuity": "Underworld palette returning; Tammuz continuity",
+          "motion": "crane-down descent",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide high-angle of Tammuz dragged down stone steps into the green-lit underworld, arms reaching back despairingly, photoreal epic cinematic Tammuz slender, divine, in cloak, wreathed in golden glow then crane-down descent, then resolve settling into crane down following his descent as the dark swallows him with a low radiant hum continuity held: Underworld palette returning; Tammuz continuity",
+          "image_prompt_start": "photoreal cinematic: high-angle of Tammuz dragged down stone steps into the green-lit underworld, arms reaching back despairingly, photoreal epic cinematic.",
+          "image_prompt_end": "photoreal cinematic: his descent as the dark swallows him.",
+          "video_prompt_start": "Crane-down descent. resolve. The beat resolves into the next matching frame. Continuity held: Underworld palette returning; Tammuz continuity.",
+          "video_prompt_end": "Crane-down descent. resolve. The beat resolves into the next matching frame. Continuity held: Underworld palette returning; Tammuz continuity.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S47",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "ishtar_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Ishtar - goddess of love and war, golden crown, lapis necklace, radiant golden-and-lapis robes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "eyes soften"
+            ]
+          ],
+          "narration_mk": "Иштар гледаше — а во победата имаше и сенка на тага.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of Ishtar watching the gateway, triumph and a quiet sorrow mingled on her face, photoreal cinematic",
+          "kf_last": "Hold as conflict passes across her eyes, then settle into resolve",
+          "continuity": "Ishtar identity; mixed emotion",
+          "motion": "static; eyes soften",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of Ishtar watching the gateway, triumph and a quiet sorrow mingled on her face, photoreal cinematic Ishtar slender, monarch, in crown, dress, wreathed in golden glow, divine glow then static, then eyes soften settling into hold as conflict passes across her eyes, then settle into resolve with a low radiant hum continuity held: Ishtar identity; mixed emotion",
+          "image_prompt_start": "photoreal cinematic: of Ishtar watching the gateway, triumph and a quiet sorrow mingled on her face, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: Hold as conflict passes across her eyes, then into resolve.",
+          "video_prompt_start": "Static. eyes soften. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Ishtar identity; mixed emotion.",
+          "video_prompt_end": "Static. eyes soften. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Ishtar identity; mixed emotion.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S48",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "crane-up",
+          "move": "crane-up",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "ishtar_A1_fused",
+            "palace_env_A4_prop"
+          ],
+          "ref_scope": "image1: the fused master of Ishtar - goddess of love and war, golden crown, lapis necklace, radiant golden-and-lapis robes — 100% identical; studio bg/pose/light NOT used; image2: the celestial palace - golden ziggurat terraces, lapis mosaics and marble terrace — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.2,
+              "crane-up reveal"
+            ],
+            [
+              2.2,
+              4.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "А Иштар, сега слободна и безбедна, повторно завладеа со Земјата.",
+          "dialogue_mk": "",
+          "kf_first": "Ishtar standing tall on her golden ziggurat terrace, arms raised, the thriving earth spreading green and gold below, photoreal epic cinematic",
+          "kf_last": "Crane up to frame her crowned against the bright sky as the land blooms endlessly",
+          "continuity": "Ishtar + restored Earth; closing golden palette",
+          "motion": "crane-up reveal",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: ishtar standing tall on her golden ziggurat terrace, arms raised, the thriving earth spreading green and gold below, photoreal epic cinematic Ishtar slender, monarch, in crown, dress, wreathed in golden glow, divine glow then crane-up reveal, then resolve settling into crane up to frame her crowned against the bright sky as the land blooms endlessly with a low radiant hum, stone groans continuity held: Ishtar + restored Earth; closing golden palette",
+          "image_prompt_start": "photoreal cinematic: Ishtar standing tall on her golden ziggurat terrace, arms raised, the thriving earth spreading green and gold below, photoreal epic cinematic.",
+          "image_prompt_end": "photoreal cinematic: to frame her crowned against the bright sky as the land blooms endlessly.",
+          "video_prompt_start": "Crane-up reveal. resolve. The beat resolves into the next matching frame. Continuity held: Ishtar + restored Earth; closing golden palette.",
+          "video_prompt_end": "Crane-up reveal. resolve. The beat resolves into the next matching frame. Continuity held: Ishtar + restored Earth; closing golden palette.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "gleaming_palace_chamber_and_return_to_reign",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#fbbf24",
+        "#ca8a04",
+        "#14532d"
+      ],
+      "light_direction": "radiant daylight from above, key light from screen-left over the bright palace",
+      "time_of_day": "day"
+    }
+  ],
+  "director_corrections": {
+    "issued": "2026-11-07",
+    "source": "KB §13 DIRECTOR CORRECTIONS — overrides all prior asset/keyframe guidance",
+    "rules": [
+      "DD HEADWEAR: no cap/hood/bandana/mask on head; hood = back-cowl only (cape-like); bare head + teal-blue glowing hair always visible; any head/face covering = REJECT",
+      "LEGENDARY WEAPONS MUST APPEAR: DD = twin Frostbite-class hand crossbows (ice-blue arcane crystal limbs, frost runes, frozen-light string, teal-blue glow); AZ = Dawnbreaker-class greatsword (pale sunsteel, molten-gold runes, golden holy fire edge, sunburst crossguard); hero sheet/keyframe without weapon = INCOMPLETE",
+      "WEAPON ANTI-SLOP: fantasy construction only; crossbow must NEVER read as firearm (no barrel/magazine/stock/Uzi/SMG silhouette = REJECT); anti-slop negatives always appended",
+      "BOSS FACE: Mal'garot HAS a prolific molten-lava face (lava dripping/running, drops falling to ground); faceless boss sheets SUPERSEDED",
+      "LOCATION BRIGHTNESS FLOOR: environment plates silhouette-readable at thumbnail; no murk-dark grades"
+    ],
+    "applies_when": "Activates when face_lock changes from AI-default to an enrolled identity (DD/AZ). AI-default packages carry this as a forward constraint, not a current defect.",
+    "anti_slop_negatives": "firearm, gun, machinegun, Uzi, barrel, magazine, ammo clip, muzzle, modern weapon"
+  },
+  "character_designs": {
+    "ishtar": {
+      "archetype": "monarch",
+      "build": "slender",
+      "scale": "human",
+      "palette": {
+        "primary": "#fbbf24",
+        "secondary": "#1e3a8a",
+        "glow": "#fde68a"
+      },
+      "costume": [
+        "crown",
+        "dress"
+      ],
+      "props": [],
+      "fx": [
+        "golden_glow",
+        "divine_glow"
+      ]
+    },
+    "ereshkigal": {
+      "archetype": "monarch",
+      "build": "robed",
+      "scale": "human",
+      "palette": {
+        "primary": "#111827",
+        "secondary": "#14532d",
+        "glow": "#22c55e"
+      },
+      "costume": [
+        "crown",
+        "cloak",
+        "dress"
+      ],
+      "props": [],
+      "fx": [
+        "shadow_smoke",
+        "divine_glow"
+      ]
+    },
+    "tammuz": {
+      "archetype": "divine",
+      "build": "slender",
+      "scale": "human",
+      "palette": {
+        "primary": "#ca8a04",
+        "secondary": "#166534",
+        "glow": "#fde68a"
+      },
+      "costume": [
+        "cloak"
+      ],
+      "props": [],
+      "fx": [
+        "golden_glow"
+      ]
+    },
+    "gatekeeper": {
+      "archetype": "warrior",
+      "build": "slender",
+      "scale": "human",
+      "palette": {
+        "primary": "#1c1917",
+        "secondary": "#57534e",
+        "glow": "#4ade80"
+      },
+      "costume": [
+        "hood",
+        "cloak"
+      ],
+      "props": [
+        "staff"
+      ],
+      "fx": [
+        "shadow_smoke"
+      ]
+    },
+    "messenger": {
+      "archetype": "elder",
+      "build": "slender",
+      "scale": "human",
+      "palette": {
+        "primary": "#a16207",
+        "secondary": "#f5e6c8",
+        "glow": "#fde68a"
+      },
+      "costume": [
+        "cloak"
+      ],
+      "props": [
+        "staff"
+      ],
+      "fx": [
+        "holy_aura"
+      ]
+    }
+  }
+}

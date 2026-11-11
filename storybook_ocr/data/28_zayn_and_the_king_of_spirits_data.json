@@ -1,0 +1,2528 @@
+{
+  "num": "28",
+  "title_mk": "Зејн и кралот на духовите",
+  "title_en": "Zayn and the King of Spirits",
+  "genre": "Легенда · источне приказни",
+  "logline": "Разгален принц открива скриена одаја со девет златни столба и тргнува во Египет за најскапоцената статуа, само да дознае дека вистинското богатство е љубовта.",
+  "spec": {
+    "aspect": "16:9",
+    "resolution": "1216x704",
+    "fps": 24,
+    "model": "model-agnostic (chosen at generation)",
+    "style": "photoreal",
+    "flf": true,
+    "language": "mk",
+    "shot_floor": 40,
+    "shot_max": 60,
+    "seed_policy": "fixed-per-shot (same seed → reproducible shot; re-roll per shot id)",
+    "style_anchor": [
+      "Diablo 2 cinematic",
+      "World of Warcraft cinematic",
+      "StarCraft cinematic"
+    ],
+    "negative_prompt": "deformed, extra limbs, morphing, watermark, text, static frame, blurry, low quality, cropped head, cut-off face",
+    "frames": 121,
+    "frames_fallback": 81,
+    "routes": [
+      {
+        "model": "Wan2.1-FLF2V-14B-720P",
+        "input": "start+end native (run START-ONLY)",
+        "status": "WORKING (lead for 14B quality)"
+      },
+      {
+        "model": "Kandinsky 6.0 Lite/Pro",
+        "input": "start-image-only",
+        "status": "WORKING (Pro-distill untested at scale)"
+      },
+      {
+        "model": "SkyReels-V3 R2V-14B",
+        "input": "start-image-only",
+        "status": "WORKING (fallback)"
+      },
+      {
+        "model": "LTX-Video 2B v0.9.5",
+        "input": "start-image-only",
+        "status": "WORKING (small/fast, low ceiling)"
+      },
+      {
+        "model": "Mochi-1",
+        "input": "start-image-only",
+        "status": "untested here"
+      },
+      {
+        "model": "LTX-2.3 22B distilled",
+        "input": "start-image-only",
+        "status": "DEAD (nanobind native-crash, 42 note)"
+      }
+    ],
+    "model_note": "Model chosen per story at generation (43 §4). Keyframes + continuation prompts are generator-agnostic; only the render command differs per model."
+  },
+  "cast": [
+    {
+      "role": "Зејн / Zayn",
+      "trait": "Млад разгален принц од Басра, раскошна источна облека и турбан",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Старецот од сонот / The Old Man of the Dream",
+      "trait": "Белобрадест мудрец со блескава сребрена руба и светлосна аура",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Кралот на духовите / The King of Spirits",
+      "trait": "Величествен дух-крал во светкава руба со мистична златна аура",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Водичот / The Guide",
+      "trait": "Виток патешественик во темна наметка, знае тајни патеки",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Принцезата на Персија / The Princess of Persia",
+      "trait": "Најубавата девојка на светот, источна принцеза со свилена облека и накит",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    }
+  ],
+  "acts": [
+    {
+      "id": "act1",
+      "num": "Act I",
+      "title": "Заложба",
+      "color": "#2dd4bf",
+      "pct": 30,
+      "synopsis": "Разгалениот принц Зејн живее само за забави, игнорира мудриот совет од сонот и ја открива скриената одаја со девет златни столба — и натписот што го води кон Египет.",
+      "shots": [
+        {
+          "id": "S01",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "basra_E1_prop"
+          ],
+          "ref_scope": "image1: the ancient-Basra design - white domes and golden minarets reflected in a wide river at golden hour — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.2,
+              "slow crane-down"
+            ],
+            [
+              2.2,
+              4.0,
+              "river glinting"
+            ]
+          ],
+          "narration_mk": "Во стариот пристанишен град Басра, каде златните минариња се огледуваат во реката, живееше принцот Зејн.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of the ancient port city of Basra at golden hour, white domes and golden minarets reflected in a wide river, warm desert haze, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Crane-down past the palace walls toward a grand domed palace courtyard, torches and banners stirring",
+          "continuity": "Golden-hour desert palette; city skyline",
+          "motion": "slow crane-down; river glinting",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of the ancient port city of Basra at golden hour, white domes and golden minarets reflected in a wide river, warm desert haze then slow crane-down, then river glinting settling into crane-down past the palace walls toward a grand domed palace courtyard, torches and banners stirring continuity held: Golden-hour desert palette; city skyline",
+          "image_prompt_start": "photoreal cinematic: wide of the ancient port city of Basra at golden hour, white domes and golden minarets reflected in a wide river, warm desert haze.",
+          "image_prompt_end": "photoreal cinematic: past the palace walls toward a grand domed palace courtyard, torches and banners stirring.",
+          "video_prompt_start": "Slow crane-down. river glinting. The beat resolves into the next matching frame. Continuity held: Golden-hour desert palette; city skyline.",
+          "video_prompt_end": "Slow crane-down. river glinting. The beat resolves into the next matching frame. Continuity held: Golden-hour desert palette; city skyline.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S02",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "zayn_A1_fused",
+            "banquethall_E2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Zayn - a young spoiled prince of Basra in lavish Middle-Eastern robes and a jeweled turban — 100% identical; studio bg/pose/light NOT used; image2: the banquet-hall design - a lavish candlelit hall with silk cushions, long tables and draped banners — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "lateral track"
+            ],
+            [
+              1.93,
+              3.5,
+              "goblet raised"
+            ]
+          ],
+          "narration_mk": "Но Зејн не мислеше на проблемите на своето кралство.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of young prince Zayn reclining on silk cushions in a lavish banquet hall, ornate Middle-Eastern robes and a jeweled turban, photoreal World of Warcraft cinematic lighting, 1216x704",
+          "kf_last": "Tracking shot along the banquet table as Zayn lifts a golden goblet, servants passing behind him",
+          "continuity": "Zayn's robes and turban; warm candlelight palace interior",
+          "motion": "lateral track; goblet raised",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of young prince Zayn reclining on silk cushions in a lavish banquet hall, ornate Middle-Eastern robes and a jeweled turban, photoreal World of Warcraft cinematic lighting Zayn athletic, warrior, in cloak, carrying sword, wreathed in golden glow then lateral track, then goblet raised settling into tracking shot along the banquet table as Zayn lifts a golden goblet, servants passing behind him with steel rings, a low radiant hum continuity held: Zayn's robes and turban; warm candlelight palace interior",
+          "image_prompt_start": "photoreal cinematic: medium of young prince Zayn reclining on silk cushions in a lavish banquet hall, ornate Middle-Eastern robes and a jeweled turban, photoreal World of Warcraft cinematic lighting.",
+          "image_prompt_end": "photoreal cinematic: along the banquet table as Zayn lifts a golden goblet, servants passing behind him.",
+          "video_prompt_start": "Lateral track. goblet raised. The beat resolves into the next matching frame. Continuity held: Zayn's robes and turban; warm candlelight palace interior.",
+          "video_prompt_end": "Lateral track. goblet raised. The beat resolves into the next matching frame. Continuity held: Zayn's robes and turban; warm candlelight palace interior.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S03",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "goblet_K1_prop"
+          ],
+          "ref_scope": "image1: the golden-goblet design - a tall golden goblet catching warm candle highlights at the banquet — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "candle flicker"
+            ]
+          ],
+          "narration_mk": "Неговиот свет беше полн само со гозби и забави.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of an overflowing banquet table: glazed fruits, roasted meats and a tall golden goblet with condensation, candle glow, photoreal StarCraft cinematic material detail, 1216x704",
+          "kf_last": "Static close hold as candle flames flicker, the goblet catching warm highlights",
+          "continuity": "Banquet table props; warm candlelight",
+          "motion": "static; candle flicker",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of an overflowing banquet table: glazed fruits, roasted meats and a tall golden goblet with condensation, candle glow, photoreal StarCraft cinematic material detail then static, then candle flicker settling into static close hold as candle flames flicker, the goblet catching warm highlights continuity held: Banquet table props; warm candlelight",
+          "image_prompt_start": "photoreal cinematic: Macro insert of an overflowing banquet table: glazed fruits, roasted meats and a tall golden goblet with condensation, candle glow, photoreal StarCraft cinematic material detail.",
+          "image_prompt_end": "photoreal cinematic: Static close hold as candle flames flicker, the goblet catching warm highlights.",
+          "video_prompt_start": "Static. candle flicker. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Banquet table props; warm candlelight.",
+          "video_prompt_end": "Static. candle flicker. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Banquet table props; warm candlelight.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S04",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-right",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "zayn_A1_fused",
+            "banquethall_E2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Zayn - a young spoiled prince of Basra in lavish Middle-Eastern robes and a jeweled turban — 100% identical; studio bg/pose/light NOT used; image2: the banquet-hall design - a lavish candlelit hall with silk cushions, long tables and draped banners — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "pan-right"
+            ],
+            [
+              1.93,
+              3.5,
+              "crowd motion"
+            ]
+          ],
+          "narration_mk": "Ден и ноќ, во палатата одекнуваа музика и смеа.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide of the huge banquet hall crowded with dancing musicians, jugglers and draped silk banners, torches blazing, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Pan-right across the revelry to where Zayn laughs from his elevated seat, goblet in hand",
+          "continuity": "Revelers and silk banners; warm festive light",
+          "motion": "pan-right; crowd motion",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide of the huge banquet hall crowded with dancing musicians, jugglers and draped silk banners, torches blazing Zayn athletic, warrior, in cloak, carrying sword, wreathed in golden glow then pan-right, then crowd motion settling into pan-right across the revelry to where Zayn laughs from his elevated seat, goblet in hand with steel rings, a low radiant hum continuity held: Revelers and silk banners; warm festive light",
+          "image_prompt_start": "photoreal cinematic: wide of the huge banquet hall crowded with dancing musicians, jugglers and draped silk banners, torches blazing.",
+          "image_prompt_end": "photoreal cinematic: -right across the revelry to where Zayn laughs from his elevated seat, goblet in hand.",
+          "video_prompt_start": "Pan-right. crowd motion. The beat resolves into the next matching frame. Continuity held: Revelers and silk banners; warm festive light.",
+          "video_prompt_end": "Pan-right. crowd motion. The beat resolves into the next matching frame. Continuity held: Revelers and silk banners; warm festive light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S05",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "zayn_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Zayn - a young spoiled prince of Basra in lavish Middle-Eastern robes and a jeweled turban — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "slow push-in"
+            ],
+            [
+              1.93,
+              3.5,
+              "shallow depth"
+            ]
+          ],
+          "narration_mk": "Никој не смееше да му спомене дека неговата грижа исчезнала.",
+          "dialogue_mk": "",
+          "kf_first": "Close on Zayn laughing carelessly, jeweled turban, warm candlelight on his face, photoreal cinematic skin detail, 1216x704",
+          "kf_last": "Slow push-in on his untroubled eyes as the banquet blurs behind him",
+          "continuity": "Zayn's face and turban; candlelit palette",
+          "motion": "slow push-in; shallow depth",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close on Zayn laughing carelessly, jeweled turban, warm candlelight on his face, photoreal cinematic skin detail Zayn athletic, warrior, in cloak, carrying sword, wreathed in golden glow then slow push-in, then shallow depth settling into slow push-in on his untroubled eyes as the banquet blurs behind him with steel rings, a low radiant hum continuity held: Zayn's face and turban; candlelit palette",
+          "image_prompt_start": "photoreal cinematic: on Zayn laughing carelessly, jeweled turban, warm candlelight on his face, photoreal cinematic skin detail.",
+          "image_prompt_end": "photoreal cinematic: Slow on his untroubled eyes as the banquet blurs behind him.",
+          "video_prompt_start": "Slow push-in. shallow depth. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Zayn's face and turban; candlelit palette.",
+          "video_prompt_end": "Slow push-in. shallow depth. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Zayn's face and turban; candlelit palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S06",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "zayn_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Zayn - a young spoiled prince of Basra in lavish Middle-Eastern robes and a jeweled turban — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "static"
+            ],
+            [
+              1.93,
+              3.5,
+              "canopy sway"
+            ]
+          ],
+          "narration_mk": "Една вечер, кога сонцето се скри, Зејн заспа на својата свилена постела.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of Zayn asleep on a vast silken bed, moonlight through arabesque lattice windows, deep blue shadows, photoreal World of Warcraft cinematic lighting, 1216x704",
+          "kf_last": "Static hold as moonlight slowly brightens, the silk canopy swaying gently",
+          "continuity": "Zayn asleep; blue night palette",
+          "motion": "static; canopy sway",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Zayn asleep on a vast silken bed, moonlight through arabesque lattice windows, deep blue shadows, photoreal World of Warcraft cinematic lighting Zayn athletic, warrior, in cloak, carrying sword, wreathed in golden glow then static, then canopy sway settling into static hold as moonlight slowly brightens, the silk canopy swaying gently with steel rings, a low radiant hum continuity held: Zayn asleep; blue night palette",
+          "image_prompt_start": "photoreal cinematic: medium of Zayn asleep on a vast silken bed, moonlight through arabesque lattice windows, deep blue shadows, photoreal World of Warcraft cinematic lighting.",
+          "image_prompt_end": "photoreal cinematic: Static hold as moonlight slowly brightens, the silk canopy swaying gently.",
+          "video_prompt_start": "Static. canopy sway. The beat resolves into the next matching frame. Continuity held: Zayn asleep; blue night palette.",
+          "video_prompt_end": "Static. canopy sway. The beat resolves into the next matching frame. Continuity held: Zayn asleep; blue night palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S07",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "oldman_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Old Man of the Dream - a white-bearded sage in a glowing silver robe with a soft light aura — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "slow push-in"
+            ],
+            [
+              1.93,
+              3.5,
+              "mist swirling"
+            ]
+          ],
+          "narration_mk": "Во неговиот сон се подигна сребрена магла.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of silvery dream-mist swirling in darkness, faint golden particles condensing into a face, photoreal StarCraft cinematic volumetric, 1216x704",
+          "kf_last": "Slow push-in as the mist parts to reveal the kind face of an old man",
+          "continuity": "Dream-mist and particles; cool silver palette",
+          "motion": "slow push-in; mist swirling",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of silvery dream-mist swirling in darkness, faint golden particles condensing into a face, photoreal StarCraft cinematic volumetric Oldman robed, elder, in beard, hood, carrying staff, wreathed in divine glow then slow push-in, then mist swirling settling into slow push-in as the mist parts to reveal the kind face of an old man with arcane energy crackles, a low radiant hum continuity held: Dream-mist and particles; cool silver palette",
+          "image_prompt_start": "photoreal cinematic: Macro insert of silvery dream-mist swirling in darkness, faint golden particles condensing into a face, photoreal StarCraft cinematic volumetric.",
+          "image_prompt_end": "photoreal cinematic: Slow as the mist parts to reveal the kind face of an old man.",
+          "video_prompt_start": "Slow push-in. mist swirling. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Dream-mist and particles; cool silver palette.",
+          "video_prompt_end": "Slow push-in. mist swirling. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Dream-mist and particles; cool silver palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S08",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "oldman_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Old Man of the Dream - a white-bearded sage in a glowing silver robe with a soft light aura — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "orbit track"
+            ],
+            [
+              1.93,
+              3.5,
+              "hand extended"
+            ]
+          ],
+          "narration_mk": "Еден старец му шепна совет — да владее помудро.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of a white-bearded old man in a glowing silver robe speaking gently inside the dream, soft halo light, photoreal cinematic, 1216x704",
+          "kf_last": "Tracking shot drifting around him as he extends a hand toward the sleeping prince",
+          "continuity": "Same old man's robe and beard; silver dream palette from S07",
+          "motion": "orbit track; hand extended",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of a white-bearded old man in a glowing silver robe speaking gently inside the dream, soft halo light, photoreal cinematic Oldman robed, elder, in beard, hood, carrying staff, wreathed in divine glow then orbit track, then hand extended settling into tracking shot drifting around him as he extends a hand toward the sleeping prince with arcane energy crackles, a low radiant hum continuity held: Same old man's robe and beard; silver dream palette from S07",
+          "image_prompt_start": "photoreal cinematic: medium of a white-bearded old man in a glowing silver robe speaking gently inside the dream, soft halo light, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: drifting around him as he extends a hand toward the sleeping prince.",
+          "video_prompt_start": "Orbit track. hand extended. The beat resolves into the next matching frame. Continuity held: Same old man's robe and beard; silver dream palette from S07.",
+          "video_prompt_end": "Orbit track. hand extended. The beat resolves into the next matching frame. Continuity held: Same old man's robe and beard; silver dream palette from S07.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S09",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "zayn_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Zayn - a young spoiled prince of Basra in lavish Middle-Eastern robes and a jeweled turban — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "push-in"
+            ],
+            [
+              1.65,
+              3.0,
+              "light dimming"
+            ]
+          ],
+          "narration_mk": "Но Зејн го одби советот и се сврте на другата страна.",
+          "dialogue_mk": "",
+          "kf_first": "Close on Zayn's dreaming face turning away, dismissive smile, silver dream-light receding, photoreal cinematic skin detail, 1216x704",
+          "kf_last": "Push-in as the old man's glow dims behind him and the dream dissolves toward darkness",
+          "continuity": "Zayn's face; fading silver light",
+          "motion": "push-in; light dimming",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close on Zayn's dreaming face turning away, dismissive smile, silver dream-light receding, photoreal cinematic skin detail Zayn athletic, warrior, in cloak, carrying sword, wreathed in golden glow then push-in, then light dimming settling into push-in as the old man's glow dims behind him and the dream dissolves toward darkness with steel rings, a low radiant hum continuity held: Zayn's face; fading silver light",
+          "image_prompt_start": "photoreal cinematic: on Zayn's dreaming face turning away, dismissive smile, silver dream-light receding, photoreal cinematic skin detail.",
+          "image_prompt_end": "photoreal cinematic: as the old man's glow dims behind him and the dream dissolves toward darkness.",
+          "video_prompt_start": "Push-in. light dimming. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Zayn's face; fading silver light.",
+          "video_prompt_end": "Push-in. light dimming. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Zayn's face; fading silver light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S10",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "oldman_A2_fused",
+            "goldchamber_E3_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Old Man of the Dream - a white-bearded sage in a glowing silver robe with a soft light aura — 100% identical; studio bg/pose/light NOT used; image2: the golden-chamber design - a vast subterranean vault with nine towering golden pillars and marble statues — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.2,
+              "crane-up"
+            ],
+            [
+              2.2,
+              4.0,
+              "coins glinting"
+            ]
+          ],
+          "narration_mk": "Но старецот се врати — и му покажа влез во одаја полна со златници.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of a hidden underground chamber revealed in the second dream, piled high with gold coins, the old man's silver glow illuminating the vault, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Crane-up as the camera rises over the vast hoard of shining coins",
+          "continuity": "Old man and gold chamber; silver glow over gold",
+          "motion": "crane-up; coins glinting",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of a hidden underground chamber revealed in the second dream, piled high with gold coins, the old man's silver glow illuminating the vault Oldman robed, elder, in beard, hood, carrying staff, wreathed in divine glow then crane-up, then coins glinting settling into crane-up as the camera rises over the vast hoard of shining coins with arcane energy crackles, a low radiant hum continuity held: Old man and gold chamber; silver glow over gold",
+          "image_prompt_start": "photoreal cinematic: wide of a hidden underground chamber revealed in the second dream, piled high with gold coins, the old man's silver glow illuminating the vault.",
+          "image_prompt_end": "photoreal cinematic: as the over the vast hoard of shining coins.",
+          "video_prompt_start": "Crane-up. coins glinting. The beat resolves into the next matching frame. Continuity held: Old man and gold chamber; silver glow over gold.",
+          "video_prompt_end": "Crane-up. coins glinting. The beat resolves into the next matching frame. Continuity held: Old man and gold chamber; silver glow over gold.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S11",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "goldchamber_E3_prop"
+          ],
+          "ref_scope": "image1: the golden-chamber design - a vast subterranean vault with nine towering golden pillars and marble statues — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "slow push-in"
+            ],
+            [
+              1.93,
+              3.5,
+              "glint sweep"
+            ]
+          ],
+          "narration_mk": "Златото светкаше како жив пламен.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of mountains of gold coins glinting, warm reflected light rippling across metal, photoreal StarCraft cinematic material detail, 1216x704",
+          "kf_last": "Slow push-in over the coins as a glint sweeps across the surface",
+          "continuity": "Gold coin palette; warm reflections",
+          "motion": "slow push-in; glint sweep",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of mountains of gold coins glinting, warm reflected light rippling across metal, photoreal StarCraft cinematic material detail then slow push-in, then glint sweep settling into slow push-in over the coins as a glint sweeps across the surface continuity held: Gold coin palette; warm reflections",
+          "image_prompt_start": "photoreal cinematic: Macro insert of mountains of gold coins glinting, warm reflected light rippling across metal, photoreal StarCraft cinematic material detail.",
+          "image_prompt_end": "photoreal cinematic: Slow over the coins as a glint sweeps across the surface.",
+          "video_prompt_start": "Slow push-in. glint sweep. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Gold coin palette; warm reflections.",
+          "video_prompt_end": "Slow push-in. glint sweep. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Gold coin palette; warm reflections.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S12",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "zayn_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Zayn - a young spoiled prince of Basra in lavish Middle-Eastern robes and a jeweled turban — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "static"
+            ],
+            [
+              1.93,
+              3.5,
+              "guards departing"
+            ]
+          ],
+          "narration_mk": "Штом се разбуди, Зејн им нареди на стражарите да копаат на скриеното место.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of Zayn standing before armored palace guards at dawn, commanding gesture, first light flooding the corridor, photoreal World of Warcraft cinematic lighting, 1216x704",
+          "kf_last": "Static hold as guards bow and turn to follow his order",
+          "continuity": "Zayn and guards; dawn light",
+          "motion": "static; guards departing",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Zayn standing before armored palace guards at dawn, commanding gesture, first light flooding the corridor, photoreal World of Warcraft cinematic lighting Zayn athletic, warrior, in cloak, carrying sword, wreathed in golden glow then static, then guards departing settling into static hold as guards bow and turn to follow his order with steel rings, a low radiant hum continuity held: Zayn and guards; dawn light",
+          "image_prompt_start": "photoreal cinematic: medium of Zayn standing before armored palace guards at dawn, commanding gesture, first light flooding the corridor, photoreal World of Warcraft cinematic lighting.",
+          "image_prompt_end": "photoreal cinematic: Static hold as guards bow and turn to his order.",
+          "video_prompt_start": "Static. guards departing. The beat resolves into the next matching frame. Continuity held: Zayn and guards; dawn light.",
+          "video_prompt_end": "Static. guards departing. The beat resolves into the next matching frame. Continuity held: Zayn and guards; dawn light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S13",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "crane-down",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "basra_E1_prop"
+          ],
+          "ref_scope": "image1: the ancient-Basra design - white domes and golden minarets reflected in a wide river at golden hour — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.2,
+              "crane-down"
+            ],
+            [
+              2.2,
+              4.0,
+              "dust rising"
+            ]
+          ],
+          "narration_mk": "Копачите дојдоа до тешка камена врата под земјата.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide of workers with shovels and torches lowering a heavy stone door open in an excavated pit, dust and torch sparks, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Crane-down into the opening as torchlight spills onto a descending stairway",
+          "continuity": "Excavation site; torchlight",
+          "motion": "crane-down; dust rising",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide of workers with shovels and torches lowering a heavy stone door open in an excavated pit, dust and torch sparks then crane-down, then dust rising settling into crane-down into the opening as torchlight spills onto a descending stairway continuity held: Excavation site; torchlight",
+          "image_prompt_start": "photoreal cinematic: wide of workers with shovels and torches lowering a heavy stone door open in an excavated pit, dust and torch sparks.",
+          "image_prompt_end": "photoreal cinematic: into the opening as torchlight spills onto a descending stairway.",
+          "video_prompt_start": "Crane-down. dust rising. The beat resolves into the next matching frame. Continuity held: Excavation site; torchlight.",
+          "video_prompt_end": "Crane-down. dust rising. The beat resolves into the next matching frame. Continuity held: Excavation site; torchlight.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S14",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "pan-left",
+          "dur": 4.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "zayn_A1_fused",
+            "goldchamber_E3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Zayn - a young spoiled prince of Basra in lavish Middle-Eastern robes and a jeweled turban — 100% identical; studio bg/pose/light NOT used; image2: the golden-chamber design - a vast subterranean vault with nine towering golden pillars and marble statues — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.48,
+              "pan-left"
+            ],
+            [
+              2.48,
+              4.5,
+              "torch flicker"
+            ]
+          ],
+          "narration_mk": "Таму, полна со сјај, стоеше одајата на деветте златни столба.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of a vast subterranean chamber with nine towering golden pillars, marble statues on eight of them, warm torchlight, photoreal World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Pan-left across the pillars and statues as Zayn strides in, dwarfed by the golden columns",
+          "continuity": "Chamber palette from S10/S11; columns and statues",
+          "motion": "pan-left; torch flicker",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of a vast subterranean chamber with nine towering golden pillars, marble statues on eight of them, warm torchlight, photoreal World of Warcraft cinematic grade Zayn athletic, warrior, in cloak, carrying sword, wreathed in golden glow then pan-left, then torch flicker settling into pan-left across the pillars and statues as Zayn strides in, dwarfed by the golden columns with steel rings, a low radiant hum continuity held: Chamber palette from S10/S11; columns and statues",
+          "image_prompt_start": "photoreal cinematic: wide of a vast subterranean chamber with nine towering golden pillars, marble statues on eight of them, warm torchlight.",
+          "image_prompt_end": "photoreal cinematic: -left across the pillars and statues as Zayn strides in, dwarfed by the golden columns.",
+          "video_prompt_start": "Pan-left. torch flicker. The beat resolves into the next matching frame. Continuity held: Chamber palette from S10/S11; columns and statues.",
+          "video_prompt_end": "Pan-left. torch flicker. The beat resolves into the next matching frame. Continuity held: Chamber palette from S10/S11; columns and statues.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "basra_palace_banquet_hall_hidden_gold_chamber",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#f59e0b",
+        "#d97706",
+        "#1e3a5f"
+      ],
+      "light_direction": "key light from screen-left, warm golden hour then candlelight and torch gold",
+      "time_of_day": "dusk"
+    },
+    {
+      "id": "act2",
+      "num": "Act II",
+      "title": "Патот",
+      "color": "#e0b341",
+      "pct": 50,
+      "synopsis": "Со водич, Зејн стигнува во Градот на духовите, се среќава со кралот кој е стариот од сонот и го прифаќа предизвикот: на летечки килим да ја донесе принцезата на Персија.",
+      "shots": [
+        {
+          "id": "S15",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "zayn_A1_fused",
+            "goldchamber_E3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Zayn - a young spoiled prince of Basra in lavish Middle-Eastern robes and a jeweled turban — 100% identical; studio bg/pose/light NOT used; image2: the golden-chamber design - a vast subterranean vault with nine towering golden pillars and marble statues — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "push-in"
+            ],
+            [
+              1.93,
+              3.5,
+              "torch flicker"
+            ]
+          ],
+          "narration_mk": "На осум столба стоеја мермерни статуи, но деветтиот беше празен.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of Zayn approaching the empty ninth golden pillar, marble statues receding behind him, torchlight, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Push-in on the bare ninth pillar where a carved inscription catches the light",
+          "continuity": "Zayn and the golden pillars; warm torch palette",
+          "motion": "push-in; torch flicker",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of Zayn approaching the empty ninth golden pillar, marble statues receding behind him, torchlight Zayn athletic, warrior, in cloak, carrying sword, wreathed in golden glow then push-in, then torch flicker settling into push-in on the bare ninth pillar where a carved inscription catches the light with steel rings, a low radiant hum continuity held: Zayn and the golden pillars; warm torch palette",
+          "image_prompt_start": "photoreal cinematic: medium of Zayn approaching the empty ninth golden pillar, marble statues receding behind him, torchlight.",
+          "image_prompt_end": "photoreal cinematic: on the bare ninth pillar where a carved inscription catches the light.",
+          "video_prompt_start": "Push-in. torch flicker. The beat resolves into the next matching frame. Continuity held: Zayn and the golden pillars; warm torch palette.",
+          "video_prompt_end": "Push-in. torch flicker. The beat resolves into the next matching frame. Continuity held: Zayn and the golden pillars; warm torch palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S16",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "inscription_K2_prop"
+          ],
+          "ref_scope": "image1: the inscription design - the sharp chiseled letters carved on the ninth empty golden pillar — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "static"
+            ],
+            [
+              1.93,
+              3.5,
+              "light shift"
+            ]
+          ],
+          "narration_mk": "На него светеше само еден натпис.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of a carved inscription on the golden pillar, sharp chiseled letters lit by torch, photoreal StarCraft cinematic material detail, 1216x704",
+          "kf_last": "Static hold as torchlight shifts across the letters, shadows deepening",
+          "continuity": "Inscription detail; gold surface",
+          "motion": "static; light shift",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of a carved inscription on the golden pillar, sharp chiseled letters lit by torch, photoreal StarCraft cinematic material detail then static, then light shift settling into static hold as torchlight shifts across the letters, shadows deepening continuity held: Inscription detail; gold surface",
+          "image_prompt_start": "photoreal cinematic: Macro insert of a carved inscription on the golden pillar, sharp chiseled letters lit by torch, photoreal StarCraft cinematic material detail.",
+          "image_prompt_end": "photoreal cinematic: Static hold as torchlight across the letters, shadows deepening.",
+          "video_prompt_start": "Static. light shift. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Inscription detail; gold surface.",
+          "video_prompt_end": "Static. light shift. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Inscription detail; gold surface.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S17",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "zayn_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Zayn - a young spoiled prince of Basra in lavish Middle-Eastern robes and a jeweled turban — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "push-in"
+            ],
+            [
+              1.93,
+              3.5,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Деветтата статуа, најскапоцената, чекала во далечниот Египет.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle close on Zayn's resolute face as he reads the inscription, golden torchlight under his jaw, photoreal cinematic, 1216x704",
+          "kf_last": "Push-in on his determined eyes as he turns from the pillar",
+          "continuity": "Zayn's face; warm torch palette",
+          "motion": "push-in; resolve",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle close on Zayn's resolute face as he reads the inscription, golden torchlight under his jaw, photoreal cinematic Zayn athletic, warrior, in cloak, carrying sword, wreathed in golden glow then push-in, then resolve settling into push-in on his determined eyes as he turns from the pillar with steel rings, a low radiant hum continuity held: Zayn's face; warm torch palette",
+          "image_prompt_start": "photoreal cinematic: close on Zayn's resolute face as he reads the inscription, golden torchlight under his jaw, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: on his determined eyes as he from the pillar.",
+          "video_prompt_start": "Push-in. resolve. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Zayn's face; warm torch palette.",
+          "video_prompt_end": "Push-in. resolve. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Zayn's face; warm torch palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S18",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-right",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "zayn_A1_fused",
+            "basra_E1_prop",
+            "desert_E4_prop"
+          ],
+          "ref_scope": "image1: the fused master of Zayn - a young spoiled prince of Basra in lavish Middle-Eastern robes and a jeweled turban — 100% identical; studio bg/pose/light NOT used; image2: the ancient-Basra design - white domes and golden minarets reflected in a wide river at golden hour — 100% identical; studio bg/pose/light NOT used; image3: the desert design - vast dunes with heat shimmer under a blazing or moonlit sky — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.2,
+              "pan-right"
+            ],
+            [
+              2.2,
+              4.0,
+              "caravan moving"
+            ]
+          ],
+          "narration_mk": "Зејн подготви карван и тргна во непознатото.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide of a desert caravan with camels and silk-covered carts departing at dawn from Basra's gates, long shadows, photoreal World of Warcraft cinematic lighting, 1216x704",
+          "kf_last": "Pan-right following the caravan onto the open desert road",
+          "continuity": "Zayn and caravan; dawn desert palette",
+          "motion": "pan-right; caravan moving",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide of a desert caravan with camels and silk-covered carts departing at dawn from Basra's gates, long shadows, photoreal World of Warcraft cinematic lighting Zayn athletic, warrior, in cloak, carrying sword, wreathed in golden glow then pan-right, then caravan moving settling into pan-right following the caravan onto the open desert road with steel rings, a low radiant hum continuity held: Zayn and caravan; dawn desert palette",
+          "image_prompt_start": "photoreal cinematic: wide of a desert caravan with camels and silk-covered carts departing at dawn from Basra's gates, long shadows, photoreal World of Warcraft cinematic lighting.",
+          "image_prompt_end": "photoreal cinematic: -right the caravan onto the open desert road.",
+          "video_prompt_start": "Pan-right. caravan moving. The beat resolves into the next matching frame. Continuity held: Zayn and caravan; dawn desert palette.",
+          "video_prompt_end": "Pan-right. caravan moving. The beat resolves into the next matching frame. Continuity held: Zayn and caravan; dawn desert palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S19",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "zayn_A1_fused",
+            "guide_A4_fused",
+            "desert_E4_prop"
+          ],
+          "ref_scope": "image1: the fused master of Zayn - a young spoiled prince of Basra in lavish Middle-Eastern robes and a jeweled turban — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Guide - a slender traveler in a dark cloak who knows the secret paths — 100% identical; studio bg/pose/light NOT used; image3: the desert design - vast dunes with heat shimmer under a blazing or moonlit sky — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "lateral track"
+            ],
+            [
+              1.93,
+              3.5,
+              "walking"
+            ]
+          ],
+          "narration_mk": "На патот, еден водич му понуди да го одведе во Градот на духовите.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of a slender guide in a dark cloak walking beside Zayn, gesturing toward a distant horizon, desert heat shimmer, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Tracking shot keeping pace with the two as the guide speaks",
+          "continuity": "Guide's dark cloak; desert palette from S18",
+          "motion": "lateral track; walking",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of a slender guide in a dark cloak walking beside Zayn, gesturing toward a distant horizon, desert heat shimmer Zayn athletic, warrior, in cloak, carrying sword, wreathed in golden glow Guide slender, trickster, in hood, cloak, carrying staff, wreathed in shadow smoke then lateral track, then walking settling into tracking shot keeping pace with the two as the guide speaks with steel rings, a low radiant hum continuity held: Guide's dark cloak; desert palette from S18",
+          "image_prompt_start": "photoreal cinematic: medium of a slender guide in a dark cloak walking beside Zayn, gesturing toward a distant horizon, desert heat shimmer.",
+          "image_prompt_end": "photoreal cinematic: keeping pace with the two as the guide speaks.",
+          "video_prompt_start": "Lateral track. walking. The beat resolves into the next matching frame. Continuity held: Guide's dark cloak; desert palette from S18.",
+          "video_prompt_end": "Lateral track. walking. The beat resolves into the next matching frame. Continuity held: Guide's dark cloak; desert palette from S18.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S20",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 4.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "spiritcity_E5_prop"
+          ],
+          "ref_scope": "image1: the City-of-Spirits design - a radiant hidden city of white towers, hanging gardens and crystal halls — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.48,
+              "crane-down"
+            ],
+            [
+              2.48,
+              4.5,
+              "haze parting"
+            ]
+          ],
+          "narration_mk": "Пред нив блесна Градот на духовите — прекрасен како сон.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of a magnificent hidden city of gleaming white towers, hanging gardens and majestic halls emerging from the desert veil, photoreal StarCraft cinematic scale, 1216x704",
+          "kf_last": "Crane-down toward the radiant city gates as the caravan approaches",
+          "continuity": "City skyline; desert-to-city transition",
+          "motion": "crane-down; haze parting",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of a magnificent hidden city of gleaming white towers, hanging gardens and majestic halls emerging from the desert veil, photoreal StarCraft cinematic scale then crane-down, then haze parting settling into crane-down toward the radiant city gates as the caravan approaches continuity held: City skyline; desert-to-city transition",
+          "image_prompt_start": "photoreal cinematic: wide of a magnificent hidden city of gleaming white towers, hanging gardens and majestic halls emerging from the desert veil, photoreal StarCraft cinematic scale.",
+          "image_prompt_end": "photoreal cinematic: toward the radiant city gates as the caravan approaches.",
+          "video_prompt_start": "Crane-down. haze parting. The beat resolves into the next matching frame. Continuity held: City skyline; desert-to-city transition.",
+          "video_prompt_end": "Crane-down. haze parting. The beat resolves into the next matching frame. Continuity held: City skyline; desert-to-city transition.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S21",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "spiritcity_E5_prop"
+          ],
+          "ref_scope": "image1: the City-of-Spirits design - a radiant hidden city of white towers, hanging gardens and crystal halls — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.2,
+              "push-in"
+            ],
+            [
+              2.2,
+              4.0,
+              "waterfall mist"
+            ]
+          ],
+          "narration_mk": "Градините беа бујни, а зданијата се креваа до небото.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of lush terraced gardens and grand colonnaded buildings, waterfalls on marble, ethereal light, photoreal World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Push-in through the gardens toward a grand royal hall entrance",
+          "continuity": "City gardens and architecture; ethereal palette",
+          "motion": "push-in; waterfall mist",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of lush terraced gardens and grand colonnaded buildings, waterfalls on marble, ethereal light, photoreal World of Warcraft cinematic grade then push-in, then waterfall mist settling into push-in through the gardens toward a grand royal hall entrance continuity held: City gardens and architecture; ethereal palette",
+          "image_prompt_start": "photoreal cinematic: medium of lush terraced gardens and grand colonnaded buildings, waterfalls on marble, ethereal light.",
+          "image_prompt_end": "photoreal cinematic: through the gardens toward a grand royal hall entrance.",
+          "video_prompt_start": "Push-in. waterfall mist. The beat resolves into the next matching frame. Continuity held: City gardens and architecture; ethereal palette.",
+          "video_prompt_end": "Push-in. waterfall mist. The beat resolves into the next matching frame. Continuity held: City gardens and architecture; ethereal palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S22",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "guide_A4_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Guide - a slender traveler in a dark cloak who knows the secret paths — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "static"
+            ],
+            [
+              1.93,
+              3.5,
+              "cautious glance"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Водичот: „Ако не сме бегаме пред Кралската палата, кралот на духовите може да ни се покаже како чудовиште.“",
+          "kf_first": "Close on the guide's wary face half-lit in the gardens, leaning in to whisper a warning, photoreal cinematic, 1216x704",
+          "kf_last": "Static hold as his eyes dart toward the great hall",
+          "continuity": "Guide's face; garden light",
+          "motion": "static; cautious glance",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close on the guide's wary face half-lit in the gardens, leaning in to whisper a warning, photoreal cinematic Guide slender, trickster, in hood, cloak, carrying staff, wreathed in shadow smoke then static, then cautious glance settling into static hold as his eyes dart toward the great hall with arcane energy crackles, shadows whisper a voice speaks in Macedonian: \"Водичот: „Ако не сме бегаме пред Кралската палата, кралот на духовите може да ни се покаже како чудовиште.“\" continuity held: Guide's face; garden light",
+          "image_prompt_start": "photoreal cinematic: on the guide's wary face half-lit in the gardens, leaning in to whisper a warning, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: Static hold as his eyes dart toward the great hall.",
+          "video_prompt_start": "Static. cautious glance. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Водичот: „Ако не сме бегаме пред Кралската палата, кралот на духовите може да ни се покаже како чудовиште.“\" Continuity held: Guide's face; garden light.",
+          "video_prompt_end": "Static. cautious glance. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Водичот: „Ако не сме бегаме пред Кралската палата, кралот на духовите може да ни се покаже како чудовиште.“\" Continuity held: Guide's face; garden light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S23",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-left",
+          "dur": 4.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "spiritcity_E5_prop"
+          ],
+          "ref_scope": "image1: the City-of-Spirits design - a radiant hidden city of white towers, hanging gardens and crystal halls — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.48,
+              "pan-left"
+            ],
+            [
+              2.48,
+              4.5,
+              "spirits drifting"
+            ]
+          ],
+          "narration_mk": "Тогаш пред нив се отвори Кралската палата.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide of a vast royal hall of translucent crystal and gold, drifting luminous spirits, a shimmering throne at the far end, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Pan-left across the hall to the throne as soft light gathers near it",
+          "continuity": "Hall and spirits; luminous palette",
+          "motion": "pan-left; spirits drifting",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide of a vast royal hall of translucent crystal and gold, drifting luminous spirits, a shimmering throne at the far end then pan-left, then spirits drifting settling into pan-left across the hall to the throne as soft light gathers near it continuity held: Hall and spirits; luminous palette",
+          "image_prompt_start": "photoreal cinematic: wide of a vast royal hall of translucent crystal and gold, drifting luminous spirits, a shimmering throne at the far end.",
+          "image_prompt_end": "photoreal cinematic: -left across the hall to the throne as soft light gathers near it.",
+          "video_prompt_start": "Pan-left. spirits drifting. The beat resolves into the next matching frame. Continuity held: Hall and spirits; luminous palette.",
+          "video_prompt_end": "Pan-left. spirits drifting. The beat resolves into the next matching frame. Continuity held: Hall and spirits; luminous palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S24",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "king_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of the King of Spirits - a majestic spirit-king in a glittering white-and-gold robe with a mystical golden aura — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "static"
+            ],
+            [
+              1.93,
+              3.5,
+              "mist settle"
+            ]
+          ],
+          "narration_mk": "Од светлината се појави самиот Крал на духовите.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of the King of Spirits materializing in a glittering white-and-gold robe, gentle golden aura, mist curling at his feet, photoreal World of Warcraft cinematic, 1216x704",
+          "kf_last": "Static hold as the mist settles and the king's form solidifies",
+          "continuity": "Spirit-king robe and golden aura; hall palette",
+          "motion": "static; mist settle",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of the King of Spirits materializing in a glittering white-and-gold robe, gentle golden aura, mist curling at his feet, photoreal World of Warcraft cinematic King robed, monarch, in crown, carrying staff, wreathed in divine glow, golden glow then static, then mist settle settling into static hold as the mist settles and the king's form solidifies with arcane energy crackles, a low radiant hum continuity held: Spirit-king robe and golden aura; hall palette",
+          "image_prompt_start": "photoreal cinematic: medium of the King of Spirits materializing in a glittering white-and-gold robe, gentle golden aura, mist curling at his feet.",
+          "image_prompt_end": "photoreal cinematic: Static hold as the mist and the king's form solidifies.",
+          "video_prompt_start": "Static. mist settle. The beat resolves into the next matching frame. Continuity held: Spirit-king robe and golden aura; hall palette.",
+          "video_prompt_end": "Static. mist settle. The beat resolves into the next matching frame. Continuity held: Spirit-king robe and golden aura; hall palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S25",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "king_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of the King of Spirits - a majestic spirit-king in a glittering white-and-gold robe with a mystical golden aura — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "push-in"
+            ],
+            [
+              1.93,
+              3.5,
+              "aura glow"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Кралот на духовите: „Добре дојде, Зејн. Јас сум стариот од твоите соништа.“",
+          "kf_first": "Close on the King of Spirits' serene face, golden light on his features, welcoming gaze, photoreal cinematic, 1216x704",
+          "kf_last": "Push-in on his warm smile as the hall glows behind him",
+          "continuity": "King's face; golden aura from S24",
+          "motion": "push-in; aura glow",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close on the King of Spirits' serene face, golden light on his features, welcoming gaze, photoreal cinematic King robed, monarch, in crown, carrying staff, wreathed in divine glow, golden glow then push-in, then aura glow settling into push-in on his warm smile as the hall glows behind him with arcane energy crackles, a low radiant hum a voice speaks in Macedonian: \"Кралот на духовите: „Добре дојде, Зејн. Јас сум стариот од твоите соништа.“\" continuity held: King's face; golden aura from S24",
+          "image_prompt_start": "photoreal cinematic: on the King of Spirits' serene face, golden light on his features, welcoming gaze, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: on his warm smile as the hall glows behind him.",
+          "video_prompt_start": "Push-in. aura glow. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Кралот на духовите: „Добре дојде, Зејн. Јас сум стариот од твоите соништа.“\" Continuity held: King's face; golden aura from S24.",
+          "video_prompt_end": "Push-in. aura glow. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Кралот на духовите: „Добре дојде, Зејн. Јас сум стариот од твоите соништа.“\" Continuity held: King's face; golden aura from S24.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S26",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "zayn_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Zayn - a young spoiled prince of Basra in lavish Middle-Eastern robes and a jeweled turban — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "push-in"
+            ],
+            [
+              1.93,
+              3.5,
+              "astonishment"
+            ]
+          ],
+          "narration_mk": "Зејн препозна во него добриот старец од сонот.",
+          "dialogue_mk": "",
+          "kf_first": "Close on Zayn's astonished face as recognition dawns, reflected golden light in his eyes, photoreal cinematic, 1216x704",
+          "kf_last": "Push-in on his widening eyes",
+          "continuity": "Zayn's face; golden hall light",
+          "motion": "push-in; astonishment",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close on Zayn's astonished face as recognition dawns, reflected golden light in his eyes, photoreal cinematic Zayn athletic, warrior, in cloak, carrying sword, wreathed in golden glow then push-in, then astonishment settling into push-in on his widening eyes with steel rings, a low radiant hum continuity held: Zayn's face; golden hall light",
+          "image_prompt_start": "photoreal cinematic: on Zayn's astonished face as recognition dawns, reflected golden light in his eyes, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: on his widening eyes.",
+          "video_prompt_start": "Push-in. astonishment. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Zayn's face; golden hall light.",
+          "video_prompt_end": "Push-in. astonishment. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Zayn's face; golden hall light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S27",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "over-shoulder",
+          "move": "static",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "king_A3_fused",
+            "zayn_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the King of Spirits - a majestic spirit-king in a glittering white-and-gold robe with a mystical golden aura — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Zayn - a young spoiled prince of Basra in lavish Middle-Eastern robes and a jeweled turban — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.2,
+              "static"
+            ],
+            [
+              2.2,
+              4.0,
+              "motes orbiting"
+            ]
+          ],
+          "narration_mk": "Кралот му понуди зделка: ќе му ја даде статуата за најубавата девојка на светот.",
+          "dialogue_mk": "",
+          "kf_first": "Over-shoulder medium of the King of Spirits speaking to Zayn, one hand raised in a graceful gesture, golden aura, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Static hold as small motes of golden light orbit the king's hand",
+          "continuity": "King and Zayn; golden palette",
+          "motion": "static; motes orbiting",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: over-shoulder medium of the King of Spirits speaking to Zayn, one hand raised in a graceful gesture, golden aura King robed, monarch, in crown, carrying staff, wreathed in divine glow, golden glow Zayn athletic, warrior, in cloak, carrying sword, wreathed in golden glow then static, then motes orbiting settling into static hold as small motes of golden light orbit the king's hand with arcane energy crackles, a low radiant hum continuity held: King and Zayn; golden palette",
+          "image_prompt_start": "photoreal cinematic: Over-shoulder medium of the King of Spirits speaking to Zayn, one hand raised in a graceful gesture, golden aura.",
+          "image_prompt_end": "photoreal cinematic: Static hold as small motes of golden light the king's hand.",
+          "video_prompt_start": "Static. motes orbiting. The beat resolves into the next matching frame. Continuity held: King and Zayn; golden palette.",
+          "video_prompt_end": "Static. motes orbiting. The beat resolves into the next matching frame. Continuity held: King and Zayn; golden palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S28",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "king_A3_fused",
+            "zayn_A1_fused",
+            "carpet_K3_prop",
+            "mirror_K4_prop"
+          ],
+          "ref_scope": "image1: the fused master of the King of Spirits - a majestic spirit-king in a glittering white-and-gold robe with a mystical golden aura — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Zayn - a young spoiled prince of Basra in lavish Middle-Eastern robes and a jeweled turban — 100% identical; studio bg/pose/light NOT used; image3: the flying-carpet design - a rolled magic carpet with a rippling, wind-lifted edge — 100% identical; studio bg/pose/light NOT used; image4: the magic-mirror design - an ornate mirror that reveals distant faces in its shimmering surface — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.2,
+              "lateral track"
+            ],
+            [
+              2.2,
+              4.0,
+              "handoff"
+            ]
+          ],
+          "narration_mk": "За да му помогне, кралот му подари летечки килим и волшебно огледало.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of the king presenting a rolled flying carpet and a mirrored glass to Zayn, servants holding both, photoreal World of Warcraft cinematic lighting, 1216x704",
+          "kf_last": "Tracking shot across as Zayn accepts the carpet and mirror",
+          "continuity": "Carpet and mirror props; king and Zayn",
+          "motion": "lateral track; handoff",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of the king presenting a rolled flying carpet and a mirrored glass to Zayn, servants holding both, photoreal World of Warcraft cinematic lighting King robed, monarch, in crown, carrying staff, wreathed in divine glow, golden glow Zayn athletic, warrior, in cloak, carrying sword, wreathed in golden glow then lateral track, then handoff settling into tracking shot across as Zayn accepts the carpet and mirror with arcane energy crackles, a low radiant hum continuity held: Carpet and mirror props; king and Zayn",
+          "image_prompt_start": "photoreal cinematic: medium of the king presenting a rolled flying carpet and a mirrored glass to Zayn, servants holding both, photoreal World of Warcraft cinematic lighting.",
+          "image_prompt_end": "photoreal cinematic: across as Zayn accepts the carpet and mirror.",
+          "video_prompt_start": "Lateral track. handoff. The beat resolves into the next matching frame. Continuity held: Carpet and mirror props; king and Zayn.",
+          "video_prompt_end": "Lateral track. handoff. The beat resolves into the next matching frame. Continuity held: Carpet and mirror props; king and Zayn.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S29",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "mirror_K4_prop"
+          ],
+          "ref_scope": "image1: the magic-mirror design - an ornate mirror that reveals distant faces in its shimmering surface — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "slow push-in"
+            ],
+            [
+              1.93,
+              3.5,
+              "face forming"
+            ]
+          ],
+          "narration_mk": "Огледалото светна и покажа туѓо лице.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of an ornate magic mirror glowing, a face slowly forming in its shimmering surface, photoreal StarCraft cinematic volumetric, 1216x704",
+          "kf_last": "Slow push-in into the mirror as the face resolves in full color",
+          "continuity": "Magic mirror; cool-to-warm glow",
+          "motion": "slow push-in; face forming",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of an ornate magic mirror glowing, a face slowly forming in its shimmering surface, photoreal StarCraft cinematic volumetric then slow push-in, then face forming settling into slow push-in into the mirror as the face resolves in full color continuity held: Magic mirror; cool-to-warm glow",
+          "image_prompt_start": "photoreal cinematic: Macro insert of an ornate magic mirror glowing, a face slowly forming in its shimmering surface, photoreal StarCraft cinematic volumetric.",
+          "image_prompt_end": "photoreal cinematic: Slow into the mirror as the face resolves in full color.",
+          "video_prompt_start": "Slow push-in. face forming. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Magic mirror; cool-to-warm glow.",
+          "video_prompt_end": "Slow push-in. face forming. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Magic mirror; cool-to-warm glow.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S30",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "mirror_K4_prop",
+            "princess_A5_fused"
+          ],
+          "ref_scope": "image1: the magic-mirror design - an ornate mirror that reveals distant faces in its shimmering surface — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Princess of Persia - the most beautiful girl in the world, an Eastern princess in silken robes and jewels — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "static"
+            ],
+            [
+              1.93,
+              3.5,
+              "mirror shimmer"
+            ]
+          ],
+          "narration_mk": "Во него се огледуваше принцезата на Персија.",
+          "dialogue_mk": "",
+          "kf_first": "Close on the mirror revealing the beautiful face of a Persian princess, dark eyes, silk veil and jeweled headband, photoreal cinematic, 1216x704",
+          "kf_last": "Static hold on her serene, luminous face in the glass",
+          "continuity": "Princess's face in mirror; cool glow from S29",
+          "motion": "static; mirror shimmer",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close on the mirror revealing the beautiful face of a Persian princess, dark eyes, silk veil and jeweled headband, photoreal cinematic Princess slender, heroine, in dress, wreathed in petals then static, then mirror shimmer settling into static hold on her serene, luminous face in the glass with petals swirl and rustle continuity held: Princess's face in mirror; cool glow from S29",
+          "image_prompt_start": "photoreal cinematic: on the mirror revealing the beautiful face of a Persian princess, dark eyes, silk veil and jeweled headband, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: Static hold on her serene, luminous face in the glass.",
+          "video_prompt_start": "Static. mirror shimmer. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Princess's face in mirror; cool glow from S29.",
+          "video_prompt_end": "Static. mirror shimmer. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Princess's face in mirror; cool glow from S29.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S31",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 4.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "zayn_A1_fused",
+            "carpet_K3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Zayn - a young spoiled prince of Basra in lavish Middle-Eastern robes and a jeweled turban — 100% identical; studio bg/pose/light NOT used; image2: the flying-carpet design - a rolled magic carpet with a rippling, wind-lifted edge — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.48,
+              "crane-up"
+            ],
+            [
+              2.48,
+              4.5,
+              "carpet soaring"
+            ]
+          ],
+          "narration_mk": "Летајќи на волшебниот килим, Зејн прелета пустини и планини.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of Zayn riding a flying carpet over vast deserts and mountain ranges at dusk, the carpet's edge rippling, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Crane-up as the carpet soars over a glowing river valley",
+          "continuity": "Zayn and flying carpet; dusk palette",
+          "motion": "crane-up; carpet soaring",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of Zayn riding a flying carpet over vast deserts and mountain ranges at dusk, the carpet's edge rippling Zayn athletic, warrior, in cloak, carrying sword, wreathed in golden glow then crane-up, then carpet soaring settling into crane-up as the carpet soars over a glowing river valley with steel rings, a low radiant hum continuity held: Zayn and flying carpet; dusk palette",
+          "image_prompt_start": "photoreal cinematic: wide of Zayn riding a flying carpet over vast deserts and mountain ranges at dusk, the carpet's edge rippling.",
+          "image_prompt_end": "photoreal cinematic: as the carpet soars over a glowing river valley.",
+          "video_prompt_start": "Crane-up. carpet soaring. The beat resolves into the next matching frame. Continuity held: Zayn and flying carpet; dusk palette.",
+          "video_prompt_end": "Crane-up. carpet soaring. The beat resolves into the next matching frame. Continuity held: Zayn and flying carpet; dusk palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S32",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "zayn_A1_fused",
+            "carpet_K3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Zayn - a young spoiled prince of Basra in lavish Middle-Eastern robes and a jeweled turban — 100% identical; studio bg/pose/light NOT used; image2: the flying-carpet design - a rolled magic carpet with a rippling, wind-lifted edge — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "push-in"
+            ],
+            [
+              1.93,
+              3.5,
+              "wind whip"
+            ]
+          ],
+          "narration_mk": "Ветрот му ги развеваше наметката и решеноста.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of Zayn kneeling on the flying carpet, cloak whipping in the wind, determined expression, moonlight, photoreal World of Warcraft cinematic, 1216x704",
+          "kf_last": "Push-in on his face as the carpet bankes through the night sky",
+          "continuity": "Zayn, carpet, cloak; night palette",
+          "motion": "push-in; wind whip",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Zayn kneeling on the flying carpet, cloak whipping in the wind, determined expression, moonlight, photoreal World of Warcraft cinematic Zayn athletic, warrior, in cloak, carrying sword, wreathed in golden glow then push-in, then wind whip settling into push-in on his face as the carpet bankes through the night sky with steel rings, a low radiant hum continuity held: Zayn, carpet, cloak; night palette",
+          "image_prompt_start": "photoreal cinematic: medium of Zayn kneeling on the flying carpet, cloak whipping in the wind, determined expression, moonlight.",
+          "image_prompt_end": "photoreal cinematic: on his face as the carpet bankes through the night sky.",
+          "video_prompt_start": "Push-in. wind whip. The beat resolves into the next matching frame. Continuity held: Zayn, carpet, cloak; night palette.",
+          "video_prompt_end": "Push-in. wind whip. The beat resolves into the next matching frame. Continuity held: Zayn, carpet, cloak; night palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S33",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "crane-down",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "persiangarden_E6_prop",
+            "carpet_K3_prop"
+          ],
+          "ref_scope": "image1: the Persian-garden design - a moonlit palace garden with fountains, flowering trees and fireflies — 100% identical; studio bg/pose/light NOT used; image2: the flying-carpet design - a rolled magic carpet with a rippling, wind-lifted edge — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.2,
+              "crane-down"
+            ],
+            [
+              2.2,
+              4.0,
+              "carpet landing"
+            ]
+          ],
+          "narration_mk": "Килимот се спушти во градините на персиската палата.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide of a moonlit Persian palace garden with fountains and flowering trees as the carpet descends, photoreal StarCraft cinematic scale, 1216x704",
+          "kf_last": "Crane-down following the carpet to a soft landing among garden paths",
+          "continuity": "Garden setting; moonlit palette",
+          "motion": "crane-down; carpet landing",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide of a moonlit Persian palace garden with fountains and flowering trees as the carpet descends, photoreal StarCraft cinematic scale then crane-down, then carpet landing settling into crane-down following the carpet to a soft landing among garden paths with leaves stir continuity held: Garden setting; moonlit palette",
+          "image_prompt_start": "photoreal cinematic: wide of a moonlit Persian palace garden with fountains and flowering trees as the carpet descends, photoreal StarCraft cinematic scale.",
+          "image_prompt_end": "photoreal cinematic: the carpet to a soft landing among garden paths.",
+          "video_prompt_start": "Crane-down. carpet landing. The beat resolves into the next matching frame. Continuity held: Garden setting; moonlit palette.",
+          "video_prompt_end": "Crane-down. carpet landing. The beat resolves into the next matching frame. Continuity held: Garden setting; moonlit palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S34",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "over-shoulder",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "zayn_A1_fused",
+            "princess_A5_fused"
+          ],
+          "ref_scope": "image1: the fused master of Zayn - a young spoiled prince of Basra in lavish Middle-Eastern robes and a jeweled turban — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Princess of Persia - the most beautiful girl in the world, an Eastern princess in silken robes and jewels — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "track"
+            ],
+            [
+              1.93,
+              3.5,
+              "fireflies rising"
+            ]
+          ],
+          "narration_mk": "Меѓу цветата, Зејн ја здогледа неа.",
+          "dialogue_mk": "",
+          "kf_first": "Over-shoulder medium from behind Zayn as he gazes at the princess walking among moonlit flowers, silks trailing, photoreal cinematic, 1216x704",
+          "kf_last": "Tracking shot drifting toward her as fireflies rise",
+          "continuity": "Princess in garden; moonlit and fireflies",
+          "motion": "track; fireflies rising",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: over-shoulder medium from behind Zayn as he gazes at the princess walking among moonlit flowers, silks trailing, photoreal cinematic Zayn athletic, warrior, in cloak, carrying sword, wreathed in golden glow Princess slender, heroine, in dress, wreathed in petals then track, then fireflies rising settling into tracking shot drifting toward her as fireflies rise with steel rings, a low radiant hum continuity held: Princess in garden; moonlit and fireflies",
+          "image_prompt_start": "photoreal cinematic: Over-shoulder medium from behind Zayn as he gazes at the princess walking among moonlit flowers, silks trailing, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: drifting toward her as fireflies rise.",
+          "video_prompt_start": "Track. fireflies rising. The beat resolves into the next matching frame. Continuity held: Princess in garden; moonlit and fireflies.",
+          "video_prompt_end": "Track. fireflies rising. The beat resolves into the next matching frame. Continuity held: Princess in garden; moonlit and fireflies.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S35",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "princess_A5_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Princess of Persia - the most beautiful girl in the world, an Eastern princess in silken robes and jewels — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "slow push-in"
+            ],
+            [
+              1.93,
+              3.5,
+              "silk stir"
+            ]
+          ],
+          "narration_mk": "Таа беше поубава од сè што некогаш видел.",
+          "dialogue_mk": "",
+          "kf_first": "Close on the princess's lovely face in moonlight, jeweled headband, dark expressive eyes, photoreal cinematic skin detail, 1216x704",
+          "kf_last": "Slow push-in on her eyes as a breeze stirs a silk strand",
+          "continuity": "Princess's face; moonlit palette",
+          "motion": "slow push-in; silk stir",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close on the princess's lovely face in moonlight, jeweled headband, dark expressive eyes, photoreal cinematic skin detail Princess slender, heroine, in dress, wreathed in petals then slow push-in, then silk stir settling into slow push-in on her eyes as a breeze stirs a silk strand with petals swirl and rustle continuity held: Princess's face; moonlit palette",
+          "image_prompt_start": "photoreal cinematic: on the princess's lovely face in moonlight, jeweled headband, dark expressive eyes, photoreal cinematic skin detail.",
+          "image_prompt_end": "photoreal cinematic: Slow on her eyes as a breeze stirs a silk strand.",
+          "video_prompt_start": "Slow push-in. silk stir. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Princess's face; moonlit palette.",
+          "video_prompt_end": "Slow push-in. silk stir. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Princess's face; moonlit palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S36",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "zayn_A1_fused",
+            "princess_A5_fused",
+            "carpet_K3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Zayn - a young spoiled prince of Basra in lavish Middle-Eastern robes and a jeweled turban — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Princess of Persia - the most beautiful girl in the world, an Eastern princess in silken robes and jewels — 100% identical; studio bg/pose/light NOT used; image3: the flying-carpet design - a rolled magic carpet with a rippling, wind-lifted edge — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.2,
+              "track"
+            ],
+            [
+              2.2,
+              4.0,
+              "carpet rising"
+            ]
+          ],
+          "narration_mk": "Зејн ја зеде на килимот за да ја однесе во Египет.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of Zayn gently lifting the princess onto the flying carpet, both bathed in moonlight, the carpet beginning to rise, photoreal World of Warcraft cinematic, 1216x704",
+          "kf_last": "Tracking shot as the carpet lifts skyward with both of them aboard",
+          "continuity": "Zayn, princess, carpet; moonlit palette",
+          "motion": "track; carpet rising",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of Zayn gently lifting the princess onto the flying carpet, both bathed in moonlight, the carpet beginning to rise, photoreal World of Warcraft cinematic Zayn athletic, warrior, in cloak, carrying sword, wreathed in golden glow Princess slender, heroine, in dress, wreathed in petals then track, then carpet rising settling into tracking shot as the carpet lifts skyward with both of them aboard with steel rings, a low radiant hum continuity held: Zayn, princess, carpet; moonlit palette",
+          "image_prompt_start": "photoreal cinematic: medium of Zayn gently lifting the princess onto the flying carpet, both bathed in moonlight, the carpet beginning to rise.",
+          "image_prompt_end": "photoreal cinematic: as the carpet lifts skyward with both of them aboard.",
+          "video_prompt_start": "Track. carpet rising. The beat resolves into the next matching frame. Continuity held: Zayn, princess, carpet; moonlit palette.",
+          "video_prompt_end": "Track. carpet rising. The beat resolves into the next matching frame. Continuity held: Zayn, princess, carpet; moonlit palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S37",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "over-shoulder",
+          "move": "static",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "zayn_A1_fused",
+            "princess_A5_fused"
+          ],
+          "ref_scope": "image1: the fused master of Zayn - a young spoiled prince of Basra in lavish Middle-Eastern robes and a jeweled turban — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Princess of Persia - the most beautiful girl in the world, an Eastern princess in silken robes and jewels — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.2,
+              "static"
+            ],
+            [
+              2.2,
+              4.0,
+              "shared glance"
+            ]
+          ],
+          "narration_mk": "Но на небесниот пат, неговото срце се промени.",
+          "dialogue_mk": "",
+          "kf_first": "Over-shoulder close of Zayn and the princess seated close on the flying carpet, their gazes meeting, stars behind, photoreal cinematic, 1216x704",
+          "kf_last": "Static hold on their shared glance as the night wind softens",
+          "continuity": "Zayn and princess; starry night palette",
+          "motion": "static; shared glance",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: over-shoulder close of Zayn and the princess seated close on the flying carpet, their gazes meeting, stars behind, photoreal cinematic Zayn athletic, warrior, in cloak, carrying sword, wreathed in golden glow Princess slender, heroine, in dress, wreathed in petals then static, then shared glance settling into static hold on their shared glance as the night wind softens with steel rings, a low radiant hum continuity held: Zayn and princess; starry night palette",
+          "image_prompt_start": "photoreal cinematic: Over-shoulder close of Zayn and the princess seated close on the flying carpet, their gazes meeting, stars behind, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: Static hold on their shared glance as the night wind softens.",
+          "video_prompt_start": "Static. shared glance. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Zayn and princess; starry night palette.",
+          "video_prompt_end": "Static. shared glance. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Zayn and princess; starry night palette.",
+          "motion_intensity": "gentle"
+        }
+      ],
+      "location_ref": "spirit_city_royal_hall_moonlit_persian_garden",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#fde68a",
+        "#a78bfa",
+        "#0f172a"
+      ],
+      "light_direction": "key light from screen-right, ethereal white-gold hall glow cooling to moonlit garden light",
+      "time_of_day": "night"
+    },
+    {
+      "id": "act3",
+      "num": "Act III",
+      "title": "Исполнување",
+      "color": "#8b5cf6",
+      "pct": 20,
+      "synopsis": "Скршен, Зејн ја предава принцезата, но кралот му открива дека статуата е веќе на место — а дома го чека љубовта, награда поскапоцена од злато.",
+      "shots": [
+        {
+          "id": "S38",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 4.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "zayn_A1_fused",
+            "princess_A5_fused",
+            "king_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of Zayn - a young spoiled prince of Basra in lavish Middle-Eastern robes and a jeweled turban — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Princess of Persia - the most beautiful girl in the world, an Eastern princess in silken robes and jewels — 100% identical; studio bg/pose/light NOT used; image3: the fused master of the King of Spirits - a majestic spirit-king in a glittering white-and-gold robe with a mystical golden aura — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.48,
+              "crane-down"
+            ],
+            [
+              2.48,
+              4.5,
+              "king rising"
+            ]
+          ],
+          "narration_mk": "Зејн ја одведе принцезата пред кралот на духовите.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of Zayn presenting the princess before the King of Spirits' throne in the glowing hall, both figures small against the grand architecture, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Crane-down toward Zayn and the princess as the king rises from his throne",
+          "continuity": "Hall, king, Zayn, princess; luminous palette",
+          "motion": "crane-down; king rising",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of Zayn presenting the princess before the King of Spirits' throne in the glowing hall, both figures small against the grand architecture Zayn athletic, warrior, in cloak, carrying sword, wreathed in golden glow Princess slender, heroine, in dress, wreathed in petals King robed, monarch, in crown, carrying staff, wreathed in divine glow, golden glow then crane-down, then king rising settling into crane-down toward Zayn and the princess as the king rises from his throne with steel rings, a low radiant hum continuity held: Hall, king, Zayn, princess; luminous palette",
+          "image_prompt_start": "photoreal cinematic: wide of Zayn presenting the princess before the King of Spirits' throne in the glowing hall, both figures small against the grand architecture.",
+          "image_prompt_end": "photoreal cinematic: toward Zayn and the princess as the king from his throne.",
+          "video_prompt_start": "Crane-down. king rising. The beat resolves into the next matching frame. Continuity held: Hall, king, Zayn, princess; luminous palette.",
+          "video_prompt_end": "Crane-down. king rising. The beat resolves into the next matching frame. Continuity held: Hall, king, Zayn, princess; luminous palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S39",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "zayn_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Zayn - a young spoiled prince of Basra in lavish Middle-Eastern robes and a jeweled turban — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "static"
+            ],
+            [
+              1.93,
+              3.5,
+              "grief"
+            ]
+          ],
+          "narration_mk": "Неговото срце беше скршено — отишла од неговата рака.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of Zayn's heartbroken face as he lets go of the princess's hand, golden hall light dimming on him, photoreal cinematic, 1216x704",
+          "kf_last": "Static hold on his grief as the princess steps toward the throne",
+          "continuity": "Zayn's face; dimming golden light",
+          "motion": "static; grief",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of Zayn's heartbroken face as he lets go of the princess's hand, golden hall light dimming on him, photoreal cinematic Zayn athletic, warrior, in cloak, carrying sword, wreathed in golden glow then static, then grief settling into static hold on his grief as the princess steps toward the throne with steel rings, a low radiant hum continuity held: Zayn's face; dimming golden light",
+          "image_prompt_start": "photoreal cinematic: medium of Zayn's heartbroken face as he lets go of the princess's hand, golden hall light dimming on him, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: Static hold on his grief as the princess steps toward the throne.",
+          "video_prompt_start": "Static. grief. The beat resolves into the next matching frame. Continuity held: Zayn's face; dimming golden light.",
+          "video_prompt_end": "Static. grief. The beat resolves into the next matching frame. Continuity held: Zayn's face; dimming golden light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S40",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "king_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of the King of Spirits - a majestic spirit-king in a glittering white-and-gold robe with a mystical golden aura — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "push-in"
+            ],
+            [
+              1.93,
+              3.5,
+              "farewell"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Кралот на духовите: „Оди си. Деветтата статуа е веќе со другите осум.“",
+          "kf_first": "Close on the King of Spirits speaking kindly, a knowing smile, golden aura softening, photoreal World of Warcraft cinematic, 1216x704",
+          "kf_last": "Push-in on the king's gentle farewell",
+          "continuity": "King's face; golden aura",
+          "motion": "push-in; farewell",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close on the King of Spirits speaking kindly, a knowing smile, golden aura softening, photoreal World of Warcraft cinematic King robed, monarch, in crown, carrying staff, wreathed in divine glow, golden glow then push-in, then farewell settling into push-in on the king's gentle farewell with arcane energy crackles, a low radiant hum a voice speaks in Macedonian: \"Кралот на духовите: „Оди си. Деветтата статуа е веќе со другите осум.“\" continuity held: King's face; golden aura",
+          "image_prompt_start": "photoreal cinematic: on the King of Spirits speaking kindly, a knowing smile, golden aura softening.",
+          "image_prompt_end": "photoreal cinematic: on the king's gentle farewell.",
+          "video_prompt_start": "Push-in. farewell. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Кралот на духовите: „Оди си. Деветтата статуа е веќе со другите осум.“\" Continuity held: King's face; golden aura.",
+          "video_prompt_end": "Push-in. farewell. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Кралот на духовите: „Оди си. Деветтата статуа е веќе со другите осум.“\" Continuity held: King's face; golden aura.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S41",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-right",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "zayn_A1_fused",
+            "desert_E4_prop",
+            "basra_E1_prop"
+          ],
+          "ref_scope": "image1: the fused master of Zayn - a young spoiled prince of Basra in lavish Middle-Eastern robes and a jeweled turban — 100% identical; studio bg/pose/light NOT used; image2: the desert design - vast dunes with heat shimmer under a blazing or moonlit sky — 100% identical; studio bg/pose/light NOT used; image3: the ancient-Basra design - white domes and golden minarets reflected in a wide river at golden hour — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.2,
+              "pan-right"
+            ],
+            [
+              2.2,
+              4.0,
+              "lone ride"
+            ]
+          ],
+          "narration_mk": "Зејн се врати во Басра, а патот му се чинеше подолг одошто било.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide of Zayn riding back across the empty desert toward Basra's distant minarets, mid-day heat shimmer, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Pan-right following his lonely ride as the city grows nearer",
+          "continuity": "Zayn and desert; midday palette",
+          "motion": "pan-right; lone ride",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide of Zayn riding back across the empty desert toward Basra's distant minarets, mid-day heat shimmer Zayn athletic, warrior, in cloak, carrying sword, wreathed in golden glow then pan-right, then lone ride settling into pan-right following his lonely ride as the city grows nearer with steel rings, a low radiant hum continuity held: Zayn and desert; midday palette",
+          "image_prompt_start": "photoreal cinematic: wide of Zayn riding back across the empty desert toward Basra's distant minarets, mid-day heat shimmer.",
+          "image_prompt_end": "photoreal cinematic: -right his lonely ride as the city grows nearer.",
+          "video_prompt_start": "Pan-right. lone ride. The beat resolves into the next matching frame. Continuity held: Zayn and desert; midday palette.",
+          "video_prompt_end": "Pan-right. lone ride. The beat resolves into the next matching frame. Continuity held: Zayn and desert; midday palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S42",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "zayn_A1_fused",
+            "goldchamber_E3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Zayn - a young spoiled prince of Basra in lavish Middle-Eastern robes and a jeweled turban — 100% identical; studio bg/pose/light NOT used; image2: the golden-chamber design - a vast subterranean vault with nine towering golden pillars and marble statues — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "track"
+            ],
+            [
+              1.93,
+              3.5,
+              "descent"
+            ]
+          ],
+          "narration_mk": "Веднаш слезе во подземната одаја кај деветте столба.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of Zayn descending the stone stairway into the golden pillar chamber, torch in hand, shadows stretching, photoreal World of Warcraft cinematic, 1216x704",
+          "kf_last": "Tracking shot following him down into the torchlit vault",
+          "continuity": "Chamber and pillars; torch palette",
+          "motion": "track; descent",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Zayn descending the stone stairway into the golden pillar chamber, torch in hand, shadows stretching, photoreal World of Warcraft cinematic Zayn athletic, warrior, in cloak, carrying sword, wreathed in golden glow then track, then descent settling into tracking shot following him down into the torchlit vault with steel rings, a low radiant hum continuity held: Chamber and pillars; torch palette",
+          "image_prompt_start": "photoreal cinematic: medium of Zayn descending the stone stairway into the golden pillar chamber, torch in hand, shadows stretching.",
+          "image_prompt_end": "photoreal cinematic: him down into the torchlit vault.",
+          "video_prompt_start": "Track. descent. The beat resolves into the next matching frame. Continuity held: Chamber and pillars; torch palette.",
+          "video_prompt_end": "Track. descent. The beat resolves into the next matching frame. Continuity held: Chamber and pillars; torch palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S43",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "princess_A5_fused",
+            "goldchamber_E3_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Princess of Persia - the most beautiful girl in the world, an Eastern princess in silken robes and jewels — 100% identical; studio bg/pose/light NOT used; image2: the golden-chamber design - a vast subterranean vault with nine towering golden pillars and marble statues — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.2,
+              "push-in"
+            ],
+            [
+              2.2,
+              4.0,
+              "recognition"
+            ]
+          ],
+          "narration_mk": "На местото на деветтата статуа стоеше некој многу попознат.",
+          "dialogue_mk": "",
+          "kf_first": "Close on the ninth golden pillar where, instead of a statue, the living princess stands in silken robes, warm light on her face, photoreal cinematic, 1216x704",
+          "kf_last": "Push-in on her smiling face as she recognizes him",
+          "continuity": "Princess at the pillar; warm torch palette",
+          "motion": "push-in; recognition",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close on the ninth golden pillar where, instead of a statue, the living princess stands in silken robes, warm light on her face, photoreal cinematic Princess slender, heroine, in dress, wreathed in petals then push-in, then recognition settling into push-in on her smiling face as she recognizes him with petals swirl and rustle continuity held: Princess at the pillar; warm torch palette",
+          "image_prompt_start": "photoreal cinematic: on the ninth golden pillar where, instead of a statue, the living princess stands in silken robes, warm light on her face, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: on her smiling face as she recognizes him.",
+          "video_prompt_start": "Push-in. recognition. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Princess at the pillar; warm torch palette.",
+          "video_prompt_end": "Push-in. recognition. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Princess at the pillar; warm torch palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S44",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "zayn_A1_fused",
+            "princess_A5_fused"
+          ],
+          "ref_scope": "image1: the fused master of Zayn - a young spoiled prince of Basra in lavish Middle-Eastern robes and a jeweled turban — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Princess of Persia - the most beautiful girl in the world, an Eastern princess in silken robes and jewels — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "static"
+            ],
+            [
+              1.93,
+              3.5,
+              "hands meet"
+            ]
+          ],
+          "narration_mk": "Таму го чекаше неговата сакана принцеза.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of Zayn and the princess standing close together in the golden chamber, hands reaching, joy on both faces, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Static hold as their hands meet in the torchlight",
+          "continuity": "Zayn and princess; torch palette",
+          "motion": "static; hands meet",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of Zayn and the princess standing close together in the golden chamber, hands reaching, joy on both faces Zayn athletic, warrior, in cloak, carrying sword, wreathed in golden glow Princess slender, heroine, in dress, wreathed in petals then static, then hands meet settling into static hold as their hands meet in the torchlight with steel rings, a low radiant hum continuity held: Zayn and princess; torch palette",
+          "image_prompt_start": "photoreal cinematic: medium of Zayn and the princess standing close together in the golden chamber, hands reaching, joy on both faces.",
+          "image_prompt_end": "photoreal cinematic: Static hold as their hands meet in the torchlight.",
+          "video_prompt_start": "Static. hands meet. The beat resolves into the next matching frame. Continuity held: Zayn and princess; torch palette.",
+          "video_prompt_end": "Static. hands meet. The beat resolves into the next matching frame. Continuity held: Zayn and princess; torch palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S45",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "crane-up",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "king_A3_fused",
+            "zayn_A1_fused",
+            "princess_A5_fused",
+            "goldchamber_E3_prop"
+          ],
+          "ref_scope": "image1: the fused master of the King of Spirits - a majestic spirit-king in a glittering white-and-gold robe with a mystical golden aura — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Zayn - a young spoiled prince of Basra in lavish Middle-Eastern robes and a jeweled turban — 100% identical; studio bg/pose/light NOT used; image3: the fused master of the Princess of Persia - the most beautiful girl in the world, an Eastern princess in silken robes and jewels — 100% identical; studio bg/pose/light NOT used; image4: the golden-chamber design - a vast subterranean vault with nine towering golden pillars and marble statues — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.2,
+              "crane-up"
+            ],
+            [
+              2.2,
+              4.0,
+              "golden flood"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Духот: „Таа навистина е најскапоцената статуа!“",
+          "kf_first": "Low-angle wide of the smiling spirit appearing from nowhere beside the couple, golden light flooding the chamber, pillars gleaming, photoreal World of Warcraft cinematic, 1216x704",
+          "kf_last": "Crane-up as the spirit's golden glow fills the vault around them",
+          "continuity": "Spirit and couple; golden chamber palette",
+          "motion": "crane-up; golden flood",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of the smiling spirit appearing from nowhere beside the couple, golden light flooding the chamber, pillars gleaming, photoreal World of Warcraft cinematic King robed, monarch, in crown, carrying staff, wreathed in divine glow, golden glow Zayn athletic, warrior, in cloak, carrying sword, wreathed in golden glow Princess slender, heroine, in dress, wreathed in petals then crane-up, then golden flood settling into crane-up as the spirit's golden glow fills the vault around them with arcane energy crackles, a low radiant hum a voice speaks in Macedonian: \"Духот: „Таа навистина е најскапоцената статуа!“\" continuity held: Spirit and couple; golden chamber palette",
+          "image_prompt_start": "photoreal cinematic: wide of the smiling spirit appearing from nowhere beside the couple, golden light flooding the chamber, pillars gleaming.",
+          "image_prompt_end": "photoreal cinematic: as the spirit's golden glow fills the vault around them.",
+          "video_prompt_start": "Crane-up. golden flood. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Духот: „Таа навистина е најскапоцената статуа!“\" Continuity held: Spirit and couple; golden chamber palette.",
+          "video_prompt_end": "Crane-up. golden flood. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Духот: „Таа навистина е најскапоцената статуа!“\" Continuity held: Spirit and couple; golden chamber palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S46",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "crane-down",
+          "dur": 4.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "zayn_A1_fused",
+            "princess_A5_fused"
+          ],
+          "ref_scope": "image1: the fused master of Zayn - a young spoiled prince of Basra in lavish Middle-Eastern robes and a jeweled turban — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Princess of Persia - the most beautiful girl in the world, an Eastern princess in silken robes and jewels — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.48,
+              "crane-down"
+            ],
+            [
+              2.48,
+              4.5,
+              "court reverent"
+            ]
+          ],
+          "narration_mk": "Зејн се ожени со девојката и оттогаш владееше мудро, сакан од сите.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide of Zayn and the princess enthroned side by side in a bright palace court, subjects bowing respectfully, banners and flowers, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Crane-down over the joyful court as warm light fills the hall",
+          "continuity": "Zayn, princess, court; bright warm palette",
+          "motion": "crane-down; court reverent",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide of Zayn and the princess enthroned side by side in a bright palace court, subjects bowing respectfully, banners and flowers Zayn athletic, warrior, in cloak, carrying sword, wreathed in golden glow Princess slender, heroine, in dress, wreathed in petals then crane-down, then court reverent settling into crane-down over the joyful court as warm light fills the hall with steel rings, a low radiant hum continuity held: Zayn, princess, court; bright warm palette",
+          "image_prompt_start": "photoreal cinematic: wide of Zayn and the princess enthroned side by side in a bright palace court, subjects bowing respectfully, banners and flowers.",
+          "image_prompt_end": "photoreal cinematic: over the joyful court as warm light fills the hall.",
+          "video_prompt_start": "Crane-down. court reverent. The beat resolves into the next matching frame. Continuity held: Zayn, princess, court; bright warm palette.",
+          "video_prompt_end": "Crane-down. court reverent. The beat resolves into the next matching frame. Continuity held: Zayn, princess, court; bright warm palette.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "return_desert_ride_golden_chamber_bright_court",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#fbbf24",
+        "#fb7185",
+        "#14532d"
+      ],
+      "light_direction": "key light from screen-left, mid-day desert sun warming to bright court light",
+      "time_of_day": "day"
+    }
+  ],
+  "director_corrections": {
+    "issued": "2026-11-07",
+    "source": "KB §13 DIRECTOR CORRECTIONS — overrides all prior asset/keyframe guidance",
+    "rules": [
+      "DD HEADWEAR: no cap/hood/bandana/mask on head; hood = back-cowl only (cape-like); bare head + teal-blue glowing hair always visible; any head/face covering = REJECT",
+      "LEGENDARY WEAPONS MUST APPEAR: DD = twin Frostbite-class hand crossbows (ice-blue arcane crystal limbs, frost runes, frozen-light string, teal-blue glow); AZ = Dawnbreaker-class greatsword (pale sunsteel, molten-gold runes, golden holy fire edge, sunburst crossguard); hero sheet/keyframe without weapon = INCOMPLETE",
+      "WEAPON ANTI-SLOP: fantasy construction only; crossbow must NEVER read as firearm (no barrel/magazine/stock/Uzi/SMG silhouette = REJECT); anti-slop negatives always appended",
+      "BOSS FACE: Mal'garot HAS a prolific molten-lava face (lava dripping/running, drops falling to ground); faceless boss sheets SUPERSEDED",
+      "LOCATION BRIGHTNESS FLOOR: environment plates silhouette-readable at thumbnail; no murk-dark grades"
+    ],
+    "applies_when": "Activates when face_lock changes from AI-default to an enrolled identity (DD/AZ). AI-default packages carry this as a forward constraint, not a current defect.",
+    "anti_slop_negatives": "firearm, gun, machinegun, Uzi, barrel, magazine, ammo clip, muzzle, modern weapon"
+  },
+  "character_designs": {
+    "zayn": {
+      "archetype": "warrior",
+      "build": "athletic",
+      "scale": "human",
+      "palette": {
+        "primary": "#d4a017",
+        "secondary": "#0e7490",
+        "glow": "#fbbf24"
+      },
+      "costume": [
+        "cloak"
+      ],
+      "props": [
+        "sword"
+      ],
+      "fx": [
+        "golden_glow"
+      ]
+    },
+    "oldman": {
+      "archetype": "elder",
+      "build": "robed",
+      "scale": "human",
+      "palette": {
+        "primary": "#e2e8f0",
+        "secondary": "#94a3b8",
+        "glow": "#c7d2fe"
+      },
+      "costume": [
+        "beard",
+        "hood"
+      ],
+      "props": [
+        "staff"
+      ],
+      "fx": [
+        "divine_glow"
+      ]
+    },
+    "king": {
+      "archetype": "monarch",
+      "build": "robed",
+      "scale": "human",
+      "palette": {
+        "primary": "#eab308",
+        "secondary": "#f8fafc",
+        "glow": "#fde68a"
+      },
+      "costume": [
+        "crown"
+      ],
+      "props": [
+        "staff"
+      ],
+      "fx": [
+        "divine_glow",
+        "golden_glow"
+      ]
+    },
+    "guide": {
+      "archetype": "trickster",
+      "build": "slender",
+      "scale": "human",
+      "palette": {
+        "primary": "#1e293b",
+        "secondary": "#475569",
+        "glow": "#94a3b8"
+      },
+      "costume": [
+        "hood",
+        "cloak"
+      ],
+      "props": [
+        "staff"
+      ],
+      "fx": [
+        "shadow_smoke"
+      ]
+    },
+    "princess": {
+      "archetype": "heroine",
+      "build": "slender",
+      "scale": "human",
+      "palette": {
+        "primary": "#b91c63",
+        "secondary": "#fbbf24",
+        "glow": "#fda4af"
+      },
+      "costume": [
+        "dress"
+      ],
+      "props": [],
+      "fx": [
+        "petals"
+      ]
+    },
+    "basra_E1_prop": {
+      "motif": "spires",
+      "tone": "#f59e0b"
+    },
+    "banquethall_E2_prop": {
+      "motif": "hall",
+      "tone": "#fbbf24"
+    },
+    "goldchamber_E3_prop": {
+      "motif": "cavern",
+      "tone": "#d97706"
+    },
+    "desert_E4_prop": {
+      "motif": "peaks",
+      "tone": "#eab308"
+    },
+    "spiritcity_E5_prop": {
+      "motif": "spires",
+      "tone": "#8b5cf6"
+    },
+    "persiangarden_E6_prop": {
+      "motif": "forest",
+      "tone": "#a5b4fc"
+    }
+  }
+}

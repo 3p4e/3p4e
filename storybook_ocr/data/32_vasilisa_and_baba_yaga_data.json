@@ -1,0 +1,2821 @@
+{
+  "num": "32",
+  "title_mk": "Василиса и Баба Јага",
+  "title_en": "Vasilisa and Baba Yaga",
+  "genre": "Легенда · епска акција",
+  "logline": "Млада Василиса, благословена со волшебна кукла, ја преживува загубата на мајка си, суровоста на маќеата и искушението на Баба Јага, за на крај да најде љубов во царскиот дворец.",
+  "spec": {
+    "aspect": "16:9",
+    "resolution": "1216x704",
+    "fps": 24,
+    "model": "model-agnostic (chosen at generation)",
+    "style": "photoreal",
+    "flf": true,
+    "language": "mk",
+    "shot_floor": 40,
+    "shot_max": 60,
+    "seed_policy": "fixed-per-shot (same seed → reproducible shot; re-roll per shot id)",
+    "style_anchor": [
+      "Diablo 2 cinematic",
+      "World of Warcraft cinematic",
+      "StarCraft cinematic"
+    ],
+    "negative_prompt": "deformed, extra limbs, morphing, watermark, text, static frame, blurry, low quality, cropped head, cut-off face",
+    "frames": 121,
+    "frames_fallback": 81,
+    "routes": [
+      {
+        "model": "Wan2.1-FLF2V-14B-720P",
+        "input": "start+end native (run START-ONLY)",
+        "status": "WORKING (lead for 14B quality)"
+      },
+      {
+        "model": "Kandinsky 6.0 Lite/Pro",
+        "input": "start-image-only",
+        "status": "WORKING (Pro-distill untested at scale)"
+      },
+      {
+        "model": "SkyReels-V3 R2V-14B",
+        "input": "start-image-only",
+        "status": "WORKING (fallback)"
+      },
+      {
+        "model": "LTX-Video 2B v0.9.5",
+        "input": "start-image-only",
+        "status": "WORKING (small/fast, low ceiling)"
+      },
+      {
+        "model": "Mochi-1",
+        "input": "start-image-only",
+        "status": "untested here"
+      },
+      {
+        "model": "LTX-2.3 22B distilled",
+        "input": "start-image-only",
+        "status": "DEAD (nanobind native-crash, 42 note)"
+      }
+    ],
+    "model_note": "Model chosen per story at generation (43 §4). Keyframes + continuation prompts are generator-agnostic; only the render command differs per model."
+  },
+  "cast": [
+    {
+      "role": "Василиса / Vasilisa",
+      "trait": "Прекрасна, кротка и храбра млада жена; хероина со волшебна кукла.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Мајката / The Mother",
+      "trait": "Бледа, нежна жена на самртна постела; и ја дава куклата на ќерка си.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Таткото трговец / The Merchant Father",
+      "trait": "Богат руски трговец со долга брада; заминува на пат.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Маќеата / The Stepmother",
+      "trait": "Строга, завистлива жена во темни руски алишта.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Посестрите (2) / Stepsisters (2)",
+      "trait": "Разгалени, надмени млади жени во скапи алишта.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Куклата / The Magic Doll",
+      "trait": "Мала дрвена кукла со благ сјај; чуварка и советничка.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Баба Јага / Baba Yaga",
+      "trait": "Ужасна вештерка со остри црти; живее во колиба на пилешки нозе.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Старата шивачка / The Old Seamstress",
+      "trait": "Добра, вешта старица; ја прима Василиса во градот.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Царот / The Tsar",
+      "trait": "Царствен, млад владетел; се восхитува и се вљубува во Василиса.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    }
+  ],
+  "acts": [
+    {
+      "id": "act1",
+      "num": "Act I",
+      "title": "Заложба",
+      "color": "#2dd4bf",
+      "pct": 28,
+      "synopsis": "Раѓањето на Василиса, смртта на мајка ѝ и подарокот на волшебната кукла; строгата маќеа и разгалените посестри; преселбата на работ на темната шума.",
+      "shots": [
+        {
+          "id": "S01",
+          "shot_type": "BOSS-ONLY",
+          "size": "WIDE",
+          "angle": "crane-down",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "merchant_house_E1_prop"
+          ],
+          "ref_scope": "image1: the merchant-house design - a snow-covered Russian timber house with candlelit windows — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "subject identity",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "slow crane-down"
+            ],
+            [
+              1.93,
+              3.5,
+              "snow falls"
+            ]
+          ],
+          "narration_mk": "Пред многу години, во една снежна руска варош, живееше богат трговец со своето семејство.",
+          "dialogue_mk": "",
+          "kf_first": "High crane-down wide of a snow-covered Russian merchant house at dusk, warm candlelight in frosted windows, horse-drawn sleigh passing, pine forest beyond, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "Crane settles at ground level on the carved front door as candle glow spills onto fresh snow",
+          "continuity": "Establishing Russian winter palette: deep blue dusk, warm amber candlelight",
+          "motion": "slow crane-down as snow falls",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high crane-down wide of a snow-covered Russian merchant house at dusk, warm candlelight in frosted windows, horse-drawn sleigh passing, pine forest beyond, photoreal cinematic, Diablo2/WoW/StarCraft grade then slow crane-down, then snow falls settling into crane settles at ground level on the carved front door as candle glow spills onto fresh snow continuity held: Establishing Russian winter palette: deep blue dusk, warm amber candlelight",
+          "image_prompt_start": "photoreal cinematic: High wide of a snow-covered Russian merchant house at dusk, warm candlelight in frosted windows, horse-drawn sleigh passing, pine forest beyond, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: Crane at ground level on the carved front door as candle glow spills onto fresh snow.",
+          "video_prompt_start": "Slow crane-down. snow falls. The action plays out at full force and lands in a held, readable end pose. Continuity held: Establishing Russian winter palette: deep blue dusk, warm amber candlelight.",
+          "video_prompt_end": "Slow crane-down. snow falls. The action plays out at full force and lands in a held, readable end pose. Continuity held: Establishing Russian winter palette: deep blue dusk, warm amber candlelight.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S02",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "mother_A4_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Mother - a pale, gentle woman on her deathbed — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "slow push-in on her eyes"
+            ],
+            [
+              1.93,
+              3.5,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Мајката на Василиса се разболе и лежеше бледа во својата одаја.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of a pale, gentle woman resting on an embroidered bed, candlelit chamber, snowlight through the window, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "Push-in on her wan face as her eyes open with tender resolve",
+          "continuity": "Same candlelit chamber palette; mother's linen gown from S01 era",
+          "motion": "slow push-in on her eyes",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of a pale, gentle woman resting on an embroidered bed, candlelit chamber, snowlight through the window, photoreal cinematic, Diablo2/WoW/StarCraft grade Mother slender, elder, in dress, wreathed in holy aura then slow push-in on her eyes, then resolve settling into push-in on her wan face as her eyes open with tender resolve with a low radiant hum continuity held: Same candlelit chamber palette; mother's linen gown from S01 era",
+          "image_prompt_start": "photoreal cinematic: of a pale, gentle woman resting on an embroidered bed, candlelit chamber, snowlight through the window, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: on her wan face as her eyes open with tender resolve.",
+          "video_prompt_start": "Slow push-in on her eyes. resolve. The beat resolves into the next matching frame. Continuity held: Same candlelit chamber palette; mother's linen gown from S01 era.",
+          "video_prompt_end": "Slow push-in on her eyes. resolve. The beat resolves into the next matching frame. Continuity held: Same candlelit chamber palette; mother's linen gown from S01 era.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S03",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "mother_A4_fused",
+            "vasilisa_A3_fused",
+            "doll_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Mother - a pale, gentle woman on her deathbed — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used; image3: the fused master of the Magic Doll - a small carved wooden doll with a warm glow — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "subtle flicker of light on the doll"
+            ]
+          ],
+          "narration_mk": "Знаејќи дека ѝ одѕвонува, таа ја повика ќерка си за последен подарок.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the mother's frail hand pressing a small carved wooden doll into young Vasilisa's hands, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "The doll's painted eyes catching a flicker of candlelight as fingers curl around it",
+          "continuity": "Wooden doll prop introduced; mother's sleeve lace; warm candle palette",
+          "motion": "static; subtle flicker of light on the doll",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the mother's frail hand pressing a small carved wooden doll into young Vasilisa's hands, photoreal cinematic, Diablo2/WoW/StarCraft grade Mother slender, elder, in dress, wreathed in holy aura Vasilisa slender, heroine, in dress, wreathed in golden glow Doll slender, divine, wreathed in golden glow, holy aura then static, then subtle flicker of light on the doll settling into the doll's painted eyes catching a flicker of candlelight as fingers curl around it with a low radiant hum continuity held: Wooden doll prop introduced; mother's sleeve lace; warm candle palette",
+          "image_prompt_start": "photoreal cinematic: of the mother's frail hand pressing a small carved wooden doll into young Vasilisa's hands, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: The doll's painted eyes catching a flicker of candlelight as fingers curl around it.",
+          "video_prompt_start": "Static. subtle flicker of light on the doll. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Wooden doll prop introduced; mother's sleeve lace; warm candle palette.",
+          "video_prompt_end": "Static. subtle flicker of light on the doll. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Wooden doll prop introduced; mother's sleeve lace; warm candle palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S04",
+          "shot_type": "BOSS-ONLY",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "doll_A2_fused",
+            "mother_A4_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Magic Doll - a small carved wooden doll with a warm glow — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Mother - a pale, gentle woman on her deathbed — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "subject identity",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "macro push-in"
+            ],
+            [
+              1.65,
+              3.0,
+              "faint glow pulse"
+            ]
+          ],
+          "narration_mk": "„Кога ќе ти биде тешко, зборувај со неа. Ќе ти помогне.“ – ѝ прошепоти мајката.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of the wooden doll's gentle painted face held close to the mother's lips as she whispers, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "A faint warm glow blooms in the doll's eyes as the whisper leaves her lips",
+          "continuity": "Doll face continuity from S03; warm low light",
+          "motion": "macro push-in; faint glow pulse",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of the wooden doll's gentle painted face held close to the mother's lips as she whispers, photoreal cinematic, Diablo2/WoW/StarCraft grade Doll slender, divine, wreathed in golden glow, holy aura Mother slender, elder, in dress, wreathed in holy aura then macro push-in, then faint glow pulse settling into a faint warm glow blooms in the doll's eyes as the whisper leaves her lips with a low radiant hum continuity held: Doll face continuity from S03; warm low light",
+          "image_prompt_start": "photoreal cinematic: Macro insert of the wooden doll's gentle painted face held close to the mother's lips as she whispers, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: A faint warm glow blooms in the doll's eyes as the whisper leaves her lips.",
+          "video_prompt_start": "Macro push-in. faint glow pulse. The action plays out at full force and lands in a held, readable end pose. Continuity held: Doll face continuity from S03; warm low light.",
+          "video_prompt_end": "Macro push-in. faint glow pulse. The action plays out at full force and lands in a held, readable end pose. Continuity held: Doll face continuity from S03; warm low light.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S05",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "vasilisa_A3_fused",
+            "doll_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Magic Doll - a small carved wooden doll with a warm glow — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.2,
+              "static"
+            ],
+            [
+              1.2,
+              2.4,
+              "tear rolls"
+            ],
+            [
+              2.4,
+              3.0,
+              "chest rises"
+            ]
+          ],
+          "narration_mk": "Василиса ја притисна куклата до гради и тивко заплака.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of young Vasilisa tearful, clutching the wooden doll to her chest, soft window light, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "Her fingers tighten as a single tear rolls down her cheek",
+          "continuity": "Vasilisa face lock AI-default; doll held against chest; cool blue light",
+          "motion": "static; tear rolls, chest rises",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of young Vasilisa tearful, clutching the wooden doll to her chest, soft window light, photoreal cinematic, Diablo2/WoW/StarCraft grade Vasilisa slender, heroine, in dress, wreathed in golden glow Doll slender, divine, wreathed in golden glow, holy aura then static, then tear rolls, then chest rises settling into her fingers tighten as a single tear rolls down her cheek with a low radiant hum continuity held: Vasilisa face lock AI-default; doll held against chest; cool blue light",
+          "image_prompt_start": "photoreal cinematic: of young Vasilisa tearful, clutching the wooden doll to her chest, soft window light, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: Her fingers tighten as a single tear rolls down her cheek.",
+          "video_prompt_start": "Static. tear rolls. chest rises. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Vasilisa face lock AI-default; doll held against chest; cool blue light.",
+          "video_prompt_end": "Static. tear rolls. chest rises. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Vasilisa face lock AI-default; doll held against chest; cool blue light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S06",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "pull-back",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "merchant_house_E1_prop",
+            "vasilisa_A3_fused"
+          ],
+          "ref_scope": "image1: the merchant-house design - a snow-covered Russian timber house with candlelit windows — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "slow pull-back"
+            ],
+            [
+              1.93,
+              3.5,
+              "dust motes drifting"
+            ]
+          ],
+          "narration_mk": "Кога мајката си отиде, куќата остана празна и тивка.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide pull-back of the dimmed merchant house interior, shroud of mourning, cold morning light, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "Pull-back reveals Vasilisa small and alone in the vast quiet room",
+          "continuity": "House interior palette; muted greys and blue morning light",
+          "motion": "slow pull-back; dust motes drifting",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide pull-back of the dimmed merchant house interior, shroud of mourning, cold morning light, photoreal cinematic, Diablo2/WoW/StarCraft grade Vasilisa slender, heroine, in dress, wreathed in golden glow then slow pull-back, then dust motes drifting settling into pull-back reveals Vasilisa small and alone in the vast quiet room with a low radiant hum continuity held: House interior palette; muted greys and blue morning light",
+          "image_prompt_start": "photoreal cinematic: wide of the dimmed merchant house interior, shroud of mourning, cold morning light, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: reveals Vasilisa small and alone in the vast quiet room.",
+          "video_prompt_start": "Slow pull-back. dust motes drifting. The beat resolves into the next matching frame. Continuity held: House interior palette; muted greys and blue morning light.",
+          "video_prompt_end": "Slow pull-back. dust motes drifting. The beat resolves into the next matching frame. Continuity held: House interior palette; muted greys and blue morning light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S07",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "stepmother_A6_fused",
+            "stepsisters_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Stepmother - a stern, envious woman in dark Russian garments — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Stepsisters - two spoiled, haughty young women in costly clothes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "lateral track"
+            ],
+            [
+              1.93,
+              3.5,
+              "the group crosses the courtyard"
+            ]
+          ],
+          "narration_mk": "Годините минаа, а таткото се прежени со една строга жена што носеше две разгалени ќерки.",
+          "dialogue_mk": "",
+          "kf_first": "Wide tracking shot of the merchant's new wife arriving with her two spoiled daughters, fine fur coats, servants carrying trunks, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "The stepmother sweeps past Vasilisa as the daughters smirk, snow in the air",
+          "continuity": "New characters introduced: stepmother and sisters; winter exterior palette",
+          "motion": "lateral track as the group crosses the courtyard",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide tracking shot of the merchant's new wife arriving with her two spoiled daughters, fine fur coats, servants carrying trunks, photoreal cinematic, Diablo2/WoW/StarCraft grade Stepmother slender, trickster, in dress, cloak, wreathed in shadow smoke Stepsisters slender, child, in dress then lateral track, then the group crosses the courtyard settling into the stepmother sweeps past Vasilisa as the daughters smirk, snow in the air with shadows whisper continuity held: New characters introduced: stepmother and sisters; winter exterior palette",
+          "image_prompt_start": "photoreal cinematic: of the merchant's new wife arriving with her two spoiled daughters, fine fur coats, servants carrying trunks, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: The stepmother sweeps past Vasilisa as the daughters smirk, snow in the air.",
+          "video_prompt_start": "Lateral track. the group crosses the courtyard. The beat resolves into the next matching frame. Continuity held: New characters introduced: stepmother and sisters; winter exterior palette.",
+          "video_prompt_end": "Lateral track. the group crosses the courtyard. The beat resolves into the next matching frame. Continuity held: New characters introduced: stepmother and sisters; winter exterior palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S08",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "stepmother_A6_fused",
+            "stepsisters_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Stepmother - a stern, envious woman in dark Russian garments — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Stepsisters - two spoiled, haughty young women in costly clothes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "contemptuous glances"
+            ]
+          ],
+          "narration_mk": "Новите домаќинки гледаа со презир на сè наоколу.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the stepmother and two stepsisters inside the warm house, sneering and inspecting, expensive winter dress, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "One sister flips her hair dismissively as the stepmother folds her arms",
+          "continuity": "Costumes from S07; warm interior versus their cold expressions",
+          "motion": "static; contemptuous glances",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the stepmother and two stepsisters inside the warm house, sneering and inspecting, expensive winter dress, photoreal cinematic, Diablo2/WoW/StarCraft grade Stepmother slender, trickster, in dress, cloak, wreathed in shadow smoke Stepsisters slender, child, in dress then static, then contemptuous glances settling into one sister flips her hair dismissively as the stepmother folds her arms with shadows whisper continuity held: Costumes from S07; warm interior versus their cold expressions",
+          "image_prompt_start": "photoreal cinematic: of the stepmother and two stepsisters inside the warm house, sneering and inspecting, expensive winter dress, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: One sister flips her hair dismissively as the stepmother folds her arms.",
+          "video_prompt_start": "Static. contemptuous glances. The beat resolves into the next matching frame. Continuity held: Costumes from S07; warm interior versus their cold expressions.",
+          "video_prompt_end": "Static. contemptuous glances. The beat resolves into the next matching frame. Continuity held: Costumes from S07; warm interior versus their cold expressions.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S09",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "vasilisa_A3_fused",
+            "stepsisters_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Stepsisters - two spoiled, haughty young women in costly clothes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "track following her labor"
+            ],
+            [
+              1.93,
+              3.5,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Сите најтешки домашни работи паднаа на плеќите на Василиса.",
+          "dialogue_mk": "",
+          "kf_first": "Wide of Vasilisa toiling alone carrying water pails up snowy steps, while the stepsisters lounge warm inside, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "She sets the pails down, breath fogging, glancing at the lit window",
+          "continuity": "Vasilisa in plain servant dress; sisters visible warm indoors; winter exterior",
+          "motion": "track following her labor",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide of Vasilisa toiling alone carrying water pails up snowy steps, while the stepsisters lounge warm inside, photoreal cinematic, Diablo2/WoW/StarCraft grade Vasilisa slender, heroine, in dress, wreathed in golden glow Stepsisters slender, child, in dress then track following her labor, then resolve settling into she sets the pails down, breath fogging, glancing at the lit window with a low radiant hum continuity held: Vasilisa in plain servant dress; sisters visible warm indoors; winter exterior",
+          "image_prompt_start": "photoreal cinematic: of Vasilisa toiling alone carrying water pails up snowy steps, while the stepsisters lounge warm inside, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: She sets the pails down, breath fogging, glancing at the lit window.",
+          "video_prompt_start": "Track following her labor. resolve. The beat resolves into the next matching frame. Continuity held: Vasilisa in plain servant dress; sisters visible warm indoors; winter exterior.",
+          "video_prompt_end": "Track following her labor. resolve. The beat resolves into the next matching frame. Continuity held: Vasilisa in plain servant dress; sisters visible warm indoors; winter exterior.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S10",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "over-shoulder",
+          "move": "shot-reverse",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "stepmother_A6_fused",
+            "vasilisa_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Stepmother - a stern, envious woman in dark Russian garments — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "shot-reverse between the two"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Маќеата не жалеше остри зборови за падорицата.",
+          "dialogue_mk": "",
+          "kf_first": "Over-shoulder reverse of the stepmother scolding Vasilisa, finger raised, firelight behind, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "Reverse to Vasilisa lowering her eyes, hands clasped, patient and still",
+          "continuity": "Hearth lit interior; stepmother and Vasilisa costumes",
+          "motion": "shot-reverse between the two",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: over-shoulder reverse of the stepmother scolding Vasilisa, finger raised, firelight behind, photoreal cinematic, Diablo2/WoW/StarCraft grade Stepmother slender, trickster, in dress, cloak, wreathed in shadow smoke Vasilisa slender, heroine, in dress, wreathed in golden glow then shot-reverse between the two, then resolve settling into reverse to Vasilisa lowering her eyes, hands clasped, patient and still with shadows whisper, a low radiant hum continuity held: Hearth lit interior; stepmother and Vasilisa costumes",
+          "image_prompt_start": "photoreal cinematic: Over-shoulder reverse of the stepmother scolding Vasilisa, finger raised, firelight behind, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: Reverse to Vasilisa lowering her eyes, hands clasped, patient and still.",
+          "video_prompt_start": "Shot-reverse between the two. resolve. The beat resolves into the next matching frame. Continuity held: Hearth lit interior; stepmother and Vasilisa costumes.",
+          "video_prompt_end": "Shot-reverse between the two. resolve. The beat resolves into the next matching frame. Continuity held: Hearth lit interior; stepmother and Vasilisa costumes.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S11",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "father_A5_fused",
+            "vasilisa_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Merchant Father - a bearded Russian merchant in a travel cloak — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "father turns to Vasilisa"
+            ]
+          ],
+          "narration_mk": "Една вечер таткото објави дека заминува на долг трговски пат.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the bearded merchant father addressing the family by the fire, travel cloak in hand, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "He clasps Vasilisa's hands in reassurance as the women look on coldly",
+          "continuity": "Family gathered; firelit room; father's cloak added",
+          "motion": "static; father turns to Vasilisa",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the bearded merchant father addressing the family by the fire, travel cloak in hand, photoreal cinematic, Diablo2/WoW/StarCraft grade Father robed, elder, in beard, cloak Vasilisa slender, heroine, in dress, wreathed in golden glow then static, then father turns to Vasilisa settling into he clasps Vasilisa's hands in reassurance as the women look on coldly with a low radiant hum continuity held: Family gathered; firelit room; father's cloak added",
+          "image_prompt_start": "photoreal cinematic: of the bearded merchant father addressing the family by the fire, travel cloak in hand, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: He clasps Vasilisa's hands in reassurance as the women look on coldly.",
+          "video_prompt_start": "Static. father turns to Vasilisa. The beat resolves into the next matching frame. Continuity held: Family gathered; firelit room; father's cloak added.",
+          "video_prompt_end": "Static. father turns to Vasilisa. The beat resolves into the next matching frame. Continuity held: Family gathered; firelit room; father's cloak added.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S12",
+          "shot_type": "BOSS-ONLY",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "merchant_house_E1_prop",
+            "forest_E2_prop"
+          ],
+          "ref_scope": "image1: the merchant-house design - a snow-covered Russian timber house with candlelit windows — 100% identical; studio bg/pose/light NOT used; image2: the dark-forest design - towering birch trees with an ominous green glow deep within — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "subject identity",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "crane-down"
+            ],
+            [
+              1.93,
+              3.5,
+              "forest shadow deepens"
+            ]
+          ],
+          "narration_mk": "Целото семејство се пресели во куќа на самиот раб на темната шума.",
+          "dialogue_mk": "",
+          "kf_first": "High crane-down wide of a timber house at the edge of a dark, looming forest, luggage stacked outside, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "Crane settles revealing the dense shadowed treeline crowding the yard",
+          "continuity": "New house exterior; ominous forest introduced",
+          "motion": "crane-down; forest shadow deepens",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high crane-down wide of a timber house at the edge of a dark, looming forest, luggage stacked outside, photoreal cinematic, Diablo2/WoW/StarCraft grade then crane-down, then forest shadow deepens settling into crane settles revealing the dense shadowed treeline crowding the yard with leaves rustle continuity held: New house exterior; ominous forest introduced",
+          "image_prompt_start": "photoreal cinematic: High wide of a timber house at the edge of a dark, looming forest, luggage stacked outside, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: Crane revealing the dense shadowed treeline crowding the yard.",
+          "video_prompt_start": "Crane-down. forest shadow deepens. The action plays out at full force and lands in a held, readable end pose. Continuity held: New house exterior; ominous forest introduced.",
+          "video_prompt_end": "Crane-down. forest shadow deepens. The action plays out at full force and lands in a held, readable end pose. Continuity held: New house exterior; ominous forest introduced.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S13",
+          "shot_type": "BOSS-ONLY",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-left",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "forest_E2_prop"
+          ],
+          "ref_scope": "image1: the dark-forest design - towering birch trees with an ominous green glow deep within — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "subject identity",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "slow pan-left"
+            ],
+            [
+              1.65,
+              3.0,
+              "ravens scatter"
+            ]
+          ],
+          "narration_mk": "За таа шума се шушкаше дека е дом на ужасната вештерка Баба Јага.",
+          "dialogue_mk": "",
+          "kf_first": "Wide pan-left across the dark forest at twilight, twisted birch trees, distant ravens lifting from the canopy, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "Pan settles on a faint, unnatural green glow deep between the trees",
+          "continuity": "Forest menace; cold twilight palette; ravens",
+          "motion": "slow pan-left; ravens scatter",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide pan-left across the dark forest at twilight, twisted birch trees, distant ravens lifting from the canopy, photoreal cinematic, Diablo2/WoW/StarCraft grade then slow pan-left, then ravens scatter settling into pan settles on a faint, unnatural green glow deep between the trees with leaves rustle continuity held: Forest menace; cold twilight palette; ravens",
+          "image_prompt_start": "photoreal cinematic: -left across the dark forest at twilight, twisted birch trees, distant ravens lifting from the canopy, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: on a faint, unnatural green glow deep between the trees.",
+          "video_prompt_start": "Slow pan-left. ravens scatter. The action plays out at full force and lands in a held, readable end pose. Continuity held: Forest menace; cold twilight palette; ravens.",
+          "video_prompt_end": "Slow pan-left. ravens scatter. The action plays out at full force and lands in a held, readable end pose. Continuity held: Forest menace; cold twilight palette; ravens.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S14",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "vasilisa_A3_fused",
+            "doll_A2_fused",
+            "forest_E2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Magic Doll - a small carved wooden doll with a warm glow — 100% identical; studio bg/pose/light NOT used; image3: the dark-forest design - towering birch trees with an ominous green glow deep within — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "slow push-in on her eyes"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Гледајќи кон шумата, Василиса ја стегна куклата како талисман.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of Vasilisa at the window, the doll pressed in her hands, dread and courage mingled, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "Push-in on her eyes reflecting the distant forest glow",
+          "continuity": "Vasilisa and doll continuity; window light; green glow reflection",
+          "motion": "slow push-in on her eyes",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of Vasilisa at the window, the doll pressed in her hands, dread and courage mingled, photoreal cinematic, Diablo2/WoW/StarCraft grade Vasilisa slender, heroine, in dress, wreathed in golden glow Doll slender, divine, wreathed in golden glow, holy aura then slow push-in on her eyes, then resolve settling into push-in on her eyes reflecting the distant forest glow with a low radiant hum, leaves rustle continuity held: Vasilisa and doll continuity; window light; green glow reflection",
+          "image_prompt_start": "photoreal cinematic: of Vasilisa at the window, the doll pressed in her hands, dread and courage mingled, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: on her eyes reflecting the distant forest glow.",
+          "video_prompt_start": "Slow push-in on her eyes. resolve. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Vasilisa and doll continuity; window light; green glow reflection.",
+          "video_prompt_end": "Slow push-in on her eyes. resolve. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Vasilisa and doll continuity; window light; green glow reflection.",
+          "motion_intensity": "gentle"
+        }
+      ],
+      "location_ref": "merchant_house_and_dark_forest_edge",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#1a2a4a",
+        "#f59e0b",
+        "#2dd4bf"
+      ],
+      "light_direction": "key light from screen-left, warm candlelight over cool blue snow-dusk",
+      "time_of_day": "dusk"
+    },
+    {
+      "id": "act2",
+      "num": "Act II",
+      "title": "Искушението",
+      "color": "#f59e0b",
+      "pct": 50,
+      "synopsis": "Василиса е испратена по оган кај Баба Јага; преживува со куклата, служи верно, добива стап со череп и ја победува злобата на маќеата и посестрите.",
+      "shots": [
+        {
+          "id": "S15",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "stepmother_A6_fused",
+            "stepsisters_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Stepmother - a stern, envious woman in dark Russian garments — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Stepsisters - two spoiled, haughty young women in costly clothes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "plotting glances"
+            ]
+          ],
+          "narration_mk": "Маќеата, сакајќи да се ослободи од Василиса, смисли опасен план.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the stepmother conspiring beside the cold hearth, her two daughters leaning in, scheming smiles, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "She gestures toward the dead embers, eyes glinting in the dim",
+          "continuity": "Stepfamily costumes; dark hearth room at night",
+          "motion": "static; plotting glances",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the stepmother conspiring beside the cold hearth, her two daughters leaning in, scheming smiles, photoreal cinematic, Diablo2/WoW/StarCraft grade Stepmother slender, trickster, in dress, cloak, wreathed in shadow smoke Stepsisters slender, child, in dress then static, then plotting glances settling into she gestures toward the dead embers, eyes glinting in the dim with shadows whisper continuity held: Stepfamily costumes; dark hearth room at night",
+          "image_prompt_start": "photoreal cinematic: of the stepmother conspiring beside the cold hearth, her two daughters leaning in, scheming smiles, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: She gestures toward the dead embers, eyes glinting in the dim.",
+          "video_prompt_start": "Static. plotting glances. The beat resolves into the next matching frame. Continuity held: Stepfamily costumes; dark hearth room at night.",
+          "video_prompt_end": "Static. plotting glances. The beat resolves into the next matching frame. Continuity held: Stepfamily costumes; dark hearth room at night.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S16",
+          "shot_type": "BOSS-ONLY",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "pull-back",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "merchant_house_E1_prop"
+          ],
+          "ref_scope": "image1: the merchant-house design - a snow-covered Russian timber house with candlelit windows — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "subject identity",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "macro pull-back"
+            ],
+            [
+              1.65,
+              3.0,
+              "a last ember dies"
+            ]
+          ],
+          "narration_mk": "Огништето беше намерно згаснато – без искра, без оган.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of a cold stone hearth, ash and dead embers, no flame, night shadows, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "Pull-back to show the whole barren room, the family waiting in the dark",
+          "continuity": "Hearth from S15; cold grey palette",
+          "motion": "macro pull-back; a last ember dies",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of a cold stone hearth, ash and dead embers, no flame, night shadows, photoreal cinematic, Diablo2/WoW/StarCraft grade then macro pull-back, then a last ember dies settling into pull-back to show the whole barren room, the family waiting in the dark continuity held: Hearth from S15; cold grey palette",
+          "image_prompt_start": "photoreal cinematic: Macro insert of a cold stone hearth, ash and dead embers, no flame, night shadows, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: to show the whole barren room, the family waiting in the dark.",
+          "video_prompt_start": "Macro pull-back. a last ember dies. The action plays out at full force and lands in a held, readable end pose. Continuity held: Hearth from S15; cold grey palette.",
+          "video_prompt_end": "Macro pull-back. a last ember dies. The action plays out at full force and lands in a held, readable end pose. Continuity held: Hearth from S15; cold grey palette.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S17",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "stepmother_A6_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Stepmother - a stern, envious woman in dark Russian garments — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "authoritative gesture"
+            ]
+          ],
+          "narration_mk": "„Оди во шумата кај Баба Јага и донеси оган.“ – нареди маќеата.",
+          "dialogue_mk": "Маќеата: „Оди во шумата и донеси оган, па додека можеш.“",
+          "kf_first": "Low-angle medium of the stepmother commanding, her shadow huge on the wall behind her, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "Her finger points toward the door and the night forest beyond",
+          "continuity": "Stepfamily room; dramatic shadow; doorway to night",
+          "motion": "static; authoritative gesture",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of the stepmother commanding, her shadow huge on the wall behind her, photoreal cinematic, Diablo2/WoW/StarCraft grade Stepmother slender, trickster, in dress, cloak, wreathed in shadow smoke then static, then authoritative gesture settling into her finger points toward the door and the night forest beyond with shadows whisper a voice speaks in Macedonian: \"Маќеата: „Оди во шумата и донеси оган, па додека можеш.“\" continuity held: Stepfamily room; dramatic shadow; doorway to night",
+          "image_prompt_start": "photoreal cinematic: medium of the stepmother commanding, her shadow huge on the wall behind her, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: Her finger points toward the door and the night forest beyond.",
+          "video_prompt_start": "Static. authoritative gesture. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Маќеата: „Оди во шумата и донеси оган, па додека можеш.“\" Continuity held: Stepfamily room; dramatic shadow; doorway to night.",
+          "video_prompt_end": "Static. authoritative gesture. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Маќеата: „Оди во шумата и донеси оган, па додека можеш.“\" Continuity held: Stepfamily room; dramatic shadow; doorway to night.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S18",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "vasilisa_A3_fused",
+            "doll_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Magic Doll - a small carved wooden doll with a warm glow — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "determined breath"
+            ]
+          ],
+          "narration_mk": "Василиса ја грабна својата кукла и, без збор, тргна кон шумата.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of Vasilisa lifting her chin with quiet resolve, the wooden doll clutched at her chest, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "She pulls her shawl tight and steps toward the door, eyes steady",
+          "continuity": "Vasilisa resolved; doll; shawl added",
+          "motion": "static; determined breath",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of Vasilisa lifting her chin with quiet resolve, the wooden doll clutched at her chest, photoreal cinematic, Diablo2/WoW/StarCraft grade Vasilisa slender, heroine, in dress, wreathed in golden glow Doll slender, divine, wreathed in golden glow, holy aura then static, then determined breath settling into she pulls her shawl tight and steps toward the door, eyes steady with a low radiant hum continuity held: Vasilisa resolved; doll; shawl added",
+          "image_prompt_start": "photoreal cinematic: of Vasilisa lifting her chin with quiet resolve, the wooden doll clutched at her chest, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: She pulls her shawl tight and steps toward the door, eyes steady.",
+          "video_prompt_start": "Static. determined breath. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Vasilisa resolved; doll; shawl added.",
+          "video_prompt_end": "Static. determined breath. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Vasilisa resolved; doll; shawl added.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S19",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "vasilisa_A3_fused",
+            "forest_E2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used; image2: the dark-forest design - towering birch trees with an ominous green glow deep within — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "track forward with her"
+            ],
+            [
+              1.93,
+              3.5,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Таа потона во темната шума, меѓу високи стебла што го голтаа месечниот сјај.",
+          "dialogue_mk": "",
+          "kf_first": "Wide tracking shot of Vasilisa entering the dark forest alone, moonlight shafts through bare branches, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "The trees crowd closer behind her, swallowing the path in shadow",
+          "continuity": "Forest from S13; moonlight; Vasilisa in shawl",
+          "motion": "track forward with her",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide tracking shot of Vasilisa entering the dark forest alone, moonlight shafts through bare branches, photoreal cinematic, Diablo2/WoW/StarCraft grade Vasilisa slender, heroine, in dress, wreathed in golden glow then track forward with her, then resolve settling into the trees crowd closer behind her, swallowing the path in shadow with a low radiant hum, leaves rustle continuity held: Forest from S13; moonlight; Vasilisa in shawl",
+          "image_prompt_start": "photoreal cinematic: of Vasilisa entering the dark forest alone, moonlight shafts through bare branches, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: The trees crowd closer behind her, swallowing the path in shadow.",
+          "video_prompt_start": "Track forward with her. resolve. The beat resolves into the next matching frame. Continuity held: Forest from S13; moonlight; Vasilisa in shawl.",
+          "video_prompt_end": "Track forward with her. resolve. The beat resolves into the next matching frame. Continuity held: Forest from S13; moonlight; Vasilisa in shawl.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S20",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "vasilisa_A3_fused",
+            "forest_E2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used; image2: the dark-forest design - towering birch trees with an ominous green glow deep within — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "track"
+            ],
+            [
+              1.93,
+              3.5,
+              "she startles"
+            ]
+          ],
+          "narration_mk": "Секој крцот и сенка ѝ се чинеше како нешто што демне.",
+          "dialogue_mk": "",
+          "kf_first": "Medium track beside Vasilisa walking through fog-draped undergrowth, shifting shadows between trunks, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "A branch snaps and she whips her head around, breath visible in the cold",
+          "continuity": "Forest undergrowth; cold fog palette",
+          "motion": "track; she startles",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium track beside Vasilisa walking through fog-draped undergrowth, shifting shadows between trunks, photoreal cinematic, Diablo2/WoW/StarCraft grade Vasilisa slender, heroine, in dress, wreathed in golden glow then track, then she startles settling into a branch snaps and she whips her head around, breath visible in the cold with a low radiant hum, leaves rustle continuity held: Forest undergrowth; cold fog palette",
+          "image_prompt_start": "photoreal cinematic: beside Vasilisa walking through fog-draped undergrowth, shifting shadows between trunks, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: A branch snaps and she whips her head around, breath visible in the cold.",
+          "video_prompt_start": "Track. she startles. The beat resolves into the next matching frame. Continuity held: Forest undergrowth; cold fog palette.",
+          "video_prompt_end": "Track. she startles. The beat resolves into the next matching frame. Continuity held: Forest undergrowth; cold fog palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S21",
+          "shot_type": "BOSS-ONLY",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "doll_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Magic Doll - a small carved wooden doll with a warm glow — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "subject identity",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "macro push-in"
+            ],
+            [
+              1.65,
+              3.0,
+              "glow pulses"
+            ]
+          ],
+          "narration_mk": "Во нејзиниот џеб, куклата тихо сјаеше, бодрејќи ја да продолжи.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of the wooden doll nestled in Vasilisa's pocket, faint warm glow pulsing in its eyes, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "The glow brightens briefly, like a heartbeat of courage",
+          "continuity": "Doll close continuity; warm glow versus cold blue forest",
+          "motion": "macro push-in; glow pulses",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of the wooden doll nestled in Vasilisa's pocket, faint warm glow pulsing in its eyes, photoreal cinematic, Diablo2/WoW/StarCraft grade Doll slender, divine, wreathed in golden glow, holy aura then macro push-in, then glow pulses settling into the glow brightens briefly, like a heartbeat of courage with a low radiant hum continuity held: Doll close continuity; warm glow versus cold blue forest",
+          "image_prompt_start": "photoreal cinematic: Macro insert of the wooden doll nestled in Vasilisa's pocket, faint warm glow pulsing in its eyes, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: The glow brightens briefly, like a heartbeat of courage.",
+          "video_prompt_start": "Macro push-in. glow pulses. The action plays out at full force and lands in a held, readable end pose. Continuity held: Doll close continuity; warm glow versus cold blue forest.",
+          "video_prompt_end": "Macro push-in. glow pulses. The action plays out at full force and lands in a held, readable end pose. Continuity held: Doll close continuity; warm glow versus cold blue forest.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S22",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "hut_B1_sheet"
+          ],
+          "ref_scope": "image1: the Baba Yaga hut sheet - the hut on giant chicken legs with bone-white walls and a skull fence — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "subject identity",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "static"
+            ],
+            [
+              1.93,
+              3.5,
+              "the hut shifts on its legs"
+            ]
+          ],
+          "narration_mk": "Пред неа се издигна колибата на Баба Јага – поставена на огромни пилешки нозе.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of Baba Yaga's hut rising on giant chicken legs, bone-white walls, skulls on the fence posts, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "The hut shifts its weight, the legs creaking as it turns to face her",
+          "continuity": "Baba Yaga hut design; skull fence; sickly green night glow",
+          "motion": "static; the hut shifts on its legs",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of Baba Yaga's hut rising on giant chicken legs, bone-white walls, skulls on the fence posts, photoreal cinematic, Diablo2/WoW/StarCraft grade then static, then the hut shifts on its legs settling into the hut shifts its weight, the legs creaking as it turns to face her continuity held: Baba Yaga hut design; skull fence; sickly green night glow",
+          "image_prompt_start": "photoreal cinematic: wide of Baba Yaga's hut rising on giant chicken legs, bone-white walls, skulls on the fence posts, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: The hut its weight, the legs creaking as it to face her.",
+          "video_prompt_start": "Static. the hut shifts on its legs. The beat resolves into the next matching frame. Continuity held: Baba Yaga hut design; skull fence; sickly green night glow.",
+          "video_prompt_end": "Static. the hut shifts on its legs. The beat resolves into the next matching frame. Continuity held: Baba Yaga hut design; skull fence; sickly green night glow.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S23",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "vasilisa_A3_fused",
+            "hut_B1_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used; image2: the Baba Yaga hut sheet - the hut on giant chicken legs with bone-white walls and a skull fence — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "subject identity",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "slow push-in on her eyes"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Василиса застана скаменета од страв, а срцето ѝ удираше како чекан.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of Vasilisa frozen, one hand to her mouth, staring up in terror at the hut, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "Push-in on her wide, trembling eyes reflecting the green glow",
+          "continuity": "Vasilisa terrified; hut looming behind; green palette",
+          "motion": "slow push-in on her eyes",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Vasilisa frozen, one hand to her mouth, staring up in terror at the hut, photoreal cinematic, Diablo2/WoW/StarCraft grade Vasilisa slender, heroine, in dress, wreathed in golden glow then slow push-in on her eyes, then resolve settling into push-in on her wide, trembling eyes reflecting the green glow with a low radiant hum continuity held: Vasilisa terrified; hut looming behind; green palette",
+          "image_prompt_start": "photoreal cinematic: of Vasilisa frozen, one hand to her mouth, staring up in terror at the hut, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: on her wide, trembling eyes reflecting the green glow.",
+          "video_prompt_start": "Slow push-in on her eyes. resolve. The beat resolves into the next matching frame. Continuity held: Vasilisa terrified; hut looming behind; green palette.",
+          "video_prompt_end": "Slow push-in on her eyes. resolve. The beat resolves into the next matching frame. Continuity held: Vasilisa terrified; hut looming behind; green palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S24",
+          "shot_type": "BOSS-ONLY",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "pan-left",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "hut_B1_sheet"
+          ],
+          "ref_scope": "image1: the Baba Yaga hut sheet - the hut on giant chicken legs with bone-white walls and a skull fence — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "subject identity",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "slow macro pan-left"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Ѕидовите беа од стара коска, а оградата – низа бели черепи.",
+          "dialogue_mk": "",
+          "kf_first": "Macro pan-left along the hut's bone-textured wall to the fence of pale skulls, each socket dark, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "Pan ends on a single skull, moss in its eye socket, faint mist drifting",
+          "continuity": "Hut texture; skull fence; misty green light",
+          "motion": "slow macro pan-left",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro pan-left along the hut's bone-textured wall to the fence of pale skulls, each socket dark, photoreal cinematic, Diablo2/WoW/StarCraft grade then slow macro pan-left, then resolve settling into pan ends on a single skull, moss in its eye socket, faint mist drifting continuity held: Hut texture; skull fence; misty green light",
+          "image_prompt_start": "photoreal cinematic: Macro -left along the hut's bone-textured wall to the fence of pale skulls, each socket dark, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: ends on a single skull, moss in its eye socket, faint mist drifting.",
+          "video_prompt_start": "Slow macro pan-left. resolve. The action plays out at full force and lands in a held, readable end pose. Continuity held: Hut texture; skull fence; misty green light.",
+          "video_prompt_end": "Slow macro pan-left. resolve. The action plays out at full force and lands in a held, readable end pose. Continuity held: Hut texture; skull fence; misty green light.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S25",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "vasilisa_A3_fused",
+            "hut_B1_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used; image2: the Baba Yaga hut sheet - the hut on giant chicken legs with bone-white walls and a skull fence — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "subject identity",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "knock connects"
+            ]
+          ],
+          "narration_mk": "Собирајќи ја сета храброст, Василиса стапна напред и тропна на вратата.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of Vasilisa stepping to the massive door, fist raised to knock, spine straight, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "Her small fist lands solidly and the echo rolls through the quiet",
+          "continuity": "Hut door; Vasilisa courage; green mist",
+          "motion": "static; knock connects",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Vasilisa stepping to the massive door, fist raised to knock, spine straight, photoreal cinematic, Diablo2/WoW/StarCraft grade Vasilisa slender, heroine, in dress, wreathed in golden glow then static, then knock connects settling into her small fist lands solidly and the echo rolls through the quiet with a low radiant hum continuity held: Hut door; Vasilisa courage; green mist",
+          "image_prompt_start": "photoreal cinematic: of Vasilisa stepping to the massive door, fist raised to knock, spine straight, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: Her small fist lands solidly and the echo rolls through the quiet.",
+          "video_prompt_start": "Static. knock connects. The beat resolves into the next matching frame. Continuity held: Hut door; Vasilisa courage; green mist.",
+          "video_prompt_end": "Static. knock connects. The beat resolves into the next matching frame. Continuity held: Hut door; Vasilisa courage; green mist.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S26",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pull-back",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "baba_yaga_A7_fused",
+            "vasilisa_A3_fused",
+            "hut_B1_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Baba Yaga - a fearsome witch with sharp features and iron jaw — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used; image3: the Baba Yaga hut sheet - the hut on giant chicken legs with bone-white walls and a skull fence — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "subject identity",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "door swings"
+            ],
+            [
+              1.93,
+              3.5,
+              "pull-back for scale"
+            ]
+          ],
+          "narration_mk": "Вратата се отвори со крцот, а на прагот застана самата вештерка.",
+          "dialogue_mk": "",
+          "kf_first": "Wide of the door swinging open to reveal Baba Yaga silhouetted in the threshold, green light, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "Pull-back frames Vasilisa tiny before the towering witch",
+          "continuity": "Baba Yaga introduced; doorway; scale contrast",
+          "motion": "door swings; pull-back for scale",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide of the door swinging open to reveal Baba Yaga silhouetted in the threshold, green light, photoreal cinematic, Diablo2/WoW/StarCraft grade Baba Yaga slender, mage, in cloak, hood, carrying staff, wreathed in shadow smoke, fire wisps Vasilisa slender, heroine, in dress, wreathed in golden glow then door swings, then pull-back for scale settling into pull-back frames Vasilisa tiny before the towering witch with arcane energy crackles, shadows whisper continuity held: Baba Yaga introduced; doorway; scale contrast",
+          "image_prompt_start": "photoreal cinematic: of the door swinging open to reveal Baba Yaga silhouetted in the threshold, green light, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: frames Vasilisa tiny before the towering witch.",
+          "video_prompt_start": "Door swings. pull-back for scale. The beat resolves into the next matching frame. Continuity held: Baba Yaga introduced; doorway; scale contrast.",
+          "video_prompt_end": "Door swings. pull-back for scale. The beat resolves into the next matching frame. Continuity held: Baba Yaga introduced; doorway; scale contrast.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S27",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "baba_yaga_A7_fused"
+          ],
+          "ref_scope": "image1: the fused master of Baba Yaga - a fearsome witch with sharp features and iron jaw — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "slow push-in on her eyes"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Очите на Баба Јага пробиваа како искри.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of Baba Yaga's sharp, weathered face, piercing pale eyes, iron jaw, stray grey hair, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "Push-in as her eyes narrow, studying the girl",
+          "continuity": "Baba Yaga face lock AI-default; harsh light",
+          "motion": "slow push-in on her eyes",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of Baba Yaga's sharp, weathered face, piercing pale eyes, iron jaw, stray grey hair, photoreal cinematic, Diablo2/WoW/StarCraft grade Baba Yaga slender, mage, in cloak, hood, carrying staff, wreathed in shadow smoke, fire wisps then slow push-in on her eyes, then resolve settling into push-in as her eyes narrow, studying the girl with arcane energy crackles, shadows whisper continuity held: Baba Yaga face lock AI-default; harsh light",
+          "image_prompt_start": "photoreal cinematic: of Baba Yaga's sharp, weathered face, piercing pale eyes, iron jaw, stray grey hair, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: as her eyes narrow, studying the girl.",
+          "video_prompt_start": "Slow push-in on her eyes. resolve. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Baba Yaga face lock AI-default; harsh light.",
+          "video_prompt_end": "Slow push-in on her eyes. resolve. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Baba Yaga face lock AI-default; harsh light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S28",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "over-shoulder",
+          "move": "shot-reverse",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "baba_yaga_A7_fused",
+            "vasilisa_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of Baba Yaga - a fearsome witch with sharp features and iron jaw — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "shot-reverse dialogue"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Василиса ѝ објасни зошто дошла – ѝ требаше оган за своето огниште.",
+          "dialogue_mk": "Василиса: „Дојдов да ве замолам за малку оган за нашиот дом.“",
+          "kf_first": "Over-shoulder of Baba Yaga listening to Vasilisa, both framed by the door, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "Reverse to Vasilisa speaking with her head bowed in respect",
+          "continuity": "Hut doorway; both characters; green glow",
+          "motion": "shot-reverse dialogue",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: over-shoulder of Baba Yaga listening to Vasilisa, both framed by the door, photoreal cinematic, Diablo2/WoW/StarCraft grade Baba Yaga slender, mage, in cloak, hood, carrying staff, wreathed in shadow smoke, fire wisps Vasilisa slender, heroine, in dress, wreathed in golden glow then shot-reverse dialogue, then resolve settling into reverse to Vasilisa speaking with her head bowed in respect with arcane energy crackles, shadows whisper a voice speaks in Macedonian: \"Василиса: „Дојдов да ве замолам за малку оган за нашиот дом.“\" continuity held: Hut doorway; both characters; green glow",
+          "image_prompt_start": "photoreal cinematic: Over-shoulder of Baba Yaga listening to Vasilisa, both framed by the door, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: Reverse to Vasilisa speaking with her head bowed in respect.",
+          "video_prompt_start": "Shot-reverse dialogue. resolve. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Василиса: „Дојдов да ве замолам за малку оган за нашиот дом.“\" Continuity held: Hut doorway; both characters; green glow.",
+          "video_prompt_end": "Shot-reverse dialogue. resolve. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Василиса: „Дојдов да ве замолам за малку оган за нашиот дом.“\" Continuity held: Hut doorway; both characters; green glow.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S29",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "baba_yaga_A7_fused",
+            "hut_B1_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Baba Yaga - a fearsome witch with sharp features and iron jaw — 100% identical; studio bg/pose/light NOT used; image2: the Baba Yaga hut sheet - the hut on giant chicken legs with bone-white walls and a skull fence — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "subject identity",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "smoke drifts"
+            ]
+          ],
+          "narration_mk": "„Ќе ти дадам што ти треба – ама прво ќе ми помогнеш во моите работи.“",
+          "dialogue_mk": "Баба Јага: „Ќе ти дадам оган, ама мора да останеш и да ми служиш.“",
+          "kf_first": "Medium of Baba Yaga pointing a long finger, eyes glinting, the hut interior alive around her, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "She holds the offer in the air between them, smoke curling past",
+          "continuity": "Hut interior introduced; brazier light",
+          "motion": "static; smoke drifts",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Baba Yaga pointing a long finger, eyes glinting, the hut interior alive around her, photoreal cinematic, Diablo2/WoW/StarCraft grade Baba Yaga slender, mage, in cloak, hood, carrying staff, wreathed in shadow smoke, fire wisps then static, then smoke drifts settling into she holds the offer in the air between them, smoke curling past with arcane energy crackles, shadows whisper a voice speaks in Macedonian: \"Баба Јага: „Ќе ти дадам оган, ама мора да останеш и да ми служиш.“\" continuity held: Hut interior introduced; brazier light",
+          "image_prompt_start": "photoreal cinematic: of Baba Yaga pointing a long finger, eyes glinting, the hut interior alive around her, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: She holds the offer in the air between them, smoke curling past.",
+          "video_prompt_start": "Static. smoke drifts. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Баба Јага: „Ќе ти дадам оган, ама мора да останеш и да ми служиш.“\" Continuity held: Hut interior introduced; brazier light.",
+          "video_prompt_end": "Static. smoke drifts. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Баба Јага: „Ќе ти дадам оган, ама мора да останеш и да ми служиш.“\" Continuity held: Hut interior introduced; brazier light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S30",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "vasilisa_A3_fused",
+            "hut_B1_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used; image2: the Baba Yaga hut sheet - the hut on giant chicken legs with bone-white walls and a skull fence — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "subject identity",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "track with her labor"
+            ],
+            [
+              1.93,
+              3.5,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Василиса кимна и се фати за работа – да мете, да готви и да чисти.",
+          "dialogue_mk": "",
+          "kf_first": "Wide of Vasilisa working inside the hut, sweeping the bone floor, huge hearth and hanging herbs behind, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "She moves steadily, dust swirling in the green light",
+          "continuity": "Hut interior; Vasilisa at work",
+          "motion": "track with her labor",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide of Vasilisa working inside the hut, sweeping the bone floor, huge hearth and hanging herbs behind, photoreal cinematic, Diablo2/WoW/StarCraft grade Vasilisa slender, heroine, in dress, wreathed in golden glow then track with her labor, then resolve settling into she moves steadily, dust swirling in the green light with a low radiant hum continuity held: Hut interior; Vasilisa at work",
+          "image_prompt_start": "photoreal cinematic: of Vasilisa working inside the hut, sweeping the bone floor, huge hearth and hanging herbs behind, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: She steadily, dust swirling in the green light.",
+          "video_prompt_start": "Track with her labor. resolve. The beat resolves into the next matching frame. Continuity held: Hut interior; Vasilisa at work.",
+          "video_prompt_end": "Track with her labor. resolve. The beat resolves into the next matching frame. Continuity held: Hut interior; Vasilisa at work.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S31",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "vasilisa_A3_fused",
+            "doll_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Magic Doll - a small carved wooden doll with a warm glow — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "slight magic shimmer"
+            ]
+          ],
+          "narration_mk": "Скришно, куклата ѝ помагаше – шепотејќи совети и завршувајќи ги тешките работи.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of Vasilisa at the great hearth, the small doll propped beside her whispering, a faint glow, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "The doll's eyes gleam as a spilled grain sweeps itself into a pile",
+          "continuity": "Doll helping; hearth; warm-green mix",
+          "motion": "static; slight magic shimmer",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Vasilisa at the great hearth, the small doll propped beside her whispering, a faint glow, photoreal cinematic, Diablo2/WoW/StarCraft grade Vasilisa slender, heroine, in dress, wreathed in golden glow Doll slender, divine, wreathed in golden glow, holy aura then static, then slight magic shimmer settling into the doll's eyes gleam as a spilled grain sweeps itself into a pile with a low radiant hum continuity held: Doll helping; hearth; warm-green mix",
+          "image_prompt_start": "photoreal cinematic: of Vasilisa at the great hearth, the small doll propped beside her whispering, a faint glow, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: The doll's eyes gleam as a spilled grain sweeps itself into a pile.",
+          "video_prompt_start": "Static. slight magic shimmer. The beat resolves into the next matching frame. Continuity held: Doll helping; hearth; warm-green mix.",
+          "video_prompt_end": "Static. slight magic shimmer. The beat resolves into the next matching frame. Continuity held: Doll helping; hearth; warm-green mix.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S32",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "baba_yaga_A7_fused"
+          ],
+          "ref_scope": "image1: the fused master of Baba Yaga - a fearsome witch with sharp features and iron jaw — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "subtle approving nod"
+            ]
+          ],
+          "narration_mk": "Баба Јага оддалеку гледаше и, задоволна, се насмевна.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of Baba Yaga watching from shadow, the ghost of an approving smile, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "Her stern eyes soften for a beat",
+          "continuity": "Baba Yaga; shadowy interior",
+          "motion": "static; subtle approving nod",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of Baba Yaga watching from shadow, the ghost of an approving smile, photoreal cinematic, Diablo2/WoW/StarCraft grade Baba Yaga slender, mage, in cloak, hood, carrying staff, wreathed in shadow smoke, fire wisps then static, then subtle approving nod settling into her stern eyes soften for a beat with arcane energy crackles, shadows whisper continuity held: Baba Yaga; shadowy interior",
+          "image_prompt_start": "photoreal cinematic: of Baba Yaga watching from shadow, the ghost of an approving smile, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: Her stern eyes soften for a beat.",
+          "video_prompt_start": "Static. subtle approving nod. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Baba Yaga; shadowy interior.",
+          "video_prompt_end": "Static. subtle approving nod. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Baba Yaga; shadowy interior.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S33",
+          "shot_type": "BOSS-ONLY",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-right",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "hut_B1_sheet",
+            "vasilisa_A3_fused"
+          ],
+          "ref_scope": "image1: the Baba Yaga hut sheet - the hut on giant chicken legs with bone-white walls and a skull fence — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "subject identity",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "slow pan-right"
+            ],
+            [
+              1.93,
+              3.5,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Седмиците минуваа брзо; колибата светеше чиста и уредна.",
+          "dialogue_mk": "",
+          "kf_first": "Wide pan-right montage of the tidy hut interior, swept floors, gleaming cauldrons, herbs hung neat, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "Pan lands on Vasilisa wiping her brow, the hut bright and orderly",
+          "continuity": "Hut interior transformed; satisfaction",
+          "motion": "slow pan-right",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide pan-right montage of the tidy hut interior, swept floors, gleaming cauldrons, herbs hung neat, photoreal cinematic, Diablo2/WoW/StarCraft grade Vasilisa slender, heroine, in dress, wreathed in golden glow then slow pan-right, then resolve settling into pan lands on Vasilisa wiping her brow, the hut bright and orderly with a low radiant hum continuity held: Hut interior transformed; satisfaction",
+          "image_prompt_start": "photoreal cinematic: -right montage of the tidy hut interior, swept floors, gleaming cauldrons, herbs hung neat, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: lands on Vasilisa wiping her brow, the hut bright and orderly.",
+          "video_prompt_start": "Slow pan-right. resolve. The action plays out at full force and lands in a held, readable end pose. Continuity held: Hut interior transformed; satisfaction.",
+          "video_prompt_end": "Slow pan-right. resolve. The action plays out at full force and lands in a held, readable end pose. Continuity held: Hut interior transformed; satisfaction.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S34",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "baba_yaga_A7_fused"
+          ],
+          "ref_scope": "image1: the fused master of Baba Yaga - a fearsome witch with sharp features and iron jaw — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "chest opens"
+            ]
+          ],
+          "narration_mk": "Задоволна од нејзиното однесување, вештерката реши да ја награди.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of Baba Yaga beckoning Vasilisa close with a rare, approving nod, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "She turns toward a dark chest, opening its lid with a creak",
+          "continuity": "Interior; chest introduced",
+          "motion": "static; chest opens",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Baba Yaga beckoning Vasilisa close with a rare, approving nod, photoreal cinematic, Diablo2/WoW/StarCraft grade Baba Yaga slender, mage, in cloak, hood, carrying staff, wreathed in shadow smoke, fire wisps then static, then chest opens settling into she turns toward a dark chest, opening its lid with a creak with arcane energy crackles, shadows whisper continuity held: Interior; chest introduced",
+          "image_prompt_start": "photoreal cinematic: of Baba Yaga beckoning Vasilisa close with a rare, approving nod, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: She toward a dark chest, opening its lid with a creak.",
+          "video_prompt_start": "Static. chest opens. The beat resolves into the next matching frame. Continuity held: Interior; chest introduced.",
+          "video_prompt_end": "Static. chest opens. The beat resolves into the next matching frame. Continuity held: Interior; chest introduced.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S35",
+          "shot_type": "BOSS-ONLY",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "staff_B2_sheet"
+          ],
+          "ref_scope": "image1: the skull staff sheet - a carved staff crowned with a skull whose eyes are two brilliant diamonds — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "subject identity",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "macro push-in"
+            ],
+            [
+              1.93,
+              3.5,
+              "diamond flare"
+            ]
+          ],
+          "narration_mk": "Од градите извади стап, а на неговиот врв – череп со два сјајни дијаманта за очи.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of a carved staff crowned with a small skull whose eyes are two brilliant diamonds, glittering, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "Push-in on the diamonds as they catch the green light and flare",
+          "continuity": "Skull staff prop introduced; diamond eyes",
+          "motion": "macro push-in; diamond flare",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of a carved staff crowned with a small skull whose eyes are two brilliant diamonds, glittering, photoreal cinematic, Diablo2/WoW/StarCraft grade then macro push-in, then diamond flare settling into push-in on the diamonds as they catch the green light and flare continuity held: Skull staff prop introduced; diamond eyes",
+          "image_prompt_start": "photoreal cinematic: Macro insert of a carved staff crowned with a small skull whose eyes are two brilliant diamonds, glittering, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: on the diamonds as they catch the green light and flare.",
+          "video_prompt_start": "Macro push-in. diamond flare. The action plays out at full force and lands in a held, readable end pose. Continuity held: Skull staff prop introduced; diamond eyes.",
+          "video_prompt_end": "Macro push-in. diamond flare. The action plays out at full force and lands in a held, readable end pose. Continuity held: Skull staff prop introduced; diamond eyes.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S36",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "baba_yaga_A7_fused",
+            "vasilisa_A3_fused",
+            "staff_B2_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Baba Yaga - a fearsome witch with sharp features and iron jaw — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used; image3: the skull staff sheet - a carved staff crowned with a skull whose eyes are two brilliant diamonds — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "subject identity",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "hands meet"
+            ]
+          ],
+          "narration_mk": "„Ова ќе ти даде оган. Покажи им го на маќеата и на посестрите.“",
+          "dialogue_mk": "Баба Јага: „Земи го. Кога ќе биде потребно, покажи го – ќе добиеш оган.“",
+          "kf_first": "Medium of Baba Yaga placing the skull staff into Vasilisa's hands, the diamonds glinting, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "Vasilisa accepts, cradling the staff with reverence",
+          "continuity": "Staff handoff; both characters",
+          "motion": "static; hands meet",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Baba Yaga placing the skull staff into Vasilisa's hands, the diamonds glinting, photoreal cinematic, Diablo2/WoW/StarCraft grade Baba Yaga slender, mage, in cloak, hood, carrying staff, wreathed in shadow smoke, fire wisps Vasilisa slender, heroine, in dress, wreathed in golden glow then static, then hands meet settling into vasilisa accepts, cradling the staff with reverence with arcane energy crackles, shadows whisper a voice speaks in Macedonian: \"Баба Јага: „Земи го. Кога ќе биде потребно, покажи го – ќе добиеш оган.“\" continuity held: Staff handoff; both characters",
+          "image_prompt_start": "photoreal cinematic: of Baba Yaga placing the skull staff into Vasilisa's hands, the diamonds glinting, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: Vasilisa accepts, cradling the staff with reverence.",
+          "video_prompt_start": "Static. hands meet. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Баба Јага: „Земи го. Кога ќе биде потребно, покажи го – ќе добиеш оган.“\" Continuity held: Staff handoff; both characters.",
+          "video_prompt_end": "Static. hands meet. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Баба Јага: „Земи го. Кога ќе биде потребно, покажи го – ќе добиеш оган.“\" Continuity held: Staff handoff; both characters.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S37",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "vasilisa_A3_fused",
+            "staff_B2_sheet",
+            "forest_E2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used; image2: the skull staff sheet - a carved staff crowned with a skull whose eyes are two brilliant diamonds — 100% identical; studio bg/pose/light NOT used; image3: the dark-forest design - towering birch trees with an ominous green glow deep within — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "subject identity",
+            "prop design",
+            "palette",
+            "light direction"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "track following her"
+            ],
+            [
+              1.93,
+              3.5,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Со стапот во рака, Василиса се упати назад низ шумата – кон дома.",
+          "dialogue_mk": "",
+          "kf_first": "Wide tracking shot of Vasilisa leaving the hut and striding through the moonlit forest, the skull staff glowing, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "The hut recedes behind as she follows the path home",
+          "continuity": "Vasilisa with staff; forest path; moonlight",
+          "motion": "track following her",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide tracking shot of Vasilisa leaving the hut and striding through the moonlit forest, the skull staff glowing, photoreal cinematic, Diablo2/WoW/StarCraft grade Vasilisa slender, heroine, in dress, wreathed in golden glow then track following her, then resolve settling into the hut recedes behind as she follows the path home with a low radiant hum, leaves rustle continuity held: Vasilisa with staff; forest path; moonlight",
+          "image_prompt_start": "photoreal cinematic: of Vasilisa leaving the hut and striding through the moonlit forest, the skull staff glowing, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: The hut recedes behind as she the path home.",
+          "video_prompt_start": "Track following her. resolve. The beat resolves into the next matching frame. Continuity held: Vasilisa with staff; forest path; moonlight.",
+          "video_prompt_end": "Track following her. resolve. The beat resolves into the next matching frame. Continuity held: Vasilisa with staff; forest path; moonlight.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S38",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "vasilisa_A3_fused",
+            "stepmother_A6_fused",
+            "stepsisters_A1_fused",
+            "staff_B2_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Stepmother - a stern, envious woman in dark Russian garments — 100% identical; studio bg/pose/light NOT used; image3: the fused master of the Stepsisters - two spoiled, haughty young women in costly clothes — 100% identical; studio bg/pose/light NOT used; image4: the skull staff sheet - a carved staff crowned with a skull whose eyes are two brilliant diamonds — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "subject identity",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "the women leer"
+            ]
+          ],
+          "narration_mk": "Кога стигна, на вратата ја чекаа маќеата и двете посестри.",
+          "dialogue_mk": "",
+          "kf_first": "Wide of Vasilisa arriving at the timber house where the stepmother and two sisters wait, arms crossed, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "The three women look at the staff with hunger and suspicion",
+          "continuity": "House exterior at night; stepfamily",
+          "motion": "static; the women leer",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide of Vasilisa arriving at the timber house where the stepmother and two sisters wait, arms crossed, photoreal cinematic, Diablo2/WoW/StarCraft grade Vasilisa slender, heroine, in dress, wreathed in golden glow Stepmother slender, trickster, in dress, cloak, wreathed in shadow smoke Stepsisters slender, child, in dress then static, then the women leer settling into the three women look at the staff with hunger and suspicion with a low radiant hum, shadows whisper continuity held: House exterior at night; stepfamily",
+          "image_prompt_start": "photoreal cinematic: of Vasilisa arriving at the timber house where the stepmother and two sisters wait, arms crossed, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: The three women look at the staff with hunger and suspicion.",
+          "video_prompt_start": "Static. the women leer. The beat resolves into the next matching frame. Continuity held: House exterior at night; stepfamily.",
+          "video_prompt_end": "Static. the women leer. The beat resolves into the next matching frame. Continuity held: House exterior at night; stepfamily.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S39",
+          "shot_type": "WIDE",
+          "size": "LOW",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "vasilisa_A3_fused",
+            "staff_B2_sheet",
+            "stepmother_A6_fused",
+            "stepsisters_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used; image2: the skull staff sheet - a carved staff crowned with a skull whose eyes are two brilliant diamonds — 100% identical; studio bg/pose/light NOT used; image3: the fused master of the Stepmother - a stern, envious woman in dark Russian garments — 100% identical; studio bg/pose/light NOT used; image4: the fused master of the Stepsisters - two spoiled, haughty young women in costly clothes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "subject identity",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "low-angle push-in"
+            ],
+            [
+              1.65,
+              3.0,
+              "light intensifies"
+            ]
+          ],
+          "narration_mk": "Василиса го крена стапот високо кон трите жени.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle shot of Vasilisa raising the skull staff toward the three women, diamonds igniting, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "Push-in as the diamond eyes burst into blinding white-gold light",
+          "continuity": "Staff raised; night sky; light builds",
+          "motion": "low-angle push-in; light intensifies",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle shot of Vasilisa raising the skull staff toward the three women, diamonds igniting, photoreal cinematic, Diablo2/WoW/StarCraft grade Vasilisa slender, heroine, in dress, wreathed in golden glow Stepmother slender, trickster, in dress, cloak, wreathed in shadow smoke Stepsisters slender, child, in dress then low-angle push-in, then light intensifies settling into push-in as the diamond eyes burst into blinding white-gold light with a low radiant hum, shadows whisper continuity held: Staff raised; night sky; light builds",
+          "image_prompt_start": "photoreal cinematic: shot of Vasilisa raising the skull staff toward the three women, diamonds igniting, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: as the diamond eyes burst into blinding white-gold light.",
+          "video_prompt_start": "Low-angle push-in. light intensifies. The beat resolves into the next matching frame. Continuity held: Staff raised; night sky; light builds.",
+          "video_prompt_end": "Low-angle push-in. light intensifies. The beat resolves into the next matching frame. Continuity held: Staff raised; night sky; light builds.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S40",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "pull-back",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "staff_B2_sheet",
+            "stepmother_A6_fused",
+            "stepsisters_A1_fused"
+          ],
+          "ref_scope": "image1: the skull staff sheet - a carved staff crowned with a skull whose eyes are two brilliant diamonds — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Stepmother - a stern, envious woman in dark Russian garments — 100% identical; studio bg/pose/light NOT used; image3: the fused master of the Stepsisters - two spoiled, haughty young women in costly clothes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "subject identity",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "high-angle pull-back"
+            ],
+            [
+              1.93,
+              3.5,
+              "radiant flash"
+            ]
+          ],
+          "narration_mk": "Очите на черепот светнаа толку силно што светлината ги победи трите жени.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of a blazing white-gold radiance swallowing the courtyard, the three women shielding their eyes, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "Pull-back as the light recedes, leaving only drifting embers and silence",
+          "continuity": "Light consumed the stepfamily; child-safe defeat, no gore",
+          "motion": "high-angle pull-back; radiant flash",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of a blazing white-gold radiance swallowing the courtyard, the three women shielding their eyes, photoreal cinematic, Diablo2/WoW/StarCraft grade Stepmother slender, trickster, in dress, cloak, wreathed in shadow smoke Stepsisters slender, child, in dress then high-angle pull-back, then radiant flash settling into pull-back as the light recedes, leaving only drifting embers and silence with shadows whisper continuity held: Light consumed the stepfamily; child-safe defeat, no gore",
+          "image_prompt_start": "photoreal cinematic: wide of a blazing white-gold radiance swallowing the courtyard, the three women shielding their eyes, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: as the light recedes, leaving only drifting embers and silence.",
+          "video_prompt_start": "High-angle pull-back. radiant flash. The beat resolves into the next matching frame. Continuity held: Light consumed the stepfamily; child-safe defeat, no gore.",
+          "video_prompt_end": "High-angle pull-back. radiant flash. The beat resolves into the next matching frame. Continuity held: Light consumed the stepfamily; child-safe defeat, no gore.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "dark_forest_and_baba_yaga_hut",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#14532d",
+        "#65a30d",
+        "#f59e0b"
+      ],
+      "light_direction": "key light from screen-right, sickly green moon-glow over cold night",
+      "time_of_day": "night"
+    },
+    {
+      "id": "act3",
+      "num": "Act III",
+      "title": "Нов живот",
+      "color": "#a78bfa",
+      "pct": 22,
+      "synopsis": "Бегство во градот, вештината на генијална шивачка, препознавање од царот и величествената венчавка со саканата кукла крај неа.",
+      "shots": [
+        {
+          "id": "S41",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "vasilisa_A3_fused",
+            "staff_B2_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used; image2: the skull staff sheet - a carved staff crowned with a skull whose eyes are two brilliant diamonds — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "subject identity",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "track"
+            ],
+            [
+              1.93,
+              3.5,
+              "she runs"
+            ]
+          ],
+          "narration_mk": "Исплашена од сè што се случи, Василиса побегна низ ноќта.",
+          "dialogue_mk": "",
+          "kf_first": "Medium track of Vasilisa running through the night, shawl flying, tears on her cheeks, skull staff dimmed, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "She glances back once, then presses on toward the distant lights",
+          "continuity": "Vasilisa fleeing; night; distant town lights",
+          "motion": "track; she runs",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium track of Vasilisa running through the night, shawl flying, tears on her cheeks, skull staff dimmed, photoreal cinematic, Diablo2/WoW/StarCraft grade Vasilisa slender, heroine, in dress, wreathed in golden glow then track, then she runs settling into she glances back once, then presses on toward the distant lights with a low radiant hum continuity held: Vasilisa fleeing; night; distant town lights",
+          "image_prompt_start": "photoreal cinematic: of Vasilisa running through the night, shawl flying, tears on her cheeks, skull staff dimmed, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: She glances back once, then presses on toward the distant lights.",
+          "video_prompt_start": "Track. she runs. The beat resolves into the next matching frame. Continuity held: Vasilisa fleeing; night; distant town lights.",
+          "video_prompt_end": "Track. she runs. The beat resolves into the next matching frame. Continuity held: Vasilisa fleeing; night; distant town lights.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S42",
+          "shot_type": "BOSS-ONLY",
+          "size": "WIDE",
+          "angle": "crane-up",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "vasilisa_A3_fused",
+            "city_E3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used; image2: the great-city design - white towers and golden domes at dawn — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "subject identity",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "crane-up"
+            ],
+            [
+              1.93,
+              3.5,
+              "day breaks"
+            ]
+          ],
+          "narration_mk": "Стигна во големиот град, под неговите бели кули и златни покриви.",
+          "dialogue_mk": "",
+          "kf_first": "Crane-up wide of Vasilisa arriving at the gates of a grand Russian city, white towers and golden domes, dawn breaking, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "Crane rises over the walls revealing the bustling city waking in golden light",
+          "continuity": "New setting: city; dawn palette from night",
+          "motion": "crane-up; day breaks",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: crane-up wide of Vasilisa arriving at the gates of a grand Russian city, white towers and golden domes, dawn breaking, photoreal cinematic, Diablo2/WoW/StarCraft grade Vasilisa slender, heroine, in dress, wreathed in golden glow then crane-up, then day breaks settling into crane rises over the walls revealing the bustling city waking in golden light with a low radiant hum continuity held: New setting: city; dawn palette from night",
+          "image_prompt_start": "photoreal cinematic: of Vasilisa arriving at the gates of a grand Russian city, white towers and golden domes, dawn breaking, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: Crane over the walls revealing the bustling city waking in golden light.",
+          "video_prompt_start": "Crane-up. day breaks. The action plays out at full force and lands in a held, readable end pose. Continuity held: New setting: city; dawn palette from night.",
+          "video_prompt_end": "Crane-up. day breaks. The action plays out at full force and lands in a held, readable end pose. Continuity held: New setting: city; dawn palette from night.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S43",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "seamstress_A8_fused",
+            "vasilisa_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Old Seamstress - a kind, skilled old woman — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "welcoming gesture"
+            ]
+          ],
+          "narration_mk": "Една добра старица, вешта шивачка, ја прими под својот покрив.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of a kind old seamstress welcoming Vasilisa into a cozy room full of fabrics and thread, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "The old woman places a warm hand on Vasilisa's shoulder with a smile",
+          "continuity": "Old seamstress introduced; warm interior",
+          "motion": "static; welcoming gesture",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of a kind old seamstress welcoming Vasilisa into a cozy room full of fabrics and thread, photoreal cinematic, Diablo2/WoW/StarCraft grade Seamstress slender, elder, in dress, cloak Vasilisa slender, heroine, in dress, wreathed in golden glow then static, then welcoming gesture settling into the old woman places a warm hand on Vasilisa's shoulder with a smile with a low radiant hum continuity held: Old seamstress introduced; warm interior",
+          "image_prompt_start": "photoreal cinematic: of a kind old seamstress welcoming Vasilisa into a cozy room full of fabrics and thread, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: The old woman places a warm hand on Vasilisa's shoulder with a smile.",
+          "video_prompt_start": "Static. welcoming gesture. The beat resolves into the next matching frame. Continuity held: Old seamstress introduced; warm interior.",
+          "video_prompt_end": "Static. welcoming gesture. The beat resolves into the next matching frame. Continuity held: Old seamstress introduced; warm interior.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S44",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "vasilisa_A3_fused",
+            "doll_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Magic Doll - a small carved wooden doll with a warm glow — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "static"
+            ],
+            [
+              1.93,
+              3.5,
+              "hands sew steadily"
+            ]
+          ],
+          "narration_mk": "Со куклата секогаш покрај себе, Василиса шиеше ден и ноќ.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of Vasilisa sewing by candlelight, the wooden doll propped beside her, bolts of cloth around, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "Needle glints as the doll's eyes gleam in approval",
+          "continuity": "Doll and sewing tools; warm candle palette",
+          "motion": "static; hands sew steadily",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Vasilisa sewing by candlelight, the wooden doll propped beside her, bolts of cloth around, photoreal cinematic, Diablo2/WoW/StarCraft grade Vasilisa slender, heroine, in dress, wreathed in golden glow Doll slender, divine, wreathed in golden glow, holy aura then static, then hands sew steadily settling into needle glints as the doll's eyes gleam in approval with a low radiant hum continuity held: Doll and sewing tools; warm candle palette",
+          "image_prompt_start": "photoreal cinematic: of Vasilisa sewing by candlelight, the wooden doll propped beside her, bolts of cloth around, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: Needle glints as the doll's eyes gleam in approval.",
+          "video_prompt_start": "Static. hands sew steadily. The beat resolves into the next matching frame. Continuity held: Doll and sewing tools; warm candle palette.",
+          "video_prompt_end": "Static. hands sew steadily. The beat resolves into the next matching frame. Continuity held: Doll and sewing tools; warm candle palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S45",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "vasilisa_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "macro push-in"
+            ],
+            [
+              1.65,
+              3.0,
+              "thread glints"
+            ]
+          ],
+          "narration_mk": "Нејзините везови станаа толку фини што сите ги споредуваа со чуда.",
+          "dialogue_mk": "",
+          "kf_first": "Macro close-up of exquisite golden embroidery taking shape under Vasilisa's needle, rich thread, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "Push-in on the finished pattern, gleaming like woven starlight",
+          "continuity": "Embroidery detail; warm light",
+          "motion": "macro push-in; thread glints",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro close-up of exquisite golden embroidery taking shape under Vasilisa's needle, rich thread, photoreal cinematic, Diablo2/WoW/StarCraft grade Vasilisa slender, heroine, in dress, wreathed in golden glow then macro push-in, then thread glints settling into push-in on the finished pattern, gleaming like woven starlight with a low radiant hum continuity held: Embroidery detail; warm light",
+          "image_prompt_start": "photoreal cinematic: Macro close-up of exquisite golden embroidery taking shape under Vasilisa's needle, rich thread, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: on the finished pattern, gleaming like woven starlight.",
+          "video_prompt_start": "Macro push-in. thread glints. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Embroidery detail; warm light.",
+          "video_prompt_end": "Macro push-in. thread glints. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Embroidery detail; warm light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S46",
+          "shot_type": "BOSS-ONLY",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "tsar_A9_fused",
+            "palace_E4_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Tsar - a regal young ruler who admires and loves Vasilisa — 100% identical; studio bg/pose/light NOT used; image2: the palace design - a grand hall with golden columns and opulent wedding light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "subject identity",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "crane-down"
+            ],
+            [
+              1.93,
+              3.5,
+              "cloth unfurls"
+            ]
+          ],
+          "narration_mk": "Гласот за нејзините изработки стигна и до самиот царски дворец.",
+          "dialogue_mk": "",
+          "kf_first": "Crane-down wide of the Tsar's grand palace hall, golden columns, servants bearing fine embroidered cloths for display, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "Crane settles on the Tsar's throne as the fabrics are unfurled before him",
+          "continuity": "Palace introduced; opulent gold palette",
+          "motion": "crane-down; cloth unfurls",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: crane-down wide of the Tsar's grand palace hall, golden columns, servants bearing fine embroidered cloths for display, photoreal cinematic, Diablo2/WoW/StarCraft grade then crane-down, then cloth unfurls settling into crane settles on the Tsar's throne as the fabrics are unfurled before him with stone groans continuity held: Palace introduced; opulent gold palette",
+          "image_prompt_start": "photoreal cinematic: of the Tsar's grand palace hall, golden columns, servants bearing fine embroidered cloths for display, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: Crane on the Tsar's throne as the fabrics are unfurled before him.",
+          "video_prompt_start": "Crane-down. cloth unfurls. The action plays out at full force and lands in a held, readable end pose. Continuity held: Palace introduced; opulent gold palette.",
+          "video_prompt_end": "Crane-down. cloth unfurls. The action plays out at full force and lands in a held, readable end pose. Continuity held: Palace introduced; opulent gold palette.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S47",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "tsar_A9_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Tsar - a regal young ruler who admires and loves Vasilisa — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "he gestures to courtiers"
+            ]
+          ],
+          "narration_mk": "Царот им се восхитуваше на изработките и посака да ја запознае шивачката.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the young Tsar stepping forward, wonder on his face as he touches the embroidered cloth, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "He turns to his court, commanding that the seamstress be summoned",
+          "continuity": "Tsar introduced; palace hall",
+          "motion": "static; he gestures to courtiers",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the young Tsar stepping forward, wonder on his face as he touches the embroidered cloth, photoreal cinematic, Diablo2/WoW/StarCraft grade then static, then he gestures to courtiers settling into he turns to his court, commanding that the seamstress be summoned continuity held: Tsar introduced; palace hall",
+          "image_prompt_start": "photoreal cinematic: of the young Tsar stepping forward, wonder on his face as he touches the embroidered cloth, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: He to his court, commanding that the seamstress be summoned.",
+          "video_prompt_start": "Static. he gestures to courtiers. The beat resolves into the next matching frame. Continuity held: Tsar introduced; palace hall.",
+          "video_prompt_end": "Static. he gestures to courtiers. The beat resolves into the next matching frame. Continuity held: Tsar introduced; palace hall.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S48",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "over-shoulder",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "tsar_A9_fused",
+            "vasilisa_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Tsar - a regal young ruler who admires and loves Vasilisa — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "push-in"
+            ],
+            [
+              1.93,
+              3.5,
+              "their eyes meet"
+            ]
+          ],
+          "narration_mk": "Кога ја виде убавата Василиса, царот во истиот миг се вљуби.",
+          "dialogue_mk": "",
+          "kf_first": "Over-shoulder medium of the Tsar gazing at Vasilisa, who curtsies in the golden light, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "Push-in on his softened face and her shy, radiant smile",
+          "continuity": "Both leads; palace glow",
+          "motion": "push-in; their eyes meet",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: over-shoulder medium of the Tsar gazing at Vasilisa, who curtsies in the golden light, photoreal cinematic, Diablo2/WoW/StarCraft grade Vasilisa slender, heroine, in dress, wreathed in golden glow then push-in, then their eyes meet settling into push-in on his softened face and her shy, radiant smile with a low radiant hum continuity held: Both leads; palace glow",
+          "image_prompt_start": "photoreal cinematic: Over-shoulder medium of the Tsar gazing at Vasilisa, who curtsies in the golden light, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: on his softened face and her shy, radiant smile.",
+          "video_prompt_start": "Push-in. their eyes meet. The beat resolves into the next matching frame. Continuity held: Both leads; palace glow.",
+          "video_prompt_end": "Push-in. their eyes meet. The beat resolves into the next matching frame. Continuity held: Both leads; palace glow.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S49",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "tsar_A9_fused",
+            "vasilisa_A3_fused",
+            "palace_E4_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Tsar - a regal young ruler who admires and loves Vasilisa — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used; image3: the palace design - a grand hall with golden columns and opulent wedding light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "crane-up"
+            ],
+            [
+              1.93,
+              3.5,
+              "petals fall"
+            ]
+          ],
+          "narration_mk": "Набрзо се одржа и величествената венчавка.",
+          "dialogue_mk": "",
+          "kf_first": "Wide crane-up of a grand wedding in the palace, guests in rich attire, candles and garlands, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "Crane rises to the vaulted ceiling as bells ring and petals fall",
+          "continuity": "Palace wedding; celebration palette",
+          "motion": "crane-up; petals fall",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide crane-up of a grand wedding in the palace, guests in rich attire, candles and garlands, photoreal cinematic, Diablo2/WoW/StarCraft grade Vasilisa slender, heroine, in dress, wreathed in golden glow then crane-up, then petals fall settling into crane rises to the vaulted ceiling as bells ring and petals fall with a low radiant hum, stone groans continuity held: Palace wedding; celebration palette",
+          "image_prompt_start": "photoreal cinematic: of a grand wedding in the palace, guests in rich attire, candles and garlands, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: Crane to the vaulted ceiling as bells ring and petals fall.",
+          "video_prompt_start": "Crane-up. petals fall. The beat resolves into the next matching frame. Continuity held: Palace wedding; celebration palette.",
+          "video_prompt_end": "Crane-up. petals fall. The beat resolves into the next matching frame. Continuity held: Palace wedding; celebration palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S50",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "pull-back",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "vasilisa_A3_fused",
+            "doll_A2_fused",
+            "father_A5_fused",
+            "seamstress_A8_fused"
+          ],
+          "ref_scope": "image1: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Magic Doll - a small carved wooden doll with a warm glow — 100% identical; studio bg/pose/light NOT used; image3: the fused master of the Merchant Father - a bearded Russian merchant in a travel cloak — 100% identical; studio bg/pose/light NOT used; image4: the fused master of the Old Seamstress - a kind, skilled old woman — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "pull-back"
+            ],
+            [
+              1.93,
+              3.5,
+              "doll glows warmly"
+            ]
+          ],
+          "narration_mk": "Татко ѝ присуствуваше, како и старата шивачка... и, се разбира, саканата кукла.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of radiant Vasilisa in bridal white, the wooden doll held gently in her hands, her father and the seamstress beaming beside her, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "Pull-back frames the whole happy gathering, the doll's eyes glowing warm and content",
+          "continuity": "Full cast reunion; warm celebratory light",
+          "motion": "pull-back; doll glows warmly",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of radiant Vasilisa in bridal white, the wooden doll held gently in her hands, her father and the seamstress beaming beside her, photoreal cinematic, Diablo2/WoW/StarCraft grade Vasilisa slender, heroine, in dress, wreathed in golden glow Doll slender, divine, wreathed in golden glow, holy aura Father robed, elder, in beard, cloak Seamstress slender, elder, in dress, cloak then pull-back, then doll glows warmly settling into pull-back frames the whole happy gathering, the doll's eyes glowing warm and content with a low radiant hum continuity held: Full cast reunion; warm celebratory light",
+          "image_prompt_start": "photoreal cinematic: of radiant Vasilisa in bridal white, the wooden doll held gently in her hands, her father and the seamstress beaming beside her, photoreal cinematic, Diablo2/WoW/StarCraft grade.",
+          "image_prompt_end": "photoreal cinematic: frames the whole happy gathering, the doll's eyes glowing warm and content.",
+          "video_prompt_start": "Pull-back. doll glows warmly. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Full cast reunion; warm celebratory light.",
+          "video_prompt_end": "Pull-back. doll glows warmly. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Full cast reunion; warm celebratory light.",
+          "motion_intensity": "gentle"
+        }
+      ],
+      "location_ref": "great_city_and_tsar_palace",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#fbbf24",
+        "#b45309",
+        "#1a2a4a"
+      ],
+      "light_direction": "radiant dawn key from above then golden palace light, screen-left",
+      "time_of_day": "dawn"
+    }
+  ],
+  "director_corrections": {
+    "issued": "2026-11-07",
+    "source": "KB §13 DIRECTOR CORRECTIONS — overrides all prior asset/keyframe guidance",
+    "rules": [
+      "DD HEADWEAR: no cap/hood/bandana/mask on head; hood = back-cowl only (cape-like); bare head + teal-blue glowing hair always visible; any head/face covering = REJECT",
+      "LEGENDARY WEAPONS MUST APPEAR: DD = twin Frostbite-class hand crossbows (ice-blue arcane crystal limbs, frost runes, frozen-light string, teal-blue glow); AZ = Dawnbreaker-class greatsword (pale sunsteel, molten-gold runes, golden holy fire edge, sunburst crossguard); hero sheet/keyframe without weapon = INCOMPLETE",
+      "WEAPON ANTI-SLOP: fantasy construction only; crossbow must NEVER read as firearm (no barrel/magazine/stock/Uzi/SMG silhouette = REJECT); anti-slop negatives always appended",
+      "BOSS FACE: Mal'garot HAS a prolific molten-lava face (lava dripping/running, drops falling to ground); faceless boss sheets SUPERSEDED",
+      "LOCATION BRIGHTNESS FLOOR: environment plates silhouette-readable at thumbnail; no murk-dark grades"
+    ],
+    "applies_when": "Activates when face_lock changes from AI-default to an enrolled identity (DD/AZ). AI-default packages carry this as a forward constraint, not a current defect.",
+    "anti_slop_negatives": "firearm, gun, machinegun, Uzi, barrel, magazine, ammo clip, muzzle, modern weapon"
+  },
+  "character_designs": {
+    "vasilisa": {
+      "archetype": "heroine",
+      "build": "slender",
+      "scale": "human",
+      "palette": {
+        "primary": "#dc2626",
+        "secondary": "#f5e6c8",
+        "glow": "#fbbf24"
+      },
+      "costume": [
+        "dress"
+      ],
+      "props": [],
+      "fx": [
+        "golden_glow"
+      ]
+    },
+    "mother": {
+      "archetype": "elder",
+      "build": "slender",
+      "scale": "human",
+      "palette": {
+        "primary": "#f5e6c8",
+        "secondary": "#94a3b8",
+        "glow": "#e0f2fe"
+      },
+      "costume": [
+        "dress"
+      ],
+      "props": [],
+      "fx": [
+        "holy_aura"
+      ]
+    },
+    "father": {
+      "archetype": "elder",
+      "build": "robed",
+      "scale": "human",
+      "palette": {
+        "primary": "#78350f",
+        "secondary": "#d4af37",
+        "glow": "#f59e0b"
+      },
+      "costume": [
+        "beard",
+        "cloak"
+      ],
+      "props": [],
+      "fx": []
+    },
+    "stepmother": {
+      "archetype": "trickster",
+      "build": "slender",
+      "scale": "human",
+      "palette": {
+        "primary": "#581c87",
+        "secondary": "#a16207",
+        "glow": "#7f1d1d"
+      },
+      "costume": [
+        "dress",
+        "cloak"
+      ],
+      "props": [],
+      "fx": [
+        "shadow_smoke"
+      ]
+    },
+    "stepsisters": {
+      "archetype": "child",
+      "build": "slender",
+      "scale": "human",
+      "palette": {
+        "primary": "#9d174d",
+        "secondary": "#f59e0b",
+        "glow": "#fda4af"
+      },
+      "costume": [
+        "dress"
+      ],
+      "props": [],
+      "fx": []
+    },
+    "baba_yaga": {
+      "archetype": "mage",
+      "build": "slender",
+      "scale": "human",
+      "palette": {
+        "primary": "#1a2a1f",
+        "secondary": "#365314",
+        "glow": "#f97316"
+      },
+      "costume": [
+        "cloak",
+        "hood"
+      ],
+      "props": [
+        "staff"
+      ],
+      "fx": [
+        "shadow_smoke",
+        "fire_wisps"
+      ]
+    },
+    "doll": {
+      "archetype": "divine",
+      "build": "slender",
+      "scale": "human",
+      "palette": {
+        "primary": "#b45309",
+        "secondary": "#fbbf24",
+        "glow": "#fde68a"
+      },
+      "costume": [],
+      "props": [],
+      "fx": [
+        "golden_glow",
+        "holy_aura"
+      ]
+    },
+    "seamstress": {
+      "archetype": "elder",
+      "build": "slender",
+      "scale": "human",
+      "palette": {
+        "primary": "#7c2d12",
+        "secondary": "#f5e6c8",
+        "glow": "#fbbf24"
+      },
+      "costume": [
+        "dress",
+        "cloak"
+      ],
+      "props": [],
+      "fx": []
+    },
+    "tsar": {
+      "archetype": "monarch",
+      "build": "robed",
+      "scale": "human",
+      "palette": {
+        "primary": "#b91c1c",
+        "secondary": "#d4af37",
+        "glow": "#fbbf24"
+      },
+      "costume": [
+        "crown",
+        "cloak"
+      ],
+      "props": [],
+      "fx": [
+        "golden_glow",
+        "divine_glow"
+      ]
+    },
+    "merchant_house": {
+      "motif": "hall",
+      "tone": "#f59e0b"
+    },
+    "forest": {
+      "motif": "forest",
+      "tone": "#14532d"
+    },
+    "city": {
+      "motif": "gate",
+      "tone": "#64748b"
+    },
+    "palace": {
+      "motif": "spires",
+      "tone": "#d4af37"
+    }
+  }
+}

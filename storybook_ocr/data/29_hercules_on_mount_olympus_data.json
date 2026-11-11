@@ -1,0 +1,2649 @@
+{
+  "num": "29",
+  "title_mk": "Херкул на планината Олимп",
+  "title_en": "Hercules on Mount Olympus",
+  "genre": "Легенда · епска акција",
+  "logline": "Завршувајќи ги дванаесетте подвизи, Херкул го врзува Кербер и се искачува на Олимп, каде ја добива својата вистинска награда — место меѓу боговите и божицата на младоста.",
+  "spec": {
+    "aspect": "16:9",
+    "resolution": "1216x704",
+    "fps": 24,
+    "model": "model-agnostic (chosen at generation)",
+    "style": "photoreal",
+    "flf": true,
+    "language": "mk",
+    "shot_floor": 40,
+    "shot_max": 60,
+    "seed_policy": "fixed-per-shot (same seed → reproducible shot; re-roll per shot id)",
+    "style_anchor": [
+      "Diablo 2 cinematic",
+      "World of Warcraft cinematic",
+      "StarCraft cinematic"
+    ],
+    "negative_prompt": "deformed, extra limbs, morphing, watermark, text, static frame, blurry, low quality, cropped head, cut-off face",
+    "frames": 121,
+    "frames_fallback": 81,
+    "routes": [
+      {
+        "model": "Wan2.1-FLF2V-14B-720P",
+        "input": "start+end native (run START-ONLY)",
+        "status": "WORKING (lead for 14B quality)"
+      },
+      {
+        "model": "Kandinsky 6.0 Lite/Pro",
+        "input": "start-image-only",
+        "status": "WORKING (Pro-distill untested at scale)"
+      },
+      {
+        "model": "SkyReels-V3 R2V-14B",
+        "input": "start-image-only",
+        "status": "WORKING (fallback)"
+      },
+      {
+        "model": "LTX-Video 2B v0.9.5",
+        "input": "start-image-only",
+        "status": "WORKING (small/fast, low ceiling)"
+      },
+      {
+        "model": "Mochi-1",
+        "input": "start-image-only",
+        "status": "untested here"
+      },
+      {
+        "model": "LTX-2.3 22B distilled",
+        "input": "start-image-only",
+        "status": "DEAD (nanobind native-crash, 42 note)"
+      }
+    ],
+    "model_note": "Model chosen per story at generation (43 §4). Keyframes + continuation prompts are generator-agnostic; only the render command differs per model."
+  },
+  "cast": [
+    {
+      "role": "Херкул / Hercules",
+      "trait": "Силниот полубог со лавовска кожа и клава",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Евристеј / Eurystheus",
+      "trait": "Плашлив крал кој издава задачи",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Ладон / Ladon",
+      "trait": "Огромниот змијски чувар на градината",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Кербер / Cerberus",
+      "trait": "Триглавото куче чувар на Подземјето",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Зевс / Zeus",
+      "trait": "Таткото на Херкул, крал на Олимп",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Хеба / Hebe",
+      "trait": "Божицата на младоста, невестата",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    }
+  ],
+  "acts": [
+    {
+      "id": "act1",
+      "num": "Act I",
+      "title": "Заложба",
+      "color": "#2dd4bf",
+      "pct": 30,
+      "synopsis": "Евристеј му ја задава задачата за златните јаболка; Херкул ја наоѓа скриената градина и се соочува со чуварот.",
+      "shots": [
+        {
+          "id": "S01",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "hercules_A1_fused",
+            "palace_E1_prop"
+          ],
+          "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image2: the Tiryns-palace design - white marble palace, olive groves and paved courtyards — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "slow crane-down toward the hero"
+            ],
+            [
+              1.93,
+              3.5,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Во зенитот на својата слава, Херкул доби уште еден необичен налог.",
+          "dialogue_mk": "",
+          "kf_first": "Aerial establishing view over the white marble palace of Tiryns at golden hour, olive groves and dust roads, a lone heroic figure striding through the gates, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Crane-down as the tall muscular hero pauses in the paved courtyard, lion-skin cloak swaying, long shadows stretching",
+          "continuity": "Warm Aegean light, ancient Greek stone architecture",
+          "motion": "slow crane-down toward the hero",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: aerial establishing view over the white marble palace of Tiryns at golden hour, olive groves and dust roads, a lone heroic figure striding through the gates Hercules towering, titan, in lion skin cloak, carrying club, wreathed in golden glow then slow crane-down toward the hero, then resolve settling into crane-down as the tall muscular hero pauses in the paved courtyard, lion-skin cloak swaying, long shadows stretching with a low radiant hum, stone groans continuity held: Warm Aegean light, ancient Greek stone architecture",
+          "image_prompt_start": "photoreal cinematic: establishing view over the white marble palace of Tiryns at golden hour, olive groves and dust roads, a lone heroic figure striding through the gates.",
+          "image_prompt_end": "photoreal cinematic: as the tall muscular hero pauses in the paved courtyard, lion-skin cloak swaying, long shadows stretching.",
+          "video_prompt_start": "Slow crane-down toward the hero. resolve. The beat resolves into the next matching frame. Continuity held: Warm Aegean light, ancient Greek stone architecture.",
+          "video_prompt_end": "Slow crane-down toward the hero. resolve. The beat resolves into the next matching frame. Continuity held: Warm Aegean light, ancient Greek stone architecture.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S02",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "eurystheus_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of King Eurystheus - the cowardly king in purple robes, thin and twitchy — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "slow push-in on the king's face"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Од балконот на својата палата, Евристеј го гледаше со мешавина од страв и презир.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the nervous king Eurystheus clutching a scroll on a stone balcony, thin frame draped in purple robes, eyes narrowed, photoreal",
+          "kf_last": "Push-in on his twitching face as he leans forward, knuckles white around the marble rail",
+          "continuity": "Hercules seen far below in courtyard from S01",
+          "motion": "slow push-in on the king's face",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the nervous king Eurystheus clutching a scroll on a stone balcony, thin frame draped in purple robes, eyes narrowed, photoreal Eurystheus thin, coward, in purple robes, crown then slow push-in on the king's face, then resolve settling into push-in on his twitching face as he leans forward, knuckles white around the marble rail continuity held: Hercules seen far below in courtyard from S01",
+          "image_prompt_start": "photoreal cinematic: of the nervous king Eurystheus clutching a scroll on a stone balcony, thin frame draped in purple robes, eyes narrowed, photoreal.",
+          "image_prompt_end": "photoreal cinematic: on his twitching face as he leans forward, knuckles white around the marble rail.",
+          "video_prompt_start": "Slow push-in on the king's face. resolve. The beat resolves into the next matching frame. Continuity held: Hercules seen far below in courtyard from S01.",
+          "video_prompt_end": "Slow push-in on the king's face. resolve. The beat resolves into the next matching frame. Continuity held: Hercules seen far below in courtyard from S01.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S03",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "scroll_K1_prop"
+          ],
+          "ref_scope": "image1: the royal-scroll design - a wax-sealed parchment painted with golden apples — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.38,
+              "slight scroll-unroll motion"
+            ],
+            [
+              1.38,
+              2.5,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Меѓу прстите му беше испишана наредбата за златните јаболка.",
+          "dialogue_mk": "",
+          "kf_first": "Close insert of a wax-sealed scroll unrolling to reveal painted golden apples on a gnarled tree, candlelight flicker",
+          "kf_last": "The seal breaks and the apples painted in gold leaf seem to glow",
+          "continuity": "Warm candle palette, prop detail continuity",
+          "motion": "slight scroll-unroll motion",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close insert of a wax-sealed scroll unrolling to reveal painted golden apples on a gnarled tree, candlelight flicker then slight scroll-unroll motion, then resolve the camera static settling into the seal breaks and the apples painted in gold leaf seem to glow continuity held: Warm candle palette, prop detail continuity",
+          "image_prompt_start": "photoreal cinematic: insert of a wax-sealed scroll unrolling to reveal painted golden apples on a gnarled tree, candlelight flicker.",
+          "image_prompt_end": "photoreal cinematic: The seal breaks and the apples painted in gold leaf seem to glow.",
+          "video_prompt_start": "Slight scroll-unroll motion. resolve. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Warm candle palette, prop detail continuity.",
+          "video_prompt_end": "Slight scroll-unroll motion. resolve. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Warm candle palette, prop detail continuity.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S04",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "eurystheus_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of King Eurystheus - the cowardly king in purple robes, thin and twitchy — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "emphatic hand gesture"
+            ],
+            [
+              1.65,
+              3.0,
+              "robe billow"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Евристеј: „Сега ги сакам златните јаболка од Градината на Хесперидите.“",
+          "kf_first": "Low-angle medium of king Eurystheus barking his command from the balcony, finger pointed downward at the hero, storm clouds gathering behind him",
+          "kf_last": "The king slams his fist on the railing, face flushed with envy",
+          "continuity": "Same purple robe and balcony; darker storm light entering",
+          "motion": "emphatic hand gesture, robe billow",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of king Eurystheus barking his command from the balcony, finger pointed downward at the hero, storm clouds gathering behind him Eurystheus thin, coward, in purple robes, crown then emphatic hand gesture, then robe billow the camera static settling into the king slams his fist on the railing, face flushed with envy a voice speaks in Macedonian: \"Евристеј: „Сега ги сакам златните јаболка од Градината на Хесперидите.“\" continuity held: Same purple robe and balcony; darker storm light entering",
+          "image_prompt_start": "photoreal cinematic: medium of king Eurystheus barking his command from the balcony, finger pointed downward at the hero, storm clouds gathering behind him.",
+          "image_prompt_end": "photoreal cinematic: The king slams his fist on the railing, face flushed with envy.",
+          "video_prompt_start": "Emphatic hand gesture. robe billow. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Евристеј: „Сега ги сакам златните јаболка од Градината на Хесперидите.“\" Continuity held: Same purple robe and balcony; darker storm light entering.",
+          "video_prompt_end": "Emphatic hand gesture. robe billow. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Евристеј: „Сега ги сакам златните јаболка од Градината на Хесперидите.“\" Continuity held: Same purple robe and balcony; darker storm light entering.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S05",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "hercules_A1_fused",
+            "club_K2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image2: the club design - Hercules massive knotted olive-wood club — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "wind in cloak"
+            ],
+            [
+              1.65,
+              3.0,
+              "subtle nod"
+            ]
+          ],
+          "narration_mk": "Во дворот, Херкул ја крена главата без трепкање.",
+          "dialogue_mk": "",
+          "kf_first": "Wide low-angle of Hercules standing firm below, massive club resting on his shoulder, golden hour storm sky, face in calm resolve",
+          "kf_last": "He nods once, the lion-skin cloak catching the rising wind",
+          "continuity": "Hero costume, club and Nemean lion cloak established",
+          "motion": "wind in cloak, subtle nod",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide low-angle of Hercules standing firm below, massive club resting on his shoulder, golden hour storm sky, face in calm resolve Hercules towering, titan, in lion skin cloak, carrying club, wreathed in golden glow then wind in cloak, then subtle nod the camera static settling into he nods once, the lion-skin cloak catching the rising wind with a low radiant hum continuity held: Hero costume, club and Nemean lion cloak established",
+          "image_prompt_start": "photoreal cinematic: low-angle of Hercules standing firm below, massive club resting on his shoulder, golden hour storm sky, face in calm resolve.",
+          "image_prompt_end": "photoreal cinematic: He nods once, the lion-skin cloak catching the rising wind.",
+          "video_prompt_start": "Wind in cloak. subtle nod. The camera static. The beat resolves into the next matching frame. Continuity held: Hero costume, club and Nemean lion cloak established.",
+          "video_prompt_end": "Wind in cloak. subtle nod. The camera static. The beat resolves into the next matching frame. Continuity held: Hero costume, club and Nemean lion cloak established.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S06",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "hercules_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "crane-up reveal"
+            ],
+            [
+              1.93,
+              3.5,
+              "mist parting"
+            ]
+          ],
+          "narration_mk": "Градината беше скриена светиња, но нозете веќе го водеа по патот.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle travelling shot over a winding coastal cliff path, the hero a small moving figure among cypress, distant glittering sea",
+          "kf_last": "Crane-up to reveal a hidden valley beyond mist, a garden of impossible golden light",
+          "continuity": "Continuing journey; palette shifts to emerald and gold",
+          "motion": "crane-up reveal, mist parting",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle travelling shot over a winding coastal cliff path, the hero a small moving figure among cypress, distant glittering sea Hercules towering, titan, in lion skin cloak, carrying club, wreathed in golden glow then crane-up reveal, then mist parting settling into crane-up to reveal a hidden valley beyond mist, a garden of impossible golden light with a low radiant hum continuity held: Continuing journey; palette shifts to emerald and gold",
+          "image_prompt_start": "photoreal cinematic: travelling shot over a winding coastal cliff path, the hero a small moving figure among cypress, distant glittering sea.",
+          "image_prompt_end": "photoreal cinematic: to reveal a hidden valley beyond mist, a garden of impossible golden light.",
+          "video_prompt_start": "Crane-up reveal. mist parting. The beat resolves into the next matching frame. Continuity held: Continuing journey; palette shifts to emerald and gold.",
+          "video_prompt_end": "Crane-up reveal. mist parting. The beat resolves into the next matching frame. Continuity held: Continuing journey; palette shifts to emerald and gold.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S07",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "hercules_A1_fused",
+            "garden_E2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image2: the Hesperides-garden design - a hidden jewel orchard where apples shine like lanterns — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "track right"
+            ],
+            [
+              1.93,
+              3.5,
+              "leaves part"
+            ]
+          ],
+          "narration_mk": "Зад златната завеса од лисја се криеше градината посветена на Хера.",
+          "dialogue_mk": "",
+          "kf_first": "Wide track of Hercules pushing aside a curtain of silver-green leaves, revealing an orchard where apples shine like lanterns",
+          "kf_last": "He steps fully into the garden, golden fruit reflecting in his eyes",
+          "continuity": "Same hero; transition to jewel garden light",
+          "motion": "track right as leaves part",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide track of Hercules pushing aside a curtain of silver-green leaves, revealing an orchard where apples shine like lanterns Hercules towering, titan, in lion skin cloak, carrying club, wreathed in golden glow then track right, then leaves part settling into he steps fully into the garden, golden fruit reflecting in his eyes with a low radiant hum, leaves stir continuity held: Same hero; transition to jewel garden light",
+          "image_prompt_start": "photoreal cinematic: of Hercules pushing aside a curtain of silver-green leaves, revealing an orchard where apples shine like lanterns.",
+          "image_prompt_end": "photoreal cinematic: He steps fully into the garden, golden fruit reflecting in his eyes.",
+          "video_prompt_start": "Track right. leaves part. The beat resolves into the next matching frame. Continuity held: Same hero; transition to jewel garden light.",
+          "video_prompt_end": "Track right. leaves part. The beat resolves into the next matching frame. Continuity held: Same hero; transition to jewel garden light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S08",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "apples_K4_prop"
+          ],
+          "ref_scope": "image1: the golden-apple design - radiant golden apples glowing with inner light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.38,
+              "subtle pulsing glow"
+            ],
+            [
+              1.38,
+              2.5,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Секое јаболко светеше со внатрешна жар.",
+          "dialogue_mk": "",
+          "kf_first": "Macro close of a single golden apple hanging from a gnarled branch, moisture beads, soft inner glow, photoreal",
+          "kf_last": "The apple's golden surface pulses faintly with warm light",
+          "continuity": "Jewel garden palette, prop continuity",
+          "motion": "subtle pulsing glow",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro close of a single golden apple hanging from a gnarled branch, moisture beads, soft inner glow, photoreal then subtle pulsing glow, then resolve the camera static settling into the apple's golden surface pulses faintly with warm light continuity held: Jewel garden palette, prop continuity",
+          "image_prompt_start": "photoreal cinematic: Macro close of a single golden apple hanging from a gnarled branch, moisture beads, soft inner glow, photoreal.",
+          "image_prompt_end": "photoreal cinematic: The apple's golden surface pulses faintly with warm light.",
+          "video_prompt_start": "Subtle pulsing glow. resolve. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Jewel garden palette, prop continuity.",
+          "video_prompt_end": "Subtle pulsing glow. resolve. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Jewel garden palette, prop continuity.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S09",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "hercules_A1_fused",
+            "club_K2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image2: the club design - Hercules massive knotted olive-wood club — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "slow club raise"
+            ],
+            [
+              1.65,
+              3.0,
+              "eyes tracking"
+            ]
+          ],
+          "narration_mk": "Но градината имаше свој чувар — и тој не спиеше.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of Hercules freezing mid-step, hand reaching toward the tree while his eyes dart sideways, alert pose",
+          "kf_last": "His muscles tense, club rising slowly as a long shadow slides across the grass toward him",
+          "continuity": "Tension rising; shadow introduces threat",
+          "motion": "slow club raise, eyes tracking",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Hercules freezing mid-step, hand reaching toward the tree while his eyes dart sideways, alert pose Hercules towering, titan, in lion skin cloak, carrying club, wreathed in golden glow then slow club raise, then eyes tracking the camera static settling into his muscles tense, club rising slowly as a long shadow slides across the grass toward him with a low radiant hum continuity held: Tension rising; shadow introduces threat",
+          "image_prompt_start": "photoreal cinematic: of Hercules freezing mid-step, hand reaching toward the tree while his eyes dart sideways, alert pose.",
+          "image_prompt_end": "photoreal cinematic: His muscles tense, club rising slowly as a long shadow slides across the grass toward him.",
+          "video_prompt_start": "Slow club raise. eyes tracking. The camera static. The beat resolves into the next matching frame. Continuity held: Tension rising; shadow introduces threat.",
+          "video_prompt_end": "Slow club raise. eyes tracking. The camera static. The beat resolves into the next matching frame. Continuity held: Tension rising; shadow introduces threat.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S10",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "ladon_A3_fused",
+            "apples_K4_prop"
+          ],
+          "ref_scope": "image1: the fused master of Ladon - the colossal serpent guardian with emerald armor-like scales — 100% identical; studio bg/pose/light NOT used; image2: the golden-apple design - radiant golden apples glowing with inner light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "slow serpent head sway"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Од сенката се изви своето огромно тело.",
+          "dialogue_mk": "",
+          "kf_first": "Wide low-angle of the colossal serpent Ladon rising from coiled shadow, scales like emerald armor, golden apples glinting above it",
+          "kf_last": "The serpent's head towers over the hero, forked tongue tasting the air",
+          "continuity": "Serpent Ladon introduced as guardian",
+          "motion": "slow serpent head sway",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide low-angle of the colossal serpent Ladon rising from coiled shadow, scales like emerald armor, golden apples glinting above it Ladon serpentine, guardian, in emerald scales, wreathed in venom drip then slow serpent head sway, then resolve the camera static settling into the serpent's head towers over the hero, forked tongue tasting the air with venom drips and hisses continuity held: Serpent Ladon introduced as guardian",
+          "image_prompt_start": "photoreal cinematic: low-angle of the colossal serpent Ladon rising from coiled shadow, scales like emerald armor, golden apples glinting above it.",
+          "image_prompt_end": "photoreal cinematic: The serpent's head towers over the hero, forked tongue tasting the air.",
+          "video_prompt_start": "Slow serpent head sway. resolve. The camera static. The beat resolves into the next matching frame. Continuity held: Serpent Ladon introduced as guardian.",
+          "video_prompt_end": "Slow serpent head sway. resolve. The camera static. The beat resolves into the next matching frame. Continuity held: Serpent Ladon introduced as guardian.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "tiryns_palace_and_hesperides_garden",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#eab308",
+        "#14532d",
+        "#f8fafc"
+      ],
+      "light_direction": "key light from screen-left, warm golden-hour Aegean sun",
+      "time_of_day": "day"
+    },
+    {
+      "id": "act2",
+      "num": "Act II",
+      "title": "Пресврт",
+      "color": "#f59e0b",
+      "pct": 40,
+      "synopsis": "Херкул го совладува Ладон, ја слуша наредбата за Кербер и слегува во Подземјето да се соочи со триглавото куче.",
+      "shots": [
+        {
+          "id": "S11",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "hercules_A1_fused",
+            "ladon_A3_fused",
+            "club_K2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Ladon - the colossal serpent guardian with emerald armor-like scales — 100% identical; studio bg/pose/light NOT used; image3: the club design - Hercules massive knotted olive-wood club — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "orbit track"
+            ],
+            [
+              1.93,
+              3.5,
+              "serpent counter-move"
+            ]
+          ],
+          "narration_mk": "Херкул не се повлече ниту еден чекор.",
+          "dialogue_mk": "",
+          "kf_first": "Medium track of Hercules circling the towering serpent, club ready, warm garden light behind him, tensed frame",
+          "kf_last": "He plants his feet, steadying his breathing as the serpent mirrors his movement",
+          "continuity": "Ladon eyes and scales; showdown composition",
+          "motion": "orbit track, serpent counter-move",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium track of Hercules circling the towering serpent, club ready, warm garden light behind him, tensed frame Hercules towering, titan, in lion skin cloak, carrying club, wreathed in golden glow Ladon serpentine, guardian, in emerald scales, wreathed in venom drip then orbit track, then serpent counter-move settling into he plants his feet, steadying his breathing as the serpent mirrors his movement with a low radiant hum, venom drips and hisses continuity held: Ladon eyes and scales; showdown composition",
+          "image_prompt_start": "photoreal cinematic: of Hercules circling the towering serpent, club ready, warm garden light behind him, tensed frame.",
+          "image_prompt_end": "photoreal cinematic: He plants his feet, steadying his breathing as the serpent mirrors his movement.",
+          "video_prompt_start": "Orbit track. serpent counter-move. The beat resolves into the next matching frame. Continuity held: Ladon eyes and scales; showdown composition.",
+          "video_prompt_end": "Orbit track. serpent counter-move. The beat resolves into the next matching frame. Continuity held: Ladon eyes and scales; showdown composition.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S12",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "bow_K3_prop"
+          ],
+          "ref_scope": "image1: the bow-and-arrow design - the great bow with a Hydra-venom bronze-tipped arrow — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.38,
+              "slow nock motion"
+            ],
+            [
+              1.38,
+              2.5,
+              "venom gleam"
+            ]
+          ],
+          "narration_mk": "Неговата стрела беше подмачкана со смртоносниот отров на Хидра.",
+          "dialogue_mk": "",
+          "kf_first": "Close insert of a bronze-tipped arrow sliding from its quiver, the tip glistening with dark green venom, firelight glint",
+          "kf_last": "The venom drop catches the golden light as he nocks the arrow",
+          "continuity": "Arrow head detail; poison motif",
+          "motion": "slow nock motion, venom gleam",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close insert of a bronze-tipped arrow sliding from its quiver, the tip glistening with dark green venom, firelight glint then slow nock motion, then venom gleam the camera static settling into the venom drop catches the golden light as he nocks the arrow continuity held: Arrow head detail; poison motif",
+          "image_prompt_start": "photoreal cinematic: insert of a bronze-tipped arrow sliding from its quiver, the tip glistening with dark green venom, firelight glint.",
+          "image_prompt_end": "photoreal cinematic: The venom drop catches the golden light as he nocks the arrow.",
+          "video_prompt_start": "Slow nock motion. venom gleam. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Arrow head detail; poison motif.",
+          "video_prompt_end": "Slow nock motion. venom gleam. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Arrow head detail; poison motif.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S13",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "over-shoulder",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "hercules_A1_fused",
+            "bow_K3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image2: the bow-and-arrow design - the great bow with a Hydra-venom bronze-tipped arrow — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "bow draw"
+            ],
+            [
+              1.65,
+              3.0,
+              "release"
+            ]
+          ],
+          "narration_mk": "Со еден потег, лакот запеа.",
+          "dialogue_mk": "",
+          "kf_first": "Over-shoulder medium of Hercules drawing his great bow, arrow aimed at the serpent's hood, taut string and coiled muscle",
+          "kf_last": "The bowstring snaps forward in a blur as the arrow flies",
+          "continuity": "Weapon and posture continuity from S12",
+          "motion": "bow draw and release",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: over-shoulder medium of Hercules drawing his great bow, arrow aimed at the serpent's hood, taut string and coiled muscle Hercules towering, titan, in lion skin cloak, carrying club, wreathed in golden glow then bow draw, then release the camera static settling into the bowstring snaps forward in a blur as the arrow flies with a low radiant hum continuity held: Weapon and posture continuity from S12",
+          "image_prompt_start": "photoreal cinematic: Over-shoulder medium of Hercules drawing his great bow, arrow aimed at the serpent's hood, taut string and coiled muscle.",
+          "image_prompt_end": "photoreal cinematic: The bowstring snaps forward in a blur as the arrow.",
+          "video_prompt_start": "Bow draw. release. The camera static. The beat resolves into the next matching frame. Continuity held: Weapon and posture continuity from S12.",
+          "video_prompt_end": "Bow draw. release. The camera static. The beat resolves into the next matching frame. Continuity held: Weapon and posture continuity from S12.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S14",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "ladon_A3_fused",
+            "bow_K3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Ladon - the colossal serpent guardian with emerald armor-like scales — 100% identical; studio bg/pose/light NOT used; image2: the bow-and-arrow design - the great bow with a Hydra-venom bronze-tipped arrow — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "arrow flight"
+            ],
+            [
+              1.93,
+              3.5,
+              "serpent spiral collapse"
+            ]
+          ],
+          "narration_mk": "Стрелата го најде ѕверот веднаш.",
+          "dialogue_mk": "",
+          "kf_first": "Wide shot of the poisoned arrow streaking toward Ladon, the serpent recoiling, scales catching the light",
+          "kf_last": "Ladon convulses and collapses in a slow spiral, apples trembling on the branches",
+          "continuity": "Impact continuity; child-safe defeat (no gore)",
+          "motion": "arrow flight, serpent spiral collapse",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide shot of the poisoned arrow streaking toward Ladon, the serpent recoiling, scales catching the light Ladon serpentine, guardian, in emerald scales, wreathed in venom drip then arrow flight, then serpent spiral collapse the camera static settling into ladon convulses and collapses in a slow spiral, apples trembling on the branches with venom drips and hisses continuity held: Impact continuity; child-safe defeat (no gore)",
+          "image_prompt_start": "photoreal cinematic: shot of the poisoned arrow streaking toward Ladon, the serpent recoiling, scales catching the light.",
+          "image_prompt_end": "photoreal cinematic: Ladon convulses and collapses in a slow spiral, apples trembling on the branches.",
+          "video_prompt_start": "Arrow flight. serpent spiral collapse. The camera static. The beat resolves into the next matching frame. Continuity held: Impact continuity; child-safe defeat (no gore).",
+          "video_prompt_end": "Arrow flight. serpent spiral collapse. The camera static. The beat resolves into the next matching frame. Continuity held: Impact continuity; child-safe defeat (no gore).",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S15",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "hercules_A1_fused",
+            "ladon_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Ladon - the colossal serpent guardian with emerald armor-like scales — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "hero steps forward"
+            ],
+            [
+              1.65,
+              3.0,
+              "bow lowers"
+            ]
+          ],
+          "narration_mk": "Чуварот падна, а градината остана мирна.",
+          "dialogue_mk": "",
+          "kf_first": "Wide low-angle of the fallen serpent sleeping among the roots, Hercules lowering his bow, golden apples now within reach",
+          "kf_last": "He steps carefully past the guardian toward the glowing tree",
+          "continuity": "Post-defeat calm; garden intact",
+          "motion": "hero steps forward, bow lowers",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide low-angle of the fallen serpent sleeping among the roots, Hercules lowering his bow, golden apples now within reach Hercules towering, titan, in lion skin cloak, carrying club, wreathed in golden glow Ladon serpentine, guardian, in emerald scales, wreathed in venom drip then hero steps forward, then bow lowers the camera static settling into he steps carefully past the guardian toward the glowing tree with a low radiant hum, venom drips and hisses continuity held: Post-defeat calm; garden intact",
+          "image_prompt_start": "photoreal cinematic: low-angle of the fallen serpent sleeping among the roots, Hercules lowering his bow, golden apples now within reach.",
+          "image_prompt_end": "photoreal cinematic: He steps carefully past the guardian toward the glowing tree.",
+          "video_prompt_start": "Hero steps forward. bow lowers. The camera static. The beat resolves into the next matching frame. Continuity held: Post-defeat calm; garden intact.",
+          "video_prompt_end": "Hero steps forward. bow lowers. The camera static. The beat resolves into the next matching frame. Continuity held: Post-defeat calm; garden intact.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S16",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "hercules_A1_fused",
+            "garden_E2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image2: the Hesperides-garden design - a hidden jewel orchard where apples shine like lanterns — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "head turn"
+            ],
+            [
+              1.65,
+              3.0,
+              "breeze through leaves"
+            ]
+          ],
+          "narration_mk": "Но ветрот донесе уште една вест — за новата задача.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of Hercules pausing beneath the apple tree, head turning as faint voices seem to carry on the breeze",
+          "kf_last": "His expression hardens, the golden fruit momentarily forgotten",
+          "continuity": "Transitional shot; wind and light continuity",
+          "motion": "head turn, breeze through leaves",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Hercules pausing beneath the apple tree, head turning as faint voices seem to carry on the breeze Hercules towering, titan, in lion skin cloak, carrying club, wreathed in golden glow then head turn, then breeze through leaves the camera static settling into his expression hardens, the golden fruit momentarily forgotten with a low radiant hum, leaves stir continuity held: Transitional shot; wind and light continuity",
+          "image_prompt_start": "photoreal cinematic: of Hercules pausing beneath the apple tree, head turning as faint voices seem to carry on the breeze.",
+          "image_prompt_end": "photoreal cinematic: His expression hardens, the golden fruit momentarily forgotten.",
+          "video_prompt_start": "Head turn. breeze through leaves. The camera static. The beat resolves into the next matching frame. Continuity held: Transitional shot; wind and light continuity.",
+          "video_prompt_end": "Head turn. breeze through leaves. The camera static. The beat resolves into the next matching frame. Continuity held: Transitional shot; wind and light continuity.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S17",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "hercules_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.38,
+              "firelight flicker"
+            ],
+            [
+              1.38,
+              2.5,
+              "jaw set"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Глас: „Ајде да ти кажам за последната задача... мора да го донесеш Кербер.“",
+          "kf_first": "Close of Hercules' stern profile as the king's command echoes, firelight from a distant brazier flickering on his jaw",
+          "kf_last": "His eyes narrow with grim understanding of the Underworld task",
+          "continuity": "Hero face; firelight accent as mood darkens",
+          "motion": "firelight flicker, jaw set",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close of Hercules' stern profile as the king's command echoes, firelight from a distant brazier flickering on his jaw Hercules towering, titan, in lion skin cloak, carrying club, wreathed in golden glow then firelight flicker, then jaw set the camera static settling into his eyes narrow with grim understanding of the Underworld task with a low radiant hum a voice speaks in Macedonian: \"Глас: „Ајде да ти кажам за последната задача... мора да го донесеш Кербер.“\" continuity held: Hero face; firelight accent as mood darkens",
+          "image_prompt_start": "photoreal cinematic: of Hercules' stern profile as the king's command echoes, firelight from a distant brazier flickering on his jaw.",
+          "image_prompt_end": "photoreal cinematic: His eyes narrow with grim understanding of the Underworld task.",
+          "video_prompt_start": "Firelight flicker. jaw set. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Глас: „Ајде да ти кажам за последната задача... мора да го донесеш Кербер.“\" Continuity held: Hero face; firelight accent as mood darkens.",
+          "video_prompt_end": "Firelight flicker. jaw set. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Глас: „Ајде да ти кажам за последната задача... мора да го донесеш Кербер.“\" Continuity held: Hero face; firelight accent as mood darkens.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S18",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "hercules_A1_fused",
+            "gate_E3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image2: the Underworld-gate design - a massive iron gate with runes, torchlit stone passages — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "crane-up reveal"
+            ],
+            [
+              1.93,
+              3.5,
+              "darkness deepening"
+            ]
+          ],
+          "narration_mk": "Најдлабокиот влез во Подземјето веќе го чекаше.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle crane-up over a dark fissure in the earth, torchlit cliffs descending into blackness, the hero standing at the brink",
+          "kf_last": "Crane rises to reveal the vast maw of the Underworld entrance swallowing the light",
+          "continuity": "Palette darkens toward Hades; torchlight",
+          "motion": "crane-up reveal, darkness deepening",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle crane-up over a dark fissure in the earth, torchlit cliffs descending into blackness, the hero standing at the brink Hercules towering, titan, in lion skin cloak, carrying club, wreathed in golden glow then crane-up reveal, then darkness deepening settling into crane rises to reveal the vast maw of the Underworld entrance swallowing the light with a low radiant hum continuity held: Palette darkens toward Hades; torchlight",
+          "image_prompt_start": "photoreal cinematic: over a dark fissure in the earth, torchlit cliffs descending into blackness, the hero standing at the brink.",
+          "image_prompt_end": "photoreal cinematic: Crane to reveal the vast maw of the Underworld entrance swallowing the light.",
+          "video_prompt_start": "Crane-up reveal. darkness deepening. The beat resolves into the next matching frame. Continuity held: Palette darkens toward Hades; torchlight.",
+          "video_prompt_end": "Crane-up reveal. darkness deepening. The beat resolves into the next matching frame. Continuity held: Palette darkens toward Hades; torchlight.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S19",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "hercules_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "track down corridor"
+            ],
+            [
+              1.93,
+              3.5,
+              "torch flutter"
+            ]
+          ],
+          "narration_mk": "Низ сенките, Херкул слезе до камените порти.",
+          "dialogue_mk": "",
+          "kf_first": "Medium track of Hercules descending a torch-lined stone passage, shadows dancing on wet walls, the Nemean cloak over his shoulders",
+          "kf_last": "He reaches a massive iron gate, runes glinting in the torch glow",
+          "continuity": "Underworld atmosphere; torch continuity",
+          "motion": "track down corridor, torch flutter",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium track of Hercules descending a torch-lined stone passage, shadows dancing on wet walls, the Nemean cloak over his shoulders Hercules towering, titan, in lion skin cloak, carrying club, wreathed in golden glow then track down corridor, then torch flutter settling into he reaches a massive iron gate, runes glinting in the torch glow with a low radiant hum continuity held: Underworld atmosphere; torch continuity",
+          "image_prompt_start": "photoreal cinematic: of Hercules descending a torch-lined stone passage, shadows dancing on wet walls, the Nemean cloak over his shoulders.",
+          "image_prompt_end": "photoreal cinematic: He reaches a massive iron gate, runes glinting in the torch glow.",
+          "video_prompt_start": "Track down corridor. torch flutter. The beat resolves into the next matching frame. Continuity held: Underworld atmosphere; torch continuity.",
+          "video_prompt_end": "Track down corridor. torch flutter. The beat resolves into the next matching frame. Continuity held: Underworld atmosphere; torch continuity.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S20",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "cerberus_A4_fused",
+            "gate_E3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Cerberus - the three-headed hound of the Underworld with coarse dark fur and glowing ember eyes — 100% identical; studio bg/pose/light NOT used; image2: the Underworld-gate design - a massive iron gate with runes, torchlit stone passages — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "cerberus stance"
+            ],
+            [
+              1.93,
+              3.5,
+              "chain rattle"
+            ]
+          ],
+          "narration_mk": "Таму се издигна чудовиштето со три грла.",
+          "dialogue_mk": "",
+          "kf_first": "Wide low-angle of Cerberus rising behind the iron gate, three massive heads snarling, chains rattling, embers in the dark",
+          "kf_last": "The three-headed hound steps forward, each pair of eyes glowing like coals",
+          "continuity": "Cerberus introduced as final labor",
+          "motion": "cerberus stance, chain rattle",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide low-angle of Cerberus rising behind the iron gate, three massive heads snarling, chains rattling, embers in the dark Cerberus hulking, beast, in three heads, dark fur, carrying bronze chains, wreathed in ember eyes then cerberus stance, then chain rattle the camera static settling into the three-headed hound steps forward, each pair of eyes glowing like coals with embers hiss continuity held: Cerberus introduced as final labor",
+          "image_prompt_start": "photoreal cinematic: low-angle of Cerberus rising behind the iron gate, three massive heads snarling, chains rattling, embers in the dark.",
+          "image_prompt_end": "photoreal cinematic: The three-headed hound steps forward, each pair of eyes glowing like coals.",
+          "video_prompt_start": "Cerberus stance. chain rattle. The camera static. The beat resolves into the next matching frame. Continuity held: Cerberus introduced as final labor.",
+          "video_prompt_end": "Cerberus stance. chain rattle. The camera static. The beat resolves into the next matching frame. Continuity held: Cerberus introduced as final labor.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S21",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "cerberus_A4_fused"
+          ],
+          "ref_scope": "image1: the fused master of Cerberus - the three-headed hound of the Underworld with coarse dark fur and glowing ember eyes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.38,
+              "glowing eyes"
+            ],
+            [
+              1.38,
+              2.5,
+              "growl vibration"
+            ]
+          ],
+          "narration_mk": "Шест очи гледаа право во него.",
+          "dialogue_mk": "",
+          "kf_first": "Close of Cerberus' central head, glowing ember eyes reflecting the torch flame, coarse dark fur, fangs glinting (no gore)",
+          "kf_last": "The three heads align, a low growl rattling the iron door",
+          "continuity": "Cerberus face continuity",
+          "motion": "glowing eyes, growl vibration",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close of Cerberus' central head, glowing ember eyes reflecting the torch flame, coarse dark fur, fangs glinting (no gore) Cerberus hulking, beast, in three heads, dark fur, carrying bronze chains, wreathed in ember eyes then glowing eyes, then growl vibration the camera static settling into the three heads align, a low growl rattling the iron door with embers hiss continuity held: Cerberus face continuity",
+          "image_prompt_start": "photoreal cinematic: of Cerberus' central head, glowing ember eyes reflecting the torch flame, coarse dark fur, fangs glinting (no gore).",
+          "image_prompt_end": "photoreal cinematic: The three heads align, a low growl rattling the iron door.",
+          "video_prompt_start": "Glowing eyes. growl vibration. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Cerberus face continuity.",
+          "video_prompt_end": "Glowing eyes. growl vibration. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Cerberus face continuity.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S22",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "hercules_A1_fused",
+            "gate_E3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image2: the Underworld-gate design - a massive iron gate with runes, torchlit stone passages — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "shoulders square"
+            ],
+            [
+              1.65,
+              3.0,
+              "step forward"
+            ]
+          ],
+          "narration_mk": "Херкул ги стегна тупаниците — знаеше дека силата нема да биде доволна.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of Hercules squaring his shoulders before the gate, fists clenched, torchlight carving his silhouette",
+          "kf_last": "He takes a slow breath and steps toward the bars, calm and decided",
+          "continuity": "Hero resolve; showdown framing",
+          "motion": "shoulders square, step forward",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Hercules squaring his shoulders before the gate, fists clenched, torchlight carving his silhouette Hercules towering, titan, in lion skin cloak, carrying club, wreathed in golden glow then shoulders square, then step forward the camera static settling into he takes a slow breath and steps toward the bars, calm and decided with a low radiant hum continuity held: Hero resolve; showdown framing",
+          "image_prompt_start": "photoreal cinematic: of Hercules squaring his shoulders before the gate, fists clenched, torchlight carving his silhouette.",
+          "image_prompt_end": "photoreal cinematic: He takes a slow breath and steps toward the bars, calm and decided.",
+          "video_prompt_start": "Shoulders square. step forward. The camera static. The beat resolves into the next matching frame. Continuity held: Hero resolve; showdown framing.",
+          "video_prompt_end": "Shoulders square. step forward. The camera static. The beat resolves into the next matching frame. Continuity held: Hero resolve; showdown framing.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "hesperides_garden_and_underworld_gates",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#14532d",
+        "#7f1d1d",
+        "#f59e0b"
+      ],
+      "light_direction": "key light from screen-right, flickering torchlight and ember glow",
+      "time_of_day": "night"
+    },
+    {
+      "id": "act3",
+      "num": "Act III",
+      "title": "Апотеоза",
+      "color": "#a78bfa",
+      "pct": 30,
+      "synopsis": "Херкул го победува Кербер, го носи кај Евристеј, а потоа се искачува на Олимп, каде Зевс го прима и го венчава со Хеба.",
+      "shots": [
+        {
+          "id": "S23",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "hercules_A1_fused",
+            "gate_E3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image2: the Underworld-gate design - a massive iron gate with runes, torchlit stone passages — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "gate open"
+            ],
+            [
+              1.93,
+              3.5,
+              "dust swirl"
+            ]
+          ],
+          "narration_mk": "Вратата се отвори со татнеж од синџири.",
+          "dialogue_mk": "",
+          "kf_first": "Medium track of the iron gate grinding open, Hercules silhouetted in its frame, ember wind whipping dust",
+          "kf_last": "He strides through as the gate booms shut behind him",
+          "continuity": "Gate and gate-run continuity",
+          "motion": "gate open, dust swirl",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium track of the iron gate grinding open, Hercules silhouetted in its frame, ember wind whipping dust Hercules towering, titan, in lion skin cloak, carrying club, wreathed in golden glow then gate open, then dust swirl the camera track settling into he strides through as the gate booms shut behind him with a low radiant hum continuity held: Gate and gate-run continuity",
+          "image_prompt_start": "photoreal cinematic: of the iron gate grinding open, Hercules silhouetted in its frame, ember wind whipping dust.",
+          "image_prompt_end": "photoreal cinematic: He strides through as the gate booms shut behind him.",
+          "video_prompt_start": "Gate open. dust swirl. The camera track. The beat resolves into the next matching frame. Continuity held: Gate and gate-run continuity.",
+          "video_prompt_end": "Gate open. dust swirl. The camera track. The beat resolves into the next matching frame. Continuity held: Gate and gate-run continuity.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S24",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "hercules_A1_fused",
+            "cerberus_A4_fused",
+            "club_K2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Cerberus - the three-headed hound of the Underworld with coarse dark fur and glowing ember eyes — 100% identical; studio bg/pose/light NOT used; image3: the club design - Hercules massive knotted olive-wood club — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "charge impact shake"
+            ],
+            [
+              1.93,
+              3.5,
+              "club raised"
+            ]
+          ],
+          "narration_mk": "Кербер јуришна, земјата се тресеше.",
+          "dialogue_mk": "",
+          "kf_first": "Wide low-angle of Cerberus charging at the hero, three heads bared, chains lashing, the cavern shaking",
+          "kf_last": "Hercules braces low, club raised, meeting the charge head-on",
+          "continuity": "Cerberus and hero both in frame; cavern scale",
+          "motion": "charge impact shake, club raised",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide low-angle of Cerberus charging at the hero, three heads bared, chains lashing, the cavern shaking Hercules towering, titan, in lion skin cloak, carrying club, wreathed in golden glow Cerberus hulking, beast, in three heads, dark fur, carrying bronze chains, wreathed in ember eyes then charge impact shake, then club raised the camera static settling into hercules braces low, club raised, meeting the charge head-on with a low radiant hum, embers hiss continuity held: Cerberus and hero both in frame; cavern scale",
+          "image_prompt_start": "photoreal cinematic: low-angle of Cerberus charging at the hero, three heads bared, chains lashing, the cavern shaking.",
+          "image_prompt_end": "photoreal cinematic: Hercules braces low, club raised, meeting the charge head-on.",
+          "video_prompt_start": "Charge impact shake. club raised. The camera static. The beat resolves into the next matching frame. Continuity held: Cerberus and hero both in frame; cavern scale.",
+          "video_prompt_end": "Charge impact shake. club raised. The camera static. The beat resolves into the next matching frame. Continuity held: Cerberus and hero both in frame; cavern scale.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S25",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "hercules_A1_fused",
+            "cerberus_A4_fused",
+            "chains_K5_prop"
+          ],
+          "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Cerberus - the three-headed hound of the Underworld with coarse dark fur and glowing ember eyes — 100% identical; studio bg/pose/light NOT used; image3: the bronze-chains design - heavy bronze restraints used to bind Cerberus — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "dodge under jaw"
+            ],
+            [
+              1.65,
+              3.0,
+              "collar grab"
+            ]
+          ],
+          "narration_mk": "Не со жестокост, туку со ум — тој ги фати наколниците на ѕверот.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of Hercules dodging under the snapping jaw, arms shooting out to grab Cerberus' heavy collar rings",
+          "kf_last": "He twists, using leverage to pull all three heads down toward the stone",
+          "continuity": "Grapple choreography; child-safe struggle",
+          "motion": "dodge under jaw, collar grab",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Hercules dodging under the snapping jaw, arms shooting out to grab Cerberus' heavy collar rings Hercules towering, titan, in lion skin cloak, carrying club, wreathed in golden glow Cerberus hulking, beast, in three heads, dark fur, carrying bronze chains, wreathed in ember eyes then dodge under jaw, then collar grab the camera static settling into he twists, using leverage to pull all three heads down toward the stone with a low radiant hum, embers hiss continuity held: Grapple choreography; child-safe struggle",
+          "image_prompt_start": "photoreal cinematic: of Hercules dodging under the snapping jaw, arms shooting out to grab Cerberus' heavy collar rings.",
+          "image_prompt_end": "photoreal cinematic: He twists, using leverage to pull all three heads down toward the stone.",
+          "video_prompt_start": "Dodge under jaw. collar grab. The camera static. The beat resolves into the next matching frame. Continuity held: Grapple choreography; child-safe struggle.",
+          "video_prompt_end": "Dodge under jaw. collar grab. The camera static. The beat resolves into the next matching frame. Continuity held: Grapple choreography; child-safe struggle.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S26",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "hercules_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.38,
+              "muscle strain"
+            ],
+            [
+              1.38,
+              2.5,
+              "slight camera vibration"
+            ]
+          ],
+          "narration_mk": "Мускулите му се напрегнаа како бронзени јажиња.",
+          "dialogue_mk": "",
+          "kf_first": "Close of Hercules' straining arms and back, veins and muscle taut against the hound's pull, torchlight sheen",
+          "kf_last": "Sweat beads as he holds the three-headed beast in a crushing lock",
+          "continuity": "Struggle continuity; physicality",
+          "motion": "muscle strain, slight camera vibration",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close of Hercules' straining arms and back, veins and muscle taut against the hound's pull, torchlight sheen Hercules towering, titan, in lion skin cloak, carrying club, wreathed in golden glow then muscle strain, then slight camera vibration the camera static settling into sweat beads as he holds the three-headed beast in a crushing lock with a low radiant hum continuity held: Struggle continuity; physicality",
+          "image_prompt_start": "photoreal cinematic: of Hercules' straining arms and back, veins and muscle taut against the hound's pull, torchlight sheen.",
+          "image_prompt_end": "photoreal cinematic: Sweat beads as he holds the three-headed beast in a crushing lock.",
+          "video_prompt_start": "Muscle strain. slight camera vibration. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Struggle continuity; physicality.",
+          "video_prompt_end": "Muscle strain. slight camera vibration. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Struggle continuity; physicality.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S27",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "cerberus_A4_fused"
+          ],
+          "ref_scope": "image1: the fused master of Cerberus - the three-headed hound of the Underworld with coarse dark fur and glowing ember eyes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "cerberus buckle"
+            ],
+            [
+              1.93,
+              3.5,
+              "breath steam"
+            ]
+          ],
+          "narration_mk": "Чудовиштето почна да попушта.",
+          "dialogue_mk": "",
+          "kf_first": "Wide low-angle of Cerberus' front legs buckling, its three heads dropping lower as Hercules leans his weight into the hold",
+          "kf_last": "The giant hound sags to its haunches, breath steaming in the dark",
+          "continuity": "Cerberus weakening; same cavern",
+          "motion": "cerberus buckle, breath steam",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide low-angle of Cerberus' front legs buckling, its three heads dropping lower as Hercules leans his weight into the hold Cerberus hulking, beast, in three heads, dark fur, carrying bronze chains, wreathed in ember eyes then cerberus buckle, then breath steam the camera static settling into the giant hound sags to its haunches, breath steaming in the dark with embers hiss continuity held: Cerberus weakening; same cavern",
+          "image_prompt_start": "photoreal cinematic: low-angle of Cerberus' front legs buckling, its three heads dropping lower as Hercules leans his weight into the hold.",
+          "image_prompt_end": "photoreal cinematic: The giant hound sags to its haunches, breath steaming in the dark.",
+          "video_prompt_start": "Cerberus buckle. breath steam. The camera static. The beat resolves into the next matching frame. Continuity held: Cerberus weakening; same cavern.",
+          "video_prompt_end": "Cerberus buckle. breath steam. The camera static. The beat resolves into the next matching frame. Continuity held: Cerberus weakening; same cavern.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S28",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "hercules_A1_fused",
+            "cerberus_A4_fused",
+            "chains_K5_prop"
+          ],
+          "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Cerberus - the three-headed hound of the Underworld with coarse dark fur and glowing ember eyes — 100% identical; studio bg/pose/light NOT used; image3: the bronze-chains design - heavy bronze restraints used to bind Cerberus — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "chain loop"
+            ],
+            [
+              1.65,
+              3.0,
+              "lock"
+            ]
+          ],
+          "narration_mk": "Со тешки синџири, тој го врза ѕверот.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of Hercules looping heavy bronze chains around Cerberus' three necks, the beast subdued and panting",
+          "kf_last": "He secures the final link, hand resting briefly on the hound's head",
+          "continuity": "Restraint continuity; chains from S23-S25",
+          "motion": "chain loop and lock",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Hercules looping heavy bronze chains around Cerberus' three necks, the beast subdued and panting Hercules towering, titan, in lion skin cloak, carrying club, wreathed in golden glow Cerberus hulking, beast, in three heads, dark fur, carrying bronze chains, wreathed in ember eyes then chain loop, then lock the camera static settling into he secures the final link, hand resting briefly on the hound's head with a low radiant hum, embers hiss continuity held: Restraint continuity; chains from S23-S25",
+          "image_prompt_start": "photoreal cinematic: of Hercules looping heavy bronze chains around Cerberus' three necks, the beast subdued and panting.",
+          "image_prompt_end": "photoreal cinematic: He secures the final link, hand resting briefly on the hound's head.",
+          "video_prompt_start": "Chain loop. lock. The camera static. The beat resolves into the next matching frame. Continuity held: Restraint continuity; chains from S23-S25.",
+          "video_prompt_end": "Chain loop. lock. The camera static. The beat resolves into the next matching frame. Continuity held: Restraint continuity; chains from S23-S25.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S29",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "hercules_A1_fused",
+            "cerberus_A4_fused",
+            "chains_K5_prop"
+          ],
+          "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Cerberus - the three-headed hound of the Underworld with coarse dark fur and glowing ember eyes — 100% identical; studio bg/pose/light NOT used; image3: the bronze-chains design - heavy bronze restraints used to bind Cerberus — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "track behind the pair"
+            ],
+            [
+              1.93,
+              3.5,
+              "light growing"
+            ]
+          ],
+          "narration_mk": "И го поведе нагоре, кон светлината на светот.",
+          "dialogue_mk": "",
+          "kf_first": "Wide track of Hercules leading the chained three-headed hound up the torchlit passage, its claws scraping stone, dawn light far ahead",
+          "kf_last": "The pair climb toward the bright opening, Cerberus walking calm beside his captor",
+          "continuity": "Underworld-to-light transition",
+          "motion": "track behind the pair, light growing",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide track of Hercules leading the chained three-headed hound up the torchlit passage, its claws scraping stone, dawn light far ahead Hercules towering, titan, in lion skin cloak, carrying club, wreathed in golden glow Cerberus hulking, beast, in three heads, dark fur, carrying bronze chains, wreathed in ember eyes then track behind the pair, then light growing settling into the pair climb toward the bright opening, Cerberus walking calm beside his captor with a low radiant hum, embers hiss continuity held: Underworld-to-light transition",
+          "image_prompt_start": "photoreal cinematic: of Hercules leading the chained three-headed hound up the torchlit passage, its claws scraping stone, dawn light far ahead.",
+          "image_prompt_end": "photoreal cinematic: The pair climb toward the bright opening, Cerberus walking calm beside his captor.",
+          "video_prompt_start": "Track behind the pair. light growing. The beat resolves into the next matching frame. Continuity held: Underworld-to-light transition.",
+          "video_prompt_end": "Track behind the pair. light growing. The beat resolves into the next matching frame. Continuity held: Underworld-to-light transition.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S30",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "hercules_A1_fused",
+            "cerberus_A4_fused",
+            "city_E5_prop"
+          ],
+          "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Cerberus - the three-headed hound of the Underworld with coarse dark fur and glowing ember eyes — 100% identical; studio bg/pose/light NOT used; image3: the city-plaza design - a crowded Greek plaza before the palace steps — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "crowd part"
+            ],
+            [
+              1.93,
+              3.5,
+              "crane-up reveal"
+            ]
+          ],
+          "narration_mk": "Пред портите на Евристеј, градот онеме од чудото.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle crane-up of a crowded city plaza parting in awe as Hercules leads the chained Cerberus toward the palace steps",
+          "kf_last": "Crane reveals the king shrinking back on his balcony at the sight",
+          "continuity": "Daylight return; crowd reaction",
+          "motion": "crowd part, crane-up reveal",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle crane-up of a crowded city plaza parting in awe as Hercules leads the chained Cerberus toward the palace steps Hercules towering, titan, in lion skin cloak, carrying club, wreathed in golden glow Cerberus hulking, beast, in three heads, dark fur, carrying bronze chains, wreathed in ember eyes then crowd part, then crane-up reveal settling into crane reveals the king shrinking back on his balcony at the sight with a low radiant hum, embers hiss continuity held: Daylight return; crowd reaction",
+          "image_prompt_start": "photoreal cinematic: of a crowded city plaza parting in awe as Hercules leads the chained Cerberus toward the palace steps.",
+          "image_prompt_end": "photoreal cinematic: Crane reveals the king shrinking back on his balcony at the sight.",
+          "video_prompt_start": "Crowd part. crane-up reveal. The beat resolves into the next matching frame. Continuity held: Daylight return; crowd reaction.",
+          "video_prompt_end": "Crowd part. crane-up reveal. The beat resolves into the next matching frame. Continuity held: Daylight return; crowd reaction.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S31",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "eurystheus_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of King Eurystheus - the cowardly king in purple robes, thin and twitchy — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "scramble behind amphora"
+            ],
+            [
+              1.65,
+              3.0,
+              "peek"
+            ]
+          ],
+          "narration_mk": "Самиот Евристеј се скри во бронзена буре.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of king Eurystheus scrambling behind a bronze amphora, trembling, purple robe askew",
+          "kf_last": "He peers out, eyes wide with terror at the hound below",
+          "continuity": "King continuity from Act I",
+          "motion": "scramble behind amphora, peek",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of king Eurystheus scrambling behind a bronze amphora, trembling, purple robe askew Eurystheus thin, coward, in purple robes, crown then scramble behind amphora, then peek the camera static settling into he peers out, eyes wide with terror at the hound below continuity held: King continuity from Act I",
+          "image_prompt_start": "photoreal cinematic: medium of king Eurystheus scrambling behind a bronze amphora, trembling, purple robe askew.",
+          "image_prompt_end": "photoreal cinematic: He peers out, eyes wide with terror at the hound below.",
+          "video_prompt_start": "Scramble behind amphora. peek. The camera static. The beat resolves into the next matching frame. Continuity held: King continuity from Act I.",
+          "video_prompt_end": "Scramble behind amphora. peek. The camera static. The beat resolves into the next matching frame. Continuity held: King continuity from Act I.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S32",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "hercules_A1_fused",
+            "cerberus_A4_fused"
+          ],
+          "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Cerberus - the three-headed hound of the Underworld with coarse dark fur and glowing ember eyes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "hero head raise"
+            ],
+            [
+              1.65,
+              3.0,
+              "crowd kneel"
+            ]
+          ],
+          "narration_mk": "Така заврши и последниот, дванаесетти подвиг.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of Hercules standing calm in the plaza, the chained Cerberus seated beside him, citizens kneeling in reverence",
+          "kf_last": "He raises his head to the sky with quiet relief",
+          "continuity": "Completion of labors; crowd reverence",
+          "motion": "hero head raise, crowd kneel",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Hercules standing calm in the plaza, the chained Cerberus seated beside him, citizens kneeling in reverence Hercules towering, titan, in lion skin cloak, carrying club, wreathed in golden glow Cerberus hulking, beast, in three heads, dark fur, carrying bronze chains, wreathed in ember eyes then hero head raise, then crowd kneel the camera static settling into he raises his head to the sky with quiet relief with a low radiant hum, embers hiss continuity held: Completion of labors; crowd reverence",
+          "image_prompt_start": "photoreal cinematic: of Hercules standing calm in the plaza, the chained Cerberus seated beside him, citizens kneeling in reverence.",
+          "image_prompt_end": "photoreal cinematic: He raises his head to the sky with quiet relief.",
+          "video_prompt_start": "Hero head raise. crowd kneel. The camera static. The beat resolves into the next matching frame. Continuity held: Completion of labors; crowd reverence.",
+          "video_prompt_end": "Hero head raise. crowd kneel. The camera static. The beat resolves into the next matching frame. Continuity held: Completion of labors; crowd reverence.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S33",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "hercules_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "clouds part"
+            ],
+            [
+              1.93,
+              3.5,
+              "light staircase descends"
+            ]
+          ],
+          "narration_mk": "Но вистинската награда допрва следуваше.",
+          "dialogue_mk": "",
+          "kf_first": "Wide low-angle crane-up from the plaza toward a luminous rift opening in the clouds, golden stairs of light descending",
+          "kf_last": "The stairway reaches down toward Hercules, whose face lifts in wonder",
+          "continuity": "Palette shifts to divine gold and silver",
+          "motion": "clouds part, light staircase descends",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide low-angle crane-up from the plaza toward a luminous rift opening in the clouds, golden stairs of light descending Hercules towering, titan, in lion skin cloak, carrying club, wreathed in golden glow then clouds part, then light staircase descends the camera crane-up settling into the stairway reaches down toward Hercules, whose face lifts in wonder with a low radiant hum continuity held: Palette shifts to divine gold and silver",
+          "image_prompt_start": "photoreal cinematic: low-angle from the plaza toward a luminous rift opening in the clouds, golden stairs of light descending.",
+          "image_prompt_end": "photoreal cinematic: The stairway reaches down toward Hercules, whose face lifts in wonder.",
+          "video_prompt_start": "Clouds part. light staircase descends. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Palette shifts to divine gold and silver.",
+          "video_prompt_end": "Clouds part. light staircase descends. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Palette shifts to divine gold and silver.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S34",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "hercules_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "ascending steps"
+            ],
+            [
+              1.65,
+              3.0,
+              "glow strengthens"
+            ]
+          ],
+          "narration_mk": "Чекор по чекор, смртникот се искачи кон Олимп.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of Hercules stepping onto the radiant staircase, still carrying the lion cloak, light streaming around him",
+          "kf_last": "He begins to ascend, the mortal world falling away beneath",
+          "continuity": "Ascension continuity; divine light",
+          "motion": "ascending steps, glow strengthens",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Hercules stepping onto the radiant staircase, still carrying the lion cloak, light streaming around him Hercules towering, titan, in lion skin cloak, carrying club, wreathed in golden glow then ascending steps, then glow strengthens the camera static settling into he begins to ascend, the mortal world falling away beneath with a low radiant hum continuity held: Ascension continuity; divine light",
+          "image_prompt_start": "photoreal cinematic: of Hercules stepping onto the radiant staircase, still carrying the lion cloak, light streaming around him.",
+          "image_prompt_end": "photoreal cinematic: He begins to , the mortal world falling away beneath.",
+          "video_prompt_start": "Ascending steps. glow strengthens. The camera static. The beat resolves into the next matching frame. Continuity held: Ascension continuity; divine light.",
+          "video_prompt_end": "Ascending steps. glow strengthens. The camera static. The beat resolves into the next matching frame. Continuity held: Ascension continuity; divine light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S35",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "olympus_E4_prop",
+            "zeus_A5_fused"
+          ],
+          "ref_scope": "image1: the Mount-Olympus design - divine marble halls and gold rooftops in eternal light — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Zeus - the king of Olympus, white beard and robes, commanding presence — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.2,
+              "grand crane-up reveal"
+            ],
+            [
+              2.2,
+              4.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "На врвот, палатите на боговите светеа без сенки.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle crane-up over Mount Olympus, marble halls and gold rooftops glowing in eternal light, gods gathered in silhouette",
+          "kf_last": "Crane reveals the throneroom at the summit, Zeus waiting at its center",
+          "continuity": "Olympus established; divine palette",
+          "motion": "grand crane-up reveal",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle crane-up over Mount Olympus, marble halls and gold rooftops glowing in eternal light, gods gathered in silhouette Zeus majestic, monarch, in white robes, beard, carrying thunderbolt, wreathed in divine glow, lightning then grand crane-up reveal, then resolve settling into crane reveals the throneroom at the summit, Zeus waiting at its center with thunder rolls, a low radiant hum continuity held: Olympus established; divine palette",
+          "image_prompt_start": "photoreal cinematic: over Mount Olympus, marble halls and gold rooftops glowing in eternal light, gods gathered in silhouette.",
+          "image_prompt_end": "photoreal cinematic: Crane reveals the throneroom at the summit, Zeus waiting at its center.",
+          "video_prompt_start": "Grand crane-up reveal. resolve. The beat resolves into the next matching frame. Continuity held: Olympus established; divine palette.",
+          "video_prompt_end": "Grand crane-up reveal. resolve. The beat resolves into the next matching frame. Continuity held: Olympus established; divine palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S36",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "zeus_A5_fused",
+            "hercules_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Zeus - the king of Olympus, white beard and robes, commanding presence — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "embrace"
+            ],
+            [
+              1.93,
+              3.5,
+              "soft lightning"
+            ]
+          ],
+          "narration_mk": "Зевс го прими со раширени раце.",
+          "dialogue_mk": "",
+          "kf_first": "Wide shot of Zeus rising from his marble throne, arms open wide, white beard and robes shining, lightning crackling softly behind him",
+          "kf_last": "Hercules approaches and is drawn into his father's embrace",
+          "continuity": "Zeus introduced; throne room context from S35",
+          "motion": "embrace, soft lightning",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide shot of Zeus rising from his marble throne, arms open wide, white beard and robes shining, lightning crackling softly behind him Zeus majestic, monarch, in white robes, beard, carrying thunderbolt, wreathed in divine glow, lightning Hercules towering, titan, in lion skin cloak, carrying club, wreathed in golden glow then embrace, then soft lightning the camera static settling into hercules approaches and is drawn into his father's embrace with thunder rolls, a low radiant hum continuity held: Zeus introduced; throne room context from S35",
+          "image_prompt_start": "photoreal cinematic: shot of Zeus rising from his marble throne, arms open wide, white beard and robes shining, lightning crackling softly behind him.",
+          "image_prompt_end": "photoreal cinematic: Hercules approaches and is drawn into his father's embrace.",
+          "video_prompt_start": "Embrace. soft lightning. The camera static. The beat resolves into the next matching frame. Continuity held: Zeus introduced; throne room context from S35.",
+          "video_prompt_end": "Embrace. soft lightning. The camera static. The beat resolves into the next matching frame. Continuity held: Zeus introduced; throne room context from S35.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S37",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "zeus_A5_fused",
+            "hercules_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Zeus - the king of Olympus, white beard and robes, commanding presence — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "palm on shoulder"
+            ],
+            [
+              1.65,
+              3.0,
+              "golden aura"
+            ]
+          ],
+          "narration_mk": "Таткото ја препозна силата и достоинството на синот.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of Zeus and Hercules face to face, the father's palm on the hero's shoulder, pride and light in both faces",
+          "kf_last": "Zeus nods, a faint golden glow rising around the hero",
+          "continuity": "Father-son bond; glow motif",
+          "motion": "palm on shoulder, golden aura",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Zeus and Hercules face to face, the father's palm on the hero's shoulder, pride and light in both faces Zeus majestic, monarch, in white robes, beard, carrying thunderbolt, wreathed in divine glow, lightning Hercules towering, titan, in lion skin cloak, carrying club, wreathed in golden glow then palm on shoulder, then golden aura the camera static settling into zeus nods, a faint golden glow rising around the hero with thunder rolls, a low radiant hum continuity held: Father-son bond; glow motif",
+          "image_prompt_start": "photoreal cinematic: of Zeus and Hercules face to face, the father's palm on the hero's shoulder, pride and light in both faces.",
+          "image_prompt_end": "photoreal cinematic: Zeus nods, a faint golden glow rising around the hero.",
+          "video_prompt_start": "Palm on shoulder. golden aura. The camera static. The beat resolves into the next matching frame. Continuity held: Father-son bond; glow motif.",
+          "video_prompt_end": "Palm on shoulder. golden aura. The camera static. The beat resolves into the next matching frame. Continuity held: Father-son bond; glow motif.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S38",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "zeus_A5_fused",
+            "olympus_E4_prop"
+          ],
+          "ref_scope": "image1: the fused master of Zeus - the king of Olympus, white beard and robes, commanding presence — 100% identical; studio bg/pose/light NOT used; image2: the Mount-Olympus design - divine marble halls and gold rooftops in eternal light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "crowd settle"
+            ],
+            [
+              1.93,
+              3.5,
+              "light ribbons"
+            ]
+          ],
+          "narration_mk": "Сите богови на Олимп се собраа за свеченоста.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of the assembled gods in the throneroom, light and flowers filling the marbled space",
+          "kf_last": "Festival ribbons of light unfurl as the gods take their places",
+          "continuity": "Olympus assembly; celebration",
+          "motion": "crowd settle, light ribbons",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of the assembled gods in the throneroom, light and flowers filling the marbled space Zeus majestic, monarch, in white robes, beard, carrying thunderbolt, wreathed in divine glow, lightning then crowd settle, then light ribbons the camera static settling into festival ribbons of light unfurl as the gods take their places with thunder rolls, a low radiant hum continuity held: Olympus assembly; celebration",
+          "image_prompt_start": "photoreal cinematic: wide of the assembled gods in the throneroom, light and flowers filling the marbled space.",
+          "image_prompt_end": "photoreal cinematic: Festival ribbons of light unfurl as the gods take their places.",
+          "video_prompt_start": "Crowd settle. light ribbons. The camera static. The beat resolves into the next matching frame. Continuity held: Olympus assembly; celebration.",
+          "video_prompt_end": "Crowd settle. light ribbons. The camera static. The beat resolves into the next matching frame. Continuity held: Olympus assembly; celebration.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S39",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "hebe_A6_fused"
+          ],
+          "ref_scope": "image1: the fused master of Hebe - the goddess of youth, youthful and radiant in silver-gold gown — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "descend stairs"
+            ],
+            [
+              1.93,
+              3.5,
+              "gown flow"
+            ]
+          ],
+          "narration_mk": "Хеба, божицата на младоста, слезе по скалите.",
+          "dialogue_mk": "",
+          "kf_first": "Medium track of Hebe descending the marble stairs, youthful and radiant, soft silver-gold gown flowing, gentle smile",
+          "kf_last": "She reaches the foot of the stairs, eyes meeting the hero's",
+          "continuity": "Hebe introduced; wedding tone",
+          "motion": "descend stairs, gown flow",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium track of Hebe descending the marble stairs, youthful and radiant, soft silver-gold gown flowing, gentle smile Hebe slender, heroine, in silver gold gown, wreathed in radiant glow then descend stairs, then gown flow the camera track settling into she reaches the foot of the stairs, eyes meeting the hero's with a low radiant hum continuity held: Hebe introduced; wedding tone",
+          "image_prompt_start": "photoreal cinematic: of Hebe descending the marble stairs, youthful and radiant, soft silver-gold gown flowing, gentle smile.",
+          "image_prompt_end": "photoreal cinematic: She reaches the foot of the stairs, eyes meeting the hero's.",
+          "video_prompt_start": "Descend stairs. gown flow. The camera track. The beat resolves into the next matching frame. Continuity held: Hebe introduced; wedding tone.",
+          "video_prompt_end": "Descend stairs. gown flow. The camera track. The beat resolves into the next matching frame. Continuity held: Hebe introduced; wedding tone.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S40",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "hercules_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "softening smile"
+            ],
+            [
+              1.65,
+              3.0,
+              "reflected light"
+            ]
+          ],
+          "narration_mk": "Очите на Херкул се сретнаа со нејзините.",
+          "dialogue_mk": "",
+          "kf_first": "Close of Hercules' face softening into a rare smile, the goddess' golden light reflected in his eyes",
+          "kf_last": "A gentle warmth passes over his worn features",
+          "continuity": "Emotional beat; Hebe's glow",
+          "motion": "softening smile, reflected light",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close of Hercules' face softening into a rare smile, the goddess' golden light reflected in his eyes Hercules towering, titan, in lion skin cloak, carrying club, wreathed in golden glow then softening smile, then reflected light the camera static settling into a gentle warmth passes over his worn features with a low radiant hum continuity held: Emotional beat; Hebe's glow",
+          "image_prompt_start": "photoreal cinematic: of Hercules' face softening into a rare smile, the goddess' golden light reflected in his eyes.",
+          "image_prompt_end": "photoreal cinematic: A gentle warmth passes over his worn features.",
+          "video_prompt_start": "Softening smile. reflected light. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Emotional beat; Hebe's glow.",
+          "video_prompt_end": "Softening smile. reflected light. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Emotional beat; Hebe's glow.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S41",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "zeus_A5_fused",
+            "hercules_A1_fused",
+            "hebe_A6_fused"
+          ],
+          "ref_scope": "image1: the fused master of Zeus - the king of Olympus, white beard and robes, commanding presence — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Hebe - the goddess of youth, youthful and radiant in silver-gold gown — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "cup raise"
+            ],
+            [
+              1.65,
+              3.0,
+              "pronouncement"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Зевс: „Денес мојот син станува дел од небесниот дом.“",
+          "kf_first": "Medium of Zeus raising a golden cup between Hercules and Hebe, his voice warm and booming across the hall",
+          "kf_last": "The king of gods lowers the cup, blessing the union with a nod",
+          "continuity": "Ceremony continuity",
+          "motion": "cup raise, pronouncement",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Zeus raising a golden cup between Hercules and Hebe, his voice warm and booming across the hall Zeus majestic, monarch, in white robes, beard, carrying thunderbolt, wreathed in divine glow, lightning Hercules towering, titan, in lion skin cloak, carrying club, wreathed in golden glow Hebe slender, heroine, in silver gold gown, wreathed in radiant glow then cup raise, then pronouncement the camera static settling into the king of gods lowers the cup, blessing the union with a nod with thunder rolls, a low radiant hum a voice speaks in Macedonian: \"Зевс: „Денес мојот син станува дел од небесниот дом.“\" continuity held: Ceremony continuity",
+          "image_prompt_start": "photoreal cinematic: of Zeus raising a golden cup between Hercules and Hebe, his voice warm and booming across the hall.",
+          "image_prompt_end": "photoreal cinematic: The king of gods lowers the cup, blessing the union with a nod.",
+          "video_prompt_start": "Cup raise. pronouncement. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Зевс: „Денес мојот син станува дел од небесниот дом.“\" Continuity held: Ceremony continuity.",
+          "video_prompt_end": "Cup raise. pronouncement. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Зевс: „Денес мојот син станува дел од небесниот дом.“\" Continuity held: Ceremony continuity.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S42",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "hercules_A1_fused",
+            "hebe_A6_fused",
+            "zeus_A5_fused"
+          ],
+          "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Hebe - the goddess of youth, youthful and radiant in silver-gold gown — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Zeus - the king of Olympus, white beard and robes, commanding presence — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.2,
+              "light cascade"
+            ],
+            [
+              2.2,
+              4.0,
+              "hands join"
+            ]
+          ],
+          "narration_mk": "Венчавката го исполни Олимп со светлина.",
+          "dialogue_mk": "",
+          "kf_first": "Wide shot of Hercules and Hebe before the assembled gods, a cascade of golden light and white petals raining over them",
+          "kf_last": "The couple joins hands as the throneroom erupts in radiant celebration",
+          "continuity": "Wedding climax; divine palette peaking",
+          "motion": "light cascade, hands join",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide shot of Hercules and Hebe before the assembled gods, a cascade of golden light and white petals raining over them Hercules towering, titan, in lion skin cloak, carrying club, wreathed in golden glow Hebe slender, heroine, in silver gold gown, wreathed in radiant glow Zeus majestic, monarch, in white robes, beard, carrying thunderbolt, wreathed in divine glow, lightning then light cascade, then hands join the camera static settling into the couple joins hands as the throneroom erupts in radiant celebration with a low radiant hum, thunder rolls continuity held: Wedding climax; divine palette peaking",
+          "image_prompt_start": "photoreal cinematic: shot of Hercules and Hebe before the assembled gods, a cascade of golden light and white petals raining over them.",
+          "image_prompt_end": "photoreal cinematic: The couple joins hands as the throneroom erupts in radiant celebration.",
+          "video_prompt_start": "Light cascade. hands join. The camera static. The beat resolves into the next matching frame. Continuity held: Wedding climax; divine palette peaking.",
+          "video_prompt_end": "Light cascade. hands join. The camera static. The beat resolves into the next matching frame. Continuity held: Wedding climax; divine palette peaking.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S43",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "hercules_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "light weaving"
+            ],
+            [
+              1.65,
+              3.0,
+              "glow intensify"
+            ]
+          ],
+          "narration_mk": "Вечниот сјај го облече смртникот како наметка.",
+          "dialogue_mk": "",
+          "kf_first": "Close of Hercules' arms as radiant light weaves golden threads over his skin, transforming him",
+          "kf_last": "The light rises to his face, his mortal scars fading into divine radiance",
+          "continuity": "Apotheosis; transformation",
+          "motion": "light weaving, glow intensify",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close of Hercules' arms as radiant light weaves golden threads over his skin, transforming him Hercules towering, titan, in lion skin cloak, carrying club, wreathed in golden glow then light weaving, then glow intensify the camera static settling into the light rises to his face, his mortal scars fading into divine radiance with a low radiant hum continuity held: Apotheosis; transformation",
+          "image_prompt_start": "photoreal cinematic: of Hercules' arms as radiant light weaves golden threads over his skin, transforming him.",
+          "image_prompt_end": "photoreal cinematic: The light to his face, his mortal scars fading into divine radiance.",
+          "video_prompt_start": "Light weaving. glow intensify. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Apotheosis; transformation.",
+          "video_prompt_end": "Light weaving. glow intensify. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Apotheosis; transformation.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S44",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "hercules_A1_fused",
+            "hebe_A6_fused"
+          ],
+          "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Hebe - the goddess of youth, youthful and radiant in silver-gold gown — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "crown settle"
+            ],
+            [
+              1.93,
+              3.5,
+              "gaze outward"
+            ]
+          ],
+          "narration_mk": "Веќе не смртник — Херкул стана бог.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of the transformed Hercules, now crowned with golden laurels, standing beside Hebe in eternal light",
+          "kf_last": "He looks out over the world far below Olympus with calm, immortal eyes",
+          "continuity": "Transformation complete; laurel crown",
+          "motion": "crown settle, gaze outward",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of the transformed Hercules, now crowned with golden laurels, standing beside Hebe in eternal light Hercules towering, titan, in lion skin cloak, carrying club, wreathed in golden glow Hebe slender, heroine, in silver gold gown, wreathed in radiant glow then crown settle, then gaze outward the camera static settling into he looks out over the world far below Olympus with calm, immortal eyes with a low radiant hum continuity held: Transformation complete; laurel crown",
+          "image_prompt_start": "photoreal cinematic: medium of the transformed Hercules, now crowned with golden laurels, standing beside Hebe in eternal light.",
+          "image_prompt_end": "photoreal cinematic: He looks out over the world far below Olympus with calm, immortal eyes.",
+          "video_prompt_start": "Crown settle. gaze outward. The camera static. The beat resolves into the next matching frame. Continuity held: Transformation complete; laurel crown.",
+          "video_prompt_end": "Crown settle. gaze outward. The camera static. The beat resolves into the next matching frame. Continuity held: Transformation complete; laurel crown.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S45",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "hercules_A1_fused",
+            "olympus_E4_prop"
+          ],
+          "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image2: the Mount-Olympus design - divine marble halls and gold rooftops in eternal light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.2,
+              "crane-up pull-back"
+            ],
+            [
+              2.2,
+              4.0,
+              "clouds roll"
+            ]
+          ],
+          "narration_mk": "Ги гледаше полињата и градовите што некогаш го чекаа.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle crane-up from Olympus down over the mortal world, clouds parting to show temples, seas and citadels bathed in new light",
+          "kf_last": "Crane pulls back to frame Hercules and the gods high above the turning world",
+          "continuity": "Closing vista; divine perspective",
+          "motion": "crane-up pull-back, clouds roll",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle crane-up from Olympus down over the mortal world, clouds parting to show temples, seas and citadels bathed in new light Hercules towering, titan, in lion skin cloak, carrying club, wreathed in golden glow then crane-up pull-back, then clouds roll settling into crane pulls back to frame Hercules and the gods high above the turning world with a low radiant hum continuity held: Closing vista; divine perspective",
+          "image_prompt_start": "photoreal cinematic: from Olympus down over the mortal world, clouds parting to show temples, seas and citadels bathed in new light.",
+          "image_prompt_end": "photoreal cinematic: Crane pulls back to frame Hercules and the gods high above the turning world.",
+          "video_prompt_start": "Crane-up pull-back. clouds roll. The beat resolves into the next matching frame. Continuity held: Closing vista; divine perspective.",
+          "video_prompt_end": "Crane-up pull-back. clouds roll. The beat resolves into the next matching frame. Continuity held: Closing vista; divine perspective.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S46",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "hercules_A1_fused",
+            "hebe_A6_fused",
+            "zeus_A5_fused"
+          ],
+          "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Hebe - the goddess of youth, youthful and radiant in silver-gold gown — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Zeus - the king of Olympus, white beard and robes, commanding presence — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "light fireworks"
+            ],
+            [
+              1.93,
+              3.5,
+              "slow couple turn"
+            ]
+          ],
+          "narration_mk": "Неговото име се изговараше со почит под небото.",
+          "dialogue_mk": "",
+          "kf_first": "Wide shot of the assembled gods lifting the hero up, golden fireworks of light bursting silently above Olympus",
+          "kf_last": "Hercules and Hebe stand together, arms around each other, bathed in the glow",
+          "continuity": "Final celebration; couple together",
+          "motion": "light fireworks, slow couple turn",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide shot of the assembled gods lifting the hero up, golden fireworks of light bursting silently above Olympus Hercules towering, titan, in lion skin cloak, carrying club, wreathed in golden glow Hebe slender, heroine, in silver gold gown, wreathed in radiant glow Zeus majestic, monarch, in white robes, beard, carrying thunderbolt, wreathed in divine glow, lightning then light fireworks, then slow couple turn the camera static settling into hercules and Hebe stand together, arms around each other, bathed in the glow with a low radiant hum, thunder rolls continuity held: Final celebration; couple together",
+          "image_prompt_start": "photoreal cinematic: shot of the assembled gods lifting the hero up, golden fireworks of light bursting silently above Olympus.",
+          "image_prompt_end": "photoreal cinematic: Hercules and Hebe stand together, arms around each other, bathed in the glow.",
+          "video_prompt_start": "Light fireworks. slow couple turn. The camera static. The beat resolves into the next matching frame. Continuity held: Final celebration; couple together.",
+          "video_prompt_end": "Light fireworks. slow couple turn. The camera static. The beat resolves into the next matching frame. Continuity held: Final celebration; couple together.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S47",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "hercules_A1_fused",
+            "hebe_A6_fused"
+          ],
+          "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Hebe - the goddess of youth, youthful and radiant in silver-gold gown — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "slow dual push"
+            ],
+            [
+              1.65,
+              3.0,
+              "halo merge"
+            ]
+          ],
+          "narration_mk": "Лицето на младоста и лицето на силата — сега едно.",
+          "dialogue_mk": "",
+          "kf_first": "Close of Hercules and Hebe side by side, foreheads near, both smiling in golden dusk light",
+          "kf_last": "The image holds, soft halos merging around the two",
+          "continuity": "Reunion beat; dual halo",
+          "motion": "slow dual push, halo merge",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close of Hercules and Hebe side by side, foreheads near, both smiling in golden dusk light Hercules towering, titan, in lion skin cloak, carrying club, wreathed in golden glow Hebe slender, heroine, in silver gold gown, wreathed in radiant glow then slow dual push, then halo merge the camera static settling into the image holds, soft halos merging around the two with a low radiant hum continuity held: Reunion beat; dual halo",
+          "image_prompt_start": "photoreal cinematic: of Hercules and Hebe side by side, foreheads near, both smiling in golden dusk light.",
+          "image_prompt_end": "photoreal cinematic: The image holds, soft halos merging around the two.",
+          "video_prompt_start": "Slow dual push. halo merge. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Reunion beat; dual halo.",
+          "video_prompt_end": "Slow dual push. halo merge. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Reunion beat; dual halo.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S48",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 4.5,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "olympus_E4_prop"
+          ],
+          "ref_scope": "image1: the Mount-Olympus design - divine marble halls and gold rooftops in eternal light — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.48,
+              "grand crane-up"
+            ],
+            [
+              2.48,
+              4.5,
+              "starfield emerge"
+            ]
+          ],
+          "narration_mk": "И така, на планината Олимп, завршува приказната за Херкул.",
+          "dialogue_mk": "",
+          "kf_first": "Final wide crane-up over Mount Olympus in eternal golden light, the divine palace glowing among the clouds, stars beginning to appear",
+          "kf_last": "Crane rises into the heavens as Olympus recedes, a single bright constellation forms",
+          "continuity": "Closing shot; constellation motif",
+          "motion": "grand crane-up, starfield emerge",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: final wide crane-up over Mount Olympus in eternal golden light, the divine palace glowing among the clouds, stars beginning to appear then grand crane-up, then starfield emerge settling into crane rises into the heavens as Olympus recedes, a single bright constellation forms continuity held: Closing shot; constellation motif",
+          "image_prompt_start": "photoreal cinematic: Final wide over Mount Olympus in eternal golden light, the divine palace glowing among the clouds, stars beginning to appear.",
+          "image_prompt_end": "photoreal cinematic: Crane into the heavens as Olympus recedes, a single bright constellation forms.",
+          "video_prompt_start": "Grand crane-up. starfield emerge. The beat resolves into the next matching frame. Continuity held: Closing shot; constellation motif.",
+          "video_prompt_end": "Grand crane-up. starfield emerge. The beat resolves into the next matching frame. Continuity held: Closing shot; constellation motif.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "underworld_cavern_tiryns_plaza_and_mount_olympus",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#fde68a",
+        "#e2e8f0",
+        "#fbbf24"
+      ],
+      "light_direction": "radiant divine dawn light from above, key light from screen-left",
+      "time_of_day": "dawn"
+    }
+  ],
+  "director_corrections": {
+    "issued": "2026-11-07",
+    "source": "KB §13 DIRECTOR CORRECTIONS — overrides all prior asset/keyframe guidance",
+    "rules": [
+      "DD HEADWEAR: no cap/hood/bandana/mask on head; hood = back-cowl only (cape-like); bare head + teal-blue glowing hair always visible; any head/face covering = REJECT",
+      "LEGENDARY WEAPONS MUST APPEAR: DD = twin Frostbite-class hand crossbows (ice-blue arcane crystal limbs, frost runes, frozen-light string, teal-blue glow); AZ = Dawnbreaker-class greatsword (pale sunsteel, molten-gold runes, golden holy fire edge, sunburst crossguard); hero sheet/keyframe without weapon = INCOMPLETE",
+      "WEAPON ANTI-SLOP: fantasy construction only; crossbow must NEVER read as firearm (no barrel/magazine/stock/Uzi/SMG silhouette = REJECT); anti-slop negatives always appended",
+      "BOSS FACE: Mal'garot HAS a prolific molten-lava face (lava dripping/running, drops falling to ground); faceless boss sheets SUPERSEDED",
+      "LOCATION BRIGHTNESS FLOOR: environment plates silhouette-readable at thumbnail; no murk-dark grades"
+    ],
+    "applies_when": "Activates when face_lock changes from AI-default to an enrolled identity (DD/AZ). AI-default packages carry this as a forward constraint, not a current defect.",
+    "anti_slop_negatives": "firearm, gun, machinegun, Uzi, barrel, magazine, ammo clip, muzzle, modern weapon"
+  },
+  "character_designs": {
+    "hercules": {
+      "archetype": "titan",
+      "build": "towering",
+      "scale": "demigod",
+      "palette": {
+        "primary": "#8a5a2b",
+        "secondary": "#d4a017",
+        "glow": "#fbbf24"
+      },
+      "costume": [
+        "lion_skin_cloak"
+      ],
+      "props": [
+        "club"
+      ],
+      "fx": [
+        "golden_glow"
+      ]
+    },
+    "eurystheus": {
+      "archetype": "coward",
+      "build": "thin",
+      "scale": "human",
+      "palette": {
+        "primary": "#5b2150",
+        "secondary": "#d4af37",
+        "glow": "#c94c4c"
+      },
+      "costume": [
+        "purple_robes",
+        "crown"
+      ],
+      "props": [],
+      "fx": []
+    },
+    "geryon": {
+      "archetype": "giant",
+      "build": "colossal",
+      "scale": "giant",
+      "palette": {
+        "primary": "#6b3a2a",
+        "secondary": "#8a4a3a",
+        "glow": "#e05252"
+      },
+      "costume": [
+        "three_heads",
+        "three_pairs_of_arms"
+      ],
+      "props": [],
+      "fx": []
+    },
+    "ladon": {
+      "archetype": "guardian",
+      "build": "serpentine",
+      "scale": "colossal",
+      "palette": {
+        "primary": "#14532d",
+        "secondary": "#2dd4bf",
+        "glow": "#a7f3d0"
+      },
+      "costume": [
+        "emerald_scales"
+      ],
+      "props": [],
+      "fx": [
+        "venom_drip"
+      ]
+    },
+    "cerberus": {
+      "archetype": "beast",
+      "build": "hulking",
+      "scale": "monstrous",
+      "palette": {
+        "primary": "#1a1a1a",
+        "secondary": "#3a3730",
+        "glow": "#f97316"
+      },
+      "costume": [
+        "three_heads",
+        "dark_fur"
+      ],
+      "props": [
+        "bronze_chains"
+      ],
+      "fx": [
+        "ember_eyes"
+      ]
+    },
+    "zeus": {
+      "archetype": "monarch",
+      "build": "majestic",
+      "scale": "god",
+      "palette": {
+        "primary": "#e2e8f0",
+        "secondary": "#fde68a",
+        "glow": "#fbbf24"
+      },
+      "costume": [
+        "white_robes",
+        "beard"
+      ],
+      "props": [
+        "thunderbolt"
+      ],
+      "fx": [
+        "divine_glow",
+        "lightning"
+      ]
+    },
+    "hebe": {
+      "archetype": "heroine",
+      "build": "slender",
+      "scale": "goddess",
+      "palette": {
+        "primary": "#f5e6c8",
+        "secondary": "#d4af37",
+        "glow": "#fda4af"
+      },
+      "costume": [
+        "silver_gold_gown"
+      ],
+      "props": [],
+      "fx": [
+        "radiant_glow"
+      ]
+    }
+  }
+}

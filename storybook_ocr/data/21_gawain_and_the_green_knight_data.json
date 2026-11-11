@@ -1,0 +1,2587 @@
+{
+  "num": "21",
+  "title_mk": "Гавејн и Зелениот Витез",
+  "title_en": "Gawain and the Green Knight",
+  "genre": "Легенда · епска акција",
+  "logline": "Младиот витез Гавејн го прифаќа натприродниот предизвик на Зелениот Витез и по една година и еден ден тргнува да го исполни својот збор.",
+  "spec": {
+    "aspect": "16:9",
+    "resolution": "1216x704",
+    "fps": 24,
+    "model": "model-agnostic (chosen at generation)",
+    "style": "photoreal",
+    "flf": true,
+    "language": "mk",
+    "shot_floor": 40,
+    "shot_max": 60,
+    "seed_policy": "fixed-per-shot (same seed → reproducible shot; re-roll per shot id)",
+    "style_anchor": [
+      "Diablo 2 cinematic",
+      "World of Warcraft cinematic",
+      "StarCraft cinematic"
+    ],
+    "negative_prompt": "deformed, extra limbs, morphing, watermark, text, static frame, blurry, low quality, cropped head, cut-off face",
+    "frames": 121,
+    "frames_fallback": 81,
+    "routes": [
+      {
+        "model": "Wan2.1-FLF2V-14B-720P",
+        "input": "start+end native (run START-ONLY)",
+        "status": "WORKING (lead for 14B quality)"
+      },
+      {
+        "model": "Kandinsky 6.0 Lite/Pro",
+        "input": "start-image-only",
+        "status": "WORKING (Pro-distill untested at scale)"
+      },
+      {
+        "model": "SkyReels-V3 R2V-14B",
+        "input": "start-image-only",
+        "status": "WORKING (fallback)"
+      },
+      {
+        "model": "LTX-Video 2B v0.9.5",
+        "input": "start-image-only",
+        "status": "WORKING (small/fast, low ceiling)"
+      },
+      {
+        "model": "Mochi-1",
+        "input": "start-image-only",
+        "status": "untested here"
+      },
+      {
+        "model": "LTX-2.3 22B distilled",
+        "input": "start-image-only",
+        "status": "DEAD (nanobind native-crash, 42 note)"
+      }
+    ],
+    "model_note": "Model chosen per story at generation (43 §4). Keyframes + continuation prompts are generator-agnostic; only the render command differs per model."
+  },
+  "cast": [
+    {
+      "role": "Гавејн / Gawain",
+      "trait": "Млад благороден витез, внук на кралот Артур, во сребрен оклоп и темноцрвен плашт",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Зелениот Витез / Green Knight",
+      "trait": "Мистериозен џиновски витез со зелена кожа, зелена коса, зелена облека и зелен коњ",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Крал Артур / King Arthur",
+      "trait": "Мудар крал на Камелот со златна круна и темноцрвен плашт",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Господарот на замокот / Lord of the Castle",
+      "trait": "Гостопримлив моќник со крзнени облеки, дарежлив домаќин",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    }
+  ],
+  "acts": [
+    {
+      "id": "act1",
+      "num": "Act I",
+      "title": "Предизвикот",
+      "color": "#2dd4bf",
+      "pct": 30,
+      "synopsis": "За време на гозбата на кралот Артур влегува Зелениот Витез и предизвикува некој да му зададе удар што ќе го врати по една година. Гавејн го прифаќа предизвикот и му ја отсекува главата, но витезот си заминува неповреден.",
+      "shots": [
+        {
+          "id": "S01",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "arthur_A3_fused",
+            "camelot_hall_env_A1_prop"
+          ],
+          "ref_scope": "image1: the fused master of King Arthur - the wise king of Camelot with a golden crown and crimson mantle - 100% identical; studio bg/pose/light NOT used; image2: Camelot great feasting hall lit by torches, long tables and the high table - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "crane down over the torchlit feasting hall"
+            ],
+            [
+              2.0,
+              4.0,
+              "reveal King Arthur at the high table"
+            ]
+          ],
+          "narration_mk": "Кралот Артур приреди богата гозба за сите свои витези.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of Camelot's great hall at night, long tables heaped with food and torches blazing, knights feasting, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Crane-down closer over the feasting hall toward the high table where King Arthur sits",
+          "continuity": "Feast hall palette; torchlight; knight group",
+          "motion": "slow crane-down; torch flames flickering",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of Camelot's great hall at night, long tables heaped with food and torches blazing, knights feasting Arthur robed, monarch, in crown, cloak, beard, wreathed in golden glow then crane down over the torchlit feasting hall, then reveal King Arthur at the high table the camera crane-down settling into crane-down closer over the feasting hall toward the high table where King Arthur sits with a low radiant hum, stone groans continuity held: Feast hall palette; torchlight; knight group",
+          "image_prompt_start": "photoreal cinematic: wide of Camelot's great hall at night, long tables heaped with food and torches blazing, knights feasting.",
+          "image_prompt_end": "photoreal cinematic: closer over the feasting hall toward the high table where King Arthur sits.",
+          "video_prompt_start": "Crane down over the torchlit feasting hall. reveal King Arthur at the high table. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Feast hall palette; torchlight; knight group.",
+          "video_prompt_end": "Crane down over the torchlit feasting hall. reveal King Arthur at the high table. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Feast hall palette; torchlight; knight group.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S02",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "arthur_A3_fused",
+            "camelot_hall_env_A1_prop"
+          ],
+          "ref_scope": "image1: the fused master of King Arthur - the wise king of Camelot with a golden crown and crimson mantle - 100% identical; studio bg/pose/light NOT used; image2: Camelot great feasting hall lit by torches, long tables and the high table - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "medium of Arthur raising a goblet in warm greeting"
+            ],
+            [
+              1.5,
+              3.0,
+              "he lowers the goblet as firelight plays on his regal face"
+            ]
+          ],
+          "narration_mk": "На почесното место седеше кралот Артур.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of King Arthur at the high table, golden crown and crimson mantle, raising a goblet with a warm smile, photoreal WoW cinematic grade, 1216x704",
+          "kf_last": "He lowers the goblet, firelight playing across his regal face",
+          "continuity": "King Arthur costume; high table palette",
+          "motion": "subtle goblet motion; firelight flicker",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of King Arthur at the high table, golden crown and crimson mantle, raising a goblet with a warm smile, photoreal WoW cinematic grade Arthur robed, monarch, in crown, cloak, beard, wreathed in golden glow then medium of Arthur raising a goblet in warm greeting, then he lowers the goblet as firelight plays on his regal face the camera static settling into he lowers the goblet, firelight playing across his regal face with a low radiant hum, stone groans continuity held: King Arthur costume; high table palette",
+          "image_prompt_start": "photoreal cinematic: medium of King Arthur at the high table, golden crown and crimson mantle, raising a goblet with a warm smile, photoreal WoW cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: He lowers the goblet, firelight playing across his regal face.",
+          "video_prompt_start": "Medium of Arthur raising a goblet in warm greeting. he lowers the goblet as firelight plays on his regal face. The camera static. The beat resolves into the next matching frame. Continuity held: King Arthur costume; high table palette.",
+          "video_prompt_end": "Medium of Arthur raising a goblet in warm greeting. he lowers the goblet as firelight plays on his regal face. The camera static. The beat resolves into the next matching frame. Continuity held: King Arthur costume; high table palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S03",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-right",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "arthur_A3_fused",
+            "camelot_hall_env_A1_prop"
+          ],
+          "ref_scope": "image1: the fused master of King Arthur - the wise king of Camelot with a golden crown and crimson mantle - 100% identical; studio bg/pose/light NOT used; image2: Camelot great feasting hall lit by torches, long tables and the high table - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "wide of the crowded hall, servants and knights laughing"
+            ],
+            [
+              1.8,
+              3.5,
+              "pan-right toward the great entrance doors"
+            ]
+          ],
+          "narration_mk": "Салата беше полна со светлина, песна и смеа.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide of the crowded feast hall, servants carrying platters, knights laughing and singing, photoreal StarCraft cinematic, 1216x704",
+          "kf_last": "Pan-right across the merriment toward the great entrance doors",
+          "continuity": "Feast hall; knight group costumes",
+          "motion": "slow pan-right; crowd motion",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide of the crowded feast hall, servants carrying platters, knights laughing and singing, photoreal StarCraft cinematic Arthur robed, monarch, in crown, cloak, beard, wreathed in golden glow then wide of the crowded hall, servants and knights laughing, then pan-right toward the great entrance doors settling into pan-right across the merriment toward the great entrance doors with a low radiant hum, stone groans continuity held: Feast hall; knight group costumes",
+          "image_prompt_start": "photoreal cinematic: wide of the crowded feast hall, servants carrying platters, knights laughing and singing.",
+          "image_prompt_end": "photoreal cinematic: -right across the merriment toward the great entrance doors.",
+          "video_prompt_start": "Wide of the crowded hall, servants and knights laughing. pan-right toward the great entrance doors. The beat resolves into the next matching frame. Continuity held: Feast hall; knight group costumes.",
+          "video_prompt_end": "Wide of the crowded hall, servants and knights laughing. pan-right toward the great entrance doors. The beat resolves into the next matching frame. Continuity held: Feast hall; knight group costumes.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S04",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "green_knight_A2_fused",
+            "camelot_hall_env_A1_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Green Knight - a giant knight with green skin, green hair and green clothes, with his magnificent green horse - 100% identical; studio bg/pose/light NOT used; image2: Camelot great feasting hall lit by torches, long tables and the high table - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the great entrance doors burst open, wind and cold air rush in"
+            ],
+            [
+              1.5,
+              3.0,
+              "a mysterious green figure is silhouetted in the threshold"
+            ]
+          ],
+          "narration_mk": "Одеднаш, големите врати силно се отворија.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide as the great hall doors burst open, wind and cold air rushing in, candles guttering, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "The doors stand wide, a mysterious figure silhouetted in the threshold",
+          "continuity": "Feast hall; door light spill",
+          "motion": "doors swinging open; candle flames bending",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide as the great hall doors burst open, wind and cold air rushing in, candles guttering, photoreal Diablo2 cinematic Green Knight hulking, knight, in cloak, wreathed in shadow smoke then the great entrance doors burst open, wind and cold air rush in, then a mysterious green figure is silhouetted in the threshold the camera static settling into the doors stand wide, a mysterious figure silhouetted in the threshold with shadows whisper, stone groans continuity held: Feast hall; door light spill",
+          "image_prompt_start": "photoreal cinematic: wide as the great hall doors burst open, wind and cold air rushing in, candles guttering.",
+          "image_prompt_end": "photoreal cinematic: The doors stand wide, a mysterious figure silhouetted in the threshold.",
+          "video_prompt_start": "The great entrance doors burst open, wind and cold air rush in. a mysterious green figure is silhouetted in the threshold. The camera static. The beat resolves into the next matching frame. Continuity held: Feast hall; door light spill.",
+          "video_prompt_end": "The great entrance doors burst open, wind and cold air rush in. a mysterious green figure is silhouetted in the threshold. The camera static. The beat resolves into the next matching frame. Continuity held: Feast hall; door light spill.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S05",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "green_knight_A2_fused",
+            "camelot_hall_env_A1_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Green Knight - a giant knight with green skin, green hair and green clothes, with his magnificent green horse - 100% identical; studio bg/pose/light NOT used; image2: Camelot great feasting hall lit by torches, long tables and the high table - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "low-angle wide of the Green Knight riding his green horse into the hall"
+            ],
+            [
+              1.8,
+              3.5,
+              "push-in as the hooves strike stone and courtiers shrink back"
+            ]
+          ],
+          "narration_mk": "Влезе непознат туѓинец — целиот во зелено, јавајќи на зелен коњ.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of the Green Knight riding a magnificent green horse into the hall, all green, torchlight glinting off his form, photoreal WoW cinematic, 1216x704",
+          "kf_last": "Push-in as the green horse's hooves strike the stone floor, courtiers shrinking back",
+          "continuity": "Green Knight and green horse; feast hall",
+          "motion": "slow push-in; horse stepping forward",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of the Green Knight riding a magnificent green horse into the hall, all green, torchlight glinting off his form, photoreal WoW cinematic Green Knight hulking, knight, in cloak, wreathed in shadow smoke then low-angle wide of the Green Knight riding his green horse into the hall, then push-in as the hooves strike stone and courtiers shrink back settling into push-in as the green horse's hooves strike the stone floor, courtiers shrinking back with shadows whisper, stone groans continuity held: Green Knight and green horse; feast hall",
+          "image_prompt_start": "photoreal cinematic: wide of the Green Knight riding a magnificent green horse into the hall, all green, torchlight glinting off his form, photoreal WoW cinematic.",
+          "image_prompt_end": "photoreal cinematic: as the green horse's hooves strike the stone floor, courtiers shrinking back.",
+          "video_prompt_start": "Low-angle wide of the Green Knight riding his green horse into the hall. push-in as the hooves strike stone and courtiers shrink back. The beat resolves into the next matching frame. Continuity held: Green Knight and green horse; feast hall.",
+          "video_prompt_end": "Low-angle wide of the Green Knight riding his green horse into the hall. push-in as the hooves strike stone and courtiers shrink back. The beat resolves into the next matching frame. Continuity held: Green Knight and green horse; feast hall.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S06",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "green_knight_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Green Knight - a giant knight with green skin, green hair and green clothes, with his magnificent green horse - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "medium of the Green Knight, vivid green skin and flowing green hair"
+            ],
+            [
+              1.5,
+              3.0,
+              "he tilts his head, the green of his eyes catching the light"
+            ]
+          ],
+          "narration_mk": "Имаше зелена кожа, зелена коса и зелена облека.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of the Green Knight's face and shoulders, vivid green skin and flowing green hair, intense gaze, photoreal cinematic, 1216x704",
+          "kf_last": "He tilts his head slightly, the green of his eyes catching the light",
+          "continuity": "Green Knight facial design; green palette",
+          "motion": "slow head tilt; intense stare",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of the Green Knight's face and shoulders, vivid green skin and flowing green hair, intense gaze, photoreal cinematic Green Knight hulking, knight, in cloak, wreathed in shadow smoke then medium of the Green Knight, vivid green skin and flowing green hair, then he tilts his head, the green of his eyes catching the light the camera static settling into he tilts his head slightly, the green of his eyes catching the light with shadows whisper continuity held: Green Knight facial design; green palette",
+          "image_prompt_start": "photoreal cinematic: medium of the Green Knight's face and shoulders, vivid green skin and flowing green hair, intense gaze, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: He tilts his head slightly, the green of his eyes catching the light.",
+          "video_prompt_start": "Medium of the Green Knight, vivid green skin and flowing green hair. he tilts his head, the green of his eyes catching the light. The camera static. The beat resolves into the next matching frame. Continuity held: Green Knight facial design; green palette.",
+          "video_prompt_end": "Medium of the Green Knight, vivid green skin and flowing green hair. he tilts his head, the green of his eyes catching the light. The camera static. The beat resolves into the next matching frame. Continuity held: Green Knight facial design; green palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S07",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "green_knight_A2_fused",
+            "axe_B2_sheet"
+          ],
+          "ref_scope": "image1: the fused master of the Green Knight - a giant knight with green skin, green hair and green clothes, with his magnificent green horse - 100% identical; studio bg/pose/light NOT used; image2: the great battle axe of the Green Knight - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "low-angle medium of the Green Knight holding out a great axe"
+            ],
+            [
+              1.8,
+              3.5,
+              "he plants the axe haft on the stone with a resonant thud"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Зелениот Витез: „Кој ќе се осмели да ме удри со меч, но потоа да прими удар од мене?“",
+          "kf_first": "Low-angle medium of the Green Knight from within the hall, holding out a great axe haft, his deep voice addressing the court, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "He plants the axe haft on the stone with a resonant thud",
+          "continuity": "Green Knight; hall; axe prop",
+          "motion": "axe planting; echo of the thud",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of the Green Knight from within the hall, holding out a great axe haft, his deep voice addressing the court, photoreal Diablo2 cinematic Green Knight hulking, knight, in cloak, wreathed in shadow smoke then low-angle medium of the Green Knight holding out a great axe, then he plants the axe haft on the stone with a resonant thud the camera static with shadows whisper a voice speaks in Macedonian: \"Зелениот Витез: „Кој ќе се осмели да ме удри со меч, но потоа да прими удар од мене?“\" continuity held: Green Knight; hall; axe prop",
+          "image_prompt_start": "photoreal cinematic: medium of the Green Knight from within the hall, holding out a great axe haft, his deep voice addressing the court.",
+          "image_prompt_end": "photoreal cinematic: He plants the axe haft on the stone with a resonant thud.",
+          "video_prompt_start": "Low-angle medium of the Green Knight holding out a great axe. he plants the axe haft on the stone with a resonant thud. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Зелениот Витез: „Кој ќе се осмели да ме удри со меч, но потоа да прими удар од мене?“\" Continuity held: Green Knight; hall; axe prop.",
+          "video_prompt_end": "Low-angle medium of the Green Knight holding out a great axe. he plants the axe haft on the stone with a resonant thud. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Зелениот Витез: „Кој ќе се осмели да ме удри со меч, но потоа да прими удар од мене?“\" Continuity held: Green Knight; hall; axe prop.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S08",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "arthur_A3_fused",
+            "green_knight_A2_fused",
+            "camelot_hall_env_A1_prop"
+          ],
+          "ref_scope": "image1: the fused master of King Arthur - the wise king of Camelot with a golden crown and crimson mantle - 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Green Knight - a giant knight with green skin, green hair and green clothes, with his magnificent green horse - 100% identical; studio bg/pose/light NOT used; image3: Camelot great feasting hall lit by torches, long tables and the high table - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "high-angle wide of the frozen hall, no knight dares move"
+            ],
+            [
+              1.8,
+              3.5,
+              "the held silence stretches over the still court"
+            ]
+          ],
+          "narration_mk": "Тишина падна врз витезите — никој не се осмели.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of the feast hall frozen, knights staring down at their plates, Arthur motionless, the Green Knight standing alone at center, photoreal StarCraft cinematic, 1216x704",
+          "kf_last": "The held silence stretches, candlelight steady over the still court",
+          "continuity": "Feast hall; tense stillness",
+          "motion": "held stillness; faint candle flicker",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of the feast hall frozen, knights staring down at their plates, Arthur motionless, the Green Knight standing alone at center, photoreal StarCraft cinematic Arthur robed, monarch, in crown, cloak, beard, wreathed in golden glow Green Knight hulking, knight, in cloak, wreathed in shadow smoke then high-angle wide of the frozen hall, no knight dares move, then the held silence stretches over the still court the camera static settling into the held silence stretches, candlelight steady over the still court with a low radiant hum, shadows whisper continuity held: Feast hall; tense stillness",
+          "image_prompt_start": "photoreal cinematic: wide of the feast hall frozen, knights staring down at their plates, Arthur motionless, the Green Knight standing alone at center.",
+          "image_prompt_end": "photoreal cinematic: The held silence stretches, candlelight steady over the still court.",
+          "video_prompt_start": "High-angle wide of the frozen hall, no knight dares move. the held silence stretches over the still court. The camera static. The beat resolves into the next matching frame. Continuity held: Feast hall; tense stillness.",
+          "video_prompt_end": "High-angle wide of the frozen hall, no knight dares move. the held silence stretches over the still court. The camera static. The beat resolves into the next matching frame. Continuity held: Feast hall; tense stillness.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S09",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "camelot_hall_env_A1_prop"
+          ],
+          "ref_scope": "image1: the fused master of Gawain - a young noble knight, nephew of King Arthur, in silver armor and a crimson cloak - 100% identical; studio bg/pose/light NOT used; image2: Camelot great feasting hall lit by torches, long tables and the high table - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "medium of Gawain rising from his seat into the torchlight"
+            ],
+            [
+              1.5,
+              3.0,
+              "track follows his steady stride toward the Green Knight"
+            ]
+          ],
+          "narration_mk": "Но Гавејн, внукот на Артур, стана и истапи напред.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of young Gawain rising from his seat, crimson and gold tunic, stepping forward into the torchlight, photoreal WoW cinematic, 1216x704",
+          "kf_last": "Tracking shot follows his steady stride toward the Green Knight",
+          "continuity": "Gawain costume; hall palette",
+          "motion": "lateral track; confident stride",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of young Gawain rising from his seat, crimson and gold tunic, stepping forward into the torchlight, photoreal WoW cinematic Gawain armored, knight, in cloak, carrying sword then medium of Gawain rising from his seat into the torchlight, then track follows his steady stride toward the Green Knight settling into tracking shot follows his steady stride toward the Green Knight with steel rings, stone groans continuity held: Gawain costume; hall palette",
+          "image_prompt_start": "photoreal cinematic: medium of young Gawain rising from his seat, crimson and gold tunic, stepping forward into the torchlight, photoreal WoW cinematic.",
+          "image_prompt_end": "photoreal cinematic: his steady stride toward the Green Knight.",
+          "video_prompt_start": "Medium of Gawain rising from his seat into the torchlight. track follows his steady stride toward the Green Knight. The beat resolves into the next matching frame. Continuity held: Gawain costume; hall palette.",
+          "video_prompt_end": "Medium of Gawain rising from his seat into the torchlight. track follows his steady stride toward the Green Knight. The beat resolves into the next matching frame. Continuity held: Gawain costume; hall palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S10",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "green_knight_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of Gawain - a young noble knight, nephew of King Arthur, in silver armor and a crimson cloak - 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Green Knight - a giant knight with green skin, green hair and green clothes, with his magnificent green horse - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "medium of Gawain facing the towering Green Knight, hand on sword hilt"
+            ],
+            [
+              1.8,
+              3.5,
+              "the Green Knight studies him with a slight nod"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Гавејн: „Јас ќе го прифатам твојот предизвик.“",
+          "kf_first": "Eye-level medium of Gawain facing the towering Green Knight, his hand on his sword hilt, voice steady, photoreal cinematic, 1216x704",
+          "kf_last": "The Green Knight studies him, a slight nod of acknowledgement",
+          "continuity": "Gawain and Green Knight; hall",
+          "motion": "steady gaze; hand settling on hilt",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of Gawain facing the towering Green Knight, his hand on his sword hilt, voice steady, photoreal cinematic Gawain armored, knight, in cloak, carrying sword Green Knight hulking, knight, in cloak, wreathed in shadow smoke then medium of Gawain facing the towering Green Knight, hand on sword hilt, then the Green Knight studies him with a slight nod the camera static settling into the Green Knight studies him, a slight nod of acknowledgement with steel rings, shadows whisper a voice speaks in Macedonian: \"Гавејн: „Јас ќе го прифатам твојот предизвик.“\" continuity held: Gawain and Green Knight; hall",
+          "image_prompt_start": "photoreal cinematic: medium of Gawain facing the towering Green Knight, his hand on his sword hilt, voice steady, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The Green Knight studies him, a slight nod of acknowledgement.",
+          "video_prompt_start": "Medium of Gawain facing the towering Green Knight, hand on sword hilt. the Green Knight studies him with a slight nod. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Гавејн: „Јас ќе го прифатам твојот предизвик.“\" Continuity held: Gawain and Green Knight; hall.",
+          "video_prompt_end": "Medium of Gawain facing the towering Green Knight, hand on sword hilt. the Green Knight studies him with a slight nod. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Гавејн: „Јас ќе го прифатам твојот предизвик.“\" Continuity held: Gawain and Green Knight; hall.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S11",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "shot-reverse",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "green_knight_A2_fused",
+            "sword_B1_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Gawain - a young noble knight, nephew of King Arthur, in silver armor and a crimson cloak - 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Green Knight - a giant knight with green skin, green hair and green clothes, with his magnificent green horse - 100% identical; studio bg/pose/light NOT used; image3: the knightly sword of Gawain with a silver hilt - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "wide of the Green Knight kneeling and offering his neck"
+            ],
+            [
+              1.8,
+              3.5,
+              "shot-reverse as Gawain brings the blade down"
+            ]
+          ],
+          "narration_mk": "Зелениот Витез клекна и го подаде вратот, а Гавејн го крена мечот.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide of the Green Knight kneeling and offering his neck, Gawain raising the sword high, the hall holding its breath, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "Shot-reverse framing the descending blade as the Green Knight calmly waits",
+          "continuity": "Gawain, Green Knight, sword; hall tension",
+          "motion": "shot-reverse; blade raised then falling",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide of the Green Knight kneeling and offering his neck, Gawain raising the sword high, the hall holding its breath, photoreal Diablo2 cinematic Gawain armored, knight, in cloak, carrying sword Green Knight hulking, knight, in cloak, wreathed in shadow smoke then wide of the Green Knight kneeling and offering his neck, then shot-reverse as Gawain brings the blade down settling into shot-reverse framing the descending blade as the Green Knight calmly waits with steel rings, shadows whisper continuity held: Gawain, Green Knight, sword; hall tension",
+          "image_prompt_start": "photoreal cinematic: wide of the Green Knight kneeling and offering his neck, Gawain raising the sword high, the hall holding its breath.",
+          "image_prompt_end": "photoreal cinematic: Shot-reverse framing the descending blade as the Green Knight calmly waits.",
+          "video_prompt_start": "Wide of the Green Knight kneeling and offering his neck. shot-reverse as Gawain brings the blade down. The beat resolves into the next matching frame. Continuity held: Gawain, Green Knight, sword; hall tension.",
+          "video_prompt_end": "Wide of the Green Knight kneeling and offering his neck. shot-reverse as Gawain brings the blade down. The beat resolves into the next matching frame. Continuity held: Gawain, Green Knight, sword; hall tension.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S12",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "green_knight_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Green Knight - a giant knight with green skin, green hair and green clothes, with his magnificent green horse - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "medium of the Green Knight calmly holding his severed head under his arm"
+            ],
+            [
+              1.5,
+              3.0,
+              "he turns and steps toward his waiting green horse"
+            ]
+          ],
+          "narration_mk": "Но, како ништо да не се случило, витезот си ја зеде главата.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of the Green Knight calmly holding his own head under his arm, unharmed and unbothered, the court reeling, photoreal WoW cinematic, 1216x704",
+          "kf_last": "He turns and steps toward his waiting green horse",
+          "continuity": "Green Knight; head under arm; hall chaos",
+          "motion": "calm turn; step to horse",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of the Green Knight calmly holding his own head under his arm, unharmed and unbothered, the court reeling, photoreal WoW cinematic Green Knight hulking, knight, in cloak, wreathed in shadow smoke then medium of the Green Knight calmly holding his severed head under his arm, then he turns and steps toward his waiting green horse the camera static with shadows whisper continuity held: Green Knight; head under arm; hall chaos",
+          "image_prompt_start": "photoreal cinematic: medium of the Green Knight calmly holding his own head under his arm, unharmed and unbothered, the court reeling, photoreal WoW cinematic.",
+          "image_prompt_end": "photoreal cinematic: He and steps toward his waiting green horse.",
+          "video_prompt_start": "Medium of the Green Knight calmly holding his severed head under his arm. he turns and steps toward his waiting green horse. The camera static. The beat resolves into the next matching frame. Continuity held: Green Knight; head under arm; hall chaos.",
+          "video_prompt_end": "Medium of the Green Knight calmly holding his severed head under his arm. he turns and steps toward his waiting green horse. The camera static. The beat resolves into the next matching frame. Continuity held: Green Knight; head under arm; hall chaos.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S13",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "green_knight_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Green Knight - a giant knight with green skin, green hair and green clothes, with his magnificent green horse - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "low-angle medium of the severed head speaking from under his arm"
+            ],
+            [
+              1.8,
+              3.5,
+              "the horse rears slightly as the green eyes fix on Gawain"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Зелениот Витез: „Ќе те чекам кај Зелената црква по една година и еден ден.“",
+          "kf_first": "Low-angle medium of the Green Knight seated on his green horse, his severed head speaking from under his arm, photoreal cinematic, 1216x704",
+          "kf_last": "The horse rears slightly as the head's green eyes fix on Gawain",
+          "continuity": "Green Knight and horse; head speaking",
+          "motion": "horse shifting; head's gaze",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of the Green Knight seated on his green horse, his severed head speaking from under his arm, photoreal cinematic Green Knight hulking, knight, in cloak, wreathed in shadow smoke then low-angle medium of the severed head speaking from under his arm, then the horse rears slightly as the green eyes fix on Gawain the camera static settling into the horse rears slightly as the head's green eyes fix on Gawain with shadows whisper a voice speaks in Macedonian: \"Зелениот Витез: „Ќе те чекам кај Зелената црква по една година и еден ден.“\" continuity held: Green Knight and horse; head speaking",
+          "image_prompt_start": "photoreal cinematic: medium of the Green Knight seated on his green horse, his severed head speaking from under his arm, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The horse rears slightly as the head's green eyes fix on Gawain.",
+          "video_prompt_start": "Low-angle medium of the severed head speaking from under his arm. the horse rears slightly as the green eyes fix on Gawain. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Зелениот Витез: „Ќе те чекам кај Зелената црква по една година и еден ден.“\" Continuity held: Green Knight and horse; head speaking.",
+          "video_prompt_end": "Low-angle medium of the severed head speaking from under his arm. the horse rears slightly as the green eyes fix on Gawain. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Зелениот Витез: „Ќе те чекам кај Зелената црква по една година и еден ден.“\" Continuity held: Green Knight and horse; head speaking.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S14",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-left",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "green_knight_A2_fused",
+            "gawain_A1_fused",
+            "camelot_hall_env_A1_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Green Knight - a giant knight with green skin, green hair and green clothes, with his magnificent green horse - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Gawain - a young noble knight, nephew of King Arthur, in silver armor and a crimson cloak - 100% identical; studio bg/pose/light NOT used; image3: Camelot great feasting hall lit by torches, long tables and the high table - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "wide of the Green Knight riding out through the doors into the night"
+            ],
+            [
+              1.8,
+              3.5,
+              "pan-left to Gawain standing alone amid the shaken court"
+            ]
+          ],
+          "narration_mk": "И додека заминуваше, главата му го кажа датумот на враќањето.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide of the Green Knight riding out through the great doors into the night, the hall in stunned silence, photoreal StarCraft cinematic, 1216x704",
+          "kf_last": "Pan-left to Gawain standing alone amid the shaken court, watching",
+          "continuity": "Green Knight leaving; Gawain; night spill",
+          "motion": "pan-left; departing ride",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide of the Green Knight riding out through the great doors into the night, the hall in stunned silence, photoreal StarCraft cinematic Green Knight hulking, knight, in cloak, wreathed in shadow smoke Gawain armored, knight, in cloak, carrying sword then wide of the Green Knight riding out through the doors into the night, then pan-left to Gawain standing alone amid the shaken court settling into pan-left to Gawain standing alone amid the shaken court, watching with shadows whisper, steel rings continuity held: Green Knight leaving; Gawain; night spill",
+          "image_prompt_start": "photoreal cinematic: wide of the Green Knight riding out through the great doors into the night, the hall in stunned silence.",
+          "image_prompt_end": "photoreal cinematic: -left to Gawain standing alone amid the shaken court, watching.",
+          "video_prompt_start": "Wide of the Green Knight riding out through the doors into the night. pan-left to Gawain standing alone amid the shaken court. The beat resolves into the next matching frame. Continuity held: Green Knight leaving; Gawain; night spill.",
+          "video_prompt_end": "Wide of the Green Knight riding out through the doors into the night. pan-left to Gawain standing alone amid the shaken court. The beat resolves into the next matching frame. Continuity held: Green Knight leaving; Gawain; night spill.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "camelot_feast_hall",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class",
+        "screen_dir"
+      ],
+      "palette": [
+        "#7f1d1d",
+        "#d4af37",
+        "#2dd4bf"
+      ],
+      "light_direction": "key light from screen-left, warm torchlight of the feasting hall",
+      "time_of_day": "night"
+    },
+    {
+      "id": "act2",
+      "num": "Act II",
+      "title": "Патот и дарот",
+      "color": "#e0b341",
+      "pct": 50,
+      "synopsis": "Минуваат месеци и Гавејн тргнува да го исполни зборот. По долг и студен пат, еден гостопримлив господар го прима во својот замок и му подарува волшебен зелен појас за заштита.",
+      "shots": [
+        {
+          "id": "S15",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "winter_path_env_A2_prop"
+          ],
+          "ref_scope": "image1: the frozen winter landscape, frost-covered forest and empty snowfields along the road - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "wide of the landscape shifting through seasons toward winter"
+            ],
+            [
+              1.8,
+              3.5,
+              "snow begins to fall over the frozen path"
+            ]
+          ],
+          "narration_mk": "Месеците минуваа како лисја на ветрот.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide of the same landscape shifting through seasons, green woods turning to autumn gold and then winter snow, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "A lone bare tree stands as snow begins to fall over the frozen path",
+          "continuity": "Landscape; seasonal palette shift",
+          "motion": "season montage; falling snow",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide of the same landscape shifting through seasons, green woods turning to autumn gold and then winter snow, photoreal Diablo2 cinematic then wide of the landscape shifting through seasons toward winter, then snow begins to fall over the frozen path the camera static settling into a lone bare tree stands as snow begins to fall over the frozen path continuity held: Landscape; seasonal palette shift",
+          "image_prompt_start": "photoreal cinematic: wide of the same landscape shifting through seasons, green woods turning to autumn gold and then winter snow.",
+          "image_prompt_end": "photoreal cinematic: A lone bare tree stands as snow begins to fall over the frozen path.",
+          "video_prompt_start": "Wide of the landscape shifting through seasons toward winter. snow begins to fall over the frozen path. The camera static. The beat resolves into the next matching frame. Continuity held: Landscape; seasonal palette shift.",
+          "video_prompt_end": "Wide of the landscape shifting through seasons toward winter. snow begins to fall over the frozen path. The camera static. The beat resolves into the next matching frame. Continuity held: Landscape; seasonal palette shift.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S16",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Gawain - a young noble knight, nephew of King Arthur, in silver armor and a crimson cloak - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "medium of Gawain standing by a high window watching falling snow"
+            ],
+            [
+              1.5,
+              3.0,
+              "he turns from the window, resolve forming"
+            ]
+          ],
+          "narration_mk": "Датумот на предизвикот беше сè поблиску.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of Gawain standing by a high window, looking out at falling snow, worry shadowing his face, photoreal WoW cinematic, 1216x704",
+          "kf_last": "He turns from the window toward the camera, resolve forming",
+          "continuity": "Gawain; winter palace interior",
+          "motion": "turning motion; resolve",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of Gawain standing by a high window, looking out at falling snow, worry shadowing his face, photoreal WoW cinematic Gawain armored, knight, in cloak, carrying sword then medium of Gawain standing by a high window watching falling snow, then he turns from the window, resolve forming the camera static settling into he turns from the window toward the camera, resolve forming with steel rings continuity held: Gawain; winter palace interior",
+          "image_prompt_start": "photoreal cinematic: medium of Gawain standing by a high window, looking out at falling snow, worry shadowing his face, photoreal WoW cinematic.",
+          "image_prompt_end": "photoreal cinematic: He from the window toward the , resolve forming.",
+          "video_prompt_start": "Medium of Gawain standing by a high window watching falling snow. he turns from the window, resolve forming. The camera static. The beat resolves into the next matching frame. Continuity held: Gawain; winter palace interior.",
+          "video_prompt_end": "Medium of Gawain standing by a high window watching falling snow. he turns from the window, resolve forming. The camera static. The beat resolves into the next matching frame. Continuity held: Gawain; winter palace interior.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S17",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "winter_path_env_A2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Gawain - a young noble knight, nephew of King Arthur, in silver armor and a crimson cloak - 100% identical; studio bg/pose/light NOT used; image2: the frozen winter landscape, frost-covered forest and empty snowfields along the road - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "high-angle wide of Gawain riding out of Camelot into a cold dawn"
+            ],
+            [
+              2.0,
+              4.0,
+              "crane-up revealing the long white road stretching ahead"
+            ]
+          ],
+          "narration_mk": "Гавејн реши да замине и да го исполни својот збор.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of Gawain riding out of Camelot's gates into a cold dawn, crimson cloak over armor, breath misting, photoreal StarCraft cinematic, 1216x704",
+          "kf_last": "Crane-up revealing the long white road stretching into the distance",
+          "continuity": "Gawain armored and mounted; winter dawn",
+          "motion": "crane-up; riding away",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of Gawain riding out of Camelot's gates into a cold dawn, crimson cloak over armor, breath misting, photoreal StarCraft cinematic Gawain armored, knight, in cloak, carrying sword then high-angle wide of Gawain riding out of Camelot into a cold dawn, then crane-up revealing the long white road stretching ahead settling into crane-up revealing the long white road stretching into the distance with steel rings continuity held: Gawain armored and mounted; winter dawn",
+          "image_prompt_start": "photoreal cinematic: wide of Gawain riding out of Camelot's gates into a cold dawn, crimson cloak over armor, breath misting.",
+          "image_prompt_end": "photoreal cinematic: revealing the long white road stretching into the distance.",
+          "video_prompt_start": "High-angle wide of Gawain riding out of Camelot into a cold dawn. crane-up revealing the long white road stretching ahead. The beat resolves into the next matching frame. Continuity held: Gawain armored and mounted; winter dawn.",
+          "video_prompt_end": "High-angle wide of Gawain riding out of Camelot into a cold dawn. crane-up revealing the long white road stretching ahead. The beat resolves into the next matching frame. Continuity held: Gawain armored and mounted; winter dawn.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S18",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-right",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "winter_path_env_A2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Gawain - a young noble knight, nephew of King Arthur, in silver armor and a crimson cloak - 100% identical; studio bg/pose/light NOT used; image2: the frozen winter landscape, frost-covered forest and empty snowfields along the road - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "wide of Gawain riding through a frost-covered forest"
+            ],
+            [
+              1.8,
+              3.5,
+              "pan-right as he crosses into an open snowfield"
+            ]
+          ],
+          "narration_mk": "Патот го водеше низ замрзнати шуми и празни полиња.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide of Gawain riding through a frost-covered forest, bare branches, pale winter light, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "Pan-right as he crosses into an open snowfield, hoofprints trailing behind",
+          "continuity": "Gawain and horse; winter forest",
+          "motion": "pan-right; steady riding",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide of Gawain riding through a frost-covered forest, bare branches, pale winter light, photoreal Diablo2 cinematic Gawain armored, knight, in cloak, carrying sword then wide of Gawain riding through a frost-covered forest, then pan-right as he crosses into an open snowfield settling into pan-right as he crosses into an open snowfield, hoofprints trailing behind with steel rings continuity held: Gawain and horse; winter forest",
+          "image_prompt_start": "photoreal cinematic: wide of Gawain riding through a frost-covered forest, bare branches, pale winter light.",
+          "image_prompt_end": "photoreal cinematic: -right as he crosses into an open snowfield, hoofprints trailing behind.",
+          "video_prompt_start": "Wide of Gawain riding through a frost-covered forest. pan-right as he crosses into an open snowfield. The beat resolves into the next matching frame. Continuity held: Gawain and horse; winter forest.",
+          "video_prompt_end": "Wide of Gawain riding through a frost-covered forest. pan-right as he crosses into an open snowfield. The beat resolves into the next matching frame. Continuity held: Gawain and horse; winter forest.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S19",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Gawain - a young noble knight, nephew of King Arthur, in silver armor and a crimson cloak - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "medium of Gawain riding bundled against the cold"
+            ],
+            [
+              1.5,
+              3.0,
+              "track keeps pace as the wind whips his cloak"
+            ]
+          ],
+          "narration_mk": "Деновите беа студени, а ноќите уште постудени.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of Gawain riding bundled against the cold, snow in his hair, weathered but determined, photoreal WoW cinematic, 1216x704",
+          "kf_last": "Tracking shot keeps pace as the wind whips his cloak",
+          "continuity": "Gawain winter attire; cold palette",
+          "motion": "track; cloak in wind",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of Gawain riding bundled against the cold, snow in his hair, weathered but determined, photoreal WoW cinematic Gawain armored, knight, in cloak, carrying sword then medium of Gawain riding bundled against the cold, then track keeps pace as the wind whips his cloak settling into tracking shot keeps pace as the wind whips his cloak with steel rings continuity held: Gawain winter attire; cold palette",
+          "image_prompt_start": "photoreal cinematic: medium of Gawain riding bundled against the cold, snow in his hair, weathered but determined, photoreal WoW cinematic.",
+          "image_prompt_end": "photoreal cinematic: keeps pace as the wind whips his cloak.",
+          "video_prompt_start": "Medium of Gawain riding bundled against the cold. track keeps pace as the wind whips his cloak. The beat resolves into the next matching frame. Continuity held: Gawain winter attire; cold palette.",
+          "video_prompt_end": "Medium of Gawain riding bundled against the cold. track keeps pace as the wind whips his cloak. The beat resolves into the next matching frame. Continuity held: Gawain winter attire; cold palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S20",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "castle_env_A3_prop"
+          ],
+          "ref_scope": "image1: the welcoming castle on the hill with a torchlit courtyard and warm hall - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "wide of a welcoming castle emerging from evening mist"
+            ],
+            [
+              2.0,
+              4.0,
+              "push-in toward the gate as lamplight brightens in the dusk"
+            ]
+          ],
+          "narration_mk": "На крајот од патот, од вечерната магла излезе еден замок.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide of a welcoming castle on a hill emerging from evening mist, warm lights in its windows, photoreal StarCraft cinematic, 1216x704",
+          "kf_last": "Push-in toward the castle gate as lamplight brightens in the dusk",
+          "continuity": "Castle establishing; dusk mist palette",
+          "motion": "push-in; mist parting",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide of a welcoming castle on a hill emerging from evening mist, warm lights in its windows, photoreal StarCraft cinematic then wide of a welcoming castle emerging from evening mist, then push-in toward the gate as lamplight brightens in the dusk settling into push-in toward the castle gate as lamplight brightens in the dusk continuity held: Castle establishing; dusk mist palette",
+          "image_prompt_start": "photoreal cinematic: wide of a welcoming castle on a hill emerging from evening mist, warm lights in its windows.",
+          "image_prompt_end": "photoreal cinematic: toward the castle gate as lamplight brightens in the dusk.",
+          "video_prompt_start": "Wide of a welcoming castle emerging from evening mist. push-in toward the gate as lamplight brightens in the dusk. The beat resolves into the next matching frame. Continuity held: Castle establishing; dusk mist palette.",
+          "video_prompt_end": "Wide of a welcoming castle emerging from evening mist. push-in toward the gate as lamplight brightens in the dusk. The beat resolves into the next matching frame. Continuity held: Castle establishing; dusk mist palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S21",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "castle_env_A3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Gawain - a young noble knight, nephew of King Arthur, in silver armor and a crimson cloak - 100% identical; studio bg/pose/light NOT used; image2: the welcoming castle on the hill with a torchlit courtyard and warm hall - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "low-angle medium of Gawain approaching the torchlit castle gate"
+            ],
+            [
+              1.8,
+              3.5,
+              "crane-up as the gate swings open to a warm courtyard"
+            ]
+          ],
+          "narration_mk": "Портата беше топла и гостопримлива.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of Gawain approaching the castle gate, welcoming torchlight spilling onto the snow, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "Crane-up along the gate as it swings open to a bright courtyard",
+          "continuity": "Gawain; castle gate; warm light",
+          "motion": "crane-up; gate opening",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Gawain approaching the castle gate, welcoming torchlight spilling onto the snow, photoreal Diablo2 cinematic Gawain armored, knight, in cloak, carrying sword then low-angle medium of Gawain approaching the torchlit castle gate, then crane-up as the gate swings open to a warm courtyard settling into crane-up along the gate as it swings open to a bright courtyard with steel rings continuity held: Gawain; castle gate; warm light",
+          "image_prompt_start": "photoreal cinematic: medium of Gawain approaching the castle gate, welcoming torchlight spilling onto the snow.",
+          "image_prompt_end": "photoreal cinematic: along the gate as it swings open to a bright courtyard.",
+          "video_prompt_start": "Low-angle medium of Gawain approaching the torchlit castle gate. crane-up as the gate swings open to a warm courtyard. The beat resolves into the next matching frame. Continuity held: Gawain; castle gate; warm light.",
+          "video_prompt_end": "Low-angle medium of Gawain approaching the torchlit castle gate. crane-up as the gate swings open to a warm courtyard. The beat resolves into the next matching frame. Continuity held: Gawain; castle gate; warm light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S22",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "lord_A4_fused",
+            "castle_env_A3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Gawain - a young noble knight, nephew of King Arthur, in silver armor and a crimson cloak - 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Lord of the Castle - a hospitable lord in fur-trimmed robes - 100% identical; studio bg/pose/light NOT used; image3: the welcoming castle on the hill with a torchlit courtyard and warm hall - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "wide of the courtyard, servants hurrying to attend Gawain"
+            ],
+            [
+              1.8,
+              3.5,
+              "the lord descends the steps to greet him"
+            ]
+          ],
+          "narration_mk": "Во дворот го пречекаа слуги и гости достојни на витез.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide of the castle courtyard, servants and grooms hurrying to attend Gawain, lanterns glowing, photoreal WoW cinematic, 1216x704",
+          "kf_last": "They lead his horse away as the lord himself descends the steps",
+          "continuity": "Castle courtyard; servant group",
+          "motion": "bustling welcome; horse led away",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide of the castle courtyard, servants and grooms hurrying to attend Gawain, lanterns glowing, photoreal WoW cinematic Gawain armored, knight, in cloak, carrying sword Lord robed, elder, in fur, beard, cloak, wreathed in golden glow then wide of the courtyard, servants hurrying to attend Gawain, then the lord descends the steps to greet him the camera static settling into they lead his horse away as the lord himself descends the steps with steel rings, a low radiant hum continuity held: Castle courtyard; servant group",
+          "image_prompt_start": "photoreal cinematic: wide of the castle courtyard, servants and grooms hurrying to attend Gawain, lanterns glowing, photoreal WoW cinematic.",
+          "image_prompt_end": "photoreal cinematic: They lead his horse away as the lord himself descends the steps.",
+          "video_prompt_start": "Wide of the courtyard, servants hurrying to attend Gawain. the lord descends the steps to greet him. The camera static. The beat resolves into the next matching frame. Continuity held: Castle courtyard; servant group.",
+          "video_prompt_end": "Wide of the courtyard, servants hurrying to attend Gawain. the lord descends the steps to greet him. The camera static. The beat resolves into the next matching frame. Continuity held: Castle courtyard; servant group.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S23",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "lord_A4_fused",
+            "gawain_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Lord of the Castle - a hospitable lord in fur-trimmed robes - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Gawain - a young noble knight, nephew of King Arthur, in silver armor and a crimson cloak - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "medium of the castle lord gesturing warmly toward Gawain"
+            ],
+            [
+              1.8,
+              3.5,
+              "his hand sweeps toward the warm hall behind him"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Господарот: „Ако преноќиш тука, утре моите слуги ќе те одведат до Зелената црква.“",
+          "kf_first": "Eye-level medium of the castle lord, a kindly man in fur-trimmed robes, gesturing warmly toward Gawain, photoreal cinematic, 1216x704",
+          "kf_last": "His hand sweeps toward the warm hall behind him",
+          "continuity": "Castle lord design; courtyard",
+          "motion": "welcoming gesture",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of the castle lord, a kindly man in fur-trimmed robes, gesturing warmly toward Gawain, photoreal cinematic Lord robed, elder, in fur, beard, cloak, wreathed in golden glow Gawain armored, knight, in cloak, carrying sword then medium of the castle lord gesturing warmly toward Gawain, then his hand sweeps toward the warm hall behind him the camera static with a low radiant hum, steel rings a voice speaks in Macedonian: \"Господарот: „Ако преноќиш тука, утре моите слуги ќе те одведат до Зелената црква.“\" continuity held: Castle lord design; courtyard",
+          "image_prompt_start": "photoreal cinematic: medium of the castle lord, a kindly man in fur-trimmed robes, gesturing warmly toward Gawain, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: His hand sweeps toward the warm hall behind him.",
+          "video_prompt_start": "Medium of the castle lord gesturing warmly toward Gawain. his hand sweeps toward the warm hall behind him. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Господарот: „Ако преноќиш тука, утре моите слуги ќе те одведат до Зелената црква.“\" Continuity held: Castle lord design; courtyard.",
+          "video_prompt_end": "Medium of the castle lord gesturing warmly toward Gawain. his hand sweeps toward the warm hall behind him. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Господарот: „Ако преноќиш тука, утре моите слуги ќе те одведат до Зелената црква.“\" Continuity held: Castle lord design; courtyard.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S24",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "over-shoulder",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "lord_A4_fused"
+          ],
+          "ref_scope": "image1: the fused master of Gawain - a young noble knight, nephew of King Arthur, in silver armor and a crimson cloak - 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Lord of the Castle - a hospitable lord in fur-trimmed robes - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "over-shoulder of Gawain bowing his head in thanks to the lord"
+            ],
+            [
+              1.5,
+              3.0,
+              "he steps forward into the bright warmth of the hall"
+            ]
+          ],
+          "narration_mk": "Гавејн со благодарност ја прифати поканата.",
+          "dialogue_mk": "",
+          "kf_first": "Over-shoulder medium of Gawain's back as he bows his head in thanks to the lord, firelight from the doorway ahead, photoreal StarCraft cinematic, 1216x704",
+          "kf_last": "He steps forward into the bright warmth of the hall",
+          "continuity": "Gawain; lord; firelit doorway",
+          "motion": "bowing; stepping forward",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: over-shoulder medium of Gawain's back as he bows his head in thanks to the lord, firelight from the doorway ahead, photoreal StarCraft cinematic Gawain armored, knight, in cloak, carrying sword Lord robed, elder, in fur, beard, cloak, wreathed in golden glow then over-shoulder of Gawain bowing his head in thanks to the lord, then he steps forward into the bright warmth of the hall the camera static with steel rings, a low radiant hum continuity held: Gawain; lord; firelit doorway",
+          "image_prompt_start": "photoreal cinematic: Over-shoulder medium of Gawain's back as he bows his head in thanks to the lord, firelight from the doorway ahead.",
+          "image_prompt_end": "photoreal cinematic: He steps forward into the bright warmth of the hall.",
+          "video_prompt_start": "Over-shoulder of Gawain bowing his head in thanks to the lord. he steps forward into the bright warmth of the hall. The camera static. The beat resolves into the next matching frame. Continuity held: Gawain; lord; firelit doorway.",
+          "video_prompt_end": "Over-shoulder of Gawain bowing his head in thanks to the lord. he steps forward into the bright warmth of the hall. The camera static. The beat resolves into the next matching frame. Continuity held: Gawain; lord; firelit doorway.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S25",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-left",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "lord_A4_fused",
+            "castle_env_A3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Gawain - a young noble knight, nephew of King Arthur, in silver armor and a crimson cloak - 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Lord of the Castle - a hospitable lord in fur-trimmed robes - 100% identical; studio bg/pose/light NOT used; image3: the welcoming castle on the hill with a torchlit courtyard and warm hall - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "wide of the castle modest feast, Gawain honored at the table"
+            ],
+            [
+              1.8,
+              3.5,
+              "pan-left as cups are raised in toast"
+            ]
+          ],
+          "narration_mk": "Истата вечер, замокот го почести со гозба и песна.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide of the castle's modest feast, the lord and his household gathered, Gawain honored at the table, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "Pan-left along the table as cups are raised in toast",
+          "continuity": "Castle hall; household group",
+          "motion": "pan-left; toast raised",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide of the castle's modest feast, the lord and his household gathered, Gawain honored at the table, photoreal Diablo2 cinematic Gawain armored, knight, in cloak, carrying sword Lord robed, elder, in fur, beard, cloak, wreathed in golden glow then wide of the castle modest feast, Gawain honored at the table, then pan-left as cups are raised in toast settling into pan-left along the table as cups are raised in toast with steel rings, a low radiant hum continuity held: Castle hall; household group",
+          "image_prompt_start": "photoreal cinematic: wide of the castle's modest feast, the lord and his household gathered, Gawain honored at the table.",
+          "image_prompt_end": "photoreal cinematic: -left along the table as cups are raised in toast.",
+          "video_prompt_start": "Wide of the castle modest feast, Gawain honored at the table. pan-left as cups are raised in toast. The beat resolves into the next matching frame. Continuity held: Castle hall; household group.",
+          "video_prompt_end": "Wide of the castle modest feast, Gawain honored at the table. pan-left as cups are raised in toast. The beat resolves into the next matching frame. Continuity held: Castle hall; household group.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S26",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "lord_A4_fused"
+          ],
+          "ref_scope": "image1: the fused master of Gawain - a young noble knight, nephew of King Arthur, in silver armor and a crimson cloak - 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Lord of the Castle - a hospitable lord in fur-trimmed robes - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "medium of the lord and Gawain seated by a low night fire"
+            ],
+            [
+              1.5,
+              3.0,
+              "first light touches the sky through the window behind them"
+            ]
+          ],
+          "narration_mk": "Ноќта мина мирно, а зората дојде брзо.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of the lord and Gawain seated by a low night fire, speaking quietly, the room dim and warm, photoreal WoW cinematic, 1216x704",
+          "kf_last": "Through the window behind them, first light touches the sky",
+          "continuity": "Lord and Gawain; night interior",
+          "motion": "fire flicker; dawn light rising",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of the lord and Gawain seated by a low night fire, speaking quietly, the room dim and warm, photoreal WoW cinematic Gawain armored, knight, in cloak, carrying sword Lord robed, elder, in fur, beard, cloak, wreathed in golden glow then medium of the lord and Gawain seated by a low night fire, then first light touches the sky through the window behind them the camera static settling into through the window behind them, first light touches the sky with steel rings, a low radiant hum continuity held: Lord and Gawain; night interior",
+          "image_prompt_start": "photoreal cinematic: medium of the lord and Gawain seated by a low night fire, speaking quietly, the room dim and warm, photoreal WoW cinematic.",
+          "image_prompt_end": "photoreal cinematic: Through the window behind them, first light touches the sky.",
+          "video_prompt_start": "Medium of the lord and Gawain seated by a low night fire. first light touches the sky through the window behind them. The camera static. The beat resolves into the next matching frame. Continuity held: Lord and Gawain; night interior.",
+          "video_prompt_end": "Medium of the lord and Gawain seated by a low night fire. first light touches the sky through the window behind them. The camera static. The beat resolves into the next matching frame. Continuity held: Lord and Gawain; night interior.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S27",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "lord_A4_fused",
+            "gawain_A1_fused",
+            "green_belt_B3_sheet"
+          ],
+          "ref_scope": "image1: the fused master of the Lord of the Castle - a hospitable lord in fur-trimmed robes - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Gawain - a young noble knight, nephew of King Arthur, in silver armor and a crimson cloak - 100% identical; studio bg/pose/light NOT used; image3: the enchanted green belt, braided threads glowing with emerald light - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "wide of the hall in morning light, the lord holding a wrapped bundle"
+            ],
+            [
+              1.5,
+              3.0,
+              "he holds the bundle out as morning sun streams through the windows"
+            ]
+          ],
+          "narration_mk": "Следното утро, господарот го дарува со проштален подарок.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide of the castle hall in morning light, the lord standing before Gawain with a small wrapped bundle, photoreal StarCraft cinematic, 1216x704",
+          "kf_last": "He holds the bundle out, morning sun streaming through the windows",
+          "continuity": "Castle hall; morning light",
+          "motion": "presenting gift; light streaming",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide of the castle hall in morning light, the lord standing before Gawain with a small wrapped bundle, photoreal StarCraft cinematic Lord robed, elder, in fur, beard, cloak, wreathed in golden glow Gawain armored, knight, in cloak, carrying sword then wide of the hall in morning light, the lord holding a wrapped bundle, then he holds the bundle out as morning sun streams through the windows the camera static settling into he holds the bundle out, morning sun streaming through the windows with a low radiant hum, steel rings continuity held: Castle hall; morning light",
+          "image_prompt_start": "photoreal cinematic: wide of the castle hall in morning light, the lord standing before Gawain with a small wrapped bundle.",
+          "image_prompt_end": "photoreal cinematic: He holds the bundle out, morning sun streaming through the windows.",
+          "video_prompt_start": "Wide of the hall in morning light, the lord holding a wrapped bundle. he holds the bundle out as morning sun streams through the windows. The camera static. The beat resolves into the next matching frame. Continuity held: Castle hall; morning light.",
+          "video_prompt_end": "Wide of the hall in morning light, the lord holding a wrapped bundle. he holds the bundle out as morning sun streams through the windows. The camera static. The beat resolves into the next matching frame. Continuity held: Castle hall; morning light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S28",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "lord_A4_fused",
+            "gawain_A1_fused",
+            "green_belt_B3_sheet"
+          ],
+          "ref_scope": "image1: the fused master of the Lord of the Castle - a hospitable lord in fur-trimmed robes - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Gawain - a young noble knight, nephew of King Arthur, in silver armor and a crimson cloak - 100% identical; studio bg/pose/light NOT used; image3: the enchanted green belt, braided threads glowing with emerald light - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "medium of the lord placing the green belt into Gawain hands"
+            ],
+            [
+              1.8,
+              3.5,
+              "the belt rests in Gawain open palms, catching the light"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Господарот: „Земи го зелениов појас. Тој е волшебен и ќе те заштити.“",
+          "kf_first": "Eye-level medium of the lord placing a fine green belt into Gawain's hands, his expression kind and sincere, photoreal cinematic, 1216x704",
+          "kf_last": "The green belt rests in Gawain's open palms, catching the light",
+          "continuity": "Green belt prop; lord and Gawain",
+          "motion": "placing the belt; palms open",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of the lord placing a fine green belt into Gawain's hands, his expression kind and sincere, photoreal cinematic Lord robed, elder, in fur, beard, cloak, wreathed in golden glow Gawain armored, knight, in cloak, carrying sword then medium of the lord placing the green belt into Gawain hands, then the belt rests in Gawain open palms, catching the light the camera static settling into the green belt rests in Gawain's open palms, catching the light with a low radiant hum, steel rings a voice speaks in Macedonian: \"Господарот: „Земи го зелениов појас. Тој е волшебен и ќе те заштити.“\" continuity held: Green belt prop; lord and Gawain",
+          "image_prompt_start": "photoreal cinematic: medium of the lord placing a fine green belt into Gawain's hands, his expression kind and sincere, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The green belt rests in Gawain's open palms, catching the light.",
+          "video_prompt_start": "Medium of the lord placing the green belt into Gawain hands. the belt rests in Gawain open palms, catching the light. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Господарот: „Земи го зелениов појас. Тој е волшебен и ќе те заштити.“\" Continuity held: Green belt prop; lord and Gawain.",
+          "video_prompt_end": "Medium of the lord placing the green belt into Gawain hands. the belt rests in Gawain open palms, catching the light. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Господарот: „Земи го зелениов појас. Тој е волшебен и ќе те заштити.“\" Continuity held: Green belt prop; lord and Gawain.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S29",
+          "shot_type": "CLOSE-UP",
+          "size": "MACRO",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "green_belt_B3_sheet"
+          ],
+          "ref_scope": "image1: the enchanted green belt, braided threads glowing with emerald light - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "macro of the enchanted green belt glowing with emerald light"
+            ],
+            [
+              1.5,
+              3.0,
+              "push-in as tiny motes of light drift from its weave"
+            ]
+          ],
+          "narration_mk": "Појасот блескаше со чудна, жива светлина.",
+          "dialogue_mk": "",
+          "kf_first": "Macro on the enchanted green belt, its braided threads glowing with soft emerald light, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "Push-in closer as tiny motes of green light drift from its weave",
+          "continuity": "Green belt macro; emerald glow",
+          "motion": "slow push-in; light motes drifting",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro on the enchanted green belt, its braided threads glowing with soft emerald light, photoreal Diablo2 cinematic then macro of the enchanted green belt glowing with emerald light, then push-in as tiny motes of light drift from its weave settling into push-in closer as tiny motes of green light drift from its weave continuity held: Green belt macro; emerald glow",
+          "image_prompt_start": "photoreal cinematic: Macro on the enchanted green belt, its braided threads glowing with soft emerald light.",
+          "image_prompt_end": "photoreal cinematic: closer as tiny motes of green light drift from its weave.",
+          "video_prompt_start": "Macro of the enchanted green belt glowing with emerald light. push-in as tiny motes of light drift from its weave. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Green belt macro; emerald glow.",
+          "video_prompt_end": "Macro of the enchanted green belt glowing with emerald light. push-in as tiny motes of light drift from its weave. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Green belt macro; emerald glow.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S30",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "gawain_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Gawain - a young noble knight, nephew of King Arthur, in silver armor and a crimson cloak - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close on Gawain face, awe and gratitude in his eyes"
+            ],
+            [
+              1.5,
+              3.0,
+              "he smiles faintly, the green glow reflected in his gaze"
+            ]
+          ],
+          "narration_mk": "Гавејн гледаше во дарот со чудење и надеж.",
+          "dialogue_mk": "",
+          "kf_first": "Close on Gawain's face, awe and gratitude in his eyes, the green glow softly lighting his features, photoreal WoW cinematic, 1216x704",
+          "kf_last": "He smiles faintly, the glow reflecting in his gaze",
+          "continuity": "Gawain face; green light",
+          "motion": "soft smile; reflected glow",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close on Gawain's face, awe and gratitude in his eyes, the green glow softly lighting his features, photoreal WoW cinematic Gawain armored, knight, in cloak, carrying sword then close on Gawain face, awe and gratitude in his eyes, then he smiles faintly, the green glow reflected in his gaze the camera static settling into he smiles faintly, the glow reflecting in his gaze with steel rings continuity held: Gawain face; green light",
+          "image_prompt_start": "photoreal cinematic: on Gawain's face, awe and gratitude in his eyes, the green glow softly lighting his features, photoreal WoW cinematic.",
+          "image_prompt_end": "photoreal cinematic: He smiles faintly, the glow reflecting in his gaze.",
+          "video_prompt_start": "Close on Gawain face, awe and gratitude in his eyes. he smiles faintly, the green glow reflected in his gaze. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Gawain face; green light.",
+          "video_prompt_end": "Close on Gawain face, awe and gratitude in his eyes. he smiles faintly, the green glow reflected in his gaze. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Gawain face; green light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S31",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "green_belt_B3_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Gawain - a young noble knight, nephew of King Arthur, in silver armor and a crimson cloak - 100% identical; studio bg/pose/light NOT used; image2: the enchanted green belt, braided threads glowing with emerald light - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "medium of Gawain fastening the green belt around his waist"
+            ],
+            [
+              1.5,
+              3.0,
+              "he smooths the belt into place, the clasp settling"
+            ]
+          ],
+          "narration_mk": "Тој го преврза појасот околу половината.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of Gawain fastening the green belt around his waist over his armor, the belt glowing gently, photoreal StarCraft cinematic, 1216x704",
+          "kf_last": "He smooths the belt into place, the clasp settling",
+          "continuity": "Gawain; green belt worn",
+          "motion": "fastening the belt",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of Gawain fastening the green belt around his waist over his armor, the belt glowing gently, photoreal StarCraft cinematic Gawain armored, knight, in cloak, carrying sword then medium of Gawain fastening the green belt around his waist, then he smooths the belt into place, the clasp settling the camera static with steel rings continuity held: Gawain; green belt worn",
+          "image_prompt_start": "photoreal cinematic: medium of Gawain fastening the green belt around his waist over his armor, the belt glowing gently.",
+          "image_prompt_end": "photoreal cinematic: He smooths the belt into place, the clasp settling.",
+          "video_prompt_start": "Medium of Gawain fastening the green belt around his waist. he smooths the belt into place, the clasp settling. The camera static. The beat resolves into the next matching frame. Continuity held: Gawain; green belt worn.",
+          "video_prompt_end": "Medium of Gawain fastening the green belt around his waist. he smooths the belt into place, the clasp settling. The camera static. The beat resolves into the next matching frame. Continuity held: Gawain; green belt worn.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S32",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "castle_env_A3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Gawain - a young noble knight, nephew of King Arthur, in silver armor and a crimson cloak - 100% identical; studio bg/pose/light NOT used; image2: the welcoming castle on the hill with a torchlit courtyard and warm hall - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "wide of the courtyard, grooms bringing the saddled horse"
+            ],
+            [
+              1.8,
+              3.5,
+              "Gawain takes the reins in the cold morning"
+            ]
+          ],
+          "narration_mk": "Слугите му го доведоа коњот, спремни да му го покажат патот.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide of the courtyard where grooms bring Gawain's saddled horse, the lord's servants prepared to guide him, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "Gawain takes the reins, the morning cold sharp on the air",
+          "continuity": "Courtyard; horse ready; servant guides",
+          "motion": "taking reins; preparation",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide of the courtyard where grooms bring Gawain's saddled horse, the lord's servants prepared to guide him, photoreal Diablo2 cinematic Gawain armored, knight, in cloak, carrying sword then wide of the courtyard, grooms bringing the saddled horse, then Gawain takes the reins in the cold morning the camera static settling into gawain takes the reins, the morning cold sharp on the air with steel rings continuity held: Courtyard; horse ready; servant guides",
+          "image_prompt_start": "photoreal cinematic: wide of the courtyard where grooms bring Gawain's saddled horse, the lord's servants prepared to guide him.",
+          "image_prompt_end": "photoreal cinematic: Gawain takes the reins, the morning cold sharp on the air.",
+          "video_prompt_start": "Wide of the courtyard, grooms bringing the saddled horse. Gawain takes the reins in the cold morning. The camera static. The beat resolves into the next matching frame. Continuity held: Courtyard; horse ready; servant guides.",
+          "video_prompt_end": "Wide of the courtyard, grooms bringing the saddled horse. Gawain takes the reins in the cold morning. The camera static. The beat resolves into the next matching frame. Continuity held: Courtyard; horse ready; servant guides.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S33",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "lord_A4_fused",
+            "green_belt_B3_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Gawain - a young noble knight, nephew of King Arthur, in silver armor and a crimson cloak - 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Lord of the Castle - a hospitable lord in fur-trimmed robes - 100% identical; studio bg/pose/light NOT used; image3: the enchanted green belt, braided threads glowing with emerald light - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "medium of Gawain in the saddle bowing his head to the lord"
+            ],
+            [
+              1.5,
+              3.0,
+              "he straightens and turns his horse toward the gate"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Гавејн: „Ти благодарам за гостопримството и за дарот.“",
+          "kf_first": "Eye-level medium of Gawain in the saddle, bowing his head to the lord, the green belt visible at his waist, photoreal WoW cinematic, 1216x704",
+          "kf_last": "He straightens and turns his horse toward the gate",
+          "continuity": "Gawain mounted; lord; belt",
+          "motion": "bowing; turning to leave",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of Gawain in the saddle, bowing his head to the lord, the green belt visible at his waist, photoreal WoW cinematic Gawain armored, knight, in cloak, carrying sword Lord robed, elder, in fur, beard, cloak, wreathed in golden glow then medium of Gawain in the saddle bowing his head to the lord, then he straightens and turns his horse toward the gate the camera static with steel rings, a low radiant hum a voice speaks in Macedonian: \"Гавејн: „Ти благодарам за гостопримството и за дарот.“\" continuity held: Gawain mounted; lord; belt",
+          "image_prompt_start": "photoreal cinematic: medium of Gawain in the saddle, bowing his head to the lord, the green belt visible at his waist, photoreal WoW cinematic.",
+          "image_prompt_end": "photoreal cinematic: He straightens and his horse toward the gate.",
+          "video_prompt_start": "Medium of Gawain in the saddle bowing his head to the lord. he straightens and turns his horse toward the gate. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Гавејн: „Ти благодарам за гостопримството и за дарот.“\" Continuity held: Gawain mounted; lord; belt.",
+          "video_prompt_end": "Medium of Gawain in the saddle bowing his head to the lord. he straightens and turns his horse toward the gate. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Гавејн: „Ти благодарам за гостопримството и за дарот.“\" Continuity held: Gawain mounted; lord; belt.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S34",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "castle_env_A3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Gawain - a young noble knight, nephew of King Arthur, in silver armor and a crimson cloak - 100% identical; studio bg/pose/light NOT used; image2: the welcoming castle on the hill with a torchlit courtyard and warm hall - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "high-angle wide of Gawain riding out of the castle gate with guides"
+            ],
+            [
+              2.0,
+              4.0,
+              "crane-up as the small party moves into the pale landscape"
+            ]
+          ],
+          "narration_mk": "И така, Гавејн ја напушти гостопримливата тврдина.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of Gawain riding out of the castle gate with two servants on foot pointing the way, winter path ahead, photoreal StarCraft cinematic, 1216x704",
+          "kf_last": "Crane-up as the small party moves into the pale landscape",
+          "continuity": "Gawain; castle; winter path",
+          "motion": "crane-up; riding out",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of Gawain riding out of the castle gate with two servants on foot pointing the way, winter path ahead, photoreal StarCraft cinematic Gawain armored, knight, in cloak, carrying sword then high-angle wide of Gawain riding out of the castle gate with guides, then crane-up as the small party moves into the pale landscape with steel rings continuity held: Gawain; castle; winter path",
+          "image_prompt_start": "photoreal cinematic: wide of Gawain riding out of the castle gate with two servants on foot pointing the way, winter path ahead.",
+          "image_prompt_end": "photoreal cinematic: as the small party into the pale landscape.",
+          "video_prompt_start": "High-angle wide of Gawain riding out of the castle gate with guides. crane-up as the small party moves into the pale landscape. The beat resolves into the next matching frame. Continuity held: Gawain; castle; winter path.",
+          "video_prompt_end": "High-angle wide of Gawain riding out of the castle gate with guides. crane-up as the small party moves into the pale landscape. The beat resolves into the next matching frame. Continuity held: Gawain; castle; winter path.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S35",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "winter_path_env_A2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Gawain - a young noble knight, nephew of King Arthur, in silver armor and a crimson cloak - 100% identical; studio bg/pose/light NOT used; image2: the frozen winter landscape, frost-covered forest and empty snowfields along the road - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "wide of Gawain riding down a narrowing path into dense evergreen forest"
+            ],
+            [
+              1.8,
+              3.5,
+              "push-in as the branches close around him in green gloom"
+            ]
+          ],
+          "narration_mk": "Патот се стеснуваше и тонеше сè подлабоко во зеленикава шума.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide of Gawain riding alone down a narrowing path into a dense evergreen forest, the light turning green and dim, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "Push-in as the branches close around him, an eerie green gloom settling",
+          "continuity": "Gawain; green forest path",
+          "motion": "push-in; green gloom deepening",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide of Gawain riding alone down a narrowing path into a dense evergreen forest, the light turning green and dim, photoreal Diablo2 cinematic Gawain armored, knight, in cloak, carrying sword then wide of Gawain riding down a narrowing path into dense evergreen forest, then push-in as the branches close around him in green gloom settling into push-in as the branches close around him, an eerie green gloom settling with steel rings continuity held: Gawain; green forest path",
+          "image_prompt_start": "photoreal cinematic: wide of Gawain riding alone down a narrowing path into a dense evergreen forest, the light turning green and dim.",
+          "image_prompt_end": "photoreal cinematic: as the branches close around him, an eerie green gloom settling.",
+          "video_prompt_start": "Wide of Gawain riding down a narrowing path into dense evergreen forest. push-in as the branches close around him in green gloom. The beat resolves into the next matching frame. Continuity held: Gawain; green forest path.",
+          "video_prompt_end": "Wide of Gawain riding down a narrowing path into dense evergreen forest. push-in as the branches close around him in green gloom. The beat resolves into the next matching frame. Continuity held: Gawain; green forest path.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S36",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "green_belt_B3_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Gawain - a young noble knight, nephew of King Arthur, in silver armor and a crimson cloak - 100% identical; studio bg/pose/light NOT used; image2: the enchanted green belt, braided threads glowing with emerald light - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "medium of Gawain riding, one hand resting on the green belt"
+            ],
+            [
+              1.5,
+              3.0,
+              "track follows as he glances down at the belt for reassurance"
+            ]
+          ],
+          "narration_mk": "Едната рака му почиваше на волшебниот појас.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of Gawain riding, one hand resting on the green belt at his waist, his face set with courage, photoreal WoW cinematic, 1216x704",
+          "kf_last": "Tracking shot follows as he glances down at the belt for reassurance",
+          "continuity": "Gawain; green belt; dim forest",
+          "motion": "track; glance to belt",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of Gawain riding, one hand resting on the green belt at his waist, his face set with courage, photoreal WoW cinematic Gawain armored, knight, in cloak, carrying sword then medium of Gawain riding, one hand resting on the green belt, then track follows as he glances down at the belt for reassurance settling into tracking shot follows as he glances down at the belt for reassurance with steel rings continuity held: Gawain; green belt; dim forest",
+          "image_prompt_start": "photoreal cinematic: medium of Gawain riding, one hand resting on the green belt at his waist, his face set with courage, photoreal WoW cinematic.",
+          "image_prompt_end": "photoreal cinematic: as he glances down at the belt for reassurance.",
+          "video_prompt_start": "Medium of Gawain riding, one hand resting on the green belt. track follows as he glances down at the belt for reassurance. The beat resolves into the next matching frame. Continuity held: Gawain; green belt; dim forest.",
+          "video_prompt_end": "Medium of Gawain riding, one hand resting on the green belt. track follows as he glances down at the belt for reassurance. The beat resolves into the next matching frame. Continuity held: Gawain; green belt; dim forest.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S37",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "green_chapel_env_A4_prop"
+          ],
+          "ref_scope": "image1: the mossy Green Chapel emerging from mist, its stones glowing faintly green - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "wide of the Green Chapel emerging from swirling mist"
+            ],
+            [
+              1.8,
+              3.5,
+              "the mist drifts, revealing the green-lit entrance"
+            ]
+          ],
+          "narration_mk": "Далеку напред, од маглата се провираше форма на стара црква.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide of a dark, mossy Green Chapel emerging from swirling mist ahead, its stones glowing faintly green, photoreal StarCraft cinematic, 1216x704",
+          "kf_last": "The mist drifts, revealing the chapel's yawning green-lit entrance",
+          "continuity": "Green Chapel establishing; mist",
+          "motion": "mist drifting; chapel revealed",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide of a dark, mossy Green Chapel emerging from swirling mist ahead, its stones glowing faintly green, photoreal StarCraft cinematic then wide of the Green Chapel emerging from swirling mist, then the mist drifts, revealing the green-lit entrance the camera static settling into the mist drifts, revealing the chapel's yawning green-lit entrance continuity held: Green Chapel establishing; mist",
+          "image_prompt_start": "photoreal cinematic: wide of a dark, mossy Green Chapel emerging from swirling mist ahead, its stones glowing faintly green.",
+          "image_prompt_end": "photoreal cinematic: The mist drifts, revealing the chapel's yawning green-lit entrance.",
+          "video_prompt_start": "Wide of the Green Chapel emerging from swirling mist. the mist drifts, revealing the green-lit entrance. The camera static. The beat resolves into the next matching frame. Continuity held: Green Chapel establishing; mist.",
+          "video_prompt_end": "Wide of the Green Chapel emerging from swirling mist. the mist drifts, revealing the green-lit entrance. The camera static. The beat resolves into the next matching frame. Continuity held: Green Chapel establishing; mist.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S38",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "green_belt_B3_sheet"
+          ],
+          "ref_scope": "image1: the enchanted green belt, braided threads glowing with emerald light - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close on the green belt pulsing with gentle light"
+            ],
+            [
+              1.5,
+              3.0,
+              "push-in as the glow brightens and steadies"
+            ]
+          ],
+          "narration_mk": "Појасот трепна со светлина, како да му шепотеше храброст.",
+          "dialogue_mk": "",
+          "kf_first": "Close on the green belt at Gawain's waist pulsing with gentle light, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "Push-in as the glow brightens and steadies",
+          "continuity": "Green belt close; glow",
+          "motion": "glow pulsing; push-in",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close on the green belt at Gawain's waist pulsing with gentle light, photoreal Diablo2 cinematic then close on the green belt pulsing with gentle light, then push-in as the glow brightens and steadies continuity held: Green belt close; glow",
+          "image_prompt_start": "photoreal cinematic: on the green belt at Gawain's waist pulsing with gentle light.",
+          "image_prompt_end": "photoreal cinematic: as the glow brightens and steadies.",
+          "video_prompt_start": "Close on the green belt pulsing with gentle light. push-in as the glow brightens and steadies. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Green belt close; glow.",
+          "video_prompt_end": "Close on the green belt pulsing with gentle light. push-in as the glow brightens and steadies. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Green belt close; glow.",
+          "motion_intensity": "gentle"
+        }
+      ],
+      "location_ref": "winter_journey_to_the_castle",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class",
+        "screen_dir"
+      ],
+      "palette": [
+        "#1e3a5f",
+        "#d9a441",
+        "#2e7d5b"
+      ],
+      "light_direction": "key light from screen-right, cold winter daylight warming into golden castle lamplight",
+      "time_of_day": "day"
+    },
+    {
+      "id": "act3",
+      "num": "Act III",
+      "title": "Кон Зелената црква",
+      "color": "#8b5cf6",
+      "pct": 20,
+      "synopsis": "Гавејн со волшебниот појас стигнува пред Зелената црква, каде што храбро чекори кон својата судбина за да го исполни ветувањето.",
+      "shots": [
+        {
+          "id": "S39",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "green_chapel_env_A4_prop"
+          ],
+          "ref_scope": "image1: the fused master of Gawain - a young noble knight, nephew of King Arthur, in silver armor and a crimson cloak - 100% identical; studio bg/pose/light NOT used; image2: the mossy Green Chapel emerging from mist, its stones glowing faintly green - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "high-angle wide of Gawain arriving at the chapel clearing at cold dawn"
+            ],
+            [
+              2.0,
+              4.0,
+              "crane-down as he halts his horse at the clearing edge"
+            ]
+          ],
+          "narration_mk": "Во студената зора, Гавејн стигна пред Зелената црква.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of Gawain arriving at the Green Chapel clearing at cold dawn, mist low over the ground, the chapel looming, photoreal WoW cinematic, 1216x704",
+          "kf_last": "Crane-down as Gawain halts his horse at the edge of the clearing",
+          "continuity": "Gawain; Green Chapel; dawn mist",
+          "motion": "crane-down; halting horse",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of Gawain arriving at the Green Chapel clearing at cold dawn, mist low over the ground, the chapel looming, photoreal WoW cinematic Gawain armored, knight, in cloak, carrying sword then high-angle wide of Gawain arriving at the chapel clearing at cold dawn, then crane-down as he halts his horse at the clearing edge settling into crane-down as Gawain halts his horse at the edge of the clearing with steel rings continuity held: Gawain; Green Chapel; dawn mist",
+          "image_prompt_start": "photoreal cinematic: wide of Gawain arriving at the Green Chapel clearing at cold dawn, mist low over the ground, the chapel looming, photoreal WoW cinematic.",
+          "image_prompt_end": "photoreal cinematic: as Gawain halts his horse at the edge of the clearing.",
+          "video_prompt_start": "High-angle wide of Gawain arriving at the chapel clearing at cold dawn. crane-down as he halts his horse at the clearing edge. The beat resolves into the next matching frame. Continuity held: Gawain; Green Chapel; dawn mist.",
+          "video_prompt_end": "High-angle wide of Gawain arriving at the chapel clearing at cold dawn. crane-down as he halts his horse at the clearing edge. The beat resolves into the next matching frame. Continuity held: Gawain; Green Chapel; dawn mist.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S40",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "green_chapel_env_A4_prop"
+          ],
+          "ref_scope": "image1: the fused master of Gawain - a young noble knight, nephew of King Arthur, in silver armor and a crimson cloak - 100% identical; studio bg/pose/light NOT used; image2: the mossy Green Chapel emerging from mist, its stones glowing faintly green - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "medium of Gawain staring up at the Green Chapel, breath misting"
+            ],
+            [
+              1.5,
+              3.0,
+              "he swings down and plants his feet on the frozen earth"
+            ]
+          ],
+          "narration_mk": "Коњот застана, а Гавејн погледна кон камените врати.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of Gawain staring up at the Green Chapel, breath visible in the cold, green mist curling around him, photoreal StarCraft cinematic, 1216x704",
+          "kf_last": "He swings down from the saddle and plants his feet on the frozen earth",
+          "continuity": "Gawain; chapel; cold palette",
+          "motion": "dismounting; steady breath",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of Gawain staring up at the Green Chapel, breath visible in the cold, green mist curling around him, photoreal StarCraft cinematic Gawain armored, knight, in cloak, carrying sword then medium of Gawain staring up at the Green Chapel, breath misting, then he swings down and plants his feet on the frozen earth the camera static settling into he swings down from the saddle and plants his feet on the frozen earth with steel rings continuity held: Gawain; chapel; cold palette",
+          "image_prompt_start": "photoreal cinematic: medium of Gawain staring up at the Green Chapel, breath visible in the cold, green mist curling around him.",
+          "image_prompt_end": "photoreal cinematic: He swings down from the saddle and plants his feet on the frozen earth.",
+          "video_prompt_start": "Medium of Gawain staring up at the Green Chapel, breath misting. he swings down and plants his feet on the frozen earth. The camera static. The beat resolves into the next matching frame. Continuity held: Gawain; chapel; cold palette.",
+          "video_prompt_end": "Medium of Gawain staring up at the Green Chapel, breath misting. he swings down and plants his feet on the frozen earth. The camera static. The beat resolves into the next matching frame. Continuity held: Gawain; chapel; cold palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S41",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "green_chapel_env_A4_prop"
+          ],
+          "ref_scope": "image1: the mossy Green Chapel emerging from mist, its stones glowing faintly green - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "low-angle wide of the chapel ancient facade, moss and frost on its stones"
+            ],
+            [
+              1.8,
+              3.5,
+              "crane-up toward a green-lit opening above"
+            ]
+          ],
+          "narration_mk": "Црквата беше тивка, обвиткана во зеленикава мразна магла.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of the Green Chapel's ancient facade, moss and frost on its stones, a faint unearthly green glow at its heart, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "Crane-up along the weathered walls toward a green-lit opening above",
+          "continuity": "Green Chapel facade; green gloom",
+          "motion": "crane-up; frost shimmering",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of the Green Chapel's ancient facade, moss and frost on its stones, a faint unearthly green glow at its heart, photoreal Diablo2 cinematic then low-angle wide of the chapel ancient facade, moss and frost on its stones, then crane-up toward a green-lit opening above settling into crane-up along the weathered walls toward a green-lit opening above continuity held: Green Chapel facade; green gloom",
+          "image_prompt_start": "photoreal cinematic: wide of the Green Chapel's ancient facade, moss and frost on its stones, a faint unearthly green glow at its heart.",
+          "image_prompt_end": "photoreal cinematic: along the weathered walls toward a green-lit opening above.",
+          "video_prompt_start": "Low-angle wide of the chapel ancient facade, moss and frost on its stones. crane-up toward a green-lit opening above. The beat resolves into the next matching frame. Continuity held: Green Chapel facade; green gloom.",
+          "video_prompt_end": "Low-angle wide of the chapel ancient facade, moss and frost on its stones. crane-up toward a green-lit opening above. The beat resolves into the next matching frame. Continuity held: Green Chapel facade; green gloom.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S42",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "sword_B1_sheet",
+            "green_belt_B3_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Gawain - a young noble knight, nephew of King Arthur, in silver armor and a crimson cloak - 100% identical; studio bg/pose/light NOT used; image2: the knightly sword of Gawain with a silver hilt - 100% identical; studio bg/pose/light NOT used; image3: the enchanted green belt, braided threads glowing with emerald light - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "medium of Gawain walking toward the entrance, belt glowing"
+            ],
+            [
+              1.8,
+              3.5,
+              "track follows his deliberate march into the mist"
+            ]
+          ],
+          "narration_mk": "Гавејн зачекори напред, една рака врз мечот, другата врз појасот.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of Gawain walking toward the chapel entrance, sword at his side, the green belt glowing at his waist, photoreal WoW cinematic, 1216x704",
+          "kf_last": "Tracking shot follows his deliberate march into the mist",
+          "continuity": "Gawain; belt glow; chapel approach",
+          "motion": "track; deliberate stride",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of Gawain walking toward the chapel entrance, sword at his side, the green belt glowing at his waist, photoreal WoW cinematic Gawain armored, knight, in cloak, carrying sword then medium of Gawain walking toward the entrance, belt glowing, then track follows his deliberate march into the mist settling into tracking shot follows his deliberate march into the mist with steel rings continuity held: Gawain; belt glow; chapel approach",
+          "image_prompt_start": "photoreal cinematic: medium of Gawain walking toward the chapel entrance, sword at his side, the green belt glowing at his waist, photoreal WoW cinematic.",
+          "image_prompt_end": "photoreal cinematic: his deliberate march into the mist.",
+          "video_prompt_start": "Medium of Gawain walking toward the entrance, belt glowing. track follows his deliberate march into the mist. The beat resolves into the next matching frame. Continuity held: Gawain; belt glow; chapel approach.",
+          "video_prompt_end": "Medium of Gawain walking toward the entrance, belt glowing. track follows his deliberate march into the mist. The beat resolves into the next matching frame. Continuity held: Gawain; belt glow; chapel approach.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S43",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "green_belt_B3_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Gawain - a young noble knight, nephew of King Arthur, in silver armor and a crimson cloak - 100% identical; studio bg/pose/light NOT used; image2: the enchanted green belt, braided threads glowing with emerald light - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close on Gawain hand brushing the glowing green belt"
+            ],
+            [
+              1.5,
+              3.0,
+              "his fingers tighten once around the braided threads"
+            ]
+          ],
+          "narration_mk": "Волшебниот појас светеше, ветувајќи му заштита.",
+          "dialogue_mk": "",
+          "kf_first": "Close on Gawain's hand brushing the glowing green belt, its light steady and reassuring, photoreal StarCraft cinematic, 1216x704",
+          "kf_last": "His fingers tighten once around the braided threads",
+          "continuity": "Gawain hand; belt glow",
+          "motion": "fingers tightening; steady glow",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close on Gawain's hand brushing the glowing green belt, its light steady and reassuring, photoreal StarCraft cinematic Gawain armored, knight, in cloak, carrying sword then close on Gawain hand brushing the glowing green belt, then his fingers tighten once around the braided threads the camera static with steel rings continuity held: Gawain hand; belt glow",
+          "image_prompt_start": "photoreal cinematic: on Gawain's hand brushing the glowing green belt, its light steady and reassuring.",
+          "image_prompt_end": "photoreal cinematic: His fingers tighten once around the braided threads.",
+          "video_prompt_start": "Close on Gawain hand brushing the glowing green belt. his fingers tighten once around the braided threads. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Gawain hand; belt glow.",
+          "video_prompt_end": "Close on Gawain hand brushing the glowing green belt. his fingers tighten once around the braided threads. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Gawain hand; belt glow.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S44",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "green_chapel_env_A4_prop"
+          ],
+          "ref_scope": "image1: the fused master of Gawain - a young noble knight, nephew of King Arthur, in silver armor and a crimson cloak - 100% identical; studio bg/pose/light NOT used; image2: the mossy Green Chapel emerging from mist, its stones glowing faintly green - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "wide of Gawain standing in the misty clearing before the chapel"
+            ],
+            [
+              1.8,
+              3.5,
+              "he stands motionless, green mist drifting around his boots"
+            ]
+          ],
+          "narration_mk": "На чистината пред црквата застана и чекаше.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide of Gawain standing centered in the misty clearing before the Green Chapel, his horse behind him, the world hushed, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "He stands motionless, the green mist drifting slowly around his boots",
+          "continuity": "Gawain; chapel clearing; stillness",
+          "motion": "held stillness; mist drifting",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide of Gawain standing centered in the misty clearing before the Green Chapel, his horse behind him, the world hushed, photoreal Diablo2 cinematic Gawain armored, knight, in cloak, carrying sword then wide of Gawain standing in the misty clearing before the chapel, then he stands motionless, green mist drifting around his boots the camera static settling into he stands motionless, the green mist drifting slowly around his boots with steel rings continuity held: Gawain; chapel clearing; stillness",
+          "image_prompt_start": "photoreal cinematic: wide of Gawain standing centered in the misty clearing before the Green Chapel, his horse behind him, the world hushed.",
+          "image_prompt_end": "photoreal cinematic: He stands motionless, the green mist drifting slowly around his boots.",
+          "video_prompt_start": "Wide of Gawain standing in the misty clearing before the chapel. he stands motionless, green mist drifting around his boots. The camera static. The beat resolves into the next matching frame. Continuity held: Gawain; chapel clearing; stillness.",
+          "video_prompt_end": "Wide of Gawain standing in the misty clearing before the chapel. he stands motionless, green mist drifting around his boots. The camera static. The beat resolves into the next matching frame. Continuity held: Gawain; chapel clearing; stillness.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S45",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Gawain - a young noble knight, nephew of King Arthur, in silver armor and a crimson cloak - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "medium of Gawain listening, eyes scanning the fog"
+            ],
+            [
+              1.5,
+              3.0,
+              "wind stirs his cloak as the chapel glow pulses once"
+            ]
+          ],
+          "narration_mk": "Никаков звук, само ветрот низ старите камења.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of Gawain listening, eyes scanning the fog, his breath misting, photoreal WoW cinematic, 1216x704",
+          "kf_last": "The wind stirs his cloak as the chapel's green glow pulses once",
+          "continuity": "Gawain; chapel atmosphere",
+          "motion": "cloak stirring; green pulse",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of Gawain listening, eyes scanning the fog, his breath misting, photoreal WoW cinematic Gawain armored, knight, in cloak, carrying sword then medium of Gawain listening, eyes scanning the fog, then wind stirs his cloak as the chapel glow pulses once the camera static settling into the wind stirs his cloak as the chapel's green glow pulses once with steel rings continuity held: Gawain; chapel atmosphere",
+          "image_prompt_start": "photoreal cinematic: medium of Gawain listening, eyes scanning the fog, his breath misting, photoreal WoW cinematic.",
+          "image_prompt_end": "photoreal cinematic: The wind stirs his cloak as the chapel's green glow pulses once.",
+          "video_prompt_start": "Medium of Gawain listening, eyes scanning the fog. wind stirs his cloak as the chapel glow pulses once. The camera static. The beat resolves into the next matching frame. Continuity held: Gawain; chapel atmosphere.",
+          "video_prompt_end": "Medium of Gawain listening, eyes scanning the fog. wind stirs his cloak as the chapel glow pulses once. The camera static. The beat resolves into the next matching frame. Continuity held: Gawain; chapel atmosphere.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S46",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "gawain_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Gawain - a young noble knight, nephew of King Arthur, in silver armor and a crimson cloak - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "close on Gawain resolute face, green light faint on his skin"
+            ],
+            [
+              1.8,
+              3.5,
+              "push-in on his eyes as the light intensifies"
+            ]
+          ],
+          "narration_mk": "Но Гавејн не се поколеба — тој беше дошол да го исполни зборот.",
+          "dialogue_mk": "",
+          "kf_first": "Close on Gawain's resolute face, jaw set, green light faint on his skin, photoreal StarCraft cinematic, 1216x704",
+          "kf_last": "Push-in on his eyes as the light from the chapel intensifies",
+          "continuity": "Gawain face; green light rising",
+          "motion": "push-in; light intensifying",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close on Gawain's resolute face, jaw set, green light faint on his skin, photoreal StarCraft cinematic Gawain armored, knight, in cloak, carrying sword then close on Gawain resolute face, green light faint on his skin, then push-in on his eyes as the light intensifies settling into push-in on his eyes as the light from the chapel intensifies with steel rings continuity held: Gawain face; green light rising",
+          "image_prompt_start": "photoreal cinematic: on Gawain's resolute face, jaw set, green light faint on his skin.",
+          "image_prompt_end": "photoreal cinematic: on his eyes as the light from the chapel intensifies.",
+          "video_prompt_start": "Close on Gawain resolute face, green light faint on his skin. push-in on his eyes as the light intensifies. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Gawain face; green light rising.",
+          "video_prompt_end": "Close on Gawain resolute face, green light faint on his skin. push-in on his eyes as the light intensifies. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Gawain face; green light rising.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S47",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "green_chapel_env_A4_prop"
+          ],
+          "ref_scope": "image1: the fused master of Gawain - a young noble knight, nephew of King Arthur, in silver armor and a crimson cloak - 100% identical; studio bg/pose/light NOT used; image2: the mossy Green Chapel emerging from mist, its stones glowing faintly green - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "low-angle wide of the chapel doors swinging open on their own"
+            ],
+            [
+              2.0,
+              4.0,
+              "green light pours over Gawain, casting his long shadow"
+            ]
+          ],
+          "narration_mk": "Вратите на Зелената црква се отворија сами.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of the Green Chapel's doors swinging open on their own, a deep green glow pouring out, Gawain facing it, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "The light pours over Gawain, casting his long shadow across the mist",
+          "continuity": "Green Chapel; Gawain; green light",
+          "motion": "doors opening; light pouring",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of the Green Chapel's doors swinging open on their own, a deep green glow pouring out, Gawain facing it, photoreal Diablo2 cinematic Gawain armored, knight, in cloak, carrying sword then low-angle wide of the chapel doors swinging open on their own, then green light pours over Gawain, casting his long shadow the camera static settling into the light pours over Gawain, casting his long shadow across the mist with steel rings continuity held: Green Chapel; Gawain; green light",
+          "image_prompt_start": "photoreal cinematic: wide of the Green Chapel's doors swinging open on their own, a deep green glow pouring out, Gawain facing it.",
+          "image_prompt_end": "photoreal cinematic: The light pours over Gawain, casting his long shadow across the mist.",
+          "video_prompt_start": "Low-angle wide of the chapel doors swinging open on their own. green light pours over Gawain, casting his long shadow. The camera static. The beat resolves into the next matching frame. Continuity held: Green Chapel; Gawain; green light.",
+          "video_prompt_end": "Low-angle wide of the chapel doors swinging open on their own. green light pours over Gawain, casting his long shadow. The camera static. The beat resolves into the next matching frame. Continuity held: Green Chapel; Gawain; green light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S48",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gawain_A1_fused",
+            "green_belt_B3_sheet",
+            "green_chapel_env_A4_prop"
+          ],
+          "ref_scope": "image1: the fused master of Gawain - a young noble knight, nephew of King Arthur, in silver armor and a crimson cloak - 100% identical; studio bg/pose/light NOT used; image2: the enchanted green belt, braided threads glowing with emerald light - 100% identical; studio bg/pose/light NOT used; image3: the mossy Green Chapel emerging from mist, its stones glowing faintly green - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "medium of Gawain stepping forward into the green light, belt blazing"
+            ],
+            [
+              2.0,
+              4.0,
+              "push-in follows him into the glow as the chapel swallows him in light"
+            ]
+          ],
+          "narration_mk": "Со појасот крај половината, Гавејн чекори напред кон својата судбина.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of Gawain stepping forward into the green light, the belt blazing at his waist, courage in every line of him, photoreal WoW cinematic, 1216x704",
+          "kf_last": "Push-in follows him into the glow as the chapel swallows him in light",
+          "continuity": "Gawain; belt blazing; green finale",
+          "motion": "push-in; stepping into light",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of Gawain stepping forward into the green light, the belt blazing at his waist, courage in every line of him, photoreal WoW cinematic Gawain armored, knight, in cloak, carrying sword then medium of Gawain stepping forward into the green light, belt blazing, then push-in follows him into the glow as the chapel swallows him in light with steel rings continuity held: Gawain; belt blazing; green finale",
+          "image_prompt_start": "photoreal cinematic: medium of Gawain stepping forward into the green light, the belt blazing at his waist, courage in every line of him, photoreal WoW cinematic.",
+          "image_prompt_end": "photoreal cinematic: him into the glow as the chapel swallows him in light.",
+          "video_prompt_start": "Medium of Gawain stepping forward into the green light, belt blazing. push-in follows him into the glow as the chapel swallows him in light. The beat resolves into the next matching frame. Continuity held: Gawain; belt blazing; green finale.",
+          "video_prompt_end": "Medium of Gawain stepping forward into the green light, belt blazing. push-in follows him into the glow as the chapel swallows him in light. The beat resolves into the next matching frame. Continuity held: Gawain; belt blazing; green finale.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "green_chapel_clearing",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class",
+        "screen_dir"
+      ],
+      "palette": [
+        "#052e1a",
+        "#10b981",
+        "#a8d5ba"
+      ],
+      "light_direction": "key light from screen-left, cold green dawn mist at the chapel",
+      "time_of_day": "dawn"
+    }
+  ],
+  "director_corrections": {
+    "issued": "2026-11-07",
+    "source": "KB §13 DIRECTOR CORRECTIONS — overrides all prior asset/keyframe guidance",
+    "rules": [
+      "DD HEADWEAR: no cap/hood/bandana/mask on head; hood = back-cowl only (cape-like); bare head + teal-blue glowing hair always visible; any head/face covering = REJECT",
+      "LEGENDARY WEAPONS MUST APPEAR: DD = twin Frostbite-class hand crossbows (ice-blue arcane crystal limbs, frost runes, frozen-light string, teal-blue glow); AZ = Dawnbreaker-class greatsword (pale sunsteel, molten-gold runes, golden holy fire edge, sunburst crossguard); hero sheet/keyframe without weapon = INCOMPLETE",
+      "WEAPON ANTI-SLOP: fantasy construction only; crossbow must NEVER read as firearm (no barrel/magazine/stock/Uzi/SMG silhouette = REJECT); anti-slop negatives always appended",
+      "BOSS FACE: Mal'garot HAS a prolific molten-lava face (lava dripping/running, drops falling to ground); faceless boss sheets SUPERSEDED",
+      "LOCATION BRIGHTNESS FLOOR: environment plates silhouette-readable at thumbnail; no murk-dark grades"
+    ],
+    "applies_when": "Activates when face_lock changes from AI-default to an enrolled identity (DD/AZ). AI-default packages carry this as a forward constraint, not a current defect.",
+    "anti_slop_negatives": "firearm, gun, machinegun, Uzi, barrel, magazine, ammo clip, muzzle, modern weapon"
+  },
+  "character_designs": {
+    "gawain": {
+      "archetype": "knight",
+      "build": "armored",
+      "scale": "human",
+      "palette": {
+        "primary": "#c0c6cc",
+        "secondary": "#7f1d1d",
+        "glow": "#ffd166"
+      },
+      "costume": [
+        "cloak"
+      ],
+      "props": [
+        "sword"
+      ],
+      "fx": []
+    },
+    "green_knight": {
+      "archetype": "knight",
+      "build": "hulking",
+      "scale": "huge",
+      "palette": {
+        "primary": "#2f855a",
+        "secondary": "#145034",
+        "glow": "#10b981"
+      },
+      "costume": [
+        "cloak"
+      ],
+      "props": [],
+      "fx": [
+        "shadow_smoke"
+      ]
+    },
+    "arthur": {
+      "archetype": "monarch",
+      "build": "robed",
+      "scale": "human",
+      "palette": {
+        "primary": "#d4af37",
+        "secondary": "#7f1d1d",
+        "glow": "#ffe08a"
+      },
+      "costume": [
+        "crown",
+        "cloak",
+        "beard"
+      ],
+      "props": [],
+      "fx": [
+        "golden_glow"
+      ]
+    },
+    "lord": {
+      "archetype": "elder",
+      "build": "robed",
+      "scale": "human",
+      "palette": {
+        "primary": "#8a6a4a",
+        "secondary": "#c8b898",
+        "glow": "#e8c877"
+      },
+      "costume": [
+        "fur",
+        "beard",
+        "cloak"
+      ],
+      "props": [],
+      "fx": [
+        "golden_glow"
+      ]
+    },
+    "camelot_hall_env_A1_prop": {
+      "motif": "hall",
+      "tone": "#7f1d1d"
+    },
+    "winter_path_env_A2_prop": {
+      "motif": "forest",
+      "tone": "#1e3a5f"
+    },
+    "castle_env_A3_prop": {
+      "motif": "castle",
+      "tone": "#d9a441"
+    },
+    "green_chapel_env_A4_prop": {
+      "motif": "gate",
+      "tone": "#10b981"
+    }
+  }
+}

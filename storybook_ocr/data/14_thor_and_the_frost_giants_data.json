@@ -1,0 +1,2676 @@
+{
+  "num": "14",
+  "title_mk": "Тор и ледените џинови",
+  "title_en": "Thor and the Frost Giants",
+  "genre": "Легенда · епска акција",
+  "logline": "Кога измамата на Локи го води брат му Тор без оружје во царството на ледените џинови, богот на громовите мора да го докаже своето херојство само со даровите на Грид.",
+  "spec": {
+    "aspect": "16:9",
+    "resolution": "1216x704",
+    "fps": 24,
+    "model": "model-agnostic (chosen at generation)",
+    "style": "photoreal",
+    "flf": true,
+    "language": "mk",
+    "shot_floor": 40,
+    "shot_max": 60,
+    "seed_policy": "fixed-per-shot (same seed → reproducible shot; re-roll per shot id)",
+    "style_anchor": [
+      "Diablo 2 cinematic",
+      "World of Warcraft cinematic",
+      "StarCraft cinematic"
+    ],
+    "negative_prompt": "deformed, extra limbs, morphing, watermark, text, static frame, blurry, low quality, cropped head, cut-off face",
+    "frames": 121,
+    "frames_fallback": 81,
+    "routes": [
+      {
+        "model": "Wan2.1-FLF2V-14B-720P",
+        "input": "start+end native (run START-ONLY)",
+        "status": "WORKING (lead for 14B quality)"
+      },
+      {
+        "model": "Kandinsky 6.0 Lite/Pro",
+        "input": "start-image-only",
+        "status": "WORKING (Pro-distill untested at scale)"
+      },
+      {
+        "model": "SkyReels-V3 R2V-14B",
+        "input": "start-image-only",
+        "status": "WORKING (fallback)"
+      },
+      {
+        "model": "LTX-Video 2B v0.9.5",
+        "input": "start-image-only",
+        "status": "WORKING (small/fast, low ceiling)"
+      },
+      {
+        "model": "Mochi-1",
+        "input": "start-image-only",
+        "status": "untested here"
+      },
+      {
+        "model": "LTX-2.3 22B distilled",
+        "input": "start-image-only",
+        "status": "DEAD (nanobind native-crash, 42 note)"
+      }
+    ],
+    "model_note": "Model chosen per story at generation (43 §4). Keyframes + continuation prompts are generator-agnostic; only the render command differs per model."
+  },
+  "cast": [
+    {
+      "role": "Тор / Thor",
+      "trait": "Богот на громовите — силен, чесен и бестрашен",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Локи / Loki",
+      "trait": "Богот на измамата — лукав и завидлив, брат на Тор",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Героид / Geirröd",
+      "trait": "Злобниот леден џин — груб и омразен насилник",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Грид / Gríðr",
+      "trait": "Добрата исполинка — пријателка на Один, му помага на Тор",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Гјалп / Gjálp",
+      "trait": "Ќерка на Героид — демне во реката да ги удави",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Греип / Greip",
+      "trait": "Ќерка на Героид — лукава домаќинка која подготвува стапица",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    }
+  ],
+  "acts": [
+    {
+      "id": "act1",
+      "num": "Act I",
+      "title": "Измамата на Локи",
+      "color": "#2dd4bf",
+      "pct": 30,
+      "synopsis": "Локи, претворен во птица, е заробен од џинот Героид и се спасува ветувајќи да го доведе Тор без оружје. Враќајќи се во Асгард, со ласкање го наговара Тор да го остави чеканот и да тргне со него.",
+      "shots": [
+        {
+          "id": "S01",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "frost_realm_env",
+            "loki_A2_fused"
+          ],
+          "ref_scope": "image1: the frost giants’ realm of glowing ice walls and frozen spires — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Loki — the trickster god, here a sleek black bird with emerald-rimmed eyes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "environment",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "crane down over glowing frost walls and spires"
+            ],
+            [
+              1.8,
+              3.5,
+              "settle on the lone black bird slicing the air"
+            ]
+          ],
+          "narration_mk": "Во кралството на мразот, ѕидовите од мраз светкаат како скапоцени камења. Една сенка прелетува над нив.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide crane-down over the frost giants' realm, vast glowing ice walls and frozen spires at dusk, cyan and steel palette, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Descend toward a lone black bird slicing through the icy air, glittering frost mist trailing its wings",
+          "continuity": "Establish frost realm palette: deep cyan ice, cold haze, volumetric fog",
+          "motion": "slow crane-down; bird glides across frame",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide crane-down over the frost giants' realm, vast glowing ice walls and frozen spires at dusk, cyan and steel palette Loki slender, trickster, in cloak, wreathed in shadow smoke, green magic then crane down over glowing frost walls and spires, then settle on the lone black bird slicing the air the camera crane-down settling into descend toward a lone black bird slicing through the icy air, glittering frost mist trailing its wings with shadows whisper, magic sizzles continuity held: Establish frost realm palette: deep cyan ice, cold haze, volumetric fog",
+          "image_prompt_start": "photoreal cinematic: wide over the frost giants' realm, vast glowing ice walls and frozen spires at dusk, cyan and steel palette.",
+          "image_prompt_end": "photoreal cinematic: toward a lone black bird slicing through the icy air, glittering frost mist trailing its wings.",
+          "video_prompt_start": "Crane down over glowing frost walls and spires. settle on the lone black bird slicing the air. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Establish frost realm palette: deep cyan ice, cold haze, volumetric fog.",
+          "video_prompt_end": "Crane down over glowing frost walls and spires. settle on the lone black bird slicing the air. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Establish frost realm palette: deep cyan ice, cold haze, volumetric fog.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S02",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "loki_A2_fused",
+            "frost_realm_env"
+          ],
+          "ref_scope": "image1: the fused master of Loki — the trickster god, here a sleek black bird with emerald-rimmed eyes — 100% identical; studio bg/pose/light NOT used; image2: the frost giants’ realm of glowing ice walls and frozen spires — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "environment",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "track the black bird skimming the frozen water"
+            ],
+            [
+              1.5,
+              3.0,
+              "emerald-rimmed eye glints as it spies"
+            ]
+          ],
+          "narration_mk": "Тоа не е обична птица. Тоа е Локи, богот на измамата, кој дошол да шпионира.",
+          "dialogue_mk": "",
+          "kf_first": "Medium tracking shot of a sleek black bird with emerald-rimmed eyes flying low over a frozen landscape, feathers rim-lit by cold light, photoreal StarCraft cinematic, 1216x704",
+          "kf_last": "The bird shifts mid-flight, a faint shimmer of green magic bleeding off its wingtips, revealing a mischievous intelligence",
+          "continuity": "Bird = Loki; green magic accent marks his true nature",
+          "motion": "track alongside the bird; wing shimmer",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium tracking shot of a sleek black bird with emerald-rimmed eyes flying low over a frozen landscape, feathers rim-lit by cold light, photoreal StarCraft cinematic Loki slender, trickster, in cloak, wreathed in shadow smoke, green magic then track the black bird skimming the frozen water, then emerald-rimmed eye glints as it spies settling into the bird shifts mid-flight, a faint shimmer of green magic bleeding off its wingtips, revealing a mischievous intelligence with shadows whisper, magic sizzles continuity held: Bird = Loki; green magic accent marks his true nature",
+          "image_prompt_start": "photoreal cinematic: of a sleek black bird with emerald-rimmed eyes flying low over a frozen landscape, feathers rim-lit by cold light.",
+          "image_prompt_end": "photoreal cinematic: The bird mid-flight, a faint shimmer of green magic bleeding off its wingtips, revealing a mischievous intelligence.",
+          "video_prompt_start": "Track the black bird skimming the frozen water. emerald-rimmed eye glints as it spies. The beat resolves into the next matching frame. Continuity held: Bird = Loki; green magic accent marks his true nature.",
+          "video_prompt_end": "Track the black bird skimming the frozen water. emerald-rimmed eye glints as it spies. The beat resolves into the next matching frame. Continuity held: Bird = Loki; green magic accent marks his true nature.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S03",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "frost_realm_env",
+            "loki_A2_fused"
+          ],
+          "ref_scope": "image1: the frost giants’ realm of glowing ice walls and frozen spires — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Loki — the trickster god, here a sleek black bird with emerald-rimmed eyes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "environment",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "hold low-angle on the towering ice palace"
+            ],
+            [
+              1.8,
+              3.5,
+              "the bird watches from the frost"
+            ]
+          ],
+          "narration_mk": "Од палатата на мразот, Локи ја набљудува величествената тврдина на џиновите.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of an immense ice palace with thousand-foot frozen towers, the black bird small against the colossal gate, aurora sky, photoreal World of Warcraft cinematic, 1216x704",
+          "kf_last": "The bird cocks its head, eye reflecting the giant palace, plotting a closer look",
+          "continuity": "Scale contrast: tiny bird vs colossal palace",
+          "motion": "static tableau; subtle aurora shimmer",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of an immense ice palace with thousand-foot frozen towers, the black bird small against the colossal gate, aurora sky, photoreal World of Warcraft cinematic Loki slender, trickster, in cloak, wreathed in shadow smoke, green magic then hold low-angle on the towering ice palace, then the bird watches from the frost the camera static settling into the bird cocks its head, eye reflecting the giant palace, plotting a closer look with shadows whisper, magic sizzles continuity held: Scale contrast: tiny bird vs colossal palace",
+          "image_prompt_start": "photoreal cinematic: wide of an immense ice palace with thousand-foot frozen towers, the black bird small against the colossal gate, aurora sky.",
+          "image_prompt_end": "photoreal cinematic: The bird cocks its head, eye reflecting the giant palace, plotting a closer look.",
+          "video_prompt_start": "Hold low-angle on the towering ice palace. the bird watches from the frost. The camera static. The beat resolves into the next matching frame. Continuity held: Scale contrast: tiny bird vs colossal palace.",
+          "video_prompt_end": "Hold low-angle on the towering ice palace. the bird watches from the frost. The camera static. The beat resolves into the next matching frame. Continuity held: Scale contrast: tiny bird vs colossal palace.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S04",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "over-shoulder",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "loki_A2_fused",
+            "geirrod_A3_fused",
+            "frost_realm_env"
+          ],
+          "ref_scope": "image1: the fused master of Loki — the trickster god, here a sleek black bird with emerald-rimmed eyes — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Geirröd — the brutal frost giant in cracked ice armor — 100% identical; studio bg/pose/light NOT used; image3: the frost giants’ realm of glowing ice walls and frozen spires — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "environment",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "bird perches on the frozen parapet"
+            ],
+            [
+              1.5,
+              3.0,
+              "colossal hand rises behind the ice"
+            ]
+          ],
+          "narration_mk": "Но во сенките демне стапица. Огромна рака се испружува од зад ледениот столб.",
+          "dialogue_mk": "",
+          "kf_first": "Over-shoulder medium of the bird perched on a frozen parapet, a colossal giant's hand rising from shadow behind the ice pillar, slow dread, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "Push-in toward the bird as the giant's fingers snap shut, capturing it in a cage of flesh",
+          "continuity": "Dark shadow intrusion; cold blue rim on the hand",
+          "motion": "slow push-in; hand closes",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: over-shoulder medium of the bird perched on a frozen parapet, a colossal giant's hand rising from shadow behind the ice pillar, slow dread, photoreal Diablo2 cinematic Loki slender, trickster, in cloak, wreathed in shadow smoke, green magic Geirrod hulking, villain, in ice armor, wreathed in frost aura then bird perches on the frozen parapet, then colossal hand rises behind the ice the camera push-in settling into push-in toward the bird as the giant's fingers snap shut, capturing it in a cage of flesh with shadows whisper, magic sizzles continuity held: Dark shadow intrusion; cold blue rim on the hand",
+          "image_prompt_start": "photoreal cinematic: Over-shoulder medium of the bird perched on a frozen parapet, a colossal giant's hand rising from shadow behind the ice pillar, slow dread.",
+          "image_prompt_end": "photoreal cinematic: toward the bird as the giant's fingers snap shut, capturing it in a cage of flesh.",
+          "video_prompt_start": "Bird perches on the frozen parapet. colossal hand rises behind the ice. The camera push-in. The beat resolves into the next matching frame. Continuity held: Dark shadow intrusion; cold blue rim on the hand.",
+          "video_prompt_end": "Bird perches on the frozen parapet. colossal hand rises behind the ice. The camera push-in. The beat resolves into the next matching frame. Continuity held: Dark shadow intrusion; cold blue rim on the hand.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S05",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "loki_A2_fused",
+            "cage_B6_prop"
+          ],
+          "ref_scope": "image1: the fused master of Loki — the trickster god, here a sleek black bird with emerald-rimmed eyes — 100% identical; studio bg/pose/light NOT used; image2: the small iron cage — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.2,
+              "close on the iron cage in the hall"
+            ],
+            [
+              1.2,
+              2.5,
+              "the trapped bird's eye searches the bars"
+            ]
+          ],
+          "narration_mk": "Злобниот Героид го фати Локи и го затвори во кафез.",
+          "dialogue_mk": "",
+          "kf_first": "Close on a small iron cage hanging in a frost giant's hall, the black bird trapped inside, emerald eyes glaring, photoreal StarCraft cinematic, 1216x704",
+          "kf_last": "Pan up the cage to reveal the grim, scarred face of Geirröd peering down, eyes like chips of lake ice",
+          "continuity": "Cage bars; Geirröd's cold face enters frame",
+          "motion": "static; slight swelling dread",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close on a small iron cage hanging in a frost giant's hall, the black bird trapped inside, emerald eyes glaring, photoreal StarCraft cinematic Loki slender, trickster, in cloak, wreathed in shadow smoke, green magic then close on the iron cage in the hall, then the trapped bird's eye searches the bars the camera static settling into pan up the cage to reveal the grim, scarred face of Geirröd peering down, eyes like chips of lake ice with shadows whisper, magic sizzles continuity held: Cage bars; Geirröd's cold face enters frame",
+          "image_prompt_start": "photoreal cinematic: on a small iron cage hanging in a frost giant's hall, the black bird trapped inside, emerald eyes glaring.",
+          "image_prompt_end": "photoreal cinematic: up the cage to reveal the grim, scarred face of Geirröd peering down, eyes like chips of lake ice.",
+          "video_prompt_start": "Close on the iron cage in the hall. the trapped bird's eye searches the bars. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Cage bars; Geirröd's cold face enters frame.",
+          "video_prompt_end": "Close on the iron cage in the hall. the trapped bird's eye searches the bars. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Cage bars; Geirröd's cold face enters frame.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S06",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "geirrod_A3_fused",
+            "loki_A2_fused",
+            "cage_B6_prop"
+          ],
+          "ref_scope": "image1: the fused master of Geirröd — the brutal frost giant in cracked ice armor — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Loki — the trickster god, here a sleek black bird with emerald-rimmed eyes — 100% identical; studio bg/pose/light NOT used; image3: the small iron cage — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "Geirröd looms over the small cage"
+            ],
+            [
+              1.5,
+              3.0,
+              "breath frosts as he peers down"
+            ]
+          ],
+          "narration_mk": "Локи брзо смислува измама.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of the giant Geirröd looming over the small cage, his breath frosting, the captive bird below, photoreal World of Warcraft cinematic, 1216x704",
+          "kf_last": "The bird leans toward the bars, a sly glint in its emerald eye, beginning to whisper",
+          "continuity": "Geirröd's towering scale; Loki small and calculating",
+          "motion": "static; breath mist drifts",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of the giant Geirröd looming over the small cage, his breath frosting, the captive bird below, photoreal World of Warcraft cinematic Geirrod hulking, villain, in ice armor, wreathed in frost aura Loki slender, trickster, in cloak, wreathed in shadow smoke, green magic then Geirröd looms over the small cage, then breath frosts as he peers down the camera static settling into the bird leans toward the bars, a sly glint in its emerald eye, beginning to whisper with ice cracks and groans, shadows whisper continuity held: Geirröd's towering scale; Loki small and calculating",
+          "image_prompt_start": "photoreal cinematic: medium of the giant Geirröd looming over the small cage, his breath frosting, the captive bird below.",
+          "image_prompt_end": "photoreal cinematic: The bird leans toward the bars, a sly glint in its emerald eye, beginning to whisper.",
+          "video_prompt_start": "Geirröd looms over the small cage. breath frosts as he peers down. The camera static. The beat resolves into the next matching frame. Continuity held: Geirröd's towering scale; Loki small and calculating.",
+          "video_prompt_end": "Geirröd looms over the small cage. breath frosts as he peers down. The camera static. The beat resolves into the next matching frame. Continuity held: Geirröd's towering scale; Loki small and calculating.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S07",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "loki_A2_fused",
+            "cage_B6_prop"
+          ],
+          "ref_scope": "image1: the fused master of Loki — the trickster god, here a sleek black bird with emerald-rimmed eyes — 100% identical; studio bg/pose/light NOT used; image2: the small iron cage — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "close on the bird behind bars"
+            ],
+            [
+              1.8,
+              3.5,
+              "emerald eye sharpens with cold light"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Локи: „Знам дека ти и брат ми не сте пријатели.“",
+          "kf_first": "Close on the bird behind bars, emerald eye sharp, cold light slashing across its beak, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "Push-in on the eye as the reflection of Geirröd fills it, the trap of the words forming",
+          "continuity": "Barbed cage bars; Loki's cunning eye",
+          "motion": "slow push-in on the eye",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close on the bird behind bars, emerald eye sharp, cold light slashing across its beak, photoreal Diablo2 cinematic Loki slender, trickster, in cloak, wreathed in shadow smoke, green magic then close on the bird behind bars, then emerald eye sharpens with cold light the camera push-in settling into push-in on the eye as the reflection of Geirröd fills it, the trap of the words forming with shadows whisper, magic sizzles a voice speaks in Macedonian: \"Локи: „Знам дека ти и брат ми не сте пријатели.“\" continuity held: Barbed cage bars; Loki's cunning eye",
+          "image_prompt_start": "photoreal cinematic: on the bird behind bars, emerald eye sharp, cold light slashing across its beak.",
+          "image_prompt_end": "photoreal cinematic: on the eye as the reflection of Geirröd fills it, the trap of the words forming.",
+          "video_prompt_start": "Close on the bird behind bars. emerald eye sharpens with cold light. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Локи: „Знам дека ти и брат ми не сте пријатели.“\" Continuity held: Barbed cage bars; Loki's cunning eye.",
+          "video_prompt_end": "Close on the bird behind bars. emerald eye sharpens with cold light. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Локи: „Знам дека ти и брат ми не сте пријатели.“\" Continuity held: Barbed cage bars; Loki's cunning eye.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S08",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "geirrod_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of Geirröd — the brutal frost giant in cracked ice armor — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "Geirröd listens with a slow cruel smile"
+            ],
+            [
+              1.5,
+              3.0,
+              "frozen features crack into interest"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Локи: „Ако ме пуштиш, ќе го доведам Тор овде — без оружје.“",
+          "kf_first": "Low-angle medium of Geirröd listening, a slow, cruel smile cracking his frozen features, reflections on his ice-knitted beard, photoreal StarCraft cinematic, 1216x704",
+          "kf_last": "The giant's hand rises to the cage latch, a hint of greedy eagerness in his posture",
+          "continuity": "Geirröd's cruel hope; cage latch",
+          "motion": "static; hand rising",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Geirröd listening, a slow, cruel smile cracking his frozen features, reflections on his ice-knitted beard, photoreal StarCraft cinematic Geirrod hulking, villain, in ice armor, wreathed in frost aura then Geirröd listens with a slow cruel smile, then frozen features crack into interest the camera static settling into the giant's hand rises to the cage latch, a hint of greedy eagerness in his posture with ice cracks and groans a voice speaks in Macedonian: \"Локи: „Ако ме пуштиш, ќе го доведам Тор овде — без оружје.“\" continuity held: Geirröd's cruel hope; cage latch",
+          "image_prompt_start": "photoreal cinematic: medium of Geirröd listening, a slow, cruel smile cracking his frozen features, reflections on his ice-knitted beard.",
+          "image_prompt_end": "photoreal cinematic: The giant's hand to the cage latch, a hint of greedy eagerness in his posture.",
+          "video_prompt_start": "Geirröd listens with a slow cruel smile. frozen features crack into interest. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Локи: „Ако ме пуштиш, ќе го доведам Тор овде — без оружје.“\" Continuity held: Geirröd's cruel hope; cage latch.",
+          "video_prompt_end": "Geirröd listens with a slow cruel smile. frozen features crack into interest. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Локи: „Ако ме пуштиш, ќе го доведам Тор овде — без оружје.“\" Continuity held: Geirröd's cruel hope; cage latch.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S09",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "cage_B6_prop",
+            "loki_A2_fused"
+          ],
+          "ref_scope": "image1: the small iron cage — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Loki — the trickster god, here a sleek black bird with emerald-rimmed eyes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.2,
+              "cage door swings open"
+            ],
+            [
+              1.2,
+              2.5,
+              "the bird's talons grip the edge to fly free"
+            ]
+          ],
+          "narration_mk": "Џинот ја прифаќа понудата.",
+          "dialogue_mk": "",
+          "kf_first": "Close on the cage door swinging open, the bird's talons gripping the edge, cold light spilling in, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "The bird bursts out through the opening, a flash of green magic scattering the frost",
+          "continuity": "Cage door; green magic release",
+          "motion": "static; burst of motion",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close on the cage door swinging open, the bird's talons gripping the edge, cold light spilling in, photoreal Diablo2 cinematic Loki slender, trickster, in cloak, wreathed in shadow smoke, green magic then cage door swings open, then the bird's talons grip the edge to fly free the camera static settling into the bird bursts out through the opening, a flash of green magic scattering the frost with shadows whisper, magic sizzles continuity held: Cage door; green magic release",
+          "image_prompt_start": "photoreal cinematic: on the cage door swinging open, the bird's talons gripping the edge, cold light spilling in.",
+          "image_prompt_end": "photoreal cinematic: The bird bursts out through the opening, a flash of green magic scattering the frost.",
+          "video_prompt_start": "Cage door swings open. the bird's talons grip the edge to fly free. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Cage door; green magic release.",
+          "video_prompt_end": "Cage door swings open. the bird's talons grip the edge to fly free. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Cage door; green magic release.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S10",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "loki_A2_fused",
+            "frost_realm_env",
+            "geirrod_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of Loki — the trickster god, here a sleek black bird with emerald-rimmed eyes — 100% identical; studio bg/pose/light NOT used; image2: the frost giants’ realm of glowing ice walls and frozen spires — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Geirröd — the brutal frost giant in cracked ice armor — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "environment",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "crane up as the bird flies from the palace"
+            ],
+            [
+              1.5,
+              3.0,
+              "Geirröd shrinks to a distant giant"
+            ]
+          ],
+          "narration_mk": "Конечно слободен, Локи одлетува назад во Асгард.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of the black bird flying away from the ice palace, Geirröd a distant giant silhouette watching from the gate, storm light gathering, photoreal World of Warcraft cinematic, 1216x704",
+          "kf_last": "Crane-up and push toward the golden towers of Asgard on the horizon, the bird a dark speck against the sky",
+          "continuity": "Warm gold Asgard vs cold blue frost realm",
+          "motion": "crane-up; bird flies toward Asgard",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of the black bird flying away from the ice palace, Geirröd a distant giant silhouette watching from the gate, storm light gathering, photoreal World of Warcraft cinematic Loki slender, trickster, in cloak, wreathed in shadow smoke, green magic Geirrod hulking, villain, in ice armor, wreathed in frost aura then crane up as the bird flies from the palace, then Geirröd shrinks to a distant giant the camera crane-up settling into crane-up and push toward the golden towers of Asgard on the horizon, the bird a dark speck against the sky with shadows whisper, magic sizzles continuity held: Warm gold Asgard vs cold blue frost realm",
+          "image_prompt_start": "photoreal cinematic: wide of the black bird flying away from the ice palace, Geirröd a distant giant silhouette watching from the gate, storm light gathering.",
+          "image_prompt_end": "photoreal cinematic: and push toward the golden towers of Asgard on the horizon, the bird a dark speck against the sky.",
+          "video_prompt_start": "Crane up as the bird flies from the palace. Geirröd shrinks to a distant giant. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Warm gold Asgard vs cold blue frost realm.",
+          "video_prompt_end": "Crane up as the bird flies from the palace. Geirröd shrinks to a distant giant. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Warm gold Asgard vs cold blue frost realm.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S11",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "thor_A1_fused",
+            "loki_A2_fused",
+            "asgard_env"
+          ],
+          "ref_scope": "image1: the fused master of Thor — the thunder god in shining armor — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Loki — the trickster god, here a sleek black bird with emerald-rimmed eyes — 100% identical; studio bg/pose/light NOT used; image3: the golden halls and gates of Asgard — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "environment",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "wide on Thor in shining armor in the Asgard hall"
+            ],
+            [
+              1.5,
+              3.0,
+              "the black bird flies in toward him"
+            ]
+          ],
+          "narration_mk": "Во златниот Асгард, Тор дочекува го својот брат.",
+          "dialogue_mk": "",
+          "kf_first": "Wide of the god of thunder Thor in shining armor standing in a golden Asgard hall, the black bird sweeping in to land before him, warm heroic light, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "The bird transforms in a coil of green light into Loki, smirking as he stands beside his brother",
+          "continuity": "Thor's armor, red cape, golden hall",
+          "motion": "static; Loki materializes",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide of the god of thunder Thor in shining armor standing in a golden Asgard hall, the black bird sweeping in to land before him, warm heroic light, photoreal Diablo2 cinematic Thor athletic, divine, in armor, cloak, carrying hammer, wreathed in storm aura, lightning Loki slender, trickster, in cloak, wreathed in shadow smoke, green magic then wide on Thor in shining armor in the Asgard hall, then the black bird flies in toward him the camera static settling into the bird transforms in a coil of green light into Loki, smirking as he stands beside his brother with the hammer-swing thunders, thunder rolls continuity held: Thor's armor, red cape, golden hall",
+          "image_prompt_start": "photoreal cinematic: of the god of thunder Thor in shining armor standing in a golden Asgard hall, the black bird sweeping in to land before him, warm heroic light.",
+          "image_prompt_end": "photoreal cinematic: The bird transforms in a coil of green light into Loki, smirking as he stands beside his brother.",
+          "video_prompt_start": "Wide on Thor in shining armor in the Asgard hall. the black bird flies in toward him. The camera static. The beat resolves into the next matching frame. Continuity held: Thor's armor, red cape, golden hall.",
+          "video_prompt_end": "Wide on Thor in shining armor in the Asgard hall. the black bird flies in toward him. The camera static. The beat resolves into the next matching frame. Continuity held: Thor's armor, red cape, golden hall.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S12",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "shot-reverse",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "loki_A2_fused",
+            "thor_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Loki — the trickster god, here a sleek black bird with emerald-rimmed eyes — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Thor — the thunder god in shining armor — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "Loki gestures grandly toward the horizon"
+            ],
+            [
+              1.8,
+              3.5,
+              "green magic flutters in his wake"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Локи: „Брате, колку убави нешта видов во кралството на џиновите!“",
+          "kf_first": "Medium of Loki, charming and animated, gesturing grandly toward the horizon, green magic flickering on his fingertips, photoreal StarCraft cinematic, 1216x704",
+          "kf_last": "Shot-reverse to Thor, curious and leaning forward, brow lifting with interest",
+          "continuity": "Loki's charm; Thor's interest",
+          "motion": "shot-reverse between brothers",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Loki, charming and animated, gesturing grandly toward the horizon, green magic flickering on his fingertips, photoreal StarCraft cinematic Loki slender, trickster, in cloak, wreathed in shadow smoke, green magic Thor athletic, divine, in armor, cloak, carrying hammer, wreathed in storm aura, lightning then Loki gestures grandly toward the horizon, then green magic flutters in his wake the camera shot-reverse settling into shot-reverse to Thor, curious and leaning forward, brow lifting with interest with shadows whisper, magic sizzles a voice speaks in Macedonian: \"Локи: „Брате, колку убави нешта видов во кралството на џиновите!“\" continuity held: Loki's charm; Thor's interest",
+          "image_prompt_start": "photoreal cinematic: of Loki, charming and animated, gesturing grandly toward the horizon, green magic flickering on his fingertips.",
+          "image_prompt_end": "photoreal cinematic: Shot-reverse to Thor, curious and leaning forward, brow lifting with interest.",
+          "video_prompt_start": "Loki gestures grandly toward the horizon. green magic flutters in his wake. The camera shot-reverse. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Локи: „Брате, колку убави нешта видов во кралството на џиновите!“\" Continuity held: Loki's charm; Thor's interest.",
+          "video_prompt_end": "Loki gestures grandly toward the horizon. green magic flutters in his wake. The camera shot-reverse. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Локи: „Брате, колку убави нешта видов во кралството на џиновите!“\" Continuity held: Loki's charm; Thor's interest.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S13",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "over-shoulder",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "thor_A1_fused",
+            "loki_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of Thor — the thunder god in shining armor — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Loki — the trickster god, here a sleek black bird with emerald-rimmed eyes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "Loki speaks close to Thor's ear"
+            ],
+            [
+              1.5,
+              3.0,
+              "a sly half-smile forms on Loki's lips"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Локи: „Ќе биде подобро да одиме без оружје — ќе им бидеме гости.“",
+          "kf_first": "Over-shoulder medium of Thor listening while Loki speaks close to his ear, a sly half-smile, the golden hall behind, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "Push-in on Thor's hand easing his great hammer down to rest, his trust outweighing doubt",
+          "continuity": "Loki leaning in; the hammer lowering",
+          "motion": "slow push-in; hammer descends",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: over-shoulder medium of Thor listening while Loki speaks close to his ear, a sly half-smile, the golden hall behind, photoreal Diablo2 cinematic Thor athletic, divine, in armor, cloak, carrying hammer, wreathed in storm aura, lightning Loki slender, trickster, in cloak, wreathed in shadow smoke, green magic then Loki speaks close to Thor's ear, then a sly half-smile forms on Loki's lips the camera push-in settling into push-in on Thor's hand easing his great hammer down to rest, his trust outweighing doubt with the hammer-swing thunders, thunder rolls a voice speaks in Macedonian: \"Локи: „Ќе биде подобро да одиме без оружје — ќе им бидеме гости.“\" continuity held: Loki leaning in; the hammer lowering",
+          "image_prompt_start": "photoreal cinematic: Over-shoulder medium of Thor listening while Loki speaks close to his ear, a sly half-smile, the golden hall behind.",
+          "image_prompt_end": "photoreal cinematic: on Thor's hand easing his great hammer down to rest, his trust outweighing doubt.",
+          "video_prompt_start": "Loki speaks close to Thor's ear. a sly half-smile forms on Loki's lips. The camera push-in. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Локи: „Ќе биде подобро да одиме без оружје — ќе им бидеме гости.“\" Continuity held: Loki leaning in; the hammer lowering.",
+          "video_prompt_end": "Loki speaks close to Thor's ear. a sly half-smile forms on Loki's lips. The camera push-in. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Локи: „Ќе биде подобро да одиме без оружје — ќе им бидеме гости.“\" Continuity held: Loki leaning in; the hammer lowering.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S14",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "hammer_B1_sheet",
+            "asgard_env"
+          ],
+          "ref_scope": "image1: Thor’s mighty rune-etched war hammer — 100% identical; studio bg/pose/light NOT used; image2: the golden halls and gates of Asgard — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "environment",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.2,
+              "close on the hammer laid on the golden bench"
+            ],
+            [
+              1.2,
+              2.5,
+              "runes flicker in the warm hall"
+            ]
+          ],
+          "narration_mk": "Тор го остава својот чекан — од кој никогаш не се делеше.",
+          "dialogue_mk": "",
+          "kf_first": "Close on the mighty war hammer laid upon a golden bench, its runes flickering, the warm hall light dimming slightly, photoreal World of Warcraft cinematic, 1216x704",
+          "kf_last": "A shadow falls across the hammer as Thor turns away, the runes' glow fading",
+          "continuity": "The hammer left behind; dimming runes",
+          "motion": "static; rune glow fades",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close on the mighty war hammer laid upon a golden bench, its runes flickering, the warm hall light dimming slightly, photoreal World of Warcraft cinematic then close on the hammer laid on the golden bench, then runes flicker in the warm hall the camera static settling into a shadow falls across the hammer as Thor turns away, the runes' glow fading continuity held: The hammer left behind; dimming runes",
+          "image_prompt_start": "photoreal cinematic: on the mighty war hammer laid upon a golden bench, its runes flickering, the warm hall light dimming slightly.",
+          "image_prompt_end": "photoreal cinematic: A shadow falls across the hammer as Thor away, the runes' glow fading.",
+          "video_prompt_start": "Close on the hammer laid on the golden bench. runes flicker in the warm hall. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: The hammer left behind; dimming runes.",
+          "video_prompt_end": "Close on the hammer laid on the golden bench. runes flicker in the warm hall. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: The hammer left behind; dimming runes.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S15",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "thor_A1_fused",
+            "loki_A2_fused",
+            "asgard_env"
+          ],
+          "ref_scope": "image1: the fused master of Thor — the thunder god in shining armor — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Loki — the trickster god, here a sleek black bird with emerald-rimmed eyes — 100% identical; studio bg/pose/light NOT used; image3: the golden halls and gates of Asgard — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "environment",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "track the brothers walking out the golden gate"
+            ],
+            [
+              1.8,
+              3.5,
+              "they stride unarmed toward the cold path"
+            ]
+          ],
+          "narration_mk": "Без оружје и оклоп, двајцата браќа тргнуваат по застрашувачкиот пат кон земјата на џиновите.",
+          "dialogue_mk": "",
+          "kf_first": "Wide tracking shot of Thor and Loki walking side by side out of Asgard's golden gate into a grey, storm-threatening wilderness, Thor unarmored, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "The brothers shrink against the vast cold horizon, a wall of dark snow clouds closing in ahead",
+          "continuity": "Brothers in travel clothes; grey approaching storm",
+          "motion": "track with the pair; storm closes",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide tracking shot of Thor and Loki walking side by side out of Asgard's golden gate into a grey, storm-threatening wilderness, Thor unarmored, photoreal Diablo2 cinematic Thor athletic, divine, in armor, cloak, carrying hammer, wreathed in storm aura, lightning Loki slender, trickster, in cloak, wreathed in shadow smoke, green magic then track the brothers walking out the golden gate, then they stride unarmed toward the cold path settling into the brothers shrink against the vast cold horizon, a wall of dark snow clouds closing in ahead with the hammer-swing thunders, thunder rolls continuity held: Brothers in travel clothes; grey approaching storm",
+          "image_prompt_start": "photoreal cinematic: of Thor and Loki walking side by side out of Asgard's golden gate into a grey, storm-threatening wilderness, Thor unarmored.",
+          "image_prompt_end": "photoreal cinematic: The brothers shrink against the vast cold horizon, a wall of dark snow clouds closing in ahead.",
+          "video_prompt_start": "Track the brothers walking out the golden gate. they stride unarmed toward the cold path. The beat resolves into the next matching frame. Continuity held: Brothers in travel clothes; grey approaching storm.",
+          "video_prompt_end": "Track the brothers walking out the golden gate. they stride unarmed toward the cold path. The beat resolves into the next matching frame. Continuity held: Brothers in travel clothes; grey approaching storm.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "frost_realm_and_asgard",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class",
+        "screen_dir"
+      ],
+      "palette": [
+        "#7dd3fc",
+        "#1e3a5f",
+        "#b45309"
+      ],
+      "light_direction": "key light from screen-left, cool icy dawn with golden Asgard accents",
+      "time_of_day": "dawn"
+    },
+    {
+      "id": "act2",
+      "num": "Act II",
+      "title": "Патот низ мразот",
+      "color": "#f59e0b",
+      "pct": 50,
+      "synopsis": "Низ снежна бура браќата стигнуваат кај добрата исполинка Грид, која им дава железна ракавица, железна палка и појас. На патот ја совладуваат речната заседа на Гјалп, а во палатата ги чекаат стапиците на Греип и бесен Героид.",
+      "shots": [
+        {
+          "id": "S16",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "thor_A1_fused",
+            "loki_A2_fused",
+            "mountain_pass_env"
+          ],
+          "ref_scope": "image1: the fused master of Thor — the thunder god in shining armor — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Loki — the trickster god, here a sleek black bird with emerald-rimmed eyes — 100% identical; studio bg/pose/light NOT used; image3: the windswept snowstorm mountain pass — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "environment",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "track the brothers across the mountain pass"
+            ],
+            [
+              1.8,
+              3.5,
+              "snow begins to fall hard"
+            ]
+          ],
+          "narration_mk": "Патот ги води низ сè пострмни предели, а небото се полни со тежок снег.",
+          "dialogue_mk": "",
+          "kf_first": "Wide tracking shot of the two brothers crossing a windswept mountain pass, snow beginning to swirl, their cloaks whipping, photoreal StarCraft cinematic, 1216x704",
+          "kf_last": "The first heavy flakes blur the frame, the light dimming to a flat storm grey",
+          "continuity": "Brothers from S15; rising snow",
+          "motion": "track; snow intensifies",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide tracking shot of the two brothers crossing a windswept mountain pass, snow beginning to swirl, their cloaks whipping, photoreal StarCraft cinematic Thor athletic, divine, in armor, cloak, carrying hammer, wreathed in storm aura, lightning Loki slender, trickster, in cloak, wreathed in shadow smoke, green magic then track the brothers across the mountain pass, then snow begins to fall hard settling into the first heavy flakes blur the frame, the light dimming to a flat storm grey with the hammer-swing thunders, thunder rolls continuity held: Brothers from S15; rising snow",
+          "image_prompt_start": "photoreal cinematic: of the two brothers crossing a windswept mountain pass, snow beginning to swirl, their cloaks whipping.",
+          "image_prompt_end": "photoreal cinematic: The first heavy flakes blur the frame, the light dimming to a flat storm grey.",
+          "video_prompt_start": "Track the brothers across the mountain pass. snow begins to fall hard. The beat resolves into the next matching frame. Continuity held: Brothers from S15; rising snow.",
+          "video_prompt_end": "Track the brothers across the mountain pass. snow begins to fall hard. The beat resolves into the next matching frame. Continuity held: Brothers from S15; rising snow.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S17",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "pan-left",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "thor_A1_fused",
+            "loki_A2_fused",
+            "mountain_pass_env"
+          ],
+          "ref_scope": "image1: the fused master of Thor — the thunder god in shining armor — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Loki — the trickster god, here a sleek black bird with emerald-rimmed eyes — 100% identical; studio bg/pose/light NOT used; image3: the windswept snowstorm mountain pass — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "environment",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "pan as the brothers push through blinding snow"
+            ],
+            [
+              1.5,
+              3.0,
+              "ice forms on their furs"
+            ]
+          ],
+          "narration_mk": "Снежната бура ги зафаќа со полна сила.",
+          "dialogue_mk": "",
+          "kf_first": "Medium pan of Thor and Loki struggling forward through a wall of blinding snow, ice forming on their beards and cloaks, photoreal World of Warcraft cinematic, 1216x704",
+          "kf_last": "Pan-left to reveal a dark cave mouth glowing faintly in the cliff face, a promise of shelter",
+          "continuity": "Storm-whipped brothers; the cave ahead",
+          "motion": "pan-left; storm howls",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium pan of Thor and Loki struggling forward through a wall of blinding snow, ice forming on their beards and cloaks, photoreal World of Warcraft cinematic Thor athletic, divine, in armor, cloak, carrying hammer, wreathed in storm aura, lightning Loki slender, trickster, in cloak, wreathed in shadow smoke, green magic then pan as the brothers push through blinding snow, then ice forms on their furs the camera pan-left settling into pan-left to reveal a dark cave mouth glowing faintly in the cliff face, a promise of shelter with the hammer-swing thunders, thunder rolls continuity held: Storm-whipped brothers; the cave ahead",
+          "image_prompt_start": "photoreal cinematic: of Thor and Loki struggling forward through a wall of blinding snow, ice forming on their beards and cloaks.",
+          "image_prompt_end": "photoreal cinematic: -left to reveal a dark cave mouth glowing faintly in the cliff face, a promise of shelter.",
+          "video_prompt_start": "Pan as the brothers push through blinding snow. ice forms on their furs. The camera pan-left. The beat resolves into the next matching frame. Continuity held: Storm-whipped brothers; the cave ahead.",
+          "video_prompt_end": "Pan as the brothers push through blinding snow. ice forms on their furs. The camera pan-left. The beat resolves into the next matching frame. Continuity held: Storm-whipped brothers; the cave ahead.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S18",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "cave_env"
+          ],
+          "ref_scope": "image1: Gríðr’s firelit cave entrance — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "environment",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "hold low-angle on the cave entrance"
+            ],
+            [
+              1.5,
+              3.0,
+              "warm firelight spills from within"
+            ]
+          ],
+          "narration_mk": "Тие бараат засолниште во пештерата на исполинката Грид.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of the cave entrance carved in a mountain, warm firelight spilling from within, the two brothers silhouetted at its mouth, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "A gentle giantess, Gríðr, emerges from the glow, her kind face welcoming them",
+          "continuity": "Warm firelight vs cold storm",
+          "motion": "static; Gríðr steps into light",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of the cave entrance carved in a mountain, warm firelight spilling from within, the two brothers silhouetted at its mouth, photoreal Diablo2 cinematic then hold low-angle on the cave entrance, then warm firelight spills from within the camera static settling into a gentle giantess, Gríðr, emerges from the glow, her kind face welcoming them with echoes roll continuity held: Warm firelight vs cold storm",
+          "image_prompt_start": "photoreal cinematic: wide of the cave entrance carved in a mountain, warm firelight spilling from within, the two brothers silhouetted at its mouth.",
+          "image_prompt_end": "photoreal cinematic: A gentle giantess, Gríðr, emerges from the glow, her kind face welcoming them.",
+          "video_prompt_start": "Hold low-angle on the cave entrance. warm firelight spills from within. The camera static. The beat resolves into the next matching frame. Continuity held: Warm firelight vs cold storm.",
+          "video_prompt_end": "Hold low-angle on the cave entrance. warm firelight spills from within. The camera static. The beat resolves into the next matching frame. Continuity held: Warm firelight vs cold storm.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S19",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "grid_A4_fused",
+            "thor_A1_fused",
+            "loki_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of Gríðr — the kind giantess in rough furs — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Thor — the thunder god in shining armor — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Loki — the trickster god, here a sleek black bird with emerald-rimmed eyes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "Gríðr smiles warmly down at the brothers"
+            ],
+            [
+              1.8,
+              3.5,
+              "her rough furs catch the firelight"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Грид: „Пријателка сум со Один, татко ви. Ќе ви помогнам.“",
+          "kf_first": "Medium of the giantess Gríðr smiling down at Thor and Loki, her eyes warm, rough furs over her shoulders, firelit cave behind, photoreal StarCraft cinematic, 1216x704",
+          "kf_last": "The brothers relax slightly, their frost-covered faces thawing in the firelight",
+          "continuity": "Gríðr's kind presence; firelight",
+          "motion": "static; warm thaw",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the giantess Gríðr smiling down at Thor and Loki, her eyes warm, rough furs over her shoulders, firelit cave behind, photoreal StarCraft cinematic Grid robed, guardian, in furs, cloak, carrying staff, wreathed in firelight Thor athletic, divine, in armor, cloak, carrying hammer, wreathed in storm aura, lightning Loki slender, trickster, in cloak, wreathed in shadow smoke, green magic then Gríðr smiles warmly down at the brothers, then her rough furs catch the firelight the camera static settling into the brothers relax slightly, their frost-covered faces thawing in the firelight with arcane energy crackles, flames crackle a voice speaks in Macedonian: \"Грид: „Пријателка сум со Один, татко ви. Ќе ви помогнам.“\" continuity held: Gríðr's kind presence; firelight",
+          "image_prompt_start": "photoreal cinematic: of the giantess Gríðr smiling down at Thor and Loki, her eyes warm, rough furs over her shoulders, firelit cave behind.",
+          "image_prompt_end": "photoreal cinematic: The brothers relax slightly, their frost-covered faces thawing in the firelight.",
+          "video_prompt_start": "Gríðr smiles warmly down at the brothers. her rough furs catch the firelight. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Грид: „Пријателка сум со Один, татко ви. Ќе ви помогнам.“\" Continuity held: Gríðr's kind presence; firelight.",
+          "video_prompt_end": "Gríðr smiles warmly down at the brothers. her rough furs catch the firelight. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Грид: „Пријателка сум со Один, татко ви. Ќе ви помогнам.“\" Continuity held: Gríðr's kind presence; firelight.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S20",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "over-shoulder",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "grid_A4_fused",
+            "thor_A1_fused",
+            "iron_gauntlet_B2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Gríðr — the kind giantess in rough furs — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Thor — the thunder god in shining armor — 100% identical; studio bg/pose/light NOT used; image3: the heavy iron gauntlet gifted by Gríðr — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "Gríðr presses the iron gauntlet into Thor's hands"
+            ],
+            [
+              1.5,
+              3.0,
+              "metal gleams in the firelight"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Грид: „Героид е насилник и не ми се допаѓа. Еве ви железна ракавица — ќе ви затреба.“",
+          "kf_first": "Over-shoulder medium of Gríðr pressing a heavy iron gauntlet into Thor's hands, its metal catching the firelight, her face grave, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "Push-in on the gauntlet in Thor's hands, its iron plates gleaming with hidden strength",
+          "continuity": "The iron gauntlet prop; grave warning",
+          "motion": "slow push-in on the gauntlet",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: over-shoulder medium of Gríðr pressing a heavy iron gauntlet into Thor's hands, its metal catching the firelight, her face grave, photoreal Diablo2 cinematic Grid robed, guardian, in furs, cloak, carrying staff, wreathed in firelight Thor athletic, divine, in armor, cloak, carrying hammer, wreathed in storm aura, lightning then Gríðr presses the iron gauntlet into Thor's hands, then metal gleams in the firelight the camera push-in settling into push-in on the gauntlet in Thor's hands, its iron plates gleaming with hidden strength with arcane energy crackles, flames crackle a voice speaks in Macedonian: \"Грид: „Героид е насилник и не ми се допаѓа. Еве ви железна ракавица — ќе ви затреба.“\" continuity held: The iron gauntlet prop; grave warning",
+          "image_prompt_start": "photoreal cinematic: Over-shoulder medium of Gríðr pressing a heavy iron gauntlet into Thor's hands, its metal catching the firelight, her face grave.",
+          "image_prompt_end": "photoreal cinematic: on the gauntlet in Thor's hands, its iron plates gleaming with hidden strength.",
+          "video_prompt_start": "Gríðr presses the iron gauntlet into Thor's hands. metal gleams in the firelight. The camera push-in. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Грид: „Героид е насилник и не ми се допаѓа. Еве ви железна ракавица — ќе ви затреба.“\" Continuity held: The iron gauntlet prop; grave warning.",
+          "video_prompt_end": "Gríðr presses the iron gauntlet into Thor's hands. metal gleams in the firelight. The camera push-in. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Грид: „Героид е насилник и не ми се допаѓа. Еве ви железна ракавица — ќе ви затреба.“\" Continuity held: The iron gauntlet prop; grave warning.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S21",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "grid_A4_fused",
+            "iron_staff_B3_prop",
+            "belt_B4_prop"
+          ],
+          "ref_scope": "image1: the fused master of Gríðr — the kind giantess in rough furs — 100% identical; studio bg/pose/light NOT used; image2: the iron staff gifted by Gríðr — 100% identical; studio bg/pose/light NOT used; image3: the woven strengthening belt gifted by Gríðr — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.2,
+              "close on the iron staff and woven belt"
+            ],
+            [
+              1.2,
+              2.5,
+              "Gríðr's hands lay them beside the gauntlet"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Грид: „Земи ја и оваа железна палка и појасот.“",
+          "kf_first": "Close on Gríðr's hands laying an iron staff and a woven belt beside the gauntlet, firelight gleaming on the steel, photoreal World of Warcraft cinematic, 1216x704",
+          "kf_last": "Thor's hand closes around the staff, its weight settling into his grip",
+          "continuity": "Staff + belt gifts; the prop set",
+          "motion": "static; hand grips staff",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close on Gríðr's hands laying an iron staff and a woven belt beside the gauntlet, firelight gleaming on the steel, photoreal World of Warcraft cinematic Grid robed, guardian, in furs, cloak, carrying staff, wreathed in firelight then close on the iron staff and woven belt, then Gríðr's hands lay them beside the gauntlet the camera static settling into thor's hand closes around the staff, its weight settling into his grip with arcane energy crackles, flames crackle a voice speaks in Macedonian: \"Грид: „Земи ја и оваа железна палка и појасот.“\" continuity held: Staff + belt gifts; the prop set",
+          "image_prompt_start": "photoreal cinematic: on Gríðr's hands laying an iron staff and a woven belt beside the gauntlet, firelight gleaming on the steel.",
+          "image_prompt_end": "photoreal cinematic: Thor's hand closes around the staff, its weight settling into his grip.",
+          "video_prompt_start": "Close on the iron staff and woven belt. Gríðr's hands lay them beside the gauntlet. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Грид: „Земи ја и оваа железна палка и појасот.“\" Continuity held: Staff + belt gifts; the prop set.",
+          "video_prompt_end": "Close on the iron staff and woven belt. Gríðr's hands lay them beside the gauntlet. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Грид: „Земи ја и оваа железна палка и појасот.“\" Continuity held: Staff + belt gifts; the prop set.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S22",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "thor_A1_fused",
+            "loki_A2_fused",
+            "cave_env"
+          ],
+          "ref_scope": "image1: the fused master of Thor — the thunder god in shining armor — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Loki — the trickster god, here a sleek black bird with emerald-rimmed eyes — 100% identical; studio bg/pose/light NOT used; image3: Gríðr’s firelit cave entrance — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "environment",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "track the brothers leaving the cave"
+            ],
+            [
+              1.8,
+              3.5,
+              "they trek through deep snow onward"
+            ]
+          ],
+          "narration_mk": "Со даровите од Грид, браќата продолжуваат кон палатата на Героид.",
+          "dialogue_mk": "",
+          "kf_first": "Wide tracking shot of Thor and Loki leaving the cave and trekking through deep snow toward a distant ice palace, Thor now carrying the iron staff, photoreal StarCraft cinematic, 1216x704",
+          "kf_last": "The frozen palace glints ahead on the horizon, grim and unwelcoming",
+          "continuity": "Thor carries staff; distant palace goal",
+          "motion": "track; approach to palace",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide tracking shot of Thor and Loki leaving the cave and trekking through deep snow toward a distant ice palace, Thor now carrying the iron staff, photoreal StarCraft cinematic Thor athletic, divine, in armor, cloak, carrying hammer, wreathed in storm aura, lightning Loki slender, trickster, in cloak, wreathed in shadow smoke, green magic then track the brothers leaving the cave, then they trek through deep snow onward settling into the frozen palace glints ahead on the horizon, grim and unwelcoming with the hammer-swing thunders, thunder rolls continuity held: Thor carries staff; distant palace goal",
+          "image_prompt_start": "photoreal cinematic: of Thor and Loki leaving the cave and trekking through deep snow toward a distant ice palace, Thor now carrying the iron staff.",
+          "image_prompt_end": "photoreal cinematic: The frozen palace glints ahead on the horizon, grim and unwelcoming.",
+          "video_prompt_start": "Track the brothers leaving the cave. they trek through deep snow onward. The beat resolves into the next matching frame. Continuity held: Thor carries staff; distant palace goal.",
+          "video_prompt_end": "Track the brothers leaving the cave. they trek through deep snow onward. The beat resolves into the next matching frame. Continuity held: Thor carries staff; distant palace goal.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S23",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "river_env"
+          ],
+          "ref_scope": "image1: the surging ice-choked river gorge — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "environment",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "crane down onto the churning ice-choked river"
+            ],
+            [
+              1.8,
+              3.5,
+              "grey water surges across the gorge"
+            ]
+          ],
+          "narration_mk": "На патот ги пресретнува брза, разбеснета река.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide crane-down onto a surging, ice-choked river, its grey water churning across the brothers' path, thin light through storm clouds, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "Crane-down to reveal a shadow moving within the water — something vast waits below",
+          "continuity": "The river obstacle; something beneath",
+          "motion": "crane-down; water churns",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide crane-down onto a surging, ice-choked river, its grey water churning across the brothers' path, thin light through storm clouds, photoreal Diablo2 cinematic then crane down onto the churning ice-choked river, then grey water surges across the gorge the camera crane-down settling into crane-down to reveal a shadow moving within the water — something vast waits below with water washes past continuity held: The river obstacle; something beneath",
+          "image_prompt_start": "photoreal cinematic: wide onto a surging, ice-choked river, its grey water churning across the brothers' path, thin light through storm clouds.",
+          "image_prompt_end": "photoreal cinematic: to reveal a shadow moving within the water — something vast waits below.",
+          "video_prompt_start": "Crane down onto the churning ice-choked river. grey water surges across the gorge. The camera crane-down. The beat resolves into the next matching frame. Continuity held: The river obstacle; something beneath.",
+          "video_prompt_end": "Crane down onto the churning ice-choked river. grey water surges across the gorge. The camera crane-down. The beat resolves into the next matching frame. Continuity held: The river obstacle; something beneath.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S24",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "gjalp_A5_fused",
+            "river_env"
+          ],
+          "ref_scope": "image1: the fused master of Gjálp — the furious river giantess — 100% identical; studio bg/pose/light NOT used; image2: the surging ice-choked river gorge — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "environment",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.2,
+              "close on the water's surface"
+            ],
+            [
+              1.2,
+              2.5,
+              "the furious Gjálp face rises from beneath"
+            ]
+          ],
+          "narration_mk": "Во реката демне Гјалп, ќерката на џинот.",
+          "dialogue_mk": "",
+          "kf_first": "Close on the water's surface as a pale, furious giantess face rises from beneath, her eyes wild, hair like wet river weeds, photoreal World of Warcraft cinematic, 1216x704",
+          "kf_last": "The face sinks back, leaving only a swell of current racing toward the brothers",
+          "continuity": "Gjálp's face; the watery threat",
+          "motion": "static; face sinks away",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close on the water's surface as a pale, furious giantess face rises from beneath, her eyes wild, hair like wet river weeds, photoreal World of Warcraft cinematic Gjalp robed, waterfolk, wreathed in water surge then close on the water's surface, then the furious Gjálp face rises from beneath the camera static settling into the face sinks back, leaving only a swell of current racing toward the brothers with water churns and surges, water washes past continuity held: Gjálp's face; the watery threat",
+          "image_prompt_start": "photoreal cinematic: on the water's surface as a pale, furious giantess face from beneath, her eyes wild, hair like wet river weeds.",
+          "image_prompt_end": "photoreal cinematic: The face sinks back, leaving only a swell of current racing toward the brothers.",
+          "video_prompt_start": "Close on the water's surface. the furious Gjálp face rises from beneath. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Gjálp's face; the watery threat.",
+          "video_prompt_end": "Close on the water's surface. the furious Gjálp face rises from beneath. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Gjálp's face; the watery threat.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S25",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gjalp_A5_fused",
+            "river_env",
+            "thor_A1_fused",
+            "loki_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of Gjálp — the furious river giantess — 100% identical; studio bg/pose/light NOT used; image2: the surging ice-choked river gorge — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Thor — the thunder god in shining armor — 100% identical; studio bg/pose/light NOT used; image4: the fused master of Loki — the trickster god, here a sleek black bird with emerald-rimmed eyes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "environment",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "low-angle wide as the river swells upward"
+            ],
+            [
+              1.5,
+              3.0,
+              "torrent rises to swallow the travelers"
+            ]
+          ],
+          "narration_mk": "Гјалп ја надига реката за да ги удави.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of the river swelling violently upward, a torrent of water rising to swallow Thor and Loki standing at the bank, photoreal StarCraft cinematic, 1216x704",
+          "kf_last": "The two brothers brace as the wall of water towers over them, cold spray exploding",
+          "continuity": "Rising flood; the drowning threat",
+          "motion": "static; flood swells",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of the river swelling violently upward, a torrent of water rising to swallow Thor and Loki standing at the bank, photoreal StarCraft cinematic Gjalp robed, waterfolk, wreathed in water surge Thor athletic, divine, in armor, cloak, carrying hammer, wreathed in storm aura, lightning Loki slender, trickster, in cloak, wreathed in shadow smoke, green magic then low-angle wide as the river swells upward, then torrent rises to swallow the travelers the camera static settling into the two brothers brace as the wall of water towers over them, cold spray exploding with water churns and surges, the hammer-swing thunders continuity held: Rising flood; the drowning threat",
+          "image_prompt_start": "photoreal cinematic: wide of the river swelling violently upward, a torrent of water rising to swallow Thor and Loki standing at the bank.",
+          "image_prompt_end": "photoreal cinematic: The two brothers brace as the wall of water towers over them, cold spray exploding.",
+          "video_prompt_start": "Low-angle wide as the river swells upward. torrent rises to swallow the travelers. The camera static. The beat resolves into the next matching frame. Continuity held: Rising flood; the drowning threat.",
+          "video_prompt_end": "Low-angle wide as the river swells upward. torrent rises to swallow the travelers. The camera static. The beat resolves into the next matching frame. Continuity held: Rising flood; the drowning threat.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S26",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "thor_A1_fused",
+            "iron_staff_B3_prop",
+            "river_env"
+          ],
+          "ref_scope": "image1: the fused master of Thor — the thunder god in shining armor — 100% identical; studio bg/pose/light NOT used; image2: the iron staff gifted by Gríðr — 100% identical; studio bg/pose/light NOT used; image3: the surging ice-choked river gorge — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "environment",
+            "prop/creature design",
+            "palette",
+            "light direction"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close on Thor driving the staff into the riverbed"
+            ],
+            [
+              1.5,
+              3.0,
+              "muscles strain against the current"
+            ]
+          ],
+          "narration_mk": "Тор ја забива железната палка длабоко во коритото на реката.",
+          "dialogue_mk": "",
+          "kf_first": "Close on Thor driving his iron staff into the riverbed, muscles straining, water roaring around him, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "Push-in on the staff biting through stone as the current claws at his legs",
+          "continuity": "The iron staff as anchor",
+          "motion": "slow push-in; staff anchors",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close on Thor driving his iron staff into the riverbed, muscles straining, water roaring around him, photoreal Diablo2 cinematic Thor athletic, divine, in armor, cloak, carrying hammer, wreathed in storm aura, lightning then close on Thor driving the staff into the riverbed, then muscles strain against the current the camera push-in settling into push-in on the staff biting through stone as the current claws at his legs with the hammer-swing thunders, thunder rolls continuity held: The iron staff as anchor",
+          "image_prompt_start": "photoreal cinematic: on Thor driving his iron staff into the riverbed, muscles straining, water roaring around him.",
+          "image_prompt_end": "photoreal cinematic: on the staff biting through stone as the current claws at his legs.",
+          "video_prompt_start": "Close on Thor driving the staff into the riverbed. muscles strain against the current. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: The iron staff as anchor.",
+          "video_prompt_end": "Close on Thor driving the staff into the riverbed. muscles strain against the current. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: The iron staff as anchor.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S27",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "pan-right",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "thor_A1_fused",
+            "loki_A2_fused",
+            "iron_staff_B3_prop",
+            "river_env"
+          ],
+          "ref_scope": "image1: the fused master of Thor — the thunder god in shining armor — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Loki — the trickster god, here a sleek black bird with emerald-rimmed eyes — 100% identical; studio bg/pose/light NOT used; image3: the iron staff gifted by Gríðr — 100% identical; studio bg/pose/light NOT used; image4: the surging ice-choked river gorge — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "environment",
+            "prop/creature design",
+            "palette",
+            "light direction"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "pan as Thor hauls along the staff"
+            ],
+            [
+              1.5,
+              3.0,
+              "he pulls free against the raging water"
+            ]
+          ],
+          "narration_mk": "Со силата на палката, тој се исправа против струјата и се извлекува на брегот.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide pan of Thor hauling himself along the staff against the raging current, Loki clinging behind him, the flood beginning to recede, photoreal World of Warcraft cinematic, 1216x704",
+          "kf_last": "Pan-right as Thor drags them both onto the far bank, the river calming in defeat",
+          "continuity": "Escape from the flood",
+          "motion": "pan-right; river calms",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide pan of Thor hauling himself along the staff against the raging current, Loki clinging behind him, the flood beginning to recede, photoreal World of Warcraft cinematic Thor athletic, divine, in armor, cloak, carrying hammer, wreathed in storm aura, lightning Loki slender, trickster, in cloak, wreathed in shadow smoke, green magic then pan as Thor hauls along the staff, then he pulls free against the raging water the camera pan-right settling into pan-right as Thor drags them both onto the far bank, the river calming in defeat with the hammer-swing thunders, thunder rolls continuity held: Escape from the flood",
+          "image_prompt_start": "photoreal cinematic: wide of Thor hauling himself along the staff against the raging current, Loki clinging behind him, the flood beginning to recede.",
+          "image_prompt_end": "photoreal cinematic: -right as Thor drags them both onto the far bank, the river calming in defeat.",
+          "video_prompt_start": "Pan as Thor hauls along the staff. he pulls free against the raging water. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Escape from the flood.",
+          "video_prompt_end": "Pan as Thor hauls along the staff. he pulls free against the raging water. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Escape from the flood.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S28",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "thor_A1_fused",
+            "loki_A2_fused",
+            "ice_palace_env"
+          ],
+          "ref_scope": "image1: the fused master of Thor — the thunder god in shining armor — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Loki — the trickster god, here a sleek black bird with emerald-rimmed eyes — 100% identical; studio bg/pose/light NOT used; image3: Geirröd’s vast rune-carved ice palace — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "environment",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "medium on the brothers before the ice doors"
+            ],
+            [
+              1.5,
+              3.0,
+              "frost swirls around the rune-carved gates"
+            ]
+          ],
+          "narration_mk": "Наскоро, тие стигнуваат до ледените порти на палатата на Героид.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the brothers standing before massive ice doors carved with runes, frost swirling at the threshold, the palace towering above, photoreal StarCraft cinematic, 1216x704",
+          "kf_last": "The doors creak open a crack, spilling cold light, a tall figure waiting within",
+          "continuity": "Palace gate; waiting figure",
+          "motion": "static; doors creak",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the brothers standing before massive ice doors carved with runes, frost swirling at the threshold, the palace towering above, photoreal StarCraft cinematic Thor athletic, divine, in armor, cloak, carrying hammer, wreathed in storm aura, lightning Loki slender, trickster, in cloak, wreathed in shadow smoke, green magic then medium on the brothers before the ice doors, then frost swirls around the rune-carved gates the camera static settling into the doors creak open a crack, spilling cold light, a tall figure waiting within with the hammer-swing thunders, thunder rolls continuity held: Palace gate; waiting figure",
+          "image_prompt_start": "photoreal cinematic: of the brothers standing before massive ice doors carved with runes, frost swirling at the threshold, the palace towering above.",
+          "image_prompt_end": "photoreal cinematic: The doors creak open a crack, spilling cold light, a tall figure waiting within.",
+          "video_prompt_start": "Medium on the brothers before the ice doors. frost swirls around the rune-carved gates. The camera static. The beat resolves into the next matching frame. Continuity held: Palace gate; waiting figure.",
+          "video_prompt_end": "Medium on the brothers before the ice doors. frost swirls around the rune-carved gates. The camera static. The beat resolves into the next matching frame. Continuity held: Palace gate; waiting figure.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S29",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "greip_A6_fused",
+            "thor_A1_fused",
+            "loki_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of Greip — the sly hostess giantess — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Thor — the thunder god in shining armor — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Loki — the trickster god, here a sleek black bird with emerald-rimmed eyes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "Greip looms in the doorway"
+            ],
+            [
+              1.5,
+              3.0,
+              "false smile on her cold face"
+            ]
+          ],
+          "narration_mk": "Нив ги дочекува Греип, другата ќерка на Героид.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of the giantess Greip looming in the doorway, a false smile on her cold face, her shadow stretching across the brothers, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "She gestures them inside with a curtsy, her eyes never softening",
+          "continuity": "Greip's false hospitality",
+          "motion": "static; curtsy gesture",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of the giantess Greip looming in the doorway, a false smile on her cold face, her shadow stretching across the brothers, photoreal Diablo2 cinematic Greip robed, monarch, in cloak, wreathed in frost mist Thor athletic, divine, in armor, cloak, carrying hammer, wreathed in storm aura, lightning Loki slender, trickster, in cloak, wreathed in shadow smoke, green magic then Greip looms in the doorway, then false smile on her cold face the camera static settling into she gestures them inside with a curtsy, her eyes never softening with ice crackles, the hammer-swing thunders continuity held: Greip's false hospitality",
+          "image_prompt_start": "photoreal cinematic: medium of the giantess Greip looming in the doorway, a false smile on her cold face, her shadow stretching across the brothers.",
+          "image_prompt_end": "photoreal cinematic: She gestures them inside with a curtsy, her eyes never softening.",
+          "video_prompt_start": "Greip looms in the doorway. false smile on her cold face. The camera static. The beat resolves into the next matching frame. Continuity held: Greip's false hospitality.",
+          "video_prompt_end": "Greip looms in the doorway. false smile on her cold face. The camera static. The beat resolves into the next matching frame. Continuity held: Greip's false hospitality.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S30",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "greip_A6_fused",
+            "thor_A1_fused",
+            "loki_A2_fused",
+            "chair_B7_prop"
+          ],
+          "ref_scope": "image1: the fused master of Greip — the sly hostess giantess — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Thor — the thunder god in shining armor — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Loki — the trickster god, here a sleek black bird with emerald-rimmed eyes — 100% identical; studio bg/pose/light NOT used; image4: the lone wooden chair in the ice hall — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "track the brothers into the vast ice hall"
+            ],
+            [
+              1.5,
+              3.0,
+              "a lone wooden chair stands waiting"
+            ]
+          ],
+          "narration_mk": "Греип ги води низ гостинската одаја и му нуди на Тор стол да седне.",
+          "dialogue_mk": "",
+          "kf_first": "Wide tracking shot of the brothers following Greip into a vast ice hall, a lone wooden chair standing at its center, cold torchlight, photoreal World of Warcraft cinematic, 1216x704",
+          "kf_last": "Greip sweeps a hand toward the chair, her smile widening as she coaxes Thor forward",
+          "continuity": "The lone chair at center; hidden trap",
+          "motion": "track into the hall",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide tracking shot of the brothers following Greip into a vast ice hall, a lone wooden chair standing at its center, cold torchlight, photoreal World of Warcraft cinematic Greip robed, monarch, in cloak, wreathed in frost mist Thor athletic, divine, in armor, cloak, carrying hammer, wreathed in storm aura, lightning Loki slender, trickster, in cloak, wreathed in shadow smoke, green magic then track the brothers into the vast ice hall, then a lone wooden chair stands waiting settling into greip sweeps a hand toward the chair, her smile widening as she coaxes Thor forward with ice crackles, the hammer-swing thunders continuity held: The lone chair at center; hidden trap",
+          "image_prompt_start": "photoreal cinematic: of the brothers Greip into a vast ice hall, a lone wooden chair standing at its center, cold torchlight.",
+          "image_prompt_end": "photoreal cinematic: Greip sweeps a hand toward the chair, her smile widening as she coaxes Thor forward.",
+          "video_prompt_start": "Track the brothers into the vast ice hall. a lone wooden chair stands waiting. The beat resolves into the next matching frame. Continuity held: The lone chair at center; hidden trap.",
+          "video_prompt_end": "Track the brothers into the vast ice hall. a lone wooden chair stands waiting. The beat resolves into the next matching frame. Continuity held: The lone chair at center; hidden trap.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S31",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "greip_A6_fused",
+            "thor_A1_fused",
+            "chair_B7_prop"
+          ],
+          "ref_scope": "image1: the fused master of Greip — the sly hostess giantess — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Thor — the thunder god in shining armor — 100% identical; studio bg/pose/light NOT used; image3: the lone wooden chair in the ice hall — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "Greip gestures to the chair with warmth"
+            ],
+            [
+              1.5,
+              3.0,
+              "Thor hesitates at its edge"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Греип: „Седни, Тор. Одмори се по долгиот пат.“",
+          "kf_first": "Medium of Greip gesturing to the chair with exaggerated warmth, Thor hesitating at its edge, his hand tight on the iron staff, photoreal StarCraft cinematic, 1216x704",
+          "kf_last": "Thor slowly lowers himself into the chair, his eyes scanning the shadowed ceiling",
+          "continuity": "The trap set; Thor sits",
+          "motion": "static; Thor sits slowly",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Greip gesturing to the chair with exaggerated warmth, Thor hesitating at its edge, his hand tight on the iron staff, photoreal StarCraft cinematic Greip robed, monarch, in cloak, wreathed in frost mist Thor athletic, divine, in armor, cloak, carrying hammer, wreathed in storm aura, lightning then Greip gestures to the chair with warmth, then Thor hesitates at its edge the camera static settling into thor slowly lowers himself into the chair, his eyes scanning the shadowed ceiling with ice crackles, the hammer-swing thunders a voice speaks in Macedonian: \"Греип: „Седни, Тор. Одмори се по долгиот пат.“\" continuity held: The trap set; Thor sits",
+          "image_prompt_start": "photoreal cinematic: of Greip gesturing to the chair with exaggerated warmth, Thor hesitating at its edge, his hand tight on the iron staff.",
+          "image_prompt_end": "photoreal cinematic: Thor slowly lowers himself into the chair, his eyes scanning the shadowed ceiling.",
+          "video_prompt_start": "Greip gestures to the chair with warmth. Thor hesitates at its edge. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Греип: „Седни, Тор. Одмори се по долгиот пат.“\" Continuity held: The trap set; Thor sits.",
+          "video_prompt_end": "Greip gestures to the chair with warmth. Thor hesitates at its edge. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Греип: „Седни, Тор. Одмори се по долгиот пат.“\" Continuity held: The trap set; Thor sits.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S32",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "greip_A6_fused",
+            "thor_A1_fused",
+            "chair_B7_prop"
+          ],
+          "ref_scope": "image1: the fused master of Greip — the sly hostess giantess — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Thor — the thunder god in shining armor — 100% identical; studio bg/pose/light NOT used; image3: the lone wooden chair in the ice hall — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "crane up as Greip lifts the chair high"
+            ],
+            [
+              1.8,
+              3.5,
+              "the ceiling begins to descend"
+            ]
+          ],
+          "narration_mk": "Одеднаш, таванот почнува да се спушта — Греип го крева столот на рамениците.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide crane-up revealing Greip lifting Thor's chair high on her shoulders, his feet dangling, the ceiling rushing closer, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "Crane-up as the ceiling beams bear down, ready to crush him against the vault",
+          "continuity": "Greip lifting the chair; crushing threat",
+          "motion": "crane-up; ceiling descends",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide crane-up revealing Greip lifting Thor's chair high on her shoulders, his feet dangling, the ceiling rushing closer, photoreal Diablo2 cinematic Greip robed, monarch, in cloak, wreathed in frost mist Thor athletic, divine, in armor, cloak, carrying hammer, wreathed in storm aura, lightning then crane up as Greip lifts the chair high, then the ceiling begins to descend the camera crane-up settling into crane-up as the ceiling beams bear down, ready to crush him against the vault with ice crackles, the hammer-swing thunders continuity held: Greip lifting the chair; crushing threat",
+          "image_prompt_start": "photoreal cinematic: wide revealing Greip lifting Thor's chair high on her shoulders, his feet dangling, the ceiling rushing closer.",
+          "image_prompt_end": "photoreal cinematic: as the ceiling beams bear down, ready to crush him against the vault.",
+          "video_prompt_start": "Crane up as Greip lifts the chair high. the ceiling begins to descend. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Greip lifting the chair; crushing threat.",
+          "video_prompt_end": "Crane up as Greip lifts the chair high. the ceiling begins to descend. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Greip lifting the chair; crushing threat.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S33",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "thor_A1_fused",
+            "iron_staff_B3_prop",
+            "greip_A6_fused"
+          ],
+          "ref_scope": "image1: the fused master of Thor — the thunder god in shining armor — 100% identical; studio bg/pose/light NOT used; image2: the iron staff gifted by Gríðr — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Greip — the sly hostess giantess — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "Thor braces the staff against the ceiling"
+            ],
+            [
+              1.5,
+              3.0,
+              "every muscle strains to hold it"
+            ]
+          ],
+          "narration_mk": "Тор ја грабнува железната палка и удира.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle close of Thor bracing his iron staff against the descending ceiling, every muscle locked, his eyes blazing, photoreal World of Warcraft cinematic, 1216x704",
+          "kf_last": "Push-in on the staff slamming down, shattering the stone floor at Greip's feet",
+          "continuity": "The staff as weapon; Thor's counter",
+          "motion": "slow push-in; staff strikes down",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle close of Thor bracing his iron staff against the descending ceiling, every muscle locked, his eyes blazing, photoreal World of Warcraft cinematic Thor athletic, divine, in armor, cloak, carrying hammer, wreathed in storm aura, lightning Greip robed, monarch, in cloak, wreathed in frost mist then Thor braces the staff against the ceiling, then every muscle strains to hold it the camera push-in settling into push-in on the staff slamming down, shattering the stone floor at Greip's feet with the hammer-swing thunders, thunder rolls continuity held: The staff as weapon; Thor's counter",
+          "image_prompt_start": "photoreal cinematic: close of Thor bracing his iron staff against the descending ceiling, every muscle locked, his eyes blazing.",
+          "image_prompt_end": "photoreal cinematic: on the staff slamming down, shattering the stone floor at Greip's feet.",
+          "video_prompt_start": "Thor braces the staff against the ceiling. every muscle strains to hold it. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: The staff as weapon; Thor's counter.",
+          "video_prompt_end": "Thor braces the staff against the ceiling. every muscle strains to hold it. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: The staff as weapon; Thor's counter.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S34",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "greip_A6_fused",
+            "thor_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Greip — the sly hostess giantess — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Thor — the thunder god in shining armor — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "track Greip staggering back splintering the chair"
+            ],
+            [
+              1.5,
+              3.0,
+              "Thor lands on the floor"
+            ]
+          ],
+          "narration_mk": "Исполинката се сопнува и се срушува на подот, поразена.",
+          "dialogue_mk": "",
+          "kf_first": "Wide tracking shot of the giantess Greip staggering back, the chair splintering, Thor landing on his feet amid falling ice shards, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "Greip crashes to the hall floor with a booming impact, ice dust billowing",
+          "continuity": "Greip falls; Thor lands safe",
+          "motion": "track; impact dust",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide tracking shot of the giantess Greip staggering back, the chair splintering, Thor landing on his feet amid falling ice shards, photoreal Diablo2 cinematic Greip robed, monarch, in cloak, wreathed in frost mist Thor athletic, divine, in armor, cloak, carrying hammer, wreathed in storm aura, lightning then track Greip staggering back splintering the chair, then Thor lands on the floor settling into greip crashes to the hall floor with a booming impact, ice dust billowing with ice crackles, the hammer-swing thunders continuity held: Greip falls; Thor lands safe",
+          "image_prompt_start": "photoreal cinematic: of the giantess Greip staggering back, the chair splintering, Thor landing on his feet amid falling ice shards.",
+          "image_prompt_end": "photoreal cinematic: Greip crashes to the hall floor with a booming impact, ice dust billowing.",
+          "video_prompt_start": "Track Greip staggering back splintering the chair. Thor lands on the floor. The beat resolves into the next matching frame. Continuity held: Greip falls; Thor lands safe.",
+          "video_prompt_end": "Track Greip staggering back splintering the chair. Thor lands on the floor. The beat resolves into the next matching frame. Continuity held: Greip falls; Thor lands safe.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S35",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "geirrod_A3_fused",
+            "hot_bar_B5_prop",
+            "thor_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Geirröd — the brutal frost giant in cracked ice armor — 100% identical; studio bg/pose/light NOT used; image2: the red-hot glowing iron bar — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Thor — the thunder god in shining armor — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "low-angle wide as Geirröd strides in"
+            ],
+            [
+              1.5,
+              3.0,
+              "glowing red-hot bar held in his fist"
+            ]
+          ],
+          "narration_mk": "Во тој миг се појавува Героид, со разгорена гламна во раката.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of the frost giant Geirröd striding into the hall, a glowing red-hot iron bar in his fist, his face a mask of fury, photoreal StarCraft cinematic, 1216x704",
+          "kf_last": "He hurls the blazing bar straight at Thor, the ember light streaking the icy air",
+          "continuity": "Geirröd's fury; the thrown bar",
+          "motion": "static; bar flies",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of the frost giant Geirröd striding into the hall, a glowing red-hot iron bar in his fist, his face a mask of fury, photoreal StarCraft cinematic Geirrod hulking, villain, in ice armor, wreathed in frost aura Thor athletic, divine, in armor, cloak, carrying hammer, wreathed in storm aura, lightning then low-angle wide as Geirröd strides in, then glowing red-hot bar held in his fist the camera static settling into he hurls the blazing bar straight at Thor, the ember light streaking the icy air with ice cracks and groans, the hammer-swing thunders continuity held: Geirröd's fury; the thrown bar",
+          "image_prompt_start": "photoreal cinematic: wide of the frost giant Geirröd striding into the hall, a glowing red-hot iron bar in his fist, his face a mask of fury.",
+          "image_prompt_end": "photoreal cinematic: He hurls the blazing bar straight at Thor, the ember light streaking the icy air.",
+          "video_prompt_start": "Low-angle wide as Geirröd strides in. glowing red-hot bar held in his fist. The camera static. The beat resolves into the next matching frame. Continuity held: Geirröd's fury; the thrown bar.",
+          "video_prompt_end": "Low-angle wide as Geirröd strides in. glowing red-hot bar held in his fist. The camera static. The beat resolves into the next matching frame. Continuity held: Geirröd's fury; the thrown bar.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S36",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "thor_A1_fused",
+            "iron_gauntlet_B2_prop",
+            "hot_bar_B5_prop"
+          ],
+          "ref_scope": "image1: the fused master of Thor — the thunder god in shining armor — 100% identical; studio bg/pose/light NOT used; image2: the heavy iron gauntlet gifted by Gríðr — 100% identical; studio bg/pose/light NOT used; image3: the red-hot glowing iron bar — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close on the iron gauntlet clamping the bar"
+            ],
+            [
+              1.5,
+              3.0,
+              "sparks spray as it grips shut"
+            ]
+          ],
+          "narration_mk": "Тор ја крева железната ракавица и ја фаќа усвитената гламна.",
+          "dialogue_mk": "",
+          "kf_first": "Close on Thor's iron gauntlet clamping shut around the red-hot bar, sparks spraying, his grip unyielding, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "Push-in on the cooling metal in his gauntleted fist, embers fading to black",
+          "continuity": "The gauntlet catches fire",
+          "motion": "slow push-in; embers fade",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close on Thor's iron gauntlet clamping shut around the red-hot bar, sparks spraying, his grip unyielding, photoreal Diablo2 cinematic Thor athletic, divine, in armor, cloak, carrying hammer, wreathed in storm aura, lightning then close on the iron gauntlet clamping the bar, then sparks spray as it grips shut the camera push-in settling into push-in on the cooling metal in his gauntleted fist, embers fading to black with the hammer-swing thunders, thunder rolls continuity held: The gauntlet catches fire",
+          "image_prompt_start": "photoreal cinematic: on Thor's iron gauntlet clamping shut around the red-hot bar, sparks spraying, his grip unyielding.",
+          "image_prompt_end": "photoreal cinematic: on the cooling metal in his gauntleted fist, embers fading to black.",
+          "video_prompt_start": "Close on the iron gauntlet clamping the bar. sparks spray as it grips shut. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: The gauntlet catches fire.",
+          "video_prompt_end": "Close on the iron gauntlet clamping the bar. sparks spray as it grips shut. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: The gauntlet catches fire.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S37",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "thor_A1_fused",
+            "hot_bar_B5_prop",
+            "geirrod_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of Thor — the thunder god in shining armor — 100% identical; studio bg/pose/light NOT used; image2: the red-hot glowing iron bar — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Geirröd — the brutal frost giant in cracked ice armor — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "Thor pivots and hurls the bar back"
+            ],
+            [
+              1.5,
+              3.0,
+              "it flies down the hall at Geirröd"
+            ]
+          ],
+          "narration_mk": "Со сета сила, Тор ја фрла назад кон Героид.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of Thor pivoting and hurling the iron bar back through the hall, his hair whipping, determination carved on his face, photoreal World of Warcraft cinematic, 1216x704",
+          "kf_last": "Track the glowing bar slicing across the hall toward the startled giant",
+          "continuity": "The returned throw",
+          "motion": "track the bar; Thor pivots",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Thor pivoting and hurling the iron bar back through the hall, his hair whipping, determination carved on his face, photoreal World of Warcraft cinematic Thor athletic, divine, in armor, cloak, carrying hammer, wreathed in storm aura, lightning Geirrod hulking, villain, in ice armor, wreathed in frost aura then Thor pivots and hurls the bar back, then it flies down the hall at Geirröd the camera track settling into track the glowing bar slicing across the hall toward the startled giant with the hammer-swing thunders, thunder rolls continuity held: The returned throw",
+          "image_prompt_start": "photoreal cinematic: medium of Thor pivoting and hurling the iron bar back through the hall, his hair whipping, determination carved on his face.",
+          "image_prompt_end": "photoreal cinematic: the glowing bar slicing across the hall toward the startled giant.",
+          "video_prompt_start": "Thor pivots and hurls the bar back. it flies down the hall at Geirröd. The camera track. The beat resolves into the next matching frame. Continuity held: The returned throw.",
+          "video_prompt_end": "Thor pivots and hurls the bar back. it flies down the hall at Geirröd. The camera track. The beat resolves into the next matching frame. Continuity held: The returned throw.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S38",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "geirrod_A3_fused",
+            "hot_bar_B5_prop"
+          ],
+          "ref_scope": "image1: the fused master of Geirröd — the brutal frost giant in cracked ice armor — 100% identical; studio bg/pose/light NOT used; image2: the red-hot glowing iron bar — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.2,
+              "close on Geirröd's eyes widening"
+            ],
+            [
+              1.2,
+              2.5,
+              "the blazing bar strikes in steam and frost"
+            ]
+          ],
+          "narration_mk": "Гламната го погодува ледениот џин.",
+          "dialogue_mk": "",
+          "kf_first": "Close on Geirröd's eyes going wide as the blazing bar strikes home in a burst of steam and embers, his expression freezing, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "The giant reels backward, cracks of ice splintering across his frozen form",
+          "continuity": "The decisive blow",
+          "motion": "static; impact frissons",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close on Geirröd's eyes going wide as the blazing bar strikes home in a burst of steam and embers, his expression freezing, photoreal Diablo2 cinematic Geirrod hulking, villain, in ice armor, wreathed in frost aura then close on Geirröd's eyes widening, then the blazing bar strikes in steam and frost the camera static settling into the giant reels backward, cracks of ice splintering across his frozen form with ice cracks and groans continuity held: The decisive blow",
+          "image_prompt_start": "photoreal cinematic: on Geirröd's eyes going wide as the blazing bar strikes home in a burst of steam and embers, his expression freezing.",
+          "image_prompt_end": "photoreal cinematic: The giant reels backward, cracks of ice splintering across his frozen form.",
+          "video_prompt_start": "Close on Geirröd's eyes widening. the blazing bar strikes in steam and frost. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: The decisive blow.",
+          "video_prompt_end": "Close on Geirröd's eyes widening. the blazing bar strikes in steam and frost. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: The decisive blow.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S39",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "geirrod_A3_fused",
+            "thor_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Geirröd — the brutal frost giant in cracked ice armor — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Thor — the thunder god in shining armor — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "crane down as Geirröd topples"
+            ],
+            [
+              1.8,
+              3.5,
+              "ice body cracks and falls defeated"
+            ]
+          ],
+          "narration_mk": "Ледената снага на Героид се крши и тој паѓа, поразен.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide crane-down as the frost giant Geirröd topples in slow thunder, his ice body shattering into harmless shards and mist, no gore, photoreal StarCraft cinematic, 1216x704",
+          "kf_last": "Crane-down over the settling frost cloud, the hall now quiet and still",
+          "continuity": "Child-safe defeat; ice dissolves",
+          "motion": "crane-down; frost settles",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide crane-down as the frost giant Geirröd topples in slow thunder, his ice body shattering into harmless shards and mist, no gore, photoreal StarCraft cinematic Geirrod hulking, villain, in ice armor, wreathed in frost aura Thor athletic, divine, in armor, cloak, carrying hammer, wreathed in storm aura, lightning then crane down as Geirröd topples, then ice body cracks and falls defeated the camera crane-down settling into crane-down over the settling frost cloud, the hall now quiet and still with ice cracks and groans, the hammer-swing thunders continuity held: Child-safe defeat; ice dissolves",
+          "image_prompt_start": "photoreal cinematic: wide as the frost giant Geirröd topples in slow thunder, his ice body shattering into harmless shards and mist, no gore.",
+          "image_prompt_end": "photoreal cinematic: over the settling frost cloud, the hall now quiet and still.",
+          "video_prompt_start": "Crane down as Geirröd topples. ice body cracks and falls defeated. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Child-safe defeat; ice dissolves.",
+          "video_prompt_end": "Crane down as Geirröd topples. ice body cracks and falls defeated. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Child-safe defeat; ice dissolves.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "frozen_pass_river_and_ice_palace",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class",
+        "screen_dir"
+      ],
+      "palette": [
+        "#cbd5e1",
+        "#334155",
+        "#b91c1c"
+      ],
+      "light_direction": "key light from screen-right, stormy overcast with firelight and hot-metal red",
+      "time_of_day": "day"
+    },
+    {
+      "id": "act3",
+      "num": "Act III",
+      "title": "Враќањето",
+      "color": "#a78bfa",
+      "pct": 20,
+      "synopsis": "Победувајќи го Героид со неговата сопствена гламна, Тор се враќа дома горд, но Локи останува со срце полно завист што брат му успеа и без чеканот.",
+      "shots": [
+        {
+          "id": "S40",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "thor_A1_fused",
+            "loki_A2_fused",
+            "ice_palace_env"
+          ],
+          "ref_scope": "image1: the fused master of Thor — the thunder god in shining armor — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Loki — the trickster god, here a sleek black bird with emerald-rimmed eyes — 100% identical; studio bg/pose/light NOT used; image3: Geirröd’s vast rune-carved ice palace — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "environment",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "track the brothers out of the ice palace"
+            ],
+            [
+              1.5,
+              3.0,
+              "pale dawn light greets them"
+            ]
+          ],
+          "narration_mk": "Со победата над Героид, браќата излегуваат од палатата на мразот.",
+          "dialogue_mk": "",
+          "kf_first": "Wide tracking shot of Thor and Loki walking out of the ice palace into pale dawn light, the storm gone, Thor leaning on the iron staff, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "The palace gates recede behind them, frost glinting as the sky clears to cold gold",
+          "continuity": "Victory exit; clearing sky",
+          "motion": "track away from palace",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide tracking shot of Thor and Loki walking out of the ice palace into pale dawn light, the storm gone, Thor leaning on the iron staff, photoreal Diablo2 cinematic Thor athletic, divine, in armor, cloak, carrying hammer, wreathed in storm aura, lightning Loki slender, trickster, in cloak, wreathed in shadow smoke, green magic then track the brothers out of the ice palace, then pale dawn light greets them settling into the palace gates recede behind them, frost glinting as the sky clears to cold gold with the hammer-swing thunders, thunder rolls continuity held: Victory exit; clearing sky",
+          "image_prompt_start": "photoreal cinematic: of Thor and Loki walking out of the ice palace into pale dawn light, the storm gone, Thor leaning on the iron staff.",
+          "image_prompt_end": "photoreal cinematic: The palace gates recede behind them, frost glinting as the sky clears to cold gold.",
+          "video_prompt_start": "Track the brothers out of the ice palace. pale dawn light greets them. The beat resolves into the next matching frame. Continuity held: Victory exit; clearing sky.",
+          "video_prompt_end": "Track the brothers out of the ice palace. pale dawn light greets them. The beat resolves into the next matching frame. Continuity held: Victory exit; clearing sky.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S41",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "thor_A1_fused",
+            "loki_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of Thor — the thunder god in shining armor — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Loki — the trickster god, here a sleek black bird with emerald-rimmed eyes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "medium on Thor walking proud"
+            ],
+            [
+              1.5,
+              3.0,
+              "Loki's face tenses with hidden envy"
+            ]
+          ],
+          "narration_mk": "Тор чекори гордо, а Локи молчи — но не од радост.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the brothers walking side by side, Thor calm and proud, Loki's face tense with hidden anger, photoreal World of Warcraft cinematic, 1216x704",
+          "kf_last": "Loki's eyes narrow at Thor's back, green sparks flickering between his fingers",
+          "continuity": "Loki's hidden envy",
+          "motion": "static; green sparks at Loki's fingers",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the brothers walking side by side, Thor calm and proud, Loki's face tense with hidden anger, photoreal World of Warcraft cinematic Thor athletic, divine, in armor, cloak, carrying hammer, wreathed in storm aura, lightning Loki slender, trickster, in cloak, wreathed in shadow smoke, green magic then medium on Thor walking proud, then Loki's face tenses with hidden envy the camera static settling into loki's eyes narrow at Thor's back, green sparks flickering between his fingers with the hammer-swing thunders, thunder rolls continuity held: Loki's hidden envy",
+          "image_prompt_start": "photoreal cinematic: of the brothers walking side by side, Thor calm and proud, Loki's face tense with hidden anger.",
+          "image_prompt_end": "photoreal cinematic: Loki's eyes narrow at Thor's back, green sparks flickering between his fingers.",
+          "video_prompt_start": "Medium on Thor walking proud. Loki's face tenses with hidden envy. The camera static. The beat resolves into the next matching frame. Continuity held: Loki's hidden envy.",
+          "video_prompt_end": "Medium on Thor walking proud. Loki's face tenses with hidden envy. The camera static. The beat resolves into the next matching frame. Continuity held: Loki's hidden envy.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S42",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "loki_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of Loki — the trickster god, here a sleek black bird with emerald-rimmed eyes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close on Loki's tight jaw"
+            ],
+            [
+              1.5,
+              3.0,
+              "green magic glimmers in his jealous eyes"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Локи: „Ти успеа... дури и без чеканот.“",
+          "kf_first": "Close on Loki's face, his jaw tight, eyes burning with cold jealousy, green magic glimmering faintly at his temples, photoreal StarCraft cinematic, 1216x704",
+          "kf_last": "Push-in on his narrowed eyes as the anger is bottled away into a thin, false smile",
+          "continuity": "Loki's jealousy motif",
+          "motion": "slow push-in on the eyes",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close on Loki's face, his jaw tight, eyes burning with cold jealousy, green magic glimmering faintly at his temples, photoreal StarCraft cinematic Loki slender, trickster, in cloak, wreathed in shadow smoke, green magic then close on Loki's tight jaw, then green magic glimmers in his jealous eyes the camera push-in settling into push-in on his narrowed eyes as the anger is bottled away into a thin, false smile with shadows whisper, magic sizzles a voice speaks in Macedonian: \"Локи: „Ти успеа... дури и без чеканот.“\" continuity held: Loki's jealousy motif",
+          "image_prompt_start": "photoreal cinematic: on Loki's face, his jaw tight, eyes burning with cold jealousy, green magic glimmering faintly at his temples.",
+          "image_prompt_end": "photoreal cinematic: on his narrowed eyes as the anger is bottled away into a thin, false smile.",
+          "video_prompt_start": "Close on Loki's tight jaw. green magic glimmers in his jealous eyes. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Локи: „Ти успеа... дури и без чеканот.“\" Continuity held: Loki's jealousy motif.",
+          "video_prompt_end": "Close on Loki's tight jaw. green magic glimmers in his jealous eyes. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Локи: „Ти успеа... дури и без чеканот.“\" Continuity held: Loki's jealousy motif.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S43",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "shot-reverse",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "thor_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Thor — the thunder god in shining armor — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close on Thor's warm steady face"
+            ],
+            [
+              1.5,
+              3.0,
+              "dawn light gilds his features"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Тор: „Силата не е само во чеканот, брате.“",
+          "kf_first": "Close on Thor's steady, warm face, the dawn light gilding his features, a gentle confidence in his eyes, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "Shot-reverse to Loki looking away, the green light at his fingertips winking out",
+          "continuity": "Thor's calm answer",
+          "motion": "shot-reverse between brothers",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close on Thor's steady, warm face, the dawn light gilding his features, a gentle confidence in his eyes, photoreal Diablo2 cinematic Thor athletic, divine, in armor, cloak, carrying hammer, wreathed in storm aura, lightning then close on Thor's warm steady face, then dawn light gilds his features the camera shot-reverse settling into shot-reverse to Loki looking away, the green light at his fingertips winking out with the hammer-swing thunders, thunder rolls a voice speaks in Macedonian: \"Тор: „Силата не е само во чеканот, брате.“\" continuity held: Thor's calm answer",
+          "image_prompt_start": "photoreal cinematic: on Thor's steady, warm face, the dawn light gilding his features, a gentle confidence in his eyes.",
+          "image_prompt_end": "photoreal cinematic: Shot-reverse to Loki looking away, the green light at his fingertips winking out.",
+          "video_prompt_start": "Close on Thor's warm steady face. dawn light gilds his features. The camera shot-reverse. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Тор: „Силата не е само во чеканот, брате.“\" Continuity held: Thor's calm answer.",
+          "video_prompt_end": "Close on Thor's warm steady face. dawn light gilds his features. The camera shot-reverse. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Тор: „Силата не е само во чеканот, брате.“\" Continuity held: Thor's calm answer.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S44",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "asgard_env"
+          ],
+          "ref_scope": "image1: the golden halls and gates of Asgard — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "environment",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "crane up over the return path"
+            ],
+            [
+              1.8,
+              3.5,
+              "golden Asgard towers glow warm ahead"
+            ]
+          ],
+          "narration_mk": "Напред ги чека златниот сјај на Асгард.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide crane-up over the return path, the golden towers of Asgard glowing warm on the horizon while the frozen wastes lie behind, photoreal World of Warcraft cinematic, 1216x704",
+          "kf_last": "Crane-up to the sky where the black bird and the thunder god walk small below, two silhouettes on the long road home",
+          "continuity": "Asgard homecoming; light vs behind",
+          "motion": "crane-up; two small silhouettes",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide crane-up over the return path, the golden towers of Asgard glowing warm on the horizon while the frozen wastes lie behind, photoreal World of Warcraft cinematic then crane up over the return path, then golden Asgard towers glow warm ahead the camera crane-up settling into crane-up to the sky where the black bird and the thunder god walk small below, two silhouettes on the long road home continuity held: Asgard homecoming; light vs behind",
+          "image_prompt_start": "photoreal cinematic: wide over the return path, the golden towers of Asgard glowing warm on the horizon while the frozen wastes lie behind.",
+          "image_prompt_end": "photoreal cinematic: to the sky where the black bird and the thunder god walk small below, two silhouettes on the long road home.",
+          "video_prompt_start": "Crane up over the return path. golden Asgard towers glow warm ahead. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Asgard homecoming; light vs behind.",
+          "video_prompt_end": "Crane up over the return path. golden Asgard towers glow warm ahead. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Asgard homecoming; light vs behind.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S45",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "hammer_B1_sheet",
+            "asgard_env"
+          ],
+          "ref_scope": "image1: Thor’s mighty rune-etched war hammer — 100% identical; studio bg/pose/light NOT used; image2: the golden halls and gates of Asgard — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "environment",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.2,
+              "close on the hammer on its bench"
+            ],
+            [
+              1.2,
+              2.5,
+              "runes reawaken with warm light"
+            ]
+          ],
+          "narration_mk": "Во Асгард, чеканот сè уште лежи каде што Тор го остави.",
+          "dialogue_mk": "",
+          "kf_first": "Close on the mighty hammer resting on its golden bench, runes reawakening as warm light returns, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "The runes glow bright again, anticipating its master's return",
+          "continuity": "The hammer awaits; runes relight",
+          "motion": "static; rune glow returns",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close on the mighty hammer resting on its golden bench, runes reawakening as warm light returns, photoreal Diablo2 cinematic then close on the hammer on its bench, then runes reawaken with warm light the camera static settling into the runes glow bright again, anticipating its master's return continuity held: The hammer awaits; runes relight",
+          "image_prompt_start": "photoreal cinematic: on the mighty hammer resting on its golden bench, runes reawakening as warm light returns.",
+          "image_prompt_end": "photoreal cinematic: The runes glow bright again, anticipating its master's return.",
+          "video_prompt_start": "Close on the hammer on its bench. runes reawaken with warm light. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: The hammer awaits; runes relight.",
+          "video_prompt_end": "Close on the hammer on its bench. runes reawaken with warm light. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: The hammer awaits; runes relight.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S46",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "thor_A1_fused",
+            "hammer_B1_sheet",
+            "asgard_env"
+          ],
+          "ref_scope": "image1: the fused master of Thor — the thunder god in shining armor — 100% identical; studio bg/pose/light NOT used; image2: Thor’s mighty rune-etched war hammer — 100% identical; studio bg/pose/light NOT used; image3: the golden halls and gates of Asgard — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "environment",
+            "prop/creature design",
+            "palette",
+            "light direction"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "Thor lifts his hammer once more"
+            ],
+            [
+              1.5,
+              3.0,
+              "soft lightning dances on its head"
+            ]
+          ],
+          "narration_mk": "Тор ја крева својата моќ повторно, а чеканот се пали со гром.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of Thor lifting his hammer once more, arcs of soft lightning dancing across its head, the golden hall flooding with light, photoreal World of Warcraft cinematic, 1216x704",
+          "kf_last": "The lightning curls calmly around his arm, a god at peace with his strength",
+          "continuity": "Reunion with the hammer",
+          "motion": "static; gentle lightning arcs",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Thor lifting his hammer once more, arcs of soft lightning dancing across its head, the golden hall flooding with light, photoreal World of Warcraft cinematic Thor athletic, divine, in armor, cloak, carrying hammer, wreathed in storm aura, lightning then Thor lifts his hammer once more, then soft lightning dances on its head the camera static settling into the lightning curls calmly around his arm, a god at peace with his strength with the hammer-swing thunders, thunder rolls continuity held: Reunion with the hammer",
+          "image_prompt_start": "photoreal cinematic: of Thor lifting his hammer once more, arcs of soft lightning dancing across its head, the golden hall flooding with light.",
+          "image_prompt_end": "photoreal cinematic: The lightning curls calmly around his arm, a god at peace with his strength.",
+          "video_prompt_start": "Thor lifts his hammer once more. soft lightning dances on its head. The camera static. The beat resolves into the next matching frame. Continuity held: Reunion with the hammer.",
+          "video_prompt_end": "Thor lifts his hammer once more. soft lightning dances on its head. The camera static. The beat resolves into the next matching frame. Continuity held: Reunion with the hammer.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S47",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "loki_A2_fused",
+            "asgard_env"
+          ],
+          "ref_scope": "image1: the fused master of Loki — the trickster god, here a sleek black bird with emerald-rimmed eyes — 100% identical; studio bg/pose/light NOT used; image2: the golden halls and gates of Asgard — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "environment",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "Loki stands in the shadowed doorway"
+            ],
+            [
+              1.5,
+              3.0,
+              "his half-lit face watches his brother"
+            ]
+          ],
+          "narration_mk": "А Локи стои во сенката, со срце полно завист.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of Loki standing in the shadowed doorway, his face half-lit, watching his brother with smoldering resentment, photoreal StarCraft cinematic, 1216x704",
+          "kf_last": "He turns away into shadow, green sparks dying as the dark swallows him",
+          "continuity": "Loki's lingering envy",
+          "motion": "static; Loki steps into shadow",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Loki standing in the shadowed doorway, his face half-lit, watching his brother with smoldering resentment, photoreal StarCraft cinematic Loki slender, trickster, in cloak, wreathed in shadow smoke, green magic then Loki stands in the shadowed doorway, then his half-lit face watches his brother the camera static settling into he turns away into shadow, green sparks dying as the dark swallows him with shadows whisper, magic sizzles continuity held: Loki's lingering envy",
+          "image_prompt_start": "photoreal cinematic: of Loki standing in the shadowed doorway, his face half-lit, watching his brother with smoldering resentment.",
+          "image_prompt_end": "photoreal cinematic: He away into shadow, green sparks dying as the dark swallows him.",
+          "video_prompt_start": "Loki stands in the shadowed doorway. his half-lit face watches his brother. The camera static. The beat resolves into the next matching frame. Continuity held: Loki's lingering envy.",
+          "video_prompt_end": "Loki stands in the shadowed doorway. his half-lit face watches his brother. The camera static. The beat resolves into the next matching frame. Continuity held: Loki's lingering envy.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S48",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "thor_A1_fused",
+            "loki_A2_fused",
+            "asgard_env"
+          ],
+          "ref_scope": "image1: the fused master of Thor — the thunder god in shining armor — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Loki — the trickster god, here a sleek black bird with emerald-rimmed eyes — 100% identical; studio bg/pose/light NOT used; image3: the golden halls and gates of Asgard — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "environment",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "track the golden Asgard hall"
+            ],
+            [
+              1.8,
+              3.5,
+              "Thor stands strong with his hammer"
+            ]
+          ],
+          "narration_mk": "Така завршува приказната за Тор и ледените џинови — каде силата е во срцето, не во оружјето.",
+          "dialogue_mk": "",
+          "kf_first": "Wide tracking shot of the golden Asgard hall in warm light, Thor standing strong with his hammer while Loki's shadow slips away at the frame's edge, photoreal Diablo2 cinematic, 1216x704",
+          "kf_last": "Pull back to reveal the whole hall radiant and serene, the two brothers forever divided by light and shadow",
+          "continuity": "Closing tableau: light vs shadow",
+          "motion": "pull-back; hall glows",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide tracking shot of the golden Asgard hall in warm light, Thor standing strong with his hammer while Loki's shadow slips away at the frame's edge, photoreal Diablo2 cinematic Thor athletic, divine, in armor, cloak, carrying hammer, wreathed in storm aura, lightning Loki slender, trickster, in cloak, wreathed in shadow smoke, green magic then track the golden Asgard hall, then Thor stands strong with his hammer settling into pull back to reveal the whole hall radiant and serene, the two brothers forever divided by light and shadow with the hammer-swing thunders, thunder rolls continuity held: Closing tableau: light vs shadow",
+          "image_prompt_start": "photoreal cinematic: of the golden Asgard hall in warm light, Thor standing strong with his hammer while Loki's shadow slips away at the frame's edge.",
+          "image_prompt_end": "photoreal cinematic: to reveal the whole hall radiant and serene, the two brothers forever divided by light and shadow.",
+          "video_prompt_start": "Track the golden Asgard hall. Thor stands strong with his hammer. The beat resolves into the next matching frame. Continuity held: Closing tableau: light vs shadow.",
+          "video_prompt_end": "Track the golden Asgard hall. Thor stands strong with his hammer. The beat resolves into the next matching frame. Continuity held: Closing tableau: light vs shadow.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "return_path_to_asgard",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class",
+        "screen_dir"
+      ],
+      "palette": [
+        "#fcd34d",
+        "#b45309",
+        "#1e3a5f"
+      ],
+      "light_direction": "key light from screen-left, warm dawn breaking into golden Asgard",
+      "time_of_day": "dawn"
+    }
+  ],
+  "director_corrections": {
+    "issued": "2026-11-07",
+    "source": "KB §13 DIRECTOR CORRECTIONS — overrides all prior asset/keyframe guidance",
+    "rules": [
+      "DD HEADWEAR: no cap/hood/bandana/mask on head; hood = back-cowl only (cape-like); bare head + teal-blue glowing hair always visible; any head/face covering = REJECT",
+      "LEGENDARY WEAPONS MUST APPEAR: DD = twin Frostbite-class hand crossbows (ice-blue arcane crystal limbs, frost runes, frozen-light string, teal-blue glow); AZ = Dawnbreaker-class greatsword (pale sunsteel, molten-gold runes, golden holy fire edge, sunburst crossguard); hero sheet/keyframe without weapon = INCOMPLETE",
+      "WEAPON ANTI-SLOP: fantasy construction only; crossbow must NEVER read as firearm (no barrel/magazine/stock/Uzi/SMG silhouette = REJECT); anti-slop negatives always appended",
+      "BOSS FACE: Mal'garot HAS a prolific molten-lava face (lava dripping/running, drops falling to ground); faceless boss sheets SUPERSEDED",
+      "LOCATION BRIGHTNESS FLOOR: environment plates silhouette-readable at thumbnail; no murk-dark grades"
+    ],
+    "applies_when": "Activates when face_lock changes from AI-default to an enrolled identity (DD/AZ). AI-default packages carry this as a forward constraint, not a current defect.",
+    "anti_slop_negatives": "firearm, gun, machinegun, Uzi, barrel, magazine, ammo clip, muzzle, modern weapon"
+  },
+  "character_designs": {
+    "thor": {
+      "archetype": "divine",
+      "build": "athletic",
+      "scale": "large",
+      "palette": {
+        "primary": "#c85a32",
+        "secondary": "#5a3a1a",
+        "glow": "#7fd4ff"
+      },
+      "costume": [
+        "armor",
+        "cloak"
+      ],
+      "props": [
+        "hammer"
+      ],
+      "fx": [
+        "storm_aura",
+        "lightning"
+      ]
+    },
+    "loki": {
+      "archetype": "trickster",
+      "build": "slender",
+      "scale": "human",
+      "palette": {
+        "primary": "#2e5a4a",
+        "secondary": "#153026",
+        "glow": "#8affc1"
+      },
+      "costume": [
+        "cloak"
+      ],
+      "props": [],
+      "fx": [
+        "shadow_smoke",
+        "green_magic"
+      ]
+    },
+    "geirrod": {
+      "archetype": "villain",
+      "build": "hulking",
+      "scale": "huge",
+      "palette": {
+        "primary": "#3a6a8a",
+        "secondary": "#122438",
+        "glow": "#ff5533"
+      },
+      "costume": [
+        "ice_armor"
+      ],
+      "props": [],
+      "fx": [
+        "frost_aura"
+      ]
+    },
+    "grid": {
+      "archetype": "guardian",
+      "build": "robed",
+      "scale": "large",
+      "palette": {
+        "primary": "#6b4a2e",
+        "secondary": "#33220f",
+        "glow": "#ffb347"
+      },
+      "costume": [
+        "furs",
+        "cloak"
+      ],
+      "props": [
+        "staff"
+      ],
+      "fx": [
+        "firelight"
+      ]
+    },
+    "gjalp": {
+      "archetype": "waterfolk",
+      "build": "robed",
+      "scale": "large",
+      "palette": {
+        "primary": "#2a6a8a",
+        "secondary": "#122438",
+        "glow": "#5affc1"
+      },
+      "costume": [],
+      "props": [],
+      "fx": [
+        "water_surge"
+      ]
+    },
+    "greip": {
+      "archetype": "monarch",
+      "build": "robed",
+      "scale": "large",
+      "palette": {
+        "primary": "#4a5a7a",
+        "secondary": "#1c2438",
+        "glow": "#b48aff"
+      },
+      "costume": [
+        "cloak"
+      ],
+      "props": [],
+      "fx": [
+        "frost_mist"
+      ]
+    },
+    "frost_realm_env": {
+      "motif": "spires",
+      "tone": "#3a5a8a"
+    },
+    "asgard_env": {
+      "motif": "hall",
+      "tone": "#f2c94c"
+    },
+    "mountain_pass_env": {
+      "motif": "peaks",
+      "tone": "#4a4a5a"
+    },
+    "cave_env": {
+      "motif": "cavern",
+      "tone": "#3a2a1a"
+    },
+    "river_env": {
+      "motif": "ocean",
+      "tone": "#2a6a8a"
+    },
+    "ice_palace_env": {
+      "motif": "hall",
+      "tone": "#7dd3fc"
+    }
+  }
+}

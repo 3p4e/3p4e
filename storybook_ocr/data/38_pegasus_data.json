@@ -1,0 +1,2524 @@
+{
+  "num": "38",
+  "title_mk": "Пегаз",
+  "title_en": "Pegasus",
+  "genre": "Легенда · епска акција",
+  "logline": "Младиот принц Белерофон, со помош на божицата Атена, го зауздува крилестиот коњ Пегаз и се вјдигнува во небото, да се соочи со страшната Химера.",
+  "spec": {
+    "aspect": "16:9",
+    "resolution": "1216x704",
+    "fps": 24,
+    "model": "model-agnostic (chosen at generation)",
+    "style": "photoreal",
+    "flf": true,
+    "language": "mk",
+    "shot_floor": 40,
+    "shot_max": 60,
+    "seed_policy": "fixed-per-shot (same seed → reproducible shot; re-roll per shot id)",
+    "style_anchor": [
+      "Diablo 2 cinematic",
+      "World of Warcraft cinematic",
+      "StarCraft cinematic"
+    ],
+    "negative_prompt": "deformed, extra limbs, morphing, watermark, text, static frame, blurry, low quality, cropped head, cut-off face",
+    "frames": 121,
+    "frames_fallback": 81,
+    "routes": [
+      {
+        "model": "Wan2.1-FLF2V-14B-720P",
+        "input": "start+end native (run START-ONLY)",
+        "status": "WORKING (lead for 14B quality)"
+      },
+      {
+        "model": "Kandinsky 6.0 Lite/Pro",
+        "input": "start-image-only",
+        "status": "WORKING (Pro-distill untested at scale)"
+      },
+      {
+        "model": "SkyReels-V3 R2V-14B",
+        "input": "start-image-only",
+        "status": "WORKING (fallback)"
+      },
+      {
+        "model": "LTX-Video 2B v0.9.5",
+        "input": "start-image-only",
+        "status": "WORKING (small/fast, low ceiling)"
+      },
+      {
+        "model": "Mochi-1",
+        "input": "start-image-only",
+        "status": "untested here"
+      },
+      {
+        "model": "LTX-2.3 22B distilled",
+        "input": "start-image-only",
+        "status": "DEAD (nanobind native-crash, 42 note)"
+      }
+    ],
+    "model_note": "Model chosen per story at generation (43 §4). Keyframes + continuation prompts are generator-agnostic; only the render command differs per model."
+  },
+  "cast": [
+    {
+      "role": "Пегаз / Pegasus",
+      "trait": "Прекрасен снежно-бел крилест коњ, носителот на Зевсовите молњи",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Белерофон / Bellerophon",
+      "trait": "Млад и храбар принц со срце на вистински јунак",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Зевс / Zeus",
+      "trait": "Кралот на сите богови, моќен и величествен владетел на Олимп",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Атена / Athena",
+      "trait": "Божицата на мудроста, сјајна и смирена заштитничка на јунаците",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Химера / Chimera",
+      "trait": "Чудовиште со лавовска глава, козјо тело и змијска опашка, блуе оган",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    }
+  ],
+  "acts": [
+    {
+      "id": "act1",
+      "num": "Act I",
+      "title": "Заложба",
+      "color": "#2dd4bf",
+      "pct": 30,
+      "synopsis": "На Олимп крилестиот коњ Пегаз ги носи зевсовите молњи; долу во светот, младиот принц Белерофон ќе го победи чудовиштето Химера, а за тоа ќе го побара помошта на божицата.",
+      "location_ref": "mount_olympus_and_mortal_city",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#fbbf24",
+        "#f8fafc",
+        "#3b82f6"
+      ],
+      "light_direction": "key light from screen-left, radiant golden dawn",
+      "time_of_day": "dawn",
+      "shots": [
+        {
+          "id": "S01",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "pegasus_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Pegasus - the magnificent snow-white winged stallion with vast feathered wings - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "slow crane-down over the cloud-wrapped summit"
+            ],
+            [
+              2.0,
+              3.5,
+              "Pegasus glides into frame"
+            ]
+          ],
+          "narration_mk": "Високо над облаците, на врвот на светот, живееше еден коњ со крилја.",
+          "dialogue_mk": "",
+          "kf_first": "Aerial establishing view of Mount Olympus summit piercing golden clouds at dawn, a snow-white winged horse gliding over marble columns, divine golden light, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Crane-down as the winged horse sweeps across the frame, great white wings catching the first sun rays",
+          "continuity": "Radiant dawn palette, white marble and gold",
+          "motion": "slow crane-down; wings beating in soft air",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: aerial establishing view of Mount Olympus summit piercing golden clouds at dawn, a snow-white winged horse gliding over marble columns, divine golden light Pegasus equine, steed, in wings, mane, carrying golden bridle, wreathed in lightning aura, holy aura then slow crane-down over the cloud-wrapped summit, then Pegasus glides into frame settling into crane-down as the winged horse sweeps across the frame, great white wings catching the first sun rays with lightning cracks, a low radiant hum continuity held: Radiant dawn palette, white marble and gold",
+          "image_prompt_start": "photoreal cinematic: establishing view of Mount Olympus summit piercing golden clouds at dawn, a snow-white winged horse gliding over marble columns, divine golden light.",
+          "image_prompt_end": "photoreal cinematic: as the winged horse sweeps across the frame, great white wings catching the first sun rays.",
+          "video_prompt_start": "Slow crane-down over the cloud-wrapped summit. Pegasus glides into frame. The beat resolves into the next matching frame. Continuity held: Radiant dawn palette, white marble and gold.",
+          "video_prompt_end": "Slow crane-down over the cloud-wrapped summit. Pegasus glides into frame. The beat resolves into the next matching frame. Continuity held: Radiant dawn palette, white marble and gold.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S02",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "pegasus_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Pegasus - the brilliant white winged stallion - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "winged horse gallops across the heavens"
+            ],
+            [
+              1.8,
+              3.5,
+              "trailing a harness of short thunderbolt darts"
+            ]
+          ],
+          "narration_mk": "Секој ден тој леташе по небото и ги носеше молњите на кралот на боговите.",
+          "dialogue_mk": "",
+          "kf_first": "The white winged stallion galloping across a vast dawn sky trailing a golden harness of short glowing thunderbolt darts, streaming clouds, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "The horse banks gently, the thunderbolt darts sparking with pale blue light, open sky ahead",
+          "continuity": "Same winged horse and golden harness; dawn sky palette",
+          "motion": "lateral tracking; wings drive the gallop",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: the white winged stallion galloping across a vast dawn sky trailing a golden harness of short glowing thunderbolt darts, streaming clouds Pegasus equine, steed, in wings, mane, carrying golden bridle, wreathed in lightning aura, holy aura then winged horse gallops across the heavens, then trailing a harness of short thunderbolt darts the camera track settling into the horse banks gently, the thunderbolt darts sparking with pale blue light, open sky ahead with lightning cracks, a low radiant hum continuity held: Same winged horse and golden harness; dawn sky palette",
+          "image_prompt_start": "photoreal cinematic: The white winged stallion galloping across a vast dawn sky trailing a golden harness of short glowing thunderbolt darts, streaming clouds.",
+          "image_prompt_end": "photoreal cinematic: The horse banks gently, the thunderbolt darts sparking with pale blue light, open sky ahead.",
+          "video_prompt_start": "Winged horse gallops across the heavens. trailing a harness of short thunderbolt darts. The camera track. The beat resolves into the next matching frame. Continuity held: Same winged horse and golden harness; dawn sky palette.",
+          "video_prompt_end": "Winged horse gallops across the heavens. trailing a harness of short thunderbolt darts. The camera track. The beat resolves into the next matching frame. Continuity held: Same winged horse and golden harness; dawn sky palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S03",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "pan-right",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "pegasus_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Pegasus - the white winged stallion - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "Pegasus descends toward the marble terrace"
+            ],
+            [
+              1.5,
+              3.0,
+              "he lands and folds his wings"
+            ]
+          ],
+          "narration_mk": "Никој смртник не можеше да го јава овој посебен коњ.",
+          "dialogue_mk": "",
+          "kf_first": "Medium view of the white winged horse descending toward a polished marble palace terrace, wings flaring, golden clouds, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "The horse lands with folded wings, hooves touching the white stone",
+          "continuity": "Same Pegasus; marble palace, dawn light",
+          "motion": "gentle pan as he settles, wings folding",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium view of the white winged horse descending toward a polished marble palace terrace, wings flaring, golden clouds Pegasus equine, steed, in wings, mane, carrying golden bridle, wreathed in lightning aura, holy aura then Pegasus descends toward the marble terrace, then he lands and folds his wings the camera pan-right settling into the horse lands with folded wings, hooves touching the white stone with lightning cracks, a low radiant hum continuity held: Same Pegasus; marble palace, dawn light",
+          "image_prompt_start": "photoreal cinematic: view of the white winged horse descending toward a polished marble palace terrace, wings flaring, golden clouds.",
+          "image_prompt_end": "photoreal cinematic: The horse lands with folded wings, hooves touching the white stone.",
+          "video_prompt_start": "Pegasus descends toward the marble terrace. he lands and folds his wings. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Same Pegasus; marble palace, dawn light.",
+          "video_prompt_end": "Pegasus descends toward the marble terrace. he lands and folds his wings. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Same Pegasus; marble palace, dawn light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S04",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "zeus_Z1_fused",
+            "pegasus_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Zeus - the majestic white-bearded king of the gods in a flowing white and gold robe - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Pegasus - the white winged stallion - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.7,
+              "Zeus extends his hand toward the horse"
+            ],
+            [
+              1.7,
+              3.5,
+              "the harness of thunderbolts is lifted away"
+            ]
+          ],
+          "narration_mk": "Зевс, кралот на сите богови, сам ги примаше молњите.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of the majestic white-bearded Zeus on a grand marble terrace reaching out as the white winged horse bows its head, golden thunderbolts in its harness, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Zeus lifts the glowing thunderbolt harness away as the stallion bows deeper",
+          "continuity": "Same Zeus and Pegasus; divine dawn light; marble terrace",
+          "motion": "static frame, slow gesture",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of the majestic white-bearded Zeus on a grand marble terrace reaching out as the white winged horse bows its head, golden thunderbolts in its harness Pegasus equine, steed, in wings, mane, carrying golden bridle, wreathed in lightning aura, holy aura then Zeus extends his hand toward the horse, then the harness of thunderbolts is lifted away the camera static settling into zeus lifts the glowing thunderbolt harness away as the stallion bows deeper with lightning cracks, a low radiant hum continuity held: Same Zeus and Pegasus; divine dawn light; marble terrace",
+          "image_prompt_start": "photoreal cinematic: medium of the majestic white-bearded Zeus on a grand marble terrace reaching out as the white winged horse bows its head, golden thunderbolts in its harness.",
+          "image_prompt_end": "photoreal cinematic: Zeus lifts the glowing thunderbolt harness away as the stallion bows deeper.",
+          "video_prompt_start": "Zeus extends his hand toward the horse. the harness of thunderbolts is lifted away. The camera static. The beat resolves into the next matching frame. Continuity held: Same Zeus and Pegasus; divine dawn light; marble terrace.",
+          "video_prompt_end": "Zeus extends his hand toward the horse. the harness of thunderbolts is lifted away. The camera static. The beat resolves into the next matching frame. Continuity held: Same Zeus and Pegasus; divine dawn light; marble terrace.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S05",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "bridle_G1_prop"
+          ],
+          "ref_scope": "image1: prop card of the golden thunderbolt - a short ornate bronze dart crackling with pale sparks - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "a single thunderbolt dart glints"
+            ],
+            [
+              1.5,
+              3.0,
+              "sparks crawl along the bronze"
+            ]
+          ],
+          "narration_mk": "Секоја молња бликаше со своствено небесно сијање.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of a single ornate bronze thunderbolt dart cracking with pale blue sparks against blurred marble, divine light, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Push-in on the dart tip as a bright spark crawls along the bronze surface",
+          "continuity": "Same dart; divine light direction",
+          "motion": "slow push-in; electric spark",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of a single ornate bronze thunderbolt dart cracking with pale blue sparks against blurred marble, divine light then a single thunderbolt dart glints, then sparks crawl along the bronze the camera push-in settling into push-in on the dart tip as a bright spark crawls along the bronze surface continuity held: Same dart; divine light direction",
+          "image_prompt_start": "photoreal cinematic: Macro insert of a single ornate bronze thunderbolt dart cracking with pale blue sparks against blurred marble, divine light.",
+          "image_prompt_end": "photoreal cinematic: on the dart tip as a bright spark crawls along the bronze surface.",
+          "video_prompt_start": "A single thunderbolt dart glints. sparks crawl along the bronze. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same dart; divine light direction.",
+          "video_prompt_end": "A single thunderbolt dart glints. sparks crawl along the bronze. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same dart; divine light direction.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S06",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [],
+          "ref_scope": "image1: environment card of the ancient Greek city below Olympus - white stone houses, olive groves, dusty roads - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "crane down toward the mortal world"
+            ],
+            [
+              2.0,
+              3.5,
+              "the city fills the frame at golden hour"
+            ]
+          ],
+          "narration_mk": "Но далеку под планината, живееше еден млад принц.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle establishing view of an ancient Greek coastal city at golden hour, white stone houses and olive groves under warm light, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Crane-down over the rooftops toward a small palace courtyard below",
+          "continuity": "Warm Aegean golden-hour palette",
+          "motion": "slow crane-down",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle establishing view of an ancient Greek coastal city at golden hour, white stone houses and olive groves under warm light then crane down toward the mortal world, then the city fills the frame at golden hour the camera crane-down settling into crane-down over the rooftops toward a small palace courtyard below continuity held: Warm Aegean golden-hour palette",
+          "image_prompt_start": "photoreal cinematic: establishing view of an ancient Greek coastal city at golden hour, white stone houses and olive groves under warm light.",
+          "image_prompt_end": "photoreal cinematic: over the rooftops toward a small palace courtyard below.",
+          "video_prompt_start": "Crane down toward the mortal world. the city fills the frame at golden hour. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Warm Aegean golden-hour palette.",
+          "video_prompt_end": "Crane down toward the mortal world. the city fills the frame at golden hour. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Warm Aegean golden-hour palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S07",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "bellerophon_B1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Bellerophon - the young brave prince in a bronze-and-leather warrior tunic with a crimson cloak - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "the young prince stands with sword at his side"
+            ],
+            [
+              1.8,
+              3.5,
+              "reads a royal bronze tablet"
+            ]
+          ],
+          "narration_mk": "Белерофон беше наречен за најтешката задача: да го победи легендарното чудовиште.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the young brave prince in a bronze warrior tunic and crimson cloak reading a royal tablet in a marble courtyard, late golden light, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Push-in toward his face as his expression hardens with resolve",
+          "continuity": "Same hero costume and cloak; warm courtyard light",
+          "motion": "slow push-in on his determined face",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the young brave prince in a bronze warrior tunic and crimson cloak reading a royal tablet in a marble courtyard, late golden light then the young prince stands with sword at his side, then reads a royal bronze tablet the camera push-in settling into push-in toward his face as his expression hardens with resolve continuity held: Same hero costume and cloak; warm courtyard light",
+          "image_prompt_start": "photoreal cinematic: of the young brave prince in a bronze warrior tunic and crimson cloak reading a royal tablet in a marble courtyard, late golden light.",
+          "image_prompt_end": "photoreal cinematic: toward his face as his expression hardens with resolve.",
+          "video_prompt_start": "The young prince stands with sword at his side. reads a royal bronze tablet. The camera push-in. The beat resolves into the next matching frame. Continuity held: Same hero costume and cloak; warm courtyard light.",
+          "video_prompt_end": "The young prince stands with sword at his side. reads a royal bronze tablet. The camera push-in. The beat resolves into the next matching frame. Continuity held: Same hero costume and cloak; warm courtyard light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S08",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "bellerophon_B1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Bellerophon - the young prince's face, strong jaw, dark determined eyes - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "his jaw tightens"
+            ],
+            [
+              1.5,
+              3.0,
+              "a spark of an idea lights his eyes"
+            ]
+          ],
+          "narration_mk": "Но во него се роди една смела замисла.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the young prince's determined face, strong jaw set, dark eyes lifting with a new idea, warm key light, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Push-in as his eyes narrow and a confident half-smile forms",
+          "continuity": "Same Bellerophon face; warm light",
+          "motion": "slow push-in on the eyes",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the young prince's determined face, strong jaw set, dark eyes lifting with a new idea, warm key light then his jaw tightens, then a spark of an idea lights his eyes the camera push-in settling into push-in as his eyes narrow and a confident half-smile forms continuity held: Same Bellerophon face; warm light",
+          "image_prompt_start": "photoreal cinematic: of the young prince's determined face, strong jaw set, dark eyes lifting with a new idea, warm key light.",
+          "image_prompt_end": "photoreal cinematic: as his eyes narrow and a confident half-smile forms.",
+          "video_prompt_start": "His jaw tightens. a spark of an idea lights his eyes. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same Bellerophon face; warm light.",
+          "video_prompt_end": "His jaw tightens. a spark of an idea lights his eyes. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same Bellerophon face; warm light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S09",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-left",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [],
+          "ref_scope": "image1: environment card of the Chimera's lair - a jagged volcanic ravine with smoke and ember glow - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "pan across the scorched ravine"
+            ],
+            [
+              1.8,
+              3.5,
+              "smoke coils rise from a dark cave mouth"
+            ]
+          ],
+          "narration_mk": "Далеку, во една задимена карпа, живееше страшно чудовиште.",
+          "dialogue_mk": "",
+          "kf_first": "Wide pan across a jagged volcanic ravine where smoke coils rise from a dark cave mouth, ember glow at dusk, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Pan-left as a burst of orange flame briefly lights the cave entrance",
+          "continuity": "Volcanic dusk palette, ember glow",
+          "motion": "slow pan-left; distant flame",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide pan across a jagged volcanic ravine where smoke coils rise from a dark cave mouth, ember glow at dusk then pan across the scorched ravine, then smoke coils rise from a dark cave mouth the camera pan-left settling into pan-left as a burst of orange flame briefly lights the cave entrance continuity held: Volcanic dusk palette, ember glow",
+          "image_prompt_start": "photoreal cinematic: across a jagged volcanic ravine where smoke coils rise from a dark cave mouth, ember glow at dusk.",
+          "image_prompt_end": "photoreal cinematic: -left as a burst of orange flame briefly lights the cave entrance.",
+          "video_prompt_start": "Pan across the scorched ravine. smoke coils rise from a dark cave mouth. The camera pan-left. The beat resolves into the next matching frame. Continuity held: Volcanic dusk palette, ember glow.",
+          "video_prompt_end": "Pan across the scorched ravine. smoke coils rise from a dark cave mouth. The camera pan-left. The beat resolves into the next matching frame. Continuity held: Volcanic dusk palette, ember glow.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S10",
+          "shot_type": "BOSS-ONLY",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "chimera_C1_sheet"
+          ],
+          "ref_scope": "image1: the creature sheet of the Chimera - lion head with a mane of embers, goat body, serpent tail - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "the beast steps forward through smoke"
+            ],
+            [
+              1.8,
+              3.5,
+              "it opens its jaws and breathes fire"
+            ]
+          ],
+          "narration_mk": "Химера имаше тело на коза, глава на лав и змијска опашка, а захарот ја беше огнен.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of the Chimera stepping through dark smoke - lion head with an ember-tipped mane, goat body, serpent tail - jaws parting with firelight, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "The beast opens its jaws and breathes a plume of orange flame into the ravine",
+          "continuity": "Same Chimera; ember-lit dusk palette",
+          "motion": "static frame; fire exhale",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of the Chimera stepping through dark smoke - lion head with an ember-tipped mane, goat body, serpent tail - jaws parting with firelight then the beast steps forward through smoke, then it opens its jaws and breathes fire the camera static settling into the beast opens its jaws and breathes a plume of orange flame into the ravine continuity held: Same Chimera; ember-lit dusk palette",
+          "image_prompt_start": "photoreal cinematic: medium of the Chimera stepping through dark smoke - lion head with an ember-tipped mane, goat body, serpent tail - jaws parting with firelight.",
+          "image_prompt_end": "photoreal cinematic: The beast opens its jaws and breathes a plume of orange flame into the ravine.",
+          "video_prompt_start": "The beast steps forward through smoke. it opens its jaws and breathes fire. The camera static. The action plays out at full force and lands in a held, readable end pose. Continuity held: Same Chimera; ember-lit dusk palette.",
+          "video_prompt_end": "The beast steps forward through smoke. it opens its jaws and breathes fire. The camera static. The action plays out at full force and lands in a held, readable end pose. Continuity held: Same Chimera; ember-lit dusk palette.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S11",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "bellerophon_B1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Bellerophon - the young prince in bronze-and-leather tunic with crimson cloak - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the prince looks up toward the heavens"
+            ],
+            [
+              1.5,
+              3.0,
+              "a white speck crosses the far sky"
+            ]
+          ],
+          "narration_mk": "Ниту еден смртник досега не беше го јавал крилестиот коњ.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of the young prince staring up at the evening sky, a distant white speck passing among the clouds, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Push-in as the prince's gaze locks onto the distant winged horse",
+          "continuity": "Same Bellerophon; dusk sky",
+          "motion": "slow push-in; upward gaze",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of the young prince staring up at the evening sky, a distant white speck passing among the clouds then the prince looks up toward the heavens, then a white speck crosses the far sky the camera push-in settling into push-in as the prince's gaze locks onto the distant winged horse continuity held: Same Bellerophon; dusk sky",
+          "image_prompt_start": "photoreal cinematic: medium of the young prince staring up at the evening sky, a distant white speck passing among the clouds.",
+          "image_prompt_end": "photoreal cinematic: as the prince's gaze locks onto the distant winged horse.",
+          "video_prompt_start": "The prince looks up toward the heavens. a white speck crosses the far sky. The camera push-in. The beat resolves into the next matching frame. Continuity held: Same Bellerophon; dusk sky.",
+          "video_prompt_end": "The prince looks up toward the heavens. a white speck crosses the far sky. The camera push-in. The beat resolves into the next matching frame. Continuity held: Same Bellerophon; dusk sky.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S12",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "bellerophon_B1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Bellerophon - the young prince with sword at his side - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.7,
+              "the prince grips the sword hilt"
+            ],
+            [
+              1.7,
+              3.5,
+              "he declares his secret plan to the night"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Белерофон: „Тој крилест коњ ќе стане моето тајно оружје во борбата со Химера.“",
+          "kf_first": "Medium of the young prince declaring his secret plan under the first stars, hand resting on his sword hilt, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "His hand closes firmly around the hilt as he finishes speaking",
+          "continuity": "Same Bellerophon; evening courtyard light",
+          "motion": "static frame; resolving gesture",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the young prince declaring his secret plan under the first stars, hand resting on his sword hilt then the prince grips the sword hilt, then he declares his secret plan to the night the camera static settling into his hand closes firmly around the hilt as he finishes speaking a voice speaks in Macedonian: \"Белерофон: „Тој крилест коњ ќе стане моето тајно оружје во борбата со Химера.“\" continuity held: Same Bellerophon; evening courtyard light",
+          "image_prompt_start": "photoreal cinematic: of the young prince declaring his secret plan under the first stars, hand resting on his sword hilt.",
+          "image_prompt_end": "photoreal cinematic: His hand closes firmly around the hilt as he finishes speaking.",
+          "video_prompt_start": "The prince grips the sword hilt. he declares his secret plan to the night. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Белерофон: „Тој крилест коњ ќе стане моето тајно оружје во борбата со Химера.“\" Continuity held: Same Bellerophon; evening courtyard light.",
+          "video_prompt_end": "The prince grips the sword hilt. he declares his secret plan to the night. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Белерофон: „Тој крилест коњ ќе стане моето тајно оружје во борбата со Химера.“\" Continuity held: Same Bellerophon; evening courtyard light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S13",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "over-shoulder",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "bellerophon_B1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Bellerophon's sword - a bronze short-sword with a leather-wrapped grip - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "over the shoulder toward the sword"
+            ],
+            [
+              1.5,
+              3.0,
+              "knuckles whiten on the grip"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "",
+          "kf_first": "Over-shoulder close-up of the young prince's hand tightening on the bronze sword hilt, dusk light, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Push-in until the knuckles whiten against the leather grip",
+          "continuity": "Same sword; evening light",
+          "motion": "slow push-in on the grip",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: over-shoulder close-up of the young prince's hand tightening on the bronze sword hilt, dusk light then over the shoulder toward the sword, then knuckles whiten on the grip the camera push-in settling into push-in until the knuckles whiten against the leather grip continuity held: Same sword; evening light",
+          "image_prompt_start": "photoreal cinematic: Over-shoulder close-up of the young prince's hand tightening on the bronze sword hilt, dusk light.",
+          "image_prompt_end": "photoreal cinematic: until the knuckles whiten against the leather grip.",
+          "video_prompt_start": "Over the shoulder toward the sword. knuckles whiten on the grip. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same sword; evening light.",
+          "video_prompt_end": "Over the shoulder toward the sword. knuckles whiten on the grip. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same sword; evening light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S14",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "bellerophon_B1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Bellerophon - the prince kneeling in a marble hall, head bowed - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "the prince kneels in the quiet hall"
+            ],
+            [
+              1.8,
+              3.5,
+              "candlelight dims as sleep takes him"
+            ]
+          ],
+          "narration_mk": "Набеден на мисла за својата тајна, тој замоли божицата за помош.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of the young prince kneeling in a dim marble hall, head bowed in silent prayer, warm candlelight, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Crane-up as the candles gutter and the prince's eyes drift closed in sleep",
+          "continuity": "Same Bellerophon; night palette, candlelight",
+          "motion": "slow crane-up; light dims",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of the young prince kneeling in a dim marble hall, head bowed in silent prayer, warm candlelight then the prince kneels in the quiet hall, then candlelight dims as sleep takes him the camera crane-up settling into crane-up as the candles gutter and the prince's eyes drift closed in sleep continuity held: Same Bellerophon; night palette, candlelight",
+          "image_prompt_start": "photoreal cinematic: wide of the young prince kneeling in a dim marble hall, head bowed in silent prayer, warm candlelight.",
+          "image_prompt_end": "photoreal cinematic: as the candles gutter and the prince's eyes drift closed in sleep.",
+          "video_prompt_start": "The prince kneels in the quiet hall. candlelight dims as sleep takes him. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Same Bellerophon; night palette, candlelight.",
+          "video_prompt_end": "The prince kneels in the quiet hall. candlelight dims as sleep takes him. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Same Bellerophon; night palette, candlelight.",
+          "motion_intensity": "moderate"
+        }
+      ]
+    },
+    {
+      "id": "act2",
+      "num": "Act II",
+      "title": "Пресврт",
+      "color": "#f59e0b",
+      "pct": 40,
+      "synopsis": "Во сонот божицата Атена му дава златни узди и го упатува кон изворот Пирен; тамо Белерофон нечујно го зауздува крилестиот коњ.",
+      "location_ref": "dream_realm_and_peirene_spring",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#bae6fd",
+        "#fde68a",
+        "#14532d"
+      ],
+      "light_direction": "key light from screen-right, silver moonlight fading to warm dawn",
+      "time_of_day": "night",
+      "shots": [
+        {
+          "id": "S15",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "athena_T1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Athena - the radiant goddess of wisdom in shimmering silver-gold armor - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "golden light blooms in the dream"
+            ],
+            [
+              2.0,
+              3.5,
+              "the goddess descends through mist"
+            ]
+          ],
+          "narration_mk": "Во сонот му се јави самата божица на мудроста.",
+          "dialogue_mk": "",
+          "kf_first": "Wide dreamscape view of the radiant goddess Athena descending through golden mist, shimmering silver-gold armor glowing, moonlit clouds, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Crane-down as she alights softly on a cloud of silver mist",
+          "continuity": "Dream palette: silver, gold, moonlit blue",
+          "motion": "slow crane-down; mist swirling",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide dreamscape view of the radiant goddess Athena descending through golden mist, shimmering silver-gold armor glowing, moonlit clouds then golden light blooms in the dream, then the goddess descends through mist the camera crane-down settling into crane-down as she alights softly on a cloud of silver mist continuity held: Dream palette: silver, gold, moonlit blue",
+          "image_prompt_start": "photoreal cinematic: dreamscape view of the radiant goddess Athena descending through golden mist, shimmering silver-gold armor glowing, moonlit clouds.",
+          "image_prompt_end": "photoreal cinematic: as she alights softly on a cloud of silver mist.",
+          "video_prompt_start": "Golden light blooms in the dream. the goddess descends through mist. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Dream palette: silver, gold, moonlit blue.",
+          "video_prompt_end": "Golden light blooms in the dream. the goddess descends through mist. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Dream palette: silver, gold, moonlit blue.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S16",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "shot-reverse",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "athena_T1_fused",
+            "bellerophon_B1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Athena - the serene goddess - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Bellerophon - the dreaming prince - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.7,
+              "the goddess faces the dreaming prince"
+            ],
+            [
+              1.7,
+              3.5,
+              "she speaks softly into the dream"
+            ]
+          ],
+          "narration_mk": "Атена го погледна со благ насмев и му прошепоти тајна.",
+          "dialogue_mk": "",
+          "kf_first": "Medium shot-reverse of the serene goddess Athena facing the dreaming prince's ethereal form in silver mist, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "The goddess leans nearer as she whispers, her golden light enveloping the dreamer",
+          "continuity": "Same Athena and Bellerophon; dream palette",
+          "motion": "shot-reverse; leaning whisper",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium shot-reverse of the serene goddess Athena facing the dreaming prince's ethereal form in silver mist then the goddess faces the dreaming prince, then she speaks softly into the dream the camera shot-reverse settling into the goddess leans nearer as she whispers, her golden light enveloping the dreamer continuity held: Same Athena and Bellerophon; dream palette",
+          "image_prompt_start": "photoreal cinematic: shot-reverse of the serene goddess Athena facing the dreaming prince's ethereal form in silver mist.",
+          "image_prompt_end": "photoreal cinematic: The goddess leans nearer as she whispers, her golden light enveloping the dreamer.",
+          "video_prompt_start": "The goddess faces the dreaming prince. she speaks softly into the dream. The camera shot-reverse. The beat resolves into the next matching frame. Continuity held: Same Athena and Bellerophon; dream palette.",
+          "video_prompt_end": "The goddess faces the dreaming prince. she speaks softly into the dream. The camera shot-reverse. The beat resolves into the next matching frame. Continuity held: Same Athena and Bellerophon; dream palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S17",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "athena_T1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Athena's face - serene eyes, calm brow, faint glow - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "her serene eyes hold the dream"
+            ],
+            [
+              1.5,
+              3.0,
+              "a knowing warmth spreads across her face"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the goddess Athena's serene face, calm knowing eyes and a faint golden glow along her brow, moonlit silver mist behind, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "A warm knowing smile slowly spreads across her face",
+          "continuity": "Same Athena; dream palette",
+          "motion": "static frame; gentle smile",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the goddess Athena's serene face, calm knowing eyes and a faint golden glow along her brow, moonlit silver mist behind then her serene eyes hold the dream, then a knowing warmth spreads across her face the camera static settling into a warm knowing smile slowly spreads across her face continuity held: Same Athena; dream palette",
+          "image_prompt_start": "photoreal cinematic: of the goddess Athena's serene face, calm knowing eyes and a faint golden glow along her brow, moonlit silver mist behind.",
+          "image_prompt_end": "photoreal cinematic: A warm knowing smile slowly spreads across her face.",
+          "video_prompt_start": "Her serene eyes hold the dream. a knowing warmth spreads across her face. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same Athena; dream palette.",
+          "video_prompt_end": "Her serene eyes hold the dream. a knowing warmth spreads across her face. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same Athena; dream palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S18",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "bridle_G1_prop"
+          ],
+          "ref_scope": "image1: prop card of the golden bridle - ornate braided gold reins with a soft glow - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the bridle takes shape in her open palms"
+            ],
+            [
+              1.5,
+              3.0,
+              "golden light blooms along the braiding"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of a golden bridle materializing in open palms, ornate braided gold reins glowing softly, dream mist, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Push-in as golden light blooms along the braided reins",
+          "continuity": "Same bridle; golden dream light",
+          "motion": "slow push-in; light blooms",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of a golden bridle materializing in open palms, ornate braided gold reins glowing softly, dream mist then the bridle takes shape in her open palms, then golden light blooms along the braiding the camera push-in settling into push-in as golden light blooms along the braided reins continuity held: Same bridle; golden dream light",
+          "image_prompt_start": "photoreal cinematic: Macro insert of a golden bridle materializing in open palms, ornate braided gold reins glowing softly, dream mist.",
+          "image_prompt_end": "photoreal cinematic: as golden light blooms along the braided reins.",
+          "video_prompt_start": "The bridle takes shape in her open palms. golden light blooms along the braiding. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same bridle; golden dream light.",
+          "video_prompt_end": "The bridle takes shape in her open palms. golden light blooms along the braiding. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same bridle; golden dream light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S19",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "bridle_G1_prop"
+          ],
+          "ref_scope": "image1: prop card of the golden bridle held to the light - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the bridle is lifted to the dreamer's eye"
+            ],
+            [
+              1.5,
+              3.0,
+              "its glow fills the frame"
+            ]
+          ],
+          "narration_mk": "В нејзините раце засвети чисто злато.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the glowing golden bridle held up before the dreaming prince's eyes, intense golden light, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "The bridle's glow swells until it fills the frame",
+          "continuity": "Same bridle; golden dream light",
+          "motion": "static frame; glow swells",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the glowing golden bridle held up before the dreaming prince's eyes, intense golden light then the bridle is lifted to the dreamer's eye, then its glow fills the frame the camera static settling into the bridle's glow swells until it fills the frame continuity held: Same bridle; golden dream light",
+          "image_prompt_start": "photoreal cinematic: of the glowing golden bridle held up before the dreaming prince's eyes, intense golden light.",
+          "image_prompt_end": "photoreal cinematic: The bridle's glow swells until it fills the frame.",
+          "video_prompt_start": "The bridle is lifted to the dreamer's eye. its glow fills the frame. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same bridle; golden dream light.",
+          "video_prompt_end": "The bridle is lifted to the dreamer's eye. its glow fills the frame. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same bridle; golden dream light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S20",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "over-shoulder",
+          "move": "static",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "athena_T1_fused",
+            "bellerophon_B1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Athena - the goddess whispering - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Bellerophon - the dreaming prince - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.3,
+              "over the goddess's shoulder to the dreamer"
+            ],
+            [
+              1.3,
+              2.6,
+              "she whispers the path"
+            ],
+            [
+              2.6,
+              4.0,
+              "the dream begins to fade"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Атена: „Земи ги овие златни узди. Оди кај изворот Пирен. Кога Пегаз ќе слета да пие вода, стави му ги околу вратот и појди го.“",
+          "kf_first": "Over-shoulder medium of the goddess Athena whispering to the dreaming prince, golden light spilling between them, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "The dream edges fade as she finishes her whispered guidance",
+          "continuity": "Same Athena and Bellerophon; dream palette",
+          "motion": "static frame; dream dissolving",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: over-shoulder medium of the goddess Athena whispering to the dreaming prince, golden light spilling between them then over the goddess's shoulder to the dreamer, then she whispers the path, then the dream begins to fade the camera static settling into the dream edges fade as she finishes her whispered guidance a voice speaks in Macedonian: \"Атена: „Земи ги овие златни узди. Оди кај изворот Пирен. Кога Пегаз ќе слета да пие вода, стави му ги околу вратот и појди го.“\" continuity held: Same Athena and Bellerophon; dream palette",
+          "image_prompt_start": "photoreal cinematic: Over-shoulder medium of the goddess Athena whispering to the dreaming prince, golden light spilling between them.",
+          "image_prompt_end": "photoreal cinematic: The dream edges fade as she finishes her whispered guidance.",
+          "video_prompt_start": "Over the goddess's shoulder to the dreamer. she whispers the path. the dream begins to fade. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Атена: „Земи ги овие златни узди. Оди кај изворот Пирен. Кога Пегаз ќе слета да пие вода, стави му ги околу вратот и појди го.“\" Continuity held: Same Athena and Bellerophon; dream palette.",
+          "video_prompt_end": "Over the goddess's shoulder to the dreamer. she whispers the path. the dream begins to fade. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Атена: „Земи ги овие златни узди. Оди кај изворот Пирен. Кога Пегаз ќе слета да пие вода, стави му ги околу вратот и појди го.“\" Continuity held: Same Athena and Bellerophon; dream palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S21",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "bellerophon_B1_fused",
+            "bridle_G1_prop"
+          ],
+          "ref_scope": "image1: the fused master of Bellerophon - the prince waking in the marble hall - 100% identical; studio bg/pose/light NOT used; image2: prop card of the golden bridle resting on the stone - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "dawn light spills into the hall"
+            ],
+            [
+              1.8,
+              3.5,
+              "the prince wakes to find the bridle beside him"
+            ]
+          ],
+          "narration_mk": "Кога се разбуди, покрај себе ги најде златните узди, дар од божицата.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of dawn light spilling into the marble hall where the young prince stirs awake, a golden bridle resting on the stone beside him, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Crane-down as the prince sits up and reaches for the bridle",
+          "continuity": "Same Bellerophon and bridle; dawn palette",
+          "motion": "slow crane-down; waking gesture",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of dawn light spilling into the marble hall where the young prince stirs awake, a golden bridle resting on the stone beside him then dawn light spills into the hall, then the prince wakes to find the bridle beside him the camera crane-down settling into crane-down as the prince sits up and reaches for the bridle continuity held: Same Bellerophon and bridle; dawn palette",
+          "image_prompt_start": "photoreal cinematic: wide of dawn light spilling into the marble hall where the young prince stirs awake, a golden bridle resting on the stone beside him.",
+          "image_prompt_end": "photoreal cinematic: as the prince sits up and reaches for the bridle.",
+          "video_prompt_start": "Dawn light spills into the hall. the prince wakes to find the bridle beside him. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Same Bellerophon and bridle; dawn palette.",
+          "video_prompt_end": "Dawn light spills into the hall. the prince wakes to find the bridle beside him. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Same Bellerophon and bridle; dawn palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S22",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "bridle_G1_prop",
+            "bellerophon_B1_fused"
+          ],
+          "ref_scope": "image1: prop card of the golden bridle in the prince's grasp - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Bellerophon's hands - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "fingers close around the braided gold"
+            ],
+            [
+              1.5,
+              3.0,
+              "he lifts it toward the light"
+            ]
+          ],
+          "narration_mk": "Златото засвети во неговите раце.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the young prince's fingers closing around the braided golden bridle, dawn light catching the gold, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Push-in as he lifts the bridle toward the morning light",
+          "continuity": "Same bridle; dawn light",
+          "motion": "slow push-in; lifting gesture",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the young prince's fingers closing around the braided golden bridle, dawn light catching the gold then fingers close around the braided gold, then he lifts it toward the light the camera push-in settling into push-in as he lifts the bridle toward the morning light continuity held: Same bridle; dawn light",
+          "image_prompt_start": "photoreal cinematic: of the young prince's fingers closing around the braided golden bridle, dawn light catching the gold.",
+          "image_prompt_end": "photoreal cinematic: as he lifts the bridle toward the morning light.",
+          "video_prompt_start": "Fingers close around the braided gold. he lifts it toward the light. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same bridle; dawn light.",
+          "video_prompt_end": "Fingers close around the braided gold. he lifts it toward the light. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same bridle; dawn light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S23",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "bellerophon_B1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Bellerophon - the prince journeying with the bridle over his shoulder - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "the prince travels a rocky mountain path"
+            ],
+            [
+              1.8,
+              3.5,
+              "a green vale and spring come into view"
+            ]
+          ],
+          "narration_mk": "Ојде таму каде што му рече божицата, кон изворот Пирен.",
+          "dialogue_mk": "",
+          "kf_first": "Wide tracking shot of the young prince traveling a rocky mountain path with the golden bridle over his shoulder, a green vale and gleaming spring appearing ahead, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Track with the prince as the spring grows larger in the frame",
+          "continuity": "Same Bellerophon and bridle; morning light",
+          "motion": "lateral tracking; forward movement",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide tracking shot of the young prince traveling a rocky mountain path with the golden bridle over his shoulder, a green vale and gleaming spring appearing ahead then the prince travels a rocky mountain path, then a green vale and spring come into view the camera track settling into track with the prince as the spring grows larger in the frame continuity held: Same Bellerophon and bridle; morning light",
+          "image_prompt_start": "photoreal cinematic: of the young prince traveling a rocky mountain path with the golden bridle over his shoulder, a green vale and gleaming spring appearing ahead.",
+          "image_prompt_end": "photoreal cinematic: with the prince as the spring grows larger in the frame.",
+          "video_prompt_start": "The prince travels a rocky mountain path. a green vale and spring come into view. The camera track. The beat resolves into the next matching frame. Continuity held: Same Bellerophon and bridle; morning light.",
+          "video_prompt_end": "The prince travels a rocky mountain path. a green vale and spring come into view. The camera track. The beat resolves into the next matching frame. Continuity held: Same Bellerophon and bridle; morning light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S24",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-right",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [],
+          "ref_scope": "image1: environment card of the Peirene spring - a clear mountain pool fed by a sparkling cascade - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "pan across the crystal pool"
+            ],
+            [
+              1.8,
+              3.5,
+              "sunlight shimmers on the water"
+            ]
+          ],
+          "narration_mk": "Тамо отечеше чиста, ледена вода кроз зелената долина.",
+          "dialogue_mk": "",
+          "kf_first": "Wide pan across the Peirene spring, a clear mountain pool fed by a sparkling cascade among green ferns, morning sun, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Pan-right as sunlight shimmers across the still water",
+          "continuity": "Spring palette: green, silver-blue, warm dawn",
+          "motion": "slow pan-right",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide pan across the Peirene spring, a clear mountain pool fed by a sparkling cascade among green ferns, morning sun then pan across the crystal pool, then sunlight shimmers on the water the camera pan-right settling into pan-right as sunlight shimmers across the still water continuity held: Spring palette: green, silver-blue, warm dawn",
+          "image_prompt_start": "photoreal cinematic: across the Peirene spring, a clear mountain pool fed by a sparkling cascade among green ferns, morning sun.",
+          "image_prompt_end": "photoreal cinematic: -right as sunlight shimmers across the still water.",
+          "video_prompt_start": "Pan across the crystal pool. sunlight shimmers on the water. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Spring palette: green, silver-blue, warm dawn.",
+          "video_prompt_end": "Pan across the crystal pool. sunlight shimmers on the water. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Spring palette: green, silver-blue, warm dawn.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S25",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "bellerophon_B1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Bellerophon - the prince crouched behind mossy rocks - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the prince hides low behind the rocks"
+            ],
+            [
+              1.5,
+              3.0,
+              "he holds his breath, watching the pool"
+            ]
+          ],
+          "narration_mk": "Белерофон се притаи зад карпите и чекаше.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the young prince crouched low behind mossy rocks at the spring's edge, holding the golden bridle ready, tense and still, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "His breathing slows as he watches the pool",
+          "continuity": "Same Bellerophon and bridle; spring palette",
+          "motion": "static frame; held breath",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the young prince crouched low behind mossy rocks at the spring's edge, holding the golden bridle ready, tense and still then the prince hides low behind the rocks, then he holds his breath, watching the pool the camera static settling into his breathing slows as he watches the pool continuity held: Same Bellerophon and bridle; spring palette",
+          "image_prompt_start": "photoreal cinematic: of the young prince crouched low behind mossy rocks at the spring's edge, holding the golden bridle ready, tense and still.",
+          "image_prompt_end": "photoreal cinematic: His breathing slows as he watches the pool.",
+          "video_prompt_start": "The prince hides low behind the rocks. he holds his breath, watching the pool. The camera static. The beat resolves into the next matching frame. Continuity held: Same Bellerophon and bridle; spring palette.",
+          "video_prompt_end": "The prince hides low behind the rocks. he holds his breath, watching the pool. The camera static. The beat resolves into the next matching frame. Continuity held: Same Bellerophon and bridle; spring palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S26",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "pegasus_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Pegasus - the white winged stallion descending through morning haze - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "a shadow crosses the pool"
+            ],
+            [
+              1.8,
+              3.5,
+              "the winged horse descends to drink"
+            ]
+          ],
+          "narration_mk": "Над водата се симна сенка, и крилестиот коњ се спушти кон изворот.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of a shadow crossing the spring as the white winged stallion descends through morning haze toward the glassy pool, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Crane-down as the horse touches down at the water's edge",
+          "continuity": "Same Pegasus; spring morning haze",
+          "motion": "slow crane-down; descent",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of a shadow crossing the spring as the white winged stallion descends through morning haze toward the glassy pool Pegasus equine, steed, in wings, mane, carrying golden bridle, wreathed in lightning aura, holy aura then a shadow crosses the pool, then the winged horse descends to drink the camera crane-down settling into crane-down as the horse touches down at the water's edge with lightning cracks, a low radiant hum continuity held: Same Pegasus; spring morning haze",
+          "image_prompt_start": "photoreal cinematic: wide of a shadow crossing the spring as the white winged stallion descends through morning haze toward the glassy pool.",
+          "image_prompt_end": "photoreal cinematic: as the horse touches down at the water's edge.",
+          "video_prompt_start": "A shadow crosses the pool. the winged horse descends to drink. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Same Pegasus; spring morning haze.",
+          "video_prompt_end": "A shadow crosses the pool. the winged horse descends to drink. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Same Pegasus; spring morning haze.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S27",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "pegasus_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Pegasus - the white winged stallion drinking calmly - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.7,
+              "the horse lowers its head"
+            ],
+            [
+              1.7,
+              3.5,
+              "sips peacefully from the pool"
+            ]
+          ],
+          "narration_mk": "Тамо го виде спокојно како си пие вода.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the white winged stallion lowering its head and sipping peacefully from the glassy spring pool, wings folded, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Ripples spread across the water as the horse drinks",
+          "continuity": "Same Pegasus; spring palette",
+          "motion": "static frame; gentle drinking",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the white winged stallion lowering its head and sipping peacefully from the glassy spring pool, wings folded Pegasus equine, steed, in wings, mane, carrying golden bridle, wreathed in lightning aura, holy aura then the horse lowers its head, then sips peacefully from the pool the camera static settling into ripples spread across the water as the horse drinks with lightning cracks, a low radiant hum continuity held: Same Pegasus; spring palette",
+          "image_prompt_start": "photoreal cinematic: of the white winged stallion lowering its head and sipping peacefully from the glassy spring pool, wings folded.",
+          "image_prompt_end": "photoreal cinematic: Ripples spread across the water as the horse drinks.",
+          "video_prompt_start": "The horse lowers its head. sips peacefully from the pool. The camera static. The beat resolves into the next matching frame. Continuity held: Same Pegasus; spring palette.",
+          "video_prompt_end": "The horse lowers its head. sips peacefully from the pool. The camera static. The beat resolves into the next matching frame. Continuity held: Same Pegasus; spring palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S28",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "bellerophon_B1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Bellerophon - the prince stepping silently from cover - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the prince slips out from behind the rocks"
+            ],
+            [
+              1.5,
+              3.0,
+              "moves slow and silent, bridle in hand"
+            ]
+          ],
+          "narration_mk": "Белерофон нечујно му се прикраде одзади.",
+          "dialogue_mk": "",
+          "kf_first": "Medium tracking shot of the young prince slipping silently from behind the rocks, creeping toward the drinking horse with the bridle ready, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Track with his slow careful stride, weight on the balls of his feet",
+          "continuity": "Same Bellerophon and bridle; spring palette",
+          "motion": "lateral tracking; stealthy stride",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium tracking shot of the young prince slipping silently from behind the rocks, creeping toward the drinking horse with the bridle ready then the prince slips out from behind the rocks, then moves slow and silent, bridle in hand the camera track settling into track with his slow careful stride, weight on the balls of his feet continuity held: Same Bellerophon and bridle; spring palette",
+          "image_prompt_start": "photoreal cinematic: of the young prince slipping silently from behind the rocks, creeping toward the drinking horse with the bridle ready.",
+          "image_prompt_end": "photoreal cinematic: with his slow careful stride, weight on the balls of his feet.",
+          "video_prompt_start": "The prince slips out from behind the rocks. moves slow and silent, bridle in hand. The camera track. The beat resolves into the next matching frame. Continuity held: Same Bellerophon and bridle; spring palette.",
+          "video_prompt_end": "The prince slips out from behind the rocks. moves slow and silent, bridle in hand. The camera track. The beat resolves into the next matching frame. Continuity held: Same Bellerophon and bridle; spring palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S29",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "high-angle",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "bellerophon_B1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Bellerophon's feet - leather sandals stepping on soft moss - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "one sandaled foot lands"
+            ],
+            [
+              1.5,
+              3.0,
+              "then the other, silent on the moss"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "",
+          "kf_first": "High-angle close-up of the young prince's leather sandals stepping slowly across soft moss, silent and careful, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Push-in as the second foot lands without a sound",
+          "continuity": "Same Bellerophon; spring palette",
+          "motion": "slow push-in; noiseless steps",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle close-up of the young prince's leather sandals stepping slowly across soft moss, silent and careful then one sandaled foot lands, then then the other, silent on the moss the camera push-in settling into push-in as the second foot lands without a sound continuity held: Same Bellerophon; spring palette",
+          "image_prompt_start": "photoreal cinematic: close-up of the young prince's leather sandals stepping slowly across soft moss, silent and careful.",
+          "image_prompt_end": "photoreal cinematic: as the second foot lands without a sound.",
+          "video_prompt_start": "One sandaled foot lands. then the other, silent on the moss. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same Bellerophon; spring palette.",
+          "video_prompt_end": "One sandaled foot lands. then the other, silent on the moss. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same Bellerophon; spring palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S30",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "bellerophon_B1_fused",
+            "pegasus_A1_fused",
+            "bridle_G1_prop"
+          ],
+          "ref_scope": "image1: the fused master of Bellerophon - the prince reaching for the horse's neck - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Pegasus - the white stallion - 100% identical; studio bg/pose/light NOT used; image3: prop card of the golden bridle - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.7,
+              "the prince leans in with the bridle"
+            ],
+            [
+              1.7,
+              3.5,
+              "slips the golden bridle around the neck"
+            ]
+          ],
+          "narration_mk": "Со едно внимателно движење ги стави уздите околу вратот.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the young prince leaning in beside the white winged stallion, slipping the golden bridle around its neck, morning light on the gold, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Push-in as the bridle settles into place against the white coat",
+          "continuity": "Same Bellerophon, Pegasus and bridle; spring palette",
+          "motion": "slow push-in; careful hands",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the young prince leaning in beside the white winged stallion, slipping the golden bridle around its neck, morning light on the gold Pegasus equine, steed, in wings, mane, carrying golden bridle, wreathed in lightning aura, holy aura then the prince leans in with the bridle, then slips the golden bridle around the neck the camera push-in settling into push-in as the bridle settles into place against the white coat with lightning cracks, a low radiant hum continuity held: Same Bellerophon, Pegasus and bridle; spring palette",
+          "image_prompt_start": "photoreal cinematic: of the young prince leaning in beside the white winged stallion, slipping the golden bridle around its neck, morning light on the gold.",
+          "image_prompt_end": "photoreal cinematic: as the bridle into place against the white coat.",
+          "video_prompt_start": "The prince leans in with the bridle. slips the golden bridle around the neck. The camera push-in. The beat resolves into the next matching frame. Continuity held: Same Bellerophon, Pegasus and bridle; spring palette.",
+          "video_prompt_end": "The prince leans in with the bridle. slips the golden bridle around the neck. The camera push-in. The beat resolves into the next matching frame. Continuity held: Same Bellerophon, Pegasus and bridle; spring palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S31",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "bridle_G1_prop",
+            "pegasus_A1_fused"
+          ],
+          "ref_scope": "image1: prop card of the golden bridle fastening around the neck - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Pegasus's white neck and mane - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the golden clasp closes"
+            ],
+            [
+              1.5,
+              3.0,
+              "the bridle glows faintly against white"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "",
+          "kf_first": "Macro close-up of the golden bridle clasp closing around the white stallion's neck, the braided gold glowing faintly against the coat, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Push-in as the clasp clicks shut and a soft glow settles",
+          "continuity": "Same bridle and Pegasus; dawn light",
+          "motion": "slow push-in; clasp closes",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro close-up of the golden bridle clasp closing around the white stallion's neck, the braided gold glowing faintly against the coat Pegasus equine, steed, in wings, mane, carrying golden bridle, wreathed in lightning aura, holy aura then the golden clasp closes, then the bridle glows faintly against white the camera push-in settling into push-in as the clasp clicks shut and a soft glow settles with lightning cracks, a low radiant hum continuity held: Same bridle and Pegasus; dawn light",
+          "image_prompt_start": "photoreal cinematic: Macro close-up of the golden bridle clasp closing around the white stallion's neck, the braided gold glowing faintly against the coat.",
+          "image_prompt_end": "photoreal cinematic: as the clasp clicks shut and a soft glow.",
+          "video_prompt_start": "The golden clasp closes. the bridle glows faintly against white. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same bridle and Pegasus; dawn light.",
+          "video_prompt_end": "The golden clasp closes. the bridle glows faintly against white. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same bridle and Pegasus; dawn light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S32",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "pegasus_A1_fused",
+            "bellerophon_B1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Pegasus - the calm white stallion - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Bellerophon - the relieved prince - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.7,
+              "the stallion turns its head calmly"
+            ],
+            [
+              1.7,
+              3.5,
+              "does not resist, meeting the prince's eyes"
+            ]
+          ],
+          "narration_mk": "Животното не се вознемири и не го отфрли.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the calm white winged stallion turning its head to face the young prince, unafraid, the golden bridle gleaming, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "The horse holds still, meeting the prince's gaze without resistance",
+          "continuity": "Same Pegasus and Bellerophon; spring palette",
+          "motion": "static frame; calm gaze",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the calm white winged stallion turning its head to face the young prince, unafraid, the golden bridle gleaming Pegasus equine, steed, in wings, mane, carrying golden bridle, wreathed in lightning aura, holy aura then the stallion turns its head calmly, then does not resist, meeting the prince's eyes the camera static settling into the horse holds still, meeting the prince's gaze without resistance with lightning cracks, a low radiant hum continuity held: Same Pegasus and Bellerophon; spring palette",
+          "image_prompt_start": "photoreal cinematic: of the calm white winged stallion turning its head to face the young prince, unafraid, the golden bridle gleaming.",
+          "image_prompt_end": "photoreal cinematic: The horse holds still, meeting the prince's gaze without resistance.",
+          "video_prompt_start": "The stallion turns its head calmly. does not resist, meeting the prince's eyes. The camera static. The beat resolves into the next matching frame. Continuity held: Same Pegasus and Bellerophon; spring palette.",
+          "video_prompt_end": "The stallion turns its head calmly. does not resist, meeting the prince's eyes. The camera static. The beat resolves into the next matching frame. Continuity held: Same Pegasus and Bellerophon; spring palette.",
+          "motion_intensity": "moderate"
+        }
+      ]
+    },
+    {
+      "id": "act3",
+      "num": "Act III",
+      "title": "Лет",
+      "color": "#a78bfa",
+      "pct": 30,
+      "synopsis": "Белерофон го јавнува Пегаз, и двајцата се вйдигнуваат во небото, летајќи кон својата опасна авантура и содбата со Химера.",
+      "location_ref": "peirene_spring_and_sky",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#fde68a",
+        "#93c5fd",
+        "#7c2d12"
+      ],
+      "light_direction": "radiant sunrise light from above, key light from screen-left",
+      "time_of_day": "dawn",
+      "shots": [
+        {
+          "id": "S33",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "bellerophon_B1_fused",
+            "pegasus_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Bellerophon - the prince swinging onto the stallion's back - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Pegasus - the white stallion - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.7,
+              "the prince grips the bridle and vaults up"
+            ],
+            [
+              1.7,
+              3.5,
+              "settles onto the stallion's back"
+            ]
+          ],
+          "narration_mk": "Потоа го јавна крилестиот коњ.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the young prince gripping the golden bridle and vaulting onto the white winged stallion's back, dawn light flaring, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Push-in as he settles firmly into place, gathering the reins",
+          "continuity": "Same Bellerophon, Pegasus and bridle; dawn palette",
+          "motion": "slow push-in; mounting gesture",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the young prince gripping the golden bridle and vaulting onto the white winged stallion's back, dawn light flaring Pegasus equine, steed, in wings, mane, carrying golden bridle, wreathed in lightning aura, holy aura then the prince grips the bridle and vaults up, then settles onto the stallion's back the camera push-in settling into push-in as he settles firmly into place, gathering the reins with lightning cracks, a low radiant hum continuity held: Same Bellerophon, Pegasus and bridle; dawn palette",
+          "image_prompt_start": "photoreal cinematic: of the young prince gripping the golden bridle and vaulting onto the white winged stallion's back, dawn light flaring.",
+          "image_prompt_end": "photoreal cinematic: as he firmly into place, gathering the reins.",
+          "video_prompt_start": "The prince grips the bridle and vaults up. settles onto the stallion's back. The camera push-in. The beat resolves into the next matching frame. Continuity held: Same Bellerophon, Pegasus and bridle; dawn palette.",
+          "video_prompt_end": "The prince grips the bridle and vaults up. settles onto the stallion's back. The camera push-in. The beat resolves into the next matching frame. Continuity held: Same Bellerophon, Pegasus and bridle; dawn palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S34",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "over-shoulder",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "bridle_G1_prop",
+            "bellerophon_B1_fused"
+          ],
+          "ref_scope": "image1: prop card of the golden reins in the prince's grip - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Bellerophon's hands - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "hands gather the reins"
+            ],
+            [
+              1.5,
+              3.0,
+              "the golden braid runs taut"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "",
+          "kf_first": "Over-shoulder close-up of the young prince's hands gathering the golden reins, the braided gold running taut, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Push-in as his fingers tighten around the reins",
+          "continuity": "Same bridle and Bellerophon; dawn light",
+          "motion": "slow push-in; reins tauten",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: over-shoulder close-up of the young prince's hands gathering the golden reins, the braided gold running taut then hands gather the reins, then the golden braid runs taut the camera push-in settling into push-in as his fingers tighten around the reins continuity held: Same bridle and Bellerophon; dawn light",
+          "image_prompt_start": "photoreal cinematic: Over-shoulder close-up of the young prince's hands gathering the golden reins, the braided gold running taut.",
+          "image_prompt_end": "photoreal cinematic: as his fingers tighten around the reins.",
+          "video_prompt_start": "Hands gather the reins. the golden braid runs taut. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same bridle and Bellerophon; dawn light.",
+          "video_prompt_end": "Hands gather the reins. the golden braid runs taut. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same bridle and Bellerophon; dawn light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S35",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "crane-up",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "pegasus_A1_fused",
+            "bellerophon_B1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Pegasus - the white stallion rearing to take off - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Bellerophon - the prince astride - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.3,
+              "the stallion rears, wings snapping open"
+            ],
+            [
+              1.3,
+              2.6,
+              "it leaps skyward"
+            ],
+            [
+              2.6,
+              4.0,
+              "the pair leaves the ground"
+            ]
+          ],
+          "narration_mk": "Првиот замав на крилјата ги крена кон небото.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of the white winged stallion rearing with wings snapping fully open, the young prince astride its back, dawn clouds behind, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Crane-up as the stallion leaps skyward, both leaving the ground together",
+          "continuity": "Same Pegasus and Bellerophon; dawn sky",
+          "motion": "crane-up; takeoff",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of the white winged stallion rearing with wings snapping fully open, the young prince astride its back, dawn clouds behind Pegasus equine, steed, in wings, mane, carrying golden bridle, wreathed in lightning aura, holy aura then the stallion rears, wings snapping open, then it leaps skyward, then the pair leaves the ground the camera crane-up settling into crane-up as the stallion leaps skyward, both leaving the ground together with lightning cracks, a low radiant hum continuity held: Same Pegasus and Bellerophon; dawn sky",
+          "image_prompt_start": "photoreal cinematic: wide of the white winged stallion rearing with wings snapping fully open, the young prince astride its back, dawn clouds behind.",
+          "image_prompt_end": "photoreal cinematic: as the stallion leaps skyward, both leaving the ground together.",
+          "video_prompt_start": "The stallion rears, wings snapping open. it leaps skyward. the pair leaves the ground. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Same Pegasus and Bellerophon; dawn sky.",
+          "video_prompt_end": "The stallion rears, wings snapping open. it leaps skyward. the pair leaves the ground. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Same Pegasus and Bellerophon; dawn sky.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S36",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "pegasus_A1_fused",
+            "bellerophon_B1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Pegasus - the winged stallion climbing with mighty wingbeats - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Bellerophon - the rider leaning forward - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "great wings beat down"
+            ],
+            [
+              1.5,
+              3.0,
+              "the pair climbs through the mist"
+            ]
+          ],
+          "narration_mk": "Тие само одлетаа во утринското небо.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of the winged stallion climbing with mighty wingbeats, the rider leaning low over its neck, dawn mist streaming past, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Track upward as the pair climbs through the brightening mist",
+          "continuity": "Same Pegasus and Bellerophon; dawn sky",
+          "motion": "vertical tracking; wingbeats",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of the winged stallion climbing with mighty wingbeats, the rider leaning low over its neck, dawn mist streaming past Pegasus equine, steed, in wings, mane, carrying golden bridle, wreathed in lightning aura, holy aura then great wings beat down, then the pair climbs through the mist the camera track settling into track upward as the pair climbs through the brightening mist with lightning cracks, a low radiant hum continuity held: Same Pegasus and Bellerophon; dawn sky",
+          "image_prompt_start": "photoreal cinematic: medium of the winged stallion climbing with mighty wingbeats, the rider leaning low over its neck, dawn mist streaming past.",
+          "image_prompt_end": "photoreal cinematic: upward as the pair climbs through the brightening mist.",
+          "video_prompt_start": "Great wings beat down. the pair climbs through the mist. The camera track. The beat resolves into the next matching frame. Continuity held: Same Pegasus and Bellerophon; dawn sky.",
+          "video_prompt_end": "Great wings beat down. the pair climbs through the mist. The camera track. The beat resolves into the next matching frame. Continuity held: Same Pegasus and Bellerophon; dawn sky.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S37",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "pan-left",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "pegasus_A1_fused",
+            "bellerophon_B1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Pegasus - the white stallion soaring above the clouds - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Bellerophon - the rider - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "the sea of clouds stretches below"
+            ],
+            [
+              1.8,
+              3.5,
+              "the pair soars high above the world"
+            ]
+          ],
+          "narration_mk": "Високо над облаците, светот стана мал.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of the white winged stallion and its rider soaring above a sea of sunlit clouds, the world small below, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Pan-left across the endless cloudscape as the pair glides through it",
+          "continuity": "Same Pegasus and Bellerophon; bright sky",
+          "motion": "slow pan-left; soaring",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of the white winged stallion and its rider soaring above a sea of sunlit clouds, the world small below Pegasus equine, steed, in wings, mane, carrying golden bridle, wreathed in lightning aura, holy aura then the sea of clouds stretches below, then the pair soars high above the world the camera pan-left settling into pan-left across the endless cloudscape as the pair glides through it with lightning cracks, a low radiant hum continuity held: Same Pegasus and Bellerophon; bright sky",
+          "image_prompt_start": "photoreal cinematic: wide of the white winged stallion and its rider soaring above a sea of sunlit clouds, the world small below.",
+          "image_prompt_end": "photoreal cinematic: -left across the endless cloudscape as the pair glides through it.",
+          "video_prompt_start": "The sea of clouds stretches below. the pair soars high above the world. The camera pan-left. The beat resolves into the next matching frame. Continuity held: Same Pegasus and Bellerophon; bright sky.",
+          "video_prompt_end": "The sea of clouds stretches below. the pair soars high above the world. The camera pan-left. The beat resolves into the next matching frame. Continuity held: Same Pegasus and Bellerophon; bright sky.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S38",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "bellerophon_B1_fused",
+            "pegasus_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Bellerophon - the prince grinning into the wind - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Pegasus - the flying stallion - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "wind whips the prince's cloak"
+            ],
+            [
+              1.8,
+              3.5,
+              "he laughs in wild triumph"
+            ]
+          ],
+          "narration_mk": "Ветрот му развеа наментката додека летаа.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the young prince astride the flying stallion, crimson cloak whipping in the wind, laughing in wild triumph against the bright sky, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Track with them as the prince leans into the sweet rush of air",
+          "continuity": "Same Pegasus and Bellerophon; bright sky",
+          "motion": "lateral tracking; wind and laughter",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the young prince astride the flying stallion, crimson cloak whipping in the wind, laughing in wild triumph against the bright sky Pegasus equine, steed, in wings, mane, carrying golden bridle, wreathed in lightning aura, holy aura then wind whips the prince's cloak, then he laughs in wild triumph the camera track settling into track with them as the prince leans into the sweet rush of air with lightning cracks, a low radiant hum continuity held: Same Pegasus and Bellerophon; bright sky",
+          "image_prompt_start": "photoreal cinematic: of the young prince astride the flying stallion, crimson cloak whipping in the wind, laughing in wild triumph against the bright sky.",
+          "image_prompt_end": "photoreal cinematic: with them as the prince leans into the sweet rush of air.",
+          "video_prompt_start": "Wind whips the prince's cloak. he laughs in wild triumph. The camera track. The beat resolves into the next matching frame. Continuity held: Same Pegasus and Bellerophon; bright sky.",
+          "video_prompt_end": "Wind whips the prince's cloak. he laughs in wild triumph. The camera track. The beat resolves into the next matching frame. Continuity held: Same Pegasus and Bellerophon; bright sky.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S39",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "bellerophon_B1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Bellerophon's face - wind-tousled hair, joyful eyes - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "his eyes shine with joy"
+            ],
+            [
+              1.5,
+              3.0,
+              "then narrow toward the horizon ahead"
+            ]
+          ],
+          "narration_mk": "Наеднаш погледот му се смири кон хоризонтот.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the young prince's wind-tousled face, eyes shining with joy that slowly narrow into resolve, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Push-in toward his shifting eyes as they lock on the horizon",
+          "continuity": "Same Bellerophon; bright sky light",
+          "motion": "slow push-in on the eyes",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the young prince's wind-tousled face, eyes shining with joy that slowly narrow into resolve then his eyes shine with joy, then then narrow toward the horizon ahead the camera push-in settling into push-in toward his shifting eyes as they lock on the horizon continuity held: Same Bellerophon; bright sky light",
+          "image_prompt_start": "photoreal cinematic: of the young prince's wind-tousled face, eyes shining with joy that slowly narrow into resolve.",
+          "image_prompt_end": "photoreal cinematic: toward his shifting eyes as they lock on the horizon.",
+          "video_prompt_start": "His eyes shine with joy. then narrow toward the horizon ahead. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same Bellerophon; bright sky light.",
+          "video_prompt_end": "His eyes shine with joy. then narrow toward the horizon ahead. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same Bellerophon; bright sky light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S40",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "pegasus_A1_fused",
+            "bellerophon_B1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Pegasus - the stallion gliding over green hills - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Bellerophon - the rider - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "the pair glide over rolling hills and rivers"
+            ],
+            [
+              1.8,
+              3.5,
+              "far ahead, a dark plume rises"
+            ]
+          ],
+          "narration_mk": "Далеку, на работ на видокот, се креваше нивната авантура.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of the winged stallion and rider gliding over rolling green hills and winding rivers, a dark smoke plume rising far ahead, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Crane-down toward the horizon where the distant plume marks the Chimera's land",
+          "continuity": "Same Pegasus and Bellerophon; day palette",
+          "motion": "slow crane-down; horizon reveal",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of the winged stallion and rider gliding over rolling green hills and winding rivers, a dark smoke plume rising far ahead Pegasus equine, steed, in wings, mane, carrying golden bridle, wreathed in lightning aura, holy aura then the pair glide over rolling hills and rivers, then far ahead, a dark plume rises the camera crane-down settling into crane-down toward the horizon where the distant plume marks the Chimera's land with lightning cracks, a low radiant hum continuity held: Same Pegasus and Bellerophon; day palette",
+          "image_prompt_start": "photoreal cinematic: wide of the winged stallion and rider gliding over rolling green hills and winding rivers, a dark smoke plume rising far ahead.",
+          "image_prompt_end": "photoreal cinematic: toward the horizon where the distant plume marks the Chimera's land.",
+          "video_prompt_start": "The pair glide over rolling hills and rivers. far ahead, a dark plume rises. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Same Pegasus and Bellerophon; day palette.",
+          "video_prompt_end": "The pair glide over rolling hills and rivers. far ahead, a dark plume rises. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Same Pegasus and Bellerophon; day palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S41",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "bridle_G1_prop"
+          ],
+          "ref_scope": "image1: prop card of the golden bridle glinting in flight - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "sunlight flares along the gold"
+            ],
+            [
+              1.5,
+              3.0,
+              "the braid gleams like living fire"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of the golden bridle glinting in full sunlight as the pair races through the sky, the braid gleaming like living fire, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Push-in on a bead of light traveling along the golden braid",
+          "continuity": "Same bridle; bright sky light",
+          "motion": "slow push-in; gleam",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of the golden bridle glinting in full sunlight as the pair races through the sky, the braid gleaming like living fire then sunlight flares along the gold, then the braid gleams like living fire the camera push-in settling into push-in on a bead of light traveling along the golden braid continuity held: Same bridle; bright sky light",
+          "image_prompt_start": "photoreal cinematic: Macro insert of the golden bridle glinting in full sunlight as the pair races through the sky, the braid gleaming like living fire.",
+          "image_prompt_end": "photoreal cinematic: on a bead of light traveling along the golden braid.",
+          "video_prompt_start": "Sunlight flares along the gold. the braid gleams like living fire. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same bridle; bright sky light.",
+          "video_prompt_end": "Sunlight flares along the gold. the braid gleams like living fire. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same bridle; bright sky light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S42",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "pegasus_A1_fused",
+            "bellerophon_B1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Pegasus - the stallion surging toward a looming volcanic peak - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Bellerophon - the rider braced - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "a jagged volcanic peak looms"
+            ],
+            [
+              1.8,
+              3.5,
+              "the pair surges toward the smoke and embers"
+            ]
+          ],
+          "narration_mk": "Однедечка го стрете вулканската планина од каде што се креваше чудовиштето.",
+          "dialogue_mk": "",
+          "kf_first": "Wide tracking shot of the winged stallion and rider surging toward a jagged volcanic peak wreathed in smoke and ember glow, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Track with them as the dark mountain rushes closer",
+          "continuity": "Same Pegasus and Bellerophon; dusk palette returning",
+          "motion": "lateral tracking; approach",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide tracking shot of the winged stallion and rider surging toward a jagged volcanic peak wreathed in smoke and ember glow Pegasus equine, steed, in wings, mane, carrying golden bridle, wreathed in lightning aura, holy aura then a jagged volcanic peak looms, then the pair surges toward the smoke and embers the camera track settling into track with them as the dark mountain rushes closer with lightning cracks, a low radiant hum continuity held: Same Pegasus and Bellerophon; dusk palette returning",
+          "image_prompt_start": "photoreal cinematic: of the winged stallion and rider surging toward a jagged volcanic peak wreathed in smoke and ember glow.",
+          "image_prompt_end": "photoreal cinematic: with them as the dark mountain rushes closer.",
+          "video_prompt_start": "A jagged volcanic peak looms. the pair surges toward the smoke and embers. The camera track. The beat resolves into the next matching frame. Continuity held: Same Pegasus and Bellerophon; dusk palette returning.",
+          "video_prompt_end": "A jagged volcanic peak looms. the pair surges toward the smoke and embers. The camera track. The beat resolves into the next matching frame. Continuity held: Same Pegasus and Bellerophon; dusk palette returning.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S43",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "bellerophon_B1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Bellerophon - the prince braced and resolute - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the prince leans into the wind"
+            ],
+            [
+              1.5,
+              3.0,
+              "his resolve hardens"
+            ]
+          ],
+          "narration_mk": "Белерофон не поколеба; срцето му беше полно со храброст.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of the young prince braced against the wind, jaw set, resolve hardening as the mountain looms, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Push-in on his resolute face as the ember light catches his armor",
+          "continuity": "Same Bellerophon; dusk ember light",
+          "motion": "slow push-in; resolve",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of the young prince braced against the wind, jaw set, resolve hardening as the mountain looms then the prince leans into the wind, then his resolve hardens the camera push-in settling into push-in on his resolute face as the ember light catches his armor continuity held: Same Bellerophon; dusk ember light",
+          "image_prompt_start": "photoreal cinematic: medium of the young prince braced against the wind, jaw set, resolve hardening as the mountain looms.",
+          "image_prompt_end": "photoreal cinematic: on his resolute face as the ember light catches his armor.",
+          "video_prompt_start": "The prince leans into the wind. his resolve hardens. The camera push-in. The beat resolves into the next matching frame. Continuity held: Same Bellerophon; dusk ember light.",
+          "video_prompt_end": "The prince leans into the wind. his resolve hardens. The camera push-in. The beat resolves into the next matching frame. Continuity held: Same Bellerophon; dusk ember light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S44",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "pegasus_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Pegasus's eye - a deep intelligent dark eye reflecting flame - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "RD",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the stallion's eye glints"
+            ],
+            [
+              1.5,
+              3.0,
+              "a reflection of distant flame dances in its dark"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the white winged stallion's deep intelligent eye, a distant orange flame reflected in its dark surface, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Push-in until the reflected flame fills the horse's eye",
+          "continuity": "Same Pegasus; dusk ember light",
+          "motion": "slow push-in on the eye",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the white winged stallion's deep intelligent eye, a distant orange flame reflected in its dark surface Pegasus equine, steed, in wings, mane, carrying golden bridle, wreathed in lightning aura, holy aura then the stallion's eye glints, then a reflection of distant flame dances in its dark the camera push-in settling into push-in until the reflected flame fills the horse's eye with lightning cracks, a low radiant hum continuity held: Same Pegasus; dusk ember light",
+          "image_prompt_start": "photoreal cinematic: of the white winged stallion's deep intelligent eye, a distant orange flame reflected in its dark surface.",
+          "image_prompt_end": "photoreal cinematic: until the reflected flame fills the horse's eye.",
+          "video_prompt_start": "The stallion's eye glints. a reflection of distant flame dances in its dark. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same Pegasus; dusk ember light.",
+          "video_prompt_end": "The stallion's eye glints. a reflection of distant flame dances in its dark. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same Pegasus; dusk ember light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S45",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "pegasus_A1_fused",
+            "bellerophon_B1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Pegasus - the stallion racing low over the scorched ravine - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Bellerophon - the rider - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "the pair race low over the scorched ground"
+            ],
+            [
+              1.8,
+              3.5,
+              "smoke and embers swirl beneath them"
+            ]
+          ],
+          "narration_mk": "Пред нив беше опасна авантура.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of the winged stallion and rider racing low over the scorched ravine, smoke and glowing embers swirling beneath them, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Track under them as they skim the burning ground toward the cave mouth",
+          "continuity": "Same Pegasus and Bellerophon; ember dusk palette",
+          "motion": "lateral tracking; low flight",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of the winged stallion and rider racing low over the scorched ravine, smoke and glowing embers swirling beneath them Pegasus equine, steed, in wings, mane, carrying golden bridle, wreathed in lightning aura, holy aura then the pair race low over the scorched ground, then smoke and embers swirl beneath them the camera track settling into track under them as they skim the burning ground toward the cave mouth with lightning cracks, a low radiant hum continuity held: Same Pegasus and Bellerophon; ember dusk palette",
+          "image_prompt_start": "photoreal cinematic: wide of the winged stallion and rider racing low over the scorched ravine, smoke and glowing embers swirling beneath them.",
+          "image_prompt_end": "photoreal cinematic: under them as they skim the burning ground toward the cave mouth.",
+          "video_prompt_start": "The pair race low over the scorched ground. smoke and embers swirl beneath them. The camera track. The beat resolves into the next matching frame. Continuity held: Same Pegasus and Bellerophon; ember dusk palette.",
+          "video_prompt_end": "The pair race low over the scorched ground. smoke and embers swirl beneath them. The camera track. The beat resolves into the next matching frame. Continuity held: Same Pegasus and Bellerophon; ember dusk palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S46",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pull-back",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "pegasus_A1_fused",
+            "bellerophon_B1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Pegasus - the stallion silhouetted against the dawn - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Bellerophon - the rider - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.3,
+              "the pair rise into the golden dawn"
+            ],
+            [
+              1.3,
+              2.6,
+              "silhouetted against a burning sky"
+            ],
+            [
+              2.6,
+              4.0,
+              "they fly toward the adventure ahead"
+            ]
+          ],
+          "narration_mk": "Им претстоеше голема авантура.",
+          "dialogue_mk": "",
+          "kf_first": "Wide final silhouette of the winged stallion and its rider rising into a golden dawn sky above the dark mountain, ember light and sunlight meeting, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Pull-back as the two figures shrink against the vast burning sky, flying toward the adventure ahead",
+          "continuity": "Same Pegasus and Bellerophon; dawn/golden palette",
+          "motion": "slow pull-back; rising silhouettes",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide final silhouette of the winged stallion and its rider rising into a golden dawn sky above the dark mountain, ember light and sunlight meeting Pegasus equine, steed, in wings, mane, carrying golden bridle, wreathed in lightning aura, holy aura then the pair rise into the golden dawn, then silhouetted against a burning sky, then they fly toward the adventure ahead the camera pull-back settling into pull-back as the two figures shrink against the vast burning sky, flying toward the adventure ahead with lightning cracks, a low radiant hum continuity held: Same Pegasus and Bellerophon; dawn/golden palette",
+          "image_prompt_start": "photoreal cinematic: final silhouette of the winged stallion and its rider rising into a golden dawn sky above the dark mountain, ember light and sunlight meeting.",
+          "image_prompt_end": "photoreal cinematic: as the two figures shrink against the vast burning sky, flying toward the adventure ahead.",
+          "video_prompt_start": "The pair rise into the golden dawn. silhouetted against a burning sky. they fly toward the adventure ahead. The camera pull-back. The beat resolves into the next matching frame. Continuity held: Same Pegasus and Bellerophon; dawn/golden palette.",
+          "video_prompt_end": "The pair rise into the golden dawn. silhouetted against a burning sky. they fly toward the adventure ahead. The camera pull-back. The beat resolves into the next matching frame. Continuity held: Same Pegasus and Bellerophon; dawn/golden palette.",
+          "motion_intensity": "moderate"
+        }
+      ]
+    }
+  ],
+  "director_corrections": {
+    "issued": "2026-11-07",
+    "source": "KB §13 DIRECTOR CORRECTIONS — overrides all prior asset/keyframe guidance",
+    "rules": [
+      "DD HEADWEAR: no cap/hood/bandana/mask on head; hood = back-cowl only (cape-like); bare head + teal-blue glowing hair always visible; any head/face covering = REJECT",
+      "LEGENDARY WEAPONS MUST APPEAR: DD = twin Frostbite-class hand crossbows (ice-blue arcane crystal limbs, frost runes, frozen-light string, teal-blue glow); AZ = Dawnbreaker-class greatsword (pale sunsteel, molten-gold runes, golden holy fire edge, sunburst crossguard); hero sheet/keyframe without weapon = INCOMPLETE",
+      "WEAPON ANTI-SLOP: fantasy construction only; crossbow must NEVER read as firearm (no barrel/magazine/stock/Uzi/SMG silhouette = REJECT); anti-slop negatives always appended",
+      "BOSS FACE: Mal'garot HAS a prolific molten-lava face (lava dripping/running, drops falling to ground); faceless boss sheets SUPERSEDED",
+      "LOCATION BRIGHTNESS FLOOR: environment plates silhouette-readable at thumbnail; no murk-dark grades"
+    ],
+    "applies_when": "Activates when face_lock changes from AI-default to an enrolled identity (DD/AZ). AI-default packages carry this as a forward constraint, not a current defect.",
+    "anti_slop_negatives": "firearm, gun, machinegun, Uzi, barrel, magazine, ammo clip, muzzle, modern weapon"
+  },
+  "character_designs": {
+    "pegasus": {
+      "archetype": "steed",
+      "build": "equine",
+      "scale": "large",
+      "palette": {
+        "primary": "#f8fafc",
+        "secondary": "#d4af37",
+        "glow": "#7dd3fc"
+      },
+      "costume": [
+        "wings",
+        "mane"
+      ],
+      "props": [
+        "golden_bridle"
+      ],
+      "fx": [
+        "lightning_aura",
+        "holy_aura"
+      ]
+    },
+    "bellerophon": {
+      "archetype": "hero",
+      "build": "athletic",
+      "scale": "human",
+      "palette": {
+        "primary": "#1e3a8a",
+        "secondary": "#b45309",
+        "glow": "#fbbf24"
+      },
+      "costume": [
+        "armor",
+        "cloak"
+      ],
+      "props": [
+        "sword",
+        "golden_bridle"
+      ],
+      "fx": [
+        "golden_glow"
+      ]
+    },
+    "athena": {
+      "archetype": "goddess",
+      "build": "armored",
+      "scale": "human",
+      "palette": {
+        "primary": "#d4af37",
+        "secondary": "#1e3a8a",
+        "glow": "#fef3c7"
+      },
+      "costume": [
+        "helmet",
+        "armor",
+        "cloak"
+      ],
+      "props": [
+        "spear",
+        "shield",
+        "olive_branch"
+      ],
+      "fx": [
+        "holy_aura",
+        "wisdom_glow"
+      ]
+    },
+    "zeus": {
+      "archetype": "monarch",
+      "build": "towering",
+      "scale": "large",
+      "palette": {
+        "primary": "#f1f5f9",
+        "secondary": "#fbbf24",
+        "glow": "#60a5fa"
+      },
+      "costume": [
+        "crown",
+        "robe",
+        "beard"
+      ],
+      "props": [
+        "thunderbolt",
+        "scepter"
+      ],
+      "fx": [
+        "lightning",
+        "storm_clouds",
+        "holy_aura"
+      ]
+    },
+    "chimera": {
+      "archetype": "monster",
+      "build": "hulking",
+      "scale": "huge",
+      "palette": {
+        "primary": "#7f1d1d",
+        "secondary": "#4d7c0f",
+        "glow": "#f97316"
+      },
+      "costume": [
+        "scales",
+        "mane",
+        "horns"
+      ],
+      "props": [],
+      "fx": [
+        "fire_breath",
+        "shadow_smoke"
+      ]
+    }
+  }
+}

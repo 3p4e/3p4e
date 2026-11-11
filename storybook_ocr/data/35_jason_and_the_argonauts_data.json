@@ -1,0 +1,2627 @@
+{
+  "num": "35",
+  "title_mk": "Јасон и Аргонаутите",
+  "title_en": "Jason and the Argonauts",
+  "genre": "Легенда · епска авантура",
+  "logline": "Младиот Јасон плови со Аргонаутите кон далечната Колхида по Златното Руно, а моќната волшебничка Медеја му помага да ги исполни три невозможни задачи и да си го врати тронот.",
+  "spec": {
+    "aspect": "16:9",
+    "resolution": "1216x704",
+    "fps": 24,
+    "model": "model-agnostic (chosen at generation)",
+    "style": "photoreal",
+    "flf": true,
+    "language": "mk",
+    "shot_floor": 40,
+    "shot_max": 60,
+    "seed_policy": "fixed-per-shot (same seed → reproducible shot; re-roll per shot id)",
+    "style_anchor": [
+      "Diablo 2 cinematic",
+      "World of Warcraft cinematic",
+      "StarCraft cinematic"
+    ],
+    "negative_prompt": "deformed, extra limbs, morphing, watermark, text, static frame, blurry, low quality, cropped head, cut-off face",
+    "frames": 121,
+    "frames_fallback": 81,
+    "routes": [
+      {
+        "model": "Wan2.1-FLF2V-14B-720P",
+        "input": "start+end native (run START-ONLY)",
+        "status": "WORKING (lead for 14B quality)"
+      },
+      {
+        "model": "Kandinsky 6.0 Lite/Pro",
+        "input": "start-image-only",
+        "status": "WORKING (Pro-distill untested at scale)"
+      },
+      {
+        "model": "SkyReels-V3 R2V-14B",
+        "input": "start-image-only",
+        "status": "WORKING (fallback)"
+      },
+      {
+        "model": "LTX-Video 2B v0.9.5",
+        "input": "start-image-only",
+        "status": "WORKING (small/fast, low ceiling)"
+      },
+      {
+        "model": "Mochi-1",
+        "input": "start-image-only",
+        "status": "untested here"
+      },
+      {
+        "model": "LTX-2.3 22B distilled",
+        "input": "start-image-only",
+        "status": "DEAD (nanobind native-crash, 42 note)"
+      }
+    ],
+    "model_note": "Model chosen per story at generation (43 §4). Keyframes + continuation prompts are generator-agnostic; only the render command differs per model."
+  },
+  "cast": [
+    {
+      "role": "Јасон / Jason",
+      "trait": "Храбар, силен млад грчки јунак кој пораснал кај кентаврот Хирон.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Алкимеда / Alcimede",
+      "trait": "Кралица и нежна мајка на Јасон, вдовица на кралот Ајсон.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Пелеј / Pelias",
+      "trait": "Узурпатор, вујко на Јасон, лукав и потсмешлив владетел на Јолк.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Хирон / Chiron",
+      "trait": "Мудар кентавр-учител, полу-човек полу-коњ, негов воспитувач.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Медеја / Medea",
+      "trait": "Моќна волшебничка, ќерка на Еет, која се вљубува во Јасон.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Еет / Aeëtes",
+      "trait": "Строг владетел на Колхида, давáч на трите задачи.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Аргонаутите / The Argonauts",
+      "trait": "Педесет храбри момци, дружина што плови со бродот Арго.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Змејот / The Dragon",
+      "trait": "Огромен, неспив змеј-чувар на Златното Руно.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    }
+  ],
+  "acts": [
+    {
+      "id": "act1",
+      "num": "Act I",
+      "title": "Заложба",
+      "color": "#2dd4bf",
+      "pct": 25,
+      "synopsis": "Алкимеда со малото Јасон бега ноќе од Јолк и го доверува на кентаврот Хирон, кој го одгледува во храбар и силен младич. Пораснат, Јасон решава да си го врати тронот.",
+      "location_ref": "iolcus_pelion_forest",
+      "global_locks": [
+        "palette — night ember, dawn forest green",
+        "light — torchlight then dawn",
+        "lens — wide and medium emphasis"
+      ],
+      "palette": [
+        "#2f3d5b",
+        "#d98a3d",
+        "#3e7a52"
+      ],
+      "light_direction": "key light from screen-right, torchlight into cool dawn",
+      "time_of_day": "night",
+      "shots": [
+        {
+          "id": "S01",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "iolcus_city_set"
+          ],
+          "ref_scope": "image1: ancient Greek port city Iolcus at night",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "palette",
+            "light direction",
+            "location",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "camera descends over torchlit Iolcus by the dark sea"
+            ],
+            [
+              2.0,
+              3.5,
+              "smoke wisps rise from the citadel, menacing quiet"
+            ]
+          ],
+          "narration_mk": "Во древниот град Јолк, сенка падна врз кралскиот дом.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle establishing of an ancient Greek coastal city at night, stone citadel, olive groves, torchlight on the dark Aegean, photoreal Diablo 2 cinematic grade, 1216x704",
+          "kf_last": "Crane down toward the citadel courtyard where torch flames gutter in a rising wind",
+          "continuity": "Night blue and ember palette; Iolcus exterior establishes the world",
+          "motion": "slow crane-down; torch flame flicker and smoke drift",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle establishing of an ancient Greek coastal city at night, stone citadel, olive groves, torchlight on the dark Aegean, photoreal Diablo 2 cinematic grade then camera descends over torchlit Iolcus by the dark sea, then smoke wisps rise from the citadel, menacing quiet the camera crane-down settling into crane down toward the citadel courtyard where torch flames gutter in a rising wind continuity held: Night blue and ember palette; Iolcus exterior establishes the world",
+          "image_prompt_start": "photoreal cinematic: establishing of an ancient Greek coastal city at night, stone citadel, olive groves, torchlight on the dark Aegean, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: toward the citadel courtyard where torch flames gutter in a rising wind.",
+          "video_prompt_start": "Camera descends over torchlit Iolcus by the dark sea. smoke wisps rise from the citadel, menacing quiet. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Night blue and ember palette; Iolcus exterior establishes the world.",
+          "video_prompt_end": "Camera descends over torchlit Iolcus by the dark sea. smoke wisps rise from the citadel, menacing quiet. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Night blue and ember palette; Iolcus exterior establishes the world.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S02",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "alcimede_A2_fused",
+            "jason_A1_fused"
+          ],
+          "ref_scope": "image1: Alcimede fused master holding baby; image2: Jason infant",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "Alcimede cradles the sleeping infant Jason close"
+            ],
+            [
+              1.5,
+              3.5,
+              "her eyes dart to the door as distant shouts rise"
+            ]
+          ],
+          "narration_mk": "Кралицата Алкимеда го стегна своето новороденче.",
+          "dialogue_mk": "Алкимеда: „Ќе те спасам, чедо мое.“",
+          "kf_first": "Eye-level medium of a Greek queen in a woolen cloak cradling a newborn to her chest in a torchlit chamber, fear in her eyes, photoreal cinematic",
+          "kf_last": "Push-in on her face as she turns toward the chamber door, resolve hardening",
+          "continuity": "Alcimede identity and mother-costume; torch-lit chamber palette from S01",
+          "motion": "slow push-in; slight sway of the bundled infant",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of a Greek queen in a woolen cloak cradling a newborn to her chest in a torchlit chamber, fear in her eyes, photoreal cinematic Alcimede robed, monarch, in royal robes, cloak Jason athletic, hero, in armor, cloak, carrying sword, spear, wreathed in golden glow then Alcimede cradles the sleeping infant Jason close, then her eyes dart to the door as distant shouts rise the camera push-in settling into push-in on her face as she turns toward the chamber door, resolve hardening with steel rings, the spear whistles through the air a voice speaks in Macedonian: \"Алкимеда: „Ќе те спасам, чедо мое.“\" continuity held: Alcimede identity and mother-costume; torch-lit chamber palette from S01",
+          "image_prompt_start": "photoreal cinematic: medium of a Greek queen in a woolen cloak cradling a newborn to her chest in a torchlit chamber, fear in her eyes, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: on her face as she toward the chamber door, resolve hardening.",
+          "video_prompt_start": "Alcimede cradles the sleeping infant Jason close. her eyes dart to the door as distant shouts rise. The camera push-in. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Алкимеда: „Ќе те спасам, чедо мое.“\" Continuity held: Alcimede identity and mother-costume; torch-lit chamber palette from S01.",
+          "video_prompt_end": "Alcimede cradles the sleeping infant Jason close. her eyes dart to the door as distant shouts rise. The camera push-in. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Алкимеда: „Ќе те спасам, чедо мое.“\" Continuity held: Alcimede identity and mother-costume; torch-lit chamber palette from S01.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S03",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "jason_A1_fused"
+          ],
+          "ref_scope": "image1: newborn Jason face card",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "light direction",
+            "palette",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the infant's tiny hand grips his mother's finger"
+            ],
+            [
+              1.5,
+              3.0,
+              "torchlight plays over his sleeping face"
+            ]
+          ],
+          "narration_mk": "Смртта му го одзеде таткото таа ноќ.",
+          "dialogue_mk": "",
+          "kf_first": "Macro of a newborn's face and small fist gripping a mother's finger, warm torchlight rim, photoreal, 1216x704",
+          "kf_last": "Flame light flickers across the baby's brow as the mother's hand gently shields him",
+          "continuity": "Infant Jason identity; warm torchlight palette",
+          "motion": "still macro; flame flicker on skin",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro of a newborn's face and small fist gripping a mother's finger, warm torchlight rim, photoreal Jason athletic, hero, in armor, cloak, carrying sword, spear, wreathed in golden glow then the infant's tiny hand grips his mother's finger, then torchlight plays over his sleeping face the camera static settling into flame light flickers across the baby's brow as the mother's hand gently shields him with steel rings, the spear whistles through the air continuity held: Infant Jason identity; warm torchlight palette",
+          "image_prompt_start": "photoreal cinematic: Macro of a newborn's face and small fist gripping a mother's finger, warm torchlight rim, photoreal.",
+          "image_prompt_end": "photoreal cinematic: Flame light flickers across the baby's brow as the mother's hand gently shields him.",
+          "video_prompt_start": "The infant's tiny hand grips his mother's finger. torchlight plays over his sleeping face. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Infant Jason identity; warm torchlight palette.",
+          "video_prompt_end": "The infant's tiny hand grips his mother's finger. torchlight plays over his sleeping face. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Infant Jason identity; warm torchlight palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S04",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "alcimede_A2_fused",
+            "jason_A1_fused"
+          ],
+          "ref_scope": "image1: Alcimede fleeing; image2: infant Jason bundle",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "Alcimede slips through a narrow gate into the night"
+            ],
+            [
+              2.0,
+              3.5,
+              "guards' shadows pass the other way, unseen"
+            ]
+          ],
+          "narration_mk": "Под покривката на ноќта, мајката и синот избегаа од Јолк.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of a cloaked mother fleeing with a bundle through a dark gate, guard shadows on the far wall, moonlit, photoreal cinematic",
+          "kf_last": "Track follows her into the moonlit hills, city receding behind",
+          "continuity": "Alcimede identity and cloak; night exit palette from S01",
+          "motion": "lateral track; cloak billow and shadow play",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of a cloaked mother fleeing with a bundle through a dark gate, guard shadows on the far wall, moonlit, photoreal cinematic Alcimede robed, monarch, in royal robes, cloak Jason athletic, hero, in armor, cloak, carrying sword, spear, wreathed in golden glow then Alcimede slips through a narrow gate into the night, then guards' shadows pass the other way, unseen the camera track settling into track follows her into the moonlit hills, city receding behind with steel rings, the spear whistles through the air continuity held: Alcimede identity and cloak; night exit palette from S01",
+          "image_prompt_start": "photoreal cinematic: wide of a cloaked mother fleeing with a bundle through a dark gate, guard shadows on the far wall, moonlit, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: her into the moonlit hills, city receding behind.",
+          "video_prompt_start": "Alcimede slips through a narrow gate into the night. guards' shadows pass the other way, unseen. The camera track. The beat resolves into the next matching frame. Continuity held: Alcimede identity and cloak; night exit palette from S01.",
+          "video_prompt_end": "Alcimede slips through a narrow gate into the night. guards' shadows pass the other way, unseen. The camera track. The beat resolves into the next matching frame. Continuity held: Alcimede identity and cloak; night exit palette from S01.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S05",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "alcimede_A2_fused"
+          ],
+          "ref_scope": "image1: Alcimede arriving in forest",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "dawn breaks over a wild forest of pines and cliffs"
+            ],
+            [
+              2.0,
+              3.5,
+              "Alcimede crests a ridge, the land of the centaurs below"
+            ]
+          ],
+          "narration_mk": "Патуваа кон земјата на кентаврите, полу-луѓе, полу-коњи.",
+          "dialogue_mk": "",
+          "kf_first": "Wide crane-up at dawn over an ancient wild forest and rocky Pelion cliffs, a lone cloaked woman cresting a ridge, morning mist, photoreal Diablo 2 cinematic grade, 1216x704",
+          "kf_last": "Crane settles over the forest clearing where centaur shadows move among the trees",
+          "continuity": "Forest dawn palette; Alcimede silhouette continuity from S04",
+          "motion": "crane-up reveal; mist lift and leaf stir",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide crane-up at dawn over an ancient wild forest and rocky Pelion cliffs, a lone cloaked woman cresting a ridge, morning mist, photoreal Diablo 2 cinematic grade Alcimede robed, monarch, in royal robes, cloak then dawn breaks over a wild forest of pines and cliffs, then Alcimede crests a ridge, the land of the centaurs below the camera crane-up settling into crane settles over the forest clearing where centaur shadows move among the trees continuity held: Forest dawn palette; Alcimede silhouette continuity from S04",
+          "image_prompt_start": "photoreal cinematic: at dawn over an ancient wild forest and rocky Pelion cliffs, a lone cloaked woman cresting a ridge, morning mist, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: Crane over the forest clearing where centaur shadows move among the trees.",
+          "video_prompt_start": "Dawn breaks over a wild forest of pines and cliffs. Alcimede crests a ridge, the land of the centaurs below. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Forest dawn palette; Alcimede silhouette continuity from S04.",
+          "video_prompt_end": "Dawn breaks over a wild forest of pines and cliffs. Alcimede crests a ridge, the land of the centaurs below. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Forest dawn palette; Alcimede silhouette continuity from S04.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S06",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "chiron_A4_fused"
+          ],
+          "ref_scope": "image1: Chiron fused master centaur",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "the wise centaur Chiron steps from between the pines"
+            ],
+            [
+              2.0,
+              3.5,
+              "he lowers himself to meet the mother's gaze"
+            ]
+          ],
+          "narration_mk": "Таму ги пречека мудриот кентавр Хирон.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of a noble centaur with a silver beard stepping from dark pines into dawn light, half-man half-horse, photoreal cinematic",
+          "kf_last": "He dips low, one hoof forward, offering his open hand toward the mother",
+          "continuity": "Chiron identity and centaur anatomy; forest dawn palette from S05",
+          "motion": "static with breathing; mane and leaf drift",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of a noble centaur with a silver beard stepping from dark pines into dawn light, half-man half-horse, photoreal cinematic Chiron hulking, creature, in beard, carrying bow, wreathed in holy aura then the wise centaur Chiron steps from between the pines, then he lowers himself to meet the mother's gaze the camera static settling into he dips low, one hoof forward, offering his open hand toward the mother with the bowstring hums, a low radiant hum continuity held: Chiron identity and centaur anatomy; forest dawn palette from S05",
+          "image_prompt_start": "photoreal cinematic: medium of a noble centaur with a silver beard stepping from dark pines into dawn light, half-man half-horse, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: He dips low, one hoof forward, offering his open hand toward the mother.",
+          "video_prompt_start": "The wise centaur Chiron steps from between the pines. he lowers himself to meet the mother's gaze. The camera static. The beat resolves into the next matching frame. Continuity held: Chiron identity and centaur anatomy; forest dawn palette from S05.",
+          "video_prompt_end": "The wise centaur Chiron steps from between the pines. he lowers himself to meet the mother's gaze. The camera static. The beat resolves into the next matching frame. Continuity held: Chiron identity and centaur anatomy; forest dawn palette from S05.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S07",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "alcimede_A2_fused",
+            "chiron_A4_fused",
+            "jason_A1_fused"
+          ],
+          "ref_scope": "image1: Alcimede fused master; image2: Chiron fused master; image3: infant Jason",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "Alcimede places the bundled child into Chiron's great hands"
+            ],
+            [
+              2.0,
+              3.5,
+              "tears glint as she steps back, trust in her eyes"
+            ]
+          ],
+          "narration_mk": "Алкимеда му го довери Јасон на стариот учител.",
+          "dialogue_mk": "Алкимеда: „Чувај го и научи го сè.“",
+          "kf_first": "Close-up of a mother's hands placing a newborn into the large weathered hands of a centaur, dawn light between them, photoreal, 1216x704",
+          "kf_last": "The centaur's hands close gently around the child as the mother steps back in tearful trust",
+          "continuity": "Alcimede and Chiron identity; infant bundle from S03; dawn palette",
+          "motion": "slow push-in on the handoff; tear glint",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of a mother's hands placing a newborn into the large weathered hands of a centaur, dawn light between them, photoreal Alcimede robed, monarch, in royal robes, cloak Chiron hulking, creature, in beard, carrying bow, wreathed in holy aura Jason athletic, hero, in armor, cloak, carrying sword, spear, wreathed in golden glow then Alcimede places the bundled child into Chiron's great hands, then tears glint as she steps back, trust in her eyes the camera push-in settling into the centaur's hands close gently around the child as the mother steps back in tearful trust with the bowstring hums, a low radiant hum a voice speaks in Macedonian: \"Алкимеда: „Чувај го и научи го сè.“\" continuity held: Alcimede and Chiron identity; infant bundle from S03; dawn palette",
+          "image_prompt_start": "photoreal cinematic: of a mother's hands placing a newborn into the large weathered hands of a centaur, dawn light between them, photoreal.",
+          "image_prompt_end": "photoreal cinematic: The centaur's hands close gently around the child as the mother steps back in tearful trust.",
+          "video_prompt_start": "Alcimede places the bundled child into Chiron's great hands. tears glint as she steps back, trust in her eyes. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Алкимеда: „Чувај го и научи го сè.“\" Continuity held: Alcimede and Chiron identity; infant bundle from S03; dawn palette.",
+          "video_prompt_end": "Alcimede places the bundled child into Chiron's great hands. tears glint as she steps back, trust in her eyes. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Алкимеда: „Чувај го и научи го сè.“\" Continuity held: Alcimede and Chiron identity; infant bundle from S03; dawn palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S08",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-left",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "chiron_A4_fused",
+            "jason_A1_fused"
+          ],
+          "ref_scope": "image1: Chiron teaching young Jason",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "young Jason runs beside Chiron through tall grass"
+            ],
+            [
+              2.0,
+              3.5,
+              "the boy looses a small hunting bow at a target"
+            ]
+          ],
+          "narration_mk": "Годините течеа: Хирон го учеше да лови и да се бори.",
+          "dialogue_mk": "",
+          "kf_first": "Wide pan across a sunlit training meadow where a centaur strides beside a running boy with a small bow, golden afternoon, photoreal cinematic",
+          "kf_last": "The boy draws and releases an arrow toward a wooden target, meadow grass rippling",
+          "continuity": "Young Jason and Chiron identities; meadow daylight palette",
+          "motion": "pan-left; running stride and arrow flight",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide pan across a sunlit training meadow where a centaur strides beside a running boy with a small bow, golden afternoon, photoreal cinematic Chiron hulking, creature, in beard, carrying bow, wreathed in holy aura Jason athletic, hero, in armor, cloak, carrying sword, spear, wreathed in golden glow then young Jason runs beside Chiron through tall grass, then the boy looses a small hunting bow at a target the camera pan-left settling into the boy draws and releases an arrow toward a wooden target, meadow grass rippling with the bowstring hums, a low radiant hum continuity held: Young Jason and Chiron identities; meadow daylight palette",
+          "image_prompt_start": "photoreal cinematic: across a sunlit training meadow where a centaur strides beside a running boy with a small bow, golden afternoon, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The boy draws and releases an arrow toward a wooden target, meadow grass rippling.",
+          "video_prompt_start": "Young Jason runs beside Chiron through tall grass. the boy looses a small hunting bow at a target. The camera pan-left. The beat resolves into the next matching frame. Continuity held: Young Jason and Chiron identities; meadow daylight palette.",
+          "video_prompt_end": "Young Jason runs beside Chiron through tall grass. the boy looses a small hunting bow at a target. The camera pan-left. The beat resolves into the next matching frame. Continuity held: Young Jason and Chiron identities; meadow daylight palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S09",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "chiron_A4_fused",
+            "jason_A1_fused"
+          ],
+          "ref_scope": "image1: Chiron teaching; image2: boy Jason listening",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "by a still pool, Chiron gestures over a scroll and the stars"
+            ],
+            [
+              2.0,
+              3.5,
+              "the boy listens, eyes wide with wonder"
+            ]
+          ],
+          "narration_mk": "Но го подучуваше и на наука и уметност.",
+          "dialogue_mk": "Хирон: „Силната рака без мудар ум е само камен.“",
+          "kf_first": "Medium of a centaur teaching a boy beside a moonlit pool, pointing from a scroll to the night sky, photoreal Diablo 2 cinematic grade",
+          "kf_last": "The boy traces a constellation with his finger, wonder on his face",
+          "continuity": "Chiron and boy Jason identities; night study palette",
+          "motion": "static; gentle water shimmer and starlight",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of a centaur teaching a boy beside a moonlit pool, pointing from a scroll to the night sky, photoreal Diablo 2 cinematic grade Chiron hulking, creature, in beard, carrying bow, wreathed in holy aura Jason athletic, hero, in armor, cloak, carrying sword, spear, wreathed in golden glow then by a still pool, Chiron gestures over a scroll and the stars, then the boy listens, eyes wide with wonder the camera static settling into the boy traces a constellation with his finger, wonder on his face with the bowstring hums, a low radiant hum a voice speaks in Macedonian: \"Хирон: „Силната рака без мудар ум е само камен.“\" continuity held: Chiron and boy Jason identities; night study palette",
+          "image_prompt_start": "photoreal cinematic: of a centaur teaching a boy beside a moonlit pool, pointing from a scroll to the night sky, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: The boy traces a constellation with his finger, wonder on his face.",
+          "video_prompt_start": "By a still pool, Chiron gestures over a scroll and the stars. the boy listens, eyes wide with wonder. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Хирон: „Силната рака без мудар ум е само камен.“\" Continuity held: Chiron and boy Jason identities; night study palette.",
+          "video_prompt_end": "By a still pool, Chiron gestures over a scroll and the stars. the boy listens, eyes wide with wonder. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Хирон: „Силната рака без мудар ум е само камен.“\" Continuity held: Chiron and boy Jason identities; night study palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S10",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "jason_A1_fused"
+          ],
+          "ref_scope": "image1: young adult Jason fused master",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "grown Jason whirls a wooden sword in the meadow"
+            ],
+            [
+              2.0,
+              3.5,
+              "he strikes a training post with clean force"
+            ]
+          ],
+          "narration_mk": "Порасна во храбар и силен младич.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of a grown Greek youth spinning a practice sword in a sunlit meadow, dust kicked up, photoreal cinematic",
+          "kf_last": "Track follows his blade as it arcs and strikes the post with a burst of chaff",
+          "continuity": "Jason young-adult identity and tunic; meadow palette from S08",
+          "motion": "track on sword swing; dust burst",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of a grown Greek youth spinning a practice sword in a sunlit meadow, dust kicked up, photoreal cinematic Jason athletic, hero, in armor, cloak, carrying sword, spear, wreathed in golden glow then grown Jason whirls a wooden sword in the meadow, then he strikes a training post with clean force the camera track settling into track follows his blade as it arcs and strikes the post with a burst of chaff with steel rings, the spear whistles through the air continuity held: Jason young-adult identity and tunic; meadow palette from S08",
+          "image_prompt_start": "photoreal cinematic: wide of a grown Greek youth spinning a practice sword in a sunlit meadow, dust kicked up, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: his blade as it arcs and strikes the post with a burst of chaff.",
+          "video_prompt_start": "Grown Jason whirls a wooden sword in the meadow. he strikes a training post with clean force. The camera track. The beat resolves into the next matching frame. Continuity held: Jason young-adult identity and tunic; meadow palette from S08.",
+          "video_prompt_end": "Grown Jason whirls a wooden sword in the meadow. he strikes a training post with clean force. The camera track. The beat resolves into the next matching frame. Continuity held: Jason young-adult identity and tunic; meadow palette from S08.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S11",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "jason_A1_fused"
+          ],
+          "ref_scope": "image1: Jason fused master face",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "light direction",
+            "palette",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "Jason gazes toward the distant city lights of Iolcus"
+            ],
+            [
+              2.0,
+              3.5,
+              "his jaw sets, a decision formed"
+            ]
+          ],
+          "narration_mk": "Во градите му се разгоре желбата да си го врати тронот.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of a determined young Greek hero's face gazing toward a far city across the sea at dusk, ember light on his skin, photoreal, 1216x704",
+          "kf_last": "His eyes narrow with resolve as the sea wind lifts his hair",
+          "continuity": "Jason face identity; dusk ember palette",
+          "motion": "slow push-in on the eyes; hair lift in wind",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of a determined young Greek hero's face gazing toward a far city across the sea at dusk, ember light on his skin, photoreal Jason athletic, hero, in armor, cloak, carrying sword, spear, wreathed in golden glow then Jason gazes toward the distant city lights of Iolcus, then his jaw sets, a decision formed the camera push-in settling into his eyes narrow with resolve as the sea wind lifts his hair with steel rings, the spear whistles through the air continuity held: Jason face identity; dusk ember palette",
+          "image_prompt_start": "photoreal cinematic: of a determined young Greek hero's face gazing toward a far city across the sea at dusk, ember light on his skin, photoreal.",
+          "image_prompt_end": "photoreal cinematic: His eyes narrow with resolve as the sea wind lifts his hair.",
+          "video_prompt_start": "Jason gazes toward the distant city lights of Iolcus. his jaw sets, a decision formed. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Jason face identity; dusk ember palette.",
+          "video_prompt_end": "Jason gazes toward the distant city lights of Iolcus. his jaw sets, a decision formed. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Jason face identity; dusk ember palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S12",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "jason_A1_fused"
+          ],
+          "ref_scope": "image1: Jason departing on the road",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "Jason strides down the mountain road, cloak over shoulder"
+            ],
+            [
+              2.0,
+              3.5,
+              "the road bends toward the smoking city of Iolcus"
+            ]
+          ],
+          "narration_mk": "Така тргна кон Јолк, по своето наследство.",
+          "dialogue_mk": "",
+          "kf_first": "Wide track of a cloaked young hero walking a mountain road at dawn, Iolcus visible ahead across the bay, photoreal cinematic",
+          "kf_last": "The road curves to reveal torchlit Iolcus framed by the rising sun",
+          "continuity": "Jason identity and cloak; road continuity from S04",
+          "motion": "lateral track; stride and cloak sway",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide track of a cloaked young hero walking a mountain road at dawn, Iolcus visible ahead across the bay, photoreal cinematic Jason athletic, hero, in armor, cloak, carrying sword, spear, wreathed in golden glow then Jason strides down the mountain road, cloak over shoulder, then the road bends toward the smoking city of Iolcus the camera track settling into the road curves to reveal torchlit Iolcus framed by the rising sun with steel rings, the spear whistles through the air continuity held: Jason identity and cloak; road continuity from S04",
+          "image_prompt_start": "photoreal cinematic: of a cloaked young hero walking a mountain road at dawn, Iolcus visible ahead across the bay, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The road curves to reveal torchlit Iolcus framed by the rising sun.",
+          "video_prompt_start": "Jason strides down the mountain road, cloak over shoulder. the road bends toward the smoking city of Iolcus. The camera track. The beat resolves into the next matching frame. Continuity held: Jason identity and cloak; road continuity from S04.",
+          "video_prompt_end": "Jason strides down the mountain road, cloak over shoulder. the road bends toward the smoking city of Iolcus. The camera track. The beat resolves into the next matching frame. Continuity held: Jason identity and cloak; road continuity from S04.",
+          "motion_intensity": "moderate"
+        }
+      ]
+    },
+    {
+      "id": "act2",
+      "num": "Act II",
+      "title": "Потрагата по Руното",
+      "color": "#f5c06b",
+      "pct": 50,
+      "synopsis": "Пелеј му ја ветува круната само ако му го донесе Златното Руно од далечната Колхида. Јасон го гради бродот Арго, собира педесет Аргонаути и по мориња и чудовишта стигнува кај Еет, кој му поставува три задачи.",
+      "location_ref": "iolcus_palace_argos_colchis",
+      "global_locks": [
+        "palette — marble gold, storm teal, Colchis ember",
+        "light — bright court then storm",
+        "lens — wide epic"
+      ],
+      "palette": [
+        "#d9b45b",
+        "#2f6d8c",
+        "#b3481f"
+      ],
+      "light_direction": "key light from screen-left, bright palace to stormy sea",
+      "time_of_day": "day",
+      "shots": [
+        {
+          "id": "S13",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "pelias_A3_fused",
+            "jason_A1_fused"
+          ],
+          "ref_scope": "image1: Pelias court; image2: Jason entering",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "camera descends over a grand marble throne hall"
+            ],
+            [
+              2.0,
+              3.5,
+              "Jason strides in through the tall columns"
+            ]
+          ],
+          "narration_mk": "Во Јолк, вујко му го пречека со срдечен лик.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle establishing of a grand Greek marble throne hall, columns and braziers, the usurper king on a golden seat, photoreal Diablo 2 cinematic grade, 1216x704",
+          "kf_last": "Crane down as a young cloaked hero strides through the pillared entrance, courtiers parting",
+          "continuity": "Marble-gold palace palette; Jason identity from S12",
+          "motion": "crane-down; brazier smoke and courtier shift",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle establishing of a grand Greek marble throne hall, columns and braziers, the usurper king on a golden seat, photoreal Diablo 2 cinematic grade Pelias robed, trickster, in crown, royal robes, beard, wreathed in shadow smoke Jason athletic, hero, in armor, cloak, carrying sword, spear, wreathed in golden glow then camera descends over a grand marble throne hall, then Jason strides in through the tall columns the camera crane-down settling into crane down as a young cloaked hero strides through the pillared entrance, courtiers parting with shadows whisper, steel rings continuity held: Marble-gold palace palette; Jason identity from S12",
+          "image_prompt_start": "photoreal cinematic: establishing of a grand Greek marble throne hall, columns and braziers, the usurper king on a golden seat, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: as a young cloaked hero strides through the pillared entrance, courtiers parting.",
+          "video_prompt_start": "Camera descends over a grand marble throne hall. Jason strides in through the tall columns. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Marble-gold palace palette; Jason identity from S12.",
+          "video_prompt_end": "Camera descends over a grand marble throne hall. Jason strides in through the tall columns. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Marble-gold palace palette; Jason identity from S12.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S14",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "shot-reverse",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "pelias_A3_fused",
+            "jason_A1_fused"
+          ],
+          "ref_scope": "image1: Pelias fused master; image2: Jason fused master",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "Pelias gestures warmly from his throne"
+            ],
+            [
+              2.0,
+              3.5,
+              "Jason stands firm, arms folded"
+            ]
+          ],
+          "narration_mk": "Додека не рече зошто дошол.",
+          "dialogue_mk": "Пелеј: „Седни, внуку. Што е тоа што го бараш?“",
+          "kf_first": "Medium shot-reverse of a bearded king in gold robes leaning forward from his throne, and a stern young hero standing below, photoreal cinematic",
+          "kf_last": "The hero answers, his stance unyielding as the king's smile tightens",
+          "continuity": "Pelias and Jason identities; throne-hall palette from S13",
+          "motion": "shot-reverse cuts; subtle hand gestures",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium shot-reverse of a bearded king in gold robes leaning forward from his throne, and a stern young hero standing below, photoreal cinematic Pelias robed, trickster, in crown, royal robes, beard, wreathed in shadow smoke Jason athletic, hero, in armor, cloak, carrying sword, spear, wreathed in golden glow then Pelias gestures warmly from his throne, then Jason stands firm, arms folded the camera shot-reverse settling into the hero answers, his stance unyielding as the king's smile tightens with shadows whisper, steel rings a voice speaks in Macedonian: \"Пелеј: „Седни, внуку. Што е тоа што го бараш?“\" continuity held: Pelias and Jason identities; throne-hall palette from S13",
+          "image_prompt_start": "photoreal cinematic: shot-reverse of a bearded king in gold robes leaning forward from his throne, and a stern young hero standing below, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The hero answers, his stance unyielding as the king's smile tightens.",
+          "video_prompt_start": "Pelias gestures warmly from his throne. Jason stands firm, arms folded. The camera shot-reverse. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Пелеј: „Седни, внуку. Што е тоа што го бараш?“\" Continuity held: Pelias and Jason identities; throne-hall palette from S13.",
+          "video_prompt_end": "Pelias gestures warmly from his throne. Jason stands firm, arms folded. The camera shot-reverse. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Пелеј: „Седни, внуку. Што е тоа што го бараш?“\" Continuity held: Pelias and Jason identities; throne-hall palette from S13.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S15",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "pelias_A3_fused"
+          ],
+          "ref_scope": "image1: Pelias fused master laughing",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "light direction",
+            "palette",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "Pelias throws his head back in laughter"
+            ],
+            [
+              2.0,
+              3.5,
+              "his mocking grin hardens into challenge"
+            ]
+          ],
+          "narration_mk": "Но тогаш прсна да се смее.",
+          "dialogue_mk": "Пелеј: „Круната ќе ти ја дадам кога ќе ми го донесеш Златното Руно!“",
+          "kf_first": "Low-angle close-up of a laughing bearded king, torchlight gilding his mocking face, photoreal, 1216x704",
+          "kf_last": "The laughter dies to a cold challenging smile as he leans into the light",
+          "continuity": "Pelias face identity; palace torch palette",
+          "motion": "slow push-in; laugh to sneer",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle close-up of a laughing bearded king, torchlight gilding his mocking face, photoreal Pelias robed, trickster, in crown, royal robes, beard, wreathed in shadow smoke then Pelias throws his head back in laughter, then his mocking grin hardens into challenge the camera push-in settling into the laughter dies to a cold challenging smile as he leans into the light with shadows whisper a voice speaks in Macedonian: \"Пелеј: „Круната ќе ти ја дадам кога ќе ми го донесеш Златното Руно!“\" continuity held: Pelias face identity; palace torch palette",
+          "image_prompt_start": "photoreal cinematic: close-up of a laughing bearded king, torchlight gilding his mocking face, photoreal.",
+          "image_prompt_end": "photoreal cinematic: The laughter dies to a cold challenging smile as he leans into the light.",
+          "video_prompt_start": "Pelias throws his head back in laughter. his mocking grin hardens into challenge. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Пелеј: „Круната ќе ти ја дадам кога ќе ми го донесеш Златното Руно!“\" Continuity held: Pelias face identity; palace torch palette.",
+          "video_prompt_end": "Pelias throws his head back in laughter. his mocking grin hardens into challenge. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Пелеј: „Круната ќе ти ја дадам кога ќе ми го донесеш Златното Руно!“\" Continuity held: Pelias face identity; palace torch palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S16",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "jason_A1_fused"
+          ],
+          "ref_scope": "image1: Jason fused master defiant",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "Jason steps forward into torchlight"
+            ],
+            [
+              2.0,
+              3.5,
+              "he raises his chin in acceptance"
+            ]
+          ],
+          "narration_mk": "А Јасон не трепна.",
+          "dialogue_mk": "Јасон: „Само кажи ми што е тоа, и ќе го најдам.“",
+          "kf_first": "Low-angle medium of a defiant young hero stepping into torchlight, cape over shoulder, photoreal cinematic",
+          "kf_last": "He lifts his chin, firelight catching the steel in his eyes",
+          "continuity": "Jason identity and cloak; palace torch palette",
+          "motion": "static; chest rise and torch shimmer",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of a defiant young hero stepping into torchlight, cape over shoulder, photoreal cinematic Jason athletic, hero, in armor, cloak, carrying sword, spear, wreathed in golden glow then Jason steps forward into torchlight, then he raises his chin in acceptance the camera static settling into he lifts his chin, firelight catching the steel in his eyes with steel rings, the spear whistles through the air a voice speaks in Macedonian: \"Јасон: „Само кажи ми што е тоа, и ќе го најдам.“\" continuity held: Jason identity and cloak; palace torch palette",
+          "image_prompt_start": "photoreal cinematic: medium of a defiant young hero stepping into torchlight, cape over shoulder, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: He lifts his chin, firelight catching the steel in his eyes.",
+          "video_prompt_start": "Jason steps forward into torchlight. he raises his chin in acceptance. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Јасон: „Само кажи ми што е тоа, и ќе го најдам.“\" Continuity held: Jason identity and cloak; palace torch palette.",
+          "video_prompt_end": "Jason steps forward into torchlight. he raises his chin in acceptance. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Јасон: „Само кажи ми што е тоа, и ќе го најдам.“\" Continuity held: Jason identity and cloak; palace torch palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S17",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "shot-reverse",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "pelias_A3_fused",
+            "jason_A1_fused"
+          ],
+          "ref_scope": "image1: Pelias describing; image2: Jason listening",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "Pelias leans forward, voice low and ominous"
+            ],
+            [
+              2.0,
+              3.5,
+              "Jason listens, face unreadable"
+            ]
+          ],
+          "narration_mk": "И му раскажа за легендарното руно на Златниот Овен.",
+          "dialogue_mk": "Пелеј: „Тоа лекува секоја рана. Но го чува змеј што никогаш не спие.“",
+          "kf_first": "Medium shot-reverse of a king leaning forward over his knees, whispering doom, and a hero listening with folded arms, photoreal cinematic",
+          "kf_last": "The king settles back, watching for fear that never comes",
+          "continuity": "Pelias and Jason identities; throne-hall palette",
+          "motion": "shot-reverse; slow lean and torch flicker",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium shot-reverse of a king leaning forward over his knees, whispering doom, and a hero listening with folded arms, photoreal cinematic Pelias robed, trickster, in crown, royal robes, beard, wreathed in shadow smoke Jason athletic, hero, in armor, cloak, carrying sword, spear, wreathed in golden glow then Pelias leans forward, voice low and ominous, then Jason listens, face unreadable the camera shot-reverse settling into the king settles back, watching for fear that never comes with shadows whisper, steel rings a voice speaks in Macedonian: \"Пелеј: „Тоа лекува секоја рана. Но го чува змеј што никогаш не спие.“\" continuity held: Pelias and Jason identities; throne-hall palette",
+          "image_prompt_start": "photoreal cinematic: shot-reverse of a king leaning forward over his knees, whispering doom, and a hero listening with folded arms, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The king back, watching for fear that never comes.",
+          "video_prompt_start": "Pelias leans forward, voice low and ominous. Jason listens, face unreadable. The camera shot-reverse. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Пелеј: „Тоа лекува секоја рана. Но го чува змеј што никогаш не спие.“\" Continuity held: Pelias and Jason identities; throne-hall palette.",
+          "video_prompt_end": "Pelias leans forward, voice low and ominous. Jason listens, face unreadable. The camera shot-reverse. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Пелеј: „Тоа лекува секоја рана. Но го чува змеј што никогаш не спие.“\" Continuity held: Pelias and Jason identities; throne-hall palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S18",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "fleece_A8"
+          ],
+          "ref_scope": "image1: golden fleece legend asset",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "fleece design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "a golden fleece hangs in a dreamlike mist"
+            ],
+            [
+              1.5,
+              3.0,
+              "each wool strand glows with healing light"
+            ]
+          ],
+          "narration_mk": "Визијата се отвори: руно на Златниот Овен, блескаво.",
+          "dialogue_mk": "",
+          "kf_first": "Macro of a mythical golden fleece hanging in mist, each strand catching warm light, photoreal, 1216x704",
+          "kf_last": "Gentle light pulses through the wool, unreal and healing",
+          "continuity": "Golden fleece asset intro; warm gold palette",
+          "motion": "macro push-in; light pulse through fibers",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro of a mythical golden fleece hanging in mist, each strand catching warm light, photoreal then a golden fleece hangs in a dreamlike mist, then each wool strand glows with healing light the camera push-in settling into gentle light pulses through the wool, unreal and healing continuity held: Golden fleece asset intro; warm gold palette",
+          "image_prompt_start": "photoreal cinematic: Macro of a mythical golden fleece hanging in mist, each strand catching warm light, photoreal.",
+          "image_prompt_end": "photoreal cinematic: Gentle light pulses through the wool, unreal and healing.",
+          "video_prompt_start": "A golden fleece hangs in a dreamlike mist. each wool strand glows with healing light. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Golden fleece asset intro; warm gold palette.",
+          "video_prompt_end": "A golden fleece hangs in a dreamlike mist. each wool strand glows with healing light. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Golden fleece asset intro; warm gold palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S19",
+          "shot_type": "BOSS-ONLY",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "dragon_B1_sheet"
+          ],
+          "ref_scope": "image1: dragon boss sheet in dark lair",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "dragon design",
+            "scale texture",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "a colossal dragon coils around a golden glow in a cavern"
+            ],
+            [
+              2.0,
+              3.5,
+              "one vast eye snaps open, unblinking"
+            ]
+          ],
+          "narration_mk": "А во далечната Колхида го чуваше неспивен змеј.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of a colossal dragon coiled around glowing gold in a dark cavern, armored scales, photoreal Diablo 2 cinematic grade, 1216x704",
+          "kf_last": "Crane-up as one immense eye opens, its lid never fully closing",
+          "continuity": "Dragon boss design; dark cavern palette",
+          "motion": "crane-up; smoke from nostrils and eye snap",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of a colossal dragon coiled around glowing gold in a dark cavern, armored scales, photoreal Diablo 2 cinematic grade then a colossal dragon coils around a golden glow in a cavern, then one vast eye snaps open, unblinking the camera crane-up settling into crane-up as one immense eye opens, its lid never fully closing continuity held: Dragon boss design; dark cavern palette",
+          "image_prompt_start": "photoreal cinematic: wide of a colossal dragon coiled around glowing gold in a dark cavern, armored scales, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: as one immense eye opens, its lid never fully closing.",
+          "video_prompt_start": "A colossal dragon coils around a golden glow in a cavern. one vast eye snaps open, unblinking. The camera crane-up. The action plays out at full force and lands in a held, readable end pose. Continuity held: Dragon boss design; dark cavern palette.",
+          "video_prompt_end": "A colossal dragon coils around a golden glow in a cavern. one vast eye snaps open, unblinking. The camera crane-up. The action plays out at full force and lands in a held, readable end pose. Continuity held: Dragon boss design; dark cavern palette.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S20",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "argo_A9",
+            "jason_A1_fused"
+          ],
+          "ref_scope": "image1: Argo hull under construction; image2: Jason directing",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "ship design",
+            "face identity",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "workmen swarm over the ribs of a great ship"
+            ],
+            [
+              2.0,
+              3.5,
+              "Jason paces the scaffold, pointing orders"
+            ]
+          ],
+          "narration_mk": "Јасон не се обесхрабри — изгради голем брод и го нарече Арго.",
+          "dialogue_mk": "",
+          "kf_first": "Wide track along a shipyard where the skeleton of a great wooden ship rises on a slipway, workmen and ropes, Mediterranean light, photoreal cinematic",
+          "kf_last": "Track reaches the prow where a young hero oversees the hammering of the final plank",
+          "continuity": "Argo ship design; Jason identity; coastal daylight palette",
+          "motion": "lateral track; hammering and sawdust",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide track along a shipyard where the skeleton of a great wooden ship rises on a slipway, workmen and ropes, Mediterranean light, photoreal cinematic Jason athletic, hero, in armor, cloak, carrying sword, spear, wreathed in golden glow then workmen swarm over the ribs of a great ship, then Jason paces the scaffold, pointing orders the camera track settling into track reaches the prow where a young hero oversees the hammering of the final plank with steel rings, the spear whistles through the air continuity held: Argo ship design; Jason identity; coastal daylight palette",
+          "image_prompt_start": "photoreal cinematic: along a shipyard where the skeleton of a great wooden ship on a slipway, workmen and ropes, Mediterranean light, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: reaches the prow where a young hero oversees the hammering of the final plank.",
+          "video_prompt_start": "Workmen swarm over the ribs of a great ship. Jason paces the scaffold, pointing orders. The camera track. The beat resolves into the next matching frame. Continuity held: Argo ship design; Jason identity; coastal daylight palette.",
+          "video_prompt_end": "Workmen swarm over the ribs of a great ship. Jason paces the scaffold, pointing orders. The camera track. The beat resolves into the next matching frame. Continuity held: Argo ship design; Jason identity; coastal daylight palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S21",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "pan-right",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "argonauts_A7",
+            "jason_A1_fused"
+          ],
+          "ref_scope": "image1: crowd of young heroes; image2: Jason greeting them",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "a crowd of strong young men gathers on the dock"
+            ],
+            [
+              2.0,
+              3.5,
+              "Jason clasps arms with each in turn"
+            ]
+          ],
+          "narration_mk": "Собра педесет стројни момци — се нарекоа Аргонаути.",
+          "dialogue_mk": "",
+          "kf_first": "Medium pan across a sunlit dock crowded with athletic young Greek heroes in bronze and linen, Jason greeting them, photoreal cinematic",
+          "kf_last": "Pan ends on raised spears and fists against the hull of the Argo",
+          "continuity": "Jason identity; Argonaut crew garb; dock palette from S20",
+          "motion": "pan-right; greetings and raised spears",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium pan across a sunlit dock crowded with athletic young Greek heroes in bronze and linen, Jason greeting them, photoreal cinematic Argonauts athletic, warrior, in armor, cloak, carrying spear, sword Jason athletic, hero, in armor, cloak, carrying sword, spear, wreathed in golden glow then a crowd of strong young men gathers on the dock, then Jason clasps arms with each in turn the camera pan-right settling into pan ends on raised spears and fists against the hull of the Argo with the spear whistles through the air, steel rings continuity held: Jason identity; Argonaut crew garb; dock palette from S20",
+          "image_prompt_start": "photoreal cinematic: across a sunlit dock crowded with athletic young Greek heroes in bronze and linen, Jason greeting them, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: ends on raised spears and fists against the hull of the Argo.",
+          "video_prompt_start": "A crowd of strong young men gathers on the dock. Jason clasps arms with each in turn. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Jason identity; Argonaut crew garb; dock palette from S20.",
+          "video_prompt_end": "A crowd of strong young men gathers on the dock. Jason clasps arms with each in turn. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Jason identity; Argonaut crew garb; dock palette from S20.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S22",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "argo_A9",
+            "argonauts_A7"
+          ],
+          "ref_scope": "image1: Argo at sea; image2: crew on deck",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "ship design",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "the Argo's sail fills as oars dip in unison"
+            ],
+            [
+              2.0,
+              3.5,
+              "the ship glides out onto the open Aegean"
+            ]
+          ],
+          "narration_mk": "И бродот Арго заплови по морињата.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of a Greek galley with a broad striped sail and fifty oars leaving a harbor at golden hour, photoreal Diablo 2 cinematic grade, 1216x704",
+          "kf_last": "Crane up as the sail catches the wind and the hull lifts on the first swell",
+          "continuity": "Argo and crew identities; golden-hour sea palette",
+          "motion": "crane-up; sail billow and oar stroke",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of a Greek galley with a broad striped sail and fifty oars leaving a harbor at golden hour, photoreal Diablo 2 cinematic grade Argonauts athletic, warrior, in armor, cloak, carrying spear, sword then the Argo's sail fills as oars dip in unison, then the ship glides out onto the open Aegean the camera crane-up settling into crane up as the sail catches the wind and the hull lifts on the first swell with the spear whistles through the air, steel rings continuity held: Argo and crew identities; golden-hour sea palette",
+          "image_prompt_start": "photoreal cinematic: wide of a Greek galley with a broad striped sail and fifty oars leaving a harbor at golden hour, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: as the sail catches the wind and the hull lifts on the first swell.",
+          "video_prompt_start": "The Argo's sail fills as oars dip in unison. the ship glides out onto the open Aegean. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Argo and crew identities; golden-hour sea palette.",
+          "video_prompt_end": "The Argo's sail fills as oars dip in unison. the ship glides out onto the open Aegean. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Argo and crew identities; golden-hour sea palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S23",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "argo_A9",
+            "argonauts_A7"
+          ],
+          "ref_scope": "image1: Argo in storm; image2: crew bracing",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "ship design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "black clouds pile and a wave towers over the bow"
+            ],
+            [
+              2.0,
+              3.5,
+              "the hull climbs the wave, spray exploding"
+            ]
+          ],
+          "narration_mk": "Премрежињата не доцнеа: бура и ѕидови од вода.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of a lone galley heaving on a storm-tossed sea, a massive wave curling before its bow, photoreal cinematic",
+          "kf_last": "Crane down as the ship's prow punches through the crest in a burst of white spray",
+          "continuity": "Argo and crew continuity; storm teal palette",
+          "motion": "crane-down; deck pitch and salt spray",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of a lone galley heaving on a storm-tossed sea, a massive wave curling before its bow, photoreal cinematic Argonauts athletic, warrior, in armor, cloak, carrying spear, sword then black clouds pile and a wave towers over the bow, then the hull climbs the wave, spray exploding the camera crane-down settling into crane down as the ship's prow punches through the crest in a burst of white spray with the spear whistles through the air, steel rings continuity held: Argo and crew continuity; storm teal palette",
+          "image_prompt_start": "photoreal cinematic: wide of a lone galley heaving on a storm-tossed sea, a massive wave curling before its bow, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: as the ship's prow punches through the crest in a burst of white spray.",
+          "video_prompt_start": "Black clouds pile and a wave towers over the bow. the hull climbs the wave, spray exploding. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Argo and crew continuity; storm teal palette.",
+          "video_prompt_end": "Black clouds pile and a wave towers over the bow. the hull climbs the wave, spray exploding. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Argo and crew continuity; storm teal palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S24",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "argo_A9",
+            "jason_A1_fused"
+          ],
+          "ref_scope": "image1: Argo vs sea monster; image2: Jason at the prow",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "ship design",
+            "face identity",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "a serpentine sea creature rears ahead of the ship"
+            ],
+            [
+              2.0,
+              3.5,
+              "Jason stands at the prow, spear braced"
+            ]
+          ],
+          "narration_mk": "Се бореа со диви морски чудовишта.",
+          "dialogue_mk": "",
+          "kf_first": "Wide track of a Greek ship closing with a rising sea serpent, green-black coils breaking the water, a hero braced at the prow, photoreal Diablo 2 cinematic grade, 1216x704",
+          "kf_last": "Track pushes past the hero as the serpent strikes, water sheeting off the oars",
+          "continuity": "Argo, Jason identity; storm-worn palette",
+          "motion": "lateral track; serpent rise and spray",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide track of a Greek ship closing with a rising sea serpent, green-black coils breaking the water, a hero braced at the prow, photoreal Diablo 2 cinematic grade Jason athletic, hero, in armor, cloak, carrying sword, spear, wreathed in golden glow then a serpentine sea creature rears ahead of the ship, then Jason stands at the prow, spear braced the camera track settling into track pushes past the hero as the serpent strikes, water sheeting off the oars with steel rings, the spear whistles through the air continuity held: Argo, Jason identity; storm-worn palette",
+          "image_prompt_start": "photoreal cinematic: of a Greek ship closing with a rising sea serpent, green-black coils breaking the water, a hero braced at the prow, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: pushes past the hero as the serpent strikes, water sheeting off the oars.",
+          "video_prompt_start": "A serpentine sea creature rears ahead of the ship. Jason stands at the prow, spear braced. The camera track. The beat resolves into the next matching frame. Continuity held: Argo, Jason identity; storm-worn palette.",
+          "video_prompt_end": "A serpentine sea creature rears ahead of the ship. Jason stands at the prow, spear braced. The camera track. The beat resolves into the next matching frame. Continuity held: Argo, Jason identity; storm-worn palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S25",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "pan-left",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "argonauts_A7",
+            "jason_A1_fused"
+          ],
+          "ref_scope": "image1: Argonauts fighting; image2: Jason leading",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "Argonauts clash with shaggy, gnarled creatures on a rocky shore"
+            ],
+            [
+              2.0,
+              3.5,
+              "Jason cuts a path to the front"
+            ]
+          ],
+          "narration_mk": "Многу премрежиња, многу борби — и сè досега издржаа.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of Greek heroes battling gnarled rock-beasts on a dark shore, bronze flashing, photoreal cinematic",
+          "kf_last": "Pan-left follows Jason as he leads the charge over the shingle",
+          "continuity": "Argonauts and Jason identities; shore twilight palette",
+          "motion": "pan-left; charge and weapon swings",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Greek heroes battling gnarled rock-beasts on a dark shore, bronze flashing, photoreal cinematic Argonauts athletic, warrior, in armor, cloak, carrying spear, sword Jason athletic, hero, in armor, cloak, carrying sword, spear, wreathed in golden glow then Argonauts clash with shaggy, gnarled creatures on a rocky shore, then Jason cuts a path to the front the camera pan-left settling into pan-left follows Jason as he leads the charge over the shingle with the spear whistles through the air, steel rings continuity held: Argonauts and Jason identities; shore twilight palette",
+          "image_prompt_start": "photoreal cinematic: medium of Greek heroes battling gnarled rock-beasts on a dark shore, bronze flashing, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: -left Jason as he leads the charge over the shingle.",
+          "video_prompt_start": "Argonauts clash with shaggy, gnarled creatures on a rocky shore. Jason cuts a path to the front. The camera pan-left. The beat resolves into the next matching frame. Continuity held: Argonauts and Jason identities; shore twilight palette.",
+          "video_prompt_end": "Argonauts clash with shaggy, gnarled creatures on a rocky shore. Jason cuts a path to the front. The camera pan-left. The beat resolves into the next matching frame. Continuity held: Argonauts and Jason identities; shore twilight palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S26",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "argo_A9"
+          ],
+          "ref_scope": "image1: Argo reaching Colchis",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "ship design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "a strange ember-lit coastline rises from the morning sea"
+            ],
+            [
+              2.0,
+              3.5,
+              "the Argo slides into a black-stone harbor"
+            ]
+          ],
+          "narration_mk": "Најпосле, по многу маки, стигнаа во Колхида.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of a Greek galley entering a strange coastal land of black rock and ember light, mountains smoking inland, photoreal Diablo 2 cinematic grade, 1216x704",
+          "kf_last": "Crane down as the Argo glides past stone jaws into the harbor of Colchis",
+          "continuity": "Argo identity; Colchis ember palette intro",
+          "motion": "crane-down; harbor drift and heat shimmer",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of a Greek galley entering a strange coastal land of black rock and ember light, mountains smoking inland, photoreal Diablo 2 cinematic grade then a strange ember-lit coastline rises from the morning sea, then the Argo slides into a black-stone harbor the camera crane-down settling into crane down as the Argo glides past stone jaws into the harbor of Colchis continuity held: Argo identity; Colchis ember palette intro",
+          "image_prompt_start": "photoreal cinematic: wide of a Greek galley entering a strange coastal land of black rock and ember light, mountains smoking inland, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: as the Argo glides past stone jaws into the harbor of Colchis.",
+          "video_prompt_start": "A strange ember-lit coastline rises from the morning sea. the Argo slides into a black-stone harbor. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Argo identity; Colchis ember palette intro.",
+          "video_prompt_end": "A strange ember-lit coastline rises from the morning sea. the Argo slides into a black-stone harbor. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Argo identity; Colchis ember palette intro.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S27",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "aeetes_A6_fused"
+          ],
+          "ref_scope": "image1: Aeëtes on his throne",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "a stern king sits upon a dark throne wreathed in bronze"
+            ],
+            [
+              2.0,
+              3.5,
+              "servants in heavy robes bow at his feet"
+            ]
+          ],
+          "narration_mk": "Со Колхида владееше строгиот крал Еет.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of a stern eastern king on a dark bronze throne, smoke braziers and bowing servants, photoreal cinematic",
+          "kf_last": "Crane up over the hall as the king rises to greet the arrivals",
+          "continuity": "Aeëtes identity; Colchis hall palette",
+          "motion": "crane-up; brazier smoke and robe sway",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of a stern eastern king on a dark bronze throne, smoke braziers and bowing servants, photoreal cinematic Aeetes robed, monarch, in crown, royal robes, beard, wreathed in fire wisps then a stern king sits upon a dark throne wreathed in bronze, then servants in heavy robes bow at his feet the camera crane-up settling into crane up over the hall as the king rises to greet the arrivals with flames crackle continuity held: Aeëtes identity; Colchis hall palette",
+          "image_prompt_start": "photoreal cinematic: wide of a stern eastern king on a dark bronze throne, smoke braziers and bowing servants, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: over the hall as the king to greet the arrivals.",
+          "video_prompt_start": "A stern king sits upon a dark throne wreathed in bronze. servants in heavy robes bow at his feet. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Aeëtes identity; Colchis hall palette.",
+          "video_prompt_end": "A stern king sits upon a dark throne wreathed in bronze. servants in heavy robes bow at his feet. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Aeëtes identity; Colchis hall palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S28",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "shot-reverse",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "aeetes_A6_fused",
+            "jason_A1_fused"
+          ],
+          "ref_scope": "image1: Aeëtes speaking; image2: Jason listening",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "Aeëtes raises three fingers"
+            ],
+            [
+              2.0,
+              3.5,
+              "Jason holds his ground, unshaken"
+            ]
+          ],
+          "narration_mk": "Еет не даваше лесно.",
+          "dialogue_mk": "Еет: „Руното ќе биде твое ако исполниш три задачи.“",
+          "kf_first": "Medium shot-reverse of a stern king raising three fingers before a smoke-lit court, and a young hero standing resolute, photoreal cinematic",
+          "kf_last": "The king's hand lowers as he studies the hero's unshaken face",
+          "continuity": "Aeëtes and Jason identities; Colchis hall palette",
+          "motion": "shot-reverse; finger gesture and brazier flicker",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium shot-reverse of a stern king raising three fingers before a smoke-lit court, and a young hero standing resolute, photoreal cinematic Aeetes robed, monarch, in crown, royal robes, beard, wreathed in fire wisps Jason athletic, hero, in armor, cloak, carrying sword, spear, wreathed in golden glow then Aeëtes raises three fingers, then Jason holds his ground, unshaken the camera shot-reverse settling into the king's hand lowers as he studies the hero's unshaken face with flames crackle, steel rings a voice speaks in Macedonian: \"Еет: „Руното ќе биде твое ако исполниш три задачи.“\" continuity held: Aeëtes and Jason identities; Colchis hall palette",
+          "image_prompt_start": "photoreal cinematic: shot-reverse of a stern king raising three fingers before a smoke-lit court, and a young hero standing resolute, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The king's hand lowers as he studies the hero's unshaken face.",
+          "video_prompt_start": "Aeëtes raises three fingers. Jason holds his ground, unshaken. The camera shot-reverse. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Еет: „Руното ќе биде твое ако исполниш три задачи.“\" Continuity held: Aeëtes and Jason identities; Colchis hall palette.",
+          "video_prompt_end": "Aeëtes raises three fingers. Jason holds his ground, unshaken. The camera shot-reverse. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Еет: „Руното ќе биде твое ако исполниш три задачи.“\" Continuity held: Aeëtes and Jason identities; Colchis hall palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S29",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "over-shoulder",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "medea_A5_fused",
+            "jason_A1_fused"
+          ],
+          "ref_scope": "image1: Medea fused master; image2: Jason across the hall",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "from behind a pillar, a dark-eyed woman watches Jason"
+            ],
+            [
+              2.0,
+              3.5,
+              "her expression softens with sudden feeling"
+            ]
+          ],
+          "narration_mk": "Но ќерката на кралот, волшебничката Медеја, го погледна поинаку.",
+          "dialogue_mk": "",
+          "kf_first": "Over-shoulder close-up of a dark-eyed sorceress watching a young hero across a smoky hall from behind a pillar, photoreal, 1216x704",
+          "kf_last": "Push-in on her face as her guarded expression melts into something tender",
+          "continuity": "Medea identity; Jason across-hall; Colchis palette",
+          "motion": "slow push-in; veil shift and softened gaze",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: over-shoulder close-up of a dark-eyed sorceress watching a young hero across a smoky hall from behind a pillar, photoreal Medea slender, mage, in cloak, dress, carrying staff, wreathed in rune ring, fire wisps Jason athletic, hero, in armor, cloak, carrying sword, spear, wreathed in golden glow then from behind a pillar, a dark-eyed woman watches Jason, then her expression softens with sudden feeling the camera push-in settling into push-in on her face as her guarded expression melts into something tender with arcane energy crackles, magic sizzles continuity held: Medea identity; Jason across-hall; Colchis palette",
+          "image_prompt_start": "photoreal cinematic: Over-shoulder close-up of a dark-eyed sorceress watching a young hero across a smoky hall from behind a pillar, photoreal.",
+          "image_prompt_end": "photoreal cinematic: on her face as her guarded expression melts into something tender.",
+          "video_prompt_start": "From behind a pillar, a dark-eyed woman watches Jason. her expression softens with sudden feeling. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Medea identity; Jason across-hall; Colchis palette.",
+          "video_prompt_end": "From behind a pillar, a dark-eyed woman watches Jason. her expression softens with sudden feeling. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Medea identity; Jason across-hall; Colchis palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S30",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "jason_A1_fused",
+            "bulls_B2_sheet"
+          ],
+          "ref_scope": "image1: Jason before fire bulls; image2: bulls charging",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "bull design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "two bronze bulls paw the ground, fire wreathing their nostrils"
+            ],
+            [
+              2.0,
+              3.5,
+              "Jason steps toward them with calm certainty"
+            ]
+          ],
+          "narration_mk": "Првата задача: да скроти два диви бика што блуеја оган од ноздрите.",
+          "dialogue_mk": "",
+          "kf_first": "Wide track of two massive bronze bulls with flame-wreathed nostrils in a stone arena, a lone hero walking toward them, photoreal Diablo 2 cinematic grade, 1216x704",
+          "kf_last": "Track keeps pace as the hero closes in, the bulls lowering their horns",
+          "continuity": "Jason identity; fire-bull design intro; arena palette",
+          "motion": "lateral track; bull stamp and flame jet",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide track of two massive bronze bulls with flame-wreathed nostrils in a stone arena, a lone hero walking toward them, photoreal Diablo 2 cinematic grade Jason athletic, hero, in armor, cloak, carrying sword, spear, wreathed in golden glow then two bronze bulls paw the ground, fire wreathing their nostrils, then Jason steps toward them with calm certainty the camera track settling into track keeps pace as the hero closes in, the bulls lowering their horns with steel rings, the spear whistles through the air continuity held: Jason identity; fire-bull design intro; arena palette",
+          "image_prompt_start": "photoreal cinematic: of two massive bronze bulls with flame-wreathed nostrils in a stone arena, a lone hero walking toward them, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: keeps pace as the hero closes in, the bulls lowering their horns.",
+          "video_prompt_start": "Two bronze bulls paw the ground, fire wreathing their nostrils. Jason steps toward them with calm certainty. The camera track. The beat resolves into the next matching frame. Continuity held: Jason identity; fire-bull design intro; arena palette.",
+          "video_prompt_end": "Two bronze bulls paw the ground, fire wreathing their nostrils. Jason steps toward them with calm certainty. The camera track. The beat resolves into the next matching frame. Continuity held: Jason identity; fire-bull design intro; arena palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S31",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "bulls_B2_sheet"
+          ],
+          "ref_scope": "image1: fire bull head macro",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "bull design",
+            "flame color",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "a bull's head fills the frame, nostrils glowing"
+            ],
+            [
+              1.5,
+              3.0,
+              "fire roars outward in a gale"
+            ]
+          ],
+          "narration_mk": "Оган и врева — но Јасон не отстапи.",
+          "dialogue_mk": "",
+          "kf_first": "Macro close-up of a bronze bull's head, nostrils glowing white-hot and vomiting flame, photoreal, 1216x704",
+          "kf_last": "A jet of fire surges past the lens as the bull lunges",
+          "continuity": "Fire-bull design; arena ember palette",
+          "motion": "macro push-in; flame surge",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro close-up of a bronze bull's head, nostrils glowing white-hot and vomiting flame, photoreal then a bull's head fills the frame, nostrils glowing, then fire roars outward in a gale the camera push-in settling into a jet of fire surges past the lens as the bull lunges continuity held: Fire-bull design; arena ember palette",
+          "image_prompt_start": "photoreal cinematic: Macro close-up of a bronze bull's head, nostrils glowing white-hot and vomiting flame, photoreal.",
+          "image_prompt_end": "photoreal cinematic: A jet of fire surges past the lens as the bull lunges.",
+          "video_prompt_start": "A bull's head fills the frame, nostrils glowing. fire roars outward in a gale. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Fire-bull design; arena ember palette.",
+          "video_prompt_end": "A bull's head fills the frame, nostrils glowing. fire roars outward in a gale. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Fire-bull design; arena ember palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S32",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "jason_A1_fused",
+            "bulls_B2_sheet"
+          ],
+          "ref_scope": "image1: bulls harnessed; image2: field plowed and teeth sown",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "bull design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "Jason binds the tamed bulls to a heavy bronze plow"
+            ],
+            [
+              2.0,
+              3.5,
+              "he drives them across a vast field, sowing something bright"
+            ]
+          ],
+          "narration_mk": "Ги врза за плуг и ги натера да изораат огромно поле.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of a hero driving two bronze bulls yoked to a plow across a vast smoky field, scattering dragon's teeth, photoreal cinematic",
+          "kf_last": "Crane up to reveal the long dark furrows and the glint of sown teeth",
+          "continuity": "Jason and bulls identities; field palette",
+          "motion": "crane-up; plow stroke and seed scatter",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of a hero driving two bronze bulls yoked to a plow across a vast smoky field, scattering dragon's teeth, photoreal cinematic Jason athletic, hero, in armor, cloak, carrying sword, spear, wreathed in golden glow then Jason binds the tamed bulls to a heavy bronze plow, then he drives them across a vast field, sowing something bright the camera crane-up settling into crane up to reveal the long dark furrows and the glint of sown teeth with steel rings, the spear whistles through the air continuity held: Jason and bulls identities; field palette",
+          "image_prompt_start": "photoreal cinematic: wide of a hero driving two bronze bulls yoked to a plow across a vast smoky field, scattering dragon's teeth, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: to reveal the long dark furrows and the glint of sown teeth.",
+          "video_prompt_start": "Jason binds the tamed bulls to a heavy bronze plow. he drives them across a vast field, sowing something bright. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Jason and bulls identities; field palette.",
+          "video_prompt_end": "Jason binds the tamed bulls to a heavy bronze plow. he drives them across a vast field, sowing something bright. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Jason and bulls identities; field palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S33",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "jason_A1_fused"
+          ],
+          "ref_scope": "image1: warriors rising; image2: Jason alone",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "from the furrows, dozens of armed warriors erupt from the earth"
+            ],
+            [
+              2.0,
+              3.5,
+              "they form a ring around the lone hero"
+            ]
+          ],
+          "narration_mk": "Како што рекол кралот, од земјата излегоа десетици воини.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of dozens of armored warriors bursting from dark furrows to encircle a lone hero, soil flying, photoreal Diablo 2 cinematic grade, 1216x704",
+          "kf_last": "The ring closes, shields locking, around the outnumbered hero",
+          "continuity": "Field payoff; earthen warrior palette",
+          "motion": "static; erupting soil and ring formation",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of dozens of armored warriors bursting from dark furrows to encircle a lone hero, soil flying, photoreal Diablo 2 cinematic grade Jason athletic, hero, in armor, cloak, carrying sword, spear, wreathed in golden glow then from the furrows, dozens of armed warriors erupt from the earth, then they form a ring around the lone hero the camera static settling into the ring closes, shields locking, around the outnumbered hero with steel rings, the spear whistles through the air continuity held: Field payoff; earthen warrior palette",
+          "image_prompt_start": "photoreal cinematic: wide of dozens of armored warriors bursting from dark furrows to encircle a lone hero, soil flying, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: The ring closes, shields locking, around the outnumbered hero.",
+          "video_prompt_start": "From the furrows, dozens of armed warriors erupt from the earth. they form a ring around the lone hero. The camera static. The beat resolves into the next matching frame. Continuity held: Field payoff; earthen warrior palette.",
+          "video_prompt_end": "From the furrows, dozens of armed warriors erupt from the earth. they form a ring around the lone hero. The camera static. The beat resolves into the next matching frame. Continuity held: Field payoff; earthen warrior palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S34",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "pan-left",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "jason_A1_fused"
+          ],
+          "ref_scope": "image1: Jason fighting warriors",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "Jason whirls his blade through the earthen ranks"
+            ],
+            [
+              2.0,
+              3.5,
+              "one by one the warriors crumble to clay and dust"
+            ]
+          ],
+          "narration_mk": "А Јасон ги совлада сите, до последниот.",
+          "dialogue_mk": "",
+          "kf_first": "Medium pan-left of a hero cutting through ranks of earthen warriors who crumble back to soil as they fall, photoreal cinematic",
+          "kf_last": "Pan settles as the last warrior collapses into windblown dust behind the victor",
+          "continuity": "Jason identity; earthen warrior palette",
+          "motion": "pan-left; blade arcs and crumbling bodies",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium pan-left of a hero cutting through ranks of earthen warriors who crumble back to soil as they fall, photoreal cinematic Jason athletic, hero, in armor, cloak, carrying sword, spear, wreathed in golden glow then Jason whirls his blade through the earthen ranks, then one by one the warriors crumble to clay and dust the camera pan-left settling into pan settles as the last warrior collapses into windblown dust behind the victor with steel rings, the spear whistles through the air continuity held: Jason identity; earthen warrior palette",
+          "image_prompt_start": "photoreal cinematic: -left of a hero cutting through ranks of earthen warriors who crumble back to soil as they fall, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: as the last warrior collapses into windblown dust behind the victor.",
+          "video_prompt_start": "Jason whirls his blade through the earthen ranks. one by one the warriors crumble to clay and dust. The camera pan-left. The beat resolves into the next matching frame. Continuity held: Jason identity; earthen warrior palette.",
+          "video_prompt_end": "Jason whirls his blade through the earthen ranks. one by one the warriors crumble to clay and dust. The camera pan-left. The beat resolves into the next matching frame. Continuity held: Jason identity; earthen warrior palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S35",
+          "shot_type": "BOSS-ONLY",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "dragon_B1_sheet"
+          ],
+          "ref_scope": "image1: dragon boss on its lair",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "dragon design",
+            "scale texture",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "a shadowed mountain looms, a cave mouth glowing gold"
+            ],
+            [
+              2.0,
+              3.5,
+              "inside, the dragon's eye tracks the intruder"
+            ]
+          ],
+          "narration_mk": "Остануваше последната задача: огромниот змеј што никогаш не спие.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of a shadowed mountain lair whose cave mouth glows with gold, the silhouette of a vast dragon within, photoreal Diablo 2 cinematic grade, 1216x704",
+          "kf_last": "Crane up as the dragon's head lifts, one eye fixed on the entrance",
+          "continuity": "Dragon boss continuity from S19; lair palette",
+          "motion": "crane-up; head lift and ember glow",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of a shadowed mountain lair whose cave mouth glows with gold, the silhouette of a vast dragon within, photoreal Diablo 2 cinematic grade then a shadowed mountain looms, a cave mouth glowing gold, then inside, the dragon's eye tracks the intruder the camera crane-up settling into crane up as the dragon's head lifts, one eye fixed on the entrance continuity held: Dragon boss continuity from S19; lair palette",
+          "image_prompt_start": "photoreal cinematic: wide of a shadowed mountain lair whose cave mouth glows with gold, the silhouette of a vast dragon within, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: as the dragon's head lifts, one eye fixed on the entrance.",
+          "video_prompt_start": "A shadowed mountain looms, a cave mouth glowing gold. inside, the dragon's eye tracks the intruder. The camera crane-up. The action plays out at full force and lands in a held, readable end pose. Continuity held: Dragon boss continuity from S19; lair palette.",
+          "video_prompt_end": "A shadowed mountain looms, a cave mouth glowing gold. inside, the dragon's eye tracks the intruder. The camera crane-up. The action plays out at full force and lands in a held, readable end pose. Continuity held: Dragon boss continuity from S19; lair palette.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S36",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "medea_A5_fused",
+            "jason_A1_fused"
+          ],
+          "ref_scope": "image1: Medea offering potion; image2: Jason accepting",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "in the gloom, Medea presses a small vial into Jason's hands"
+            ],
+            [
+              2.0,
+              3.5,
+              "their fingers meet, and she whispers urgency"
+            ]
+          ],
+          "narration_mk": "Но Медеја веќе знаеше како да му помогне.",
+          "dialogue_mk": "Медеја: „Оваа напивка ќе му донесе сон — барем за неколку минути.“",
+          "kf_first": "Medium of a sorceress pressing a glowing vial into the hands of a hero in a dark passage, their faces lit by the potion's light, photoreal, 1216x704",
+          "kf_last": "Push-in on their joined hands and her pleading eyes before the final task",
+          "continuity": "Medea and Jason identities; lair-edge palette",
+          "motion": "slow push-in; potion glow and whispered breath",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of a sorceress pressing a glowing vial into the hands of a hero in a dark passage, their faces lit by the potion's light, photoreal Medea slender, mage, in cloak, dress, carrying staff, wreathed in rune ring, fire wisps Jason athletic, hero, in armor, cloak, carrying sword, spear, wreathed in golden glow then in the gloom, Medea presses a small vial into Jason's hands, then their fingers meet, and she whispers urgency the camera push-in settling into push-in on their joined hands and her pleading eyes before the final task with arcane energy crackles, magic sizzles a voice speaks in Macedonian: \"Медеја: „Оваа напивка ќе му донесе сон — барем за неколку минути.“\" continuity held: Medea and Jason identities; lair-edge palette",
+          "image_prompt_start": "photoreal cinematic: of a sorceress pressing a glowing vial into the hands of a hero in a dark passage, their faces lit by the potion's light, photoreal.",
+          "image_prompt_end": "photoreal cinematic: on their joined hands and her pleading eyes before the final task.",
+          "video_prompt_start": "In the gloom, Medea presses a small vial into Jason's hands. their fingers meet, and she whispers urgency. The camera push-in. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Медеја: „Оваа напивка ќе му донесе сон — барем за неколку минути.“\" Continuity held: Medea and Jason identities; lair-edge palette.",
+          "video_prompt_end": "In the gloom, Medea presses a small vial into Jason's hands. their fingers meet, and she whispers urgency. The camera push-in. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Медеја: „Оваа напивка ќе му донесе сон — барем за неколку минути.“\" Continuity held: Medea and Jason identities; lair-edge palette.",
+          "motion_intensity": "moderate"
+        }
+      ]
+    },
+    {
+      "id": "act3",
+      "num": "Act III",
+      "title": "Златното Руно",
+      "color": "#8a5a9e",
+      "pct": 25,
+      "synopsis": "Јасон со напивката на Медеја го заспива неспијниот змеј, го грабнува Златното Руно и со Медеја плови назад кон Јолк. Пред запрепастениот Пелеј, Јасон си го бара тронот.",
+      "location_ref": "colchis_dragon_lair_iolcus_throne",
+      "global_locks": [
+        "palette — gold on dark, ember, dawn return",
+        "light — potion glow then dawn",
+        "lens — close and wide"
+      ],
+      "palette": [
+        "#e0a23c",
+        "#5a2c1f",
+        "#2dd4bf"
+      ],
+      "light_direction": "key light from screen-right, potion glow into breaking dawn",
+      "time_of_day": "night",
+      "shots": [
+        {
+          "id": "S37",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "medea_A5_fused",
+            "jason_A1_fused"
+          ],
+          "ref_scope": "image1: potion vial between hands",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "potion glow",
+            "face identity",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the vial glows brighter between their fingers"
+            ],
+            [
+              1.5,
+              3.0,
+              "a wisp of golden vapor curls from its lip"
+            ]
+          ],
+          "narration_mk": "Тие мигови се чинеа вечни.",
+          "dialogue_mk": "",
+          "kf_first": "Macro of a small glass vial glowing with golden liquid held between a hero's and a sorceress's fingers, vapor rising, photoreal, 1216x704",
+          "kf_last": "Golden vapor curls upward as the two hands steady it together",
+          "continuity": "Potion glow; Medea and Jason hands; lair-edge palette",
+          "motion": "macro push-in; vapor curl",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro of a small glass vial glowing with golden liquid held between a hero's and a sorceress's fingers, vapor rising, photoreal Medea slender, mage, in cloak, dress, carrying staff, wreathed in rune ring, fire wisps Jason athletic, hero, in armor, cloak, carrying sword, spear, wreathed in golden glow then the vial glows brighter between their fingers, then a wisp of golden vapor curls from its lip the camera push-in settling into golden vapor curls upward as the two hands steady it together with arcane energy crackles, magic sizzles continuity held: Potion glow; Medea and Jason hands; lair-edge palette",
+          "image_prompt_start": "photoreal cinematic: Macro of a small glass vial glowing with golden liquid held between a hero's and a sorceress's fingers, vapor rising, photoreal.",
+          "image_prompt_end": "photoreal cinematic: Golden vapor curls upward as the two hands steady it together.",
+          "video_prompt_start": "The vial glows brighter between their fingers. a wisp of golden vapor curls from its lip. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Potion glow; Medea and Jason hands; lair-edge palette.",
+          "video_prompt_end": "The vial glows brighter between their fingers. a wisp of golden vapor curls from its lip. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Potion glow; Medea and Jason hands; lair-edge palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S38",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "dragon_B1_sheet",
+            "jason_A1_fused"
+          ],
+          "ref_scope": "image1: dragon vs Jason; image2: hero approaching",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "dragon design",
+            "face identity",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "Jason advances into the gold-lit cavern, vial in hand"
+            ],
+            [
+              2.0,
+              3.5,
+              "the dragon uncoils, smoke pluming from its jaws"
+            ]
+          ],
+          "narration_mk": "Јасон зачекори во змејската дувка.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of a lone hero approaching a vast coiled dragon in a gold-lit cavern, the monster rising to full height, photoreal Diablo 2 cinematic grade, 1216x704",
+          "kf_last": "Crane up as the dragon rears, its unblinking eye pinning the tiny hero",
+          "continuity": "Dragon and Jason identities; lair gold palette",
+          "motion": "crane-up; dragon uncoil and smoke plume",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of a lone hero approaching a vast coiled dragon in a gold-lit cavern, the monster rising to full height, photoreal Diablo 2 cinematic grade Jason athletic, hero, in armor, cloak, carrying sword, spear, wreathed in golden glow then Jason advances into the gold-lit cavern, vial in hand, then the dragon uncoils, smoke pluming from its jaws the camera crane-up settling into crane up as the dragon rears, its unblinking eye pinning the tiny hero with steel rings, the spear whistles through the air continuity held: Dragon and Jason identities; lair gold palette",
+          "image_prompt_start": "photoreal cinematic: wide of a lone hero approaching a vast coiled dragon in a gold-lit cavern, the monster rising to full height, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: as the dragon rears, its unblinking eye pinning the tiny hero.",
+          "video_prompt_start": "Jason advances into the gold-lit cavern, vial in hand. the dragon uncoils, smoke pluming from its jaws. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Dragon and Jason identities; lair gold palette.",
+          "video_prompt_end": "Jason advances into the gold-lit cavern, vial in hand. the dragon uncoils, smoke pluming from its jaws. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Dragon and Jason identities; lair gold palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S39",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "jason_A1_fused",
+            "dragon_B1_sheet"
+          ],
+          "ref_scope": "image1: Jason casting potion; image2: dragon inhaling",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "dragon design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "Jason hurls the vial, and golden mist bursts over the beast"
+            ],
+            [
+              2.0,
+              3.5,
+              "the dragon inhales the vapor, a low rumble dying in its chest"
+            ]
+          ],
+          "narration_mk": "Го опсипа со напивката од Медеја.",
+          "dialogue_mk": "",
+          "kf_first": "Medium track of a hero hurling a glowing vial that bursts into golden mist over a dragon's face, the beast inhaling, photoreal cinematic",
+          "kf_last": "The vapor settles over the beast as the rumble in its chest fades",
+          "continuity": "Jason and dragon identities; potion-gold palette",
+          "motion": "lateral track; vial arc and mist bloom",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium track of a hero hurling a glowing vial that bursts into golden mist over a dragon's face, the beast inhaling, photoreal cinematic Jason athletic, hero, in armor, cloak, carrying sword, spear, wreathed in golden glow then Jason hurls the vial, and golden mist bursts over the beast, then the dragon inhales the vapor, a low rumble dying in its chest the camera track settling into the vapor settles over the beast as the rumble in its chest fades with steel rings, the spear whistles through the air continuity held: Jason and dragon identities; potion-gold palette",
+          "image_prompt_start": "photoreal cinematic: of a hero hurling a glowing vial that bursts into golden mist over a dragon's face, the beast inhaling, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The vapor over the beast as the rumble in its chest fades.",
+          "video_prompt_start": "Jason hurls the vial, and golden mist bursts over the beast. the dragon inhales the vapor, a low rumble dying in its chest. The camera track. The beat resolves into the next matching frame. Continuity held: Jason and dragon identities; potion-gold palette.",
+          "video_prompt_end": "Jason hurls the vial, and golden mist bursts over the beast. the dragon inhales the vapor, a low rumble dying in its chest. The camera track. The beat resolves into the next matching frame. Continuity held: Jason and dragon identities; potion-gold palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S40",
+          "shot_type": "BOSS-ONLY",
+          "size": "CLOSE-UP",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "dragon_B1_sheet"
+          ],
+          "ref_scope": "image1: dragon eye closing",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "dragon design",
+            "scale texture",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the great eye blinks once, twice"
+            ],
+            [
+              1.5,
+              3.0,
+              "the lid lowers and stays, breath slowing to a rumble"
+            ]
+          ],
+          "narration_mk": "И чудовиштето, за првпат, заспа.",
+          "dialogue_mk": "",
+          "kf_first": "Macro close-up of a vast dragon's eye as its armored lid slowly lowers and stays closed, breath fogging the scales, photoreal, 1216x704",
+          "kf_last": "The scaly lid settles, the eye beneath going dark and still",
+          "continuity": "Dragon boss design; lair gold-dim palette",
+          "motion": "macro push-in; slow blink and breath fog",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro close-up of a vast dragon's eye as its armored lid slowly lowers and stays closed, breath fogging the scales, photoreal then the great eye blinks once, twice, then the lid lowers and stays, breath slowing to a rumble the camera push-in settling into the scaly lid settles, the eye beneath going dark and still continuity held: Dragon boss design; lair gold-dim palette",
+          "image_prompt_start": "photoreal cinematic: Macro close-up of a vast dragon's eye as its armored lid slowly lowers and stays closed, breath fogging the scales, photoreal.",
+          "image_prompt_end": "photoreal cinematic: The scaly lid , the eye beneath going dark and still.",
+          "video_prompt_start": "The great eye blinks once, twice. the lid lowers and stays, breath slowing to a rumble. The camera push-in. The action plays out at full force and lands in a held, readable end pose. Continuity held: Dragon boss design; lair gold-dim palette.",
+          "video_prompt_end": "The great eye blinks once, twice. the lid lowers and stays, breath slowing to a rumble. The camera push-in. The action plays out at full force and lands in a held, readable end pose. Continuity held: Dragon boss design; lair gold-dim palette.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S41",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "pan-left",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "jason_A1_fused",
+            "fleece_A8"
+          ],
+          "ref_scope": "image1: Jason taking fleece; image2: fleece in his arms",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "fleece design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "Jason climbs the coils toward the glowing prize"
+            ],
+            [
+              2.0,
+              3.5,
+              "he lifts the golden fleece free in both arms"
+            ]
+          ],
+          "narration_mk": "Јунакот го грабна Златното Руно.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of a hero climbing a giant's coils to lift a glowing golden fleece from its perch, light spilling over him, photoreal Diablo 2 cinematic grade, 1216x704",
+          "kf_last": "Pan-left as he raises the fleece high, its light washing over the cavern",
+          "continuity": "Jason and fleece identities; gold cavern palette",
+          "motion": "pan-left; climb and fleece lift",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of a hero climbing a giant's coils to lift a glowing golden fleece from its perch, light spilling over him, photoreal Diablo 2 cinematic grade Jason athletic, hero, in armor, cloak, carrying sword, spear, wreathed in golden glow then Jason climbs the coils toward the glowing prize, then he lifts the golden fleece free in both arms the camera pan-left settling into pan-left as he raises the fleece high, its light washing over the cavern with steel rings, the spear whistles through the air continuity held: Jason and fleece identities; gold cavern palette",
+          "image_prompt_start": "photoreal cinematic: wide of a hero climbing a giant's coils to lift a glowing golden fleece from its perch, light spilling over him, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: -left as he raises the fleece high, its light washing over the cavern.",
+          "video_prompt_start": "Jason climbs the coils toward the glowing prize. he lifts the golden fleece free in both arms. The camera pan-left. The beat resolves into the next matching frame. Continuity held: Jason and fleece identities; gold cavern palette.",
+          "video_prompt_end": "Jason climbs the coils toward the glowing prize. he lifts the golden fleece free in both arms. The camera pan-left. The beat resolves into the next matching frame. Continuity held: Jason and fleece identities; gold cavern palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S42",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "fleece_A8",
+            "jason_A1_fused"
+          ],
+          "ref_scope": "image1: fleece glow reflecting on Jason",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "fleece design",
+            "face identity",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the fleece's golden light washes over Jason's awed face"
+            ],
+            [
+              1.5,
+              3.0,
+              "each strand gleams like captured sun"
+            ]
+          ],
+          "narration_mk": "Светлината од руното му го осветли лицето.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of a golden fleece held aloft, its light washing over a hero's awed face, photoreal, 1216x704",
+          "kf_last": "The glow intensifies, each wool strand like captured sunlight",
+          "continuity": "Fleece and Jason identities; gold light palette",
+          "motion": "macro push-in; light pulse on skin",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of a golden fleece held aloft, its light washing over a hero's awed face, photoreal Jason athletic, hero, in armor, cloak, carrying sword, spear, wreathed in golden glow then the fleece's golden light washes over Jason's awed face, then each strand gleams like captured sun the camera push-in settling into the glow intensifies, each wool strand like captured sunlight with steel rings, the spear whistles through the air continuity held: Fleece and Jason identities; gold light palette",
+          "image_prompt_start": "photoreal cinematic: of a golden fleece held aloft, its light washing over a hero's awed face, photoreal.",
+          "image_prompt_end": "photoreal cinematic: The glow intensifies, each wool strand like captured sunlight.",
+          "video_prompt_start": "The fleece's golden light washes over Jason's awed face. each strand gleams like captured sun. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Fleece and Jason identities; gold light palette.",
+          "video_prompt_end": "The fleece's golden light washes over Jason's awed face. each strand gleams like captured sun. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Fleece and Jason identities; gold light palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S43",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "jason_A1_fused",
+            "medea_A5_fused",
+            "fleece_A8"
+          ],
+          "ref_scope": "image1: Jason and Medea fleeing together",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "fleece design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "Jason and Medea race through the dark halls, fleece bundled"
+            ],
+            [
+              2.0,
+              3.5,
+              "behind them, the path begins to crumble"
+            ]
+          ],
+          "narration_mk": "И заедно со Медеја, побегнаа кон бродот.",
+          "dialogue_mk": "",
+          "kf_first": "Wide track of a hero and a sorceress fleeing side by side through collapsing stone halls, the golden fleece bundled between them, photoreal cinematic",
+          "kf_last": "The path crumbles behind them as they burst toward the harbor light",
+          "continuity": "Jason, Medea and fleece identities; escape palette",
+          "motion": "lateral track; run and falling stone",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide track of a hero and a sorceress fleeing side by side through collapsing stone halls, the golden fleece bundled between them, photoreal cinematic Jason athletic, hero, in armor, cloak, carrying sword, spear, wreathed in golden glow Medea slender, mage, in cloak, dress, carrying staff, wreathed in rune ring, fire wisps then Jason and Medea race through the dark halls, fleece bundled, then behind them, the path begins to crumble the camera track settling into the path crumbles behind them as they burst toward the harbor light with steel rings, the spear whistles through the air continuity held: Jason, Medea and fleece identities; escape palette",
+          "image_prompt_start": "photoreal cinematic: of a hero and a sorceress fleeing side by side through collapsing stone halls, the golden fleece bundled between them, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The path crumbles behind them as they burst toward the harbor light.",
+          "video_prompt_start": "Jason and Medea race through the dark halls, fleece bundled. behind them, the path begins to crumble. The camera track. The beat resolves into the next matching frame. Continuity held: Jason, Medea and fleece identities; escape palette.",
+          "video_prompt_end": "Jason and Medea race through the dark halls, fleece bundled. behind them, the path begins to crumble. The camera track. The beat resolves into the next matching frame. Continuity held: Jason, Medea and fleece identities; escape palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S44",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "argo_A9",
+            "jason_A1_fused",
+            "medea_A5_fused"
+          ],
+          "ref_scope": "image1: Argo return voyage",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "ship design",
+            "face identity",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "the Argo sails out under a crimson dawn"
+            ],
+            [
+              2.0,
+              3.5,
+              "Jason stands at the prow, fleece glowing beside Medea"
+            ]
+          ],
+          "narration_mk": "И пловија назад, кон Јолк.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of the Argo sailing into a crimson dawn, Jason and Medea at the prow with the glowing fleece, photoreal Diablo 2 cinematic grade, 1216x704",
+          "kf_last": "Crane down to the prow where the fleece glows bright against the darkening sea",
+          "continuity": "Argo, Jason, Medea, fleece identities; dawn return palette",
+          "motion": "crane-down; deck rise and fleece glow",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of the Argo sailing into a crimson dawn, Jason and Medea at the prow with the glowing fleece, photoreal Diablo 2 cinematic grade Jason athletic, hero, in armor, cloak, carrying sword, spear, wreathed in golden glow Medea slender, mage, in cloak, dress, carrying staff, wreathed in rune ring, fire wisps then the Argo sails out under a crimson dawn, then Jason stands at the prow, fleece glowing beside Medea the camera crane-down settling into crane down to the prow where the fleece glows bright against the darkening sea with steel rings, the spear whistles through the air continuity held: Argo, Jason, Medea, fleece identities; dawn return palette",
+          "image_prompt_start": "photoreal cinematic: wide of the Argo sailing into a crimson dawn, Jason and Medea at the prow with the glowing fleece, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: to the prow where the fleece glows bright against the darkening sea.",
+          "video_prompt_start": "The Argo sails out under a crimson dawn. Jason stands at the prow, fleece glowing beside Medea. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Argo, Jason, Medea, fleece identities; dawn return palette.",
+          "video_prompt_end": "The Argo sails out under a crimson dawn. Jason stands at the prow, fleece glowing beside Medea. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Argo, Jason, Medea, fleece identities; dawn return palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S45",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "jason_A1_fused",
+            "medea_A5_fused",
+            "pelias_A3_fused"
+          ],
+          "ref_scope": "image1: Jason entering throne hall with fleece",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "fleece design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "Jason strides into the great hall, fleece held high"
+            ],
+            [
+              2.0,
+              3.5,
+              "the court falls silent, all eyes on him"
+            ]
+          ],
+          "narration_mk": "Стигнаа пред Пелеј — и му го покажаа неговото исполнето ветување.",
+          "dialogue_mk": "",
+          "kf_first": "Wide track of a hero striding into a marble throne hall holding a radiant golden fleece aloft, a sorceress at his side, courtiers staring, photoreal cinematic",
+          "kf_last": "The hall falls deathly still as the king half-rises from his throne",
+          "continuity": "Jason, Medea, Pelias identities; throne-hall return palette",
+          "motion": "lateral track; robe sway and court hush",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide track of a hero striding into a marble throne hall holding a radiant golden fleece aloft, a sorceress at his side, courtiers staring, photoreal cinematic Jason athletic, hero, in armor, cloak, carrying sword, spear, wreathed in golden glow Medea slender, mage, in cloak, dress, carrying staff, wreathed in rune ring, fire wisps Pelias robed, trickster, in crown, royal robes, beard, wreathed in shadow smoke then Jason strides into the great hall, fleece held high, then the court falls silent, all eyes on him the camera track settling into the hall falls deathly still as the king half-rises from his throne with steel rings, the spear whistles through the air continuity held: Jason, Medea, Pelias identities; throne-hall return palette",
+          "image_prompt_start": "photoreal cinematic: of a hero striding into a marble throne hall holding a radiant golden fleece aloft, a sorceress at his side, courtiers staring, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The hall falls deathly still as the king half- from his throne.",
+          "video_prompt_start": "Jason strides into the great hall, fleece held high. the court falls silent, all eyes on him. The camera track. The beat resolves into the next matching frame. Continuity held: Jason, Medea, Pelias identities; throne-hall return palette.",
+          "video_prompt_end": "Jason strides into the great hall, fleece held high. the court falls silent, all eyes on him. The camera track. The beat resolves into the next matching frame. Continuity held: Jason, Medea, Pelias identities; throne-hall return palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S46",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "shot-reverse",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "pelias_A3_fused"
+          ],
+          "ref_scope": "image1: Pelias stunned; image2: empty throne",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "Pelias's mocking confidence drains from his face"
+            ],
+            [
+              2.0,
+              3.5,
+              "his fingers grip the throne arms"
+            ]
+          ],
+          "narration_mk": "И тогаш Пелеј сфати.",
+          "dialogue_mk": "Пелеј: „Тоа е невозможно...“",
+          "kf_first": "Low-angle medium of a king's face crumbling from arrogance to shock, throne towering behind him, photoreal, 1216x704",
+          "kf_last": "His knuckles whiten on the throne arms as the truth settles",
+          "continuity": "Pelias identity; throne-hall palette",
+          "motion": "shot-reverse; face fall and grip tighten",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of a king's face crumbling from arrogance to shock, throne towering behind him, photoreal Pelias robed, trickster, in crown, royal robes, beard, wreathed in shadow smoke then Pelias's mocking confidence drains from his face, then his fingers grip the throne arms the camera shot-reverse settling into his knuckles whiten on the throne arms as the truth settles with shadows whisper a voice speaks in Macedonian: \"Пелеј: „Тоа е невозможно...“\" continuity held: Pelias identity; throne-hall palette",
+          "image_prompt_start": "photoreal cinematic: medium of a king's face crumbling from arrogance to shock, throne towering behind him, photoreal.",
+          "image_prompt_end": "photoreal cinematic: His knuckles whiten on the throne arms as the truth.",
+          "video_prompt_start": "Pelias's mocking confidence drains from his face. his fingers grip the throne arms. The camera shot-reverse. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Пелеј: „Тоа е невозможно...“\" Continuity held: Pelias identity; throne-hall palette.",
+          "video_prompt_end": "Pelias's mocking confidence drains from his face. his fingers grip the throne arms. The camera shot-reverse. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Пелеј: „Тоа е невозможно...“\" Continuity held: Pelias identity; throne-hall palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S47",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "jason_A1_fused",
+            "medea_A5_fused"
+          ],
+          "ref_scope": "image1: Jason claiming the throne",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "fleece design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "Jason steps forward, fleece before him"
+            ],
+            [
+              2.0,
+              3.5,
+              "Medea stands proud at his side"
+            ]
+          ],
+          "narration_mk": "А Јасон, со руното во раце, си го побара тронот.",
+          "dialogue_mk": "Јасон: „Ги исполнив задачите. Круната е моја.“",
+          "kf_first": "Low-angle medium of a hero stepping forward with the golden fleece, a sorceress proud at his side, before the dais of power, photoreal cinematic",
+          "kf_last": "The fleece's light spills over the steps as he claims his birthright",
+          "continuity": "Jason, Medea, fleece identities; throne-hall palette",
+          "motion": "static; fleece light and steady breath",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of a hero stepping forward with the golden fleece, a sorceress proud at his side, before the dais of power, photoreal cinematic Jason athletic, hero, in armor, cloak, carrying sword, spear, wreathed in golden glow Medea slender, mage, in cloak, dress, carrying staff, wreathed in rune ring, fire wisps then Jason steps forward, fleece before him, then Medea stands proud at his side the camera static settling into the fleece's light spills over the steps as he claims his birthright with steel rings, the spear whistles through the air a voice speaks in Macedonian: \"Јасон: „Ги исполнив задачите. Круната е моја.“\" continuity held: Jason, Medea, fleece identities; throne-hall palette",
+          "image_prompt_start": "photoreal cinematic: medium of a hero stepping forward with the golden fleece, a sorceress proud at his side, before the dais of power, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The fleece's light spills over the steps as he claims his birthright.",
+          "video_prompt_start": "Jason steps forward, fleece before him. Medea stands proud at his side. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Јасон: „Ги исполнив задачите. Круната е моја.“\" Continuity held: Jason, Medea, fleece identities; throne-hall palette.",
+          "video_prompt_end": "Jason steps forward, fleece before him. Medea stands proud at his side. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Јасон: „Ги исполнив задачите. Круната е моја.“\" Continuity held: Jason, Medea, fleece identities; throne-hall palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S48",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "crane-up",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "jason_A1_fused",
+            "medea_A5_fused",
+            "argo_A9"
+          ],
+          "ref_scope": "image1: Jason triumphant return",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "fleece design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "Jason stands on the palace steps, fleece raised"
+            ],
+            [
+              2.0,
+              4.0,
+              "the city below erupts in torchlight and cheers"
+            ]
+          ],
+          "narration_mk": "И така, Јасон си го врати наследството — со срце, дружина и една верна волшебничка до себе.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of a hero on the palace steps raising the golden fleece as the city below erupts in torchlight and cheering crowds, photoreal Diablo 2 cinematic grade, 1216x704",
+          "kf_last": "Crane up over the celebrating city toward a dawn breaking on the distant sea",
+          "continuity": "Jason, Medea, fleece identities; triumphant dawn palette",
+          "motion": "crane-up; crowd cheer and dawn break",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of a hero on the palace steps raising the golden fleece as the city below erupts in torchlight and cheering crowds, photoreal Diablo 2 cinematic grade Jason athletic, hero, in armor, cloak, carrying sword, spear, wreathed in golden glow Medea slender, mage, in cloak, dress, carrying staff, wreathed in rune ring, fire wisps then Jason stands on the palace steps, fleece raised, then the city below erupts in torchlight and cheers the camera crane-up settling into crane up over the celebrating city toward a dawn breaking on the distant sea with steel rings, the spear whistles through the air continuity held: Jason, Medea, fleece identities; triumphant dawn palette",
+          "image_prompt_start": "photoreal cinematic: wide of a hero on the palace steps raising the golden fleece as the city below erupts in torchlight and cheering crowds, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: over the celebrating city toward a dawn breaking on the distant sea.",
+          "video_prompt_start": "Jason stands on the palace steps, fleece raised. the city below erupts in torchlight and cheers. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Jason, Medea, fleece identities; triumphant dawn palette.",
+          "video_prompt_end": "Jason stands on the palace steps, fleece raised. the city below erupts in torchlight and cheers. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Jason, Medea, fleece identities; triumphant dawn palette.",
+          "motion_intensity": "moderate"
+        }
+      ]
+    }
+  ],
+  "director_corrections": {
+    "issued": "2026-11-07",
+    "source": "KB §13 DIRECTOR CORRECTIONS — overrides all prior asset/keyframe guidance",
+    "rules": [
+      "DD HEADWEAR: no cap/hood/bandana/mask on head; hood = back-cowl only (cape-like); bare head + teal-blue glowing hair always visible; any head/face covering = REJECT",
+      "LEGENDARY WEAPONS MUST APPEAR: DD = twin Frostbite-class hand crossbows (ice-blue arcane crystal limbs, frost runes, frozen-light string, teal-blue glow); AZ = Dawnbreaker-class greatsword (pale sunsteel, molten-gold runes, golden holy fire edge, sunburst crossguard); hero sheet/keyframe without weapon = INCOMPLETE",
+      "WEAPON ANTI-SLOP: fantasy construction only; crossbow must NEVER read as firearm (no barrel/magazine/stock/Uzi/SMG silhouette = REJECT); anti-slop negatives always appended",
+      "BOSS FACE: Mal'garot HAS a prolific molten-lava face (lava dripping/running, drops falling to ground); faceless boss sheets SUPERSEDED",
+      "LOCATION BRIGHTNESS FLOOR: environment plates silhouette-readable at thumbnail; no murk-dark grades"
+    ],
+    "applies_when": "Activates when face_lock changes from AI-default to an enrolled identity (DD/AZ). AI-default packages carry this as a forward constraint, not a current defect.",
+    "anti_slop_negatives": "firearm, gun, machinegun, Uzi, barrel, magazine, ammo clip, muzzle, modern weapon"
+  },
+  "character_designs": {
+    "jason": {
+      "archetype": "hero",
+      "build": "athletic",
+      "scale": "human",
+      "palette": {
+        "primary": "#d4a017",
+        "secondary": "#2f6d8c",
+        "glow": "#fbbf24"
+      },
+      "costume": [
+        "armor",
+        "cloak"
+      ],
+      "props": [
+        "sword",
+        "spear"
+      ],
+      "fx": [
+        "golden_glow"
+      ]
+    },
+    "alcimede": {
+      "archetype": "monarch",
+      "build": "robed",
+      "scale": "human",
+      "palette": {
+        "primary": "#d98a3d",
+        "secondary": "#f5e6c8",
+        "glow": "#fde68a"
+      },
+      "costume": [
+        "royal_robes",
+        "cloak"
+      ],
+      "props": [],
+      "fx": []
+    },
+    "pelias": {
+      "archetype": "trickster",
+      "build": "robed",
+      "scale": "human",
+      "palette": {
+        "primary": "#d9b45b",
+        "secondary": "#5b2150",
+        "glow": "#c94c4c"
+      },
+      "costume": [
+        "crown",
+        "royal_robes",
+        "beard"
+      ],
+      "props": [],
+      "fx": [
+        "shadow_smoke"
+      ]
+    },
+    "chiron": {
+      "archetype": "creature",
+      "build": "hulking",
+      "scale": "large",
+      "palette": {
+        "primary": "#8a5a2b",
+        "secondary": "#d4a017",
+        "glow": "#a7f3d0"
+      },
+      "costume": [
+        "beard"
+      ],
+      "props": [
+        "bow"
+      ],
+      "fx": [
+        "holy_aura"
+      ]
+    },
+    "medea": {
+      "archetype": "mage",
+      "build": "slender",
+      "scale": "human",
+      "palette": {
+        "primary": "#14532d",
+        "secondary": "#2f6d8c",
+        "glow": "#2dd4bf"
+      },
+      "costume": [
+        "cloak",
+        "dress"
+      ],
+      "props": [
+        "staff"
+      ],
+      "fx": [
+        "rune_ring",
+        "fire_wisps"
+      ]
+    },
+    "aeetes": {
+      "archetype": "monarch",
+      "build": "robed",
+      "scale": "human",
+      "palette": {
+        "primary": "#5a2c1f",
+        "secondary": "#d9b45b",
+        "glow": "#b3481f"
+      },
+      "costume": [
+        "crown",
+        "royal_robes",
+        "beard"
+      ],
+      "props": [],
+      "fx": [
+        "fire_wisps"
+      ]
+    },
+    "dragon": {
+      "archetype": "monster",
+      "build": "hulking",
+      "scale": "huge",
+      "palette": {
+        "primary": "#5a2c1f",
+        "secondary": "#8a5a2b",
+        "glow": "#f59e0b"
+      },
+      "costume": [
+        "armor"
+      ],
+      "props": [],
+      "fx": [
+        "fire_wisps",
+        "shadow_smoke"
+      ]
+    },
+    "argonauts": {
+      "archetype": "warrior",
+      "build": "athletic",
+      "scale": "human",
+      "palette": {
+        "primary": "#8a5a2b",
+        "secondary": "#2f6d8c",
+        "glow": "#fbbf24"
+      },
+      "costume": [
+        "armor",
+        "cloak"
+      ],
+      "props": [
+        "spear",
+        "sword"
+      ],
+      "fx": []
+    }
+  }
+}

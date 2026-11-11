@@ -1,0 +1,760 @@
+<!DOCTYPE html><html lang="mk"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ловецот и Паладинот: Господарот на Пепелта — Cinematic Storyboard</title><style>
+:root{--bg:#050507;--ink:#f5f2ea;--mut:#98988f;--hair:rgba(255,255,255,.08);--gold:#d4af37;--ease:cubic-bezier(0.32,0.72,0,1);}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:
+  radial-gradient(1100px 520px at 88% -8%,rgba(212,175,55,.13),transparent 60%),
+  radial-gradient(900px 480px at -8% 12%,rgba(45,212,191,.10),transparent 55%),
+  radial-gradient(1000px 680px at 50% 112%,rgba(239,68,68,.09),transparent 60%),
+  var(--bg);color:var(--ink);font-family:'Clash Display','Plus Jakarta Sans',system-ui,-apple-system,sans-serif;
+  line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+body::before{content:"";position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+.nav{position:sticky;top:0;z-index:50;display:flex;justify-content:center;padding:14px 0;}
+.nav-in{display:flex;gap:4px;align-items:center;padding:5px;background:rgba(10,10,14,.72);
+  backdrop-filter:blur(22px);border:1px solid var(--hair);border-radius:999px;}
+.nav-in a{color:var(--mut);text-decoration:none;font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;padding:7px 14px;border-radius:999px;transition:all .6s var(--ease);}
+.nav-in a:hover{color:var(--ink);background:rgba(255,255,255,.06)}
+.wrap{max-width:1360px;margin:0 auto;padding:40px 26px 140px;}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;padding:6px 14px;border-radius:999px;
+  border:1px solid var(--hair);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 12px var(--gold)}
+h1{font-size:clamp(2.6rem,7vw,5.6rem);line-height:.98;letter-spacing:-.035em;margin:20px 0 12px;
+  background:linear-gradient(120deg,#fff 22%,#d8d4c8 68%,#8f8b81);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.lede{max-width:760px;color:var(--mut);font-size:1.05rem;}
+.meta{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 6px;}
+.chip{padding:9px 16px;border-radius:14px;border:1px solid var(--hair);background:rgba(255,255,255,.03);font-size:13px;color:var(--mut);}
+.chip b{color:var(--ink);font-weight:600}
+.chip.gold{color:var(--gold);border-color:rgba(212,175,55,.35)}
+.shell{border-radius:2rem;padding:8px;background:rgba(255,255,255,.04);border:1px solid var(--hair);margin:40px 0;}
+.core{border-radius:calc(2rem - 8px);background:rgba(8,8,11,.72);box-shadow:inset 0 1px 1px rgba(255,255,255,.07);padding:28px;overflow:hidden;}
+.g{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;}
+.c{border-radius:1.3rem;padding:14px;background:rgba(255,255,255,.025);border:1px solid var(--hair);
+  transition:transform .7s var(--ease),border-color .7s var(--ease),background .7s var(--ease),box-shadow .7s var(--ease);}
+.c:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.2);background:rgba(255,255,255,.05);box-shadow:0 18px 40px -24px rgba(0,0,0,.8)}
+.sp2{grid-column:span 2}.sp3{grid-column:span 3}.sp4{grid-column:span 4}.sp5{grid-column:span 5}.sp6{grid-column:span 6}.sp8{grid-column:span 8}.sp12{grid-column:span 12}
+.frame{position:relative;border-radius:11px;overflow:hidden;aspect-ratio:16/10;background:linear-gradient(160deg,#12121a,#0b0b10);border:1px solid var(--hair);}
+.frame svg{width:100%;height:100%;display:block}
+.sid{position:absolute;top:12px;left:12px;font-size:9px;letter-spacing:.16em;color:var(--gold);font-weight:600;
+  padding:3px 9px;border-radius:999px;background:rgba(0,0,0,.6);border:1px solid var(--hair)}
+.gm{margin-top:12px;font-size:11.5px;color:var(--mut);line-height:1.45}
+.gm b{color:var(--ink);font-weight:600;letter-spacing:.03em}
+.cue{margin-top:8px;font-size:12.3px;border-left:2px solid;padding-left:9px;}
+.cue.narr{border-color:#2dd4bf;color:#bfe8e1}.cue.dlg{border-color:#f59e0b;color:#f3d9a8}
+.cue .tag{font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;opacity:.7;display:block;margin-bottom:2px}
+.spec{margin-top:10px;border-top:1px dashed var(--hair);padding-top:10px;font-size:11.5px;color:var(--mut);}
+.spec .kv{display:grid;gap:5px;margin-top:6px}
+.spec .row{display:flex;gap:8px;align-items:baseline}
+.spec .k{flex:none;width:58px;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);opacity:.8}
+.spec .v{color:#d7d4ca;}
+.spec code{font-family:'SFMono-Regular',ui-monospace,Menlo,monospace;font-size:10.5px;color:#b9e3dc;word-break:break-word;line-height:1.5}
+.spec code.endl{color:#f3d9a8}
+.rail{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.dot{width:11px;height:11px;border-radius:50%;flex:none}
+.rail .n{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mut)}
+.rail h2{margin:0;font-size:1.45rem;letter-spacing:-.02em;font-weight:600}
+.rail .bar{flex:1;height:1px;background:linear-gradient(90deg,var(--hair),transparent)}
+.note{font-size:13px;color:var(--mut);max-width:900px;margin:0 0 6px}
+.note b{color:var(--ink)}
+.specgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;margin-top:14px}
+.specbox{border:1px solid var(--hair);border-radius:14px;padding:12px 14px;background:rgba(255,255,255,.02)}
+.specbox .sk{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);opacity:.85}
+.specbox .sv{font-size:13px;color:#d7d4ca;margin-top:4px;word-break:break-word}
+.specbox .sv code{font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#b9e3dc}
+.specbox.wide{grid-column:1 / -1}
+@keyframes pu{0%{transform:scale(1)}100%{transform:scale(1.3)}}
+@keyframes pl{0%{transform:translateX(0)}100%{transform:translateX(-30px)}}
+@keyframes pr{0%{transform:translateX(0)}100%{transform:translateX(30px)}}
+@keyframes tr{0%{transform:translate(0,0)}100%{transform:translate(20px,-14px)}}
+@keyframes cr{0%{transform:translateY(0)}100%{transform:translateY(-24px)}}
+@keyframes dash{to{stroke-dashoffset:-24}}
+.m-push{animation:pu 4s var(--ease) infinite alternate}
+.m-panl{animation:pl 4.6s var(--ease) infinite alternate}
+.m-panr{animation:pr 4.6s var(--ease) infinite alternate}
+.m-track{animation:tr 4s var(--ease) infinite alternate}
+.m-crane{animation:cr 4.4s var(--ease) infinite alternate}
+.m-arrow{stroke-dasharray:24;animation:dash 1.5s linear infinite}
+svg *{transform-box:fill-box;transform-origin:center}
+.rv{opacity:0;transform:translateY(34px);filter:blur(8px);transition:opacity .9s var(--ease),transform .9s var(--ease),filter .9s var(--ease)}
+.rv.in{opacity:1;transform:none;filter:none}
+.tl{position:relative;height:70px;border-radius:16px;background:rgba(255,255,255,.025);border:1px solid var(--hair);overflow:hidden}
+.tl .seg{position:absolute;top:0;bottom:0;display:flex;align-items:center;padding:0 16px;font-size:12px;font-weight:600;letter-spacing:.05em}
+.playhead{position:absolute;top:-8px;bottom:-8px;width:2px;background:var(--gold);box-shadow:0 0 14px var(--gold);animation:scrub 16s var(--ease) infinite alternate}
+@keyframes scrub{0%{left:0%}100%{left:100%}}
+.legend{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0}
+.legend .li{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--mut)}
+.sw{width:24px;height:12px;border-radius:4px;border:1px solid var(--hair)}
+.glyph{font-family:monospace;font-size:11px;color:var(--ink)}
+.blocking{position:relative;border-radius:16px;border:1px solid var(--hair);background:radial-gradient(circle at 50% 50%,#101018,#07070b);min-height:260px;overflow:hidden}
+.blocking .stage{position:absolute;inset:0}
+.filmstrip{display:flex;gap:10px;overflow:hidden;padding:8px 0;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.fs-track{display:flex;gap:10px;animation:roll 38s linear infinite}
+@keyframes roll{to{transform:translateX(-50%)}}
+.fs{width:170px;flex:none;border-radius:10px;overflow:hidden;border:1px solid var(--hair);background:#0c0c12}
+.fs svg{width:100%;display:block;aspect-ratio:16/10}
+.fs .lbl{font-size:10px;color:var(--mut);padding:6px 8px;letter-spacing:.06em}
+.castrow{display:flex;justify-content:space-between;gap:12px;align-items:center}
+.castrow b{font-size:14px}
+.castrow .sub{font-size:12px;color:var(--mut)}
+.castrow .lock{font-size:11px;letter-spacing:.05em;color:var(--gold)}
+@media(max-width:900px){.g{grid-template-columns:repeat(6,1fr)}}
+@media(max-width:768px){.wrap{padding:26px 14px 80px}.core{padding:18px}.g{grid-template-columns:1fr 1fr;gap:10px}
+  .sp2,.sp3,.sp4,.sp5,.sp6,.sp8,.sp12{grid-column:span 1}.nav-in a{padding:6px 9px;font-size:9px}}
+@media(max-width:480px){.g{grid-template-columns:1fr}}
+</style></head><body>
+<div class="nav"><div class="nav-in">
+<a href="#spec">Spec</a><a href="#act1">Act I</a><a href="#act2">Act II</a><a href="#act3">Act III</a><a href="#timeline">Timeline</a><a href="#blocking">Blocking</a></div></div>
+<div class="wrap">
+<span class="eyebrow rv"><i></i> SkyReels-V3 · Cinematic Storyboard · Machine-ready</span>
+<h1 class="rv">Ловецот и Паладинот: Господарот на Пепелта</h1>
+<p class="lede rv">Оригинална приказна · епска борба со бос · dark fantasy · Двојца — ловецот на мраз и паладинот на светлината — заедно го гаснат Господарот на Пепелта.</p>
+<div class="meta rv">
+<div class="chip">Формат <b>1280x720</b></div><div class="chip">Кадри <b>20</b></div>
+<div class="chip">Траење <b>~82.5s</b></div><div class="chip">Рендер <b>100.0s</b></div>
+<div class="chip">Модел <b>SkyReels-V3-identity</b></div>
+<div class="chip gold">Статус <b>proof exemplar</b></div></div>
+<div class="shell" id="spec"><div class="core">
+<div class="rail rv"><span class="dot" style="background:var(--gold);box-shadow:0 0 18px var(--gold)"></span><span class="n">Render contract</span><h2>Продукциски спецификации</h2></div>
+<div class="specgrid"><div class="specbox"><div class="sk">resolution</div><div class="sv">1280x720</div></div>
+<div class="specbox"><div class="sk">aspect</div><div class="sv">16:9</div></div>
+<div class="specbox"><div class="sk">fps</div><div class="sv">24</div></div>
+<div class="specbox"><div class="sk">model</div><div class="sv">SkyReels-V3-identity</div></div>
+<div class="specbox"><div class="sk">style</div><div class="sv">photoreal</div></div>
+<div class="specbox"><div class="sk">FLF</div><div class="sv">start+end keyframes</div></div>
+<div class="specbox"><div class="sk">shot floor</div><div class="sv">40</div></div>
+<div class="specbox"><div class="sk">shot max</div><div class="sv">60</div></div>
+<div class="specbox"><div class="sk">seed policy</div><div class="sv"><code>fixed-per-shot (same seed → reproducible shot; re-roll per shot id)</code></div></div>
+<div class="specbox wide"><div class="sk">style anchor</div><div class="sv">Diablo 2 cinematic · World of Warcraft cinematic · StarCraft cinematic</div></div>
+<div class="specbox wide"><div class="sk">negative prompt</div><div class="sv"><code>cartoon, anime, illustration, low poly, blurry, extra fingers, distorted face, watermark, text, gore, blood spray, child-unfriendly</code></div></div></div>
+<p class="note rv" style="margin-top:14px">Овој договор е вграден како <b>machine-readable JSON</b> во <code>&lt;script id="storyboard-spec"&gt;</code> — секој агент може да го преземе директно без повторно толкување.</p>
+</div></div>
+<div class="legend rv">
+<div class="li"><span class="sw" style="background:#38c8e8"></span> Act I</div>
+<div class="li"><span class="sw" style="background:#f5c518"></span> Act II</div>
+<div class="li"><span class="sw" style="background:#ef4444"></span> Act III</div>
+<div class="li"><span class="glyph">→</span> track/pan</div><div class="li"><span class="glyph">◎</span> push-in</div>
+<div class="li"><span class="glyph">↗</span> crane</div><div class="li"><span class="glyph">⟲</span> shot/reverse</div></div>
+<div class="shell" id="timeline"><div class="core">
+<div class="rail rv"><span class="dot" style="background:var(--gold);box-shadow:0 0 18px var(--gold)"></span><span class="n">Master timeline</span><h2>Пат на приказната</h2></div>
+<div class="tl"><div class="seg" style="left:0%;width:30.0%;background:#38c8e822;border-right:1px solid var(--hair)">Act I · Заложба · Доаѓањето</div>
+<div class="seg" style="left:30.0%;width:44.0%;background:#f5c51822;border-right:1px solid var(--hair)">Act II · Пресметка · Двете сили</div>
+<div class="seg" style="left:74.0%;width:26.0%;background:#ef444422;border-right:1px solid var(--hair)">Act III · Разрешување · Сонцето на пепелта</div><div class="playhead"></div></div></div></div>
+<div class="shell" id="act1"><div class="core">
+<div class="rail rv"><span class="dot" style="background:#38c8e8;box-shadow:0 0 18px #38c8e8"></span><span class="n">Act I</span><h2>Заложба · Доаѓањето</h2><span class="bar"></span></div>
+<p class="note rv">Во изгорена клисура се среќаваат Ловецот и Паладинот; од пепелта се крева Мал’гарот, Господарот на Пепелта, и им се потсмева.</p>
+<div class="g">
+<div class="c sp4 rv"><div class="frame">
+<svg viewBox="0 0 160 100" aria-hidden="true"><g class="m-crane"><rect width="160" height="100" fill="#160d0a"/><path d="M0 70 L30 46 L52 64 L84 38 L118 62 L160 44 L160 100 L0 100Z" fill="#241410"/><circle cx="130" cy="20" r="9" fill="#ff9d3c" opacity=".5"/><g fill="#38c8e8"><circle cx="64" cy="62" r="5"/><rect x="60" y="67" width="8" height="14" rx="3"/></g><g fill="#f5c518"><circle cx="96" cy="62" r="5"/><rect x="92" y="67" width="8" height="14" rx="3"/></g></g></svg>
+<span class="sid">S01</span></div>
+<div class="gm"><b>WIDE</b> · high-angle · <b>crane-down</b> · 4.5s · clip 5.0s</div>
+<div class="cue narr"><span class="tag">NARRATION</span>Во една изгорена клисура, каде ветрот носеше жар наместо песок, на сртот од карпата застанаа двајца.</div>
+<div class="spec">
+<div class="kv"><div class="row"><span class="k">KF·A</span><code>Epic aerial establishing shot of a vast scorched canyon at dusk, windblown embers instead of sand, jagged black rock ridges, smoke pillars, photoreal Diablo2/WoW cinematic grade</code></div>
+<div class="row"><span class="k">KF·B</span><code class="endl">Camera cranes down to a high ridge where two silhouetted figures stand side by side, ember storm swirling around them</code></div>
+<div class="row"><span class="k">CONT</span><span class="v">NONE (opening master); establish ember-red palette</span></div>
+<div class="row"><span class="k">MOTION</span><span class="v">slow crane-down; embers drift past lens</span></div></div>
+</div></div>
+
+<div class="c sp4 rv"><div class="frame">
+<svg viewBox="0 0 160 100" aria-hidden="true"><g class="m-track"><rect width="160" height="100" fill="#0d1316"/><path d="M38 50 q12 -4 60 48 M44 50 l54 54" stroke="#38c8e8" stroke-width="1.4" fill="none"/><path d="M116 50 q12 -4 138 48 M122 50 l132 54" stroke="#38c8e8" stroke-width="1.4" fill="none"/><g fill="#38c8e8"><circle cx="80" cy="60" r="5"/><rect x="76" y="65" width="8" height="14" rx="3"/></g><path d="M66 40 Q74 30 82 40 Q90 30 98 40" stroke="#38c8e8" stroke-width="1.6" fill="none"/></g></svg>
+<span class="sid">S02</span></div>
+<div class="gm"><b>MEDIUM</b> · eye-level · <b>track</b> · 4.0s · clip 5.0s</div>
+<div class="cue narr"><span class="tag">NARRATION</span>Првиот — ловецот, со две пеколни самострели и влакна што лебдеа во сино-тиркизно како под вода.</div>
+<div class="spec">
+<div class="kv"><div class="row"><span class="k">KF·A</span><code>Medium shot of the HUNTER: lean warrior with two dark infernal crossbows, long hair glowing blue-turquoise and floating weightlessly as if underwater, embers behind him</code></div>
+<div class="row"><span class="k">KF·B</span><code class="endl">Tracking shot settles on his glowing eyes and the twin crossbows in his hands; hair ripples</code></div>
+<div class="row"><span class="k">CONT</span><span class="v">Hunter identity LOCK: blue-turquoise floating hair, twin crossbows (carry through all shots)</span></div>
+<div class="row"><span class="k">MOTION</span><span class="v">lateral track; hair floats with current; crossbows glint</span></div></div>
+</div></div>
+
+<div class="c sp4 rv"><div class="frame">
+<svg viewBox="0 0 160 100" aria-hidden="true"><g class="m-push"><rect width="160" height="100" fill="#120f09"/><g fill="#f5c518"><circle cx="80" cy="58" r="5.5"/><rect x="75.6" y="63.5" width="8.8" height="15.400000000000002" rx="3.3000000000000003"/></g><path d="M64 44 L78 40 L92 44 L78 50 Z" fill="none" stroke="#f5c518" stroke-width="1.2" opacity=".9"/><path d="M62 48 L80 44 L96 48" fill="none" stroke="#f5c518" stroke-width="1" opacity=".7"/><circle cx="78" cy="46" r="1.4" fill="#fff"/></g></svg>
+<span class="sid">S03</span></div>
+<div class="gm"><b>MEDIUM</b> · low-angle · <b>push-in</b> · 4.0s · clip 5.0s</div>
+<div class="cue narr"><span class="tag">NARRATION</span>Вториот — паладинот, ќелав и облеан во златен вез, со лавиринт од руни што тлееше како жар врз кожата.</div>
+<div class="spec">
+<div class="kv"><div class="row"><span class="k">KF·A</span><code>Low-angle medium of the PALADIN: bald, ornate golden embroidery on armor, one-sided labyrinth of glowing runes carved over face, neck and body, faint ember-light pulsing under the skin</code></div>
+<div class="row"><span class="k">KF·B</span><code class="endl">Push-in to the rune maze on his face flaring faintly white-gold</code></div>
+<div class="row"><span class="k">CONT</span><span class="v">Paladin identity LOCK: bald, golden embroidery, face/neck rune labyrinth (carry through all shots)</span></div>
+<div class="row"><span class="k">MOTION</span><span class="v">push-in; runes pulse; ember underlight flickers</span></div></div>
+</div></div>
+
+<div class="c sp4 rv"><div class="frame">
+<svg viewBox="0 0 160 100" aria-hidden="true"><g class="m-crane"><rect width="160" height="100" fill="#170b06"/><path d="M0 86 L40 58 L80 70 L120 50 L160 64 L160 100 L0 100Z" fill="#241008"/><g fill="#ef4444"><path d="M49.199999999999996 32 Q31.599999999999994 -7.600000000000001 62.4 -20.800000000000004 Q71.2 5.599999999999998 80 32" opacity=".85"/><path d="M110.80000000000001 32 Q128.4 -7.600000000000001 97.6 -20.800000000000004 Q88.8 5.599999999999998 80 32" opacity=".85"/><rect x="58.0" y="32" width="44.0" height="70.4" rx="17.6"/><circle cx="80" cy="58.400000000000006" r="14.96" fill="#ff9d3c"/></g><g fill="#38c8e8"><circle cx="58" cy="64" r="3.0"/><rect x="55.6" y="67.0" width="4.8" height="8.4" rx="1.7999999999999998"/></g><g fill="#f5c518"><circle cx="102" cy="64" r="3.0"/><rect x="99.6" y="67.0" width="4.8" height="8.4" rx="1.7999999999999998"/></g></g></svg>
+<span class="sid">S04</span></div>
+<div class="gm"><b>WIDE</b> · low-angle · <b>crane-up</b> · 4.5s · clip 5.0s</div>
+<div class="cue narr"><span class="tag">NARRATION</span>Од пепелта под нив се надигна Мал’гарот, Господарот на Пепелта: висока роговидна сенка завиткана во пепел.</div>
+<div class="spec">
+<div class="kv"><div class="row"><span class="k">KF·A</span><code>Low-angle wide as the ash below erupts: Master of Ash MULGAROTH rises — tall horned shadow wrapped in swirling ash, half-liquid fire core burning in its chest, crown of dead embers</code></div>
+<div class="row"><span class="k">KF·B</span><code class="endl">Crane up revealing the giant boss towering over the two small figures on the ridge, ember lightning in the air</code></div>
+<div class="row"><span class="k">CONT</span><span class="v">Boss identity LOCK: horned ash form, chest fire-core, dead-ember crown (carry through all shots)</span></div>
+<div class="row"><span class="k">MOTION</span><span class="v">crane-up; ash plume billows upward; core churns</span></div></div>
+</div></div>
+
+<div class="c sp4 rv"><div class="frame">
+<svg viewBox="0 0 160 100" aria-hidden="true"><g class="m-push"><rect width="160" height="100" fill="#140a04"/><path d="M0 30 Q50 60 90 78 T160 60" fill="none" stroke="#ef4444" stroke-width="2.4" opacity=".9"/><path d="M110 14 L124 22 L128 12 L140 26 L148 16" fill="none" stroke="#3a1f10" stroke-width="3"/><circle cx="126" cy="20" r="2.4" fill="#ff9d3c"/></g></svg>
+<span class="sid">S05</span></div>
+<div class="gm"><b>INSERT</b> · macro · <b>push-in</b> · 3.0s · clip 5.0s</div>
+<div class="cue narr"><span class="tag">NARRATION</span>Една стопена рака-камшик и круна од мртви јаглени — сè што ќе допреше, издивуваше во чад.</div>
+<div class="spec">
+<div class="kv"><div class="row"><span class="k">KF·A</span><code>Macro insert on a single melted whip-arm of dripping ember, smoke rising where it trails, slow liquid fire drips</code></div>
+<div class="row"><span class="k">KF·B</span><code class="endl">Push-in to the twisted crown of dead charcoals on its head, faint coals dying and reigniting</code></div>
+<div class="row"><span class="k">CONT</span><span class="v">Boss whip-arm + charcoal crown introduced (key boss props)</span></div>
+<div class="row"><span class="k">MOTION</span><span class="v">micro push-in; whip drips molten ember; smoke curls</span></div></div>
+</div></div>
+
+<div class="c sp4 rv"><div class="frame">
+<svg viewBox="0 0 160 100" aria-hidden="true"><g class="m-push"><rect width="160" height="100" fill="#150a04"/><g fill="#ef4444"><path d="M57.599999999999994 44 Q44.8 15.2 67.2 5.599999999999994 Q73.6 24.799999999999997 80 44" opacity=".85"/><path d="M102.4 44 Q115.2 15.2 92.8 5.599999999999994 Q86.4 24.799999999999997 80 44" opacity=".85"/><rect x="64.0" y="44" width="32.0" height="51.2" rx="12.8"/><circle cx="80" cy="63.2" r="10.88" fill="#ff9d3c"/></g><path d="M0 30 Q50 60 90 78 T160 60" fill="none" stroke="#ef4444" stroke-width="2.4" opacity=".9"/></g></svg>
+<span class="sid">S06</span></div>
+<div class="gm"><b>MEDIUM</b> · low-angle · <b>push-in</b> · 4.5s · clip 5.0s</div>
+<div class="cue dlg"><span class="tag">DIALOGUE</span>Мал’гарот: „Дојдовте да изгорите, како сите пред вас.“ — и камшикот од жар пукна низ воздухот.</div>
+<div class="spec">
+<div class="kv"><div class="row"><span class="k">KF·A</span><code>Low-angle medium of MULGAROTH speaking, fire core flaring, ember whip arcing through the air toward camera</code></div>
+<div class="row"><span class="k">KF·B</span><code class="endl">Push-in on its molten face as the whip cracks with a burst of sparks</code></div>
+<div class="row"><span class="k">CONT</span><span class="v">Same boss; whip from S05 now in motion</span></div>
+<div class="row"><span class="k">MOTION</span><span class="v">push-in; whip crack; sparks fly</span></div></div>
+</div></div></div></div></div><div class="shell" id="act2"><div class="core">
+<div class="rail rv"><span class="dot" style="background:#f5c518;box-shadow:0 0 18px #f5c518"></span><span class="n">Act II</span><h2>Пресметка · Двете сили</h2><span class="bar"></span></div>
+<p class="note rv">Ловецот го покажува Ледениот ореол и мразните греди; Паладинот задава со Златната пресуда; следи првата заедничка техника — Замрзни-и-Скрши.</p>
+<div class="g">
+<div class="c sp4 rv"><div class="frame">
+<svg viewBox="0 0 160 100" aria-hidden="true"><g class="m-track"><rect width="160" height="100" fill="#0b1519"/><g fill="#38c8e8"><circle cx="80" cy="62" r="5"/><rect x="76" y="67" width="8" height="14" rx="3"/></g><circle cx="80" cy="54" r="22" fill="none" stroke="#38c8e8" stroke-width="1.6" opacity=".9"/><circle cx="80" cy="54" r="30" fill="none" stroke="#7fd8f0" stroke-width=".8" opacity=".5"/></g></svg>
+<span class="sid">S07</span></div>
+<div class="gm"><b>WIDE</b> · eye-level · <b>track</b> · 4.0s · clip 5.0s</div>
+<div class="cue narr"><span class="tag">NARRATION</span>Ловецот крена рака и околу него разцвета прстен од мраз и тајни знаци — неговиот Леден ореол.</div>
+<div class="spec">
+<div class="kv"><div class="row"><span class="k">KF·A</span><code>Wide shot: the Hunter raises one hand, a ring of frost and arcane symbols blooms around him, embers nearby flash-frozen into snow</code></div>
+<div class="row"><span class="k">KF·B</span><code class="endl">The Glacial Aura expands outward, freezing cinders mid-air into glittering snow</code></div>
+<div class="row"><span class="k">CONT</span><span class="v">Hunter; introduc Glacial Aura ring — recurring ability</span></div>
+<div class="row"><span class="k">MOTION</span><span class="v">track + halo expands; embers→snow transformation</span></div></div>
+</div></div>
+
+<div class="c sp4 rv"><div class="frame">
+<svg viewBox="0 0 160 100" aria-hidden="true"><g class="m-track"><rect width="160" height="100" fill="#0a1417"/><g fill="#ef4444"><path d="M61 48 Q49 21 70 12 Q76 30 82 48" opacity=".85"/><path d="M103 48 Q115 21 94 12 Q88 30 82 48" opacity=".85"/><rect x="67" y="48" width="30" height="48" rx="12"/><circle cx="82" cy="66" r="10.2" fill="#ff9d3c"/></g><g fill="#38c8e8"><circle cx="44" cy="32" r="4.0"/><rect x="40.8" y="36.0" width="6.4" height="11.200000000000001" rx="2.4000000000000004"/></g><path d="M20 64 Q50 30 96 30 Q128 30 150 46" fill="none" stroke="#7fd8f0" stroke-width="1.6" opacity=".8"/></g></svg>
+<span class="sid">S08</span></div>
+<div class="gm"><b>WIDE</b> · low-angle · <b>track</b> · 4.0s · clip 5.0s</div>
+<div class="cue narr"><span class="tag">NARRATION</span>Се одби од земјата како комета од слана, а зад него остануваше смрзната трага.</div>
+<div class="spec">
+<div class="kv"><div class="row"><span class="k">KF·A</span><code>The Hunter launches from the ground like a frost comet, a trail of ice crystal forming in the air behind his arc</code></div>
+<div class="row"><span class="k">KF·B</span><code class="endl">He soars over the boss, leaving a frozen ribbon of ice curling in his wake</code></div>
+<div class="row"><span class="k">CONT</span><span class="v">Hunter with Glacial Aura active; frozen trail is new visual (ice vs ember contrast)</span></div>
+<div class="row"><span class="k">MOTION</span><span class="v">fast tracking launch; ice ribbon trails; ember recoils</span></div></div>
+</div></div>
+
+<div class="c sp4 rv"><div class="frame">
+<svg viewBox="0 0 160 100" aria-hidden="true"><g class="m-push"><rect width="160" height="100" fill="#080e14"/><path d="M40 50 L130 50" stroke="#bcdcf0" stroke-width="2.6"/><path d="M40 56 L130 56" stroke="#c08bf5" stroke-width="1.4" opacity=".8"/><path d="M134 40 l6 10 l-10 4 l4 -6z" fill="#9fd8f0"/></g></svg>
+<span class="sid">S09</span></div>
+<div class="gm"><b>INSERT</b> · macro · <b>push-in</b> · 3.5s · clip 5.0s</div>
+<div class="cue narr"><span class="tag">NARRATION</span>Неговите очи пламнаа и од нив искочија две мразни греди — бело-сини копја со виолетово јадро.</div>
+<div class="spec">
+<div class="kv"><div class="row"><span class="k">KF·A</span><code>Macro on the Hunter&#x27;s blazing eyes, two Rime Beams erupting — white-blue spears with a violet core, everything they touch flash-freezing instantly</code></div>
+<div class="row"><span class="k">KF·B</span><code class="endl">Push-in as a flame in frame freezes solid into an ice sculpture from the beam</code></div>
+<div class="row"><span class="k">CONT</span><span class="v">Hunter Rime Beams (white-blue + violet core) — recurring attack</span></div>
+<div class="row"><span class="k">MOTION</span><span class="v">micro push-in; beams flare; flame→ice sculpture</span></div></div>
+</div></div>
+
+<div class="c sp4 rv"><div class="frame">
+<svg viewBox="0 0 160 100" aria-hidden="true"><g class="m-push"><rect width="160" height="100" fill="#160a04"/><g fill="#ef4444"><path d="M56.2 40 Q42.6 9.400000000000002 66.4 -0.7999999999999972 Q73.2 19.6 80 40" opacity=".85"/><path d="M103.8 40 Q117.4 9.400000000000002 93.6 -0.7999999999999972 Q86.8 19.6 80 40" opacity=".85"/><rect x="63.0" y="40" width="34.0" height="54.4" rx="13.6"/><circle cx="80" cy="60.4" r="11.559999999999999" fill="#ff9d3c"/></g><path d="M0 30 Q50 60 90 78 T160 60" fill="none" stroke="#ef4444" stroke-width="2.4" opacity=".9"/></g></svg>
+<span class="sid">S10</span></div>
+<div class="gm"><b>MEDIUM</b> · low-angle · <b>push-in</b> · 4.0s · clip 5.0s</div>
+<div class="cue dlg"><span class="tag">DIALOGUE</span>Босот: „Мразот само ја прави пепелта поубава,“ — додека камшикот му се нишаше над двајцата.</div>
+<div class="spec">
+<div class="kv"><div class="row"><span class="k">KF·A</span><code>The boss taunts as its ember whip sways high above both heroes; its fire core glows with contempt</code></div>
+<div class="row"><span class="k">KF·B</span><code class="endl">Push-in on the boss&#x27; coal-crown face, half-smile, ash curling off its jaw</code></div>
+<div class="row"><span class="k">CONT</span><span class="v">Boss taunt beat; whip recurring across the fight</span></div>
+<div class="row"><span class="k">MOTION</span><span class="v">push-in; whip sways; ash drifts from mouth</span></div></div>
+</div></div>
+
+<div class="c sp4 rv"><div class="frame">
+<svg viewBox="0 0 160 100" aria-hidden="true"><g class="m-track"><rect width="160" height="100" fill="#100f0a"/><line x1="80" y1="38" x2="80" y2="74" stroke="#f5c518" stroke-width="2"/><rect x="79" y="39" width="4" height="3" fill="#f5c518"/><g fill="#f5c518"><circle cx="80" cy="64" r="5"/><rect x="76" y="69" width="8" height="14" rx="3"/></g><circle cx="80" cy="74" r="16" fill="none" stroke="#f5c518" stroke-width="1.8" opacity=".9"/><g fill="#ef4444"><path d="M105.8 46 Q95.4 22.599999999999998 113.6 14.799999999999997 Q118.8 30.4 124 46" opacity=".85"/><path d="M142.2 46 Q152.6 22.599999999999998 134.4 14.799999999999997 Q129.2 30.4 124 46" opacity=".85"/><rect x="111.0" y="46" width="26.0" height="41.6" rx="10.4"/><circle cx="124" cy="61.6" r="8.84" fill="#ff9d3c"/></g></g></svg>
+<span class="sid">S11</span></div>
+<div class="gm"><b>WIDE</b> · low-angle · <b>track</b> · 4.0s · clip 5.0s</div>
+<div class="cue narr"><span class="tag">NARRATION</span>Паладинот го вкорени својот голем меч во земјата и златниот ударен бран го испука каменот.</div>
+<div class="spec">
+<div class="kv"><div class="row"><span class="k">KF·A</span><code>Wide low-angle: the Paladin plants his greatsword into the ground, a golden shockwave splitting the stone outward in a radiating crack</code></div>
+<div class="row"><span class="k">KF·B</span><code class="endl">The gold blast slams into the boss, hurling ash aside as the shockwave pulses</code></div>
+<div class="row"><span class="k">CONT</span><span class="v">Paladin; introduces Templar Verdict shockwave (gold); greatsword planted</span></div>
+<div class="row"><span class="k">MOTION</span><span class="v">track with shockwave; stone cracks radiate; gold light blooms</span></div></div>
+</div></div>
+
+<div class="c sp4 rv"><div class="frame">
+<svg viewBox="0 0 160 100" aria-hidden="true"><g class="m-push"><rect width="160" height="100" fill="#0e0c06"/><path d="M40 44 Q70 34 96 44 Q118 52 136 40" fill="none" stroke="#f5c518" stroke-width="1.6"/><path d="M52 56 Q80 48 108 58" fill="none" stroke="#fff6d8" stroke-width="1.2"/><circle cx="118" cy="48" r="2.2" fill="#fff"/></g></svg>
+<span class="sid">S12</span></div>
+<div class="gm"><b>INSERT</b> · macro · <b>push-in</b> · 3.5s · clip 5.0s</div>
+<div class="cue narr"><span class="tag">NARRATION</span>Златниот ударен бран... а руните по телото му пламнаа од тивко злато во бел оган, за секој удар посебно.</div>
+<div class="spec">
+<div class="kv"><div class="row"><span class="k">KF·A</span><code>Macro on the Paladin&#x27;s skin: the rune labyrinth flare from quiet gold into white fire, traveling along the carved paths for each strike</code></div>
+<div class="row"><span class="k">KF·B</span><code class="endl">The rune light reaches his eye and blade, both searing white-gold</code></div>
+<div class="row"><span class="k">CONT</span><span class="v">Paladin runes (identity, S03) now actively flaring — power escalation</span></div>
+<div class="row"><span class="k">MOTION</span><span class="v">micro push-in; runes crawl along skin; light intensifies</span></div></div>
+</div></div>
+
+<div class="c sp4 rv"><div class="frame">
+<svg viewBox="0 0 160 100" aria-hidden="true"><g class="m-track"><rect width="160" height="100" fill="#0a0f14"/><g fill="#38c8e8"><circle cx="44" cy="58" r="4.5"/><rect x="40.4" y="62.5" width="7.2" height="12.6" rx="2.7"/></g><g fill="#f5c518"><circle cx="116" cy="58" r="4.5"/><rect x="112.4" y="62.5" width="7.2" height="12.6" rx="2.7"/></g><g fill="#ef4444"><path d="M59 38 Q47 11 68 2 Q74 20 80 38" opacity=".85"/><path d="M101 38 Q113 11 92 2 Q86 20 80 38" opacity=".85"/><rect x="65" y="38" width="30" height="48" rx="12"/><circle cx="80" cy="56" r="10.2" fill="#ff9d3c"/></g><path d="M80 34 l-8 14 l-14 -4 l9 -10z" fill="#9fd8f0"/><path d="M80 34 l8 14 l14 -2 l-8 -12z" fill="#f5c518"/></g></svg>
+<span class="sid">S13</span></div>
+<div class="gm"><b>WIDE</b> · eye-level · <b>track</b> · 4.5s · clip 5.0s</div>
+<div class="cue narr"><span class="tag">NARRATION</span>Првата заедничка техника — Замрзни-и-Скрши: мразот и светлината заедно.</div>
+<div class="spec">
+<div class="kv"><div class="row"><span class="k">KF·A</span><code>Wide shot of the FIRST combined technique Freeze-and-Sunder: the Hunter&#x27;s Rime Beams freeze the whip-arm mid-swing, then the Paladin&#x27;s Verdict blast shatters it</code></div>
+<div class="row"><span class="k">KF·B</span><code class="endl">The frozen arm shatters into a million golden-lit ice shards raining down; boss reels back</code></div>
+<div class="row"><span class="k">CONT</span><span class="v">Tags S09 (Rime Beams) + S11 (Judgement); whip-arm destroyed here</span></div>
+<div class="row"><span class="k">MOTION</span><span class="v">track through the shatter; ice shards + gold blast; boss recoil</span></div></div>
+</div></div></div></div></div><div class="shell" id="act3"><div class="core">
+<div class="rail rv"><span class="dot" style="background:#ef4444;box-shadow:0 0 18px #ef4444"></span><span class="n">Act III</span><h2>Разрешување · Сонцето на пепелта</h2><span class="bar"></span></div>
+<p class="note rv">Босот го разголува јадрото и го крева Сонцето на пепелта; хероите ги будат своите ултимативни форми и заедно го гаснат јадрото; првата зора доаѓа.</p>
+<div class="g">
+<div class="c sp4 rv"><div class="frame">
+<svg viewBox="0 0 160 100" aria-hidden="true"><g class="m-crane"><rect width="160" height="100" fill="#120604"/><g fill="#ef4444"><path d="M52 34 Q36 -2 64 -14 Q72 10 80 34" opacity=".85"/><path d="M108 34 Q124 -2 96 -14 Q88 10 80 34" opacity=".85"/><rect x="60" y="34" width="40" height="64" rx="16"/><circle cx="80" cy="58" r="13.6" fill="#ff9d3c"/></g><line x1="20" y1="0" x2="26" y2="30" stroke="#3a1c0c" stroke-width="1"/><line x1="52" y1="0" x2="58" y2="26" stroke="#3a1c0c" stroke-width="1"/><line x1="94" y1="0" x2="100" y2="32" stroke="#3a1c0c" stroke-width="1"/><line x1="128" y1="0" x2="134" y2="28" stroke="#3a1c0c" stroke-width="1"/><line x1="40" y1="0" x2="46" y2="38" stroke="#3a1c0c" stroke-width="1"/></g></svg>
+<span class="sid">S14</span></div>
+<div class="gm"><b>WIDE</b> · high-angle · <b>crane-down</b> · 4.5s · clip 5.0s</div>
+<div class="cue narr"><span class="tag">NARRATION</span>Разбеснет, босот го фрли својот оклоп и го разголи огненото јадро. Почна црн дожд — жежок, од жар и стакло.</div>
+<div class="spec">
+<div class="kv"><div class="row"><span class="k">KF·A</span><code>High-angle wide: the enraged boss sheds its ash armor, exposing the blazing fire core; a black rain of hot ember and glass begins to fall</code></div>
+<div class="row"><span class="k">KF·B</span><code class="endl">Crane down through the falling ember-glass rain toward the two heroes bracing below</code></div>
+<div class="row"><span class="k">CONT</span><span class="v">Boss escalates (armor off, core exposed); BLACK RAIN is new hazard</span></div>
+<div class="row"><span class="k">MOTION</span><span class="v">crane-down; black rain falls; core strobes</span></div></div>
+</div></div>
+
+<div class="c sp4 rv"><div class="frame">
+<svg viewBox="0 0 160 100" aria-hidden="true"><g class="m-track"><rect width="160" height="100" fill="#0d0906"/><g fill="#f5c518"><circle cx="80" cy="60" r="5"/><rect x="76" y="65" width="8" height="14" rx="3"/></g><circle cx="80" cy="56" r="26" fill="none" stroke="#f5c518" stroke-width="1.2" opacity=".7"/><line x1="60" y1="18" x2="64" y2="34" stroke="#3a1c0c"/><line x1="100" y1="14" x2="104" y2="30" stroke="#3a1c0c"/></g></svg>
+<span class="sid">S15</span></div>
+<div class="gm"><b>MEDIUM</b> · eye-level · <b>track</b> · 4.0s · clip 5.0s</div>
+<div class="cue narr"><span class="tag">NARRATION</span>Паладинот застана неподвижен под него, а светлината го соблекуваше дождот како вода.</div>
+<div class="spec">
+<div class="kv"><div class="row"><span class="k">KF·A</span><code>The Paladin stands motionless under the black rain, his golden light shedding the ember-glass like water off a shield</code></div>
+<div class="row"><span class="k">KF·B</span><code class="endl">Tracking shot circles him; rain hisses into smoke on contact with his aura</code></div>
+<div class="row"><span class="k">CONT</span><span class="v">Paladin aura (rune light) now a shield; black rain from S14</span></div>
+<div class="row"><span class="k">MOTION</span><span class="v">slow circular track; rain evaporates to smoke on aura</span></div></div>
+</div></div>
+
+<div class="c sp4 rv"><div class="frame">
+<svg viewBox="0 0 160 100" aria-hidden="true"><g class="m-crane"><rect width="160" height="100" fill="#1a0702"/><g fill="#ef4444"><path d="M54.8 30 Q40.4 -2.3999999999999986 65.6 -13.200000000000003 Q72.8 8.399999999999999 80 30" opacity=".85"/><path d="M105.2 30 Q119.6 -2.3999999999999986 94.4 -13.200000000000003 Q87.2 8.399999999999999 80 30" opacity=".85"/><rect x="62.0" y="30" width="36.0" height="57.6" rx="14.4"/><circle cx="80" cy="51.6" r="12.24" fill="#ff9d3c"/></g><circle cx="80" cy="30" r="20" fill="#ff9d3c" opacity=".75"/><circle cx="80" cy="30" r="30" fill="none" stroke="#ff9d3c" stroke-width="1.2" opacity=".6"/><g fill="#38c8e8"><circle cx="52" cy="64" r="3.0"/><rect x="49.6" y="67.0" width="4.8" height="8.4" rx="1.7999999999999998"/></g><g fill="#f5c518"><circle cx="108" cy="64" r="3.0"/><rect x="105.6" y="67.0" width="4.8" height="8.4" rx="1.7999999999999998"/></g></g></svg>
+<span class="sid">S16</span></div>
+<div class="gm"><b>WIDE</b> · low-angle · <b>crane-up</b> · 4.5s · clip 5.0s</div>
+<div class="cue dlg"><span class="tag">DIALOGUE</span>Босот: „Од пепел сте — и во пепел ќе ве вратам!“ — го крена Сонцето на пепелта, супернова од жар над клисурата.</div>
+<div class="spec">
+<div class="kv"><div class="row"><span class="k">KF·A</span><code>The boss roars and raises the SUN OF ASH — a supernova of ember rising above the canyon, red-orange light flooding everything</code></div>
+<div class="row"><span class="k">KF·B</span><code class="endl">Crane up as the ember sun grows, dwarfing both heroes, the canyon walls cracking from the heat</code></div>
+<div class="row"><span class="k">CONT</span><span class="v">BOSS ULTIMATE: Sun of Ash (ember supernova); ultimate stakes</span></div>
+<div class="row"><span class="k">MOTION</span><span class="v">crane-up; ember sun expands; heat shimmer; walls crack</span></div></div>
+</div></div>
+
+<div class="c sp4 rv"><div class="frame">
+<svg viewBox="0 0 160 100" aria-hidden="true"><g class="m-track"><rect width="160" height="100" fill="#0e0602"/><g fill="#38c8e8"><circle cx="52" cy="58" r="5"/><rect x="48" y="63" width="8" height="14" rx="3"/></g><g fill="#f5c518"><circle cx="108" cy="58" r="5"/><rect x="104" y="63" width="8" height="14" rx="3"/></g><path d="M52 58 Q80 34 80 16" fill="none" stroke="#7fd8f0" stroke-width="1.4"/><path d="M108 58 Q80 34 80 16" fill="none" stroke="#f5c518" stroke-width="1.4"/><circle cx="80" cy="16" r="9" fill="#ff9d3c" opacity=".8"/></g></svg>
+<span class="sid">S17</span></div>
+<div class="gm"><b>WIDE</b> · low-angle · <b>track</b> · 4.5s · clip 5.0s</div>
+<div class="cue narr"><span class="tag">NARRATION</span>Ловецот ја прифати Ледената облика, а паладинот — Одмаздничкиот гнев. Мразна и златна лента, право кон срцето на суперновата.</div>
+<div class="spec">
+<div class="kv"><div class="row"><span class="k">KF·A</span><code>Side-by-side low-angle: the Hunter&#x27;s hair erupts in white light with a turquoise ring of signs (Glacier Form); the Paladin&#x27;s runes blaze and transparent golden wings unfold (Avenging Wrath)</code></div>
+<div class="row"><span class="k">KF·B</span><code class="endl">They launch together — a ribbon of ice and a ribbon of gold intertwined, streaking toward the heart of the ember sun</code></div>
+<div class="row"><span class="k">CONT</span><span class="v">Both ultimates (Glacier Form + Avenging Wrath); tag Sun of Ash from S16</span></div>
+<div class="row"><span class="k">MOTION</span><span class="v">track toward sun; twin ribbons spiral; wind distortion</span></div></div>
+</div></div>
+
+<div class="c sp4 rv"><div class="frame">
+<svg viewBox="0 0 160 100" aria-hidden="true"><g class="m-panr"><rect width="160" height="100" fill="#0a0d12"/><g fill="#38c8e8"><circle cx="56" cy="58" r="5"/><rect x="52" y="63" width="8" height="14" rx="3"/></g><g fill="#f5c518"><circle cx="116" cy="58" r="5"/><rect x="112" y="63" width="8" height="14" rx="3"/></g><path d="M56 50 L116 50" stroke="#ffffff" stroke-width="1.4" opacity=".9"/><circle cx="86" cy="50" r="8" fill="#fff" opacity=".9"/></g></svg>
+<span class="sid">S18</span></div>
+<div class="gm"><b>CLOSE</b> · eye-level · <b>shot-reverse</b> · 3.5s · clip 5.0s</div>
+<div class="cue dlg"><span class="tag">DIALOGUE</span>„Замрзни,“ рече ловецот. „Суди,“ рече паладинот.</div>
+<div class="spec">
+<div class="kv"><div class="row"><span class="k">KF·A</span><code>Close on the Hunter, white-hot eyes, speaking: FREEZE. Reverse close on the Paladin, runes searing, speaking: JUDGE.</code></div>
+<div class="row"><span class="k">KF·B</span><code class="endl">The two words land as the Rime Beam and the golden Verdict strike the fire core simultaneously</code></div>
+<div class="row"><span class="k">CONT</span><span class="v">Shot/reverse of both heroes at the decisive instant</span></div>
+<div class="row"><span class="k">MOTION</span><span class="v">shot/reverse cut; core impact flash</span></div></div>
+</div></div>
+
+<div class="c sp4 rv"><div class="frame">
+<svg viewBox="0 0 160 100" aria-hidden="true"><g class="m-crane"><rect width="160" height="100" fill="#0c0a10"/><circle cx="80" cy="46" r="18" fill="#fff" opacity=".5"/><circle cx="80" cy="46" r="26" fill="none" stroke="#c9c2d8" stroke-width="1" opacity=".5"/><path d="M70 30 L78 24 L88 30" fill="none" stroke="#3a1f10" stroke-width="2.4"/></g></svg>
+<span class="sid">S19</span></div>
+<div class="gm"><b>WIDE</b> · high-angle · <b>pull-back</b> · 4.5s · clip 5.0s</div>
+<div class="cue narr"><span class="tag">NARRATION</span>Јадрото се распука. Светлината надојде од внатре и ја потопи жарта. Суперновата се соблече навнатре, а круната од мртви јаглени падна.</div>
+<div class="spec">
+<div class="kv"><div class="row"><span class="k">KF·A</span><code>The fire core cracks open, pure light rising from within and drowning the ember; the ember supernova collapses inward</code></div>
+<div class="row"><span class="k">KF·B</span><code class="endl">Pull-back high-angle as the crown of dead charcoals cracks and falls; the light fades to ashen calm</code></div>
+<div class="row"><span class="k">CONT</span><span class="v">Pays off S16 Sun of Ash; boss defeated (crown falls)</span></div>
+<div class="row"><span class="k">MOTION</span><span class="v">pull-back; inward collapse; light floods then subsides</span></div></div>
+</div></div>
+
+<div class="c sp4 rv"><div class="frame">
+<svg viewBox="0 0 160 100" aria-hidden="true"><g class="m-track"><rect width="160" height="100" fill="#1b130c"/><path d="M0 70 L40 58 L80 66 L120 54 L160 62 L160 100 L0 100Z" fill="#241a12"/><g fill="#38c8e8"><circle cx="62" cy="64" r="5"/><rect x="58" y="69" width="8" height="14" rx="3"/></g><g fill="#f5c518"><circle cx="100" cy="64" r="5"/><rect x="96" y="69" width="8" height="14" rx="3"/></g><path d="M58 56 q4 -6 8 0" stroke="#38c8e8" stroke-width="1" fill="none"/><circle cx="136" cy="18" r="9" fill="#ffd9a0" opacity=".55"/></g></svg>
+<span class="sid">S20</span></div>
+<div class="gm"><b>WIDE</b> · eye-level · <b>track</b> · 5.0s · clip 5.0s</div>
+<div class="cue dlg"><span class="tag">DIALOGUE</span>Ловецот: „Пепелта е само снег што не стигнал на време.“ — првата зора прободе низ пепелта.</div>
+<div class="spec">
+<div class="kv"><div class="row"><span class="k">KF·A</span><code>The ash settles: two silhouettes stand over the extinguished core, the Hunter lowering his hood and exhaling a thin stream of frost, the Paladin slinging his sword over his shoulder</code></div>
+<div class="row"><span class="k">KF·B</span><code class="endl">The first dawn light pierces through the falling ash, warming the frame to soft gold</code></div>
+<div class="row"><span class="k">CONT</span><span class="v">Grand closing; mirrors S01 (two figures on ridge) but now dawn instead of dusk</span></div>
+<div class="row"><span class="k">MOTION</span><span class="v">gentle track; ash settles; dawn light breaks; frost breath curls</span></div></div>
+</div></div></div></div></div>
+<div class="shell" id="blocking"><div class="core">
+<div class="rail rv"><span class="dot" style="background:var(--gold);box-shadow:0 0 18px var(--gold)"></span><span class="n">Blocking map</span><h2>Топ-поглед · камера &amp; ликови</h2></div>
+<div class="blocking"><svg class="stage" viewBox="0 0 160 100" preserveAspectRatio="xMidYMid meet">
+<g stroke="#1c1c26" stroke-width="1"><line x1="0" y1="10" x2="160" y2="10"/><line x1="10" y1="0" x2="10" y2="100"/><line x1="0" y1="10" x2="160" y2="10"/><line x1="30" y1="0" x2="30" y2="100"/><line x1="0" y1="10" x2="160" y2="10"/><line x1="50" y1="0" x2="50" y2="100"/><line x1="0" y1="10" x2="160" y2="10"/><line x1="70" y1="0" x2="70" y2="100"/><line x1="0" y1="10" x2="160" y2="10"/><line x1="90" y1="0" x2="90" y2="100"/><line x1="0" y1="10" x2="160" y2="10"/><line x1="110" y1="0" x2="110" y2="100"/><line x1="0" y1="10" x2="160" y2="10"/><line x1="130" y1="0" x2="130" y2="100"/><line x1="0" y1="10" x2="160" y2="10"/><line x1="150" y1="0" x2="150" y2="100"/><line x1="0" y1="28" x2="160" y2="28"/><line x1="10" y1="0" x2="10" y2="100"/><line x1="0" y1="28" x2="160" y2="28"/><line x1="30" y1="0" x2="30" y2="100"/><line x1="0" y1="28" x2="160" y2="28"/><line x1="50" y1="0" x2="50" y2="100"/><line x1="0" y1="28" x2="160" y2="28"/><line x1="70" y1="0" x2="70" y2="100"/><line x1="0" y1="28" x2="160" y2="28"/><line x1="90" y1="0" x2="90" y2="100"/><line x1="0" y1="28" x2="160" y2="28"/><line x1="110" y1="0" x2="110" y2="100"/><line x1="0" y1="28" x2="160" y2="28"/><line x1="130" y1="0" x2="130" y2="100"/><line x1="0" y1="28" x2="160" y2="28"/><line x1="150" y1="0" x2="150" y2="100"/><line x1="0" y1="46" x2="160" y2="46"/><line x1="10" y1="0" x2="10" y2="100"/><line x1="0" y1="46" x2="160" y2="46"/><line x1="30" y1="0" x2="30" y2="100"/><line x1="0" y1="46" x2="160" y2="46"/><line x1="50" y1="0" x2="50" y2="100"/><line x1="0" y1="46" x2="160" y2="46"/><line x1="70" y1="0" x2="70" y2="100"/><line x1="0" y1="46" x2="160" y2="46"/><line x1="90" y1="0" x2="90" y2="100"/><line x1="0" y1="46" x2="160" y2="46"/><line x1="110" y1="0" x2="110" y2="100"/><line x1="0" y1="46" x2="160" y2="46"/><line x1="130" y1="0" x2="130" y2="100"/><line x1="0" y1="46" x2="160" y2="46"/><line x1="150" y1="0" x2="150" y2="100"/><line x1="0" y1="64" x2="160" y2="64"/><line x1="10" y1="0" x2="10" y2="100"/><line x1="0" y1="64" x2="160" y2="64"/><line x1="30" y1="0" x2="30" y2="100"/><line x1="0" y1="64" x2="160" y2="64"/><line x1="50" y1="0" x2="50" y2="100"/><line x1="0" y1="64" x2="160" y2="64"/><line x1="70" y1="0" x2="70" y2="100"/><line x1="0" y1="64" x2="160" y2="64"/><line x1="90" y1="0" x2="90" y2="100"/><line x1="0" y1="64" x2="160" y2="64"/><line x1="110" y1="0" x2="110" y2="100"/><line x1="0" y1="64" x2="160" y2="64"/><line x1="130" y1="0" x2="130" y2="100"/><line x1="0" y1="64" x2="160" y2="64"/><line x1="150" y1="0" x2="150" y2="100"/><line x1="0" y1="82" x2="160" y2="82"/><line x1="10" y1="0" x2="10" y2="100"/><line x1="0" y1="82" x2="160" y2="82"/><line x1="30" y1="0" x2="30" y2="100"/><line x1="0" y1="82" x2="160" y2="82"/><line x1="50" y1="0" x2="50" y2="100"/><line x1="0" y1="82" x2="160" y2="82"/><line x1="70" y1="0" x2="70" y2="100"/><line x1="0" y1="82" x2="160" y2="82"/><line x1="90" y1="0" x2="90" y2="100"/><line x1="0" y1="82" x2="160" y2="82"/><line x1="110" y1="0" x2="110" y2="100"/><line x1="0" y1="82" x2="160" y2="82"/><line x1="130" y1="0" x2="130" y2="100"/><line x1="0" y1="82" x2="160" y2="82"/><line x1="150" y1="0" x2="150" y2="100"/></g>
+<circle cx="42" cy="58" r="4" fill="#d4af37"/><circle cx="84" cy="32" r="4" fill="#d4af37"/><circle cx="128" cy="62" r="4" fill="#d4af37"/><path d="M42 54 L58 18 L100 18" fill="none" stroke="#d4af37" stroke-width="1" opacity=".5"/><circle cx="80" cy="70" r="5" fill="#2dd4bf"/><circle cx="108" cy="60" r="5" fill="#f59e0b"/><circle cx="58" cy="42" r="5" fill="#ef4444"/><text x="70" y="84" fill="#2dd4bf" font-size="7">Ловецот</text><text x="100" y="72" fill="#f59e0b" font-size="7">Паладинот</text><text x="46" y="56" fill="#ef4444" font-size="7">Мал’гарот</text>
+<text x="42" y="76" fill="#9a9a92" font-size="7">CAM</text>
+</svg></div></div></div>
+<div class="shell"><div class="core"><div class="rail rv"><span class="dot" style="background:var(--gold);box-shadow:0 0 18px var(--gold)"></span><span class="n">Film strip</span><h2>Секвенца</h2></div>
+<div class="filmstrip"><div class="fs-track"><div class="fs"><svg viewBox="0 0 160 100"><g class="m-crane"><rect width="160" height="100" fill="#160d0a"/><path d="M0 70 L30 46 L52 64 L84 38 L118 62 L160 44 L160 100 L0 100Z" fill="#241410"/><circle cx="130" cy="20" r="9" fill="#ff9d3c" opacity=".5"/><g fill="#38c8e8"><circle cx="64" cy="62" r="5"/><rect x="60" y="67" width="8" height="14" rx="3"/></g><g fill="#f5c518"><circle cx="96" cy="62" r="5"/><rect x="92" y="67" width="8" height="14" rx="3"/></g></g></svg><div class="lbl">S01 · crane-down</div></div><div class="fs"><svg viewBox="0 0 160 100"><g class="m-track"><rect width="160" height="100" fill="#0d1316"/><path d="M38 50 q12 -4 60 48 M44 50 l54 54" stroke="#38c8e8" stroke-width="1.4" fill="none"/><path d="M116 50 q12 -4 138 48 M122 50 l132 54" stroke="#38c8e8" stroke-width="1.4" fill="none"/><g fill="#38c8e8"><circle cx="80" cy="60" r="5"/><rect x="76" y="65" width="8" height="14" rx="3"/></g><path d="M66 40 Q74 30 82 40 Q90 30 98 40" stroke="#38c8e8" stroke-width="1.6" fill="none"/></g></svg><div class="lbl">S02 · track</div></div><div class="fs"><svg viewBox="0 0 160 100"><g class="m-push"><rect width="160" height="100" fill="#120f09"/><g fill="#f5c518"><circle cx="80" cy="58" r="5.5"/><rect x="75.6" y="63.5" width="8.8" height="15.400000000000002" rx="3.3000000000000003"/></g><path d="M64 44 L78 40 L92 44 L78 50 Z" fill="none" stroke="#f5c518" stroke-width="1.2" opacity=".9"/><path d="M62 48 L80 44 L96 48" fill="none" stroke="#f5c518" stroke-width="1" opacity=".7"/><circle cx="78" cy="46" r="1.4" fill="#fff"/></g></svg><div class="lbl">S03 · push-in</div></div><div class="fs"><svg viewBox="0 0 160 100"><g class="m-crane"><rect width="160" height="100" fill="#170b06"/><path d="M0 86 L40 58 L80 70 L120 50 L160 64 L160 100 L0 100Z" fill="#241008"/><g fill="#ef4444"><path d="M49.199999999999996 32 Q31.599999999999994 -7.600000000000001 62.4 -20.800000000000004 Q71.2 5.599999999999998 80 32" opacity=".85"/><path d="M110.80000000000001 32 Q128.4 -7.600000000000001 97.6 -20.800000000000004 Q88.8 5.599999999999998 80 32" opacity=".85"/><rect x="58.0" y="32" width="44.0" height="70.4" rx="17.6"/><circle cx="80" cy="58.400000000000006" r="14.96" fill="#ff9d3c"/></g><g fill="#38c8e8"><circle cx="58" cy="64" r="3.0"/><rect x="55.6" y="67.0" width="4.8" height="8.4" rx="1.7999999999999998"/></g><g fill="#f5c518"><circle cx="102" cy="64" r="3.0"/><rect x="99.6" y="67.0" width="4.8" height="8.4" rx="1.7999999999999998"/></g></g></svg><div class="lbl">S04 · crane-up</div></div><div class="fs"><svg viewBox="0 0 160 100"><g class="m-push"><rect width="160" height="100" fill="#140a04"/><path d="M0 30 Q50 60 90 78 T160 60" fill="none" stroke="#ef4444" stroke-width="2.4" opacity=".9"/><path d="M110 14 L124 22 L128 12 L140 26 L148 16" fill="none" stroke="#3a1f10" stroke-width="3"/><circle cx="126" cy="20" r="2.4" fill="#ff9d3c"/></g></svg><div class="lbl">S05 · push-in</div></div><div class="fs"><svg viewBox="0 0 160 100"><g class="m-push"><rect width="160" height="100" fill="#150a04"/><g fill="#ef4444"><path d="M57.599999999999994 44 Q44.8 15.2 67.2 5.599999999999994 Q73.6 24.799999999999997 80 44" opacity=".85"/><path d="M102.4 44 Q115.2 15.2 92.8 5.599999999999994 Q86.4 24.799999999999997 80 44" opacity=".85"/><rect x="64.0" y="44" width="32.0" height="51.2" rx="12.8"/><circle cx="80" cy="63.2" r="10.88" fill="#ff9d3c"/></g><path d="M0 30 Q50 60 90 78 T160 60" fill="none" stroke="#ef4444" stroke-width="2.4" opacity=".9"/></g></svg><div class="lbl">S06 · push-in</div></div><div class="fs"><svg viewBox="0 0 160 100"><g class="m-track"><rect width="160" height="100" fill="#0b1519"/><g fill="#38c8e8"><circle cx="80" cy="62" r="5"/><rect x="76" y="67" width="8" height="14" rx="3"/></g><circle cx="80" cy="54" r="22" fill="none" stroke="#38c8e8" stroke-width="1.6" opacity=".9"/><circle cx="80" cy="54" r="30" fill="none" stroke="#7fd8f0" stroke-width=".8" opacity=".5"/></g></svg><div class="lbl">S07 · track</div></div><div class="fs"><svg viewBox="0 0 160 100"><g class="m-track"><rect width="160" height="100" fill="#0a1417"/><g fill="#ef4444"><path d="M61 48 Q49 21 70 12 Q76 30 82 48" opacity=".85"/><path d="M103 48 Q115 21 94 12 Q88 30 82 48" opacity=".85"/><rect x="67" y="48" width="30" height="48" rx="12"/><circle cx="82" cy="66" r="10.2" fill="#ff9d3c"/></g><g fill="#38c8e8"><circle cx="44" cy="32" r="4.0"/><rect x="40.8" y="36.0" width="6.4" height="11.200000000000001" rx="2.4000000000000004"/></g><path d="M20 64 Q50 30 96 30 Q128 30 150 46" fill="none" stroke="#7fd8f0" stroke-width="1.6" opacity=".8"/></g></svg><div class="lbl">S08 · track</div></div><div class="fs"><svg viewBox="0 0 160 100"><g class="m-push"><rect width="160" height="100" fill="#080e14"/><path d="M40 50 L130 50" stroke="#bcdcf0" stroke-width="2.6"/><path d="M40 56 L130 56" stroke="#c08bf5" stroke-width="1.4" opacity=".8"/><path d="M134 40 l6 10 l-10 4 l4 -6z" fill="#9fd8f0"/></g></svg><div class="lbl">S09 · push-in</div></div><div class="fs"><svg viewBox="0 0 160 100"><g class="m-push"><rect width="160" height="100" fill="#160a04"/><g fill="#ef4444"><path d="M56.2 40 Q42.6 9.400000000000002 66.4 -0.7999999999999972 Q73.2 19.6 80 40" opacity=".85"/><path d="M103.8 40 Q117.4 9.400000000000002 93.6 -0.7999999999999972 Q86.8 19.6 80 40" opacity=".85"/><rect x="63.0" y="40" width="34.0" height="54.4" rx="13.6"/><circle cx="80" cy="60.4" r="11.559999999999999" fill="#ff9d3c"/></g><path d="M0 30 Q50 60 90 78 T160 60" fill="none" stroke="#ef4444" stroke-width="2.4" opacity=".9"/></g></svg><div class="lbl">S10 · push-in</div></div><div class="fs"><svg viewBox="0 0 160 100"><g class="m-track"><rect width="160" height="100" fill="#100f0a"/><line x1="80" y1="38" x2="80" y2="74" stroke="#f5c518" stroke-width="2"/><rect x="79" y="39" width="4" height="3" fill="#f5c518"/><g fill="#f5c518"><circle cx="80" cy="64" r="5"/><rect x="76" y="69" width="8" height="14" rx="3"/></g><circle cx="80" cy="74" r="16" fill="none" stroke="#f5c518" stroke-width="1.8" opacity=".9"/><g fill="#ef4444"><path d="M105.8 46 Q95.4 22.599999999999998 113.6 14.799999999999997 Q118.8 30.4 124 46" opacity=".85"/><path d="M142.2 46 Q152.6 22.599999999999998 134.4 14.799999999999997 Q129.2 30.4 124 46" opacity=".85"/><rect x="111.0" y="46" width="26.0" height="41.6" rx="10.4"/><circle cx="124" cy="61.6" r="8.84" fill="#ff9d3c"/></g></g></svg><div class="lbl">S11 · track</div></div><div class="fs"><svg viewBox="0 0 160 100"><g class="m-push"><rect width="160" height="100" fill="#0e0c06"/><path d="M40 44 Q70 34 96 44 Q118 52 136 40" fill="none" stroke="#f5c518" stroke-width="1.6"/><path d="M52 56 Q80 48 108 58" fill="none" stroke="#fff6d8" stroke-width="1.2"/><circle cx="118" cy="48" r="2.2" fill="#fff"/></g></svg><div class="lbl">S12 · push-in</div></div><div class="fs"><svg viewBox="0 0 160 100"><g class="m-track"><rect width="160" height="100" fill="#0a0f14"/><g fill="#38c8e8"><circle cx="44" cy="58" r="4.5"/><rect x="40.4" y="62.5" width="7.2" height="12.6" rx="2.7"/></g><g fill="#f5c518"><circle cx="116" cy="58" r="4.5"/><rect x="112.4" y="62.5" width="7.2" height="12.6" rx="2.7"/></g><g fill="#ef4444"><path d="M59 38 Q47 11 68 2 Q74 20 80 38" opacity=".85"/><path d="M101 38 Q113 11 92 2 Q86 20 80 38" opacity=".85"/><rect x="65" y="38" width="30" height="48" rx="12"/><circle cx="80" cy="56" r="10.2" fill="#ff9d3c"/></g><path d="M80 34 l-8 14 l-14 -4 l9 -10z" fill="#9fd8f0"/><path d="M80 34 l8 14 l14 -2 l-8 -12z" fill="#f5c518"/></g></svg><div class="lbl">S13 · track</div></div><div class="fs"><svg viewBox="0 0 160 100"><g class="m-crane"><rect width="160" height="100" fill="#120604"/><g fill="#ef4444"><path d="M52 34 Q36 -2 64 -14 Q72 10 80 34" opacity=".85"/><path d="M108 34 Q124 -2 96 -14 Q88 10 80 34" opacity=".85"/><rect x="60" y="34" width="40" height="64" rx="16"/><circle cx="80" cy="58" r="13.6" fill="#ff9d3c"/></g><line x1="20" y1="0" x2="26" y2="30" stroke="#3a1c0c" stroke-width="1"/><line x1="52" y1="0" x2="58" y2="26" stroke="#3a1c0c" stroke-width="1"/><line x1="94" y1="0" x2="100" y2="32" stroke="#3a1c0c" stroke-width="1"/><line x1="128" y1="0" x2="134" y2="28" stroke="#3a1c0c" stroke-width="1"/><line x1="40" y1="0" x2="46" y2="38" stroke="#3a1c0c" stroke-width="1"/></g></svg><div class="lbl">S14 · crane-down</div></div><div class="fs"><svg viewBox="0 0 160 100"><g class="m-track"><rect width="160" height="100" fill="#0d0906"/><g fill="#f5c518"><circle cx="80" cy="60" r="5"/><rect x="76" y="65" width="8" height="14" rx="3"/></g><circle cx="80" cy="56" r="26" fill="none" stroke="#f5c518" stroke-width="1.2" opacity=".7"/><line x1="60" y1="18" x2="64" y2="34" stroke="#3a1c0c"/><line x1="100" y1="14" x2="104" y2="30" stroke="#3a1c0c"/></g></svg><div class="lbl">S15 · track</div></div><div class="fs"><svg viewBox="0 0 160 100"><g class="m-crane"><rect width="160" height="100" fill="#1a0702"/><g fill="#ef4444"><path d="M54.8 30 Q40.4 -2.3999999999999986 65.6 -13.200000000000003 Q72.8 8.399999999999999 80 30" opacity=".85"/><path d="M105.2 30 Q119.6 -2.3999999999999986 94.4 -13.200000000000003 Q87.2 8.399999999999999 80 30" opacity=".85"/><rect x="62.0" y="30" width="36.0" height="57.6" rx="14.4"/><circle cx="80" cy="51.6" r="12.24" fill="#ff9d3c"/></g><circle cx="80" cy="30" r="20" fill="#ff9d3c" opacity=".75"/><circle cx="80" cy="30" r="30" fill="none" stroke="#ff9d3c" stroke-width="1.2" opacity=".6"/><g fill="#38c8e8"><circle cx="52" cy="64" r="3.0"/><rect x="49.6" y="67.0" width="4.8" height="8.4" rx="1.7999999999999998"/></g><g fill="#f5c518"><circle cx="108" cy="64" r="3.0"/><rect x="105.6" y="67.0" width="4.8" height="8.4" rx="1.7999999999999998"/></g></g></svg><div class="lbl">S16 · crane-up</div></div><div class="fs"><svg viewBox="0 0 160 100"><g class="m-track"><rect width="160" height="100" fill="#0e0602"/><g fill="#38c8e8"><circle cx="52" cy="58" r="5"/><rect x="48" y="63" width="8" height="14" rx="3"/></g><g fill="#f5c518"><circle cx="108" cy="58" r="5"/><rect x="104" y="63" width="8" height="14" rx="3"/></g><path d="M52 58 Q80 34 80 16" fill="none" stroke="#7fd8f0" stroke-width="1.4"/><path d="M108 58 Q80 34 80 16" fill="none" stroke="#f5c518" stroke-width="1.4"/><circle cx="80" cy="16" r="9" fill="#ff9d3c" opacity=".8"/></g></svg><div class="lbl">S17 · track</div></div><div class="fs"><svg viewBox="0 0 160 100"><g class="m-panr"><rect width="160" height="100" fill="#0a0d12"/><g fill="#38c8e8"><circle cx="56" cy="58" r="5"/><rect x="52" y="63" width="8" height="14" rx="3"/></g><g fill="#f5c518"><circle cx="116" cy="58" r="5"/><rect x="112" y="63" width="8" height="14" rx="3"/></g><path d="M56 50 L116 50" stroke="#ffffff" stroke-width="1.4" opacity=".9"/><circle cx="86" cy="50" r="8" fill="#fff" opacity=".9"/></g></svg><div class="lbl">S18 · shot-reverse</div></div><div class="fs"><svg viewBox="0 0 160 100"><g class="m-crane"><rect width="160" height="100" fill="#0c0a10"/><circle cx="80" cy="46" r="18" fill="#fff" opacity=".5"/><circle cx="80" cy="46" r="26" fill="none" stroke="#c9c2d8" stroke-width="1" opacity=".5"/><path d="M70 30 L78 24 L88 30" fill="none" stroke="#3a1f10" stroke-width="2.4"/></g></svg><div class="lbl">S19 · pull-back</div></div><div class="fs"><svg viewBox="0 0 160 100"><g class="m-track"><rect width="160" height="100" fill="#1b130c"/><path d="M0 70 L40 58 L80 66 L120 54 L160 62 L160 100 L0 100Z" fill="#241a12"/><g fill="#38c8e8"><circle cx="62" cy="64" r="5"/><rect x="58" y="69" width="8" height="14" rx="3"/></g><g fill="#f5c518"><circle cx="100" cy="64" r="5"/><rect x="96" y="69" width="8" height="14" rx="3"/></g><path d="M58 56 q4 -6 8 0" stroke="#38c8e8" stroke-width="1" fill="none"/><circle cx="136" cy="18" r="9" fill="#ffd9a0" opacity=".55"/></g></svg><div class="lbl">S20 · track</div></div><div class="fs"><svg viewBox="0 0 160 100"><g class="m-crane"><rect width="160" height="100" fill="#160d0a"/><path d="M0 70 L30 46 L52 64 L84 38 L118 62 L160 44 L160 100 L0 100Z" fill="#241410"/><circle cx="130" cy="20" r="9" fill="#ff9d3c" opacity=".5"/><g fill="#38c8e8"><circle cx="64" cy="62" r="5"/><rect x="60" y="67" width="8" height="14" rx="3"/></g><g fill="#f5c518"><circle cx="96" cy="62" r="5"/><rect x="92" y="67" width="8" height="14" rx="3"/></g></g></svg><div class="lbl">S01 · crane-down</div></div><div class="fs"><svg viewBox="0 0 160 100"><g class="m-track"><rect width="160" height="100" fill="#0d1316"/><path d="M38 50 q12 -4 60 48 M44 50 l54 54" stroke="#38c8e8" stroke-width="1.4" fill="none"/><path d="M116 50 q12 -4 138 48 M122 50 l132 54" stroke="#38c8e8" stroke-width="1.4" fill="none"/><g fill="#38c8e8"><circle cx="80" cy="60" r="5"/><rect x="76" y="65" width="8" height="14" rx="3"/></g><path d="M66 40 Q74 30 82 40 Q90 30 98 40" stroke="#38c8e8" stroke-width="1.6" fill="none"/></g></svg><div class="lbl">S02 · track</div></div><div class="fs"><svg viewBox="0 0 160 100"><g class="m-push"><rect width="160" height="100" fill="#120f09"/><g fill="#f5c518"><circle cx="80" cy="58" r="5.5"/><rect x="75.6" y="63.5" width="8.8" height="15.400000000000002" rx="3.3000000000000003"/></g><path d="M64 44 L78 40 L92 44 L78 50 Z" fill="none" stroke="#f5c518" stroke-width="1.2" opacity=".9"/><path d="M62 48 L80 44 L96 48" fill="none" stroke="#f5c518" stroke-width="1" opacity=".7"/><circle cx="78" cy="46" r="1.4" fill="#fff"/></g></svg><div class="lbl">S03 · push-in</div></div><div class="fs"><svg viewBox="0 0 160 100"><g class="m-crane"><rect width="160" height="100" fill="#170b06"/><path d="M0 86 L40 58 L80 70 L120 50 L160 64 L160 100 L0 100Z" fill="#241008"/><g fill="#ef4444"><path d="M49.199999999999996 32 Q31.599999999999994 -7.600000000000001 62.4 -20.800000000000004 Q71.2 5.599999999999998 80 32" opacity=".85"/><path d="M110.80000000000001 32 Q128.4 -7.600000000000001 97.6 -20.800000000000004 Q88.8 5.599999999999998 80 32" opacity=".85"/><rect x="58.0" y="32" width="44.0" height="70.4" rx="17.6"/><circle cx="80" cy="58.400000000000006" r="14.96" fill="#ff9d3c"/></g><g fill="#38c8e8"><circle cx="58" cy="64" r="3.0"/><rect x="55.6" y="67.0" width="4.8" height="8.4" rx="1.7999999999999998"/></g><g fill="#f5c518"><circle cx="102" cy="64" r="3.0"/><rect x="99.6" y="67.0" width="4.8" height="8.4" rx="1.7999999999999998"/></g></g></svg><div class="lbl">S04 · crane-up</div></div><div class="fs"><svg viewBox="0 0 160 100"><g class="m-push"><rect width="160" height="100" fill="#140a04"/><path d="M0 30 Q50 60 90 78 T160 60" fill="none" stroke="#ef4444" stroke-width="2.4" opacity=".9"/><path d="M110 14 L124 22 L128 12 L140 26 L148 16" fill="none" stroke="#3a1f10" stroke-width="3"/><circle cx="126" cy="20" r="2.4" fill="#ff9d3c"/></g></svg><div class="lbl">S05 · push-in</div></div><div class="fs"><svg viewBox="0 0 160 100"><g class="m-push"><rect width="160" height="100" fill="#150a04"/><g fill="#ef4444"><path d="M57.599999999999994 44 Q44.8 15.2 67.2 5.599999999999994 Q73.6 24.799999999999997 80 44" opacity=".85"/><path d="M102.4 44 Q115.2 15.2 92.8 5.599999999999994 Q86.4 24.799999999999997 80 44" opacity=".85"/><rect x="64.0" y="44" width="32.0" height="51.2" rx="12.8"/><circle cx="80" cy="63.2" r="10.88" fill="#ff9d3c"/></g><path d="M0 30 Q50 60 90 78 T160 60" fill="none" stroke="#ef4444" stroke-width="2.4" opacity=".9"/></g></svg><div class="lbl">S06 · push-in</div></div><div class="fs"><svg viewBox="0 0 160 100"><g class="m-track"><rect width="160" height="100" fill="#0b1519"/><g fill="#38c8e8"><circle cx="80" cy="62" r="5"/><rect x="76" y="67" width="8" height="14" rx="3"/></g><circle cx="80" cy="54" r="22" fill="none" stroke="#38c8e8" stroke-width="1.6" opacity=".9"/><circle cx="80" cy="54" r="30" fill="none" stroke="#7fd8f0" stroke-width=".8" opacity=".5"/></g></svg><div class="lbl">S07 · track</div></div><div class="fs"><svg viewBox="0 0 160 100"><g class="m-track"><rect width="160" height="100" fill="#0a1417"/><g fill="#ef4444"><path d="M61 48 Q49 21 70 12 Q76 30 82 48" opacity=".85"/><path d="M103 48 Q115 21 94 12 Q88 30 82 48" opacity=".85"/><rect x="67" y="48" width="30" height="48" rx="12"/><circle cx="82" cy="66" r="10.2" fill="#ff9d3c"/></g><g fill="#38c8e8"><circle cx="44" cy="32" r="4.0"/><rect x="40.8" y="36.0" width="6.4" height="11.200000000000001" rx="2.4000000000000004"/></g><path d="M20 64 Q50 30 96 30 Q128 30 150 46" fill="none" stroke="#7fd8f0" stroke-width="1.6" opacity=".8"/></g></svg><div class="lbl">S08 · track</div></div><div class="fs"><svg viewBox="0 0 160 100"><g class="m-push"><rect width="160" height="100" fill="#080e14"/><path d="M40 50 L130 50" stroke="#bcdcf0" stroke-width="2.6"/><path d="M40 56 L130 56" stroke="#c08bf5" stroke-width="1.4" opacity=".8"/><path d="M134 40 l6 10 l-10 4 l4 -6z" fill="#9fd8f0"/></g></svg><div class="lbl">S09 · push-in</div></div><div class="fs"><svg viewBox="0 0 160 100"><g class="m-push"><rect width="160" height="100" fill="#160a04"/><g fill="#ef4444"><path d="M56.2 40 Q42.6 9.400000000000002 66.4 -0.7999999999999972 Q73.2 19.6 80 40" opacity=".85"/><path d="M103.8 40 Q117.4 9.400000000000002 93.6 -0.7999999999999972 Q86.8 19.6 80 40" opacity=".85"/><rect x="63.0" y="40" width="34.0" height="54.4" rx="13.6"/><circle cx="80" cy="60.4" r="11.559999999999999" fill="#ff9d3c"/></g><path d="M0 30 Q50 60 90 78 T160 60" fill="none" stroke="#ef4444" stroke-width="2.4" opacity=".9"/></g></svg><div class="lbl">S10 · push-in</div></div><div class="fs"><svg viewBox="0 0 160 100"><g class="m-track"><rect width="160" height="100" fill="#100f0a"/><line x1="80" y1="38" x2="80" y2="74" stroke="#f5c518" stroke-width="2"/><rect x="79" y="39" width="4" height="3" fill="#f5c518"/><g fill="#f5c518"><circle cx="80" cy="64" r="5"/><rect x="76" y="69" width="8" height="14" rx="3"/></g><circle cx="80" cy="74" r="16" fill="none" stroke="#f5c518" stroke-width="1.8" opacity=".9"/><g fill="#ef4444"><path d="M105.8 46 Q95.4 22.599999999999998 113.6 14.799999999999997 Q118.8 30.4 124 46" opacity=".85"/><path d="M142.2 46 Q152.6 22.599999999999998 134.4 14.799999999999997 Q129.2 30.4 124 46" opacity=".85"/><rect x="111.0" y="46" width="26.0" height="41.6" rx="10.4"/><circle cx="124" cy="61.6" r="8.84" fill="#ff9d3c"/></g></g></svg><div class="lbl">S11 · track</div></div><div class="fs"><svg viewBox="0 0 160 100"><g class="m-push"><rect width="160" height="100" fill="#0e0c06"/><path d="M40 44 Q70 34 96 44 Q118 52 136 40" fill="none" stroke="#f5c518" stroke-width="1.6"/><path d="M52 56 Q80 48 108 58" fill="none" stroke="#fff6d8" stroke-width="1.2"/><circle cx="118" cy="48" r="2.2" fill="#fff"/></g></svg><div class="lbl">S12 · push-in</div></div><div class="fs"><svg viewBox="0 0 160 100"><g class="m-track"><rect width="160" height="100" fill="#0a0f14"/><g fill="#38c8e8"><circle cx="44" cy="58" r="4.5"/><rect x="40.4" y="62.5" width="7.2" height="12.6" rx="2.7"/></g><g fill="#f5c518"><circle cx="116" cy="58" r="4.5"/><rect x="112.4" y="62.5" width="7.2" height="12.6" rx="2.7"/></g><g fill="#ef4444"><path d="M59 38 Q47 11 68 2 Q74 20 80 38" opacity=".85"/><path d="M101 38 Q113 11 92 2 Q86 20 80 38" opacity=".85"/><rect x="65" y="38" width="30" height="48" rx="12"/><circle cx="80" cy="56" r="10.2" fill="#ff9d3c"/></g><path d="M80 34 l-8 14 l-14 -4 l9 -10z" fill="#9fd8f0"/><path d="M80 34 l8 14 l14 -2 l-8 -12z" fill="#f5c518"/></g></svg><div class="lbl">S13 · track</div></div><div class="fs"><svg viewBox="0 0 160 100"><g class="m-crane"><rect width="160" height="100" fill="#120604"/><g fill="#ef4444"><path d="M52 34 Q36 -2 64 -14 Q72 10 80 34" opacity=".85"/><path d="M108 34 Q124 -2 96 -14 Q88 10 80 34" opacity=".85"/><rect x="60" y="34" width="40" height="64" rx="16"/><circle cx="80" cy="58" r="13.6" fill="#ff9d3c"/></g><line x1="20" y1="0" x2="26" y2="30" stroke="#3a1c0c" stroke-width="1"/><line x1="52" y1="0" x2="58" y2="26" stroke="#3a1c0c" stroke-width="1"/><line x1="94" y1="0" x2="100" y2="32" stroke="#3a1c0c" stroke-width="1"/><line x1="128" y1="0" x2="134" y2="28" stroke="#3a1c0c" stroke-width="1"/><line x1="40" y1="0" x2="46" y2="38" stroke="#3a1c0c" stroke-width="1"/></g></svg><div class="lbl">S14 · crane-down</div></div><div class="fs"><svg viewBox="0 0 160 100"><g class="m-track"><rect width="160" height="100" fill="#0d0906"/><g fill="#f5c518"><circle cx="80" cy="60" r="5"/><rect x="76" y="65" width="8" height="14" rx="3"/></g><circle cx="80" cy="56" r="26" fill="none" stroke="#f5c518" stroke-width="1.2" opacity=".7"/><line x1="60" y1="18" x2="64" y2="34" stroke="#3a1c0c"/><line x1="100" y1="14" x2="104" y2="30" stroke="#3a1c0c"/></g></svg><div class="lbl">S15 · track</div></div><div class="fs"><svg viewBox="0 0 160 100"><g class="m-crane"><rect width="160" height="100" fill="#1a0702"/><g fill="#ef4444"><path d="M54.8 30 Q40.4 -2.3999999999999986 65.6 -13.200000000000003 Q72.8 8.399999999999999 80 30" opacity=".85"/><path d="M105.2 30 Q119.6 -2.3999999999999986 94.4 -13.200000000000003 Q87.2 8.399999999999999 80 30" opacity=".85"/><rect x="62.0" y="30" width="36.0" height="57.6" rx="14.4"/><circle cx="80" cy="51.6" r="12.24" fill="#ff9d3c"/></g><circle cx="80" cy="30" r="20" fill="#ff9d3c" opacity=".75"/><circle cx="80" cy="30" r="30" fill="none" stroke="#ff9d3c" stroke-width="1.2" opacity=".6"/><g fill="#38c8e8"><circle cx="52" cy="64" r="3.0"/><rect x="49.6" y="67.0" width="4.8" height="8.4" rx="1.7999999999999998"/></g><g fill="#f5c518"><circle cx="108" cy="64" r="3.0"/><rect x="105.6" y="67.0" width="4.8" height="8.4" rx="1.7999999999999998"/></g></g></svg><div class="lbl">S16 · crane-up</div></div><div class="fs"><svg viewBox="0 0 160 100"><g class="m-track"><rect width="160" height="100" fill="#0e0602"/><g fill="#38c8e8"><circle cx="52" cy="58" r="5"/><rect x="48" y="63" width="8" height="14" rx="3"/></g><g fill="#f5c518"><circle cx="108" cy="58" r="5"/><rect x="104" y="63" width="8" height="14" rx="3"/></g><path d="M52 58 Q80 34 80 16" fill="none" stroke="#7fd8f0" stroke-width="1.4"/><path d="M108 58 Q80 34 80 16" fill="none" stroke="#f5c518" stroke-width="1.4"/><circle cx="80" cy="16" r="9" fill="#ff9d3c" opacity=".8"/></g></svg><div class="lbl">S17 · track</div></div><div class="fs"><svg viewBox="0 0 160 100"><g class="m-panr"><rect width="160" height="100" fill="#0a0d12"/><g fill="#38c8e8"><circle cx="56" cy="58" r="5"/><rect x="52" y="63" width="8" height="14" rx="3"/></g><g fill="#f5c518"><circle cx="116" cy="58" r="5"/><rect x="112" y="63" width="8" height="14" rx="3"/></g><path d="M56 50 L116 50" stroke="#ffffff" stroke-width="1.4" opacity=".9"/><circle cx="86" cy="50" r="8" fill="#fff" opacity=".9"/></g></svg><div class="lbl">S18 · shot-reverse</div></div><div class="fs"><svg viewBox="0 0 160 100"><g class="m-crane"><rect width="160" height="100" fill="#0c0a10"/><circle cx="80" cy="46" r="18" fill="#fff" opacity=".5"/><circle cx="80" cy="46" r="26" fill="none" stroke="#c9c2d8" stroke-width="1" opacity=".5"/><path d="M70 30 L78 24 L88 30" fill="none" stroke="#3a1f10" stroke-width="2.4"/></g></svg><div class="lbl">S19 · pull-back</div></div><div class="fs"><svg viewBox="0 0 160 100"><g class="m-track"><rect width="160" height="100" fill="#1b130c"/><path d="M0 70 L40 58 L80 66 L120 54 L160 62 L160 100 L0 100Z" fill="#241a12"/><g fill="#38c8e8"><circle cx="62" cy="64" r="5"/><rect x="58" y="69" width="8" height="14" rx="3"/></g><g fill="#f5c518"><circle cx="100" cy="64" r="5"/><rect x="96" y="69" width="8" height="14" rx="3"/></g><path d="M58 56 q4 -6 8 0" stroke="#38c8e8" stroke-width="1" fill="none"/><circle cx="136" cy="18" r="9" fill="#ffd9a0" opacity=".55"/></g></svg><div class="lbl">S20 · track</div></div></div></div></div></div>
+<div class="shell"><div class="core"><div class="rail rv"><span class="dot" style="background:var(--gold)"></span><span class="n">Cast</span><h2>Кастинг</h2></div><div class="g"><div class="c sp12 rv"><div class="castrow"><div><b>Ловецот / The Hunter</b><div class="sub">Две пеколни самострели; сино-тиркизни влакна што лебдат; мраз-магија</div></div><div style="text-align:right"><div class="lock">DD (заклучување подоцна)</div><div class="sub">faces/dd_cards_final (9 enrolled) · identity_index→dd</div></div></div></div><div class="c sp12 rv"><div class="castrow"><div><b>Паладинот / The Paladin</b><div class="sub">Ќелав, златен вез; лавиринт од руни преку лице/врат/тело; светлосна магија</div></div><div style="text-align:right"><div class="lock">Blagoj (заклучување подоцна)</div><div class="sub">Blagoj-shaven 454a359e · IDENTITY.md/CHARACTER_SYSTEM.md</div></div></div></div><div class="c sp12 rv"><div class="castrow"><div><b>Мал’гарот / Mal&#x27;garot</b><div class="sub">Господар на Пепелта; роговидна пепел сенка, огнено јадро, круна од мртви јаглени</div></div><div style="text-align:right"><div class="lock">AI-default</div><div class="sub">story-suggested</div></div></div></div></div></div></div>
+<div style="height:1px;background:linear-gradient(90deg,transparent,var(--hair),transparent);margin:44px 0"></div>
+<p class="note rv" style="text-align:center;margin:0 auto">Доказен шаблон (proof exemplar) · 20 кадри / 3 чина · може да се прошири до 40–60 кадри според доктрината.</p>
+</div>
+<script type="application/json" id="storyboard-spec">{
+  "meta": {
+    "title_mk": "Ловецот и Паладинот: Господарот на Пепелта",
+    "title_en": "The Hunter &amp; the Paladin: Lord of Ash",
+    "genre": "Оригинална приказна · епска борба со бос · dark fantasy",
+    "logline": "Двојца — ловецот на мраз и паладинот на светлината — заедно го гаснат Господарот на Пепелта."
+  },
+  "spec": {
+    "aspect": "16:9",
+    "resolution": "1280x720",
+    "fps": 24,
+    "model": "SkyReels-V3-identity",
+    "style": "photoreal",
+    "flf": true,
+    "language": "mk",
+    "shot_floor": 40,
+    "shot_max": 60,
+    "seed_policy": "fixed-per-shot (same seed → reproducible shot; re-roll per shot id)",
+    "style_anchor": [
+      "Diablo 2 cinematic",
+      "World of Warcraft cinematic",
+      "StarCraft cinematic"
+    ],
+    "negative_prompt": "cartoon, anime, illustration, low poly, blurry, extra fingers, distorted face, watermark, text, gore, blood spray, child-unfriendly"
+  },
+  "cast": [
+    {
+      "role": "Ловецот / The Hunter",
+      "trait": "Две пеколни самострели; сино-тиркизни влакна што лебдат; мраз-магија",
+      "source": "faces/dd_cards_final (9 enrolled) · identity_index→dd",
+      "face_lock": "DD (заклучување подоцна)"
+    },
+    {
+      "role": "Паладинот / The Paladin",
+      "trait": "Ќелав, златен вез; лавиринт од руни преку лице/врат/тело; светлосна магија",
+      "source": "Blagoj-shaven 454a359e · IDENTITY.md/CHARACTER_SYSTEM.md",
+      "face_lock": "Blagoj (заклучување подоцна)"
+    },
+    {
+      "role": "Мал’гарот / Mal'garot",
+      "trait": "Господар на Пепелта; роговидна пепел сенка, огнено јадро, круна од мртви јаглени",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    }
+  ],
+  "acts": [
+    {
+      "id": "act1",
+      "num": "Act I",
+      "title": "Заложба · Доаѓањето",
+      "color": "#38c8e8",
+      "synopsis": "Во изгорена клисура се среќаваат Ловецот и Паладинот; од пепелта се крева Мал’гарот, Господарот на Пепелта, и им се потсмева.",
+      "shots": [
+        {
+          "id": "S01",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 4.5,
+          "clip_s": 5.0,
+          "narration_mk": "Во една изгорена клисура, каде ветрот носеше жар наместо песок, на сртот од карпата застанаа двајца.",
+          "dialogue_mk": "",
+          "kf_first": "Epic aerial establishing shot of a vast scorched canyon at dusk, windblown embers instead of sand, jagged black rock ridges, smoke pillars, photoreal Diablo2/WoW cinematic grade",
+          "kf_last": "Camera cranes down to a high ridge where two silhouetted figures stand side by side, ember storm swirling around them",
+          "continuity": "NONE (opening master); establish ember-red palette",
+          "motion": "slow crane-down; embers drift past lens"
+        },
+        {
+          "id": "S02",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 4.0,
+          "clip_s": 5.0,
+          "narration_mk": "Првиот — ловецот, со две пеколни самострели и влакна што лебдеа во сино-тиркизно како под вода.",
+          "dialogue_mk": "",
+          "kf_first": "Medium shot of the HUNTER: lean warrior with two dark infernal crossbows, long hair glowing blue-turquoise and floating weightlessly as if underwater, embers behind him",
+          "kf_last": "Tracking shot settles on his glowing eyes and the twin crossbows in his hands; hair ripples",
+          "continuity": "Hunter identity LOCK: blue-turquoise floating hair, twin crossbows (carry through all shots)",
+          "motion": "lateral track; hair floats with current; crossbows glint"
+        },
+        {
+          "id": "S03",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 4.0,
+          "clip_s": 5.0,
+          "narration_mk": "Вториот — паладинот, ќелав и облеан во златен вез, со лавиринт од руни што тлееше како жар врз кожата.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of the PALADIN: bald, ornate golden embroidery on armor, one-sided labyrinth of glowing runes carved over face, neck and body, faint ember-light pulsing under the skin",
+          "kf_last": "Push-in to the rune maze on his face flaring faintly white-gold",
+          "continuity": "Paladin identity LOCK: bald, golden embroidery, face/neck rune labyrinth (carry through all shots)",
+          "motion": "push-in; runes pulse; ember underlight flickers"
+        },
+        {
+          "id": "S04",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "crane-up",
+          "dur": 4.5,
+          "clip_s": 5.0,
+          "narration_mk": "Од пепелта под нив се надигна Мал’гарот, Господарот на Пепелта: висока роговидна сенка завиткана во пепел.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide as the ash below erupts: Master of Ash MULGAROTH rises — tall horned shadow wrapped in swirling ash, half-liquid fire core burning in its chest, crown of dead embers",
+          "kf_last": "Crane up revealing the giant boss towering over the two small figures on the ridge, ember lightning in the air",
+          "continuity": "Boss identity LOCK: horned ash form, chest fire-core, dead-ember crown (carry through all shots)",
+          "motion": "crane-up; ash plume billows upward; core churns"
+        },
+        {
+          "id": "S05",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.0,
+          "narration_mk": "Една стопена рака-камшик и круна од мртви јаглени — сè што ќе допреше, издивуваше во чад.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert on a single melted whip-arm of dripping ember, smoke rising where it trails, slow liquid fire drips",
+          "kf_last": "Push-in to the twisted crown of dead charcoals on its head, faint coals dying and reigniting",
+          "continuity": "Boss whip-arm + charcoal crown introduced (key boss props)",
+          "motion": "micro push-in; whip drips molten ember; smoke curls"
+        },
+        {
+          "id": "S06",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 4.5,
+          "clip_s": 5.0,
+          "narration_mk": "",
+          "dialogue_mk": "Мал’гарот: „Дојдовте да изгорите, како сите пред вас.“ — и камшикот од жар пукна низ воздухот.",
+          "kf_first": "Low-angle medium of MULGAROTH speaking, fire core flaring, ember whip arcing through the air toward camera",
+          "kf_last": "Push-in on its molten face as the whip cracks with a burst of sparks",
+          "continuity": "Same boss; whip from S05 now in motion",
+          "motion": "push-in; whip crack; sparks fly"
+        }
+      ]
+    },
+    {
+      "id": "act2",
+      "num": "Act II",
+      "title": "Пресметка · Двете сили",
+      "color": "#f5c518",
+      "synopsis": "Ловецот го покажува Ледениот ореол и мразните греди; Паладинот задава со Златната пресуда; следи првата заедничка техника — Замрзни-и-Скрши.",
+      "shots": [
+        {
+          "id": "S07",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 4.0,
+          "clip_s": 5.0,
+          "narration_mk": "Ловецот крена рака и околу него разцвета прстен од мраз и тајни знаци — неговиот Леден ореол.",
+          "dialogue_mk": "",
+          "kf_first": "Wide shot: the Hunter raises one hand, a ring of frost and arcane symbols blooms around him, embers nearby flash-frozen into snow",
+          "kf_last": "The Glacial Aura expands outward, freezing cinders mid-air into glittering snow",
+          "continuity": "Hunter; introduc Glacial Aura ring — recurring ability",
+          "motion": "track + halo expands; embers→snow transformation"
+        },
+        {
+          "id": "S08",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "track",
+          "dur": 4.0,
+          "clip_s": 5.0,
+          "narration_mk": "Се одби од земјата како комета од слана, а зад него остануваше смрзната трага.",
+          "dialogue_mk": "",
+          "kf_first": "The Hunter launches from the ground like a frost comet, a trail of ice crystal forming in the air behind his arc",
+          "kf_last": "He soars over the boss, leaving a frozen ribbon of ice curling in his wake",
+          "continuity": "Hunter with Glacial Aura active; frozen trail is new visual (ice vs ember contrast)",
+          "motion": "fast tracking launch; ice ribbon trails; ember recoils"
+        },
+        {
+          "id": "S09",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.0,
+          "narration_mk": "Неговите очи пламнаа и од нив искочија две мразни греди — бело-сини копја со виолетово јадро.",
+          "dialogue_mk": "",
+          "kf_first": "Macro on the Hunter's blazing eyes, two Rime Beams erupting — white-blue spears with a violet core, everything they touch flash-freezing instantly",
+          "kf_last": "Push-in as a flame in frame freezes solid into an ice sculpture from the beam",
+          "continuity": "Hunter Rime Beams (white-blue + violet core) — recurring attack",
+          "motion": "micro push-in; beams flare; flame→ice sculpture"
+        },
+        {
+          "id": "S10",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 4.0,
+          "clip_s": 5.0,
+          "narration_mk": "",
+          "dialogue_mk": "Босот: „Мразот само ја прави пепелта поубава,“ — додека камшикот му се нишаше над двајцата.",
+          "kf_first": "The boss taunts as its ember whip sways high above both heroes; its fire core glows with contempt",
+          "kf_last": "Push-in on the boss' coal-crown face, half-smile, ash curling off its jaw",
+          "continuity": "Boss taunt beat; whip recurring across the fight",
+          "motion": "push-in; whip sways; ash drifts from mouth"
+        },
+        {
+          "id": "S11",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "track",
+          "dur": 4.0,
+          "clip_s": 5.0,
+          "narration_mk": "Паладинот го вкорени својот голем меч во земјата и златниот ударен бран го испука каменот.",
+          "dialogue_mk": "",
+          "kf_first": "Wide low-angle: the Paladin plants his greatsword into the ground, a golden shockwave splitting the stone outward in a radiating crack",
+          "kf_last": "The gold blast slams into the boss, hurling ash aside as the shockwave pulses",
+          "continuity": "Paladin; introduces Templar Verdict shockwave (gold); greatsword planted",
+          "motion": "track with shockwave; stone cracks radiate; gold light blooms"
+        },
+        {
+          "id": "S12",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.0,
+          "narration_mk": "Златниот ударен бран... а руните по телото му пламнаа од тивко злато во бел оган, за секој удар посебно.",
+          "dialogue_mk": "",
+          "kf_first": "Macro on the Paladin's skin: the rune labyrinth flare from quiet gold into white fire, traveling along the carved paths for each strike",
+          "kf_last": "The rune light reaches his eye and blade, both searing white-gold",
+          "continuity": "Paladin runes (identity, S03) now actively flaring — power escalation",
+          "motion": "micro push-in; runes crawl along skin; light intensifies"
+        },
+        {
+          "id": "S13",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 4.5,
+          "clip_s": 5.0,
+          "narration_mk": "Првата заедничка техника — Замрзни-и-Скрши: мразот и светлината заедно.",
+          "dialogue_mk": "",
+          "kf_first": "Wide shot of the FIRST combined technique Freeze-and-Sunder: the Hunter's Rime Beams freeze the whip-arm mid-swing, then the Paladin's Verdict blast shatters it",
+          "kf_last": "The frozen arm shatters into a million golden-lit ice shards raining down; boss reels back",
+          "continuity": "Tags S09 (Rime Beams) + S11 (Judgement); whip-arm destroyed here",
+          "motion": "track through the shatter; ice shards + gold blast; boss recoil"
+        }
+      ]
+    },
+    {
+      "id": "act3",
+      "num": "Act III",
+      "title": "Разрешување · Сонцето на пепелта",
+      "color": "#ef4444",
+      "synopsis": "Босот го разголува јадрото и го крева Сонцето на пепелта; хероите ги будат своите ултимативни форми и заедно го гаснат јадрото; првата зора доаѓа.",
+      "shots": [
+        {
+          "id": "S14",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 4.5,
+          "clip_s": 5.0,
+          "narration_mk": "Разбеснет, босот го фрли својот оклоп и го разголи огненото јадро. Почна црн дожд — жежок, од жар и стакло.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide: the enraged boss sheds its ash armor, exposing the blazing fire core; a black rain of hot ember and glass begins to fall",
+          "kf_last": "Crane down through the falling ember-glass rain toward the two heroes bracing below",
+          "continuity": "Boss escalates (armor off, core exposed); BLACK RAIN is new hazard",
+          "motion": "crane-down; black rain falls; core strobes"
+        },
+        {
+          "id": "S15",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 4.0,
+          "clip_s": 5.0,
+          "narration_mk": "Паладинот застана неподвижен под него, а светлината го соблекуваше дождот како вода.",
+          "dialogue_mk": "",
+          "kf_first": "The Paladin stands motionless under the black rain, his golden light shedding the ember-glass like water off a shield",
+          "kf_last": "Tracking shot circles him; rain hisses into smoke on contact with his aura",
+          "continuity": "Paladin aura (rune light) now a shield; black rain from S14",
+          "motion": "slow circular track; rain evaporates to smoke on aura"
+        },
+        {
+          "id": "S16",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "crane-up",
+          "dur": 4.5,
+          "clip_s": 5.0,
+          "narration_mk": "",
+          "dialogue_mk": "Босот: „Од пепел сте — и во пепел ќе ве вратам!“ — го крена Сонцето на пепелта, супернова од жар над клисурата.",
+          "kf_first": "The boss roars and raises the SUN OF ASH — a supernova of ember rising above the canyon, red-orange light flooding everything",
+          "kf_last": "Crane up as the ember sun grows, dwarfing both heroes, the canyon walls cracking from the heat",
+          "continuity": "BOSS ULTIMATE: Sun of Ash (ember supernova); ultimate stakes",
+          "motion": "crane-up; ember sun expands; heat shimmer; walls crack"
+        },
+        {
+          "id": "S17",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "track",
+          "dur": 4.5,
+          "clip_s": 5.0,
+          "narration_mk": "Ловецот ја прифати Ледената облика, а паладинот — Одмаздничкиот гнев. Мразна и златна лента, право кон срцето на суперновата.",
+          "dialogue_mk": "",
+          "kf_first": "Side-by-side low-angle: the Hunter's hair erupts in white light with a turquoise ring of signs (Glacier Form); the Paladin's runes blaze and transparent golden wings unfold (Avenging Wrath)",
+          "kf_last": "They launch together — a ribbon of ice and a ribbon of gold intertwined, streaking toward the heart of the ember sun",
+          "continuity": "Both ultimates (Glacier Form + Avenging Wrath); tag Sun of Ash from S16",
+          "motion": "track toward sun; twin ribbons spiral; wind distortion"
+        },
+        {
+          "id": "S18",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "shot-reverse",
+          "dur": 3.5,
+          "clip_s": 5.0,
+          "narration_mk": "",
+          "dialogue_mk": "„Замрзни,“ рече ловецот. „Суди,“ рече паладинот.",
+          "kf_first": "Close on the Hunter, white-hot eyes, speaking: FREEZE. Reverse close on the Paladin, runes searing, speaking: JUDGE.",
+          "kf_last": "The two words land as the Rime Beam and the golden Verdict strike the fire core simultaneously",
+          "continuity": "Shot/reverse of both heroes at the decisive instant",
+          "motion": "shot/reverse cut; core impact flash"
+        },
+        {
+          "id": "S19",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "pull-back",
+          "dur": 4.5,
+          "clip_s": 5.0,
+          "narration_mk": "Јадрото се распука. Светлината надојде од внатре и ја потопи жарта. Суперновата се соблече навнатре, а круната од мртви јаглени падна.",
+          "dialogue_mk": "",
+          "kf_first": "The fire core cracks open, pure light rising from within and drowning the ember; the ember supernova collapses inward",
+          "kf_last": "Pull-back high-angle as the crown of dead charcoals cracks and falls; the light fades to ashen calm",
+          "continuity": "Pays off S16 Sun of Ash; boss defeated (crown falls)",
+          "motion": "pull-back; inward collapse; light floods then subsides"
+        },
+        {
+          "id": "S20",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 5.0,
+          "clip_s": 5.0,
+          "narration_mk": "",
+          "dialogue_mk": "Ловецот: „Пепелта е само снег што не стигнал на време.“ — првата зора прободе низ пепелта.",
+          "kf_first": "The ash settles: two silhouettes stand over the extinguished core, the Hunter lowering his hood and exhaling a thin stream of frost, the Paladin slinging his sword over his shoulder",
+          "kf_last": "The first dawn light pierces through the falling ash, warming the frame to soft gold",
+          "continuity": "Grand closing; mirrors S01 (two figures on ridge) but now dawn instead of dusk",
+          "motion": "gentle track; ash settles; dawn light breaks; frost breath curls"
+        }
+      ]
+    }
+  ]
+}</script>
+<script>const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.06});document.querySelectorAll('.rv').forEach(el=>io.observe(el));</script>
+</body></html>

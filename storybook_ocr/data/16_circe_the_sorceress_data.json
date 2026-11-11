@@ -1,0 +1,2613 @@
+{
+  "num": "16",
+  "title_mk": "Волшебничката Кирка",
+  "title_en": "Circe the Sorceress",
+  "genre": "Старогрчки мит · епска авантура",
+  "logline": "По бесот на Посејдон, Одисеј и неговата посада паѓаат во рацете на волшебничката Кирка, чија магија ги претвора луѓето во свињи — а само една билка од Хермес може да ги спаси.",
+  "spec": {
+    "aspect": "16:9",
+    "resolution": "1216x704",
+    "fps": 24,
+    "model": "model-agnostic (chosen at generation)",
+    "style": "photoreal",
+    "flf": true,
+    "language": "mk",
+    "shot_floor": 40,
+    "shot_max": 60,
+    "seed_policy": "fixed-per-shot (same seed → reproducible shot; re-roll per shot id)",
+    "style_anchor": [
+      "Diablo 2 cinematic",
+      "World of Warcraft cinematic",
+      "StarCraft cinematic"
+    ],
+    "negative_prompt": "deformed, extra limbs, morphing, watermark, text, static frame, blurry, low quality, cropped head, cut-off face",
+    "frames": 121,
+    "frames_fallback": 81,
+    "routes": [
+      {
+        "model": "Wan2.1-FLF2V-14B-720P",
+        "input": "start+end native (run START-ONLY)",
+        "status": "WORKING (lead for 14B quality)"
+      },
+      {
+        "model": "Kandinsky 6.0 Lite/Pro",
+        "input": "start-image-only",
+        "status": "WORKING (Pro-distill untested at scale)"
+      },
+      {
+        "model": "SkyReels-V3 R2V-14B",
+        "input": "start-image-only",
+        "status": "WORKING (fallback)"
+      },
+      {
+        "model": "LTX-Video 2B v0.9.5",
+        "input": "start-image-only",
+        "status": "WORKING (small/fast, low ceiling)"
+      },
+      {
+        "model": "Mochi-1",
+        "input": "start-image-only",
+        "status": "untested here"
+      },
+      {
+        "model": "LTX-2.3 22B distilled",
+        "input": "start-image-only",
+        "status": "DEAD (nanobind native-crash, 42 note)"
+      }
+    ],
+    "model_note": "Model chosen per story at generation (43 §4). Keyframes + continuation prompts are generator-agnostic; only the render command differs per model."
+  },
+  "cast": [
+    {
+      "role": "Одисеј / Odysseus",
+      "trait": "Кралот на Итака, лукав и упорен херој со истрошена морнарска облека",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Кирка / Circe",
+      "trait": "Волшебничка на островот, елегантна и моќна, со блескава наметка и светлечки стап",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Еол / Aeolus",
+      "trait": "Бог на ветровите, величествен владетел на пловечкиот остров",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Хермес / Hermes",
+      "trait": "Гласник на боговите, окрилен и сјаен, носи билка со бели цветови",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Морепловците / The Sailors",
+      "trait": "Одисеевата посада, изморени морнари во парталави туники",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    }
+  ],
+  "acts": [
+    {
+      "id": "act1",
+      "num": "Act I",
+      "title": "Заложба",
+      "color": "#2dd4bf",
+      "pct": 25,
+      "synopsis": "Посејдоновиот гнев шири нова бура, но бродовите на Одисеј наоѓаат мир кај Еол, богот на ветровите, кој му дава запечатена мешина со сите ветрови.",
+      "shots": [
+        {
+          "id": "S01",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "storm_sea_env_A1_prop",
+            "ship_env_A2_prop"
+          ],
+          "ref_scope": "image1: the churning dark Aegean sea storm — 100% identical; studio bg/pose/light NOT used; image2: the three Greek wooden ships — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "crane down over the churning dark sea under storm dusk"
+            ],
+            [
+              1.8,
+              3.5,
+              "settle toward the three battered ships tossed on towering waves"
+            ]
+          ],
+          "narration_mk": "Киклопите беа синови на Посејдон.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide establishing shot of a churning dark Aegean sea at storm dusk, jagged rocks, rain streaking sideways, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Crane-down toward three small Greek wooden ships tossed on towering waves below, sails torn",
+          "continuity": "Storm palette: slate blue, charcoal, silver foam",
+          "motion": "slow crane-down over boiling sea",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide establishing shot of a churning dark Aegean sea at storm dusk, jagged rocks, rain streaking sideways then crane down over the churning dark sea under storm dusk, then settle toward the three battered ships tossed on towering waves the camera crane-down settling into crane-down toward three small Greek wooden ships tossed on towering waves below, sails torn with water churns and surges, thunder rolls continuity held: Storm palette: slate blue, charcoal, silver foam",
+          "image_prompt_start": "photoreal cinematic: wide establishing shot of a churning dark Aegean sea at storm dusk, jagged rocks, rain streaking sideways.",
+          "image_prompt_end": "photoreal cinematic: toward three small Greek wooden ships tossed on towering waves below, sails torn.",
+          "video_prompt_start": "Crane down over the churning dark sea under storm dusk. settle toward the three battered ships tossed on towering waves. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Storm palette: slate blue, charcoal, silver foam.",
+          "video_prompt_end": "Crane down over the churning dark sea under storm dusk. settle toward the three battered ships tossed on towering waves. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Storm palette: slate blue, charcoal, silver foam.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S02",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "poseidon_boss_B1_sheet"
+          ],
+          "ref_scope": "image1: the colossal face of Poseidon in the storm clouds — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "low-angle push-in on Poseidon’s furious face forming in the thunderheads"
+            ],
+            [
+              1.5,
+              3.0,
+              "a trident bolt of lightning splits the storm sky"
+            ]
+          ],
+          "narration_mk": "Богот бесен поради она што му се случи на Полифем.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of Poseidon's wrath forming in storm clouds, a colossal bearded face in the thunderheads, trident lightning, photoreal WoW cinematic",
+          "kf_last": "Push-in on the roaring cloud visage as a trident bolt splits the sky",
+          "continuity": "Storm palette from S01",
+          "motion": "push-in on the cloud face; lightning strike",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Poseidon's wrath forming in storm clouds, a colossal bearded face in the thunderheads, trident lightning, photoreal WoW cinematic then low-angle push-in on Poseidon’s furious face forming in the thunderheads, then a trident bolt of lightning splits the storm sky settling into push-in on the roaring cloud visage as a trident bolt splits the sky continuity held: Storm palette from S01",
+          "image_prompt_start": "photoreal cinematic: medium of Poseidon's wrath forming in storm clouds, a colossal bearded face in the thunderheads, trident lightning, photoreal WoW cinematic.",
+          "image_prompt_end": "photoreal cinematic: on the roaring cloud visage as a trident bolt splits the sky.",
+          "video_prompt_start": "Low-angle push-in on Poseidon’s furious face forming in the thunderheads. a trident bolt of lightning splits the storm sky. The beat resolves into the next matching frame. Continuity held: Storm palette from S01.",
+          "video_prompt_end": "Low-angle push-in on Poseidon’s furious face forming in the thunderheads. a trident bolt of lightning splits the storm sky. The beat resolves into the next matching frame. Continuity held: Storm palette from S01.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S03",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "ship_env_A2_prop",
+            "sailors_A5_fused"
+          ],
+          "ref_scope": "image1: the three Greek wooden ships — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Sailors — Odysseus’s weary crew in torn tunics — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "eye-level track of the fleet battling a fresh monstrous wave as men haul ropes"
+            ],
+            [
+              1.8,
+              3.5,
+              "a wall of water towers behind the plunging ships"
+            ]
+          ],
+          "narration_mk": "Тој предизвика уште една бура насочена кон бродовите на Одисеј.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide tracking shot of Odysseus's fleet battling a fresh monstrous wave, men hauling ropes, spray exploding, photoreal StarCraft cinematic energy",
+          "kf_last": "The trio of ships lurches forward as a wall of water towers behind them",
+          "continuity": "Same three ships and sailors; storm palette persists",
+          "motion": "lateral track following the ships",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide tracking shot of Odysseus's fleet battling a fresh monstrous wave, men hauling ropes, spray exploding, photoreal StarCraft cinematic energy Sailors athletic, warrior then eye-level track of the fleet battling a fresh monstrous wave as men haul ropes, then a wall of water towers behind the plunging ships settling into the trio of ships lurches forward as a wall of water towers behind them continuity held: Same three ships and sailors; storm palette persists",
+          "image_prompt_start": "photoreal cinematic: wide of Odysseus's fleet battling a fresh monstrous wave, men hauling ropes, spray exploding, photoreal StarCraft cinematic energy.",
+          "image_prompt_end": "photoreal cinematic: The trio of ships lurches forward as a wall of water towers behind them.",
+          "video_prompt_start": "Eye-level track of the fleet battling a fresh monstrous wave as men haul ropes. a wall of water towers behind the plunging ships. The beat resolves into the next matching frame. Continuity held: Same three ships and sailors; storm palette persists.",
+          "video_prompt_end": "Eye-level track of the fleet battling a fresh monstrous wave as men haul ropes. a wall of water towers behind the plunging ships. The beat resolves into the next matching frame. Continuity held: Same three ships and sailors; storm palette persists.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S04",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "odysseus_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Odysseus — weathered Greek king in a sea-worn tunic — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close push-in on Odysseus gripping the prow rail, rain-soaked and steady"
+            ],
+            [
+              1.5,
+              3.0,
+              "his gaze fixes forward as calm golden light blooms ahead"
+            ]
+          ],
+          "narration_mk": "Но овој пат бродовите најдоа прибежиште.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of Odysseus at the prow, rain-soaked beard, gripping the rail, gaze fixed forward, photoreal cinematic skin detail",
+          "kf_last": "Push-in on his steady eyes as calm golden light begins to bloom ahead",
+          "continuity": "Odysseus identity: weathered tunic, worn face",
+          "motion": "slow push-in on the eyes; light blooms",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of Odysseus at the prow, rain-soaked beard, gripping the rail, gaze fixed forward, photoreal cinematic skin detail Odysseus athletic, warrior, in cloak, beard, carrying sword, wreathed in golden glow then close push-in on Odysseus gripping the prow rail, rain-soaked and steady, then his gaze fixes forward as calm golden light blooms ahead settling into push-in on his steady eyes as calm golden light begins to bloom ahead with steel rings, a low radiant hum continuity held: Odysseus identity: weathered tunic, worn face",
+          "image_prompt_start": "photoreal cinematic: of Odysseus at the prow, rain-soaked beard, gripping the rail, gaze fixed forward, photoreal cinematic skin detail.",
+          "image_prompt_end": "photoreal cinematic: on his steady eyes as calm golden light begins to bloom ahead.",
+          "video_prompt_start": "Close push-in on Odysseus gripping the prow rail, rain-soaked and steady. his gaze fixes forward as calm golden light blooms ahead. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Odysseus identity: weathered tunic, worn face.",
+          "video_prompt_end": "Close push-in on Odysseus gripping the prow rail, rain-soaked and steady. his gaze fixes forward as calm golden light blooms ahead. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Odysseus identity: weathered tunic, worn face.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S05",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pull-back",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "aeolia_env_A3_prop",
+            "ship_env_A2_prop"
+          ],
+          "ref_scope": "image1: the floating emerald island of Aeolus — 100% identical; studio bg/pose/light NOT used; image2: the three Greek wooden ships — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "pull-back over the floating emerald island ringed by wind currents"
+            ],
+            [
+              1.8,
+              3.5,
+              "reveal the three ships gliding through a calm channel toward its harbor"
+            ]
+          ],
+          "narration_mk": "Во земјата на Еол, богот на ветрот.",
+          "dialogue_mk": "",
+          "kf_first": "Wide shot of a floating emerald island ringed by glowing wind currents, a marble palace rising, storm clouds parting around it, photoreal fantastical",
+          "kf_last": "Pull-back revealing the three ships gliding through a calm channel toward the island harbor",
+          "continuity": "Ships from S03; transition from storm to serene light",
+          "motion": "slow pull-back revealing the safe harbor",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide shot of a floating emerald island ringed by glowing wind currents, a marble palace rising, storm clouds parting around it, photoreal fantastical then pull-back over the floating emerald island ringed by wind currents, then reveal the three ships gliding through a calm channel toward its harbor settling into pull-back revealing the three ships gliding through a calm channel toward the island harbor continuity held: Ships from S03; transition from storm to serene light",
+          "image_prompt_start": "photoreal cinematic: shot of a floating emerald island ringed by glowing wind currents, a marble palace rising, storm clouds parting around it, photoreal fantastical.",
+          "image_prompt_end": "photoreal cinematic: revealing the three ships gliding through a calm channel toward the island harbor.",
+          "video_prompt_start": "Pull-back over the floating emerald island ringed by wind currents. reveal the three ships gliding through a calm channel toward its harbor. The beat resolves into the next matching frame. Continuity held: Ships from S03; transition from storm to serene light.",
+          "video_prompt_end": "Pull-back over the floating emerald island ringed by wind currents. reveal the three ships gliding through a calm channel toward its harbor. The beat resolves into the next matching frame. Continuity held: Ships from S03; transition from storm to serene light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S06",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "aeolus_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of Aeolus — silver-haired wind god in flowing robes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.2,
+              "static close on Aeolus seated on his marble throne in warm torchlight"
+            ],
+            [
+              1.2,
+              2.5,
+              "he leans forward with a kind welcoming question"
+            ]
+          ],
+          "narration_mk": "Еол го дочека Одисеј со гостопримство.",
+          "dialogue_mk": "Еол: „Кажи ми за Троја, Одисеј.“",
+          "kf_first": "Close-up of Aeolus, silver-haired god in flowing robes, seated on a marble throne, warm torchlight, photoreal",
+          "kf_last": "Same close-up as he leans forward with a welcoming question, eyes kind",
+          "continuity": "Aeolus identity: silver hair, godly robe; palace marble palette",
+          "motion": "static with subtle torchlight flicker",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of Aeolus, silver-haired god in flowing robes, seated on a marble throne, warm torchlight, photoreal Aeolus robed, divine, in cloak, beard, wreathed in storm aura then static close on Aeolus seated on his marble throne in warm torchlight, then he leans forward with a kind welcoming question settling into same close-up as he leans forward with a welcoming question, eyes kind with thunder rolls a voice speaks in Macedonian: \"Еол: „Кажи ми за Троја, Одисеј.“\" continuity held: Aeolus identity: silver hair, godly robe; palace marble palette",
+          "image_prompt_start": "photoreal cinematic: of Aeolus, silver-haired god in flowing robes, seated on a marble throne, warm torchlight, photoreal.",
+          "image_prompt_end": "photoreal cinematic: Same close-up as he leans forward with a welcoming question, eyes kind.",
+          "video_prompt_start": "Static close on Aeolus seated on his marble throne in warm torchlight. he leans forward with a kind welcoming question. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Еол: „Кажи ми за Троја, Одисеј.“\" Continuity held: Aeolus identity: silver hair, godly robe; palace marble palette.",
+          "video_prompt_end": "Static close on Aeolus seated on his marble throne in warm torchlight. he leans forward with a kind welcoming question. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Еол: „Кажи ми за Троја, Одисеј.“\" Continuity held: Aeolus identity: silver hair, godly robe; palace marble palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S07",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "over-shoulder",
+          "move": "shot-reverse",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "odysseus_A1_fused",
+            "aeolus_A3_fused",
+            "palace_env_A4_prop"
+          ],
+          "ref_scope": "image1: the fused master of Odysseus — weathered Greek king in a sea-worn tunic — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Aeolus — silver-haired wind god in flowing robes — 100% identical; studio bg/pose/light NOT used; image3: the marble palace banquet hall — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "over-shoulder medium of Odysseus at the feast table speaking to Aeolus"
+            ],
+            [
+              1.8,
+              3.5,
+              "shot-reverse to Aeolus listening intently as banquet smoke curls"
+            ]
+          ],
+          "narration_mk": "Тој сакаше да ги слушне приказните за Тројанската војна.",
+          "dialogue_mk": "Одисеј: „Десет години војна... и уште ме чека дома Итака.“",
+          "kf_first": "Over-shoulder medium of Odysseus seated at a feast table, firelit hall, speaking to Aeolus across the table, photoreal",
+          "kf_last": "Shot-reverse to Aeolus listening intently, nodding as the banquet smoke curls",
+          "continuity": "Banquet hall palette; torchlight; both identities locked",
+          "motion": "shot-reverse between the two speakers",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: over-shoulder medium of Odysseus seated at a feast table, firelit hall, speaking to Aeolus across the table, photoreal Odysseus athletic, warrior, in cloak, beard, carrying sword, wreathed in golden glow Aeolus robed, divine, in cloak, beard, wreathed in storm aura then over-shoulder medium of Odysseus at the feast table speaking to Aeolus, then shot-reverse to Aeolus listening intently as banquet smoke curls settling into shot-reverse to Aeolus listening intently, nodding as the banquet smoke curls with steel rings, a low radiant hum a voice speaks in Macedonian: \"Одисеј: „Десет години војна... и уште ме чека дома Итака.“\" continuity held: Banquet hall palette; torchlight; both identities locked",
+          "image_prompt_start": "photoreal cinematic: Over-shoulder medium of Odysseus seated at a feast table, firelit hall, speaking to Aeolus across the table, photoreal.",
+          "image_prompt_end": "photoreal cinematic: Shot-reverse to Aeolus listening intently, nodding as the banquet smoke curls.",
+          "video_prompt_start": "Over-shoulder medium of Odysseus at the feast table speaking to Aeolus. shot-reverse to Aeolus listening intently as banquet smoke curls. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Одисеј: „Десет години војна... и уште ме чека дома Итака.“\" Continuity held: Banquet hall palette; torchlight; both identities locked.",
+          "video_prompt_end": "Over-shoulder medium of Odysseus at the feast table speaking to Aeolus. shot-reverse to Aeolus listening intently as banquet smoke curls. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Одисеј: „Десет години војна... и уште ме чека дома Итака.“\" Continuity held: Banquet hall palette; torchlight; both identities locked.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S08",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "windbag_prop_B2_prop",
+            "aeolus_A3_fused"
+          ],
+          "ref_scope": "image1: the sealed ox-hide bag of winds — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Aeolus — silver-haired wind god in flowing robes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "macro push-in on the ox-hide bag bound with silver cord in Aeolus’s hands"
+            ],
+            [
+              1.5,
+              3.0,
+              "faint gusts ripple its surface from within"
+            ]
+          ],
+          "narration_mk": "По некое време, Еол му подари запечатена мешина.",
+          "dialogue_mk": "Еол: „Земи ја мешинава. Во неа се сите ветрови.“",
+          "kf_first": "Macro insert of a large ox-hide bag bound with silver cord, embossed with swirling wind sigils, resting in Aeolus's hands, photoreal",
+          "kf_last": "Push-in on the sealed mouth of the bag as faint gusts ripple its surface from within",
+          "continuity": "Sacred object prop; warm palace light",
+          "motion": "macro push-in toward the sealed cord",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of a large ox-hide bag bound with silver cord, embossed with swirling wind sigils, resting in Aeolus's hands, photoreal Aeolus robed, divine, in cloak, beard, wreathed in storm aura then macro push-in on the ox-hide bag bound with silver cord in Aeolus’s hands, then faint gusts ripple its surface from within settling into push-in on the sealed mouth of the bag as faint gusts ripple its surface from within with thunder rolls a voice speaks in Macedonian: \"Еол: „Земи ја мешинава. Во неа се сите ветрови.“\" continuity held: Sacred object prop; warm palace light",
+          "image_prompt_start": "photoreal cinematic: Macro insert of a large ox-hide bag bound with silver cord, embossed with swirling wind sigils, resting in Aeolus's hands, photoreal.",
+          "image_prompt_end": "photoreal cinematic: on the sealed mouth of the bag as faint gusts ripple its surface from within.",
+          "video_prompt_start": "Macro push-in on the ox-hide bag bound with silver cord in Aeolus’s hands. faint gusts ripple its surface from within. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Еол: „Земи ја мешинава. Во неа се сите ветрови.“\" Continuity held: Sacred object prop; warm palace light.",
+          "video_prompt_end": "Macro push-in on the ox-hide bag bound with silver cord in Aeolus’s hands. faint gusts ripple its surface from within. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Еол: „Земи ја мешинава. Во неа се сите ветрови.“\" Continuity held: Sacred object prop; warm palace light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S09",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "odysseus_A1_fused",
+            "windbag_prop_B2_prop",
+            "sailors_A5_fused"
+          ],
+          "ref_scope": "image1: the fused master of Odysseus — weathered Greek king in a sea-worn tunic — 100% identical; studio bg/pose/light NOT used; image2: the sealed ox-hide bag of winds — 100% identical; studio bg/pose/light NOT used; image3: the fused master of the Sailors — Odysseus’s weary crew in torn tunics — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "medium of Odysseus receiving the sealed bag with both hands, solemn"
+            ],
+            [
+              1.5,
+              3.0,
+              "sailors watch in awe as he cradles the gift"
+            ]
+          ],
+          "narration_mk": "Ветровите можеле да го спречат да стигне до Итака.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of Odysseus receiving the bag with both hands, solemn and grateful, sailors watching in awe behind him",
+          "kf_last": "Push-in on his hands cradling the bag as if it could burst",
+          "continuity": "Bag prop from S08; hall palette",
+          "motion": "slow push-in on the cradled gift",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Odysseus receiving the bag with both hands, solemn and grateful, sailors watching in awe behind him Odysseus athletic, warrior, in cloak, beard, carrying sword, wreathed in golden glow Sailors athletic, warrior then medium of Odysseus receiving the sealed bag with both hands, solemn, then sailors watch in awe as he cradles the gift the camera push-in settling into push-in on his hands cradling the bag as if it could burst with steel rings, a low radiant hum continuity held: Bag prop from S08; hall palette",
+          "image_prompt_start": "photoreal cinematic: of Odysseus receiving the bag with both hands, solemn and grateful, sailors watching in awe behind him.",
+          "image_prompt_end": "photoreal cinematic: on his hands cradling the bag as if it could burst.",
+          "video_prompt_start": "Medium of Odysseus receiving the sealed bag with both hands, solemn. sailors watch in awe as he cradles the gift. The camera push-in. The beat resolves into the next matching frame. Continuity held: Bag prop from S08; hall palette.",
+          "video_prompt_end": "Medium of Odysseus receiving the sealed bag with both hands, solemn. sailors watch in awe as he cradles the gift. The camera push-in. The beat resolves into the next matching frame. Continuity held: Bag prop from S08; hall palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S10",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "ship_env_A2_prop",
+            "aeolia_env_A3_prop"
+          ],
+          "ref_scope": "image1: the three Greek wooden ships — 100% identical; studio bg/pose/light NOT used; image2: the floating emerald island of Aeolus — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "crane-up as the fleet launches from the floating island harbor at dawn"
+            ],
+            [
+              1.8,
+              3.5,
+              "the ships shrink toward the open horizon, island receding"
+            ]
+          ],
+          "narration_mk": "Бродовите повторно испловија, со ветер во грбот.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of the fleet launching from the floating island harbor, white sails filled, dawn gold on the water, photoreal",
+          "kf_last": "Crane-up as the ships shrink toward the open horizon, island receding",
+          "continuity": "Ships and calm sea palette; departure light",
+          "motion": "crane-up as ships sail away",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of the fleet launching from the floating island harbor, white sails filled, dawn gold on the water, photoreal then crane-up as the fleet launches from the floating island harbor at dawn, then the ships shrink toward the open horizon, island receding settling into crane-up as the ships shrink toward the open horizon, island receding continuity held: Ships and calm sea palette; departure light",
+          "image_prompt_start": "photoreal cinematic: wide of the fleet launching from the floating island harbor, white sails filled, dawn gold on the water, photoreal.",
+          "image_prompt_end": "photoreal cinematic: as the ships shrink toward the open horizon, island receding.",
+          "video_prompt_start": "Crane-up as the fleet launches from the floating island harbor at dawn. the ships shrink toward the open horizon, island receding. The beat resolves into the next matching frame. Continuity held: Ships and calm sea palette; departure light.",
+          "video_prompt_end": "Crane-up as the fleet launches from the floating island harbor at dawn. the ships shrink toward the open horizon, island receding. The beat resolves into the next matching frame. Continuity held: Ships and calm sea palette; departure light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S11",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "ship_env_A2_prop",
+            "isola_env_A5_prop"
+          ],
+          "ref_scope": "image1: the three Greek wooden ships — 100% identical; studio bg/pose/light NOT used; image2: the mist-shrouded island of Circe — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "forward track from the deck as a green shoreline emerges on the noon horizon"
+            ],
+            [
+              1.5,
+              3.0,
+              "the homeland coast sharpens with gulls wheeling"
+            ]
+          ],
+          "narration_mk": "Наскоро, на хоризонтот, се појави островот на Итака.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide tracking shot from the deck, a green shoreline and low mountains emerging on the horizon under noon sun",
+          "kf_last": "Tracking closer as the homeland coast sharpens into view, gulls wheeling",
+          "continuity": "Sailors and ship palette; bright hopeful daylight",
+          "motion": "smooth forward track toward the emerging shore",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide tracking shot from the deck, a green shoreline and low mountains emerging on the horizon under noon sun then forward track from the deck as a green shoreline emerges on the noon horizon, then the homeland coast sharpens with gulls wheeling settling into tracking closer as the homeland coast sharpens into view, gulls wheeling continuity held: Sailors and ship palette; bright hopeful daylight",
+          "image_prompt_start": "photoreal cinematic: wide from the deck, a green shoreline and low mountains emerging on the horizon under noon sun.",
+          "image_prompt_end": "photoreal cinematic: closer as the homeland coast sharpens into view, gulls wheeling.",
+          "video_prompt_start": "Forward track from the deck as a green shoreline emerges on the noon horizon. the homeland coast sharpens with gulls wheeling. The beat resolves into the next matching frame. Continuity held: Sailors and ship palette; bright hopeful daylight.",
+          "video_prompt_end": "Forward track from the deck as a green shoreline emerges on the noon horizon. the homeland coast sharpens with gulls wheeling. The beat resolves into the next matching frame. Continuity held: Sailors and ship palette; bright hopeful daylight.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S12",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "pan-left",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "sailors_A5_fused",
+            "windbag_prop_B2_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Sailors — Odysseus’s weary crew in torn tunics — 100% identical; studio bg/pose/light NOT used; image2: the sealed ox-hide bag of winds — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.2,
+              "close on two sailors exchanging a glance toward the tied bag"
+            ],
+            [
+              1.2,
+              2.5,
+              "pan-left to the bag lashed near the mast, its cord gleaming"
+            ]
+          ],
+          "narration_mk": "Две посади гледаа кон дома — но љубопитноста веќе се будеше.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of two sailors exchanging a glance toward the tied bag lashed near the mast",
+          "kf_last": "Pan-left to the mysterious bag, its cord gleaming, tempting in the noon light",
+          "continuity": "Bag prop; sailor identities; ship deck",
+          "motion": "pan-left from the men to the tempting bag",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of two sailors exchanging a glance toward the tied bag lashed near the mast Sailors athletic, warrior then close on two sailors exchanging a glance toward the tied bag, then pan-left to the bag lashed near the mast, its cord gleaming settling into pan-left to the mysterious bag, its cord gleaming, tempting in the noon light continuity held: Bag prop; sailor identities; ship deck",
+          "image_prompt_start": "photoreal cinematic: of two sailors exchanging a glance toward the tied bag lashed near the mast.",
+          "image_prompt_end": "photoreal cinematic: -left to the mysterious bag, its cord gleaming, tempting in the noon light.",
+          "video_prompt_start": "Close on two sailors exchanging a glance toward the tied bag. pan-left to the bag lashed near the mast, its cord gleaming. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Bag prop; sailor identities; ship deck.",
+          "video_prompt_end": "Close on two sailors exchanging a glance toward the tied bag. pan-left to the bag lashed near the mast, its cord gleaming. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Bag prop; sailor identities; ship deck.",
+          "motion_intensity": "gentle"
+        }
+      ],
+      "location_ref": "storm_sea_aeolus_island_and_feast_hall",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class",
+        "screen_dir"
+      ],
+      "palette": [
+        "#2b4a6f",
+        "#1c2d44",
+        "#c8a24b"
+      ],
+      "light_direction": "key light from screen-left, cool dawn over the stormy sea warming to Aeolian gold",
+      "time_of_day": "dawn"
+    },
+    {
+      "id": "act2",
+      "num": "Act II",
+      "title": "Сукоб",
+      "color": "#f59e0b",
+      "pct": 50,
+      "synopsis": "Љубопитните морнари ја отвораат мешината, торнадо ги носи на отворено море и на сурова брег — островот на Кирка — каде волшебничката ги претвора во свињи, а Одисеј мора да побара спас.",
+      "shots": [
+        {
+          "id": "S13",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "sailors_A5_fused",
+            "windbag_prop_B2_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Sailors — Odysseus’s weary crew in torn tunics — 100% identical; studio bg/pose/light NOT used; image2: the sealed ox-hide bag of winds — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close push-in on a young sailor’s hand reaching for the silver cord"
+            ],
+            [
+              1.5,
+              3.0,
+              "his fingers graze the knot as the others lean in"
+            ]
+          ],
+          "narration_mk": "Некои морепловци ja засакаа таинствената мешина.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of a young sailor's hand tentatively reaching toward the silver cord of the wind bag, shadows gathering, photoreal",
+          "kf_last": "Push-in on his fingers just grazing the knot as the others lean in behind",
+          "continuity": "Bag prop from S12; gathering tension light",
+          "motion": "slow push-in on the reaching hand",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of a young sailor's hand tentatively reaching toward the silver cord of the wind bag, shadows gathering, photoreal Sailors athletic, warrior then close push-in on a young sailor’s hand reaching for the silver cord, then his fingers graze the knot as the others lean in settling into push-in on his fingers just grazing the knot as the others lean in behind continuity held: Bag prop from S12; gathering tension light",
+          "image_prompt_start": "photoreal cinematic: of a young sailor's hand tentatively reaching toward the silver cord of the wind bag, shadows gathering, photoreal.",
+          "image_prompt_end": "photoreal cinematic: on his fingers just grazing the knot as the others lean in behind.",
+          "video_prompt_start": "Close push-in on a young sailor’s hand reaching for the silver cord. his fingers graze the knot as the others lean in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Bag prop from S12; gathering tension light.",
+          "video_prompt_end": "Close push-in on a young sailor’s hand reaching for the silver cord. his fingers graze the knot as the others lean in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Bag prop from S12; gathering tension light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S14",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "windbag_prop_B2_prop"
+          ],
+          "ref_scope": "image1: the sealed ox-hide bag of winds — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.2,
+              "macro push-in as the silver cord slips free and the seam splits"
+            ],
+            [
+              1.2,
+              2.5,
+              "a sliver of glowing cyclone-light screams through the gap"
+            ]
+          ],
+          "narration_mk": "Со едно влечење, јазолот се одврза.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of the silver cord slipping free, the bag seam splitting, a sliver of glowing cyclone-light escaping",
+          "kf_last": "Push-in as the seam tears wider and white wind screams through the gap",
+          "continuity": "Bag object; danger light turning harsh",
+          "motion": "macro push-in; cord slips; light erupts",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of the silver cord slipping free, the bag seam splitting, a sliver of glowing cyclone-light escaping then macro push-in as the silver cord slips free and the seam splits, then a sliver of glowing cyclone-light screams through the gap settling into push-in as the seam tears wider and white wind screams through the gap continuity held: Bag object; danger light turning harsh",
+          "image_prompt_start": "photoreal cinematic: Macro insert of the silver cord slipping free, the bag seam splitting, a sliver of glowing cyclone-light escaping.",
+          "image_prompt_end": "photoreal cinematic: as the seam tears wider and white wind screams through the gap.",
+          "video_prompt_start": "Macro push-in as the silver cord slips free and the seam splits. a sliver of glowing cyclone-light screams through the gap. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Bag object; danger light turning harsh.",
+          "video_prompt_end": "Macro push-in as the silver cord slips free and the seam splits. a sliver of glowing cyclone-light screams through the gap. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Bag object; danger light turning harsh.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S15",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "pull-back",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "ship_env_A2_prop",
+            "sailors_A5_fused"
+          ],
+          "ref_scope": "image1: the three Greek wooden ships — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Sailors — Odysseus’s weary crew in torn tunics — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "low-angle pull-back as a furious tornado erupts from the tiny bag on deck"
+            ],
+            [
+              1.5,
+              3.0,
+              "the tornado swells to swallow the mast and sky"
+            ]
+          ],
+          "narration_mk": "Од неа излезе торнадо.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of the deck as a furious tornado erupts from the tiny bag, men thrown back, ropes whipping, photoreal",
+          "kf_last": "Pull-back as the tornado swells to swallow the mast and sky",
+          "continuity": "Ship deck; cyclone violence palette",
+          "motion": "rapid pull-back as the tornado grows",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of the deck as a furious tornado erupts from the tiny bag, men thrown back, ropes whipping, photoreal Sailors athletic, warrior then low-angle pull-back as a furious tornado erupts from the tiny bag on deck, then the tornado swells to swallow the mast and sky settling into pull-back as the tornado swells to swallow the mast and sky continuity held: Ship deck; cyclone violence palette",
+          "image_prompt_start": "photoreal cinematic: wide of the deck as a furious tornado erupts from the tiny bag, men thrown back, ropes whipping, photoreal.",
+          "image_prompt_end": "photoreal cinematic: as the tornado swells to swallow the mast and sky.",
+          "video_prompt_start": "Low-angle pull-back as a furious tornado erupts from the tiny bag on deck. the tornado swells to swallow the mast and sky. The beat resolves into the next matching frame. Continuity held: Ship deck; cyclone violence palette.",
+          "video_prompt_end": "Low-angle pull-back as a furious tornado erupts from the tiny bag on deck. the tornado swells to swallow the mast and sky. The beat resolves into the next matching frame. Continuity held: Ship deck; cyclone violence palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S16",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "ship_env_A2_prop"
+          ],
+          "ref_scope": "image1: the three Greek wooden ships — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "crane-down as the whole fleet spins helplessly inside a colossal water spout"
+            ],
+            [
+              1.8,
+              3.5,
+              "one ship is hurled outward across the blackened waves"
+            ]
+          ],
+          "narration_mk": "Тоа ги одвлечка бродовите на отворено море.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of the fleet spinning helplessly inside a colossal water spout on a blackened sea",
+          "kf_last": "Crane-down following one ship as it is hurled outward across the waves",
+          "continuity": "Ships from S10; maelstrom palette",
+          "motion": "crane-down tracking the spinning hulls",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of the fleet spinning helplessly inside a colossal water spout on a blackened sea then crane-down as the whole fleet spins helplessly inside a colossal water spout, then one ship is hurled outward across the blackened waves settling into crane-down following one ship as it is hurled outward across the waves continuity held: Ships from S10; maelstrom palette",
+          "image_prompt_start": "photoreal cinematic: wide of the fleet spinning helplessly inside a colossal water spout on a blackened sea.",
+          "image_prompt_end": "photoreal cinematic: one ship as it is hurled outward across the waves.",
+          "video_prompt_start": "Crane-down as the whole fleet spins helplessly inside a colossal water spout. one ship is hurled outward across the blackened waves. The beat resolves into the next matching frame. Continuity held: Ships from S10; maelstrom palette.",
+          "video_prompt_end": "Crane-down as the whole fleet spins helplessly inside a colossal water spout. one ship is hurled outward across the blackened waves. The beat resolves into the next matching frame. Continuity held: Ships from S10; maelstrom palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S17",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "isola_env_A5_prop"
+          ],
+          "ref_scope": "image1: the mist-shrouded island of Circe — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "push-in on a mist-shrouded rocky shoreline with twisted cypress"
+            ],
+            [
+              1.5,
+              3.0,
+              "a plume of green smoke lifts from the cliffs ahead"
+            ]
+          ],
+          "narration_mk": "Потоа, еден брег се исправи пред нив.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of a rocky, mist-shrouded shoreline rising ahead, twisted cypress and pale wisping light, waves crashing",
+          "kf_last": "Push-in toward the witch's island shore as a plume of green smoke lifts from the cliffs",
+          "continuity": "Transition from storm to eerie coastal palette",
+          "motion": "slow push-in toward the forbidding shore",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of a rocky, mist-shrouded shoreline rising ahead, twisted cypress and pale wisping light, waves crashing then push-in on a mist-shrouded rocky shoreline with twisted cypress, then a plume of green smoke lifts from the cliffs ahead settling into push-in toward the witch's island shore as a plume of green smoke lifts from the cliffs continuity held: Transition from storm to eerie coastal palette",
+          "image_prompt_start": "photoreal cinematic: of a rocky, mist-shrouded shoreline rising ahead, twisted cypress and pale wisping light, waves crashing.",
+          "image_prompt_end": "photoreal cinematic: toward the witch's island shore as a plume of green smoke lifts from the cliffs.",
+          "video_prompt_start": "Push-in on a mist-shrouded rocky shoreline with twisted cypress. a plume of green smoke lifts from the cliffs ahead. The beat resolves into the next matching frame. Continuity held: Transition from storm to eerie coastal palette.",
+          "video_prompt_end": "Push-in on a mist-shrouded rocky shoreline with twisted cypress. a plume of green smoke lifts from the cliffs ahead. The beat resolves into the next matching frame. Continuity held: Transition from storm to eerie coastal palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S18",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "ship_env_A2_prop",
+            "sailors_A5_fused"
+          ],
+          "ref_scope": "image1: the three Greek wooden ships — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Sailors — Odysseus’s weary crew in torn tunics — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "lateral track of battered ships slamming into a cove of black sand"
+            ],
+            [
+              1.8,
+              3.5,
+              "anchor lines drop and exhausted men collapse"
+            ]
+          ],
+          "narration_mk": "Беа принудени да се вкотват на островот на Кирка.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide tracking shot of the battered ships slamming into a cove of black sand, anchors dropping, men collapsing",
+          "kf_last": "Track past the exhausted crew to the dark grove at the water's edge",
+          "continuity": "Ships and weary sailors; gloomy island palette",
+          "motion": "lateral track across the landing cove",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide tracking shot of the battered ships slamming into a cove of black sand, anchors dropping, men collapsing Sailors athletic, warrior then lateral track of battered ships slamming into a cove of black sand, then anchor lines drop and exhausted men collapse settling into track past the exhausted crew to the dark grove at the water's edge continuity held: Ships and weary sailors; gloomy island palette",
+          "image_prompt_start": "photoreal cinematic: wide of the battered ships slamming into a cove of black sand, anchors dropping, men collapsing.",
+          "image_prompt_end": "photoreal cinematic: past the exhausted crew to the dark grove at the water's edge.",
+          "video_prompt_start": "Lateral track of battered ships slamming into a cove of black sand. anchor lines drop and exhausted men collapse. The beat resolves into the next matching frame. Continuity held: Ships and weary sailors; gloomy island palette.",
+          "video_prompt_end": "Lateral track of battered ships slamming into a cove of black sand. anchor lines drop and exhausted men collapse. The beat resolves into the next matching frame. Continuity held: Ships and weary sailors; gloomy island palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S19",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "hall_env_A6_prop"
+          ],
+          "ref_scope": "image1: the grand stone hall lit by emerald fire — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "low-angle push-in on a grand stone hall mouth glowing emerald"
+            ],
+            [
+              1.8,
+              3.5,
+              "silhouettes of great beasts pace within the threshold"
+            ]
+          ],
+          "narration_mk": "А таму ги чекаше уште една неволја.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of a grand stone hall mouth glowing emerald, ivy and smoke, silhouettes of great beasts pacing within",
+          "kf_last": "Push-in past the threshold as enchantment light intensifies",
+          "continuity": "Island fantasy palette; foreboding",
+          "motion": "slow push-in toward the glowing threshold",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of a grand stone hall mouth glowing emerald, ivy and smoke, silhouettes of great beasts pacing within then low-angle push-in on a grand stone hall mouth glowing emerald, then silhouettes of great beasts pace within the threshold settling into push-in past the threshold as enchantment light intensifies with stone groans continuity held: Island fantasy palette; foreboding",
+          "image_prompt_start": "photoreal cinematic: medium of a grand stone hall mouth glowing emerald, ivy and smoke, silhouettes of great beasts pacing within.",
+          "image_prompt_end": "photoreal cinematic: past the threshold as enchantment light intensifies.",
+          "video_prompt_start": "Low-angle push-in on a grand stone hall mouth glowing emerald. silhouettes of great beasts pace within the threshold. The beat resolves into the next matching frame. Continuity held: Island fantasy palette; foreboding.",
+          "video_prompt_end": "Low-angle push-in on a grand stone hall mouth glowing emerald. silhouettes of great beasts pace within the threshold. The beat resolves into the next matching frame. Continuity held: Island fantasy palette; foreboding.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S20",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-right",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "circe_A2_fused",
+            "hall_env_A6_prop"
+          ],
+          "ref_scope": "image1: the fused master of Circe — elegant sorceress in crimson robes with a silver staff — 100% identical; studio bg/pose/light NOT used; image2: the grand stone hall lit by emerald fire — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "pan-right as Circe emerges from shadow in long crimson robes"
+            ],
+            [
+              1.5,
+              3.0,
+              "her silver staff glows crossing the entrance in emerald light"
+            ]
+          ],
+          "narration_mk": "Од мракот излезе волшебничката Кирка.",
+          "dialogue_mk": "",
+          "kf_first": "Wide shot of Circe emerging from shadow, long crimson robes trailing, a silver staff glowing, magical fire braziers lining the hall",
+          "kf_last": "Pan-right as she crosses toward the entrance, her robes catching the emerald light",
+          "continuity": "Circe identity: crimson robes, silver staff, glowing eyes",
+          "motion": "pan-right following her entrance",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide shot of Circe emerging from shadow, long crimson robes trailing, a silver staff glowing, magical fire braziers lining the hall Circe robed, mage, in cloak, carrying staff, wreathed in fire wisps, rune ring then pan-right as Circe emerges from shadow in long crimson robes, then her silver staff glows crossing the entrance in emerald light settling into pan-right as she crosses toward the entrance, her robes catching the emerald light with arcane energy crackles, flames crackle continuity held: Circe identity: crimson robes, silver staff, glowing eyes",
+          "image_prompt_start": "photoreal cinematic: shot of Circe emerging from shadow, long crimson robes trailing, a silver staff glowing, magical fire braziers lining the hall.",
+          "image_prompt_end": "photoreal cinematic: -right as she crosses toward the entrance, her robes catching the emerald light.",
+          "video_prompt_start": "Pan-right as Circe emerges from shadow in long crimson robes. her silver staff glows crossing the entrance in emerald light. The beat resolves into the next matching frame. Continuity held: Circe identity: crimson robes, silver staff, glowing eyes.",
+          "video_prompt_end": "Pan-right as Circe emerges from shadow in long crimson robes. her silver staff glows crossing the entrance in emerald light. The beat resolves into the next matching frame. Continuity held: Circe identity: crimson robes, silver staff, glowing eyes.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S21",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "circe_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of Circe — elegant sorceress in crimson robes with a silver staff — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close push-in on Circe’s serene face, green fire in her pupils"
+            ],
+            [
+              1.5,
+              3.0,
+              "her eyes flash with emerald sorcery and a cold smile"
+            ]
+          ],
+          "narration_mk": "Нејзиниот глас беше сладок, но клетвата — страшна.",
+          "dialogue_mk": "Кирка: „Ќе ве претворам во свињи.“",
+          "kf_first": "Close-up of Circe's serene face, green fire reflected in her pupils, lips parted in a cold smile",
+          "kf_last": "Push-in as her eyes flash with emerald sorcery",
+          "continuity": "Circe face lock; emerald magic palette",
+          "motion": "slow push-in on the flashing eyes",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of Circe's serene face, green fire reflected in her pupils, lips parted in a cold smile Circe robed, mage, in cloak, carrying staff, wreathed in fire wisps, rune ring then close push-in on Circe’s serene face, green fire in her pupils, then her eyes flash with emerald sorcery and a cold smile settling into push-in as her eyes flash with emerald sorcery with arcane energy crackles, flames crackle a voice speaks in Macedonian: \"Кирка: „Ќе ве претворам во свињи.“\" continuity held: Circe face lock; emerald magic palette",
+          "image_prompt_start": "photoreal cinematic: of Circe's serene face, green fire reflected in her pupils, lips parted in a cold smile.",
+          "image_prompt_end": "photoreal cinematic: as her eyes flash with emerald sorcery.",
+          "video_prompt_start": "Close push-in on Circe’s serene face, green fire in her pupils. her eyes flash with emerald sorcery and a cold smile. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Кирка: „Ќе ве претворам во свињи.“\" Continuity held: Circe face lock; emerald magic palette.",
+          "video_prompt_end": "Close push-in on Circe’s serene face, green fire in her pupils. her eyes flash with emerald sorcery and a cold smile. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Кирка: „Ќе ве претворам во свињи.“\" Continuity held: Circe face lock; emerald magic palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S22",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "pull-back",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "circe_A2_fused",
+            "staff_prop_B3_prop",
+            "sailors_A5_fused"
+          ],
+          "ref_scope": "image1: the fused master of Circe — elegant sorceress in crimson robes with a silver staff — 100% identical; studio bg/pose/light NOT used; image2: Circe’s silver glowing staff — 100% identical; studio bg/pose/light NOT used; image3: the fused master of the Sailors — Odysseus’s weary crew in torn tunics — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "pull-back as Circe raises her staff and glittering green dust surges"
+            ],
+            [
+              1.5,
+              3.0,
+              "the spell wave engulfs the gathered sailors"
+            ]
+          ],
+          "narration_mk": "Со замав на стапот, светлината ги поклопи.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of Circe raising her staff, a wave of glittering green dust surging toward the gathered sailors",
+          "kf_last": "Pull-back as the dust engulfs the men, twisting and crackling",
+          "continuity": "Staff prop; sorcery explosion palette",
+          "motion": "pull-back as the spell wave expands",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Circe raising her staff, a wave of glittering green dust surging toward the gathered sailors Circe robed, mage, in cloak, carrying staff, wreathed in fire wisps, rune ring Sailors athletic, warrior then pull-back as Circe raises her staff and glittering green dust surges, then the spell wave engulfs the gathered sailors settling into pull-back as the dust engulfs the men, twisting and crackling with arcane energy crackles, flames crackle continuity held: Staff prop; sorcery explosion palette",
+          "image_prompt_start": "photoreal cinematic: of Circe raising her staff, a wave of glittering green dust surging toward the gathered sailors.",
+          "image_prompt_end": "photoreal cinematic: as the dust engulfs the men, twisting and crackling.",
+          "video_prompt_start": "Pull-back as Circe raises her staff and glittering green dust surges. the spell wave engulfs the gathered sailors. The beat resolves into the next matching frame. Continuity held: Staff prop; sorcery explosion palette.",
+          "video_prompt_end": "Pull-back as Circe raises her staff and glittering green dust surges. the spell wave engulfs the gathered sailors. The beat resolves into the next matching frame. Continuity held: Staff prop; sorcery explosion palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S23",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "sailors_A5_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Sailors — Odysseus’s weary crew in torn tunics — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "low-angle close on a sailor’s hands contorting to bristled hide"
+            ],
+            [
+              1.5,
+              3.0,
+              "his face elongates toward a swine snout, ears rising"
+            ]
+          ],
+          "narration_mk": "Еден по еден, луѓето почнаа да се менуваат.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle close-up of a sailor's hands contorting, skin roughening to bristled hide, fingers curling, photoreal horror-lite",
+          "kf_last": "Push-in as his face elongates toward a swine snout, ears rising",
+          "continuity": "Transformation palette; no gore, child-safe",
+          "motion": "slow push-in on the transforming face",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle close-up of a sailor's hands contorting, skin roughening to bristled hide, fingers curling, photoreal horror-lite Sailors athletic, warrior then low-angle close on a sailor’s hands contorting to bristled hide, then his face elongates toward a swine snout, ears rising the camera push-in settling into push-in as his face elongates toward a swine snout, ears rising continuity held: Transformation palette; no gore, child-safe",
+          "image_prompt_start": "photoreal cinematic: close-up of a sailor's hands contorting, skin roughening to bristled hide, fingers curling, photoreal horror-lite.",
+          "image_prompt_end": "photoreal cinematic: as his face elongates toward a swine snout, ears rising.",
+          "video_prompt_start": "Low-angle close on a sailor’s hands contorting to bristled hide. his face elongates toward a swine snout, ears rising. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Transformation palette; no gore, child-safe.",
+          "video_prompt_end": "Low-angle close on a sailor’s hands contorting to bristled hide. his face elongates toward a swine snout, ears rising. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Transformation palette; no gore, child-safe.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S24",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "sailors_A5_fused",
+            "hall_env_A6_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Sailors — Odysseus’s weary crew in torn tunics — 100% identical; studio bg/pose/light NOT used; image2: the grand stone hall lit by emerald fire — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "crane-down over the great hall now full of confused boars and pigs"
+            ],
+            [
+              1.8,
+              3.5,
+              "the frightened animals huddle in the emerald light"
+            ]
+          ],
+          "narration_mk": "Салата се исполни со свињи на местото на храбри морнари.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of the grand hall now full of confused boars and pigs trampling fallen armor and tunics",
+          "kf_last": "Crane-down toward the frightened animals huddled in the emerald light",
+          "continuity": "Hall palette; transformed crew",
+          "motion": "crane-down over the transformed hall",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of the grand hall now full of confused boars and pigs trampling fallen armor and tunics Sailors athletic, warrior then crane-down over the great hall now full of confused boars and pigs, then the frightened animals huddle in the emerald light settling into crane-down toward the frightened animals huddled in the emerald light with stone groans continuity held: Hall palette; transformed crew",
+          "image_prompt_start": "photoreal cinematic: wide of the grand hall now full of confused boars and pigs trampling fallen armor and tunics.",
+          "image_prompt_end": "photoreal cinematic: toward the frightened animals huddled in the emerald light.",
+          "video_prompt_start": "Crane-down over the great hall now full of confused boars and pigs. the frightened animals huddle in the emerald light. The beat resolves into the next matching frame. Continuity held: Hall palette; transformed crew.",
+          "video_prompt_end": "Crane-down over the great hall now full of confused boars and pigs. the frightened animals huddle in the emerald light. The beat resolves into the next matching frame. Continuity held: Hall palette; transformed crew.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S25",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "over-shoulder",
+          "move": "shot-reverse",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "odysseus_A1_fused",
+            "circe_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of Odysseus — weathered Greek king in a sea-worn tunic — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Circe — elegant sorceress in crimson robes with a silver staff — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "over-shoulder medium of Odysseus facing Circe, sword half-drawn"
+            ],
+            [
+              1.8,
+              3.5,
+              "shot-reverse to Circe smirking, staff lowered and unbothered"
+            ]
+          ],
+          "narration_mk": "Одисеј остана сам, надвор од дофатот на магијата.",
+          "dialogue_mk": "Одисеј: „Што им стори? Врати ми ги луѓето!“",
+          "kf_first": "Over-shoulder medium of Odysseus facing Circe from the hall entrance, sword half-drawn, torn between fear and fury",
+          "kf_last": "Shot-reverse to Circe smirking, staff lowered, unbothered",
+          "continuity": "Both identities locked; emerald hall light",
+          "motion": "shot-reverse confrontation",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: over-shoulder medium of Odysseus facing Circe from the hall entrance, sword half-drawn, torn between fear and fury Odysseus athletic, warrior, in cloak, beard, carrying sword, wreathed in golden glow Circe robed, mage, in cloak, carrying staff, wreathed in fire wisps, rune ring then over-shoulder medium of Odysseus facing Circe, sword half-drawn, then shot-reverse to Circe smirking, staff lowered and unbothered settling into shot-reverse to Circe smirking, staff lowered, unbothered with steel rings, a low radiant hum a voice speaks in Macedonian: \"Одисеј: „Што им стори? Врати ми ги луѓето!“\" continuity held: Both identities locked; emerald hall light",
+          "image_prompt_start": "photoreal cinematic: Over-shoulder medium of Odysseus facing Circe from the hall entrance, sword half-drawn, torn between fear and fury.",
+          "image_prompt_end": "photoreal cinematic: Shot-reverse to Circe smirking, staff lowered, unbothered.",
+          "video_prompt_start": "Over-shoulder medium of Odysseus facing Circe, sword half-drawn. shot-reverse to Circe smirking, staff lowered and unbothered. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Одисеј: „Што им стори? Врати ми ги луѓето!“\" Continuity held: Both identities locked; emerald hall light.",
+          "video_prompt_end": "Over-shoulder medium of Odysseus facing Circe, sword half-drawn. shot-reverse to Circe smirking, staff lowered and unbothered. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Одисеј: „Што им стори? Врати ми ги луѓето!“\" Continuity held: Both identities locked; emerald hall light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S26",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "circe_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of Circe — elegant sorceress in crimson robes with a silver staff — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close push-in on Circe turning away dismissively as green sparks dance"
+            ],
+            [
+              1.5,
+              3.0,
+              "her cold profile speaks the threat over her shoulder"
+            ]
+          ],
+          "narration_mk": "Но Кирка беше посилна од нивните мечеви.",
+          "dialogue_mk": "Кирка: „Истото те чека и тебе, кралу.“",
+          "kf_first": "Close-up of Circe turning away dismissively, green sparks dancing off her fingertips",
+          "kf_last": "Push-in on her cold profile as she speaks the threat",
+          "continuity": "Circe portrait; sorcery sparks",
+          "motion": "push-in on her profile",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of Circe turning away dismissively, green sparks dancing off her fingertips Circe robed, mage, in cloak, carrying staff, wreathed in fire wisps, rune ring then close push-in on Circe turning away dismissively as green sparks dance, then her cold profile speaks the threat over her shoulder settling into push-in on her cold profile as she speaks the threat with arcane energy crackles, flames crackle a voice speaks in Macedonian: \"Кирка: „Истото те чека и тебе, кралу.“\" continuity held: Circe portrait; sorcery sparks",
+          "image_prompt_start": "photoreal cinematic: of Circe turning away dismissively, green sparks dancing off her fingertips.",
+          "image_prompt_end": "photoreal cinematic: on her cold profile as she speaks the threat.",
+          "video_prompt_start": "Close push-in on Circe turning away dismissively as green sparks dance. her cold profile speaks the threat over her shoulder. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Кирка: „Истото те чека и тебе, кралу.“\" Continuity held: Circe portrait; sorcery sparks.",
+          "video_prompt_end": "Close push-in on Circe turning away dismissively as green sparks dance. her cold profile speaks the threat over her shoulder. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Кирка: „Истото те чека и тебе, кралу.“\" Continuity held: Circe portrait; sorcery sparks.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S27",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "odysseus_A1_fused",
+            "grove_env_A7_prop"
+          ],
+          "ref_scope": "image1: the fused master of Odysseus — weathered Greek king in a sea-worn tunic — 100% identical; studio bg/pose/light NOT used; image2: the moonlit cypress grove — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "wide static of Odysseus walking alone among moonlit cypress at dusk"
+            ],
+            [
+              1.8,
+              3.5,
+              "he pauses beneath a gnarled tree as moonlight breaks through"
+            ]
+          ],
+          "narration_mk": "Одисеј излезе од салата со тешко срце.",
+          "dialogue_mk": "",
+          "kf_first": "Wide shot of the island grove at dusk, Odysseus walking alone among cypress trees, the great hall glowing behind",
+          "kf_last": "Static as he pauses beneath a gnarled tree, moonlight breaking through the leaves",
+          "continuity": "Island grove palette; Odysseus alone",
+          "motion": "static with drifting moonbeams",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide shot of the island grove at dusk, Odysseus walking alone among cypress trees, the great hall glowing behind Odysseus athletic, warrior, in cloak, beard, carrying sword, wreathed in golden glow then wide static of Odysseus walking alone among moonlit cypress at dusk, then he pauses beneath a gnarled tree as moonlight breaks through settling into static as he pauses beneath a gnarled tree, moonlight breaking through the leaves with steel rings, a low radiant hum continuity held: Island grove palette; Odysseus alone",
+          "image_prompt_start": "photoreal cinematic: shot of the island grove at dusk, Odysseus walking alone among cypress trees, the great hall glowing behind.",
+          "image_prompt_end": "photoreal cinematic: Static as he pauses beneath a gnarled tree, moonlight breaking through the leaves.",
+          "video_prompt_start": "Wide static of Odysseus walking alone among moonlit cypress at dusk. he pauses beneath a gnarled tree as moonlight breaks through. The beat resolves into the next matching frame. Continuity held: Island grove palette; Odysseus alone.",
+          "video_prompt_end": "Wide static of Odysseus walking alone among moonlit cypress at dusk. he pauses beneath a gnarled tree as moonlight breaks through. The beat resolves into the next matching frame. Continuity held: Island grove palette; Odysseus alone.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S28",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "hermes_A4_fused"
+          ],
+          "ref_scope": "image1: the fused master of Hermes — winged radiant messenger with a caduceus — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "push-in on Hermes materializing in a burst of golden sparks, winged and radiant"
+            ],
+            [
+              1.5,
+              3.0,
+              "he extends a hand in greeting to the hero"
+            ]
+          ],
+          "narration_mk": "Тогаш, од нигде никаде, се појави еден сјаен гласник.",
+          "dialogue_mk": "Хермес: „Не оди сам, Одисеј.“",
+          "kf_first": "Medium of Hermes materializing in a burst of golden sparks, winged sandals and caduceus, youthful and radiant",
+          "kf_last": "Push-in on him as he extends a hand in greeting",
+          "continuity": "Hermes identity: golden light, winged sandals",
+          "motion": "push-in on the radiant messenger",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Hermes materializing in a burst of golden sparks, winged sandals and caduceus, youthful and radiant Hermes winged, divine, wreathed in golden glow then push-in on Hermes materializing in a burst of golden sparks, winged and radiant, then he extends a hand in greeting to the hero settling into push-in on him as he extends a hand in greeting with a low radiant hum a voice speaks in Macedonian: \"Хермес: „Не оди сам, Одисеј.“\" continuity held: Hermes identity: golden light, winged sandals",
+          "image_prompt_start": "photoreal cinematic: of Hermes materializing in a burst of golden sparks, winged sandals and caduceus, youthful and radiant.",
+          "image_prompt_end": "photoreal cinematic: on him as he extends a hand in greeting.",
+          "video_prompt_start": "Push-in on Hermes materializing in a burst of golden sparks, winged and radiant. he extends a hand in greeting to the hero. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Хермес: „Не оди сам, Одисеј.“\" Continuity held: Hermes identity: golden light, winged sandals.",
+          "video_prompt_end": "Push-in on Hermes materializing in a burst of golden sparks, winged and radiant. he extends a hand in greeting to the hero. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Хермес: „Не оди сам, Одисеј.“\" Continuity held: Hermes identity: golden light, winged sandals.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S29",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "hermes_A4_fused",
+            "herb_prop_B4_prop"
+          ],
+          "ref_scope": "image1: the fused master of Hermes — winged radiant messenger with a caduceus — 100% identical; studio bg/pose/light NOT used; image2: the herb with black root and white blossoms — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "macro push-in on the small plant with black root and white blossoms in his hand"
+            ],
+            [
+              1.5,
+              3.0,
+              "dew of light beads on the pure white petals"
+            ]
+          ],
+          "narration_mk": "Во раката држеше билка со светли цветови.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of Hermes' hand offering a small plant with a black root and pure white blossoms, glowing softly",
+          "kf_last": "Push-in on the white petals as dew of light beads on them",
+          "continuity": "Sacred herb prop; golden light palette",
+          "motion": "macro push-in on the luminous blossom",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of Hermes' hand offering a small plant with a black root and pure white blossoms, glowing softly Hermes winged, divine, wreathed in golden glow then macro push-in on the small plant with black root and white blossoms in his hand, then dew of light beads on the pure white petals settling into push-in on the white petals as dew of light beads on them with a low radiant hum continuity held: Sacred herb prop; golden light palette",
+          "image_prompt_start": "photoreal cinematic: Macro insert of Hermes' hand offering a small plant with a black root and pure white blossoms, glowing softly.",
+          "image_prompt_end": "photoreal cinematic: on the white petals as dew of light beads on them.",
+          "video_prompt_start": "Macro push-in on the small plant with black root and white blossoms in his hand. dew of light beads on the pure white petals. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Sacred herb prop; golden light palette.",
+          "video_prompt_end": "Macro push-in on the small plant with black root and white blossoms in his hand. dew of light beads on the pure white petals. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Sacred herb prop; golden light palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S30",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "hermes_A4_fused",
+            "odysseus_A1_fused",
+            "herb_prop_B4_prop"
+          ],
+          "ref_scope": "image1: the fused master of Hermes — winged radiant messenger with a caduceus — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Odysseus — weathered Greek king in a sea-worn tunic — 100% identical; studio bg/pose/light NOT used; image3: the herb with black root and white blossoms — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "push-in on Hermes pressing the herb into Odysseus’s palm"
+            ],
+            [
+              1.5,
+              3.0,
+              "golden light passes from the god to the hero"
+            ]
+          ],
+          "narration_mk": "Оваа билка, рече тој, штити од секоја магија.",
+          "dialogue_mk": "Хермес: „Стуткај ја во зовриена вода. Ќе те штити од нејзината клетва.“",
+          "kf_first": "Medium of Hermes pressing the herb into Odysseus's palm, the two framed by moonlit cypress",
+          "kf_last": "Push-in on their joined hands as golden light passes from the god to the hero",
+          "continuity": "Herb prop; Hermes and Odysseus identities",
+          "motion": "push-in on the exchanged gift",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Hermes pressing the herb into Odysseus's palm, the two framed by moonlit cypress Hermes winged, divine, wreathed in golden glow Odysseus athletic, warrior, in cloak, beard, carrying sword, wreathed in golden glow then push-in on Hermes pressing the herb into Odysseus’s palm, then golden light passes from the god to the hero settling into push-in on their joined hands as golden light passes from the god to the hero with a low radiant hum, steel rings a voice speaks in Macedonian: \"Хермес: „Стуткај ја во зовриена вода. Ќе те штити од нејзината клетва.“\" continuity held: Herb prop; Hermes and Odysseus identities",
+          "image_prompt_start": "photoreal cinematic: of Hermes pressing the herb into Odysseus's palm, the two framed by moonlit cypress.",
+          "image_prompt_end": "photoreal cinematic: on their joined hands as golden light passes from the god to the hero.",
+          "video_prompt_start": "Push-in on Hermes pressing the herb into Odysseus’s palm. golden light passes from the god to the hero. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Хермес: „Стуткај ја во зовриена вода. Ќе те штити од нејзината клетва.“\" Continuity held: Herb prop; Hermes and Odysseus identities.",
+          "video_prompt_end": "Push-in on Hermes pressing the herb into Odysseus’s palm. golden light passes from the god to the hero. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Хермес: „Стуткај ја во зовриена вода. Ќе те штити од нејзината клетва.“\" Continuity held: Herb prop; Hermes and Odysseus identities.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S31",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "odysseus_A1_fused",
+            "herb_prop_B4_prop",
+            "potion_prop_B5_prop"
+          ],
+          "ref_scope": "image1: the fused master of Odysseus — weathered Greek king in a sea-worn tunic — 100% identical; studio bg/pose/light NOT used; image2: the herb with black root and white blossoms — 100% identical; studio bg/pose/light NOT used; image3: the golden protective potion — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close push-in on Odysseus grinding the dark root into a clay cup"
+            ],
+            [
+              1.5,
+              3.0,
+              "the swirling potion glows faintly gold with steam"
+            ]
+          ],
+          "narration_mk": "Одисеј направи напивка од билките.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of Odysseus grinding the dark root into a clay cup, steam rising, white petals scattered on a stone table",
+          "kf_last": "Push-in on the swirling potion as it glows faintly gold",
+          "continuity": "Herb prop; campfire palette",
+          "motion": "slow push-in on the brewing potion",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of Odysseus grinding the dark root into a clay cup, steam rising, white petals scattered on a stone table Odysseus athletic, warrior, in cloak, beard, carrying sword, wreathed in golden glow then close push-in on Odysseus grinding the dark root into a clay cup, then the swirling potion glows faintly gold with steam settling into push-in on the swirling potion as it glows faintly gold with steel rings, a low radiant hum continuity held: Herb prop; campfire palette",
+          "image_prompt_start": "photoreal cinematic: of Odysseus grinding the dark root into a clay cup, steam rising, white petals scattered on a stone table.",
+          "image_prompt_end": "photoreal cinematic: on the swirling potion as it glows faintly gold.",
+          "video_prompt_start": "Close push-in on Odysseus grinding the dark root into a clay cup. the swirling potion glows faintly gold with steam. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Herb prop; campfire palette.",
+          "video_prompt_end": "Close push-in on Odysseus grinding the dark root into a clay cup. the swirling potion glows faintly gold with steam. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Herb prop; campfire palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S32",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "odysseus_A1_fused",
+            "potion_prop_B5_prop"
+          ],
+          "ref_scope": "image1: the fused master of Odysseus — weathered Greek king in a sea-worn tunic — 100% identical; studio bg/pose/light NOT used; image2: the golden protective potion — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "push-in on Odysseus lifting the cup and drinking deep"
+            ],
+            [
+              1.5,
+              3.0,
+              "a thin golden aura shimmers over his skin"
+            ]
+          ],
+          "narration_mk": "Со една голтка, неговото тело стана отпорно.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of Odysseus lifting the cup to his lips, resolve hardening in the fire glow",
+          "kf_last": "Push-in as he drinks, a thin golden aura shimmering over his skin",
+          "continuity": "Potion and hero identity; protective golden aura",
+          "motion": "push-in as the protective aura blooms",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Odysseus lifting the cup to his lips, resolve hardening in the fire glow Odysseus athletic, warrior, in cloak, beard, carrying sword, wreathed in golden glow then push-in on Odysseus lifting the cup and drinking deep, then a thin golden aura shimmers over his skin settling into push-in as he drinks, a thin golden aura shimmering over his skin with steel rings, a low radiant hum continuity held: Potion and hero identity; protective golden aura",
+          "image_prompt_start": "photoreal cinematic: of Odysseus lifting the cup to his lips, resolve hardening in the fire glow.",
+          "image_prompt_end": "photoreal cinematic: as he drinks, a thin golden aura shimmering over his skin.",
+          "video_prompt_start": "Push-in on Odysseus lifting the cup and drinking deep. a thin golden aura shimmers over his skin. The beat resolves into the next matching frame. Continuity held: Potion and hero identity; protective golden aura.",
+          "video_prompt_end": "Push-in on Odysseus lifting the cup and drinking deep. a thin golden aura shimmers over his skin. The beat resolves into the next matching frame. Continuity held: Potion and hero identity; protective golden aura.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S33",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "odysseus_A1_fused",
+            "hall_env_A6_prop",
+            "sailors_A5_fused"
+          ],
+          "ref_scope": "image1: the fused master of Odysseus — weathered Greek king in a sea-worn tunic — 100% identical; studio bg/pose/light NOT used; image2: the grand stone hall lit by emerald fire — 100% identical; studio bg/pose/light NOT used; image3: the fused master of the Sailors — Odysseus’s weary crew in torn tunics — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "forward track of Odysseus striding back up the hall, faint golden aura"
+            ],
+            [
+              1.5,
+              3.0,
+              "the swine part before his path toward Circe"
+            ]
+          ],
+          "narration_mk": "Се врати пред волшебничката, посилен од нејзината магија.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide tracking shot of Odysseus striding back up the hall, golden aura faint around him, the swine parting before his path",
+          "kf_last": "Track toward Circe at the far end, her smile faltering",
+          "continuity": "Golden aura; hall palette; transformed crew",
+          "motion": "forward track toward the waiting sorceress",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide tracking shot of Odysseus striding back up the hall, golden aura faint around him, the swine parting before his path Odysseus athletic, warrior, in cloak, beard, carrying sword, wreathed in golden glow Sailors athletic, warrior then forward track of Odysseus striding back up the hall, faint golden aura, then the swine part before his path toward Circe settling into track toward Circe at the far end, her smile faltering with steel rings, a low radiant hum continuity held: Golden aura; hall palette; transformed crew",
+          "image_prompt_start": "photoreal cinematic: wide of Odysseus striding back up the hall, golden aura faint around him, the swine parting before his path.",
+          "image_prompt_end": "photoreal cinematic: toward Circe at the far end, her smile faltering.",
+          "video_prompt_start": "Forward track of Odysseus striding back up the hall, faint golden aura. the swine part before his path toward Circe. The beat resolves into the next matching frame. Continuity held: Golden aura; hall palette; transformed crew.",
+          "video_prompt_end": "Forward track of Odysseus striding back up the hall, faint golden aura. the swine part before his path toward Circe. The beat resolves into the next matching frame. Continuity held: Golden aura; hall palette; transformed crew.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S34",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "circe_A2_fused",
+            "staff_prop_B3_prop",
+            "odysseus_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Circe — elegant sorceress in crimson robes with a silver staff — 100% identical; studio bg/pose/light NOT used; image2: Circe’s silver glowing staff — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Odysseus — weathered Greek king in a sea-worn tunic — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "low-angle close as Circe hurls a lance of emerald fire from her staff"
+            ],
+            [
+              1.5,
+              3.0,
+              "the blast shatters against his golden aura in harmless sparks"
+            ]
+          ],
+          "narration_mk": "Кирка го крена стапот — но зракот се скрши.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle close-up of Circe hurling a lance of emerald fire from her staff at Odysseus",
+          "kf_last": "Push-in as the blast shatters against his golden aura in a shower of harmless sparks",
+          "continuity": "Golden aura vs emerald magic; both identities",
+          "motion": "push-in as the spell shatters against the aura",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle close-up of Circe hurling a lance of emerald fire from her staff at Odysseus Circe robed, mage, in cloak, carrying staff, wreathed in fire wisps, rune ring Odysseus athletic, warrior, in cloak, beard, carrying sword, wreathed in golden glow then low-angle close as Circe hurls a lance of emerald fire from her staff, then the blast shatters against his golden aura in harmless sparks the camera push-in settling into push-in as the blast shatters against his golden aura in a shower of harmless sparks with arcane energy crackles, flames crackle continuity held: Golden aura vs emerald magic; both identities",
+          "image_prompt_start": "photoreal cinematic: close-up of Circe hurling a lance of emerald fire from her staff at Odysseus.",
+          "image_prompt_end": "photoreal cinematic: as the blast shatters against his golden aura in a shower of harmless sparks.",
+          "video_prompt_start": "Low-angle close as Circe hurls a lance of emerald fire from her staff. the blast shatters against his golden aura in harmless sparks. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Golden aura vs emerald magic; both identities.",
+          "video_prompt_end": "Low-angle close as Circe hurls a lance of emerald fire from her staff. the blast shatters against his golden aura in harmless sparks. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Golden aura vs emerald magic; both identities.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S35",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "shot-reverse",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "circe_A2_fused",
+            "odysseus_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Circe — elegant sorceress in crimson robes with a silver staff — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Odysseus — weathered Greek king in a sea-worn tunic — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "shot-reverse as Circe steps back in genuine shock"
+            ],
+            [
+              1.8,
+              3.5,
+              "Odysseus advances unshaken, his golden aura steady"
+            ]
+          ],
+          "narration_mk": "Магијата немаше моќ над него.",
+          "dialogue_mk": "Кирка: „Кој те штити, смртнику?“",
+          "kf_first": "Medium of Circe stepping back, genuine shock crossing her face, staff held defensively",
+          "kf_last": "Shot-reverse to Odysseus advancing, unshaken, the golden aura steady",
+          "continuity": "Confrontation palette; aura steady",
+          "motion": "shot-reverse as power shifts",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Circe stepping back, genuine shock crossing her face, staff held defensively Circe robed, mage, in cloak, carrying staff, wreathed in fire wisps, rune ring Odysseus athletic, warrior, in cloak, beard, carrying sword, wreathed in golden glow then shot-reverse as Circe steps back in genuine shock, then Odysseus advances unshaken, his golden aura steady settling into shot-reverse to Odysseus advancing, unshaken, the golden aura steady with arcane energy crackles, flames crackle a voice speaks in Macedonian: \"Кирка: „Кој те штити, смртнику?“\" continuity held: Confrontation palette; aura steady",
+          "image_prompt_start": "photoreal cinematic: of Circe stepping back, genuine shock crossing her face, staff held defensively.",
+          "image_prompt_end": "photoreal cinematic: Shot-reverse to Odysseus advancing, unshaken, the golden aura steady.",
+          "video_prompt_start": "Shot-reverse as Circe steps back in genuine shock. Odysseus advances unshaken, his golden aura steady. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Кирка: „Кој те штити, смртнику?“\" Continuity held: Confrontation palette; aura steady.",
+          "video_prompt_end": "Shot-reverse as Circe steps back in genuine shock. Odysseus advances unshaken, his golden aura steady. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Кирка: „Кој те штити, смртнику?“\" Continuity held: Confrontation palette; aura steady.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S36",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "odysseus_A1_fused",
+            "circe_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of Odysseus — weathered Greek king in a sea-worn tunic — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Circe — elegant sorceress in crimson robes with a silver staff — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "low-angle push-in on Odysseus towering over the sorceress, sword drawn"
+            ],
+            [
+              1.8,
+              3.5,
+              "Circe yields before his commanding gaze"
+            ]
+          ],
+          "narration_mk": "Одисеј ја натера да му вети дека ќе им го врати обликот.",
+          "dialogue_mk": "Одисеј: „Врати им го човечкиот лик — или ќе се соочиш со меч, а не со зборови.“",
+          "kf_first": "Low-angle medium of Odysseus towering over the sorceress, sword now drawn, golden aura blazing",
+          "kf_last": "Push-in on his commanding gaze as Circe yields before him",
+          "continuity": "Odysseus power pose; aura peak",
+          "motion": "slow push-in on the commanding hero",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Odysseus towering over the sorceress, sword now drawn, golden aura blazing Odysseus athletic, warrior, in cloak, beard, carrying sword, wreathed in golden glow Circe robed, mage, in cloak, carrying staff, wreathed in fire wisps, rune ring then low-angle push-in on Odysseus towering over the sorceress, sword drawn, then Circe yields before his commanding gaze settling into push-in on his commanding gaze as Circe yields before him with steel rings, a low radiant hum a voice speaks in Macedonian: \"Одисеј: „Врати им го човечкиот лик — или ќе се соочиш со меч, а не со зборови.“\" continuity held: Odysseus power pose; aura peak",
+          "image_prompt_start": "photoreal cinematic: medium of Odysseus towering over the sorceress, sword now drawn, golden aura blazing.",
+          "image_prompt_end": "photoreal cinematic: on his commanding gaze as Circe yields before him.",
+          "video_prompt_start": "Low-angle push-in on Odysseus towering over the sorceress, sword drawn. Circe yields before his commanding gaze. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Одисеј: „Врати им го човечкиот лик — или ќе се соочиш со меч, а не со зборови.“\" Continuity held: Odysseus power pose; aura peak.",
+          "video_prompt_end": "Low-angle push-in on Odysseus towering over the sorceress, sword drawn. Circe yields before his commanding gaze. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Одисеј: „Врати им го човечкиот лик — или ќе се соочиш со меч, а не со зборови.“\" Continuity held: Odysseus power pose; aura peak.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "windbag_disaster_and_circes_emerald_island",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class",
+        "screen_dir"
+      ],
+      "palette": [
+        "#1d5c4a",
+        "#2f9e65",
+        "#0e2b21"
+      ],
+      "light_direction": "key light from screen-right, moody island dusk with emerald sorcery glow",
+      "time_of_day": "dusk"
+    },
+    {
+      "id": "act3",
+      "num": "Act III",
+      "title": "Расплет",
+      "color": "#a78bfa",
+      "pct": 25,
+      "synopsis": "Кирка ја крева клетвата и на луѓето им се враќа човечкиот облик, излекувани и побројни; Одисеј со целата посада повторно плови кон дома.",
+      "shots": [
+        {
+          "id": "S37",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "circe_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of Circe — elegant sorceress in crimson robes with a silver staff — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close push-in on Circe raising both hands as emerald fire fades"
+            ],
+            [
+              1.5,
+              3.0,
+              "her calm face as the power turns to soft silver light"
+            ]
+          ],
+          "narration_mk": "Кирка крена раце, а светлината омекна.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of Circe raising both hands, emerald fire fading to soft silver light",
+          "kf_last": "Push-in on her calm face as the power turns gentle",
+          "continuity": "Circe identity; magic cools to silver",
+          "motion": "push-in as the spell softens",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of Circe raising both hands, emerald fire fading to soft silver light Circe robed, mage, in cloak, carrying staff, wreathed in fire wisps, rune ring then close push-in on Circe raising both hands as emerald fire fades, then her calm face as the power turns to soft silver light settling into push-in on her calm face as the power turns gentle with arcane energy crackles, flames crackle continuity held: Circe identity; magic cools to silver",
+          "image_prompt_start": "photoreal cinematic: of Circe raising both hands, emerald fire fading to soft silver light.",
+          "image_prompt_end": "photoreal cinematic: on her calm face as the power gentle.",
+          "video_prompt_start": "Close push-in on Circe raising both hands as emerald fire fades. her calm face as the power turns to soft silver light. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Circe identity; magic cools to silver.",
+          "video_prompt_end": "Close push-in on Circe raising both hands as emerald fire fades. her calm face as the power turns to soft silver light. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Circe identity; magic cools to silver.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S38",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "sailors_A5_fused",
+            "hall_env_A6_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Sailors — Odysseus’s weary crew in torn tunics — 100% identical; studio bg/pose/light NOT used; image2: the grand stone hall lit by emerald fire — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "crane-down as silver light rains and the boars rise onto hind legs"
+            ],
+            [
+              1.8,
+              3.5,
+              "bristles recede and human silhouettes re-enter the glow"
+            ]
+          ],
+          "narration_mk": "Еден по еден, свињите почнаа да се исправаат.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of the hall as silver light rains down and the boars begin rising onto hind legs, forms shimmering",
+          "kf_last": "Crane-down as bristles recede and human silhouettes re-enter the glow",
+          "continuity": "Reverse-transformation palette",
+          "motion": "crane-down over the restoring hall",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of the hall as silver light rains down and the boars begin rising onto hind legs, forms shimmering Sailors athletic, warrior then crane-down as silver light rains and the boars rise onto hind legs, then bristles recede and human silhouettes re-enter the glow settling into crane-down as bristles recede and human silhouettes re-enter the glow with stone groans continuity held: Reverse-transformation palette",
+          "image_prompt_start": "photoreal cinematic: wide of the hall as silver light rains down and the boars begin rising onto hind legs, forms shimmering.",
+          "image_prompt_end": "photoreal cinematic: as bristles recede and human silhouettes re-enter the glow.",
+          "video_prompt_start": "Crane-down as silver light rains and the boars rise onto hind legs. bristles recede and human silhouettes re-enter the glow. The beat resolves into the next matching frame. Continuity held: Reverse-transformation palette.",
+          "video_prompt_end": "Crane-down as silver light rains and the boars rise onto hind legs. bristles recede and human silhouettes re-enter the glow. The beat resolves into the next matching frame. Continuity held: Reverse-transformation palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S39",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "pull-back",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "sailors_A5_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Sailors — Odysseus’s weary crew in torn tunics — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close on a young sailor’s face rematerializing from a swine snout"
+            ],
+            [
+              1.5,
+              3.0,
+              "pull-back revealing more restored crewmen rising in wonder"
+            ]
+          ],
+          "narration_mk": "Лицата им се вратија, посветли од порано.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of a young sailor's face rematerializing from a swine snout, joyful, tears of relief",
+          "kf_last": "Pull-back revealing more restored crewmen rising around him in wonder",
+          "continuity": "Restoration palette; child-safe",
+          "motion": "pull-back as more men are restored",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of a young sailor's face rematerializing from a swine snout, joyful, tears of relief Sailors athletic, warrior then close on a young sailor’s face rematerializing from a swine snout, then pull-back revealing more restored crewmen rising in wonder settling into pull-back revealing more restored crewmen rising around him in wonder continuity held: Restoration palette; child-safe",
+          "image_prompt_start": "photoreal cinematic: of a young sailor's face rematerializing from a swine snout, joyful, tears of relief.",
+          "image_prompt_end": "photoreal cinematic: revealing more restored crewmen rising around him in wonder.",
+          "video_prompt_start": "Close on a young sailor’s face rematerializing from a swine snout. pull-back revealing more restored crewmen rising in wonder. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Restoration palette; child-safe.",
+          "video_prompt_end": "Close on a young sailor’s face rematerializing from a swine snout. pull-back revealing more restored crewmen rising in wonder. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Restoration palette; child-safe.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S40",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-left",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "sailors_A5_fused",
+            "odysseus_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Sailors — Odysseus’s weary crew in torn tunics — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Odysseus — weathered Greek king in a sea-worn tunic — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "pan-left across the crew standing tall again, embracing and laughing"
+            ],
+            [
+              1.5,
+              3.0,
+              "they turn to Odysseus watching proudly"
+            ]
+          ],
+          "narration_mk": "Луѓето на Одисеј повторно стоеја на нозе.",
+          "dialogue_mk": "",
+          "kf_first": "Wide shot of the crew standing tall again in the emerald hall, embracing and laughing, armor gleaming",
+          "kf_last": "Pan-left across their relieved faces to Odysseus watching proudly",
+          "continuity": "Restored crew; warm victory palette",
+          "motion": "pan-left across the reunited crew",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide shot of the crew standing tall again in the emerald hall, embracing and laughing, armor gleaming Sailors athletic, warrior Odysseus athletic, warrior, in cloak, beard, carrying sword, wreathed in golden glow then pan-left across the crew standing tall again, embracing and laughing, then they turn to Odysseus watching proudly settling into pan-left across their relieved faces to Odysseus watching proudly with steel rings, a low radiant hum continuity held: Restored crew; warm victory palette",
+          "image_prompt_start": "photoreal cinematic: shot of the crew standing tall again in the emerald hall, embracing and laughing, armor gleaming.",
+          "image_prompt_end": "photoreal cinematic: -left across their relieved faces to Odysseus watching proudly.",
+          "video_prompt_start": "Pan-left across the crew standing tall again, embracing and laughing. they turn to Odysseus watching proudly. The beat resolves into the next matching frame. Continuity held: Restored crew; warm victory palette.",
+          "video_prompt_end": "Pan-left across the crew standing tall again, embracing and laughing. they turn to Odysseus watching proudly. The beat resolves into the next matching frame. Continuity held: Restored crew; warm victory palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S41",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "over-shoulder",
+          "move": "shot-reverse",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "odysseus_A1_fused",
+            "circe_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of Odysseus — weathered Greek king in a sea-worn tunic — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Circe — elegant sorceress in crimson robes with a silver staff — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "over-shoulder medium of Odysseus speaking to Circe in the calm hall"
+            ],
+            [
+              1.8,
+              3.5,
+              "shot-reverse to Circe bowing her head in assent, staff dimmed"
+            ]
+          ],
+          "narration_mk": "Дури и Кирка беше кротка кога молчеше.",
+          "dialogue_mk": "Одисеј: „Сега врати нè дома, и ќе си одиме во мир.“",
+          "kf_first": "Over-shoulder medium of Odysseus speaking to Circe, the hall calm, battle tension gone",
+          "kf_last": "Shot-reverse to Circe bowing her head in assent, staff dimmed",
+          "continuity": "Both identities; reconciled tone",
+          "motion": "shot-reverse of the truce",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: over-shoulder medium of Odysseus speaking to Circe, the hall calm, battle tension gone Odysseus athletic, warrior, in cloak, beard, carrying sword, wreathed in golden glow Circe robed, mage, in cloak, carrying staff, wreathed in fire wisps, rune ring then over-shoulder medium of Odysseus speaking to Circe in the calm hall, then shot-reverse to Circe bowing her head in assent, staff dimmed with steel rings, a low radiant hum a voice speaks in Macedonian: \"Одисеј: „Сега врати нè дома, и ќе си одиме во мир.“\" continuity held: Both identities; reconciled tone",
+          "image_prompt_start": "photoreal cinematic: Over-shoulder medium of Odysseus speaking to Circe, the hall calm, battle tension gone.",
+          "image_prompt_end": "photoreal cinematic: Shot-reverse to Circe bowing her head in assent, staff dimmed.",
+          "video_prompt_start": "Over-shoulder medium of Odysseus speaking to Circe in the calm hall. shot-reverse to Circe bowing her head in assent, staff dimmed. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Одисеј: „Сега врати нè дома, и ќе си одиме во мир.“\" Continuity held: Both identities; reconciled tone.",
+          "video_prompt_end": "Over-shoulder medium of Odysseus speaking to Circe in the calm hall. shot-reverse to Circe bowing her head in assent, staff dimmed. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Одисеј: „Сега врати нè дома, и ќе си одиме во мир.“\" Continuity held: Both identities; reconciled tone.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S42",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "ship_env_A2_prop"
+          ],
+          "ref_scope": "image1: the three Greek wooden ships — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "lateral track along the repaired ships rocking gently at a moonlit dock"
+            ],
+            [
+              1.5,
+              3.0,
+              "sails unfurl in the soft breeze as crew load supplies"
+            ]
+          ],
+          "narration_mk": "Бродовите беа поправени, а ветрот — милостив.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide tracking shot of the repaired ships rocking gently at a moonlit dock, crew loading supplies",
+          "kf_last": "Track along the hulls as sails unfurl in the soft breeze",
+          "continuity": "Ships; peaceful night palette",
+          "motion": "lateral track along the readying fleet",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide tracking shot of the repaired ships rocking gently at a moonlit dock, crew loading supplies then lateral track along the repaired ships rocking gently at a moonlit dock, then sails unfurl in the soft breeze as crew load supplies settling into track along the hulls as sails unfurl in the soft breeze continuity held: Ships; peaceful night palette",
+          "image_prompt_start": "photoreal cinematic: wide of the repaired ships rocking gently at a moonlit dock, crew loading supplies.",
+          "image_prompt_end": "photoreal cinematic: along the hulls as sails unfurl in the soft breeze.",
+          "video_prompt_start": "Lateral track along the repaired ships rocking gently at a moonlit dock. sails unfurl in the soft breeze as crew load supplies. The beat resolves into the next matching frame. Continuity held: Ships; peaceful night palette.",
+          "video_prompt_end": "Lateral track along the repaired ships rocking gently at a moonlit dock. sails unfurl in the soft breeze as crew load supplies. The beat resolves into the next matching frame. Continuity held: Ships; peaceful night palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S43",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "odysseus_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Odysseus — weathered Greek king in a sea-worn tunic — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "crane-up from a low-angle medium of Odysseus at the prow, hand raised"
+            ],
+            [
+              1.8,
+              3.5,
+              "rise past him into the open starlit sea stretching home"
+            ]
+          ],
+          "narration_mk": "Одисеј застана на прамниот крај и погледна кон хоризонтот.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of Odysseus at the prow, hand raised, moon and stars above, wind in his hair",
+          "kf_last": "Crane-up past him into the open starlit sea stretching toward home",
+          "continuity": "Odysseus identity; hopeful night palette",
+          "motion": "crane-up from the hero to the starry horizon",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Odysseus at the prow, hand raised, moon and stars above, wind in his hair Odysseus athletic, warrior, in cloak, beard, carrying sword, wreathed in golden glow then crane-up from a low-angle medium of Odysseus at the prow, hand raised, then rise past him into the open starlit sea stretching home settling into crane-up past him into the open starlit sea stretching toward home with steel rings, a low radiant hum continuity held: Odysseus identity; hopeful night palette",
+          "image_prompt_start": "photoreal cinematic: medium of Odysseus at the prow, hand raised, moon and stars above, wind in his hair.",
+          "image_prompt_end": "photoreal cinematic: past him into the open starlit sea stretching toward home.",
+          "video_prompt_start": "Crane-up from a low-angle medium of Odysseus at the prow, hand raised. rise past him into the open starlit sea stretching home. The beat resolves into the next matching frame. Continuity held: Odysseus identity; hopeful night palette.",
+          "video_prompt_end": "Crane-up from a low-angle medium of Odysseus at the prow, hand raised. rise past him into the open starlit sea stretching home. The beat resolves into the next matching frame. Continuity held: Odysseus identity; hopeful night palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S44",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "odysseus_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Odysseus — weathered Greek king in a sea-worn tunic — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "slow push-in on Odysseus smiling faintly, moonlight silvering his face"
+            ],
+            [
+              1.5,
+              3.0,
+              "quiet certainty settles in his gaze toward home"
+            ]
+          ],
+          "narration_mk": "Срцето му беше мирно: Итака веќе не беше далеку.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of Odysseus smiling faintly, moonlight silvering his face, eyes toward home",
+          "kf_last": "Push-in on the quiet certainty in his gaze",
+          "continuity": "Hero portrait; serene moon palette",
+          "motion": "slow push-in on the peaceful face",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of Odysseus smiling faintly, moonlight silvering his face, eyes toward home Odysseus athletic, warrior, in cloak, beard, carrying sword, wreathed in golden glow then slow push-in on Odysseus smiling faintly, moonlight silvering his face, then quiet certainty settles in his gaze toward home settling into push-in on the quiet certainty in his gaze with steel rings, a low radiant hum continuity held: Hero portrait; serene moon palette",
+          "image_prompt_start": "photoreal cinematic: of Odysseus smiling faintly, moonlight silvering his face, eyes toward home.",
+          "image_prompt_end": "photoreal cinematic: on the quiet certainty in his gaze.",
+          "video_prompt_start": "Slow push-in on Odysseus smiling faintly, moonlight silvering his face. quiet certainty settles in his gaze toward home. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Hero portrait; serene moon palette.",
+          "video_prompt_end": "Slow push-in on Odysseus smiling faintly, moonlight silvering his face. quiet certainty settles in his gaze toward home. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Hero portrait; serene moon palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S45",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "ship_env_A2_prop"
+          ],
+          "ref_scope": "image1: the three Greek wooden ships — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "crane-up as the restored fleet sails out of the cove, lanterns glowing"
+            ],
+            [
+              1.8,
+              3.5,
+              "the ships shrink into the silver path of moonlight"
+            ]
+          ],
+          "narration_mk": "Со плна посада, бродовите испловија во ноќта.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of the restored fleet sailing out of the cove, lanterns glowing, sails full of the gentle wind",
+          "kf_last": "Crane-up as the ships shrink into the silver path of moonlight on the waves",
+          "continuity": "Fleet and crew; departure palette",
+          "motion": "crane-up as the fleet sails into night",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of the restored fleet sailing out of the cove, lanterns glowing, sails full of the gentle wind then crane-up as the restored fleet sails out of the cove, lanterns glowing, then the ships shrink into the silver path of moonlight settling into crane-up as the ships shrink into the silver path of moonlight on the waves continuity held: Fleet and crew; departure palette",
+          "image_prompt_start": "photoreal cinematic: wide of the restored fleet sailing out of the cove, lanterns glowing, sails full of the gentle wind.",
+          "image_prompt_end": "photoreal cinematic: as the ships shrink into the silver path of moonlight on the waves.",
+          "video_prompt_start": "Crane-up as the restored fleet sails out of the cove, lanterns glowing. the ships shrink into the silver path of moonlight. The beat resolves into the next matching frame. Continuity held: Fleet and crew; departure palette.",
+          "video_prompt_end": "Crane-up as the restored fleet sails out of the cove, lanterns glowing. the ships shrink into the silver path of moonlight. The beat resolves into the next matching frame. Continuity held: Fleet and crew; departure palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S46",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "isola_env_A5_prop"
+          ],
+          "ref_scope": "image1: the mist-shrouded island of Circe — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "forward track looking back as the sorceress’s island recedes into fog"
+            ],
+            [
+              1.5,
+              3.0,
+              "its emerald glow dims to a faint shadow on the horizon"
+            ]
+          ],
+          "narration_mk": "Зад нив, островот на Кирка полека се топеше во магла.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide tracking shot looking back at the sorceress's island receding into silver fog, its emerald glow dimming",
+          "kf_last": "Track further as the island becomes a faint shadow on the horizon",
+          "continuity": "Island farewell palette",
+          "motion": "forward track away from the fading island",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide tracking shot looking back at the sorceress's island receding into silver fog, its emerald glow dimming then forward track looking back as the sorceress’s island recedes into fog, then its emerald glow dims to a faint shadow on the horizon settling into track further as the island becomes a faint shadow on the horizon continuity held: Island farewell palette",
+          "image_prompt_start": "photoreal cinematic: wide looking back at the sorceress's island receding into silver fog, its emerald glow dimming.",
+          "image_prompt_end": "photoreal cinematic: further as the island becomes a faint shadow on the horizon.",
+          "video_prompt_start": "Forward track looking back as the sorceress’s island recedes into fog. its emerald glow dims to a faint shadow on the horizon. The beat resolves into the next matching frame. Continuity held: Island farewell palette.",
+          "video_prompt_end": "Forward track looking back as the sorceress’s island recedes into fog. its emerald glow dims to a faint shadow on the horizon. The beat resolves into the next matching frame. Continuity held: Island farewell palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S47",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "sailors_A5_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Sailors — Odysseus’s weary crew in torn tunics — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "push-in on the crew gathered at the bow, faces lit by lantern and starlight"
+            ],
+            [
+              1.5,
+              3.0,
+              "a sailor’s hand points toward the first pale dawn light"
+            ]
+          ],
+          "narration_mk": "Пред нив се простираше морето — пат кон дома.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the crew gathered at the bow, faces lit by lantern and starlight, staring into the open water ahead",
+          "kf_last": "Push-in on a sailor's hand pointing toward the first pale light of dawn on the horizon",
+          "continuity": "Crew; dawn-breaking palette",
+          "motion": "push-in toward the pointing hand and dawn",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the crew gathered at the bow, faces lit by lantern and starlight, staring into the open water ahead Sailors athletic, warrior then push-in on the crew gathered at the bow, faces lit by lantern and starlight, then a sailor’s hand points toward the first pale dawn light settling into push-in on a sailor's hand pointing toward the first pale light of dawn on the horizon continuity held: Crew; dawn-breaking palette",
+          "image_prompt_start": "photoreal cinematic: of the crew gathered at the bow, faces lit by lantern and starlight, staring into the open water ahead.",
+          "image_prompt_end": "photoreal cinematic: on a sailor's hand pointing toward the first pale light of dawn on the horizon.",
+          "video_prompt_start": "Push-in on the crew gathered at the bow, faces lit by lantern and starlight. a sailor’s hand points toward the first pale dawn light. The beat resolves into the next matching frame. Continuity held: Crew; dawn-breaking palette.",
+          "video_prompt_end": "Push-in on the crew gathered at the bow, faces lit by lantern and starlight. a sailor’s hand points toward the first pale dawn light. The beat resolves into the next matching frame. Continuity held: Crew; dawn-breaking palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S48",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pull-back",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "isola_env_A5_prop",
+            "ship_env_A2_prop"
+          ],
+          "ref_scope": "image1: the mist-shrouded island of Circe — 100% identical; studio bg/pose/light NOT used; image2: the three Greek wooden ships — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "pull-back from the dawn-lit coast of Ithaca glowing gold"
+            ],
+            [
+              1.8,
+              3.5,
+              "the fleet becomes small specks approaching home under a painterly sky"
+            ]
+          ],
+          "narration_mk": "На хоризонтот, Итака ги чекаше.",
+          "dialogue_mk": "",
+          "kf_first": "Wide shot of the dawn-lit Greek coast of Ithaca glowing gold at the horizon, the fleet sailing toward it",
+          "kf_last": "Pull-back to a vast painterly sky as the ships become small specks approaching home",
+          "continuity": "Hopeful resolution palette; homeland",
+          "motion": "slow pull-back to the epic final frame",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide shot of the dawn-lit Greek coast of Ithaca glowing gold at the horizon, the fleet sailing toward it then pull-back from the dawn-lit coast of Ithaca glowing gold, then the fleet becomes small specks approaching home under a painterly sky settling into pull-back to a vast painterly sky as the ships become small specks approaching home continuity held: Hopeful resolution palette; homeland",
+          "image_prompt_start": "photoreal cinematic: shot of the dawn-lit Greek coast of Ithaca glowing gold at the horizon, the fleet sailing toward it.",
+          "image_prompt_end": "photoreal cinematic: to a vast painterly sky as the ships become small specks approaching home.",
+          "video_prompt_start": "Pull-back from the dawn-lit coast of Ithaca glowing gold. the fleet becomes small specks approaching home under a painterly sky. The beat resolves into the next matching frame. Continuity held: Hopeful resolution palette; homeland.",
+          "video_prompt_end": "Pull-back from the dawn-lit coast of Ithaca glowing gold. the fleet becomes small specks approaching home under a painterly sky. The beat resolves into the next matching frame. Continuity held: Hopeful resolution palette; homeland.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "restored_hall_and_moonlit_voyage_home",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class",
+        "screen_dir"
+      ],
+      "palette": [
+        "#1f2c4a",
+        "#7f8fb5",
+        "#e8d9a0"
+      ],
+      "light_direction": "key light from screen-left, silver moonlight fading into dawn gold",
+      "time_of_day": "night"
+    }
+  ],
+  "director_corrections": {
+    "issued": "2026-11-07",
+    "source": "KB §13 DIRECTOR CORRECTIONS — overrides all prior asset/keyframe guidance",
+    "rules": [
+      "DD HEADWEAR: no cap/hood/bandana/mask on head; hood = back-cowl only (cape-like); bare head + teal-blue glowing hair always visible; any head/face covering = REJECT",
+      "LEGENDARY WEAPONS MUST APPEAR: DD = twin Frostbite-class hand crossbows (ice-blue arcane crystal limbs, frost runes, frozen-light string, teal-blue glow); AZ = Dawnbreaker-class greatsword (pale sunsteel, molten-gold runes, golden holy fire edge, sunburst crossguard); hero sheet/keyframe without weapon = INCOMPLETE",
+      "WEAPON ANTI-SLOP: fantasy construction only; crossbow must NEVER read as firearm (no barrel/magazine/stock/Uzi/SMG silhouette = REJECT); anti-slop negatives always appended",
+      "BOSS FACE: Mal'garot HAS a prolific molten-lava face (lava dripping/running, drops falling to ground); faceless boss sheets SUPERSEDED",
+      "LOCATION BRIGHTNESS FLOOR: environment plates silhouette-readable at thumbnail; no murk-dark grades"
+    ],
+    "applies_when": "Activates when face_lock changes from AI-default to an enrolled identity (DD/AZ). AI-default packages carry this as a forward constraint, not a current defect.",
+    "anti_slop_negatives": "firearm, gun, machinegun, Uzi, barrel, magazine, ammo clip, muzzle, modern weapon"
+  },
+  "character_designs": {
+    "odysseus": {
+      "archetype": "warrior",
+      "build": "athletic",
+      "scale": "human",
+      "palette": {
+        "primary": "#7a5a3a",
+        "secondary": "#d9c8a8",
+        "glow": "#f2c94c"
+      },
+      "costume": [
+        "cloak",
+        "beard"
+      ],
+      "props": [
+        "sword"
+      ],
+      "fx": [
+        "golden_glow"
+      ]
+    },
+    "circe": {
+      "archetype": "mage",
+      "build": "robed",
+      "scale": "human",
+      "palette": {
+        "primary": "#8a2a34",
+        "secondary": "#2a0a12",
+        "glow": "#34d399"
+      },
+      "costume": [
+        "cloak"
+      ],
+      "props": [
+        "staff"
+      ],
+      "fx": [
+        "fire_wisps",
+        "rune_ring"
+      ]
+    },
+    "aeolus": {
+      "archetype": "divine",
+      "build": "robed",
+      "scale": "large",
+      "palette": {
+        "primary": "#5a7a9a",
+        "secondary": "#dfe8f0",
+        "glow": "#7fd4ff"
+      },
+      "costume": [
+        "cloak",
+        "beard"
+      ],
+      "props": [],
+      "fx": [
+        "storm_aura"
+      ]
+    },
+    "hermes": {
+      "archetype": "divine",
+      "build": "winged",
+      "scale": "human",
+      "palette": {
+        "primary": "#d4af7a",
+        "secondary": "#fff4e0",
+        "glow": "#ffd166"
+      },
+      "costume": [],
+      "props": [],
+      "fx": [
+        "golden_glow"
+      ]
+    },
+    "sailors": {
+      "archetype": "warrior",
+      "build": "athletic",
+      "scale": "human",
+      "palette": {
+        "primary": "#6a5a4a",
+        "secondary": "#c8b898",
+        "glow": "#e8d8b0"
+      },
+      "costume": [],
+      "props": [],
+      "fx": []
+    },
+    "poseidon": {
+      "archetype": "divine",
+      "build": "hulking",
+      "scale": "huge",
+      "palette": {
+        "primary": "#1c3a5a",
+        "secondary": "#0e2038",
+        "glow": "#4aa8ff"
+      },
+      "costume": [
+        "beard"
+      ],
+      "props": [
+        "spear"
+      ],
+      "fx": [
+        "storm_aura",
+        "lightning"
+      ]
+    },
+    "storm_sea_env_A1_prop": {
+      "motif": "ocean",
+      "tone": "#1c2d44"
+    },
+    "ship_env_A2_prop": {
+      "motif": "ocean",
+      "tone": "#2a4a5a"
+    },
+    "aeolia_env_A3_prop": {
+      "motif": "spires",
+      "tone": "#1d5c4a"
+    },
+    "palace_env_A4_prop": {
+      "motif": "hall",
+      "tone": "#c8a24b"
+    },
+    "isola_env_A5_prop": {
+      "motif": "forest",
+      "tone": "#0e2b21"
+    },
+    "hall_env_A6_prop": {
+      "motif": "hall",
+      "tone": "#145c42"
+    },
+    "grove_env_A7_prop": {
+      "motif": "forest",
+      "tone": "#2a3550"
+    }
+  }
+}

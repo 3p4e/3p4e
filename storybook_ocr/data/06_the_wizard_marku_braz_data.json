@@ -1,0 +1,2586 @@
+{
+  "num": "06",
+  "title_mk": "Волшебникот Марку Браз",
+  "title_en": "The Wizard Marku Braz",
+  "genre": "Легенда · епска акција",
+  "logline": "Храбриот принц Каламан влегува во замокот на волшебникот Марку Браз за да ја ослободи принцезата на Шпанија, со нејзина помош ги совладува трите предизвици и ја крши магијата.",
+  "spec": {
+    "aspect": "16:9",
+    "resolution": "1216x704",
+    "fps": 24,
+    "model": "model-agnostic (chosen at generation)",
+    "style": "photoreal",
+    "flf": true,
+    "language": "mk",
+    "shot_floor": 40,
+    "shot_max": 60,
+    "seed_policy": "fixed-per-shot (same seed → reproducible shot; re-roll per shot id)",
+    "style_anchor": [
+      "Diablo 2 cinematic",
+      "World of Warcraft cinematic",
+      "StarCraft cinematic"
+    ],
+    "negative_prompt": "deformed, extra limbs, morphing, watermark, text, static frame, blurry, low quality, cropped head, cut-off face",
+    "frames": 121,
+    "frames_fallback": 81,
+    "routes": [
+      {
+        "model": "Wan2.1-FLF2V-14B-720P",
+        "input": "start+end native (run START-ONLY)",
+        "status": "WORKING (lead for 14B quality)"
+      },
+      {
+        "model": "Kandinsky 6.0 Lite/Pro",
+        "input": "start-image-only",
+        "status": "WORKING (Pro-distill untested at scale)"
+      },
+      {
+        "model": "SkyReels-V3 R2V-14B",
+        "input": "start-image-only",
+        "status": "WORKING (fallback)"
+      },
+      {
+        "model": "LTX-Video 2B v0.9.5",
+        "input": "start-image-only",
+        "status": "WORKING (small/fast, low ceiling)"
+      },
+      {
+        "model": "Mochi-1",
+        "input": "start-image-only",
+        "status": "untested here"
+      },
+      {
+        "model": "LTX-2.3 22B distilled",
+        "input": "start-image-only",
+        "status": "DEAD (nanobind native-crash, 42 note)"
+      }
+    ],
+    "model_note": "Model chosen per story at generation (43 §4). Keyframes + continuation prompts are generator-agnostic; only the render command differs per model."
+  },
+  "cast": [
+    {
+      "role": "Каламан / Calaman",
+      "trait": "Млад и храбар принц на Франција, патувачка облека, меч и израз на решеност",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Волшебникот Марку Браз / The Wizard Marku Braz",
+      "trait": "Моќен темен волшебник со долга наметка и огромен меч",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Принцезата / The Princess",
+      "trait": "Ќерка на кралот на Шпанија, убава како сонцето, вешта во магиските книги",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Стражарот / The Old Guard",
+      "trait": "Старец со бела брада, проколнат чувар на замокот",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Седумглавиот змеј / The Seven-Headed Dragon",
+      "trait": "Чудовишен змеј со седум глави и долга опашка",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    }
+  ],
+  "acts": [
+    {
+      "id": "act1",
+      "num": "Act I",
+      "title": "Патувањето",
+      "color": "#2dd4bf",
+      "pct": 28,
+      "synopsis": "Каламан тргнува од дома, го наоѓа замокот во шумата, слуша предупредувањето на стражарот, влегува храбро и ја наоѓа принцезата во градината.",
+      "shots": [
+        {
+          "id": "S01",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Каламан, синот на кралот на Франција, сонувал да го истражи светот.",
+          "dialogue_mk": "",
+          "kf_first": "High wide crane-down over a golden mediaeval French palace at dawn, towers and banners, a young prince standing alone at the gate, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Crane settles to show the young prince's face looking toward the horizon, resolve in his eyes",
+          "continuity": "Establish warm dawn palette and hero; palace silhouette",
+          "motion": "slow crane-down toward the prince",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "calaman_A1_fused",
+            "palace_env"
+          ],
+          "ref_scope": "image1: the fused master of Calaman - young prince, travel garb, sword, resolved eyes - 100% identical; studio bg/pose/light NOT used; image2: the French palace environment - golden mediaeval palace, towers and banners - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "Calaman face and travel garb",
+            "environment and set design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "crane-down crosses the golden palace towers toward the gate"
+            ],
+            [
+              1.75,
+              3.5,
+              "crane settles on the young prince facing the horizon"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high wide crane-down over a golden mediaeval French palace at dawn, towers and banners, a young prince standing alone at the gate Calaman athletic, warrior, in cloak, carrying sword, wreathed in golden glow then crane-down crosses the golden palace towers toward the gate, then crane settles on the young prince facing the horizon settling into crane settles to show the young prince's face looking toward the horizon, resolve in his eyes with steel rings, a low radiant hum continuity held: Establish warm dawn palette and hero; palace silhouette",
+          "image_prompt_start": "photoreal cinematic: High wide over a golden mediaeval French palace at dawn, towers and banners, a young prince standing alone at the gate.",
+          "image_prompt_end": "photoreal cinematic: Crane to show the young prince's face looking toward the horizon, resolve in his eyes.",
+          "video_prompt_start": "Crane-down crosses the golden palace towers toward the gate. crane settles on the young prince facing the horizon. The beat resolves into the next matching frame. Continuity held: Establish warm dawn palette and hero; palace silhouette.",
+          "video_prompt_end": "Crane-down crosses the golden palace towers toward the gate. crane settles on the young prince facing the horizon. The beat resolves into the next matching frame. Continuity held: Establish warm dawn palette and hero; palace silhouette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S02",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Еден ден реши конечно да замине од дома.",
+          "dialogue_mk": "",
+          "kf_first": "Medium eye-level of the young prince tightening a travel pack and sword belt, palace courtyard behind him, morning light, photoreal",
+          "kf_last": "Push-in to his determined expression as he steps away from the gate",
+          "continuity": "Prince costume and sword from S01",
+          "motion": "slow push-in on face",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "calaman_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Calaman - young prince, travel garb, sword, resolved eyes - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "Calaman face and travel garb",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "framing continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "prince tightens the travel pack and sword belt in the courtyard"
+            ],
+            [
+              1.5,
+              3.0,
+              "push-in toward a determined face as he steps from the gate"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level of the young prince tightening a travel pack and sword belt, palace courtyard behind him, morning light, photoreal Calaman athletic, warrior, in cloak, carrying sword, wreathed in golden glow then prince tightens the travel pack and sword belt in the courtyard, then push-in toward a determined face as he steps from the gate settling into push-in to his determined expression as he steps away from the gate with steel rings, a low radiant hum continuity held: Prince costume and sword from S01",
+          "image_prompt_start": "photoreal cinematic: eye-level of the young prince tightening a travel pack and sword belt, palace courtyard behind him, morning light, photoreal.",
+          "image_prompt_end": "photoreal cinematic: to his determined expression as he steps away from the gate.",
+          "video_prompt_start": "Prince tightens the travel pack and sword belt in the courtyard. push-in toward a determined face as he steps from the gate. The beat resolves into the next matching frame. Continuity held: Prince costume and sword from S01.",
+          "video_prompt_end": "Prince tightens the travel pack and sword belt in the courtyard. push-in toward a determined face as he steps from the gate. The beat resolves into the next matching frame. Continuity held: Prince costume and sword from S01.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S03",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Патуваше долго, низ полиња и шуми од далечни земји.",
+          "dialogue_mk": "",
+          "kf_first": "Wide eye-level tracking shot of the prince walking a long dusty road through fields and distant hills, cape fluttering, photoreal WoW cinematic travel",
+          "kf_last": "Track follows past a bend as a dark forest edge rises ahead",
+          "continuity": "Prince solo travel outfit; golden-afternoon light",
+          "motion": "lateral track alongside the walk",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "calaman_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Calaman - young prince, travel garb, sword, resolved eyes - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "Calaman face and travel garb",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "framing continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "track follows the prince walking the long dusty road"
+            ],
+            [
+              1.75,
+              3.5,
+              "track passes a bend as a dark forest edge rises ahead"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide eye-level tracking shot of the prince walking a long dusty road through fields and distant hills, cape fluttering, photoreal WoW cinematic travel Calaman athletic, warrior, in cloak, carrying sword, wreathed in golden glow then track follows the prince walking the long dusty road, then track passes a bend as a dark forest edge rises ahead settling into track follows past a bend as a dark forest edge rises ahead with steel rings, a low radiant hum continuity held: Prince solo travel outfit; golden-afternoon light",
+          "image_prompt_start": "photoreal cinematic: eye-level of the prince walking a long dusty road through fields and distant hills, cape fluttering, photoreal WoW cinematic travel.",
+          "image_prompt_end": "photoreal cinematic: past a bend as a dark forest edge ahead.",
+          "video_prompt_start": "Track follows the prince walking the long dusty road. track passes a bend as a dark forest edge rises ahead. The beat resolves into the next matching frame. Continuity held: Prince solo travel outfit; golden-afternoon light.",
+          "video_prompt_end": "Track follows the prince walking the long dusty road. track passes a bend as a dark forest edge rises ahead. The beat resolves into the next matching frame. Continuity held: Prince solo travel outfit; golden-afternoon light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S04",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Најпосле стигна до густа, маѓепсана шума што го проголта патот.",
+          "dialogue_mk": "",
+          "kf_first": "Low wide tracking shot entering a dense misty forest, gnarled twisted trees closing in, pale shafts of light, photoreal Diablo2 moody woodland",
+          "kf_last": "Track through fog as a colossal castle silhouette emerges between the trunks",
+          "continuity": "Forest transition palette; hero from S03",
+          "motion": "forward track into the forest",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "calaman_A1_fused",
+            "forest_env"
+          ],
+          "ref_scope": "image1: the fused master of Calaman - young prince, travel garb, sword, resolved eyes - 100% identical; studio bg/pose/light NOT used; image2: the enchanted forest environment - mist, gnarled trees, cursed human-shaped trees - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "Calaman face and travel garb",
+            "environment and set design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "forward track enters the misty gnarled forest"
+            ],
+            [
+              1.5,
+              3.0,
+              "a colossal castle silhouette emerges between the trunks"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low wide tracking shot entering a dense misty forest, gnarled twisted trees closing in, pale shafts of light, photoreal Diablo2 moody woodland Calaman athletic, warrior, in cloak, carrying sword, wreathed in golden glow then forward track enters the misty gnarled forest, then a colossal castle silhouette emerges between the trunks settling into track through fog as a colossal castle silhouette emerges between the trunks with steel rings, a low radiant hum continuity held: Forest transition palette; hero from S03",
+          "image_prompt_start": "photoreal cinematic: Low wide entering a dense misty forest, gnarled twisted trees closing in, pale shafts of light, photoreal Diablo2 moody woodland.",
+          "image_prompt_end": "photoreal cinematic: through fog as a colossal castle silhouette emerges between the trunks.",
+          "video_prompt_start": "Forward track enters the misty gnarled forest. a colossal castle silhouette emerges between the trunks. The beat resolves into the next matching frame. Continuity held: Forest transition palette; hero from S03.",
+          "video_prompt_end": "Forward track enters the misty gnarled forest. a colossal castle silhouette emerges between the trunks. The beat resolves into the next matching frame. Continuity held: Forest transition palette; hero from S03.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S05",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Среде шумата се издигаше огромен замок, потемнет од тајна магија.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle crane-up over a vast gothic castle rising from the forest, ivy and crooked spires, cold twilight, photoreal StarCraft cinematic scale",
+          "kf_last": "Crane out to reveal the full fortress and the tiny prince at its gate",
+          "continuity": "Castle as new anchor; cold twilight palette",
+          "motion": "crane-up revealing scale",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "calaman_A1_fused",
+            "castle_env"
+          ],
+          "ref_scope": "image1: the fused master of Calaman - young prince, travel garb, sword, resolved eyes - 100% identical; studio bg/pose/light NOT used; image2: the castle environment of the wizard - gothic silhouette, ivy and crooked spires - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "Calaman face and travel garb",
+            "environment and set design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "crane-up ascends the gothic castle with ivy and crooked spires"
+            ],
+            [
+              1.75,
+              3.5,
+              "crane out reveals the full fortress and the tiny prince at the gate"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle crane-up over a vast gothic castle rising from the forest, ivy and crooked spires, cold twilight, photoreal StarCraft cinematic scale Calaman athletic, warrior, in cloak, carrying sword, wreathed in golden glow then crane-up ascends the gothic castle with ivy and crooked spires, then crane out reveals the full fortress and the tiny prince at the gate settling into crane out to reveal the full fortress and the tiny prince at its gate with steel rings, a low radiant hum continuity held: Castle as new anchor; cold twilight palette",
+          "image_prompt_start": "photoreal cinematic: over a vast gothic castle rising from the forest, ivy and crooked spires, cold twilight, photoreal StarCraft cinematic scale.",
+          "image_prompt_end": "photoreal cinematic: Crane out to reveal the full fortress and the tiny prince at its gate.",
+          "video_prompt_start": "Crane-up ascends the gothic castle with ivy and crooked spires. crane out reveals the full fortress and the tiny prince at the gate. The beat resolves into the next matching frame. Continuity held: Castle as new anchor; cold twilight palette.",
+          "video_prompt_end": "Crane-up ascends the gothic castle with ivy and crooked spires. crane out reveals the full fortress and the tiny prince at the gate. The beat resolves into the next matching frame. Continuity held: Castle as new anchor; cold twilight palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S06",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "На портата стоеше стражарот со долгата бела брада.",
+          "dialogue_mk": "",
+          "kf_first": "Medium eye-level of a white-bearded old guard in worn robes standing before the castle gate, sorrowful eyes, cold light, photoreal",
+          "kf_last": "Push-in on the old man's weathered face as the prince approaches",
+          "continuity": "Old guard introduced; castle gate from S05",
+          "motion": "slow push-in on the guard",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "guard_A4_fused",
+            "castle_env"
+          ],
+          "ref_scope": "image1: the fused master of the Old Guard - white-bearded cursed keeper of the castle - 100% identical; studio bg/pose/light NOT used; image2: the castle environment of the wizard - gothic silhouette, ivy and crooked spires - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "guard face and white beard",
+            "environment and set design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "medium frames the white-bearded guard at the castle gate"
+            ],
+            [
+              1.5,
+              3.0,
+              "push-in on the weathered face as the prince approaches"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level of a white-bearded old guard in worn robes standing before the castle gate, sorrowful eyes, cold light, photoreal Guard robed, elder, in beard then medium frames the white-bearded guard at the castle gate, then push-in on the weathered face as the prince approaches settling into push-in on the old man's weathered face as the prince approaches continuity held: Old guard introduced; castle gate from S05",
+          "image_prompt_start": "photoreal cinematic: eye-level of a white-bearded old guard in worn robes standing before the castle gate, sorrowful eyes, cold light, photoreal.",
+          "image_prompt_end": "photoreal cinematic: on the old man's weathered face as the prince approaches.",
+          "video_prompt_start": "Medium frames the white-bearded guard at the castle gate. push-in on the weathered face as the prince approaches. The beat resolves into the next matching frame. Continuity held: Old guard introduced; castle gate from S05.",
+          "video_prompt_end": "Medium frames the white-bearded guard at the castle gate. push-in on the weathered face as the prince approaches. The beat resolves into the next matching frame. Continuity held: Old guard introduced; castle gate from S05.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S07",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.5,
+          "clip_s": 5.04,
+          "narration_mk": "",
+          "dialogue_mk": "Каламан: „Би сакал да влезам, со ваша дозвола.“",
+          "kf_first": "Medium eye-level two-shot over the prince's shoulder as he addresses the old guard politely at the gate, photoreal",
+          "kf_last": "Guard raises a warning hand, his expression tightening",
+          "continuity": "Two characters and gate; continuity of S06",
+          "motion": "static polite exchange",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "calaman_A1_fused",
+            "guard_A4_fused"
+          ],
+          "ref_scope": "image1: the fused master of Calaman - young prince, travel garb, sword, resolved eyes - 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Old Guard - white-bearded cursed keeper of the castle - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "Calaman face and travel garb",
+            "guard face and white beard",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.25,
+              "two-shot over the shoulder as the prince addresses the guard"
+            ],
+            [
+              1.25,
+              2.5,
+              "guard raises a warning hand, expression tightening"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level two-shot over the prince's shoulder as he addresses the old guard politely at the gate, photoreal Calaman athletic, warrior, in cloak, carrying sword, wreathed in golden glow Guard robed, elder, in beard then two-shot over the shoulder as the prince addresses the guard, then guard raises a warning hand, expression tightening the camera static settling into guard raises a warning hand, his expression tightening with steel rings, a low radiant hum a voice speaks in Macedonian: \"Каламан: „Би сакал да влезам, со ваша дозвола.“\" continuity held: Two characters and gate; continuity of S06",
+          "image_prompt_start": "photoreal cinematic: eye-level two-shot over the prince's shoulder as he addresses the old guard politely at the gate, photoreal.",
+          "image_prompt_end": "photoreal cinematic: Guard raises a warning hand, his expression tightening.",
+          "video_prompt_start": "Two-shot over the shoulder as the prince addresses the guard. guard raises a warning hand, expression tightening. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Каламан: „Би сакал да влезам, со ваша дозвола.“\" Continuity held: Two characters and gate; continuity of S06.",
+          "video_prompt_end": "Two-shot over the shoulder as the prince addresses the guard. guard raises a warning hand, expression tightening. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Каламан: „Би сакал да влезам, со ваша дозвола.“\" Continuity held: Two characters and gate; continuity of S06.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S08",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Старецот му одговори: местово припаѓа на еден моќен волшебник.",
+          "dialogue_mk": "Стражарот: „Ова место му припаѓа на моќниот волшебник!“",
+          "kf_first": "Close-up on the guard's face as he warns the prince, white beard trembling, lantern glow, photoreal Diablo2 close",
+          "kf_last": "Push-in closer on his anxious eyes",
+          "continuity": "Guard face; cold lantern light",
+          "motion": "slow push-in on the warning",
+          "shot_type": "CLOSE-UP",
+          "face_floor_px": 200,
+          "asset_refs": [
+            "guard_A4_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Old Guard - white-bearded cursed keeper of the castle - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "guard face and white beard",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "framing continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "close on the trembling white beard in the lantern glow"
+            ],
+            [
+              1.75,
+              3.5,
+              "push-in closer on the anxious eyes"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up on the guard's face as he warns the prince, white beard trembling, lantern glow, photoreal Diablo2 close Guard robed, elder, in beard then close on the trembling white beard in the lantern glow, then push-in closer on the anxious eyes settling into push-in closer on his anxious eyes a voice speaks in Macedonian: \"Стражарот: „Ова место му припаѓа на моќниот волшебник!“\" continuity held: Guard face; cold lantern light",
+          "image_prompt_start": "photoreal cinematic: on the guard's face as he warns the prince, white beard trembling, lantern glow, photoreal Diablo2 close.",
+          "image_prompt_end": "photoreal cinematic: closer on his anxious eyes.",
+          "video_prompt_start": "Close on the trembling white beard in the lantern glow. push-in closer on the anxious eyes. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Стражарот: „Ова место му припаѓа на моќниот волшебник!“\" Continuity held: Guard face; cold lantern light.",
+          "video_prompt_end": "Close on the trembling white beard in the lantern glow. push-in closer on the anxious eyes. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Стражарот: „Ова место му припаѓа на моќниот волшебник!“\" Continuity held: Guard face; cold lantern light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S09",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-left",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Ги претворил неговите роднини и поданици во дрвјата во шумата.",
+          "dialogue_mk": "",
+          "kf_first": "Wide pan-left across the forest edge revealing motionless human-shaped trees, faces faint in the bark, dread mood, photoreal",
+          "kf_last": "Pan ends on a single tree with a sorrowful carved face",
+          "continuity": "Forest and trees as tragic motif",
+          "motion": "pan-left over cursed trees",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "forest_env"
+          ],
+          "ref_scope": "image1: the enchanted forest environment - mist, gnarled trees, cursed human-shaped trees - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "environment and set design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "framing continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "pan-left crosses the forest edge of motionless human-shaped trees"
+            ],
+            [
+              1.5,
+              3.0,
+              "pan ends on one tree with a sorrowful carved face"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide pan-left across the forest edge revealing motionless human-shaped trees, faces faint in the bark, dread mood, photoreal then pan-left crosses the forest edge of motionless human-shaped trees, then pan ends on one tree with a sorrowful carved face settling into pan ends on a single tree with a sorrowful carved face with leaves rustle continuity held: Forest and trees as tragic motif",
+          "image_prompt_start": "photoreal cinematic: -left across the forest edge revealing motionless human-shaped trees, faces faint in the bark, dread mood, photoreal.",
+          "image_prompt_end": "photoreal cinematic: ends on a single tree with a sorrowful carved face.",
+          "video_prompt_start": "Pan-left crosses the forest edge of motionless human-shaped trees. pan ends on one tree with a sorrowful carved face. The beat resolves into the next matching frame. Continuity held: Forest and trees as tragic motif.",
+          "video_prompt_end": "Pan-left crosses the forest edge of motionless human-shaped trees. pan ends on one tree with a sorrowful carved face. The beat resolves into the next matching frame. Continuity held: Forest and trees as tragic motif.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S10",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Ако допре нешто — ќе се претвори и самиот во дрво.",
+          "dialogue_mk": "Стражарот: „Ако допреш од раскошите внатре, и ти ќе станеш дрво!“",
+          "kf_first": "Close-up of the guard holding up a hand in warning, a gnarled branch behind him framing the shot, photoreal",
+          "kf_last": "The prince's fingertips hover over the gate latch, hesitating",
+          "continuity": "Guard warning; gate and branch motif",
+          "motion": "static tension",
+          "shot_type": "CLOSE-UP",
+          "face_floor_px": 200,
+          "asset_refs": [
+            "guard_A4_fused",
+            "calaman_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Old Guard - white-bearded cursed keeper of the castle - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Calaman - young prince, travel garb, sword, resolved eyes - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "guard face and white beard",
+            "Calaman face and travel garb",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close on the upraised warning hand of the guard"
+            ],
+            [
+              1.5,
+              3.0,
+              "fingertips of the prince hover over the gate latch, hesitating"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the guard holding up a hand in warning, a gnarled branch behind him framing the shot, photoreal Guard robed, elder, in beard Calaman athletic, warrior, in cloak, carrying sword, wreathed in golden glow then close on the upraised warning hand of the guard, then fingertips of the prince hover over the gate latch, hesitating the camera static settling into the prince's fingertips hover over the gate latch, hesitating with steel rings, a low radiant hum a voice speaks in Macedonian: \"Стражарот: „Ако допреш од раскошите внатре, и ти ќе станеш дрво!“\" continuity held: Guard warning; gate and branch motif",
+          "image_prompt_start": "photoreal cinematic: of the guard holding up a hand in warning, a gnarled branch behind him framing the shot, photoreal.",
+          "image_prompt_end": "photoreal cinematic: The prince's fingertips hover over the gate latch, hesitating.",
+          "video_prompt_start": "Close on the upraised warning hand of the guard. fingertips of the prince hover over the gate latch, hesitating. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Стражарот: „Ако допреш од раскошите внатре, и ти ќе станеш дрво!“\" Continuity held: Guard warning; gate and branch motif.",
+          "video_prompt_end": "Close on the upraised warning hand of the guard. fingertips of the prince hover over the gate latch, hesitating. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Стражарот: „Ако допреш од раскошите внатре, и ти ќе станеш дрво!“\" Continuity held: Guard warning; gate and branch motif.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S11",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Но Каламан беше храбар и влезе во замокот.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of the prince striding through the great gate into the shadowed courtyard, cape snapping, photoreal heroic entrance",
+          "kf_last": "Push-in behind him as the gate closes in the dark",
+          "continuity": "Prince resolve; castle gate",
+          "motion": "push-in through the gate",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "calaman_A1_fused",
+            "castle_env"
+          ],
+          "ref_scope": "image1: the fused master of Calaman - young prince, travel garb, sword, resolved eyes - 100% identical; studio bg/pose/light NOT used; image2: the castle environment of the wizard - gothic silhouette, ivy and crooked spires - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "Calaman face and travel garb",
+            "environment and set design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "low-angle stride through the great gate into the shadow"
+            ],
+            [
+              1.5,
+              3.0,
+              "push-in behind as the gate closes in darkness"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of the prince striding through the great gate into the shadowed courtyard, cape snapping, photoreal heroic entrance Calaman athletic, warrior, in cloak, carrying sword, wreathed in golden glow then low-angle stride through the great gate into the shadow, then push-in behind as the gate closes in darkness settling into push-in behind him as the gate closes in the dark with steel rings, a low radiant hum continuity held: Prince resolve; castle gate",
+          "image_prompt_start": "photoreal cinematic: medium of the prince striding through the great gate into the shadowed courtyard, cape snapping, photoreal heroic entrance.",
+          "image_prompt_end": "photoreal cinematic: behind him as the gate closes in the dark.",
+          "video_prompt_start": "Low-angle stride through the great gate into the shadow. push-in behind as the gate closes in darkness. The beat resolves into the next matching frame. Continuity held: Prince resolve; castle gate.",
+          "video_prompt_end": "Low-angle stride through the great gate into the shadow. push-in behind as the gate closes in darkness. The beat resolves into the next matching frame. Continuity held: Prince resolve; castle gate.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S12",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Не ги допре ниту вкусната храна ниту сјајните камења и рубини.",
+          "dialogue_mk": "",
+          "kf_first": "Wide eye-level track along a dazzling treasure hall of gold, gems and a banquet, the prince walking past with hands drawn close, resisting temptation, photoreal",
+          "kf_last": "Track past a ruby the prince nearly reaches for but pulls away",
+          "continuity": "Opulent interior; ruby/gold temptation motif",
+          "motion": "lateral track of restraint",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "calaman_A1_fused",
+            "treasure_env"
+          ],
+          "ref_scope": "image1: the fused master of Calaman - young prince, travel garb, sword, resolved eyes - 100% identical; studio bg/pose/light NOT used; image2: the treasure hall environment - gold, gems and banquet - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "Calaman face and travel garb",
+            "environment and set design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "track along the treasure of gold, gems and banquet, resisting"
+            ],
+            [
+              1.75,
+              3.5,
+              "track past a ruby nearly reached for but pulled away"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide eye-level track along a dazzling treasure hall of gold, gems and a banquet, the prince walking past with hands drawn close, resisting temptation, photoreal Calaman athletic, warrior, in cloak, carrying sword, wreathed in golden glow then track along the treasure of gold, gems and banquet, resisting, then track past a ruby nearly reached for but pulled away settling into track past a ruby the prince nearly reaches for but pulls away with steel rings, a low radiant hum continuity held: Opulent interior; ruby/gold temptation motif",
+          "image_prompt_start": "photoreal cinematic: eye-level along a dazzling treasure hall of gold, gems and a banquet, the prince walking past with hands drawn close, resisting temptation, photoreal.",
+          "image_prompt_end": "photoreal cinematic: past a ruby the prince nearly reaches for but pulls away.",
+          "video_prompt_start": "Track along the treasure of gold, gems and banquet, resisting. track past a ruby nearly reached for but pulled away. The beat resolves into the next matching frame. Continuity held: Opulent interior; ruby/gold temptation motif.",
+          "video_prompt_end": "Track along the treasure of gold, gems and banquet, resisting. track past a ruby nearly reached for but pulled away. The beat resolves into the next matching frame. Continuity held: Opulent interior; ruby/gold temptation motif.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S13",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Во прекрасна градина ја најде принцезата, убава како сонцето.",
+          "dialogue_mk": "",
+          "kf_first": "Wide crane-down into a lush moonlit garden where a princess in a radiant gown stands among white flowers, photoreal fairytale beauty",
+          "kf_last": "Crane settles on her face turned toward the arriving prince",
+          "continuity": "Garden reveal; princess as radiant anchor",
+          "motion": "crane-down into the garden",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "princess_A3_fused",
+            "garden_env"
+          ],
+          "ref_scope": "image1: the fused master of the Princess - daughter of the King of Spain, radiant gown - 100% identical; studio bg/pose/light NOT used; image2: the moonlit garden environment - white flowers and radiant blooms - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "princess face and radiant gown",
+            "environment and set design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "crane-down into the moonlit garden where the princess stands"
+            ],
+            [
+              1.75,
+              3.5,
+              "crane settles on the face turned toward the arriving prince"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide crane-down into a lush moonlit garden where a princess in a radiant gown stands among white flowers, photoreal fairytale beauty Princess slender, heroine, in dress, wreathed in golden glow then crane-down into the moonlit garden where the princess stands, then crane settles on the face turned toward the arriving prince settling into crane settles on her face turned toward the arriving prince with a low radiant hum, leaves stir continuity held: Garden reveal; princess as radiant anchor",
+          "image_prompt_start": "photoreal cinematic: into a lush moonlit garden where a princess in a radiant gown stands among white flowers, photoreal fairytale beauty.",
+          "image_prompt_end": "photoreal cinematic: Crane on her face turned toward the arriving prince.",
+          "video_prompt_start": "Crane-down into the moonlit garden where the princess stands. crane settles on the face turned toward the arriving prince. The beat resolves into the next matching frame. Continuity held: Garden reveal; princess as radiant anchor.",
+          "video_prompt_end": "Crane-down into the moonlit garden where the princess stands. crane settles on the face turned toward the arriving prince. The beat resolves into the next matching frame. Continuity held: Garden reveal; princess as radiant anchor.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S14",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "shot-reverse",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Двајцата се засакаа на прв поглед.",
+          "dialogue_mk": "Принцезата: „Ги читав книгите на волшебникот — сега сум помоќна од него. Заедно ќе ја тргнеме магијата!“",
+          "kf_first": "Medium eye-level two-shot of prince and princess, gazes locked, golden light between them, photoreal romantic cinematic",
+          "kf_last": "Reverse angle on the princess as she speaks her plan with certainty",
+          "continuity": "Both heroes; garden and moonlit glow",
+          "motion": "shot-reverse between them",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "calaman_A1_fused",
+            "princess_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of Calaman - young prince, travel garb, sword, resolved eyes - 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Princess - daughter of the King of Spain, radiant gown - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "Calaman face and travel garb",
+            "princess face and radiant gown",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "shot-reverse on the prince and princess, gazes locked"
+            ],
+            [
+              1.75,
+              3.5,
+              "reverse angle on the princess as she speaks the plan"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level two-shot of prince and princess, gazes locked, golden light between them, photoreal romantic cinematic Calaman athletic, warrior, in cloak, carrying sword, wreathed in golden glow Princess slender, heroine, in dress, wreathed in golden glow then shot-reverse on the prince and princess, gazes locked, then reverse angle on the princess as she speaks the plan settling into reverse angle on the princess as she speaks her plan with certainty with steel rings, a low radiant hum a voice speaks in Macedonian: \"Принцезата: „Ги читав книгите на волшебникот — сега сум помоќна од него. Заедно ќе ја тргнеме магијата!“\" continuity held: Both heroes; garden and moonlit glow",
+          "image_prompt_start": "photoreal cinematic: eye-level two-shot of prince and princess, gazes locked, golden light between them, photoreal romantic cinematic.",
+          "image_prompt_end": "photoreal cinematic: Reverse angle on the princess as she speaks her plan with certainty.",
+          "video_prompt_start": "Shot-reverse on the prince and princess, gazes locked. reverse angle on the princess as she speaks the plan. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Принцезата: „Ги читав книгите на волшебникот — сега сум помоќна од него. Заедно ќе ја тргнеме магијата!“\" Continuity held: Both heroes; garden and moonlit glow.",
+          "video_prompt_end": "Shot-reverse on the prince and princess, gazes locked. reverse angle on the princess as she speaks the plan. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Принцезата: „Ги читав книгите на волшебникот — сега сум помоќна од него. Заедно ќе ја тргнеме магијата!“\" Continuity held: Both heroes; garden and moonlit glow.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "french_palace_and_enchanted_forest",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#e8b84b",
+        "#3b6a3a",
+        "#2b3a5c"
+      ],
+      "light_direction": "key light from screen-left, warm dawn darkening to cold twilight",
+      "time_of_day": "dawn"
+    },
+    {
+      "id": "act2",
+      "num": "Act II",
+      "title": "Трите предизвици",
+      "color": "#f59e0b",
+      "pct": 52,
+      "synopsis": "Волшебникот се враќа, го заробува Каламан и му наметнува три предизвици. Со магијата и советите на принцезата, Каламан го совладува непријателот, седумглавиот змеј и на крај самиот волшебник.",
+      "shots": [
+        {
+          "id": "S15",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Вечерта, Марку Браз се врати во замокот.",
+          "dialogue_mk": "",
+          "kf_first": "Low wide tracking shot of the wizard striding back through the castle gate at night, cloak billowing with dark energy, photoreal Diablo2 menace",
+          "kf_last": "Track behind him as doors slam shut in his wake",
+          "continuity": "Wizard and gate; night palette",
+          "motion": "forward track of the return",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "wizard_A2_fused",
+            "castle_env"
+          ],
+          "ref_scope": "image1: the fused master of the Wizard Marku Braz - long dark cloak, colossal sword - 100% identical; studio bg/pose/light NOT used; image2: the castle environment of the wizard - gothic silhouette, ivy and crooked spires - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "wizard face, dark cloak and giant sword",
+            "environment and set design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "track follows the wizard striding back through the gate at night"
+            ],
+            [
+              1.5,
+              3.0,
+              "track behind as doors slam shut in the wake"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low wide tracking shot of the wizard striding back through the castle gate at night, cloak billowing with dark energy, photoreal Diablo2 menace Wizard robed, mage, in cloak, carrying greatsword, wreathed in shadow smoke, rune ring then track follows the wizard striding back through the gate at night, then track behind as doors slam shut in the wake settling into track behind him as doors slam shut in his wake with steel rings, shadows whisper continuity held: Wizard and gate; night palette",
+          "image_prompt_start": "photoreal cinematic: Low wide of the wizard striding back through the castle gate at night, cloak billowing with dark energy, photoreal Diablo2 menace.",
+          "image_prompt_end": "photoreal cinematic: behind him as doors slam shut in his wake.",
+          "video_prompt_start": "Track follows the wizard striding back through the gate at night. track behind as doors slam shut in the wake. The beat resolves into the next matching frame. Continuity held: Wizard and gate; night palette.",
+          "video_prompt_end": "Track follows the wizard striding back through the gate at night. track behind as doors slam shut in the wake. The beat resolves into the next matching frame. Continuity held: Wizard and gate; night palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S16",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Го виде Каламан и гнев му се разгоре.",
+          "dialogue_mk": "",
+          "kf_first": "Medium eye-level of the wizard spotting Calaman across the hall, eyes flashing, fist clenching, photoreal",
+          "kf_last": "Push-in on the wizard's furious face",
+          "continuity": "Wizard face; castle hall",
+          "motion": "slow push-in on rage",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "wizard_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Wizard Marku Braz - long dark cloak, colossal sword - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "wizard face, dark cloak and giant sword",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "framing continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "medium as the wizard spots Calaman, eyes flashing"
+            ],
+            [
+              1.5,
+              3.0,
+              "push-in on the furious face"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level of the wizard spotting Calaman across the hall, eyes flashing, fist clenching, photoreal Wizard robed, mage, in cloak, carrying greatsword, wreathed in shadow smoke, rune ring then medium as the wizard spots Calaman, eyes flashing, then push-in on the furious face settling into push-in on the wizard's furious face with steel rings, shadows whisper continuity held: Wizard face; castle hall",
+          "image_prompt_start": "photoreal cinematic: eye-level of the wizard spotting Calaman across the hall, eyes flashing, fist clenching, photoreal.",
+          "image_prompt_end": "photoreal cinematic: on the wizard's furious face.",
+          "video_prompt_start": "Medium as the wizard spots Calaman, eyes flashing. push-in on the furious face. The beat resolves into the next matching frame. Continuity held: Wizard face; castle hall.",
+          "video_prompt_end": "Medium as the wizard spots Calaman, eyes flashing. push-in on the furious face. The beat resolves into the next matching frame. Continuity held: Wizard face; castle hall.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S17",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "crane-down",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Со еден замав на магија, го зароби.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium as crackling green magic coils around Calaman, binding his arms, the princess watching from the shadows, photoreal",
+          "kf_last": "Crane-down as Calaman strains against glowing bonds",
+          "continuity": "Bound hero; green magic motif",
+          "motion": "crane-down over the capture",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "wizard_A2_fused",
+            "calaman_A1_fused",
+            "princess_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Wizard Marku Braz - long dark cloak, colossal sword - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Calaman - young prince, travel garb, sword, resolved eyes - 100% identical; studio bg/pose/light NOT used; image3: the fused master of the Princess - daughter of the King of Spain, radiant gown - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "wizard face, dark cloak and giant sword",
+            "Calaman face and travel garb",
+            "princess face and radiant gown",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "green magic coils around Calaman binding the arms"
+            ],
+            [
+              1.5,
+              3.0,
+              "crane-down as Calaman strains against glowing bonds"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium as crackling green magic coils around Calaman, binding his arms, the princess watching from the shadows, photoreal Wizard robed, mage, in cloak, carrying greatsword, wreathed in shadow smoke, rune ring Calaman athletic, warrior, in cloak, carrying sword, wreathed in golden glow Princess slender, heroine, in dress, wreathed in golden glow then green magic coils around Calaman binding the arms, then crane-down as Calaman strains against glowing bonds with steel rings, shadows whisper continuity held: Bound hero; green magic motif",
+          "image_prompt_start": "photoreal cinematic: medium as crackling green magic coils around Calaman, binding his arms, the princess watching from the shadows, photoreal.",
+          "image_prompt_end": "photoreal cinematic: as Calaman strains against glowing bonds.",
+          "video_prompt_start": "Green magic coils around Calaman binding the arms. crane-down as Calaman strains against glowing bonds. The beat resolves into the next matching frame. Continuity held: Bound hero; green magic motif.",
+          "video_prompt_end": "Green magic coils around Calaman binding the arms. crane-down as Calaman strains against glowing bonds. The beat resolves into the next matching frame. Continuity held: Bound hero; green magic motif.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S18",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Утре ќе се соочи со три предизвици — или црно му се пишува.",
+          "dialogue_mk": "Волшебникот: „Утре ќе се соочиш со три предизвици. Ако не ги поминеш — црно ти се пишува!“",
+          "kf_first": "Close-up on the wizard's cold smile as he pronounces the challenge, candlelit hall, photoreal",
+          "kf_last": "Push-in past him to Calaman's unbroken gaze",
+          "continuity": "Wizard threat; candlelight",
+          "motion": "slow push-in on the threat",
+          "shot_type": "CLOSE-UP",
+          "face_floor_px": 200,
+          "asset_refs": [
+            "wizard_A2_fused",
+            "calaman_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Wizard Marku Braz - long dark cloak, colossal sword - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Calaman - young prince, travel garb, sword, resolved eyes - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "wizard face, dark cloak and giant sword",
+            "Calaman face and travel garb",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "close on the cold smile pronouncing the challenge"
+            ],
+            [
+              1.75,
+              3.5,
+              "push-in past to the unbroken gaze of Calaman"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up on the wizard's cold smile as he pronounces the challenge, candlelit hall, photoreal Wizard robed, mage, in cloak, carrying greatsword, wreathed in shadow smoke, rune ring Calaman athletic, warrior, in cloak, carrying sword, wreathed in golden glow then close on the cold smile pronouncing the challenge, then push-in past to the unbroken gaze of Calaman settling into push-in past him to Calaman's unbroken gaze with steel rings, shadows whisper a voice speaks in Macedonian: \"Волшебникот: „Утре ќе се соочиш со три предизвици. Ако не ги поминеш — црно ти се пишува!“\" continuity held: Wizard threat; candlelight",
+          "image_prompt_start": "photoreal cinematic: on the wizard's cold smile as he pronounces the challenge, candlelit hall, photoreal.",
+          "image_prompt_end": "photoreal cinematic: past him to Calaman's unbroken gaze.",
+          "video_prompt_start": "Close on the cold smile pronouncing the challenge. push-in past to the unbroken gaze of Calaman. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Волшебникот: „Утре ќе се соочиш со три предизвици. Ако не ги поминеш — црно ти се пишува!“\" Continuity held: Wizard threat; candlelight.",
+          "video_prompt_end": "Close on the cold smile pronouncing the challenge. push-in past to the unbroken gaze of Calaman. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Волшебникот: „Утре ќе се соочиш со три предизвици. Ако не ги поминеш — црно ти се пишува!“\" Continuity held: Wizard threat; candlelight.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S19",
+          "size": "MEDIUM",
+          "angle": "high-angle",
+          "move": "pan-right",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Ноќта, принцезата тајно ги читаше книгите на волшебникот.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle medium pan-right over a candlelit library where the princess turns ancient pages, runes glowing on her fingers, photoreal",
+          "kf_last": "Pan stops on a page of glowing diagrams",
+          "continuity": "Princess and magic books; warm candlelight",
+          "motion": "pan-right over the study",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "princess_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Princess - daughter of the King of Spain, radiant gown - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "princess face and radiant gown",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "framing continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "pan-right over the candlelit library as the princess turns pages"
+            ],
+            [
+              1.5,
+              3.0,
+              "pan stops on a page of glowing diagrams"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle medium pan-right over a candlelit library where the princess turns ancient pages, runes glowing on her fingers, photoreal Princess slender, heroine, in dress, wreathed in golden glow then pan-right over the candlelit library as the princess turns pages, then pan stops on a page of glowing diagrams with a low radiant hum continuity held: Princess and magic books; warm candlelight",
+          "image_prompt_start": "photoreal cinematic: medium -right over a candlelit library where the princess ancient pages, runes glowing on her fingers, photoreal.",
+          "image_prompt_end": "photoreal cinematic: stops on a page of glowing diagrams.",
+          "video_prompt_start": "Pan-right over the candlelit library as the princess turns pages. pan stops on a page of glowing diagrams. The beat resolves into the next matching frame. Continuity held: Princess and magic books; warm candlelight.",
+          "video_prompt_end": "Pan-right over the candlelit library as the princess turns pages. pan stops on a page of glowing diagrams. The beat resolves into the next matching frame. Continuity held: Princess and magic books; warm candlelight.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S20",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Во мугрите, започна првиот предизвик.",
+          "dialogue_mk": "",
+          "kf_first": "High wide crane-down into a grey dawn arena within the castle, torches ringed around, Calaman armed at the center, photoreal",
+          "kf_last": "Crane settles at arena level as a gate begins to open",
+          "continuity": "Arena as new space; dawn palette",
+          "motion": "crane-down onto the arena",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "calaman_A1_fused",
+            "arena_env"
+          ],
+          "ref_scope": "image1: the fused master of Calaman - young prince, travel garb, sword, resolved eyes - 100% identical; studio bg/pose/light NOT used; image2: the castle arena environment - torch ring, grey dawn stone - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "Calaman face and travel garb",
+            "environment and set design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "crane-down into the grey dawn arena, Calaman armed at center"
+            ],
+            [
+              1.5,
+              3.0,
+              "crane settles as a gate begins to open"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high wide crane-down into a grey dawn arena within the castle, torches ringed around, Calaman armed at the center, photoreal Calaman athletic, warrior, in cloak, carrying sword, wreathed in golden glow then crane-down into the grey dawn arena, Calaman armed at center, then crane settles as a gate begins to open settling into crane settles at arena level as a gate begins to open with steel rings, a low radiant hum continuity held: Arena as new space; dawn palette",
+          "image_prompt_start": "photoreal cinematic: High wide into a grey dawn arena within the castle, torches ringed around, Calaman armed at the center, photoreal.",
+          "image_prompt_end": "photoreal cinematic: Crane at arena level as a gate begins to open.",
+          "video_prompt_start": "Crane-down into the grey dawn arena, Calaman armed at center. crane settles as a gate begins to open. The beat resolves into the next matching frame. Continuity held: Arena as new space; dawn palette.",
+          "video_prompt_end": "Crane-down into the grey dawn arena, Calaman armed at center. crane settles as a gate begins to open. The beat resolves into the next matching frame. Continuity held: Arena as new space; dawn palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S21",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Од сенките излезе првиот непријател, висок и оклопен.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of an armoured foe stepping from a shadowed arch, heavy sword dragging sparks, photoreal Diablo2 adversary",
+          "kf_last": "The foe raises its blade, filling the frame",
+          "continuity": "Foe introduced; arena light",
+          "motion": "static intimidating reveal",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "arena_env"
+          ],
+          "ref_scope": "image1: the castle arena environment - torch ring, grey dawn stone - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "environment and set design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "framing continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "low-angle armoured foe steps from the shadowed arch"
+            ],
+            [
+              1.5,
+              3.0,
+              "the foe raises its blade, filling the frame"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of an armoured foe stepping from a shadowed arch, heavy sword dragging sparks, photoreal Diablo2 adversary then low-angle armoured foe steps from the shadowed arch, then the foe raises its blade, filling the frame the camera static continuity held: Foe introduced; arena light",
+          "image_prompt_start": "photoreal cinematic: medium of an armoured foe stepping from a shadowed arch, heavy sword dragging sparks, photoreal Diablo2 adversary.",
+          "image_prompt_end": "photoreal cinematic: The foe raises its blade, filling the frame.",
+          "video_prompt_start": "Low-angle armoured foe steps from the shadowed arch. the foe raises its blade, filling the frame. The camera static. The beat resolves into the next matching frame. Continuity held: Foe introduced; arena light.",
+          "video_prompt_end": "Low-angle armoured foe steps from the shadowed arch. the foe raises its blade, filling the frame. The camera static. The beat resolves into the next matching frame. Continuity held: Foe introduced; arena light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S22",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Принцезата му шепнеше совети и го штитеше со магијата.",
+          "dialogue_mk": "",
+          "kf_first": "Medium eye-level track of Calaman duelling the foe while a faint golden glow weaves around him from the princess watching above, photoreal",
+          "kf_last": "Track as a whisper of gold deflects the enemy blade",
+          "continuity": "Battle; princess golden magic motif",
+          "motion": "lateral track of the duel",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "calaman_A1_fused",
+            "princess_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of Calaman - young prince, travel garb, sword, resolved eyes - 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Princess - daughter of the King of Spain, radiant gown - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "Calaman face and travel garb",
+            "princess face and radiant gown",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "track the duel as a golden glow weaves around Calaman"
+            ],
+            [
+              1.75,
+              3.5,
+              "a whisper of gold deflects the enemy blade"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level track of Calaman duelling the foe while a faint golden glow weaves around him from the princess watching above, photoreal Calaman athletic, warrior, in cloak, carrying sword, wreathed in golden glow Princess slender, heroine, in dress, wreathed in golden glow then track the duel as a golden glow weaves around Calaman, then a whisper of gold deflects the enemy blade settling into track as a whisper of gold deflects the enemy blade with steel rings, a low radiant hum continuity held: Battle; princess golden magic motif",
+          "image_prompt_start": "photoreal cinematic: eye-level of Calaman duelling the foe while a faint golden glow weaves around him from the princess watching above, photoreal.",
+          "image_prompt_end": "photoreal cinematic: as a whisper of gold deflects the enemy blade.",
+          "video_prompt_start": "Track the duel as a golden glow weaves around Calaman. a whisper of gold deflects the enemy blade. The beat resolves into the next matching frame. Continuity held: Battle; princess golden magic motif.",
+          "video_prompt_end": "Track the duel as a golden glow weaves around Calaman. a whisper of gold deflects the enemy blade. The beat resolves into the next matching frame. Continuity held: Battle; princess golden magic motif.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S23",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Со нејзина помош, Каламан го порази непријателот.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium as Calaman delivers the winning strike and the armoured foe staggers back and falls, dust rising, photoreal",
+          "kf_last": "Push-in on Calaman breathing hard, sword lowered",
+          "continuity": "Victory; hero sword",
+          "motion": "push-in over the fallen foe",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "calaman_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Calaman - young prince, travel garb, sword, resolved eyes - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "Calaman face and travel garb",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "framing continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "Calaman delivers the winning strike, the foe staggers and falls"
+            ],
+            [
+              1.5,
+              3.0,
+              "push-in on Calaman breathing hard, sword lowered"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium as Calaman delivers the winning strike and the armoured foe staggers back and falls, dust rising, photoreal Calaman athletic, warrior, in cloak, carrying sword, wreathed in golden glow then Calaman delivers the winning strike, the foe staggers and falls, then push-in on Calaman breathing hard, sword lowered with steel rings, a low radiant hum continuity held: Victory; hero sword",
+          "image_prompt_start": "photoreal cinematic: medium as Calaman delivers the winning strike and the armoured foe staggers back and falls, dust rising, photoreal.",
+          "image_prompt_end": "photoreal cinematic: on Calaman breathing hard, sword lowered.",
+          "video_prompt_start": "Calaman delivers the winning strike, the foe staggers and falls. push-in on Calaman breathing hard, sword lowered. The beat resolves into the next matching frame. Continuity held: Victory; hero sword.",
+          "video_prompt_end": "Calaman delivers the winning strike, the foe staggers and falls. push-in on Calaman breathing hard, sword lowered. The beat resolves into the next matching frame. Continuity held: Victory; hero sword.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S24",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Волшебникот тогаш му рече да се бори со седумглав змеј.",
+          "dialogue_mk": "Волшебникот: „Сега бори се со седумглавиот змеј!“",
+          "kf_first": "Close-up of the wizard raising his arms as green sparks crackle around him, photoreal",
+          "kf_last": "Push-in on his sneer as dark smoke begins to pour into the arena",
+          "continuity": "Wizard summoning; green magic",
+          "motion": "slow push-in on the command",
+          "shot_type": "CLOSE-UP",
+          "face_floor_px": 200,
+          "asset_refs": [
+            "wizard_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Wizard Marku Braz - long dark cloak, colossal sword - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "wizard face, dark cloak and giant sword",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "framing continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close on the wizard raising arms, green sparks crackling"
+            ],
+            [
+              1.5,
+              3.0,
+              "push-in on the sneer as smoke pours into the arena"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the wizard raising his arms as green sparks crackle around him, photoreal Wizard robed, mage, in cloak, carrying greatsword, wreathed in shadow smoke, rune ring then close on the wizard raising arms, green sparks crackling, then push-in on the sneer as smoke pours into the arena settling into push-in on his sneer as dark smoke begins to pour into the arena with steel rings, shadows whisper a voice speaks in Macedonian: \"Волшебникот: „Сега бори се со седумглавиот змеј!“\" continuity held: Wizard summoning; green magic",
+          "image_prompt_start": "photoreal cinematic: of the wizard raising his arms as green sparks crackle around him, photoreal.",
+          "image_prompt_end": "photoreal cinematic: on his sneer as dark smoke begins to pour into the arena.",
+          "video_prompt_start": "Close on the wizard raising arms, green sparks crackling. push-in on the sneer as smoke pours into the arena. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Волшебникот: „Сега бори се со седумглавиот змеј!“\" Continuity held: Wizard summoning; green magic.",
+          "video_prompt_end": "Close on the wizard raising arms, green sparks crackling. push-in on the sneer as smoke pours into the arena. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Волшебникот: „Сега бори се со седумглавиот змеј!“\" Continuity held: Wizard summoning; green magic.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S25",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Од чадот се појави чудовиштето со седум глави.",
+          "dialogue_mk": "",
+          "kf_first": "Low wide crane-up from behind Calaman as a colossal seven-headed dragon erupts from smoke, maws open, photoreal WoW monster reveal",
+          "kf_last": "Crane-up reveals all seven snapping heads against the firelight",
+          "continuity": "Dragon introduced; smoke and firelight",
+          "motion": "crane-up revealing scale",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "calaman_A1_fused",
+            "dragon_A5_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Calaman - young prince, travel garb, sword, resolved eyes - 100% identical; studio bg/pose/light NOT used; image2: the seven-headed dragon sheet - seven heads and long tail - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "Calaman face and travel garb",
+            "seven-headed dragon design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "crane-up from behind Calaman as the dragon erupts from smoke"
+            ],
+            [
+              1.75,
+              3.5,
+              "crane-up reveals all seven snapping heads"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low wide crane-up from behind Calaman as a colossal seven-headed dragon erupts from smoke, maws open, photoreal WoW monster reveal Calaman athletic, warrior, in cloak, carrying sword, wreathed in golden glow then crane-up from behind Calaman as the dragon erupts from smoke, then crane-up reveals all seven snapping heads settling into crane-up reveals all seven snapping heads against the firelight with steel rings, a low radiant hum continuity held: Dragon introduced; smoke and firelight",
+          "image_prompt_start": "photoreal cinematic: Low wide from behind Calaman as a colossal seven-headed dragon erupts from smoke, maws open, photoreal WoW monster reveal.",
+          "image_prompt_end": "photoreal cinematic: reveals all seven snapping heads against the firelight.",
+          "video_prompt_start": "Crane-up from behind Calaman as the dragon erupts from smoke. crane-up reveals all seven snapping heads. The beat resolves into the next matching frame. Continuity held: Dragon introduced; smoke and firelight.",
+          "video_prompt_end": "Crane-up from behind Calaman as the dragon erupts from smoke. crane-up reveals all seven snapping heads. The beat resolves into the next matching frame. Continuity held: Dragon introduced; smoke and firelight.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S26",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Каламан застана цврсто пред змејот.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of Calaman braced with sword raised, the seven heads looming above him, embers drifting, photoreal heroic",
+          "kf_last": "One head dives toward him breathing fire",
+          "continuity": "Hero vs dragon; ember light",
+          "motion": "static stand-off",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "calaman_A1_fused",
+            "dragon_A5_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Calaman - young prince, travel garb, sword, resolved eyes - 100% identical; studio bg/pose/light NOT used; image2: the seven-headed dragon sheet - seven heads and long tail - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "Calaman face and travel garb",
+            "seven-headed dragon design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "low-angle braced stance, sword raised beneath seven heads"
+            ],
+            [
+              1.5,
+              3.0,
+              "one head dives toward him breathing fire"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Calaman braced with sword raised, the seven heads looming above him, embers drifting, photoreal heroic Calaman athletic, warrior, in cloak, carrying sword, wreathed in golden glow then low-angle braced stance, sword raised beneath seven heads, then one head dives toward him breathing fire the camera static with steel rings, a low radiant hum continuity held: Hero vs dragon; ember light",
+          "image_prompt_start": "photoreal cinematic: medium of Calaman braced with sword raised, the seven heads looming above him, embers drifting, photoreal heroic.",
+          "image_prompt_end": "photoreal cinematic: One head dives toward him breathing fire.",
+          "video_prompt_start": "Low-angle braced stance, sword raised beneath seven heads. one head dives toward him breathing fire. The camera static. The beat resolves into the next matching frame. Continuity held: Hero vs dragon; ember light.",
+          "video_prompt_end": "Low-angle braced stance, sword raised beneath seven heads. one head dives toward him breathing fire. The camera static. The beat resolves into the next matching frame. Continuity held: Hero vs dragon; ember light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S27",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Прво му ја пресече опашката.",
+          "dialogue_mk": "",
+          "kf_first": "Medium eye-level track of Calaman rolling beneath the dragon and slicing its sweeping tail, sparks flying, photoreal dynamic combat",
+          "kf_last": "Track as the tail thrashes down away from him",
+          "continuity": "Dragon combat; sword arc",
+          "motion": "lateral track of the tail cut",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "calaman_A1_fused",
+            "dragon_A5_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Calaman - young prince, travel garb, sword, resolved eyes - 100% identical; studio bg/pose/light NOT used; image2: the seven-headed dragon sheet - seven heads and long tail - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "Calaman face and travel garb",
+            "seven-headed dragon design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "track Calaman rolling beneath the dragon slicing the tail"
+            ],
+            [
+              1.5,
+              3.0,
+              "the tail thrashes down away from him"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level track of Calaman rolling beneath the dragon and slicing its sweeping tail, sparks flying, photoreal dynamic combat Calaman athletic, warrior, in cloak, carrying sword, wreathed in golden glow then track Calaman rolling beneath the dragon slicing the tail, then the tail thrashes down away from him settling into track as the tail thrashes down away from him with steel rings, a low radiant hum continuity held: Dragon combat; sword arc",
+          "image_prompt_start": "photoreal cinematic: eye-level of Calaman rolling beneath the dragon and slicing its sweeping tail, sparks flying, photoreal dynamic combat.",
+          "image_prompt_end": "photoreal cinematic: as the tail thrashes down away from him.",
+          "video_prompt_start": "Track Calaman rolling beneath the dragon slicing the tail. the tail thrashes down away from him. The beat resolves into the next matching frame. Continuity held: Dragon combat; sword arc.",
+          "video_prompt_end": "Track Calaman rolling beneath the dragon slicing the tail. the tail thrashes down away from him. The beat resolves into the next matching frame. Continuity held: Dragon combat; sword arc.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S28",
+          "size": "CLOSE",
+          "angle": "high-angle",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Потоа ја отсече главата во средината.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle close on Calaman striking the central head, blade cleaving through scale, photoreal decisive blow",
+          "kf_last": "Push-in as the middle head falls limp and the remaining heads recoil",
+          "continuity": "Central head; high-angle arena",
+          "motion": "slow push-in on the strike",
+          "shot_type": "CLOSE-UP",
+          "face_floor_px": 200,
+          "asset_refs": [
+            "calaman_A1_fused",
+            "dragon_A5_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Calaman - young prince, travel garb, sword, resolved eyes - 100% identical; studio bg/pose/light NOT used; image2: the seven-headed dragon sheet - seven heads and long tail - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "Calaman face and travel garb",
+            "seven-headed dragon design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "high-angle close strike on the central head"
+            ],
+            [
+              1.5,
+              3.0,
+              "the middle head falls limp and the rest recoil"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle close on Calaman striking the central head, blade cleaving through scale, photoreal decisive blow Calaman athletic, warrior, in cloak, carrying sword, wreathed in golden glow then high-angle close strike on the central head, then the middle head falls limp and the rest recoil the camera push-in settling into push-in as the middle head falls limp and the remaining heads recoil with steel rings, a low radiant hum continuity held: Central head; high-angle arena",
+          "image_prompt_start": "photoreal cinematic: close on Calaman striking the central head, blade cleaving through scale, photoreal decisive blow.",
+          "image_prompt_end": "photoreal cinematic: as the middle head falls limp and the remaining heads recoil.",
+          "video_prompt_start": "High-angle close strike on the central head. the middle head falls limp and the rest recoil. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Central head; high-angle arena.",
+          "video_prompt_end": "High-angle close strike on the central head. the middle head falls limp and the rest recoil. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Central head; high-angle arena.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S29",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Така полесно ги отсече и останатите глави.",
+          "dialogue_mk": "",
+          "kf_first": "Medium eye-level track of Calaman whirling to strike head after head, the dragon weakening, firelight strobing, photoreal action sequence",
+          "kf_last": "Track ends as the last head collapses",
+          "continuity": "Dragon heads; combat continuity",
+          "motion": "lateral track of the flurry",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "calaman_A1_fused",
+            "dragon_A5_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Calaman - young prince, travel garb, sword, resolved eyes - 100% identical; studio bg/pose/light NOT used; image2: the seven-headed dragon sheet - seven heads and long tail - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "Calaman face and travel garb",
+            "seven-headed dragon design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "track whirling to strike head after head"
+            ],
+            [
+              1.75,
+              3.5,
+              "the last head collapses"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level track of Calaman whirling to strike head after head, the dragon weakening, firelight strobing, photoreal action sequence Calaman athletic, warrior, in cloak, carrying sword, wreathed in golden glow then track whirling to strike head after head, then the last head collapses settling into track ends as the last head collapses with steel rings, a low radiant hum continuity held: Dragon heads; combat continuity",
+          "image_prompt_start": "photoreal cinematic: eye-level of Calaman whirling to strike head after head, the dragon weakening, firelight strobing, photoreal action sequence.",
+          "image_prompt_end": "photoreal cinematic: ends as the last head collapses.",
+          "video_prompt_start": "Track whirling to strike head after head. the last head collapses. The beat resolves into the next matching frame. Continuity held: Dragon heads; combat continuity.",
+          "video_prompt_end": "Track whirling to strike head after head. the last head collapses. The beat resolves into the next matching frame. Continuity held: Dragon heads; combat continuity.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S30",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "На крајот чудовиштето падна на земја, совладано.",
+          "dialogue_mk": "",
+          "kf_first": "High wide crane-down as the massive dragon crashes to the arena floor and goes still, smoke rising, Calaman standing over it, photoreal",
+          "kf_last": "Crane settles on the still beast, embers settling",
+          "continuity": "Defeated dragon; arena smoke",
+          "motion": "crane-down on the fall",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "calaman_A1_fused",
+            "dragon_A5_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Calaman - young prince, travel garb, sword, resolved eyes - 100% identical; studio bg/pose/light NOT used; image2: the seven-headed dragon sheet - seven heads and long tail - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "Calaman face and travel garb",
+            "seven-headed dragon design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "crane-down as the massive dragon crashes and goes still"
+            ],
+            [
+              1.75,
+              3.5,
+              "crane settles on the still beast, embers settling"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high wide crane-down as the massive dragon crashes to the arena floor and goes still, smoke rising, Calaman standing over it, photoreal Calaman athletic, warrior, in cloak, carrying sword, wreathed in golden glow then crane-down as the massive dragon crashes and goes still, then crane settles on the still beast, embers settling with steel rings, a low radiant hum continuity held: Defeated dragon; arena smoke",
+          "image_prompt_start": "photoreal cinematic: High wide as the massive dragon crashes to the arena floor and goes still, smoke rising, Calaman standing over it, photoreal.",
+          "image_prompt_end": "photoreal cinematic: Crane on the still beast, embers settling.",
+          "video_prompt_start": "Crane-down as the massive dragon crashes and goes still. crane settles on the still beast, embers settling. The beat resolves into the next matching frame. Continuity held: Defeated dragon; arena smoke.",
+          "video_prompt_end": "Crane-down as the massive dragon crashes and goes still. crane settles on the still beast, embers settling. The beat resolves into the next matching frame. Continuity held: Defeated dragon; arena smoke.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S31",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Тогаш волшебникот сам нападна, со огромниот меч.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of the wizard leaping with a colossal blade, cloak spread like wings, green fury, photoreal Diablo2 climax",
+          "kf_last": "Push-in on the sword arcing down toward Calaman",
+          "continuity": "Wizard attack; giant sword",
+          "motion": "push-in on the oncoming blade",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "wizard_A2_fused",
+            "calaman_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Wizard Marku Braz - long dark cloak, colossal sword - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Calaman - young prince, travel garb, sword, resolved eyes - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "wizard face, dark cloak and giant sword",
+            "Calaman face and travel garb",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "low-angle leap with the colossal blade, cloak spread like wings"
+            ],
+            [
+              1.5,
+              3.0,
+              "push-in on the sword arcing down toward Calaman"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of the wizard leaping with a colossal blade, cloak spread like wings, green fury, photoreal Diablo2 climax Wizard robed, mage, in cloak, carrying greatsword, wreathed in shadow smoke, rune ring Calaman athletic, warrior, in cloak, carrying sword, wreathed in golden glow then low-angle leap with the colossal blade, cloak spread like wings, then push-in on the sword arcing down toward Calaman with steel rings, shadows whisper continuity held: Wizard attack; giant sword",
+          "image_prompt_start": "photoreal cinematic: medium of the wizard leaping with a colossal blade, cloak spread like wings, green fury, photoreal Diablo2 climax.",
+          "image_prompt_end": "photoreal cinematic: on the sword arcing down toward Calaman.",
+          "video_prompt_start": "Low-angle leap with the colossal blade, cloak spread like wings. push-in on the sword arcing down toward Calaman. The beat resolves into the next matching frame. Continuity held: Wizard attack; giant sword.",
+          "video_prompt_end": "Low-angle leap with the colossal blade, cloak spread like wings. push-in on the sword arcing down toward Calaman. The beat resolves into the next matching frame. Continuity held: Wizard attack; giant sword.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S32",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Благодарение на советите и волшепствата на принцезата, го избегна мечот.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of Calaman's face as a golden shimmer deflects the descending blade at the last instant, photoreal",
+          "kf_last": "The wizard's sword crashes into the stone beside him",
+          "continuity": "Princess golden magic; close dodge",
+          "motion": "static near-miss",
+          "shot_type": "CLOSE-UP",
+          "face_floor_px": 200,
+          "asset_refs": [
+            "calaman_A1_fused",
+            "princess_A3_fused",
+            "wizard_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of Calaman - young prince, travel garb, sword, resolved eyes - 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Princess - daughter of the King of Spain, radiant gown - 100% identical; studio bg/pose/light NOT used; image3: the fused master of the Wizard Marku Braz - long dark cloak, colossal sword - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "Calaman face and travel garb",
+            "princess face and radiant gown",
+            "wizard face, dark cloak and giant sword",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close on the face of Calaman as golden shimmer deflects the blade"
+            ],
+            [
+              1.5,
+              3.0,
+              "the sword crashes into the stone beside him"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of Calaman's face as a golden shimmer deflects the descending blade at the last instant, photoreal Calaman athletic, warrior, in cloak, carrying sword, wreathed in golden glow Princess slender, heroine, in dress, wreathed in golden glow Wizard robed, mage, in cloak, carrying greatsword, wreathed in shadow smoke, rune ring then close on the face of Calaman as golden shimmer deflects the blade, then the sword crashes into the stone beside him the camera static settling into the wizard's sword crashes into the stone beside him with steel rings, a low radiant hum continuity held: Princess golden magic; close dodge",
+          "image_prompt_start": "photoreal cinematic: of Calaman's face as a golden shimmer deflects the descending blade at the last instant, photoreal.",
+          "image_prompt_end": "photoreal cinematic: The wizard's sword crashes into the stone beside him.",
+          "video_prompt_start": "Close on the face of Calaman as golden shimmer deflects the blade. the sword crashes into the stone beside him. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Princess golden magic; close dodge.",
+          "video_prompt_end": "Close on the face of Calaman as golden shimmer deflects the blade. the sword crashes into the stone beside him. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Princess golden magic; close dodge.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S33",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Каламан се сврте и се доближи.",
+          "dialogue_mk": "",
+          "kf_first": "Medium eye-level track of Calaman ducking under the wizard's recovering blade and closing the distance, photoreal",
+          "kf_last": "Track as he comes within striking range",
+          "continuity": "Duel flow; hero sword",
+          "motion": "lateral track of the counter",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "calaman_A1_fused",
+            "wizard_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of Calaman - young prince, travel garb, sword, resolved eyes - 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Wizard Marku Braz - long dark cloak, colossal sword - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "Calaman face and travel garb",
+            "wizard face, dark cloak and giant sword",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "track ducking under the recovering blade"
+            ],
+            [
+              1.5,
+              3.0,
+              "track as he comes within striking range"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level track of Calaman ducking under the wizard's recovering blade and closing the distance, photoreal Calaman athletic, warrior, in cloak, carrying sword, wreathed in golden glow Wizard robed, mage, in cloak, carrying greatsword, wreathed in shadow smoke, rune ring then track ducking under the recovering blade, then track as he comes within striking range with steel rings, a low radiant hum continuity held: Duel flow; hero sword",
+          "image_prompt_start": "photoreal cinematic: eye-level of Calaman ducking under the wizard's recovering blade and closing the distance, photoreal.",
+          "image_prompt_end": "photoreal cinematic: as he comes within striking range.",
+          "video_prompt_start": "Track ducking under the recovering blade. track as he comes within striking range. The beat resolves into the next matching frame. Continuity held: Duel flow; hero sword.",
+          "video_prompt_end": "Track ducking under the recovering blade. track as he comes within striking range. The beat resolves into the next matching frame. Continuity held: Duel flow; hero sword.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S34",
+          "size": "CLOSE",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "И право во срцето го прободе.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle close of the decisive thrust, Calaman's blade striking the wizard's chest, green light bursting, photoreal",
+          "kf_last": "Push-in on the wizard's wide, disbelieving eyes",
+          "continuity": "Final blow; green light burst",
+          "motion": "slow push-in on the impact",
+          "shot_type": "CLOSE-UP",
+          "face_floor_px": 200,
+          "asset_refs": [
+            "calaman_A1_fused",
+            "wizard_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of Calaman - young prince, travel garb, sword, resolved eyes - 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Wizard Marku Braz - long dark cloak, colossal sword - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "Calaman face and travel garb",
+            "wizard face, dark cloak and giant sword",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "low-angle close of the decisive thrust into the chest of the wizard"
+            ],
+            [
+              1.5,
+              3.0,
+              "push-in on the disbelieving eyes"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle close of the decisive thrust, Calaman's blade striking the wizard's chest, green light bursting, photoreal Calaman athletic, warrior, in cloak, carrying sword, wreathed in golden glow Wizard robed, mage, in cloak, carrying greatsword, wreathed in shadow smoke, rune ring then low-angle close of the decisive thrust into the chest of the wizard, then push-in on the disbelieving eyes settling into push-in on the wizard's wide, disbelieving eyes with steel rings, a low radiant hum continuity held: Final blow; green light burst",
+          "image_prompt_start": "photoreal cinematic: close of the decisive thrust, Calaman's blade striking the wizard's chest, green light bursting, photoreal.",
+          "image_prompt_end": "photoreal cinematic: on the wizard's wide, disbelieving eyes.",
+          "video_prompt_start": "Low-angle close of the decisive thrust into the chest of the wizard. push-in on the disbelieving eyes. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Final blow; green light burst.",
+          "video_prompt_end": "Low-angle close of the decisive thrust into the chest of the wizard. push-in on the disbelieving eyes. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Final blow; green light burst.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S35",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Волшебникот исчезна во еден вител.",
+          "dialogue_mk": "",
+          "kf_first": "Wide eye-level crane-up as the wizard unravels into a spinning vortex of green-black smoke, his form dissolving, photoreal supernatural",
+          "kf_last": "Crane-up follows the vortex shrinking to nothing",
+          "continuity": "Wizard dissolution; creepy palette",
+          "motion": "crane-up with the vortex",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "wizard_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Wizard Marku Braz - long dark cloak, colossal sword - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "wizard face, dark cloak and giant sword",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "framing continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "crane-up as the wizard unravels into a vortex of green-black smoke"
+            ],
+            [
+              1.75,
+              3.5,
+              "crane-up follows the vortex shrinking to nothing"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide eye-level crane-up as the wizard unravels into a spinning vortex of green-black smoke, his form dissolving, photoreal supernatural Wizard robed, mage, in cloak, carrying greatsword, wreathed in shadow smoke, rune ring then crane-up as the wizard unravels into a vortex of green-black smoke, then crane-up follows the vortex shrinking to nothing with steel rings, shadows whisper continuity held: Wizard dissolution; creepy palette",
+          "image_prompt_start": "photoreal cinematic: eye-level as the wizard unravels into a spinning vortex of green-black smoke, his form dissolving, photoreal supernatural.",
+          "image_prompt_end": "photoreal cinematic: the vortex shrinking to nothing.",
+          "video_prompt_start": "Crane-up as the wizard unravels into a vortex of green-black smoke. crane-up follows the vortex shrinking to nothing. The beat resolves into the next matching frame. Continuity held: Wizard dissolution; creepy palette.",
+          "video_prompt_end": "Crane-up as the wizard unravels into a vortex of green-black smoke. crane-up follows the vortex shrinking to nothing. The beat resolves into the next matching frame. Continuity held: Wizard dissolution; creepy palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S36",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Замокот замолкна, а магијата почна да бледнее.",
+          "dialogue_mk": "",
+          "kf_first": "Wide static of the arena now silent, dust and smoke settling, the first pale dawn light returning, photoreal aftermath",
+          "kf_last": "The torches gutter and dim one by one",
+          "continuity": "Aftermath; fading magic",
+          "motion": "static settling atmosphere",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "arena_env"
+          ],
+          "ref_scope": "image1: the castle arena environment - torch ring, grey dawn stone - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "environment and set design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "framing continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "wide static of the silent arena, dust settling"
+            ],
+            [
+              1.5,
+              3.0,
+              "torches gutter and dim one by one"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide static of the arena now silent, dust and smoke settling, the first pale dawn light returning, photoreal aftermath then wide static of the silent arena, dust settling, then torches gutter and dim one by one settling into the torches gutter and dim one by one continuity held: Aftermath; fading magic",
+          "image_prompt_start": "photoreal cinematic: static of the arena now silent, dust and smoke settling, the first pale dawn light returning, photoreal aftermath.",
+          "image_prompt_end": "photoreal cinematic: The torches gutter and dim one by one.",
+          "video_prompt_start": "Wide static of the silent arena, dust settling. torches gutter and dim one by one. The beat resolves into the next matching frame. Continuity held: Aftermath; fading magic.",
+          "video_prompt_end": "Wide static of the silent arena, dust settling. torches gutter and dim one by one. The beat resolves into the next matching frame. Continuity held: Aftermath; fading magic.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S37",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Каламан и принцезата се прегрнаа.",
+          "dialogue_mk": "",
+          "kf_first": "Medium eye-level of Calaman and the princess embracing amid the settling smoke, relief on their faces, warm light seeping in, photoreal",
+          "kf_last": "Push-in on their joined hands, magic shimmer fading",
+          "continuity": "Both heroes; hopeful light",
+          "motion": "slow push-in on the embrace",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "calaman_A1_fused",
+            "princess_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of Calaman - young prince, travel garb, sword, resolved eyes - 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Princess - daughter of the King of Spain, radiant gown - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "Calaman face and travel garb",
+            "princess face and radiant gown",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "medium of Calaman and the princess embracing amid settling smoke"
+            ],
+            [
+              1.5,
+              3.0,
+              "push-in on joined hands, magic fading"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level of Calaman and the princess embracing amid the settling smoke, relief on their faces, warm light seeping in, photoreal Calaman athletic, warrior, in cloak, carrying sword, wreathed in golden glow Princess slender, heroine, in dress, wreathed in golden glow then medium of Calaman and the princess embracing amid settling smoke, then push-in on joined hands, magic fading settling into push-in on their joined hands, magic shimmer fading with steel rings, a low radiant hum continuity held: Both heroes; hopeful light",
+          "image_prompt_start": "photoreal cinematic: eye-level of Calaman and the princess embracing amid the settling smoke, relief on their faces, warm light seeping in, photoreal.",
+          "image_prompt_end": "photoreal cinematic: on their joined hands, magic shimmer fading.",
+          "video_prompt_start": "Medium of Calaman and the princess embracing amid settling smoke. push-in on joined hands, magic fading. The beat resolves into the next matching frame. Continuity held: Both heroes; hopeful light.",
+          "video_prompt_end": "Medium of Calaman and the princess embracing amid settling smoke. push-in on joined hands, magic fading. The beat resolves into the next matching frame. Continuity held: Both heroes; hopeful light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S38",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "А прозорците на замокот засветлеа за првпат по долго време.",
+          "dialogue_mk": "",
+          "kf_first": "Low wide crane-up of the castle exterior as every window begins to glow with warm light, dawn breaking over the forest, photoreal",
+          "kf_last": "Crane-up shows the sky clearing and colour returning to the trees",
+          "continuity": "Castle exterior; dawn relief",
+          "motion": "crane-up revealing the change",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "castle_env"
+          ],
+          "ref_scope": "image1: the castle environment of the wizard - gothic silhouette, ivy and crooked spires - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "environment and set design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "framing continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "crane-up of the castle exterior, windows glowing warm"
+            ],
+            [
+              1.75,
+              3.5,
+              "crane-up shows the sky clearing and colour returning to trees"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low wide crane-up of the castle exterior as every window begins to glow with warm light, dawn breaking over the forest, photoreal then crane-up of the castle exterior, windows glowing warm, then crane-up shows the sky clearing and colour returning to trees settling into crane-up shows the sky clearing and colour returning to the trees continuity held: Castle exterior; dawn relief",
+          "image_prompt_start": "photoreal cinematic: Low wide of the castle exterior as every window begins to glow with warm light, dawn breaking over the forest, photoreal.",
+          "image_prompt_end": "photoreal cinematic: shows the sky clearing and colour returning to the trees.",
+          "video_prompt_start": "Crane-up of the castle exterior, windows glowing warm. crane-up shows the sky clearing and colour returning to trees. The beat resolves into the next matching frame. Continuity held: Castle exterior; dawn relief.",
+          "video_prompt_end": "Crane-up of the castle exterior, windows glowing warm. crane-up shows the sky clearing and colour returning to trees. The beat resolves into the next matching frame. Continuity held: Castle exterior; dawn relief.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "wizard_castle_and_arena",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#3a5a3a",
+        "#6b5a3a",
+        "#d94b3a"
+      ],
+      "light_direction": "key light from screen-right, torch and ember glow over grey dawn stone",
+      "time_of_day": "night"
+    },
+    {
+      "id": "act3",
+      "num": "Act III",
+      "title": "Среќниот крај",
+      "color": "#a78bfa",
+      "pct": 20,
+      "synopsis": "Магијата се крши: дрвјата повторно стануваат луѓе, стражарот е облечен во раскош, а Каламан и принцезата се венчаваат и живеат среќно.",
+      "shots": [
+        {
+          "id": "S39",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-right",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Малку по малку, дрвјата во шумата се преобразуваа.",
+          "dialogue_mk": "",
+          "kf_first": "Wide eye-level pan-right across the forest as tree trunks shimmer and limbs begin to reshape into human figures, golden light, photoreal",
+          "kf_last": "Pan ends on a tree midway through becoming a woman in a fine gown",
+          "continuity": "Forest; golden restoration light",
+          "motion": "pan-right over the transformation",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "forest_env"
+          ],
+          "ref_scope": "image1: the enchanted forest environment - mist, gnarled trees, cursed human-shaped trees - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "environment and set design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "framing continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "pan-right across the forest as trunks shimmer into human figures"
+            ],
+            [
+              1.75,
+              3.5,
+              "pan ends on a tree midway to a woman in a fine gown"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide eye-level pan-right across the forest as tree trunks shimmer and limbs begin to reshape into human figures, golden light, photoreal then pan-right across the forest as trunks shimmer into human figures, then pan ends on a tree midway to a woman in a fine gown settling into pan ends on a tree midway through becoming a woman in a fine gown with leaves rustle continuity held: Forest; golden restoration light",
+          "image_prompt_start": "photoreal cinematic: eye-level -right across the forest as tree trunks shimmer and limbs begin to reshape into human figures, golden light, photoreal.",
+          "image_prompt_end": "photoreal cinematic: ends on a tree midway through becoming a woman in a fine gown.",
+          "video_prompt_start": "Pan-right across the forest as trunks shimmer into human figures. pan ends on a tree midway to a woman in a fine gown. The beat resolves into the next matching frame. Continuity held: Forest; golden restoration light.",
+          "video_prompt_end": "Pan-right across the forest as trunks shimmer into human figures. pan ends on a tree midway to a woman in a fine gown. The beat resolves into the next matching frame. Continuity held: Forest; golden restoration light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S40",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Повторно станаа убави дами и витези.",
+          "dialogue_mk": "",
+          "kf_first": "Medium eye-level of a young knight and a lady emerging fully from their tree forms, gazing at their hands in wonder, photoreal joyful",
+          "kf_last": "Push-in on a restored face breaking into a smile",
+          "continuity": "Restored people; warm light",
+          "motion": "slow push-in on the wonder",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "forest_env"
+          ],
+          "ref_scope": "image1: the enchanted forest environment - mist, gnarled trees, cursed human-shaped trees - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "environment and set design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "framing continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "medium of a knight and a lady emerging from tree forms"
+            ],
+            [
+              1.5,
+              3.0,
+              "push-in on a restored face breaking into a smile"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level of a young knight and a lady emerging fully from their tree forms, gazing at their hands in wonder, photoreal joyful then medium of a knight and a lady emerging from tree forms, then push-in on a restored face breaking into a smile with leaves rustle continuity held: Restored people; warm light",
+          "image_prompt_start": "photoreal cinematic: eye-level of a young knight and a lady emerging fully from their tree forms, gazing at their hands in wonder, photoreal joyful.",
+          "image_prompt_end": "photoreal cinematic: on a restored face breaking into a smile.",
+          "video_prompt_start": "Medium of a knight and a lady emerging from tree forms. push-in on a restored face breaking into a smile. The beat resolves into the next matching frame. Continuity held: Restored people; warm light.",
+          "video_prompt_end": "Medium of a knight and a lady emerging from tree forms. push-in on a restored face breaking into a smile. The beat resolves into the next matching frame. Continuity held: Restored people; warm light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S41",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Стражарот, сега во раскошна облека, зачекори напред.",
+          "dialogue_mk": "",
+          "kf_first": "Medium eye-level of the old guard transformed into a nobleman in splendid robes, white beard gleaming, standing tall, photoreal",
+          "kf_last": "Push-in on his dignified, grateful face",
+          "continuity": "Guard restored; rich costume",
+          "motion": "slow push-in on the restored guard",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "guard_A4_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Old Guard - white-bearded cursed keeper of the castle - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "guard face and white beard",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "framing continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "medium of the old guard transformed into a nobleman"
+            ],
+            [
+              1.5,
+              3.0,
+              "push-in on the dignified grateful face"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level of the old guard transformed into a nobleman in splendid robes, white beard gleaming, standing tall, photoreal Guard robed, elder, in beard then medium of the old guard transformed into a nobleman, then push-in on the dignified grateful face settling into push-in on his dignified, grateful face continuity held: Guard restored; rich costume",
+          "image_prompt_start": "photoreal cinematic: eye-level of the old guard transformed into a nobleman in splendid robes, white beard gleaming, standing tall, photoreal.",
+          "image_prompt_end": "photoreal cinematic: on his dignified, grateful face.",
+          "video_prompt_start": "Medium of the old guard transformed into a nobleman. push-in on the dignified grateful face. The beat resolves into the next matching frame. Continuity held: Guard restored; rich costume.",
+          "video_prompt_end": "Medium of the old guard transformed into a nobleman. push-in on the dignified grateful face. The beat resolves into the next matching frame. Continuity held: Guard restored; rich costume.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S42",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Им се заблагодари со најразлични подароци.",
+          "dialogue_mk": "Стражарот: „Ви благодарам од сè срце!“",
+          "kf_first": "Medium eye-level of the restored nobleman presenting chests of treasures and gifts to Calaman and the princess, golden hall, photoreal",
+          "kf_last": "He clasps Calaman's hands in gratitude",
+          "continuity": "Gift-giving; golden hall",
+          "motion": "static scene of gratitude",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "guard_A4_fused",
+            "calaman_A1_fused",
+            "princess_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Old Guard - white-bearded cursed keeper of the castle - 100% identical; studio bg/pose/light NOT used; image2: the fused master of Calaman - young prince, travel garb, sword, resolved eyes - 100% identical; studio bg/pose/light NOT used; image3: the fused master of the Princess - daughter of the King of Spain, radiant gown - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "guard face and white beard",
+            "Calaman face and travel garb",
+            "princess face and radiant gown",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "medium of the nobleman presenting chests of treasures and gifts"
+            ],
+            [
+              1.5,
+              3.0,
+              "he clasps the hands of Calaman in gratitude"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level of the restored nobleman presenting chests of treasures and gifts to Calaman and the princess, golden hall, photoreal Guard robed, elder, in beard Calaman athletic, warrior, in cloak, carrying sword, wreathed in golden glow Princess slender, heroine, in dress, wreathed in golden glow then medium of the nobleman presenting chests of treasures and gifts, then he clasps the hands of Calaman in gratitude the camera static settling into he clasps Calaman's hands in gratitude with steel rings, a low radiant hum a voice speaks in Macedonian: \"Стражарот: „Ви благодарам од сè срце!“\" continuity held: Gift-giving; golden hall",
+          "image_prompt_start": "photoreal cinematic: eye-level of the restored nobleman presenting chests of treasures and gifts to Calaman and the princess, golden hall, photoreal.",
+          "image_prompt_end": "photoreal cinematic: He clasps Calaman's hands in gratitude.",
+          "video_prompt_start": "Medium of the nobleman presenting chests of treasures and gifts. he clasps the hands of Calaman in gratitude. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Стражарот: „Ви благодарам од сè срце!“\" Continuity held: Gift-giving; golden hall.",
+          "video_prompt_end": "Medium of the nobleman presenting chests of treasures and gifts. he clasps the hands of Calaman in gratitude. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Стражарот: „Ви благодарам од сè срце!“\" Continuity held: Gift-giving; golden hall.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S43",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Во замокот започа голема прослава.",
+          "dialogue_mk": "",
+          "kf_first": "High wide crane-up over a grand candlelit banquet, dancers and music, banners swaying, photoreal festive cinematic",
+          "kf_last": "Crane-up reveals the whole hall filled with celebration",
+          "continuity": "Restored castle; festivity",
+          "motion": "crane-up over the feast",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "castle_env"
+          ],
+          "ref_scope": "image1: the castle environment of the wizard - gothic silhouette, ivy and crooked spires - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "environment and set design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "framing continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "crane-up over a grand candlelit banquet with dancers and music"
+            ],
+            [
+              1.75,
+              3.5,
+              "crane-up reveals the whole hall in celebration"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high wide crane-up over a grand candlelit banquet, dancers and music, banners swaying, photoreal festive cinematic then crane-up over a grand candlelit banquet with dancers and music, then crane-up reveals the whole hall in celebration settling into crane-up reveals the whole hall filled with celebration continuity held: Restored castle; festivity",
+          "image_prompt_start": "photoreal cinematic: High wide over a grand candlelit banquet, dancers and music, banners swaying, photoreal festive cinematic.",
+          "image_prompt_end": "photoreal cinematic: reveals the whole hall filled with celebration.",
+          "video_prompt_start": "Crane-up over a grand candlelit banquet with dancers and music. crane-up reveals the whole hall in celebration. The beat resolves into the next matching frame. Continuity held: Restored castle; festivity.",
+          "video_prompt_end": "Crane-up over a grand candlelit banquet with dancers and music. crane-up reveals the whole hall in celebration. The beat resolves into the next matching frame. Continuity held: Restored castle; festivity.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S44",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Каламан и принцезата се венчаа.",
+          "dialogue_mk": "",
+          "kf_first": "Medium eye-level of the wedding, Calaman and the princess before an altar of flowers, crowns of light, photoreal fairytale wedding",
+          "kf_last": "Push-in on their vows, hands joined",
+          "continuity": "Couple; wedding altar",
+          "motion": "slow push-in on the vows",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "calaman_A1_fused",
+            "princess_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of Calaman - young prince, travel garb, sword, resolved eyes - 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Princess - daughter of the King of Spain, radiant gown - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "Calaman face and travel garb",
+            "princess face and radiant gown",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "medium of the wedding before an altar of flowers"
+            ],
+            [
+              1.75,
+              3.5,
+              "push-in on the vows, hands joined"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level of the wedding, Calaman and the princess before an altar of flowers, crowns of light, photoreal fairytale wedding Calaman athletic, warrior, in cloak, carrying sword, wreathed in golden glow Princess slender, heroine, in dress, wreathed in golden glow then medium of the wedding before an altar of flowers, then push-in on the vows, hands joined settling into push-in on their vows, hands joined with steel rings, a low radiant hum continuity held: Couple; wedding altar",
+          "image_prompt_start": "photoreal cinematic: eye-level of the wedding, Calaman and the princess before an altar of flowers, crowns of light, photoreal fairytale wedding.",
+          "image_prompt_end": "photoreal cinematic: on their vows, hands joined.",
+          "video_prompt_start": "Medium of the wedding before an altar of flowers. push-in on the vows, hands joined. The beat resolves into the next matching frame. Continuity held: Couple; wedding altar.",
+          "video_prompt_end": "Medium of the wedding before an altar of flowers. push-in on the vows, hands joined. The beat resolves into the next matching frame. Continuity held: Couple; wedding altar.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S45",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-left",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Сите ги славеа среќните младенци.",
+          "dialogue_mk": "",
+          "kf_first": "Wide eye-level pan-left across a cheering crowd of restored ladies and knights showering the couple with petals, photoreal jubilant",
+          "kf_last": "Pan ends on the couple laughing under falling petals",
+          "continuity": "Crowd; celebration palette",
+          "motion": "pan-left over the celebration",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "calaman_A1_fused",
+            "princess_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of Calaman - young prince, travel garb, sword, resolved eyes - 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Princess - daughter of the King of Spain, radiant gown - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "Calaman face and travel garb",
+            "princess face and radiant gown",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "pan-left across a cheering crowd showering petals"
+            ],
+            [
+              1.5,
+              3.0,
+              "pan ends on the couple laughing under petals"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide eye-level pan-left across a cheering crowd of restored ladies and knights showering the couple with petals, photoreal jubilant Calaman athletic, warrior, in cloak, carrying sword, wreathed in golden glow Princess slender, heroine, in dress, wreathed in golden glow then pan-left across a cheering crowd showering petals, then pan ends on the couple laughing under petals settling into pan ends on the couple laughing under falling petals with steel rings, a low radiant hum continuity held: Crowd; celebration palette",
+          "image_prompt_start": "photoreal cinematic: eye-level -left across a cheering crowd of restored ladies and knights showering the couple with petals, photoreal jubilant.",
+          "image_prompt_end": "photoreal cinematic: ends on the couple laughing under falling petals.",
+          "video_prompt_start": "Pan-left across a cheering crowd showering petals. pan ends on the couple laughing under petals. The beat resolves into the next matching frame. Continuity held: Crowd; celebration palette.",
+          "video_prompt_end": "Pan-left across a cheering crowd showering petals. pan ends on the couple laughing under petals. The beat resolves into the next matching frame. Continuity held: Crowd; celebration palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S46",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "narration_mk": "Двајцата зачекорија низ градината, сега целата расцветана.",
+          "dialogue_mk": "",
+          "kf_first": "Medium eye-level track of the couple walking hand in hand through the once-moonlit garden now blooming in full daylight, photoreal bliss",
+          "kf_last": "Track alongside as they pause to admire a bright rose",
+          "continuity": "Garden restored; daylight",
+          "motion": "lateral track through the garden",
+          "shot_type": "MEDIUM",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "calaman_A1_fused",
+            "princess_A3_fused",
+            "garden_env"
+          ],
+          "ref_scope": "image1: the fused master of Calaman - young prince, travel garb, sword, resolved eyes - 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Princess - daughter of the King of Spain, radiant gown - 100% identical; studio bg/pose/light NOT used; image3: the moonlit garden environment - white flowers and radiant blooms - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "Calaman face and travel garb",
+            "princess face and radiant gown",
+            "environment and set design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "track the couple walking through the blooming garden"
+            ],
+            [
+              1.5,
+              3.0,
+              "track as they pause to admire a bright rose"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium eye-level track of the couple walking hand in hand through the once-moonlit garden now blooming in full daylight, photoreal bliss Calaman athletic, warrior, in cloak, carrying sword, wreathed in golden glow Princess slender, heroine, in dress, wreathed in golden glow then track the couple walking through the blooming garden, then track as they pause to admire a bright rose settling into track alongside as they pause to admire a bright rose with steel rings, a low radiant hum continuity held: Garden restored; daylight",
+          "image_prompt_start": "photoreal cinematic: eye-level of the couple walking hand in hand through the once-moonlit garden now blooming in full daylight, photoreal bliss.",
+          "image_prompt_end": "photoreal cinematic: alongside as they pause to admire a bright rose.",
+          "video_prompt_start": "Track the couple walking through the blooming garden. track as they pause to admire a bright rose. The beat resolves into the next matching frame. Continuity held: Garden restored; daylight.",
+          "video_prompt_end": "Track the couple walking through the blooming garden. track as they pause to admire a bright rose. The beat resolves into the next matching frame. Continuity held: Garden restored; daylight.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S47",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "Замокот и шумата блескаа, ослободени од магијата.",
+          "dialogue_mk": "",
+          "kf_first": "High wide crane-up over the fully restored castle and green forest, birds wheeling, banners bright in sunlight, photoreal triumphant vista",
+          "kf_last": "Crane-up settles on the horizon as the whole land shines",
+          "continuity": "Restored world; bright daylight",
+          "motion": "crane-up over the vista",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "castle_env",
+            "forest_env"
+          ],
+          "ref_scope": "image1: the castle environment of the wizard - gothic silhouette, ivy and crooked spires - 100% identical; studio bg/pose/light NOT used; image2: the enchanted forest environment - mist, gnarled trees, cursed human-shaped trees - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "environment and set design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "framing continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "crane-up over the restored castle and green forest"
+            ],
+            [
+              1.75,
+              3.5,
+              "crane settles on the horizon as the land shines"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high wide crane-up over the fully restored castle and green forest, birds wheeling, banners bright in sunlight, photoreal triumphant vista then crane-up over the restored castle and green forest, then crane settles on the horizon as the land shines settling into crane-up settles on the horizon as the whole land shines with leaves rustle continuity held: Restored world; bright daylight",
+          "image_prompt_start": "photoreal cinematic: High wide over the fully restored castle and green forest, birds wheeling, banners bright in sunlight, photoreal triumphant vista.",
+          "image_prompt_end": "photoreal cinematic: on the horizon as the whole land shines.",
+          "video_prompt_start": "Crane-up over the restored castle and green forest. crane settles on the horizon as the land shines. The beat resolves into the next matching frame. Continuity held: Restored world; bright daylight.",
+          "video_prompt_end": "Crane-up over the restored castle and green forest. crane settles on the horizon as the land shines. The beat resolves into the next matching frame. Continuity held: Restored world; bright daylight.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S48",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pull-back",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "narration_mk": "И си живееја среќно, засекогаш.",
+          "dialogue_mk": "",
+          "kf_first": "Wide eye-level pull-back of Calaman and the princess standing together on a hilltop at sunset, the castle glowing behind them, photoreal storybook close",
+          "kf_last": "Pull-back to a long view of the couple framed by the golden sky",
+          "continuity": "Couple; sunset and castle",
+          "motion": "slow pull-back to close the tale",
+          "shot_type": "WIDE",
+          "face_floor_px": 120,
+          "asset_refs": [
+            "calaman_A1_fused",
+            "princess_A3_fused",
+            "castle_env"
+          ],
+          "ref_scope": "image1: the fused master of Calaman - young prince, travel garb, sword, resolved eyes - 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Princess - daughter of the King of Spain, radiant gown - 100% identical; studio bg/pose/light NOT used; image3: the castle environment of the wizard - gothic silhouette, ivy and crooked spires - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "Calaman face and travel garb",
+            "princess face and radiant gown",
+            "environment and set design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.75,
+              "pull-back from the couple on the hilltop at sunset"
+            ],
+            [
+              1.75,
+              3.5,
+              "pull-back to a long view framed by the golden sky"
+            ]
+          ],
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide eye-level pull-back of Calaman and the princess standing together on a hilltop at sunset, the castle glowing behind them, photoreal storybook close Calaman athletic, warrior, in cloak, carrying sword, wreathed in golden glow Princess slender, heroine, in dress, wreathed in golden glow then pull-back from the couple on the hilltop at sunset, then pull-back to a long view framed by the golden sky settling into pull-back to a long view of the couple framed by the golden sky with steel rings, a low radiant hum continuity held: Couple; sunset and castle",
+          "image_prompt_start": "photoreal cinematic: eye-level of Calaman and the princess standing together on a hilltop at sunset, the castle glowing behind them, photoreal storybook close.",
+          "image_prompt_end": "photoreal cinematic: to a long view of the couple framed by the golden sky.",
+          "video_prompt_start": "Pull-back from the couple on the hilltop at sunset. pull-back to a long view framed by the golden sky. The beat resolves into the next matching frame. Continuity held: Couple; sunset and castle.",
+          "video_prompt_end": "Pull-back from the couple on the hilltop at sunset. pull-back to a long view framed by the golden sky. The beat resolves into the next matching frame. Continuity held: Couple; sunset and castle.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "restored_castle_and_forest",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#f5c76a",
+        "#e8b04b",
+        "#7a9a5a"
+      ],
+      "light_direction": "key light from screen-left, radiant golden daylight warming to sunset",
+      "time_of_day": "day"
+    }
+  ],
+  "director_corrections": {
+    "issued": "2026-11-07",
+    "source": "KB §13 DIRECTOR CORRECTIONS — overrides all prior asset/keyframe guidance",
+    "rules": [
+      "DD HEADWEAR: no cap/hood/bandana/mask on head; hood = back-cowl only (cape-like); bare head + teal-blue glowing hair always visible; any head/face covering = REJECT",
+      "LEGENDARY WEAPONS MUST APPEAR: DD = twin Frostbite-class hand crossbows (ice-blue arcane crystal limbs, frost runes, frozen-light string, teal-blue glow); AZ = Dawnbreaker-class greatsword (pale sunsteel, molten-gold runes, golden holy fire edge, sunburst crossguard); hero sheet/keyframe without weapon = INCOMPLETE",
+      "WEAPON ANTI-SLOP: fantasy construction only; crossbow must NEVER read as firearm (no barrel/magazine/stock/Uzi/SMG silhouette = REJECT); anti-slop negatives always appended",
+      "BOSS FACE: Mal'garot HAS a prolific molten-lava face (lava dripping/running, drops falling to ground); faceless boss sheets SUPERSEDED",
+      "LOCATION BRIGHTNESS FLOOR: environment plates silhouette-readable at thumbnail; no murk-dark grades"
+    ],
+    "applies_when": "Activates when face_lock changes from AI-default to an enrolled identity (DD/AZ). AI-default packages carry this as a forward constraint, not a current defect.",
+    "anti_slop_negatives": "firearm, gun, machinegun, Uzi, barrel, magazine, ammo clip, muzzle, modern weapon"
+  },
+  "character_designs": {
+    "calaman": {
+      "archetype": "warrior",
+      "build": "athletic",
+      "scale": "human",
+      "palette": {
+        "primary": "#d9a640",
+        "secondary": "#8a6040",
+        "glow": "#f5c76a"
+      },
+      "costume": [
+        "cloak"
+      ],
+      "props": [
+        "sword"
+      ],
+      "fx": [
+        "golden_glow"
+      ]
+    },
+    "wizard": {
+      "archetype": "mage",
+      "build": "robed",
+      "scale": "human",
+      "palette": {
+        "primary": "#2a2a3a",
+        "secondary": "#0e0e14",
+        "glow": "#7aff9a"
+      },
+      "costume": [
+        "cloak"
+      ],
+      "props": [
+        "greatsword"
+      ],
+      "fx": [
+        "shadow_smoke",
+        "rune_ring"
+      ]
+    },
+    "princess": {
+      "archetype": "heroine",
+      "build": "slender",
+      "scale": "human",
+      "palette": {
+        "primary": "#f5e8c8",
+        "secondary": "#e8b04b",
+        "glow": "#ffe08a"
+      },
+      "costume": [
+        "dress"
+      ],
+      "props": [],
+      "fx": [
+        "golden_glow"
+      ]
+    },
+    "guard": {
+      "archetype": "elder",
+      "build": "robed",
+      "scale": "human",
+      "palette": {
+        "primary": "#5a4a3a",
+        "secondary": "#2c2218",
+        "glow": "#c9a86a"
+      },
+      "costume": [
+        "beard"
+      ],
+      "props": [],
+      "fx": []
+    },
+    "dragon": {
+      "archetype": "monster",
+      "build": "hulking",
+      "scale": "huge",
+      "palette": {
+        "primary": "#3a2e2a",
+        "secondary": "#1a1410",
+        "glow": "#ff6b3a"
+      },
+      "costume": [],
+      "props": [],
+      "fx": [
+        "fire_wisps"
+      ]
+    },
+    "palace_env": {
+      "motif": "spires",
+      "tone": "#e8b84b"
+    },
+    "forest_env": {
+      "motif": "forest",
+      "tone": "#3b6a3a"
+    },
+    "castle_env": {
+      "motif": "spires",
+      "tone": "#2b3a5c"
+    },
+    "treasure_env": {
+      "motif": "hall",
+      "tone": "#d4a017"
+    },
+    "garden_env": {
+      "motif": "forest",
+      "tone": "#b8d4b8"
+    },
+    "arena_env": {
+      "motif": "cavern",
+      "tone": "#8a8a8f"
+    }
+  }
+}

@@ -1,0 +1,2506 @@
+{
+  "num": "17",
+  "title_mk": "Дартањан и тројцата мускетари",
+  "title_en": "D'Artagnan and the Three Musketeers",
+  "genre": "Историска авантура · епска акција",
+  "logline": "Младиот Гасконец Дартањан пристигнува во Париз да стане мускетар, но прво мора да ги победи, а потоа да ги придобие Атос, Портос и Арамис — пред кралска мисија за дванаесетте дијаманти да ги сплоти во неразделен квартет.",
+  "spec": {
+    "aspect": "16:9",
+    "resolution": "1216x704",
+    "fps": 24,
+    "model": "model-agnostic (chosen at generation)",
+    "style": "photoreal",
+    "flf": true,
+    "language": "mk",
+    "shot_floor": 40,
+    "shot_max": 60,
+    "seed_policy": "fixed-per-shot (same seed → reproducible shot; re-roll per shot id)",
+    "style_anchor": [
+      "Diablo 2 cinematic",
+      "World of Warcraft cinematic",
+      "StarCraft cinematic"
+    ],
+    "negative_prompt": "deformed, extra limbs, morphing, watermark, text, static frame, blurry, low quality, cropped head, cut-off face",
+    "frames": 121,
+    "frames_fallback": 81,
+    "routes": [
+      {
+        "model": "Wan2.1-FLF2V-14B-720P",
+        "input": "start+end native (run START-ONLY)",
+        "status": "WORKING (lead for 14B quality)"
+      },
+      {
+        "model": "Kandinsky 6.0 Lite/Pro",
+        "input": "start-image-only",
+        "status": "WORKING (Pro-distill untested at scale)"
+      },
+      {
+        "model": "SkyReels-V3 R2V-14B",
+        "input": "start-image-only",
+        "status": "WORKING (fallback)"
+      },
+      {
+        "model": "LTX-Video 2B v0.9.5",
+        "input": "start-image-only",
+        "status": "WORKING (small/fast, low ceiling)"
+      },
+      {
+        "model": "Mochi-1",
+        "input": "start-image-only",
+        "status": "untested here"
+      },
+      {
+        "model": "LTX-2.3 22B distilled",
+        "input": "start-image-only",
+        "status": "DEAD (nanobind native-crash, 42 note)"
+      }
+    ],
+    "model_note": "Model chosen per story at generation (43 §4). Keyframes + continuation prompts are generator-agnostic; only the render command differs per model."
+  },
+  "cast": [
+    {
+      "role": "Дартањан / D'Artagnan",
+      "trait": "Млад Гасконец, желен за слава, со испилени црти, темна коса и табатски меч",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Атос / Athos",
+      "trait": "Благороден и достоинствен мускетар, сериозен, со темна брадичка и елегантна униформа",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Портос / Porthos",
+      "trait": "Крупен и весел мускетар со раскошен појас и громогласен глас",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Арамис / Aramis",
+      "trait": "Префинет мускетар со чисти црти, мазен говор и грациозно држење",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Кардинал Ришелје / Cardinal Richelieu",
+      "trait": "Моќен кардинал во црвена одежда, остар поглед и студено држење",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Милејди / Milady",
+      "trait": "Злобна шпионка на кардиналот, елегантна и лукава, со темен превез",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Кралицата / The Queen",
+      "trait": "Француската кралица, достоинствена и љубезна, во светла дворска тоалета",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Војвода од Бакингам / Duke of Buckingham",
+      "trait": "Висок, префинет англиски благородник со сјајна облека и стрплива тага",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Војниците на кардиналот / The Cardinal's Guards",
+      "trait": "Гардисти во темни униформи со калпаци, дисциплинирани и груби",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    }
+  ],
+  "acts": [
+    {
+      "id": "act1",
+      "num": "Act I",
+      "title": "Заложба",
+      "color": "#2dd4bf",
+      "pct": 28,
+      "synopsis": "Младиот Гасконец Дартањан пристигнува во Париз и налетува на тројцата мускетари, кои го предизвикуваат на двобој. Кога гардата на кардиналот го прекинува двобојот, Дартањан застанува на страната на мускетарите и сите четворица ги победуваат.",
+      "shots": [
+        {
+          "id": "S01",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "dartagnan_A1_fused",
+            "countryside_env_A1_prop"
+          ],
+          "ref_scope": "image1: the fused master of D'Artagnan — young Gascon with dark hair and a worn cloak over musketeer blue — 100% identical; studio bg/pose/light NOT used; image2: the sunbaked French countryside road to Paris — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/scenic design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "high-angle crane down over the sunbaked countryside at golden hour"
+            ],
+            [
+              1.8,
+              3.5,
+              "settle on the lone rider and his long rapier as Paris spires rise ahead"
+            ]
+          ],
+          "narration_mk": "Од југ, од прашливите патишта на Гаскоњ, пристигнуваше еден млад и дрзок сонувач.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide establishing shot of sunbaked French countryside at golden hour, a lone young rider trotting a dusty road toward distant Paris, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Crane-down revealing his worn Gascon cloak and the long rapier at his hip as the city spires rise ahead",
+          "continuity": "Golden dusk palette: amber, dust, olive fields",
+          "motion": "slow crane-down over the rider",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide establishing shot of sunbaked French countryside at golden hour, a lone young rider trotting a dusty road toward distant Paris then high-angle crane down over the sunbaked countryside at golden hour, then settle on the lone rider and his long rapier as Paris spires rise ahead the camera crane-down settling into crane-down revealing his worn Gascon cloak and the long rapier at his hip as the city spires rise ahead continuity held: Golden dusk palette: amber, dust, olive fields",
+          "image_prompt_start": "photoreal cinematic: wide establishing shot of sunbaked French countryside at golden hour, a lone young rider trotting a dusty road toward distant Paris.",
+          "image_prompt_end": "photoreal cinematic: revealing his worn Gascon cloak and the long rapier at his hip as the city spires rise ahead.",
+          "video_prompt_start": "High-angle crane down over the sunbaked countryside at golden hour. settle on the lone rider and his long rapier as Paris spires rise ahead. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Golden dusk palette: amber, dust, olive fields.",
+          "video_prompt_end": "High-angle crane down over the sunbaked countryside at golden hour. settle on the lone rider and his long rapier as Paris spires rise ahead. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Golden dusk palette: amber, dust, olive fields.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S02",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "dartagnan_A1_fused",
+            "rapier_prop_B1_prop"
+          ],
+          "ref_scope": "image1: the fused master of D'Artagnan — young Gascon with dark hair and a worn cloak over musketeer blue — 100% identical; studio bg/pose/light NOT used; image2: D'Artagnan's long slim rapier — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/scenic design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "eye-level track of the young rider through the stone gate, eager face lifted"
+            ],
+            [
+              1.5,
+              3.0,
+              "he glances up as the grand palace rises before him, wonder dawning"
+            ]
+          ],
+          "narration_mk": "Го викаа Дартањан, и носеше само еден сон на ум.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium tracking shot of D'Artagnan riding through a stone gate, eager face, wind lifting his dark hair, rapier glinting",
+          "kf_last": "He glances up at the grand palace rising before him, wonder dawning",
+          "continuity": "D'Artagnan identity: Gascon cloak, dark hair, rapier; golden palette",
+          "motion": "lateral track as he rides",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium tracking shot of D'Artagnan riding through a stone gate, eager face, wind lifting his dark hair, rapier glinting then eye-level track of the young rider through the stone gate, eager face lifted, then he glances up as the grand palace rises before him, wonder dawning settling into he glances up at the grand palace rising before him, wonder dawning continuity held: D'Artagnan identity: Gascon cloak, dark hair, rapier; golden palette",
+          "image_prompt_start": "photoreal cinematic: medium of D'Artagnan riding through a stone gate, eager face, wind lifting his dark hair, rapier glinting.",
+          "image_prompt_end": "photoreal cinematic: He glances up at the grand palace rising before him, wonder dawning.",
+          "video_prompt_start": "Eye-level track of the young rider through the stone gate, eager face lifted. he glances up as the grand palace rises before him, wonder dawning. The beat resolves into the next matching frame. Continuity held: D'Artagnan identity: Gascon cloak, dark hair, rapier; golden palette.",
+          "video_prompt_end": "Eye-level track of the young rider through the stone gate, eager face lifted. he glances up as the grand palace rises before him, wonder dawning. The beat resolves into the next matching frame. Continuity held: D'Artagnan identity: Gascon cloak, dark hair, rapier; golden palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S03",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "versailles_env_A2_prop",
+            "guards_A9_fused"
+          ],
+          "ref_scope": "image1: the vast carved-stone facade of Versailles — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Cardinal's Guards — disciplined soldiers in dark uniforms and wide hats — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/scenic design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "low-angle wide on the vast carved facade and the guards on the steps"
+            ],
+            [
+              1.8,
+              3.5,
+              "push in toward the grand entrance as a banner snaps in the wind"
+            ]
+          ],
+          "narration_mk": "Во Париз стоеше палатата, дом на мускетарите — избраната гарда на кралот.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of Versailles's vast facade, carved stone and tall windows, guards with muskets on the steps, clouded sky",
+          "kf_last": "Push-in toward the grand entrance as a banner snaps in the wind",
+          "continuity": "Arrival palette: cool stone, blue sky, gold trim",
+          "motion": "slow push-in on the entrance",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of Versailles's vast facade, carved stone and tall windows, guards with muskets on the steps, clouded sky then low-angle wide on the vast carved facade and the guards on the steps, then push in toward the grand entrance as a banner snaps in the wind the camera push-in settling into push-in toward the grand entrance as a banner snaps in the wind continuity held: Arrival palette: cool stone, blue sky, gold trim",
+          "image_prompt_start": "photoreal cinematic: wide of Versailles's vast facade, carved stone and tall windows, guards with muskets on the steps, clouded sky.",
+          "image_prompt_end": "photoreal cinematic: toward the grand entrance as a banner snaps in the wind.",
+          "video_prompt_start": "Low-angle wide on the vast carved facade and the guards on the steps. push in toward the grand entrance as a banner snaps in the wind. The camera push-in. The beat resolves into the next matching frame. Continuity held: Arrival palette: cool stone, blue sky, gold trim.",
+          "video_prompt_end": "Low-angle wide on the vast carved facade and the guards on the steps. push in toward the grand entrance as a banner snaps in the wind. The camera push-in. The beat resolves into the next matching frame. Continuity held: Arrival palette: cool stone, blue sky, gold trim.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S04",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "eye-level",
+          "move": "pan-left",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "dartagnan_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of D'Artagnan — young Gascon with dark hair and a worn cloak over musketeer blue — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "insert of worn boots striding fast over polished marble, cloak hem swinging"
+            ],
+            [
+              1.5,
+              3.0,
+              "pan left to a tall musketeer stepping from behind a pillar into his path"
+            ]
+          ],
+          "narration_mk": "Додека излегуваше од Версај, брзаше и не гледаше каде оди.",
+          "dialogue_mk": "",
+          "kf_first": "Insert of D'Artagnan's worn boots striding fast across polished marble, his cloak hem swinging, footsteps echoing",
+          "kf_last": "Pan-left showing a tall musketeer stepping out from behind a pillar directly into his path",
+          "continuity": "Palace interior palette; marble floor",
+          "motion": "pan-left following the boots",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: insert of D'Artagnan's worn boots striding fast across polished marble, his cloak hem swinging, footsteps echoing then insert of worn boots striding fast over polished marble, cloak hem swinging, then pan left to a tall musketeer stepping from behind a pillar into his path the camera pan-left settling into pan-left showing a tall musketeer stepping out from behind a pillar directly into his path continuity held: Palace interior palette; marble floor",
+          "image_prompt_start": "photoreal cinematic: Insert of D'Artagnan's worn boots striding fast across polished marble, his cloak hem swinging, footsteps echoing.",
+          "image_prompt_end": "photoreal cinematic: -left showing a tall musketeer stepping out from behind a pillar directly into his path.",
+          "video_prompt_start": "Insert of worn boots striding fast over polished marble, cloak hem swinging. pan left to a tall musketeer stepping from behind a pillar into his path. The camera pan-left. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Palace interior palette; marble floor.",
+          "video_prompt_end": "Insert of worn boots striding fast over polished marble, cloak hem swinging. pan left to a tall musketeer stepping from behind a pillar into his path. The camera pan-left. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Palace interior palette; marble floor.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S05",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "dartagnan_A1_fused",
+            "athos_A2_fused",
+            "porthos_A3_fused",
+            "aramis_A4_fused"
+          ],
+          "ref_scope": "image1: the fused master of D'Artagnan — young Gascon with dark hair and a worn cloak over musketeer blue — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Athos — noble musketeer with a dark beard and elegant blue-and-silver uniform — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Porthos — large cheerful musketeer with an ornate baldric and booming presence — 100% identical; studio bg/pose/light NOT used; image4: the fused master of Aramis — refined musketeer with clean features and graceful bearing — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the clumsy collision sends papers and a hat tumbling, shock on every face"
+            ],
+            [
+              1.5,
+              3.0,
+              "Athos steadies himself and levels a cold glare at the young stranger"
+            ]
+          ],
+          "narration_mk": "Со еден несмасент удар се судри во Атос, Арамис и Портос.",
+          "dialogue_mk": "Атос: „Гледај каде одиш, момче!“",
+          "kf_first": "Medium of the collision: D'Artagnan stumbling into the tall musketeers, papers and a hat tumbling, shock on every face",
+          "kf_last": "Static as Athos steadies himself and levels a cold glare at the young stranger",
+          "continuity": "Musketeer uniforms: blue tunics with white crosses; palace palette",
+          "motion": "static with falling papers",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the collision: D'Artagnan stumbling into the tall musketeers, papers and a hat tumbling, shock on every face then the clumsy collision sends papers and a hat tumbling, shock on every face, then Athos steadies himself and levels a cold glare at the young stranger the camera static settling into static as Athos steadies himself and levels a cold glare at the young stranger a voice speaks in Macedonian: \"Атос: „Гледај каде одиш, момче!“\" continuity held: Musketeer uniforms: blue tunics with white crosses; palace palette",
+          "image_prompt_start": "photoreal cinematic: of the collision: D'Artagnan stumbling into the tall musketeers, papers and a hat tumbling, shock on every face.",
+          "image_prompt_end": "photoreal cinematic: Static as Athos steadies himself and levels a cold glare at the young stranger.",
+          "video_prompt_start": "The clumsy collision sends papers and a hat tumbling, shock on every face. Athos steadies himself and levels a cold glare at the young stranger. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Атос: „Гледај каде одиш, момче!“\" Continuity held: Musketeer uniforms: blue tunics with white crosses; palace palette.",
+          "video_prompt_end": "The clumsy collision sends papers and a hat tumbling, shock on every face. Athos steadies himself and levels a cold glare at the young stranger. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Атос: „Гледај каде одиш, момче!“\" Continuity held: Musketeer uniforms: blue tunics with white crosses; palace palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S06",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "over-shoulder",
+          "move": "shot-reverse",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "dartagnan_A1_fused",
+            "athos_A2_fused",
+            "porthos_A3_fused",
+            "aramis_A4_fused"
+          ],
+          "ref_scope": "image1: the fused master of D'Artagnan — young Gascon with dark hair and a worn cloak over musketeer blue — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Athos — noble musketeer with a dark beard and elegant blue-and-silver uniform — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Porthos — large cheerful musketeer with an ornate baldric and booming presence — 100% identical; studio bg/pose/light NOT used; image4: the fused master of Aramis — refined musketeer with clean features and graceful bearing — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "over-shoulder close as Porthos leans into D'Artagnan's face, finger raised"
+            ],
+            [
+              1.8,
+              3.5,
+              "shot-reverse to D'Artagnan's defiant half-smile, chin lifted without fear"
+            ]
+          ],
+          "narration_mk": "Навредени од непокажувањето почит, тие му наредија двобој.",
+          "dialogue_mk": "Портос: „Го гледаш ли тоа дрско лице? Ќе платиш за ова!“",
+          "kf_first": "Over-shoulder close of Porthos leaning close to D'Artagnan's face, finger raised, Athis and Aramis flanking him",
+          "kf_last": "Shot-reverse to D'Artagnan's defiant half-smile, chin lifted without fear",
+          "continuity": "Character identities locked; palace courtyard light",
+          "motion": "shot-reverse between the two",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: over-shoulder close of Porthos leaning close to D'Artagnan's face, finger raised, Athis and Aramis flanking him then over-shoulder close as Porthos leans into D'Artagnan's face, finger raised, then shot-reverse to D'Artagnan's defiant half-smile, chin lifted without fear a voice speaks in Macedonian: \"Портос: „Го гледаш ли тоа дрско лице? Ќе платиш за ова!“\" continuity held: Character identities locked; palace courtyard light",
+          "image_prompt_start": "photoreal cinematic: Over-shoulder close of Porthos leaning close to D'Artagnan's face, finger raised, Athis and Aramis flanking him.",
+          "image_prompt_end": "photoreal cinematic: Shot-reverse to D'Artagnan's defiant half-smile, chin lifted without fear.",
+          "video_prompt_start": "Over-shoulder close as Porthos leans into D'Artagnan's face, finger raised. shot-reverse to D'Artagnan's defiant half-smile, chin lifted without fear. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Портос: „Го гледаш ли тоа дрско лице? Ќе платиш за ова!“\" Continuity held: Character identities locked; palace courtyard light.",
+          "video_prompt_end": "Over-shoulder close as Porthos leans into D'Artagnan's face, finger raised. shot-reverse to D'Artagnan's defiant half-smile, chin lifted without fear. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Портос: „Го гледаш ли тоа дрско лице? Ќе платиш за ова!“\" Continuity held: Character identities locked; palace courtyard light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S07",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "dartagnan_A1_fused",
+            "athos_A2_fused",
+            "porthos_A3_fused",
+            "aramis_A4_fused"
+          ],
+          "ref_scope": "image1: the fused master of D'Artagnan — young Gascon with dark hair and a worn cloak over musketeer blue — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Athos — noble musketeer with a dark beard and elegant blue-and-silver uniform — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Porthos — large cheerful musketeer with an ornate baldric and booming presence — 100% identical; studio bg/pose/light NOT used; image4: the fused master of Aramis — refined musketeer with clean features and graceful bearing — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "low-angle medium of D'Artagnan standing tall, hand on his rapier hilt"
+            ],
+            [
+              1.8,
+              3.5,
+              "push in on his resolute eyes as he turns with a flourish of his cloak"
+            ]
+          ],
+          "narration_mk": "Дартањан, сосема сигурен во себе, прифати.",
+          "dialogue_mk": "Дартањан: „Ве чекам утре напладне под ѕидините на кралската палата.“",
+          "kf_first": "Low-angle medium of D'Artagnan standing tall, hand resting on his rapier hilt, the three musketeers looking on",
+          "kf_last": "Push-in on his resolute eyes as he turns with a flourish of his cloak",
+          "continuity": "D'Artagnan costume locked; late-day palace light",
+          "motion": "slow push-in on the proud young man",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of D'Artagnan standing tall, hand resting on his rapier hilt, the three musketeers looking on then low-angle medium of D'Artagnan standing tall, hand on his rapier hilt, then push in on his resolute eyes as he turns with a flourish of his cloak the camera push-in settling into push-in on his resolute eyes as he turns with a flourish of his cloak a voice speaks in Macedonian: \"Дартањан: „Ве чекам утре напладне под ѕидините на кралската палата.“\" continuity held: D'Artagnan costume locked; late-day palace light",
+          "image_prompt_start": "photoreal cinematic: medium of D'Artagnan standing tall, hand resting on his rapier hilt, the three musketeers looking on.",
+          "image_prompt_end": "photoreal cinematic: on his resolute eyes as he with a flourish of his cloak.",
+          "video_prompt_start": "Low-angle medium of D'Artagnan standing tall, hand on his rapier hilt. push in on his resolute eyes as he turns with a flourish of his cloak. The camera push-in. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Дартањан: „Ве чекам утре напладне под ѕидините на кралската палата.“\" Continuity held: D'Artagnan costume locked; late-day palace light.",
+          "video_prompt_end": "Low-angle medium of D'Artagnan standing tall, hand on his rapier hilt. push in on his resolute eyes as he turns with a flourish of his cloak. The camera push-in. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Дартањан: „Ве чекам утре напладне под ѕидините на кралската палата.“\" Continuity held: D'Artagnan costume locked; late-day palace light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S08",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "dartagnan_A1_fused",
+            "athos_A2_fused",
+            "porthos_A3_fused",
+            "aramis_A4_fused",
+            "courtyard_env_A3_prop"
+          ],
+          "ref_scope": "image1: the fused master of D'Artagnan — young Gascon with dark hair and a worn cloak over musketeer blue — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Athos — noble musketeer with a dark beard and elegant blue-and-silver uniform — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Porthos — large cheerful musketeer with an ornate baldric and booming presence — 100% identical; studio bg/pose/light NOT used; image4: the fused master of Aramis — refined musketeer with clean features and graceful bearing — 100% identical; studio bg/pose/light NOT used; image5: the palace courtyard — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/scenic design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "high-angle wide of four figures standing apart in the courtyard at high noon"
+            ],
+            [
+              1.8,
+              3.5,
+              "crane up as each man slowly draws his blade, steel flashing in the sun"
+            ]
+          ],
+          "narration_mk": "Следниот ден, точно напладне, четворицата застанаа под ѕидините.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of four figures standing apart in a palace courtyard at high noon, long shadows, spectators at the edge",
+          "kf_last": "Crane-up as each man slowly draws his blade, steel flashing in the sun",
+          "continuity": "Noon palette: white stone, hard shadows; same four costumes",
+          "motion": "slow crane-up over the duel ground",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of four figures standing apart in a palace courtyard at high noon, long shadows, spectators at the edge then high-angle wide of four figures standing apart in the courtyard at high noon, then crane up as each man slowly draws his blade, steel flashing in the sun the camera crane-up settling into crane-up as each man slowly draws his blade, steel flashing in the sun continuity held: Noon palette: white stone, hard shadows; same four costumes",
+          "image_prompt_start": "photoreal cinematic: wide of four figures standing apart in a palace courtyard at high noon, long shadows, spectators at the edge.",
+          "image_prompt_end": "photoreal cinematic: as each man slowly draws his blade, steel flashing in the sun.",
+          "video_prompt_start": "High-angle wide of four figures standing apart in the courtyard at high noon. crane up as each man slowly draws his blade, steel flashing in the sun. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Noon palette: white stone, hard shadows; same four costumes.",
+          "video_prompt_end": "High-angle wide of four figures standing apart in the courtyard at high noon. crane up as each man slowly draws his blade, steel flashing in the sun. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Noon palette: white stone, hard shadows; same four costumes.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S09",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "rapier_prop_B1_prop"
+          ],
+          "ref_scope": "image1: D'Artagnan's long slim rapier — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop/scenic design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close-up of crossed rapier tips kissing in the sunlight, dust motes swirling"
+            ],
+            [
+              1.5,
+              3.0,
+              "push in past the blades as a clatter of boots breaks the silence"
+            ]
+          ],
+          "narration_mk": "Но дуелот никогаш не почна.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the tips of crossed rapiers kissing in the sunlight, dust motes swirling between the blades",
+          "kf_last": "Push-in past the blades as a clatter of boots breaks the silence",
+          "continuity": "Sun-drenched duel palette",
+          "motion": "push-in on the locked blades",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the tips of crossed rapiers kissing in the sunlight, dust motes swirling between the blades then close-up of crossed rapier tips kissing in the sunlight, dust motes swirling, then push in past the blades as a clatter of boots breaks the silence the camera push-in settling into push-in past the blades as a clatter of boots breaks the silence continuity held: Sun-drenched duel palette",
+          "image_prompt_start": "photoreal cinematic: of the tips of crossed rapiers kissing in the sunlight, dust motes swirling between the blades.",
+          "image_prompt_end": "photoreal cinematic: past the blades as a clatter of boots breaks the silence.",
+          "video_prompt_start": "Close-up of crossed rapier tips kissing in the sunlight, dust motes swirling. push in past the blades as a clatter of boots breaks the silence. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Sun-drenched duel palette.",
+          "video_prompt_end": "Close-up of crossed rapier tips kissing in the sunlight, dust motes swirling. push in past the blades as a clatter of boots breaks the silence. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Sun-drenched duel palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S10",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "guards_A9_fused",
+            "dartagnan_A1_fused",
+            "athos_A2_fused",
+            "porthos_A3_fused",
+            "aramis_A4_fused",
+            "courtyard_env_A3_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Cardinal's Guards — disciplined soldiers in dark uniforms and wide hats — 100% identical; studio bg/pose/light NOT used; image2: the fused master of D'Artagnan — young Gascon with dark hair and a worn cloak over musketeer blue — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Athos — noble musketeer with a dark beard and elegant blue-and-silver uniform — 100% identical; studio bg/pose/light NOT used; image4: the fused master of Porthos — large cheerful musketeer with an ornate baldric and booming presence — 100% identical; studio bg/pose/light NOT used; image5: the fused master of Aramis — refined musketeer with clean features and graceful bearing — 100% identical; studio bg/pose/light NOT used; image6: the palace courtyard — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/scenic design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "eye-level wide track of the cardinal’s guards marching in, halberds and dust"
+            ],
+            [
+              1.8,
+              3.5,
+              "the four duelists whirl to face the sudden threat, blades still drawn"
+            ]
+          ],
+          "narration_mk": "Пристигнаа војниците на кардиналот Ришелје, советникот кој правеше што сака на дворот.",
+          "dialogue_mk": "Војник: „Двобоите се забранети од кралот! Уапсени сте!“",
+          "kf_first": "Eye-level wide tracking shot of a line of cardinal's guards marching into the courtyard, dark uniforms and halberds, dust rising",
+          "kf_last": "The four duelists whirl to face the sudden threat, blades still drawn",
+          "continuity": "Guards identity: dark uniforms, red sashes; noon palette",
+          "motion": "track following the advancing guards",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide tracking shot of a line of cardinal's guards marching into the courtyard, dark uniforms and halberds, dust rising then eye-level wide track of the cardinal’s guards marching in, halberds and dust, then the four duelists whirl to face the sudden threat, blades still drawn a voice speaks in Macedonian: \"Војник: „Двобоите се забранети од кралот! Уапсени сте!“\" continuity held: Guards identity: dark uniforms, red sashes; noon palette",
+          "image_prompt_start": "photoreal cinematic: wide of a line of cardinal's guards marching into the courtyard, dark uniforms and halberds, dust rising.",
+          "image_prompt_end": "photoreal cinematic: The four duelists whirl to face the sudden threat, blades still drawn.",
+          "video_prompt_start": "Eye-level wide track of the cardinal’s guards marching in, halberds and dust. the four duelists whirl to face the sudden threat, blades still drawn. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Војник: „Двобоите се забранети од кралот! Уапсени сте!“\" Continuity held: Guards identity: dark uniforms, red sashes; noon palette.",
+          "video_prompt_end": "Eye-level wide track of the cardinal’s guards marching in, halberds and dust. the four duelists whirl to face the sudden threat, blades still drawn. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Војник: „Двобоите се забранети од кралот! Уапсени сте!“\" Continuity held: Guards identity: dark uniforms, red sashes; noon palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S11",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "dartagnan_A1_fused",
+            "rapier_prop_B1_prop",
+            "guards_A9_fused"
+          ],
+          "ref_scope": "image1: the fused master of D'Artagnan — young Gascon with dark hair and a worn cloak over musketeer blue — 100% identical; studio bg/pose/light NOT used; image2: D'Artagnan's long slim rapier — 100% identical; studio bg/pose/light NOT used; image3: the fused master of the Cardinal's Guards — disciplined soldiers in dark uniforms and wide hats — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/scenic design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "low-angle medium of D'Artagnan drawing his rapier and stepping in front of the three"
+            ],
+            [
+              1.5,
+              3.0,
+              "push in on his blade lifting toward the charging guards, eyes blazing"
+            ]
+          ],
+          "narration_mk": "Без да размисли, Дартањан го извлече мечот и застана на страната на тројцата мускетари.",
+          "dialogue_mk": "Дартањан: „Ако ве апсат, тогаш и мене ќе ме апсете!“",
+          "kf_first": "Low-angle medium of D'Artagnan drawing his rapier and stepping in front of the three musketeers, cape flying",
+          "kf_last": "Push-in on his blade lifting toward the charging guards, eyes blazing",
+          "continuity": "D'Artagnan identity; courtyard palette",
+          "motion": "push-in as he plants his stance",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of D'Artagnan drawing his rapier and stepping in front of the three musketeers, cape flying then low-angle medium of D'Artagnan drawing his rapier and stepping in front of the three, then push in on his blade lifting toward the charging guards, eyes blazing the camera push-in settling into push-in on his blade lifting toward the charging guards, eyes blazing a voice speaks in Macedonian: \"Дартањан: „Ако ве апсат, тогаш и мене ќе ме апсете!“\" continuity held: D'Artagnan identity; courtyard palette",
+          "image_prompt_start": "photoreal cinematic: medium of D'Artagnan drawing his rapier and stepping in front of the three musketeers, cape flying.",
+          "image_prompt_end": "photoreal cinematic: on his blade lifting toward the charging guards, eyes blazing.",
+          "video_prompt_start": "Low-angle medium of D'Artagnan drawing his rapier and stepping in front of the three. push in on his blade lifting toward the charging guards, eyes blazing. The camera push-in. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Дартањан: „Ако ве апсат, тогаш и мене ќе ме апсете!“\" Continuity held: D'Artagnan identity; courtyard palette.",
+          "video_prompt_end": "Low-angle medium of D'Artagnan drawing his rapier and stepping in front of the three. push in on his blade lifting toward the charging guards, eyes blazing. The camera push-in. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Дартањан: „Ако ве апсат, тогаш и мене ќе ме апсете!“\" Continuity held: D'Artagnan identity; courtyard palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S12",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-right",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "dartagnan_A1_fused",
+            "athos_A2_fused",
+            "porthos_A3_fused",
+            "aramis_A4_fused",
+            "guards_A9_fused",
+            "courtyard_env_A3_prop"
+          ],
+          "ref_scope": "image1: the fused master of D'Artagnan — young Gascon with dark hair and a worn cloak over musketeer blue — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Athos — noble musketeer with a dark beard and elegant blue-and-silver uniform — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Porthos — large cheerful musketeer with an ornate baldric and booming presence — 100% identical; studio bg/pose/light NOT used; image4: the fused master of Aramis — refined musketeer with clean features and graceful bearing — 100% identical; studio bg/pose/light NOT used; image5: the fused master of the Cardinal's Guards — disciplined soldiers in dark uniforms and wide hats — 100% identical; studio bg/pose/light NOT used; image6: the palace courtyard — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/scenic design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "eye-level wide of the four battling the guards, blades clashing and cloaks whirling"
+            ],
+            [
+              1.8,
+              3.5,
+              "pan right as the guards break and stumble back, one by one disarmed and routed"
+            ]
+          ],
+          "narration_mk": "Заедно ги изгонија војниците.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide of the four battling the guards across the courtyard, blades clashing, cloaks whirling, dust and shouts",
+          "kf_last": "Pan-right as the guards break and stumble back, one by one disarmed and routed",
+          "continuity": "Battle choreography; same costumes; churned dust",
+          "motion": "pan-right tracking the clash",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide of the four battling the guards across the courtyard, blades clashing, cloaks whirling, dust and shouts then eye-level wide of the four battling the guards, blades clashing and cloaks whirling, then pan right as the guards break and stumble back, one by one disarmed and routed the camera pan-right settling into pan-right as the guards break and stumble back, one by one disarmed and routed continuity held: Battle choreography; same costumes; churned dust",
+          "image_prompt_start": "photoreal cinematic: wide of the four battling the guards across the courtyard, blades clashing, cloaks whirling, dust and shouts.",
+          "image_prompt_end": "photoreal cinematic: -right as the guards break and stumble back, one by one disarmed and routed.",
+          "video_prompt_start": "Eye-level wide of the four battling the guards, blades clashing and cloaks whirling. pan right as the guards break and stumble back, one by one disarmed and routed. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Battle choreography; same costumes; churned dust.",
+          "video_prompt_end": "Eye-level wide of the four battling the guards, blades clashing and cloaks whirling. pan right as the guards break and stumble back, one by one disarmed and routed. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Battle choreography; same costumes; churned dust.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S13",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "pull-back",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "dartagnan_A1_fused",
+            "athos_A2_fused",
+            "porthos_A3_fused",
+            "aramis_A4_fused",
+            "rapier_prop_B1_prop"
+          ],
+          "ref_scope": "image1: the fused master of D'Artagnan — young Gascon with dark hair and a worn cloak over musketeer blue — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Athos — noble musketeer with a dark beard and elegant blue-and-silver uniform — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Porthos — large cheerful musketeer with an ornate baldric and booming presence — 100% identical; studio bg/pose/light NOT used; image4: the fused master of Aramis — refined musketeer with clean features and graceful bearing — 100% identical; studio bg/pose/light NOT used; image5: D'Artagnan's long slim rapier — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/scenic design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "low-angle medium of the four friends standing back to back, blades crossed high"
+            ],
+            [
+              1.8,
+              3.5,
+              "pull back as the four blades lock together and rise skyward in a pledge"
+            ]
+          ],
+          "narration_mk": "Од тој ден станаа најдобри пријатели и си дадоа заклетва.",
+          "dialogue_mk": "Атос и Портос: „Еден за сите!“ Арамис и Дартањан: „Сите за еден!“",
+          "kf_first": "Low-angle medium of the four friends standing back to back in victory, blades crossed high in the center, breathless grins",
+          "kf_last": "Pull-back as the four blades lock together and they raise them skyward in a pledge",
+          "continuity": "Victory palette: warm afternoon light; all identities locked",
+          "motion": "pull-back revealing the crossed swords",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of the four friends standing back to back in victory, blades crossed high in the center, breathless grins then low-angle medium of the four friends standing back to back, blades crossed high, then pull back as the four blades lock together and rise skyward in a pledge the camera pull-back settling into pull-back as the four blades lock together and they raise them skyward in a pledge a voice speaks in Macedonian: \"Атос и Портос: „Еден за сите!“ Арамис и Дартањан: „Сите за еден!“\" continuity held: Victory palette: warm afternoon light; all identities locked",
+          "image_prompt_start": "photoreal cinematic: medium of the four friends standing back to back in victory, blades crossed high in the center, breathless grins.",
+          "image_prompt_end": "photoreal cinematic: as the four blades lock together and they raise them skyward in a pledge.",
+          "video_prompt_start": "Low-angle medium of the four friends standing back to back, blades crossed high. pull back as the four blades lock together and rise skyward in a pledge. The camera pull-back. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Атос и Портос: „Еден за сите!“ Арамис и Дартањан: „Сите за еден!“\" Continuity held: Victory palette: warm afternoon light; all identities locked.",
+          "video_prompt_end": "Low-angle medium of the four friends standing back to back, blades crossed high. pull back as the four blades lock together and rise skyward in a pledge. The camera pull-back. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Атос и Портос: „Еден за сите!“ Арамис и Дартањан: „Сите за еден!“\" Continuity held: Victory palette: warm afternoon light; all identities locked.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "gascony_road_to_versailles_and_the_courtyard_duel",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class",
+        "screen_dir"
+      ],
+      "palette": [
+        "#c8a24b",
+        "#8a6a3a",
+        "#3a5b7a"
+      ],
+      "light_direction": "key light from screen-left, warm golden hour over the dusty Gascon road",
+      "time_of_day": "dusk"
+    },
+    {
+      "id": "act2",
+      "num": "Act II",
+      "title": "Пресврт",
+      "color": "#f59e0b",
+      "pct": 46,
+      "synopsis": "Кралицата ги праќа четворицата да ги вратат дванаесетте дијаманти од војводата од Бакингам. На патот кон Лондон ги пречекува заседа на кардиналовите војници; само Дартањан стигнува до војводата, кој открива дека злобната Милејди украла два дијаманта.",
+      "shots": [
+        {
+          "id": "S14",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "dartagnan_A1_fused",
+            "athos_A2_fused",
+            "porthos_A3_fused",
+            "aramis_A4_fused",
+            "courtyard_env_A3_prop"
+          ],
+          "ref_scope": "image1: the fused master of D'Artagnan — young Gascon with dark hair and a worn cloak over musketeer blue — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Athos — noble musketeer with a dark beard and elegant blue-and-silver uniform — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Porthos — large cheerful musketeer with an ornate baldric and booming presence — 100% identical; studio bg/pose/light NOT used; image4: the fused master of Aramis — refined musketeer with clean features and graceful bearing — 100% identical; studio bg/pose/light NOT used; image5: the palace courtyard — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/scenic design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "high-angle wide of the four friends walking the courtyard in fading light"
+            ],
+            [
+              1.8,
+              3.5,
+              "crane up to the ramparts where the sun sinks behind the city"
+            ]
+          ],
+          "narration_mk": "Деновите минаа, но нивното пријателство остана челично.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of the four friends walking together across a palace courtyard in fading light, capes over shoulders, laughing",
+          "kf_last": "Crane-up to the ramparts where the sun sinks behind the city",
+          "continuity": "Same four costumes; transition to evening palette",
+          "motion": "slow crane-up over the courtyard",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of the four friends walking together across a palace courtyard in fading light, capes over shoulders, laughing then high-angle wide of the four friends walking the courtyard in fading light, then crane up to the ramparts where the sun sinks behind the city the camera crane-up settling into crane-up to the ramparts where the sun sinks behind the city continuity held: Same four costumes; transition to evening palette",
+          "image_prompt_start": "photoreal cinematic: wide of the four friends walking together across a palace courtyard in fading light, capes over shoulders, laughing.",
+          "image_prompt_end": "photoreal cinematic: to the ramparts where the sun sinks behind the city.",
+          "video_prompt_start": "High-angle wide of the four friends walking the courtyard in fading light. crane up to the ramparts where the sun sinks behind the city. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Same four costumes; transition to evening palette.",
+          "video_prompt_end": "High-angle wide of the four friends walking the courtyard in fading light. crane up to the ramparts where the sun sinks behind the city. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Same four costumes; transition to evening palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S15",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "dartagnan_A1_fused",
+            "athos_A2_fused",
+            "porthos_A3_fused",
+            "aramis_A4_fused",
+            "corridor_env_A4_prop"
+          ],
+          "ref_scope": "image1: the fused master of D'Artagnan — young Gascon with dark hair and a worn cloak over musketeer blue — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Athos — noble musketeer with a dark beard and elegant blue-and-silver uniform — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Porthos — large cheerful musketeer with an ornate baldric and booming presence — 100% identical; studio bg/pose/light NOT used; image4: the fused master of Aramis — refined musketeer with clean features and graceful bearing — 100% identical; studio bg/pose/light NOT used; image5: the candlelit palace corridor — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/scenic design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "eye-level medium of the four marching through the candlelit corridor, a livery messenger leading"
+            ],
+            [
+              1.5,
+              3.0,
+              "push in toward a tall gilded door opening onto a bright chamber beyond"
+            ]
+          ],
+          "narration_mk": "По некое време, француската кралица ги повика кај себе.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of the four musketeers marching through a candlelit palace corridor, a royal messenger in livery leading them",
+          "kf_last": "Push-in toward a tall gilded door opening onto a bright chamber beyond",
+          "continuity": "Palace interior palette: gold, cream, candle glow",
+          "motion": "push-in toward the door",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of the four musketeers marching through a candlelit palace corridor, a royal messenger in livery leading them then eye-level medium of the four marching through the candlelit corridor, a livery messenger leading, then push in toward a tall gilded door opening onto a bright chamber beyond the camera push-in settling into push-in toward a tall gilded door opening onto a bright chamber beyond continuity held: Palace interior palette: gold, cream, candle glow",
+          "image_prompt_start": "photoreal cinematic: medium of the four musketeers marching through a candlelit palace corridor, a royal messenger in livery leading them.",
+          "image_prompt_end": "photoreal cinematic: toward a tall gilded door opening onto a bright chamber beyond.",
+          "video_prompt_start": "Eye-level medium of the four marching through the candlelit corridor, a livery messenger leading. push in toward a tall gilded door opening onto a bright chamber beyond. The camera push-in. The beat resolves into the next matching frame. Continuity held: Palace interior palette: gold, cream, candle glow.",
+          "video_prompt_end": "Eye-level medium of the four marching through the candlelit corridor, a livery messenger leading. push in toward a tall gilded door opening onto a bright chamber beyond. The camera push-in. The beat resolves into the next matching frame. Continuity held: Palace interior palette: gold, cream, candle glow.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S16",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "queen_A7_fused",
+            "dartagnan_A1_fused",
+            "athos_A2_fused",
+            "porthos_A3_fused",
+            "aramis_A4_fused",
+            "chamber_env_A5_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Queen — dignified French queen in a bright court gown — 100% identical; studio bg/pose/light NOT used; image2: the fused master of D'Artagnan — young Gascon with dark hair and a worn cloak over musketeer blue — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Athos — noble musketeer with a dark beard and elegant blue-and-silver uniform — 100% identical; studio bg/pose/light NOT used; image4: the fused master of Porthos — large cheerful musketeer with an ornate baldric and booming presence — 100% identical; studio bg/pose/light NOT used; image5: the fused master of Aramis — refined musketeer with clean features and graceful bearing — 100% identical; studio bg/pose/light NOT used; image6: the Queen's bright chamber — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/scenic design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "medium of the Queen seated by the tall window, morning light on her gown, the four before her"
+            ],
+            [
+              1.8,
+              3.5,
+              "static as she inclines her head with regal gravity, trusting the mission to them"
+            ]
+          ],
+          "narration_mk": "Таа им довери една многу важна задача.",
+          "dialogue_mk": "Кралицата: „Одете кај војводата од Бакингам и кажете му да ми ги врати дванаесетте дијаманти.“",
+          "kf_first": "Medium of the Queen seated gracefully by a tall window, bright morning light on her gown, the four standing before her",
+          "kf_last": "Static as she inclines her head with regal gravity, trusting the mission to them",
+          "continuity": "Queen identity: luminous gown; palace chamber light",
+          "motion": "static with gentle light shift",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the Queen seated gracefully by a tall window, bright morning light on her gown, the four standing before her then medium of the Queen seated by the tall window, morning light on her gown, the four before her, then static as she inclines her head with regal gravity, trusting the mission to them a voice speaks in Macedonian: \"Кралицата: „Одете кај војводата од Бакингам и кажете му да ми ги врати дванаесетте дијаманти.“\" continuity held: Queen identity: luminous gown; palace chamber light",
+          "image_prompt_start": "photoreal cinematic: of the Queen seated gracefully by a tall window, bright morning light on her gown, the four standing before her.",
+          "image_prompt_end": "photoreal cinematic: Static as she inclines her head with regal gravity, trusting the mission to them.",
+          "video_prompt_start": "Medium of the Queen seated by the tall window, morning light on her gown, the four before her. static as she inclines her head with regal gravity, trusting the mission to them. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Кралицата: „Одете кај војводата од Бакингам и кажете му да ми ги врати дванаесетте дијаманти.“\" Continuity held: Queen identity: luminous gown; palace chamber light.",
+          "video_prompt_end": "Medium of the Queen seated by the tall window, morning light on her gown, the four before her. static as she inclines her head with regal gravity, trusting the mission to them. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Кралицата: „Одете кај војводата од Бакингам и кажете му да ми ги врати дванаесетте дијаманти.“\" Continuity held: Queen identity: luminous gown; palace chamber light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S17",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "queen_A7_fused",
+            "casket_prop_B3_prop",
+            "diamonds_prop_B2_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Queen — dignified French queen in a bright court gown — 100% identical; studio bg/pose/light NOT used; image2: the velvet-lined jewellery casket — 100% identical; studio bg/pose/light NOT used; image3: the twelve diamond studs, two sockets eventually empty — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/scenic design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close-up of the Queen's hands over the velvet casket, twelve diamonds glittering"
+            ],
+            [
+              1.5,
+              3.0,
+              "push in until the diamonds fill the frame, each facet sharp and cold"
+            ]
+          ],
+          "narration_mk": "Тоа беа нејзиниот подарок од кралот.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the Queen's hands over a velvet-lined casket, twelve diamonds glittering within, soft blue fire in each stone",
+          "kf_last": "Push-in until the diamonds fill the frame, each facet sharp and cold",
+          "continuity": "Diamond prop: velvet casket; cool early light",
+          "motion": "slow push-in on the diamonds",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the Queen's hands over a velvet-lined casket, twelve diamonds glittering within, soft blue fire in each stone then close-up of the Queen's hands over the velvet casket, twelve diamonds glittering, then push in until the diamonds fill the frame, each facet sharp and cold the camera push-in settling into push-in until the diamonds fill the frame, each facet sharp and cold continuity held: Diamond prop: velvet casket; cool early light",
+          "image_prompt_start": "photoreal cinematic: of the Queen's hands over a velvet-lined casket, twelve diamonds glittering within, soft blue fire in each stone.",
+          "image_prompt_end": "photoreal cinematic: until the diamonds fill the frame, each facet sharp and cold.",
+          "video_prompt_start": "Close-up of the Queen's hands over the velvet casket, twelve diamonds glittering. push in until the diamonds fill the frame, each facet sharp and cold. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Diamond prop: velvet casket; cool early light.",
+          "video_prompt_end": "Close-up of the Queen's hands over the velvet casket, twelve diamonds glittering. push in until the diamonds fill the frame, each facet sharp and cold. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Diamond prop: velvet casket; cool early light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S18",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "queen_A7_fused",
+            "dartagnan_A1_fused",
+            "athos_A2_fused",
+            "porthos_A3_fused",
+            "aramis_A4_fused",
+            "casket_prop_B3_prop",
+            "chamber_env_A5_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Queen — dignified French queen in a bright court gown — 100% identical; studio bg/pose/light NOT used; image2: the fused master of D'Artagnan — young Gascon with dark hair and a worn cloak over musketeer blue — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Athos — noble musketeer with a dark beard and elegant blue-and-silver uniform — 100% identical; studio bg/pose/light NOT used; image4: the fused master of Porthos — large cheerful musketeer with an ornate baldric and booming presence — 100% identical; studio bg/pose/light NOT used; image5: the fused master of Aramis — refined musketeer with clean features and graceful bearing — 100% identical; studio bg/pose/light NOT used; image6: the velvet-lined jewellery casket — 100% identical; studio bg/pose/light NOT used; image7: the Queen's bright chamber — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/scenic design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "low-angle medium of the Queen standing, reflection in the gilded mirror, casket cradled"
+            ],
+            [
+              1.8,
+              3.5,
+              "push in on the four musketeers bowing their heads in solemn promise"
+            ]
+          ],
+          "narration_mk": "Кралот сакаше да ги носи на следниот дворски бал.",
+          "dialogue_mk": "Кралицата: „Тие ми се подарок од кралот, и мора да ги носам на бало.“",
+          "kf_first": "Low-angle medium of the Queen standing, her reflection caught in a gilded mirror, the casket cradled to her chest",
+          "kf_last": "Push-in on the four musketeers bowing their heads in solemn promise",
+          "continuity": "Queen identity and casket; golden light",
+          "motion": "push-in as they bow",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of the Queen standing, her reflection caught in a gilded mirror, the casket cradled to her chest then low-angle medium of the Queen standing, reflection in the gilded mirror, casket cradled, then push in on the four musketeers bowing their heads in solemn promise the camera push-in settling into push-in on the four musketeers bowing their heads in solemn promise a voice speaks in Macedonian: \"Кралицата: „Тие ми се подарок од кралот, и мора да ги носам на бало.“\" continuity held: Queen identity and casket; golden light",
+          "image_prompt_start": "photoreal cinematic: medium of the Queen standing, her reflection caught in a gilded mirror, the casket cradled to her chest.",
+          "image_prompt_end": "photoreal cinematic: on the four musketeers bowing their heads in solemn promise.",
+          "video_prompt_start": "Low-angle medium of the Queen standing, reflection in the gilded mirror, casket cradled. push in on the four musketeers bowing their heads in solemn promise. The camera push-in. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Кралицата: „Тие ми се подарок од кралот, и мора да ги носам на бало.“\" Continuity held: Queen identity and casket; golden light.",
+          "video_prompt_end": "Low-angle medium of the Queen standing, reflection in the gilded mirror, casket cradled. push in on the four musketeers bowing their heads in solemn promise. The camera push-in. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Кралицата: „Тие ми се подарок од кралот, и мора да ги носам на бало.“\" Continuity held: Queen identity and casket; golden light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S19",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "over-shoulder",
+          "move": "shot-reverse",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "dartagnan_A1_fused",
+            "athos_A2_fused",
+            "porthos_A3_fused",
+            "aramis_A4_fused",
+            "queen_A7_fused"
+          ],
+          "ref_scope": "image1: the fused master of D'Artagnan — young Gascon with dark hair and a worn cloak over musketeer blue — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Athos — noble musketeer with a dark beard and elegant blue-and-silver uniform — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Porthos — large cheerful musketeer with an ornate baldric and booming presence — 100% identical; studio bg/pose/light NOT used; image4: the fused master of Aramis — refined musketeer with clean features and graceful bearing — 100% identical; studio bg/pose/light NOT used; image5: the fused master of the Queen — dignified French queen in a bright court gown — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "over-shoulder medium of the four bowing as one, hands over hearts"
+            ],
+            [
+              1.8,
+              3.5,
+              "shot-reverse to the Queen's warm grateful smile as she bids them farewell"
+            ]
+          ],
+          "narration_mk": "Честа им беше да и служат.",
+          "dialogue_mk": "Четворицата: „Чест ни е што Ви служиме, Височество.“",
+          "kf_first": "Over-shoulder medium of the four musketeers bowing as one, hands over hearts, the Queen luminous before them",
+          "kf_last": "Shot-reverse to the Queen's warm, grateful smile as she bids them farewell",
+          "continuity": "Same chamber light; musketeer uniforms",
+          "motion": "shot-reverse between queen and bows",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: over-shoulder medium of the four musketeers bowing as one, hands over hearts, the Queen luminous before them then over-shoulder medium of the four bowing as one, hands over hearts, then shot-reverse to the Queen's warm grateful smile as she bids them farewell settling into shot-reverse to the Queen's warm, grateful smile as she bids them farewell a voice speaks in Macedonian: \"Четворицата: „Чест ни е што Ви служиме, Височество.“\" continuity held: Same chamber light; musketeer uniforms",
+          "image_prompt_start": "photoreal cinematic: Over-shoulder medium of the four musketeers bowing as one, hands over hearts, the Queen luminous before them.",
+          "image_prompt_end": "photoreal cinematic: Shot-reverse to the Queen's warm, grateful smile as she bids them farewell.",
+          "video_prompt_start": "Over-shoulder medium of the four bowing as one, hands over hearts. shot-reverse to the Queen's warm grateful smile as she bids them farewell. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Четворицата: „Чест ни е што Ви служиме, Височество.“\" Continuity held: Same chamber light; musketeer uniforms.",
+          "video_prompt_end": "Over-shoulder medium of the four bowing as one, hands over hearts. shot-reverse to the Queen's warm grateful smile as she bids them farewell. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Четворицата: „Чест ни е што Ви служиме, Височество.“\" Continuity held: Same chamber light; musketeer uniforms.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S20",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "dartagnan_A1_fused",
+            "athos_A2_fused",
+            "porthos_A3_fused",
+            "aramis_A4_fused",
+            "countryside_env_A1_prop"
+          ],
+          "ref_scope": "image1: the fused master of D'Artagnan — young Gascon with dark hair and a worn cloak over musketeer blue — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Athos — noble musketeer with a dark beard and elegant blue-and-silver uniform — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Porthos — large cheerful musketeer with an ornate baldric and booming presence — 100% identical; studio bg/pose/light NOT used; image4: the fused master of Aramis — refined musketeer with clean features and graceful bearing — 100% identical; studio bg/pose/light NOT used; image5: the sunbaked French countryside road to Paris — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/scenic design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "eye-level wide track of the four riding abreast down an empty road toward the darkening sea"
+            ],
+            [
+              1.8,
+              3.5,
+              "they urge their horses faster as a wind rises from the shore"
+            ]
+          ],
+          "narration_mk": "Веднаш заминаа на пат кон морето.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide tracking shot of the four riding abreast down an empty road toward the darkening sea, mist curling over the fields",
+          "kf_last": "They urge their horses faster as a wind rises from the shore",
+          "continuity": "Journey palette: grey-blue, silver mist; horses and capes",
+          "motion": "track following the riders",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide tracking shot of the four riding abreast down an empty road toward the darkening sea, mist curling over the fields then eye-level wide track of the four riding abreast down an empty road toward the darkening sea, then they urge their horses faster as a wind rises from the shore continuity held: Journey palette: grey-blue, silver mist; horses and capes",
+          "image_prompt_start": "photoreal cinematic: wide of the four riding abreast down an empty road toward the darkening sea, mist curling over the fields.",
+          "image_prompt_end": "photoreal cinematic: They urge their horses faster as a wind from the shore.",
+          "video_prompt_start": "Eye-level wide track of the four riding abreast down an empty road toward the darkening sea. they urge their horses faster as a wind rises from the shore. The beat resolves into the next matching frame. Continuity held: Journey palette: grey-blue, silver mist; horses and capes.",
+          "video_prompt_end": "Eye-level wide track of the four riding abreast down an empty road toward the darkening sea. they urge their horses faster as a wind rises from the shore. The beat resolves into the next matching frame. Continuity held: Journey palette: grey-blue, silver mist; horses and capes.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S21",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "harbor_env_A6_prop",
+            "ship_env_A7_prop",
+            "dartagnan_A1_fused",
+            "athos_A2_fused",
+            "porthos_A3_fused",
+            "aramis_A4_fused",
+            "guards_A9_fused"
+          ],
+          "ref_scope": "image1: the dawn harbor with a moored ship — 100% identical; studio bg/pose/light NOT used; image2: the sailing ship to London and back — 100% identical; studio bg/pose/light NOT used; image3: the fused master of D'Artagnan — young Gascon with dark hair and a worn cloak over musketeer blue — 100% identical; studio bg/pose/light NOT used; image4: the fused master of Athos — noble musketeer with a dark beard and elegant blue-and-silver uniform — 100% identical; studio bg/pose/light NOT used; image5: the fused master of Porthos — large cheerful musketeer with an ornate baldric and booming presence — 100% identical; studio bg/pose/light NOT used; image6: the fused master of Aramis — refined musketeer with clean features and graceful bearing — 100% identical; studio bg/pose/light NOT used; image7: the fused master of the Cardinal's Guards — disciplined soldiers in dark uniforms and wide hats — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/scenic design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "high-angle wide of the dawn harbor and the moored ship, the four riders dismounting"
+            ],
+            [
+              1.8,
+              3.5,
+              "crane down as a squad of guards rushes from behind the crates, blades drawn"
+            ]
+          ],
+          "narration_mk": "Пред да се качат на бродот за Лондон, повторно беа нападнати.",
+          "dialogue_mk": "Портос: „Ах, пак војниците на кардиналот!“",
+          "kf_first": "High-angle wide of a dawn harbor, a moored ship with furled sails, the four riders dismounting on the quay",
+          "kf_last": "Crane-down as a squad of cardinal's guards rushes from behind the crates, blades drawn",
+          "continuity": "Harbor palette: pink dawn, grey water; guards reappear",
+          "motion": "crane-down over the ambush",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of a dawn harbor, a moored ship with furled sails, the four riders dismounting on the quay then high-angle wide of the dawn harbor and the moored ship, the four riders dismounting, then crane down as a squad of guards rushes from behind the crates, blades drawn the camera crane-down settling into crane-down as a squad of cardinal's guards rushes from behind the crates, blades drawn a voice speaks in Macedonian: \"Портос: „Ах, пак војниците на кардиналот!“\" continuity held: Harbor palette: pink dawn, grey water; guards reappear",
+          "image_prompt_start": "photoreal cinematic: wide of a dawn harbor, a moored ship with furled sails, the four riders dismounting on the quay.",
+          "image_prompt_end": "photoreal cinematic: as a squad of cardinal's guards rushes from behind the crates, blades drawn.",
+          "video_prompt_start": "High-angle wide of the dawn harbor and the moored ship, the four riders dismounting. crane down as a squad of guards rushes from behind the crates, blades drawn. The camera crane-down. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Портос: „Ах, пак војниците на кардиналот!“\" Continuity held: Harbor palette: pink dawn, grey water; guards reappear.",
+          "video_prompt_end": "High-angle wide of the dawn harbor and the moored ship, the four riders dismounting. crane down as a squad of guards rushes from behind the crates, blades drawn. The camera crane-down. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Портос: „Ах, пак војниците на кардиналот!“\" Continuity held: Harbor palette: pink dawn, grey water; guards reappear.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S22",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "pan-right",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "dartagnan_A1_fused",
+            "athos_A2_fused",
+            "porthos_A3_fused",
+            "aramis_A4_fused",
+            "guards_A9_fused",
+            "harbor_env_A6_prop"
+          ],
+          "ref_scope": "image1: the fused master of D'Artagnan — young Gascon with dark hair and a worn cloak over musketeer blue — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Athos — noble musketeer with a dark beard and elegant blue-and-silver uniform — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Porthos — large cheerful musketeer with an ornate baldric and booming presence — 100% identical; studio bg/pose/light NOT used; image4: the fused master of Aramis — refined musketeer with clean features and graceful bearing — 100% identical; studio bg/pose/light NOT used; image5: the fused master of the Cardinal's Guards — disciplined soldiers in dark uniforms and wide hats — 100% identical; studio bg/pose/light NOT used; image6: the dawn harbor with a moored ship — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/scenic design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "eye-level medium of the four forming a line, blades out, guards closing from both sides"
+            ],
+            [
+              1.8,
+              3.5,
+              "pan right along the clash of steel, the gangway defended behind them"
+            ]
+          ],
+          "narration_mk": "Кардиналот ги следеше бидејќи мислеше лошо на кралицата.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of the four musketeers forming a line, blades out, as the guards close in from both sides of the quay",
+          "kf_last": "Pan-right along the clash of steel, the ship's gangway defended behind them",
+          "continuity": "Dawn battle light; all identities locked",
+          "motion": "pan-right across the skirmish",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of the four musketeers forming a line, blades out, as the guards close in from both sides of the quay then eye-level medium of the four forming a line, blades out, guards closing from both sides, then pan right along the clash of steel, the gangway defended behind them the camera pan-right settling into pan-right along the clash of steel, the ship's gangway defended behind them continuity held: Dawn battle light; all identities locked",
+          "image_prompt_start": "photoreal cinematic: medium of the four musketeers forming a line, blades out, as the guards close in from both sides of the quay.",
+          "image_prompt_end": "photoreal cinematic: -right along the clash of steel, the ship's gangway defended behind them.",
+          "video_prompt_start": "Eye-level medium of the four forming a line, blades out, guards closing from both sides. pan right along the clash of steel, the gangway defended behind them. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Dawn battle light; all identities locked.",
+          "video_prompt_end": "Eye-level medium of the four forming a line, blades out, guards closing from both sides. pan right along the clash of steel, the gangway defended behind them. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Dawn battle light; all identities locked.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S23",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "athos_A2_fused",
+            "guards_A9_fused",
+            "dartagnan_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Athos — noble musketeer with a dark beard and elegant blue-and-silver uniform — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Cardinal's Guards — disciplined soldiers in dark uniforms and wide hats — 100% identical; studio bg/pose/light NOT used; image3: the fused master of D'Artagnan — young Gascon with dark hair and a worn cloak over musketeer blue — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "low-angle close of Athos shouting over his shoulder, sword locked with a guard"
+            ],
+            [
+              1.5,
+              3.0,
+              "push in on D'Artagnan sprinting past toward the ship as the others hold the line"
+            ]
+          ],
+          "narration_mk": "Само Дартањан успеа да се пробие.",
+          "dialogue_mk": "Атос: „Оди! Ние ќе ги задржиме!“",
+          "kf_first": "Low-angle close of Athos shouting over his shoulder, sword locked with a guard, bracing against the press of attackers",
+          "kf_last": "Push-in on D'Artagnan sprinting past toward the ship as the others hold the line",
+          "continuity": "Dawn harbor; motion blur on the sprint",
+          "motion": "push-in following the breakaway",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle close of Athos shouting over his shoulder, sword locked with a guard, bracing against the press of attackers then low-angle close of Athos shouting over his shoulder, sword locked with a guard, then push in on D'Artagnan sprinting past toward the ship as the others hold the line the camera push-in settling into push-in on D'Artagnan sprinting past toward the ship as the others hold the line a voice speaks in Macedonian: \"Атос: „Оди! Ние ќе ги задржиме!“\" continuity held: Dawn harbor; motion blur on the sprint",
+          "image_prompt_start": "photoreal cinematic: close of Athos shouting over his shoulder, sword locked with a guard, bracing against the press of attackers.",
+          "image_prompt_end": "photoreal cinematic: on D'Artagnan sprinting past toward the ship as the others hold the line.",
+          "video_prompt_start": "Low-angle close of Athos shouting over his shoulder, sword locked with a guard. push in on D'Artagnan sprinting past toward the ship as the others hold the line. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Атос: „Оди! Ние ќе ги задржиме!“\" Continuity held: Dawn harbor; motion blur on the sprint.",
+          "video_prompt_end": "Low-angle close of Athos shouting over his shoulder, sword locked with a guard. push in on D'Artagnan sprinting past toward the ship as the others hold the line. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Атос: „Оди! Ние ќе ги задржиме!“\" Continuity held: Dawn harbor; motion blur on the sprint.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S24",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pull-back",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "ship_env_A7_prop",
+            "dartagnan_A1_fused",
+            "athos_A2_fused",
+            "porthos_A3_fused",
+            "aramis_A4_fused",
+            "harbor_env_A6_prop"
+          ],
+          "ref_scope": "image1: the sailing ship to London and back — 100% identical; studio bg/pose/light NOT used; image2: the fused master of D'Artagnan — young Gascon with dark hair and a worn cloak over musketeer blue — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Athos — noble musketeer with a dark beard and elegant blue-and-silver uniform — 100% identical; studio bg/pose/light NOT used; image4: the fused master of Porthos — large cheerful musketeer with an ornate baldric and booming presence — 100% identical; studio bg/pose/light NOT used; image5: the fused master of Aramis — refined musketeer with clean features and graceful bearing — 100% identical; studio bg/pose/light NOT used; image6: the dawn harbor with a moored ship — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/scenic design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "eye-level wide of the ship pulling away, ropes cast off, D'Artagnan at the rail looking back"
+            ],
+            [
+              1.8,
+              3.5,
+              "pull back as the three friends stand on the dock, breathless, watching the sails fill"
+            ]
+          ],
+          "narration_mk": "Бродот исплови, а тројцата останаа безбедни на кејот.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide of the ship pulling away from the quay, ropes cast off, D'Artagnan at the rail looking back",
+          "kf_last": "Pull-back as the three friends stand on the dock, breathless, watching the sails fill",
+          "continuity": "Harbor palette; guards retreating behind",
+          "motion": "pull-back revealing ship and dock",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide of the ship pulling away from the quay, ropes cast off, D'Artagnan at the rail looking back then eye-level wide of the ship pulling away, ropes cast off, D'Artagnan at the rail looking back, then pull back as the three friends stand on the dock, breathless, watching the sails fill the camera pull-back settling into pull-back as the three friends stand on the dock, breathless, watching the sails fill continuity held: Harbor palette; guards retreating behind",
+          "image_prompt_start": "photoreal cinematic: wide of the ship pulling away from the quay, ropes cast off, D'Artagnan at the rail looking back.",
+          "image_prompt_end": "photoreal cinematic: as the three friends stand on the dock, breathless, watching the sails fill.",
+          "video_prompt_start": "Eye-level wide of the ship pulling away, ropes cast off, D'Artagnan at the rail looking back. pull back as the three friends stand on the dock, breathless, watching the sails fill. The camera pull-back. The beat resolves into the next matching frame. Continuity held: Harbor palette; guards retreating behind.",
+          "video_prompt_end": "Eye-level wide of the ship pulling away, ropes cast off, D'Artagnan at the rail looking back. pull back as the three friends stand on the dock, breathless, watching the sails fill. The camera pull-back. The beat resolves into the next matching frame. Continuity held: Harbor palette; guards retreating behind.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S25",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "london_env_A8_prop"
+          ],
+          "ref_scope": "image1: morning London with the Thames glittering — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop/scenic design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "high-angle wide of London at morning, the Thames glittering in soft haze"
+            ],
+            [
+              1.8,
+              3.5,
+              "track toward a stately palace on the riverbank as a carriage rolls in"
+            ]
+          ],
+          "narration_mk": "Стигна во Лондон, во дворецот на војводата од Бакингам.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of London at morning, the Thames glittering, towers and church spires in a soft haze",
+          "kf_last": "Track toward a stately palace on the riverbank as a carriage rolls into its courtyard",
+          "continuity": "London palette: stone, silver water, pale sky",
+          "motion": "track toward the palace",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of London at morning, the Thames glittering, towers and church spires in a soft haze then high-angle wide of London at morning, the Thames glittering in soft haze, then track toward a stately palace on the riverbank as a carriage rolls in settling into track toward a stately palace on the riverbank as a carriage rolls into its courtyard continuity held: London palette: stone, silver water, pale sky",
+          "image_prompt_start": "photoreal cinematic: wide of London at morning, the Thames glittering, towers and church spires in a soft haze.",
+          "image_prompt_end": "photoreal cinematic: toward a stately palace on the riverbank as a carriage rolls into its courtyard.",
+          "video_prompt_start": "High-angle wide of London at morning, the Thames glittering in soft haze. track toward a stately palace on the riverbank as a carriage rolls in. The beat resolves into the next matching frame. Continuity held: London palette: stone, silver water, pale sky.",
+          "video_prompt_end": "High-angle wide of London at morning, the Thames glittering in soft haze. track toward a stately palace on the riverbank as a carriage rolls in. The beat resolves into the next matching frame. Continuity held: London palette: stone, silver water, pale sky.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S26",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "buckingham_A8_fused",
+            "dartagnan_A1_fused",
+            "buckingham_env_A9_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Duke of Buckingham — tall refined English noble in a gleaming doublet — 100% identical; studio bg/pose/light NOT used; image2: the fused master of D'Artagnan — young Gascon with dark hair and a worn cloak over musketeer blue — 100% identical; studio bg/pose/light NOT used; image3: the Duke's candlelit study — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/scenic design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "eye-level medium of the Duke turning from a map table to greet his guest"
+            ],
+            [
+              1.8,
+              3.5,
+              "push in on the Duke's welcoming but weary smile in candlelight"
+            ]
+          ],
+          "narration_mk": "Војводата го прими во својата одаја.",
+          "dialogue_mk": "Војвода: „Добредојде, мускетару. Имаш вести од кралицата?“",
+          "kf_first": "Eye-level medium of the Duke of Buckingham, tall and elegant in a velvet doublet, turning from a map table to greet his guest",
+          "kf_last": "Push-in on the Duke's welcoming but weary smile, candlelight on silver candlesticks",
+          "continuity": "Duke identity: velvet doublet, fine beard; study palette",
+          "motion": "push-in on the Duke",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of the Duke of Buckingham, tall and elegant in a velvet doublet, turning from a map table to greet his guest then eye-level medium of the Duke turning from a map table to greet his guest, then push in on the Duke's welcoming but weary smile in candlelight the camera push-in settling into push-in on the Duke's welcoming but weary smile, candlelight on silver candlesticks a voice speaks in Macedonian: \"Војвода: „Добредојде, мускетару. Имаш вести од кралицата?“\" continuity held: Duke identity: velvet doublet, fine beard; study palette",
+          "image_prompt_start": "photoreal cinematic: medium of the Duke of Buckingham, tall and elegant in a velvet doublet, turning from a map table to greet his guest.",
+          "image_prompt_end": "photoreal cinematic: on the Duke's welcoming but weary smile, candlelight on silver candlesticks.",
+          "video_prompt_start": "Eye-level medium of the Duke turning from a map table to greet his guest. push in on the Duke's welcoming but weary smile in candlelight. The camera push-in. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Војвода: „Добредојде, мускетару. Имаш вести од кралицата?“\" Continuity held: Duke identity: velvet doublet, fine beard; study palette.",
+          "video_prompt_end": "Eye-level medium of the Duke turning from a map table to greet his guest. push in on the Duke's welcoming but weary smile in candlelight. The camera push-in. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Војвода: „Добредојде, мускетару. Имаш вести од кралицата?“\" Continuity held: Duke identity: velvet doublet, fine beard; study palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S27",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "over-shoulder",
+          "move": "shot-reverse",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "buckingham_A8_fused",
+            "dartagnan_A1_fused",
+            "buckingham_env_A9_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Duke of Buckingham — tall refined English noble in a gleaming doublet — 100% identical; studio bg/pose/light NOT used; image2: the fused master of D'Artagnan — young Gascon with dark hair and a worn cloak over musketeer blue — 100% identical; studio bg/pose/light NOT used; image3: the Duke's candlelit study — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/scenic design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "over-shoulder medium of the Duke at a side table, hand hovering over a silk tray"
+            ],
+            [
+              1.8,
+              3.5,
+              "shot-reverse to D'Artagnan's face falling as the words sink in"
+            ]
+          ],
+          "narration_mk": "Потоа лицето му се смрачи.",
+          "dialogue_mk": "Војвода: „Имам само десет дијаманти. Другите два ги украде злобната Милејди.“",
+          "kf_first": "Over-shoulder medium of the Duke stepping to a side table, his hand hovering over a silk-covered tray, face troubled",
+          "kf_last": "Shot-reverse to D'Artagnan's face falling as the words sink in",
+          "continuity": "Duke study palette; tension tightening",
+          "motion": "shot-reverse between the two",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: over-shoulder medium of the Duke stepping to a side table, his hand hovering over a silk-covered tray, face troubled then over-shoulder medium of the Duke at a side table, hand hovering over a silk tray, then shot-reverse to D'Artagnan's face falling as the words sink in a voice speaks in Macedonian: \"Војвода: „Имам само десет дијаманти. Другите два ги украде злобната Милејди.“\" continuity held: Duke study palette; tension tightening",
+          "image_prompt_start": "photoreal cinematic: Over-shoulder medium of the Duke stepping to a side table, his hand hovering over a silk-covered tray, face troubled.",
+          "image_prompt_end": "photoreal cinematic: Shot-reverse to D'Artagnan's face falling as the words sink in.",
+          "video_prompt_start": "Over-shoulder medium of the Duke at a side table, hand hovering over a silk tray. shot-reverse to D'Artagnan's face falling as the words sink in. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Војвода: „Имам само десет дијаманти. Другите два ги украде злобната Милејди.“\" Continuity held: Duke study palette; tension tightening.",
+          "video_prompt_end": "Over-shoulder medium of the Duke at a side table, hand hovering over a silk tray. shot-reverse to D'Artagnan's face falling as the words sink in. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Војвода: „Имам само десет дијаманти. Другите два ги украде злобната Милејди.“\" Continuity held: Duke study palette; tension tightening.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S28",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "diamonds_prop_B2_prop",
+            "casket_prop_B3_prop"
+          ],
+          "ref_scope": "image1: the twelve diamond studs, two sockets eventually empty — 100% identical; studio bg/pose/light NOT used; image2: the velvet-lined jewellery casket — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop/scenic design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "macro close of ten diamonds set in the velvet tray, two empty sockets gaping dark"
+            ],
+            [
+              1.5,
+              3.0,
+              "push in on the empty sockets, candle flame wavering in their hollows"
+            ]
+          ],
+          "narration_mk": "Два гнезда стоеја празни.",
+          "dialogue_mk": "",
+          "kf_first": "Macro close of ten diamonds set in a velvet tray, two empty sockets gaping dark among the glittering stones",
+          "kf_last": "Push-in on the empty sockets, candle flame wavering in their hollows",
+          "continuity": "Diamond tray prop from S26/S27",
+          "motion": "macro push-in on the gaps",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro close of ten diamonds set in a velvet tray, two empty sockets gaping dark among the glittering stones then macro close of ten diamonds set in the velvet tray, two empty sockets gaping dark, then push in on the empty sockets, candle flame wavering in their hollows the camera push-in settling into push-in on the empty sockets, candle flame wavering in their hollows continuity held: Diamond tray prop from S26/S27",
+          "image_prompt_start": "photoreal cinematic: Macro close of ten diamonds set in a velvet tray, two empty sockets gaping dark among the glittering stones.",
+          "image_prompt_end": "photoreal cinematic: on the empty sockets, candle flame wavering in their hollows.",
+          "video_prompt_start": "Macro close of ten diamonds set in the velvet tray, two empty sockets gaping dark. push in on the empty sockets, candle flame wavering in their hollows. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Diamond tray prop from S26/S27.",
+          "video_prompt_end": "Macro close of ten diamonds set in the velvet tray, two empty sockets gaping dark. push in on the empty sockets, candle flame wavering in their hollows. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Diamond tray prop from S26/S27.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S29",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "dartagnan_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of D'Artagnan — young Gascon with dark hair and a worn cloak over musketeer blue — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close-up of D'Artagnan's stunned face, the empty tray reflected faintly in his eyes"
+            ],
+            [
+              1.5,
+              3.0,
+              "push in on his jaw setting with new determination"
+            ]
+          ],
+          "narration_mk": "Милејди — шпионка на кардиналот Ришелје.",
+          "dialogue_mk": "Дартањан: „Милејди? Која е таа?“ Војвода: „Шпионка на кардиналот.“",
+          "kf_first": "Close-up of D'Artagnan's stunned face, the empty tray reflected faintly in his eyes",
+          "kf_last": "Push-in on his jaw setting with new determination",
+          "continuity": "D'Artagnan identity; candlelit study",
+          "motion": "slow push-in on the resolve",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of D'Artagnan's stunned face, the empty tray reflected faintly in his eyes then close-up of D'Artagnan's stunned face, the empty tray reflected faintly in his eyes, then push in on his jaw setting with new determination the camera push-in settling into push-in on his jaw setting with new determination a voice speaks in Macedonian: \"Дартањан: „Милејди? Која е таа?“ Војвода: „Шпионка на кардиналот.“\" continuity held: D'Artagnan identity; candlelit study",
+          "image_prompt_start": "photoreal cinematic: of D'Artagnan's stunned face, the empty tray reflected faintly in his eyes.",
+          "image_prompt_end": "photoreal cinematic: on his jaw setting with new determination.",
+          "video_prompt_start": "Close-up of D'Artagnan's stunned face, the empty tray reflected faintly in his eyes. push in on his jaw setting with new determination. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Дартањан: „Милејди? Која е таа?“ Војвода: „Шпионка на кардиналот.“\" Continuity held: D'Artagnan identity; candlelit study.",
+          "video_prompt_end": "Close-up of D'Artagnan's stunned face, the empty tray reflected faintly in his eyes. push in on his jaw setting with new determination. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Дартањан: „Милејди? Која е таа?“ Војвода: „Шпионка на кардиналот.“\" Continuity held: D'Artagnan identity; candlelit study.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S30",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "dartagnan_A1_fused",
+            "buckingham_env_A9_prop"
+          ],
+          "ref_scope": "image1: the fused master of D'Artagnan — young Gascon with dark hair and a worn cloak over musketeer blue — 100% identical; studio bg/pose/light NOT used; image2: the Duke's candlelit study — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/scenic design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "eye-level medium of D'Artagnan at the study window, London evening fog beyond"
+            ],
+            [
+              1.8,
+              3.5,
+              "static as he turns decisively toward the door, cloak swinging"
+            ]
+          ],
+          "narration_mk": "Остануваше малку време, а бало наближуваше.",
+          "dialogue_mk": "Дартањан: „Морам да се вратам пред бало.“",
+          "kf_first": "Eye-level medium of D'Artagnan at the study window, London evening fog beyond, lamplight on his determined profile",
+          "kf_last": "Static as he turns decisively toward the door, cloak swinging",
+          "continuity": "Evening palette: amber lamp, blue fog",
+          "motion": "static with fog drifting outside",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of D'Artagnan at the study window, London evening fog beyond, lamplight on his determined profile then eye-level medium of D'Artagnan at the study window, London evening fog beyond, then static as he turns decisively toward the door, cloak swinging a voice speaks in Macedonian: \"Дартањан: „Морам да се вратам пред бало.“\" continuity held: Evening palette: amber lamp, blue fog",
+          "image_prompt_start": "photoreal cinematic: medium of D'Artagnan at the study window, London evening fog beyond, lamplight on his determined profile.",
+          "image_prompt_end": "photoreal cinematic: Static as he decisively toward the door, cloak swinging.",
+          "video_prompt_start": "Eye-level medium of D'Artagnan at the study window, London evening fog beyond. static as he turns decisively toward the door, cloak swinging. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Дартањан: „Морам да се вратам пред бало.“\" Continuity held: Evening palette: amber lamp, blue fog.",
+          "video_prompt_end": "Eye-level medium of D'Artagnan at the study window, London evening fog beyond. static as he turns decisively toward the door, cloak swinging. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Дартањан: „Морам да се вратам пред бало.“\" Continuity held: Evening palette: amber lamp, blue fog.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "queens_chamber_london_and_the_dukes_study",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class",
+        "screen_dir"
+      ],
+      "palette": [
+        "#e8d9a0",
+        "#7a6a3a",
+        "#1c2d44"
+      ],
+      "light_direction": "key light from screen-right, candlelit interiors fading into a cold dawn harbor",
+      "time_of_day": "dusk"
+    },
+    {
+      "id": "act3",
+      "num": "Act III",
+      "title": "Кулминација",
+      "color": "#8b5cf6",
+      "pct": 26,
+      "synopsis": "Дартањан се враќа во Париз и ја фаќа Милејди во последен момент пред бало, ги враќа дијамантите и ја спасува мисијата. Кралицата наредува да биде унапреден во полковник, а неговиот сон конечно станува стварност.",
+      "shots": [
+        {
+          "id": "S31",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "ship_env_A7_prop"
+          ],
+          "ref_scope": "image1: the sailing ship to London and back — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop/scenic design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "high-angle wide track of the ship's prow slicing a moonless sea, gale in the sails"
+            ],
+            [
+              1.8,
+              3.5,
+              "track as the dark outline of the French coastline rises out of the mist"
+            ]
+          ],
+          "narration_mk": "Бродот брзаше назад кон Франција.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide tracking shot of the ship's prow slicing through a dark moonless sea, white spray, a gale bulging the sails",
+          "kf_last": "Track as the dark outline of the French coastline rises out of the mist",
+          "continuity": "Night-sea palette: indigo, silver foam; ship from S24",
+          "motion": "track with the ship's prow",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide tracking shot of the ship's prow slicing through a dark moonless sea, white spray, a gale bulging the sails then high-angle wide track of the ship's prow slicing a moonless sea, gale in the sails, then track as the dark outline of the French coastline rises out of the mist continuity held: Night-sea palette: indigo, silver foam; ship from S24",
+          "image_prompt_start": "photoreal cinematic: wide of the ship's prow slicing through a dark moonless sea, white spray, a gale bulging the sails.",
+          "image_prompt_end": "photoreal cinematic: as the dark outline of the French coastline out of the mist.",
+          "video_prompt_start": "High-angle wide track of the ship's prow slicing a moonless sea, gale in the sails. track as the dark outline of the French coastline rises out of the mist. The beat resolves into the next matching frame. Continuity held: Night-sea palette: indigo, silver foam; ship from S24.",
+          "video_prompt_end": "High-angle wide track of the ship's prow slicing a moonless sea, gale in the sails. track as the dark outline of the French coastline rises out of the mist. The beat resolves into the next matching frame. Continuity held: Night-sea palette: indigo, silver foam; ship from S24.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S32",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "dartagnan_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of D'Artagnan — young Gascon with dark hair and a worn cloak over musketeer blue — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "eye-level medium track of D'Artagnan galloping through wet lantern-lit streets, rain sheeting"
+            ],
+            [
+              1.5,
+              3.0,
+              "the palace rises at the avenue’s end as he leans over the horse’s neck"
+            ]
+          ],
+          "narration_mk": "Дартањан влета во Париз сред ноќ.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium tracking shot of D'Artagnan galloping through wet, lantern-lit city streets, rain sheeting down, cape streaming",
+          "kf_last": "The palace rises at the end of the avenue as he leans forward over the horse's neck",
+          "continuity": "Night palette: amber lanterns, wet cobbles; D'Artagnan costume",
+          "motion": "track with the gallop",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium tracking shot of D'Artagnan galloping through wet, lantern-lit city streets, rain sheeting down, cape streaming then eye-level medium track of D'Artagnan galloping through wet lantern-lit streets, rain sheeting, then the palace rises at the avenue’s end as he leans over the horse’s neck settling into the palace rises at the end of the avenue as he leans forward over the horse's neck continuity held: Night palette: amber lanterns, wet cobbles; D'Artagnan costume",
+          "image_prompt_start": "photoreal cinematic: medium of D'Artagnan galloping through wet, lantern-lit city streets, rain sheeting down, cape streaming.",
+          "image_prompt_end": "photoreal cinematic: The palace at the end of the avenue as he leans forward over the horse's neck.",
+          "video_prompt_start": "Eye-level medium track of D'Artagnan galloping through wet lantern-lit streets, rain sheeting. the palace rises at the avenue’s end as he leans over the horse’s neck. The beat resolves into the next matching frame. Continuity held: Night palette: amber lanterns, wet cobbles; D'Artagnan costume.",
+          "video_prompt_end": "Eye-level medium track of D'Artagnan galloping through wet lantern-lit streets, rain sheeting. the palace rises at the avenue’s end as he leans over the horse’s neck. The beat resolves into the next matching frame. Continuity held: Night palette: amber lanterns, wet cobbles; D'Artagnan costume.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S33",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "dartagnan_A1_fused",
+            "athos_A2_fused",
+            "porthos_A3_fused",
+            "aramis_A4_fused"
+          ],
+          "ref_scope": "image1: the fused master of D'Artagnan — young Gascon with dark hair and a worn cloak over musketeer blue — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Athos — noble musketeer with a dark beard and elegant blue-and-silver uniform — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Porthos — large cheerful musketeer with an ornate baldric and booming presence — 100% identical; studio bg/pose/light NOT used; image4: the fused master of Aramis — refined musketeer with clean features and graceful bearing — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "eye-level medium of the three rushing from the palace gate to embrace a dismounting friend"
+            ],
+            [
+              1.8,
+              3.5,
+              "push in on the four clasping shoulders, huddled together in the rain"
+            ]
+          ],
+          "narration_mk": "Пријателите го пречекаа со прегратки.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of the three musketeers rushing from the palace gate to embrace a dismounting D'Artagnan, relief on every face",
+          "kf_last": "Push-in on the four clasping shoulders, huddled together in the rain",
+          "continuity": "Friendship emotive; same four; lantern light in rain",
+          "motion": "push-in on the reunion",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of the three musketeers rushing from the palace gate to embrace a dismounting D'Artagnan, relief on every face then eye-level medium of the three rushing from the palace gate to embrace a dismounting friend, then push in on the four clasping shoulders, huddled together in the rain the camera push-in settling into push-in on the four clasping shoulders, huddled together in the rain continuity held: Friendship emotive; same four; lantern light in rain",
+          "image_prompt_start": "photoreal cinematic: medium of the three musketeers rushing from the palace gate to embrace a dismounting D'Artagnan, relief on every face.",
+          "image_prompt_end": "photoreal cinematic: on the four clasping shoulders, huddled together in the rain.",
+          "video_prompt_start": "Eye-level medium of the three rushing from the palace gate to embrace a dismounting friend. push in on the four clasping shoulders, huddled together in the rain. The camera push-in. The beat resolves into the next matching frame. Continuity held: Friendship emotive; same four; lantern light in rain.",
+          "video_prompt_end": "Eye-level medium of the three rushing from the palace gate to embrace a dismounting friend. push in on the four clasping shoulders, huddled together in the rain. The camera push-in. The beat resolves into the next matching frame. Continuity held: Friendship emotive; same four; lantern light in rain.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S34",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "over-shoulder",
+          "move": "shot-reverse",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "dartagnan_A1_fused",
+            "athos_A2_fused",
+            "porthos_A3_fused",
+            "aramis_A4_fused"
+          ],
+          "ref_scope": "image1: the fused master of D'Artagnan — young Gascon with dark hair and a worn cloak over musketeer blue — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Athos — noble musketeer with a dark beard and elegant blue-and-silver uniform — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Porthos — large cheerful musketeer with an ornate baldric and booming presence — 100% identical; studio bg/pose/light NOT used; image4: the fused master of Aramis — refined musketeer with clean features and graceful bearing — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "over-shoulder close, speaking low and urgent, rain dripping from their hats"
+            ],
+            [
+              1.8,
+              3.5,
+              "shot-reverse to the three friends exchanging grim determined looks"
+            ]
+          ],
+          "narration_mk": "Но мисијата уште не беше завршена.",
+          "dialogue_mk": "Дартањан: „Два дијаманта украде Милејди. Треба да ја најдам пред бало.“",
+          "kf_first": "Over-shoulder close of D'Artagnan speaking low and urgent to the three, rain dripping from their hats",
+          "kf_last": "Shot-reverse to the three friends exchanging grim, determined looks",
+          "continuity": "Night rain palette; all identities locked",
+          "motion": "shot-reverse around the huddle",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: over-shoulder close of D'Artagnan speaking low and urgent to the three, rain dripping from their hats then over-shoulder close, speaking low and urgent, rain dripping from their hats, then shot-reverse to the three friends exchanging grim determined looks settling into shot-reverse to the three friends exchanging grim, determined looks a voice speaks in Macedonian: \"Дартањан: „Два дијаманта украде Милејди. Треба да ја најдам пред бало.“\" continuity held: Night rain palette; all identities locked",
+          "image_prompt_start": "photoreal cinematic: Over-shoulder close of D'Artagnan speaking low and urgent to the three, rain dripping from their hats.",
+          "image_prompt_end": "photoreal cinematic: Shot-reverse to the three friends exchanging grim, determined looks.",
+          "video_prompt_start": "Over-shoulder close, speaking low and urgent, rain dripping from their hats. shot-reverse to the three friends exchanging grim determined looks. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Дартањан: „Два дијаманта украде Милејди. Треба да ја најдам пред бало.“\" Continuity held: Night rain palette; all identities locked.",
+          "video_prompt_end": "Over-shoulder close, speaking low and urgent, rain dripping from their hats. shot-reverse to the three friends exchanging grim determined looks. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Дартањан: „Два дијаманта украде Милејди. Треба да ја најдам пред бало.“\" Continuity held: Night rain palette; all identities locked.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S35",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "dartagnan_A1_fused",
+            "athos_A2_fused",
+            "porthos_A3_fused",
+            "aramis_A4_fused",
+            "corridor_env_A4_prop"
+          ],
+          "ref_scope": "image1: the fused master of D'Artagnan — young Gascon with dark hair and a worn cloak over musketeer blue — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Athos — noble musketeer with a dark beard and elegant blue-and-silver uniform — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Porthos — large cheerful musketeer with an ornate baldric and booming presence — 100% identical; studio bg/pose/light NOT used; image4: the fused master of Aramis — refined musketeer with clean features and graceful bearing — 100% identical; studio bg/pose/light NOT used; image5: the candlelit palace corridor — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/scenic design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "eye-level medium track of the four moving through the torch-lit corridor"
+            ],
+            [
+              1.5,
+              3.0,
+              "they round a corner as a cloaked figure slips away at the far end"
+            ]
+          ],
+          "narration_mk": "Го бараа низ осветлените коридори на палатата.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium tracking shot of the four moving swiftly through a torch-lit palace corridor, eyes darting, footsteps soft",
+          "kf_last": "They round a corner as a cloaked figure slips away at the far end",
+          "continuity": "Palace interior at night; gold and shadow",
+          "motion": "track following their search",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium tracking shot of the four moving swiftly through a torch-lit palace corridor, eyes darting, footsteps soft then eye-level medium track of the four moving through the torch-lit corridor, then they round a corner as a cloaked figure slips away at the far end continuity held: Palace interior at night; gold and shadow",
+          "image_prompt_start": "photoreal cinematic: medium of the four moving swiftly through a torch-lit palace corridor, eyes darting, footsteps soft.",
+          "image_prompt_end": "photoreal cinematic: They round a corner as a cloaked figure slips away at the far end.",
+          "video_prompt_start": "Eye-level medium track of the four moving through the torch-lit corridor. they round a corner as a cloaked figure slips away at the far end. The beat resolves into the next matching frame. Continuity held: Palace interior at night; gold and shadow.",
+          "video_prompt_end": "Eye-level medium track of the four moving through the torch-lit corridor. they round a corner as a cloaked figure slips away at the far end. The beat resolves into the next matching frame. Continuity held: Palace interior at night; gold and shadow.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S36",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "milady_A6_fused",
+            "corridor_env_A4_prop"
+          ],
+          "ref_scope": "image1: the fused master of Milady — elegant cunning spy in a dark hooded gown with veil — 100% identical; studio bg/pose/light NOT used; image2: the candlelit palace corridor — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/scenic design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "low-angle medium of Milady in her dark hooded cloak glancing back with a cold smile"
+            ],
+            [
+              1.5,
+              3.0,
+              "push in on the empty space where she stood, torchlight flickering over stone"
+            ]
+          ],
+          "narration_mk": "Пред нив — Милејди, шпионката на кардиналот.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of Milady, a slender woman in a dark hooded cloak, glancing back with a cold smile before vanishing around a column",
+          "kf_last": "Push-in on the empty space where she stood, torchlight flickering over stone",
+          "continuity": "Milady identity: dark hood, pale face; shadow corridor",
+          "motion": "push-in after the fleeing figure",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Milady, a slender woman in a dark hooded cloak, glancing back with a cold smile before vanishing around a column then low-angle medium of Milady in her dark hooded cloak glancing back with a cold smile, then push in on the empty space where she stood, torchlight flickering over stone the camera push-in settling into push-in on the empty space where she stood, torchlight flickering over stone continuity held: Milady identity: dark hood, pale face; shadow corridor",
+          "image_prompt_start": "photoreal cinematic: medium of Milady, a slender woman in a dark hooded cloak, glancing back with a cold smile before vanishing around a column.",
+          "image_prompt_end": "photoreal cinematic: on the empty space where she stood, torchlight flickering over stone.",
+          "video_prompt_start": "Low-angle medium of Milady in her dark hooded cloak glancing back with a cold smile. push in on the empty space where she stood, torchlight flickering over stone. The camera push-in. The beat resolves into the next matching frame. Continuity held: Milady identity: dark hood, pale face; shadow corridor.",
+          "video_prompt_end": "Low-angle medium of Milady in her dark hooded cloak glancing back with a cold smile. push in on the empty space where she stood, torchlight flickering over stone. The camera push-in. The beat resolves into the next matching frame. Continuity held: Milady identity: dark hood, pale face; shadow corridor.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S37",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-right",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "dartagnan_A1_fused",
+            "athos_A2_fused",
+            "porthos_A3_fused",
+            "aramis_A4_fused",
+            "milady_A6_fused",
+            "corridor_env_A4_prop"
+          ],
+          "ref_scope": "image1: the fused master of D'Artagnan — young Gascon with dark hair and a worn cloak over musketeer blue — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Athos — noble musketeer with a dark beard and elegant blue-and-silver uniform — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Porthos — large cheerful musketeer with an ornate baldric and booming presence — 100% identical; studio bg/pose/light NOT used; image4: the fused master of Aramis — refined musketeer with clean features and graceful bearing — 100% identical; studio bg/pose/light NOT used; image5: the fused master of Milady — elegant cunning spy in a dark hooded gown with veil — 100% identical; studio bg/pose/light NOT used; image6: the candlelit palace corridor — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/scenic design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "eye-level wide of the colonnade chase, four musketeers sprinting as Milady darts between pillars"
+            ],
+            [
+              1.8,
+              3.5,
+              "pan right as D'Artagnan stretches out, closing the distance to her cloak"
+            ]
+          ],
+          "narration_mk": "Потерата се разгори.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide of the chase through the colonnade, four musketeers sprinting while Milady darts between pillars, cloaks flying",
+          "kf_last": "Pan-right as D'Artagnan stretches out, closing the distance to her cloak",
+          "continuity": "Chase palette: torchlight and deep shadow",
+          "motion": "pan-right with the sprint",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide of the chase through the colonnade, four musketeers sprinting while Milady darts between pillars, cloaks flying then eye-level wide of the colonnade chase, four musketeers sprinting as Milady darts between pillars, then pan right as D'Artagnan stretches out, closing the distance to her cloak the camera pan-right settling into pan-right as D'Artagnan stretches out, closing the distance to her cloak continuity held: Chase palette: torchlight and deep shadow",
+          "image_prompt_start": "photoreal cinematic: wide of the chase through the colonnade, four musketeers sprinting while Milady darts between pillars, cloaks flying.",
+          "image_prompt_end": "photoreal cinematic: -right as D'Artagnan stretches out, closing the distance to her cloak.",
+          "video_prompt_start": "Eye-level wide of the colonnade chase, four musketeers sprinting as Milady darts between pillars. pan right as D'Artagnan stretches out, closing the distance to her cloak. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Chase palette: torchlight and deep shadow.",
+          "video_prompt_end": "Eye-level wide of the colonnade chase, four musketeers sprinting as Milady darts between pillars. pan right as D'Artagnan stretches out, closing the distance to her cloak. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Chase palette: torchlight and deep shadow.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S38",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "milady_A6_fused",
+            "diamonds_prop_B2_prop",
+            "chamber_dark_env_A12_prop"
+          ],
+          "ref_scope": "image1: the fused master of Milady — elegant cunning spy in a dark hooded gown with veil — 100% identical; studio bg/pose/light NOT used; image2: the twelve diamond studs, two sockets eventually empty — 100% identical; studio bg/pose/light NOT used; image3: the dim moonlit chamber — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/scenic design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "eye-level medium of Milady cornered in the dim chamber, moonlight over her hooded face"
+            ],
+            [
+              1.8,
+              3.5,
+              "push in as the stolen diamonds glint at her throat against the dark"
+            ]
+          ],
+          "narration_mk": "Во една темна одаја, Милејди остана без излез.",
+          "dialogue_mk": "Милејди: „Нема да стигнеш...“",
+          "kf_first": "Eye-level medium of Milady cornered in a dim chamber, a single high window pouring moonlight over her hooded face",
+          "kf_last": "Push-in as the stolen diamonds glint at her throat against the dark",
+          "continuity": "Milady identity; moonlit chamber palette",
+          "motion": "push-in on the cornered spy",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of Milady cornered in a dim chamber, a single high window pouring moonlight over her hooded face then eye-level medium of Milady cornered in the dim chamber, moonlight over her hooded face, then push in as the stolen diamonds glint at her throat against the dark the camera push-in settling into push-in as the stolen diamonds glint at her throat against the dark a voice speaks in Macedonian: \"Милејди: „Нема да стигнеш...“\" continuity held: Milady identity; moonlit chamber palette",
+          "image_prompt_start": "photoreal cinematic: medium of Milady cornered in a dim chamber, a single high window pouring moonlight over her hooded face.",
+          "image_prompt_end": "photoreal cinematic: as the stolen diamonds glint at her throat against the dark.",
+          "video_prompt_start": "Eye-level medium of Milady cornered in the dim chamber, moonlight over her hooded face. push in as the stolen diamonds glint at her throat against the dark. The camera push-in. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Милејди: „Нема да стигнеш...“\" Continuity held: Milady identity; moonlit chamber palette.",
+          "video_prompt_end": "Eye-level medium of Milady cornered in the dim chamber, moonlight over her hooded face. push in as the stolen diamonds glint at her throat against the dark. The camera push-in. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Милејди: „Нема да стигнеш...“\" Continuity held: Milady identity; moonlit chamber palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S39",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "over-shoulder",
+          "move": "shot-reverse",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "dartagnan_A1_fused",
+            "milady_A6_fused",
+            "diamonds_prop_B2_prop"
+          ],
+          "ref_scope": "image1: the fused master of D'Artagnan — young Gascon with dark hair and a worn cloak over musketeer blue — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Milady — elegant cunning spy in a dark hooded gown with veil — 100% identical; studio bg/pose/light NOT used; image3: the twelve diamond studs, two sockets eventually empty — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/scenic design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "over-shoulder close of D'Artagnan's outstretched open palm, steady and unblinking"
+            ],
+            [
+              1.8,
+              3.5,
+              "shot-reverse to Milady's defiant glare softening into reluctant surrender"
+            ]
+          ],
+          "narration_mk": "Дартањан ја побара назад.",
+          "dialogue_mk": "Дартањан: „Дај ми ги дијамантите. Веднаш.“",
+          "kf_first": "Over-shoulder close of D'Artagnan's outstretched open palm before Milady, steady and unblinking",
+          "kf_last": "Shot-reverse to Milady's defiant glare softening into a reluctant surrender",
+          "continuity": "Moonlit chamber; both identities locked",
+          "motion": "shot-reverse between the two",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: over-shoulder close of D'Artagnan's outstretched open palm before Milady, steady and unblinking then over-shoulder close of D'Artagnan's outstretched open palm, steady and unblinking, then shot-reverse to Milady's defiant glare softening into reluctant surrender settling into shot-reverse to Milady's defiant glare softening into a reluctant surrender a voice speaks in Macedonian: \"Дартањан: „Дај ми ги дијамантите. Веднаш.“\" continuity held: Moonlit chamber; both identities locked",
+          "image_prompt_start": "photoreal cinematic: Over-shoulder close of D'Artagnan's outstretched open palm before Milady, steady and unblinking.",
+          "image_prompt_end": "photoreal cinematic: Shot-reverse to Milady's defiant glare softening into a reluctant surrender.",
+          "video_prompt_start": "Over-shoulder close of D'Artagnan's outstretched open palm, steady and unblinking. shot-reverse to Milady's defiant glare softening into reluctant surrender. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Дартањан: „Дај ми ги дијамантите. Веднаш.“\" Continuity held: Moonlit chamber; both identities locked.",
+          "video_prompt_end": "Over-shoulder close of D'Artagnan's outstretched open palm, steady and unblinking. shot-reverse to Milady's defiant glare softening into reluctant surrender. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Дартањан: „Дај ми ги дијамантите. Веднаш.“\" Continuity held: Moonlit chamber; both identities locked.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S40",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "diamonds_prop_B2_prop",
+            "milady_A6_fused",
+            "dartagnan_A1_fused"
+          ],
+          "ref_scope": "image1: the twelve diamond studs, two sockets eventually empty — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Milady — elegant cunning spy in a dark hooded gown with veil — 100% identical; studio bg/pose/light NOT used; image3: the fused master of D'Artagnan — young Gascon with dark hair and a worn cloak over musketeer blue — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/scenic design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "macro insert of two diamonds gleaming in Milady’s pale palm, moonlight on the facets"
+            ],
+            [
+              1.5,
+              3.0,
+              "push in as the stones tumble into D'Artagnan's waiting hand beside the other ten"
+            ]
+          ],
+          "narration_mk": "Двата дијаманта паднаа во неговата дланка.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of two diamonds gleaming in Milady's pale palm as she holds them out, moonlight sharp on the facets",
+          "kf_last": "Push-in as the stones tumble into D'Artagnan's waiting hand beside the other ten",
+          "continuity": "Diamond prop; moonlit contrast",
+          "motion": "macro push-in on the exchange",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of two diamonds gleaming in Milady's pale palm as she holds them out, moonlight sharp on the facets then macro insert of two diamonds gleaming in Milady’s pale palm, moonlight on the facets, then push in as the stones tumble into D'Artagnan's waiting hand beside the other ten the camera push-in settling into push-in as the stones tumble into D'Artagnan's waiting hand beside the other ten continuity held: Diamond prop; moonlit contrast",
+          "image_prompt_start": "photoreal cinematic: Macro insert of two diamonds gleaming in Milady's pale palm as she holds them out, moonlight sharp on the facets.",
+          "image_prompt_end": "photoreal cinematic: as the stones tumble into D'Artagnan's waiting hand beside the other ten.",
+          "video_prompt_start": "Macro insert of two diamonds gleaming in Milady’s pale palm, moonlight on the facets. push in as the stones tumble into D'Artagnan's waiting hand beside the other ten. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Diamond prop; moonlit contrast.",
+          "video_prompt_end": "Macro insert of two diamonds gleaming in Milady’s pale palm, moonlight on the facets. push in as the stones tumble into D'Artagnan's waiting hand beside the other ten. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Diamond prop; moonlit contrast.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S41",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "ballroom_env_A10_prop"
+          ],
+          "ref_scope": "image1: the golden palace ballroom — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop/scenic design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "eye-level wide of the golden ballroom aglow with chandeliers, guests swirling"
+            ],
+            [
+              1.8,
+              3.5,
+              "crane up to the glittering chandeliers as the music swells"
+            ]
+          ],
+          "narration_mk": "Токму пред бало, сите дванаесет беа повторно заедно.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide of a golden ballroom aglow with chandeliers, guests in bright silks and white wigs swirling on the polished floor",
+          "kf_last": "Crane-up to the glittering chandeliers as the music swells",
+          "continuity": "Ballroom palette: gold, candlelight, silk",
+          "motion": "crane-up over the hall",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide of a golden ballroom aglow with chandeliers, guests in bright silks and white wigs swirling on the polished floor then eye-level wide of the golden ballroom aglow with chandeliers, guests swirling, then crane up to the glittering chandeliers as the music swells the camera crane-up settling into crane-up to the glittering chandeliers as the music swells continuity held: Ballroom palette: gold, candlelight, silk",
+          "image_prompt_start": "photoreal cinematic: wide of a golden ballroom aglow with chandeliers, guests in bright silks and white wigs swirling on the polished floor.",
+          "image_prompt_end": "photoreal cinematic: to the glittering chandeliers as the music swells.",
+          "video_prompt_start": "Eye-level wide of the golden ballroom aglow with chandeliers, guests swirling. crane up to the glittering chandeliers as the music swells. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Ballroom palette: gold, candlelight, silk.",
+          "video_prompt_end": "Eye-level wide of the golden ballroom aglow with chandeliers, guests swirling. crane up to the glittering chandeliers as the music swells. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Ballroom palette: gold, candlelight, silk.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S42",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "queen_A7_fused",
+            "diamonds_prop_B2_prop",
+            "ballroom_env_A10_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Queen — dignified French queen in a bright court gown — 100% identical; studio bg/pose/light NOT used; image2: the twelve diamond studs, two sockets eventually empty — 100% identical; studio bg/pose/light NOT used; image3: the golden palace ballroom — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/scenic design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "eye-level medium of the Queen at center, the twelve diamonds blazing at her throat"
+            ],
+            [
+              1.8,
+              3.5,
+              "push in on her confident smile as the court bows around her"
+            ]
+          ],
+          "narration_mk": "Кралицата ја носеше сјајната низа, а кралот гледаше со гордост.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of the Queen at the center of the ball, the twelve diamonds blazing at her throat as she turns, serene",
+          "kf_last": "Push-in on her confident smile as the court bows around her",
+          "continuity": "Queen identity; diamond necklace prop; ballroom light",
+          "motion": "push-in on the Queen",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of the Queen at the center of the ball, the twelve diamonds blazing at her throat as she turns, serene then eye-level medium of the Queen at center, the twelve diamonds blazing at her throat, then push in on her confident smile as the court bows around her the camera push-in settling into push-in on her confident smile as the court bows around her continuity held: Queen identity; diamond necklace prop; ballroom light",
+          "image_prompt_start": "photoreal cinematic: medium of the Queen at the center of the ball, the twelve diamonds blazing at her throat as she , serene.",
+          "image_prompt_end": "photoreal cinematic: on her confident smile as the court bows around her.",
+          "video_prompt_start": "Eye-level medium of the Queen at center, the twelve diamonds blazing at her throat. push in on her confident smile as the court bows around her. The camera push-in. The beat resolves into the next matching frame. Continuity held: Queen identity; diamond necklace prop; ballroom light.",
+          "video_prompt_end": "Eye-level medium of the Queen at center, the twelve diamonds blazing at her throat. push in on her confident smile as the court bows around her. The camera push-in. The beat resolves into the next matching frame. Continuity held: Queen identity; diamond necklace prop; ballroom light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S43",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "high-angle",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "richelieu_A5_fused",
+            "ballroom_env_A10_prop"
+          ],
+          "ref_scope": "image1: the fused master of Cardinal Richelieu — powerful cardinal in crimson vestments with a cold gaze — 100% identical; studio bg/pose/light NOT used; image2: the golden palace ballroom — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/scenic design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "high-angle medium of Richelieu in his crimson robe watching from the shadowed gallery"
+            ],
+            [
+              1.5,
+              3.0,
+              "static as his hand tightens on the balustrade, knuckles white"
+            ]
+          ],
+          "narration_mk": "Само кардиналот Ришелје гледаше од сенка, мрачен.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle medium of Cardinal Richelieu in his crimson robe watching from the shadowed gallery above the ball, face cold",
+          "kf_last": "Static as his hand tightens on the balustrade, knuckles white",
+          "continuity": "Richelieu identity: red robe; shadowed gallery",
+          "motion": "static with his grim stillness",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle medium of Cardinal Richelieu in his crimson robe watching from the shadowed gallery above the ball, face cold then high-angle medium of Richelieu in his crimson robe watching from the shadowed gallery, then static as his hand tightens on the balustrade, knuckles white continuity held: Richelieu identity: red robe; shadowed gallery",
+          "image_prompt_start": "photoreal cinematic: medium of Cardinal Richelieu in his crimson robe watching from the shadowed gallery above the ball, face cold.",
+          "image_prompt_end": "photoreal cinematic: Static as his hand tightens on the balustrade, knuckles white.",
+          "video_prompt_start": "High-angle medium of Richelieu in his crimson robe watching from the shadowed gallery. static as his hand tightens on the balustrade, knuckles white. The beat resolves into the next matching frame. Continuity held: Richelieu identity: red robe; shadowed gallery.",
+          "video_prompt_end": "High-angle medium of Richelieu in his crimson robe watching from the shadowed gallery. static as his hand tightens on the balustrade, knuckles white. The beat resolves into the next matching frame. Continuity held: Richelieu identity: red robe; shadowed gallery.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S44",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "queen_A7_fused",
+            "dartagnan_A1_fused",
+            "ballroom_env_A10_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Queen — dignified French queen in a bright court gown — 100% identical; studio bg/pose/light NOT used; image2: the fused master of D'Artagnan — young Gascon with dark hair and a worn cloak over musketeer blue — 100% identical; studio bg/pose/light NOT used; image3: the golden palace ballroom — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/scenic design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "low-angle medium of the Queen gesturing toward D'Artagnan before the court"
+            ],
+            [
+              1.8,
+              3.5,
+              "push in on D'Artagnan stepping forward, tall, in a new colonel's uniform"
+            ]
+          ],
+          "narration_mk": "Мисијата беше успешна, и доаѓаше награда.",
+          "dialogue_mk": "Кралицата: „За неговата храброст, нека биде унапреден во полковник на мускетарите!“",
+          "kf_first": "Low-angle medium of the Queen gesturing toward D'Artagnan before the assembled court, her voice clear and proud",
+          "kf_last": "Push-in on D'Artagnan as he steps forward, tall, in a new colonel's uniform",
+          "continuity": "Ballroom palette; colonel's sash added",
+          "motion": "push-in on the promotion",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of the Queen gesturing toward D'Artagnan before the assembled court, her voice clear and proud then low-angle medium of the Queen gesturing toward D'Artagnan before the court, then push in on D'Artagnan stepping forward, tall, in a new colonel's uniform the camera push-in settling into push-in on D'Artagnan as he steps forward, tall, in a new colonel's uniform a voice speaks in Macedonian: \"Кралицата: „За неговата храброст, нека биде унапреден во полковник на мускетарите!“\" continuity held: Ballroom palette; colonel's sash added",
+          "image_prompt_start": "photoreal cinematic: medium of the Queen gesturing toward D'Artagnan before the assembled court, her voice clear and proud.",
+          "image_prompt_end": "photoreal cinematic: on D'Artagnan as he steps forward, tall, in a new colonel's uniform.",
+          "video_prompt_start": "Low-angle medium of the Queen gesturing toward D'Artagnan before the court. push in on D'Artagnan stepping forward, tall, in a new colonel's uniform. The camera push-in. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Кралицата: „За неговата храброст, нека биде унапреден во полковник на мускетарите!“\" Continuity held: Ballroom palette; colonel's sash added.",
+          "video_prompt_end": "Low-angle medium of the Queen gesturing toward D'Artagnan before the court. push in on D'Artagnan stepping forward, tall, in a new colonel's uniform. The camera push-in. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Кралицата: „За неговата храброст, нека биде унапреден во полковник на мускетарите!“\" Continuity held: Ballroom palette; colonel's sash added.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S45",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "richelieu_A5_fused"
+          ],
+          "ref_scope": "image1: the fused master of Cardinal Richelieu — powerful cardinal in crimson vestments with a cold gaze — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close-up of Richelieu’s pale face as he bows stiffly, a thin forced smile"
+            ],
+            [
+              1.5,
+              3.0,
+              "push in on his narrowed eyes as the camera holds his bitterness"
+            ]
+          ],
+          "narration_mk": "Кардиналот мораше да нареди, но во очите му гореше злоба.",
+          "dialogue_mk": "Ришелје: „Нека биде така.“",
+          "kf_first": "Close-up of Richelieu's pale face as he bows stiffly, a thin forced smile over clenched jaw",
+          "kf_last": "Push-in on his narrowed eyes as the camera holds his bitterness",
+          "continuity": "Richelieu identity; warm ball light against his cold face",
+          "motion": "push-in on his gaze",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of Richelieu's pale face as he bows stiffly, a thin forced smile over clenched jaw then close-up of Richelieu’s pale face as he bows stiffly, a thin forced smile, then push in on his narrowed eyes as the camera holds his bitterness the camera push-in settling into push-in on his narrowed eyes as the camera holds his bitterness a voice speaks in Macedonian: \"Ришелје: „Нека биде така.“\" continuity held: Richelieu identity; warm ball light against his cold face",
+          "image_prompt_start": "photoreal cinematic: of Richelieu's pale face as he bows stiffly, a thin forced smile over clenched jaw.",
+          "image_prompt_end": "photoreal cinematic: on his narrowed eyes as the holds his bitterness.",
+          "video_prompt_start": "Close-up of Richelieu’s pale face as he bows stiffly, a thin forced smile. push in on his narrowed eyes as the camera holds his bitterness. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Ришелје: „Нека биде така.“\" Continuity held: Richelieu identity; warm ball light against his cold face.",
+          "video_prompt_end": "Close-up of Richelieu’s pale face as he bows stiffly, a thin forced smile. push in on his narrowed eyes as the camera holds his bitterness. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Ришелје: „Нека биде така.“\" Continuity held: Richelieu identity; warm ball light against his cold face.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S46",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "pull-back",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "dartagnan_A1_fused",
+            "athos_A2_fused",
+            "porthos_A3_fused",
+            "aramis_A4_fused",
+            "tavern_env_A11_prop"
+          ],
+          "ref_scope": "image1: the fused master of D'Artagnan — young Gascon with dark hair and a worn cloak over musketeer blue — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Athos — noble musketeer with a dark beard and elegant blue-and-silver uniform — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Porthos — large cheerful musketeer with an ornate baldric and booming presence — 100% identical; studio bg/pose/light NOT used; image4: the fused master of Aramis — refined musketeer with clean features and graceful bearing — 100% identical; studio bg/pose/light NOT used; image5: the warm late-night tavern — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/scenic design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "low-angle wide of the four friends raising tankards in the firelit tavern"
+            ],
+            [
+              1.8,
+              3.5,
+              "pull back to show them shoulder to shoulder, the Paris night glittering beyond"
+            ]
+          ],
+          "narration_mk": "Дартањан прослави со своите неразделни пријатели — неговиот сон конечно стана стварност.",
+          "dialogue_mk": "Четворицата: „За мускетарите!“",
+          "kf_first": "Low-angle wide of the four friends in a tavern late at night, raising tankards together, firelight warm on their laughing faces",
+          "kf_last": "Pull-back to show them shoulder to shoulder against the window, the Paris night glittering beyond",
+          "continuity": "Finale palette: firelight gold, deep night; all identities locked",
+          "motion": "pull-back on the celebration",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of the four friends in a tavern late at night, raising tankards together, firelight warm on their laughing faces then low-angle wide of the four friends raising tankards in the firelit tavern, then pull back to show them shoulder to shoulder, the Paris night glittering beyond the camera pull-back settling into pull-back to show them shoulder to shoulder against the window, the Paris night glittering beyond a voice speaks in Macedonian: \"Четворицата: „За мускетарите!“\" continuity held: Finale palette: firelight gold, deep night; all identities locked",
+          "image_prompt_start": "photoreal cinematic: wide of the four friends in a tavern late at night, raising tankards together, firelight warm on their laughing faces.",
+          "image_prompt_end": "photoreal cinematic: to show them shoulder to shoulder against the window, the Paris night glittering beyond.",
+          "video_prompt_start": "Low-angle wide of the four friends raising tankards in the firelit tavern. pull back to show them shoulder to shoulder, the Paris night glittering beyond. The camera pull-back. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Четворицата: „За мускетарите!“\" Continuity held: Finale palette: firelight gold, deep night; all identities locked.",
+          "video_prompt_end": "Low-angle wide of the four friends raising tankards in the firelit tavern. pull back to show them shoulder to shoulder, the Paris night glittering beyond. The camera pull-back. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Четворицата: „За мускетарите!“\" Continuity held: Finale palette: firelight gold, deep night; all identities locked.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "night_chase_cornered_chamber_and_the_golden_ball",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class",
+        "screen_dir"
+      ],
+      "palette": [
+        "#1f2c4a",
+        "#7f8fb5",
+        "#e8c85a"
+      ],
+      "light_direction": "key light from screen-left, cold moonlight warming into the golden ballroom",
+      "time_of_day": "night"
+    }
+  ],
+  "director_corrections": {
+    "issued": "2026-11-07",
+    "source": "KB §13 DIRECTOR CORRECTIONS — overrides all prior asset/keyframe guidance",
+    "rules": [
+      "DD HEADWEAR: no cap/hood/bandana/mask on head; hood = back-cowl only (cape-like); bare head + teal-blue glowing hair always visible; any head/face covering = REJECT",
+      "LEGENDARY WEAPONS MUST APPEAR: DD = twin Frostbite-class hand crossbows (ice-blue arcane crystal limbs, frost runes, frozen-light string, teal-blue glow); AZ = Dawnbreaker-class greatsword (pale sunsteel, molten-gold runes, golden holy fire edge, sunburst crossguard); hero sheet/keyframe without weapon = INCOMPLETE",
+      "WEAPON ANTI-SLOP: fantasy construction only; crossbow must NEVER read as firearm (no barrel/magazine/stock/Uzi/SMG silhouette = REJECT); anti-slop negatives always appended",
+      "BOSS FACE: Mal'garot HAS a prolific molten-lava face (lava dripping/running, drops falling to ground); faceless boss sheets SUPERSEDED",
+      "LOCATION BRIGHTNESS FLOOR: environment plates silhouette-readable at thumbnail; no murk-dark grades"
+    ],
+    "applies_when": "Activates when face_lock changes from AI-default to an enrolled identity (DD/AZ). AI-default packages carry this as a forward constraint, not a current defect.",
+    "anti_slop_negatives": "firearm, gun, machinegun, Uzi, barrel, magazine, ammo clip, muzzle, modern weapon"
+  }
+}

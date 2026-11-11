@@ -1,0 +1,2600 @@
+{
+  "num": "40",
+  "title_mk": "Маѓепсаниот орел",
+  "title_en": "The Enchanted Eagle",
+  "genre": "Бајка · фантазија · љубовна приказна",
+  "logline": "Младата селанка, претворена од волшебникот Ките во орел, го води својот сакан принц до дрвото со златни јаболка за да го добие благословот на кралот.",
+  "spec": {
+    "aspect": "16:9",
+    "resolution": "1216x704",
+    "fps": 24,
+    "model": "model-agnostic (chosen at generation)",
+    "style": "photoreal",
+    "flf": true,
+    "language": "mk",
+    "shot_floor": 40,
+    "shot_max": 60,
+    "seed_policy": "fixed-per-shot (same seed → reproducible shot; re-roll per shot id)",
+    "style_anchor": [
+      "Diablo 2 cinematic",
+      "World of Warcraft cinematic",
+      "StarCraft cinematic"
+    ],
+    "negative_prompt": "deformed, extra limbs, morphing, watermark, text, static frame, blurry, low quality, cropped head, cut-off face",
+    "frames": 121,
+    "frames_fallback": 81,
+    "routes": [
+      {
+        "model": "Wan2.1-FLF2V-14B-720P",
+        "input": "start+end native (run START-ONLY)",
+        "status": "WORKING (lead for 14B quality)"
+      },
+      {
+        "model": "Kandinsky 6.0 Lite/Pro",
+        "input": "start-image-only",
+        "status": "WORKING (Pro-distill untested at scale)"
+      },
+      {
+        "model": "SkyReels-V3 R2V-14B",
+        "input": "start-image-only",
+        "status": "WORKING (fallback)"
+      },
+      {
+        "model": "LTX-Video 2B v0.9.5",
+        "input": "start-image-only",
+        "status": "WORKING (small/fast, low ceiling)"
+      },
+      {
+        "model": "Mochi-1",
+        "input": "start-image-only",
+        "status": "untested here"
+      },
+      {
+        "model": "LTX-2.3 22B distilled",
+        "input": "start-image-only",
+        "status": "DEAD (nanobind native-crash, 42 note)"
+      }
+    ],
+    "model_note": "Model chosen per story at generation (43 §4). Keyframes + continuation prompts are generator-agnostic; only the render command differs per model."
+  },
+  "cast": [
+    {
+      "role": "Принцот / The Prince",
+      "trait": "Млад, храбар принц во богата облека, заљубен во селанката",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Селанката / The Peasant Girl",
+      "trait": "Убава млада селанка со светли очи, подоцна претворена во орел",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Кралот / The King",
+      "trait": "Строг татко на принцот со круна, црвени облеки и сива брада",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Волшебникот Ките / The Wizard Kite",
+      "trait": "Мудар, белобрад чаробник со дрвено волшебно стапче",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    }
+  ],
+  "acts": [
+    {
+      "id": "act1",
+      "num": "Act I",
+      "title": "Средбата",
+      "color": "#2dd4bf",
+      "pct": 30,
+      "synopsis": "Принцот ја среќава убавата селанка во полето и се вљубува, но кралот го одбива бракот и двајцата се принудени да бидат разделени.",
+      "location_ref": "cornfield_scene",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#f6c453",
+        "#8c5a2b",
+        "#f3e6c0"
+      ],
+      "light_direction": "key light from screen-left, warm golden-hour daylight",
+      "time_of_day": "day",
+      "shots": [
+        {
+          "id": "S01",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "girl_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Peasant Girl - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "crane down over the cornfield"
+            ],
+            [
+              2.0,
+              3.5,
+              "girl straightens and looks up"
+            ]
+          ],
+          "narration_mk": "Еден принц патуваше низ златните полиња и здогледа девојка меѓу пченката.",
+          "dialogue_mk": "",
+          "kf_first": "Aerial establishing view of a sunlit cornfield at golden hour, a peasant girl gathering corn far below, a lone rider on the horizon, warm golden haze, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Crane down toward the girl as she straightens among the tall corn stalks",
+          "continuity": "Golden-hour field palette, tall corn rows",
+          "motion": "slow crane-down; corn swaying in breeze",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: aerial establishing view of a sunlit cornfield at golden hour, a peasant girl gathering corn far below, a lone rider on the horizon, warm golden haze Girl slender, heroine, in dress, wreathed in petals then crane down over the cornfield, then girl straightens and looks up the camera crane-down settling into crane down toward the girl as she straightens among the tall corn stalks with petals swirl and rustle continuity held: Golden-hour field palette, tall corn rows",
+          "image_prompt_start": "photoreal cinematic: establishing view of a sunlit cornfield at golden hour, a peasant girl gathering corn far below, a lone rider on the horizon, warm golden haze.",
+          "image_prompt_end": "photoreal cinematic: toward the girl as she straightens among the tall corn stalks.",
+          "video_prompt_start": "Crane down over the cornfield. girl straightens and looks up. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Golden-hour field palette, tall corn rows.",
+          "video_prompt_end": "Crane down over the cornfield. girl straightens and looks up. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Golden-hour field palette, tall corn rows.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S02",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "girl_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Peasant Girl - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "girl works among stalks"
+            ],
+            [
+              1.8,
+              3.0,
+              "she turns toward the road"
+            ]
+          ],
+          "narration_mk": "Девојката работеше тивко, а нејзината убавина светеше сред златото на полето.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the young peasant girl among tall corn stalks, simple linen dress, sunlit face, wind-blown hair, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "She turns slightly toward the distant road, a faint smile forming",
+          "continuity": "Same girl costume and warm light from S01",
+          "motion": "gentle turn of the head; corn rustling",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the young peasant girl among tall corn stalks, simple linen dress, sunlit face, wind-blown hair Girl slender, heroine, in dress, wreathed in petals then girl works among stalks, then she turns toward the road the camera static settling into she turns slightly toward the distant road, a faint smile forming with petals swirl and rustle continuity held: Same girl costume and warm light from S01",
+          "image_prompt_start": "photoreal cinematic: of the young peasant girl among tall corn stalks, simple linen dress, sunlit face, wind-blown hair.",
+          "image_prompt_end": "photoreal cinematic: She slightly toward the distant road, a faint smile forming.",
+          "video_prompt_start": "Girl works among stalks. she turns toward the road. The camera static. The beat resolves into the next matching frame. Continuity held: Same girl costume and warm light from S01.",
+          "video_prompt_end": "Girl works among stalks. she turns toward the road. The camera static. The beat resolves into the next matching frame. Continuity held: Same girl costume and warm light from S01.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S03",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "prince_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the young Prince - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "rider approaches"
+            ],
+            [
+              1.6,
+              3.0,
+              "he reins in and stares"
+            ]
+          ],
+          "narration_mk": "Принцот јаваше кон неа, срцето му забрза.",
+          "dialogue_mk": "",
+          "kf_first": "Medium tracking shot of a young prince on horseback riding through the cornfield edge, rich travelling cloak, soft afternoon light, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "He reins the horse to a stop and stares ahead, spellbound",
+          "continuity": "Prince costume and horse; golden field light",
+          "motion": "track beside the horse; rider slows",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium tracking shot of a young prince on horseback riding through the cornfield edge, rich travelling cloak, soft afternoon light Prince athletic, warrior, in cloak, armor, carrying sword, wreathed in golden glow then rider approaches, then he reins in and stares the camera track settling into he reins the horse to a stop and stares ahead, spellbound with steel rings, a low radiant hum continuity held: Prince costume and horse; golden field light",
+          "image_prompt_start": "photoreal cinematic: of a young prince on horseback riding through the cornfield edge, rich travelling cloak, soft afternoon light.",
+          "image_prompt_end": "photoreal cinematic: He reins the horse to a stop and stares ahead, spellbound.",
+          "video_prompt_start": "Rider approaches. he reins in and stares. The camera track. The beat resolves into the next matching frame. Continuity held: Prince costume and horse; golden field light.",
+          "video_prompt_end": "Rider approaches. he reins in and stares. The camera track. The beat resolves into the next matching frame. Continuity held: Prince costume and horse; golden field light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S04",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "prince_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the young Prince - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "eyes widen"
+            ],
+            [
+              1.5,
+              3.0,
+              "push-in as expression softens"
+            ]
+          ],
+          "narration_mk": "Кога ја виде, застана како маѓепсан.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the young prince's eyes widening with sudden love, warm rim light, photoreal, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Push-in on his softened expression as wonder overtakes him",
+          "continuity": "Same prince face identity",
+          "motion": "slow push-in on the eyes",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the young prince's eyes widening with sudden love, warm rim light, photoreal Prince athletic, warrior, in cloak, armor, carrying sword, wreathed in golden glow then eyes widen, then push-in as expression softens settling into push-in on his softened expression as wonder overtakes him with steel rings, a low radiant hum continuity held: Same prince face identity",
+          "image_prompt_start": "photoreal cinematic: of the young prince's eyes widening with sudden love, warm rim light, photoreal.",
+          "image_prompt_end": "photoreal cinematic: on his softened expression as wonder overtakes him.",
+          "video_prompt_start": "Eyes widen. push-in as expression softens. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same prince face identity.",
+          "video_prompt_end": "Eyes widen. push-in as expression softens. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same prince face identity.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S05",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "girl_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Peasant Girl - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "girl looks up"
+            ],
+            [
+              1.5,
+              3.0,
+              "smile blooms"
+            ]
+          ],
+          "narration_mk": "И таа го забележа него.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the peasant girl's face turning to look, bright curious eyes, golden light through corn, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "A gentle smile blooms as recognition dawns",
+          "continuity": "Same girl face identity",
+          "motion": "subtle smile; eyes brighten",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the peasant girl's face turning to look, bright curious eyes, golden light through corn Girl slender, heroine, in dress, wreathed in petals then girl looks up, then smile blooms the camera static settling into a gentle smile blooms as recognition dawns with petals swirl and rustle continuity held: Same girl face identity",
+          "image_prompt_start": "photoreal cinematic: of the peasant girl's face turning to look, bright curious eyes, golden light through corn.",
+          "image_prompt_end": "photoreal cinematic: A gentle smile blooms as recognition dawns.",
+          "video_prompt_start": "Girl looks up. smile blooms. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same girl face identity.",
+          "video_prompt_end": "Girl looks up. smile blooms. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same girl face identity.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S06",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "prince_A1_fused",
+            "girl_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of the young Prince - 100% identical; image2: the fused master of the Peasant Girl - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "two-shot holds"
+            ],
+            [
+              1.8,
+              3.5,
+              "they lean closer, eyes locked"
+            ]
+          ],
+          "narration_mk": "Двајцата млади се сретнаа меѓу пченките и веднаш се вљубија.",
+          "dialogue_mk": "",
+          "kf_first": "Medium two-shot of the prince and the peasant girl meeting among the corn stalks, hands nearly touching, dappled sunlight, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "They lean toward each other, eyes locked",
+          "continuity": "Both identities, same field palette",
+          "motion": "they close the distance",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium two-shot of the prince and the peasant girl meeting among the corn stalks, hands nearly touching, dappled sunlight Prince athletic, warrior, in cloak, armor, carrying sword, wreathed in golden glow Girl slender, heroine, in dress, wreathed in petals then two-shot holds, then they lean closer, eyes locked the camera static settling into they lean toward each other, eyes locked with steel rings, a low radiant hum continuity held: Both identities, same field palette",
+          "image_prompt_start": "photoreal cinematic: two-shot of the prince and the peasant girl meeting among the corn stalks, hands nearly touching, dappled sunlight.",
+          "image_prompt_end": "photoreal cinematic: They lean toward each other, eyes locked.",
+          "video_prompt_start": "Two-shot holds. they lean closer, eyes locked. The camera static. The beat resolves into the next matching frame. Continuity held: Both identities, same field palette.",
+          "video_prompt_end": "Two-shot holds. they lean closer, eyes locked. The camera static. The beat resolves into the next matching frame. Continuity held: Both identities, same field palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S07",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "crane-up",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "prince_A1_fused",
+            "girl_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of the young Prince - 100% identical; image2: the fused master of the Peasant Girl - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "couple framed low"
+            ],
+            [
+              1.6,
+              3.0,
+              "crane up, sun flares"
+            ]
+          ],
+          "narration_mk": "Сонцето ги позлати додека ветуваа љубов.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of the prince and girl together in the golden field, the low sun behind them ringed in light, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Crane up revealing the endless field around them both",
+          "continuity": "Same couple, golden-hour backlight",
+          "motion": "crane-up as the sun flares",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of the prince and girl together in the golden field, the low sun behind them ringed in light Prince athletic, warrior, in cloak, armor, carrying sword, wreathed in golden glow Girl slender, heroine, in dress, wreathed in petals then couple framed low, then crane up, sun flares the camera crane-up settling into crane up revealing the endless field around them both with steel rings, a low radiant hum continuity held: Same couple, golden-hour backlight",
+          "image_prompt_start": "photoreal cinematic: wide of the prince and girl together in the golden field, the low sun behind them ringed in light.",
+          "image_prompt_end": "photoreal cinematic: revealing the endless field around them both.",
+          "video_prompt_start": "Couple framed low. crane up, sun flares. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Same couple, golden-hour backlight.",
+          "video_prompt_end": "Couple framed low. crane up, sun flares. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Same couple, golden-hour backlight.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S08",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "king_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of the King - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "king sits in judgment"
+            ],
+            [
+              1.6,
+              3.0,
+              "he leans forward, scowling"
+            ]
+          ],
+          "narration_mk": "Но кралот, таткото на принцот, не го сакаше тој брак.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the stern King seated in the stone throne hall, heavy crown and deep red robes, cold torchlight, photoreal World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "He leans forward, brow furrowed in refusal",
+          "continuity": "King identity, throne hall palette",
+          "motion": "the king leans forward",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the stern King seated in the stone throne hall, heavy crown and deep red robes, cold torchlight, photoreal World of Warcraft cinematic grade King armored, monarch, in crown, armor, beard, cloak, wreathed in golden glow then king sits in judgment, then he leans forward, scowling the camera static settling into he leans forward, brow furrowed in refusal with a low radiant hum continuity held: King identity, throne hall palette",
+          "image_prompt_start": "photoreal cinematic: of the stern King seated in the stone throne hall, heavy crown and deep red robes, cold torchlight.",
+          "image_prompt_end": "photoreal cinematic: He leans forward, brow furrowed in refusal.",
+          "video_prompt_start": "King sits in judgment. he leans forward, scowling. The camera static. The beat resolves into the next matching frame. Continuity held: King identity, throne hall palette.",
+          "video_prompt_end": "King sits in judgment. he leans forward, scowling. The camera static. The beat resolves into the next matching frame. Continuity held: King identity, throne hall palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S09",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "king_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of the King - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "stern face"
+            ],
+            [
+              1.5,
+              3.0,
+              "push-in on his stare"
+            ]
+          ],
+          "narration_mk": "Кралската гордост не дозволуваше селанка да стане принцеза.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the king's displeased face, hard eyes, grey beard, torchlight sculpting his features, photoreal World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Push-in on his resolute, unyielding stare",
+          "continuity": "Same king face identity",
+          "motion": "slow push-in",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the king's displeased face, hard eyes, grey beard, torchlight sculpting his features, photoreal World of Warcraft cinematic grade King armored, monarch, in crown, armor, beard, cloak, wreathed in golden glow then stern face, then push-in on his stare settling into push-in on his resolute, unyielding stare with a low radiant hum continuity held: Same king face identity",
+          "image_prompt_start": "photoreal cinematic: of the king's displeased face, hard eyes, grey beard, torchlight sculpting his features.",
+          "image_prompt_end": "photoreal cinematic: on his resolute, unyielding stare.",
+          "video_prompt_start": "Stern face. push-in on his stare. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same king face identity.",
+          "video_prompt_end": "Stern face. push-in on his stare. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same king face identity.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S10",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "prince_A1_fused",
+            "king_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of the young Prince - 100% identical; image2: the fused master of the King - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "prince pleads"
+            ],
+            [
+              1.8,
+              3.5,
+              "king turns away, unmoved"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Принц: „Таа е единствената што ја сакам.“",
+          "kf_first": "Medium of the prince pleading before the seated king, one hand to his chest, earnest expression, photoreal World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "The king turns his head away, unmoved",
+          "continuity": "Both identities, throne hall light",
+          "motion": "prince gestures; king turns away",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the prince pleading before the seated king, one hand to his chest, earnest expression, photoreal World of Warcraft cinematic grade Prince athletic, warrior, in cloak, armor, carrying sword, wreathed in golden glow King armored, monarch, in crown, armor, beard, cloak, wreathed in golden glow then prince pleads, then king turns away, unmoved the camera static settling into the king turns his head away, unmoved with steel rings, a low radiant hum a voice speaks in Macedonian: \"Принц: „Таа е единствената што ја сакам.“\" continuity held: Both identities, throne hall light",
+          "image_prompt_start": "photoreal cinematic: of the prince pleading before the seated king, one hand to his chest, earnest expression.",
+          "image_prompt_end": "photoreal cinematic: The king his head away, unmoved.",
+          "video_prompt_start": "Prince pleads. king turns away, unmoved. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Принц: „Таа е единствената што ја сакам.“\" Continuity held: Both identities, throne hall light.",
+          "video_prompt_end": "Prince pleads. king turns away, unmoved. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Принц: „Таа е единствената што ја сакам.“\" Continuity held: Both identities, throne hall light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S11",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "prince_A1_fused",
+            "girl_A2_fused",
+            "king_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of the young Prince - 100% identical; image2: the fused master of the Peasant Girl - 100% identical; image3: the fused master of the King - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "hall scene"
+            ],
+            [
+              1.6,
+              3.0,
+              "girl led away, prince reaches"
+            ]
+          ],
+          "narration_mk": "Со тешко срце ги разделија, еден од друг.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of the throne hall as guards separate the prince and the peasant girl, the king watching from his seat, photoreal World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "The girl is led away while the prince reaches after her",
+          "continuity": "All three identities, hall palette",
+          "motion": "track as the girl is led away",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of the throne hall as guards separate the prince and the peasant girl, the king watching from his seat, photoreal World of Warcraft cinematic grade Prince athletic, warrior, in cloak, armor, carrying sword, wreathed in golden glow Girl slender, heroine, in dress, wreathed in petals King armored, monarch, in crown, armor, beard, cloak, wreathed in golden glow then hall scene, then girl led away, prince reaches the camera track settling into the girl is led away while the prince reaches after her with steel rings, a low radiant hum continuity held: All three identities, hall palette",
+          "image_prompt_start": "photoreal cinematic: wide of the throne hall as guards separate the prince and the peasant girl, the king watching from his seat.",
+          "image_prompt_end": "photoreal cinematic: The girl is led away while the prince reaches after her.",
+          "video_prompt_start": "Hall scene. girl led away, prince reaches. The camera track. The beat resolves into the next matching frame. Continuity held: All three identities, hall palette.",
+          "video_prompt_end": "Hall scene. girl led away, prince reaches. The camera track. The beat resolves into the next matching frame. Continuity held: All three identities, hall palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S12",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "girl_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Peasant Girl - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "girl bowed, sorrowful"
+            ],
+            [
+              1.8,
+              3.0,
+              "she lifts her tearful face"
+            ]
+          ],
+          "narration_mk": "Девојката остана сама, со очи полни солзи.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the peasant girl seated alone on a stone step, head bowed, tearful in fading light, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "She lifts her face, wet cheeks catching the last light",
+          "continuity": "Same girl identity, soft dusk light",
+          "motion": "she lifts her head",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the peasant girl seated alone on a stone step, head bowed, tearful in fading light Girl slender, heroine, in dress, wreathed in petals then girl bowed, sorrowful, then she lifts her tearful face the camera static settling into she lifts her face, wet cheeks catching the last light with petals swirl and rustle continuity held: Same girl identity, soft dusk light",
+          "image_prompt_start": "photoreal cinematic: of the peasant girl seated alone on a stone step, head bowed, tearful in fading light.",
+          "image_prompt_end": "photoreal cinematic: She lifts her face, wet cheeks catching the last light.",
+          "video_prompt_start": "Girl bowed, sorrowful. she lifts her tearful face. The camera static. The beat resolves into the next matching frame. Continuity held: Same girl identity, soft dusk light.",
+          "video_prompt_end": "Girl bowed, sorrowful. she lifts her tearful face. The camera static. The beat resolves into the next matching frame. Continuity held: Same girl identity, soft dusk light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S13",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "girl_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Peasant Girl - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "girl resolute"
+            ],
+            [
+              1.6,
+              3.0,
+              "push-in on determined eyes"
+            ]
+          ],
+          "narration_mk": "Но решена, таа тргна да ја побара моќта на волшебникот Ките.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle close-up of the peasant girl's determined face, jaw set, dawn light rising behind her, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Push-in on her fierce, hopeful eyes",
+          "continuity": "Same girl identity",
+          "motion": "slow push-in; eyes harden with resolve",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle close-up of the peasant girl's determined face, jaw set, dawn light rising behind her Girl slender, heroine, in dress, wreathed in petals then girl resolute, then push-in on determined eyes settling into push-in on her fierce, hopeful eyes with petals swirl and rustle continuity held: Same girl identity",
+          "image_prompt_start": "photoreal cinematic: close-up of the peasant girl's determined face, jaw set, dawn light rising behind her.",
+          "image_prompt_end": "photoreal cinematic: on her fierce, hopeful eyes.",
+          "video_prompt_start": "Girl resolute. push-in on determined eyes. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same girl identity.",
+          "video_prompt_end": "Girl resolute. push-in on determined eyes. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same girl identity.",
+          "motion_intensity": "gentle"
+        }
+      ]
+    },
+    {
+      "id": "act2",
+      "num": "Act II",
+      "title": "Полетот",
+      "color": "#fbbf24",
+      "pct": 50,
+      "synopsis": "Девојката ја бара помошта на волшебникот Ките и се претвора во орел; лета до дворецот, го поканува принцот, го крева во небото и го носи до дрвото со златни јаболка.",
+      "location_ref": "wizard_glen_scene",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#3b2f2f",
+        "#e3a72f",
+        "#1f2937"
+      ],
+      "light_direction": "key light from screen-right, dusk-to-night arcane glow",
+      "time_of_day": "dusk",
+      "shots": [
+        {
+          "id": "S14",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "crane-down",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "kite_A4_fused",
+            "girl_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Wizard Kite - 100% identical; image2: the fused master of the Peasant Girl - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "crane down over glen"
+            ],
+            [
+              1.8,
+              3.0,
+              "girl reaches the hut"
+            ]
+          ],
+          "narration_mk": "Во сенчеста клисура живееше волшебникот Ките, познат по чуда.",
+          "dialogue_mk": "",
+          "kf_first": "Wide establishing of a misty forest glen with a stone wizard hut, the girl walking in, an old sorcerer waiting, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "Crane down toward the hut and the waiting wizard",
+          "continuity": "Misty glen palette, hut and sorcerer",
+          "motion": "crane-down; mist drifting",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide establishing of a misty forest glen with a stone wizard hut, the girl walking in, an old sorcerer waiting, photoreal StarCraft cinematic grade Kite robed, mage, in hood, beard, carrying staff, wreathed in rune ring Girl slender, heroine, in dress, wreathed in petals then crane down over glen, then girl reaches the hut the camera crane-down settling into crane down toward the hut and the waiting wizard with arcane energy crackles, magic sizzles continuity held: Misty glen palette, hut and sorcerer",
+          "image_prompt_start": "photoreal cinematic: establishing of a misty forest glen with a stone wizard hut, the girl walking in, an old sorcerer waiting.",
+          "image_prompt_end": "photoreal cinematic: toward the hut and the waiting wizard.",
+          "video_prompt_start": "Crane down over glen. girl reaches the hut. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Misty glen palette, hut and sorcerer.",
+          "video_prompt_end": "Crane down over glen. girl reaches the hut. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Misty glen palette, hut and sorcerer.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S15",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "kite_A4_fused",
+            "girl_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Wizard Kite - 100% identical; image2: the fused master of the Peasant Girl - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "wizard speaks"
+            ],
+            [
+              1.6,
+              3.0,
+              "girl nods hopefully"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Ките: „Дојде за љубовта што ти ја одзедоа.“",
+          "kf_first": "Medium two-shot of the white-bearded wizard Kite greeting the peasant girl at his hut, wooden staff, kind old eyes, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "The girl nods, hopeful",
+          "continuity": "Both identities, glen light",
+          "motion": "wizard speaks; girl nods",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium two-shot of the white-bearded wizard Kite greeting the peasant girl at his hut, wooden staff, kind old eyes, photoreal StarCraft cinematic grade Kite robed, mage, in hood, beard, carrying staff, wreathed in rune ring Girl slender, heroine, in dress, wreathed in petals then wizard speaks, then girl nods hopefully the camera static settling into the girl nods, hopeful with arcane energy crackles, magic sizzles a voice speaks in Macedonian: \"Ките: „Дојде за љубовта што ти ја одзедоа.“\" continuity held: Both identities, glen light",
+          "image_prompt_start": "photoreal cinematic: two-shot of the white-bearded wizard Kite greeting the peasant girl at his hut, wooden staff, kind old eyes.",
+          "image_prompt_end": "photoreal cinematic: The girl nods, hopeful.",
+          "video_prompt_start": "Wizard speaks. girl nods hopefully. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Ките: „Дојде за љубовта што ти ја одзедоа.“\" Continuity held: Both identities, glen light.",
+          "video_prompt_end": "Wizard speaks. girl nods hopefully. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Ките: „Дојде за љубовта што ти ја одзедоа.“\" Continuity held: Both identities, glen light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S16",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "kite_A4_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Wizard Kite - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "wizard speaks"
+            ],
+            [
+              1.6,
+              3.0,
+              "light gathers around his hand"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Ките: „Ќе те претворам во орел, и ќе одлеташ кај твојот љубен.“",
+          "kf_first": "Close-up of the wizard Kite's lined face as he speaks the promise, eyes glinting with arcane light, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "Push-in as tiny motes of light gather around his raised hand",
+          "continuity": "Same wizard identity",
+          "motion": "push-in; arcane light gathers",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the wizard Kite's lined face as he speaks the promise, eyes glinting with arcane light, photoreal StarCraft cinematic grade Kite robed, mage, in hood, beard, carrying staff, wreathed in rune ring then wizard speaks, then light gathers around his hand the camera push-in settling into push-in as tiny motes of light gather around his raised hand with arcane energy crackles, magic sizzles a voice speaks in Macedonian: \"Ките: „Ќе те претворам во орел, и ќе одлеташ кај твојот љубен.“\" continuity held: Same wizard identity",
+          "image_prompt_start": "photoreal cinematic: of the wizard Kite's lined face as he speaks the promise, eyes glinting with arcane light.",
+          "image_prompt_end": "photoreal cinematic: as tiny motes of light gather around his raised hand.",
+          "video_prompt_start": "Wizard speaks. light gathers around his hand. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Ките: „Ќе те претворам во орел, и ќе одлеташ кај твојот љубен.“\" Continuity held: Same wizard identity.",
+          "video_prompt_end": "Wizard speaks. light gathers around his hand. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Ките: „Ќе те претворам во орел, и ќе одлеташ кај твојот љубен.“\" Continuity held: Same wizard identity.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S17",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "kite_A4_fused",
+            "girl_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Wizard Kite - 100% identical; image2: the fused master of the Peasant Girl - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "wizard raises staff"
+            ],
+            [
+              1.6,
+              3.0,
+              "light spirals around the girl"
+            ]
+          ],
+          "narration_mk": "Ките крена волшебно стапче кон својата гостинка.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the wizard raising his carved wooden staff toward the standing girl, a soft glow at its tip, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "Ribbons of golden light begin to spiral around the girl",
+          "continuity": "Both identities, glen light turning golden",
+          "motion": "light spirals around the girl",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the wizard raising his carved wooden staff toward the standing girl, a soft glow at its tip, photoreal StarCraft cinematic grade Kite robed, mage, in hood, beard, carrying staff, wreathed in rune ring Girl slender, heroine, in dress, wreathed in petals then wizard raises staff, then light spirals around the girl the camera static settling into ribbons of golden light begin to spiral around the girl with arcane energy crackles, magic sizzles continuity held: Both identities, glen light turning golden",
+          "image_prompt_start": "photoreal cinematic: of the wizard raising his carved wooden staff toward the standing girl, a soft glow at its tip.",
+          "image_prompt_end": "photoreal cinematic: Ribbons of golden light begin to spiral around the girl.",
+          "video_prompt_start": "Wizard raises staff. light spirals around the girl. The camera static. The beat resolves into the next matching frame. Continuity held: Both identities, glen light turning golden.",
+          "video_prompt_end": "Wizard raises staff. light spirals around the girl. The camera static. The beat resolves into the next matching frame. Continuity held: Both identities, glen light turning golden.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S18",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "girl_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Peasant Girl - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "wonder on her face"
+            ],
+            [
+              1.6,
+              3.0,
+              "light wraps her features"
+            ]
+          ],
+          "narration_mk": "Топла светлина ја обви девојката.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the peasant girl's face bathed in warm golden magic, eyes wide with wonder, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "Strands of light wrap around her cheeks and hair",
+          "continuity": "Same girl identity",
+          "motion": "her eyes widen; light wraps her",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the peasant girl's face bathed in warm golden magic, eyes wide with wonder, photoreal StarCraft cinematic grade Girl slender, heroine, in dress, wreathed in petals then wonder on her face, then light wraps her features the camera push-in settling into strands of light wrap around her cheeks and hair with petals swirl and rustle continuity held: Same girl identity",
+          "image_prompt_start": "photoreal cinematic: of the peasant girl's face bathed in warm golden magic, eyes wide with wonder.",
+          "image_prompt_end": "photoreal cinematic: Strands of light wrap around her cheeks and hair.",
+          "video_prompt_start": "Wonder on her face. light wraps her features. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same girl identity.",
+          "video_prompt_end": "Wonder on her face. light wraps her features. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same girl identity.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S19",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "eagle_A2_fused",
+            "girl_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Enchanted Eagle (the girl's eagle form) - 100% identical; image2: the fused master of the Peasant Girl - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "silhouette forms"
+            ],
+            [
+              1.8,
+              3.5,
+              "wings unfurl fully"
+            ]
+          ],
+          "narration_mk": "И одеднаш, на нејзините раменици раснаа крилја.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of the girl's silhouette transforming, vast feathered wings unfurling outward in golden light, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "Her form lifts as the wings spread fully into an eagle shape",
+          "continuity": "Golden transformation light, shared identity thread",
+          "motion": "wings unfurl; form lifts",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of the girl's silhouette transforming, vast feathered wings unfurling outward in golden light, photoreal StarCraft cinematic grade Eagle winged, creature, wreathed in wings, golden glow Girl slender, heroine, in dress, wreathed in petals then silhouette forms, then wings unfurl fully the camera crane-up settling into her form lifts as the wings spread fully into an eagle shape with wings beat the air, a low radiant hum continuity held: Golden transformation light, shared identity thread",
+          "image_prompt_start": "photoreal cinematic: wide of the girl's silhouette transforming, vast feathered wings unfurling outward in golden light.",
+          "image_prompt_end": "photoreal cinematic: Her form lifts as the wings spread fully into an eagle shape.",
+          "video_prompt_start": "Silhouette forms. wings unfurl fully. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Golden transformation light, shared identity thread.",
+          "video_prompt_end": "Silhouette forms. wings unfurl fully. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Golden transformation light, shared identity thread.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S20",
+          "shot_type": "CLOSE-UP",
+          "size": "MACRO",
+          "angle": "macro",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "eagle_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Enchanted Eagle (the girl's eagle form) - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "feathers form"
+            ],
+            [
+              1.6,
+              3.0,
+              "plumage completes"
+            ]
+          ],
+          "narration_mk": "Пердувите се распростираа под златната светлина.",
+          "dialogue_mk": "",
+          "kf_first": "Extreme macro insert of golden-brown feathers forming in a lattice of light, individual barbs catching the glow, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "The feather lattice completes into dense plumage",
+          "continuity": "Warm transformation light",
+          "motion": "feathers ripple into place",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: extreme macro insert of golden-brown feathers forming in a lattice of light, individual barbs catching the glow, photoreal StarCraft cinematic grade Eagle winged, creature, wreathed in wings, golden glow then feathers form, then plumage completes the camera static settling into the feather lattice completes into dense plumage with wings beat the air, a low radiant hum continuity held: Warm transformation light",
+          "image_prompt_start": "photoreal cinematic: macro insert of golden-brown feathers forming in a lattice of light, individual barbs catching the glow.",
+          "image_prompt_end": "photoreal cinematic: The feather lattice completes into dense plumage.",
+          "video_prompt_start": "Feathers form. plumage completes. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Warm transformation light.",
+          "video_prompt_end": "Feathers form. plumage completes. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Warm transformation light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S21",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "eagle_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Enchanted Eagle (the girl's eagle form) - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "eagle launches"
+            ],
+            [
+              1.8,
+              3.5,
+              "it climbs into twilight"
+            ]
+          ],
+          "narration_mk": "Таа стана величествен орел и се крена кон небото.",
+          "dialogue_mk": "",
+          "kf_first": "Wide of a magnificent golden-brown eagle launching from the glen into the dusk sky, wings powering upward, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "The eagle climbs into the deepening twilight",
+          "continuity": "Eagle identity, dusk palette",
+          "motion": "eagle launches and climbs",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide of a magnificent golden-brown eagle launching from the glen into the dusk sky, wings powering upward, photoreal StarCraft cinematic grade Eagle winged, creature, wreathed in wings, golden glow then eagle launches, then it climbs into twilight the camera crane-up settling into the eagle climbs into the deepening twilight with wings beat the air, a low radiant hum continuity held: Eagle identity, dusk palette",
+          "image_prompt_start": "photoreal cinematic: of a magnificent golden-brown eagle launching from the glen into the dusk sky, wings powering upward.",
+          "image_prompt_end": "photoreal cinematic: The eagle climbs into the deepening twilight.",
+          "video_prompt_start": "Eagle launches. it climbs into twilight. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Eagle identity, dusk palette.",
+          "video_prompt_end": "Eagle launches. it climbs into twilight. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Eagle identity, dusk palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S22",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "eagle_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Enchanted Eagle (the girl's eagle form) - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "eagle glides"
+            ],
+            [
+              1.8,
+              3.5,
+              "it banks toward the palace"
+            ]
+          ],
+          "narration_mk": "Орелот долета над дворецот на принцот.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of the eagle gliding over a castle on a hill at twilight, painted sky, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "The palace parapet nears as the eagle banks downward",
+          "continuity": "Eagle identity, twilight sky",
+          "motion": "track the eagle; it banks down",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of the eagle gliding over a castle on a hill at twilight, painted sky, photoreal StarCraft cinematic grade Eagle winged, creature, wreathed in wings, golden glow then eagle glides, then it banks toward the palace the camera track settling into the palace parapet nears as the eagle banks downward with wings beat the air, a low radiant hum continuity held: Eagle identity, twilight sky",
+          "image_prompt_start": "photoreal cinematic: wide of the eagle gliding over a castle on a hill at twilight, painted sky.",
+          "image_prompt_end": "photoreal cinematic: The palace parapet nears as the eagle banks downward.",
+          "video_prompt_start": "Eagle glides. it banks toward the palace. The camera track. The beat resolves into the next matching frame. Continuity held: Eagle identity, twilight sky.",
+          "video_prompt_end": "Eagle glides. it banks toward the palace. The camera track. The beat resolves into the next matching frame. Continuity held: Eagle identity, twilight sky.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S23",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "eagle_A2_fused",
+            "prince_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Enchanted Eagle (the girl's eagle form) - 100% identical; image2: the fused master of the young Prince - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "eagle lands"
+            ],
+            [
+              1.6,
+              3.0,
+              "prince turns, startled"
+            ]
+          ],
+          "narration_mk": "И слета на балконот каде принцот тагуваше.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the golden-brown eagle landing on a stone balcony beside the grieving prince at dusk, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "The prince turns, startled, and recognizes its gaze",
+          "continuity": "Eagle and prince identities, balcony dusk light",
+          "motion": "eagle lands; prince turns",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the golden-brown eagle landing on a stone balcony beside the grieving prince at dusk, photoreal StarCraft cinematic grade Eagle winged, creature, wreathed in wings, golden glow Prince athletic, warrior, in cloak, armor, carrying sword, wreathed in golden glow then eagle lands, then prince turns, startled the camera static settling into the prince turns, startled, and recognizes its gaze with wings beat the air, a low radiant hum continuity held: Eagle and prince identities, balcony dusk light",
+          "image_prompt_start": "photoreal cinematic: of the golden-brown eagle landing on a stone balcony beside the grieving prince at dusk.",
+          "image_prompt_end": "photoreal cinematic: The prince , startled, and recognizes its gaze.",
+          "video_prompt_start": "Eagle lands. prince turns, startled. The camera static. The beat resolves into the next matching frame. Continuity held: Eagle and prince identities, balcony dusk light.",
+          "video_prompt_end": "Eagle lands. prince turns, startled. The camera static. The beat resolves into the next matching frame. Continuity held: Eagle and prince identities, balcony dusk light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S24",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "eagle_A2_fused",
+            "prince_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Enchanted Eagle (the girl's eagle form) - 100% identical; image2: the fused master of the young Prince - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "eagle beckons"
+            ],
+            [
+              1.8,
+              3.0,
+              "prince understands"
+            ]
+          ],
+          "narration_mk": "Орелот го повика со очи и јасно му покажа да тргне.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the eagle perched on the balustrade, looking intently at the prince, wings half-spread as if beckoning, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "The prince leans forward, understanding the silent call",
+          "continuity": "Eagle and prince identities",
+          "motion": "eagle beckons with wings; prince leans in",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the eagle perched on the balustrade, looking intently at the prince, wings half-spread as if beckoning, photoreal StarCraft cinematic grade Eagle winged, creature, wreathed in wings, golden glow Prince athletic, warrior, in cloak, armor, carrying sword, wreathed in golden glow then eagle beckons, then prince understands the camera static settling into the prince leans forward, understanding the silent call with wings beat the air, a low radiant hum continuity held: Eagle and prince identities",
+          "image_prompt_start": "photoreal cinematic: of the eagle perched on the balustrade, looking intently at the prince, wings half-spread as if beckoning.",
+          "image_prompt_end": "photoreal cinematic: The prince leans forward, understanding the silent call.",
+          "video_prompt_start": "Eagle beckons. prince understands. The camera static. The beat resolves into the next matching frame. Continuity held: Eagle and prince identities.",
+          "video_prompt_end": "Eagle beckons. prince understands. The camera static. The beat resolves into the next matching frame. Continuity held: Eagle and prince identities.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S25",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "eagle_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Enchanted Eagle (the girl's eagle form) - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "eagle eye holds"
+            ],
+            [
+              1.6,
+              3.0,
+              "gaze softens"
+            ]
+          ],
+          "narration_mk": "Во нејзините очи принцот ја препозна својата љубена.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the eagle's intelligent amber eye, a perfect reflection of the prince in its pupil, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "The eagle's gaze softens with human warmth",
+          "continuity": "Eagle identity detail",
+          "motion": "the eye softens, reflecting the prince",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the eagle's intelligent amber eye, a perfect reflection of the prince in its pupil, photoreal StarCraft cinematic grade Eagle winged, creature, wreathed in wings, golden glow then eagle eye holds, then gaze softens the camera static settling into the eagle's gaze softens with human warmth with wings beat the air, a low radiant hum continuity held: Eagle identity detail",
+          "image_prompt_start": "photoreal cinematic: of the eagle's intelligent amber eye, a perfect reflection of the prince in its pupil.",
+          "image_prompt_end": "photoreal cinematic: The eagle's gaze softens with human warmth.",
+          "video_prompt_start": "Eagle eye holds. gaze softens. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Eagle identity detail.",
+          "video_prompt_end": "Eagle eye holds. gaze softens. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Eagle identity detail.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S26",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "prince_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the young Prince - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "prince runs"
+            ],
+            [
+              1.6,
+              3.0,
+              "he bursts forward"
+            ]
+          ],
+          "narration_mk": "Принцот веднаш побрза кон клисурата на Ките.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium tracking shot of the prince running through the moonlit forest toward the glen, cloak flying, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "He bursts ahead, urgency in his stride",
+          "continuity": "Prince identity, moonlit forest",
+          "motion": "track his run",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium tracking shot of the prince running through the moonlit forest toward the glen, cloak flying, photoreal StarCraft cinematic grade Prince athletic, warrior, in cloak, armor, carrying sword, wreathed in golden glow then prince runs, then he bursts forward the camera track settling into he bursts ahead, urgency in his stride with steel rings, a low radiant hum continuity held: Prince identity, moonlit forest",
+          "image_prompt_start": "photoreal cinematic: medium of the prince running through the moonlit forest toward the glen, cloak flying.",
+          "image_prompt_end": "photoreal cinematic: He bursts ahead, urgency in his stride.",
+          "video_prompt_start": "Prince runs. he bursts forward. The camera track. The beat resolves into the next matching frame. Continuity held: Prince identity, moonlit forest.",
+          "video_prompt_end": "Prince runs. he bursts forward. The camera track. The beat resolves into the next matching frame. Continuity held: Prince identity, moonlit forest.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S27",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "prince_A1_fused",
+            "kite_A4_fused"
+          ],
+          "ref_scope": "image1: the fused master of the young Prince - 100% identical; image2: the fused master of the Wizard Kite - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "prince arrives"
+            ],
+            [
+              1.6,
+              3.0,
+              "wizard studies him"
+            ]
+          ],
+          "narration_mk": "Застана пред волшебникот, без здив.",
+          "dialogue_mk": "",
+          "kf_first": "Medium two-shot of the breathless prince standing before the wizard Kite at the hut, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "The wizard studies him calmly",
+          "continuity": "Both identities, glen light",
+          "motion": "prince catches his breath",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium two-shot of the breathless prince standing before the wizard Kite at the hut, photoreal StarCraft cinematic grade Prince athletic, warrior, in cloak, armor, carrying sword, wreathed in golden glow Kite robed, mage, in hood, beard, carrying staff, wreathed in rune ring then prince arrives, then wizard studies him the camera static settling into the wizard studies him calmly with steel rings, a low radiant hum continuity held: Both identities, glen light",
+          "image_prompt_start": "photoreal cinematic: two-shot of the breathless prince standing before the wizard Kite at the hut.",
+          "image_prompt_end": "photoreal cinematic: The wizard studies him calmly.",
+          "video_prompt_start": "Prince arrives. wizard studies him. The camera static. The beat resolves into the next matching frame. Continuity held: Both identities, glen light.",
+          "video_prompt_end": "Prince arrives. wizard studies him. The camera static. The beat resolves into the next matching frame. Continuity held: Both identities, glen light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S28",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "kite_A4_fused",
+            "prince_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Wizard Kite - 100% identical; image2: the fused master of the young Prince - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "wizard states the price"
+            ],
+            [
+              1.8,
+              3.5,
+              "three apple glows solidify"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Ките: „Ќе го добиеш тоа што го сакаш ако ми донесеш три златни јаболка.“",
+          "kf_first": "Medium of the wizard Kite speaking to the prince, one hand raised, a golden apple-shaped glow hovering in his palm, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "The glow sharpens into three distinct apples",
+          "continuity": "Both identities, golden light accent",
+          "motion": "wizard speaks; three glows form",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the wizard Kite speaking to the prince, one hand raised, a golden apple-shaped glow hovering in his palm, photoreal StarCraft cinematic grade Kite robed, mage, in hood, beard, carrying staff, wreathed in rune ring Prince athletic, warrior, in cloak, armor, carrying sword, wreathed in golden glow then wizard states the price, then three apple glows solidify the camera static settling into the glow sharpens into three distinct apples with arcane energy crackles, magic sizzles a voice speaks in Macedonian: \"Ките: „Ќе го добиеш тоа што го сакаш ако ми донесеш три златни јаболка.“\" continuity held: Both identities, golden light accent",
+          "image_prompt_start": "photoreal cinematic: of the wizard Kite speaking to the prince, one hand raised, a golden apple-shaped glow hovering in his palm.",
+          "image_prompt_end": "photoreal cinematic: The glow sharpens into three distinct apples.",
+          "video_prompt_start": "Wizard states the price. three apple glows solidify. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Ките: „Ќе го добиеш тоа што го сакаш ако ми донесеш три златни јаболка.“\" Continuity held: Both identities, golden light accent.",
+          "video_prompt_end": "Wizard states the price. three apple glows solidify. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Ките: „Ќе го добиеш тоа што го сакаш ако ми донесеш три златни јаболка.“\" Continuity held: Both identities, golden light accent.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S29",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "kite_A4_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Wizard Kite - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "apples conjured"
+            ],
+            [
+              1.6,
+              3.0,
+              "they orbit; push-in"
+            ]
+          ],
+          "narration_mk": "Цената беше чудна: три јаболка од злато.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the wizard's weathered hand conjuring three small shining golden apples, arcane sparks, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "Push-in as the apples orbit slowly above his palm",
+          "continuity": "Wizard identity, golden conjuring light",
+          "motion": "apples orbit; push-in",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the wizard's weathered hand conjuring three small shining golden apples, arcane sparks, photoreal StarCraft cinematic grade Kite robed, mage, in hood, beard, carrying staff, wreathed in rune ring then apples conjured, then they orbit; push-in settling into push-in as the apples orbit slowly above his palm with arcane energy crackles, magic sizzles continuity held: Wizard identity, golden conjuring light",
+          "image_prompt_start": "photoreal cinematic: of the wizard's weathered hand conjuring three small shining golden apples, arcane sparks.",
+          "image_prompt_end": "photoreal cinematic: as the apples slowly above his palm.",
+          "video_prompt_start": "Apples conjured. they orbit; push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Wizard identity, golden conjuring light.",
+          "video_prompt_end": "Apples conjured. they orbit; push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Wizard identity, golden conjuring light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S30",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "eagle_A2_fused",
+            "prince_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Enchanted Eagle (the girl's eagle form) - 100% identical; image2: the fused master of the young Prince - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "talons take hold"
+            ],
+            [
+              1.8,
+              3.5,
+              "they lift above the trees"
+            ]
+          ],
+          "narration_mk": "Додека излегуваше, орелот со канџи го крена високо во небото.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of the great eagle gently grasping the prince by the shoulders in its talons and lifting him into the dusk sky, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "They rise together above the treeline",
+          "continuity": "Eagle and prince identities, dusk palette",
+          "motion": "eagle lifts the prince; they rise",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of the great eagle gently grasping the prince by the shoulders in its talons and lifting him into the dusk sky, photoreal StarCraft cinematic grade Eagle winged, creature, wreathed in wings, golden glow Prince athletic, warrior, in cloak, armor, carrying sword, wreathed in golden glow then talons take hold, then they lift above the trees the camera crane-up settling into they rise together above the treeline with wings beat the air, a low radiant hum continuity held: Eagle and prince identities, dusk palette",
+          "image_prompt_start": "photoreal cinematic: wide of the great eagle gently grasping the prince by the shoulders in its talons and lifting him into the dusk sky.",
+          "image_prompt_end": "photoreal cinematic: They rise together above the treeline.",
+          "video_prompt_start": "Talons take hold. they lift above the trees. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Eagle and prince identities, dusk palette.",
+          "video_prompt_end": "Talons take hold. they lift above the trees. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Eagle and prince identities, dusk palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S31",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "track",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "eagle_A2_fused",
+            "prince_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Enchanted Eagle (the girl's eagle form) - 100% identical; image2: the fused master of the young Prince - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "aerial flight"
+            ],
+            [
+              2.0,
+              4.0,
+              "forests recede below"
+            ]
+          ],
+          "narration_mk": "Летаа долго над полиња и шуми.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide aerial of the eagle carrying the prince over patchwork fields and darkening forests, moonlit clouds, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "The landscape unrolls beneath them",
+          "continuity": "Eagle and prince identities, night aerial palette",
+          "motion": "track as land rolls beneath",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide aerial of the eagle carrying the prince over patchwork fields and darkening forests, moonlit clouds, photoreal StarCraft cinematic grade Eagle winged, creature, wreathed in wings, golden glow Prince athletic, warrior, in cloak, armor, carrying sword, wreathed in golden glow then aerial flight, then forests recede below the camera track settling into the landscape unrolls beneath them with wings beat the air, a low radiant hum continuity held: Eagle and prince identities, night aerial palette",
+          "image_prompt_start": "photoreal cinematic: wide of the eagle carrying the prince over patchwork fields and darkening forests, moonlit clouds.",
+          "image_prompt_end": "photoreal cinematic: The landscape unrolls beneath them.",
+          "video_prompt_start": "Aerial flight. forests recede below. The camera track. The beat resolves into the next matching frame. Continuity held: Eagle and prince identities, night aerial palette.",
+          "video_prompt_end": "Aerial flight. forests recede below. The camera track. The beat resolves into the next matching frame. Continuity held: Eagle and prince identities, night aerial palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S32",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "pan-left",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "eagle_A2_fused",
+            "prince_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Enchanted Eagle (the girl's eagle form) - 100% identical; image2: the fused master of the young Prince - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "pan across flight"
+            ],
+            [
+              1.8,
+              3.5,
+              "lake glows in distance"
+            ]
+          ],
+          "narration_mk": "Принцот гледаше како земјата се стеснува под нив.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide pan across the eagle and prince in flight above moonlit mountains, the world small below, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "Pan left reveals a distant shining lake",
+          "continuity": "Eagle and prince identities, night palette",
+          "motion": "pan left; lake appears",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide pan across the eagle and prince in flight above moonlit mountains, the world small below, photoreal StarCraft cinematic grade Eagle winged, creature, wreathed in wings, golden glow Prince athletic, warrior, in cloak, armor, carrying sword, wreathed in golden glow then pan across flight, then lake glows in distance the camera pan-left settling into pan left reveals a distant shining lake with wings beat the air, a low radiant hum continuity held: Eagle and prince identities, night palette",
+          "image_prompt_start": "photoreal cinematic: wide across the eagle and prince in flight above moonlit mountains, the world small below.",
+          "image_prompt_end": "photoreal cinematic: left reveals a distant shining lake.",
+          "video_prompt_start": "Pan across flight. lake glows in distance. The camera pan-left. The beat resolves into the next matching frame. Continuity held: Eagle and prince identities, night palette.",
+          "video_prompt_end": "Pan across flight. lake glows in distance. The camera pan-left. The beat resolves into the next matching frame. Continuity held: Eagle and prince identities, night palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S33",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "eagle_A2_fused",
+            "prince_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Enchanted Eagle (the girl's eagle form) - 100% identical; image2: the fused master of the young Prince - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "lake and tree revealed"
+            ],
+            [
+              1.8,
+              3.5,
+              "crane down to the tree"
+            ]
+          ],
+          "narration_mk": "Покрај едно езеро блесна дрво со златни плодови.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of a mirror-still lake at dawn, a single radiant tree heavy with glowing golden apples on its shore, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "Crane down toward the golden apple tree",
+          "continuity": "Golden apple tree and lake palette",
+          "motion": "crane down toward the tree",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of a mirror-still lake at dawn, a single radiant tree heavy with glowing golden apples on its shore, photoreal StarCraft cinematic grade Eagle winged, creature, wreathed in wings, golden glow Prince athletic, warrior, in cloak, armor, carrying sword, wreathed in golden glow then lake and tree revealed, then crane down to the tree the camera crane-down settling into crane down toward the golden apple tree with wings beat the air, a low radiant hum continuity held: Golden apple tree and lake palette",
+          "image_prompt_start": "photoreal cinematic: wide of a mirror-still lake at dawn, a single radiant tree heavy with glowing golden apples on its shore.",
+          "image_prompt_end": "photoreal cinematic: toward the golden apple tree.",
+          "video_prompt_start": "Lake and tree revealed. crane down to the tree. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Golden apple tree and lake palette.",
+          "video_prompt_end": "Lake and tree revealed. crane down to the tree. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Golden apple tree and lake palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S34",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "crane-down",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "eagle_A2_fused",
+            "prince_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Enchanted Eagle (the girl's eagle form) - 100% identical; image2: the fused master of the young Prince - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "eagle lowers"
+            ],
+            [
+              1.6,
+              3.0,
+              "prince lands softly"
+            ]
+          ],
+          "narration_mk": "Орелот го спушти принцот крај мирната вода.",
+          "dialogue_mk": "",
+          "kf_first": "Wide of the eagle gently lowering the prince onto the pebbled shore beside the still lake, dawn mist, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "The prince's feet settle on the ground",
+          "continuity": "Eagle and prince identities, dawn palette",
+          "motion": "descent settles; gentle release",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide of the eagle gently lowering the prince onto the pebbled shore beside the still lake, dawn mist, photoreal StarCraft cinematic grade Eagle winged, creature, wreathed in wings, golden glow Prince athletic, warrior, in cloak, armor, carrying sword, wreathed in golden glow then eagle lowers, then prince lands softly the camera crane-down settling into the prince's feet settle on the ground with wings beat the air, a low radiant hum continuity held: Eagle and prince identities, dawn palette",
+          "image_prompt_start": "photoreal cinematic: of the eagle gently lowering the prince onto the pebbled shore beside the still lake, dawn mist.",
+          "image_prompt_end": "photoreal cinematic: The prince's feet on the ground.",
+          "video_prompt_start": "Eagle lowers. prince lands softly. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Eagle and prince identities, dawn palette.",
+          "video_prompt_end": "Eagle lowers. prince lands softly. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Eagle and prince identities, dawn palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S35",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "prince_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the young Prince - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "prince walks"
+            ],
+            [
+              1.6,
+              3.0,
+              "he reaches the boughs"
+            ]
+          ],
+          "narration_mk": "Принцот тргна кон чудното дрво.",
+          "dialogue_mk": "",
+          "kf_first": "Medium tracking shot of the prince walking through low dawn mist toward the radiant apple tree, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "He reaches the tree's glowing boughs",
+          "continuity": "Prince identity, golden dawn light",
+          "motion": "prince walks; reaches tree",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium tracking shot of the prince walking through low dawn mist toward the radiant apple tree, photoreal StarCraft cinematic grade Prince athletic, warrior, in cloak, armor, carrying sword, wreathed in golden glow then prince walks, then he reaches the boughs the camera track settling into he reaches the tree's glowing boughs with steel rings, a low radiant hum continuity held: Prince identity, golden dawn light",
+          "image_prompt_start": "photoreal cinematic: of the prince walking through low dawn mist toward the radiant apple tree.",
+          "image_prompt_end": "photoreal cinematic: He reaches the tree's glowing boughs.",
+          "video_prompt_start": "Prince walks. he reaches the boughs. The camera track. The beat resolves into the next matching frame. Continuity held: Prince identity, golden dawn light.",
+          "video_prompt_end": "Prince walks. he reaches the boughs. The camera track. The beat resolves into the next matching frame. Continuity held: Prince identity, golden dawn light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S36",
+          "shot_type": "CLOSE-UP",
+          "size": "MACRO",
+          "angle": "macro",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [],
+          "ref_scope": "studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "apple glows"
+            ],
+            [
+              1.6,
+              3.0,
+              "light pulses"
+            ]
+          ],
+          "narration_mk": "Плодовите светеа како мало сонце.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of a single golden apple hanging on the branch, its skin glowing like a miniature sun, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "Light pulses gently within the fruit",
+          "continuity": "Golden apple identity detail",
+          "motion": "light pulses in the fruit",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of a single golden apple hanging on the branch, its skin glowing like a miniature sun, photoreal StarCraft cinematic grade then apple glows, then light pulses the camera static settling into light pulses gently within the fruit continuity held: Golden apple identity detail",
+          "image_prompt_start": "photoreal cinematic: Macro insert of a single golden apple hanging on the branch, its skin glowing like a miniature sun.",
+          "image_prompt_end": "photoreal cinematic: Light pulses gently within the fruit.",
+          "video_prompt_start": "Apple glows. light pulses. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Golden apple identity detail.",
+          "video_prompt_end": "Apple glows. light pulses. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Golden apple identity detail.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S37",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "prince_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the young Prince - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "pluck the apples"
+            ],
+            [
+              1.6,
+              3.0,
+              "gather three apples"
+            ]
+          ],
+          "narration_mk": "Набра три јаболка од злато.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the prince carefully plucking three glowing golden apples from the branches, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "He gathers the three apples against his chest",
+          "continuity": "Prince identity, golden light on him",
+          "motion": "apples plucked, gathered",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the prince carefully plucking three glowing golden apples from the branches, photoreal StarCraft cinematic grade Prince athletic, warrior, in cloak, armor, carrying sword, wreathed in golden glow then pluck the apples, then gather three apples the camera static settling into he gathers the three apples against his chest with steel rings, a low radiant hum continuity held: Prince identity, golden light on him",
+          "image_prompt_start": "photoreal cinematic: of the prince carefully plucking three glowing golden apples from the branches.",
+          "image_prompt_end": "photoreal cinematic: He gathers the three apples against his chest.",
+          "video_prompt_start": "Pluck the apples. gather three apples. The camera static. The beat resolves into the next matching frame. Continuity held: Prince identity, golden light on him.",
+          "video_prompt_end": "Pluck the apples. gather three apples. The camera static. The beat resolves into the next matching frame. Continuity held: Prince identity, golden light on him.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S38",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "prince_A1_fused",
+            "eagle_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of the young Prince - 100% identical; image2: the fused master of the Enchanted Eagle (the girl's eagle form) - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "prince returns"
+            ],
+            [
+              1.6,
+              3.0,
+              "eagle spreads wings"
+            ]
+          ],
+          "narration_mk": "Со јаболката в раце, се врати кај орелот.",
+          "dialogue_mk": "",
+          "kf_first": "Wide of the prince returning to the waiting eagle at the lake shore, three golden apples aglow in his arms, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "The eagle spreads its wings, ready to fly again",
+          "continuity": "Prince and eagle identities, dawn palette",
+          "motion": "prince returns; eagle readies",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide of the prince returning to the waiting eagle at the lake shore, three golden apples aglow in his arms, photoreal StarCraft cinematic grade Prince athletic, warrior, in cloak, armor, carrying sword, wreathed in golden glow Eagle winged, creature, wreathed in wings, golden glow then prince returns, then eagle spreads wings the camera static settling into the eagle spreads its wings, ready to fly again with steel rings, a low radiant hum continuity held: Prince and eagle identities, dawn palette",
+          "image_prompt_start": "photoreal cinematic: of the prince returning to the waiting eagle at the lake shore, three golden apples aglow in his arms.",
+          "image_prompt_end": "photoreal cinematic: The eagle spreads its wings, ready to fly again.",
+          "video_prompt_start": "Prince returns. eagle spreads wings. The camera static. The beat resolves into the next matching frame. Continuity held: Prince and eagle identities, dawn palette.",
+          "video_prompt_end": "Prince returns. eagle spreads wings. The camera static. The beat resolves into the next matching frame. Continuity held: Prince and eagle identities, dawn palette.",
+          "motion_intensity": "moderate"
+        }
+      ]
+    },
+    {
+      "id": "act3",
+      "num": "Act III",
+      "title": "Благословот",
+      "color": "#f472b6",
+      "pct": 20,
+      "synopsis": "Ките го претвора орелот повторно во девојка, златните јаболка стануваат мираз, а кралот дава благослов за венчавката.",
+      "location_ref": "palace_scene",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#fcd34d",
+        "#fff7ed",
+        "#9d174d"
+      ],
+      "light_direction": "key light from screen-left, warm festive daylight and candlelight",
+      "time_of_day": "day",
+      "shots": [
+        {
+          "id": "S39",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "prince_A1_fused",
+            "eagle_A2_fused",
+            "kite_A4_fused"
+          ],
+          "ref_scope": "image1: the fused master of the young Prince - 100% identical; image2: the fused master of the Enchanted Eagle (the girl's eagle form) - 100% identical; image3: the fused master of the Wizard Kite - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "apples presented"
+            ],
+            [
+              1.6,
+              3.0,
+              "wizard reaches out"
+            ]
+          ],
+          "narration_mk": "И двајцата се вратија кај Ките.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the prince presenting the three golden apples to the wizard Kite while the eagle waits at his side, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "Kite reaches out to accept the offering",
+          "continuity": "All three identities, glen light",
+          "motion": "apples presented; wizard accepts",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the prince presenting the three golden apples to the wizard Kite while the eagle waits at his side, photoreal StarCraft cinematic grade Prince athletic, warrior, in cloak, armor, carrying sword, wreathed in golden glow Eagle winged, creature, wreathed in wings, golden glow Kite robed, mage, in hood, beard, carrying staff, wreathed in rune ring then apples presented, then wizard reaches out the camera static settling into kite reaches out to accept the offering with steel rings, a low radiant hum continuity held: All three identities, glen light",
+          "image_prompt_start": "photoreal cinematic: of the prince presenting the three golden apples to the wizard Kite while the eagle waits at his side.",
+          "image_prompt_end": "photoreal cinematic: Kite reaches out to accept the offering.",
+          "video_prompt_start": "Apples presented. wizard reaches out. The camera static. The beat resolves into the next matching frame. Continuity held: All three identities, glen light.",
+          "video_prompt_end": "Apples presented. wizard reaches out. The camera static. The beat resolves into the next matching frame. Continuity held: All three identities, glen light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S40",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "kite_A4_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Wizard Kite - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "staff raised"
+            ],
+            [
+              1.6,
+              3.0,
+              "single sweep, light arc"
+            ]
+          ],
+          "narration_mk": "Ките со едно замавнување со стапчето...",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the wizard Kite's hand sweeping his staff once through the air, a trail of golden light following, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "Push-in as the light trail arcs toward the eagle",
+          "continuity": "Wizard identity, golden magic light",
+          "motion": "single staff sweep; light arcs",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the wizard Kite's hand sweeping his staff once through the air, a trail of golden light following, photoreal StarCraft cinematic grade Kite robed, mage, in hood, beard, carrying staff, wreathed in rune ring then staff raised, then single sweep, light arc the camera push-in settling into push-in as the light trail arcs toward the eagle with arcane energy crackles, magic sizzles continuity held: Wizard identity, golden magic light",
+          "image_prompt_start": "photoreal cinematic: of the wizard Kite's hand sweeping his staff once through the air, a trail of golden light.",
+          "image_prompt_end": "photoreal cinematic: as the light trail arcs toward the eagle.",
+          "video_prompt_start": "Staff raised. single sweep, light arc. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Wizard identity, golden magic light.",
+          "video_prompt_end": "Staff raised. single sweep, light arc. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Wizard identity, golden magic light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S41",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "eagle_A2_fused",
+            "girl_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Enchanted Eagle (the girl's eagle form) - 100% identical; image2: the fused master of the Peasant Girl - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "eagle in light"
+            ],
+            [
+              1.8,
+              3.5,
+              "girl emerges"
+            ]
+          ],
+          "narration_mk": "...го претвори орелот повторно во девојка.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of the eagle bathed in golden magic transforming back into the peasant girl, wings folding into a human form, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "The girl emerges from the light, whole and human",
+          "continuity": "Transformation light, shared identity thread",
+          "motion": "form shifts; girl emerges",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of the eagle bathed in golden magic transforming back into the peasant girl, wings folding into a human form, photoreal StarCraft cinematic grade Eagle winged, creature, wreathed in wings, golden glow Girl slender, heroine, in dress, wreathed in petals then eagle in light, then girl emerges the camera crane-up settling into the girl emerges from the light, whole and human with wings beat the air, a low radiant hum continuity held: Transformation light, shared identity thread",
+          "image_prompt_start": "photoreal cinematic: wide of the eagle bathed in golden magic transforming back into the peasant girl, wings folding into a human form.",
+          "image_prompt_end": "photoreal cinematic: The girl emerges from the light, whole and human.",
+          "video_prompt_start": "Eagle in light. girl emerges. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Transformation light, shared identity thread.",
+          "video_prompt_end": "Eagle in light. girl emerges. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Transformation light, shared identity thread.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S42",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "girl_A2_fused",
+            "prince_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Peasant Girl - 100% identical; image2: the fused master of the young Prince - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "girl restored"
+            ],
+            [
+              1.6,
+              3.0,
+              "prince steps toward her"
+            ]
+          ],
+          "narration_mk": "Девојката стоеше повторно пред него, цела и насмеана.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the restored peasant girl smiling at the prince, golden light fading around them, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "The prince takes a step toward her",
+          "continuity": "Girl and prince identities, warm light",
+          "motion": "girl smiles; prince steps closer",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the restored peasant girl smiling at the prince, golden light fading around them, photoreal StarCraft cinematic grade Girl slender, heroine, in dress, wreathed in petals Prince athletic, warrior, in cloak, armor, carrying sword, wreathed in golden glow then girl restored, then prince steps toward her the camera static settling into the prince takes a step toward her with petals swirl and rustle, steel rings continuity held: Girl and prince identities, warm light",
+          "image_prompt_start": "photoreal cinematic: of the restored peasant girl smiling at the prince, golden light fading around them.",
+          "image_prompt_end": "photoreal cinematic: The prince takes a step toward her.",
+          "video_prompt_start": "Girl restored. prince steps toward her. The camera static. The beat resolves into the next matching frame. Continuity held: Girl and prince identities, warm light.",
+          "video_prompt_end": "Girl restored. prince steps toward her. The camera static. The beat resolves into the next matching frame. Continuity held: Girl and prince identities, warm light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S43",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "kite_A4_fused",
+            "girl_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Wizard Kite - 100% identical; image2: the fused master of the Peasant Girl - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "wizard speaks"
+            ],
+            [
+              1.8,
+              3.5,
+              "apples gleam in her hands"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Ките: „Златните јаболка ќе бидат твојот мираз.“",
+          "kf_first": "Medium of the wizard Kite placing the three golden apples into the girl's open hands, kind smile, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "The apples gleam in her cupped palms",
+          "continuity": "Wizard and girl identities, golden apple light",
+          "motion": "apples placed; she holds them",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the wizard Kite placing the three golden apples into the girl's open hands, kind smile, photoreal StarCraft cinematic grade Kite robed, mage, in hood, beard, carrying staff, wreathed in rune ring Girl slender, heroine, in dress, wreathed in petals then wizard speaks, then apples gleam in her hands the camera static settling into the apples gleam in her cupped palms with arcane energy crackles, magic sizzles a voice speaks in Macedonian: \"Ките: „Златните јаболка ќе бидат твојот мираз.“\" continuity held: Wizard and girl identities, golden apple light",
+          "image_prompt_start": "photoreal cinematic: of the wizard Kite placing the three golden apples into the girl's open hands, kind smile.",
+          "image_prompt_end": "photoreal cinematic: The apples gleam in her cupped palms.",
+          "video_prompt_start": "Wizard speaks. apples gleam in her hands. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Ките: „Златните јаболка ќе бидат твојот мираз.“\" Continuity held: Wizard and girl identities, golden apple light.",
+          "video_prompt_end": "Wizard speaks. apples gleam in her hands. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Ките: „Златните јаболка ќе бидат твојот мираз.“\" Continuity held: Wizard and girl identities, golden apple light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S44",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "girl_A2_fused",
+            "prince_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Peasant Girl - 100% identical; image2: the fused master of the young Prince - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "couple walks"
+            ],
+            [
+              1.6,
+              3.0,
+              "palace draws near"
+            ]
+          ],
+          "narration_mk": "Сега со богатство и љубов, тргнаа кон дворецот.",
+          "dialogue_mk": "",
+          "kf_first": "Wide tracking shot of the girl and prince walking together out of the forest toward the distant palace, golden apples aglow, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "The palace gates grow near",
+          "continuity": "Girl and prince identities, warm daylight",
+          "motion": "couple walks; palace nears",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide tracking shot of the girl and prince walking together out of the forest toward the distant palace, golden apples aglow, photoreal StarCraft cinematic grade Girl slender, heroine, in dress, wreathed in petals Prince athletic, warrior, in cloak, armor, carrying sword, wreathed in golden glow then couple walks, then palace draws near the camera track settling into the palace gates grow near with petals swirl and rustle, steel rings continuity held: Girl and prince identities, warm daylight",
+          "image_prompt_start": "photoreal cinematic: of the girl and prince walking together out of the forest toward the distant palace, golden apples aglow.",
+          "image_prompt_end": "photoreal cinematic: The palace gates grow near.",
+          "video_prompt_start": "Couple walks. palace draws near. The camera track. The beat resolves into the next matching frame. Continuity held: Girl and prince identities, warm daylight.",
+          "video_prompt_end": "Couple walks. palace draws near. The camera track. The beat resolves into the next matching frame. Continuity held: Girl and prince identities, warm daylight.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S45",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "girl_A2_fused",
+            "prince_A1_fused",
+            "king_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Peasant Girl - 100% identical; image2: the fused master of the young Prince - 100% identical; image3: the fused master of the King - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "court assembled"
+            ],
+            [
+              1.8,
+              3.5,
+              "crane up over celebration"
+            ]
+          ],
+          "narration_mk": "Кралот ги прими, и младата повеќе не беше сиромашна.",
+          "dialogue_mk": "",
+          "kf_first": "Wide of the grand wedding hall where the prince and the radiant bride stand before the king, the three golden apples displayed nearby, photoreal World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Crane up to reveal the full celebrating court",
+          "continuity": "All identities, warm hall palette",
+          "motion": "crane up over the court",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide of the grand wedding hall where the prince and the radiant bride stand before the king, the three golden apples displayed nearby, photoreal World of Warcraft cinematic grade Girl slender, heroine, in dress, wreathed in petals Prince athletic, warrior, in cloak, armor, carrying sword, wreathed in golden glow King armored, monarch, in crown, armor, beard, cloak, wreathed in golden glow then court assembled, then crane up over celebration the camera crane-up settling into crane up to reveal the full celebrating court with petals swirl and rustle, steel rings continuity held: All identities, warm hall palette",
+          "image_prompt_start": "photoreal cinematic: of the grand wedding hall where the prince and the radiant bride stand before the king, the three golden apples displayed nearby.",
+          "image_prompt_end": "photoreal cinematic: to reveal the full celebrating court.",
+          "video_prompt_start": "Court assembled. crane up over celebration. The camera crane-up. The beat resolves into the next matching frame. Continuity held: All identities, warm hall palette.",
+          "video_prompt_end": "Court assembled. crane up over celebration. The camera crane-up. The beat resolves into the next matching frame. Continuity held: All identities, warm hall palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S46",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "king_A3_fused",
+            "girl_A2_fused",
+            "prince_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the King - 100% identical; image2: the fused master of the Peasant Girl - 100% identical; image3: the fused master of the young Prince - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "king raises hands"
+            ],
+            [
+              1.6,
+              3.0,
+              "he smiles in blessing"
+            ]
+          ],
+          "narration_mk": "Со благослов, кралот даде одобрување за венчавката.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the king, now softened, raising his hands in blessing over the kneeling couple, warm candlelight, photoreal World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "He smiles warmly upon them",
+          "continuity": "All identities, hall palette",
+          "motion": "king blesses; couple bows",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the king, now softened, raising his hands in blessing over the kneeling couple, warm candlelight, photoreal World of Warcraft cinematic grade King armored, monarch, in crown, armor, beard, cloak, wreathed in golden glow Girl slender, heroine, in dress, wreathed in petals Prince athletic, warrior, in cloak, armor, carrying sword, wreathed in golden glow then king raises hands, then he smiles in blessing the camera static settling into he smiles warmly upon them with a low radiant hum, petals swirl and rustle continuity held: All identities, hall palette",
+          "image_prompt_start": "photoreal cinematic: of the king, now softened, raising his hands in blessing over the kneeling couple, warm candlelight.",
+          "image_prompt_end": "photoreal cinematic: He smiles warmly upon them.",
+          "video_prompt_start": "King raises hands. he smiles in blessing. The camera static. The beat resolves into the next matching frame. Continuity held: All identities, hall palette.",
+          "video_prompt_end": "King raises hands. he smiles in blessing. The camera static. The beat resolves into the next matching frame. Continuity held: All identities, hall palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S47",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "girl_A2_fused",
+            "prince_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Peasant Girl - 100% identical; image2: the fused master of the young Prince - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "hands joined"
+            ],
+            [
+              1.6,
+              3.0,
+              "ring slides on"
+            ]
+          ],
+          "narration_mk": "И двајцата си го дадоа ветувањето.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the couple's joined hands as a wedding ring slides onto the bride's finger, golden apples glinting beside them, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Their fingers interlace",
+          "continuity": "Couple identities, warm light",
+          "motion": "ring placed; fingers join",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the couple's joined hands as a wedding ring slides onto the bride's finger, golden apples glinting beside them Girl slender, heroine, in dress, wreathed in petals Prince athletic, warrior, in cloak, armor, carrying sword, wreathed in golden glow then hands joined, then ring slides on the camera static settling into their fingers interlace with petals swirl and rustle, steel rings continuity held: Couple identities, warm light",
+          "image_prompt_start": "photoreal cinematic: of the couple's joined hands as a wedding ring slides onto the bride's finger, golden apples glinting beside them.",
+          "image_prompt_end": "photoreal cinematic: Their fingers interlace.",
+          "video_prompt_start": "Hands joined. ring slides on. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Couple identities, warm light.",
+          "video_prompt_end": "Hands joined. ring slides on. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Couple identities, warm light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S48",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "girl_A2_fused",
+            "prince_A1_fused",
+            "king_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Peasant Girl - 100% identical; image2: the fused master of the young Prince - 100% identical; image3: the fused master of the King - 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "celebration below"
+            ],
+            [
+              1.8,
+              3.5,
+              "crane up, light swells"
+            ]
+          ],
+          "narration_mk": "Така љубовта, посилна од круната, победи во златниот дворец.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide crane-up of the whole court rejoicing as the prince and the bride dance, the golden apples shining like a promise, photoreal World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "The hall fills with light and music",
+          "continuity": "All identities, festive palette",
+          "motion": "crane up; celebration swells",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide crane-up of the whole court rejoicing as the prince and the bride dance, the golden apples shining like a promise, photoreal World of Warcraft cinematic grade Girl slender, heroine, in dress, wreathed in petals Prince athletic, warrior, in cloak, armor, carrying sword, wreathed in golden glow King armored, monarch, in crown, armor, beard, cloak, wreathed in golden glow then celebration below, then crane up, light swells the camera crane-up settling into the hall fills with light and music with petals swirl and rustle, steel rings continuity held: All identities, festive palette",
+          "image_prompt_start": "photoreal cinematic: wide of the whole court rejoicing as the prince and the bride dance, the golden apples shining like a promise.",
+          "image_prompt_end": "photoreal cinematic: The hall fills with light and music.",
+          "video_prompt_start": "Celebration below. crane up, light swells. The camera crane-up. The beat resolves into the next matching frame. Continuity held: All identities, festive palette.",
+          "video_prompt_end": "Celebration below. crane up, light swells. The camera crane-up. The beat resolves into the next matching frame. Continuity held: All identities, festive palette.",
+          "motion_intensity": "moderate"
+        }
+      ]
+    }
+  ],
+  "director_corrections": {
+    "issued": "2026-11-07",
+    "source": "KB §13 DIRECTOR CORRECTIONS — overrides all prior asset/keyframe guidance",
+    "rules": [
+      "EAGLE FORM: the girl's eagle is a photoreal golden-brown eagle that MUST retain her identity thread (same amber eye warmth, soft gaze); never a generic or cartoon bird; off-model eagle = REJECT",
+      "TRANSFORMATION FX: magic is light-driven and coherent (golden ribbons and motes, wings unfurl from light) — no cartoon sparkle storm, no anime glow halo, no 2D flash frames",
+      "GOLDEN APPLES: three distinct glowing golden apples with apple silhouette and stem, never oranges, peaches or featureless orbs; the count stays three across all shots",
+      "WIZARD KITE: aged, white-bearded sorcerer with a carved wooden staff; no modern props, no firearm or gun silhouette anywhere",
+      "CHILD-SAFE: eagle talons carry the prince by his shoulders with no injury, no blood, no distress; separation is shown as sorrow, not violence",
+      "AI-DEFAULT FACES: prince, girl, king and kite all AI-default; face identity must stay consistent across all shots (no real faces)"
+    ],
+    "applies_when": "Activates when face_lock changes from AI-default to an enrolled identity. AI-default packages carry this as a forward constraint, not a current defect.",
+    "anti_slop_negatives": "firearm, gun, machinegun, Uzi, barrel, magazine, ammo clip, muzzle, modern weapon, cartoon sparkle, anime glow, plastic skin, low poly, 3d render"
+  },
+  "character_designs": {
+    "prince": {
+      "archetype": "warrior",
+      "build": "athletic",
+      "scale": "human",
+      "palette": {
+        "primary": "#1e3a5f",
+        "secondary": "#c9a227",
+        "glow": "#f6c453"
+      },
+      "costume": [
+        "cloak",
+        "armor"
+      ],
+      "props": [
+        "sword"
+      ],
+      "fx": [
+        "golden_glow"
+      ]
+    },
+    "girl": {
+      "archetype": "heroine",
+      "build": "slender",
+      "scale": "human",
+      "palette": {
+        "primary": "#f6c453",
+        "secondary": "#f3e6c0",
+        "glow": "#fde68a"
+      },
+      "costume": [
+        "dress"
+      ],
+      "props": [],
+      "fx": [
+        "petals"
+      ]
+    },
+    "king": {
+      "archetype": "monarch",
+      "build": "armored",
+      "scale": "human",
+      "palette": {
+        "primary": "#9d174d",
+        "secondary": "#fcd34d",
+        "glow": "#fbbf24"
+      },
+      "costume": [
+        "crown",
+        "armor",
+        "beard",
+        "cloak"
+      ],
+      "props": [],
+      "fx": [
+        "golden_glow"
+      ]
+    },
+    "kite": {
+      "archetype": "mage",
+      "build": "robed",
+      "scale": "human",
+      "palette": {
+        "primary": "#1f2937",
+        "secondary": "#e3a72f",
+        "glow": "#3b82f6"
+      },
+      "costume": [
+        "hood",
+        "beard"
+      ],
+      "props": [
+        "staff"
+      ],
+      "fx": [
+        "rune_ring"
+      ]
+    },
+    "eagle": {
+      "archetype": "creature",
+      "build": "winged",
+      "scale": "large",
+      "palette": {
+        "primary": "#8c5a2b",
+        "secondary": "#f6c453",
+        "glow": "#fbbf24"
+      },
+      "costume": [],
+      "props": [],
+      "fx": [
+        "wings",
+        "golden_glow"
+      ]
+    }
+  }
+}

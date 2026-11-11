@@ -1,0 +1,2574 @@
+{
+  "num": "13",
+  "title_mk": "Фенрир, волкот од Асгард",
+  "title_en": "Fenrir, the Wolf of Asgard",
+  "genre": "Нордиски мит · епска акција",
+  "logline": "Кога дивиот волк Фенрир расте како закана за Асгард, боговите го врзуваат со магичен синџир — а храбриот Тир ја жртвува својата рака за да го заштити светот.",
+  "spec": {
+    "aspect": "16:9",
+    "resolution": "1216x704",
+    "fps": 24,
+    "model": "model-agnostic (chosen at generation)",
+    "style": "photoreal",
+    "flf": true,
+    "language": "mk",
+    "shot_floor": 40,
+    "shot_max": 60,
+    "seed_policy": "fixed-per-shot (same seed → reproducible shot; re-roll per shot id)",
+    "style_anchor": [
+      "Diablo 2 cinematic",
+      "World of Warcraft cinematic",
+      "StarCraft cinematic"
+    ],
+    "negative_prompt": "deformed, extra limbs, morphing, watermark, text, static frame, blurry, low quality, cropped head, cut-off face",
+    "frames": 121,
+    "frames_fallback": 81,
+    "routes": [
+      {
+        "model": "Wan2.1-FLF2V-14B-720P",
+        "input": "start+end native (run START-ONLY)",
+        "status": "WORKING (lead for 14B quality)"
+      },
+      {
+        "model": "Kandinsky 6.0 Lite/Pro",
+        "input": "start-image-only",
+        "status": "WORKING (Pro-distill untested at scale)"
+      },
+      {
+        "model": "SkyReels-V3 R2V-14B",
+        "input": "start-image-only",
+        "status": "WORKING (fallback)"
+      },
+      {
+        "model": "LTX-Video 2B v0.9.5",
+        "input": "start-image-only",
+        "status": "WORKING (small/fast, low ceiling)"
+      },
+      {
+        "model": "Mochi-1",
+        "input": "start-image-only",
+        "status": "untested here"
+      },
+      {
+        "model": "LTX-2.3 22B distilled",
+        "input": "start-image-only",
+        "status": "DEAD (nanobind native-crash, 42 note)"
+      }
+    ],
+    "model_note": "Model chosen per story at generation (43 §4). Keyframes + continuation prompts are generator-agnostic; only the render command differs per model."
+  },
+  "cast": [
+    {
+      "role": "Один / Odin",
+      "trait": "Сеотецот, кралот на Асгард; мудар, строг и далекувид",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Локи / Loki",
+      "trait": "Богот-измамник, татко на Фенрир; лукав, но колеблив пред сопственото дете",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Фенрир / Fenrir",
+      "trait": "Огромниот див волк, син на Локи; расте од волче во закана за боговите",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Тир / Týr",
+      "trait": "Богот на војната; храбар, благороден и подготвен на врвна жртва",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Јормунгандир / Jörmungandr",
+      "trait": "Светската змија, син на Локи; истеран во длабокото море",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Хел / Hel",
+      "trait": "Божицата на подземниот свет, ќерка на Локи; бледа и мирна",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Џуџињата ковачи / The Dwarf Smiths",
+      "trait": "Најдобрите ковачи на железо во темните пештери на Нидавелир",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    }
+  ],
+  "acts": [
+    {
+      "id": "act1",
+      "num": "Act I",
+      "title": "Растењето",
+      "color": "#2dd4bf",
+      "pct": 30,
+      "synopsis": "Во златниот Асгард, Локи ги има трите деца — Фенрир, Јормунгандир и Хел. Один ги гони Јормунгандир и Хел како чудовишта, но го задржува Фенрир. Ден по ден волкот расте огромен, сè додека не стане закана за боговите.",
+      "shots": [
+        {
+          "id": "S01",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "asgard_realm_env_A1_prop"
+          ],
+          "ref_scope": "image1: the golden realm of Asgard with its shining bridge and marble spires — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "crane down over the golden realm and shining bridge at dawn"
+            ],
+            [
+              1.8,
+              3.5,
+              "settle toward the great hall where the gods dwell"
+            ]
+          ],
+          "narration_mk": "Златниот Асгард блеска високо над облаците — домот на боговите.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of Asgard, a golden realm of towering halls and a shining bridge above the clouds, dawn light breaking over marble spires, photoreal Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Crane down past the Bifrost toward the great hall where the gods dwell",
+          "continuity": "Establishing look: golden light, Norse architecture, dawn palette",
+          "motion": "slow crane-down; drifting clouds",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of Asgard, a golden realm of towering halls and a shining bridge above the clouds, dawn light breaking over marble spires then crane down over the golden realm and shining bridge at dawn, then settle toward the great hall where the gods dwell the camera crane-down settling into crane down past the Bifrost toward the great hall where the gods dwell continuity held: Establishing look: golden light, Norse architecture, dawn palette",
+          "image_prompt_start": "photoreal cinematic: wide of Asgard, a golden realm of towering halls and a shining bridge above the clouds, dawn light breaking over marble spires.",
+          "image_prompt_end": "photoreal cinematic: past the Bifrost toward the great hall where the gods dwell.",
+          "video_prompt_start": "Crane down over the golden realm and shining bridge at dawn. settle toward the great hall where the gods dwell. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Establishing look: golden light, Norse architecture, dawn palette.",
+          "video_prompt_end": "Crane down over the golden realm and shining bridge at dawn. settle toward the great hall where the gods dwell. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Establishing look: golden light, Norse architecture, dawn palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S02",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "odin_A1_fused",
+            "asgard_hall_env_A2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Odin the All-Father — one-eyed grey-bearded king in deep-blue robes — 100% identical; studio bg/pose/light NOT used; image2: the great torchlit hall of the Norse gods — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close on Odin seated on his carved throne, ravens at his side"
+            ],
+            [
+              1.5,
+              3.0,
+              "push-in as his wise gaze sweeps the gathered gods"
+            ]
+          ],
+          "narration_mk": "Во неговото срце седи Один, Сеотецот, мудар и строг.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of Odin the All-Father seated on a carved throne, one eye wise, ravens at his side, warm hall light, photoreal cinematic",
+          "kf_last": "Push-in on his weathered face as he gazes over the gathered gods",
+          "continuity": "Odin's grey beard, ravens, golden hall from S01",
+          "motion": "slow push-in on Odin's gaze",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of Odin the All-Father seated on a carved throne, one eye wise, ravens at his side, warm hall light, photoreal cinematic Odin athletic, divine, in cloak, hood, beard, carrying spear, wreathed in storm aura, rune ring then close on Odin seated on his carved throne, ravens at his side, then push-in as his wise gaze sweeps the gathered gods settling into push-in on his weathered face as he gazes over the gathered gods with the spear whistles through the air, thunder rolls continuity held: Odin's grey beard, ravens, golden hall from S01",
+          "image_prompt_start": "photoreal cinematic: medium of Odin the All-Father seated on a carved throne, one eye wise, ravens at his side, warm hall light, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: on his weathered face as he gazes over the gathered gods.",
+          "video_prompt_start": "Close on Odin seated on his carved throne, ravens at his side. push-in as his wise gaze sweeps the gathered gods. The beat resolves into the next matching frame. Continuity held: Odin's grey beard, ravens, golden hall from S01.",
+          "video_prompt_end": "Close on Odin seated on his carved throne, ravens at his side. push-in as his wise gaze sweeps the gathered gods. The beat resolves into the next matching frame. Continuity held: Odin's grey beard, ravens, golden hall from S01.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S03",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "loki_A2_fused",
+            "fenrir_A3_fused",
+            "jormungandr_A5_fused",
+            "hel_A6_fused",
+            "asgard_hall_env_A2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Loki the trickster — sharp-featured god in green-gold clothing — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Fenrir — the colossal grey wolf with blazing amber eyes — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Jörmungandr — the dark coiling world-serpent — 100% identical; studio bg/pose/light NOT used; image4: the fused master of Hel — the pale somber underworld goddess — 100% identical; studio bg/pose/light NOT used; image5: the great torchlit hall of the Norse gods — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "wide of Loki stepping forward, a sly smile on his face"
+            ],
+            [
+              1.8,
+              3.5,
+              "three small figures come into view behind him — wolf, serpent, pale girl"
+            ]
+          ],
+          "narration_mk": "Но во сенката стои Локи — а зад него чекорат три негови деца.",
+          "dialogue_mk": "",
+          "kf_first": "Wide eye-level of Loki the trickster stepping forward in the great hall, a sly smile on his face, three small figures following behind him, photoreal cinematic",
+          "kf_last": "The three children come into view: a young wolf, a coiling serpent, and a pale girl",
+          "continuity": "Loki's sharp features, green-gold clothing; great hall light",
+          "motion": "static; children stepping into light",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide eye-level of Loki the trickster stepping forward in the great hall, a sly smile on his face, three small figures following behind him, photoreal cinematic Loki slender, trickster, in cloak, wreathed in shadow smoke Fenrir hulking, beast, wreathed in shadow smoke Jormungandr hulking, serpent Hel robed, monarch, in hood, cloak, wreathed in shadow smoke then wide of Loki stepping forward, a sly smile on his face, then three small figures come into view behind him — wolf, serpent, pale girl the camera static settling into the three children come into view: a young wolf, a coiling serpent, and a pale girl with shadows whisper, stone groans continuity held: Loki's sharp features, green-gold clothing; great hall light",
+          "image_prompt_start": "photoreal cinematic: eye-level of Loki the trickster stepping forward in the great hall, a sly smile on his face, three small figures behind him, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The three children come into view: a young wolf, a coiling serpent, and a pale girl.",
+          "video_prompt_start": "Wide of Loki stepping forward, a sly smile on his face. three small figures come into view behind him — wolf, serpent, pale girl. The camera static. The beat resolves into the next matching frame. Continuity held: Loki's sharp features, green-gold clothing; great hall light.",
+          "video_prompt_end": "Wide of Loki stepping forward, a sly smile on his face. three small figures come into view behind him — wolf, serpent, pale girl. The camera static. The beat resolves into the next matching frame. Continuity held: Loki's sharp features, green-gold clothing; great hall light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S04",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "fenrir_A3_fused",
+            "jormungandr_A5_fused",
+            "hel_A6_fused"
+          ],
+          "ref_scope": "image1: the fused master of Fenrir — the colossal grey wolf with blazing amber eyes — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Jörmungandr — the dark coiling world-serpent — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Hel — the pale somber underworld goddess — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close of the three children side by side in cool shadowed light"
+            ],
+            [
+              1.5,
+              3.0,
+              "the wolf cub’s amber eyes glint as the serpent coils"
+            ]
+          ],
+          "narration_mk": "Фенрир, волкчето; Јормунгандир, змијата; и Хел, бледата девојка.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level close of the three strange children side by side: a grey wolf cub, a dark writhing serpent, and a pale girl with somber eyes, photoreal cinematic",
+          "kf_last": "The wolf cub's amber eyes glint as the serpent coils and the girl looks down",
+          "continuity": "The three children from S03; cool shadowed light",
+          "motion": "static; slow serpent coil",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level close of the three strange children side by side: a grey wolf cub, a dark writhing serpent, and a pale girl with somber eyes, photoreal cinematic Fenrir hulking, beast, wreathed in shadow smoke Jormungandr hulking, serpent Hel robed, monarch, in hood, cloak, wreathed in shadow smoke then close of the three children side by side in cool shadowed light, then the wolf cub’s amber eyes glint as the serpent coils the camera static settling into the wolf cub's amber eyes glint as the serpent coils and the girl looks down with shadows whisper continuity held: The three children from S03; cool shadowed light",
+          "image_prompt_start": "photoreal cinematic: close of the three strange children side by side: a grey wolf cub, a dark writhing serpent, and a pale girl with somber eyes, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The wolf cub's amber eyes glint as the serpent coils and the girl looks down.",
+          "video_prompt_start": "Close of the three children side by side in cool shadowed light. the wolf cub’s amber eyes glint as the serpent coils. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: The three children from S03; cool shadowed light.",
+          "video_prompt_end": "Close of the three children side by side in cool shadowed light. the wolf cub’s amber eyes glint as the serpent coils. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: The three children from S03; cool shadowed light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S05",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "odin_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Odin the All-Father — one-eyed grey-bearded king in deep-blue robes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "low-angle of Odin leaning forward, eye narrowing at the serpent and girl"
+            ],
+            [
+              1.5,
+              3.0,
+              "push-in as his unease hardens into grim decision"
+            ]
+          ],
+          "narration_mk": "Один ги гледа змијата и девојката — и во нив гледа чудовишта.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of Odin leaning forward, his one eye narrowing at Jörmungandr and Hel, unease darkening his face, photoreal cinematic",
+          "kf_last": "Push-in as his expression hardens with grim decision",
+          "continuity": "Odin's face; the two children at the corner of frame",
+          "motion": "slow push-in; Odin's frown deepening",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Odin leaning forward, his one eye narrowing at Jörmungandr and Hel, unease darkening his face, photoreal cinematic Odin athletic, divine, in cloak, hood, beard, carrying spear, wreathed in storm aura, rune ring then low-angle of Odin leaning forward, eye narrowing at the serpent and girl, then push-in as his unease hardens into grim decision settling into push-in as his expression hardens with grim decision with the spear whistles through the air, thunder rolls continuity held: Odin's face; the two children at the corner of frame",
+          "image_prompt_start": "photoreal cinematic: medium of Odin leaning forward, his one eye narrowing at Jörmungandr and Hel, unease darkening his face, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: as his expression hardens with grim decision.",
+          "video_prompt_start": "Low-angle of Odin leaning forward, eye narrowing at the serpent and girl. push-in as his unease hardens into grim decision. The beat resolves into the next matching frame. Continuity held: Odin's face; the two children at the corner of frame.",
+          "video_prompt_end": "Low-angle of Odin leaning forward, eye narrowing at the serpent and girl. push-in as his unease hardens into grim decision. The beat resolves into the next matching frame. Continuity held: Odin's face; the two children at the corner of frame.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S06",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "odin_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Odin the All-Father — one-eyed grey-bearded king in deep-blue robes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close of Odin rising to command, torchlight flaring"
+            ],
+            [
+              1.5,
+              3.0,
+              "his arm sweeps outward toward the realm’s edge"
+            ]
+          ],
+          "narration_mk": "Тогаш од неговите гради грми наредба.",
+          "dialogue_mk": "Один: „Изгонете ги Јормунгандир и Хел од Асгард!“",
+          "kf_first": "Eye-level close of Odin rising from his throne, his voice commanding, torchlight flaring behind him, photoreal cinematic",
+          "kf_last": "His arm sweeps outward, pointing toward the realm's edge",
+          "continuity": "Odin's authority; hall torchlight",
+          "motion": "static; rising motion",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level close of Odin rising from his throne, his voice commanding, torchlight flaring behind him, photoreal cinematic Odin athletic, divine, in cloak, hood, beard, carrying spear, wreathed in storm aura, rune ring then close of Odin rising to command, torchlight flaring, then his arm sweeps outward toward the realm’s edge the camera static settling into his arm sweeps outward, pointing toward the realm's edge with the spear whistles through the air, thunder rolls a voice speaks in Macedonian: \"Один: „Изгонете ги Јормунгандир и Хел од Асгард!“\" continuity held: Odin's authority; hall torchlight",
+          "image_prompt_start": "photoreal cinematic: close of Odin rising from his throne, his voice commanding, torchlight flaring behind him, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: His arm sweeps outward, pointing toward the realm's edge.",
+          "video_prompt_start": "Close of Odin rising to command, torchlight flaring. his arm sweeps outward toward the realm’s edge. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Один: „Изгонете ги Јормунгандир и Хел од Асгард!“\" Continuity held: Odin's authority; hall torchlight.",
+          "video_prompt_end": "Close of Odin rising to command, torchlight flaring. his arm sweeps outward toward the realm’s edge. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Один: „Изгонете ги Јормунгандир и Хел од Асгард!“\" Continuity held: Odin's authority; hall torchlight.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S07",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "pan-right",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "jormungandr_A5_fused",
+            "ocean_env_A3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Jörmungandr — the dark coiling world-serpent — 100% identical; studio bg/pose/light NOT used; image2: the vast churning sea beneath the realm’s edge — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "low-angle wide of the serpent tumbling toward the churning ocean"
+            ],
+            [
+              1.5,
+              3.0,
+              "pan right as it crashes into the waves and vanishes"
+            ]
+          ],
+          "narration_mk": "Јормунгандир, светската змија, е фрлен во длабокото море.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of a titanic serpent tumbling from the sky's edge toward a vast churning ocean, photoreal cinematic",
+          "kf_last": "Pan right as the serpent crashes into the waves and vanishes beneath the sea",
+          "continuity": "Jörmungandr serpent form; sky-to-sea descent",
+          "motion": "fast pan-right; serpent fall",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of a titanic serpent tumbling from the sky's edge toward a vast churning ocean, photoreal cinematic Jormungandr hulking, serpent then low-angle wide of the serpent tumbling toward the churning ocean, then pan right as it crashes into the waves and vanishes the camera pan-right settling into pan right as the serpent crashes into the waves and vanishes beneath the sea with water churns and surges continuity held: Jörmungandr serpent form; sky-to-sea descent",
+          "image_prompt_start": "photoreal cinematic: wide of a titanic serpent tumbling from the sky's edge toward a vast churning ocean, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: right as the serpent crashes into the waves and vanishes beneath the sea.",
+          "video_prompt_start": "Low-angle wide of the serpent tumbling toward the churning ocean. pan right as it crashes into the waves and vanishes. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Jörmungandr serpent form; sky-to-sea descent.",
+          "video_prompt_end": "Low-angle wide of the serpent tumbling toward the churning ocean. pan right as it crashes into the waves and vanishes. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Jörmungandr serpent form; sky-to-sea descent.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S08",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "hel_A6_fused",
+            "underworld_env_A4_prop"
+          ],
+          "ref_scope": "image1: the fused master of Hel — the pale somber underworld goddess — 100% identical; studio bg/pose/light NOT used; image2: the cold dim underworld of Hel — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "high-angle of Hel descending stone steps into the cold underworld"
+            ],
+            [
+              1.5,
+              3.0,
+              "crane down as darkness closes gently around her"
+            ]
+          ],
+          "narration_mk": "А Хел — мирна и бледа — е испратена во подземниот свет.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle medium of the pale girl Hel descending stone steps into a dim, cold underworld, half her face in shadow, photoreal cinematic",
+          "kf_last": "Crane down as the darkness closes gently around her",
+          "continuity": "Hel's pale features; underworld cold palette",
+          "motion": "slow crane-down; shadow enveloping",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle medium of the pale girl Hel descending stone steps into a dim, cold underworld, half her face in shadow, photoreal cinematic Hel robed, monarch, in hood, cloak, wreathed in shadow smoke then high-angle of Hel descending stone steps into the cold underworld, then crane down as darkness closes gently around her the camera crane-down settling into crane down as the darkness closes gently around her with shadows whisper continuity held: Hel's pale features; underworld cold palette",
+          "image_prompt_start": "photoreal cinematic: medium of the pale girl Hel descending stone steps into a dim, cold underworld, half her face in shadow, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: as the darkness closes gently around her.",
+          "video_prompt_start": "High-angle of Hel descending stone steps into the cold underworld. crane down as darkness closes gently around her. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Hel's pale features; underworld cold palette.",
+          "video_prompt_end": "High-angle of Hel descending stone steps into the cold underworld. crane down as darkness closes gently around her. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Hel's pale features; underworld cold palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S09",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "fenrir_A3_fused",
+            "asgard_hall_env_A2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Fenrir — the colossal grey wolf with blazing amber eyes — 100% identical; studio bg/pose/light NOT used; image2: the great torchlit hall of the Norse gods — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "medium of the young Fenrir sitting among the gods, playful and curious"
+            ],
+            [
+              1.8,
+              3.5,
+              "the cub tilts its head, amber eyes bright with growing intelligence"
+            ]
+          ],
+          "narration_mk": "Само Фенрир останува — растејќи како дете меѓу боговите.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of the young grey wolf Fenrir sitting among the gods in the golden hall, playful and curious, photoreal cinematic",
+          "kf_last": "The wolf cub tilts its head, amber eyes watching the gods with growing intelligence",
+          "continuity": "Fenrir cub, amber eyes, grey fur; golden hall",
+          "motion": "static; head tilt",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of the young grey wolf Fenrir sitting among the gods in the golden hall, playful and curious, photoreal cinematic Fenrir hulking, beast, wreathed in shadow smoke then medium of the young Fenrir sitting among the gods, playful and curious, then the cub tilts its head, amber eyes bright with growing intelligence the camera static settling into the wolf cub tilts its head, amber eyes watching the gods with growing intelligence with shadows whisper, stone groans continuity held: Fenrir cub, amber eyes, grey fur; golden hall",
+          "image_prompt_start": "photoreal cinematic: medium of the young grey wolf Fenrir sitting among the gods in the golden hall, playful and curious, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The wolf cub tilts its head, amber eyes watching the gods with growing intelligence.",
+          "video_prompt_start": "Medium of the young Fenrir sitting among the gods, playful and curious. the cub tilts its head, amber eyes bright with growing intelligence. The camera static. The beat resolves into the next matching frame. Continuity held: Fenrir cub, amber eyes, grey fur; golden hall.",
+          "video_prompt_end": "Medium of the young Fenrir sitting among the gods, playful and curious. the cub tilts its head, amber eyes bright with growing intelligence. The camera static. The beat resolves into the next matching frame. Continuity held: Fenrir cub, amber eyes, grey fur; golden hall.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S10",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "fenrir_A3_fused",
+            "asgard_hall_env_A2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Fenrir — the colossal grey wolf with blazing amber eyes — 100% identical; studio bg/pose/light NOT used; image2: the great torchlit hall of the Norse gods — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "wide tracking of Fenrir growing larger with each step through shifting seasons"
+            ],
+            [
+              1.8,
+              3.5,
+              "the wolf now towers over the hall’s pillars, shadow stretching long"
+            ]
+          ],
+          "narration_mk": "Ден по ден, волкот растеше сè поголем и поголем.",
+          "dialogue_mk": "",
+          "kf_first": "Wide eye-level tracking shot of Fenrir moving through time, the wolf visibly larger with each step, seasons shifting around him, photoreal cinematic",
+          "kf_last": "The wolf now towers over the hall's pillars, its shadow stretching long",
+          "continuity": "Fenrir's grey fur and amber eyes; time-lapse growth",
+          "motion": "tracking; growth time-lapse",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide eye-level tracking shot of Fenrir moving through time, the wolf visibly larger with each step, seasons shifting around him, photoreal cinematic Fenrir hulking, beast, wreathed in shadow smoke then wide tracking of Fenrir growing larger with each step through shifting seasons, then the wolf now towers over the hall’s pillars, shadow stretching long settling into the wolf now towers over the hall's pillars, its shadow stretching long with shadows whisper, stone groans continuity held: Fenrir's grey fur and amber eyes; time-lapse growth",
+          "image_prompt_start": "photoreal cinematic: eye-level of Fenrir moving through time, the wolf visibly larger with each step, seasons shifting around him, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The wolf now towers over the hall's pillars, its shadow stretching long.",
+          "video_prompt_start": "Wide tracking of Fenrir growing larger with each step through shifting seasons. the wolf now towers over the hall’s pillars, shadow stretching long. The beat resolves into the next matching frame. Continuity held: Fenrir's grey fur and amber eyes; time-lapse growth.",
+          "video_prompt_end": "Wide tracking of Fenrir growing larger with each step through shifting seasons. the wolf now towers over the hall’s pillars, shadow stretching long. The beat resolves into the next matching frame. Continuity held: Fenrir's grey fur and amber eyes; time-lapse growth.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S11",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "fenrir_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of Fenrir — the colossal grey wolf with blazing amber eyes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "low-angle wide of the massive Fenrir standing before the gods’ hall"
+            ],
+            [
+              1.8,
+              3.5,
+              "push-in as his jaws part, breath fogging the cold air"
+            ]
+          ],
+          "narration_mk": "Наскоро Фенрир стана џиновски ѕвер — закана за целиот Асгард.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of the now-massive Fenrir standing before the gods' hall, muscles rippling under silver-grey fur, menacing yet magnificent, photoreal cinematic",
+          "kf_last": "Push-in as the wolf's great jaws part slightly, breath fogging the cold air",
+          "continuity": "Fenrir's colossal grey form, amber eyes; cold twilight",
+          "motion": "slow push-in; breath mist",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of the now-massive Fenrir standing before the gods' hall, muscles rippling under silver-grey fur, menacing yet magnificent, photoreal cinematic Fenrir hulking, beast, wreathed in shadow smoke then low-angle wide of the massive Fenrir standing before the gods’ hall, then push-in as his jaws part, breath fogging the cold air settling into push-in as the wolf's great jaws part slightly, breath fogging the cold air with shadows whisper continuity held: Fenrir's colossal grey form, amber eyes; cold twilight",
+          "image_prompt_start": "photoreal cinematic: wide of the now-massive Fenrir standing before the gods' hall, muscles rippling under silver-grey fur, menacing yet magnificent, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: as the wolf's great jaws part slightly, breath fogging the cold air.",
+          "video_prompt_start": "Low-angle wide of the massive Fenrir standing before the gods’ hall. push-in as his jaws part, breath fogging the cold air. The beat resolves into the next matching frame. Continuity held: Fenrir's colossal grey form, amber eyes; cold twilight.",
+          "video_prompt_end": "Low-angle wide of the massive Fenrir standing before the gods’ hall. push-in as his jaws part, breath fogging the cold air. The beat resolves into the next matching frame. Continuity held: Fenrir's colossal grey form, amber eyes; cold twilight.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S12",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "odin_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Odin the All-Father — one-eyed grey-bearded king in deep-blue robes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close of Odin watching the giant wolf from the high balcony"
+            ],
+            [
+              1.5,
+              3.0,
+              "his hand tightens on the rail as worry darkens his face"
+            ]
+          ],
+          "narration_mk": "И Один повеќе не можеше да гледа како волкот расте без крај.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level close of Odin watching the giant wolf from a high balcony, worry etched into his face, photoreal cinematic",
+          "kf_last": "His hand tightens on the balcony rail as he weighs the danger",
+          "continuity": "Odin's face; high balcony; the wolf below",
+          "motion": "static; fist tightening",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level close of Odin watching the giant wolf from a high balcony, worry etched into his face, photoreal cinematic Odin athletic, divine, in cloak, hood, beard, carrying spear, wreathed in storm aura, rune ring then close of Odin watching the giant wolf from the high balcony, then his hand tightens on the rail as worry darkens his face the camera static settling into his hand tightens on the balcony rail as he weighs the danger with the spear whistles through the air, thunder rolls continuity held: Odin's face; high balcony; the wolf below",
+          "image_prompt_start": "photoreal cinematic: close of Odin watching the giant wolf from a high balcony, worry etched into his face, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: His hand tightens on the balcony rail as he weighs the danger.",
+          "video_prompt_start": "Close of Odin watching the giant wolf from the high balcony. his hand tightens on the rail as worry darkens his face. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Odin's face; high balcony; the wolf below.",
+          "video_prompt_end": "Close of Odin watching the giant wolf from the high balcony. his hand tightens on the rail as worry darkens his face. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Odin's face; high balcony; the wolf below.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S13",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "odin_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Odin the All-Father — one-eyed grey-bearded king in deep-blue robes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "low-angle close of Odin, his eye blazing with authority"
+            ],
+            [
+              1.5,
+              3.0,
+              "push-in as the command echoes and the gods turn in alarm"
+            ]
+          ],
+          "narration_mk": "И тогаш, на глас, Сеотецот изговори страшна наредба.",
+          "dialogue_mk": "Один: „Врзете го!“",
+          "kf_first": "Low-angle close of Odin, one eye blazing with authority, his voice ringing through the hall, photoreal cinematic",
+          "kf_last": "Push-in as the command hangs in the air and the gods turn in alarm",
+          "continuity": "Odin's command; hall murmur begins",
+          "motion": "slow push-in; echoing command",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle close of Odin, one eye blazing with authority, his voice ringing through the hall, photoreal cinematic Odin athletic, divine, in cloak, hood, beard, carrying spear, wreathed in storm aura, rune ring then low-angle close of Odin, his eye blazing with authority, then push-in as the command echoes and the gods turn in alarm settling into push-in as the command hangs in the air and the gods turn in alarm with the spear whistles through the air, thunder rolls a voice speaks in Macedonian: \"Один: „Врзете го!“\" continuity held: Odin's command; hall murmur begins",
+          "image_prompt_start": "photoreal cinematic: close of Odin, one eye blazing with authority, his voice ringing through the hall, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: as the command hangs in the air and the gods turn in alarm.",
+          "video_prompt_start": "Low-angle close of Odin, his eye blazing with authority. push-in as the command echoes and the gods turn in alarm. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Один: „Врзете го!“\" Continuity held: Odin's command; hall murmur begins.",
+          "video_prompt_end": "Low-angle close of Odin, his eye blazing with authority. push-in as the command echoes and the gods turn in alarm. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Один: „Врзете го!“\" Continuity held: Odin's command; hall murmur begins.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S14",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "odin_A1_fused",
+            "loki_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of Odin the All-Father — one-eyed grey-bearded king in deep-blue robes — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Loki the trickster — sharp-featured god in green-gold clothing — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "medium of Odin facing Loki, the trickster’s smirk gone"
+            ],
+            [
+              1.8,
+              3.5,
+              "Loki shakes his head and steps back into shadow"
+            ]
+          ],
+          "narration_mk": "Но кога Один го погледна Локи, таткото на волкот го одврати лицето.",
+          "dialogue_mk": "Один: „Локи, можеш ти да го направиш тоа?“",
+          "kf_first": "Eye-level medium of Odin facing Loki, the trickster's smirk gone, his eyes lowered in refusal, photoreal cinematic",
+          "kf_last": "Loki slowly shakes his head and steps back into the shadow",
+          "continuity": "Loki's fallen expression; Odin's expectation",
+          "motion": "static; Loki retreating",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of Odin facing Loki, the trickster's smirk gone, his eyes lowered in refusal, photoreal cinematic Odin athletic, divine, in cloak, hood, beard, carrying spear, wreathed in storm aura, rune ring Loki slender, trickster, in cloak, wreathed in shadow smoke then medium of Odin facing Loki, the trickster’s smirk gone, then Loki shakes his head and steps back into shadow the camera static settling into loki slowly shakes his head and steps back into the shadow with the spear whistles through the air, thunder rolls a voice speaks in Macedonian: \"Один: „Локи, можеш ти да го направиш тоа?“\" continuity held: Loki's fallen expression; Odin's expectation",
+          "image_prompt_start": "photoreal cinematic: medium of Odin facing Loki, the trickster's smirk gone, his eyes lowered in refusal, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: Loki slowly shakes his head and steps back into the shadow.",
+          "video_prompt_start": "Medium of Odin facing Loki, the trickster’s smirk gone. Loki shakes his head and steps back into shadow. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Один: „Локи, можеш ти да го направиш тоа?“\" Continuity held: Loki's fallen expression; Odin's expectation.",
+          "video_prompt_end": "Medium of Odin facing Loki, the trickster’s smirk gone. Loki shakes his head and steps back into shadow. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Один: „Локи, можеш ти да го направиш тоа?“\" Continuity held: Loki's fallen expression; Odin's expectation.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "asgard_golden_realm_and_throne_hall",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class",
+        "screen_dir"
+      ],
+      "palette": [
+        "#d4af37",
+        "#6b8cae",
+        "#1b2430"
+      ],
+      "light_direction": "key light from screen-left, cool golden dawn through the great hall",
+      "time_of_day": "dawn"
+    },
+    {
+      "id": "act2",
+      "num": "Act II",
+      "title": "Синџирот",
+      "color": "#f59e0b",
+      "pct": 50,
+      "synopsis": "Один наредува Фенрир да се врзе, но Локи одбива. Тир се понудува. Железниот синџир што Тир го наоѓа не издржува — волкот го крши лесно. Тир бара помош од џуџињата во Нидавелир, кои коваат нежен, магичен синџир. Но Фенрир не е глупав: бара раката на Тир во својата уста како залог.",
+      "shots": [
+        {
+          "id": "S15",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "tyr_A4_fused"
+          ],
+          "ref_scope": "image1: the fused master of Týr the war-god — broad-shouldered knight in dark iron armor — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "medium of Týr stepping forward, broad-shouldered and resolute"
+            ],
+            [
+              1.5,
+              3.0,
+              "push-in on his fearless eyes as the gods look on"
+            ]
+          ],
+          "narration_mk": "Тогаш напред чекори Тир, богот на војната — храбар и решителен.",
+          "dialogue_mk": "Тир: „Јас ќе го врзам Фенрир.“",
+          "kf_first": "Eye-level medium of Týr the war-god stepping forward, broad-shouldered and resolute, his voice steady, photoreal cinematic",
+          "kf_last": "Push-in on his fearless eyes as the gods look on with hope",
+          "continuity": "Týr's armor and noble bearing; hall light",
+          "motion": "slow push-in; determined step",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of Týr the war-god stepping forward, broad-shouldered and resolute, his voice steady, photoreal cinematic Tyr athletic, warrior, in cloak, carrying sword, shield, wreathed in holy aura then medium of Týr stepping forward, broad-shouldered and resolute, then push-in on his fearless eyes as the gods look on settling into push-in on his fearless eyes as the gods look on with hope with steel rings, the shield clangs a voice speaks in Macedonian: \"Тир: „Јас ќе го врзам Фенрир.“\" continuity held: Týr's armor and noble bearing; hall light",
+          "image_prompt_start": "photoreal cinematic: medium of Týr the war-god stepping forward, broad-shouldered and resolute, his voice steady, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: on his fearless eyes as the gods look on with hope.",
+          "video_prompt_start": "Medium of Týr stepping forward, broad-shouldered and resolute. push-in on his fearless eyes as the gods look on. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Тир: „Јас ќе го врзам Фенрир.“\" Continuity held: Týr's armor and noble bearing; hall light.",
+          "video_prompt_end": "Medium of Týr stepping forward, broad-shouldered and resolute. push-in on his fearless eyes as the gods look on. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Тир: „Јас ќе го врзам Фенрир.“\" Continuity held: Týr's armor and noble bearing; hall light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S16",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "tyr_A4_fused",
+            "spear_B3_sheet",
+            "landscape_env_A5_prop"
+          ],
+          "ref_scope": "image1: the fused master of Týr the war-god — broad-shouldered knight in dark iron armor — 100% identical; studio bg/pose/light NOT used; image2: Týr’s war spear — 100% identical; studio bg/pose/light NOT used; image3: the rocky Norse landscape beneath the dark mountains — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "wide tracking of Týr riding across the rocky Norse landscape, spear in hand"
+            ],
+            [
+              1.8,
+              3.5,
+              "he dismounts before the iron-bound gate beneath the dark mountain"
+            ]
+          ],
+          "narration_mk": "Тир замина да бара синџир — тежок, дебел, направен од чисто железо.",
+          "dialogue_mk": "",
+          "kf_first": "Wide eye-level tracking shot of Týr riding across a rocky Norse landscape, spear in hand, searching the horizon, photoreal cinematic",
+          "kf_last": "He dismounts before a massive iron-bound gate beneath a dark mountain",
+          "continuity": "Týr's armor, spear; cold mountain palette",
+          "motion": "tracking; landscape sweep",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide eye-level tracking shot of Týr riding across a rocky Norse landscape, spear in hand, searching the horizon, photoreal cinematic Tyr athletic, warrior, in cloak, carrying sword, shield, wreathed in holy aura then wide tracking of Týr riding across the rocky Norse landscape, spear in hand, then he dismounts before the iron-bound gate beneath the dark mountain settling into he dismounts before a massive iron-bound gate beneath a dark mountain with steel rings, the shield clangs continuity held: Týr's armor, spear; cold mountain palette",
+          "image_prompt_start": "photoreal cinematic: eye-level of Týr riding across a rocky Norse landscape, spear in hand, searching the horizon, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: He dismounts before a massive iron-bound gate beneath a dark mountain.",
+          "video_prompt_start": "Wide tracking of Týr riding across the rocky Norse landscape, spear in hand. he dismounts before the iron-bound gate beneath the dark mountain. The beat resolves into the next matching frame. Continuity held: Týr's armor, spear; cold mountain palette.",
+          "video_prompt_end": "Wide tracking of Týr riding across the rocky Norse landscape, spear in hand. he dismounts before the iron-bound gate beneath the dark mountain. The beat resolves into the next matching frame. Continuity held: Týr's armor, spear; cold mountain palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S17",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "tyr_A4_fused",
+            "iron_chain_B1_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Týr the war-god — broad-shouldered knight in dark iron armor — 100% identical; studio bg/pose/light NOT used; image2: the heavy iron chain — thick unyielding links — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "medium of Týr hauling the thick iron chain across the hall floor"
+            ],
+            [
+              1.5,
+              3.0,
+              "the chain coils at the wolf’s feet as Týr stands ready"
+            ]
+          ],
+          "narration_mk": "Тир го донесе тешкиот железен синџир пред волкот.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of Týr hauling a long, thick iron chain across the hall floor, links clanking heavy, photoreal cinematic",
+          "kf_last": "The chain coils at the wolf's feet as Týr stands ready",
+          "continuity": "Iron chain; Týr; Fenrir watching",
+          "motion": "static; chain dragging",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of Týr hauling a long, thick iron chain across the hall floor, links clanking heavy, photoreal cinematic Tyr athletic, warrior, in cloak, carrying sword, shield, wreathed in holy aura then medium of Týr hauling the thick iron chain across the hall floor, then the chain coils at the wolf’s feet as Týr stands ready the camera static settling into the chain coils at the wolf's feet as Týr stands ready with steel rings, the shield clangs continuity held: Iron chain; Týr; Fenrir watching",
+          "image_prompt_start": "photoreal cinematic: medium of Týr hauling a long, thick iron chain across the hall floor, links clanking heavy, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The chain coils at the wolf's feet as Týr stands ready.",
+          "video_prompt_start": "Medium of Týr hauling the thick iron chain across the hall floor. the chain coils at the wolf’s feet as Týr stands ready. The camera static. The beat resolves into the next matching frame. Continuity held: Iron chain; Týr; Fenrir watching.",
+          "video_prompt_end": "Medium of Týr hauling the thick iron chain across the hall floor. the chain coils at the wolf’s feet as Týr stands ready. The camera static. The beat resolves into the next matching frame. Continuity held: Iron chain; Týr; Fenrir watching.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S18",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-left",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "tyr_A4_fused",
+            "odin_A1_fused",
+            "iron_chain_B1_sheet",
+            "asgard_hall_env_A2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Týr the war-god — broad-shouldered knight in dark iron armor — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Odin the All-Father — one-eyed grey-bearded king in deep-blue robes — 100% identical; studio bg/pose/light NOT used; image3: the heavy iron chain — thick unyielding links — 100% identical; studio bg/pose/light NOT used; image4: the great torchlit hall of the Norse gods — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "wide of the gods approaching the seated Fenrir in a careful circle"
+            ],
+            [
+              1.8,
+              3.5,
+              "pan left as they draw the chain around his massive form"
+            ]
+          ],
+          "narration_mk": "Боговите пристапија внимателно, со синџирот во рацете.",
+          "dialogue_mk": "",
+          "kf_first": "Wide eye-level shot of the gods approaching the seated Fenrir in a careful circle, iron chain carried between them, photoreal cinematic",
+          "kf_last": "Pan left as they draw the chain around the wolf's massive form",
+          "continuity": "Iron chain; gods' cautious stance; Fenrir seated",
+          "motion": "pan-left; gods encircling",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide eye-level shot of the gods approaching the seated Fenrir in a careful circle, iron chain carried between them, photoreal cinematic Tyr athletic, warrior, in cloak, carrying sword, shield, wreathed in holy aura Odin athletic, divine, in cloak, hood, beard, carrying spear, wreathed in storm aura, rune ring then wide of the gods approaching the seated Fenrir in a careful circle, then pan left as they draw the chain around his massive form the camera pan-left settling into pan left as they draw the chain around the wolf's massive form with steel rings, the shield clangs continuity held: Iron chain; gods' cautious stance; Fenrir seated",
+          "image_prompt_start": "photoreal cinematic: eye-level shot of the gods approaching the seated Fenrir in a careful circle, iron chain carried between them, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: left as they draw the chain around the wolf's massive form.",
+          "video_prompt_start": "Wide of the gods approaching the seated Fenrir in a careful circle. pan left as they draw the chain around his massive form. The camera pan-left. The beat resolves into the next matching frame. Continuity held: Iron chain; gods' cautious stance; Fenrir seated.",
+          "video_prompt_end": "Wide of the gods approaching the seated Fenrir in a careful circle. pan left as they draw the chain around his massive form. The camera pan-left. The beat resolves into the next matching frame. Continuity held: Iron chain; gods' cautious stance; Fenrir seated.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S19",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "fenrir_A3_fused",
+            "iron_chain_B1_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Fenrir — the colossal grey wolf with blazing amber eyes — 100% identical; studio bg/pose/light NOT used; image2: the heavy iron chain — thick unyielding links — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "low-angle of the iron chain wrapped tight around Fenrir’s shoulders and limbs"
+            ],
+            [
+              1.5,
+              3.0,
+              "the chain pulls taut, biting into the grey fur"
+            ]
+          ],
+          "narration_mk": "Тие го обвиткаа волкот со железо и го стегнаа со сета сила.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of the iron chain being wrapped tight around Fenrir's shoulders and limbs, gods straining, photoreal cinematic",
+          "kf_last": "The chain pulls taut, biting into the grey fur",
+          "continuity": "Iron chain wrapping; Fenrir's grey fur",
+          "motion": "static; chain tightening",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of the iron chain being wrapped tight around Fenrir's shoulders and limbs, gods straining, photoreal cinematic Fenrir hulking, beast, wreathed in shadow smoke then low-angle of the iron chain wrapped tight around Fenrir’s shoulders and limbs, then the chain pulls taut, biting into the grey fur the camera static with shadows whisper continuity held: Iron chain wrapping; Fenrir's grey fur",
+          "image_prompt_start": "photoreal cinematic: medium of the iron chain being wrapped tight around Fenrir's shoulders and limbs, gods straining, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The chain pulls taut, biting into the grey fur.",
+          "video_prompt_start": "Low-angle of the iron chain wrapped tight around Fenrir’s shoulders and limbs. the chain pulls taut, biting into the grey fur. The camera static. The beat resolves into the next matching frame. Continuity held: Iron chain wrapping; Fenrir's grey fur.",
+          "video_prompt_end": "Low-angle of the iron chain wrapped tight around Fenrir’s shoulders and limbs. the chain pulls taut, biting into the grey fur. The camera static. The beat resolves into the next matching frame. Continuity held: Iron chain wrapping; Fenrir's grey fur.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S20",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "fenrir_A3_fused",
+            "iron_chain_B1_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Fenrir — the colossal grey wolf with blazing amber eyes — 100% identical; studio bg/pose/light NOT used; image2: the heavy iron chain — thick unyielding links — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "macro of Fenrir’s muscles tensing, the iron links straining"
+            ],
+            [
+              1.5,
+              3.0,
+              "the links snap in a burst of broken metal, fragments flying"
+            ]
+          ],
+          "narration_mk": "Но Фенрир само ги напрегна мускулите — и железото пукна како конец.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of Fenrir's muscles tensing under grey fur, the iron chain links straining, photoreal cinematic",
+          "kf_last": "The links snap apart in a burst of broken metal, fragments flying",
+          "continuity": "Iron chain under strain; Fenrir's form",
+          "motion": "slow push-in; chain snapping",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of Fenrir's muscles tensing under grey fur, the iron chain links straining, photoreal cinematic Fenrir hulking, beast, wreathed in shadow smoke then macro of Fenrir’s muscles tensing, the iron links straining, then the links snap in a burst of broken metal, fragments flying the camera push-in settling into the links snap apart in a burst of broken metal, fragments flying with shadows whisper continuity held: Iron chain under strain; Fenrir's form",
+          "image_prompt_start": "photoreal cinematic: Macro insert of Fenrir's muscles tensing under grey fur, the iron chain links straining, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The links snap apart in a burst of broken metal, fragments flying.",
+          "video_prompt_start": "Macro of Fenrir’s muscles tensing, the iron links straining. the links snap in a burst of broken metal, fragments flying. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Iron chain under strain; Fenrir's form.",
+          "video_prompt_end": "Macro of Fenrir’s muscles tensing, the iron links straining. the links snap in a burst of broken metal, fragments flying. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Iron chain under strain; Fenrir's form.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S21",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "fenrir_A3_fused",
+            "iron_chain_B1_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Fenrir — the colossal grey wolf with blazing amber eyes — 100% identical; studio bg/pose/light NOT used; image2: the heavy iron chain — thick unyielding links — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "low-angle wide of Fenrir rising to full height, broken links at his feet"
+            ],
+            [
+              1.8,
+              3.5,
+              "the wolf shakes off the last of the iron, calm and unchallenged"
+            ]
+          ],
+          "narration_mk": "Волкот стана слободен — а боговите отстапија во страв.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of Fenrir rising to full height, broken chain links scattered at his feet, the gods stumbling back, photoreal cinematic",
+          "kf_last": "The wolf shakes off the last of the iron, calm and unchallenged",
+          "continuity": "Broken chain; Fenrir freed; gods' retreat",
+          "motion": "static; wolf rising",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of Fenrir rising to full height, broken chain links scattered at his feet, the gods stumbling back, photoreal cinematic Fenrir hulking, beast, wreathed in shadow smoke then low-angle wide of Fenrir rising to full height, broken links at his feet, then the wolf shakes off the last of the iron, calm and unchallenged the camera static with shadows whisper continuity held: Broken chain; Fenrir freed; gods' retreat",
+          "image_prompt_start": "photoreal cinematic: wide of Fenrir rising to full height, broken chain links scattered at his feet, the gods stumbling back, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The wolf shakes off the last of the iron, calm and unchallenged.",
+          "video_prompt_start": "Low-angle wide of Fenrir rising to full height, broken links at his feet. the wolf shakes off the last of the iron, calm and unchallenged. The camera static. The beat resolves into the next matching frame. Continuity held: Broken chain; Fenrir freed; gods' retreat.",
+          "video_prompt_end": "Low-angle wide of Fenrir rising to full height, broken links at his feet. the wolf shakes off the last of the iron, calm and unchallenged. The camera static. The beat resolves into the next matching frame. Continuity held: Broken chain; Fenrir freed; gods' retreat.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S22",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "tyr_A4_fused",
+            "iron_chain_B1_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Týr the war-god — broad-shouldered knight in dark iron armor — 100% identical; studio bg/pose/light NOT used; image2: the heavy iron chain — thick unyielding links — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close of Týr watching the broken chain, his jaw set"
+            ],
+            [
+              1.5,
+              3.0,
+              "push-in as he turns toward the distant mountains, resolved"
+            ]
+          ],
+          "narration_mk": "Тир знаеше дека железото не е одговор — му требаше магија на џуџињата.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level close of Týr watching the broken chain, jaw set, a new resolve forming in his eyes, photoreal cinematic",
+          "kf_last": "Push-in as he turns toward the distant mountains with determination",
+          "continuity": "Týr's resolve; broken chain at frame edge",
+          "motion": "slow push-in; turning away",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level close of Týr watching the broken chain, jaw set, a new resolve forming in his eyes, photoreal cinematic Tyr athletic, warrior, in cloak, carrying sword, shield, wreathed in holy aura then close of Týr watching the broken chain, his jaw set, then push-in as he turns toward the distant mountains, resolved settling into push-in as he turns toward the distant mountains with determination with steel rings, the shield clangs continuity held: Týr's resolve; broken chain at frame edge",
+          "image_prompt_start": "photoreal cinematic: close of Týr watching the broken chain, jaw set, a new resolve forming in his eyes, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: as he toward the distant mountains with determination.",
+          "video_prompt_start": "Close of Týr watching the broken chain, his jaw set. push-in as he turns toward the distant mountains, resolved. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Týr's resolve; broken chain at frame edge.",
+          "video_prompt_end": "Close of Týr watching the broken chain, his jaw set. push-in as he turns toward the distant mountains, resolved. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Týr's resolve; broken chain at frame edge.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S23",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "tyr_A4_fused",
+            "nidavellir_env_A6_prop"
+          ],
+          "ref_scope": "image1: the fused master of Týr the war-god — broad-shouldered knight in dark iron armor — 100% identical; studio bg/pose/light NOT used; image2: the deep ember-lit caverns of Nidavellir — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "low-angle wide of Týr descending winding stairs into the dark caverns"
+            ],
+            [
+              1.8,
+              3.5,
+              "crane down as ember light flickers on ancient anvils below"
+            ]
+          ],
+          "narration_mk": "Длабоко во темните пештери на Нидавелир — домот на најдобрите ковачи.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of Týr descending winding stone stairs into the dark caverns of Nidavellir, forge-light glowing far below, photoreal cinematic",
+          "kf_last": "Crane down into the cavern where ember light flickers on ancient anvils",
+          "continuity": "Journey into darkness; ember glow dawns",
+          "motion": "slow crane-down; descending",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of Týr descending winding stone stairs into the dark caverns of Nidavellir, forge-light glowing far below, photoreal cinematic Tyr athletic, warrior, in cloak, carrying sword, shield, wreathed in holy aura then low-angle wide of Týr descending winding stairs into the dark caverns, then crane down as ember light flickers on ancient anvils below the camera crane-down settling into crane down into the cavern where ember light flickers on ancient anvils with steel rings, the shield clangs continuity held: Journey into darkness; ember glow dawns",
+          "image_prompt_start": "photoreal cinematic: wide of Týr descending winding stone stairs into the dark caverns of Nidavellir, forge-light glowing far below, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: into the cavern where ember light flickers on ancient anvils.",
+          "video_prompt_start": "Low-angle wide of Týr descending winding stairs into the dark caverns. crane down as ember light flickers on ancient anvils below. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Journey into darkness; ember glow dawns.",
+          "video_prompt_end": "Low-angle wide of Týr descending winding stairs into the dark caverns. crane down as ember light flickers on ancient anvils below. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Journey into darkness; ember glow dawns.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S24",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "dwarfs_A7_fused",
+            "nidavellir_env_A6_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Dwarf Smiths — stout soot-stained forge workers — 100% identical; studio bg/pose/light NOT used; image2: the deep ember-lit caverns of Nidavellir — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "medium of the dwarf smiths hammering at glowing anvils"
+            ],
+            [
+              1.5,
+              3.0,
+              "one dwarf looks up, squinting at Týr through the soot"
+            ]
+          ],
+          "narration_mk": "Таму, зад вжарените огништа, работат џуџињата-ковачи.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of stout dwarf smiths hammering at glowing anvils in a fiery cavern, sparks spraying, photoreal cinematic",
+          "kf_last": "One dwarf looks up, wiping soot from his brow, squinting at Týr",
+          "continuity": "Dwarven forge; ember-and-spark palette",
+          "motion": "static; hammer strikes",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of stout dwarf smiths hammering at glowing anvils in a fiery cavern, sparks spraying, photoreal cinematic Dwarfs hulking, craftsman, in beard, carrying hammer, wreathed in fire wisps then medium of the dwarf smiths hammering at glowing anvils, then one dwarf looks up, squinting at Týr through the soot the camera static settling into one dwarf looks up, wiping soot from his brow, squinting at Týr with the hammer-swing thunders, flames crackle continuity held: Dwarven forge; ember-and-spark palette",
+          "image_prompt_start": "photoreal cinematic: medium of stout dwarf smiths hammering at glowing anvils in a fiery cavern, sparks spraying, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: One dwarf looks up, wiping soot from his brow, squinting at Týr.",
+          "video_prompt_start": "Medium of the dwarf smiths hammering at glowing anvils. one dwarf looks up, squinting at Týr through the soot. The camera static. The beat resolves into the next matching frame. Continuity held: Dwarven forge; ember-and-spark palette.",
+          "video_prompt_end": "Medium of the dwarf smiths hammering at glowing anvils. one dwarf looks up, squinting at Týr through the soot. The camera static. The beat resolves into the next matching frame. Continuity held: Dwarven forge; ember-and-spark palette.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S25",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "dwarfs_A7_fused",
+            "magic_chain_B2_sheet"
+          ],
+          "ref_scope": "image1: the fused master of the Dwarf Smiths — stout soot-stained forge workers — 100% identical; studio bg/pose/light NOT used; image2: the dwarven magic chain — thin silken ribbon strung with glowing runes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "macro of dwarf hands weaving impossibly fine golden thread"
+            ],
+            [
+              1.8,
+              3.5,
+              "the thread spools into a delicate rune-lit chain"
+            ]
+          ],
+          "narration_mk": "Од најнежни нешта — шепот на ветрот, корења и магла — тие го плетеа новиот синџир.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of dwarf hands weaving impossibly fine golden thread over a glowing anvil, magic shimmering along each strand, photoreal cinematic",
+          "kf_last": "The thread spools into a delicate chain, light dancing through it",
+          "continuity": "Dwarven hands; magical golden thread",
+          "motion": "slow push-in; thread weaving",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of dwarf hands weaving impossibly fine golden thread over a glowing anvil, magic shimmering along each strand, photoreal cinematic Dwarfs hulking, craftsman, in beard, carrying hammer, wreathed in fire wisps then macro of dwarf hands weaving impossibly fine golden thread, then the thread spools into a delicate rune-lit chain the camera push-in settling into the thread spools into a delicate chain, light dancing through it with the hammer-swing thunders, flames crackle continuity held: Dwarven hands; magical golden thread",
+          "image_prompt_start": "photoreal cinematic: Macro insert of dwarf hands weaving impossibly fine golden thread over a glowing anvil, magic shimmering along each strand, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The thread spools into a delicate chain, light dancing through it.",
+          "video_prompt_start": "Macro of dwarf hands weaving impossibly fine golden thread. the thread spools into a delicate rune-lit chain. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Dwarven hands; magical golden thread.",
+          "video_prompt_end": "Macro of dwarf hands weaving impossibly fine golden thread. the thread spools into a delicate rune-lit chain. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Dwarven hands; magical golden thread.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S26",
+          "shot_type": "CLOSE-UP",
+          "size": "MACRO",
+          "angle": "macro",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "magic_chain_B2_sheet"
+          ],
+          "ref_scope": "image1: the dwarven magic chain — thin silken ribbon strung with glowing runes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "macro of the finished chain, thin and soft as silk ribbon"
+            ],
+            [
+              1.5,
+              3.0,
+              "the chain catches the forge-light, gleam hiding its hidden strength"
+            ]
+          ],
+          "narration_mk": "Синџирот што го направија беше толку тенок и нежен — а сепак непокршлива стапица.",
+          "dialogue_mk": "",
+          "kf_first": "Macro close of the finished chain, as thin and soft as silk ribbon, faint runes glinting along its links, photoreal cinematic",
+          "kf_last": "The chain catches the forge-light, its surface gleaming with hidden strength",
+          "continuity": "The dwarven chain; forge light; runes",
+          "motion": "static; rune glint",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro close of the finished chain, as thin and soft as silk ribbon, faint runes glinting along its links, photoreal cinematic then macro of the finished chain, thin and soft as silk ribbon, then the chain catches the forge-light, gleam hiding its hidden strength the camera static settling into the chain catches the forge-light, its surface gleaming with hidden strength continuity held: The dwarven chain; forge light; runes",
+          "image_prompt_start": "photoreal cinematic: Macro close of the finished chain, as thin and soft as silk ribbon, faint runes glinting along its links, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The chain catches the forge-light, its surface gleaming with hidden strength.",
+          "video_prompt_start": "Macro of the finished chain, thin and soft as silk ribbon. the chain catches the forge-light, gleam hiding its hidden strength. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: The dwarven chain; forge light; runes.",
+          "video_prompt_end": "Macro of the finished chain, thin and soft as silk ribbon. the chain catches the forge-light, gleam hiding its hidden strength. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: The dwarven chain; forge light; runes.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S27",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "tyr_A4_fused",
+            "fenrir_A3_fused",
+            "magic_chain_B2_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Týr the war-god — broad-shouldered knight in dark iron armor — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Fenrir — the colossal grey wolf with blazing amber eyes — 100% identical; studio bg/pose/light NOT used; image3: the dwarven magic chain — thin silken ribbon strung with glowing runes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "medium of Týr holding up the thin chain before Fenrir"
+            ],
+            [
+              1.8,
+              3.5,
+              "the wolf’s amber eyes narrow as he sniffs it warily"
+            ]
+          ],
+          "narration_mk": "Тир му го донесе тенкиот синџир на Фенрир — а волкот веднаш насети нешто.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of Týr standing before Fenrir holding up the thin chain, the wolf's amber eyes narrowing, photoreal cinematic",
+          "kf_last": "Fenrir leans closer, sniffing the chain warily",
+          "continuity": "Thin glowing chain; Fenrir's suspicion",
+          "motion": "static; wolf leaning in",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of Týr standing before Fenrir holding up the thin chain, the wolf's amber eyes narrowing, photoreal cinematic Tyr athletic, warrior, in cloak, carrying sword, shield, wreathed in holy aura Fenrir hulking, beast, wreathed in shadow smoke then medium of Týr holding up the thin chain before Fenrir, then the wolf’s amber eyes narrow as he sniffs it warily the camera static settling into fenrir leans closer, sniffing the chain warily with steel rings, the shield clangs continuity held: Thin glowing chain; Fenrir's suspicion",
+          "image_prompt_start": "photoreal cinematic: medium of Týr standing before Fenrir holding up the thin chain, the wolf's amber eyes narrowing, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: Fenrir leans closer, sniffing the chain warily.",
+          "video_prompt_start": "Medium of Týr holding up the thin chain before Fenrir. the wolf’s amber eyes narrow as he sniffs it warily. The camera static. The beat resolves into the next matching frame. Continuity held: Thin glowing chain; Fenrir's suspicion.",
+          "video_prompt_end": "Medium of Týr holding up the thin chain before Fenrir. the wolf’s amber eyes narrow as he sniffs it warily. The camera static. The beat resolves into the next matching frame. Continuity held: Thin glowing chain; Fenrir's suspicion.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S28",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "fenrir_A3_fused",
+            "magic_chain_B2_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Fenrir — the colossal grey wolf with blazing amber eyes — 100% identical; studio bg/pose/light NOT used; image2: the dwarven magic chain — thin silken ribbon strung with glowing runes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close of Fenrir’s face, the thin chain reflected in his sharp eyes"
+            ],
+            [
+              1.5,
+              3.0,
+              "push-in as his gaze hardens with cold intelligence"
+            ]
+          ],
+          "narration_mk": "Фенрир не беше глупав — а неговите очи сè гледаа.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level close of Fenrir's face, amber eyes sharp and knowing, the thin chain reflected in them, photoreal cinematic",
+          "kf_last": "Push-in as the wolf's gaze hardens with cold intelligence",
+          "continuity": "Fenrir's amber eyes; the chain reflection",
+          "motion": "slow push-in; narrowing eyes",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level close of Fenrir's face, amber eyes sharp and knowing, the thin chain reflected in them, photoreal cinematic Fenrir hulking, beast, wreathed in shadow smoke then close of Fenrir’s face, the thin chain reflected in his sharp eyes, then push-in as his gaze hardens with cold intelligence settling into push-in as the wolf's gaze hardens with cold intelligence with shadows whisper continuity held: Fenrir's amber eyes; the chain reflection",
+          "image_prompt_start": "photoreal cinematic: close of Fenrir's face, amber eyes sharp and knowing, the thin chain reflected in them, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: as the wolf's gaze hardens with cold intelligence.",
+          "video_prompt_start": "Close of Fenrir’s face, the thin chain reflected in his sharp eyes. push-in as his gaze hardens with cold intelligence. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Fenrir's amber eyes; the chain reflection.",
+          "video_prompt_end": "Close of Fenrir’s face, the thin chain reflected in his sharp eyes. push-in as his gaze hardens with cold intelligence. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Fenrir's amber eyes; the chain reflection.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S29",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "tyr_A4_fused",
+            "magic_chain_B2_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Týr the war-god — broad-shouldered knight in dark iron armor — 100% identical; studio bg/pose/light NOT used; image2: the dwarven magic chain — thin silken ribbon strung with glowing runes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "medium of Týr offering the thin chain, expression calm but watchful"
+            ],
+            [
+              1.8,
+              3.5,
+              "his hand steadies as he bids the wolf test it"
+            ]
+          ],
+          "narration_mk": "Тогаш Тир проговори со ладен, мирен глас.",
+          "dialogue_mk": "Тир: „Да видиме дали ќе можеш да го скинеш и овој синџир.“",
+          "kf_first": "Eye-level medium of Týr holding the thin chain toward Fenrir, his expression calm but watchful, photoreal cinematic",
+          "kf_last": "His hand steadies as he gestures for the wolf to test it",
+          "continuity": "Týr's calm; thin chain offered",
+          "motion": "static; offering gesture",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of Týr holding the thin chain toward Fenrir, his expression calm but watchful, photoreal cinematic Tyr athletic, warrior, in cloak, carrying sword, shield, wreathed in holy aura then medium of Týr offering the thin chain, expression calm but watchful, then his hand steadies as he bids the wolf test it the camera static settling into his hand steadies as he gestures for the wolf to test it with steel rings, the shield clangs a voice speaks in Macedonian: \"Тир: „Да видиме дали ќе можеш да го скинеш и овој синџир.“\" continuity held: Týr's calm; thin chain offered",
+          "image_prompt_start": "photoreal cinematic: medium of Týr holding the thin chain toward Fenrir, his expression calm but watchful, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: His hand steadies as he gestures for the wolf to test it.",
+          "video_prompt_start": "Medium of Týr offering the thin chain, expression calm but watchful. his hand steadies as he bids the wolf test it. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Тир: „Да видиме дали ќе можеш да го скинеш и овој синџир.“\" Continuity held: Týr's calm; thin chain offered.",
+          "video_prompt_end": "Medium of Týr offering the thin chain, expression calm but watchful. his hand steadies as he bids the wolf test it. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Тир: „Да видиме дали ќе можеш да го скинеш и овој синџир.“\" Continuity held: Týr's calm; thin chain offered.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S30",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "fenrir_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of Fenrir — the colossal grey wolf with blazing amber eyes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "close of Fenrir speaking, lips curling over white fangs"
+            ],
+            [
+              2.0,
+              4.0,
+              "his mouth opens slightly, a silent demand hanging in the air"
+            ]
+          ],
+          "narration_mk": "А волкот одговори со жестока, лукава пресметка.",
+          "dialogue_mk": "Фенрир: „Може да ме врзеш — но ќе ја ставиш раката во мојата уста. Ако не се ослободам, и ти ќе изгубиш нешто!“",
+          "kf_first": "Eye-level close of Fenrir speaking, his lips curling over white fangs, amber eyes locked on Týr, photoreal cinematic",
+          "kf_last": "The wolf's mouth opens slightly, a silent demand hanging between them",
+          "continuity": "Fenrir's fangs and amber eyes; tense standoff",
+          "motion": "static; jaw parting",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level close of Fenrir speaking, his lips curling over white fangs, amber eyes locked on Týr, photoreal cinematic Fenrir hulking, beast, wreathed in shadow smoke then close of Fenrir speaking, lips curling over white fangs, then his mouth opens slightly, a silent demand hanging in the air the camera static settling into the wolf's mouth opens slightly, a silent demand hanging between them with shadows whisper a voice speaks in Macedonian: \"Фенрир: „Може да ме врзеш — но ќе ја ставиш раката во мојата уста. Ако не се ослободам, и ти ќе изгубиш нешто!“\" continuity held: Fenrir's fangs and amber eyes; tense standoff",
+          "image_prompt_start": "photoreal cinematic: close of Fenrir speaking, his lips curling over white fangs, amber eyes locked on Týr, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The wolf's mouth opens slightly, a silent demand hanging between them.",
+          "video_prompt_start": "Close of Fenrir speaking, lips curling over white fangs. his mouth opens slightly, a silent demand hanging in the air. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Фенрир: „Може да ме врзеш — но ќе ја ставиш раката во мојата уста. Ако не се ослободам, и ти ќе изгубиш нешто!“\" Continuity held: Fenrir's fangs and amber eyes; tense standoff.",
+          "video_prompt_end": "Close of Fenrir speaking, lips curling over white fangs. his mouth opens slightly, a silent demand hanging in the air. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Фенрир: „Може да ме врзеш — но ќе ја ставиш раката во мојата уста. Ако не се ослободам, и ти ќе изгубиш нешто!“\" Continuity held: Fenrir's fangs and amber eyes; tense standoff.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S31",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "tyr_A4_fused",
+            "odin_A1_fused",
+            "asgard_hall_env_A2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Týr the war-god — broad-shouldered knight in dark iron armor — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Odin the All-Father — one-eyed grey-bearded king in deep-blue robes — 100% identical; studio bg/pose/light NOT used; image3: the great torchlit hall of the Norse gods — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "wide of the gods exchanging horrified glances, the hall hushed"
+            ],
+            [
+              1.5,
+              3.0,
+              "all eyes fall on Týr, waiting for his answer"
+            ]
+          ],
+          "narration_mk": "Боговите замолкнаа — цената беше престрашна за да се прифати.",
+          "dialogue_mk": "",
+          "kf_first": "Wide eye-level shot of the gods exchanging horrified glances, the great hall suddenly hushed, photoreal cinematic",
+          "kf_last": "All eyes fall on Týr, waiting for his answer",
+          "continuity": "Gods' fear; hall silence; Týr center",
+          "motion": "static; glances turn",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide eye-level shot of the gods exchanging horrified glances, the great hall suddenly hushed, photoreal cinematic Tyr athletic, warrior, in cloak, carrying sword, shield, wreathed in holy aura Odin athletic, divine, in cloak, hood, beard, carrying spear, wreathed in storm aura, rune ring then wide of the gods exchanging horrified glances, the hall hushed, then all eyes fall on Týr, waiting for his answer the camera static with steel rings, the shield clangs continuity held: Gods' fear; hall silence; Týr center",
+          "image_prompt_start": "photoreal cinematic: eye-level shot of the gods exchanging horrified glances, the great hall suddenly hushed, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: All eyes fall on Týr, waiting for his answer.",
+          "video_prompt_start": "Wide of the gods exchanging horrified glances, the hall hushed. all eyes fall on Týr, waiting for his answer. The camera static. The beat resolves into the next matching frame. Continuity held: Gods' fear; hall silence; Týr center.",
+          "video_prompt_end": "Wide of the gods exchanging horrified glances, the hall hushed. all eyes fall on Týr, waiting for his answer. The camera static. The beat resolves into the next matching frame. Continuity held: Gods' fear; hall silence; Týr center.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S32",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "tyr_A4_fused",
+            "fenrir_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of Týr the war-god — broad-shouldered knight in dark iron armor — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Fenrir — the colossal grey wolf with blazing amber eyes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "low-angle medium of Týr extending his right hand toward the open jaws"
+            ],
+            [
+              1.8,
+              3.5,
+              "push-in as his hand comes to rest inside the wolf’s mouth"
+            ]
+          ],
+          "narration_mk": "Но Тир, без трепет, ја подаде десната рака — залогот на неговата смелост.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of Týr extending his right hand toward Fenrir's open jaws, his face unwavering, photoreal cinematic",
+          "kf_last": "Push-in as his hand comes to rest inside the wolf's mouth",
+          "continuity": "Týr's right hand; Fenrir's open jaws",
+          "motion": "slow push-in; hand extending",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Týr extending his right hand toward Fenrir's open jaws, his face unwavering, photoreal cinematic Tyr athletic, warrior, in cloak, carrying sword, shield, wreathed in holy aura Fenrir hulking, beast, wreathed in shadow smoke then low-angle medium of Týr extending his right hand toward the open jaws, then push-in as his hand comes to rest inside the wolf’s mouth settling into push-in as his hand comes to rest inside the wolf's mouth with steel rings, the shield clangs continuity held: Týr's right hand; Fenrir's open jaws",
+          "image_prompt_start": "photoreal cinematic: medium of Týr extending his right hand toward Fenrir's open jaws, his face unwavering, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: as his hand comes to rest inside the wolf's mouth.",
+          "video_prompt_start": "Low-angle medium of Týr extending his right hand toward the open jaws. push-in as his hand comes to rest inside the wolf’s mouth. The beat resolves into the next matching frame. Continuity held: Týr's right hand; Fenrir's open jaws.",
+          "video_prompt_end": "Low-angle medium of Týr extending his right hand toward the open jaws. push-in as his hand comes to rest inside the wolf’s mouth. The beat resolves into the next matching frame. Continuity held: Týr's right hand; Fenrir's open jaws.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S33",
+          "shot_type": "CLOSE-UP",
+          "size": "MACRO",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "tyr_A4_fused",
+            "fenrir_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of Týr the war-god — broad-shouldered knight in dark iron armor — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Fenrir — the colossal grey wolf with blazing amber eyes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "macro of Týr’s hand placed gently between Fenrir’s teeth"
+            ],
+            [
+              1.8,
+              3.5,
+              "tight push-in as the jaws settle, a fragile trust sealing the bargain"
+            ]
+          ],
+          "narration_mk": "Топла и влажна, устата на волкот се затвори околу раката на Тир.",
+          "dialogue_mk": "",
+          "kf_first": "Macro close of Týr's hand placed gently between Fenrir's teeth, the wolf's jaws resting lightly over it, photoreal cinematic",
+          "kf_last": "Tight push-in as the wolf's lips settle, a fragile trust sealing the bargain",
+          "continuity": "Hand-in-mouth bargain; Týr's hand, Fenrir's teeth",
+          "motion": "slow push-in; jaws settling",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro close of Týr's hand placed gently between Fenrir's teeth, the wolf's jaws resting lightly over it, photoreal cinematic Tyr athletic, warrior, in cloak, carrying sword, shield, wreathed in holy aura Fenrir hulking, beast, wreathed in shadow smoke then macro of Týr’s hand placed gently between Fenrir’s teeth, then tight push-in as the jaws settle, a fragile trust sealing the bargain settling into tight push-in as the wolf's lips settle, a fragile trust sealing the bargain with steel rings, the shield clangs continuity held: Hand-in-mouth bargain; Týr's hand, Fenrir's teeth",
+          "image_prompt_start": "photoreal cinematic: Macro close of Týr's hand placed gently between Fenrir's teeth, the wolf's jaws resting lightly over it, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: Tight as the wolf's lips , a fragile trust sealing the bargain.",
+          "video_prompt_start": "Macro of Týr’s hand placed gently between Fenrir’s teeth. tight push-in as the jaws settle, a fragile trust sealing the bargain. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Hand-in-mouth bargain; Týr's hand, Fenrir's teeth.",
+          "video_prompt_end": "Macro of Týr’s hand placed gently between Fenrir’s teeth. tight push-in as the jaws settle, a fragile trust sealing the bargain. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Hand-in-mouth bargain; Týr's hand, Fenrir's teeth.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S34",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "tyr_A4_fused",
+            "fenrir_A3_fused",
+            "magic_chain_B2_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Týr the war-god — broad-shouldered knight in dark iron armor — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Fenrir — the colossal grey wolf with blazing amber eyes — 100% identical; studio bg/pose/light NOT used; image3: the dwarven magic chain — thin silken ribbon strung with glowing runes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "medium of Týr wrapping the thin chain around Fenrir’s legs and body"
+            ],
+            [
+              1.5,
+              3.0,
+              "the chain tightens, faint runes beginning to glow"
+            ]
+          ],
+          "narration_mk": "Со слободната рака, Тир го обвитка волкот со тенкиот магичен синџир.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of Týr wrapping the thin chain around Fenrir's legs and body, the wolf standing still, watching, photoreal cinematic",
+          "kf_last": "The chain tightens across the wolf's frame, faint runes beginning to glow",
+          "continuity": "Thin chain; Fenrir bound; runes igniting",
+          "motion": "static; chain wrapping",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of Týr wrapping the thin chain around Fenrir's legs and body, the wolf standing still, watching, photoreal cinematic Tyr athletic, warrior, in cloak, carrying sword, shield, wreathed in holy aura Fenrir hulking, beast, wreathed in shadow smoke then medium of Týr wrapping the thin chain around Fenrir’s legs and body, then the chain tightens, faint runes beginning to glow the camera static settling into the chain tightens across the wolf's frame, faint runes beginning to glow with steel rings, the shield clangs continuity held: Thin chain; Fenrir bound; runes igniting",
+          "image_prompt_start": "photoreal cinematic: medium of Týr wrapping the thin chain around Fenrir's legs and body, the wolf standing still, watching, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The chain tightens across the wolf's frame, faint runes beginning to glow.",
+          "video_prompt_start": "Medium of Týr wrapping the thin chain around Fenrir’s legs and body. the chain tightens, faint runes beginning to glow. The camera static. The beat resolves into the next matching frame. Continuity held: Thin chain; Fenrir bound; runes igniting.",
+          "video_prompt_end": "Medium of Týr wrapping the thin chain around Fenrir’s legs and body. the chain tightens, faint runes beginning to glow. The camera static. The beat resolves into the next matching frame. Continuity held: Thin chain; Fenrir bound; runes igniting.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S35",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "fenrir_A3_fused",
+            "magic_chain_B2_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Fenrir — the colossal grey wolf with blazing amber eyes — 100% identical; studio bg/pose/light NOT used; image2: the dwarven magic chain — thin silken ribbon strung with glowing runes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "macro of the thin chain drawing tight, golden runes flaring"
+            ],
+            [
+              1.5,
+              3.0,
+              "the rune-light spills over the wolf, binding with invisible strength"
+            ]
+          ],
+          "narration_mk": "Штом синџирот се затегна, руните се разгореа — и магијата се разбуди.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of the thin chain drawing tight, golden runes flaring to life along every link, photoreal cinematic",
+          "kf_last": "The rune-light spills over the wolf's body, binding it with invisible strength",
+          "continuity": "Runes; thin chain; magic awakening",
+          "motion": "slow push-in; rune flare",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of the thin chain drawing tight, golden runes flaring to life along every link, photoreal cinematic Fenrir hulking, beast, wreathed in shadow smoke then macro of the thin chain drawing tight, golden runes flaring, then the rune-light spills over the wolf, binding with invisible strength the camera push-in settling into the rune-light spills over the wolf's body, binding it with invisible strength with shadows whisper continuity held: Runes; thin chain; magic awakening",
+          "image_prompt_start": "photoreal cinematic: Macro insert of the thin chain drawing tight, golden runes flaring to life along every link, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The rune-light spills over the wolf's body, binding it with invisible strength.",
+          "video_prompt_start": "Macro of the thin chain drawing tight, golden runes flaring. the rune-light spills over the wolf, binding with invisible strength. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Runes; thin chain; magic awakening.",
+          "video_prompt_end": "Macro of the thin chain drawing tight, golden runes flaring. the rune-light spills over the wolf, binding with invisible strength. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Runes; thin chain; magic awakening.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S36",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "fenrir_A3_fused",
+            "magic_chain_B2_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Fenrir — the colossal grey wolf with blazing amber eyes — 100% identical; studio bg/pose/light NOT used; image2: the dwarven magic chain — thin silken ribbon strung with glowing runes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "low-angle wide of Fenrir straining, muscles bulging, ground cracking"
+            ],
+            [
+              1.8,
+              3.5,
+              "the chain holds unbroken, glowing brighter under his fury"
+            ]
+          ],
+          "narration_mk": "Фенрир се напрегна — но овој пат синџирот на џуџињата не попушташе.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of Fenrir straining against the thin chain, muscles bulging, the ground cracking beneath him, photoreal cinematic",
+          "kf_last": "The chain holds unbroken, glowing brighter under his fury",
+          "continuity": "Fenrir straining; rune chain holding",
+          "motion": "static; violent strain",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of Fenrir straining against the thin chain, muscles bulging, the ground cracking beneath him, photoreal cinematic Fenrir hulking, beast, wreathed in shadow smoke then low-angle wide of Fenrir straining, muscles bulging, ground cracking, then the chain holds unbroken, glowing brighter under his fury the camera static with shadows whisper continuity held: Fenrir straining; rune chain holding",
+          "image_prompt_start": "photoreal cinematic: wide of Fenrir straining against the thin chain, muscles bulging, the ground cracking beneath him, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The chain holds unbroken, glowing brighter under his fury.",
+          "video_prompt_start": "Low-angle wide of Fenrir straining, muscles bulging, ground cracking. the chain holds unbroken, glowing brighter under his fury. The camera static. The beat resolves into the next matching frame. Continuity held: Fenrir straining; rune chain holding.",
+          "video_prompt_end": "Low-angle wide of Fenrir straining, muscles bulging, ground cracking. the chain holds unbroken, glowing brighter under his fury. The camera static. The beat resolves into the next matching frame. Continuity held: Fenrir straining; rune chain holding.",
+          "motion_intensity": "action"
+        }
+      ],
+      "location_ref": "throne_hall_landscape_and_nidavellir_forge",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class",
+        "screen_dir"
+      ],
+      "palette": [
+        "#f59e0b",
+        "#7c5a30",
+        "#2b1a10"
+      ],
+      "light_direction": "key light from screen-right, bright day shifting to deep ember forge-light in the caverns",
+      "time_of_day": "day"
+    },
+    {
+      "id": "act3",
+      "num": "Act III",
+      "title": "Жртвата",
+      "color": "#ef4444",
+      "pct": 20,
+      "synopsis": "Фенрир се бори, но магичниот синџир не се крши. Бесен, волкот ја затвора устата и ја одзема десната рака на Тир. Морничав крик одекнува низ Асгард, а Тир за навек останува храбар бог без десница.",
+      "shots": [
+        {
+          "id": "S37",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "fenrir_A3_fused",
+            "magic_chain_B2_sheet",
+            "asgard_hall_env_A2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Fenrir — the colossal grey wolf with blazing amber eyes — 100% identical; studio bg/pose/light NOT used; image2: the dwarven magic chain — thin silken ribbon strung with glowing runes — 100% identical; studio bg/pose/light NOT used; image3: the great torchlit hall of the Norse gods — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "wide tracking of the bound Fenrir thrashing across the hall"
+            ],
+            [
+              1.8,
+              3.5,
+              "the glowing chain keeps his limbs pinned, never yielding"
+            ]
+          ],
+          "narration_mk": "Волкот се преташе и грчеше, со синџирот на џуџињата цврсто до коски.",
+          "dialogue_mk": "",
+          "kf_first": "Wide eye-level tracking shot of the bound Fenrir thrashing across the hall, the thin chain keeping his limbs pinned, photoreal cinematic",
+          "kf_last": "The wolf tumbles and strains, yet the glowing chain never yields",
+          "continuity": "Fenrir bound; rune chain; hall being damaged",
+          "motion": "tracking; thrashing",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide eye-level tracking shot of the bound Fenrir thrashing across the hall, the thin chain keeping his limbs pinned, photoreal cinematic Fenrir hulking, beast, wreathed in shadow smoke then wide tracking of the bound Fenrir thrashing across the hall, then the glowing chain keeps his limbs pinned, never yielding settling into the wolf tumbles and strains, yet the glowing chain never yields with shadows whisper, stone groans continuity held: Fenrir bound; rune chain; hall being damaged",
+          "image_prompt_start": "photoreal cinematic: eye-level of the bound Fenrir thrashing across the hall, the thin chain keeping his limbs pinned, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The wolf tumbles and strains, yet the glowing chain never yields.",
+          "video_prompt_start": "Wide tracking of the bound Fenrir thrashing across the hall. the glowing chain keeps his limbs pinned, never yielding. The beat resolves into the next matching frame. Continuity held: Fenrir bound; rune chain; hall being damaged.",
+          "video_prompt_end": "Wide tracking of the bound Fenrir thrashing across the hall. the glowing chain keeps his limbs pinned, never yielding. The beat resolves into the next matching frame. Continuity held: Fenrir bound; rune chain; hall being damaged.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S38",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "fenrir_A3_fused",
+            "magic_chain_B2_sheet"
+          ],
+          "ref_scope": "image1: the fused master of Fenrir — the colossal grey wolf with blazing amber eyes — 100% identical; studio bg/pose/light NOT used; image2: the dwarven magic chain — thin silken ribbon strung with glowing runes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "low-angle medium of Fenrir heaving, links glowing with each struggle"
+            ],
+            [
+              1.5,
+              3.0,
+              "his chest heaves, trapped, the chain unbroken"
+            ]
+          ],
+          "narration_mk": "Колку повеќе се бореше, толку посилно синџирот го држеше.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of Fenrir heaving against the chain, the links glowing ever brighter with each struggle, photoreal cinematic",
+          "kf_last": "The wolf's chest heaves, trapped, the chain unbroken",
+          "continuity": "Fenrir bound; glowing chain; futile escape",
+          "motion": "static; heaving strain",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Fenrir heaving against the chain, the links glowing ever brighter with each struggle, photoreal cinematic Fenrir hulking, beast, wreathed in shadow smoke then low-angle medium of Fenrir heaving, links glowing with each struggle, then his chest heaves, trapped, the chain unbroken the camera static settling into the wolf's chest heaves, trapped, the chain unbroken with shadows whisper continuity held: Fenrir bound; glowing chain; futile escape",
+          "image_prompt_start": "photoreal cinematic: medium of Fenrir heaving against the chain, the links glowing ever brighter with each struggle, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The wolf's chest heaves, trapped, the chain unbroken.",
+          "video_prompt_start": "Low-angle medium of Fenrir heaving, links glowing with each struggle. his chest heaves, trapped, the chain unbroken. The camera static. The beat resolves into the next matching frame. Continuity held: Fenrir bound; glowing chain; futile escape.",
+          "video_prompt_end": "Low-angle medium of Fenrir heaving, links glowing with each struggle. his chest heaves, trapped, the chain unbroken. The camera static. The beat resolves into the next matching frame. Continuity held: Fenrir bound; glowing chain; futile escape.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S39",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "fenrir_A3_fused",
+            "tyr_A4_fused"
+          ],
+          "ref_scope": "image1: the fused master of Fenrir — the colossal grey wolf with blazing amber eyes — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Týr the war-god — broad-shouldered knight in dark iron armor — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close of Fenrir’s face twisting with fury, jaws clenching"
+            ],
+            [
+              1.5,
+              3.0,
+              "push-in as his teeth close with terrible finality"
+            ]
+          ],
+          "narration_mk": "Тогаш во очите на волкот се разгоре бес — и тој ги затвори вилиците.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level close of Fenrir's face twisting with fury, amber eyes blazing, jaws clenching shut, photoreal cinematic",
+          "kf_last": "Push-in as the wolf's teeth close with terrible finality",
+          "continuity": "Fenrir's enraged face; closing jaws",
+          "motion": "slow push-in; jaws closing",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level close of Fenrir's face twisting with fury, amber eyes blazing, jaws clenching shut, photoreal cinematic Fenrir hulking, beast, wreathed in shadow smoke Tyr athletic, warrior, in cloak, carrying sword, shield, wreathed in holy aura then close of Fenrir’s face twisting with fury, jaws clenching, then push-in as his teeth close with terrible finality settling into push-in as the wolf's teeth close with terrible finality with shadows whisper, steel rings continuity held: Fenrir's enraged face; closing jaws",
+          "image_prompt_start": "photoreal cinematic: close of Fenrir's face twisting with fury, amber eyes blazing, jaws clenching shut, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: as the wolf's teeth close with terrible finality.",
+          "video_prompt_start": "Close of Fenrir’s face twisting with fury, jaws clenching. push-in as his teeth close with terrible finality. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Fenrir's enraged face; closing jaws.",
+          "video_prompt_end": "Close of Fenrir’s face twisting with fury, jaws clenching. push-in as his teeth close with terrible finality. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Fenrir's enraged face; closing jaws.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S40",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "tyr_A4_fused"
+          ],
+          "ref_scope": "image1: the fused master of Týr the war-god — broad-shouldered knight in dark iron armor — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "macro insert of Týr’s face through the moment of loss, no gore shown"
+            ],
+            [
+              1.5,
+              3.0,
+              "tight push-in as he draws back, his sleeve empty at the wrist"
+            ]
+          ],
+          "narration_mk": "И раката, залогот на смелоста — веќе ја немаше.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of Týr's face through the moment of loss, his jaw set against the pain, no gore shown, photoreal cinematic",
+          "kf_last": "Tight push-in as Týr draws back, his sleeve now empty at the wrist",
+          "continuity": "Týr's sacrifice; the bargain fulfilled; no gore",
+          "motion": "slow push-in; stoic face",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of Týr's face through the moment of loss, his jaw set against the pain, no gore shown, photoreal cinematic Tyr athletic, warrior, in cloak, carrying sword, shield, wreathed in holy aura then macro insert of Týr’s face through the moment of loss, no gore shown, then tight push-in as he draws back, his sleeve empty at the wrist settling into tight push-in as Týr draws back, his sleeve now empty at the wrist with steel rings, the shield clangs continuity held: Týr's sacrifice; the bargain fulfilled; no gore",
+          "image_prompt_start": "photoreal cinematic: Macro insert of Týr's face through the moment of loss, his jaw set against the pain, no gore shown, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: Tight as Týr draws back, his sleeve now empty at the wrist.",
+          "video_prompt_start": "Macro insert of Týr’s face through the moment of loss, no gore shown. tight push-in as he draws back, his sleeve empty at the wrist. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Týr's sacrifice; the bargain fulfilled; no gore.",
+          "video_prompt_end": "Macro insert of Týr’s face through the moment of loss, no gore shown. tight push-in as he draws back, his sleeve empty at the wrist. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Týr's sacrifice; the bargain fulfilled; no gore.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S41",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "fenrir_A3_fused",
+            "asgard_hall_env_A2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Fenrir — the colossal grey wolf with blazing amber eyes — 100% identical; studio bg/pose/light NOT used; image2: the great torchlit hall of the Norse gods — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "high-angle wide as a terrible howl erupts from Fenrir"
+            ],
+            [
+              1.8,
+              3.5,
+              "crane up as the howl rises and shatters the sky’s silence"
+            ]
+          ],
+          "narration_mk": "Морничав крик одекна низ целиот Асгард — до небесата.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of the great hall as a terrible howl erupts from Fenrir, the pillars trembling with the sound, photoreal cinematic",
+          "kf_last": "Crane up as the howl rises through the halls and shatters the sky's silence",
+          "continuity": "The howl; shaking hall; gods recoiling",
+          "motion": "slow crane-up; howl echoing",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of the great hall as a terrible howl erupts from Fenrir, the pillars trembling with the sound, photoreal cinematic Fenrir hulking, beast, wreathed in shadow smoke then high-angle wide as a terrible howl erupts from Fenrir, then crane up as the howl rises and shatters the sky’s silence the camera crane-up settling into crane up as the howl rises through the halls and shatters the sky's silence with shadows whisper, stone groans continuity held: The howl; shaking hall; gods recoiling",
+          "image_prompt_start": "photoreal cinematic: wide of the great hall as a terrible howl erupts from Fenrir, the pillars trembling with the sound, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: as the howl through the halls and shatters the sky's silence.",
+          "video_prompt_start": "High-angle wide as a terrible howl erupts from Fenrir. crane up as the howl rises and shatters the sky’s silence. The camera crane-up. The beat resolves into the next matching frame. Continuity held: The howl; shaking hall; gods recoiling.",
+          "video_prompt_end": "High-angle wide as a terrible howl erupts from Fenrir. crane up as the howl rises and shatters the sky’s silence. The camera crane-up. The beat resolves into the next matching frame. Continuity held: The howl; shaking hall; gods recoiling.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S42",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "tyr_A4_fused",
+            "odin_A1_fused",
+            "asgard_hall_env_A2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Týr the war-god — broad-shouldered knight in dark iron armor — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Odin the All-Father — one-eyed grey-bearded king in deep-blue robes — 100% identical; studio bg/pose/light NOT used; image3: the great torchlit hall of the Norse gods — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "wide of the gods stunned and silent, hands to their mouths"
+            ],
+            [
+              1.5,
+              3.0,
+              "the hall settles into a heavy, breathless quiet"
+            ]
+          ],
+          "narration_mk": "Боговите го гледаа ужаснати — цената беше платена.",
+          "dialogue_mk": "",
+          "kf_first": "Wide eye-level shot of the gods stunned and silent, hands over mouths, staring at the empty sleeve and the bound wolf, photoreal cinematic",
+          "kf_last": "The hall settles into a heavy, breathless quiet",
+          "continuity": "Gods' horror; Týr center; Fenrir bound",
+          "motion": "static; silence settling",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide eye-level shot of the gods stunned and silent, hands over mouths, staring at the empty sleeve and the bound wolf, photoreal cinematic Tyr athletic, warrior, in cloak, carrying sword, shield, wreathed in holy aura Odin athletic, divine, in cloak, hood, beard, carrying spear, wreathed in storm aura, rune ring then wide of the gods stunned and silent, hands to their mouths, then the hall settles into a heavy, breathless quiet the camera static with steel rings, the shield clangs continuity held: Gods' horror; Týr center; Fenrir bound",
+          "image_prompt_start": "photoreal cinematic: eye-level shot of the gods stunned and silent, hands over mouths, staring at the empty sleeve and the bound wolf, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: The hall into a heavy, breathless quiet.",
+          "video_prompt_start": "Wide of the gods stunned and silent, hands to their mouths. the hall settles into a heavy, breathless quiet. The camera static. The beat resolves into the next matching frame. Continuity held: Gods' horror; Týr center; Fenrir bound.",
+          "video_prompt_end": "Wide of the gods stunned and silent, hands to their mouths. the hall settles into a heavy, breathless quiet. The camera static. The beat resolves into the next matching frame. Continuity held: Gods' horror; Týr center; Fenrir bound.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S43",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "tyr_A4_fused"
+          ],
+          "ref_scope": "image1: the fused master of Týr the war-god — broad-shouldered knight in dark iron armor — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close of Týr standing tall despite his loss, pain and pride in his eyes"
+            ],
+            [
+              1.5,
+              3.0,
+              "push-in as his steady gaze meets the hall — he does not falter"
+            ]
+          ],
+          "narration_mk": "А Тир, без десната рака, застана исправен — непобегнат.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level close of Týr standing tall despite his loss, pain and pride mingling in his eyes, photoreal cinematic",
+          "kf_last": "Push-in as his steady gaze meets the hall — he does not falter",
+          "continuity": "Týr's courage; empty sleeve; hall light",
+          "motion": "slow push-in; unwavering gaze",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level close of Týr standing tall despite his loss, pain and pride mingling in his eyes, photoreal cinematic Tyr athletic, warrior, in cloak, carrying sword, shield, wreathed in holy aura then close of Týr standing tall despite his loss, pain and pride in his eyes, then push-in as his steady gaze meets the hall — he does not falter with steel rings, the shield clangs continuity held: Týr's courage; empty sleeve; hall light",
+          "image_prompt_start": "photoreal cinematic: close of Týr standing tall despite his loss, pain and pride mingling in his eyes, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: as his steady gaze meets the hall — he does not falter.",
+          "video_prompt_start": "Close of Týr standing tall despite his loss, pain and pride in his eyes. push-in as his steady gaze meets the hall — he does not falter. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Týr's courage; empty sleeve; hall light.",
+          "video_prompt_end": "Close of Týr standing tall despite his loss, pain and pride in his eyes. push-in as his steady gaze meets the hall — he does not falter. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Týr's courage; empty sleeve; hall light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S44",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "tyr_A4_fused"
+          ],
+          "ref_scope": "image1: the fused master of Týr the war-god — broad-shouldered knight in dark iron armor — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "medium of Týr walking into the pale light, sleeve hanging empty"
+            ],
+            [
+              1.8,
+              3.5,
+              "he is met by the silent respect of the bowed gods"
+            ]
+          ],
+          "narration_mk": "Од тој ден, Тир мораше да живее без својата десна рака.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level medium of Týr walking from the hall into pale light, his right sleeve hanging empty, yet his stride strong, photoreal cinematic",
+          "kf_last": "He is met by the silent respect of the gathered gods, heads bowed",
+          "continuity": "Týr's empty sleeve; strength; gods' respect",
+          "motion": "static; steady walk",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of Týr walking from the hall into pale light, his right sleeve hanging empty, yet his stride strong, photoreal cinematic Tyr athletic, warrior, in cloak, carrying sword, shield, wreathed in holy aura then medium of Týr walking into the pale light, sleeve hanging empty, then he is met by the silent respect of the bowed gods the camera static settling into he is met by the silent respect of the gathered gods, heads bowed with steel rings, the shield clangs continuity held: Týr's empty sleeve; strength; gods' respect",
+          "image_prompt_start": "photoreal cinematic: medium of Týr walking from the hall into pale light, his right sleeve hanging empty, yet his stride strong, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: He is met by the silent respect of the gathered gods, heads bowed.",
+          "video_prompt_start": "Medium of Týr walking into the pale light, sleeve hanging empty. he is met by the silent respect of the bowed gods. The camera static. The beat resolves into the next matching frame. Continuity held: Týr's empty sleeve; strength; gods' respect.",
+          "video_prompt_end": "Medium of Týr walking into the pale light, sleeve hanging empty. he is met by the silent respect of the bowed gods. The camera static. The beat resolves into the next matching frame. Continuity held: Týr's empty sleeve; strength; gods' respect.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S45",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "fenrir_A3_fused",
+            "magic_chain_B2_sheet",
+            "mountain_env_A7_prop"
+          ],
+          "ref_scope": "image1: the fused master of Fenrir — the colossal grey wolf with blazing amber eyes — 100% identical; studio bg/pose/light NOT used; image2: the dwarven magic chain — thin silken ribbon strung with glowing runes — 100% identical; studio bg/pose/light NOT used; image3: the dark shadowed mountain where the wolf is bound — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "low-angle wide of the bound Fenrir lying still beneath the dark mountain"
+            ],
+            [
+              1.8,
+              3.5,
+              "crane down as his amber eyes slowly close, defeated but unbroken"
+            ]
+          ],
+          "narration_mk": "А Фенрир, врзан со најнежниот синџир, мирно легна во сенката на карпата.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of the bound Fenrir lying still beneath a dark mountain, the thin glowing chain across his chest, photoreal cinematic",
+          "kf_last": "Crane down as the wolf's amber eyes slowly close, defeated but unbroken",
+          "continuity": "Fenrir bound; rune chain; shadowed mountain",
+          "motion": "slow crane-down; eyes closing",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of the bound Fenrir lying still beneath a dark mountain, the thin glowing chain across his chest, photoreal cinematic Fenrir hulking, beast, wreathed in shadow smoke then low-angle wide of the bound Fenrir lying still beneath the dark mountain, then crane down as his amber eyes slowly close, defeated but unbroken the camera crane-down settling into crane down as the wolf's amber eyes slowly close, defeated but unbroken with shadows whisper, wind howls continuity held: Fenrir bound; rune chain; shadowed mountain",
+          "image_prompt_start": "photoreal cinematic: wide of the bound Fenrir lying still beneath a dark mountain, the thin glowing chain across his chest, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: as the wolf's amber eyes slowly close, defeated but unbroken.",
+          "video_prompt_start": "Low-angle wide of the bound Fenrir lying still beneath the dark mountain. crane down as his amber eyes slowly close, defeated but unbroken. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Fenrir bound; rune chain; shadowed mountain.",
+          "video_prompt_end": "Low-angle wide of the bound Fenrir lying still beneath the dark mountain. crane down as his amber eyes slowly close, defeated but unbroken. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Fenrir bound; rune chain; shadowed mountain.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S46",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "asgard_realm_env_A1_prop"
+          ],
+          "ref_scope": "image1: the golden realm of Asgard with its shining bridge and marble spires — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "high-angle wide of Asgard’s golden spires under the vast twilight sky"
+            ],
+            [
+              1.8,
+              3.5,
+              "crane up into the stars as the tale ends, the realm at peace"
+            ]
+          ],
+          "narration_mk": "Така заврши легендата за волкот — и за храброста што го скроти светот.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of Asgard's golden spires under a vast twilight sky, the wolf's long howl fading into legend, photoreal cinematic",
+          "kf_last": "Crane up into the stars as the tale ends, the realm at peace below",
+          "continuity": "Asgard sky; closing epic frame",
+          "motion": "slow crane-up; stars appearing",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of Asgard's golden spires under a vast twilight sky, the wolf's long howl fading into legend, photoreal cinematic then high-angle wide of Asgard’s golden spires under the vast twilight sky, then crane up into the stars as the tale ends, the realm at peace the camera crane-up settling into crane up into the stars as the tale ends, the realm at peace below continuity held: Asgard sky; closing epic frame",
+          "image_prompt_start": "photoreal cinematic: wide of Asgard's golden spires under a vast twilight sky, the wolf's long howl fading into legend, photoreal cinematic.",
+          "image_prompt_end": "photoreal cinematic: into the stars as the tale ends, the realm at peace below.",
+          "video_prompt_start": "High-angle wide of Asgard’s golden spires under the vast twilight sky. crane up into the stars as the tale ends, the realm at peace. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Asgard sky; closing epic frame.",
+          "video_prompt_end": "High-angle wide of Asgard’s golden spires under the vast twilight sky. crane up into the stars as the tale ends, the realm at peace. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Asgard sky; closing epic frame.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "throne_hall_beneath_the_mountain_and_asgard_sky",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class",
+        "screen_dir"
+      ],
+      "palette": [
+        "#ef4444",
+        "#4b5563",
+        "#1f2937"
+      ],
+      "light_direction": "key light from screen-left, dusk twilight with cold shadows and dying ember light",
+      "time_of_day": "dusk"
+    }
+  ],
+  "director_corrections": {
+    "issued": "2026-11-07",
+    "source": "KB §13 DIRECTOR CORRECTIONS — overrides all prior asset/keyframe guidance",
+    "rules": [
+      "DD HEADWEAR: no cap/hood/bandana/mask on head; hood = back-cowl only (cape-like); bare head + teal-blue glowing hair always visible; any head/face covering = REJECT",
+      "LEGENDARY WEAPONS MUST APPEAR: DD = twin Frostbite-class hand crossbows (ice-blue arcane crystal limbs, frost runes, frozen-light string, teal-blue glow); AZ = Dawnbreaker-class greatsword (pale sunsteel, molten-gold runes, golden holy fire edge, sunburst crossguard); hero sheet/keyframe without weapon = INCOMPLETE",
+      "WEAPON ANTI-SLOP: fantasy construction only; crossbow must NEVER read as firearm (no barrel/magazine/stock/Uzi/SMG silhouette = REJECT); anti-slop negatives always appended",
+      "BOSS FACE: Mal'garot HAS a prolific molten-lava face (lava dripping/running, drops falling to ground); faceless boss sheets SUPERSEDED",
+      "LOCATION BRIGHTNESS FLOOR: environment plates silhouette-readable at thumbnail; no murk-dark grades"
+    ],
+    "applies_when": "Activates when face_lock changes from AI-default to an enrolled identity (DD/AZ). AI-default packages carry this as a forward constraint, not a current defect.",
+    "anti_slop_negatives": "firearm, gun, machinegun, Uzi, barrel, magazine, ammo clip, muzzle, modern weapon"
+  },
+  "character_designs": {
+    "odin": {
+      "archetype": "divine",
+      "build": "athletic",
+      "scale": "large",
+      "palette": {
+        "primary": "#3a4a6b",
+        "secondary": "#1c2438",
+        "glow": "#7fd4ff"
+      },
+      "costume": [
+        "cloak",
+        "hood",
+        "beard"
+      ],
+      "props": [
+        "spear"
+      ],
+      "fx": [
+        "storm_aura",
+        "rune_ring"
+      ]
+    },
+    "loki": {
+      "archetype": "trickster",
+      "build": "slender",
+      "scale": "human",
+      "palette": {
+        "primary": "#2e5a4a",
+        "secondary": "#153026",
+        "glow": "#8affc1"
+      },
+      "costume": [
+        "cloak"
+      ],
+      "props": [],
+      "fx": [
+        "shadow_smoke"
+      ]
+    },
+    "fenrir": {
+      "archetype": "beast",
+      "build": "hulking",
+      "scale": "huge",
+      "palette": {
+        "primary": "#2a2a33",
+        "secondary": "#0e0e14",
+        "glow": "#ff5533"
+      },
+      "costume": [],
+      "props": [],
+      "fx": [
+        "shadow_smoke"
+      ]
+    },
+    "tyr": {
+      "archetype": "warrior",
+      "build": "athletic",
+      "scale": "human",
+      "palette": {
+        "primary": "#5a4a3a",
+        "secondary": "#2c2218",
+        "glow": "#ffd166"
+      },
+      "costume": [
+        "cloak"
+      ],
+      "props": [
+        "sword",
+        "shield"
+      ],
+      "fx": [
+        "holy_aura"
+      ]
+    },
+    "dwarfs": {
+      "archetype": "craftsman",
+      "build": "hulking",
+      "scale": "human",
+      "palette": {
+        "primary": "#6b4a2e",
+        "secondary": "#33220f",
+        "glow": "#ffb347"
+      },
+      "costume": [
+        "beard"
+      ],
+      "props": [
+        "hammer"
+      ],
+      "fx": [
+        "fire_wisps"
+      ]
+    },
+    "hel": {
+      "archetype": "monarch",
+      "build": "robed",
+      "scale": "large",
+      "palette": {
+        "primary": "#2a2440",
+        "secondary": "#120e20",
+        "glow": "#b48aff"
+      },
+      "costume": [
+        "hood",
+        "cloak"
+      ],
+      "props": [],
+      "fx": [
+        "shadow_smoke"
+      ]
+    },
+    "jormungandr": {
+      "archetype": "serpent",
+      "build": "hulking",
+      "scale": "huge",
+      "palette": {
+        "primary": "#1e4a3a",
+        "secondary": "#0c2418",
+        "glow": "#5aff9a"
+      },
+      "costume": [],
+      "props": [],
+      "fx": []
+    },
+    "asgard_realm_env_A1_prop": {
+      "motif": "spires",
+      "tone": "#3a5a8a"
+    },
+    "asgard_hall_env_A2_prop": {
+      "motif": "hall",
+      "tone": "#4a5a7a"
+    },
+    "ocean_env_A3_prop": {
+      "motif": "ocean",
+      "tone": "#2a6a8a"
+    },
+    "underworld_env_A4_prop": {
+      "motif": "cavern",
+      "tone": "#241a3a"
+    },
+    "nidavellir_env_A6_prop": {
+      "motif": "cavern",
+      "tone": "#3a2a1a"
+    },
+    "mountain_env_A7_prop": {
+      "motif": "peaks",
+      "tone": "#4a4a5a"
+    }
+  }
+}

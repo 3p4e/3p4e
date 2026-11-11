@@ -1,0 +1,2627 @@
+{
+  "num": "19",
+  "title_mk": "Пука и гајдаџијата",
+  "title_en": "Pooka and the Piper",
+  "genre": "Легенда · мистична авантура",
+  "logline": "Еден невешт млад гајдаџија му свири на шумскиот дух Пука и на самовилите Банши, преку една магична ноќ станува најдобриот гајдаџија во цела Ирска.",
+  "spec": {
+    "aspect": "16:9",
+    "resolution": "1216x704",
+    "fps": 24,
+    "model": "model-agnostic (chosen at generation)",
+    "style": "photoreal",
+    "flf": true,
+    "language": "mk",
+    "shot_floor": 40,
+    "shot_max": 60,
+    "seed_policy": "fixed-per-shot (same seed → reproducible shot; re-roll per shot id)",
+    "style_anchor": [
+      "Diablo 2 cinematic",
+      "World of Warcraft cinematic",
+      "StarCraft cinematic"
+    ],
+    "negative_prompt": "deformed, extra limbs, morphing, watermark, text, static frame, blurry, low quality, cropped head, cut-off face",
+    "frames": 121,
+    "frames_fallback": 81,
+    "routes": [
+      {
+        "model": "Wan2.1-FLF2V-14B-720P",
+        "input": "start+end native (run START-ONLY)",
+        "status": "WORKING (lead for 14B quality)"
+      },
+      {
+        "model": "Kandinsky 6.0 Lite/Pro",
+        "input": "start-image-only",
+        "status": "WORKING (Pro-distill untested at scale)"
+      },
+      {
+        "model": "SkyReels-V3 R2V-14B",
+        "input": "start-image-only",
+        "status": "WORKING (fallback)"
+      },
+      {
+        "model": "LTX-Video 2B v0.9.5",
+        "input": "start-image-only",
+        "status": "WORKING (small/fast, low ceiling)"
+      },
+      {
+        "model": "Mochi-1",
+        "input": "start-image-only",
+        "status": "untested here"
+      },
+      {
+        "model": "LTX-2.3 22B distilled",
+        "input": "start-image-only",
+        "status": "DEAD (nanobind native-crash, 42 note)"
+      }
+    ],
+    "model_note": "Model chosen per story at generation (43 §4). Keyframes + continuation prompts are generator-agnostic; only the render command differs per model."
+  },
+  "cast": [
+    {
+      "role": "Гајдаџијата / The Piper",
+      "trait": "Млад, добродушен и истраен свирач со едноставни селски алишта",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Пука / Pooka",
+      "trait": "Шумски дух со рогови, разбушавена грива и палав, но благ насмев",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Банши / Banshees",
+      "trait": "Самовили со долги зелени наметки и свилена коса, бледо сјаење",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Мајката / The Mother",
+      "trait": "Грижлива старица покрај огништето",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Соседите / The Neighbors",
+      "trait": "Едноставни ирски селани во волнени облеки",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    }
+  ],
+  "acts": [
+    {
+      "id": "act1",
+      "num": "Act I",
+      "title": "Заложба",
+      "color": "#2dd4bf",
+      "pct": 26,
+      "synopsis": "Младиот невешт гајдаџија го среќава шумскиот дух Пука, кој му нуди да го однесе на магично патување.",
+      "shots": [
+        {
+          "id": "S01",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "piper_A1_fused",
+            "irish_hills_env_A1_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the misty emerald Irish hills with a lone stone cottage — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "crane down over misty emerald hills toward the stone cottage"
+            ],
+            [
+              1.8,
+              3.5,
+              "reveal the young piper walking the path with his bagpipe"
+            ]
+          ],
+          "narration_mk": "Во дамнешна Ирска, сред зелените ридови, живееше еден млад гајдаџија.",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal cinematic aerial wide of misty emerald Irish hills at dawn, a lone stone cottage with a smoking chimney in the distance, soft god rays, Diablo2 cinematic grade, 1216x704",
+          "kf_last": "Crane-down toward the cottage as the mist thins, revealing a young man with a bagpipe walking the path below",
+          "continuity": "Cold emerald dawn palette; character introduced in next shot",
+          "motion": "slow crane-down descent through drifting mist",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal cinematic aerial wide of misty emerald Irish hills at dawn, a lone stone cottage with a smoking chimney in the distance, soft god rays then crane down over misty emerald hills toward the stone cottage, then reveal the young piper walking the path with his bagpipe the camera crane-down settling into crane-down toward the cottage as the mist thins, revealing a young man with a bagpipe walking the path below continuity held: Cold emerald dawn palette; character introduced in next shot",
+          "image_prompt_start": "photoreal cinematic: Photoreal cinematic wide of misty emerald Irish hills at dawn, a lone stone cottage with a smoking chimney in the distance, soft god rays, Diablo2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: toward the cottage as the mist thins, revealing a young man with a bagpipe walking the path below.",
+          "video_prompt_start": "Crane down over misty emerald hills toward the stone cottage. reveal the young piper walking the path with his bagpipe. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Cold emerald dawn palette; character introduced in next shot.",
+          "video_prompt_end": "Crane down over misty emerald hills toward the stone cottage. reveal the young piper walking the path with his bagpipe. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Cold emerald dawn palette; character introduced in next shot.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S02",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "piper_A1_fused",
+            "bagpipe_B1_sheet",
+            "irish_hills_env_A1_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the uilleann bagpipe — wooden chanter and worn leather bag — 100% identical; studio bg/pose/light NOT used; image3: the misty emerald Irish hills with a lone stone cottage — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "medium walk beside the stone wall with sheep grazing"
+            ],
+            [
+              1.8,
+              3.5,
+              "push-in as a wobbly note sounds from the pipes"
+            ]
+          ],
+          "narration_mk": "Тој свиреше со сето срце, но неговите мелодии беа груби и нескладни.",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal medium of a young Irish piper in homespun wool walking beside a stone wall, sheep grazing behind him, uilleann pipes under his arm, warm morning light, 1216x704",
+          "kf_last": "Slow push-in on his focused, slightly disappointed face as he squeezes the bag and a wobbly note sounds",
+          "continuity": "Same piper clothing, bagpipe prop and emerald morning palette from S01",
+          "motion": "slow push-in on the piper's face",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal medium of a young Irish piper in homespun wool walking beside a stone wall, sheep grazing behind him, uilleann pipes under his arm, warm morning light then medium walk beside the stone wall with sheep grazing, then push-in as a wobbly note sounds from the pipes settling into slow push-in on his focused, slightly disappointed face as he squeezes the bag and a wobbly note sounds continuity held: Same piper clothing, bagpipe prop and emerald morning palette from S01",
+          "image_prompt_start": "photoreal cinematic: Photoreal medium of a young Irish piper in homespun wool walking beside a stone wall, sheep grazing behind him, uilleann pipes under his arm, warm morning light.",
+          "image_prompt_end": "photoreal cinematic: Slow on his focused, slightly disappointed face as he squeezes the bag and a wobbly note sounds.",
+          "video_prompt_start": "Medium walk beside the stone wall with sheep grazing. push-in as a wobbly note sounds from the pipes. The beat resolves into the next matching frame. Continuity held: Same piper clothing, bagpipe prop and emerald morning palette from S01.",
+          "video_prompt_end": "Medium walk beside the stone wall with sheep grazing. push-in as a wobbly note sounds from the pipes. The beat resolves into the next matching frame. Continuity held: Same piper clothing, bagpipe prop and emerald morning palette from S01.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S03",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "piper_A1_fused",
+            "bagpipe_B1_sheet"
+          ],
+          "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the uilleann bagpipe — wooden chanter and worn leather bag — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close on clumsy fingers pressing the wooden chanter"
+            ],
+            [
+              1.5,
+              3.0,
+              "fingers fumble and the air recoils in off-key effort"
+            ]
+          ],
+          "narration_mk": "По цел ден вежбаше, но песната му излегуваше рапава.",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal close-up of clumsy fingers pressing the wooden chanter of an uilleann pipe, calloused hands, worn leather bag, soft window light, 1216x704",
+          "kf_last": "Fingers fumble over a hole, the air recoils slightly, conveying off-key effort",
+          "continuity": "Same bagpipe prop and hands; interior warm light contrast to morning exterior",
+          "motion": "micro-movement of fingers over the chanter",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal close-up of clumsy fingers pressing the wooden chanter of an uilleann pipe, calloused hands, worn leather bag, soft window light then close on clumsy fingers pressing the wooden chanter, then fingers fumble and the air recoils in off-key effort the camera static settling into fingers fumble over a hole, the air recoils slightly, conveying off-key effort continuity held: Same bagpipe prop and hands; interior warm light contrast to morning exterior",
+          "image_prompt_start": "photoreal cinematic: Photoreal close-up of clumsy fingers pressing the wooden chanter of an uilleann pipe, calloused hands, worn leather bag, soft window light.",
+          "image_prompt_end": "photoreal cinematic: Fingers fumble over a hole, the air recoils slightly, conveying off-key effort.",
+          "video_prompt_start": "Close on clumsy fingers pressing the wooden chanter. fingers fumble and the air recoils in off-key effort. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same bagpipe prop and hands; interior warm light contrast to morning exterior.",
+          "video_prompt_end": "Close on clumsy fingers pressing the wooden chanter. fingers fumble and the air recoils in off-key effort. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same bagpipe prop and hands; interior warm light contrast to morning exterior.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S04",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "piper_A1_fused",
+            "bagpipe_B1_sheet",
+            "forest_env_A2_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the uilleann bagpipe — wooden chanter and worn leather bag — 100% identical; studio bg/pose/light NOT used; image3: the darkening Irish forest with a gnarled oak clearing — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "wide of the piper seated under the gnarled oak"
+            ],
+            [
+              1.8,
+              3.5,
+              "birds burst into flight at the harsh first note"
+            ]
+          ],
+          "narration_mk": "Дури и птиците се разлетуваа кога ќе засвиреше.",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal low-angle wide of the young piper seated on a mossy rock under a gnarled oak, inflating his pipes, birds perched on the branches above, 1216x704",
+          "kf_last": "The birds burst into flight as the first harsh note rings out, leaves trembling",
+          "continuity": "Same piper and bagpipe; forest-oak micro-setting, emerald palette",
+          "motion": "birds scattering; bag inflating",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal low-angle wide of the young piper seated on a mossy rock under a gnarled oak, inflating his pipes, birds perched on the branches above then wide of the piper seated under the gnarled oak, then birds burst into flight at the harsh first note the camera track settling into the birds burst into flight as the first harsh note rings out, leaves trembling with leaves rustle continuity held: Same piper and bagpipe; forest-oak micro-setting, emerald palette",
+          "image_prompt_start": "photoreal cinematic: Photoreal low-angle wide of the young piper seated on a mossy rock under a gnarled oak, inflating his pipes, birds perched on the branches above.",
+          "image_prompt_end": "photoreal cinematic: The birds burst into flight as the first harsh note rings out, leaves trembling.",
+          "video_prompt_start": "Wide of the piper seated under the gnarled oak. birds burst into flight at the harsh first note. The camera track. The beat resolves into the next matching frame. Continuity held: Same piper and bagpipe; forest-oak micro-setting, emerald palette.",
+          "video_prompt_end": "Wide of the piper seated under the gnarled oak. birds burst into flight at the harsh first note. The camera track. The beat resolves into the next matching frame. Continuity held: Same piper and bagpipe; forest-oak micro-setting, emerald palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S05",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "shot-reverse",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "piper_A1_fused",
+            "bagpipe_B1_sheet",
+            "forest_env_A2_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the uilleann bagpipe — wooden chanter and worn leather bag — 100% identical; studio bg/pose/light NOT used; image3: the darkening Irish forest with a gnarled oak clearing — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "piper trudges toward the darkening forest edge"
+            ],
+            [
+              1.5,
+              3.0,
+              "reverse onto the shadowy treeline he approaches"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Гајдаџијата: „Добро е што знам барем една песна.“",
+          "kf_first": "Photoreal medium of the piper trudging toward a darkening forest edge, bagpipe slung over his shoulder, talking to himself with a rueful smile, 1216x704",
+          "kf_last": "Reverse angle on the tall shadowy treeline he approaches, leaves rustling unnaturally",
+          "continuity": "Same piper, costume and bagpipe; transition to dusk forest palette",
+          "motion": "walk-toward; shot-reverse cut to the forest",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal medium of the piper trudging toward a darkening forest edge, bagpipe slung over his shoulder, talking to himself with a rueful smile then piper trudges toward the darkening forest edge, then reverse onto the shadowy treeline he approaches the camera shot-reverse settling into reverse angle on the tall shadowy treeline he approaches, leaves rustling unnaturally with leaves rustle a voice speaks in Macedonian: \"Гајдаџијата: „Добро е што знам барем една песна.“\" continuity held: Same piper, costume and bagpipe; transition to dusk forest palette",
+          "image_prompt_start": "photoreal cinematic: Photoreal medium of the piper trudging toward a darkening forest edge, bagpipe slung over his shoulder, talking to himself with a rueful smile.",
+          "image_prompt_end": "photoreal cinematic: Reverse angle on the tall shadowy treeline he approaches, leaves rustling unnaturally.",
+          "video_prompt_start": "Piper trudges toward the darkening forest edge. reverse onto the shadowy treeline he approaches. The camera shot-reverse. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Гајдаџијата: „Добро е што знам барем една песна.“\" Continuity held: Same piper, costume and bagpipe; transition to dusk forest palette.",
+          "video_prompt_end": "Piper trudges toward the darkening forest edge. reverse onto the shadowy treeline he approaches. The camera shot-reverse. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Гајдаџијата: „Добро е што знам барем една песна.“\" Continuity held: Same piper, costume and bagpipe; transition to dusk forest palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S06",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "piper_A1_fused",
+            "pooka_A2_fused",
+            "forest_env_A2_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Pooka — a horned forest spirit with a wild mane and warm amber eyes — 100% identical; studio bg/pose/light NOT used; image3: the darkening Irish forest with a gnarled oak clearing — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "wide of the piper small in the mist-choked clearing"
+            ],
+            [
+              1.8,
+              3.5,
+              "a horned silhouette rises from the fog behind him"
+            ]
+          ],
+          "narration_mk": "Тогаш, од маглата на шумата, се појави сенка со рогови.",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal high-angle wide of the piper small in a mist-choked forest clearing, blue-grey fog coiling between dark trunks, 1216x704",
+          "kf_last": "A horned silhouette rises from the fog behind him, its shape just resolving in the gloom",
+          "continuity": "Dusk forest palette; horned silhouette teases the Pooka design of S07",
+          "motion": "slow crane-down; fog parting around the rising figure",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal high-angle wide of the piper small in a mist-choked forest clearing, blue-grey fog coiling between dark trunks then wide of the piper small in the mist-choked clearing, then a horned silhouette rises from the fog behind him the camera crane-down settling into a horned silhouette rises from the fog behind him, its shape just resolving in the gloom with leaves rustle continuity held: Dusk forest palette; horned silhouette teases the Pooka design of S07",
+          "image_prompt_start": "photoreal cinematic: Photoreal high-angle wide of the piper small in a mist-choked forest clearing, blue-grey fog coiling between dark trunks.",
+          "image_prompt_end": "photoreal cinematic: A horned silhouette from the fog behind him, its shape just resolving in the gloom.",
+          "video_prompt_start": "Wide of the piper small in the mist-choked clearing. a horned silhouette rises from the fog behind him. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Dusk forest palette; horned silhouette teases the Pooka design of S07.",
+          "video_prompt_end": "Wide of the piper small in the mist-choked clearing. a horned silhouette rises from the fog behind him. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Dusk forest palette; horned silhouette teases the Pooka design of S07.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S07",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "pooka_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Pooka — a horned forest spirit with a wild mane and warm amber eyes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "medium reveal of the Pooka in the misty light"
+            ],
+            [
+              1.8,
+              3.5,
+              "push-in on his gentle amber eyes and half-smile"
+            ]
+          ],
+          "narration_mk": "Тоа беше Пука, шумски дух што сакаше да плаши и да се шегува со луѓето.",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal low-angle medium of the Pooka revealed: a wild maned forest spirit with curling horns, moss-flecked hide and warm amber eyes, backlit by misty light, 1216x704",
+          "kf_last": "Slow push-in on his gentle, mischievous amber eyes and half-smile through the haze",
+          "continuity": "Full Pooka design established for rest of film; amber eye glow and horn shape",
+          "motion": "slow push-in on the Pooka's eyes",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal low-angle medium of the Pooka revealed: a wild maned forest spirit with curling horns, moss-flecked hide and warm amber eyes, backlit by misty light then medium reveal of the Pooka in the misty light, then push-in on his gentle amber eyes and half-smile settling into slow push-in on his gentle, mischievous amber eyes and half-smile through the haze continuity held: Full Pooka design established for rest of film; amber eye glow and horn shape",
+          "image_prompt_start": "photoreal cinematic: Photoreal low-angle medium of the Pooka revealed: a wild maned forest spirit with curling horns, moss-flecked hide and warm amber eyes, backlit by misty light.",
+          "image_prompt_end": "photoreal cinematic: Slow on his gentle, mischievous amber eyes and half-smile through the haze.",
+          "video_prompt_start": "Medium reveal of the Pooka in the misty light. push-in on his gentle amber eyes and half-smile. The beat resolves into the next matching frame. Continuity held: Full Pooka design established for rest of film; amber eye glow and horn shape.",
+          "video_prompt_end": "Medium reveal of the Pooka in the misty light. push-in on his gentle amber eyes and half-smile. The beat resolves into the next matching frame. Continuity held: Full Pooka design established for rest of film; amber eye glow and horn shape.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S08",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "over-shoulder",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "piper_A1_fused",
+            "pooka_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Pooka — a horned forest spirit with a wild mane and warm amber eyes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "over-shoulder close of the piper’s frightened face"
+            ],
+            [
+              1.5,
+              3.0,
+              "he recoils and raises a defensive hand"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Гајдаџијата: „Подалеку од мене!“",
+          "kf_first": "Photoreal over-shoulder close of the piper's frightened face as the horned spirit looms behind him, wide eyes reflecting amber light, 1216x704",
+          "kf_last": "He recoils and raises a hand defensively, breath visible in the cold mist",
+          "continuity": "Same piper and Pooka; amber eye-light reflected in the piper's eyes",
+          "motion": "flinch and defensive hand raise",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal over-shoulder close of the piper's frightened face as the horned spirit looms behind him, wide eyes reflecting amber light then over-shoulder close of the piper’s frightened face, then he recoils and raises a defensive hand the camera static settling into he recoils and raises a hand defensively, breath visible in the cold mist a voice speaks in Macedonian: \"Гајдаџијата: „Подалеку од мене!“\" continuity held: Same piper and Pooka; amber eye-light reflected in the piper's eyes",
+          "image_prompt_start": "photoreal cinematic: Photoreal over-shoulder close of the piper's frightened face as the horned spirit looms behind him, wide eyes reflecting amber light.",
+          "image_prompt_end": "photoreal cinematic: He recoils and raises a hand defensively, breath visible in the cold mist.",
+          "video_prompt_start": "Over-shoulder close of the piper’s frightened face. he recoils and raises a defensive hand. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Гајдаџијата: „Подалеку од мене!“\" Continuity held: Same piper and Pooka; amber eye-light reflected in the piper's eyes.",
+          "video_prompt_end": "Over-shoulder close of the piper’s frightened face. he recoils and raises a defensive hand. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Гајдаџијата: „Подалеку од мене!“\" Continuity held: Same piper and Pooka; amber eye-light reflected in the piper's eyes.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S09",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "shot-reverse",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "pooka_A2_fused",
+            "piper_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Pooka — a horned forest spirit with a wild mane and warm amber eyes — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "medium of the Pooka smiling with a calming gesture"
+            ],
+            [
+              1.5,
+              3.0,
+              "reverse on the piper slowly lowering his guard"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Пука: „Не плаши се, младичу!“",
+          "kf_first": "Photoreal medium of the Pooka smiling playfully, head tilted, one hoofed hand raised in a calming gesture, mist swirling, 1216x704",
+          "kf_last": "Reverse on the piper slowly lowering his guard, eyes still wide but curious",
+          "continuity": "Same Pooka design and misty clearing palette",
+          "motion": "calming hand gesture; shot-reverse to the piper",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal medium of the Pooka smiling playfully, head tilted, one hoofed hand raised in a calming gesture, mist swirling then medium of the Pooka smiling with a calming gesture, then reverse on the piper slowly lowering his guard the camera shot-reverse settling into reverse on the piper slowly lowering his guard, eyes still wide but curious a voice speaks in Macedonian: \"Пука: „Не плаши се, младичу!“\" continuity held: Same Pooka design and misty clearing palette",
+          "image_prompt_start": "photoreal cinematic: Photoreal medium of the Pooka smiling playfully, head tilted, one hoofed hand raised in a calming gesture, mist swirling.",
+          "image_prompt_end": "photoreal cinematic: Reverse on the piper slowly lowering his guard, eyes still wide but curious.",
+          "video_prompt_start": "Medium of the Pooka smiling with a calming gesture. reverse on the piper slowly lowering his guard. The camera shot-reverse. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Пука: „Не плаши се, младичу!“\" Continuity held: Same Pooka design and misty clearing palette.",
+          "video_prompt_end": "Medium of the Pooka smiling with a calming gesture. reverse on the piper slowly lowering his guard. The camera shot-reverse. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Пука: „Не плаши се, младичу!“\" Continuity held: Same Pooka design and misty clearing palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S10",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "pooka_A2_fused",
+            "piper_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Pooka — a horned forest spirit with a wild mane and warm amber eyes — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "Pooka kneels low offering his mossy back"
+            ],
+            [
+              1.5,
+              3.0,
+              "the piper steps hesitantly toward a horn"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Пука: „Качи ми се на грбот! Фати се за роговите!“",
+          "kf_first": "Photoreal medium of the Pooka kneeling low in the clearing, offering his broad mossy back toward the piper, horns within easy reach, 1216x704",
+          "kf_last": "The piper takes a hesitant step forward, reaching toward a horn",
+          "continuity": "Same Pooka, clearing and mist palette",
+          "motion": "kneeling offer; piper's hesitant approach",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal medium of the Pooka kneeling low in the clearing, offering his broad mossy back toward the piper, horns within easy reach then Pooka kneels low offering his mossy back, then the piper steps hesitantly toward a horn the camera static settling into the piper takes a hesitant step forward, reaching toward a horn a voice speaks in Macedonian: \"Пука: „Качи ми се на грбот! Фати се за роговите!“\" continuity held: Same Pooka, clearing and mist palette",
+          "image_prompt_start": "photoreal cinematic: Photoreal medium of the Pooka kneeling low in the clearing, offering his broad mossy back toward the piper, horns within easy reach.",
+          "image_prompt_end": "photoreal cinematic: The piper takes a hesitant step forward, reaching toward a horn.",
+          "video_prompt_start": "Pooka kneels low offering his mossy back. the piper steps hesitantly toward a horn. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Пука: „Качи ми се на грбот! Фати се за роговите!“\" Continuity held: Same Pooka, clearing and mist palette.",
+          "video_prompt_end": "Pooka kneels low offering his mossy back. the piper steps hesitantly toward a horn. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Пука: „Качи ми се на грбот! Фати се за роговите!“\" Continuity held: Same Pooka, clearing and mist palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S11",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "pooka_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Pooka — a horned forest spirit with a wild mane and warm amber eyes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close on the Pooka’s kind face in green rim-light"
+            ],
+            [
+              1.5,
+              3.0,
+              "push-in on his earnest eyes as he speaks"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Пука: „Ќе те одведам да ми посвириш малку.“",
+          "kf_first": "Photoreal low-angle close of the Pooka's kind face, amber eyes warm, faint green glow rim-lighting his horns, 1216x704",
+          "kf_last": "Push-in on his earnest eyes as he speaks, mist drifting past",
+          "continuity": "Same Pooka design; amber and green rim-light palette",
+          "motion": "slow push-in on the Pooka's face",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal low-angle close of the Pooka's kind face, amber eyes warm, faint green glow rim-lighting his horns then close on the Pooka’s kind face in green rim-light, then push-in on his earnest eyes as he speaks settling into push-in on his earnest eyes as he speaks, mist drifting past a voice speaks in Macedonian: \"Пука: „Ќе те одведам да ми посвириш малку.“\" continuity held: Same Pooka design; amber and green rim-light palette",
+          "image_prompt_start": "photoreal cinematic: Photoreal low-angle close of the Pooka's kind face, amber eyes warm, faint green glow rim-lighting his horns.",
+          "image_prompt_end": "photoreal cinematic: on his earnest eyes as he speaks, mist drifting past.",
+          "video_prompt_start": "Close on the Pooka’s kind face in green rim-light. push-in on his earnest eyes as he speaks. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Пука: „Ќе те одведам да ми посвириш малку.“\" Continuity held: Same Pooka design; amber and green rim-light palette.",
+          "video_prompt_end": "Close on the Pooka’s kind face in green rim-light. push-in on his earnest eyes as he speaks. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Пука: „Ќе те одведам да ми посвириш малку.“\" Continuity held: Same Pooka design; amber and green rim-light palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S12",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "over-shoulder",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "piper_A1_fused",
+            "pooka_A2_fused",
+            "bagpipe_B1_sheet"
+          ],
+          "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Pooka — a horned forest spirit with a wild mane and warm amber eyes — 100% identical; studio bg/pose/light NOT used; image3: the uilleann bagpipe — wooden chanter and worn leather bag — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "over-shoulder medium of the shy piper holding his bagpipe"
+            ],
+            [
+              1.5,
+              3.0,
+              "he glances down then back up awaiting the reply"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Гајдаџијата: „Ама јас знам само една песна.“",
+          "kf_first": "Photoreal over-shoulder medium of the piper from behind the Pooka, holding his bagpipe to his chest, shy and uncertain, 1216x704",
+          "kf_last": "He glances down at his pipes then back up, awaiting the spirit's reply",
+          "continuity": "Same piper and Pooka positions; misty clearing",
+          "motion": "down-then-up glance; bag held close",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal over-shoulder medium of the piper from behind the Pooka, holding his bagpipe to his chest, shy and uncertain then over-shoulder medium of the shy piper holding his bagpipe, then he glances down then back up awaiting the reply the camera static settling into he glances down at his pipes then back up, awaiting the spirit's reply a voice speaks in Macedonian: \"Гајдаџијата: „Ама јас знам само една песна.“\" continuity held: Same piper and Pooka positions; misty clearing",
+          "image_prompt_start": "photoreal cinematic: Photoreal over-shoulder medium of the piper from behind the Pooka, holding his bagpipe to his chest, shy and uncertain.",
+          "image_prompt_end": "photoreal cinematic: He glances down at his pipes then back up, awaiting the spirit's reply.",
+          "video_prompt_start": "Over-shoulder medium of the shy piper holding his bagpipe. he glances down then back up awaiting the reply. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Гајдаџијата: „Ама јас знам само една песна.“\" Continuity held: Same piper and Pooka positions; misty clearing.",
+          "video_prompt_end": "Over-shoulder medium of the shy piper holding his bagpipe. he glances down then back up awaiting the reply. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Гајдаџијата: „Ама јас знам само една песна.“\" Continuity held: Same piper and Pooka positions; misty clearing.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S13",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "pooka_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Pooka — a horned forest spirit with a wild mane and warm amber eyes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close of the Pooka grinning with promised magic"
+            ],
+            [
+              1.5,
+              3.0,
+              "emerald aura brightens around his horns"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Пука: „Не е важно. Ќе те претворам во најдобриот гајдаџија.“",
+          "kf_first": "Photoreal close of the Pooka grinning, eyes glinting with promised magic, a soft emerald aura igniting around his horns, 1216x704",
+          "kf_last": "The emerald aura brightens, catching the piper's face in green light off-screen",
+          "continuity": "Same Pooka design; emerald magic glow introduced (recurring in Act II)",
+          "motion": "rising emerald aura glow",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal close of the Pooka grinning, eyes glinting with promised magic, a soft emerald aura igniting around his horns then close of the Pooka grinning with promised magic, then emerald aura brightens around his horns the camera static settling into the emerald aura brightens, catching the piper's face in green light off-screen a voice speaks in Macedonian: \"Пука: „Не е важно. Ќе те претворам во најдобриот гајдаџија.“\" continuity held: Same Pooka design; emerald magic glow introduced (recurring in Act II)",
+          "image_prompt_start": "photoreal cinematic: Photoreal close of the Pooka grinning, eyes glinting with promised magic, a soft emerald aura igniting around his horns.",
+          "image_prompt_end": "photoreal cinematic: The emerald aura brightens, catching the piper's face in green light off-screen.",
+          "video_prompt_start": "Close of the Pooka grinning with promised magic. emerald aura brightens around his horns. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Пука: „Не е важно. Ќе те претворам во најдобриот гајдаџија.“\" Continuity held: Same Pooka design; emerald magic glow introduced (recurring in Act II).",
+          "video_prompt_end": "Close of the Pooka grinning with promised magic. emerald aura brightens around his horns. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Пука: „Не е важно. Ќе те претворам во најдобриот гајдаџија.“\" Continuity held: Same Pooka design; emerald magic glow introduced (recurring in Act II).",
+          "motion_intensity": "gentle"
+        }
+      ],
+      "location_ref": "emerald_irish_hills_forest_and_cottage",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class",
+        "screen_dir"
+      ],
+      "palette": [
+        "#2e7d5b",
+        "#7fb069",
+        "#bfd8bd"
+      ],
+      "light_direction": "key light from screen-left, cool golden dawn through drifting mist over emerald hills",
+      "time_of_day": "dawn"
+    },
+    {
+      "id": "act2",
+      "num": "Act II",
+      "title": "Патот и пештерата",
+      "color": "#22d3ee",
+      "pct": 52,
+      "synopsis": "Пука го носи гајдаџијата во пештерата на Баншите, каде младичот свири цела ноќ и го открива својот дар.",
+      "shots": [
+        {
+          "id": "S14",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "piper_A1_fused",
+            "pooka_A2_fused",
+            "bagpipe_B1_sheet"
+          ],
+          "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Pooka — a horned forest spirit with a wild mane and warm amber eyes — 100% identical; studio bg/pose/light NOT used; image3: the uilleann bagpipe — wooden chanter and worn leather bag — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "piper climbs onto the kneeling Pooka’s back"
+            ],
+            [
+              1.8,
+              3.5,
+              "settles into place as the Pooka begins to rise"
+            ]
+          ],
+          "narration_mk": "И така, младичот се качи на грбот на духот.",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal low-angle wide of the piper climbing onto the kneeling Pooka's broad back, gripping a horn with one hand, bagpipe slung at his side, 1216x704",
+          "kf_last": "The piper settles into place, legs around the spirit's flanks, as the Pooka begins to rise",
+          "continuity": "Same piper and Pooka from Act I; emerald magic aura lingers softly",
+          "motion": "climb and settle; Pooka rising",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal low-angle wide of the piper climbing onto the kneeling Pooka's broad back, gripping a horn with one hand, bagpipe slung at his side then piper climbs onto the kneeling Pooka’s back, then settles into place as the Pooka begins to rise the camera track settling into the piper settles into place, legs around the spirit's flanks, as the Pooka begins to rise continuity held: Same piper and Pooka from Act I; emerald magic aura lingers softly",
+          "image_prompt_start": "photoreal cinematic: Photoreal low-angle wide of the piper climbing onto the kneeling Pooka's broad back, gripping a horn with one hand, bagpipe slung at his side.",
+          "image_prompt_end": "photoreal cinematic: The piper into place, legs around the spirit's flanks, as the Pooka begins to rise.",
+          "video_prompt_start": "Piper climbs onto the kneeling Pooka’s back. settles into place as the Pooka begins to rise. The camera track. The beat resolves into the next matching frame. Continuity held: Same piper and Pooka from Act I; emerald magic aura lingers softly.",
+          "video_prompt_end": "Piper climbs onto the kneeling Pooka’s back. settles into place as the Pooka begins to rise. The camera track. The beat resolves into the next matching frame. Continuity held: Same piper and Pooka from Act I; emerald magic aura lingers softly.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S15",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "piper_A1_fused",
+            "pooka_A2_fused",
+            "forest_env_A2_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Pooka — a horned forest spirit with a wild mane and warm amber eyes — 100% identical; studio bg/pose/light NOT used; image3: the darkening Irish forest with a gnarled oak clearing — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "Pooka gallops with the piper through dark trees"
+            ],
+            [
+              1.8,
+              3.5,
+              "streak past the camera at speed, leaves whipping"
+            ]
+          ],
+          "narration_mk": "Пука побрза низ шумата како ветар.",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal wide tracking shot of the Pooka galloping with the piper on his back through dark trees, mane and cloak streaming, moonlit blurs, 1216x704",
+          "kf_last": "They streak past the camera at speed, leaves whipping in their wake",
+          "continuity": "Same piper and Pooka; night forest palette with emerald magic streak",
+          "motion": "fast lateral track; motion blur on the forest",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal wide tracking shot of the Pooka galloping with the piper on his back through dark trees, mane and cloak streaming, moonlit blurs then Pooka gallops with the piper through dark trees, then streak past the camera at speed, leaves whipping the camera track settling into they streak past the camera at speed, leaves whipping in their wake with leaves rustle continuity held: Same piper and Pooka; night forest palette with emerald magic streak",
+          "image_prompt_start": "photoreal cinematic: Photoreal wide of the Pooka galloping with the piper on his back through dark trees, mane and cloak streaming, moonlit blurs.",
+          "image_prompt_end": "photoreal cinematic: They streak past the at speed, leaves whipping in their wake.",
+          "video_prompt_start": "Pooka gallops with the piper through dark trees. streak past the camera at speed, leaves whipping. The camera track. The beat resolves into the next matching frame. Continuity held: Same piper and Pooka; night forest palette with emerald magic streak.",
+          "video_prompt_end": "Pooka gallops with the piper through dark trees. streak past the camera at speed, leaves whipping. The camera track. The beat resolves into the next matching frame. Continuity held: Same piper and Pooka; night forest palette with emerald magic streak.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S16",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "over-shoulder",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "piper_A1_fused",
+            "pooka_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Pooka — a horned forest spirit with a wild mane and warm amber eyes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "over-shoulder close of the piper’s wind-blown face"
+            ],
+            [
+              1.5,
+              3.0,
+              "a grin breaks through his fear as they ride faster"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal over-shoulder close of the piper's wind-blown face over the Pooka's shoulder, hair streaming, eyes wide with thrill and fear, 1216x704",
+          "kf_last": "A grin breaks through his fear as the ride carries him faster",
+          "continuity": "Same piper, Pooka shoulder and night palette; speed lines in wind",
+          "motion": "hair and cloak streaming; expression shifting to joy",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal over-shoulder close of the piper's wind-blown face over the Pooka's shoulder, hair streaming, eyes wide with thrill and fear then over-shoulder close of the piper’s wind-blown face, then a grin breaks through his fear as they ride faster the camera track settling into a grin breaks through his fear as the ride carries him faster continuity held: Same piper, Pooka shoulder and night palette; speed lines in wind",
+          "image_prompt_start": "photoreal cinematic: Photoreal over-shoulder close of the piper's wind-blown face over the Pooka's shoulder, hair streaming, eyes wide with thrill and fear.",
+          "image_prompt_end": "photoreal cinematic: A grin breaks through his fear as the ride carries him faster.",
+          "video_prompt_start": "Over-shoulder close of the piper’s wind-blown face. a grin breaks through his fear as they ride faster. The camera track. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same piper, Pooka shoulder and night palette; speed lines in wind.",
+          "video_prompt_end": "Over-shoulder close of the piper’s wind-blown face. a grin breaks through his fear as they ride faster. The camera track. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same piper, Pooka shoulder and night palette; speed lines in wind.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S17",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "piper_A1_fused",
+            "pooka_A2_fused",
+            "cavern_env_A3_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Pooka — a horned forest spirit with a wild mane and warm amber eyes — 100% identical; studio bg/pose/light NOT used; image3: the vast cathedral cavern hung with glowing green moss and crystals — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "halt before the jagged cave mouth in the rock wall"
+            ],
+            [
+              1.8,
+              3.5,
+              "crane-down as green light pulses from within"
+            ]
+          ],
+          "narration_mk": "Стигнаа до устието на пештера во карпата.",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal high-angle wide of the Pooka and rider halting before a jagged black cave mouth in a moonlit rock wall, mist seeping from within, 1216x704",
+          "kf_last": "Crane-down toward the cave mouth as a faint green light pulses from deep inside",
+          "continuity": "Same piper and Pooka; cave entrance green glow (foreshadows cavern)",
+          "motion": "slow crane-down toward the glowing cave",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal high-angle wide of the Pooka and rider halting before a jagged black cave mouth in a moonlit rock wall, mist seeping from within then halt before the jagged cave mouth in the rock wall, then crane-down as green light pulses from within settling into crane-down toward the cave mouth as a faint green light pulses from deep inside with echoes roll continuity held: Same piper and Pooka; cave entrance green glow (foreshadows cavern)",
+          "image_prompt_start": "photoreal cinematic: Photoreal high-angle wide of the Pooka and rider halting before a jagged black cave mouth in a moonlit rock wall, mist seeping from within.",
+          "image_prompt_end": "photoreal cinematic: toward the cave mouth as a faint green light pulses from deep inside.",
+          "video_prompt_start": "Halt before the jagged cave mouth in the rock wall. crane-down as green light pulses from within. The beat resolves into the next matching frame. Continuity held: Same piper and Pooka; cave entrance green glow (foreshadows cavern).",
+          "video_prompt_end": "Halt before the jagged cave mouth in the rock wall. crane-down as green light pulses from within. The beat resolves into the next matching frame. Continuity held: Same piper and Pooka; cave entrance green glow (foreshadows cavern).",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S18",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "piper_A1_fused",
+            "pooka_A2_fused",
+            "cavern_env_A3_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Pooka — a horned forest spirit with a wild mane and warm amber eyes — 100% identical; studio bg/pose/light NOT used; image3: the vast cathedral cavern hung with glowing green moss and crystals — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "piper slides off silhouetted against the green glow"
+            ],
+            [
+              1.8,
+              3.5,
+              "they step together into the tunnel"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal medium of the piper sliding off the Pooka's back, both silhouetted against the growing green glow of the cave entrance, 1216x704",
+          "kf_last": "Push-in as they step together into the tunnel, green light washing over their faces",
+          "continuity": "Same characters; green cave glow, transition interior palette",
+          "motion": "dismount and step forward; green light washing over",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal medium of the piper sliding off the Pooka's back, both silhouetted against the growing green glow of the cave entrance then piper slides off silhouetted against the green glow, then they step together into the tunnel the camera push-in settling into push-in as they step together into the tunnel, green light washing over their faces with echoes roll continuity held: Same characters; green cave glow, transition interior palette",
+          "image_prompt_start": "photoreal cinematic: Photoreal medium of the piper sliding off the Pooka's back, both silhouetted against the growing green glow of the cave entrance.",
+          "image_prompt_end": "photoreal cinematic: as they step together into the tunnel, green light washing over their faces.",
+          "video_prompt_start": "Piper slides off silhouetted against the green glow. they step together into the tunnel. The camera push-in. The beat resolves into the next matching frame. Continuity held: Same characters; green cave glow, transition interior palette.",
+          "video_prompt_end": "Piper slides off silhouetted against the green glow. they step together into the tunnel. The camera push-in. The beat resolves into the next matching frame. Continuity held: Same characters; green cave glow, transition interior palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S19",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "piper_A1_fused",
+            "pooka_A2_fused",
+            "banshees_A3_fused",
+            "cavern_env_A3_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Pooka — a horned forest spirit with a wild mane and warm amber eyes — 100% identical; studio bg/pose/light NOT used; image3: the fused master of the Banshees — fairy women in long green gowns with pale glowing skin — 100% identical; studio bg/pose/light NOT used; image4: the vast cathedral cavern hung with glowing green moss and crystals — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "wide of the vast cavern hung with moss and crystals"
+            ],
+            [
+              1.8,
+              3.5,
+              "the crowd turns with hundreds of luminous eyes"
+            ]
+          ],
+          "narration_mk": "Внатре чекаа повеќе од стотина суштества со долги коси.",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal wide of a vast cathedral cavern hung with glowing green moss and crystals, dozens of pale figures with long hair gathered in the shimmering light, 1216x704",
+          "kf_last": "Track forward as the crowd turns, hundreds of luminous eyes fixing on the two arrivals",
+          "continuity": "Cavern emerald-green palette established; Banshee crowd silhouette",
+          "motion": "slow track-in; crowd turning toward camera",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal wide of a vast cathedral cavern hung with glowing green moss and crystals, dozens of pale figures with long hair gathered in the shimmering light then wide of the vast cavern hung with moss and crystals, then the crowd turns with hundreds of luminous eyes the camera track settling into track forward as the crowd turns, hundreds of luminous eyes fixing on the two arrivals with echoes roll continuity held: Cavern emerald-green palette established; Banshee crowd silhouette",
+          "image_prompt_start": "photoreal cinematic: Photoreal wide of a vast cathedral cavern hung with glowing green moss and crystals, dozens of pale figures with long hair gathered in the shimmering light.",
+          "image_prompt_end": "photoreal cinematic: forward as the crowd , hundreds of luminous eyes fixing on the two arrivals.",
+          "video_prompt_start": "Wide of the vast cavern hung with moss and crystals. the crowd turns with hundreds of luminous eyes. The camera track. The beat resolves into the next matching frame. Continuity held: Cavern emerald-green palette established; Banshee crowd silhouette.",
+          "video_prompt_end": "Wide of the vast cavern hung with moss and crystals. the crowd turns with hundreds of luminous eyes. The camera track. The beat resolves into the next matching frame. Continuity held: Cavern emerald-green palette established; Banshee crowd silhouette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S20",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "pan-left",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "banshees_A3_fused",
+            "cavern_env_A3_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Banshees — fairy women in long green gowns with pale glowing skin — 100% identical; studio bg/pose/light NOT used; image2: the vast cathedral cavern hung with glowing green moss and crystals — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "medium reveal of the Banshees in flowing green gowns"
+            ],
+            [
+              1.8,
+              3.5,
+              "pan-left along the line of luminous faces"
+            ]
+          ],
+          "narration_mk": "Тоа беа Баншите, шумските самовили, сите во зелено.",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal medium of a row of Banshees revealed: ethereal fairy women in flowing green gowns, long silken hair, pale glowing skin, 1216x704",
+          "kf_last": "Pan-left along the row, each face distinct yet uniformly luminous and curious",
+          "continuity": "Banshee design established (green gowns, long hair, pale glow) for rest of film",
+          "motion": "slow pan-left along the line of fairies",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal medium of a row of Banshees revealed: ethereal fairy women in flowing green gowns, long silken hair, pale glowing skin then medium reveal of the Banshees in flowing green gowns, then pan-left along the line of luminous faces settling into pan-left along the row, each face distinct yet uniformly luminous and curious with echoes roll continuity held: Banshee design established (green gowns, long hair, pale glow) for rest of film",
+          "image_prompt_start": "photoreal cinematic: Photoreal medium of a row of Banshees revealed: ethereal fairy women in flowing green gowns, long silken hair, pale glowing skin.",
+          "image_prompt_end": "photoreal cinematic: -left along the row, each face distinct yet uniformly luminous and curious.",
+          "video_prompt_start": "Medium reveal of the Banshees in flowing green gowns. pan-left along the line of luminous faces. The beat resolves into the next matching frame. Continuity held: Banshee design established (green gowns, long hair, pale glow) for rest of film.",
+          "video_prompt_end": "Medium reveal of the Banshees in flowing green gowns. pan-left along the line of luminous faces. The beat resolves into the next matching frame. Continuity held: Banshee design established (green gowns, long hair, pale glow) for rest of film.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S21",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "banshees_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Banshees — fairy women in long green gowns with pale glowing skin — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close of a single Banshee turning toward the arrivals"
+            ],
+            [
+              1.5,
+              3.0,
+              "her lips part in a soft curious smile"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal close of a single Banshee turning toward the arrivals, luminous violet eyes, faint emerald light on her cheek, serene and watchful, 1216x704",
+          "kf_last": "Her lips part in a soft, curious smile as her eyes reflect the newcomers",
+          "continuity": "Same Banshee design and cavern green palette",
+          "motion": "slow head turn; soft smile",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal close of a single Banshee turning toward the arrivals, luminous violet eyes, faint emerald light on her cheek, serene and watchful then close of a single Banshee turning toward the arrivals, then her lips part in a soft curious smile the camera static settling into her lips part in a soft, curious smile as her eyes reflect the newcomers continuity held: Same Banshee design and cavern green palette",
+          "image_prompt_start": "photoreal cinematic: Photoreal close of a single Banshee turning toward the arrivals, luminous violet eyes, faint emerald light on her cheek, serene and watchful.",
+          "image_prompt_end": "photoreal cinematic: Her lips part in a soft, curious smile as her eyes reflect the newcomers.",
+          "video_prompt_start": "Close of a single Banshee turning toward the arrivals. her lips part in a soft curious smile. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same Banshee design and cavern green palette.",
+          "video_prompt_end": "Close of a single Banshee turning toward the arrivals. her lips part in a soft curious smile. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same Banshee design and cavern green palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S22",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "shot-reverse",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "banshees_A3_fused",
+            "pooka_A2_fused",
+            "piper_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Banshees — fairy women in long green gowns with pale glowing skin — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Pooka — a horned forest spirit with a wild mane and warm amber eyes — 100% identical; studio bg/pose/light NOT used; image3: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "a Banshee steps forward to address the Pooka"
+            ],
+            [
+              1.5,
+              3.0,
+              "reverse on the Pooka and the nervous piper"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Банши: „Добровечер, Пука. Кој е овој човек со тебе?“",
+          "kf_first": "Photoreal medium of a Banshee stepping forward to address the Pooka, one hand lifted delicately, the piper seen beyond, 1216x704",
+          "kf_last": "Reverse on the Pooka and the nervous piper standing together at the tunnel mouth",
+          "continuity": "Same Banshee, Pooka and piper; cavern palette",
+          "motion": "shot-reverse; Banshee's welcoming step",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal medium of a Banshee stepping forward to address the Pooka, one hand lifted delicately, the piper seen beyond then a Banshee steps forward to address the Pooka, then reverse on the Pooka and the nervous piper the camera shot-reverse settling into reverse on the Pooka and the nervous piper standing together at the tunnel mouth a voice speaks in Macedonian: \"Банши: „Добровечер, Пука. Кој е овој човек со тебе?“\" continuity held: Same Banshee, Pooka and piper; cavern palette",
+          "image_prompt_start": "photoreal cinematic: Photoreal medium of a Banshee stepping forward to address the Pooka, one hand lifted delicately, the piper seen beyond.",
+          "image_prompt_end": "photoreal cinematic: Reverse on the Pooka and the nervous piper standing together at the tunnel mouth.",
+          "video_prompt_start": "A Banshee steps forward to address the Pooka. reverse on the Pooka and the nervous piper. The camera shot-reverse. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Банши: „Добровечер, Пука. Кој е овој човек со тебе?“\" Continuity held: Same Banshee, Pooka and piper; cavern palette.",
+          "video_prompt_end": "A Banshee steps forward to address the Pooka. reverse on the Pooka and the nervous piper. The camera shot-reverse. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Банши: „Добровечер, Пука. Кој е овој човек со тебе?“\" Continuity held: Same Banshee, Pooka and piper; cavern palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S23",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "pooka_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Pooka — a horned forest spirit with a wild mane and warm amber eyes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close of the Pooka beaming with pride"
+            ],
+            [
+              1.5,
+              3.0,
+              "he glances sideways to share the boast with the piper"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Пука: „Тој е најдобриот гајдаџија во цела Ирска.“",
+          "kf_first": "Photoreal close of the Pooka beaming with pride, chest puffed, one horned head held high in emerald light, 1216x704",
+          "kf_last": "He glances sideways briefly toward the piper, sharing the boast",
+          "continuity": "Same Pooka design and cavern palette",
+          "motion": "chest swell; brief sideways glance",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal close of the Pooka beaming with pride, chest puffed, one horned head held high in emerald light then close of the Pooka beaming with pride, then he glances sideways to share the boast with the piper the camera static settling into he glances sideways briefly toward the piper, sharing the boast a voice speaks in Macedonian: \"Пука: „Тој е најдобриот гајдаџија во цела Ирска.“\" continuity held: Same Pooka design and cavern palette",
+          "image_prompt_start": "photoreal cinematic: Photoreal close of the Pooka beaming with pride, chest puffed, one horned head held high in emerald light.",
+          "image_prompt_end": "photoreal cinematic: He glances sideways briefly toward the piper, sharing the boast.",
+          "video_prompt_start": "Close of the Pooka beaming with pride. he glances sideways to share the boast with the piper. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Пука: „Тој е најдобриот гајдаџија во цела Ирска.“\" Continuity held: Same Pooka design and cavern palette.",
+          "video_prompt_end": "Close of the Pooka beaming with pride. he glances sideways to share the boast with the piper. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Пука: „Тој е најдобриот гајдаџија во цела Ирска.“\" Continuity held: Same Pooka design and cavern palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S24",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "over-shoulder",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "pooka_A2_fused",
+            "piper_A1_fused",
+            "banshees_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Pooka — a horned forest spirit with a wild mane and warm amber eyes — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image3: the fused master of the Banshees — fairy women in long green gowns with pale glowing skin — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "over-shoulder on the Pooka nodding toward the piper"
+            ],
+            [
+              1.5,
+              3.0,
+              "push-in past the shoulder toward the piper"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Пука: „Почни да свириш!“",
+          "kf_first": "Photoreal over-shoulder medium of the Pooka turning to nod at the piper, the vast fairy crowd visible beyond in soft focus, 1216x704",
+          "kf_last": "Push-in past the Pooka toward the piper as he begins to raise his pipes",
+          "continuity": "Same Pooka, piper and cavern crowd; emerald palette",
+          "motion": "push-in past shoulder toward the piper",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal over-shoulder medium of the Pooka turning to nod at the piper, the vast fairy crowd visible beyond in soft focus then over-shoulder on the Pooka nodding toward the piper, then push-in past the shoulder toward the piper settling into push-in past the Pooka toward the piper as he begins to raise his pipes a voice speaks in Macedonian: \"Пука: „Почни да свириш!“\" continuity held: Same Pooka, piper and cavern crowd; emerald palette",
+          "image_prompt_start": "photoreal cinematic: Photoreal over-shoulder medium of the Pooka turning to nod at the piper, the vast fairy crowd visible beyond in soft focus.",
+          "image_prompt_end": "photoreal cinematic: past the Pooka toward the piper as he begins to raise his pipes.",
+          "video_prompt_start": "Over-shoulder on the Pooka nodding toward the piper. push-in past the shoulder toward the piper. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Пука: „Почни да свириш!“\" Continuity held: Same Pooka, piper and cavern crowd; emerald palette.",
+          "video_prompt_end": "Over-shoulder on the Pooka nodding toward the piper. push-in past the shoulder toward the piper. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Пука: „Почни да свириш!“\" Continuity held: Same Pooka, piper and cavern crowd; emerald palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S25",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "piper_A1_fused",
+            "bagpipe_B1_sheet"
+          ],
+          "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the uilleann bagpipe — wooden chanter and worn leather bag — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close of the piper’s nervous face in green light"
+            ],
+            [
+              1.5,
+              3.0,
+              "his eyes close in concentration"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal close of the piper's nervous face in the green light, swallowing hard as he lifts the blowpipe to his lips, 1216x704",
+          "kf_last": "His eyes close in concentration, a single bead of sweat on his temple",
+          "continuity": "Same piper; cavern green palette",
+          "motion": "lifting pipes; eyes closing",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal close of the piper's nervous face in the green light, swallowing hard as he lifts the blowpipe to his lips then close of the piper’s nervous face in green light, then his eyes close in concentration the camera static settling into his eyes close in concentration, a single bead of sweat on his temple continuity held: Same piper; cavern green palette",
+          "image_prompt_start": "photoreal cinematic: Photoreal close of the piper's nervous face in the green light, swallowing hard as he lifts the blowpipe to his lips.",
+          "image_prompt_end": "photoreal cinematic: His eyes close in concentration, a single bead of sweat on his temple.",
+          "video_prompt_start": "Close of the piper’s nervous face in green light. his eyes close in concentration. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same piper; cavern green palette.",
+          "video_prompt_end": "Close of the piper’s nervous face in green light. his eyes close in concentration. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same piper; cavern green palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S26",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "piper_A1_fused",
+            "bagpipe_B1_sheet"
+          ],
+          "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the uilleann bagpipe — wooden chanter and worn leather bag — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "macro of fingers pressing the chanter, bag swelling"
+            ],
+            [
+              1.5,
+              3.0,
+              "the bag tightens and the reed vibrates"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal macro insert of the piper's fingers pressing the chanter, the leather bag swelling as air fills it, emerald light glinting on the wood, 1216x704",
+          "kf_last": "The bag tightens and the reed vibrates, first shimmer of sound rippling through the air",
+          "continuity": "Same bagpipe prop; emerald cavern palette; magic shimmer foreshadow",
+          "motion": "bag swelling; reed vibration and air shimmer",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal macro insert of the piper's fingers pressing the chanter, the leather bag swelling as air fills it, emerald light glinting on the wood then macro of fingers pressing the chanter, bag swelling, then the bag tightens and the reed vibrates the camera static settling into the bag tightens and the reed vibrates, first shimmer of sound rippling through the air continuity held: Same bagpipe prop; emerald cavern palette; magic shimmer foreshadow",
+          "image_prompt_start": "photoreal cinematic: Photoreal macro insert of the piper's fingers pressing the chanter, the leather bag swelling as air fills it, emerald light glinting on the wood.",
+          "image_prompt_end": "photoreal cinematic: The bag tightens and the reed vibrates, first shimmer of sound rippling through the air.",
+          "video_prompt_start": "Macro of fingers pressing the chanter, bag swelling. the bag tightens and the reed vibrates. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same bagpipe prop; emerald cavern palette; magic shimmer foreshadow.",
+          "video_prompt_end": "Macro of fingers pressing the chanter, bag swelling. the bag tightens and the reed vibrates. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same bagpipe prop; emerald cavern palette; magic shimmer foreshadow.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S27",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "piper_A1_fused",
+            "bagpipe_B1_sheet"
+          ],
+          "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the uilleann bagpipe — wooden chanter and worn leather bag — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "piper begins to play as emerald shimmer spreads outward"
+            ],
+            [
+              1.8,
+              3.5,
+              "push-in as the shimmer reaches the swaying Banshees"
+            ]
+          ],
+          "narration_mk": "Штом засвире, воздухот во пештерата затрепери.",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal medium of the piper beginning to play, a visible shimmer of emerald light rippling outward from his pipes across the cavern air, 1216x704",
+          "kf_last": "Push-in as the shimmer spreads toward the watching Banshees, who begin to sway",
+          "continuity": "Same piper; emerald magic ripple introduced as the tune's visual motif",
+          "motion": "push-in; expanding light ripple",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal medium of the piper beginning to play, a visible shimmer of emerald light rippling outward from his pipes across the cavern air then piper begins to play as emerald shimmer spreads outward, then push-in as the shimmer reaches the swaying Banshees settling into push-in as the shimmer spreads toward the watching Banshees, who begin to sway continuity held: Same piper; emerald magic ripple introduced as the tune's visual motif",
+          "image_prompt_start": "photoreal cinematic: Photoreal medium of the piper beginning to play, a visible shimmer of emerald light rippling outward from his pipes across the cavern air.",
+          "image_prompt_end": "photoreal cinematic: as the shimmer spreads toward the watching Banshees, who begin to sway.",
+          "video_prompt_start": "Piper begins to play as emerald shimmer spreads outward. push-in as the shimmer reaches the swaying Banshees. The beat resolves into the next matching frame. Continuity held: Same piper; emerald magic ripple introduced as the tune's visual motif.",
+          "video_prompt_end": "Piper begins to play as emerald shimmer spreads outward. push-in as the shimmer reaches the swaying Banshees. The beat resolves into the next matching frame. Continuity held: Same piper; emerald magic ripple introduced as the tune's visual motif.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S28",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "banshees_A3_fused",
+            "cavern_env_A3_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Banshees — fairy women in long green gowns with pale glowing skin — 100% identical; studio bg/pose/light NOT used; image2: the vast cathedral cavern hung with glowing green moss and crystals — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "low-angle wide of the Banshees rising and swaying"
+            ],
+            [
+              1.8,
+              3.5,
+              "track along as their sway synchronizes into a dance"
+            ]
+          ],
+          "narration_mk": "Баншите почнаа да се нишаат во ритам.",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal low-angle wide of the Banshees rising and beginning to sway, green gowns catching the emerald light as the melody takes hold, 1216x704",
+          "kf_last": "Track along the crowd as their swaying synchronizes into the start of a dance",
+          "continuity": "Same Banshees and emerald magic ripple; dance motion begins",
+          "motion": "lateral track; synchronized swaying",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal low-angle wide of the Banshees rising and beginning to sway, green gowns catching the emerald light as the melody takes hold then low-angle wide of the Banshees rising and swaying, then track along as their sway synchronizes into a dance settling into track along the crowd as their swaying synchronizes into the start of a dance with echoes roll continuity held: Same Banshees and emerald magic ripple; dance motion begins",
+          "image_prompt_start": "photoreal cinematic: Photoreal low-angle wide of the Banshees rising and beginning to sway, green gowns catching the emerald light as the melody takes hold.",
+          "image_prompt_end": "photoreal cinematic: along the crowd as their swaying synchronizes into the start of a dance.",
+          "video_prompt_start": "Low-angle wide of the Banshees rising and swaying. track along as their sway synchronizes into a dance. The beat resolves into the next matching frame. Continuity held: Same Banshees and emerald magic ripple; dance motion begins.",
+          "video_prompt_end": "Low-angle wide of the Banshees rising and swaying. track along as their sway synchronizes into a dance. The beat resolves into the next matching frame. Continuity held: Same Banshees and emerald magic ripple; dance motion begins.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S29",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "banshees_A3_fused",
+            "cavern_env_A3_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Banshees — fairy women in long green gowns with pale glowing skin — 100% identical; studio bg/pose/light NOT used; image2: the vast cathedral cavern hung with glowing green moss and crystals — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "wide of the Banshees swirling in the cavern"
+            ],
+            [
+              1.8,
+              3.5,
+              "the dance accelerates into overlapping circles"
+            ]
+          ],
+          "narration_mk": "Самовилите започнаа да танцуваат.",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal wide of dozens of Banshees swirling in the cavern, long green hair and gowns spinning, emerald light trails arcing through the air, 1216x704",
+          "kf_last": "The dance accelerates, bodies whirling in overlapping circles around the piper",
+          "continuity": "Same Banshee crowd and green palette; dance grows",
+          "motion": "circular swirling; accelerating dance",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal wide of dozens of Banshees swirling in the cavern, long green hair and gowns spinning, emerald light trails arcing through the air then wide of the Banshees swirling in the cavern, then the dance accelerates into overlapping circles the camera track settling into the dance accelerates, bodies whirling in overlapping circles around the piper with echoes roll continuity held: Same Banshee crowd and green palette; dance grows",
+          "image_prompt_start": "photoreal cinematic: Photoreal wide of dozens of Banshees swirling in the cavern, long green hair and gowns spinning, emerald light trails arcing through the air.",
+          "image_prompt_end": "photoreal cinematic: The dance accelerates, bodies whirling in overlapping circles around the piper.",
+          "video_prompt_start": "Wide of the Banshees swirling in the cavern. the dance accelerates into overlapping circles. The camera track. The beat resolves into the next matching frame. Continuity held: Same Banshee crowd and green palette; dance grows.",
+          "video_prompt_end": "Wide of the Banshees swirling in the cavern. the dance accelerates into overlapping circles. The camera track. The beat resolves into the next matching frame. Continuity held: Same Banshee crowd and green palette; dance grows.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S30",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "over-shoulder",
+          "move": "pan-left",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "piper_A1_fused",
+            "banshees_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Banshees — fairy women in long green gowns with pale glowing skin — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "over-shoulder of the piper playing, dance behind"
+            ],
+            [
+              1.8,
+              3.5,
+              "pan-left to reveal the full sweep of the dance"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal over-shoulder medium of the piper playing, the spinning dance of fairies visible over his shoulder in a blur of green, 1216x704",
+          "kf_last": "Pan-left across his determined face to reveal the full sweep of the dance",
+          "continuity": "Same piper and Banshee dance; emerald palette",
+          "motion": "pan-left from piper to dance",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal over-shoulder medium of the piper playing, the spinning dance of fairies visible over his shoulder in a blur of green then over-shoulder of the piper playing, dance behind, then pan-left to reveal the full sweep of the dance settling into pan-left across his determined face to reveal the full sweep of the dance continuity held: Same piper and Banshee dance; emerald palette",
+          "image_prompt_start": "photoreal cinematic: Photoreal over-shoulder medium of the piper playing, the spinning dance of fairies visible over his shoulder in a blur of green.",
+          "image_prompt_end": "photoreal cinematic: -left across his determined face to reveal the full sweep of the dance.",
+          "video_prompt_start": "Over-shoulder of the piper playing, dance behind. pan-left to reveal the full sweep of the dance. The beat resolves into the next matching frame. Continuity held: Same piper and Banshee dance; emerald palette.",
+          "video_prompt_end": "Over-shoulder of the piper playing, dance behind. pan-left to reveal the full sweep of the dance. The beat resolves into the next matching frame. Continuity held: Same piper and Banshee dance; emerald palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S31",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "piper_A1_fused",
+            "banshees_A3_fused",
+            "cavern_env_A3_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Banshees — fairy women in long green gowns with pale glowing skin — 100% identical; studio bg/pose/light NOT used; image3: the vast cathedral cavern hung with glowing green moss and crystals — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "high-angle wide of the full dance from above"
+            ],
+            [
+              1.8,
+              3.5,
+              "crane-up as the spiral blurs into ribbons of light"
+            ]
+          ],
+          "narration_mk": "И не запреа цела ноќ.",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal high-angle wide of the full cavern dance from above, the piper at the center, spiraling emerald light trails and whirling figures, 1216x704",
+          "kf_last": "Crane-up as the spiral widens, time blurring the dance into ribbons of green light",
+          "continuity": "Same cavern, piper at center, dance ribbon motif",
+          "motion": "crane-up; expanding spiral blur",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal high-angle wide of the full cavern dance from above, the piper at the center, spiraling emerald light trails and whirling figures then high-angle wide of the full dance from above, then crane-up as the spiral blurs into ribbons of light settling into crane-up as the spiral widens, time blurring the dance into ribbons of green light with echoes roll continuity held: Same cavern, piper at center, dance ribbon motif",
+          "image_prompt_start": "photoreal cinematic: Photoreal high-angle wide of the full cavern dance from above, the piper at the center, spiraling emerald light trails and whirling figures.",
+          "image_prompt_end": "photoreal cinematic: as the spiral widens, time blurring the dance into ribbons of green light.",
+          "video_prompt_start": "High-angle wide of the full dance from above. crane-up as the spiral blurs into ribbons of light. The beat resolves into the next matching frame. Continuity held: Same cavern, piper at center, dance ribbon motif.",
+          "video_prompt_end": "High-angle wide of the full dance from above. crane-up as the spiral blurs into ribbons of light. The beat resolves into the next matching frame. Continuity held: Same cavern, piper at center, dance ribbon motif.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S32",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "piper_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close of the piper’s face transformed with joy"
+            ],
+            [
+              1.5,
+              3.0,
+              "a tear of happiness rolls down his cheek"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal close of the piper's face transformed with joy, eyes bright, cheeks flushed, playing with effortless mastery in the green glow, 1216x704",
+          "kf_last": "A tear of happiness rolls down his cheek as the music flows through him",
+          "continuity": "Same piper; emerald glow; joy-as-magic motif",
+          "motion": "expression shifting to rapture; single tear",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal close of the piper's face transformed with joy, eyes bright, cheeks flushed, playing with effortless mastery in the green glow then close of the piper’s face transformed with joy, then a tear of happiness rolls down his cheek the camera static settling into a tear of happiness rolls down his cheek as the music flows through him continuity held: Same piper; emerald glow; joy-as-magic motif",
+          "image_prompt_start": "photoreal cinematic: Photoreal close of the piper's face transformed with joy, eyes bright, cheeks flushed, playing with effortless mastery in the green glow.",
+          "image_prompt_end": "photoreal cinematic: A tear of happiness rolls down his cheek as the music flows through him.",
+          "video_prompt_start": "Close of the piper’s face transformed with joy. a tear of happiness rolls down his cheek. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same piper; emerald glow; joy-as-magic motif.",
+          "video_prompt_end": "Close of the piper’s face transformed with joy. a tear of happiness rolls down his cheek. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same piper; emerald glow; joy-as-magic motif.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S33",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "banshees_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Banshees — fairy women in long green gowns with pale glowing skin — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "medium of two Banshees twirling hand in hand"
+            ],
+            [
+              1.8,
+              3.5,
+              "track with their spin as light coils around them"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal medium of two Banshees twirling hand in hand, their green hair and gowns flowing like silk, faces alight, 1216x704",
+          "kf_last": "Track with their spin as emerald light trails coil around them",
+          "continuity": "Same Banshee design and emerald palette",
+          "motion": "twirling track; light coiling",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal medium of two Banshees twirling hand in hand, their green hair and gowns flowing like silk, faces alight then medium of two Banshees twirling hand in hand, then track with their spin as light coils around them settling into track with their spin as emerald light trails coil around them continuity held: Same Banshee design and emerald palette",
+          "image_prompt_start": "photoreal cinematic: Photoreal medium of two Banshees twirling hand in hand, their green hair and gowns flowing like silk, faces alight.",
+          "image_prompt_end": "photoreal cinematic: with their spin as emerald light trails coil around them.",
+          "video_prompt_start": "Medium of two Banshees twirling hand in hand. track with their spin as light coils around them. The beat resolves into the next matching frame. Continuity held: Same Banshee design and emerald palette.",
+          "video_prompt_end": "Medium of two Banshees twirling hand in hand. track with their spin as light coils around them. The beat resolves into the next matching frame. Continuity held: Same Banshee design and emerald palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S34",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "banshees_A3_fused",
+            "cavern_env_A3_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Banshees — fairy women in long green gowns with pale glowing skin — 100% identical; studio bg/pose/light NOT used; image2: the vast cathedral cavern hung with glowing green moss and crystals — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "wide of the dance reaching frenzy"
+            ],
+            [
+              1.8,
+              3.5,
+              "crane-down into the heart of the whirl"
+            ]
+          ],
+          "narration_mk": "Колата стануваше сè подива.",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal wide of the dance reaching frenzy, whirling green figures and flying hair, emerald light strobing across the cavern walls, 1216x704",
+          "kf_last": "Crane-down into the heart of the whirl as the music peaks",
+          "continuity": "Same cavern, piper, and dance; intensifying emerald light",
+          "motion": "crane-down into the whirl",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal wide of the dance reaching frenzy, whirling green figures and flying hair, emerald light strobing across the cavern walls then wide of the dance reaching frenzy, then crane-down into the heart of the whirl settling into crane-down into the heart of the whirl as the music peaks with echoes roll continuity held: Same cavern, piper, and dance; intensifying emerald light",
+          "image_prompt_start": "photoreal cinematic: Photoreal wide of the dance reaching frenzy, whirling green figures and flying hair, emerald light strobing across the cavern walls.",
+          "image_prompt_end": "photoreal cinematic: into the heart of the whirl as the music peaks.",
+          "video_prompt_start": "Wide of the dance reaching frenzy. crane-down into the heart of the whirl. The beat resolves into the next matching frame. Continuity held: Same cavern, piper, and dance; intensifying emerald light.",
+          "video_prompt_end": "Wide of the dance reaching frenzy. crane-down into the heart of the whirl. The beat resolves into the next matching frame. Continuity held: Same cavern, piper, and dance; intensifying emerald light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S35",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "over-shoulder",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "pooka_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Pooka — a horned forest spirit with a wild mane and warm amber eyes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "over-shoulder close of the proud Pooka watching"
+            ],
+            [
+              1.5,
+              3.0,
+              "his amber eyes soften as he watches the piper"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal over-shoulder close of the Pooka watching proudly from the cave's edge, horned silhouette rimmed in green, a satisfied smile, 1216x704",
+          "kf_last": "His amber eyes soften as he watches the piper he once doubted become magic",
+          "continuity": "Same Pooka design and cavern palette",
+          "motion": "proud smile; amber eyes softening",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal over-shoulder close of the Pooka watching proudly from the cave's edge, horned silhouette rimmed in green, a satisfied smile then over-shoulder close of the proud Pooka watching, then his amber eyes soften as he watches the piper the camera static settling into his amber eyes soften as he watches the piper he once doubted become magic continuity held: Same Pooka design and cavern palette",
+          "image_prompt_start": "photoreal cinematic: Photoreal over-shoulder close of the Pooka watching proudly from the cave's edge, horned silhouette rimmed in green, a satisfied smile.",
+          "image_prompt_end": "photoreal cinematic: His amber eyes soften as he watches the piper he once doubted become magic.",
+          "video_prompt_start": "Over-shoulder close of the proud Pooka watching. his amber eyes soften as he watches the piper. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same Pooka design and cavern palette.",
+          "video_prompt_end": "Over-shoulder close of the proud Pooka watching. his amber eyes soften as he watches the piper. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same Pooka design and cavern palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S36",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "pan-right",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "banshees_A3_fused",
+            "cavern_env_A3_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Banshees — fairy women in long green gowns with pale glowing skin — 100% identical; studio bg/pose/light NOT used; image2: the vast cathedral cavern hung with glowing green moss and crystals — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "low-angle wide of the night dance turning dreamlike"
+            ],
+            [
+              1.8,
+              3.5,
+              "pan-right across the ecstatic crowd"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal low-angle wide of the night continuing inside the cave, emerald light intensifying as the dance turns dreamlike, 1216x704",
+          "kf_last": "Pan-right across the ecstatic crowd, arms raised, hair flaring, mid-leap",
+          "continuity": "Same cavern, Banshees and dance; night-deepening emerald palette",
+          "motion": "pan-right; leaping figures",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal low-angle wide of the night continuing inside the cave, emerald light intensifying as the dance turns dreamlike then low-angle wide of the night dance turning dreamlike, then pan-right across the ecstatic crowd settling into pan-right across the ecstatic crowd, arms raised, hair flaring, mid-leap with echoes roll continuity held: Same cavern, Banshees and dance; night-deepening emerald palette",
+          "image_prompt_start": "photoreal cinematic: Photoreal low-angle wide of the night continuing inside the cave, emerald light intensifying as the dance dreamlike.",
+          "image_prompt_end": "photoreal cinematic: -right across the ecstatic crowd, arms raised, hair flaring, mid-leap.",
+          "video_prompt_start": "Low-angle wide of the night dance turning dreamlike. pan-right across the ecstatic crowd. The beat resolves into the next matching frame. Continuity held: Same cavern, Banshees and dance; night-deepening emerald palette.",
+          "video_prompt_end": "Low-angle wide of the night dance turning dreamlike. pan-right across the ecstatic crowd. The beat resolves into the next matching frame. Continuity held: Same cavern, Banshees and dance; night-deepening emerald palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S37",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "piper_A1_fused",
+            "bagpipe_B1_sheet"
+          ],
+          "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the uilleann bagpipe — wooden chanter and worn leather bag — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "medium of the piper still playing, pipes gleaming"
+            ],
+            [
+              1.8,
+              3.5,
+              "push-in on fingers, streaks of light following"
+            ]
+          ],
+          "narration_mk": "Гајдаџијата свиреше без престан, а музиката беше магична.",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal medium of the piper still playing, a faint sheen of effort and wonder on his brow, the bagpipe gleaming in green light, 1216x704",
+          "kf_last": "Push-in on his hands moving with supernatural skill, streaks of light following his fingers",
+          "continuity": "Same piper, bagpipe and emerald palette;",
+          "motion": "push-in on light-following fingers",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal medium of the piper still playing, a faint sheen of effort and wonder on his brow, the bagpipe gleaming in green light then medium of the piper still playing, pipes gleaming, then push-in on fingers, streaks of light following settling into push-in on his hands moving with supernatural skill, streaks of light following his fingers continuity held: Same piper, bagpipe and emerald palette;",
+          "image_prompt_start": "photoreal cinematic: Photoreal medium of the piper still playing, a faint sheen of effort and wonder on his brow, the bagpipe gleaming in green light.",
+          "image_prompt_end": "photoreal cinematic: on his hands moving with supernatural skill, streaks of light his fingers.",
+          "video_prompt_start": "Medium of the piper still playing, pipes gleaming. push-in on fingers, streaks of light following. The beat resolves into the next matching frame. Continuity held: Same piper, bagpipe and emerald palette;.",
+          "video_prompt_end": "Medium of the piper still playing, pipes gleaming. push-in on fingers, streaks of light following. The beat resolves into the next matching frame. Continuity held: Same piper, bagpipe and emerald palette;.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S38",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "banshees_A3_fused",
+            "cavern_env_A3_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Banshees — fairy women in long green gowns with pale glowing skin — 100% identical; studio bg/pose/light NOT used; image2: the vast cathedral cavern hung with glowing green moss and crystals — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "high-angle wide of the ecstatic Banshee host"
+            ],
+            [
+              1.8,
+              3.5,
+              "the crowd stills for a suspended heartbeat"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal high-angle wide of the entire Banshee host in ecstatic motion, arms raised toward the cavern ceiling as light pours down, 1216x704",
+          "kf_last": "The crowd stills for a suspended heartbeat, breath held, before the final flourish",
+          "continuity": "Same cavern, Banshees and emerald light",
+          "motion": "crowd ecstasy then suspended still",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal high-angle wide of the entire Banshee host in ecstatic motion, arms raised toward the cavern ceiling as light pours down then high-angle wide of the ecstatic Banshee host, then the crowd stills for a suspended heartbeat settling into the crowd stills for a suspended heartbeat, breath held, before the final flourish with echoes roll continuity held: Same cavern, Banshees and emerald light",
+          "image_prompt_start": "photoreal cinematic: Photoreal high-angle wide of the entire Banshee host in ecstatic motion, arms raised toward the cavern ceiling as light pours down.",
+          "image_prompt_end": "photoreal cinematic: The crowd stills for a suspended heartbeat, breath held, before the final flourish.",
+          "video_prompt_start": "High-angle wide of the ecstatic Banshee host. the crowd stills for a suspended heartbeat. The beat resolves into the next matching frame. Continuity held: Same cavern, Banshees and emerald light.",
+          "video_prompt_end": "High-angle wide of the ecstatic Banshee host. the crowd stills for a suspended heartbeat. The beat resolves into the next matching frame. Continuity held: Same cavern, Banshees and emerald light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S39",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "piper_A1_fused",
+            "banshees_A3_fused",
+            "cavern_env_A3_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Banshees — fairy women in long green gowns with pale glowing skin — 100% identical; studio bg/pose/light NOT used; image3: the vast cathedral cavern hung with glowing green moss and crystals — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "close of dawn light spilling into the cave mouth"
+            ],
+            [
+              1.8,
+              3.5,
+              "the dance winds gently down as the tune ends"
+            ]
+          ],
+          "narration_mk": "Дури првите зраци на зората не допреа до устието на пештерата.",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal close of the cave mouth as the first pale dawn light spills in, gilding the edge of the emerald glow and the weary, smiling faces, 1216x704",
+          "kf_last": "The dance winds gently down, fairies settling like petals as the tune ends",
+          "continuity": "Same cavern palette; dawn light replaces emerald as dance closes",
+          "motion": "dawn light spilling; dance settling",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal close of the cave mouth as the first pale dawn light spills in, gilding the edge of the emerald glow and the weary, smiling faces then close of dawn light spilling into the cave mouth, then the dance winds gently down as the tune ends the camera static settling into the dance winds gently down, fairies settling like petals as the tune ends with echoes roll continuity held: Same cavern palette; dawn light replaces emerald as dance closes",
+          "image_prompt_start": "photoreal cinematic: Photoreal close of the cave mouth as the first pale dawn light spills in, gilding the edge of the emerald glow and the weary, smiling faces.",
+          "image_prompt_end": "photoreal cinematic: The dance winds gently down, fairies settling like petals as the tune ends.",
+          "video_prompt_start": "Close of dawn light spilling into the cave mouth. the dance winds gently down as the tune ends. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same cavern palette; dawn light replaces emerald as dance closes.",
+          "video_prompt_end": "Close of dawn light spilling into the cave mouth. the dance winds gently down as the tune ends. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same cavern palette; dawn light replaces emerald as dance closes.",
+          "motion_intensity": "gentle"
+        }
+      ],
+      "location_ref": "moonlit_forest_and_banshee_cavern",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class",
+        "screen_dir"
+      ],
+      "palette": [
+        "#052e1a",
+        "#10b981",
+        "#0f172a"
+      ],
+      "light_direction": "key light from screen-right, moonlit night giving way to the green emerald cavern glow",
+      "time_of_day": "night"
+    },
+    {
+      "id": "act3",
+      "num": "Act III",
+      "title": "Наградата и вистината",
+      "color": "#7dd3fc",
+      "pct": 22,
+      "synopsis": "Младичот добива златници, но тие се претвораат во лисја. Сепак, од тој ден неговото свирење е совршено и сите го признаваат.",
+      "shots": [
+        {
+          "id": "S40",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "banshees_A3_fused",
+            "piper_A1_fused",
+            "gold_pouch_B2_sheet"
+          ],
+          "ref_scope": "image1: the fused master of the Banshees — fairy women in long green gowns with pale glowing skin — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image3: the soft leather pouch of gold coins — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "Banshees approach extending the leather pouch"
+            ],
+            [
+              1.8,
+              3.5,
+              "the pouch is placed in his cupped hands"
+            ]
+          ],
+          "narration_mk": "Како награда, самовилите му дадоа полна кеса со златници.",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal medium of a group of Banshees approaching the piper, one extending a soft leather pouch toward him, dawn light mixing with emerald, 1216x704",
+          "kf_last": "The pouch is placed in his cupped hands, weighty and full",
+          "continuity": "Same piper and Banshees; dawn-transition palette",
+          "motion": "outstretched offering; pouch placed in hands",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal medium of a group of Banshees approaching the piper, one extending a soft leather pouch toward him, dawn light mixing with emerald then Banshees approach extending the leather pouch, then the pouch is placed in his cupped hands the camera static settling into the pouch is placed in his cupped hands, weighty and full continuity held: Same piper and Banshees; dawn-transition palette",
+          "image_prompt_start": "photoreal cinematic: Photoreal medium of a group of Banshees approaching the piper, one extending a soft leather pouch toward him, dawn light mixing with emerald.",
+          "image_prompt_end": "photoreal cinematic: The pouch is placed in his cupped hands, weighty and full.",
+          "video_prompt_start": "Banshees approach extending the leather pouch. the pouch is placed in his cupped hands. The camera static. The beat resolves into the next matching frame. Continuity held: Same piper and Banshees; dawn-transition palette.",
+          "video_prompt_end": "Banshees approach extending the leather pouch. the pouch is placed in his cupped hands. The camera static. The beat resolves into the next matching frame. Continuity held: Same piper and Banshees; dawn-transition palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S41",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "gold_pouch_B2_sheet"
+          ],
+          "ref_scope": "image1: the soft leather pouch of gold coins — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "macro of gold coins pouring into the leather pouch"
+            ],
+            [
+              1.5,
+              3.0,
+              "the coins settle in a bright gleaming heap"
+            ]
+          ],
+          "narration_mk": "Златниците светкаа како жар.",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal macro insert of gold coins pouring into a leather pouch, gleaming warm gold against the cool green cavern light, 1216x704",
+          "kf_last": "The coins settle in a bright heap, their glow flaring softly",
+          "continuity": "Pouch and gold props; gold-vs-green light contrast motif",
+          "motion": "coins pouring and settling",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal macro insert of gold coins pouring into a leather pouch, gleaming warm gold against the cool green cavern light then macro of gold coins pouring into the leather pouch, then the coins settle in a bright gleaming heap the camera static settling into the coins settle in a bright heap, their glow flaring softly continuity held: Pouch and gold props; gold-vs-green light contrast motif",
+          "image_prompt_start": "photoreal cinematic: Photoreal macro insert of gold coins pouring into a leather pouch, gleaming warm gold against the cool green cavern light.",
+          "image_prompt_end": "photoreal cinematic: The coins in a bright heap, their glow flaring softly.",
+          "video_prompt_start": "Macro of gold coins pouring into the leather pouch. the coins settle in a bright gleaming heap. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Pouch and gold props; gold-vs-green light contrast motif.",
+          "video_prompt_end": "Macro of gold coins pouring into the leather pouch. the coins settle in a bright gleaming heap. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Pouch and gold props; gold-vs-green light contrast motif.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S42",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "piper_A1_fused",
+            "pooka_A2_fused",
+            "gold_pouch_B2_sheet",
+            "forest_env_A2_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Pooka — a horned forest spirit with a wild mane and warm amber eyes — 100% identical; studio bg/pose/light NOT used; image3: the soft leather pouch of gold coins — 100% identical; studio bg/pose/light NOT used; image4: the darkening Irish forest with a gnarled oak clearing — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "Pooka carries the piper home through the dawn forest"
+            ],
+            [
+              1.8,
+              3.5,
+              "they emerge from the treeline toward the cottage"
+            ]
+          ],
+          "narration_mk": "Најсреќен, младичот се врати дома на грбот на Пука.",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal wide tracking shot of the Pooka carrying the piper home through the dawn forest, gold pouch clutched to his chest, light streaming through branches, 1216x704",
+          "kf_last": "They emerge from the treeline toward the cottage, morning fully risen",
+          "continuity": "Same piper, Pooka and gold pouch; warm dawn home palette",
+          "motion": "lateral track through trees; emerging to cottage",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal wide tracking shot of the Pooka carrying the piper home through the dawn forest, gold pouch clutched to his chest, light streaming through branches then Pooka carries the piper home through the dawn forest, then they emerge from the treeline toward the cottage the camera track settling into they emerge from the treeline toward the cottage, morning fully risen with leaves rustle continuity held: Same piper, Pooka and gold pouch; warm dawn home palette",
+          "image_prompt_start": "photoreal cinematic: Photoreal wide of the Pooka carrying the piper home through the dawn forest, gold pouch clutched to his chest, light streaming through branches.",
+          "image_prompt_end": "photoreal cinematic: They emerge from the treeline toward the cottage, morning fully risen.",
+          "video_prompt_start": "Pooka carries the piper home through the dawn forest. they emerge from the treeline toward the cottage. The camera track. The beat resolves into the next matching frame. Continuity held: Same piper, Pooka and gold pouch; warm dawn home palette.",
+          "video_prompt_end": "Pooka carries the piper home through the dawn forest. they emerge from the treeline toward the cottage. The camera track. The beat resolves into the next matching frame. Continuity held: Same piper, Pooka and gold pouch; warm dawn home palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S43",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "piper_A1_fused",
+            "mother_A4_fused",
+            "gold_pouch_B2_sheet",
+            "cottage_int_env_A4_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Mother — a caring elderly woman by the hearth — 100% identical; studio bg/pose/light NOT used; image3: the soft leather pouch of gold coins — 100% identical; studio bg/pose/light NOT used; image4: the warm cottage interior lit by the hearth — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "piper bursts through the cottage door, pouch held high"
+            ],
+            [
+              1.5,
+              3.0,
+              "the mother rises half-skeptical from the hearth"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Гајдаџијата: „Мајко, самовилите ме наградија со злато!“",
+          "kf_first": "Photoreal medium of the piper bursting through the cottage door, gold pouch held high, his elderly mother looking up from the hearth, 1216x704",
+          "kf_last": "The mother rises, half-skeptical, as he beams breathlessly",
+          "continuity": "Same piper, gold pouch and warm cottage interior palette",
+          "motion": "door burst; mother rising",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal medium of the piper bursting through the cottage door, gold pouch held high, his elderly mother looking up from the hearth then piper bursts through the cottage door, pouch held high, then the mother rises half-skeptical from the hearth the camera static settling into the mother rises, half-skeptical, as he beams breathlessly a voice speaks in Macedonian: \"Гајдаџијата: „Мајко, самовилите ме наградија со злато!“\" continuity held: Same piper, gold pouch and warm cottage interior palette",
+          "image_prompt_start": "photoreal cinematic: Photoreal medium of the piper bursting through the cottage door, gold pouch held high, his elderly mother looking up from the hearth.",
+          "image_prompt_end": "photoreal cinematic: The mother , half-skeptical, as he beams breathlessly.",
+          "video_prompt_start": "Piper bursts through the cottage door, pouch held high. the mother rises half-skeptical from the hearth. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Гајдаџијата: „Мајко, самовилите ме наградија со злато!“\" Continuity held: Same piper, gold pouch and warm cottage interior palette.",
+          "video_prompt_end": "Piper bursts through the cottage door, pouch held high. the mother rises half-skeptical from the hearth. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Гајдаџијата: „Мајко, самовилите ме наградија со злато!“\" Continuity held: Same piper, gold pouch and warm cottage interior palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S44",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-left",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "piper_A1_fused",
+            "neighbors_A5_fused",
+            "gold_pouch_B2_sheet"
+          ],
+          "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Neighbors — simple Irish villagers in woolen clothes — 100% identical; studio bg/pose/light NOT used; image3: the soft leather pouch of gold coins — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "crowd of villagers gathers outside the cottage"
+            ],
+            [
+              1.8,
+              3.5,
+              "pan-left across the skeptical amused faces"
+            ]
+          ],
+          "narration_mk": "Соседите се собраа да ја чујат чудната приказна.",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal wide of a crowd of villagers gathered outside the cottage, leaning in curiously as the piper, still holding the pouch, begins to tell his tale, 1216x704",
+          "kf_last": "Pan-left across the skeptical, amused faces of the neighbors",
+          "continuity": "Same piper, pouch and village palette; neighbor crowd introduced",
+          "motion": "pan-left across the gathered crowd",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal wide of a crowd of villagers gathered outside the cottage, leaning in curiously as the piper, still holding the pouch, begins to tell his tale then crowd of villagers gathers outside the cottage, then pan-left across the skeptical amused faces settling into pan-left across the skeptical, amused faces of the neighbors continuity held: Same piper, pouch and village palette; neighbor crowd introduced",
+          "image_prompt_start": "photoreal cinematic: Photoreal wide of a crowd of villagers gathered outside the cottage, leaning in curiously as the piper, still holding the pouch, begins to tell his tale.",
+          "image_prompt_end": "photoreal cinematic: -left across the skeptical, amused faces of the neighbors.",
+          "video_prompt_start": "Crowd of villagers gathers outside the cottage. pan-left across the skeptical amused faces. The beat resolves into the next matching frame. Continuity held: Same piper, pouch and village palette; neighbor crowd introduced.",
+          "video_prompt_end": "Crowd of villagers gathers outside the cottage. pan-left across the skeptical amused faces. The beat resolves into the next matching frame. Continuity held: Same piper, pouch and village palette; neighbor crowd introduced.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S45",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "over-shoulder",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "piper_A1_fused",
+            "neighbors_A5_fused",
+            "gold_pouch_B2_sheet"
+          ],
+          "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Neighbors — simple Irish villagers in woolen clothes — 100% identical; studio bg/pose/light NOT used; image3: the soft leather pouch of gold coins — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "over-shoulder on the piper’s hand reaching into his pocket"
+            ],
+            [
+              1.5,
+              3.0,
+              "a proud smile as he begins to draw the pouch out"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal over-shoulder close of the piper's hand reaching confidently into his pocket over the watching crowd, a proud smile on his face, 1216x704",
+          "kf_last": "His expression tilts toward triumph as he begins to draw the pouch out",
+          "continuity": "Same piper, pouch and village crowd",
+          "motion": "hand reaching; proud smile",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal over-shoulder close of the piper's hand reaching confidently into his pocket over the watching crowd, a proud smile on his face then over-shoulder on the piper’s hand reaching into his pocket, then a proud smile as he begins to draw the pouch out the camera static settling into his expression tilts toward triumph as he begins to draw the pouch out continuity held: Same piper, pouch and village crowd",
+          "image_prompt_start": "photoreal cinematic: Photoreal over-shoulder close of the piper's hand reaching confidently into his pocket over the watching crowd, a proud smile on his face.",
+          "image_prompt_end": "photoreal cinematic: His expression tilts toward triumph as he begins to draw the pouch out.",
+          "video_prompt_start": "Over-shoulder on the piper’s hand reaching into his pocket. a proud smile as he begins to draw the pouch out. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same piper, pouch and village crowd.",
+          "video_prompt_end": "Over-shoulder on the piper’s hand reaching into his pocket. a proud smile as he begins to draw the pouch out. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same piper, pouch and village crowd.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S46",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "piper_A1_fused",
+            "gold_pouch_B2_sheet"
+          ],
+          "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the soft leather pouch of gold coins — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "macro of the piper’s open hand over the table"
+            ],
+            [
+              1.8,
+              3.5,
+              "withered leaves spill out instead of coins"
+            ]
+          ],
+          "narration_mk": "Но кога ја извади кесата, златниците беа исчезнати.",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal macro insert of the piper's open hand over a wooden table, the leather pouch tipping, withered brown leaves spilling out instead of coins, 1216x704",
+          "kf_last": "The last dry leaf drifts to the table, the pouch lying empty",
+          "continuity": "Same pouch; leaves-instead-of-gold reveal motif",
+          "motion": "leaves spilling; pouch emptying",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal macro insert of the piper's open hand over a wooden table, the leather pouch tipping, withered brown leaves spilling out instead of coins then macro of the piper’s open hand over the table, then withered leaves spill out instead of coins the camera static settling into the last dry leaf drifts to the table, the pouch lying empty continuity held: Same pouch; leaves-instead-of-gold reveal motif",
+          "image_prompt_start": "photoreal cinematic: Photoreal macro insert of the piper's open hand over a wooden table, the leather pouch tipping, withered brown leaves spilling out instead of coins.",
+          "image_prompt_end": "photoreal cinematic: The last dry leaf drifts to the table, the pouch lying empty.",
+          "video_prompt_start": "Macro of the piper’s open hand over the table. withered leaves spill out instead of coins. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same pouch; leaves-instead-of-gold reveal motif.",
+          "video_prompt_end": "Macro of the piper’s open hand over the table. withered leaves spill out instead of coins. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same pouch; leaves-instead-of-gold reveal motif.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S47",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "neighbors_A5_fused",
+            "mother_A4_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Neighbors — simple Irish villagers in woolen clothes — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Mother — a caring elderly woman by the hearth — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "close of the mother and neighbors laughing and pointing"
+            ],
+            [
+              1.5,
+              3.0,
+              "the laughter spreads, hands slapping knees"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Соседите: „Будалче! Те измамија!“",
+          "kf_first": "Photoreal close of the mother and neighbors laughing and pointing, faces creased with mockery, the withered leaves in the foreground, 1216x704",
+          "kf_last": "The laughter spreads, hands slapping knees, eyes glinting with disdain",
+          "continuity": "Same villagers and mother; harsh mockery beats",
+          "motion": "pointing and laughter",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal close of the mother and neighbors laughing and pointing, faces creased with mockery, the withered leaves in the foreground then close of the mother and neighbors laughing and pointing, then the laughter spreads, hands slapping knees the camera static settling into the laughter spreads, hands slapping knees, eyes glinting with disdain a voice speaks in Macedonian: \"Соседите: „Будалче! Те измамија!“\" continuity held: Same villagers and mother; harsh mockery beats",
+          "image_prompt_start": "photoreal cinematic: Photoreal close of the mother and neighbors laughing and pointing, faces creased with mockery, the withered leaves in the foreground.",
+          "image_prompt_end": "photoreal cinematic: The laughter spreads, hands slapping knees, eyes glinting with disdain.",
+          "video_prompt_start": "Close of the mother and neighbors laughing and pointing. the laughter spreads, hands slapping knees. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Соседите: „Будалче! Те измамија!“\" Continuity held: Same villagers and mother; harsh mockery beats.",
+          "video_prompt_end": "Close of the mother and neighbors laughing and pointing. the laughter spreads, hands slapping knees. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Соседите: „Будалче! Те измамија!“\" Continuity held: Same villagers and mother; harsh mockery beats.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S48",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "piper_A1_fused",
+            "bagpipe_B1_sheet"
+          ],
+          "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the uilleann bagpipe — wooden chanter and worn leather bag — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "low-angle medium of the dignified piper standing tall"
+            ],
+            [
+              1.8,
+              3.5,
+              "push-in on his resolved eyes as laughter falters"
+            ]
+          ],
+          "narration_mk": "Младичот не рече ништо. Ги подигна гајдите.",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal low-angle medium of the hurt but dignified piper standing tall amid the jeering crowd, stoically lifting his bagpipe to his shoulder, 1216x704",
+          "kf_last": "Push-in on his resolved eyes as the laughter begins to falter",
+          "continuity": "Same piper, bagpipe and village; turn from shame to resolve",
+          "motion": "slow push-in on resolved eyes",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal low-angle medium of the hurt but dignified piper standing tall amid the jeering crowd, stoically lifting his bagpipe to his shoulder then low-angle medium of the dignified piper standing tall, then push-in on his resolved eyes as laughter falters settling into push-in on his resolved eyes as the laughter begins to falter continuity held: Same piper, bagpipe and village; turn from shame to resolve",
+          "image_prompt_start": "photoreal cinematic: Photoreal low-angle medium of the hurt but dignified piper standing tall amid the jeering crowd, stoically lifting his bagpipe to his shoulder.",
+          "image_prompt_end": "photoreal cinematic: on his resolved eyes as the laughter begins to falter.",
+          "video_prompt_start": "Low-angle medium of the dignified piper standing tall. push-in on his resolved eyes as laughter falters. The beat resolves into the next matching frame. Continuity held: Same piper, bagpipe and village; turn from shame to resolve.",
+          "video_prompt_end": "Low-angle medium of the dignified piper standing tall. push-in on his resolved eyes as laughter falters. The beat resolves into the next matching frame. Continuity held: Same piper, bagpipe and village; turn from shame to resolve.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S49",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "piper_A1_fused",
+            "bagpipe_B1_sheet",
+            "village_env_A5_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the uilleann bagpipe — wooden chanter and worn leather bag — 100% identical; studio bg/pose/light NOT used; image3: the Irish village square outside the cottage under a golden sky — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "wide of the piper playing in the village square"
+            ],
+            [
+              1.8,
+              3.5,
+              "crane-up as a warm golden light blooms around him"
+            ]
+          ],
+          "narration_mk": "Штом засвире, неговата песна беше совршена.",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal wide of the piper playing in the village square, a warm golden light blooming around him as his now-perfect tune fills the air, 1216x704",
+          "kf_last": "Crane-up as the golden light spreads, the villagers frozen in silent awe",
+          "continuity": "Same piper, village; golden light marks his true gift (vs emerald magic)",
+          "motion": "crane-up; golden light blooming",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal wide of the piper playing in the village square, a warm golden light blooming around him as his now-perfect tune fills the air then wide of the piper playing in the village square, then crane-up as a warm golden light blooms around him settling into crane-up as the golden light spreads, the villagers frozen in silent awe continuity held: Same piper, village; golden light marks his true gift (vs emerald magic)",
+          "image_prompt_start": "photoreal cinematic: Photoreal wide of the piper playing in the village square, a warm golden light blooming around him as his now-perfect tune fills the air.",
+          "image_prompt_end": "photoreal cinematic: as the golden light spreads, the villagers frozen in silent awe.",
+          "video_prompt_start": "Wide of the piper playing in the village square. crane-up as a warm golden light blooms around him. The beat resolves into the next matching frame. Continuity held: Same piper, village; golden light marks his true gift (vs emerald magic).",
+          "video_prompt_end": "Wide of the piper playing in the village square. crane-up as a warm golden light blooms around him. The beat resolves into the next matching frame. Continuity held: Same piper, village; golden light marks his true gift (vs emerald magic).",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S50",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "crane-down",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "piper_A1_fused",
+            "bagpipe_B1_sheet",
+            "neighbors_A5_fused",
+            "village_env_A5_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the uilleann bagpipe — wooden chanter and worn leather bag — 100% identical; studio bg/pose/light NOT used; image3: the fused master of the Neighbors — simple Irish villagers in woolen clothes — 100% identical; studio bg/pose/light NOT used; image4: the Irish village square outside the cottage under a golden sky — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop/creature design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "low-angle wide of the village transfixed before the piper"
+            ],
+            [
+              2.0,
+              4.0,
+              "crane-down to frame the piper as hero beneath the golden sky"
+            ]
+          ],
+          "narration_mk": "Од тој ден, сите знаеја дека тој е најдобриот гајдаџија на сите времиња.",
+          "dialogue_mk": "",
+          "kf_first": "Photoreal low-angle wide of the whole village transfixed before the playing piper, golden light and drifting leaves swirling around them, faces turned to wonder, 1216x704",
+          "kf_last": "Crane-down to frame the piper as hero beneath the golden sky, his melody carrying over the hills",
+          "continuity": "Same piper and village; golden closure palette; leaves now beautiful",
+          "motion": "crane-down to hero framing; swirling leaves",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: photoreal low-angle wide of the whole village transfixed before the playing piper, golden light and drifting leaves swirling around them, faces turned to wonder then low-angle wide of the village transfixed before the piper, then crane-down to frame the piper as hero beneath the golden sky settling into crane-down to frame the piper as hero beneath the golden sky, his melody carrying over the hills continuity held: Same piper and village; golden closure palette; leaves now beautiful",
+          "image_prompt_start": "photoreal cinematic: Photoreal low-angle wide of the whole village transfixed before the playing piper, golden light and drifting leaves swirling around them, faces turned to wonder.",
+          "image_prompt_end": "photoreal cinematic: to frame the piper as hero beneath the golden sky, his melody carrying over the hills.",
+          "video_prompt_start": "Low-angle wide of the village transfixed before the piper. crane-down to frame the piper as hero beneath the golden sky. The beat resolves into the next matching frame. Continuity held: Same piper and village; golden closure palette; leaves now beautiful.",
+          "video_prompt_end": "Low-angle wide of the village transfixed before the piper. crane-down to frame the piper as hero beneath the golden sky. The beat resolves into the next matching frame. Continuity held: Same piper and village; golden closure palette; leaves now beautiful.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "cottage_and_village_under_golden_sky",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class",
+        "screen_dir"
+      ],
+      "palette": [
+        "#f59e0b",
+        "#d4af37",
+        "#fef3c7"
+      ],
+      "light_direction": "key light from screen-left, warm golden morning light over the village",
+      "time_of_day": "day"
+    }
+  ],
+  "director_corrections": {
+    "issued": "2026-11-07",
+    "source": "KB §13 DIRECTOR CORRECTIONS — overrides all prior asset/keyframe guidance",
+    "rules": [
+      "DD HEADWEAR: no cap/hood/bandana/mask on head; hood = back-cowl only (cape-like); bare head + teal-blue glowing hair always visible; any head/face covering = REJECT",
+      "LEGENDARY WEAPONS MUST APPEAR: DD = twin Frostbite-class hand crossbows (ice-blue arcane crystal limbs, frost runes, frozen-light string, teal-blue glow); AZ = Dawnbreaker-class greatsword (pale sunsteel, molten-gold runes, golden holy fire edge, sunburst crossguard); hero sheet/keyframe without weapon = INCOMPLETE",
+      "WEAPON ANTI-SLOP: fantasy construction only; crossbow must NEVER read as firearm (no barrel/magazine/stock/Uzi/SMG silhouette = REJECT); anti-slop negatives always appended",
+      "BOSS FACE: Mal'garot HAS a prolific molten-lava face (lava dripping/running, drops falling to ground); faceless boss sheets SUPERSEDED",
+      "LOCATION BRIGHTNESS FLOOR: environment plates silhouette-readable at thumbnail; no murk-dark grades"
+    ],
+    "applies_when": "Activates when face_lock changes from AI-default to an enrolled identity (DD/AZ). AI-default packages carry this as a forward constraint, not a current defect.",
+    "anti_slop_negatives": "firearm, gun, machinegun, Uzi, barrel, magazine, ammo clip, muzzle, modern weapon"
+  }
+}

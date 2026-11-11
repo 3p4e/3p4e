@@ -1,0 +1,2511 @@
+{
+  "num": "30",
+  "title_mk": "Проколнатата кралица",
+  "title_en": "The Cursed Queen",
+  "genre": "Легенда · епска акција",
+  "logline": "Three brothers shelter in a cursed castle where a queen lies frozen in a fountain; the brave youngest endures two nights of beasts to break the spell.",
+  "spec": {
+    "aspect": "16:9",
+    "resolution": "1216x704",
+    "fps": 24,
+    "model": "model-agnostic (chosen at generation)",
+    "style": "photoreal",
+    "flf": true,
+    "language": "mk",
+    "shot_floor": 40,
+    "shot_max": 60,
+    "seed_policy": "fixed-per-shot (same seed → reproducible shot; re-roll per shot id)",
+    "style_anchor": [
+      "Diablo 2 cinematic",
+      "World of Warcraft cinematic",
+      "StarCraft cinematic"
+    ],
+    "negative_prompt": "deformed, extra limbs, morphing, watermark, text, static frame, blurry, low quality, cropped head, cut-off face",
+    "frames": 121,
+    "frames_fallback": 81,
+    "routes": [
+      {
+        "model": "Wan2.1-FLF2V-14B-720P",
+        "input": "start+end native (run START-ONLY)",
+        "status": "WORKING (lead for 14B quality)"
+      },
+      {
+        "model": "Kandinsky 6.0 Lite/Pro",
+        "input": "start-image-only",
+        "status": "WORKING (Pro-distill untested at scale)"
+      },
+      {
+        "model": "SkyReels-V3 R2V-14B",
+        "input": "start-image-only",
+        "status": "WORKING (fallback)"
+      },
+      {
+        "model": "LTX-Video 2B v0.9.5",
+        "input": "start-image-only",
+        "status": "WORKING (small/fast, low ceiling)"
+      },
+      {
+        "model": "Mochi-1",
+        "input": "start-image-only",
+        "status": "untested here"
+      },
+      {
+        "model": "LTX-2.3 22B distilled",
+        "input": "start-image-only",
+        "status": "DEAD (nanobind native-crash, 42 note)"
+      }
+    ],
+    "model_note": "Model chosen per story at generation (43 §4). Keyframes + continuation prompts are generator-agnostic; only the render command differs per model."
+  },
+  "cast": [
+    {
+      "role": "Најмалиот брат / The Youngest Brother",
+      "trait": "Храбар и добар младич, најмладиот од тројцата браќа.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Кралицата / The Queen",
+      "trait": "Прекрасна кралица заробена под мразот на фонтаната.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Лавот / The Lion",
+      "trait": "Огромен лав со светкави очи, чувар на проклетството.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Волкот / The Wolf",
+      "trait": "Сив волк што ноќе ги демне одаите.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Постарите браќа / The Older Brothers",
+      "trait": "Двајцата постари браќа, преплашени и пред да побегнат.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    }
+  ],
+  "acts": [
+    {
+      "id": "act1",
+      "num": "Act I",
+      "title": "Ноќно засолниште",
+      "color": "#2dd4bf",
+      "pct": 28,
+      "synopsis": "Тројца браќа пристигнуваат ноќе во мистериозно здание; лавот и волкот ги прогонуваат, а најмалиот спие непоколебливо.",
+      "shots": [
+        {
+          "id": "S01",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "youngest_A3_fused",
+            "brothers_A5_fused",
+            "castle_E1_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Youngest Brother - brave, kind young man, youngest of the three brothers — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Older Brothers - two frightened older brothers — 100% identical; studio bg/pose/light NOT used; image3: the old-castle design - a silent, looming stone building at dusk — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "slow crane-down following the walkers"
+            ],
+            [
+              1.93,
+              3.5,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Тројца браќа патуваа кон престолнината на соседното кралство.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of three brothers in travel cloaks walking a dusty road toward a distant walled capital at golden dusk, photoreal Diablo 2 cinematic grade, 1216x704",
+          "kf_last": "Crane-down as the road curves toward the capital gates, banners fluttering on towers",
+          "continuity": "Three brothers in earth-toned travel cloaks; warm dusk palette",
+          "motion": "slow crane-down following the walkers",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of three brothers in travel cloaks walking a dusty road toward a distant walled capital at golden dusk, photoreal Diablo 2 cinematic grade Youngest slender, hero, in cloak, wreathed in golden glow Brothers lanky, commoner, in cloak, carrying satchel then slow crane-down following the walkers, then resolve settling into crane-down as the road curves toward the capital gates, banners fluttering on towers with a low radiant hum continuity held: Three brothers in earth-toned travel cloaks; warm dusk palette",
+          "image_prompt_start": "photoreal cinematic: wide of three brothers in travel cloaks walking a dusty road toward a distant walled capital at golden dusk, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: as the road curves toward the capital gates, banners fluttering on towers.",
+          "video_prompt_start": "Slow crane-down following the walkers. resolve. The beat resolves into the next matching frame. Continuity held: Three brothers in earth-toned travel cloaks; warm dusk palette.",
+          "video_prompt_end": "Slow crane-down following the walkers. resolve. The beat resolves into the next matching frame. Continuity held: Three brothers in earth-toned travel cloaks; warm dusk palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S02",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "youngest_A3_fused",
+            "brothers_A5_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Youngest Brother - brave, kind young man, youngest of the three brothers — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Older Brothers - two frightened older brothers — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "steady lateral track alongside the brothers"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "По некое време решија да застанат и да отпочинат.",
+          "dialogue_mk": "",
+          "kf_first": "Medium tracking shot of the three brothers walking side by side, satchels on shoulders, tired faces in the low sun",
+          "kf_last": "They slow as their eyes lift to something off-screen ahead",
+          "continuity": "Same three cloaks and satchels from S01",
+          "motion": "steady lateral track alongside the brothers",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium tracking shot of the three brothers walking side by side, satchels on shoulders, tired faces in the low sun Youngest slender, hero, in cloak, wreathed in golden glow Brothers lanky, commoner, in cloak, carrying satchel then steady lateral track alongside the brothers, then resolve settling into they slow as their eyes lift to something off-screen ahead with a low radiant hum continuity held: Same three cloaks and satchels from S01",
+          "image_prompt_start": "photoreal cinematic: of the three brothers walking side by side, satchels on shoulders, tired faces in the low sun.",
+          "image_prompt_end": "photoreal cinematic: They slow as their eyes lift to something off-screen ahead.",
+          "video_prompt_start": "Steady lateral track alongside the brothers. resolve. The beat resolves into the next matching frame. Continuity held: Same three cloaks and satchels from S01.",
+          "video_prompt_end": "Steady lateral track alongside the brothers. resolve. The beat resolves into the next matching frame. Continuity held: Same three cloaks and satchels from S01.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S03",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-left",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "castle_E1_prop"
+          ],
+          "ref_scope": "image1: the old-castle design - a silent, looming stone building at dusk — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "slow pan-left onto the building"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Пред нив се издигна едно старо, тивко здание.",
+          "dialogue_mk": "",
+          "kf_first": "Wide of the empty road as the camera pans left to reveal a looming stone building silhouetted against a violet dusk sky",
+          "kf_last": "The old iron door of the building fills the frame under fading light",
+          "continuity": "Dusk palette deepens toward violet from S01-S02",
+          "motion": "slow pan-left onto the building",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide of the empty road as the camera pans left to reveal a looming stone building silhouetted against a violet dusk sky then slow pan-left onto the building, then resolve settling into the old iron door of the building fills the frame under fading light continuity held: Dusk palette deepens toward violet from S01-S02",
+          "image_prompt_start": "photoreal cinematic: of the empty road as the left to reveal a looming stone building silhouetted against a violet dusk sky.",
+          "image_prompt_end": "photoreal cinematic: The old iron door of the building fills the frame under fading light.",
+          "video_prompt_start": "Slow pan-left onto the building. resolve. The beat resolves into the next matching frame. Continuity held: Dusk palette deepens toward violet from S01-S02.",
+          "video_prompt_end": "Slow pan-left onto the building. resolve. The beat resolves into the next matching frame. Continuity held: Dusk palette deepens toward violet from S01-S02.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S04",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 2.8,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "castle_E1_prop"
+          ],
+          "ref_scope": "image1: the old-castle design - a silent, looming stone building at dusk — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.54,
+              "slow push-in toward the door"
+            ],
+            [
+              1.54,
+              2.8,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Вратата се отвори со тежок звук.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of the heavy iron door of the stone building, weathered hinges and old carvings in the wood",
+          "kf_last": "Push-in on the door handle as a hand reaches to turn it",
+          "continuity": "Same iron door from S03",
+          "motion": "slow push-in toward the door",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of the heavy iron door of the stone building, weathered hinges and old carvings in the wood then slow push-in toward the door, then resolve settling into push-in on the door handle as a hand reaches to turn it continuity held: Same iron door from S03",
+          "image_prompt_start": "photoreal cinematic: medium of the heavy iron door of the stone building, weathered hinges and old carvings in the wood.",
+          "image_prompt_end": "photoreal cinematic: on the door handle as a hand reaches to turn it.",
+          "video_prompt_start": "Slow push-in toward the door. resolve. The beat resolves into the next matching frame. Continuity held: Same iron door from S03.",
+          "video_prompt_end": "Slow push-in toward the door. resolve. The beat resolves into the next matching frame. Continuity held: Same iron door from S03.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S05",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.2,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "youngest_A3_fused",
+            "brothers_A5_fused",
+            "chamber_E2_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Youngest Brother - brave, kind young man, youngest of the three brothers — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Older Brothers - two frightened older brothers — 100% identical; studio bg/pose/light NOT used; image3: the sleeping-chamber design - a dim stone room with three simple beds and torchlight — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.76,
+              "static"
+            ],
+            [
+              1.76,
+              3.2,
+              "light flicker"
+            ]
+          ],
+          "narration_mk": "Внатре најдоа една одаја и си легнаа да преспијат.",
+          "dialogue_mk": "",
+          "kf_first": "Wide of a dim stone chamber with three simple beds, torchlight flickering on the walls, the brothers settling in",
+          "kf_last": "Torch flames calm as the room quiets, shadows lengthening",
+          "continuity": "Stone interior palette; three beds established",
+          "motion": "static, light flicker",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide of a dim stone chamber with three simple beds, torchlight flickering on the walls, the brothers settling in Youngest slender, hero, in cloak, wreathed in golden glow Brothers lanky, commoner, in cloak, carrying satchel then static, then light flicker settling into torch flames calm as the room quiets, shadows lengthening with a low radiant hum continuity held: Stone interior palette; three beds established",
+          "image_prompt_start": "photoreal cinematic: of a dim stone chamber with three simple beds, torchlight flickering on the walls, the brothers settling in.",
+          "image_prompt_end": "photoreal cinematic: Torch flames calm as the room quiets, shadows lengthening.",
+          "video_prompt_start": "Static. light flicker. The beat resolves into the next matching frame. Continuity held: Stone interior palette; three beds established.",
+          "video_prompt_end": "Static. light flicker. The beat resolves into the next matching frame. Continuity held: Stone interior palette; three beds established.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S06",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.8,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "youngest_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Youngest Brother - brave, kind young man, youngest of the three brothers — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.54,
+              "static"
+            ],
+            [
+              1.54,
+              2.8,
+              "gentle breath"
+            ]
+          ],
+          "narration_mk": "Најмалиот брат заспа длабоко, без грижа.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the youngest brother's peaceful sleeping face, torch glow warming his skin",
+          "kf_last": "His eyes remain softly closed, breathing slow and steady",
+          "continuity": "Youngest brother face established; warm torchlight",
+          "motion": "static, gentle breath",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the youngest brother's peaceful sleeping face, torch glow warming his skin Youngest slender, hero, in cloak, wreathed in golden glow then static, then gentle breath settling into his eyes remain softly closed, breathing slow and steady with a low radiant hum continuity held: Youngest brother face established; warm torchlight",
+          "image_prompt_start": "photoreal cinematic: of the youngest brother's peaceful sleeping face, torch glow warming his skin.",
+          "image_prompt_end": "photoreal cinematic: His eyes remain softly closed, breathing slow and steady.",
+          "video_prompt_start": "Static. gentle breath. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Youngest brother face established; warm torchlight.",
+          "video_prompt_end": "Static. gentle breath. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Youngest brother face established; warm torchlight.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S07",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "chamber_E2_prop"
+          ],
+          "ref_scope": "image1: the sleeping-chamber design - a dim stone room with three simple beds and torchlight — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "door creak"
+            ]
+          ],
+          "narration_mk": "Ноќта, нешто влезе во нивната одаја.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of the sleeping chamber in deep night, the wooden door slowly creaking open, a sliver of moonlight on the floor",
+          "kf_last": "The door stands ajar, darkness and moonlight spilling inward",
+          "continuity": "Same chamber from S05; night palette",
+          "motion": "static, door creak",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of the sleeping chamber in deep night, the wooden door slowly creaking open, a sliver of moonlight on the floor then static, then door creak settling into the door stands ajar, darkness and moonlight spilling inward continuity held: Same chamber from S05; night palette",
+          "image_prompt_start": "photoreal cinematic: wide of the sleeping chamber in deep night, the wooden door slowly creaking open, a sliver of moonlight on the floor.",
+          "image_prompt_end": "photoreal cinematic: The door stands ajar, darkness and moonlight spilling inward.",
+          "video_prompt_start": "Static. door creak. The beat resolves into the next matching frame. Continuity held: Same chamber from S05; night palette.",
+          "video_prompt_end": "Static. door creak. The beat resolves into the next matching frame. Continuity held: Same chamber from S05; night palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S08",
+          "shot_type": "BOSS-ONLY",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "lion_B1_sheet"
+          ],
+          "ref_scope": "image1: the lion sheet - a huge lion with gleaming eyes, guardian of the curse — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "subject identity",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "slow push-in on the lion"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Прво се појави еден лав.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of a great lion stepping through the doorway, amber eyes gleaming in moonlight, mane glowing",
+          "kf_last": "Push-in on the lion's calm but watchful eyes",
+          "continuity": "Lion design established; moonlight rim light",
+          "motion": "slow push-in on the lion",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of a great lion stepping through the doorway, amber eyes gleaming in moonlight, mane glowing then slow push-in on the lion, then resolve settling into push-in on the lion's calm but watchful eyes continuity held: Lion design established; moonlight rim light",
+          "image_prompt_start": "photoreal cinematic: medium of a great lion stepping through the doorway, amber eyes gleaming in moonlight, mane glowing.",
+          "image_prompt_end": "photoreal cinematic: on the lion's calm but watchful eyes.",
+          "video_prompt_start": "Slow push-in on the lion. resolve. The action plays out at full force and lands in a held, readable end pose. Continuity held: Lion design established; moonlight rim light.",
+          "video_prompt_end": "Slow push-in on the lion. resolve. The action plays out at full force and lands in a held, readable end pose. Continuity held: Lion design established; moonlight rim light.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S09",
+          "shot_type": "BOSS-ONLY",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "pan-left",
+          "dur": 2.8,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "wolf_B2_sheet"
+          ],
+          "ref_scope": "image1: the wolf sheet - a grey wolf that prowls the chambers at night — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "subject identity",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.54,
+              "slow pan-left following the wolf"
+            ],
+            [
+              1.54,
+              2.8,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Зад него се прокрадна еден волк.",
+          "dialogue_mk": "",
+          "kf_first": "Close shot panning left as a grey wolf slips silently in behind the lion, low and watchful",
+          "kf_last": "The wolf's pale eyes catch the moonlight as it pauses",
+          "continuity": "Wolf design established; same moonlight",
+          "motion": "slow pan-left following the wolf",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close shot panning left as a grey wolf slips silently in behind the lion, low and watchful then slow pan-left following the wolf, then resolve settling into the wolf's pale eyes catch the moonlight as it pauses continuity held: Wolf design established; same moonlight",
+          "image_prompt_start": "photoreal cinematic: shot left as a grey wolf slips silently in behind the lion, low and watchful.",
+          "image_prompt_end": "photoreal cinematic: The wolf's pale eyes catch the moonlight as it pauses.",
+          "video_prompt_start": "Slow pan-left following the wolf. resolve. The action plays out at full force and lands in a held, readable end pose. Continuity held: Wolf design established; same moonlight.",
+          "video_prompt_end": "Slow pan-left following the wolf. resolve. The action plays out at full force and lands in a held, readable end pose. Continuity held: Wolf design established; same moonlight.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S10",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "brothers_A5_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Older Brothers - two frightened older brothers — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "quick track"
+            ],
+            [
+              1.65,
+              3.0,
+              "they recoil"
+            ]
+          ],
+          "narration_mk": "Двајцата постари браќа се будеа и се уплашија.",
+          "dialogue_mk": "",
+          "kf_first": "Medium tracking shot of the two older brothers jolting awake, eyes wide with terror, scrambling back on their beds",
+          "kf_last": "They glance toward the door and shrink against the wall",
+          "continuity": "Older brothers design; same chamber torchlight",
+          "motion": "quick track as they recoil",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium tracking shot of the two older brothers jolting awake, eyes wide with terror, scrambling back on their beds Brothers lanky, commoner, in cloak, carrying satchel then quick track, then they recoil settling into they glance toward the door and shrink against the wall continuity held: Older brothers design; same chamber torchlight",
+          "image_prompt_start": "photoreal cinematic: of the two older brothers jolting awake, eyes wide with terror, scrambling back on their beds.",
+          "image_prompt_end": "photoreal cinematic: They glance toward the door and shrink against the wall.",
+          "video_prompt_start": "Quick track. they recoil. The beat resolves into the next matching frame. Continuity held: Older brothers design; same chamber torchlight.",
+          "video_prompt_end": "Quick track. they recoil. The beat resolves into the next matching frame. Continuity held: Older brothers design; same chamber torchlight.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S11",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.2,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "brothers_A5_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Older Brothers - two frightened older brothers — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.76,
+              "fast tracking shot of the fleeing brothers"
+            ],
+            [
+              1.76,
+              3.2,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Тие избегаа кон ридовите.",
+          "dialogue_mk": "",
+          "kf_first": "Wide tracking shot of the two older brothers fleeing out through a side opening toward moonlit hills, cloaks flying",
+          "kf_last": "Their silhouettes vanish into the dark hillside",
+          "continuity": "Same two brothers from S10; night exterior",
+          "motion": "fast tracking shot of the fleeing brothers",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide tracking shot of the two older brothers fleeing out through a side opening toward moonlit hills, cloaks flying Brothers lanky, commoner, in cloak, carrying satchel then fast tracking shot of the fleeing brothers, then resolve settling into their silhouettes vanish into the dark hillside continuity held: Same two brothers from S10; night exterior",
+          "image_prompt_start": "photoreal cinematic: of the two older brothers fleeing out through a side opening toward moonlit hills, cloaks flying.",
+          "image_prompt_end": "photoreal cinematic: Their silhouettes vanish into the dark hillside.",
+          "video_prompt_start": "Fast tracking shot of the fleeing brothers. resolve. The beat resolves into the next matching frame. Continuity held: Same two brothers from S10; night exterior.",
+          "video_prompt_end": "Fast tracking shot of the fleeing brothers. resolve. The beat resolves into the next matching frame. Continuity held: Same two brothers from S10; night exterior.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S12",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.8,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "youngest_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Youngest Brother - brave, kind young man, youngest of the three brothers — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.54,
+              "static"
+            ],
+            [
+              1.54,
+              2.8,
+              "gentle breath"
+            ]
+          ],
+          "narration_mk": "Најмалиот не насети ништо и сѐ уште спиеше.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the youngest brother still fast asleep, undisturbed, moonlight crossing his calm face",
+          "kf_last": "He does not stir, breathing evenly",
+          "continuity": "Youngest brother from S06; now moonlight",
+          "motion": "static, gentle breath",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the youngest brother still fast asleep, undisturbed, moonlight crossing his calm face Youngest slender, hero, in cloak, wreathed in golden glow then static, then gentle breath settling into he does not stir, breathing evenly with a low radiant hum continuity held: Youngest brother from S06; now moonlight",
+          "image_prompt_start": "photoreal cinematic: of the youngest brother still fast asleep, undisturbed, moonlight crossing his calm face.",
+          "image_prompt_end": "photoreal cinematic: He does not stir, breathing evenly.",
+          "video_prompt_start": "Static. gentle breath. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Youngest brother from S06; now moonlight.",
+          "video_prompt_end": "Static. gentle breath. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Youngest brother from S06; now moonlight.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S13",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "static",
+          "dur": 3.2,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "youngest_A3_fused",
+            "lion_B1_sheet",
+            "wolf_B2_sheet",
+            "chamber_E2_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Youngest Brother - brave, kind young man, youngest of the three brothers — 100% identical; studio bg/pose/light NOT used; image2: the lion sheet - a huge lion with gleaming eyes, guardian of the curse — 100% identical; studio bg/pose/light NOT used; image3: the wolf sheet - a grey wolf that prowls the chambers at night — 100% identical; studio bg/pose/light NOT used; image4: the sleeping-chamber design - a dim stone room with three simple beds and torchlight — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "subject identity",
+            "prop design",
+            "palette",
+            "light direction"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.76,
+              "static"
+            ],
+            [
+              1.76,
+              3.2,
+              "light shift to dawn"
+            ]
+          ],
+          "narration_mk": "Ѕверовите кружеа, но не го допреа.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of the lion and wolf circling the sleeping youngest brother in the moonlit chamber, calm and watchful",
+          "kf_last": "First pale dawn light begins to creep through the window as the beasts retreat to shadows",
+          "continuity": "Lion, wolf, and youngest brother in chamber; night to dawn transition",
+          "motion": "static, light shift to dawn",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of the lion and wolf circling the sleeping youngest brother in the moonlit chamber, calm and watchful Youngest slender, hero, in cloak, wreathed in golden glow then static, then light shift to dawn settling into first pale dawn light begins to creep through the window as the beasts retreat to shadows with a low radiant hum continuity held: Lion, wolf, and youngest brother in chamber; night to dawn transition",
+          "image_prompt_start": "photoreal cinematic: wide of the lion and wolf circling the sleeping youngest brother in the moonlit chamber, calm and watchful.",
+          "image_prompt_end": "photoreal cinematic: First pale dawn light begins to creep through the window as the beasts retreat to shadows.",
+          "video_prompt_start": "Static. light shift to dawn. The beat resolves into the next matching frame. Continuity held: Lion, wolf, and youngest brother in chamber; night to dawn transition.",
+          "video_prompt_end": "Static. light shift to dawn. The beat resolves into the next matching frame. Continuity held: Lion, wolf, and youngest brother in chamber; night to dawn transition.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "cursed_old_castle_and_sleeping_chamber",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#2dd4bf",
+        "#4c1d95",
+        "#1a2a4a"
+      ],
+      "light_direction": "key light from screen-left, warm duskthen torchlight fading to cold moonlight",
+      "time_of_day": "dusk"
+    },
+    {
+      "id": "act2",
+      "num": "Act II",
+      "title": "Проклетството",
+      "color": "#f59e0b",
+      "pct": 52,
+      "synopsis": "Младичот ја открива кралицата заробена под мраз во фонтаната и ја дознава клетвата; две ноќи по ред ги заробува лавот и волкот во визбата.",
+      "shots": [
+        {
+          "id": "S14",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pull-back",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "youngest_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Youngest Brother - brave, kind young man, youngest of the three brothers — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "slow pull-back"
+            ],
+            [
+              1.65,
+              3.0,
+              "he walks the hall"
+            ]
+          ],
+          "narration_mk": "Кога се разбуди, тргна да ги бара браќата.",
+          "dialogue_mk": "",
+          "kf_first": "Wide of the youngest brother walking through silent stone hallways at first dawn, voice echoing as he calls out",
+          "kf_last": "Pull-back to reveal the long empty corridor stretching behind him",
+          "continuity": "Youngest brother from S12; interior dawn palette",
+          "motion": "slow pull-back as he walks the hall",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide of the youngest brother walking through silent stone hallways at first dawn, voice echoing as he calls out Youngest slender, hero, in cloak, wreathed in golden glow then slow pull-back, then he walks the hall settling into pull-back to reveal the long empty corridor stretching behind him with a low radiant hum continuity held: Youngest brother from S12; interior dawn palette",
+          "image_prompt_start": "photoreal cinematic: of the youngest brother walking through silent stone hallways at first dawn, voice echoing as he calls out.",
+          "image_prompt_end": "photoreal cinematic: to reveal the long empty corridor stretching behind him.",
+          "video_prompt_start": "Slow pull-back. he walks the hall. The beat resolves into the next matching frame. Continuity held: Youngest brother from S12; interior dawn palette.",
+          "video_prompt_end": "Slow pull-back. he walks the hall. The beat resolves into the next matching frame. Continuity held: Youngest brother from S12; interior dawn palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S15",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "garden_E1_prop",
+            "fountain_E3_prop"
+          ],
+          "ref_scope": "image1: the overgrown-castle-garden design - mossy stone walls and tangled roses around the fountain — 100% identical; studio bg/pose/light NOT used; image2: the great-fountain design - the huge stone fountain sealed under thick ice — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "crane-down over the garden toward the fountain"
+            ],
+            [
+              1.93,
+              3.5,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Влезе во огромна, зафрлена градина.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide crane-down into a vast overgrown garden, mossy stone walls, tangled roses, a great fountain glinting at its center",
+          "kf_last": "Crane-down settles on the enormous stone fountain, water still and frozen",
+          "continuity": "Castle exterior palette; garden introduced",
+          "motion": "crane-down over the garden toward the fountain",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide crane-down into a vast overgrown garden, mossy stone walls, tangled roses, a great fountain glinting at its center then crane-down over the garden toward the fountain, then resolve settling into crane-down settles on the enormous stone fountain, water still and frozen with leaves stir continuity held: Castle exterior palette; garden introduced",
+          "image_prompt_start": "photoreal cinematic: wide into a vast overgrown garden, mossy stone walls, tangled roses, a great fountain glinting at its center.",
+          "image_prompt_end": "photoreal cinematic: on the enormous stone fountain, water still and frozen.",
+          "video_prompt_start": "Crane-down over the garden toward the fountain. resolve. The beat resolves into the next matching frame. Continuity held: Castle exterior palette; garden introduced.",
+          "video_prompt_end": "Crane-down over the garden toward the fountain. resolve. The beat resolves into the next matching frame. Continuity held: Castle exterior palette; garden introduced.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S16",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.2,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "fountain_E3_prop"
+          ],
+          "ref_scope": "image1: the great-fountain design - the huge stone fountain sealed under thick ice — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.76,
+              "slow push-in on the frozen fountain"
+            ],
+            [
+              1.76,
+              3.2,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Во фонтаната имаше девојка заробена под мраз.",
+          "dialogue_mk": "",
+          "kf_first": "Medium push-in on the huge fountain, its basin sealed under thick, cloudy ice, morning light on the frost",
+          "kf_last": "Push-in closer as a silhouette becomes visible beneath the frozen surface",
+          "continuity": "Fountain from S15; morning light palette",
+          "motion": "slow push-in on the frozen fountain",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium push-in on the huge fountain, its basin sealed under thick, cloudy ice, morning light on the frost then slow push-in on the frozen fountain, then resolve settling into push-in closer as a silhouette becomes visible beneath the frozen surface continuity held: Fountain from S15; morning light palette",
+          "image_prompt_start": "photoreal cinematic: on the huge fountain, its basin sealed under thick, cloudy ice, morning light on the frost.",
+          "image_prompt_end": "photoreal cinematic: closer as a silhouette becomes visible beneath the frozen surface.",
+          "video_prompt_start": "Slow push-in on the frozen fountain. resolve. The beat resolves into the next matching frame. Continuity held: Fountain from S15; morning light palette.",
+          "video_prompt_end": "Slow push-in on the frozen fountain. resolve. The beat resolves into the next matching frame. Continuity held: Fountain from S15; morning light palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S17",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.2,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "queen_A4_fused",
+            "fountain_E3_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Queen - beautiful queen frozen beneath the fountain ice — 100% identical; studio bg/pose/light NOT used; image2: the great-fountain design - the huge stone fountain sealed under thick ice — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.76,
+              "slow push-in on the face under ice"
+            ],
+            [
+              1.76,
+              3.2,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Нејзиното лице беше прекрасно и мирно.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up through frosted ice of a beautiful queen's face, eyes closed, long hair suspended in the frozen water",
+          "kf_last": "Push-in until her features fill the frame beneath the ice",
+          "continuity": "Queen design beneath ice; soft blue frost palette",
+          "motion": "slow push-in on the face under ice",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up through frosted ice of a beautiful queen's face, eyes closed, long hair suspended in the frozen water Queen slender, queen, in dress, crown, wreathed in frost glow then slow push-in on the face under ice, then resolve settling into push-in until her features fill the frame beneath the ice with ice groans continuity held: Queen design beneath ice; soft blue frost palette",
+          "image_prompt_start": "photoreal cinematic: through frosted ice of a beautiful queen's face, eyes closed, long hair suspended in the frozen water.",
+          "image_prompt_end": "photoreal cinematic: until her features fill the frame beneath the ice.",
+          "video_prompt_start": "Slow push-in on the face under ice. resolve. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Queen design beneath ice; soft blue frost palette.",
+          "video_prompt_end": "Slow push-in on the face under ice. resolve. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Queen design beneath ice; soft blue frost palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S18",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "over-shoulder",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "youngest_A3_fused",
+            "queen_A4_fused",
+            "fountain_E3_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Youngest Brother - brave, kind young man, youngest of the three brothers — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Queen - beautiful queen frozen beneath the fountain ice — 100% identical; studio bg/pose/light NOT used; image3: the great-fountain design - the huge stone fountain sealed under thick ice — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "breath fogging"
+            ]
+          ],
+          "narration_mk": "Младичот се наведна над ладната површина.",
+          "dialogue_mk": "",
+          "kf_first": "Over-shoulder close of the youngest brother leaning over the frozen fountain, his reflection ghosting on the ice near the queen's face",
+          "kf_last": "His breath fogs the ice as he peers closer",
+          "continuity": "Youngest brother and queen under ice; frost palette",
+          "motion": "static, breath fogging",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: over-shoulder close of the youngest brother leaning over the frozen fountain, his reflection ghosting on the ice near the queen's face Youngest slender, hero, in cloak, wreathed in golden glow Queen slender, queen, in dress, crown, wreathed in frost glow then static, then breath fogging settling into his breath fogs the ice as he peers closer with a low radiant hum, ice groans continuity held: Youngest brother and queen under ice; frost palette",
+          "image_prompt_start": "photoreal cinematic: Over-shoulder close of the youngest brother leaning over the frozen fountain, his reflection ghosting on the ice near the queen's face.",
+          "image_prompt_end": "photoreal cinematic: His breath fogs the ice as he peers closer.",
+          "video_prompt_start": "Static. breath fogging. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Youngest brother and queen under ice; frost palette.",
+          "video_prompt_end": "Static. breath fogging. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Youngest brother and queen under ice; frost palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S19",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "shot-reverse",
+          "dur": 3.2,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "youngest_A3_fused",
+            "fountain_E3_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Youngest Brother - brave, kind young man, youngest of the three brothers — 100% identical; studio bg/pose/light NOT used; image2: the great-fountain design - the huge stone fountain sealed under thick ice — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.76,
+              "shot-reverse framing"
+            ],
+            [
+              1.76,
+              3.2,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "„Што правиш тука?“, ја праша.",
+          "dialogue_mk": "Најмалиот брат: „Што правиш тука?“",
+          "kf_first": "Medium shot-reverse on the youngest brother as he speaks softly toward the ice, morning light on his face",
+          "kf_last": "He waits, searching the frozen surface for an answer",
+          "continuity": "Youngest brother; garden morning palette",
+          "motion": "shot-reverse framing",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium shot-reverse on the youngest brother as he speaks softly toward the ice, morning light on his face Youngest slender, hero, in cloak, wreathed in golden glow then shot-reverse framing, then resolve settling into he waits, searching the frozen surface for an answer with a low radiant hum a voice speaks in Macedonian: \"Најмалиот брат: „Што правиш тука?“\" continuity held: Youngest brother; garden morning palette",
+          "image_prompt_start": "photoreal cinematic: shot-reverse on the youngest brother as he speaks softly toward the ice, morning light on his face.",
+          "image_prompt_end": "photoreal cinematic: He waits, searching the frozen surface for an answer.",
+          "video_prompt_start": "Shot-reverse framing. resolve. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Најмалиот брат: „Што правиш тука?“\" Continuity held: Youngest brother; garden morning palette.",
+          "video_prompt_end": "Shot-reverse framing. resolve. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Најмалиот брат: „Што правиш тука?“\" Continuity held: Youngest brother; garden morning palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S20",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "shot-reverse",
+          "dur": 3.2,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "queen_A4_fused",
+            "fountain_E3_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Queen - beautiful queen frozen beneath the fountain ice — 100% identical; studio bg/pose/light NOT used; image2: the great-fountain design - the huge stone fountain sealed under thick ice — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.76,
+              "shot-reverse"
+            ],
+            [
+              1.76,
+              3.2,
+              "faint movement beneath ice"
+            ]
+          ],
+          "narration_mk": "Од мразот одговори кралицата.",
+          "dialogue_mk": "Кралицата: „Јас сум кралицата на овој замок и сум проколната.“",
+          "kf_first": "Medium shot-reverse through the ice on the queen's face, her eyes now open, lips moving faintly beneath the frost",
+          "kf_last": "Her gaze meets his through the frozen barrier",
+          "continuity": "Queen under ice; frosted blue palette",
+          "motion": "shot-reverse, faint movement beneath ice",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium shot-reverse through the ice on the queen's face, her eyes now open, lips moving faintly beneath the frost Queen slender, queen, in dress, crown, wreathed in frost glow then shot-reverse, then faint movement beneath ice settling into her gaze meets his through the frozen barrier with ice groans a voice speaks in Macedonian: \"Кралицата: „Јас сум кралицата на овој замок и сум проколната.“\" continuity held: Queen under ice; frosted blue palette",
+          "image_prompt_start": "photoreal cinematic: shot-reverse through the ice on the queen's face, her eyes now open, lips moving faintly beneath the frost.",
+          "image_prompt_end": "photoreal cinematic: Her gaze meets his through the frozen barrier.",
+          "video_prompt_start": "Shot-reverse. faint movement beneath ice. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Кралицата: „Јас сум кралицата на овој замок и сум проколната.“\" Continuity held: Queen under ice; frosted blue palette.",
+          "video_prompt_end": "Shot-reverse. faint movement beneath ice. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Кралицата: „Јас сум кралицата на овој замок и сум проколната.“\" Continuity held: Queen under ice; frosted blue palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S21",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.2,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "queen_A4_fused",
+            "fountain_E3_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Queen - beautiful queen frozen beneath the fountain ice — 100% identical; studio bg/pose/light NOT used; image2: the great-fountain design - the huge stone fountain sealed under thick ice — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.76,
+              "slow push-in on her eyes"
+            ],
+            [
+              1.76,
+              3.2,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Таа му рече дека две ноќи ќе ја ослободат.",
+          "dialogue_mk": "Кралицата: „Ако поминеш уште две ноќи тука без да избегаш, ќе ме ослободиш.“",
+          "kf_first": "Close-up on the queen's pleading eyes beneath the ice, a faint glow of hope in them",
+          "kf_last": "Push-in on her eyes as her words settle",
+          "continuity": "Queen eyes beneath ice; cold blue palette with warm glint",
+          "motion": "slow push-in on her eyes",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up on the queen's pleading eyes beneath the ice, a faint glow of hope in them Queen slender, queen, in dress, crown, wreathed in frost glow then slow push-in on her eyes, then resolve settling into push-in on her eyes as her words settle with ice groans a voice speaks in Macedonian: \"Кралицата: „Ако поминеш уште две ноќи тука без да избегаш, ќе ме ослободиш.“\" continuity held: Queen eyes beneath ice; cold blue palette with warm glint",
+          "image_prompt_start": "photoreal cinematic: on the queen's pleading eyes beneath the ice, a faint glow of hope in them.",
+          "image_prompt_end": "photoreal cinematic: on her eyes as her words.",
+          "video_prompt_start": "Slow push-in on her eyes. resolve. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Кралицата: „Ако поминеш уште две ноќи тука без да избегаш, ќе ме ослободиш.“\" Continuity held: Queen eyes beneath ice; cold blue palette with warm glint.",
+          "video_prompt_end": "Slow push-in on her eyes. resolve. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Кралицата: „Ако поминеш уште две ноќи тука без да избегаш, ќе ме ослободиш.“\" Continuity held: Queen eyes beneath ice; cold blue palette with warm glint.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S22",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "youngest_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Youngest Brother - brave, kind young man, youngest of the three brothers — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "firm nod"
+            ]
+          ],
+          "narration_mk": "Младичот не се двоумеше.",
+          "dialogue_mk": "Најмалиот брат: „Во ред.“",
+          "kf_first": "Medium of the youngest brother straightening, face set with quiet determination, morning light behind him",
+          "kf_last": "He gives a slow, sure nod toward the ice",
+          "continuity": "Youngest brother; morning light intensifies",
+          "motion": "static, firm nod",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the youngest brother straightening, face set with quiet determination, morning light behind him Youngest slender, hero, in cloak, wreathed in golden glow then static, then firm nod settling into he gives a slow, sure nod toward the ice with a low radiant hum a voice speaks in Macedonian: \"Најмалиот брат: „Во ред.“\" continuity held: Youngest brother; morning light intensifies",
+          "image_prompt_start": "photoreal cinematic: of the youngest brother straightening, face set with quiet determination, morning light behind him.",
+          "image_prompt_end": "photoreal cinematic: He gives a slow, sure nod toward the ice.",
+          "video_prompt_start": "Static. firm nod. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Најмалиот брат: „Во ред.“\" Continuity held: Youngest brother; morning light intensifies.",
+          "video_prompt_end": "Static. firm nod. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Најмалиот брат: „Во ред.“\" Continuity held: Youngest brother; morning light intensifies.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S23",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "castle_E1_prop",
+            "garden_E1_prop"
+          ],
+          "ref_scope": "image1: the old-castle design - a silent, looming stone building at dusk — 100% identical; studio bg/pose/light NOT used; image2: the overgrown-castle-garden design - mossy stone walls and tangled roses around the fountain — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "crane-up to night sky"
+            ],
+            [
+              1.93,
+              3.5,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Падна ноќта.",
+          "dialogue_mk": "",
+          "kf_first": "Wide crane-up over the castle as dusk swallows the garden, torches flaring to life along the walls",
+          "kf_last": "Crane-up to a star-pricked night sky over the dark castle",
+          "continuity": "Castle exterior; night palette",
+          "motion": "crane-up to night sky",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide crane-up over the castle as dusk swallows the garden, torches flaring to life along the walls then crane-up to night sky, then resolve settling into crane-up to a star-pricked night sky over the dark castle with leaves stir continuity held: Castle exterior; night palette",
+          "image_prompt_start": "photoreal cinematic: over the castle as dusk swallows the garden, torches flaring to life along the walls.",
+          "image_prompt_end": "photoreal cinematic: to a star-pricked night sky over the dark castle.",
+          "video_prompt_start": "Crane-up to night sky. resolve. The beat resolves into the next matching frame. Continuity held: Castle exterior; night palette.",
+          "video_prompt_end": "Crane-up to night sky. resolve. The beat resolves into the next matching frame. Continuity held: Castle exterior; night palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S24",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "youngest_A3_fused",
+            "chamber_E2_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Youngest Brother - brave, kind young man, youngest of the three brothers — 100% identical; studio bg/pose/light NOT used; image2: the sleeping-chamber design - a dim stone room with three simple beds and torchlight — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "track"
+            ],
+            [
+              1.65,
+              3.0,
+              "he rises"
+            ]
+          ],
+          "narration_mk": "Тој се разбуди кога се стемни.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium tracking shot of the youngest brother rising from his bed in the dark chamber, torchlight flickering",
+          "kf_last": "He stands, alert, listening to the silence",
+          "continuity": "Youngest brother in chamber; torchlit night",
+          "motion": "track as he rises",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium tracking shot of the youngest brother rising from his bed in the dark chamber, torchlight flickering Youngest slender, hero, in cloak, wreathed in golden glow then track, then he rises settling into he stands, alert, listening to the silence with a low radiant hum continuity held: Youngest brother in chamber; torchlit night",
+          "image_prompt_start": "photoreal cinematic: medium of the youngest brother rising from his bed in the dark chamber, torchlight flickering.",
+          "image_prompt_end": "photoreal cinematic: He stands, alert, listening to the silence.",
+          "video_prompt_start": "Track. he rises. The beat resolves into the next matching frame. Continuity held: Youngest brother in chamber; torchlit night.",
+          "video_prompt_end": "Track. he rises. The beat resolves into the next matching frame. Continuity held: Youngest brother in chamber; torchlit night.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S25",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "youngest_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Youngest Brother - brave, kind young man, youngest of the three brothers — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "looking down the stairs"
+            ]
+          ],
+          "narration_mk": "Слезе по скалите кон визбата.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide looking down a narrow spiral stone staircase descending into darkness, the boy at its top",
+          "kf_last": "His hand rests on the cold stone rail as he peers down",
+          "continuity": "Youngest brother; interior stone staircase",
+          "motion": "static, looking down the stairs",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide looking down a narrow spiral stone staircase descending into darkness, the boy at its top Youngest slender, hero, in cloak, wreathed in golden glow then static, then looking down the stairs settling into his hand rests on the cold stone rail as he peers down with a low radiant hum continuity held: Youngest brother; interior stone staircase",
+          "image_prompt_start": "photoreal cinematic: wide looking down a narrow spiral stone staircase descending into darkness, the boy at its top.",
+          "image_prompt_end": "photoreal cinematic: His hand rests on the cold stone rail as he peers down.",
+          "video_prompt_start": "Static. looking down the stairs. The beat resolves into the next matching frame. Continuity held: Youngest brother; interior stone staircase.",
+          "video_prompt_end": "Static. looking down the stairs. The beat resolves into the next matching frame. Continuity held: Youngest brother; interior stone staircase.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S26",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.2,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "youngest_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Youngest Brother - brave, kind young man, youngest of the three brothers — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.76,
+              "track following his descent"
+            ],
+            [
+              1.76,
+              3.2,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Се спушти чекор по чекор во темнината.",
+          "dialogue_mk": "",
+          "kf_first": "Medium tracking shot following the youngest brother descending the spiral stairs, torchlight and shadow alternating across his face",
+          "kf_last": "He reaches the bottom and steps into the cellar",
+          "continuity": "Youngest brother; staircase into cellar",
+          "motion": "track following his descent",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium tracking shot following the youngest brother descending the spiral stairs, torchlight and shadow alternating across his face Youngest slender, hero, in cloak, wreathed in golden glow then track following his descent, then resolve settling into he reaches the bottom and steps into the cellar with a low radiant hum continuity held: Youngest brother; staircase into cellar",
+          "image_prompt_start": "photoreal cinematic: the youngest brother descending the spiral stairs, torchlight and shadow alternating across his face.",
+          "image_prompt_end": "photoreal cinematic: He reaches the bottom and steps into the cellar.",
+          "video_prompt_start": "Track following his descent. resolve. The beat resolves into the next matching frame. Continuity held: Youngest brother; staircase into cellar.",
+          "video_prompt_end": "Track following his descent. resolve. The beat resolves into the next matching frame. Continuity held: Youngest brother; staircase into cellar.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S27",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.2,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "cellar_E4_prop"
+          ],
+          "ref_scope": "image1: the cellar design - a vast stone cellar with tall pillars and iron-barred cells — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.76,
+              "static"
+            ],
+            [
+              1.76,
+              3.2,
+              "dust in moonbeams"
+            ]
+          ],
+          "narration_mk": "Долу имаше визба со железни ќелии.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of a vast stone cellar with tall pillars and rows of iron-barred cells, cold blue moonlight through a high window",
+          "kf_last": "The bars of the nearest cell glint faintly",
+          "continuity": "Cellar space established; cold blue night palette",
+          "motion": "static, dust in moonbeams",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of a vast stone cellar with tall pillars and rows of iron-barred cells, cold blue moonlight through a high window then static, then dust in moonbeams settling into the bars of the nearest cell glint faintly continuity held: Cellar space established; cold blue night palette",
+          "image_prompt_start": "photoreal cinematic: wide of a vast stone cellar with tall pillars and rows of iron-barred cells, cold blue moonlight through a high window.",
+          "image_prompt_end": "photoreal cinematic: The bars of the nearest cell glint faintly.",
+          "video_prompt_start": "Static. dust in moonbeams. The beat resolves into the next matching frame. Continuity held: Cellar space established; cold blue night palette.",
+          "video_prompt_end": "Static. dust in moonbeams. The beat resolves into the next matching frame. Continuity held: Cellar space established; cold blue night palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S28",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "youngest_A3_fused",
+            "cellar_E4_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Youngest Brother - brave, kind young man, youngest of the three brothers — 100% identical; studio bg/pose/light NOT used; image2: the cellar design - a vast stone cellar with tall pillars and iron-barred cells — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "slow push-in toward his hiding spot"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Се скри зад еден столб и чекаше.",
+          "dialogue_mk": "",
+          "kf_first": "Medium push-in as the youngest brother crouches behind a wide stone pillar, peeking around its edge",
+          "kf_last": "Push-in on his focused, watchful eyes in the dim light",
+          "continuity": "Youngest brother in cellar; cold palette",
+          "motion": "slow push-in toward his hiding spot",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium push-in as the youngest brother crouches behind a wide stone pillar, peeking around its edge Youngest slender, hero, in cloak, wreathed in golden glow then slow push-in toward his hiding spot, then resolve settling into push-in on his focused, watchful eyes in the dim light with a low radiant hum continuity held: Youngest brother in cellar; cold palette",
+          "image_prompt_start": "photoreal cinematic: as the youngest brother crouches behind a wide stone pillar, peeking around its edge.",
+          "image_prompt_end": "photoreal cinematic: on his focused, watchful eyes in the dim light.",
+          "video_prompt_start": "Slow push-in toward his hiding spot. resolve. The beat resolves into the next matching frame. Continuity held: Youngest brother in cellar; cold palette.",
+          "video_prompt_end": "Slow push-in toward his hiding spot. resolve. The beat resolves into the next matching frame. Continuity held: Youngest brother in cellar; cold palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S29",
+          "shot_type": "BOSS-ONLY",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "static",
+          "dur": 3.2,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "lion_B1_sheet",
+            "cellar_E4_prop"
+          ],
+          "ref_scope": "image1: the lion sheet - a huge lion with gleaming eyes, guardian of the curse — 100% identical; studio bg/pose/light NOT used; image2: the cellar design - a vast stone cellar with tall pillars and iron-barred cells — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "subject identity",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.76,
+              "static"
+            ],
+            [
+              1.76,
+              3.2,
+              "lion pacing"
+            ]
+          ],
+          "narration_mk": "Првата ноќ, лавот влезе во визбата.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of the cellar as the great lion paces slowly in through the open doorway, mane lit by cold moonlight",
+          "kf_last": "The lion stops in the center, sniffing the air",
+          "continuity": "Lion from Act I; cellar night palette",
+          "motion": "static, lion pacing",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of the cellar as the great lion paces slowly in through the open doorway, mane lit by cold moonlight then static, then lion pacing settling into the lion stops in the center, sniffing the air continuity held: Lion from Act I; cellar night palette",
+          "image_prompt_start": "photoreal cinematic: wide of the cellar as the great lion paces slowly in through the open doorway, mane lit by cold moonlight.",
+          "image_prompt_end": "photoreal cinematic: The lion stops in the center, sniffing the air.",
+          "video_prompt_start": "Static. lion pacing. The action plays out at full force and lands in a held, readable end pose. Continuity held: Lion from Act I; cellar night palette.",
+          "video_prompt_end": "Static. lion pacing. The action plays out at full force and lands in a held, readable end pose. Continuity held: Lion from Act I; cellar night palette.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S30",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.8,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "youngest_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Youngest Brother - brave, kind young man, youngest of the three brothers — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.54,
+              "static"
+            ],
+            [
+              1.54,
+              2.8,
+              "held breath"
+            ]
+          ],
+          "narration_mk": "Младичот го држеше здивот.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the youngest brother's face behind the pillar, eyes wide, holding his breath",
+          "kf_last": "A bead of torchlight shifts as he steadies himself",
+          "continuity": "Youngest brother; tense cold palette",
+          "motion": "static, held breath",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the youngest brother's face behind the pillar, eyes wide, holding his breath Youngest slender, hero, in cloak, wreathed in golden glow then static, then held breath settling into a bead of torchlight shifts as he steadies himself with a low radiant hum continuity held: Youngest brother; tense cold palette",
+          "image_prompt_start": "photoreal cinematic: of the youngest brother's face behind the pillar, eyes wide, holding his breath.",
+          "image_prompt_end": "photoreal cinematic: A bead of torchlight as he steadies himself.",
+          "video_prompt_start": "Static. held breath. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Youngest brother; tense cold palette.",
+          "video_prompt_end": "Static. held breath. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Youngest brother; tense cold palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S31",
+          "shot_type": "BOSS-ONLY",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "lion_B1_sheet",
+            "cellar_E4_prop"
+          ],
+          "ref_scope": "image1: the lion sheet - a huge lion with gleaming eyes, guardian of the curse — 100% identical; studio bg/pose/light NOT used; image2: the cellar design - a vast stone cellar with tall pillars and iron-barred cells — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "subject identity",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "track following the lion into the cell"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Лавот влезе во една од ќелиите.",
+          "dialogue_mk": "",
+          "kf_first": "Medium tracking shot of the lion stepping slowly into one of the iron-barred cells",
+          "kf_last": "The lion turns inside the cell, its tail swaying",
+          "continuity": "Lion and cellar cells; cold palette",
+          "motion": "track following the lion into the cell",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium tracking shot of the lion stepping slowly into one of the iron-barred cells then track following the lion into the cell, then resolve settling into the lion turns inside the cell, its tail swaying continuity held: Lion and cellar cells; cold palette",
+          "image_prompt_start": "photoreal cinematic: of the lion stepping slowly into one of the iron-barred cells.",
+          "image_prompt_end": "photoreal cinematic: The lion inside the cell, its tail swaying.",
+          "video_prompt_start": "Track following the lion into the cell. resolve. The action plays out at full force and lands in a held, readable end pose. Continuity held: Lion and cellar cells; cold palette.",
+          "video_prompt_end": "Track following the lion into the cell. resolve. The action plays out at full force and lands in a held, readable end pose. Continuity held: Lion and cellar cells; cold palette.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S32",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "pan-right",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "youngest_A3_fused",
+            "lion_B1_sheet"
+          ],
+          "ref_scope": "image1: the fused master of the Youngest Brother - brave, kind young man, youngest of the three brothers — 100% identical; studio bg/pose/light NOT used; image2: the lion sheet - a huge lion with gleaming eyes, guardian of the curse — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "subject identity",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "fast pan-right with his leap"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Младичот скокна и ја затвори вратата.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium panning right as the youngest brother leaps from behind the pillar and swings the heavy cell door toward the lion",
+          "kf_last": "The iron door slams against the frame",
+          "continuity": "Youngest brother and lion in cellar",
+          "motion": "fast pan-right with his leap",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium panning right as the youngest brother leaps from behind the pillar and swings the heavy cell door toward the lion Youngest slender, hero, in cloak, wreathed in golden glow then fast pan-right with his leap, then resolve settling into the iron door slams against the frame with a low radiant hum continuity held: Youngest brother and lion in cellar",
+          "image_prompt_start": "photoreal cinematic: medium right as the youngest brother leaps from behind the pillar and swings the heavy cell door toward the lion.",
+          "image_prompt_end": "photoreal cinematic: The iron door slams against the frame.",
+          "video_prompt_start": "Fast pan-right with his leap. resolve. The beat resolves into the next matching frame. Continuity held: Youngest brother and lion in cellar.",
+          "video_prompt_end": "Fast pan-right with his leap. resolve. The beat resolves into the next matching frame. Continuity held: Youngest brother and lion in cellar.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S33",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "youngest_A3_fused",
+            "lion_B1_sheet"
+          ],
+          "ref_scope": "image1: the fused master of the Youngest Brother - brave, kind young man, youngest of the three brothers — 100% identical; studio bg/pose/light NOT used; image2: the lion sheet - a huge lion with gleaming eyes, guardian of the curse — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "subject identity",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "push-in on the locking bolt"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Го заклучи лавот.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the youngest brother's hands driving the heavy iron bolt into the hasp of the cell door",
+          "kf_last": "Push-in on the bolt sliding fully home with a clank",
+          "continuity": "Cell door from S32; iron bolt",
+          "motion": "push-in on the locking bolt",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the youngest brother's hands driving the heavy iron bolt into the hasp of the cell door Youngest slender, hero, in cloak, wreathed in golden glow then push-in on the locking bolt, then resolve settling into push-in on the bolt sliding fully home with a clank with a low radiant hum continuity held: Cell door from S32; iron bolt",
+          "image_prompt_start": "photoreal cinematic: of the youngest brother's hands driving the heavy iron bolt into the hasp of the cell door.",
+          "image_prompt_end": "photoreal cinematic: on the bolt sliding fully home with a clank.",
+          "video_prompt_start": "Push-in on the locking bolt. resolve. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Cell door from S32; iron bolt.",
+          "video_prompt_end": "Push-in on the locking bolt. resolve. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Cell door from S32; iron bolt.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S34",
+          "shot_type": "BOSS-ONLY",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.2,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "lion_B1_sheet",
+            "cellar_E4_prop"
+          ],
+          "ref_scope": "image1: the lion sheet - a huge lion with gleaming eyes, guardian of the curse — 100% identical; studio bg/pose/light NOT used; image2: the cellar design - a vast stone cellar with tall pillars and iron-barred cells — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "subject identity",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.76,
+              "static"
+            ],
+            [
+              1.76,
+              3.2,
+              "lion pacing"
+            ]
+          ],
+          "narration_mk": "Лавот остана заробен зад решетките.",
+          "dialogue_mk": "",
+          "kf_first": "Wide of the lion pacing behind the locked iron bars, calm rather than angry, moonlight streaking the floor",
+          "kf_last": "The boy stands breathing hard in the doorway, watching",
+          "continuity": "Lion in cell; cellar night palette",
+          "motion": "static, lion pacing",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide of the lion pacing behind the locked iron bars, calm rather than angry, moonlight streaking the floor then static, then lion pacing settling into the boy stands breathing hard in the doorway, watching continuity held: Lion in cell; cellar night palette",
+          "image_prompt_start": "photoreal cinematic: of the lion pacing behind the locked iron bars, calm rather than angry, moonlight streaking the floor.",
+          "image_prompt_end": "photoreal cinematic: The boy stands breathing hard in the doorway, watching.",
+          "video_prompt_start": "Static. lion pacing. The action plays out at full force and lands in a held, readable end pose. Continuity held: Lion in cell; cellar night palette.",
+          "video_prompt_end": "Static. lion pacing. The action plays out at full force and lands in a held, readable end pose. Continuity held: Lion in cell; cellar night palette.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S35",
+          "shot_type": "BOSS-ONLY",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "wolf_B2_sheet",
+            "cellar_E4_prop"
+          ],
+          "ref_scope": "image1: the wolf sheet - a grey wolf that prowls the chambers at night — 100% identical; studio bg/pose/light NOT used; image2: the cellar design - a vast stone cellar with tall pillars and iron-barred cells — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "subject identity",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "wolf entering"
+            ]
+          ],
+          "narration_mk": "Следната ноќ, волкот влезе во визбата.",
+          "dialogue_mk": "",
+          "kf_first": "Wide of the cellar on the second night as the grey wolf slips silently in through the open doorway",
+          "kf_last": "The wolf's eyes gleam as it scans the shadows",
+          "continuity": "Wolf from Act I; cellar night palette",
+          "motion": "static, wolf entering",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide of the cellar on the second night as the grey wolf slips silently in through the open doorway then static, then wolf entering settling into the wolf's eyes gleam as it scans the shadows continuity held: Wolf from Act I; cellar night palette",
+          "image_prompt_start": "photoreal cinematic: of the cellar on the second night as the grey wolf slips silently in through the open doorway.",
+          "image_prompt_end": "photoreal cinematic: The wolf's eyes gleam as it scans the shadows.",
+          "video_prompt_start": "Static. wolf entering. The action plays out at full force and lands in a held, readable end pose. Continuity held: Wolf from Act I; cellar night palette.",
+          "video_prompt_end": "Static. wolf entering. The action plays out at full force and lands in a held, readable end pose. Continuity held: Wolf from Act I; cellar night palette.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S36",
+          "shot_type": "BOSS-ONLY",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "wolf_B2_sheet",
+            "cellar_E4_prop"
+          ],
+          "ref_scope": "image1: the wolf sheet - a grey wolf that prowls the chambers at night — 100% identical; studio bg/pose/light NOT used; image2: the cellar design - a vast stone cellar with tall pillars and iron-barred cells — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "subject identity",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "track following the wolf"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Волкот кружеше, па влезе во ќелија.",
+          "dialogue_mk": "",
+          "kf_first": "Medium tracking shot of the wolf circling the pillar before padding into one of the iron cells",
+          "kf_last": "The wolf settles inside the cell, ears pricked",
+          "continuity": "Wolf in cellar; cold palette",
+          "motion": "track following the wolf",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium tracking shot of the wolf circling the pillar before padding into one of the iron cells then track following the wolf, then resolve settling into the wolf settles inside the cell, ears pricked continuity held: Wolf in cellar; cold palette",
+          "image_prompt_start": "photoreal cinematic: of the wolf circling the pillar before padding into one of the iron cells.",
+          "image_prompt_end": "photoreal cinematic: The wolf inside the cell, ears pricked.",
+          "video_prompt_start": "Track following the wolf. resolve. The action plays out at full force and lands in a held, readable end pose. Continuity held: Wolf in cellar; cold palette.",
+          "video_prompt_end": "Track following the wolf. resolve. The action plays out at full force and lands in a held, readable end pose. Continuity held: Wolf in cellar; cold palette.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S37",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "pan-left",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "youngest_A3_fused",
+            "wolf_B2_sheet"
+          ],
+          "ref_scope": "image1: the fused master of the Youngest Brother - brave, kind young man, youngest of the three brothers — 100% identical; studio bg/pose/light NOT used; image2: the wolf sheet - a grey wolf that prowls the chambers at night — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "subject identity",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "pan-left with the closing door"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Исто како со лавот, го заклучи и волкот.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium panning left as the youngest brother swings the second cell door shut on the wolf and drives the bolt home",
+          "kf_last": "The bolt clanks into place as the boy steps back",
+          "continuity": "Youngest brother and wolf; second cell",
+          "motion": "pan-left with the closing door",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium panning left as the youngest brother swings the second cell door shut on the wolf and drives the bolt home Youngest slender, hero, in cloak, wreathed in golden glow then pan-left with the closing door, then resolve settling into the bolt clanks into place as the boy steps back with a low radiant hum continuity held: Youngest brother and wolf; second cell",
+          "image_prompt_start": "photoreal cinematic: medium left as the youngest brother swings the second cell door shut on the wolf and drives the bolt home.",
+          "image_prompt_end": "photoreal cinematic: The bolt clanks into place as the boy steps back.",
+          "video_prompt_start": "Pan-left with the closing door. resolve. The beat resolves into the next matching frame. Continuity held: Youngest brother and wolf; second cell.",
+          "video_prompt_end": "Pan-left with the closing door. resolve. The beat resolves into the next matching frame. Continuity held: Youngest brother and wolf; second cell.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "frozen_garden_fountain_and_cellar",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#f59e0b",
+        "#1e3a8a",
+        "#1a2a4a"
+      ],
+      "light_direction": "key light from screen-right, cold moonlight then dawn gold",
+      "time_of_day": "night"
+    },
+    {
+      "id": "act3",
+      "num": "Act III",
+      "title": "Ослободување",
+      "color": "#fbbf24",
+      "pct": 20,
+      "synopsis": "Во зори, првите сончеви зраци го кршат мразот и кралицата конечно е ослободена.",
+      "shots": [
+        {
+          "id": "S38",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "castle_E1_prop",
+            "garden_E1_prop"
+          ],
+          "ref_scope": "image1: the old-castle design - a silent, looming stone building at dusk — 100% identical; studio bg/pose/light NOT used; image2: the overgrown-castle-garden design - mossy stone walls and tangled roses around the fountain — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "light rising"
+            ]
+          ],
+          "narration_mk": "Се ближеше зората.",
+          "dialogue_mk": "",
+          "kf_first": "Wide of the castle and garden as the first pale gold light breaks over the horizon, stars fading",
+          "kf_last": "The garden begins to glow softly with dawn light",
+          "continuity": "Castle exterior; dawn transition",
+          "motion": "static, light rising",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide of the castle and garden as the first pale gold light breaks over the horizon, stars fading then static, then light rising settling into the garden begins to glow softly with dawn light with leaves stir continuity held: Castle exterior; dawn transition",
+          "image_prompt_start": "photoreal cinematic: of the castle and garden as the first pale gold light breaks over the horizon, stars fading.",
+          "image_prompt_end": "photoreal cinematic: The garden begins to glow softly with dawn light.",
+          "video_prompt_start": "Static. light rising. The beat resolves into the next matching frame. Continuity held: Castle exterior; dawn transition.",
+          "video_prompt_end": "Static. light rising. The beat resolves into the next matching frame. Continuity held: Castle exterior; dawn transition.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S39",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.2,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "youngest_A3_fused",
+            "garden_E1_prop",
+            "fountain_E3_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Youngest Brother - brave, kind young man, youngest of the three brothers — 100% identical; studio bg/pose/light NOT used; image2: the overgrown-castle-garden design - mossy stone walls and tangled roses around the fountain — 100% identical; studio bg/pose/light NOT used; image3: the great-fountain design - the huge stone fountain sealed under thick ice — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.76,
+              "track following his walk"
+            ],
+            [
+              1.76,
+              3.2,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Младичот тргна кон фонтаната.",
+          "dialogue_mk": "",
+          "kf_first": "Medium tracking shot of the youngest brother walking through the dew-heavy garden toward the fountain in the growing light",
+          "kf_last": "He reaches the edge of the frozen fountain",
+          "continuity": "Youngest brother in garden; dawn gold palette",
+          "motion": "track following his walk",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium tracking shot of the youngest brother walking through the dew-heavy garden toward the fountain in the growing light Youngest slender, hero, in cloak, wreathed in golden glow then track following his walk, then resolve settling into he reaches the edge of the frozen fountain with a low radiant hum, leaves stir continuity held: Youngest brother in garden; dawn gold palette",
+          "image_prompt_start": "photoreal cinematic: of the youngest brother walking through the dew-heavy garden toward the fountain in the growing light.",
+          "image_prompt_end": "photoreal cinematic: He reaches the edge of the frozen fountain.",
+          "video_prompt_start": "Track following his walk. resolve. The beat resolves into the next matching frame. Continuity held: Youngest brother in garden; dawn gold palette.",
+          "video_prompt_end": "Track following his walk. resolve. The beat resolves into the next matching frame. Continuity held: Youngest brother in garden; dawn gold palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S40",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "youngest_A3_fused",
+            "fountain_E3_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Youngest Brother - brave, kind young man, youngest of the three brothers — 100% identical; studio bg/pose/light NOT used; image2: the great-fountain design - the huge stone fountain sealed under thick ice — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "crane-down toward the frozen surface"
+            ],
+            [
+              1.93,
+              3.5,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Застана пред фонтаната.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide crane-down on the youngest brother standing before the great frozen fountain, dawn light framing him",
+          "kf_last": "Crane-down settles on the ice surface, the queen's form faint beneath",
+          "continuity": "Fountain and youngest brother; dawn palette",
+          "motion": "crane-down toward the frozen surface",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide crane-down on the youngest brother standing before the great frozen fountain, dawn light framing him Youngest slender, hero, in cloak, wreathed in golden glow then crane-down toward the frozen surface, then resolve settling into crane-down settles on the ice surface, the queen's form faint beneath with a low radiant hum continuity held: Fountain and youngest brother; dawn palette",
+          "image_prompt_start": "photoreal cinematic: wide on the youngest brother standing before the great frozen fountain, dawn light framing him.",
+          "image_prompt_end": "photoreal cinematic: on the ice surface, the queen's form faint beneath.",
+          "video_prompt_start": "Crane-down toward the frozen surface. resolve. The beat resolves into the next matching frame. Continuity held: Fountain and youngest brother; dawn palette.",
+          "video_prompt_end": "Crane-down toward the frozen surface. resolve. The beat resolves into the next matching frame. Continuity held: Fountain and youngest brother; dawn palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S41",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "queen_A4_fused",
+            "fountain_E3_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Queen - beautiful queen frozen beneath the fountain ice — 100% identical; studio bg/pose/light NOT used; image2: the great-fountain design - the huge stone fountain sealed under thick ice — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "slow push-in on her waking eyes"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Погледна во лицето на кралицата.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the queen's face beneath the ice, her eyes slowly opening as warm light touches the frost",
+          "kf_last": "Push-in on her eyes brightening with recognition",
+          "continuity": "Queen under ice; warm dawn glint",
+          "motion": "slow push-in on her waking eyes",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the queen's face beneath the ice, her eyes slowly opening as warm light touches the frost Queen slender, queen, in dress, crown, wreathed in frost glow then slow push-in on her waking eyes, then resolve settling into push-in on her eyes brightening with recognition with ice groans continuity held: Queen under ice; warm dawn glint",
+          "image_prompt_start": "photoreal cinematic: of the queen's face beneath the ice, her eyes slowly opening as warm light touches the frost.",
+          "image_prompt_end": "photoreal cinematic: on her eyes brightening with recognition.",
+          "video_prompt_start": "Slow push-in on her waking eyes. resolve. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Queen under ice; warm dawn glint.",
+          "video_prompt_end": "Slow push-in on her waking eyes. resolve. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Queen under ice; warm dawn glint.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S42",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "static",
+          "dur": 3.2,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "fountain_E3_prop"
+          ],
+          "ref_scope": "image1: the great-fountain design - the huge stone fountain sealed under thick ice — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.76,
+              "static"
+            ],
+            [
+              1.76,
+              3.2,
+              "sunlight spreading"
+            ]
+          ],
+          "narration_mk": "Првите зраци ја допреа фонтаната.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of the frozen fountain as the first direct sunbeams strike its surface, light blooming across the ice",
+          "kf_last": "The ice glares bright white-gold at the point of contact",
+          "continuity": "Fountain; dawn light intensifies",
+          "motion": "static, sunlight spreading",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of the frozen fountain as the first direct sunbeams strike its surface, light blooming across the ice then static, then sunlight spreading settling into the ice glares bright white-gold at the point of contact continuity held: Fountain; dawn light intensifies",
+          "image_prompt_start": "photoreal cinematic: wide of the frozen fountain as the first direct sunbeams strike its surface, light blooming across the ice.",
+          "image_prompt_end": "photoreal cinematic: The ice glares bright white-gold at the point of contact.",
+          "video_prompt_start": "Static. sunlight spreading. The beat resolves into the next matching frame. Continuity held: Fountain; dawn light intensifies.",
+          "video_prompt_end": "Static. sunlight spreading. The beat resolves into the next matching frame. Continuity held: Fountain; dawn light intensifies.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S43",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "fountain_E3_prop"
+          ],
+          "ref_scope": "image1: the great-fountain design - the huge stone fountain sealed under thick ice — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "push-in on spreading cracks"
+            ],
+            [
+              1.65,
+              3.0,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Мразот почна да се крши.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of hairline cracks racing outward across the frozen fountain surface in the golden light",
+          "kf_last": "Push-in as the cracks widen into a web across the ice",
+          "continuity": "Ice surface from S42; cracking detail",
+          "motion": "push-in on spreading cracks",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of hairline cracks racing outward across the frozen fountain surface in the golden light then push-in on spreading cracks, then resolve settling into push-in as the cracks widen into a web across the ice continuity held: Ice surface from S42; cracking detail",
+          "image_prompt_start": "photoreal cinematic: of hairline cracks racing outward across the frozen fountain surface in the golden light.",
+          "image_prompt_end": "photoreal cinematic: as the cracks widen into a web across the ice.",
+          "video_prompt_start": "Push-in on spreading cracks. resolve. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Ice surface from S42; cracking detail.",
+          "video_prompt_end": "Push-in on spreading cracks. resolve. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Ice surface from S42; cracking detail.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S44",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "pull-back",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "queen_A4_fused",
+            "fountain_E3_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Queen - beautiful queen frozen beneath the fountain ice — 100% identical; studio bg/pose/light NOT used; image2: the great-fountain design - the huge stone fountain sealed under thick ice — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "pull-back revealing her rising"
+            ],
+            [
+              1.93,
+              3.5,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Мразот се скрши, а кралицата се издигна.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of the ice shattering apart, water surging upward as the queen rises free, her gown streaming",
+          "kf_last": "Pull-back to frame her emergence in a burst of sunlit water",
+          "continuity": "Queen; fountain water and ice shards",
+          "motion": "pull-back revealing her rising",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of the ice shattering apart, water surging upward as the queen rises free, her gown streaming Queen slender, queen, in dress, crown, wreathed in frost glow then pull-back revealing her rising, then resolve settling into pull-back to frame her emergence in a burst of sunlit water with ice groans continuity held: Queen; fountain water and ice shards",
+          "image_prompt_start": "photoreal cinematic: medium of the ice shattering apart, water surging upward as the queen free, her gown streaming.",
+          "image_prompt_end": "photoreal cinematic: to frame her emergence in a burst of sunlit water.",
+          "video_prompt_start": "Pull-back revealing her rising. resolve. The beat resolves into the next matching frame. Continuity held: Queen; fountain water and ice shards.",
+          "video_prompt_end": "Pull-back revealing her rising. resolve. The beat resolves into the next matching frame. Continuity held: Queen; fountain water and ice shards.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S45",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "queen_A4_fused",
+            "youngest_A3_fused",
+            "garden_E1_prop"
+          ],
+          "ref_scope": "image1: the fused master of the Queen - beautiful queen frozen beneath the fountain ice — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Youngest Brother - brave, kind young man, youngest of the three brothers — 100% identical; studio bg/pose/light NOT used; image3: the overgrown-castle-garden design - mossy stone walls and tangled roses around the fountain — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "crane-up"
+            ],
+            [
+              1.93,
+              3.5,
+              "the light rises"
+            ]
+          ],
+          "narration_mk": "Кралицата конечно беше ослободена.",
+          "dialogue_mk": "",
+          "kf_first": "Wide crane-up as the queen steps free onto the fountain's edge, sunlight haloing her hair, the youngest brother watching in awe",
+          "kf_last": "Crane-up to the bright morning sky over the garden",
+          "continuity": "Queen and youngest brother; sunlit morning palette",
+          "motion": "crane-up as the light rises",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide crane-up as the queen steps free onto the fountain's edge, sunlight haloing her hair, the youngest brother watching in awe Queen slender, queen, in dress, crown, wreathed in frost glow Youngest slender, hero, in cloak, wreathed in golden glow then crane-up, then the light rises settling into crane-up to the bright morning sky over the garden with ice groans, a low radiant hum continuity held: Queen and youngest brother; sunlit morning palette",
+          "image_prompt_start": "photoreal cinematic: as the queen steps free onto the fountain's edge, sunlight haloing her hair, the youngest brother watching in awe.",
+          "image_prompt_end": "photoreal cinematic: to the bright morning sky over the garden.",
+          "video_prompt_start": "Crane-up. the light rises. The beat resolves into the next matching frame. Continuity held: Queen and youngest brother; sunlit morning palette.",
+          "video_prompt_end": "Crane-up. the light rises. The beat resolves into the next matching frame. Continuity held: Queen and youngest brother; sunlit morning palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S46",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "queen_A4_fused",
+            "youngest_A3_fused"
+          ],
+          "ref_scope": "image1: the fused master of the Queen - beautiful queen frozen beneath the fountain ice — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Youngest Brother - brave, kind young man, youngest of the three brothers — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "static"
+            ],
+            [
+              1.65,
+              3.0,
+              "gentle smile"
+            ]
+          ],
+          "narration_mk": "Таа му се насмевна во зраците на зората.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the queen smiling warmly at the youngest brother, golden dawn light on her face",
+          "kf_last": "The sun flares softly behind her, completing the moment",
+          "continuity": "Queen free; warm gold palette",
+          "motion": "static, gentle smile",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the queen smiling warmly at the youngest brother, golden dawn light on her face Queen slender, queen, in dress, crown, wreathed in frost glow Youngest slender, hero, in cloak, wreathed in golden glow then static, then gentle smile settling into the sun flares softly behind her, completing the moment with ice groans, a low radiant hum continuity held: Queen free; warm gold palette",
+          "image_prompt_start": "photoreal cinematic: of the queen smiling warmly at the youngest brother, golden dawn light on her face.",
+          "image_prompt_end": "photoreal cinematic: The sun flares softly behind her, completing the moment.",
+          "video_prompt_start": "Static. gentle smile. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Queen free; warm gold palette.",
+          "video_prompt_end": "Static. gentle smile. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Queen free; warm gold palette.",
+          "motion_intensity": "gentle"
+        }
+      ],
+      "location_ref": "dawn_garden_and_fountain",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#fbbf24",
+        "#b45309",
+        "#14532d"
+      ],
+      "light_direction": "radiant dawn light from above, key light from screen-left over the garden",
+      "time_of_day": "dawn"
+    }
+  ],
+  "director_corrections": {
+    "issued": "2026-11-07",
+    "source": "KB §13 DIRECTOR CORRECTIONS — overrides all prior asset/keyframe guidance",
+    "rules": [
+      "DD HEADWEAR: no cap/hood/bandana/mask on head; hood = back-cowl only (cape-like); bare head + teal-blue glowing hair always visible; any head/face covering = REJECT",
+      "LEGENDARY WEAPONS MUST APPEAR: DD = twin Frostbite-class hand crossbows (ice-blue arcane crystal limbs, frost runes, frozen-light string, teal-blue glow); AZ = Dawnbreaker-class greatsword (pale sunsteel, molten-gold runes, golden holy fire edge, sunburst crossguard); hero sheet/keyframe without weapon = INCOMPLETE",
+      "WEAPON ANTI-SLOP: fantasy construction only; crossbow must NEVER read as firearm (no barrel/magazine/stock/Uzi/SMG silhouette = REJECT); anti-slop negatives always appended",
+      "BOSS FACE: Mal'garot HAS a prolific molten-lava face (lava dripping/running, drops falling to ground); faceless boss sheets SUPERSEDED",
+      "LOCATION BRIGHTNESS FLOOR: environment plates silhouette-readable at thumbnail; no murk-dark grades"
+    ],
+    "applies_when": "Activates when face_lock changes from AI-default to an enrolled identity (DD/AZ). AI-default packages carry this as a forward constraint, not a current defect.",
+    "anti_slop_negatives": "firearm, gun, machinegun, Uzi, barrel, magazine, ammo clip, muzzle, modern weapon"
+  },
+  "character_designs": {
+    "youngest": {
+      "archetype": "hero",
+      "build": "slender",
+      "scale": "human",
+      "palette": {
+        "primary": "#b45309",
+        "secondary": "#854d0e",
+        "glow": "#fbbf24"
+      },
+      "costume": [
+        "cloak"
+      ],
+      "props": [],
+      "fx": [
+        "golden_glow"
+      ]
+    },
+    "queen": {
+      "archetype": "queen",
+      "build": "slender",
+      "scale": "human",
+      "palette": {
+        "primary": "#7dd3fc",
+        "secondary": "#e0f2fe",
+        "glow": "#bae6fd"
+      },
+      "costume": [
+        "dress",
+        "crown"
+      ],
+      "props": [],
+      "fx": [
+        "frost_glow"
+      ]
+    },
+    "brothers": {
+      "archetype": "commoner",
+      "build": "lanky",
+      "scale": "human",
+      "palette": {
+        "primary": "#57534e",
+        "secondary": "#78716c",
+        "glow": "#a8a29e"
+      },
+      "costume": [
+        "cloak"
+      ],
+      "props": [
+        "satchel"
+      ],
+      "fx": []
+    },
+    "lion": {
+      "archetype": "beast",
+      "build": "massive",
+      "scale": "large",
+      "palette": {
+        "primary": "#b45309",
+        "secondary": "#f59e0b",
+        "glow": "#fbbf24"
+      },
+      "costume": [],
+      "props": [],
+      "fx": [
+        "glowing_eyes"
+      ]
+    },
+    "wolf": {
+      "archetype": "beast",
+      "build": "lean",
+      "scale": "large",
+      "palette": {
+        "primary": "#52525b",
+        "secondary": "#71717a",
+        "glow": "#a1a1aa"
+      },
+      "costume": [],
+      "props": [],
+      "fx": [
+        "night_stalker"
+      ]
+    },
+    "castle_E1_prop": {
+      "motif": "fortress",
+      "tone": "#4c1d95"
+    },
+    "garden_E1_prop": {
+      "motif": "garden",
+      "tone": "#14532d"
+    },
+    "chamber_E2_prop": {
+      "motif": "chamber",
+      "tone": "#8a5a2b"
+    },
+    "fountain_E3_prop": {
+      "motif": "fountain",
+      "tone": "#7dd3fc"
+    },
+    "cellar_E4_prop": {
+      "motif": "dungeon",
+      "tone": "#1e3a8a"
+    }
+  }
+}

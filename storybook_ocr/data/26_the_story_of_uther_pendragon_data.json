@@ -1,0 +1,2639 @@
+{
+  "num": "26",
+  "title_mk": "Приказната за Утер Пендрагон",
+  "title_en": "The Story of Uther Pendragon",
+  "genre": "Брешонска легенда · епска акција",
+  "logline": "Храбриот принц Утер, следејќи го пророштвото на волшебникот Мерлин од кометата-змеј, станува крал Пендрагон и, опкружен со непријатели, го доверува својот син Артур на мудриот волшебник.",
+  "spec": {
+    "aspect": "16:9",
+    "resolution": "1216x704",
+    "fps": 24,
+    "model": "model-agnostic (chosen at generation)",
+    "style": "photoreal",
+    "flf": true,
+    "language": "mk",
+    "shot_floor": 40,
+    "shot_max": 60,
+    "seed_policy": "fixed-per-shot (same seed → reproducible shot; re-roll per shot id)",
+    "style_anchor": [
+      "Diablo 2 cinematic",
+      "World of Warcraft cinematic",
+      "StarCraft cinematic"
+    ],
+    "negative_prompt": "deformed, extra limbs, morphing, watermark, text, static frame, blurry, low quality, cropped head, cut-off face",
+    "frames": 121,
+    "frames_fallback": 81,
+    "routes": [
+      {
+        "model": "Wan2.1-FLF2V-14B-720P",
+        "input": "start+end native (run START-ONLY)",
+        "status": "WORKING (lead for 14B quality)"
+      },
+      {
+        "model": "Kandinsky 6.0 Lite/Pro",
+        "input": "start-image-only",
+        "status": "WORKING (Pro-distill untested at scale)"
+      },
+      {
+        "model": "SkyReels-V3 R2V-14B",
+        "input": "start-image-only",
+        "status": "WORKING (fallback)"
+      },
+      {
+        "model": "LTX-Video 2B v0.9.5",
+        "input": "start-image-only",
+        "status": "WORKING (small/fast, low ceiling)"
+      },
+      {
+        "model": "Mochi-1",
+        "input": "start-image-only",
+        "status": "untested here"
+      },
+      {
+        "model": "LTX-2.3 22B distilled",
+        "input": "start-image-only",
+        "status": "DEAD (nanobind native-crash, 42 note)"
+      }
+    ],
+    "model_note": "Model chosen per story at generation (43 §4). Keyframes + continuation prompts are generator-agnostic; only the render command differs per model."
+  },
+  "cast": [
+    {
+      "role": "Утер Пендрагон / Uther Pendragon",
+      "trait": "Храбар принц, подоцна крал; силен, решително лице со оклоп на црвен змеј",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Мерлин / Merlin",
+      "trait": "Стар, мудар волшебник со долга бела брада, стап и светечка магија",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Крал Амброзиј / King Ambrosius",
+      "trait": "Постар, благороден крал, брат на Утер",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Играин / Igraine",
+      "trait": "Убава, нежна кралица со топло, грижливо срце",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Артур / Arthur (бебе)",
+      "trait": "Мил, светлокос бебе со мирно лице",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Непријатели / Enemies",
+      "trait": "Саксонски воини и војски на границата, темни оклопи",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    }
+  ],
+  "acts": [
+    {
+      "id": "act1",
+      "num": "Act I",
+      "title": "Кометата-змеј",
+      "color": "#2dd4bf",
+      "pct": 30,
+      "synopsis": "Во древна Британија живее храбар принц Утер, брат на кралот Амброзиј. Кога Мерлин здогледува комета во облик на змеј и му прорекува дека ќе стане крал, Амброзиј умира и Утер го презема тронот, земајќи го името Пендрагон.",
+      "shots": [
+        {
+          "id": "S01",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "britain_E1_prop"
+          ],
+          "ref_scope": "image1: the ancient-Britain design - misty hills, stone strongholds and a dark sea — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "slow crane-down toward the fortress"
+            ],
+            [
+              1.93,
+              3.5,
+              "resolve"
+            ]
+          ],
+          "narration_mk": "Пред повеќе од илјада и петстотини години, во магливата Британија живееше еден принц.",
+          "dialogue_mk": "",
+          "kf_first": "Aerial high-angle wide establishing shot of an ancient misty Britain at dusk, rolling green hills, stone strongholds and a dark sea beyond, torn clouds, photoreal Diablo 2 cinematic grade, 1216x704",
+          "kf_last": "Crane-down toward a torch-lit hilltop fortress where a lone red banner snaps in the wind",
+          "continuity": "Cold dusk palette, mist, pre-medieval British land",
+          "motion": "slow crane-down toward the fortress",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: aerial high-angle wide establishing shot of an ancient misty Britain at dusk, rolling green hills, stone strongholds and a dark sea beyond, torn clouds, photoreal Diablo 2 cinematic grade then slow crane-down toward the fortress, then resolve settling into crane-down toward a torch-lit hilltop fortress where a lone red banner snaps in the wind continuity held: Cold dusk palette, mist, pre-medieval British land",
+          "image_prompt_start": "photoreal cinematic: wide establishing shot of an ancient misty Britain at dusk, rolling green hills, stone strongholds and a dark sea beyond, torn clouds, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: toward a torch-lit hilltop fortress where a lone red banner snaps in the wind.",
+          "video_prompt_start": "Slow crane-down toward the fortress. resolve. The beat resolves into the next matching frame. Continuity held: Cold dusk palette, mist, pre-medieval British land.",
+          "video_prompt_end": "Slow crane-down toward the fortress. resolve. The beat resolves into the next matching frame. Continuity held: Cold dusk palette, mist, pre-medieval British land.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S02",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "uthr_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Uther Pendragon - bold, resolute prince-turned-king; bronze-scale then red-dragon armor — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "track alongside Uther"
+            ],
+            [
+              1.93,
+              3.5,
+              "soldiers bowing"
+            ]
+          ],
+          "narration_mk": "Тоа беше Утер, брат на кралот Амброзиј и најхрабар од сите воини.",
+          "dialogue_mk": "",
+          "kf_first": "Wide tracking shot of a young prince Uther in bronze-scale armor striding through a muddy encampment, soldiers bowing as he passes, photoreal World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "He mounts a dark warhorse, gripping a round shield painted with his house crest",
+          "continuity": "Uther's armor and shield; steely morning light",
+          "motion": "track alongside Uther; soldiers bowing",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide tracking shot of a young prince Uther in bronze-scale armor striding through a muddy encampment, soldiers bowing as he passes, photoreal World of Warcraft cinematic grade then track alongside Uther, then soldiers bowing settling into he mounts a dark warhorse, gripping a round shield painted with his house crest continuity held: Uther's armor and shield; steely morning light",
+          "image_prompt_start": "photoreal cinematic: of a young prince Uther in bronze-scale armor striding through a muddy encampment, soldiers bowing as he passes.",
+          "image_prompt_end": "photoreal cinematic: He mounts a dark warhorse, gripping a round shield painted with his house crest.",
+          "video_prompt_start": "Track alongside Uther. soldiers bowing. The beat resolves into the next matching frame. Continuity held: Uther's armor and shield; steely morning light.",
+          "video_prompt_end": "Track alongside Uther. soldiers bowing. The beat resolves into the next matching frame. Continuity held: Uther's armor and shield; steely morning light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S03",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "uthr_A1_fused",
+            "sword_K1_prop"
+          ],
+          "ref_scope": "image1: the fused master of Uther Pendragon - bold, resolute prince-turned-king; bronze-scale then red-dragon armor — 100% identical; studio bg/pose/light NOT used; image2: the sword design - a noble steel blade worn by Uther in battle — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.4,
+              "sword raise"
+            ],
+            [
+              1.4,
+              2.8,
+              "lower"
+            ],
+            [
+              2.8,
+              3.5,
+              "crowd cheering"
+            ]
+          ],
+          "narration_mk": "Благодарение на неговата смелост, секогаш ги поразуваше своите непријатели.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of Uther on horseback raising his sword to a grey sky, embers and torn banners behind him, no blood, stylized, photoreal StarCraft cinematic lighting, 1216x704",
+          "kf_last": "He lowers the blade as his men cheer and stamp their spears",
+          "continuity": "Uther's armor, horse and sword; field of victory",
+          "motion": "sword raise and lower; crowd cheering",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Uther on horseback raising his sword to a grey sky, embers and torn banners behind him, no blood, stylized, photoreal StarCraft cinematic lighting then sword raise, then lower, then crowd cheering the camera static settling into he lowers the blade as his men cheer and stamp their spears continuity held: Uther's armor, horse and sword; field of victory",
+          "image_prompt_start": "photoreal cinematic: medium of Uther on horseback raising his sword to a grey sky, embers and torn banners behind him, no blood, stylized, photoreal StarCraft cinematic lighting.",
+          "image_prompt_end": "photoreal cinematic: He lowers the blade as his men cheer and stamp their spears.",
+          "video_prompt_start": "Sword raise. lower. crowd cheering. The camera static. The beat resolves into the next matching frame. Continuity held: Uther's armor, horse and sword; field of victory.",
+          "video_prompt_end": "Sword raise. lower. crowd cheering. The camera static. The beat resolves into the next matching frame. Continuity held: Uther's armor, horse and sword; field of victory.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S04",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "uthr_A1_fused",
+            "merlin_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of Uther Pendragon - bold, resolute prince-turned-king; bronze-scale then red-dragon armor — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Merlin - old, wise wizard; long white beard, gnarled staff, deep-blue robes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "firelight dancing"
+            ],
+            [
+              1.65,
+              3.0,
+              "a shared nod"
+            ]
+          ],
+          "narration_mk": "Но не беше сам — негов верен пријател беше големиот волшебник Мерлин.",
+          "dialogue_mk": "",
+          "kf_first": "Medium shot of the old wizard Merlin standing beside Uther by a fire, long white beard and gnarled staff, robed in deep blue, photoreal World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "The two share a quiet nod as firelight dances between them",
+          "continuity": "Uther's armor; Merlin's robes and staff; warm firelight",
+          "motion": "firelight dancing; a shared nod",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium shot of the old wizard Merlin standing beside Uther by a fire, long white beard and gnarled staff, robed in deep blue, photoreal World of Warcraft cinematic grade Merlin slender, wizard, in robes, cloak, carrying staff, book, wreathed in magic glow then firelight dancing, then a shared nod the camera static settling into the two share a quiet nod as firelight dances between them with arcane energy crackles, pages flutter continuity held: Uther's armor; Merlin's robes and staff; warm firelight",
+          "image_prompt_start": "photoreal cinematic: shot of the old wizard Merlin standing beside Uther by a fire, long white beard and gnarled staff, robed in deep blue.",
+          "image_prompt_end": "photoreal cinematic: The two share a quiet nod as firelight dances between them.",
+          "video_prompt_start": "Firelight dancing. a shared nod. The camera static. The beat resolves into the next matching frame. Continuity held: Uther's armor; Merlin's robes and staff; warm firelight.",
+          "video_prompt_end": "Firelight dancing. a shared nod. The camera static. The beat resolves into the next matching frame. Continuity held: Uther's armor; Merlin's robes and staff; warm firelight.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S05",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "merlin_A2_fused",
+            "tower_E2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Merlin - old, wise wizard; long white beard, gnarled staff, deep-blue robes — 100% identical; studio bg/pose/light NOT used; image2: the wizard-tower design - Merlin cluttered tower with astrolabes and star charts — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "breeze stirring robes"
+            ],
+            [
+              1.65,
+              3.0,
+              "candle flames flickering"
+            ]
+          ],
+          "narration_mk": "Една ноќ, Мерлин ги следеше ѕвездите од неговата кула.",
+          "dialogue_mk": "",
+          "kf_first": "Wide shot of Merlin's cluttered tower interior at night, brass astrolabes, star charts and shelves of scrolls, a tall window open to the dark sky, warm amber light, photoreal, 1216x704",
+          "kf_last": "Merlin steps to the window, his robes stirred by a sudden cold breeze",
+          "continuity": "Merlin's tower set; star charts; warm amber light",
+          "motion": "breeze stirring robes; candle flames flickering",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide shot of Merlin's cluttered tower interior at night, brass astrolabes, star charts and shelves of scrolls, a tall window open to the dark sky, warm amber light, photoreal Merlin slender, wizard, in robes, cloak, carrying staff, book, wreathed in magic glow then breeze stirring robes, then candle flames flickering the camera static settling into merlin steps to the window, his robes stirred by a sudden cold breeze with arcane energy crackles, pages flutter continuity held: Merlin's tower set; star charts; warm amber light",
+          "image_prompt_start": "photoreal cinematic: shot of Merlin's cluttered tower interior at night, brass astrolabes, star charts and shelves of scrolls, a tall window open to the dark sky, warm amber light, photoreal.",
+          "image_prompt_end": "photoreal cinematic: Merlin steps to the window, his robes stirred by a sudden cold breeze.",
+          "video_prompt_start": "Breeze stirring robes. candle flames flickering. The camera static. The beat resolves into the next matching frame. Continuity held: Merlin's tower set; star charts; warm amber light.",
+          "video_prompt_end": "Breeze stirring robes. candle flames flickering. The camera static. The beat resolves into the next matching frame. Continuity held: Merlin's tower set; star charts; warm amber light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S06",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "pan-left",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "comet_E8_prop",
+            "britain_E1_prop"
+          ],
+          "ref_scope": "image1: the dragon-comet design - a colossal comet whose tail coils like a dragon — 100% identical; studio bg/pose/light NOT used; image2: the ancient-Britain design - misty hills, stone strongholds and a dark sea — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "pan-left"
+            ],
+            [
+              1.93,
+              3.5,
+              "comet tail streaming"
+            ]
+          ],
+          "narration_mk": "Тогаш на небото се појави голема комета во облик на змеј.",
+          "dialogue_mk": "",
+          "kf_first": "Wide high-angle shot of a colossal comet streaking across the night sky, its glowing tail coiling like a dragon's mouth and wings, above the sleeping fortress, photoreal Diablo 2 cinematic grade, 1216x704",
+          "kf_last": "Pan-left as the comet's light floods the hills and reflects in the river below",
+          "continuity": "Night sky, comet, cold blue-gold light",
+          "motion": "pan-left; comet tail streaming",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide high-angle shot of a colossal comet streaking across the night sky, its glowing tail coiling like a dragon's mouth and wings, above the sleeping fortress, photoreal Diablo 2 cinematic grade then pan-left, then comet tail streaming settling into pan-left as the comet's light floods the hills and reflects in the river below continuity held: Night sky, comet, cold blue-gold light",
+          "image_prompt_start": "photoreal cinematic: high-angle shot of a colossal comet streaking across the night sky, its glowing tail coiling like a dragon's mouth and wings, above the sleeping fortress, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: -left as the comet's light floods the hills and reflects in the river below.",
+          "video_prompt_start": "Pan-left. comet tail streaming. The beat resolves into the next matching frame. Continuity held: Night sky, comet, cold blue-gold light.",
+          "video_prompt_end": "Pan-left. comet tail streaming. The beat resolves into the next matching frame. Continuity held: Night sky, comet, cold blue-gold light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S07",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "merlin_A2_fused",
+            "comet_E8_prop"
+          ],
+          "ref_scope": "image1: the fused master of Merlin - old, wise wizard; long white beard, gnarled staff, deep-blue robes — 100% identical; studio bg/pose/light NOT used; image2: the dragon-comet design - a colossal comet whose tail coils like a dragon — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "push-in"
+            ],
+            [
+              1.93,
+              3.5,
+              "comet light flaring"
+            ]
+          ],
+          "narration_mk": "Обликот на змејот светеше како жив оган.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of Merlin's awed face lit by the comet's gold-green glow, his eyes reflecting the dragon shape",
+          "kf_last": "Push-in as the dragon-light flares brighter and his lips part in wonder",
+          "continuity": "Merlin's face; comet glow reflected",
+          "motion": "push-in; comet light flaring",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of Merlin's awed face lit by the comet's gold-green glow, his eyes reflecting the dragon shape Merlin slender, wizard, in robes, cloak, carrying staff, book, wreathed in magic glow then push-in, then comet light flaring settling into push-in as the dragon-light flares brighter and his lips part in wonder with arcane energy crackles, pages flutter continuity held: Merlin's face; comet glow reflected",
+          "image_prompt_start": "photoreal cinematic: of Merlin's awed face lit by the comet's gold-green glow, his eyes reflecting the dragon shape.",
+          "image_prompt_end": "photoreal cinematic: as the dragon-light flares brighter and his lips part in wonder.",
+          "video_prompt_start": "Push-in. comet light flaring. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Merlin's face; comet glow reflected.",
+          "video_prompt_end": "Push-in. comet light flaring. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Merlin's face; comet glow reflected.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S08",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "over-shoulder",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "merlin_A2_fused",
+            "uthr_A1_fused",
+            "comet_E8_prop"
+          ],
+          "ref_scope": "image1: the fused master of Merlin - old, wise wizard; long white beard, gnarled staff, deep-blue robes — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Uther Pendragon - bold, resolute prince-turned-king; bronze-scale then red-dragon armor — 100% identical; studio bg/pose/light NOT used; image3: the dragon-comet design - a colossal comet whose tail coils like a dragon — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "comet tail flickering"
+            ],
+            [
+              1.93,
+              3.5,
+              "subtle dialogue exchange"
+            ]
+          ],
+          "narration_mk": "Со сигурен глас, Мерлин му рече на Утер дека наскоро ќе стане крал.",
+          "dialogue_mk": "Мерлин: „Наскоро ќе станеш крал.“",
+          "kf_first": "Over-shoulder medium of Merlin speaking to Uther under the burning comet, the dragon-shape blazing above them",
+          "kf_last": "Uther's stern face softens with quiet doubt, lit gold from above",
+          "continuity": "Comet above; Uther and Merlin together",
+          "motion": "comet tail flickering; subtle dialogue exchange",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: over-shoulder medium of Merlin speaking to Uther under the burning comet, the dragon-shape blazing above them Merlin slender, wizard, in robes, cloak, carrying staff, book, wreathed in magic glow then comet tail flickering, then subtle dialogue exchange the camera static settling into uther's stern face softens with quiet doubt, lit gold from above with arcane energy crackles, pages flutter a voice speaks in Macedonian: \"Мерлин: „Наскоро ќе станеш крал.“\" continuity held: Comet above; Uther and Merlin together",
+          "image_prompt_start": "photoreal cinematic: Over-shoulder medium of Merlin speaking to Uther under the burning comet, the dragon-shape blazing above them.",
+          "image_prompt_end": "photoreal cinematic: Uther's stern face softens with quiet doubt, lit gold from above.",
+          "video_prompt_start": "Comet tail flickering. subtle dialogue exchange. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Мерлин: „Наскоро ќе станеш крал.“\" Continuity held: Comet above; Uther and Merlin together.",
+          "video_prompt_end": "Comet tail flickering. subtle dialogue exchange. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Мерлин: „Наскоро ќе станеш крал.“\" Continuity held: Comet above; Uther and Merlin together.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S09",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "ambrosius_A3_fused",
+            "uthr_A1_fused",
+            "hall_E3_prop"
+          ],
+          "ref_scope": "image1: the fused master of King Ambrosius - elder, noble king and brother of Uther, peaceful in repose — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Uther Pendragon - bold, resolute prince-turned-king; bronze-scale then red-dragon armor — 100% identical; studio bg/pose/light NOT used; image3: the great-hall design - torch-lit hall with lowered banners and long tables — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "candles flickering"
+            ],
+            [
+              1.93,
+              3.5,
+              "Uther kneeling"
+            ]
+          ],
+          "narration_mk": "Набрзо потоа, кралот Амброзиј мирно почина.",
+          "dialogue_mk": "",
+          "kf_first": "Wide shot of a calm great hall where King Ambrosius lies still on a draped bier, candles burning low, banners lowered, photoreal World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Uther kneels at his brother's side in the quiet hall, head bowed",
+          "continuity": "Great hall; candlelight; Uther and the late king",
+          "motion": "candles flickering; Uther kneeling",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide shot of a calm great hall where King Ambrosius lies still on a draped bier, candles burning low, banners lowered, photoreal World of Warcraft cinematic grade Ambrosius stately, king, in robes, cloak, carrying crown then candles flickering, then Uther kneeling the camera static settling into uther kneels at his brother's side in the quiet hall, head bowed with stone groans continuity held: Great hall; candlelight; Uther and the late king",
+          "image_prompt_start": "photoreal cinematic: shot of a calm great hall where King Ambrosius lies still on a draped bier, candles burning low, banners lowered.",
+          "image_prompt_end": "photoreal cinematic: Uther kneels at his brother's side in the quiet hall, head bowed.",
+          "video_prompt_start": "Candles flickering. Uther kneeling. The camera static. The beat resolves into the next matching frame. Continuity held: Great hall; candlelight; Uther and the late king.",
+          "video_prompt_end": "Candles flickering. Uther kneeling. The camera static. The beat resolves into the next matching frame. Continuity held: Great hall; candlelight; Uther and the late king.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S10",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "uthr_A1_fused",
+            "crown_K2_prop",
+            "hall_E3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Uther Pendragon - bold, resolute prince-turned-king; bronze-scale then red-dragon armor — 100% identical; studio bg/pose/light NOT used; image2: the crown design - a regal golden circlet, the royal crown of Britain — 100% identical; studio bg/pose/light NOT used; image3: the great-hall design - torch-lit hall with lowered banners and long tables — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "push-in"
+            ],
+            [
+              1.93,
+              3.5,
+              "crown lowering"
+            ]
+          ],
+          "narration_mk": "Утер остана единствениот законит владетел на Британија, токму како што предвиде Мерлин.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of Uther rising in the dim hall, a crown being offered to him on a velvet cushion",
+          "kf_last": "Push-in on his resolved face as the crown is lowered toward his brow",
+          "continuity": "Great hall; Uther; the crown prop",
+          "motion": "push-in; crown lowering",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Uther rising in the dim hall, a crown being offered to him on a velvet cushion then push-in, then crown lowering settling into push-in on his resolved face as the crown is lowered toward his brow with stone groans continuity held: Great hall; Uther; the crown prop",
+          "image_prompt_start": "photoreal cinematic: medium of Uther rising in the dim hall, a crown being offered to him on a velvet cushion.",
+          "image_prompt_end": "photoreal cinematic: on his resolved face as the crown is lowered toward his brow.",
+          "video_prompt_start": "Push-in. crown lowering. The beat resolves into the next matching frame. Continuity held: Great hall; Uther; the crown prop.",
+          "video_prompt_end": "Push-in. crown lowering. The beat resolves into the next matching frame. Continuity held: Great hall; Uther; the crown prop.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S11",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "uthr_A1_fused",
+            "dragon_K3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Uther Pendragon - bold, resolute prince-turned-king; bronze-scale then red-dragon armor — 100% identical; studio bg/pose/light NOT used; image2: the red-dragon design - a bold red dragon emblazon on armor and the great war banner — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "brush strokes"
+            ],
+            [
+              1.65,
+              3.0,
+              "crest lighting"
+            ]
+          ],
+          "narration_mk": "Во чест на кометата, Утер нареди на својот оклоп да биде нацртан црвен змеј.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of a skilled hand painting a bold red dragon emblazon across a steel breastplate, fine brush strokes and gold leaf",
+          "kf_last": "The red dragon crest glows under torchlight as the brush pulls away",
+          "continuity": "Uther's armor; red dragon motif; torchlight",
+          "motion": "brush strokes; crest lighting",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of a skilled hand painting a bold red dragon emblazon across a steel breastplate, fine brush strokes and gold leaf then brush strokes, then crest lighting the camera static settling into the red dragon crest glows under torchlight as the brush pulls away continuity held: Uther's armor; red dragon motif; torchlight",
+          "image_prompt_start": "photoreal cinematic: Macro insert of a skilled hand painting a bold red dragon emblazon across a steel breastplate, fine brush strokes and gold leaf.",
+          "image_prompt_end": "photoreal cinematic: The red dragon crest glows under torchlight as the brush pulls away.",
+          "video_prompt_start": "Brush strokes. crest lighting. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Uther's armor; red dragon motif; torchlight.",
+          "video_prompt_end": "Brush strokes. crest lighting. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Uther's armor; red dragon motif; torchlight.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S12",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "uthr_A1_fused",
+            "dragon_K3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Uther Pendragon - bold, resolute prince-turned-king; bronze-scale then red-dragon armor — 100% identical; studio bg/pose/light NOT used; image2: the red-dragon design - a bold red dragon emblazon on armor and the great war banner — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "banner unfurling"
+            ],
+            [
+              1.93,
+              3.5,
+              "torch flames"
+            ]
+          ],
+          "narration_mk": "Го зеде името Пендрагон, што значи „змејова глава“.",
+          "dialogue_mk": "Утер: „Од денес, јас ќе бидам Пендрагон.“",
+          "kf_first": "Low-angle medium of Uther now wearing the red-dragon armor, a matching banner unfurled behind him, torchlight blazing",
+          "kf_last": "The massive red dragon banner snaps open wide, its head looming over him",
+          "continuity": "Red dragon armor; banner; the comet's dragon shape mirrored",
+          "motion": "banner unfurling; torch flames",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Uther now wearing the red-dragon armor, a matching banner unfurled behind him, torchlight blazing then banner unfurling, then torch flames the camera static settling into the massive red dragon banner snaps open wide, its head looming over him a voice speaks in Macedonian: \"Утер: „Од денес, јас ќе бидам Пендрагон.“\" continuity held: Red dragon armor; banner; the comet's dragon shape mirrored",
+          "image_prompt_start": "photoreal cinematic: medium of Uther now wearing the red-dragon armor, a matching banner unfurled behind him, torchlight blazing.",
+          "image_prompt_end": "photoreal cinematic: The massive red dragon banner snaps open wide, its head looming over him.",
+          "video_prompt_start": "Banner unfurling. torch flames. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Утер: „Од денес, јас ќе бидам Пендрагон.“\" Continuity held: Red dragon armor; banner; the comet's dragon shape mirrored.",
+          "video_prompt_end": "Banner unfurling. torch flames. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Утер: „Од денес, јас ќе бидам Пендрагон.“\" Continuity held: Red dragon armor; banner; the comet's dragon shape mirrored.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S13",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "uthr_A1_fused",
+            "dragon_K3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Uther Pendragon - bold, resolute prince-turned-king; bronze-scale then red-dragon armor — 100% identical; studio bg/pose/light NOT used; image2: the red-dragon design - a bold red dragon emblazon on armor and the great war banner — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "crane-up"
+            ],
+            [
+              1.93,
+              3.5,
+              "crowd roaring"
+            ]
+          ],
+          "narration_mk": "Пендрагон се издигна над сите останати, а неговото име одекна низ целата земја.",
+          "dialogue_mk": "",
+          "kf_first": "Wide high-angle shot of King Uther Pendragon standing before his gathered army under the red dragon banner, spears raised, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "Crane-up as the throng roars and the banner flutters against a clearing dawn",
+          "continuity": "Red dragon crest; Uther; his army",
+          "motion": "crane-up; crowd roaring",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide high-angle shot of King Uther Pendragon standing before his gathered army under the red dragon banner, spears raised, photoreal StarCraft cinematic grade then crane-up, then crowd roaring settling into crane-up as the throng roars and the banner flutters against a clearing dawn continuity held: Red dragon crest; Uther; his army",
+          "image_prompt_start": "photoreal cinematic: high-angle shot of King Uther Pendragon standing before his gathered army under the red dragon banner, spears raised.",
+          "image_prompt_end": "photoreal cinematic: as the throng roars and the banner flutters against a clearing dawn.",
+          "video_prompt_start": "Crane-up. crowd roaring. The beat resolves into the next matching frame. Continuity held: Red dragon crest; Uther; his army.",
+          "video_prompt_end": "Crane-up. crowd roaring. The beat resolves into the next matching frame. Continuity held: Red dragon crest; Uther; his army.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S14",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "uthr_A1_fused",
+            "crown_K2_prop"
+          ],
+          "ref_scope": "image1: the fused master of Uther Pendragon - bold, resolute prince-turned-king; bronze-scale then red-dragon armor — 100% identical; studio bg/pose/light NOT used; image2: the crown design - a regal golden circlet, the royal crown of Britain — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "Uther turning"
+            ],
+            [
+              1.65,
+              3.0,
+              "candlelight wavering"
+            ]
+          ],
+          "narration_mk": "Но на кралот му требаше кралица покрај него.",
+          "dialogue_mk": "",
+          "kf_first": "Medium shot of Uther standing alone at a tall castle window, the crown resting in his hands, his reflection in the glass",
+          "kf_last": "He turns from the window, resolved, the hall beyond warm with candlelight",
+          "continuity": "Uther's face and crown; castle interior",
+          "motion": "Uther turning; candlelight wavering",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium shot of Uther standing alone at a tall castle window, the crown resting in his hands, his reflection in the glass then Uther turning, then candlelight wavering the camera static settling into he turns from the window, resolved, the hall beyond warm with candlelight continuity held: Uther's face and crown; castle interior",
+          "image_prompt_start": "photoreal cinematic: shot of Uther standing alone at a tall castle window, the crown resting in his hands, his reflection in the glass.",
+          "image_prompt_end": "photoreal cinematic: He from the window, resolved, the hall beyond warm with candlelight.",
+          "video_prompt_start": "Uther turning. candlelight wavering. The camera static. The beat resolves into the next matching frame. Continuity held: Uther's face and crown; castle interior.",
+          "video_prompt_end": "Uther turning. candlelight wavering. The camera static. The beat resolves into the next matching frame. Continuity held: Uther's face and crown; castle interior.",
+          "motion_intensity": "moderate"
+        }
+      ],
+      "location_ref": "ancient_britain_fortress_merlins_tower_great_hall",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#2dd4bf",
+        "#f2c14e",
+        "#1a2a4a"
+      ],
+      "light_direction": "key light from screen-left, cold dusk and the comet gold-green glow",
+      "time_of_day": "dusk"
+    },
+    {
+      "id": "act2",
+      "num": "Act II",
+      "title": "Кралицата и принцот",
+      "color": "#f59e0b",
+      "pct": 50,
+      "synopsis": "Кралот ја избира убавата Играин за своја кралица. Им се раѓа син Артур. Но додека семејството доживува радост, на границите се собираат непријатели, па Утер решава да го довери Артур на Мерлин.",
+      "shots": [
+        {
+          "id": "S15",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "uthr_A1_fused",
+            "igrain_A4_fused",
+            "manor_E4_prop"
+          ],
+          "ref_scope": "image1: the fused master of Uther Pendragon - bold, resolute prince-turned-king; bronze-scale then red-dragon armor — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Igraine - beautiful, gentle queen with a warm, caring heart — 100% identical; studio bg/pose/light NOT used; image3: the timber-manor design - Igraine flowered manor in a spring valley — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "tracking ride"
+            ],
+            [
+              1.93,
+              3.5,
+              "horse reining"
+            ]
+          ],
+          "narration_mk": "Утер го бараше правото срце за своја кралица.",
+          "dialogue_mk": "",
+          "kf_first": "Wide tracking shot of Uther riding through a flowered valley in early spring, court riders behind him, a distant timber manor ahead, photoreal, 1216x704",
+          "kf_last": "He reins in his horse as a figure in a pale gown steps into the manor's doorway",
+          "continuity": "Uther's red-dragon tunic; spring light; the manor",
+          "motion": "tracking ride; horse reining",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide tracking shot of Uther riding through a flowered valley in early spring, court riders behind him, a distant timber manor ahead, photoreal then tracking ride, then horse reining settling into he reins in his horse as a figure in a pale gown steps into the manor's doorway continuity held: Uther's red-dragon tunic; spring light; the manor",
+          "image_prompt_start": "photoreal cinematic: of Uther riding through a flowered valley in early spring, court riders behind him, a distant timber manor ahead, photoreal.",
+          "image_prompt_end": "photoreal cinematic: He reins in his horse as a figure in a pale gown steps into the manor's doorway.",
+          "video_prompt_start": "Tracking ride. horse reining. The beat resolves into the next matching frame. Continuity held: Uther's red-dragon tunic; spring light; the manor.",
+          "video_prompt_end": "Tracking ride. horse reining. The beat resolves into the next matching frame. Continuity held: Uther's red-dragon tunic; spring light; the manor.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S16",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "igrain_A4_fused"
+          ],
+          "ref_scope": "image1: the fused master of Igraine - beautiful, gentle queen with a warm, caring heart — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.4,
+              "push-in"
+            ],
+            [
+              1.4,
+              2.8,
+              "hair"
+            ],
+            [
+              2.8,
+              3.5,
+              "gown in wind"
+            ]
+          ],
+          "narration_mk": "Таа се викаше Играин — убава, нежна и блага.",
+          "dialogue_mk": "",
+          "kf_first": "Medium shot of the beautiful Igraine standing in golden morning light, her pale gown and loose hair catching the wind, soft smile, photoreal, 1216x704",
+          "kf_last": "Push-in on her warm eyes as she turns toward Uther's approach",
+          "continuity": "Igraine's appearance; morning light; the doorway",
+          "motion": "push-in; hair and gown in wind",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium shot of the beautiful Igraine standing in golden morning light, her pale gown and loose hair catching the wind, soft smile, photoreal then push-in, then hair, then gown in wind settling into push-in on her warm eyes as she turns toward Uther's approach continuity held: Igraine's appearance; morning light; the doorway",
+          "image_prompt_start": "photoreal cinematic: shot of the beautiful Igraine standing in golden morning light, her pale gown and loose hair catching the wind, soft smile, photoreal.",
+          "image_prompt_end": "photoreal cinematic: on her warm eyes as she toward Uther's approach.",
+          "video_prompt_start": "Push-in. hair. gown in wind. The beat resolves into the next matching frame. Continuity held: Igraine's appearance; morning light; the doorway.",
+          "video_prompt_end": "Push-in. hair. gown in wind. The beat resolves into the next matching frame. Continuity held: Igraine's appearance; morning light; the doorway.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S17",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "over-shoulder",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "uthr_A1_fused",
+            "igrain_A4_fused"
+          ],
+          "ref_scope": "image1: the fused master of Uther Pendragon - bold, resolute prince-turned-king; bronze-scale then red-dragon armor — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Igraine - beautiful, gentle queen with a warm, caring heart — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "hands joining"
+            ],
+            [
+              1.65,
+              3.0,
+              "blossoms drifting"
+            ]
+          ],
+          "narration_mk": "Утер ја избра Играин, и таа стана кралица покрај него.",
+          "dialogue_mk": "Утер: „Ќе бидеш мојата кралица.“",
+          "kf_first": "Over-shoulder medium of Uther offering his hand to Igraine in the sunlit courtyard, courtiers gathered at a respectful distance",
+          "kf_last": "She lays her hand in his, both smiling, spring blossoms drifting",
+          "continuity": "Uther and Igraine; courtyard; spring palette",
+          "motion": "hands joining; blossoms drifting",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: over-shoulder medium of Uther offering his hand to Igraine in the sunlit courtyard, courtiers gathered at a respectful distance then hands joining, then blossoms drifting the camera static settling into she lays her hand in his, both smiling, spring blossoms drifting a voice speaks in Macedonian: \"Утер: „Ќе бидеш мојата кралица.“\" continuity held: Uther and Igraine; courtyard; spring palette",
+          "image_prompt_start": "photoreal cinematic: Over-shoulder medium of Uther offering his hand to Igraine in the sunlit courtyard, courtiers gathered at a respectful distance.",
+          "image_prompt_end": "photoreal cinematic: She lays her hand in his, both smiling, spring blossoms drifting.",
+          "video_prompt_start": "Hands joining. blossoms drifting. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Утер: „Ќе бидеш мојата кралица.“\" Continuity held: Uther and Igraine; courtyard; spring palette.",
+          "video_prompt_end": "Hands joining. blossoms drifting. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Утер: „Ќе бидеш мојата кралица.“\" Continuity held: Uther and Igraine; courtyard; spring palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S18",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "uthr_A1_fused",
+            "igrain_A4_fused",
+            "hall_E3_prop",
+            "dragon_K3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Uther Pendragon - bold, resolute prince-turned-king; bronze-scale then red-dragon armor — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Igraine - beautiful, gentle queen with a warm, caring heart — 100% identical; studio bg/pose/light NOT used; image3: the great-hall design - torch-lit hall with lowered banners and long tables — 100% identical; studio bg/pose/light NOT used; image4: the red-dragon design - a bold red dragon emblazon on armor and the great war banner — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "crane-down"
+            ],
+            [
+              1.93,
+              3.5,
+              "crowd dancing"
+            ]
+          ],
+          "narration_mk": "На свадбата, целата земја се радуваше.",
+          "dialogue_mk": "",
+          "kf_first": "Wide high-angle shot of a joyous wedding feast in the great hall, long tables, torches, red dragon banners, music and dancing, photoreal World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Crane-down onto Uther and Igraine seated together at the high table, toasting the crowd",
+          "continuity": "Great hall; red dragon banners; Uther and Igraine",
+          "motion": "crane-down; crowd dancing",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide high-angle shot of a joyous wedding feast in the great hall, long tables, torches, red dragon banners, music and dancing, photoreal World of Warcraft cinematic grade then crane-down, then crowd dancing settling into crane-down onto Uther and Igraine seated together at the high table, toasting the crowd with stone groans continuity held: Great hall; red dragon banners; Uther and Igraine",
+          "image_prompt_start": "photoreal cinematic: high-angle shot of a joyous wedding feast in the great hall, long tables, torches, red dragon banners, music and dancing.",
+          "image_prompt_end": "photoreal cinematic: onto Uther and Igraine seated together at the high table, toasting the crowd.",
+          "video_prompt_start": "Crane-down. crowd dancing. The beat resolves into the next matching frame. Continuity held: Great hall; red dragon banners; Uther and Igraine.",
+          "video_prompt_end": "Crane-down. crowd dancing. The beat resolves into the next matching frame. Continuity held: Great hall; red dragon banners; Uther and Igraine.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S19",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "igrain_A4_fused",
+            "uthr_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Igraine - beautiful, gentle queen with a warm, caring heart — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Uther Pendragon - bold, resolute prince-turned-king; bronze-scale then red-dragon armor — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "snow falling"
+            ],
+            [
+              1.65,
+              3.0,
+              "hand resting"
+            ]
+          ],
+          "narration_mk": "Потоа дојде вест исполнета со среќа — во дворецот ќе се роди дете.",
+          "dialogue_mk": "",
+          "kf_first": "Medium shot of Igraine in warm candlelight placing a hand on her growing child, Uther beside her with quiet pride",
+          "kf_last": "She looks up at him as snow begins to fall beyond the tower window",
+          "continuity": "Igraine and Uther; castle chamber; candlelight",
+          "motion": "snow falling; hand resting",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium shot of Igraine in warm candlelight placing a hand on her growing child, Uther beside her with quiet pride then snow falling, then hand resting the camera static settling into she looks up at him as snow begins to fall beyond the tower window continuity held: Igraine and Uther; castle chamber; candlelight",
+          "image_prompt_start": "photoreal cinematic: shot of Igraine in warm candlelight placing a hand on her growing child, Uther beside her with quiet pride.",
+          "image_prompt_end": "photoreal cinematic: She looks up at him as snow begins to fall beyond the tower window.",
+          "video_prompt_start": "Snow falling. hand resting. The camera static. The beat resolves into the next matching frame. Continuity held: Igraine and Uther; castle chamber; candlelight.",
+          "video_prompt_end": "Snow falling. hand resting. The camera static. The beat resolves into the next matching frame. Continuity held: Igraine and Uther; castle chamber; candlelight.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S20",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "arthur_A5_fused",
+            "igrain_A4_fused"
+          ],
+          "ref_scope": "image1: the fused master of Arthur - fair-haired child from newborn to toddler, peaceful bright eyes — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Igraine - beautiful, gentle queen with a warm, caring heart — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "baby lifted"
+            ],
+            [
+              1.93,
+              3.5,
+              "firelight glow"
+            ]
+          ],
+          "narration_mk": "И така се роди едно дете, кое го нарекоа Артур.",
+          "dialogue_mk": "",
+          "kf_first": "Wide shot of a stone birth chamber lit by firelight, midwives gathered, the first cry of a newborn breaking the hush, photoreal, 1216x704",
+          "kf_last": "A baby wrapped in white linen is lifted gently into the warm lamplight",
+          "continuity": "Castle chamber; firelight; the newborn",
+          "motion": "baby lifted; firelight glow",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide shot of a stone birth chamber lit by firelight, midwives gathered, the first cry of a newborn breaking the hush, photoreal then baby lifted, then firelight glow the camera static settling into a baby wrapped in white linen is lifted gently into the warm lamplight continuity held: Castle chamber; firelight; the newborn",
+          "image_prompt_start": "photoreal cinematic: shot of a stone birth chamber lit by firelight, midwives gathered, the first cry of a newborn breaking the hush, photoreal.",
+          "image_prompt_end": "photoreal cinematic: A baby wrapped in white linen is lifted gently into the warm lamplight.",
+          "video_prompt_start": "Baby lifted. firelight glow. The camera static. The beat resolves into the next matching frame. Continuity held: Castle chamber; firelight; the newborn.",
+          "video_prompt_end": "Baby lifted. firelight glow. The camera static. The beat resolves into the next matching frame. Continuity held: Castle chamber; firelight; the newborn.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S21",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "arthur_A5_fused"
+          ],
+          "ref_scope": "image1: the fused master of Arthur - fair-haired child from newborn to toddler, peaceful bright eyes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "push-in"
+            ],
+            [
+              1.93,
+              3.5,
+              "light drift"
+            ]
+          ],
+          "narration_mk": "Малиот Артур беше мирен, со очи полни светлина.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the newborn Arthur's tiny peaceful face, soft golden hair, wrapped in linen, candlelight in his wide eyes",
+          "kf_last": "Push-in on the baby's blinking eyes as a mote of light drifts across",
+          "continuity": "Baby Arthur's face; golden light; linen wrap",
+          "motion": "push-in; light drift",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the newborn Arthur's tiny peaceful face, soft golden hair, wrapped in linen, candlelight in his wide eyes then push-in, then light drift settling into push-in on the baby's blinking eyes as a mote of light drifts across continuity held: Baby Arthur's face; golden light; linen wrap",
+          "image_prompt_start": "photoreal cinematic: of the newborn Arthur's tiny peaceful face, soft golden hair, wrapped in linen, candlelight in his wide eyes.",
+          "image_prompt_end": "photoreal cinematic: on the baby's blinking eyes as a mote of light drifts across.",
+          "video_prompt_start": "Push-in. light drift. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Baby Arthur's face; golden light; linen wrap.",
+          "video_prompt_end": "Push-in. light drift. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Baby Arthur's face; golden light; linen wrap.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S22",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "uthr_A1_fused",
+            "igrain_A4_fused",
+            "arthur_A5_fused"
+          ],
+          "ref_scope": "image1: the fused master of Uther Pendragon - bold, resolute prince-turned-king; bronze-scale then red-dragon armor — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Igraine - beautiful, gentle queen with a warm, caring heart — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Arthur - fair-haired child from newborn to toddler, peaceful bright eyes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "hand reaching"
+            ],
+            [
+              1.65,
+              3.0,
+              "baby fingers curling"
+            ]
+          ],
+          "narration_mk": "Утер и Играин ја држеа бесценетата нова радост.",
+          "dialogue_mk": "Играин: „Артур... тој е совршен.“",
+          "kf_first": "Medium shot of Uther and Igraine leaning together over the baby in Igraine's arms, firelight warming the small family",
+          "kf_last": "Uther's battle-worn hand reaches to touch the baby's tiny fingers",
+          "continuity": "The family; baby Arthur; warm firelight",
+          "motion": "hand reaching; baby fingers curling",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium shot of Uther and Igraine leaning together over the baby in Igraine's arms, firelight warming the small family then hand reaching, then baby fingers curling the camera static settling into uther's battle-worn hand reaches to touch the baby's tiny fingers a voice speaks in Macedonian: \"Играин: „Артур... тој е совршен.“\" continuity held: The family; baby Arthur; warm firelight",
+          "image_prompt_start": "photoreal cinematic: shot of Uther and Igraine leaning together over the baby in Igraine's arms, firelight warming the small family.",
+          "image_prompt_end": "photoreal cinematic: Uther's battle-worn hand reaches to touch the baby's tiny fingers.",
+          "video_prompt_start": "Hand reaching. baby fingers curling. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Играин: „Артур... тој е совршен.“\" Continuity held: The family; baby Arthur; warm firelight.",
+          "video_prompt_end": "Hand reaching. baby fingers curling. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Играин: „Артур... тој е совршен.“\" Continuity held: The family; baby Arthur; warm firelight.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S23",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "pan-right",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "enemies_B1_sheet",
+            "shore_E5_prop"
+          ],
+          "ref_scope": "image1: the enemy war-sheet - dark Saxon warriors and border war hosts in dark armor — 100% identical; studio bg/pose/light NOT used; image2: the night-shore design - rocky shore where enemy longships land — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "subject identity",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.4,
+              "pan-right"
+            ],
+            [
+              1.4,
+              2.8,
+              "torch flames"
+            ],
+            [
+              2.8,
+              3.5,
+              "host marching"
+            ]
+          ],
+          "narration_mk": "Но на границата, од сенките се собираа непријатели.",
+          "dialogue_mk": "",
+          "kf_first": "Wide high-angle shot of dark enemy longships sliding onto a rocky shore at night, torches winking, a war host massing, photoreal Diablo 2 cinematic grade, 1216x704",
+          "kf_last": "Pan-right across a growing column of armed silhouettes marching inland",
+          "continuity": "Night shore; enemy torches; dark palette",
+          "motion": "pan-right; torch flames; host marching",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide high-angle shot of dark enemy longships sliding onto a rocky shore at night, torches winking, a war host massing, photoreal Diablo 2 cinematic grade then pan-right, then torch flames, then host marching settling into pan-right across a growing column of armed silhouettes marching inland continuity held: Night shore; enemy torches; dark palette",
+          "image_prompt_start": "photoreal cinematic: high-angle shot of dark enemy longships sliding onto a rocky shore at night, torches winking, a war host massing, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: -right across a growing column of armed silhouettes marching inland.",
+          "video_prompt_start": "Pan-right. torch flames. host marching. The beat resolves into the next matching frame. Continuity held: Night shore; enemy torches; dark palette.",
+          "video_prompt_end": "Pan-right. torch flames. host marching. The beat resolves into the next matching frame. Continuity held: Night shore; enemy torches; dark palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S24",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "war_drum_K7_prop",
+            "enemies_B1_sheet"
+          ],
+          "ref_scope": "image1: the war-drum design - a skin war drum booming with each enemy strike — 100% identical; studio bg/pose/light NOT used; image2: the enemy war-sheet - dark Saxon warriors and border war hosts in dark armor — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "subject identity",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "drum skin vibrating"
+            ],
+            [
+              1.65,
+              3.0,
+              "dust shaking"
+            ]
+          ],
+          "narration_mk": "Над нивните кампови тапаните биеја како далечен гром.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of a war drum skin vibrating under a striking fist, embers and smoke drifting past",
+          "kf_last": "A second fist strikes, the drum booming, dust shaking free",
+          "continuity": "Enemy camp; war drum; ember and smoke",
+          "motion": "drum skin vibrating; dust shaking",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of a war drum skin vibrating under a striking fist, embers and smoke drifting past then drum skin vibrating, then dust shaking the camera static settling into a second fist strikes, the drum booming, dust shaking free continuity held: Enemy camp; war drum; ember and smoke",
+          "image_prompt_start": "photoreal cinematic: Macro insert of a war drum skin vibrating under a striking fist, embers and smoke drifting past.",
+          "image_prompt_end": "photoreal cinematic: A second fist strikes, the drum booming, dust shaking free.",
+          "video_prompt_start": "Drum skin vibrating. dust shaking. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Enemy camp; war drum; ember and smoke.",
+          "video_prompt_end": "Drum skin vibrating. dust shaking. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Enemy camp; war drum; ember and smoke.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S25",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "uthr_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Uther Pendragon - bold, resolute prince-turned-king; bronze-scale then red-dragon armor — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "torch flare"
+            ],
+            [
+              1.65,
+              3.0,
+              "gaze hardening"
+            ]
+          ],
+          "narration_mk": "Утер знаеше дека битката доаѓа.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of Uther's grave face in dim hall light, the red dragon crest on his shoulder catching a flare of torchlight",
+          "kf_last": "His gaze hardens as distant thunder rolls beyond the walls",
+          "continuity": "Uther's face and armor; dim hall",
+          "motion": "torch flare; gaze hardening",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of Uther's grave face in dim hall light, the red dragon crest on his shoulder catching a flare of torchlight then torch flare, then gaze hardening the camera static settling into his gaze hardens as distant thunder rolls beyond the walls continuity held: Uther's face and armor; dim hall",
+          "image_prompt_start": "photoreal cinematic: of Uther's grave face in dim hall light, the red dragon crest on his shoulder catching a flare of torchlight.",
+          "image_prompt_end": "photoreal cinematic: His gaze hardens as distant thunder rolls beyond the walls.",
+          "video_prompt_start": "Torch flare. gaze hardening. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Uther's face and armor; dim hall.",
+          "video_prompt_end": "Torch flare. gaze hardening. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Uther's face and armor; dim hall.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S26",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "shot-reverse",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "uthr_A1_fused",
+            "igrain_A4_fused",
+            "arthur_A5_fused",
+            "cradle_K6_prop"
+          ],
+          "ref_scope": "image1: the fused master of Uther Pendragon - bold, resolute prince-turned-king; bronze-scale then red-dragon armor — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Igraine - beautiful, gentle queen with a warm, caring heart — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Arthur - fair-haired child from newborn to toddler, peaceful bright eyes — 100% identical; studio bg/pose/light NOT used; image4: the cradle design - a woven wooden cradle holding the newborn Arthur — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "shot-reverse"
+            ],
+            [
+              1.93,
+              3.5,
+              "storm shadows moving"
+            ]
+          ],
+          "narration_mk": "Кралот беше опкружен со непријатели, па мораше да донесе тешка одлука.",
+          "dialogue_mk": "Утер: „Овде Артур не е безбеден.“",
+          "kf_first": "Shot-reverse of Uther and Igraine in tense conversation, the baby asleep in a cradle between them, storm light in the window",
+          "kf_last": "Igraine looks down at the cradle, then back to Uther, worry in her eyes",
+          "continuity": "Uther, Igraine, baby Arthur; storm light",
+          "motion": "shot-reverse; storm shadows moving",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: shot-reverse of Uther and Igraine in tense conversation, the baby asleep in a cradle between them, storm light in the window then shot-reverse, then storm shadows moving the camera static settling into igraine looks down at the cradle, then back to Uther, worry in her eyes a voice speaks in Macedonian: \"Утер: „Овде Артур не е безбеден.“\" continuity held: Uther, Igraine, baby Arthur; storm light",
+          "image_prompt_start": "photoreal cinematic: Shot-reverse of Uther and Igraine in tense conversation, the baby asleep in a cradle between them, storm light in the window.",
+          "image_prompt_end": "photoreal cinematic: Igraine looks down at the cradle, then back to Uther, worry in her eyes.",
+          "video_prompt_start": "Shot-reverse. storm shadows moving. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Утер: „Овде Артур не е безбеден.“\" Continuity held: Uther, Igraine, baby Arthur; storm light.",
+          "video_prompt_end": "Shot-reverse. storm shadows moving. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Утер: „Овде Артур не е безбеден.“\" Continuity held: Uther, Igraine, baby Arthur; storm light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S27",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "uthr_A1_fused",
+            "arthur_A5_fused",
+            "cradle_K6_prop"
+          ],
+          "ref_scope": "image1: the fused master of Uther Pendragon - bold, resolute prince-turned-king; bronze-scale then red-dragon armor — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Arthur - fair-haired child from newborn to toddler, peaceful bright eyes — 100% identical; studio bg/pose/light NOT used; image3: the cradle design - a woven wooden cradle holding the newborn Arthur — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "baby lifted"
+            ],
+            [
+              1.93,
+              3.5,
+              "hands cradling"
+            ]
+          ],
+          "narration_mk": "Утер го зеде својот син в раце, тежок од тага.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of Uther's large hands gently lifting baby Arthur from the cradle, the child's small fingers wrapped around his thumb",
+          "kf_last": "Push-in on Uther's face bending toward the baby, eyes glistening",
+          "continuity": "Baby Arthur; Uther's hands; cradle",
+          "motion": "baby lifted; hands cradling",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of Uther's large hands gently lifting baby Arthur from the cradle, the child's small fingers wrapped around his thumb then baby lifted, then hands cradling the camera push-in settling into push-in on Uther's face bending toward the baby, eyes glistening continuity held: Baby Arthur; Uther's hands; cradle",
+          "image_prompt_start": "photoreal cinematic: of Uther's large hands gently lifting baby Arthur from the cradle, the child's small fingers wrapped around his thumb.",
+          "image_prompt_end": "photoreal cinematic: on Uther's face bending toward the baby, eyes glistening.",
+          "video_prompt_start": "Baby lifted. hands cradling. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Baby Arthur; Uther's hands; cradle.",
+          "video_prompt_end": "Baby lifted. hands cradling. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Baby Arthur; Uther's hands; cradle.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S28",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "uthr_A1_fused",
+            "merlin_A2_fused",
+            "arthur_A5_fused"
+          ],
+          "ref_scope": "image1: the fused master of Uther Pendragon - bold, resolute prince-turned-king; bronze-scale then red-dragon armor — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Merlin - old, wise wizard; long white beard, gnarled staff, deep-blue robes — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Arthur - fair-haired child from newborn to toddler, peaceful bright eyes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "cloaks tugging"
+            ],
+            [
+              1.65,
+              3.0,
+              "baby extended"
+            ]
+          ],
+          "narration_mk": "Реши да го довери Артур на Мерлин — оној кој го учеше и му прорече сѐ.",
+          "dialogue_mk": "",
+          "kf_first": "Medium shot of Uther standing in the hall doorway as Merlin steps inside, storm wind tugging at both their cloaks",
+          "kf_last": "Uther extends the swaddled baby toward the wizard, determination and sorrow mixed",
+          "continuity": "Uther and Merlin; hallway; storm wind",
+          "motion": "cloaks tugging; baby extended",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium shot of Uther standing in the hall doorway as Merlin steps inside, storm wind tugging at both their cloaks Merlin slender, wizard, in robes, cloak, carrying staff, book, wreathed in magic glow then cloaks tugging, then baby extended the camera static settling into uther extends the swaddled baby toward the wizard, determination and sorrow mixed with arcane energy crackles, pages flutter continuity held: Uther and Merlin; hallway; storm wind",
+          "image_prompt_start": "photoreal cinematic: shot of Uther standing in the hall doorway as Merlin steps inside, storm wind tugging at both their cloaks.",
+          "image_prompt_end": "photoreal cinematic: Uther extends the swaddled baby toward the wizard, determination and sorrow mixed.",
+          "video_prompt_start": "Cloaks tugging. baby extended. The camera static. The beat resolves into the next matching frame. Continuity held: Uther and Merlin; hallway; storm wind.",
+          "video_prompt_end": "Cloaks tugging. baby extended. The camera static. The beat resolves into the next matching frame. Continuity held: Uther and Merlin; hallway; storm wind.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S29",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "merlin_A2_fused",
+            "arthur_A5_fused",
+            "staff_K4_prop"
+          ],
+          "ref_scope": "image1: the fused master of Merlin - old, wise wizard; long white beard, gnarled staff, deep-blue robes — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Arthur - fair-haired child from newborn to toddler, peaceful bright eyes — 100% identical; studio bg/pose/light NOT used; image3: the staff design - Merlin gnarled staff glowing with soft blue magic — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "baby settling"
+            ],
+            [
+              1.93,
+              3.5,
+              "staff glowing"
+            ]
+          ],
+          "narration_mk": "Со мудра смиреност, Мерлин го прифати бебето.",
+          "dialogue_mk": "Мерлин: „Не грижи се. Ќе биде безбеден со мене.“",
+          "kf_first": "Medium shot of Merlin receiving baby Arthur into his arms, his staff glowing faintly blue, a calm smile crossing his beard",
+          "kf_last": "The baby settles against the wizard's chest, a soft light warming them both",
+          "continuity": "Merlin, baby Arthur; soft blue magic light",
+          "motion": "baby settling; staff glowing",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium shot of Merlin receiving baby Arthur into his arms, his staff glowing faintly blue, a calm smile crossing his beard Merlin slender, wizard, in robes, cloak, carrying staff, book, wreathed in magic glow then baby settling, then staff glowing the camera static settling into the baby settles against the wizard's chest, a soft light warming them both with arcane energy crackles, pages flutter a voice speaks in Macedonian: \"Мерлин: „Не грижи се. Ќе биде безбеден со мене.“\" continuity held: Merlin, baby Arthur; soft blue magic light",
+          "image_prompt_start": "photoreal cinematic: shot of Merlin receiving baby Arthur into his arms, his staff glowing faintly blue, a calm smile crossing his beard.",
+          "image_prompt_end": "photoreal cinematic: The baby against the wizard's chest, a soft light warming them both.",
+          "video_prompt_start": "Baby settling. staff glowing. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Мерлин: „Не грижи се. Ќе биде безбеден со мене.“\" Continuity held: Merlin, baby Arthur; soft blue magic light.",
+          "video_prompt_end": "Baby settling. staff glowing. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Мерлин: „Не грижи се. Ќе биде безбеден со мене.“\" Continuity held: Merlin, baby Arthur; soft blue magic light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S30",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "merlin_A2_fused",
+            "book_K5_prop",
+            "staff_K4_prop"
+          ],
+          "ref_scope": "image1: the fused master of Merlin - old, wise wizard; long white beard, gnarled staff, deep-blue robes — 100% identical; studio bg/pose/light NOT used; image2: the magic-book design - gilded pages of stars and beasts that turn on their own — 100% identical; studio bg/pose/light NOT used; image3: the staff design - Merlin gnarled staff glowing with soft blue magic — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "magic spark"
+            ],
+            [
+              1.65,
+              3.0,
+              "floating objects"
+            ]
+          ],
+          "narration_mk": "Ќе го учеше литература и наука, а можеби и неколку волшебнички трикови.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of Merlin's kind eyes above the baby, the faint glow of a floating book and a vial drifting behind him",
+          "kf_last": "A tiny spark of magic dances over his staff's tip, reflecting in his beard",
+          "continuity": "Merlin's face; baby; magical props",
+          "motion": "magic spark; floating objects",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of Merlin's kind eyes above the baby, the faint glow of a floating book and a vial drifting behind him Merlin slender, wizard, in robes, cloak, carrying staff, book, wreathed in magic glow then magic spark, then floating objects the camera static settling into a tiny spark of magic dances over his staff's tip, reflecting in his beard with arcane energy crackles, pages flutter continuity held: Merlin's face; baby; magical props",
+          "image_prompt_start": "photoreal cinematic: of Merlin's kind eyes above the baby, the faint glow of a floating book and a vial drifting behind him.",
+          "image_prompt_end": "photoreal cinematic: A tiny spark of magic dances over his staff's tip, reflecting in his beard.",
+          "video_prompt_start": "Magic spark. floating objects. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Merlin's face; baby; magical props.",
+          "video_prompt_end": "Magic spark. floating objects. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Merlin's face; baby; magical props.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S31",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "over-shoulder",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "igrain_A4_fused",
+            "merlin_A2_fused",
+            "arthur_A5_fused"
+          ],
+          "ref_scope": "image1: the fused master of Igraine - beautiful, gentle queen with a warm, caring heart — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Merlin - old, wise wizard; long white beard, gnarled staff, deep-blue robes — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Arthur - fair-haired child from newborn to toddler, peaceful bright eyes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "fingertips brushing"
+            ],
+            [
+              1.93,
+              3.5,
+              "whisper"
+            ]
+          ],
+          "narration_mk": "Играин, со солзи во очите, ја кажа својата мајчинска молба.",
+          "dialogue_mk": "Играин: „Пази на моето момче, Мерлин.“",
+          "kf_first": "Over-shoulder shot of Igraine reaching to touch the baby one last time, Merlin between the parents",
+          "kf_last": "Her fingertips brush the baby's cheek as she whispers a blessing",
+          "continuity": "Igraine, Merlin, baby Arthur; tender farewell",
+          "motion": "fingertips brushing; whisper",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: over-shoulder shot of Igraine reaching to touch the baby one last time, Merlin between the parents Merlin slender, wizard, in robes, cloak, carrying staff, book, wreathed in magic glow then fingertips brushing, then whisper the camera static settling into her fingertips brush the baby's cheek as she whispers a blessing with arcane energy crackles, pages flutter a voice speaks in Macedonian: \"Играин: „Пази на моето момче, Мерлин.“\" continuity held: Igraine, Merlin, baby Arthur; tender farewell",
+          "image_prompt_start": "photoreal cinematic: Over-shoulder shot of Igraine reaching to touch the baby one last time, Merlin between the parents.",
+          "image_prompt_end": "photoreal cinematic: Her fingertips brush the baby's cheek as she whispers a blessing.",
+          "video_prompt_start": "Fingertips brushing. whisper. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Играин: „Пази на моето момче, Мерлин.“\" Continuity held: Igraine, Merlin, baby Arthur; tender farewell.",
+          "video_prompt_end": "Fingertips brushing. whisper. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Играин: „Пази на моето момче, Мерлин.“\" Continuity held: Igraine, Merlin, baby Arthur; tender farewell.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S32",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pull-back",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "merlin_A2_fused",
+            "arthur_A5_fused",
+            "forest_E6_prop"
+          ],
+          "ref_scope": "image1: the fused master of Merlin - old, wise wizard; long white beard, gnarled staff, deep-blue robes — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Arthur - fair-haired child from newborn to toddler, peaceful bright eyes — 100% identical; studio bg/pose/light NOT used; image3: the misty-forest design - dense ancient forest where Merlin hides — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "pull-back"
+            ],
+            [
+              1.93,
+              3.5,
+              "mist swallowing the path"
+            ]
+          ],
+          "narration_mk": "Потоа Мерлин исчезна во шумата со бебето во раце.",
+          "dialogue_mk": "",
+          "kf_first": "Wide shot of Merlin walking away from the castle gate into dense misty forest, baby Arthur wrapped against the cold, his staff lighting the path",
+          "kf_last": "Pull-back as the trees close over him and the castle fades into the fog behind",
+          "continuity": "Merlin, the baby, the misty forest",
+          "motion": "pull-back; mist swallowing the path",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide shot of Merlin walking away from the castle gate into dense misty forest, baby Arthur wrapped against the cold, his staff lighting the path Merlin slender, wizard, in robes, cloak, carrying staff, book, wreathed in magic glow then pull-back, then mist swallowing the path settling into pull-back as the trees close over him and the castle fades into the fog behind with arcane energy crackles, pages flutter continuity held: Merlin, the baby, the misty forest",
+          "image_prompt_start": "photoreal cinematic: shot of Merlin walking away from the castle gate into dense misty forest, baby Arthur wrapped against the cold, his staff lighting the path.",
+          "image_prompt_end": "photoreal cinematic: as the trees close over him and the castle fades into the fog behind.",
+          "video_prompt_start": "Pull-back. mist swallowing the path. The beat resolves into the next matching frame. Continuity held: Merlin, the baby, the misty forest.",
+          "video_prompt_end": "Pull-back. mist swallowing the path. The beat resolves into the next matching frame. Continuity held: Merlin, the baby, the misty forest.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S33",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "merlin_A2_fused",
+            "arthur_A5_fused",
+            "staff_K4_prop",
+            "forest_E6_prop"
+          ],
+          "ref_scope": "image1: the fused master of Merlin - old, wise wizard; long white beard, gnarled staff, deep-blue robes — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Arthur - fair-haired child from newborn to toddler, peaceful bright eyes — 100% identical; studio bg/pose/light NOT used; image3: the staff design - Merlin gnarled staff glowing with soft blue magic — 100% identical; studio bg/pose/light NOT used; image4: the misty-forest design - dense ancient forest where Merlin hides — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "track along the forest path"
+            ],
+            [
+              1.93,
+              3.5,
+              "magic motes"
+            ]
+          ],
+          "narration_mk": "Низ древната шума, Мерлин го носеше Артур како што би носел ризница.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle tracking shot of Merlin's lantern staff glowing among towering oaks, baby Arthur peeking from his bundle, photoreal World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "The track glides through hanging moss as soft motes of blue magic light the way",
+          "continuity": "Merlin's staff light; forest; baby Arthur",
+          "motion": "track along the forest path; magic motes",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle tracking shot of Merlin's lantern staff glowing among towering oaks, baby Arthur peeking from his bundle, photoreal World of Warcraft cinematic grade Merlin slender, wizard, in robes, cloak, carrying staff, book, wreathed in magic glow then track along the forest path, then magic motes settling into the track glides through hanging moss as soft motes of blue magic light the way with arcane energy crackles, pages flutter continuity held: Merlin's staff light; forest; baby Arthur",
+          "image_prompt_start": "photoreal cinematic: of Merlin's lantern staff glowing among towering oaks, baby Arthur peeking from his bundle.",
+          "image_prompt_end": "photoreal cinematic: The glides through hanging moss as soft motes of blue magic light the way.",
+          "video_prompt_start": "Track along the forest path. magic motes. The beat resolves into the next matching frame. Continuity held: Merlin's staff light; forest; baby Arthur.",
+          "video_prompt_end": "Track along the forest path. magic motes. The beat resolves into the next matching frame. Continuity held: Merlin's staff light; forest; baby Arthur.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S34",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "arthur_A5_fused"
+          ],
+          "ref_scope": "image1: the fused master of Arthur - fair-haired child from newborn to toddler, peaceful bright eyes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "leaf shadows"
+            ],
+            [
+              1.65,
+              3.0,
+              "eyes closing"
+            ]
+          ],
+          "narration_mk": "Од далечина, катанецот на замокот се спушти зад нив.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of baby Arthur's calm face in the blue lantern glow, the soft shadow of leaves passing over him",
+          "kf_last": "His eyes slowly close in peaceful sleep as the light holds steady",
+          "continuity": "Baby Arthur's face; blue lantern light",
+          "motion": "leaf shadows; eyes closing",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of baby Arthur's calm face in the blue lantern glow, the soft shadow of leaves passing over him then leaf shadows, then eyes closing the camera static settling into his eyes slowly close in peaceful sleep as the light holds steady continuity held: Baby Arthur's face; blue lantern light",
+          "image_prompt_start": "photoreal cinematic: of baby Arthur's calm face in the blue lantern glow, the soft shadow of leaves passing over him.",
+          "image_prompt_end": "photoreal cinematic: His eyes slowly close in peaceful sleep as the light holds steady.",
+          "video_prompt_start": "Leaf shadows. eyes closing. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Baby Arthur's face; blue lantern light.",
+          "video_prompt_end": "Leaf shadows. eyes closing. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Baby Arthur's face; blue lantern light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S35",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "uthr_A1_fused",
+            "hall_E3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Uther Pendragon - bold, resolute prince-turned-king; bronze-scale then red-dragon armor — 100% identical; studio bg/pose/light NOT used; image2: the great-hall design - torch-lit hall with lowered banners and long tables — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "crane-up"
+            ],
+            [
+              1.93,
+              3.5,
+              "Uther striding in"
+            ]
+          ],
+          "narration_mk": "А Утер се врати во салата, каде војската веќе чекаше.",
+          "dialogue_mk": "",
+          "kf_first": "Wide high-angle shot of Uther marching back into the torch-lit hall, his armored lords gathered around a war table strewn with maps",
+          "kf_last": "Crane-up as he spreads his hands over the map and every eye turns to him",
+          "continuity": "Great hall; war table; Uther and lords",
+          "motion": "crane-up; Uther striding in",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide high-angle shot of Uther marching back into the torch-lit hall, his armored lords gathered around a war table strewn with maps then crane-up, then Uther striding in settling into crane-up as he spreads his hands over the map and every eye turns to him with stone groans continuity held: Great hall; war table; Uther and lords",
+          "image_prompt_start": "photoreal cinematic: high-angle shot of Uther marching back into the torch-lit hall, his armored lords gathered around a war table strewn with maps.",
+          "image_prompt_end": "photoreal cinematic: as he spreads his hands over the map and every eye to him.",
+          "video_prompt_start": "Crane-up. Uther striding in. The beat resolves into the next matching frame. Continuity held: Great hall; war table; Uther and lords.",
+          "video_prompt_end": "Crane-up. Uther striding in. The beat resolves into the next matching frame. Continuity held: Great hall; war table; Uther and lords.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S36",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "uthr_A1_fused",
+            "dragon_K3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Uther Pendragon - bold, resolute prince-turned-king; bronze-scale then red-dragon armor — 100% identical; studio bg/pose/light NOT used; image2: the red-dragon design - a bold red dragon emblazon on armor and the great war banner — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "push-in"
+            ],
+            [
+              1.93,
+              3.5,
+              "forge sparks rising"
+            ]
+          ],
+          "narration_mk": "Тој ја собра својата војска за следната битка.",
+          "dialogue_mk": "Утер: „Соберете ги луѓето. Одиме во војна.“",
+          "kf_first": "Low-angle medium of Uther donning his red-dragon battle helm, lords saluting behind him, forge sparks rising",
+          "kf_last": "Push-in on the dragon crest blazing over his brow as he turns to the hall",
+          "continuity": "Uther's dragon armor and helm; the hall",
+          "motion": "push-in; forge sparks rising",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Uther donning his red-dragon battle helm, lords saluting behind him, forge sparks rising then push-in, then forge sparks rising settling into push-in on the dragon crest blazing over his brow as he turns to the hall a voice speaks in Macedonian: \"Утер: „Соберете ги луѓето. Одиме во војна.“\" continuity held: Uther's dragon armor and helm; the hall",
+          "image_prompt_start": "photoreal cinematic: medium of Uther donning his red-dragon battle helm, lords saluting behind him, forge sparks rising.",
+          "image_prompt_end": "photoreal cinematic: on the dragon crest blazing over his brow as he to the hall.",
+          "video_prompt_start": "Push-in. forge sparks rising. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Утер: „Соберете ги луѓето. Одиме во војна.“\" Continuity held: Uther's dragon armor and helm; the hall.",
+          "video_prompt_end": "Push-in. forge sparks rising. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Утер: „Соберете ги луѓето. Одиме во војна.“\" Continuity held: Uther's dragon armor and helm; the hall.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S37",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "uthr_A1_fused",
+            "dragon_K3_prop"
+          ],
+          "ref_scope": "image1: the fused master of Uther Pendragon - bold, resolute prince-turned-king; bronze-scale then red-dragon armor — 100% identical; studio bg/pose/light NOT used; image2: the red-dragon design - a bold red dragon emblazon on armor and the great war banner — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "track past ranks"
+            ],
+            [
+              1.93,
+              3.5,
+              "war horn"
+            ]
+          ],
+          "narration_mk": "Во долината пред дворецот, војските се подредија во црвени редови.",
+          "dialogue_mk": "",
+          "kf_first": "Wide tracking shot of ranks of armored warriors forming in the courtyard under the red dragon banner, torches and spear tips gleaming, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "The track sweeps past their steady faces as a war horn sounds",
+          "continuity": "Army forming; red dragon banner; torchlight",
+          "motion": "track past ranks; war horn",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide tracking shot of ranks of armored warriors forming in the courtyard under the red dragon banner, torches and spear tips gleaming, photoreal StarCraft cinematic grade then track past ranks, then war horn settling into the track sweeps past their steady faces as a war horn sounds continuity held: Army forming; red dragon banner; torchlight",
+          "image_prompt_start": "photoreal cinematic: of ranks of armored warriors forming in the courtyard under the red dragon banner, torches and spear tips gleaming.",
+          "image_prompt_end": "photoreal cinematic: The sweeps past their steady faces as a war horn sounds.",
+          "video_prompt_start": "Track past ranks. war horn. The beat resolves into the next matching frame. Continuity held: Army forming; red dragon banner; torchlight.",
+          "video_prompt_end": "Track past ranks. war horn. The beat resolves into the next matching frame. Continuity held: Army forming; red dragon banner; torchlight.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S38",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "uthr_A1_fused"
+          ],
+          "ref_scope": "image1: the fused master of Uther Pendragon - bold, resolute prince-turned-king; bronze-scale then red-dragon armor — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "gaze turning"
+            ],
+            [
+              1.93,
+              3.5,
+              "distant light winking"
+            ]
+          ],
+          "narration_mk": "Утер погледна кон шумата, знаејќи дека синот му е на сигурно.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of Uther atop his horse at the gate, turning to gaze once more toward the dark treeline where Merlin vanished",
+          "kf_last": "A faint blue light winks deep in the forest, then fades, and he faces forward",
+          "continuity": "Uther; the forest; faint magic light",
+          "motion": "gaze turning; distant light winking",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of Uther atop his horse at the gate, turning to gaze once more toward the dark treeline where Merlin vanished then gaze turning, then distant light winking the camera static settling into a faint blue light winks deep in the forest, then fades, and he faces forward continuity held: Uther; the forest; faint magic light",
+          "image_prompt_start": "photoreal cinematic: of Uther atop his horse at the gate, turning to gaze once more toward the dark treeline where Merlin vanished.",
+          "image_prompt_end": "photoreal cinematic: A faint blue light winks deep in the forest, then fades, and he faces forward.",
+          "video_prompt_start": "Gaze turning. distant light winking. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Uther; the forest; faint magic light.",
+          "video_prompt_end": "Gaze turning. distant light winking. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Uther; the forest; faint magic light.",
+          "motion_intensity": "gentle"
+        }
+      ],
+      "location_ref": "igraines_manor_great_hall_and_night_shore",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#f59e0b",
+        "#8a3a2b",
+        "#1a2a4a"
+      ],
+      "light_direction": "key light from screen-right, warm candlelight, firelight and storm grey",
+      "time_of_day": "night"
+    },
+    {
+      "id": "act3",
+      "num": "Act III",
+      "title": "Змејовата глава",
+      "color": "#fbbf24",
+      "pct": 20,
+      "synopsis": "Утер, како Пендрагон, ја поведува војската во битка под багроволикиот знаме, додека Мерлин се грижи и го подучува малиот Артур длабоко во шумата, полагајќи го семето на идната легенда.",
+      "shots": [
+        {
+          "id": "S39",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "uthr_A1_fused",
+            "dragon_K3_prop",
+            "battlefield_E7_prop"
+          ],
+          "ref_scope": "image1: the fused master of Uther Pendragon - bold, resolute prince-turned-king; bronze-scale then red-dragon armor — 100% identical; studio bg/pose/light NOT used; image2: the red-dragon design - a bold red dragon emblazon on armor and the great war banner — 100% identical; studio bg/pose/light NOT used; image3: the battlefield design - the valley field where the two armies meet — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "crane-down"
+            ],
+            [
+              1.93,
+              3.5,
+              "column marching"
+            ]
+          ],
+          "narration_mk": "Со црвениот змеј напред, Утер ја поведе војската кон границата.",
+          "dialogue_mk": "",
+          "kf_first": "Wide high-angle shot of the army on the march at dawn, the great red dragon banner streaming at the head of the column, mist over the hills, photoreal Diablo 2 cinematic grade, 1216x704",
+          "kf_last": "Crane-down onto Uther riding at the front, his dragon helm catching the first light",
+          "continuity": "Red dragon banner; Uther at the head; dawn palette",
+          "motion": "crane-down; column marching",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide high-angle shot of the army on the march at dawn, the great red dragon banner streaming at the head of the column, mist over the hills, photoreal Diablo 2 cinematic grade then crane-down, then column marching settling into crane-down onto Uther riding at the front, his dragon helm catching the first light continuity held: Red dragon banner; Uther at the head; dawn palette",
+          "image_prompt_start": "photoreal cinematic: high-angle shot of the army on the march at dawn, the great red dragon banner streaming at the head of the column, mist over the hills, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: onto Uther riding at the front, his dragon helm catching the first light.",
+          "video_prompt_start": "Crane-down. column marching. The beat resolves into the next matching frame. Continuity held: Red dragon banner; Uther at the head; dawn palette.",
+          "video_prompt_end": "Crane-down. column marching. The beat resolves into the next matching frame. Continuity held: Red dragon banner; Uther at the head; dawn palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S40",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "uthr_A1_fused",
+            "dragon_K3_prop",
+            "sword_K1_prop"
+          ],
+          "ref_scope": "image1: the fused master of Uther Pendragon - bold, resolute prince-turned-king; bronze-scale then red-dragon armor — 100% identical; studio bg/pose/light NOT used; image2: the red-dragon design - a bold red dragon emblazon on armor and the great war banner — 100% identical; studio bg/pose/light NOT used; image3: the sword design - a noble steel blade worn by Uther in battle — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "sword drawn"
+            ],
+            [
+              1.65,
+              3.0,
+              "light flaring"
+            ]
+          ],
+          "narration_mk": "Неговата решителност гореше посветло од било кој оган.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of Uther in full dragon armor astride his warhorse, sunlight flaring behind the crimson crest on his chest",
+          "kf_last": "He draws his sword, the blade ringing in the cold air",
+          "continuity": "Uther's dragon armor and horse; sunrise light",
+          "motion": "sword drawn; light flaring",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Uther in full dragon armor astride his warhorse, sunlight flaring behind the crimson crest on his chest then sword drawn, then light flaring the camera static settling into he draws his sword, the blade ringing in the cold air continuity held: Uther's dragon armor and horse; sunrise light",
+          "image_prompt_start": "photoreal cinematic: medium of Uther in full dragon armor astride his warhorse, sunlight flaring behind the crimson crest on his chest.",
+          "image_prompt_end": "photoreal cinematic: He draws his sword, the blade ringing in the cold air.",
+          "video_prompt_start": "Sword drawn. light flaring. The camera static. The beat resolves into the next matching frame. Continuity held: Uther's dragon armor and horse; sunrise light.",
+          "video_prompt_end": "Sword drawn. light flaring. The camera static. The beat resolves into the next matching frame. Continuity held: Uther's dragon armor and horse; sunrise light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S41",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-left",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "enemies_B1_sheet",
+            "battlefield_E7_prop"
+          ],
+          "ref_scope": "image1: the enemy war-sheet - dark Saxon warriors and border war hosts in dark armor — 100% identical; studio bg/pose/light NOT used; image2: the battlefield design - the valley field where the two armies meet — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "subject identity",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "pan-left"
+            ],
+            [
+              1.93,
+              3.5,
+              "storm gathering"
+            ]
+          ],
+          "narration_mk": "Низ ридовите, непријателските војски дојдоа да го пречекаат.",
+          "dialogue_mk": "",
+          "kf_first": "Wide shot of the enemy war host cresting the opposite ridge, dark shields and banners, a storm front gathering overhead, photoreal StarCraft cinematic grade, 1216x704",
+          "kf_last": "Pan-left as the two armies face each other across the valley field",
+          "continuity": "Two armies; storm sky; valley field",
+          "motion": "pan-left; storm gathering",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide shot of the enemy war host cresting the opposite ridge, dark shields and banners, a storm front gathering overhead, photoreal StarCraft cinematic grade then pan-left, then storm gathering settling into pan-left as the two armies face each other across the valley field continuity held: Two armies; storm sky; valley field",
+          "image_prompt_start": "photoreal cinematic: shot of the enemy war host cresting the opposite ridge, dark shields and banners, a storm front gathering overhead.",
+          "image_prompt_end": "photoreal cinematic: -left as the two armies face each other across the valley field.",
+          "video_prompt_start": "Pan-left. storm gathering. The beat resolves into the next matching frame. Continuity held: Two armies; storm sky; valley field.",
+          "video_prompt_end": "Pan-left. storm gathering. The beat resolves into the next matching frame. Continuity held: Two armies; storm sky; valley field.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S42",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "merlin_A2_fused",
+            "arthur_A5_fused",
+            "forest_E6_prop"
+          ],
+          "ref_scope": "image1: the fused master of Merlin - old, wise wizard; long white beard, gnarled staff, deep-blue robes — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Arthur - fair-haired child from newborn to toddler, peaceful bright eyes — 100% identical; studio bg/pose/light NOT used; image3: the misty-forest design - dense ancient forest where Merlin hides — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "fireflies drifting"
+            ],
+            [
+              1.93,
+              3.5,
+              "dust sprinkling"
+            ]
+          ],
+          "narration_mk": "Далеку во шумата, Мерлин ја палеше ограната лулка.",
+          "dialogue_mk": "",
+          "kf_first": "Medium shot of Merlin in a hidden forest glade, rocking the baby in a mossy cradle he wove with magic, fireflies drifting around",
+          "kf_last": "He sprinkles a pinch of glowing dust over the sleeping child",
+          "continuity": "Merlin, baby Arthur; forest glade; magic glow",
+          "motion": "fireflies drifting; dust sprinkling",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium shot of Merlin in a hidden forest glade, rocking the baby in a mossy cradle he wove with magic, fireflies drifting around Merlin slender, wizard, in robes, cloak, carrying staff, book, wreathed in magic glow then fireflies drifting, then dust sprinkling the camera static settling into he sprinkles a pinch of glowing dust over the sleeping child with arcane energy crackles, pages flutter continuity held: Merlin, baby Arthur; forest glade; magic glow",
+          "image_prompt_start": "photoreal cinematic: shot of Merlin in a hidden forest glade, rocking the baby in a mossy cradle he wove with magic, fireflies drifting around.",
+          "image_prompt_end": "photoreal cinematic: He sprinkles a pinch of glowing dust over the sleeping child.",
+          "video_prompt_start": "Fireflies drifting. dust sprinkling. The camera static. The beat resolves into the next matching frame. Continuity held: Merlin, baby Arthur; forest glade; magic glow.",
+          "video_prompt_end": "Fireflies drifting. dust sprinkling. The camera static. The beat resolves into the next matching frame. Continuity held: Merlin, baby Arthur; forest glade; magic glow.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S43",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "arthur_A5_fused",
+            "book_K5_prop"
+          ],
+          "ref_scope": "image1: the fused master of Arthur - fair-haired child from newborn to toddler, peaceful bright eyes — 100% identical; studio bg/pose/light NOT used; image2: the magic-book design - gilded pages of stars and beasts that turn on their own — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "pages turning"
+            ],
+            [
+              1.65,
+              3.0,
+              "symbols glowing"
+            ]
+          ],
+          "narration_mk": "Книгите и науката се отвораа пред малиот Артур како светулка во ноќта.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of a child's tiny fingers brushing the gilded edge of an open book, ink drawings of stars and beasts glimmering",
+          "kf_last": "The pages turn on their own in a soft blue gust, symbols glowing faintly",
+          "continuity": "Magic book; baby Arthur's hands; blue gust",
+          "motion": "pages turning; symbols glowing",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of a child's tiny fingers brushing the gilded edge of an open book, ink drawings of stars and beasts glimmering then pages turning, then symbols glowing the camera static settling into the pages turn on their own in a soft blue gust, symbols glowing faintly continuity held: Magic book; baby Arthur's hands; blue gust",
+          "image_prompt_start": "photoreal cinematic: Macro insert of a child's tiny fingers brushing the gilded edge of an open book, ink drawings of stars and beasts glimmering.",
+          "image_prompt_end": "photoreal cinematic: The pages turn on their own in a soft blue gust, symbols glowing faintly.",
+          "video_prompt_start": "Pages turning. symbols glowing. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Magic book; baby Arthur's hands; blue gust.",
+          "video_prompt_end": "Pages turning. symbols glowing. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Magic book; baby Arthur's hands; blue gust.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S44",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "merlin_A2_fused",
+            "arthur_A5_fused"
+          ],
+          "ref_scope": "image1: the fused master of Merlin - old, wise wizard; long white beard, gnarled staff, deep-blue robes — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Arthur - fair-haired child from newborn to toddler, peaceful bright eyes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "child reaching"
+            ],
+            [
+              1.93,
+              3.5,
+              "stars twinkling"
+            ]
+          ],
+          "narration_mk": "Додека Утер се бореше, Мерлин го подучуваше Артур на мирни работи.",
+          "dialogue_mk": "Мерлин: „Еден ден, и ти ќе водиш. Но со мудрост, не со меч.“",
+          "kf_first": "Medium shot of Merlin seated on a mossy log with toddler Arthur on his knee, pointing to a floating constellation above them",
+          "kf_last": "The child raises his hand toward the stars, wonder in his eyes",
+          "continuity": "Merlin and slightly older Arthur; forest at night",
+          "motion": "child reaching; stars twinkling",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium shot of Merlin seated on a mossy log with toddler Arthur on his knee, pointing to a floating constellation above them Merlin slender, wizard, in robes, cloak, carrying staff, book, wreathed in magic glow then child reaching, then stars twinkling the camera static settling into the child raises his hand toward the stars, wonder in his eyes with arcane energy crackles, pages flutter a voice speaks in Macedonian: \"Мерлин: „Еден ден, и ти ќе водиш. Но со мудрост, не со меч.“\" continuity held: Merlin and slightly older Arthur; forest at night",
+          "image_prompt_start": "photoreal cinematic: shot of Merlin seated on a mossy log with toddler Arthur on his knee, pointing to a floating constellation above them.",
+          "image_prompt_end": "photoreal cinematic: The child raises his hand toward the stars, wonder in his eyes.",
+          "video_prompt_start": "Child reaching. stars twinkling. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Мерлин: „Еден ден, и ти ќе водиш. Но со мудрост, не со меч.“\" Continuity held: Merlin and slightly older Arthur; forest at night.",
+          "video_prompt_end": "Child reaching. stars twinkling. The camera static. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Мерлин: „Еден ден, и ти ќе водиш. Но со мудрост, не со меч.“\" Continuity held: Merlin and slightly older Arthur; forest at night.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S45",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "uthr_A1_fused",
+            "dragon_K3_prop",
+            "battlefield_E7_prop"
+          ],
+          "ref_scope": "image1: the fused master of Uther Pendragon - bold, resolute prince-turned-king; bronze-scale then red-dragon armor — 100% identical; studio bg/pose/light NOT used; image2: the red-dragon design - a bold red dragon emblazon on armor and the great war banner — 100% identical; studio bg/pose/light NOT used; image3: the battlefield design - the valley field where the two armies meet — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.93,
+              "track forward"
+            ],
+            [
+              1.93,
+              3.5,
+              "embers rising"
+            ]
+          ],
+          "narration_mk": "Пендрагон ја поведе војската напред, а црвениот змеј го крилеше со крилјата.",
+          "dialogue_mk": "",
+          "kf_first": "Wide low-angle tracking shot of Uther leading the charge across the field, the red dragon banner billowing like living wings, embers in the wind, no blood, photoreal StarCraft cinematic lighting, 1216x704",
+          "kf_last": "The charging line surges forward, dust and embers rising around them",
+          "continuity": "Uther leading; red dragon banner; ember wind",
+          "motion": "track forward; embers rising",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide low-angle tracking shot of Uther leading the charge across the field, the red dragon banner billowing like living wings, embers in the wind, no blood, photoreal StarCraft cinematic lighting then track forward, then embers rising settling into the charging line surges forward, dust and embers rising around them continuity held: Uther leading; red dragon banner; ember wind",
+          "image_prompt_start": "photoreal cinematic: low-angle of Uther leading the charge across the field, the red dragon banner billowing like living wings, embers in the wind, no blood, photoreal StarCraft cinematic lighting.",
+          "image_prompt_end": "photoreal cinematic: The charging line surges forward, dust and embers rising around them.",
+          "video_prompt_start": "Track forward. embers rising. The beat resolves into the next matching frame. Continuity held: Uther leading; red dragon banner; ember wind.",
+          "video_prompt_end": "Track forward. embers rising. The beat resolves into the next matching frame. Continuity held: Uther leading; red dragon banner; ember wind.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S46",
+          "shot_type": "CLOSE-UP",
+          "size": "INSERT",
+          "angle": "macro",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "dragon_K3_prop"
+          ],
+          "ref_scope": "image1: the red-dragon design - a bold red dragon emblazon on armor and the great war banner — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.65,
+              "banner rippling"
+            ],
+            [
+              1.65,
+              3.0,
+              "light blazing"
+            ]
+          ],
+          "narration_mk": "Знамето со змејовата глава се вивна високо над бојното поле.",
+          "dialogue_mk": "",
+          "kf_first": "Macro insert of the red dragon banner rippling violently, the embroidered head catching a shaft of storm light",
+          "kf_last": "The banner cracks taut in the wind as the light behind it blazes",
+          "continuity": "Red dragon banner; storm light",
+          "motion": "banner rippling; light blazing",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro insert of the red dragon banner rippling violently, the embroidered head catching a shaft of storm light then banner rippling, then light blazing the camera static settling into the banner cracks taut in the wind as the light behind it blazes continuity held: Red dragon banner; storm light",
+          "image_prompt_start": "photoreal cinematic: Macro insert of the red dragon banner rippling violently, the embroidered head catching a shaft of storm light.",
+          "image_prompt_end": "photoreal cinematic: The banner cracks taut in the wind as the light behind it blazes.",
+          "video_prompt_start": "Banner rippling. light blazing. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Red dragon banner; storm light.",
+          "video_prompt_end": "Banner rippling. light blazing. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Red dragon banner; storm light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S47",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "dragon_K3_prop",
+            "battlefield_E7_prop"
+          ],
+          "ref_scope": "image1: the red-dragon design - a bold red dragon emblazon on armor and the great war banner — 100% identical; studio bg/pose/light NOT used; image2: the battlefield design - the valley field where the two armies meet — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.2,
+              "crane-up"
+            ],
+            [
+              2.2,
+              4.0,
+              "light breaking"
+            ]
+          ],
+          "narration_mk": "Така името Пендрагон — „змејова глава“ — остана да свети низ вековите.",
+          "dialogue_mk": "",
+          "kf_first": "Wide high-angle shot of the battlefield calm after the storm, the red dragon standard planted atop the hill, dawn light breaking through the clouds, photoreal Diablo 2 cinematic grade, 1216x704",
+          "kf_last": "Crane-up over the quiet hills and the lone banner glowing against a clearing sky",
+          "continuity": "Red dragon standard; dawn after battle; no gore",
+          "motion": "crane-up; light breaking",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide high-angle shot of the battlefield calm after the storm, the red dragon standard planted atop the hill, dawn light breaking through the clouds, photoreal Diablo 2 cinematic grade then crane-up, then light breaking settling into crane-up over the quiet hills and the lone banner glowing against a clearing sky continuity held: Red dragon standard; dawn after battle; no gore",
+          "image_prompt_start": "photoreal cinematic: high-angle shot of the battlefield calm after the storm, the red dragon standard planted atop the hill, dawn light breaking through the clouds, photoreal Diablo 2 cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: over the quiet hills and the lone banner glowing against a clearing sky.",
+          "video_prompt_start": "Crane-up. light breaking. The beat resolves into the next matching frame. Continuity held: Red dragon standard; dawn after battle; no gore.",
+          "video_prompt_end": "Crane-up. light breaking. The beat resolves into the next matching frame. Continuity held: Red dragon standard; dawn after battle; no gore.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S48",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "arthur_A5_fused",
+            "merlin_A2_fused"
+          ],
+          "ref_scope": "image1: the fused master of Arthur - fair-haired child from newborn to toddler, peaceful bright eyes — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Merlin - old, wise wizard; long white beard, gnarled staff, deep-blue robes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.2,
+              "push-in on eyes"
+            ],
+            [
+              2.2,
+              4.0,
+              "leaf drifting"
+            ]
+          ],
+          "narration_mk": "А во шумата, малото семе на идната легенда растеше под закрила на волшебникот.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of young Arthur's bright, curious face in the forest undergrowth, green-gold light dappling through leaves, Merlin's hand resting on his shoulder",
+          "kf_last": "Push-in on his steady eyes as a single red-gold leaf drifts past, carrying the promise of a future king",
+          "continuity": "Young Arthur and Merlin; forest dappled light",
+          "motion": "push-in on eyes; leaf drifting",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of young Arthur's bright, curious face in the forest undergrowth, green-gold light dappling through leaves, Merlin's hand resting on his shoulder Merlin slender, wizard, in robes, cloak, carrying staff, book, wreathed in magic glow then push-in on eyes, then leaf drifting settling into push-in on his steady eyes as a single red-gold leaf drifts past, carrying the promise of a future king with arcane energy crackles, pages flutter continuity held: Young Arthur and Merlin; forest dappled light",
+          "image_prompt_start": "photoreal cinematic: of young Arthur's bright, curious face in the forest undergrowth, green-gold light dappling through leaves, Merlin's hand resting on his shoulder.",
+          "image_prompt_end": "photoreal cinematic: on his steady eyes as a single red-gold leaf drifts past, carrying the promise of a future king.",
+          "video_prompt_start": "Push-in on eyes. leaf drifting. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Young Arthur and Merlin; forest dappled light.",
+          "video_prompt_end": "Push-in on eyes. leaf drifting. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Young Arthur and Merlin; forest dappled light.",
+          "motion_intensity": "gentle"
+        }
+      ],
+      "location_ref": "battlefield_valley_and_misty_forest_glade",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#fbbf24",
+        "#b91c1c",
+        "#14532d"
+      ],
+      "light_direction": "radiant dawn light from above, key light from screen-left over the field and the forest",
+      "time_of_day": "dawn"
+    }
+  ],
+  "director_corrections": {
+    "issued": "2026-11-07",
+    "source": "KB §13 DIRECTOR CORRECTIONS — overrides all prior asset/keyframe guidance",
+    "rules": [
+      "DD HEADWEAR: no cap/hood/bandana/mask on head; hood = back-cowl only (cape-like); bare head + teal-blue glowing hair always visible; any head/face covering = REJECT",
+      "LEGENDARY WEAPONS MUST APPEAR: DD = twin Frostbite-class hand crossbows (ice-blue arcane crystal limbs, frost runes, frozen-light string, teal-blue glow); AZ = Dawnbreaker-class greatsword (pale sunsteel, molten-gold runes, golden holy fire edge, sunburst crossguard); hero sheet/keyframe without weapon = INCOMPLETE",
+      "WEAPON ANTI-SLOP: fantasy construction only; crossbow must NEVER read as firearm (no barrel/magazine/stock/Uzi/SMG silhouette = REJECT); anti-slop negatives always appended",
+      "BOSS FACE: Mal'garot HAS a prolific molten-lava face (lava dripping/running, drops falling to ground); faceless boss sheets SUPERSEDED",
+      "LOCATION BRIGHTNESS FLOOR: environment plates silhouette-readable at thumbnail; no murk-dark grades"
+    ],
+    "applies_when": "Activates when face_lock changes from AI-default to an enrolled identity (DD/AZ). AI-default packages carry this as a forward constraint, not a current defect.",
+    "anti_slop_negatives": "firearm, gun, machinegun, Uzi, barrel, magazine, ammo clip, muzzle, modern weapon"
+  },
+  "character_designs": {
+    "uther": {
+      "archetype": "warrior",
+      "build": "armored",
+      "scale": "human",
+      "palette": {
+        "primary": "#b91c1c",
+        "secondary": "#8a5a2b",
+        "glow": "#f2c14e"
+      },
+      "costume": [
+        "armor",
+        "cloak"
+      ],
+      "props": [
+        "sword",
+        "crown"
+      ],
+      "fx": [
+        "dragon_banner",
+        "golden_glow"
+      ]
+    },
+    "merlin": {
+      "archetype": "wizard",
+      "build": "slender",
+      "scale": "human",
+      "palette": {
+        "primary": "#1a2a4a",
+        "secondary": "#2dd4bf",
+        "glow": "#34d399"
+      },
+      "costume": [
+        "robes",
+        "cloak"
+      ],
+      "props": [
+        "staff",
+        "book"
+      ],
+      "fx": [
+        "magic_glow"
+      ]
+    },
+    "ambrosius": {
+      "archetype": "king",
+      "build": "stately",
+      "scale": "human",
+      "palette": {
+        "primary": "#8a5a2b",
+        "secondary": "#f2c14e",
+        "glow": "#f59e0b"
+      },
+      "costume": [
+        "robes",
+        "cloak"
+      ],
+      "props": [
+        "crown"
+      ],
+      "fx": []
+    },
+    "igraine": {
+      "archetype": "queen",
+      "build": "graceful",
+      "scale": "human",
+      "palette": {
+        "primary": "#f0e8dc",
+        "secondary": "#e8a2c0",
+        "glow": "#f5c6d0"
+      },
+      "costume": [
+        "dress",
+        "cloak"
+      ],
+      "props": [],
+      "fx": [
+        "petals"
+      ]
+    }
+  }
+}

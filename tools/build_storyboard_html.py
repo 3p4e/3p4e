@@ -3,7 +3,7 @@
 
 A storyboard must do two jobs:
   1. Let a human (or director) SEE the film: acts, shots, blocking, camera moves, cues.
-  2. Let an AI (SkyReels-V3 job builder) EXECUTE the film: per-shot FLF keyframes,
+  2. Let an AI (model-agnostic job builder, 43 sec.4) EXECUTE the film: per-shot N-clip start-frame-only keyframes,
      camera grammar, continuity anchors, motion validation, and a global render spec.
 
 This generator emits a single self-contained HTML that carries BOTH layers.
@@ -14,7 +14,7 @@ Data schema (dict):
 {
   "title_mk": str, "title_en": str, "genre": str, "logline": str,
   "spec": {                                  # global render contract
-      "aspect": "16:9", "resolution": "1280x720", "fps": 24, "model": "SkyReels-V3-identity",
+      "aspect": "16:9", "resolution": "1216x704", "fps": 24, "model": "model-agnostic (chosen at generation)",
       "style": "photoreal", "flf": true, "language": "mk",
       "shot_floor": 40, "shot_max": 60,
       "seed_policy": "fixed-per-shot",
@@ -477,16 +477,22 @@ def _placeholder(sh):
 
 def _spec_rows(sh):
     rows = []
-    if sh.get("kf_first"):
-        rows.append(f'<div class="row"><span class="k">KF·A</span><code>{H.escape(sh["kf_first"])}</code></div>')
-    if sh.get("kf_last"):
-        rows.append(f'<div class="row"><span class="k">KF·B</span><code class="endl">{H.escape(sh["kf_last"])}</code></div>')
+    if sh.get("image_prompt_start"):
+        rows.append(f'<div class="row"><span class="k">IMG·A</span><code>{H.escape(sh["image_prompt_start"])}</code></div>')
+    if sh.get("image_prompt_end"):
+        rows.append(f'<div class="row"><span class="k">IMG·B</span><code class="endl">{H.escape(sh["image_prompt_end"])}</code></div>')
     if sh.get("mid"):
         rows.append(f'<div class="row"><span class="k">MID</span><code>{H.escape(sh["mid"])}</code></div>')
     if sh.get("continuity"):
         rows.append(f'<div class="row"><span class="k">CONT</span><span class="v">{H.escape(sh["continuity"])}</span></div>')
     if sh.get("motion"):
         rows.append(f'<div class="row"><span class="k">MOTION</span><span class="v">{H.escape(sh["motion"])}</span></div>')
+    if sh.get("video_prompt_start"):
+        rows.append(f'<div class="row"><span class="k">VID·A</span><code>{H.escape(sh["video_prompt_start"])}</code></div>')
+    if sh.get("video_prompt_end"):
+        rows.append(f'<div class="row"><span class="k">VID·B</span><code class="endl">{H.escape(sh["video_prompt_end"])}</code></div>')
+    if sh.get("motion_intensity"):
+        rows.append(f'<div class="row"><span class="k">MOTION</span><span class="v">{H.escape(sh["motion_intensity"])} · model chosen at generation</span></div>')
     return '<div class="kv">' + NL.join(rows) + '</div>'
 
 def act_section(act):
@@ -553,12 +559,14 @@ def spec_section(data):
     def box(k, v, wide=False, code=False):
         inner = f'<code>{H.escape(v)}</code>' if code else H.escape(v)
         return f'<div class="specbox{" wide" if wide else ""}"><div class="sk">{H.escape(k)}</div><div class="sv">{inner}</div></div>'
-    boxes.append(box("resolution", s.get("resolution","1280x720")))
+    boxes.append(box("resolution", s.get("resolution","1216x704")))
     boxes.append(box("aspect", s.get("aspect","16:9")))
     boxes.append(box("fps", str(s.get("fps",24))))
-    boxes.append(box("model", s.get("model","SkyReels-V3")))
+    boxes.append(box("model", s.get("model","model-agnostic (chosen at generation)")))
+    boxes.append(box("frames", f'{str(s.get("frames",121))} (8k+1; fb {str(s.get("frames_fallback",81))})'))
+    boxes.append(box("prompt model", "two-prompt (3a image + 3b video, 43 sec.3)"))
     boxes.append(box("style", s.get("style","photoreal")))
-    boxes.append(box("FLF", "start+end keyframes" if s.get("flf",True) else "single-ref"))
+    boxes.append(box("clip model", "N-clip start-frame-only (43 sec.2)"))
     boxes.append(box("shot floor", str(s.get("shot_floor",40))))
     boxes.append(box("shot max", str(s.get("shot_max",60))))
     boxes.append(box("seed policy", s.get("seed_policy","fixed-per-shot"), code=True))
@@ -596,10 +604,11 @@ def build(data):
     acts_html = "".join(act_section(a) for a in data["acts"])
     spec = data["spec"]
     meta = f"""<div class="meta rv">
-<div class="chip">Формат <b>{H.escape(spec.get('resolution','1280x720'))}</b></div><div class="chip">Кадри <b>{nshots}</b></div>
+<div class="chip">Формат <b>{H.escape(spec.get("resolution","1216x704"))}</b></div><div class="chip">Кадри <b>{nshots}</b></div>
 <div class="chip">Траење <b>~{total_dur}s</b></div><div class="chip">Рендер <b>{total_clip}s</b></div>
-<div class="chip">Модел <b>{H.escape(spec.get('model','SkyReels-V3'))}</b></div>
-<div class="chip gold">Статус <b>proof exemplar</b></div></div>"""
+<div class="chip">Модел <b>model-agnostic (chosen at generation)</b></div>
+<div class="chip">Промпт <b>two-prompt (3a+3b)</b></div>
+<div class="chip gold">Статус <b>43-standard ready</b></div></div>"""
     legend = f"""<div class="legend rv">
 <div class="li"><span class="sw" style="background:{data['acts'][0]['color']}"></span> {data['acts'][0]['num']}</div>
 <div class="li"><span class="sw" style="background:{data['acts'][1]['color']}"></span> {data['acts'][1]['num']}</div>
@@ -612,7 +621,7 @@ def build(data):
 <div class="nav"><div class="nav-in">
 <a href="#spec">Spec</a><a href="#{data['acts'][0]['id']}">{data['acts'][0]['num']}</a><a href="#{data['acts'][1]['id']}">{data['acts'][1]['num']}</a><a href="#{data['acts'][2]['id']}">{data['acts'][2]['num']}</a><a href="#timeline">Timeline</a><a href="#blocking">Blocking</a></div></div>
 <div class="wrap">
-<span class="eyebrow rv"><i></i> SkyReels-V3 · Cinematic Storyboard · Machine-ready</span>
+<span class="eyebrow rv"><i></i> Model-agnostic · Two-prompt (43 sec.3) · Cinematic Storyboard · Machine-ready</span>
 <h1 class="rv">{H.escape(data['title_mk'])}</h1>
 <p class="lede rv">{H.escape(data['genre'])} · {H.escape(data['logline'])}</p>
 {meta}

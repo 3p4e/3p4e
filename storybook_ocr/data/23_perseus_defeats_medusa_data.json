@@ -1,0 +1,2582 @@
+{
+  "num": "23",
+  "title_mk": "Персеј ја победува Медуза",
+  "title_en": "Perseus Defeats Medusa",
+  "genre": "Легенда · епска акција",
+  "logline": "Младиот Персеј, со помош на Атена и Хермес, го победува чудовиштето Медуза гледајќи го само нејзиниот одраз, а потоа го освојува небото на Пегаз и ја спасува Андромеда.",
+  "spec": {
+    "aspect": "16:9",
+    "resolution": "1216x704",
+    "fps": 24,
+    "model": "model-agnostic (chosen at generation)",
+    "style": "photoreal",
+    "flf": true,
+    "language": "mk",
+    "shot_floor": 40,
+    "shot_max": 60,
+    "seed_policy": "fixed-per-shot (same seed → reproducible shot; re-roll per shot id)",
+    "style_anchor": [
+      "Diablo 2 cinematic",
+      "World of Warcraft cinematic",
+      "StarCraft cinematic"
+    ],
+    "negative_prompt": "deformed, extra limbs, morphing, watermark, text, static frame, blurry, low quality, cropped head, cut-off face",
+    "frames": 121,
+    "frames_fallback": 81,
+    "routes": [
+      {
+        "model": "Wan2.1-FLF2V-14B-720P",
+        "input": "start+end native (run START-ONLY)",
+        "status": "WORKING (lead for 14B quality)"
+      },
+      {
+        "model": "Kandinsky 6.0 Lite/Pro",
+        "input": "start-image-only",
+        "status": "WORKING (Pro-distill untested at scale)"
+      },
+      {
+        "model": "SkyReels-V3 R2V-14B",
+        "input": "start-image-only",
+        "status": "WORKING (fallback)"
+      },
+      {
+        "model": "LTX-Video 2B v0.9.5",
+        "input": "start-image-only",
+        "status": "WORKING (small/fast, low ceiling)"
+      },
+      {
+        "model": "Mochi-1",
+        "input": "start-image-only",
+        "status": "untested here"
+      },
+      {
+        "model": "LTX-2.3 22B distilled",
+        "input": "start-image-only",
+        "status": "DEAD (nanobind native-crash, 42 note)"
+      }
+    ],
+    "model_note": "Model chosen per story at generation (43 §4). Keyframes + continuation prompts are generator-agnostic; only the render command differs per model."
+  },
+  "cast": [
+    {
+      "role": "Персеј / Perseus",
+      "trait": "Храбар и снаодлив млад јунак со решителен поглед; носи бронзен оклоп и сандали, кратка кадрава коса.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Медуза / Medusa",
+      "trait": "Застрашувачко чудовиште со тело на жена, змии место коса, крилест грб и скаменувачки поглед.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Атена / Athena",
+      "trait": "Божица на мудроста — висока, мирна, со сребрено-бронзен шлем и копје.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Хермес / Hermes",
+      "trait": "Гласник на боговите — млад, брз, со крилести сандали и златен летечки шлем.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Пегаз / Pegasus",
+      "trait": "Снежно-бел крилест коњ, мирен и благороден, со огромни бели крила.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Андромеда / Andromeda",
+      "trait": "Убава и достоинствена девојка, окована за карпа, со долга темна коса и бела туника.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Кралот / The King",
+      "trait": "Постар, строг владетел на островот, во пурпурна наметка.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Горгоните / The Gorgons",
+      "trait": "Две ужасни сестри на Медуза, со змиска коса и остри канџи.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    }
+  ],
+  "acts": [
+    {
+      "id": "act1",
+      "num": "Act I",
+      "title": "Заложба и божествена дарба",
+      "color": "#2dd4bf",
+      "pct": 30,
+      "synopsis": "Персеј му ветува на кралот дека ќе ја донесе главата на Медуза; Атена и Хермес му даваат сребрен штит-огледало и остар меч, и го советуваат да не ја гледа директно.",
+      "location_ref": "island_palace_and_ridge",
+      "global_locks": [
+        "bronze-and-ivory palace palette",
+        "warm dawn key light",
+        "35mm wide lens class"
+      ],
+      "palette": [
+        "#f5e6c8",
+        "#b8874a",
+        "#7a5a3a"
+      ],
+      "light_direction": "key light from screen-left, warm dawn",
+      "time_of_day": "dawn",
+      "shots": [
+        {
+          "id": "S01",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [],
+          "ref_scope": "image1: island palace exterior establishing — Aegean island citadel above a rocky shore",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "palette",
+            "light direction",
+            "stone architecture",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "camera descends over a white stone island citadel beside the Aegean sea"
+            ],
+            [
+              2.0,
+              3.5,
+              "morning light glints off the sea beyond the walls"
+            ]
+          ],
+          "narration_mk": "Кралот владеел со еден остров сред синото море.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle establishing of an ancient Greek island citadel at dawn, white stone walls above a glittering Aegean shore, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Crane down toward the torchlit megaron hall inside the walls",
+          "continuity": "Island palace exterior palette, dawn haze over the Aegean",
+          "motion": "slow crane-down; sea shimmer in distance",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle establishing of an ancient Greek island citadel at dawn, white stone walls above a glittering Aegean shore, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade then camera descends over a white stone island citadel beside the Aegean sea, then morning light glints off the sea beyond the walls the camera crane-down settling into crane down toward the torchlit megaron hall inside the walls continuity held: Island palace exterior palette, dawn haze over the Aegean",
+          "image_prompt_start": "photoreal cinematic: establishing of an ancient Greek island citadel at dawn, white stone walls above a glittering Aegean shore, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: toward the torchlit megaron hall inside the walls.",
+          "video_prompt_start": "Camera descends over a white stone island citadel beside the Aegean sea. morning light glints off the sea beyond the walls. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Island palace exterior palette, dawn haze over the Aegean.",
+          "video_prompt_end": "Camera descends over a white stone island citadel beside the Aegean sea. morning light glints off the sea beyond the walls. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Island palace exterior palette, dawn haze over the Aegean.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S02",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "hero_Perseus",
+            "king"
+          ],
+          "ref_scope": "image1: fused master of Perseus — 100% identical face and costume; image2: the king in purple robe",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "Perseus kneels before the king in the throne hall"
+            ],
+            [
+              1.5,
+              3.0,
+              "he lifts his head with a fearless vow"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Персеј: „Ќе ти ја донесам главата на Медуза.“",
+          "kf_first": "Eye-level medium of young Perseus kneeling before a stern older king in a torchlit megaron, bronze armor, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Push-in on Perseus as he raises his resolved face to speak",
+          "continuity": "Perseus bronze armor and determined face; throne hall torchlight",
+          "motion": "slow push-in; steady vow gesture",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level medium of young Perseus kneeling before a stern older king in a torchlit megaron, bronze armor, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade Hero Perseus armored, warrior, in armor, cloak, carrying sword, shield, wreathed in golden glow then Perseus kneels before the king in the throne hall, then he lifts his head with a fearless vow the camera push-in settling into push-in on Perseus as he raises his resolved face to speak with steel rings, the shield clangs a voice speaks in Macedonian: \"Персеј: „Ќе ти ја донесам главата на Медуза.“\" continuity held: Perseus bronze armor and determined face; throne hall torchlight",
+          "image_prompt_start": "photoreal cinematic: medium of young Perseus kneeling before a stern older king in a torchlit megaron, bronze armor, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: on Perseus as he raises his resolved face to speak.",
+          "video_prompt_start": "Perseus kneels before the king in the throne hall. he lifts his head with a fearless vow. The camera push-in. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Персеј: „Ќе ти ја донесам главата на Медуза.“\" Continuity held: Perseus bronze armor and determined face; throne hall torchlight.",
+          "video_prompt_end": "Perseus kneels before the king in the throne hall. he lifts his head with a fearless vow. The camera push-in. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Персеј: „Ќе ти ја донесам главата на Медуза.“\" Continuity held: Perseus bronze armor and determined face; throne hall torchlight.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S03",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "hero_Perseus"
+          ],
+          "ref_scope": "image1: face card of Perseus — resolved young hero eyes",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "his jaw tightens with resolve"
+            ],
+            [
+              1.5,
+              3.0,
+              "torchlight flickers across his bronze shoulder"
+            ]
+          ],
+          "narration_mk": "Зборот беше даден — а пред него стоеше само стравот од Медуза.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle close-up of the resolved face of Perseus, torchlight and bronze armor, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "His eyes hold steady as flame-light dances over his cheek",
+          "continuity": "Same Perseus face; warm torch palette from S02",
+          "motion": "subtle hair and flame flicker; resolute stillness",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle close-up of the resolved face of Perseus, torchlight and bronze armor, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade Hero Perseus armored, warrior, in armor, cloak, carrying sword, shield, wreathed in golden glow then his jaw tightens with resolve, then torchlight flickers across his bronze shoulder the camera static settling into his eyes hold steady as flame-light dances over his cheek with steel rings, the shield clangs continuity held: Same Perseus face; warm torch palette from S02",
+          "image_prompt_start": "photoreal cinematic: close-up of the resolved face of Perseus, torchlight and bronze armor, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: His eyes hold steady as flame-light dances over his cheek.",
+          "video_prompt_start": "His jaw tightens with resolve. torchlight flickers across his bronze shoulder. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same Perseus face; warm torch palette from S02.",
+          "video_prompt_end": "His jaw tightens with resolve. torchlight flickers across his bronze shoulder. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Same Perseus face; warm torch palette from S02.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S04",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "boss_Medusa"
+          ],
+          "ref_scope": "image1: boss sheet of Medusa — body of a woman, serpent crown, stone gaze",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "boss face",
+            "serpent hair",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "the camera reveals a shadowed lair where a monstrous female figure lies"
+            ],
+            [
+              2.0,
+              3.5,
+              "snakes coil and hiss in place of her hair"
+            ]
+          ],
+          "narration_mk": "Медуза беше страшно чудовиште — жена одоздола, змии место коса.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of the shadowed lair where the monstrous Medusa rests, snake hair coiling, her form half in darkness, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Crane down closer as her serpent crown stirs with a soft hiss",
+          "continuity": "Boss Medusa shadowed lair; cold green-grey palette",
+          "motion": "slow crane-down; snakes writing subtly",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of the shadowed lair where the monstrous Medusa rests, snake hair coiling, her form half in darkness, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade Boss Medusa slender, monster, wreathed in shadow smoke then the camera reveals a shadowed lair where a monstrous female figure lies, then snakes coil and hiss in place of her hair the camera crane-down settling into crane down closer as her serpent crown stirs with a soft hiss with shadows whisper continuity held: Boss Medusa shadowed lair; cold green-grey palette",
+          "image_prompt_start": "photoreal cinematic: wide of the shadowed lair where the monstrous Medusa rests, snake hair coiling, her form half in darkness, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: closer as her serpent crown stirs with a soft hiss.",
+          "video_prompt_start": "The camera reveals a shadowed lair where a monstrous female figure lies. snakes coil and hiss in place of her hair. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Boss Medusa shadowed lair; cold green-grey palette.",
+          "video_prompt_end": "The camera reveals a shadowed lair where a monstrous female figure lies. snakes coil and hiss in place of her hair. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Boss Medusa shadowed lair; cold green-grey palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S05",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "boss_Medusa"
+          ],
+          "ref_scope": "image1: boss face — the petrifying eyes of Medusa",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "boss face",
+            "serpent hair",
+            "eyes",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "her slit pupils open with a faint green glow"
+            ],
+            [
+              1.5,
+              3.0,
+              "a serpent slides across her brow"
+            ]
+          ],
+          "narration_mk": "Еден поглед во тие очи — и човек станува камен.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level close-up of the terrifying face of Medusa, glowing slit-pupil eyes and writhing snake hair, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Push-in on her glowing eyes as a snake slithers over her brow",
+          "continuity": "Medusa face identity; serpent hair from S04",
+          "motion": "slow push-in; snake slither and blink",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level close-up of the terrifying face of Medusa, glowing slit-pupil eyes and writhing snake hair, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade Boss Medusa slender, monster, wreathed in shadow smoke then her slit pupils open with a faint green glow, then a serpent slides across her brow the camera push-in settling into push-in on her glowing eyes as a snake slithers over her brow with shadows whisper continuity held: Medusa face identity; serpent hair from S04",
+          "image_prompt_start": "photoreal cinematic: close-up of the terrifying face of Medusa, glowing slit-pupil eyes and writhing snake hair, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: on her glowing eyes as a snake slithers over her brow.",
+          "video_prompt_start": "Her slit pupils open with a faint green glow. a serpent slides across her brow. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Medusa face identity; serpent hair from S04.",
+          "video_prompt_end": "Her slit pupils open with a faint green glow. a serpent slides across her brow. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Medusa face identity; serpent hair from S04.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S06",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-left",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "goddess_Athena",
+            "hero_Perseus"
+          ],
+          "ref_scope": "image1: Athena in silver-bronze helm; image2: Perseus before her",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "a soft golden light blooms on a rocky hilltop"
+            ],
+            [
+              1.8,
+              3.5,
+              "Athena materializes before the kneeling hero"
+            ]
+          ],
+          "narration_mk": "За среќа, со него беа Атена и брзоногиот Хермес.",
+          "dialogue_mk": "",
+          "kf_first": "Wide of the goddess Athena appearing in a bloom of golden light on a rocky hilltop before Perseus, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Pan left as Athena steps forward, her helm catching the light",
+          "continuity": "Perseus costume; dawn palette; gold light bloom",
+          "motion": "pan-left; Athena materialization glow",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide of the goddess Athena appearing in a bloom of golden light on a rocky hilltop before Perseus, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade Goddess Athena armored, divine, in armor, cloak, carrying spear, shield, wreathed in divine glow, holy aura Hero Perseus armored, warrior, in armor, cloak, carrying sword, shield, wreathed in golden glow then a soft golden light blooms on a rocky hilltop, then Athena materializes before the kneeling hero the camera pan-left settling into pan left as Athena steps forward, her helm catching the light with the spear whistles through the air, the shield clangs continuity held: Perseus costume; dawn palette; gold light bloom",
+          "image_prompt_start": "photoreal cinematic: of the goddess Athena appearing in a bloom of golden light on a rocky hilltop before Perseus, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: left as Athena steps forward, her helm catching the light.",
+          "video_prompt_start": "A soft golden light blooms on a rocky hilltop. Athena materializes before the kneeling hero. The camera pan-left. The beat resolves into the next matching frame. Continuity held: Perseus costume; dawn palette; gold light bloom.",
+          "video_prompt_end": "A soft golden light blooms on a rocky hilltop. Athena materializes before the kneeling hero. The camera pan-left. The beat resolves into the next matching frame. Continuity held: Perseus costume; dawn palette; gold light bloom.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S07",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "goddess_Athena",
+            "weapon_shield"
+          ],
+          "ref_scope": "image1: Athena presenting the silver shield; image2: the polished shield surface",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "weapon design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "Athena holds out a gleaming silver shield"
+            ],
+            [
+              1.8,
+              3.5,
+              "Perseus accepts it with both hands"
+            ]
+          ],
+          "narration_mk": "Хермес му даде остар меч, а Атена — сребрен штит сјаен како огледало.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of Athena offering a gleaming silver mirror-shield to Perseus, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Push-in as Perseus reaches to take the polished shield",
+          "continuity": "Silver shield design; Athena helm and Perseus costume",
+          "motion": "slow push-in; shield glint",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Athena offering a gleaming silver mirror-shield to Perseus, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade Goddess Athena armored, divine, in armor, cloak, carrying spear, shield, wreathed in divine glow, holy aura then Athena holds out a gleaming silver shield, then Perseus accepts it with both hands the camera push-in settling into push-in as Perseus reaches to take the polished shield with the spear whistles through the air, the shield clangs continuity held: Silver shield design; Athena helm and Perseus costume",
+          "image_prompt_start": "photoreal cinematic: of Athena offering a gleaming silver mirror-shield to Perseus, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: as Perseus reaches to take the polished shield.",
+          "video_prompt_start": "Athena holds out a gleaming silver shield. Perseus accepts it with both hands. The camera push-in. The beat resolves into the next matching frame. Continuity held: Silver shield design; Athena helm and Perseus costume.",
+          "video_prompt_end": "Athena holds out a gleaming silver shield. Perseus accepts it with both hands. The camera push-in. The beat resolves into the next matching frame. Continuity held: Silver shield design; Athena helm and Perseus costume.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S08",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "hermes",
+            "weapon_sword"
+          ],
+          "ref_scope": "image1: Hermes presenting a sharp bronze sword",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "weapon design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "Hermes grins as he flips the blade"
+            ],
+            [
+              1.5,
+              3.0,
+              "he offers the hilt to Perseus"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Хермес: „Земи го ова — ќе ти треба повеќе одошто мислиш.“",
+          "kf_first": "Close-up of the winged messenger Hermes presenting a sharp bronze sword, winged sandals and golden helm, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "He turns the blade so its edge flashes in the light",
+          "continuity": "Hermes face and winged gear; bright gold palette",
+          "motion": "blade flash; wing flutter",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the winged messenger Hermes presenting a sharp bronze sword, winged sandals and golden helm, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade Hermes winged, divine, in cloak, wreathed in golden glow, wings then Hermes grins as he flips the blade, then he offers the hilt to Perseus the camera static settling into he turns the blade so its edge flashes in the light with a low radiant hum, wings beat the air a voice speaks in Macedonian: \"Хермес: „Земи го ова — ќе ти треба повеќе одошто мислиш.“\" continuity held: Hermes face and winged gear; bright gold palette",
+          "image_prompt_start": "photoreal cinematic: of the winged messenger Hermes presenting a sharp bronze sword, winged sandals and golden helm, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: He the blade so its edge flashes in the light.",
+          "video_prompt_start": "Hermes grins as he flips the blade. he offers the hilt to Perseus. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Хермес: „Земи го ова — ќе ти треба повеќе одошто мислиш.“\" Continuity held: Hermes face and winged gear; bright gold palette.",
+          "video_prompt_end": "Hermes grins as he flips the blade. he offers the hilt to Perseus. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Хермес: „Земи го ова — ќе ти треба повеќе одошто мислиш.“\" Continuity held: Hermes face and winged gear; bright gold palette.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S09",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "two-shot",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "goddess_Athena",
+            "hero_Perseus"
+          ],
+          "ref_scope": "image1: Athena advising; image2: Perseus listening",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "Athena leans close to counsel the hero"
+            ],
+            [
+              1.8,
+              3.5,
+              "her voice is calm and measured"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Атена: „Кога ќе бидеш близу Медуза, не гледај во неа! Гледај го само нејзиниот одраз во штитот.“",
+          "kf_first": "Medium two-shot of Athena counseling Perseus, her tone measured, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "She gestures at the shield as she gives her warning",
+          "continuity": "Athena and Perseus identities; warm gold-to-silver palette",
+          "motion": "gentle two-shot; shield gesture",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium two-shot of Athena counseling Perseus, her tone measured, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade Goddess Athena armored, divine, in armor, cloak, carrying spear, shield, wreathed in divine glow, holy aura Hero Perseus armored, warrior, in armor, cloak, carrying sword, shield, wreathed in golden glow then Athena leans close to counsel the hero, then her voice is calm and measured the camera two-shot settling into she gestures at the shield as she gives her warning with the spear whistles through the air, the shield clangs a voice speaks in Macedonian: \"Атена: „Кога ќе бидеш близу Медуза, не гледај во неа! Гледај го само нејзиниот одраз во штитот.“\" continuity held: Athena and Perseus identities; warm gold-to-silver palette",
+          "image_prompt_start": "photoreal cinematic: two-shot of Athena counseling Perseus, her tone measured, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: She gestures at the shield as she gives her warning.",
+          "video_prompt_start": "Athena leans close to counsel the hero. her voice is calm and measured. The camera two-shot. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Атена: „Кога ќе бидеш близу Медуза, не гледај во неа! Гледај го само нејзиниот одраз во штитот.“\" Continuity held: Athena and Perseus identities; warm gold-to-silver palette.",
+          "video_prompt_end": "Athena leans close to counsel the hero. her voice is calm and measured. The camera two-shot. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Атена: „Кога ќе бидеш близу Медуза, не гледај во неа! Гледај го само нејзиниот одраз во штитот.“\" Continuity held: Athena and Perseus identities; warm gold-to-silver palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S10",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "hero_Perseus"
+          ],
+          "ref_scope": "image1: face card of Perseus absorbing the warning",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "his eyes widen with understanding"
+            ],
+            [
+              1.5,
+              3.0,
+              "he gives a small, firm nod"
+            ]
+          ],
+          "narration_mk": "Не гледај во неа — само во одразот. Тој совет му остана врежан.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of Perseus as the warning of Athena sinks in, a quiet nod of understanding, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Push-in on his steady eyes as he firms his resolve",
+          "continuity": "Perseus face continuity; silver shield reflection light",
+          "motion": "slow push-in; tiny nod",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of Perseus as the warning of Athena sinks in, a quiet nod of understanding, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade Hero Perseus armored, warrior, in armor, cloak, carrying sword, shield, wreathed in golden glow then his eyes widen with understanding, then he gives a small, firm nod the camera push-in settling into push-in on his steady eyes as he firms his resolve with steel rings, the shield clangs continuity held: Perseus face continuity; silver shield reflection light",
+          "image_prompt_start": "photoreal cinematic: of Perseus as the warning of Athena sinks in, a quiet nod of understanding, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: on his steady eyes as he firms his resolve.",
+          "video_prompt_start": "His eyes widen with understanding. he gives a small, firm nod. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Perseus face continuity; silver shield reflection light.",
+          "video_prompt_end": "His eyes widen with understanding. he gives a small, firm nod. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Perseus face continuity; silver shield reflection light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S11",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "hero_Perseus"
+          ],
+          "ref_scope": "image1: fused master Perseus journeying over barren cliffs, shield slung, sword at hip",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "weapon design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "Perseus crosses a windswept ridge toward distant mountains"
+            ],
+            [
+              2.0,
+              4.0,
+              "clouds drag shadows across the barren land"
+            ]
+          ],
+          "narration_mk": "Јунакот замина на долг пат, кон мрачните карпи каде се криеше чудовиштето.",
+          "dialogue_mk": "",
+          "kf_first": "Wide tracking of Perseus trekking over barren cliffs toward distant dark mountains, shield slung, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Camera tracks him as cloud-shadow sweeps the barren ridge",
+          "continuity": "Perseus costume and weapons; barren overcast palette",
+          "motion": "track; cloud shadows drifting over land",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide tracking of Perseus trekking over barren cliffs toward distant dark mountains, shield slung, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade Hero Perseus armored, warrior, in armor, cloak, carrying sword, shield, wreathed in golden glow then Perseus crosses a windswept ridge toward distant mountains, then clouds drag shadows across the barren land the camera track settling into camera tracks him as cloud-shadow sweeps the barren ridge with steel rings, the shield clangs continuity held: Perseus costume and weapons; barren overcast palette",
+          "image_prompt_start": "photoreal cinematic: of Perseus trekking over barren cliffs toward distant dark mountains, shield slung, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: tracks him as cloud-shadow sweeps the barren ridge.",
+          "video_prompt_start": "Perseus crosses a windswept ridge toward distant mountains. clouds drag shadows across the barren land. The camera track. The beat resolves into the next matching frame. Continuity held: Perseus costume and weapons; barren overcast palette.",
+          "video_prompt_end": "Perseus crosses a windswept ridge toward distant mountains. clouds drag shadows across the barren land. The camera track. The beat resolves into the next matching frame. Continuity held: Perseus costume and weapons; barren overcast palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S12",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "hero_Perseus",
+            "weapon_shield"
+          ],
+          "ref_scope": "image1: Perseus polishing the shield face as he walks",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "weapon design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "he checks the mirror-polish of the shield"
+            ],
+            [
+              1.8,
+              3.5,
+              "his own reflection stares back"
+            ]
+          ],
+          "narration_mk": "Од време на време проверуваше дали среброто сè уште свети како огледало.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of Perseus polishing his mirror-shield as he walks the ridge, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Push-in as his own reflection sharpens on the silver",
+          "continuity": "Shield mirror surface; Perseus face reflected",
+          "motion": "slow push-in; reflection sharpening",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Perseus polishing his mirror-shield as he walks the ridge, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade Hero Perseus armored, warrior, in armor, cloak, carrying sword, shield, wreathed in golden glow then he checks the mirror-polish of the shield, then his own reflection stares back the camera push-in settling into push-in as his own reflection sharpens on the silver with steel rings, the shield clangs continuity held: Shield mirror surface; Perseus face reflected",
+          "image_prompt_start": "photoreal cinematic: medium of Perseus polishing his mirror-shield as he the ridge, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: as his own reflection sharpens on the silver.",
+          "video_prompt_start": "He checks the mirror-polish of the shield. his own reflection stares back. The camera push-in. The beat resolves into the next matching frame. Continuity held: Shield mirror surface; Perseus face reflected.",
+          "video_prompt_end": "He checks the mirror-polish of the shield. his own reflection stares back. The camera push-in. The beat resolves into the next matching frame. Continuity held: Shield mirror surface; Perseus face reflected.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S13",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [],
+          "ref_scope": "image1: distant cave mouth in a cliff face, ring of standing stones before it",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "palette",
+            "light direction",
+            "stone architecture",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "the camera rises to reveal a jagged cliff with a dark cave mouth"
+            ],
+            [
+              2.0,
+              3.5,
+              "pale morning light slants across scattered stone figures"
+            ]
+          ],
+          "narration_mk": "Најпосле, пред него се отвори пештерата — а пред влезот стоеја неколку статуа.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide revealing a jagged cliff face with a dark cave mouth and scattered standing figures before it, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Crane up and back to show the ring of still figures guarding the entrance",
+          "continuity": "Cave exterior palette; dawn light; standing figure silhouettes",
+          "motion": "slow crane-up; light shifting over figures",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide revealing a jagged cliff face with a dark cave mouth and scattered standing figures before it, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade then the camera rises to reveal a jagged cliff with a dark cave mouth, then pale morning light slants across scattered stone figures the camera crane-up settling into crane up and back to show the ring of still figures guarding the entrance continuity held: Cave exterior palette; dawn light; standing figure silhouettes",
+          "image_prompt_start": "photoreal cinematic: wide revealing a jagged cliff face with a dark cave mouth and scattered standing figures before it, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: and back to show the ring of still figures guarding the entrance.",
+          "video_prompt_start": "The camera rises to reveal a jagged cliff with a dark cave mouth. pale morning light slants across scattered stone figures. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Cave exterior palette; dawn light; standing figure silhouettes.",
+          "video_prompt_end": "The camera rises to reveal a jagged cliff with a dark cave mouth. pale morning light slants across scattered stone figures. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Cave exterior palette; dawn light; standing figure silhouettes.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S14",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "pan-right",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "stone_warrior"
+          ],
+          "ref_scope": "image1: petrified warrior statue — a soldier frozen mid-step, grey stone",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "palette",
+            "light direction",
+            "statue detail",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "the camera glides past a warrior turned entirely to grey stone"
+            ],
+            [
+              1.8,
+              3.5,
+              "his stone face is caught mid-scream"
+            ]
+          ],
+          "narration_mk": "Скаменети воини — замрзнати во последниот миг на ужас.",
+          "dialogue_mk": "",
+          "kf_first": "Medium panning past a warrior turned fully to grey stone, frozen mid-step, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Pan right across the horrified stone face of the warrior",
+          "continuity": "Grey statue palette; cave entrance behind",
+          "motion": "pan-right; dust motes drifting",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium panning past a warrior turned fully to grey stone, frozen mid-step, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade then the camera glides past a warrior turned entirely to grey stone, then his stone face is caught mid-scream the camera pan-right settling into pan right across the horrified stone face of the warrior continuity held: Grey statue palette; cave entrance behind",
+          "image_prompt_start": "photoreal cinematic: past a warrior turned fully to grey stone, frozen mid-step, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: right across the horrified stone face of the warrior.",
+          "video_prompt_start": "The camera glides past a warrior turned entirely to grey stone. his stone face is caught mid-scream. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Grey statue palette; cave entrance behind.",
+          "video_prompt_end": "The camera glides past a warrior turned entirely to grey stone. his stone face is caught mid-scream. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Grey statue palette; cave entrance behind.",
+          "motion_intensity": "moderate"
+        }
+      ]
+    },
+    {
+      "id": "act2",
+      "num": "Act II",
+      "title": "Пештерата и падот на Медуза",
+      "color": "#64748b",
+      "pct": 50,
+      "synopsis": "Персеј стигнува до пештерата полна со скаменети воини, влегува наназад гледајќи во штитот, ја победува Медуза, ја зема главата и бега на Пегаз пред Горгоните.",
+      "location_ref": "medusa_cave_and_sky",
+      "global_locks": [
+        "cold green-grey cave palette",
+        "torch/ember key light",
+        "wide lens class"
+      ],
+      "palette": [
+        "#3a4a3f",
+        "#8a9a8a",
+        "#c8b090"
+      ],
+      "light_direction": "key light from screen-right, torch and ember glow",
+      "time_of_day": "dusk",
+      "shots": [
+        {
+          "id": "S15",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "hero_Perseus",
+            "weapon_shield"
+          ],
+          "ref_scope": "image1: Perseus gripping the shield, studying the petrified warriors",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "weapon design",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "Perseus studies the stone warriors with grim focus"
+            ],
+            [
+              1.8,
+              3.5,
+              "his knuckles whiten on the shield strap"
+            ]
+          ],
+          "narration_mk": "Зар и тој ќе стане статуа? Прашањето тежеше во воздухот.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of Perseus studying the petrified warriors, gripping his mirror-shield, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Push-in on his tightening grip and steady breathing",
+          "continuity": "Perseus face and shield; grey statue backdrop",
+          "motion": "slow push-in; grip tightening",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Perseus studying the petrified warriors, gripping his mirror-shield, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade Hero Perseus armored, warrior, in armor, cloak, carrying sword, shield, wreathed in golden glow then Perseus studies the stone warriors with grim focus, then his knuckles whiten on the shield strap the camera push-in settling into push-in on his tightening grip and steady breathing with steel rings, the shield clangs continuity held: Perseus face and shield; grey statue backdrop",
+          "image_prompt_start": "photoreal cinematic: of Perseus studying the petrified warriors, gripping his mirror-shield, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: on his tightening grip and steady breathing.",
+          "video_prompt_start": "Perseus studies the stone warriors with grim focus. his knuckles whiten on the shield strap. The camera push-in. The beat resolves into the next matching frame. Continuity held: Perseus face and shield; grey statue backdrop.",
+          "video_prompt_end": "Perseus studies the stone warriors with grim focus. his knuckles whiten on the shield strap. The camera push-in. The beat resolves into the next matching frame. Continuity held: Perseus face and shield; grey statue backdrop.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S16",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "hero_Perseus"
+          ],
+          "ref_scope": "image1: face card of Perseus steeling himself",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "he closes his eyes and takes a slow breath"
+            ],
+            [
+              1.5,
+              3.0,
+              "his lids lift with new courage"
+            ]
+          ],
+          "narration_mk": "Се охрабри и влезе.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of Perseus steeling himself at the cave threshold, eyes closing then opening with courage, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "His breathing slows as his resolve hardens",
+          "continuity": "Perseus face; threshold shadow light",
+          "motion": "subtle breathing rise; eye movement",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of Perseus steeling himself at the cave threshold, eyes closing then opening with courage, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade Hero Perseus armored, warrior, in armor, cloak, carrying sword, shield, wreathed in golden glow then he closes his eyes and takes a slow breath, then his lids lift with new courage the camera static settling into his breathing slows as his resolve hardens with steel rings, the shield clangs continuity held: Perseus face; threshold shadow light",
+          "image_prompt_start": "photoreal cinematic: of Perseus steeling himself at the cave threshold, eyes closing then opening with courage, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: His breathing slows as his resolve hardens.",
+          "video_prompt_start": "He closes his eyes and takes a slow breath. his lids lift with new courage. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Perseus face; threshold shadow light.",
+          "video_prompt_end": "He closes his eyes and takes a slow breath. his lids lift with new courage. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Perseus face; threshold shadow light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S17",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "behind",
+          "move": "track",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "hero_Perseus",
+            "weapon_shield"
+          ],
+          "ref_scope": "image1: Perseus walking backwards into the dark cave, shield raised behind him",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "weapon design",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "Perseus enters backwards, one careful step after another"
+            ],
+            [
+              2.0,
+              4.0,
+              "he watches the shield reflecting the path behind"
+            ]
+          ],
+          "narration_mk": "Чекореше наназад, а штитот му беше очи.",
+          "dialogue_mk": "",
+          "kf_first": "Wide behind-shot of Perseus walking backwards into the dark cave, shield raised to view behind him, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Track with his backward steps as the cave swallows the light",
+          "continuity": "Perseus and shield; cave darkness closing in",
+          "motion": "track; backward stepping rhythm",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide behind-shot of Perseus walking backwards into the dark cave, shield raised to view behind him, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade Hero Perseus armored, warrior, in armor, cloak, carrying sword, shield, wreathed in golden glow then Perseus enters backwards, one careful step after another, then he watches the shield reflecting the path behind the camera track settling into track with his backward steps as the cave swallows the light with steel rings, the shield clangs continuity held: Perseus and shield; cave darkness closing in",
+          "image_prompt_start": "photoreal cinematic: behind-shot of Perseus walking backwards into the dark cave, shield raised to view behind him, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: with his backward steps as the cave swallows the light.",
+          "video_prompt_start": "Perseus enters backwards, one careful step after another. he watches the shield reflecting the path behind. The camera track. The beat resolves into the next matching frame. Continuity held: Perseus and shield; cave darkness closing in.",
+          "video_prompt_end": "Perseus enters backwards, one careful step after another. he watches the shield reflecting the path behind. The camera track. The beat resolves into the next matching frame. Continuity held: Perseus and shield; cave darkness closing in.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S18",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "macro",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "weapon_shield"
+          ],
+          "ref_scope": "image1: the mirror-shield surface showing a distorted reflection of the cave",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "weapon design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the silver surface ripples with torchlight reflections"
+            ],
+            [
+              1.5,
+              3.0,
+              "a faint form stirs in the reflection"
+            ]
+          ],
+          "narration_mk": "Во сјајот на среброто можеше да ја види... неа.",
+          "dialogue_mk": "",
+          "kf_first": "Macro close-up of the mirror-shield surface reflecting the shadowed cave interior, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "A faint creature form stirs in the silver reflection",
+          "continuity": "Shield mirror texture; cold reflected light",
+          "motion": "reflection drifting across silver",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: macro close-up of the mirror-shield surface reflecting the shadowed cave interior, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade then the silver surface ripples with torchlight reflections, then a faint form stirs in the reflection the camera static settling into a faint creature form stirs in the silver reflection continuity held: Shield mirror texture; cold reflected light",
+          "image_prompt_start": "photoreal cinematic: Macro close-up of the mirror-shield surface reflecting the shadowed cave interior, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: A faint creature form stirs in the silver reflection.",
+          "video_prompt_start": "The silver surface ripples with torchlight reflections. a faint form stirs in the reflection. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Shield mirror texture; cold reflected light.",
+          "video_prompt_end": "The silver surface ripples with torchlight reflections. a faint form stirs in the reflection. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Shield mirror texture; cold reflected light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S19",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "boss_Medusa"
+          ],
+          "ref_scope": "image1: boss sheet — Medusa rising from a stone bed in the deep cave",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "boss face",
+            "serpent hair",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "Medusa stirs and rises from her stone bed"
+            ],
+            [
+              2.0,
+              3.5,
+              "her snake crown unfurls with loud hissing"
+            ]
+          ],
+          "narration_mk": "Медуза стана од својот камен кревет.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of Medusa rising from her stone bed deep in the cave, serpent hair unfurling, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Crane down as she rises to her full monstrous height",
+          "continuity": "Medusa boss identity; cave green-grey palette",
+          "motion": "crane-down; serpents writhing",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of Medusa rising from her stone bed deep in the cave, serpent hair unfurling, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade Boss Medusa slender, monster, wreathed in shadow smoke then Medusa stirs and rises from her stone bed, then her snake crown unfurls with loud hissing the camera crane-down settling into crane down as she rises to her full monstrous height with shadows whisper continuity held: Medusa boss identity; cave green-grey palette",
+          "image_prompt_start": "photoreal cinematic: wide of Medusa rising from her stone bed deep in the cave, serpent hair unfurling, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: as she to her full monstrous height.",
+          "video_prompt_start": "Medusa stirs and rises from her stone bed. her snake crown unfurls with loud hissing. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Medusa boss identity; cave green-grey palette.",
+          "video_prompt_end": "Medusa stirs and rises from her stone bed. her snake crown unfurls with loud hissing. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Medusa boss identity; cave green-grey palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S20",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "boss_Medusa"
+          ],
+          "ref_scope": "image1: boss sheet — Medusa lunging toward the camera, claws out",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "boss face",
+            "serpent hair",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "she fixes her petrifying gaze forward"
+            ],
+            [
+              1.8,
+              3.5,
+              "she surges toward Perseus to strike him down"
+            ]
+          ],
+          "narration_mk": "Таа се вдаде кон него за да го убие.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of Medusa lunging toward the camera, claws outstretched, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Push-in as her glowing gaze locks forward",
+          "continuity": "Medusa face and claws; lurking shadows",
+          "motion": "push-in; lunge and claw strike",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of Medusa lunging toward the camera, claws outstretched, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade Boss Medusa slender, monster, wreathed in shadow smoke then she fixes her petrifying gaze forward, then she surges toward Perseus to strike him down the camera push-in settling into push-in as her glowing gaze locks forward with shadows whisper continuity held: Medusa face and claws; lurking shadows",
+          "image_prompt_start": "photoreal cinematic: medium of Medusa lunging toward the , claws outstretched, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: as her glowing gaze locks forward.",
+          "video_prompt_start": "She fixes her petrifying gaze forward. she surges toward Perseus to strike him down. The camera push-in. The beat resolves into the next matching frame. Continuity held: Medusa face and claws; lurking shadows.",
+          "video_prompt_end": "She fixes her petrifying gaze forward. she surges toward Perseus to strike him down. The camera push-in. The beat resolves into the next matching frame. Continuity held: Medusa face and claws; lurking shadows.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S21",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "swish-pan",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "hero_Perseus",
+            "weapon_sword"
+          ],
+          "ref_scope": "image1: Perseus turning fast with eyes shut tight, sword drawn",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "weapon design",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "Perseus spins around with his eyes firmly closed"
+            ],
+            [
+              1.5,
+              3.0,
+              "the blade arcs through the air"
+            ]
+          ],
+          "narration_mk": "Но Персеј брзо се сврти — со затворени очи.",
+          "dialogue_mk": "",
+          "kf_first": "Medium swish-pan of Perseus spinning with eyes shut tight, sword arcing, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "The blade cuts a silver arc against the shadows",
+          "continuity": "Perseus and sword; motion blur arc",
+          "motion": "fast swish-pan; sword arc",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium swish-pan of Perseus spinning with eyes shut tight, sword arcing, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade Hero Perseus armored, warrior, in armor, cloak, carrying sword, shield, wreathed in golden glow then Perseus spins around with his eyes firmly closed, then the blade arcs through the air the camera swish-pan settling into the blade cuts a silver arc against the shadows with steel rings, the shield clangs continuity held: Perseus and sword; motion blur arc",
+          "image_prompt_start": "photoreal cinematic: swish- of Perseus spinning with eyes shut tight, sword arcing, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: The blade cuts a silver arc against the shadows.",
+          "video_prompt_start": "Perseus spins around with his eyes firmly closed. the blade arcs through the air. The camera swish-pan. The beat resolves into the next matching frame. Continuity held: Perseus and sword; motion blur arc.",
+          "video_prompt_end": "Perseus spins around with his eyes firmly closed. the blade arcs through the air. The camera swish-pan. The beat resolves into the next matching frame. Continuity held: Perseus and sword; motion blur arc.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S22",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "hero_Perseus"
+          ],
+          "ref_scope": "image1: face card — the eyes of Perseus squeezed shut in concentration",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "sweat beads on his brow"
+            ],
+            [
+              1.5,
+              3.0,
+              "he trusts the shield and strikes true"
+            ]
+          ],
+          "narration_mk": "Гледаше само наназад — и удри со мечот.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the eyes of Perseus squeezed shut in fierce concentration, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "A bead of sweat falls as he commits to the blow",
+          "continuity": "Perseus face; torch-hot highlights",
+          "motion": "subtle sweat fall; jaw clench",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the eyes of Perseus squeezed shut in fierce concentration, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade Hero Perseus armored, warrior, in armor, cloak, carrying sword, shield, wreathed in golden glow then sweat beads on his brow, then he trusts the shield and strikes true the camera static settling into a bead of sweat falls as he commits to the blow with steel rings, the shield clangs continuity held: Perseus face; torch-hot highlights",
+          "image_prompt_start": "photoreal cinematic: of the eyes of Perseus squeezed shut in fierce concentration, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: A bead of sweat falls as he commits to the blow.",
+          "video_prompt_start": "Sweat beads on his brow. he trusts the shield and strikes true. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Perseus face; torch-hot highlights.",
+          "video_prompt_end": "Sweat beads on his brow. he trusts the shield and strikes true. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Perseus face; torch-hot highlights.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S23",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "boss_Medusa",
+            "hero_Perseus",
+            "weapon_sword"
+          ],
+          "ref_scope": "image1: the decisive strike — sword cleaving, Medusa defeated",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "boss face",
+            "hero face",
+            "weapon design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the sword cleaves cleanly"
+            ],
+            [
+              1.5,
+              3.0,
+              "the monstrous figure goes still and falls"
+            ]
+          ],
+          "narration_mk": "Со еден удар — Медуза беше победена.",
+          "dialogue_mk": "",
+          "kf_first": "Wide of the decisive strike as the sword of Perseus cleaves through Medusa, her form going still, no gore, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "The defeated figure gives way and collapses into shadow",
+          "continuity": "Sword and both figures; shadowed cave",
+          "motion": "strike-to-collapse motion; dust plume",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide of the decisive strike as the sword of Perseus cleaves through Medusa, her form going still, no gore, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade Boss Medusa slender, monster, wreathed in shadow smoke Hero Perseus armored, warrior, in armor, cloak, carrying sword, shield, wreathed in golden glow then the sword cleaves cleanly, then the monstrous figure goes still and falls the camera static settling into the defeated figure gives way and collapses into shadow with shadows whisper, steel rings continuity held: Sword and both figures; shadowed cave",
+          "image_prompt_start": "photoreal cinematic: of the decisive strike as the sword of Perseus cleaves through Medusa, her form going still, no gore, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: The defeated figure gives way and collapses into shadow.",
+          "video_prompt_start": "The sword cleaves cleanly. the monstrous figure goes still and falls. The camera static. The beat resolves into the next matching frame. Continuity held: Sword and both figures; shadowed cave.",
+          "video_prompt_end": "The sword cleaves cleanly. the monstrous figure goes still and falls. The camera static. The beat resolves into the next matching frame. Continuity held: Sword and both figures; shadowed cave.",
+          "motion_intensity": "action"
+        },
+        {
+          "id": "S24",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "boss_Medusa"
+          ],
+          "ref_scope": "image1: boss face — the head of Medusa at rest, serpents gone quietly still",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "boss face",
+            "serpent hair",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the serpents coil into stillness"
+            ],
+            [
+              1.5,
+              3.0,
+              "the terrible eyes dim and close"
+            ]
+          ],
+          "narration_mk": "Главата на Медуза потона во тишина.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the head of Medusa at rest, serpents grown still, the fateful gaze dimming, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Her eyes dim and close as the cave falls quiet",
+          "continuity": "Medusa head identity; stillness",
+          "motion": "serpents falling still",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the head of Medusa at rest, serpents grown still, the fateful gaze dimming, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade Boss Medusa slender, monster, wreathed in shadow smoke then the serpents coil into stillness, then the terrible eyes dim and close the camera static settling into her eyes dim and close as the cave falls quiet with shadows whisper continuity held: Medusa head identity; stillness",
+          "image_prompt_start": "photoreal cinematic: of the head of Medusa at rest, serpents grown still, the fateful gaze dimming, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: Her eyes dim and close as the cave falls quiet.",
+          "video_prompt_start": "The serpents coil into stillness. the terrible eyes dim and close. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Medusa head identity; stillness.",
+          "video_prompt_end": "The serpents coil into stillness. the terrible eyes dim and close. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Medusa head identity; stillness.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S25",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "pan-right",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "hero_Perseus",
+            "weapon_sack"
+          ],
+          "ref_scope": "image1: Perseus placing the head into a leather sack with care",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "weapon design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "he lowers the head into a woven sack"
+            ],
+            [
+              1.8,
+              3.5,
+              "he secures the opening tight"
+            ]
+          ],
+          "narration_mk": "Внимателно ја стави во вреќа — и ја врза цврсто.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of Perseus placing the head of Medusa into a leather sack, securing it tight, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Pan right as he knots the sack and slings it over his shoulder",
+          "continuity": "Perseus costume; leather sack; cave light",
+          "motion": "pan-right; knotted sack",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Perseus placing the head of Medusa into a leather sack, securing it tight, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade Hero Perseus armored, warrior, in armor, cloak, carrying sword, shield, wreathed in golden glow then he lowers the head into a woven sack, then he secures the opening tight the camera pan-right settling into pan right as he knots the sack and slings it over his shoulder with steel rings, the shield clangs continuity held: Perseus costume; leather sack; cave light",
+          "image_prompt_start": "photoreal cinematic: of Perseus placing the head of Medusa into a leather sack, securing it tight, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: right as he knots the sack and slings it over his shoulder.",
+          "video_prompt_start": "He lowers the head into a woven sack. he secures the opening tight. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Perseus costume; leather sack; cave light.",
+          "video_prompt_end": "He lowers the head into a woven sack. he secures the opening tight. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Perseus costume; leather sack; cave light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S26",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "crane-up",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [],
+          "ref_scope": "image1: cave mouth exploding with light as Perseus runs out",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "he sprints for the bright cave entrance"
+            ],
+            [
+              1.5,
+              3.0,
+              "daylight floods over him"
+            ]
+          ],
+          "narration_mk": "Истрча од пештерата кон светлината.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of Perseus sprinting out of the dark cave into blinding daylight, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Crane up as he bursts into the open air",
+          "continuity": "Cave-to-daylight transition; bright sky",
+          "motion": "crane-up; sprint burst",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of Perseus sprinting out of the dark cave into blinding daylight, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade then he sprints for the bright cave entrance, then daylight floods over him the camera crane-up settling into crane up as he bursts into the open air continuity held: Cave-to-daylight transition; bright sky",
+          "image_prompt_start": "photoreal cinematic: wide of Perseus sprinting out of the dark cave into blinding daylight, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: as he bursts into the open air.",
+          "video_prompt_start": "He sprints for the bright cave entrance. daylight floods over him. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Cave-to-daylight transition; bright sky.",
+          "video_prompt_end": "He sprints for the bright cave entrance. daylight floods over him. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Cave-to-daylight transition; bright sky.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S27",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "crane-down",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "pegasus"
+          ],
+          "ref_scope": "image1: Pegasus — the snowy winged horse standing before the cave",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "pegasus design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "the winged horse waits, wings folded, bathed in light"
+            ],
+            [
+              2.0,
+              4.0,
+              "it turns its noble head toward the hero"
+            ]
+          ],
+          "narration_mk": "Надвор го чекаше Пегаз — крилестиот коњ на боговите.",
+          "dialogue_mk": "",
+          "kf_first": "Wide crane-down revealing Pegasus, the snowy winged horse, waiting outside the cave in bright light, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "The horse turns its noble head toward Perseus as the camera settles",
+          "continuity": "Pegasus wings and white coat; golden daylight",
+          "motion": "crane-down; wing fold shift",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide crane-down revealing Pegasus, the snowy winged horse, waiting outside the cave in bright light, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade Pegasus winged, creature, wreathed in wings, golden glow then the winged horse waits, wings folded, bathed in light, then it turns its noble head toward the hero the camera crane-down settling into the horse turns its noble head toward Perseus as the camera settles with wings beat the air, a low radiant hum continuity held: Pegasus wings and white coat; golden daylight",
+          "image_prompt_start": "photoreal cinematic: revealing Pegasus, the snowy winged horse, waiting outside the cave in bright light, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: The horse its noble head toward Perseus as the.",
+          "video_prompt_start": "The winged horse waits, wings folded, bathed in light. it turns its noble head toward the hero. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Pegasus wings and white coat; golden daylight.",
+          "video_prompt_end": "The winged horse waits, wings folded, bathed in light. it turns its noble head toward the hero. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Pegasus wings and white coat; golden daylight.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S28",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "pegasus",
+            "hero_Perseus"
+          ],
+          "ref_scope": "image1: Perseus approaching Pegasus, hand extended",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "pegasus design",
+            "hero face",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "Perseus reaches out a steady hand"
+            ],
+            [
+              1.5,
+              3.0,
+              "Pegasus lowers its head in trust"
+            ]
+          ],
+          "narration_mk": "Коњот мирно го пречека како стар пријател.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of Perseus approaching Pegasus with an extended hand as the horse lowers its head, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Push-in as the noble horse nuzzles his palm in trust",
+          "continuity": "Pegasus and Perseus identities; warm light",
+          "motion": "push-in; trust nuzzle",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Perseus approaching Pegasus with an extended hand as the horse lowers its head, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade Pegasus winged, creature, wreathed in wings, golden glow Hero Perseus armored, warrior, in armor, cloak, carrying sword, shield, wreathed in golden glow then Perseus reaches out a steady hand, then Pegasus lowers its head in trust the camera push-in settling into push-in as the noble horse nuzzles his palm in trust with wings beat the air, a low radiant hum continuity held: Pegasus and Perseus identities; warm light",
+          "image_prompt_start": "photoreal cinematic: of Perseus approaching Pegasus with an extended hand as the horse lowers its head, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: as the noble horse nuzzles his palm in trust.",
+          "video_prompt_start": "Perseus reaches out a steady hand. Pegasus lowers its head in trust. The camera push-in. The beat resolves into the next matching frame. Continuity held: Pegasus and Perseus identities; warm light.",
+          "video_prompt_end": "Perseus reaches out a steady hand. Pegasus lowers its head in trust. The camera push-in. The beat resolves into the next matching frame. Continuity held: Pegasus and Perseus identities; warm light.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S29",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "crane-up",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "pegasus",
+            "hero_Perseus",
+            "weapon_sack"
+          ],
+          "ref_scope": "image1: Pegasus spreading its great white wings for takeoff",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "pegasus design",
+            "hero face",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "Perseus mounts and the great wings unfurl"
+            ],
+            [
+              2.0,
+              4.0,
+              "with one powerful beat they leave the ground"
+            ]
+          ],
+          "narration_mk": "Го јавна Пегаз и се кренаа во небото.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of Pegasus spreading its great white wings for takeoff, Perseus mounted, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Crane up as a powerful wingbeat lifts them into the sky",
+          "continuity": "Pegasus wings and rider; open sky",
+          "motion": "crane-up; wingbeat launch",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of Pegasus spreading its great white wings for takeoff, Perseus mounted, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade Pegasus winged, creature, wreathed in wings, golden glow Hero Perseus armored, warrior, in armor, cloak, carrying sword, shield, wreathed in golden glow then Perseus mounts and the great wings unfurl, then with one powerful beat they leave the ground the camera crane-up settling into crane up as a powerful wingbeat lifts them into the sky with wings beat the air, a low radiant hum continuity held: Pegasus wings and rider; open sky",
+          "image_prompt_start": "photoreal cinematic: wide of Pegasus spreading its great white wings for takeoff, Perseus mounted, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: as a powerful wingbeat lifts them into the sky.",
+          "video_prompt_start": "Perseus mounts and the great wings unfurl. with one powerful beat they leave the ground. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Pegasus wings and rider; open sky.",
+          "video_prompt_end": "Perseus mounts and the great wings unfurl. with one powerful beat they leave the ground. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Pegasus wings and rider; open sky.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S30",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "gorgons"
+          ],
+          "ref_scope": "image1: the Gorgon sisters emerging from the cave, shrieking up at the sky",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "gorgon design",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "two terrible sisters burst from the cave below"
+            ],
+            [
+              1.8,
+              3.5,
+              "their clawed hands rake the empty air"
+            ]
+          ],
+          "narration_mk": "Две ужасни сестри излетаа од пештерата — но предоцна.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of two Gorgon sisters emerging from the cave, shrieking up at the escaping rider, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Crane down to their clawed reach as the hero climbs away",
+          "continuity": "Gorgon snake hair; cave below; shrinking ground",
+          "motion": "crane-down; claws raking air",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of two Gorgon sisters emerging from the cave, shrieking up at the escaping rider, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade then two terrible sisters burst from the cave below, then their clawed hands rake the empty air the camera crane-down settling into crane down to their clawed reach as the hero climbs away continuity held: Gorgon snake hair; cave below; shrinking ground",
+          "image_prompt_start": "photoreal cinematic: wide of two Gorgon sisters emerging from the cave, shrieking up at the escaping rider, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: to their clawed reach as the hero climbs away.",
+          "video_prompt_start": "Two terrible sisters burst from the cave below. their clawed hands rake the empty air. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Gorgon snake hair; cave below; shrinking ground.",
+          "video_prompt_end": "Two terrible sisters burst from the cave below. their clawed hands rake the empty air. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Gorgon snake hair; cave below; shrinking ground.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S31",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "pegasus",
+            "hero_Perseus",
+            "weapon_sack"
+          ],
+          "ref_scope": "image1: Perseus and Pegasus soaring over the open sea at speed",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "pegasus design",
+            "hero face",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "the winged horse surges over the whitecaps"
+            ],
+            [
+              2.0,
+              4.0,
+              "Perseus clutches the sack close"
+            ]
+          ],
+          "narration_mk": "Победнички полетаа над синото море.",
+          "dialogue_mk": "",
+          "kf_first": "Medium tracking of Pegasus and Perseus soaring over the open sea, sack secured, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Track as they streak past sea spray and wind",
+          "continuity": "Pegasus and Perseus; sea-and-sky palette",
+          "motion": "track; sea spray and wind rush",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium tracking of Pegasus and Perseus soaring over the open sea, sack secured, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade Pegasus winged, creature, wreathed in wings, golden glow Hero Perseus armored, warrior, in armor, cloak, carrying sword, shield, wreathed in golden glow then the winged horse surges over the whitecaps, then Perseus clutches the sack close the camera track settling into track as they streak past sea spray and wind with wings beat the air, a low radiant hum continuity held: Pegasus and Perseus; sea-and-sky palette",
+          "image_prompt_start": "photoreal cinematic: of Pegasus and Perseus soaring over the open sea, sack secured, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: as they streak past sea spray and wind.",
+          "video_prompt_start": "The winged horse surges over the whitecaps. Perseus clutches the sack close. The camera track. The beat resolves into the next matching frame. Continuity held: Pegasus and Perseus; sea-and-sky palette.",
+          "video_prompt_end": "The winged horse surges over the whitecaps. Perseus clutches the sack close. The camera track. The beat resolves into the next matching frame. Continuity held: Pegasus and Perseus; sea-and-sky palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S32",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [],
+          "ref_scope": "image1: rocky shore ahead with a lone figure chained to the rocks",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "the camera reveals a jagged rock face above pounding waves"
+            ],
+            [
+              2.0,
+              4.0,
+              "a small white figure is chained against the rock"
+            ]
+          ],
+          "narration_mk": "Додека леташе над морето, здогледа девојка окована за карпа.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide crane-down toward a jagged rock face where a lone figure is chained above pounding waves, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "The chained maiden grows clearer as the camera descends",
+          "continuity": "Rock and sea palette; the lone figure",
+          "motion": "crane-down; waves crashing",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide crane-down toward a jagged rock face where a lone figure is chained above pounding waves, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade then the camera reveals a jagged rock face above pounding waves, then a small white figure is chained against the rock the camera crane-down settling into the chained maiden grows clearer as the camera descends continuity held: Rock and sea palette; the lone figure",
+          "image_prompt_start": "photoreal cinematic: wide toward a jagged rock face where a lone figure is chained above pounding waves, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: The chained maiden grows clearer as the descends.",
+          "video_prompt_start": "The camera reveals a jagged rock face above pounding waves. a small white figure is chained against the rock. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Rock and sea palette; the lone figure.",
+          "video_prompt_end": "The camera reveals a jagged rock face above pounding waves. a small white figure is chained against the rock. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Rock and sea palette; the lone figure.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S33",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "andromeda"
+          ],
+          "ref_scope": "image1: Andromeda chained to the rock, wind whipping her tunic",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "the chained maiden lifts her face to the sea wind"
+            ],
+            [
+              1.8,
+              3.5,
+              "hope flickers as she sees the approaching rider"
+            ]
+          ],
+          "narration_mk": "Таа стоеше сама меѓу брановите и чекаше.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of Andromeda chained to the rock, wind whipping her tunic and dark hair, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Push-in as her fearful face turns toward the incoming shadow",
+          "continuity": "Andromeda face; chains and white tunic; sea spray",
+          "motion": "push-in; hair and tunic in wind",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of Andromeda chained to the rock, wind whipping her tunic and dark hair, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade Andromeda slender, heroine, in dress, wreathed in petals then the chained maiden lifts her face to the sea wind, then hope flickers as she sees the approaching rider the camera push-in settling into push-in as her fearful face turns toward the incoming shadow with petals swirl and rustle continuity held: Andromeda face; chains and white tunic; sea spray",
+          "image_prompt_start": "photoreal cinematic: of Andromeda chained to the rock, wind whipping her tunic and dark hair, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: as her fearful face toward the incoming shadow.",
+          "video_prompt_start": "The chained maiden lifts her face to the sea wind. hope flickers as she sees the approaching rider. The camera push-in. The beat resolves into the next matching frame. Continuity held: Andromeda face; chains and white tunic; sea spray.",
+          "video_prompt_end": "The chained maiden lifts her face to the sea wind. hope flickers as she sees the approaching rider. The camera push-in. The beat resolves into the next matching frame. Continuity held: Andromeda face; chains and white tunic; sea spray.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S34",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "andromeda"
+          ],
+          "ref_scope": "image1: face card — the tear-streaked but hopeful face of Andromeda",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "a tear tracks down her cheek"
+            ],
+            [
+              1.5,
+              3.0,
+              "her eyes widen with sudden hope"
+            ]
+          ],
+          "narration_mk": "Солзи и надеж се сретнаа во нејзиниот поглед.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the tear-streaked face of Andromeda turning hopeful, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Her eyes widen as she dares to believe",
+          "continuity": "Andromeda face; sea-mist light",
+          "motion": "tear fall; hopeful gaze",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the tear-streaked face of Andromeda turning hopeful, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade Andromeda slender, heroine, in dress, wreathed in petals then a tear tracks down her cheek, then her eyes widen with sudden hope the camera static settling into her eyes widen as she dares to believe with petals swirl and rustle continuity held: Andromeda face; sea-mist light",
+          "image_prompt_start": "photoreal cinematic: of the tear-streaked face of Andromeda turning hopeful, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: Her eyes widen as she dares to believe.",
+          "video_prompt_start": "A tear tracks down her cheek. her eyes widen with sudden hope. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Andromeda face; sea-mist light.",
+          "video_prompt_end": "A tear tracks down her cheek. her eyes widen with sudden hope. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Andromeda face; sea-mist light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S35",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "crane-up",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "pegasus",
+            "hero_Perseus",
+            "andromeda"
+          ],
+          "ref_scope": "image1: Perseus dismounting onto the rock, reaching for the chains",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "pegasus design",
+            "hero face",
+            "andromeda face",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "Pegasus lands lightly on the rock ledge"
+            ],
+            [
+              1.8,
+              3.5,
+              "Perseus leaps down and reaches for the chains"
+            ]
+          ],
+          "narration_mk": "Без размислување, тој слезе да ја спаси.",
+          "dialogue_mk": "",
+          "kf_first": "Wide crane-up of Pegasus landing on the rock ledge as Perseus dismounts toward the chains, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "He reaches to free her from the iron bonds",
+          "continuity": "Pegasus, Perseus, Andromeda; sea rock",
+          "motion": "crane-up; dismount and reach",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide crane-up of Pegasus landing on the rock ledge as Perseus dismounts toward the chains, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade Pegasus winged, creature, wreathed in wings, golden glow Hero Perseus armored, warrior, in armor, cloak, carrying sword, shield, wreathed in golden glow Andromeda slender, heroine, in dress, wreathed in petals then Pegasus lands lightly on the rock ledge, then Perseus leaps down and reaches for the chains the camera crane-up settling into he reaches to free her from the iron bonds with wings beat the air, a low radiant hum continuity held: Pegasus, Perseus, Andromeda; sea rock",
+          "image_prompt_start": "photoreal cinematic: of Pegasus landing on the rock ledge as Perseus dismounts toward the chains, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: He reaches to free her from the iron bonds.",
+          "video_prompt_start": "Pegasus lands lightly on the rock ledge. Perseus leaps down and reaches for the chains. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Pegasus, Perseus, Andromeda; sea rock.",
+          "video_prompt_end": "Pegasus lands lightly on the rock ledge. Perseus leaps down and reaches for the chains. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Pegasus, Perseus, Andromeda; sea rock.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S36",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "hero_Perseus",
+            "andromeda",
+            "chain"
+          ],
+          "ref_scope": "image1: hands loosening the chain around the wrists of Andromeda",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "chain detail",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "Perseus works the iron bonds free"
+            ],
+            [
+              1.5,
+              3.0,
+              "the chains loosen and fall away"
+            ]
+          ],
+          "narration_mk": "Ги одврза — и ја качи на Пегаз.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the hands of Perseus loosening the iron chains around the wrists of Andromeda, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "The chains fall away as she is freed",
+          "continuity": "Hands and chains; rock light",
+          "motion": "chain loosening; wrists freed",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the hands of Perseus loosening the iron chains around the wrists of Andromeda, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade Hero Perseus armored, warrior, in armor, cloak, carrying sword, shield, wreathed in golden glow Andromeda slender, heroine, in dress, wreathed in petals then Perseus works the iron bonds free, then the chains loosen and fall away the camera static settling into the chains fall away as she is freed with steel rings, the shield clangs continuity held: Hands and chains; rock light",
+          "image_prompt_start": "photoreal cinematic: of the hands of Perseus loosening the iron chains around the wrists of Andromeda, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: The chains fall away as she is freed.",
+          "video_prompt_start": "Perseus works the iron bonds free. the chains loosen and fall away. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Hands and chains; rock light.",
+          "video_prompt_end": "Perseus works the iron bonds free. the chains loosen and fall away. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Hands and chains; rock light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S37",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "pegasus",
+            "hero_Perseus",
+            "andromeda"
+          ],
+          "ref_scope": "image1: Andromeda seated behind Perseus as Pegasus lifts off",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "pegasus design",
+            "andromeda face",
+            "hero face",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "Perseus helps Andromeda onto the back of the horse"
+            ],
+            [
+              1.8,
+              3.5,
+              "Pegasus launches into the open sky"
+            ]
+          ],
+          "narration_mk": "Заедно се кренаа над брановите — слободни.",
+          "dialogue_mk": "",
+          "kf_first": "Medium tracking of Andromeda seated behind Perseus as Pegasus lifts into the open sky, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Track as they rise above the crashing surf",
+          "continuity": "Pegasus and riders; sea-to-sky transition",
+          "motion": "track; rising flight",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium tracking of Andromeda seated behind Perseus as Pegasus lifts into the open sky, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade Pegasus winged, creature, wreathed in wings, golden glow Hero Perseus armored, warrior, in armor, cloak, carrying sword, shield, wreathed in golden glow Andromeda slender, heroine, in dress, wreathed in petals then Perseus helps Andromeda onto the back of the horse, then Pegasus launches into the open sky the camera track settling into track as they rise above the crashing surf with wings beat the air, a low radiant hum continuity held: Pegasus and riders; sea-to-sky transition",
+          "image_prompt_start": "photoreal cinematic: of Andromeda seated behind Perseus as Pegasus lifts into the open sky, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: as they rise above the crashing surf.",
+          "video_prompt_start": "Perseus helps Andromeda onto the back of the horse. Pegasus launches into the open sky. The camera track. The beat resolves into the next matching frame. Continuity held: Pegasus and riders; sea-to-sky transition.",
+          "video_prompt_end": "Perseus helps Andromeda onto the back of the horse. Pegasus launches into the open sky. The camera track. The beat resolves into the next matching frame. Continuity held: Pegasus and riders; sea-to-sky transition.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S38",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "andromeda"
+          ],
+          "ref_scope": "image1: face card — Andromeda overflowing with gratitude",
+          "screen_dir": "R-to-L",
+          "positive_locks": [
+            "face identity",
+            "palette",
+            "light direction",
+            "screen_dir R-to-L"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "her voice trembles with relief"
+            ],
+            [
+              1.5,
+              3.0,
+              "a tearful smile breaks through"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Андромеда: „Ти благодарам многу.“",
+          "kf_first": "Close-up of Andromeda overflowing with gratitude, a tearful smile, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "She meets his eyes with quiet thanks",
+          "continuity": "Andromeda face; soft sky light",
+          "motion": "tearful smile; lip tremble",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of Andromeda overflowing with gratitude, a tearful smile, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade Andromeda slender, heroine, in dress, wreathed in petals then her voice trembles with relief, then a tearful smile breaks through the camera static settling into she meets his eyes with quiet thanks with petals swirl and rustle a voice speaks in Macedonian: \"Андромеда: „Ти благодарам многу.“\" continuity held: Andromeda face; soft sky light",
+          "image_prompt_start": "photoreal cinematic: of Andromeda overflowing with gratitude, a tearful smile, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: She meets his eyes with quiet thanks.",
+          "video_prompt_start": "Her voice trembles with relief. a tearful smile breaks through. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Андромеда: „Ти благодарам многу.“\" Continuity held: Andromeda face; soft sky light.",
+          "video_prompt_end": "Her voice trembles with relief. a tearful smile breaks through. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Андромеда: „Ти благодарам многу.“\" Continuity held: Andromeda face; soft sky light.",
+          "motion_intensity": "gentle"
+        }
+      ]
+    },
+    {
+      "id": "act3",
+      "num": "Act III",
+      "title": "Спасението на Андромеда",
+      "color": "#f59e0b",
+      "pct": 20,
+      "synopsis": "Летајќи над морето, Персеј ја наоѓа Андромеда окована за карпа, ја спасува и ја носи дома, а таа ја раскажува својата приказна за морската змија и жртвата.",
+      "location_ref": "sea_and_coastal_city",
+      "global_locks": [
+        "azure-and-gold sea palette",
+        "golden dusk key light",
+        "wide aerial lens class"
+      ],
+      "palette": [
+        "#1e6091",
+        "#7fb4d4",
+        "#f2c14e"
+      ],
+      "light_direction": "key light from screen-left, golden dusk",
+      "time_of_day": "dusk",
+      "shots": [
+        {
+          "id": "S39",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "pegasus",
+            "hero_Perseus",
+            "andromeda"
+          ],
+          "ref_scope": "image1: the three soaring high above the sea, bound for the home of Andromeda",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "pegasus design",
+            "andromeda face",
+            "hero face",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "Pegasus glides high above the glittering water"
+            ],
+            [
+              2.0,
+              4.0,
+              "a distant coastline draws near"
+            ]
+          ],
+          "narration_mk": "Летаа кон нејзиниот дом, а таа раскажуваше.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide crane-up of Pegasus gliding high above the sea with both riders, a distant coast ahead, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "The distant coastline of her homeland draws nearer",
+          "continuity": "Pegasus and riders; vast sea-sky palette",
+          "motion": "crane-up; gliding flight",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide crane-up of Pegasus gliding high above the sea with both riders, a distant coast ahead, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade Pegasus winged, creature, wreathed in wings, golden glow Hero Perseus armored, warrior, in armor, cloak, carrying sword, shield, wreathed in golden glow Andromeda slender, heroine, in dress, wreathed in petals then Pegasus glides high above the glittering water, then a distant coastline draws near the camera crane-up settling into the distant coastline of her homeland draws nearer with wings beat the air, a low radiant hum continuity held: Pegasus and riders; vast sea-sky palette",
+          "image_prompt_start": "photoreal cinematic: wide of Pegasus gliding high above the sea with both riders, a distant coast ahead, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: The distant coastline of her homeland draws nearer.",
+          "video_prompt_start": "Pegasus glides high above the glittering water. a distant coastline draws near. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Pegasus and riders; vast sea-sky palette.",
+          "video_prompt_end": "Pegasus glides high above the glittering water. a distant coastline draws near. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Pegasus and riders; vast sea-sky palette.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S40",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "two-shot",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "andromeda",
+            "hero_Perseus"
+          ],
+          "ref_scope": "image1: Andromeda speaking, Perseus listening as they ride",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "she begins to tell her story above the wind"
+            ],
+            [
+              1.8,
+              3.5,
+              "he listens, brow furrowed"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Андромеда: „Јас сум Андромеда, ќерка на кралицата Касиопеја.“",
+          "kf_first": "Medium two-shot of Andromeda speaking as Perseus listens on the flying horse, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "She turns to tell him the truth of her birth",
+          "continuity": "Andromeda and Perseus faces; flight wind",
+          "motion": "two-shot; wind-blown hair",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium two-shot of Andromeda speaking as Perseus listens on the flying horse, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade Andromeda slender, heroine, in dress, wreathed in petals Hero Perseus armored, warrior, in armor, cloak, carrying sword, shield, wreathed in golden glow then she begins to tell her story above the wind, then he listens, brow furrowed the camera two-shot settling into she turns to tell him the truth of her birth with petals swirl and rustle, steel rings a voice speaks in Macedonian: \"Андромеда: „Јас сум Андромеда, ќерка на кралицата Касиопеја.“\" continuity held: Andromeda and Perseus faces; flight wind",
+          "image_prompt_start": "photoreal cinematic: two-shot of Andromeda speaking as Perseus listens on the flying horse, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: She to tell him the truth of her birth.",
+          "video_prompt_start": "She begins to tell her story above the wind. he listens, brow furrowed. The camera two-shot. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Андромеда: „Јас сум Андромеда, ќерка на кралицата Касиопеја.“\" Continuity held: Andromeda and Perseus faces; flight wind.",
+          "video_prompt_end": "She begins to tell her story above the wind. he listens, brow furrowed. The camera two-shot. The beat resolves into the next matching frame. A voice speaks in Macedonian: \"Андромеда: „Јас сум Андромеда, ќерка на кралицата Касиопеја.“\" Continuity held: Andromeda and Perseus faces; flight wind.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S41",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "andromeda"
+          ],
+          "ref_scope": "image1: face card — Andromeda recounting the offense of her mother",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "shame softens her voice"
+            ],
+            [
+              1.5,
+              3.0,
+              "the memory darkens her eyes"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Андромеда: „Мајка ми ги навреди Нереидите, морските нимфи.“",
+          "kf_first": "Close-up of Andromeda recounting the offense of her mother, shame and memory in her eyes, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Push-in as the painful memory darkens her expression",
+          "continuity": "Andromeda face; twilight sky light",
+          "motion": "push-in; voice softening",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of Andromeda recounting the offense of her mother, shame and memory in her eyes, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade Andromeda slender, heroine, in dress, wreathed in petals then shame softens her voice, then the memory darkens her eyes the camera push-in settling into push-in as the painful memory darkens her expression with petals swirl and rustle a voice speaks in Macedonian: \"Андромеда: „Мајка ми ги навреди Нереидите, морските нимфи.“\" continuity held: Andromeda face; twilight sky light",
+          "image_prompt_start": "photoreal cinematic: of Andromeda recounting the offense of her mother, shame and memory in her eyes, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: as the painful memory darkens her expression.",
+          "video_prompt_start": "Shame softens her voice. the memory darkens her eyes. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Андромеда: „Мајка ми ги навреди Нереидите, морските нимфи.“\" Continuity held: Andromeda face; twilight sky light.",
+          "video_prompt_end": "Shame softens her voice. the memory darkens her eyes. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Андромеда: „Мајка ми ги навреди Нереидите, морските нимфи.“\" Continuity held: Andromeda face; twilight sky light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S42",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "crane-down",
+          "dur": 3.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "sea_serpent"
+          ],
+          "ref_scope": "image1: the terrible sea serpent churning the waters below",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "serpent design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "a vast shadow coils beneath the waves"
+            ],
+            [
+              1.8,
+              3.5,
+              "a scaled back breaks the surface"
+            ]
+          ],
+          "narration_mk": "Поради тоа Посејдон испрати ужасна морска змија да ги измачува.",
+          "dialogue_mk": "",
+          "kf_first": "Wide crane-down to a terrible sea serpent churning the waves below, scaled back breaking the surface, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "The coils of the serpent surge through the dark water",
+          "continuity": "Sea serpent; churning deep-blue water",
+          "motion": "crane-down; coils surging",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide crane-down to a terrible sea serpent churning the waves below, scaled back breaking the surface, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade then a vast shadow coils beneath the waves, then a scaled back breaks the surface the camera crane-down settling into the coils of the serpent surge through the dark water with water churns and surges continuity held: Sea serpent; churning deep-blue water",
+          "image_prompt_start": "photoreal cinematic: to a terrible sea serpent churning the waves below, scaled back breaking the surface, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: The coils of the serpent surge through the dark water.",
+          "video_prompt_start": "A vast shadow coils beneath the waves. a scaled back breaks the surface. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Sea serpent; churning deep-blue water.",
+          "video_prompt_end": "A vast shadow coils beneath the waves. a scaled back breaks the surface. The camera crane-down. The beat resolves into the next matching frame. Continuity held: Sea serpent; churning deep-blue water.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S43",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "sea_serpent"
+          ],
+          "ref_scope": "image1: the head of the serpent rising from the water, fanged maw",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "serpent design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "the enormous head rises on a spray of foam"
+            ],
+            [
+              1.5,
+              3.0,
+              "its fanged maw opens toward the sky"
+            ]
+          ],
+          "narration_mk": "Единствениот спас — жртва... девојката сама на карпата.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of the head of the sea serpent rising from the foam, fanged maw open, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Push-in as its maw gapes toward the cliff",
+          "continuity": "Sea serpent head; sea foam and spray",
+          "motion": "push-in; rising head and spray",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of the head of the sea serpent rising from the foam, fanged maw open, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade then the enormous head rises on a spray of foam, then its fanged maw opens toward the sky the camera push-in settling into push-in as its maw gapes toward the cliff with water churns and surges continuity held: Sea serpent head; sea foam and spray",
+          "image_prompt_start": "photoreal cinematic: medium of the head of the sea serpent rising from the foam, fanged maw open, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: as its maw gapes toward the cliff.",
+          "video_prompt_start": "The enormous head rises on a spray of foam. its fanged maw opens toward the sky. The camera push-in. The beat resolves into the next matching frame. Continuity held: Sea serpent head; sea foam and spray.",
+          "video_prompt_end": "The enormous head rises on a spray of foam. its fanged maw opens toward the sky. The camera push-in. The beat resolves into the next matching frame. Continuity held: Sea serpent head; sea foam and spray.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S44",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "andromeda"
+          ],
+          "ref_scope": "image1: face card — the voice of Andromeda steady as she faces the memory",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "her gaze hardens with old fear and courage"
+            ],
+            [
+              1.5,
+              3.0,
+              "she speaks the sacrifice plainly"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Андромеда: „Единствениот начин да нè ослободи е да понудиме жртва...“",
+          "kf_first": "Close-up of Andromeda facing the harrowing memory with steady courage, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Her voice steadies even as the words grow heavier",
+          "continuity": "Andromeda face; golden dusk light",
+          "motion": "steady gaze; measured words",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of Andromeda facing the harrowing memory with steady courage, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade Andromeda slender, heroine, in dress, wreathed in petals then her gaze hardens with old fear and courage, then she speaks the sacrifice plainly the camera static settling into her voice steadies even as the words grow heavier with petals swirl and rustle a voice speaks in Macedonian: \"Андромеда: „Единствениот начин да нè ослободи е да понудиме жртва...“\" continuity held: Andromeda face; golden dusk light",
+          "image_prompt_start": "photoreal cinematic: of Andromeda facing the harrowing memory with steady courage, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: Her voice steadies even as the words grow heavier.",
+          "video_prompt_start": "Her gaze hardens with old fear and courage. she speaks the sacrifice plainly. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Андромеда: „Единствениот начин да нè ослободи е да понудиме жртва...“\" Continuity held: Andromeda face; golden dusk light.",
+          "video_prompt_end": "Her gaze hardens with old fear and courage. she speaks the sacrifice plainly. The camera static. The motion stays gentle, holding identity, and settles into a still close-up. A voice speaks in Macedonian: \"Андромеда: „Единствениот начин да нè ослободи е да понудиме жртва...“\" Continuity held: Andromeda face; golden dusk light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S45",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "pan-right",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "hero_Perseus"
+          ],
+          "ref_scope": "image1: Perseus realizing the terrible fate she escaped",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "understanding dawns across his face"
+            ],
+            [
+              1.5,
+              3.0,
+              "his grip on her hand tightens in promise"
+            ]
+          ],
+          "narration_mk": "Персеј сфати од каква судбина ја одбрани.",
+          "dialogue_mk": "",
+          "kf_first": "Medium pan-right to Perseus as realization dawns across his face, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "His expression turns protective and resolute",
+          "continuity": "Perseus face; dusk sky warming",
+          "motion": "pan-right; dawning realization",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium pan-right to Perseus as realization dawns across his face, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade Hero Perseus armored, warrior, in armor, cloak, carrying sword, shield, wreathed in golden glow then understanding dawns across his face, then his grip on her hand tightens in promise the camera pan-right settling into his expression turns protective and resolute with steel rings, the shield clangs continuity held: Perseus face; dusk sky warming",
+          "image_prompt_start": "photoreal cinematic: -right to Perseus as realization dawns across his face, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: His expression protective and resolute.",
+          "video_prompt_start": "Understanding dawns across his face. his grip on her hand tightens in promise. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Perseus face; dusk sky warming.",
+          "video_prompt_end": "Understanding dawns across his face. his grip on her hand tightens in promise. The camera pan-right. The beat resolves into the next matching frame. Continuity held: Perseus face; dusk sky warming.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S46",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.0,
+          "clip_s": 5.04,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "hero_Perseus",
+            "andromeda"
+          ],
+          "ref_scope": "image1: two hands clasped in shared resolve",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "face identity",
+            "costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "their hands joining over the flying horse"
+            ],
+            [
+              1.5,
+              3.0,
+              "a silent vow passes between them"
+            ]
+          ],
+          "narration_mk": "Меѓу нив се роди тивок ветерок на доверба.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of two hands clasping in shared resolve above the flying horse, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Push-in on the joined hands as trust settles",
+          "continuity": "Hands and flight wind; golden dusk light",
+          "motion": "push-in; clasp tightening",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of two hands clasping in shared resolve above the flying horse, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade Hero Perseus armored, warrior, in armor, cloak, carrying sword, shield, wreathed in golden glow Andromeda slender, heroine, in dress, wreathed in petals then their hands joining over the flying horse, then a silent vow passes between them the camera push-in settling into push-in on the joined hands as trust settles with steel rings, the shield clangs continuity held: Hands and flight wind; golden dusk light",
+          "image_prompt_start": "photoreal cinematic: of two hands clasping in shared resolve above the flying horse, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: on the joined hands as trust.",
+          "video_prompt_start": "Their hands joining over the flying horse. a silent vow passes between them. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Hands and flight wind; golden dusk light.",
+          "video_prompt_end": "Their hands joining over the flying horse. a silent vow passes between them. The camera push-in. The motion stays gentle, holding identity, and settles into a still close-up. Continuity held: Hands and flight wind; golden dusk light.",
+          "motion_intensity": "gentle"
+        },
+        {
+          "id": "S47",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 4.0,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "pegasus",
+            "hero_Perseus",
+            "andromeda"
+          ],
+          "ref_scope": "image1: Pegasus descending toward a white-walled coastal city at dusk",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "pegasus design",
+            "andromeda face",
+            "hero face",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "the winged horse glides down toward the coastal city"
+            ],
+            [
+              2.0,
+              4.0,
+              "its white walls glow in the fading sun"
+            ]
+          ],
+          "narration_mk": "Ја врати дома — кај нејзините родители.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide crane-up of Pegasus descending toward a white-walled coastal city glowing at dusk, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "The walls of the city catch the last golden light",
+          "continuity": "Pegasus and riders; coastal city; dusk glow",
+          "motion": "crane-up; gentle descent",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide crane-up of Pegasus descending toward a white-walled coastal city glowing at dusk, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade Pegasus winged, creature, wreathed in wings, golden glow Hero Perseus armored, warrior, in armor, cloak, carrying sword, shield, wreathed in golden glow Andromeda slender, heroine, in dress, wreathed in petals then the winged horse glides down toward the coastal city, then its white walls glow in the fading sun the camera crane-up settling into the walls of the city catch the last golden light with wings beat the air, a low radiant hum continuity held: Pegasus and riders; coastal city; dusk glow",
+          "image_prompt_start": "photoreal cinematic: wide of Pegasus descending toward a white-walled coastal city glowing at dusk, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: The walls of the city catch the last golden light.",
+          "video_prompt_start": "The winged horse glides down toward the coastal city. its white walls glow in the fading sun. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Pegasus and riders; coastal city; dusk glow.",
+          "video_prompt_end": "The winged horse glides down toward the coastal city. its white walls glow in the fading sun. The camera crane-up. The beat resolves into the next matching frame. Continuity held: Pegasus and riders; coastal city; dusk glow.",
+          "motion_intensity": "moderate"
+        },
+        {
+          "id": "S48",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pull-back",
+          "dur": 4.5,
+          "clip_s": 5.04,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "pegasus",
+            "hero_Perseus",
+            "andromeda"
+          ],
+          "ref_scope": "image1: the reunited family scene at the city gates, hero and maiden safe",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "pegasus design",
+            "andromeda face",
+            "hero face",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.2,
+              "the family rushes to meet the returning maiden"
+            ],
+            [
+              2.2,
+              4.5,
+              "the camera pulls back as the tale settles into peace"
+            ]
+          ],
+          "narration_mk": "И така приказната заврши — со победа, спасение и нова надеж.",
+          "dialogue_mk": "",
+          "kf_first": "Wide of the reunited family at the city gates as Pegasus rests and the pair stand safe, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade, 1216x704",
+          "kf_last": "Pull back to a peaceful dusk tableau as the story settles",
+          "continuity": "All characters; coastal city dusk; warm peace",
+          "motion": "slow pull-back; settling dusk",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide of the reunited family at the city gates as Pegasus rests and the pair stand safe, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade Pegasus winged, creature, wreathed in wings, golden glow Hero Perseus armored, warrior, in armor, cloak, carrying sword, shield, wreathed in golden glow Andromeda slender, heroine, in dress, wreathed in petals then the family rushes to meet the returning maiden, then the camera pulls back as the tale settles into peace the camera pull-back settling into pull back to a peaceful dusk tableau as the story settles with wings beat the air, a low radiant hum continuity held: All characters; coastal city dusk; warm peace",
+          "image_prompt_start": "photoreal cinematic: of the reunited family at the city gates as Pegasus rests and the pair stand safe, photoreal cinematic, Diablo 2 / World of Warcraft cinematic grade.",
+          "image_prompt_end": "photoreal cinematic: to a peaceful dusk tableau as the story.",
+          "video_prompt_start": "The family rushes to meet the returning maiden. the camera pulls back as the tale settles into peace. The camera pull-back. The beat resolves into the next matching frame. Continuity held: All characters; coastal city dusk; warm peace.",
+          "video_prompt_end": "The family rushes to meet the returning maiden. the camera pulls back as the tale settles into peace. The camera pull-back. The beat resolves into the next matching frame. Continuity held: All characters; coastal city dusk; warm peace.",
+          "motion_intensity": "moderate"
+        }
+      ]
+    }
+  ],
+  "director_corrections": {
+    "issued": "2026-11-07",
+    "source": "KB §13 DIRECTOR CORRECTIONS — overrides all prior asset/keyframe guidance",
+    "rules": [
+      "DD HEADWEAR: no cap/hood/bandana/mask on head; hood = back-cowl only; bare head + teal-blue glowing hair always visible; any head/face covering = REJECT",
+      "LEGENDARY WEAPONS MUST APPEAR: DD = twin Frostbite-class hand crossbows; AZ = Dawnbreaker-class greatsword; hero sheet/keyframe without weapon = INCOMPLETE",
+      "WEAPON ANTI-SLOP: fantasy construction only; crossbow must NEVER read as firearm; anti-slop negatives always appended",
+      "BOSS FACE: Mal'garot HAS a prolific molten-lava face; faceless boss sheets SUPERSEDED",
+      "LOCATION BRIGHTNESS FLOOR: environment plates silhouette-readable at thumbnail; no murk-dark grades"
+    ],
+    "applies_when": "Activates when face_lock changes from AI-default to an enrolled identity (DD/AZ).",
+    "anti_slop_negatives": "firearm, gun, machinegun, Uzi, barrel, magazine, ammo clip, muzzle, modern weapon"
+  },
+  "character_designs": {
+    "hero_Perseus": {
+      "archetype": "warrior",
+      "build": "armored",
+      "scale": "human",
+      "palette": {
+        "primary": "#b8874a",
+        "secondary": "#f5e6c8",
+        "glow": "#f2c14e"
+      },
+      "costume": [
+        "armor",
+        "cloak"
+      ],
+      "props": [
+        "sword",
+        "shield"
+      ],
+      "fx": [
+        "golden_glow"
+      ]
+    },
+    "boss_Medusa": {
+      "archetype": "monster",
+      "build": "slender",
+      "scale": "large",
+      "palette": {
+        "primary": "#3a4a3f",
+        "secondary": "#1a2a1f",
+        "glow": "#34d399"
+      },
+      "costume": [],
+      "props": [],
+      "fx": [
+        "shadow_smoke"
+      ]
+    },
+    "goddess_Athena": {
+      "archetype": "divine",
+      "build": "armored",
+      "scale": "human",
+      "palette": {
+        "primary": "#8a9a8a",
+        "secondary": "#f5e6c8",
+        "glow": "#e8d8b0"
+      },
+      "costume": [
+        "armor",
+        "cloak"
+      ],
+      "props": [
+        "spear",
+        "shield"
+      ],
+      "fx": [
+        "divine_glow",
+        "holy_aura"
+      ]
+    },
+    "hermes": {
+      "archetype": "divine",
+      "build": "winged",
+      "scale": "human",
+      "palette": {
+        "primary": "#f2c14e",
+        "secondary": "#fff4e0",
+        "glow": "#ffd166"
+      },
+      "costume": [
+        "cloak"
+      ],
+      "props": [],
+      "fx": [
+        "golden_glow",
+        "wings"
+      ]
+    },
+    "pegasus": {
+      "archetype": "creature",
+      "build": "winged",
+      "scale": "large",
+      "palette": {
+        "primary": "#f5f0e6",
+        "secondary": "#d9e2f0",
+        "glow": "#f2c14e"
+      },
+      "costume": [],
+      "props": [],
+      "fx": [
+        "wings",
+        "golden_glow"
+      ]
+    },
+    "andromeda": {
+      "archetype": "heroine",
+      "build": "slender",
+      "scale": "human",
+      "palette": {
+        "primary": "#f0e8dc",
+        "secondary": "#7fb4d4",
+        "glow": "#d1e8f5"
+      },
+      "costume": [
+        "dress"
+      ],
+      "props": [],
+      "fx": [
+        "petals"
+      ]
+    }
+  }
+}
