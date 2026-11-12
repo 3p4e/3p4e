@@ -1,5 +1,7 @@
 # 13 — Фенрир (Fenrir, the Wolf of Asgard) — GROK DESIGN-LOOK PROMPTS
 
+> SUPERSEDED 2026-11-12 by `13_GROK_CARD_FILL_PACK_P1P2.md` (canonical doc-44 P1+P2 cards). The character design CONTENT below remains valid reference; the DELIVERY format is now P1+P2 cards per TEMPLATE_REGISTRY.md.
+
 > Zero cost — authoring only. Mirrors the DHPF boss-fight Grok workflow (`higgsfield/37_GROK_100_KEYFRAME_PROMPTS.md`): each prompt below yields a **look + face card in one image** (full-body sheet + head-and-shoulders portrait). Once you approve a look, its name and design become **canon** and I hash-lock it under a stable base name.
 >
 > Style anchor (from the SPEC render contract): **Diablo 2 cinematic · World of Warcraft cinematic · StarCraft cinematic**. Photoreal. No cross-character contamination — each design owns its palette and motifs.
