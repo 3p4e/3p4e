@@ -154,7 +154,10 @@ start-image model; only the render command differs per model.
 - Wan-FLF: the ONLY native first-last-frame option; run START-ONLY (this model)
   until/unless the end-lock is proven fixed (16-step untried).
 - LTX-2.3 22B distilled: start-only native; renders via the official
-  ltx_pipelines.distilled (38 spec). **NOT dead — the 42 "dead" verdict is RETRACTED**
-  (torch-pin fix = the repo's own `uv sync`; grey-mush fix = FULL `gemma-3-12b-it` dir).
-  The official route rendered user-rated top-tier; ~2-3 min/clip on 48GB, no offload.
+  ltx_pipelines.distilled (38 spec). **"Dead" verdict (42) UNRESOLVED.** The 2026-11-12
+  uv-sync retry on box 60279666 never rendered — blocked by a DEAD HF_TOKEN (whoami 401),
+  the LTX-Video repo 401ing even anonymously (possibly now gated), and google/gemma gated
+  (unsloth mirror OK). So uv-sync-vs-nanobind is untested here. **Prereq: a VALID HF_TOKEN
+  with LTX-Video access (or unsloth gemma mirror + valid/anonymous download).** ~2-3 min/clip
+  on 48GB if it runs — UNPROVEN until a render completes.
 - K6 / SkyReels-V3 / Mochi-1: start-only by spec.

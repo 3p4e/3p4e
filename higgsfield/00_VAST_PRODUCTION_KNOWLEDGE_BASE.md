@@ -611,7 +611,7 @@ Edit = concat clip_001..clip_100 in order. No in-prompt transition; the cut IS t
 
 **Model routing (proven ledger).**
 - Wan-FLF: only native FLF option; run START-ONLY under this model until the end-lock is proven fixed (16-step untried).
-- LTX-2.3 22B distilled: start-only native; renders via official `ltx_pipelines.distilled` (38 spec). **NOT dead — the 2026-11-11 "dead" verdict (42) is RETRACTED.** The nanobind crash was a torch-pin mismatch (fix = the repo's own `uv sync`, never hand-pip torch); the grey-mush was ComfyUI's half-loaded fp8 Gemma (fix = FULL `gemma-3-12b-it` dir). The official route rendered user-rated top-tier. ~2-3 min/clip on 48GB, no offload — the fast high-quality lane.
+- LTX-2.3 22B distilled: start-only native; renders via official `ltx_pipelines.distilled` (38 spec). **"Dead" verdict (42) is UNRESOLVED — neither confirmed nor retracted.** The 2026-11-12 uv-sync retry on box 60279666 NEVER RENDERED: blocked by a DEAD HF_TOKEN (whoami 401) + the LTX-Video repo returning 401 even anonymously (repo now possibly gated) + google/gemma gated (unsloth mirror OK, 307). So the uv-sync-vs-nanobind question is untested on this box. The earlier top-tier clips ran on a DIFFERENT box (A100 60075318) with a working token. **Prereq: a VALID HF_TOKEN with access to the LTX-Video repo; else use the unsloth gemma mirror + anonymous/valid-token download.** ~2-3 min/clip on 48GB if it runs — the fast high-quality lane, but UNPROVEN until a render completes.
 - K6 / SkyReels-V3 / Mochi-1: start-only by spec.
 
 ---
