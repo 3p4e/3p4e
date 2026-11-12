@@ -627,3 +627,50 @@ Edit = concat clip_001..clip_100 in order. No in-prompt transition; the cut IS t
 2. On SSH, look for the existing install first: `ls -d /opt/ComfyUI /workspace/ComfyUI /ComfyUI /opt/workspace-internal/ComfyUI`, and check `python -c 'import torch; print(torch.__version__)'` in any venv. USE IT.
 3. Only the MODEL WEIGHTS + the model's LoRA need downloading (~23 GB, ~5 min at 4.7 Gbps) — not the framework.
 4. If a dependency is genuinely missing, install just that package (pin torch to the template's existing version), never a blanket requirements reinstall.
+
+## §22 LTX-2.3 22B distilled FAST LANE — PROVEN WORKING recipe + failure taxonomy (2026-11-12, box 60281638 RTX 4090)
+
+**Verdict: the fast lane is ALIVE.** LTX-2.3 22B distilled rendered 3 verified clips
+(kf_01/kf_02/kf_03, all h264 1216×704 @24fps, 121f, native audio, sha256-logged in
+media/dhpf_ltx23_proofs/). ~15s denoise + decode ≈ ~3 min/clip end-to-end with all weights cached.
+
+### The exact WORKING recipe (deviation = one of the failure modes below)
+```
+# 1. clone + uv sync (pulls a too-new torch, fixed in step 2)
+git clone --depth 1 https://github.com/Lightricks/LTX-2.git && cd LTX-2 && uv sync
+# 2. PIN torch 2.8.0 (uv sync alone pulls 2.13 -> nanobind crash)
+uv pip install torch==2.8.0 torchvision==0.23.0 torchaudio==2.8.0 --torch-backend=cu128
+# 3. weights: FULL gemma-3-12b-it dir via unsloth mirror (google/ is 403-gated)
+#    + Lightricks/LTX-2.3 repo: distilled ckpt 46,149,345,334 B + lora-384-1.1 + spatial-upscaler-x2-1.1
+# 4. render (3 denoise steps is the pipeline default; do NOT force 8)
+.venv/bin/python -m ltx_pipelines.distilled \
+  --distilled-checkpoint-path ltx-2.3-22b-distilled-1.1.safetensors \
+  --gemma-root gemma-3-12b-it \
+  --lora ltx-2.3-22b-distilled-lora-384-1.1.safetensors 0.5 \
+  --spatial-upsampler-path ltx-2.3-spatial-upscaler-x2-1.1.safetensors \
+  --image kf_NN_start.png 0 0.7 --height 704 --width 1216 --num-frames 121 --frame-rate 24 --seed NN
+```
+
+### Failure taxonomy (each one HIT tonight, each one distinct)
+1. **nanobind 'leaked N functions' on rc=2 with NO output** = torch too new (2.13 from uv sync).
+   Fix = step 2. On SUCCESS the same nanobind lines appear but rc=0 — they are BENIGN EXIT NOISE
+   (OpenImageIO refcount cleanup after the video is saved). Judge by rc + file, not the noise.
+2. **nanobind crash persisting across torch versions on RTX 6000D** = GPU-SPECIFIC. Same torch 2.8.0
+   + same command renders CLEAN on RTX 4090. The 6000D (Blackwell-class) ltx-core binding is broken;
+   4090 (Ada) works. Host-class matters, not just VRAM.
+3. **FATAL_NO_TOKEN in a nohup'd retry** = the script's token check runs but HF_TOKEN wasn't inherited
+   by the nohup'd process. Pass the token INLINE in the same bash -c string as the render command.
+4. **Stale lora filename in the render script** (ltx-2.3-22b-384-distilled-lora.safetensors vs actual
+   ...-lora-384-1.1.safetensors) — silent 'Path not found'. Always ls the model dir and use real names.
+5. **HF_TOKEN diagnosis: 401 everywhere = DEAD token; 403 on one repo = VALID token, gated repo**
+   (google/gemma is gated; use the unsloth/gemma-3-12b-it mirror, 200). Never conclude 'token dead'
+   from a single 403 — that misdiagnosis cost one destroyed box.
+6. **Real weights repo = Lightricks/LTX-2.3.** 'LTX-Video/...' is a 404 wrong-name, not a token problem.
+
+### THE PROMPT LESSON — per-model condition strength (baked into 43)
+Identity-silent continuation prompts are MODEL-SPECIFIC, not universal:
+- **Wan-FLF 14B**: start+end native, holds the frame hard → fully identity-silent is SAFE.
+- **LTX-2.3 22B at image-strength 0.7**: only weakly conditioned → it RE-DREAMS the crowd and
+  ADDS people (shot 01 grew a random third person). The fix is a LIGHT count/subject anchor with NO
+  full identity restatement: '...the two armored figures ... no other people in frame.'
+  Verified: shot 02 with the anchor (ltx23_s02_kf02.mp4) — user to confirm the extra person is gone.

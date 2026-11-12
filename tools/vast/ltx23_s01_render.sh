@@ -28,9 +28,9 @@ MODELS=/workspace/models/ltx23
 mkdir -p $MODELS
 cd $MODELS
 if [ ! -f gemma-3-12b-it/config.json ]; then
-  say "pull FULL gemma-3-12b-it"
-  (uvx hf download google/gemma-3-12b-it --local-dir $MODELS/gemma-3-12b-it 2>&1 || \
-   $PY -m huggingface_hub.snapshot_download google/gemma-3-12b-it --local-dir $MODELS/gemma-3-12b-it 2>&1) | tail -5
+  say "pull FULL gemma-3-12b-it via UNSLOTH mirror (google/ is 403-gated)"
+  (uvx hf download unsloth/gemma-3-12b-it --local-dir $MODELS/gemma-3-12b-it 2>&1 || \
+   $PY -m huggingface_hub.snapshot_download unsloth/gemma-3-12b-it --local-dir $MODELS/gemma-3-12b-it 2>&1) | tail -6
 fi
 say "gemma files: $(ls $MODELS/gemma-3-12b-it 2>/dev/null | wc -l)"
 
@@ -40,11 +40,13 @@ fetch(){
   url="https://huggingface.co/$repo/resolve/main/$path"
   say "GET $name"
   curl -L --fail --connect-timeout 20 --max-time 7200 -C - -H "Authorization: Bearer $HF_TOKEN" -o "$out" "$url" 2>/dev/null
-  say "$name bytes=$(stat -c%s "$out" 2>/dev/null || echo 0)"
+  rc=$?; sz=$(stat -c%s "$out" 2>/dev/null || echo 0)
+  say "$name rc=$rc bytes=$sz"
+  [ "$sz" = "0" ] && { say "RETRY_NO_AUTH $name"; curl -L --fail --connect-timeout 20 --max-time 7200 -C - -o "$out" "$url" 2>/dev/null; say "$name anon bytes=$(stat -c%s "$out" 2>/dev/null || echo 0)"; }
 }
-fetch LTX-Video/ltx-2.3-22b-distilled-1.1 ltx-2.3-22b-distilled-1.1.safetensors
-fetch LTX-Video/ltx-2.3-22b-distilled-1.1 ltx-2.3-22b-384-distilled-lora.safetensors
-fetch LTX-Video/ltx-2.3-spatial-upscaler ltx-2.3-spatial-upscaler-x2-1.1.safetensors
+fetch Lightricks/LTX-2.3 ltx-2.3-22b-distilled-1.1.safetensors
+fetch Lightricks/LTX-2.3 ltx-2.3-22b-distilled-lora-384-1.1.safetensors
+fetch Lightricks/LTX-2.3 ltx-2.3-spatial-upscaler-x2-1.1.safetensors
 
 say "stills: $(ls -la /workspace/stills/ 2>/dev/null | tail -2)"
 PROMPT='Mist drifts across the corruption-ring edge while the two figures hold their stance on the hummock. The camera pushes in slowly. Opening the beat. Photoreal, 35mm anamorphic, film grain, real skin.'

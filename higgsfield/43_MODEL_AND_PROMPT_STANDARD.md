@@ -101,3 +101,22 @@ keyframe order; no transition is generated in-prompt.
 For small/fast LTX work: LTX-Video 2B v0.9.5 + T5, start-image-only, ambient
 motion (the 2B ceiling). Use only where its look is acceptable; it is NOT the
 lead. The LTX-2.3 22B route is dead (nanobind, §1).
+
+## Per-model condition strength (added 2026-11-12, from the LTX-2.3 shot-01 extra-person defect)
+
+Identity-silent continuation prompts (§3b) are MODEL-SPECIFIC, not universal. How strongly the
+video model conditions on the start keyframe decides how much prompt anchoring it needs:
+
+| Model | start-frame hold | continuation-prompt identity |
+|---|---|---|
+| **Wan-FLF 14B** | STRONG (start+end native) | fully identity-silent is SAFE |
+| **LTX-2.3 22B** (img-strength 0.7) | WEAK (re-dreams the scene) | needs a LIGHT count/subject anchor |
+| **Kandinsky 6.0 Pro** | MEDIUM (start-only I2V) | light anchor; close-ups hold better |
+
+LTX-2.3 weak conditioning failure mode: it INVENTS extra people not in the start frame
+(verified shot 01 grew a random third figure; YuNet counted a transient 2nd face at f015/f030).
+The fix is NOT a full identity restatement (that caused the shot-04 morph) but a count anchor:
+`...the two armored figures ... no other people in frame.` Verified in ltx23_s02_kf02.mp4.
+
+Rule: for weak-conditioning models, every multi-character continuation prompt carries an explicit
+count + 'no other people in frame'; single-character shots carry a subject anchor.
