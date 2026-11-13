@@ -22,7 +22,7 @@
 | model | model-agnostic (chosen at generation) |
 | frames | 121 (8k+1; fallback 81) |
 | routing | model chosen per story at generation (43 sec.4 routes ledger) |
-| model note | Model chosen per story at generation (43 §4). Keyframes + continuation prompts are generator-agnostic; only the render command differs per model. |
+| model note | Model chosen per story at generation (43 sec.4). Keyframes + continuation prompts are generator-agnostic; only the render command differs per model. |
 
 **Model routes (43 sec.4 — choose per story at generation):**
 

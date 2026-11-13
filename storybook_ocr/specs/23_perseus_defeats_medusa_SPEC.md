@@ -22,7 +22,7 @@
 | model | model-agnostic (chosen at generation) |
 | frames | 121 (8k+1; fallback 81) |
 | routing | model chosen per story at generation (43 sec.4 routes ledger) |
-| model note | Model chosen per story at generation (43 §4). Keyframes + continuation prompts are generator-agnostic; only the render command differs per model. |
+| model note | Model chosen per story at generation (43 sec.4). Keyframes + continuation prompts are generator-agnostic; only the render command differs per model. |
 
 **Model routes (43 sec.4 — choose per story at generation):**
 
@@ -49,12 +49,27 @@ deformed, extra limbs, morphing, watermark, text, static frame, blurry, low qual
 
 ---
 
+
+---
+
+## 1b. GRIMDARK AEGEAN HORROR - aesthetic canon (2026-11-12 pivot)
+
+The story is retold in a dark horror register - grim, weird-art, oppressive. NOT gore: dread.
+- Palette: desaturated cold greys, bone, blackened bronze, bruised storm blues; one sickly accent per scene.
+- Light: low-key, motivated sources only - storm-gloom, guttering torches, sickly cave reflections, storm-split silver. No warm cheerful daylight.
+- Weather/texture: creeping fog, wind-stunted thorn scrub, salt-stained stone, weeping cave walls, carrion birds, ash-dust falling like snow.
+- Weird-art touches: petrified warriors half-merged with living rock, stalactites like fangs, a sea that behaves like a breathing thing, statues that seem to watch.
+- Per act: Act I decaying citadel under storm-gloom - Act II weeping cavern of the petrified - Act III storm-black sea and drowned-ruin coast.
+- Not gore: horror is atmospheric; blood/wounds/decapitation stay in the negative prompt; Medusa's defeat reads as stone-stillness, not butchery.
+
+---
+
 ## 2. Cast
 
 | Role | Trait | Source | Face-lock |
 |---|---|---|---|
-| Персеј / Perseus | Храбар и снаодлив млад јунак со решителен поглед; носи бронзен оклоп и сандали, кратка кадрава коса. | story-suggested | AI-default |
-| Медуза / Medusa | Застрашувачко чудовиште со тело на жена, змии место коса, крилест грб и скаменувачки поглед. | story-suggested | AI-default |
+| Персеј / Perseus | Храбар и снаодлив млад јунак со решителен поглед; носи бронзен оклоп и сандали, кратка кадрава коса. | story-suggested | **AZ** (enrolled) |
+| Медуза / Medusa | Застрашувачко чудовиште со тело на жена, змии место коса, крилест грб и скаменувачки поглед. | story-suggested | **Feminized DD** (enrolled) |
 | Атена / Athena | Божица на мудроста — висока, мирна, со сребрено-бронзен шлем и копје. | story-suggested | AI-default |
 | Хермес / Hermes | Гласник на боговите — млад, брз, со крилести сандали и златен летечки шлем. | story-suggested | AI-default |
 | Пегаз / Pegasus | Снежно-бел крилест коњ, мирен и благороден, со огромни бели крила. | story-suggested | AI-default |
