@@ -19,7 +19,7 @@ DATA = ROOT / 'storybook_ocr' / 'data'
 SPECS = ROOT / 'storybook_ocr' / 'specs'
 SPECS.mkdir(parents=True, exist_ok=True)
 
-STYLE = "Photoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting."
+STYLE = "Photoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape)."
 NEG = "duplicate face, extra limbs, extra fingers, deformed hands, text, watermark, logo, cartoon, anime, illustration, cel-shaded, 3d render, plastic skin, gore, blood"
 
 # map archetype -> short label for the subject line
