@@ -56,3 +56,13 @@ Artifacts this register governs:
 - `storybook_ocr/specs/23_GROK_FIGHT_EXPANSION_PROMPTS.md` — F01–F10 boss-fight keyframes
 - `tools/render_v2.sh / render_v3.sh / render_v3b.sh` — LTX-2.3 new-CLI render scripts
 - `tools/build_23_v4_jobfile.py` — the v4 prompt builder (rerunnable)
+
+## 2026-11-15 addendum — #23 Perseus & Medusa, Kandinsky-6 take (lessons 26+)
+
+26. **Wan2.1-I2V-14B on 48GB is a dead end.** It loads (after installing `accelerate` — without it diffusers silently sets low_cpu_mem_usage=False and hard-errors on keep_in_fp32_modules), it runs, it is sharp by Laplacian — but the CPU-encode device fix produces contentless output the director correctly called "all noise". Metrics (motion 3.45, luma 110) looked fine; the frames were a flat wash. **Lesson: metric-PASS is not content-PASS. Always visually verify (strip or eyes) before declaring a model works.**
+27. **Kandinsky-6.0-Lite-distill-5s is the proven 48GB Kandinsky.** Runs in ~10GB VRAM, 121f@24fps at ~140s/clip, ~7.6x faster than Wan-14B, native AAC 44.1kHz audio per clip, TI2VA with a start keyframe. K6 Pro (29B) int8 quant is ComfyUI-only (diffusers loads raw tensors, cannot dequantize → garbage); full bf16 Pro OOMs 48GB.
+28. **K6 coherence check catches noise:** consecutive-frame grayscale correlation >0.8 = real scene; <0.3 = noise. Use it as the first-pass content gate.
+29. **Zero-credit stop ≠ destroy.** Vast STOPS the instance; the /workspace volume persists (disk_usage kept). Recovery: top up credit, then `PUT /api/v0/instances/{id}/` with body `{"state":"running"}` (the `/start` endpoint 404s; the state-update PUT succeeds). Pull clips immediately after SSH returns.
+30. **Idle-after-completion is the expensive failure, twice.** The earlier ~3h idle (~$1.90) and this session's loader-fight idle (~$0.28) both came from leaving a paid box alive while awaiting a director decision. Rule: when a paid decision goes to the director, destroy first, re-rent after the answer.
+31. **Per-clip incremental pull saved the film.** Because every clip was pulled the moment it rendered, the zero-credit stop cost ZERO clips (29 were already home). Never let a batch run ahead of the pull.
+32. **K6 native audio changes the mix plan.** Every clip ships an ambient bed → mix is 3 layers (native bed ducked −14dB under narration + narration + SFX/score), not a from-scratch build. See `storybook_ocr/specs/23_AUDIO_MIX_SPEC_v4_K6.md`.

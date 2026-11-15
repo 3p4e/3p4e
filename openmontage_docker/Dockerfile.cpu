@@ -1,0 +1,33 @@
+# Dockerfile.openmontage.cpu - CPU-only variant (no CUDA base)
+FROM ubuntu:22.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV PYTHON_VERSION=3.10
+
+RUN apt-get update && apt-get install -y --no-install-recommends \n    python3.10 python3.10-venv python3.10-dev \n    nodejs npm \n    ffmpeg \n    git curl wget \n    build-essential \n    && rm -rf /var/lib/apt/lists/*
+
+RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 1 \n    && update-alternatives --install /usr/bin/python python /usr/bin/python3.10 1
+
+RUN pip install --no-cache-dir uv
+
+RUN useradd -m -s /bin/bash openmontage
+WORKDIR /home/openmontage
+
+USER openmontage
+RUN git clone https://github.com/calesthio/OpenMontage.git /home/openmontage/OpenMontage
+WORKDIR /home/openmontage/OpenMontage
+
+RUN uv venv --python 3.10 .venv
+ENV PATH="/home/openmontage/OpenMontage/.venv/bin:$PATH"
+
+RUN uv pip install -r requirements.txt
+
+RUN cd remotion-composer && npm install
+
+RUN uv pip install piper-tts || echo "piper-tts optional"
+
+RUN npx --yes hyperframes --version >/dev/null 2>&1 || echo "HyperFrames cache warm skipped"
+
+RUN cp .env.example .env
+
+CMD ["/bin/bash"]

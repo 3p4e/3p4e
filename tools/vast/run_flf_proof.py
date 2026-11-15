@@ -9,7 +9,9 @@ SERVER = os.environ.get("COMFY", "http://127.0.0.1:8188")
 UNET   = "wan2.1_flf2v_720p_14B_fp8_e4m3fn.safetensors"
 CLIP   = "umt5_xxl_fp8_e4m3fn_scaled.safetensors"
 VAE    = "wan_2.1_vae.safetensors"
+LORA   = "Wan21_T2V_14B_lightx2v_cfg_step_distill_lora_rank32.safetensors"
 LENGTH = 81
+LENGTH = 121
 FPS    = 16
 
 def post(p, payload):
@@ -25,6 +27,7 @@ def get(p):
 def graph(start, end, pos, neg, seed, steps, w, h):
     return {
       "1": {"class_type": "UNETLoader", "inputs": {"unet_name": UNET, "weight_dtype": "default"}},
+      "1b": {"class_type": "LoraLoaderModelOnly", "inputs": {"model": ["1", 0], "lora_name": LORA, "strength_model": 1.0}},
       "2": {"class_type": "CLIPLoader",  "inputs": {"clip_name": CLIP, "type": "wan"}},
       "3": {"class_type": "VAELoader",  "inputs": {"vae_name": VAE}},
       "4": {"class_type": "CLIPTextEncode", "inputs": {"clip": ["2", 0], "text": pos}},
@@ -36,9 +39,9 @@ def graph(start, end, pos, neg, seed, steps, w, h):
               "width": w, "height": h, "length": LENGTH, "batch_size": 1,
               "start_image": ["6", 0], "end_image": ["7", 0]}},
       "9": {"class_type": "KSampler", "inputs": {
-              "model": ["1", 0], "positive": ["8", 0], "negative": ["8", 1],
-              "latent_image": ["8", 2], "seed": seed, "steps": steps, "cfg": 5.0,
-              "sampler_name": "uni_pc", "scheduler": "simple", "denoise": 1.0}},
+              "model": ["1b", 0], "positive": ["8", 0], "negative": ["8", 1],
+              "latent_image": ["8", 2], "seed": seed, "steps": 8, "cfg": 1.0,
+              "sampler_name": "euler", "scheduler": "simple", "denoise": 1.0}},
       "10": {"class_type": "VAEDecode", "inputs": {"samples": ["9", 0], "vae": ["3", 0]}},
       "11": {"class_type": "CreateVideo", "inputs": {"images": ["10", 0], "fps": FPS}},
       "12": {"class_type": "SaveVideo", "inputs": {"video": ["11", 0],
@@ -52,13 +55,17 @@ def main():
     steps = int(a[3]) if len(a) > 3 else 20
     seed  = int(a[4]) if len(a) > 4 else 190119
     pos = ("Photoreal cinematic battle motion. The hooded demon hunter in blackened frost-etched "
-           "plate fires both hand crossbows, frost smoke and violet muzzle flare. The bald paladin "
-           "in gold-trimmed plate with a molten-gold rune across one eye drives his longsword "
-           "forward, gold light flaring. Behind them the colossal ember demon recoils as a jagged "
-           "blue ice wall erupts from the cracked obsidian ground. Ash falls, heat shimmer, "
-           "camera pushes in slowly. Continuous natural movement, real physics.")
+           "plate holds her twin ornate hand-crossbows raised and ready, the weapons locked firmly "
+           "in both fists and clearly visible in every frame, never leaving her grip. The bald "
+           "paladin in gold-trimmed plate with a molten-gold rune across one eye holds his "
+           "longsword leveled before him, gold light steady. Behind them the colossal ember "
+           "demon shifts and recoils slowly as a jagged blue ice wall rises gradually from the "
+           "cracked obsidian ground. Ash falls, heat shimmer, camera pushes in very slowly. "
+           "Slow, deliberate, weighty, unhurried motion. Gentle continuous movement, real physics.")
     neg = ("static, frozen, still image, no motion, slideshow, crossfade, dissolve, morphing "
            "faces, identity change, warping, melting, extra limbs, extra fingers, deformed hands, "
+           "faces, identity change, warping, melting, empty hands, weapons vanishing, dropping "
+           "weapons, crossbow fading, missing weapons, disappearing weapons, extra limbs, extra fingers, deformed hands, "
            "wings, bat wings, face on the demon, eyes on the demon, helmet, cartoon, anime, "
            "3d render, blurry, low quality, text, watermark")
     g = graph(start, end, pos, neg, seed, steps, 1280, 720)

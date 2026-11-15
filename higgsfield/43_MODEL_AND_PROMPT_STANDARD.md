@@ -120,3 +120,13 @@ The fix is NOT a full identity restatement (that caused the shot-04 morph) but a
 
 Rule: for weak-conditioning models, every multi-character continuation prompt carries an explicit
 count + 'no other people in frame'; single-character shots carry a subject anchor.
+
+## 2026-11-15 — Kandinsky-6.0-Lite-distill-5s locked as the #23 48GB render model
+- **Model:** `kandinskylab/Kandinsky-6.0-Lite-distill-5s-Diffusers` (Apache-2.0, ungated), TI2VA, T5-umt5-XXL prompts.
+- **Recipe:** 480×832 (portrait) or 832×480, 121 frames @ 24fps, 16 steps, guidance_scale 1.0 (distilled), seed per shot, start keyframe only. `enable_model_cpu_offload()` fits 48GB (~10GB used).
+- **Per-clip:** ~140s on RTX 6000Ada. Native AAC 44.1kHz stereo audio generated in the same pass.
+- **Prompt form:** single motion verb sentence → camera-move sentence → endpoint-in-words (same form as the Wan/LTX action rewrites; see `tools/vast/jobs/p23_wan65.json`, 65 prompts).
+- **Not chosen:** Wan2.1-I2V-14B (48GB noise-output failure, lesson 26); Wan2.2-Animate-2-14B (driving-video animator, no template videos); K6 Pro 29B (int8 ComfyUI-only / bf16 OOMs 48GB); Wan 3.0 (API-only, family faces → Alibaba).
+- **Batch runner:** `tools/vast/render_k6_batch.py` (resume-safe, skips existing >100KB clips, per-shot seed, native-audio mux).
+- **Master assembler:** `tools/assemble_23_k6_master.py` (picture-lock order S01–S20, F01–F10, S26–S60).
+- **Audio:** 3-layer mix per `23_AUDIO_MIX_SPEC_v4_K6.md`; script `23_AUDIO_SCRIPT_MK_EN_v3_65clips.md` (65 lines, ElevenLabs casting table; MOSS-TTS = free MK route).
