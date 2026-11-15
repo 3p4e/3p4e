@@ -113,7 +113,7 @@
             "irish_hills_env_A1_prop"
           ],
           "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the misty emerald Irish hills with a lone stone cottage — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -146,7 +146,8 @@
           "image_prompt_end": "photoreal cinematic: toward the cottage as the mist thins, revealing a young man with a bagpipe walking the path below. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Slow crane-down descent through drifting mist — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Slow crane-down descent through drifting mist — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S02",
@@ -163,7 +164,7 @@
             "irish_hills_env_A1_prop"
           ],
           "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the uilleann bagpipe — wooden chanter and worn leather bag — 100% identical; studio bg/pose/light NOT used; image3: the misty emerald Irish hills with a lone stone cottage — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -196,7 +197,8 @@
           "image_prompt_end": "photoreal cinematic: Slow on his focused, slightly disappointed face as he squeezes the bag and a wobbly note sounds. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the piper's face — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the piper's face — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S03",
@@ -212,7 +214,7 @@
             "bagpipe_B1_sheet"
           ],
           "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the uilleann bagpipe — wooden chanter and worn leather bag — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -245,7 +247,8 @@
           "image_prompt_end": "photoreal cinematic: Fingers fumble over a hole, the air recoils slightly, conveying off-key effort. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Micro-movement of fingers over the chanter — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Micro-movement of fingers over the chanter — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S04",
@@ -262,7 +265,7 @@
             "forest_env_A2_prop"
           ],
           "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the uilleann bagpipe — wooden chanter and worn leather bag — 100% identical; studio bg/pose/light NOT used; image3: the darkening Irish forest with a gnarled oak clearing — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -295,7 +298,8 @@
           "image_prompt_end": "photoreal cinematic: The birds burst into flight as the first harsh note rings out, leaves trembling. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Birds scattering; bag inflating — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Birds scattering; bag inflating — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S05",
@@ -312,7 +316,7 @@
             "forest_env_A2_prop"
           ],
           "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the uilleann bagpipe — wooden chanter and worn leather bag — 100% identical; studio bg/pose/light NOT used; image3: the darkening Irish forest with a gnarled oak clearing — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -345,7 +349,8 @@
           "image_prompt_end": "photoreal cinematic: Reverse angle on the tall shadowy treeline he approaches, leaves rustling unnaturally. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Walk-toward; shot-reverse cut to the forest — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Walk-toward; shot-reverse cut to the forest — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S06",
@@ -362,7 +367,7 @@
             "forest_env_A2_prop"
           ],
           "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Pooka — a horned forest spirit with a wild mane and warm amber eyes — 100% identical; studio bg/pose/light NOT used; image3: the darkening Irish forest with a gnarled oak clearing — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -395,7 +400,8 @@
           "image_prompt_end": "photoreal cinematic: A horned silhouette from the fog behind him, its shape just resolving in the gloom. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Fog parting around the rising figure — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Fog parting around the rising figure — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S07",
@@ -410,7 +416,7 @@
             "pooka_A2_fused"
           ],
           "ref_scope": "image1: the fused master of the Pooka — a horned forest spirit with a wild mane and warm amber eyes — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -442,7 +448,8 @@
           "image_prompt_end": "photoreal cinematic: Slow on his gentle, mischievous amber eyes and half-smile through the haze. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the Pooka's eyes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the Pooka's eyes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S08",
@@ -458,7 +465,7 @@
             "pooka_A2_fused"
           ],
           "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Pooka — a horned forest spirit with a wild mane and warm amber eyes — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -490,7 +497,8 @@
           "image_prompt_end": "photoreal cinematic: He recoils and raises a hand defensively, breath visible in the cold mist. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Flinch and defensive hand raise — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Flinch and defensive hand raise — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S09",
@@ -506,7 +514,7 @@
             "piper_A1_fused"
           ],
           "ref_scope": "image1: the fused master of the Pooka — a horned forest spirit with a wild mane and warm amber eyes — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -538,7 +546,8 @@
           "image_prompt_end": "photoreal cinematic: Reverse on the piper slowly lowering his guard, eyes still wide but curious. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Calming hand gesture; shot-reverse to the piper — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Calming hand gesture; shot-reverse to the piper — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S10",
@@ -554,7 +563,7 @@
             "piper_A1_fused"
           ],
           "ref_scope": "image1: the fused master of the Pooka — a horned forest spirit with a wild mane and warm amber eyes — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -586,7 +595,8 @@
           "image_prompt_end": "photoreal cinematic: The piper takes a hesitant step forward, reaching toward a horn. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Kneeling offer; piper's hesitant approach — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Kneeling offer; piper's hesitant approach — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S11",
@@ -601,7 +611,7 @@
             "pooka_A2_fused"
           ],
           "ref_scope": "image1: the fused master of the Pooka — a horned forest spirit with a wild mane and warm amber eyes — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -633,7 +643,8 @@
           "image_prompt_end": "photoreal cinematic: on his earnest eyes as he speaks, mist drifting past. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the Pooka's face — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the Pooka's face — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S12",
@@ -650,7 +661,7 @@
             "bagpipe_B1_sheet"
           ],
           "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Pooka — a horned forest spirit with a wild mane and warm amber eyes — 100% identical; studio bg/pose/light NOT used; image3: the uilleann bagpipe — wooden chanter and worn leather bag — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -683,7 +694,8 @@
           "image_prompt_end": "photoreal cinematic: He glances down at his pipes then back up, awaiting the spirit's reply. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Down-then-up glance; bag held close — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Down-then-up glance; bag held close — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S13",
@@ -698,7 +710,7 @@
             "pooka_A2_fused"
           ],
           "ref_scope": "image1: the fused master of the Pooka — a horned forest spirit with a wild mane and warm amber eyes — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -730,7 +742,8 @@
           "image_prompt_end": "photoreal cinematic: The emerald aura brightens, catching the piper's face in green light off-screen. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Rising emerald aura glow — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Rising emerald aura glow — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         }
       ],
       "location_ref": "emerald_irish_hills_forest_and_cottage",
@@ -804,7 +817,8 @@
           "image_prompt_end": "photoreal cinematic: The piper into place, legs around the spirit's flanks, as the Pooka begins to rise. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Climb and settle; Pooka rising — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Climb and settle; Pooka rising — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S15",
@@ -854,7 +868,8 @@
           "image_prompt_end": "photoreal cinematic: They streak past the at speed, leaves whipping in their wake. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Fast lateral track; motion blur on the forest — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Fast lateral track; motion blur on the forest — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S16",
@@ -902,7 +917,8 @@
           "image_prompt_end": "photoreal cinematic: A grin breaks through his fear as the ride carries him faster. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Hair and cloak streaming; expression shifting to joy — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Hair and cloak streaming; expression shifting to joy — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S17",
@@ -952,7 +968,8 @@
           "image_prompt_end": "photoreal cinematic: toward the cave mouth as a faint green light pulses from deep inside. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Slow crane-down toward the glowing cave — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Slow crane-down toward the glowing cave — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S18",
@@ -1002,7 +1019,8 @@
           "image_prompt_end": "photoreal cinematic: as they step together into the tunnel, green light washing over their faces. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Dismount and step forward; green light washing over — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Dismount and step forward; green light washing over — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S19",
@@ -1053,7 +1071,8 @@
           "image_prompt_end": "photoreal cinematic: forward as the crowd , hundreds of luminous eyes fixing on the two arrivals. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Slow track-in; crowd turning toward camera — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Slow track-in; crowd turning toward camera — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S20",
@@ -1102,7 +1121,8 @@
           "image_prompt_end": "photoreal cinematic: -left along the row, each face distinct yet uniformly luminous and curious. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Slow pan-left along the line of fairies — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Slow pan-left along the line of fairies — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S21",
@@ -1149,7 +1169,8 @@
           "image_prompt_end": "photoreal cinematic: Her lips part in a soft, curious smile as her eyes reflect the newcomers. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Slow head turn; soft smile — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Slow head turn; soft smile — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S22",
@@ -1198,7 +1219,8 @@
           "image_prompt_end": "photoreal cinematic: Reverse on the Pooka and the nervous piper standing together at the tunnel mouth. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Banshee's welcoming step — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Banshee's welcoming step — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S23",
@@ -1245,7 +1267,8 @@
           "image_prompt_end": "photoreal cinematic: He glances sideways briefly toward the piper, sharing the boast. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Chest swell; brief sideways glance — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Chest swell; brief sideways glance — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S24",
@@ -1294,7 +1317,8 @@
           "image_prompt_end": "photoreal cinematic: past the Pooka toward the piper as he begins to raise his pipes. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in past shoulder toward the piper — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in past shoulder toward the piper — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S25",
@@ -1343,7 +1367,8 @@
           "image_prompt_end": "photoreal cinematic: His eyes close in concentration, a single bead of sweat on his temple. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Lifting pipes; eyes closing — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Lifting pipes; eyes closing — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S26",
@@ -1392,7 +1417,8 @@
           "image_prompt_end": "photoreal cinematic: The bag tightens and the reed vibrates, first shimmer of sound rippling through the air. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Bag swelling; reed vibration and air shimmer — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Bag swelling; reed vibration and air shimmer — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S27",
@@ -1441,7 +1467,8 @@
           "image_prompt_end": "photoreal cinematic: as the shimmer spreads toward the watching Banshees, who begin to sway. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Expanding light ripple — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Expanding light ripple — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S28",
@@ -1490,7 +1517,8 @@
           "image_prompt_end": "photoreal cinematic: along the crowd as their swaying synchronizes into the start of a dance. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Lateral track; synchronized swaying — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Lateral track; synchronized swaying — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S29",
@@ -1539,7 +1567,8 @@
           "image_prompt_end": "photoreal cinematic: The dance accelerates, bodies whirling in overlapping circles around the piper. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Circular swirling; accelerating dance — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Circular swirling; accelerating dance — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S30",
@@ -1587,7 +1616,8 @@
           "image_prompt_end": "photoreal cinematic: -left across his determined face to reveal the full sweep of the dance. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Pan-left from piper to dance — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Pan-left from piper to dance — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S31",
@@ -1637,7 +1667,8 @@
           "image_prompt_end": "photoreal cinematic: as the spiral widens, time blurring the dance into ribbons of green light. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes up; the horizon re-settles as the vertical move completes. Expanding spiral blur — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes up; the horizon re-settles as the vertical move completes. Expanding spiral blur — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S32",
@@ -1684,7 +1715,8 @@
           "image_prompt_end": "photoreal cinematic: A tear of happiness rolls down his cheek as the music flows through him. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Expression shifting to rapture; single tear — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Expression shifting to rapture; single tear — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S33",
@@ -1731,7 +1763,8 @@
           "image_prompt_end": "photoreal cinematic: with their spin as emerald light trails coil around them. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Twirling track; light coiling — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Twirling track; light coiling — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S34",
@@ -1780,7 +1813,8 @@
           "image_prompt_end": "photoreal cinematic: into the heart of the whirl as the music peaks. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Crane-down into the whirl — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Crane-down into the whirl — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S35",
@@ -1827,7 +1861,8 @@
           "image_prompt_end": "photoreal cinematic: His amber eyes soften as he watches the piper he once doubted become magic. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Proud smile; amber eyes softening — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Proud smile; amber eyes softening — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S36",
@@ -1876,7 +1911,8 @@
           "image_prompt_end": "photoreal cinematic: -right across the ecstatic crowd, arms raised, hair flaring, mid-leap. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera pans right; the landscape streams past, parallax layers sliding at different speeds. Leaping figures — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera pans right; the landscape streams past, parallax layers sliding at different speeds. Leaping figures — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S37",
@@ -1925,7 +1961,8 @@
           "image_prompt_end": "photoreal cinematic: on his hands moving with supernatural skill, streaks of light his fingers. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on light-following fingers — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on light-following fingers — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S38",
@@ -1974,7 +2011,8 @@
           "image_prompt_end": "photoreal cinematic: The crowd stills for a suspended heartbeat, breath held, before the final flourish. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Crowd ecstasy then suspended still — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Crowd ecstasy then suspended still — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S39",
@@ -2024,7 +2062,8 @@
           "image_prompt_end": "photoreal cinematic: The dance winds gently down, fairies settling like petals as the tune ends. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Dawn light spilling; dance settling — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Dawn light spilling; dance settling — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         }
       ],
       "location_ref": "moonlit_forest_and_banshee_cavern",
@@ -2065,7 +2104,7 @@
             "gold_pouch_B2_sheet"
           ],
           "ref_scope": "image1: the fused master of the Banshees — fairy women in long green gowns with pale glowing skin — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image3: the soft leather pouch of gold coins — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2098,7 +2137,8 @@
           "image_prompt_end": "photoreal cinematic: The pouch is placed in his cupped hands, weighty and full. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Outstretched offering; pouch placed in hands — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Outstretched offering; pouch placed in hands — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S41",
@@ -2113,7 +2153,7 @@
             "gold_pouch_B2_sheet"
           ],
           "ref_scope": "image1: the soft leather pouch of gold coins — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "prop/creature design",
             "palette",
@@ -2144,7 +2184,8 @@
           "image_prompt_end": "photoreal cinematic: The coins in a bright heap, their glow flaring softly. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Coins pouring and settling — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Coins pouring and settling — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S42",
@@ -2162,7 +2203,7 @@
             "forest_env_A2_prop"
           ],
           "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Pooka — a horned forest spirit with a wild mane and warm amber eyes — 100% identical; studio bg/pose/light NOT used; image3: the soft leather pouch of gold coins — 100% identical; studio bg/pose/light NOT used; image4: the darkening Irish forest with a gnarled oak clearing — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2195,7 +2236,8 @@
           "image_prompt_end": "photoreal cinematic: They emerge from the treeline toward the cottage, morning fully risen. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Lateral track through trees; emerging to cottage — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Lateral track through trees; emerging to cottage — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S43",
@@ -2213,7 +2255,7 @@
             "cottage_int_env_A4_prop"
           ],
           "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Mother — a caring elderly woman by the hearth — 100% identical; studio bg/pose/light NOT used; image3: the soft leather pouch of gold coins — 100% identical; studio bg/pose/light NOT used; image4: the warm cottage interior lit by the hearth — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2246,7 +2288,8 @@
           "image_prompt_end": "photoreal cinematic: The mother , half-skeptical, as he beams breathlessly. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Door burst; mother rising — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Door burst; mother rising — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S44",
@@ -2263,7 +2306,7 @@
             "gold_pouch_B2_sheet"
           ],
           "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Neighbors — simple Irish villagers in woolen clothes — 100% identical; studio bg/pose/light NOT used; image3: the soft leather pouch of gold coins — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2296,7 +2339,8 @@
           "image_prompt_end": "photoreal cinematic: -left across the skeptical, amused faces of the neighbors. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Pan-left across the gathered crowd — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Pan-left across the gathered crowd — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S45",
@@ -2313,7 +2357,7 @@
             "gold_pouch_B2_sheet"
           ],
           "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Neighbors — simple Irish villagers in woolen clothes — 100% identical; studio bg/pose/light NOT used; image3: the soft leather pouch of gold coins — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2346,7 +2390,8 @@
           "image_prompt_end": "photoreal cinematic: His expression tilts toward triumph as he begins to draw the pouch out. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Hand reaching; proud smile — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Hand reaching; proud smile — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S46",
@@ -2362,7 +2407,7 @@
             "gold_pouch_B2_sheet"
           ],
           "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the soft leather pouch of gold coins — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2395,7 +2440,8 @@
           "image_prompt_end": "photoreal cinematic: The last dry leaf drifts to the table, the pouch lying empty. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Leaves spilling; pouch emptying — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Leaves spilling; pouch emptying — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S47",
@@ -2411,7 +2457,7 @@
             "mother_A4_fused"
           ],
           "ref_scope": "image1: the fused master of the Neighbors — simple Irish villagers in woolen clothes — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Mother — a caring elderly woman by the hearth — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2443,7 +2489,8 @@
           "image_prompt_end": "photoreal cinematic: The laughter spreads, hands slapping knees, eyes glinting with disdain. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Pointing and laughter — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Pointing and laughter — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S48",
@@ -2459,7 +2506,7 @@
             "bagpipe_B1_sheet"
           ],
           "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the uilleann bagpipe — wooden chanter and worn leather bag — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2492,7 +2539,8 @@
           "image_prompt_end": "photoreal cinematic: on his resolved eyes as the laughter begins to falter. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on resolved eyes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on resolved eyes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S49",
@@ -2509,7 +2557,7 @@
             "village_env_A5_prop"
           ],
           "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the uilleann bagpipe — wooden chanter and worn leather bag — 100% identical; studio bg/pose/light NOT used; image3: the Irish village square outside the cottage under a golden sky — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2542,7 +2590,8 @@
           "image_prompt_end": "photoreal cinematic: as the golden light spreads, the villagers frozen in silent awe. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes up; the horizon re-settles as the vertical move completes. Golden light blooming — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes up; the horizon re-settles as the vertical move completes. Golden light blooming — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S50",
@@ -2560,7 +2609,7 @@
             "village_env_A5_prop"
           ],
           "ref_scope": "image1: the fused master of the Piper — a young good-natured Irish piper in homespun wool — 100% identical; studio bg/pose/light NOT used; image2: the uilleann bagpipe — wooden chanter and worn leather bag — 100% identical; studio bg/pose/light NOT used; image3: the fused master of the Neighbors — simple Irish villagers in woolen clothes — 100% identical; studio bg/pose/light NOT used; image4: the Irish village square outside the cottage under a golden sky — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2593,7 +2642,8 @@
           "image_prompt_end": "photoreal cinematic: to frame the piper as hero beneath the golden sky, his melody carrying over the hills. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Crane-down to hero framing; swirling leaves — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Crane-down to hero framing; swirling leaves — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         }
       ],
       "location_ref": "cottage_and_village_under_golden_sky",

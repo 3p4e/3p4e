@@ -144,7 +144,8 @@
           "image_prompt_end": "photoreal cinematic: into the dark heart of the realm, torches flaring as the descends toward a colossal gate. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Ember light sputter — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Ember light sputter — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S02",
@@ -193,7 +194,8 @@
           "image_prompt_end": "photoreal cinematic: left across the golden palace to reveal Ishtar standing on a marble terrace, wind in her robes. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Smooth pan-left; silk robes flutter — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Smooth pan-left; silk robes flutter — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S03",
@@ -242,7 +244,8 @@
           "image_prompt_end": "photoreal cinematic: on her face as longing hardens into decision, eyes narrowing toward the earth below. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Determined eye glint — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Determined eye glint — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S04",
@@ -291,7 +294,8 @@
           "image_prompt_end": "photoreal cinematic: with her descent as the warm light fades behind and cold indigo shadow ahead. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Tracking descent; light dims — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Tracking descent; light dims — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S05",
@@ -340,7 +344,8 @@
           "image_prompt_end": "photoreal cinematic: Hold on the gate as green flame braziers flare, emphasizing its immense scale against Ishtar. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Flame flare — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Flame flare — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S06",
@@ -388,7 +393,8 @@
           "image_prompt_end": "photoreal cinematic: on her eyes as her expression to iron will. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on eyes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on eyes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S07",
@@ -442,7 +448,8 @@
           "image_prompt_end": "photoreal cinematic: Her fist strikes the gate, a deep boom ringing with green sparks. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Fist strike, spark burst — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Fist strike, spark burst — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "action"
+          "motion_intensity": "action",
+          "strength": 0.6
         },
         {
           "id": "S08",
@@ -495,7 +502,8 @@
           "image_prompt_end": "photoreal cinematic: Hold as torch flames flatten from her shout, cracks spreading across the brazen door. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Dust ripple, flame flatten — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Dust ripple, flame flatten — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S09",
@@ -549,7 +557,8 @@
           "image_prompt_end": "photoreal cinematic: He flattens against the wall as the door booms again, dust falling on his shoulders. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Tremble, dust fall — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Tremble, dust fall — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S10",
@@ -604,7 +613,8 @@
           "image_prompt_end": "photoreal cinematic: The gate swings open revealing Ishtar framed in amber light against the dark gateway. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Gate opens, light spill — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Gate opens, light spill — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S11",
@@ -654,7 +664,8 @@
           "image_prompt_end": "photoreal cinematic: through the corridor as they pass silent shades and green braziers, descending deeper. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Tracking shot; torch flicker — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Tracking shot; torch flicker — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S12",
@@ -701,7 +712,8 @@
           "image_prompt_end": "photoreal cinematic: Hold as Ishtar and the gatekeeper enter at the far end, tiny against the monstrous hall. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Braziers flicker — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Braziers flicker — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S13",
@@ -750,7 +762,8 @@
           "image_prompt_end": "photoreal cinematic: on her regal, severe face as she regards the approaching goddess. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on face — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on face — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S14",
@@ -800,7 +813,8 @@
           "image_prompt_end": "photoreal cinematic: Shot-reverse to Ishtar's face as she opens her mouth but finds no words. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Ishtar freezes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Ishtar freezes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S15",
@@ -850,7 +864,8 @@
           "image_prompt_end": "photoreal cinematic: as green chains of light rise in the dark behind her, sealing her fate. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Chains rise — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Chains rise — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         }
       ],
       "location_ref": "celestial_palace_descending_to_irkala_throne_hall",
@@ -890,7 +905,7 @@
             "irkala_env_A1_prop"
           ],
           "ref_scope": "image1: the fused master of Ishtar - goddess of love and war, golden crown, lapis necklace, radiant golden-and-lapis robes — 100% identical; studio bg/pose/light NOT used; image2: the green light-chains - translucent green chains that bind Ishtar — 100% identical; studio bg/pose/light NOT used; image3: the Irkala environment - dark underworld of obsidian caverns, ember torches and shadow corridors — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -923,7 +938,8 @@
           "image_prompt_end": "photoreal cinematic: from high angle as the chains tighten gently and her glow fades. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Chains pulse — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Chains pulse — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S17",
@@ -940,7 +956,7 @@
             "chains_prop_B1_prop"
           ],
           "ref_scope": "image1: the fused master of Ishtar - goddess of love and war, golden crown, lapis necklace, radiant golden-and-lapis robes — 100% identical; studio bg/pose/light NOT used; image2: the gold bracelets - ornate gold cuffs on Ishtar wrists — 100% identical; studio bg/pose/light NOT used; image3: the green light-chains - translucent green chains that bind Ishtar — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -973,7 +989,8 @@
           "image_prompt_end": "photoreal cinematic: as the last warm glint dies on the metal. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Macro push-in; glint fades — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Macro push-in; glint fades — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S18",
@@ -988,7 +1005,7 @@
             "earth_env_A5_prop"
           ],
           "ref_scope": "image1: the earth environment - Mesopotamian fields, orchards, dusty village and stone plaza — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "prop design",
             "palette",
@@ -1020,7 +1037,8 @@
           "image_prompt_end": "photoreal cinematic: right across the withering land as leaves curl and wells run dry. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera pans right; the landscape streams past, parallax layers sliding at different speeds. Leaves curl — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera pans right; the landscape streams past, parallax layers sliding at different speeds. Leaves curl — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S19",
@@ -1035,7 +1053,7 @@
             "fruit_prop_B3_prop"
           ],
           "ref_scope": "image1: the fruit - fruit shriveling then ripening on a branch — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "prop design",
             "palette",
@@ -1067,7 +1085,8 @@
           "image_prompt_end": "photoreal cinematic: as the fruit withers and a leaf crumbles in the still air. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Macro push-in; wither — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Macro push-in; wither — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S20",
@@ -1082,7 +1101,7 @@
             "earth_env_A5_prop"
           ],
           "ref_scope": "image1: the earth environment - Mesopotamian fields, orchards, dusty village and stone plaza — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "prop design",
             "palette",
@@ -1114,7 +1133,8 @@
           "image_prompt_end": "photoreal cinematic: Hold as they turn away from each other, their faces empty of warmth. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. They turn away — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. They turn away — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S21",
@@ -1129,7 +1149,7 @@
             "earth_env_A5_prop"
           ],
           "ref_scope": "image1: the earth environment - Mesopotamian fields, orchards, dusty village and stone plaza — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "prop design",
             "palette",
@@ -1161,7 +1181,8 @@
           "image_prompt_end": "photoreal cinematic: to reveal the whole saddened city under a colorless sky. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes up; the horizon re-settles as the vertical move completes. The scene breathes with ambient life — weight settles, small movements ripple through frame, nothing sits frozen. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes up; the horizon re-settles as the vertical move completes. The scene breathes with ambient life — weight settles, small movements ripple through frame, nothing sits frozen. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S22",
@@ -1176,7 +1197,7 @@
             "flower_prop_B4_prop"
           ],
           "ref_scope": "image1: the desert flower - a single wilting flower shedding a petal — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "prop design",
             "palette",
@@ -1208,7 +1229,8 @@
           "image_prompt_end": "photoreal cinematic: as the petal detaches and drifts to the dust. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Macro push-in; petal fall — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Macro push-in; petal fall — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S23",
@@ -1224,7 +1246,7 @@
             "earth_env_A5_prop"
           ],
           "ref_scope": "image1: the fused master of the Messenger - lean, calm, brave pleader in a plain traveling cloak — 100% identical; studio bg/pose/light NOT used; image2: the earth environment - Mesopotamian fields, orchards, dusty village and stone plaza — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1257,7 +1279,8 @@
           "image_prompt_end": "photoreal cinematic: on his steady eyes as the crowd parts behind him. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on eyes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on eyes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S24",
@@ -1273,7 +1296,7 @@
             "stair_env_A6_prop"
           ],
           "ref_scope": "image1: the fused master of the Messenger - lean, calm, brave pleader in a plain traveling cloak — 100% identical; studio bg/pose/light NOT used; image2: the great underworld stair - spiraling stone stair descending into a dark chasm — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1306,7 +1329,8 @@
           "image_prompt_end": "photoreal cinematic: his descent as amber torchlight gives way to indigo underworld gloom. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Tracking descent; light dims — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Tracking descent; light dims — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S25",
@@ -1323,7 +1347,7 @@
             "throne_hall_env_A2_prop"
           ],
           "ref_scope": "image1: the fused master of the Messenger - lean, calm, brave pleader in a plain traveling cloak — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Ereshkigal - dark queen of the underworld, pale skin, black bone crown, obsidian robes — 100% identical; studio bg/pose/light NOT used; image3: the throne hall environment - vast obsidian throne hall lined with green flame braziers — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1356,7 +1380,8 @@
           "image_prompt_end": "photoreal cinematic: Hold as Ereshkigal leans forward, her shadow swallowing the kneeling man. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Shadow stretch — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Shadow stretch — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S26",
@@ -1372,7 +1397,7 @@
             "throne_hall_env_A2_prop"
           ],
           "ref_scope": "image1: the fused master of the Messenger - lean, calm, brave pleader in a plain traveling cloak — 100% identical; studio bg/pose/light NOT used; image2: the throne hall environment - vast obsidian throne hall lined with green flame braziers — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1405,7 +1430,8 @@
           "image_prompt_end": "photoreal cinematic: Hold as his earnest words echo through the cold hall. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Echo dust — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Echo dust — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S27",
@@ -1420,7 +1446,7 @@
             "ereshkigal_A2_fused"
           ],
           "ref_scope": "image1: the fused master of Ereshkigal - dark queen of the underworld, pale skin, black bone crown, obsidian robes — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1453,7 +1479,8 @@
           "image_prompt_end": "photoreal cinematic: as her eyes narrow in calculation, then relax. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Eyes shift — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Eyes shift — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S28",
@@ -1469,7 +1496,7 @@
             "throne_hall_env_A2_prop"
           ],
           "ref_scope": "image1: the fused master of Ereshkigal - dark queen of the underworld, pale skin, black bone crown, obsidian robes — 100% identical; studio bg/pose/light NOT used; image2: the throne hall environment - vast obsidian throne hall lined with green flame braziers — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1502,7 +1529,8 @@
           "image_prompt_end": "photoreal cinematic: Hold as the words hang in the air and green flame behind her. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Flame rise — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Flame rise — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S29",
@@ -1519,7 +1547,7 @@
             "throne_hall_env_A2_prop"
           ],
           "ref_scope": "image1: the fused master of the Messenger - lean, calm, brave pleader in a plain traveling cloak — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Ishtar - goddess of love and war, golden crown, lapis necklace, radiant golden-and-lapis robes — 100% identical; studio bg/pose/light NOT used; image3: the throne hall environment - vast obsidian throne hall lined with green flame braziers — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1552,7 +1580,8 @@
           "image_prompt_end": "photoreal cinematic: Hold as the messenger's gaze toward the chained goddess. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Glance — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Glance — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S30",
@@ -1569,7 +1598,7 @@
             "irkala_env_A1_prop"
           ],
           "ref_scope": "image1: the fused master of Ishtar - goddess of love and war, golden crown, lapis necklace, radiant golden-and-lapis robes — 100% identical; studio bg/pose/light NOT used; image2: the green light-chains - translucent green chains that bind Ishtar — 100% identical; studio bg/pose/light NOT used; image3: the Irkala environment - dark underworld of obsidian caverns, ember torches and shadow corridors — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1602,7 +1631,8 @@
           "image_prompt_end": "photoreal cinematic: The chains crumble to embers, her radiance flooding back into her robes. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Chains dissolve — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Chains dissolve — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S31",
@@ -1618,7 +1648,7 @@
             "stair_env_A6_prop"
           ],
           "ref_scope": "image1: the fused master of Ishtar - goddess of love and war, golden crown, lapis necklace, radiant golden-and-lapis robes — 100% identical; studio bg/pose/light NOT used; image2: the great underworld stair - spiraling stone stair descending into a dark chasm — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1651,7 +1681,8 @@
           "image_prompt_end": "photoreal cinematic: her rise as warm light spills down the stairway to meet her. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Tracking ascent; light grows — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Tracking ascent; light grows — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S32",
@@ -1667,7 +1698,7 @@
             "underworld_gate_env_A3_prop"
           ],
           "ref_scope": "image1: the fused master of Ishtar - goddess of love and war, golden crown, lapis necklace, radiant golden-and-lapis robes — 100% identical; studio bg/pose/light NOT used; image2: the underworld gate - colossal black-bronze and bone gate with green flame braziers — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1700,7 +1731,8 @@
           "image_prompt_end": "photoreal cinematic: as she steps into the light and the whole valley blooms around her. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes up; the horizon re-settles as the vertical move completes. Bloom burst — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes up; the horizon re-settles as the vertical move completes. Bloom burst — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S33",
@@ -1715,7 +1747,7 @@
             "earth_env_A5_prop"
           ],
           "ref_scope": "image1: the earth environment - Mesopotamian fields, orchards, dusty village and stone plaza — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "prop design",
             "palette",
@@ -1747,7 +1779,8 @@
           "image_prompt_end": "photoreal cinematic: Hold as color floods back into the landscape like a wave. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Color flood — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Color flood — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S34",
@@ -1762,7 +1795,7 @@
             "fruit_prop_B3_prop"
           ],
           "ref_scope": "image1: the fruit - fruit shriveling then ripening on a branch — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "prop design",
             "palette",
@@ -1794,7 +1827,8 @@
           "image_prompt_end": "photoreal cinematic: as the whole branch bursts with ripe fruit. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pulls back; depth planes separate, near objects swelling past the lens. Macro pull-back; ripen — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pulls back; depth planes separate, near objects swelling past the lens. Macro pull-back; ripen — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S35",
@@ -1809,7 +1843,7 @@
             "earth_env_A5_prop"
           ],
           "ref_scope": "image1: the earth environment - Mesopotamian fields, orchards, dusty village and stone plaza — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "prop design",
             "palette",
@@ -1841,7 +1875,8 @@
           "image_prompt_end": "photoreal cinematic: Hold as they lean close, eyes meeting with warmth. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Embrace — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Embrace — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S36",
@@ -1856,7 +1891,7 @@
             "earth_env_A5_prop"
           ],
           "ref_scope": "image1: the earth environment - Mesopotamian fields, orchards, dusty village and stone plaza — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "prop design",
             "palette",
@@ -1888,7 +1923,8 @@
           "image_prompt_end": "photoreal cinematic: over the celebrating land toward the bright sky. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes up; the horizon re-settles as the vertical move completes. Celebration — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes up; the horizon re-settles as the vertical move completes. Celebration — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S37",
@@ -1904,7 +1940,7 @@
             "palace_env_A4_prop"
           ],
           "ref_scope": "image1: the fused master of Ishtar - goddess of love and war, golden crown, lapis necklace, radiant golden-and-lapis robes — 100% identical; studio bg/pose/light NOT used; image2: the celestial palace - golden ziggurat terraces, lapis mosaics and marble terrace — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1937,7 +1973,8 @@
           "image_prompt_end": "photoreal cinematic: with her stride as the palace gate draws near. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Tracking walk — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Tracking walk — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S38",
@@ -1953,7 +1990,7 @@
             "palace_env_A4_prop"
           ],
           "ref_scope": "image1: the fused master of Ishtar - goddess of love and war, golden crown, lapis necklace, radiant golden-and-lapis robes — 100% identical; studio bg/pose/light NOT used; image2: the celestial palace - golden ziggurat terraces, lapis mosaics and marble terrace — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1986,7 +2023,8 @@
           "image_prompt_end": "photoreal cinematic: Hold as the door opens inward to a warm interior. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Door opens — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Door opens — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         }
       ],
       "location_ref": "irkala_chained_chamber_and_withered_earth",
@@ -2058,7 +2096,8 @@
           "image_prompt_end": "photoreal cinematic: with her as her eyes search the quiet room for welcome. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Tracking; searching gaze — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Tracking; searching gaze — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S40",
@@ -2107,7 +2146,8 @@
           "image_prompt_end": "photoreal cinematic: Hold on his oblivious face, not once glancing up at his returned wife. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Oblivious glance away — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Oblivious glance away — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S41",
@@ -2155,7 +2195,8 @@
           "image_prompt_end": "photoreal cinematic: on his vacant, self-satisfied gaze. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Vacant gaze — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Vacant gaze — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S42",
@@ -2203,7 +2244,8 @@
           "image_prompt_end": "photoreal cinematic: as her expression darkens and her jaw tightens. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Fury flash — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Fury flash — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S43",
@@ -2253,7 +2295,8 @@
           "image_prompt_end": "photoreal cinematic: Hold as the force of her words makes the air ripple and the lamps gutter. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Air ripple — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Air ripple — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S44",
@@ -2302,7 +2345,8 @@
           "image_prompt_end": "photoreal cinematic: Hold as they close silently around the startled Tammuz. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Shadows emerge — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Shadows emerge — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S45",
@@ -2351,7 +2395,8 @@
           "image_prompt_end": "photoreal cinematic: as they haul him struggling toward the dark opening. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Tracking; struggle — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Tracking; struggle — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S46",
@@ -2400,7 +2445,8 @@
           "image_prompt_end": "photoreal cinematic: his descent as the dark swallows him. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Crane-down descent — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Crane-down descent — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S47",
@@ -2448,7 +2494,8 @@
           "image_prompt_end": "photoreal cinematic: Hold as conflict passes across her eyes, then into resolve. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Eyes soften — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Eyes soften — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S48",
@@ -2497,7 +2544,8 @@
           "image_prompt_end": "photoreal cinematic: to frame her crowned against the bright sky as the land blooms endlessly. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes up; the horizon re-settles as the vertical move completes. The scene breathes with ambient life — weight settles, small movements ripple through frame, nothing sits frozen. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes up; the horizon re-settles as the vertical move completes. The scene breathes with ambient life — weight settles, small movements ripple through frame, nothing sits frozen. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         }
       ],
       "location_ref": "gleaming_palace_chamber_and_return_to_reign",

@@ -134,7 +134,8 @@
           "image_prompt_end": "photoreal cinematic: He steps forward toward the ship, resolve on his face, rigging and masts silhouetted against bright sky. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Slow push toward the hero then he steps forward — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Slow push toward the hero then he steps forward — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S02",
@@ -182,7 +183,8 @@
           "image_prompt_end": "photoreal cinematic: on his beaming face as the ship begins to pull away from the dock. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on face; ship gently rocking — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on face; ship gently rocking — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S03",
@@ -231,7 +233,8 @@
           "image_prompt_end": "photoreal cinematic: to deck level where Robinson leans on the rail, relaxed. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Crane-down from sky to deck — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Crane-down from sky to deck — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S04",
@@ -279,7 +282,8 @@
           "image_prompt_end": "photoreal cinematic: Waves swell higher around the hull as first rain streaks begin. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Clouds boil; waves heave — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Clouds boil; waves heave — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S05",
@@ -328,7 +332,8 @@
           "image_prompt_end": "photoreal cinematic: The hull tilts steeply as another massive breaker slams the bow. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Tracking shot following the rolling deck — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Tracking shot following the rolling deck — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S06",
@@ -376,7 +381,8 @@
           "image_prompt_end": "photoreal cinematic: The broken mast topples toward the deck in slow collapse. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Mast cracks and falls; rope snap — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Mast cracks and falls; rope snap — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S07",
@@ -425,7 +431,8 @@
           "image_prompt_end": "photoreal cinematic: The ship slides below the surface, leaving swirling foam and debris. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Crane-down as the ship sinks under water — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Crane-down as the ship sinks under water — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S08",
@@ -473,7 +480,8 @@
           "image_prompt_end": "photoreal cinematic: on his half-closed eyes as a wave rolls past. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on face; water bobs — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on face; water bobs — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S09",
@@ -521,7 +529,8 @@
           "image_prompt_end": "photoreal cinematic: reveals the full island: white beach ring and dense green jungle interior. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes up; the horizon re-settles as the vertical move completes. Crane-up to reveal the island — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes up; the horizon re-settles as the vertical move completes. Crane-up to reveal the island — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S10",
@@ -569,7 +578,8 @@
           "image_prompt_end": "photoreal cinematic: He stirs, lifting his head, seaweed in his hair. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. He stirs awake — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. He stirs awake — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S11",
@@ -618,7 +628,8 @@
           "image_prompt_end": "photoreal cinematic: -right ends on dense jungle foliage and no sign of people. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera pans right; the landscape streams past, parallax layers sliding at different speeds. Slow pan-right across the empty beach — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera pans right; the landscape streams past, parallax layers sliding at different speeds. Slow pan-right across the empty beach — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S12",
@@ -666,7 +677,8 @@
           "image_prompt_end": "photoreal cinematic: frames his small figure against huge trees, alone but resolved. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pulls back; depth planes separate, near objects swelling past the lens. Pull-back to emphasize isolation — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pulls back; depth planes separate, near objects swelling past the lens. Pull-back to emphasize isolation — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         }
       ],
       "location_ref": "ship_at_sea",
@@ -711,7 +723,7 @@
             "island_env_A5"
           ],
           "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical; image2: tropical island shore environment — 100% identical",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -738,7 +750,8 @@
           "image_prompt_end": "photoreal cinematic: -left shows the growing wooden frame as he lays another branch. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Pan-left following his work — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Pan-left following his work — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S14",
@@ -759,7 +772,7 @@
             "robinson_A1_fused"
           ],
           "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -786,7 +799,8 @@
           "image_prompt_end": "photoreal cinematic: He pulls a vine tight, the knot cinching firm. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Hands tighten the knot — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Hands tighten the knot — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S15",
@@ -808,7 +822,7 @@
             "island_env_A5"
           ],
           "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical; image2: tropical island shore environment — 100% identical",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -835,7 +849,8 @@
           "image_prompt_end": "photoreal cinematic: reveals the hut as a small refuge beside the vast quiet ocean. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes up; the horizon re-settles as the vertical move completes. Crane-up over the hut — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes up; the horizon re-settles as the vertical move completes. Crane-up over the hut — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S16",
@@ -856,7 +871,7 @@
             "robinson_A1_fused"
           ],
           "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -883,7 +898,8 @@
           "image_prompt_end": "photoreal cinematic: He his gaze toward the open doorway and the sea beyond. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. He carves and glances out — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. He carves and glances out — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S17",
@@ -904,7 +920,7 @@
             "robinson_A1_fused"
           ],
           "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -931,7 +947,8 @@
           "image_prompt_end": "photoreal cinematic: -right his steps until he stops abruptly, staring down. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera pans right; the landscape streams past, parallax layers sliding at different speeds. He halts — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera pans right; the landscape streams past, parallax layers sliding at different speeds. He halts — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S18",
@@ -952,7 +969,7 @@
             "footprint_insert_A6"
           ],
           "ref_scope": "image1: oversized human footprint reference — 100% identical",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "prop design",
             "palette",
@@ -979,7 +996,8 @@
           "image_prompt_end": "photoreal cinematic: A second matching footprint revealed beside it as foam recedes. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Water recedes revealing print — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Water recedes revealing print — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S19",
@@ -1000,7 +1018,7 @@
             "robinson_A1_fused"
           ],
           "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1027,7 +1045,8 @@
           "image_prompt_end": "photoreal cinematic: on his alarmed eyes as he realizes someone else is here. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on eyes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on eyes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S20",
@@ -1048,7 +1067,7 @@
             "robinson_A1_fused"
           ],
           "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1075,7 +1094,8 @@
           "image_prompt_end": "photoreal cinematic: He crouches low, peering toward the sound through dense leaves. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track following his stealth movement — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track following his stealth movement — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S21",
@@ -1096,7 +1116,7 @@
             "robinson_A1_fused"
           ],
           "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1123,7 +1143,8 @@
           "image_prompt_end": "photoreal cinematic: His view widens through the leaves to reveal figures on the beach. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Leaves part — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Leaves part — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S22",
@@ -1146,7 +1167,7 @@
             "petko_A2_fused"
           ],
           "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical; image2: islander group costume — 100% identical; image3: fused master of Петко — 100% identical",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1173,7 +1194,8 @@
           "image_prompt_end": "photoreal cinematic: -left on the bound prisoner, rope tight around his wrists. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Pan-left to the prisoner — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Pan-left to the prisoner — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S23",
@@ -1194,7 +1216,7 @@
             "petko_A2_fused"
           ],
           "ref_scope": "image1: fused master of Петко — 100% identical",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1221,7 +1243,8 @@
           "image_prompt_end": "photoreal cinematic: on his helpless eyes as the last native disappears into the jungle. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on eyes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on eyes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S24",
@@ -1243,7 +1266,7 @@
             "petko_A2_fused"
           ],
           "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical; image2: fused master of Петко — 100% identical",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1270,7 +1293,8 @@
           "image_prompt_end": "photoreal cinematic: He kneels beside the prisoner and reaches for the ropes. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track toward the bound man — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track toward the bound man — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S25",
@@ -1292,7 +1316,7 @@
             "petko_A2_fused"
           ],
           "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical; image2: fused master of Петко — 100% identical",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1319,7 +1343,8 @@
           "image_prompt_end": "photoreal cinematic: The rope falls loose into the sand. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Hands untie; rope drops — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Hands untie; rope drops — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S26",
@@ -1341,7 +1366,7 @@
             "petko_A2_fused"
           ],
           "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical; image2: fused master of Петко — 100% identical",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1368,7 +1393,8 @@
           "image_prompt_end": "photoreal cinematic: Reverse medium of the freed man looking up, beginning to smile. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Shot-reverse between the two — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Shot-reverse between the two — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S27",
@@ -1390,7 +1416,7 @@
             "petko_A2_fused"
           ],
           "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical; image2: fused master of Петко — 100% identical",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1417,7 +1443,8 @@
           "image_prompt_end": "photoreal cinematic: on his warm smile as he grips Robinson's offered hand. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on smile — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on smile — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S28",
@@ -1439,7 +1466,7 @@
             "petko_A2_fused"
           ],
           "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical; image2: fused master of Петко — 100% identical",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1466,7 +1493,8 @@
           "image_prompt_end": "photoreal cinematic: frames the two friends beneath a brightening sky, a journey ahead. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes up; the horizon re-settles as the vertical move completes. Crane-up over the pair — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes up; the horizon re-settles as the vertical move completes. Crane-up over the pair — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S29",
@@ -1488,7 +1516,7 @@
             "petko_A2_fused"
           ],
           "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical; image2: fused master of Петко — 100% identical",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1515,7 +1543,8 @@
           "image_prompt_end": "photoreal cinematic: -left shows them wading back to shore with their catch, grinning. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Pan-left following their joy — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Pan-left following their joy — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S30",
@@ -1537,7 +1566,7 @@
             "petko_A2_fused"
           ],
           "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical; image2: fused master of Петко — 100% identical",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1564,7 +1593,8 @@
           "image_prompt_end": "photoreal cinematic: The same beach under a different season, waves unchanged. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Lighting shifts with seasons — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Lighting shifts with seasons — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S31",
@@ -1585,7 +1615,7 @@
             "robinson_A1_fused"
           ],
           "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1612,7 +1642,8 @@
           "image_prompt_end": "photoreal cinematic: -right his gaze toward the empty horizon. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera pans right; the landscape streams past, parallax layers sliding at different speeds. Pan-right to the sea — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera pans right; the landscape streams past, parallax layers sliding at different speeds. Pan-right to the sea — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S32",
@@ -1633,7 +1664,7 @@
             "robinson_A1_fused"
           ],
           "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1660,7 +1691,8 @@
           "image_prompt_end": "photoreal cinematic: on both faces as their eyes go wide in recognition. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in as they spot something — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in as they spot something — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S33",
@@ -1682,7 +1714,7 @@
             "petko_A2_fused"
           ],
           "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical; image2: fused master of Петко — 100% identical",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1709,7 +1741,8 @@
           "image_prompt_end": "photoreal cinematic: pushes toward the ship as it grows larger against the sky. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track toward the ship — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track toward the ship — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S34",
@@ -1730,7 +1763,7 @@
             "british_flag_A7"
           ],
           "ref_scope": "image1: British union flag design — 100% identical",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "prop design",
             "palette",
@@ -1757,7 +1790,8 @@
           "image_prompt_end": "photoreal cinematic: The flag snaps in the wind. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Flag waves — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Flag waves — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S35",
@@ -1778,7 +1812,7 @@
             "robinson_A1_fused"
           ],
           "ref_scope": "image1: fused master of Робинсон Крусо — 100% identical",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1805,7 +1839,8 @@
           "image_prompt_end": "photoreal cinematic: on his radiant smile as he shouts toward the ship. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on joy — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on joy — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         }
       ],
       "location_ref": "island_hut_and_beach",
@@ -1877,7 +1912,8 @@
           "image_prompt_end": "photoreal cinematic: -left their urgent run as the ship anchors offshore. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Pan-left tracking their run — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Pan-left tracking their run — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S37",
@@ -1925,7 +1961,8 @@
           "image_prompt_end": "photoreal cinematic: The sailors vanish into the foliage, leaving the officers tied on the beach. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Figures move and depart — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Figures move and depart — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S38",
@@ -1973,7 +2010,8 @@
           "image_prompt_end": "photoreal cinematic: The captain looks up at Robinson, grateful but weary. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track across the rescue — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track across the rescue — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S39",
@@ -2021,7 +2059,8 @@
           "image_prompt_end": "photoreal cinematic: His resolute face as the captain nods. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Wind — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Wind — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S40",
@@ -2071,7 +2110,8 @@
           "image_prompt_end": "photoreal cinematic: to the waterline as the two reach the ship's hull in shadow. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Moonlit swim — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Moonlit swim — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S41",
@@ -2120,7 +2160,8 @@
           "image_prompt_end": "photoreal cinematic: They crouch into shadow, scanning the dim deck. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track as they slip aboard — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track as they slip aboard — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S42",
@@ -2169,7 +2210,8 @@
           "image_prompt_end": "photoreal cinematic: -right reveals Robinson and Petko hidden behind barrels, watching. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera pans right; the landscape streams past, parallax layers sliding at different speeds. Pan-right to reveal the hidden pair — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera pans right; the landscape streams past, parallax layers sliding at different speeds. Pan-right to reveal the hidden pair — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S43",
@@ -2219,7 +2261,8 @@
           "image_prompt_end": "photoreal cinematic: Reverse medium of Petko binding the captured man's arms. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Swift capture — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Swift capture — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S44",
@@ -2268,7 +2311,8 @@
           "image_prompt_end": "photoreal cinematic: The heavy hold door swings shut and is barred. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Door closes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Door closes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S45",
@@ -2316,7 +2360,8 @@
           "image_prompt_end": "photoreal cinematic: on his steady eyes as the ship toward open sea. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on his command — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on his command — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S46",
@@ -2365,7 +2410,8 @@
           "image_prompt_end": "photoreal cinematic: Reverse close-up of Petko's resolute face as he refuses to leave. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Shared decision — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Shared decision — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S47",
@@ -2416,7 +2462,8 @@
           "image_prompt_end": "photoreal cinematic: -left reveals the white cliffs and a harbor town ahead. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Pan-left to the coast — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Pan-left to the coast — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S48",
@@ -2466,7 +2513,8 @@
           "image_prompt_end": "photoreal cinematic: They pause at the dock, taking in the town together. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. They step ashore — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. They step ashore — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S49",
@@ -2515,7 +2563,8 @@
           "image_prompt_end": "photoreal cinematic: frames the two friends together, bound by a lifetime of friendship. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pulls back; depth planes separate, near objects swelling past the lens. Pull-back to close the story — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pulls back; depth planes separate, near objects swelling past the lens. Pull-back to close the story — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         }
       ],
       "location_ref": "island_beach_and_ship",

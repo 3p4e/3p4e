@@ -287,7 +287,7 @@
             "sea_env_A2_prop"
           ],
           "ref_scope": "image1: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image2: the black-sailed pirate schooner on tropical sea — 100% identical; studio bg/pose/light NOT used; image3: the churning tropical sea and storm sky — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -320,7 +320,8 @@
           "image_prompt_end": "photoreal cinematic: Crane toward the ship's deck where a lone figure in a crimson turban stands at the bow. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Waves rolling — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Waves rolling — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S02",
@@ -336,7 +337,7 @@
             "sea_env_A2_prop"
           ],
           "ref_scope": "image1: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image2: the churning tropical sea and storm sky — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -369,7 +370,8 @@
           "image_prompt_end": "photoreal cinematic: on his burning eyes as lightning cracks behind his turban. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Lightning flash — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Lightning flash — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S03",
@@ -384,7 +386,7 @@
             "sandokan_A1_fused"
           ],
           "ref_scope": "image1: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -416,7 +418,8 @@
           "image_prompt_end": "photoreal cinematic: His blade glints as his fist tightens, resolve hardening in his eyes. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Turban snapping in wind — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Turban snapping in wind — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S04",
@@ -433,7 +436,7 @@
             "ship_env_A1_prop"
           ],
           "ref_scope": "image1: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image2: the loyal pirate crew of Mompracem — 100% identical; studio bg/pose/light NOT used; image3: the black-sailed pirate schooner on tropical sea — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -466,7 +469,8 @@
           "image_prompt_end": "photoreal cinematic: The crew raises their weapons in a roaring cheer, torches blazing. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Slow track across the deck; torches flickering — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Slow track across the deck; torches flickering — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S05",
@@ -482,7 +486,7 @@
             "sea_env_A2_prop"
           ],
           "ref_scope": "image1: the black-sailed pirate schooner on tropical sea — 100% identical; studio bg/pose/light NOT used; image2: the churning tropical sea and storm sky — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "prop/creature design",
             "palette",
@@ -513,7 +517,8 @@
           "image_prompt_end": "photoreal cinematic: left as the gap closes and the enemy ship's sails fill the frame. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Ship cutting through waves — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Ship cutting through waves — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S06",
@@ -530,7 +535,7 @@
             "cannonball_A6_prop"
           ],
           "ref_scope": "image1: the pirate cannon crew — 100% identical; studio bg/pose/light NOT used; image2: the black-sailed pirate schooner on tropical sea — 100% identical; studio bg/pose/light NOT used; image3: the heavy iron cannonball — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -563,7 +568,8 @@
           "image_prompt_end": "photoreal cinematic: Smoke clears to reveal the enemy mast cracking and the hull sliding under. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Cannon smoke billowing — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Cannon smoke billowing — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S07",
@@ -579,7 +585,7 @@
             "sea_env_A2_prop"
           ],
           "ref_scope": "image1: the black-sailed pirate schooner on tropical sea — 100% identical; studio bg/pose/light NOT used; image2: the churning tropical sea and storm sky — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "prop/creature design",
             "palette",
@@ -610,7 +616,8 @@
           "image_prompt_end": "photoreal cinematic: right across the enemy fleet as every gun barrel toward the lone ship. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera pans right; the landscape streams past, parallax layers sliding at different speeds. Clouds thickening — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera pans right; the landscape streams past, parallax layers sliding at different speeds. Clouds thickening — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S08",
@@ -626,7 +633,7 @@
             "ship_env_A1_prop"
           ],
           "ref_scope": "image1: the heavy iron cannonball — 100% identical; studio bg/pose/light NOT used; image2: the black-sailed pirate schooner on tropical sea — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "prop/creature design",
             "palette",
@@ -657,7 +664,8 @@
           "image_prompt_end": "photoreal cinematic: The deck buckles and flame erupts from below. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Splinters flying — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Splinters flying — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S09",
@@ -673,7 +681,7 @@
             "sea_env_A2_prop"
           ],
           "ref_scope": "image1: the black-sailed pirate schooner on tropical sea — 100% identical; studio bg/pose/light NOT used; image2: the churning tropical sea and storm sky — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "prop/creature design",
             "palette",
@@ -704,7 +712,8 @@
           "image_prompt_end": "photoreal cinematic: Crane as the stern slips beneath the churning water. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes up; the horizon re-settles as the vertical move completes. Ship sinking — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes up; the horizon re-settles as the vertical move completes. Ship sinking — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S10",
@@ -720,7 +729,7 @@
             "sea_env_A2_prop"
           ],
           "ref_scope": "image1: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image2: the churning tropical sea and storm sky — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -753,7 +762,8 @@
           "image_prompt_end": "photoreal cinematic: He fights through a cresting wave, head above water, land faint ahead. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track alongside him; waves crashing — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track alongside him; waves crashing — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S11",
@@ -769,7 +779,7 @@
             "beach_env_A3_prop"
           ],
           "ref_scope": "image1: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image2: the pale tropical beach of Labuan at dawn — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -802,7 +812,8 @@
           "image_prompt_end": "photoreal cinematic: He goes still on the sand as the first sunbeams warm the shore. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Tide receding — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Tide receding — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S12",
@@ -819,7 +830,7 @@
             "beach_env_A3_prop"
           ],
           "ref_scope": "image1: the two servants in white cloth — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image3: the pale tropical beach of Labuan at dawn — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -852,7 +863,8 @@
           "image_prompt_end": "photoreal cinematic: as they carry him toward a white colonial villa in the jungle distance. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Servants lifting — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Servants lifting — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         }
       ],
       "location_ref": "tropical_sea_pirate_ship_and_labuan_beach",
@@ -925,7 +937,8 @@
           "image_prompt_end": "photoreal cinematic: He pushes himself up slowly, scanning the unfamiliar elegant room. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. He sits upright — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. He sits upright — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S14",
@@ -972,7 +985,8 @@
           "image_prompt_end": "photoreal cinematic: Focus sharpens as a face appears beside the bed. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on the eyes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on the eyes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S15",
@@ -1021,7 +1035,8 @@
           "image_prompt_end": "photoreal cinematic: She places a cool cloth on his brow, kindness in her eyes. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Gentle gesture — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Gentle gesture — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S16",
@@ -1071,7 +1086,8 @@
           "image_prompt_end": "photoreal cinematic: His fingers grip the blanket tighter, the moment of silent danger. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Grip tightening — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Grip tightening — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S17",
@@ -1119,7 +1135,8 @@
           "image_prompt_end": "photoreal cinematic: Marianna listens, her expression softening with belief. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Soft head turns — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Soft head turns — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S18",
@@ -1170,7 +1187,8 @@
           "image_prompt_end": "photoreal cinematic: Sandokan accepts with a small, guarded nod. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Handshake nod — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Handshake nod — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S19",
@@ -1216,7 +1234,8 @@
           "image_prompt_end": "photoreal cinematic: The light changes angle, marking the passage of days. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Light shifting — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Light shifting — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S20",
@@ -1266,7 +1285,8 @@
           "image_prompt_end": "photoreal cinematic: Crane on Sandokan standing apart, watching the soldiers warily. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Hunters moving — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Hunters moving — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S21",
@@ -1315,7 +1335,8 @@
           "image_prompt_end": "photoreal cinematic: He pauses, senses something large in the shadows ahead. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track through the jungle — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track through the jungle — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S22",
@@ -1362,7 +1383,8 @@
           "image_prompt_end": "photoreal cinematic: The tiger's tail lashes, ready to spring. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Tension before the pounce — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Tension before the pounce — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S23",
@@ -1411,7 +1433,8 @@
           "image_prompt_end": "photoreal cinematic: on the clash as man and tiger collide mid-motion. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Kinetic clash — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Kinetic clash — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S24",
@@ -1460,7 +1483,8 @@
           "image_prompt_end": "photoreal cinematic: More soldiers burst into frame behind him, rifles raised. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Soldiers advancing — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Soldiers advancing — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S25",
@@ -1508,7 +1532,8 @@
           "image_prompt_end": "photoreal cinematic: He is pulled out of the jungle toward the estate gates. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Struggle — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Struggle — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S26",
@@ -1557,7 +1582,8 @@
           "image_prompt_end": "photoreal cinematic: The heavy iron door clangs shut, sealing him in shadow. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Door slamming — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Door slamming — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "action"
+          "motion_intensity": "action",
+          "strength": 0.6
         },
         {
           "id": "S27",
@@ -1606,7 +1632,8 @@
           "image_prompt_end": "photoreal cinematic: He lifts his chin, a faint smile of resolve. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Chin lifting — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Chin lifting — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S28",
@@ -1652,7 +1679,8 @@
           "image_prompt_end": "photoreal cinematic: Crane toward the entrance where a tall stranger in Scottish tartan arrives. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Dancers swirling — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Dancers swirling — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S29",
@@ -1701,7 +1729,8 @@
           "image_prompt_end": "photoreal cinematic: He adjusts his tartan sash and slips toward a shadowed corridor. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Yanez moving aside — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Yanez moving aside — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S30",
@@ -1751,7 +1780,8 @@
           "image_prompt_end": "photoreal cinematic: Sandokan steps free as the chains fall away. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Chains falling — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Chains falling — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S31",
@@ -1801,7 +1831,8 @@
           "image_prompt_end": "photoreal cinematic: They vanish into the dark garden beyond the gate. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Shadowy escape — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Shadowy escape — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S32",
@@ -1851,7 +1882,8 @@
           "image_prompt_end": "photoreal cinematic: Crane as Sandokan and stares out at the open sea. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes up; the horizon re-settles as the vertical move completes. Cove fires flickering — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes up; the horizon re-settles as the vertical move completes. Cove fires flickering — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S33",
@@ -1900,7 +1932,8 @@
           "image_prompt_end": "photoreal cinematic: as his resolve tender and certain. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Dusk light softening — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Dusk light softening — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S34",
@@ -1949,7 +1982,8 @@
           "image_prompt_end": "photoreal cinematic: The sails snap full and the prow swings toward the open sea. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Sails rising — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Sails rising — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S36",
@@ -1998,7 +2032,8 @@
           "image_prompt_end": "photoreal cinematic: He parts the leaves, watching for the right moment. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Leaves parting — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Leaves parting — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         }
       ],
       "location_ref": "estate_bedroom_jungle_dungeon_ballroom_mompracem",
@@ -2038,7 +2073,7 @@
             "sea_env_A2_prop"
           ],
           "ref_scope": "image1: the black-sailed pirate schooner on tropical sea — 100% identical; studio bg/pose/light NOT used; image2: the churning tropical sea and storm sky — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "prop/creature design",
             "palette",
@@ -2069,7 +2104,8 @@
           "image_prompt_end": "photoreal cinematic: Crane level with the bow as a lantern glints at the helm. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Moonlit sailing — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Moonlit sailing — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S37",
@@ -2085,7 +2121,7 @@
             "garden_env_A10_prop"
           ],
           "ref_scope": "image1: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image2: the moonlit colonial garden — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2118,7 +2154,8 @@
           "image_prompt_end": "photoreal cinematic: He steps into the open, moonlight falling on his face. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Stealthy approach — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Stealthy approach — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S38",
@@ -2135,7 +2172,7 @@
             "garden_env_A10_prop"
           ],
           "ref_scope": "image1: the fused master of Marianna — graceful young English woman, soft curls, lavender gown — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image3: the moonlit colonial garden — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2168,7 +2205,8 @@
           "image_prompt_end": "photoreal cinematic: She throws her arms around Sandokan and he holds her close. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Embrace — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Embrace — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S39",
@@ -2184,7 +2222,7 @@
             "marianna_A2_fused"
           ],
           "ref_scope": "image1: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Marianna — graceful young English woman, soft curls, lavender gown — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2216,7 +2254,8 @@
           "image_prompt_end": "photoreal cinematic: on their clasped hands as they turn to run. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Hands clasping — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Hands clasping — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S40",
@@ -2233,7 +2272,7 @@
             "garden_env_A10_prop"
           ],
           "ref_scope": "image1: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Marianna — graceful young English woman, soft curls, lavender gown — 100% identical; studio bg/pose/light NOT used; image3: the moonlit colonial garden — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2266,7 +2305,8 @@
           "image_prompt_end": "photoreal cinematic: They reach the bushes and slip into the shadow line of the shore. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Running together — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Running together — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S41",
@@ -2283,7 +2323,7 @@
             "ship_env_A1_prop"
           ],
           "ref_scope": "image1: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Marianna — graceful young English woman, soft curls, lavender gown — 100% identical; studio bg/pose/light NOT used; image3: the black-sailed pirate schooner on tropical sea — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2316,7 +2356,8 @@
           "image_prompt_end": "photoreal cinematic: Crane as the black sails fill and the island shrinks behind them. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes up; the horizon re-settles as the vertical move completes. Ship pulling away — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes up; the horizon re-settles as the vertical move completes. Ship pulling away — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S42",
@@ -2334,7 +2375,7 @@
             "sea_env_A2_prop"
           ],
           "ref_scope": "image1: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Marianna — graceful young English woman, soft curls, lavender gown — 100% identical; studio bg/pose/light NOT used; image3: the black-sailed pirate schooner on tropical sea — 100% identical; studio bg/pose/light NOT used; image4: the churning tropical sea and storm sky — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2367,7 +2408,8 @@
           "image_prompt_end": "photoreal cinematic: Marianna rests her head on his shoulder as the ship sails on. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Wind in her hair — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Wind in her hair — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S43",
@@ -2384,7 +2426,7 @@
             "mompracem_env_A9_prop"
           ],
           "ref_scope": "image1: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Marianna — graceful young English woman, soft curls, lavender gown — 100% identical; studio bg/pose/light NOT used; image3: the hidden pirate cove on the jungle island of Mompracem — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2417,7 +2459,8 @@
           "image_prompt_end": "photoreal cinematic: The sun dips low, bathing the scene in gold and rose light. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Sunset glow deepening — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Sunset glow deepening — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S44",
@@ -2433,7 +2476,7 @@
             "marianna_A2_fused"
           ],
           "ref_scope": "image1: the fused master of Sandokan — bearded pirate, crimson turban, weathered scarred face — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Marianna — graceful young English woman, soft curls, lavender gown — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2465,7 +2508,8 @@
           "image_prompt_end": "photoreal cinematic: as the last sunbeam crowns them both in warm light. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Sun setting — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Sun setting — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         }
       ],
       "location_ref": "moonlit_garden_schooner_and_mompracem_sunset",

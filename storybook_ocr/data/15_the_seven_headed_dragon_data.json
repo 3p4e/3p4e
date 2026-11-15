@@ -154,7 +154,8 @@
           "image_prompt_end": "photoreal cinematic: Crane low over the cottage where a young man and a young woman stand beside three woolly sheep. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Slow crane-down from sky to the cottage — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Slow crane-down from sky to the cottage — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S02",
@@ -205,7 +206,8 @@
           "image_prompt_end": "photoreal cinematic: They pause, both smiling, their bond warm and trusting as the sheep graze around them. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Slow lateral track following the pair — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Slow lateral track following the pair — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S03",
@@ -255,7 +257,8 @@
           "image_prompt_end": "photoreal cinematic: The brother's other hand clasps his sister's shoulder, both gazing down at the animals. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Gentle static hold with soft wool micro-motion — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Gentle static hold with soft wool micro-motion — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S04",
@@ -305,7 +308,8 @@
           "image_prompt_end": "photoreal cinematic: He glances back at the sheep with a mix of hope and worry as the road bends. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Slow tracking with drifting dust — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Slow tracking with drifting dust — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S05",
@@ -355,7 +359,8 @@
           "image_prompt_end": "photoreal cinematic: on the stranger as the brother halts the sheep and stares. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in toward the stranger — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in toward the stranger — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S06",
@@ -402,7 +407,8 @@
           "image_prompt_end": "photoreal cinematic: He tilts his head toward the three dogs standing behind him, jaw set. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static hold, subtle eye glint — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static hold, subtle eye glint — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S07",
@@ -449,7 +455,8 @@
           "image_prompt_end": "photoreal cinematic: Each dog's eyes flare with hidden power as their names are spoken. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Macro static with breathing fur — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Macro static with breathing fur — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S08",
@@ -500,7 +507,8 @@
           "image_prompt_end": "photoreal cinematic: Reverse to the brother looking between the sheep and the dogs, uncertain. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Shot-reverse as offer is made — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Shot-reverse as offer is made — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S09",
@@ -548,7 +556,8 @@
           "image_prompt_end": "photoreal cinematic: on his resolute eyes as the handshake completes. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the eyes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the eyes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S10",
@@ -598,7 +607,8 @@
           "image_prompt_end": "photoreal cinematic: The sheep pen behind them now empty as they approach the cottage. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Tracking follow shot through the lane — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Tracking follow shot through the lane — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S11",
@@ -649,7 +659,8 @@
           "image_prompt_end": "photoreal cinematic: The sister's face hardens as she steps toward him. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with mounting tension — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with mounting tension — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S12",
@@ -696,7 +707,8 @@
           "image_prompt_end": "photoreal cinematic: on her mouth as she finishes the accusation. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in as she shouts — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in as she shouts — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S13",
@@ -746,7 +758,8 @@
           "image_prompt_end": "photoreal cinematic: The cottage grows small behind him as he into the falling night. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pulls back; depth planes separate, near objects swelling past the lens. Slow pull-back revealing distance — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pulls back; depth planes separate, near objects swelling past the lens. Slow pull-back revealing distance — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S14",
@@ -797,7 +810,8 @@
           "image_prompt_end": "photoreal cinematic: The palace looms larger as the crane and the road stretches toward it. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes up; the horizon re-settles as the vertical move completes. Slow crane-up revealing the palace — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes up; the horizon re-settles as the vertical move completes. Slow crane-up revealing the palace — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         }
       ],
       "location_ref": "village_cottage_and_market_road",
@@ -836,7 +850,7 @@
             "palace_env_A3_prop"
           ],
           "ref_scope": "image1: the grand abandoned Italian palace — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "palette",
             "light direction",
@@ -868,7 +882,8 @@
           "image_prompt_end": "photoreal cinematic: The gates stand open, inviting, as the brother and dogs arrive at the foot of the steps. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes up; the horizon re-settles as the vertical move completes. Slow crane-up along the palace facade — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes up; the horizon re-settles as the vertical move completes. Slow crane-up along the palace facade — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S16",
@@ -885,7 +900,7 @@
             "palace_env_A3_prop"
           ],
           "ref_scope": "image1: the fused master of the Brother — kind young peasant in homespun clothes, gentle but brave — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Three Dogs — Kinisindzir, Krshizid and Vitkajzhelezo, three magical dogs of supernatural strength — 100% identical; studio bg/pose/light NOT used; image3: the grand abandoned Italian palace — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "palette",
             "light direction",
@@ -918,7 +933,8 @@
           "image_prompt_end": "photoreal cinematic: He slowly inside the vast hall, awed, the dogs exploring. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in through the doorway — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in through the doorway — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S17",
@@ -933,7 +949,7 @@
             "palace_env_A3_prop"
           ],
           "ref_scope": "image1: the grand abandoned Italian palace — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "palette",
             "light direction",
@@ -965,7 +981,8 @@
           "image_prompt_end": "photoreal cinematic: on the brother turning a slow circle in wonder. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Lateral pan-left across the hall — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Lateral pan-left across the hall — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S18",
@@ -980,7 +997,7 @@
             "brother_A1_fused"
           ],
           "ref_scope": "image1: the fused master of the Brother — kind young peasant in homespun clothes, gentle but brave — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "palette",
             "light direction",
@@ -1012,7 +1029,8 @@
           "image_prompt_end": "photoreal cinematic: A soft smile spreads as he exhales. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with faint smile — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with faint smile — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S19",
@@ -1029,7 +1047,7 @@
             "palace_env_A3_prop"
           ],
           "ref_scope": "image1: the fused master of the Brother — kind young peasant in homespun clothes, gentle but brave — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Three Dogs — Kinisindzir, Krshizid and Vitkajzhelezo, three magical dogs of supernatural strength — 100% identical; studio bg/pose/light NOT used; image3: the grand abandoned Italian palace — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "palette",
             "light direction",
@@ -1062,7 +1080,8 @@
           "image_prompt_end": "photoreal cinematic: He his hand along gilded furniture, living like a young prince. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Tracking through the rich rooms — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Tracking through the rich rooms — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S20",
@@ -1077,7 +1096,7 @@
             "feast_prop_A4_prop"
           ],
           "ref_scope": "image1: the golden plates of fruit and bread — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "palette",
             "light direction",
@@ -1109,7 +1128,8 @@
           "image_prompt_end": "photoreal cinematic: A hand reaches in to take a ripe apple. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Macro static, candle flicker — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Macro static, candle flicker — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S21",
@@ -1125,7 +1145,7 @@
             "apple_tree_prop_A2_prop"
           ],
           "ref_scope": "image1: the palace garden — 100% identical; studio bg/pose/light NOT used; image2: the enchanted apple tree with one golden apple — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "palette",
             "light direction",
@@ -1157,7 +1177,8 @@
           "image_prompt_end": "photoreal cinematic: The tree shimmers faintly, drawing the eye to the golden apple. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with faint shimmer — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with faint shimmer — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S22",
@@ -1173,7 +1194,7 @@
             "palace_env_A3_prop"
           ],
           "ref_scope": "image1: the fused master of the Brother — kind young peasant in homespun clothes, gentle but brave — 100% identical; studio bg/pose/light NOT used; image2: the grand abandoned Italian palace — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "palette",
             "light direction",
@@ -1206,7 +1227,8 @@
           "image_prompt_end": "photoreal cinematic: He smiles as he seals the letter meant for his sister. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the letter — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the letter — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S23",
@@ -1224,7 +1246,7 @@
             "palace_env_A3_prop"
           ],
           "ref_scope": "image1: the fused master of the Brother — kind young peasant in homespun clothes, gentle but brave — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Sister — young woman, caring then envious and fearful — 100% identical; studio bg/pose/light NOT used; image3: the fused master of the Three Dogs — Kinisindzir, Krshizid and Vitkajzhelezo, three magical dogs of supernatural strength — 100% identical; studio bg/pose/light NOT used; image4: the grand abandoned Italian palace — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "palette",
             "light direction",
@@ -1257,7 +1279,8 @@
           "image_prompt_end": "photoreal cinematic: The two siblings embrace in the grand doorway, shadows shifting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Lateral track capturing the reunion — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Lateral track capturing the reunion — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S24",
@@ -1273,7 +1296,7 @@
             "palace_env_A3_prop"
           ],
           "ref_scope": "image1: the fused master of the Seven-Headed Dragon — colossal beast with seven iron-scaled heads and smoke from its nostrils — 100% identical; studio bg/pose/light NOT used; image2: the grand abandoned Italian palace — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "palette",
             "light direction",
@@ -1306,7 +1329,8 @@
           "image_prompt_end": "photoreal cinematic: The dragon lands heavily before the terrified girl, dust and wind exploding outward. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Crane-down tracing the dragon's descent — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Crane-down tracing the dragon's descent — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S25",
@@ -1321,7 +1345,7 @@
             "dragon_B1_sheet"
           ],
           "ref_scope": "image1: the fused master of the Seven-Headed Dragon — colossal beast with seven iron-scaled heads and smoke from its nostrils — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "palette",
             "light direction",
@@ -1353,7 +1377,8 @@
           "image_prompt_end": "photoreal cinematic: The heads weave and snap, one lowering toward the. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with weaving heads — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with weaving heads — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S26",
@@ -1369,7 +1394,7 @@
             "dragon_B1_sheet"
           ],
           "ref_scope": "image1: the fused master of the Sister — young woman, caring then envious and fearful — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Seven-Headed Dragon — colossal beast with seven iron-scaled heads and smoke from its nostrils — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "palette",
             "light direction",
@@ -1402,7 +1427,8 @@
           "image_prompt_end": "photoreal cinematic: The dragon's huge clawed shadow falls over her. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with looming shadow — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with looming shadow — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S27",
@@ -1418,7 +1444,7 @@
             "dragon_B1_sheet"
           ],
           "ref_scope": "image1: the fused master of the Sister — young woman, caring then envious and fearful — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Seven-Headed Dragon — colossal beast with seven iron-scaled heads and smoke from its nostrils — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "palette",
             "light direction",
@@ -1451,7 +1477,8 @@
           "image_prompt_end": "photoreal cinematic: The dragon's eye narrows as it listens, breath fogging the air. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static over-shoulder with trembling — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static over-shoulder with trembling — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S28",
@@ -1467,7 +1494,7 @@
             "sister_A2_fused"
           ],
           "ref_scope": "image1: the fused master of the Seven-Headed Dragon — colossal beast with seven iron-scaled heads and smoke from its nostrils — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Sister — young woman, caring then envious and fearful — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "palette",
             "light direction",
@@ -1500,7 +1527,8 @@
           "image_prompt_end": "photoreal cinematic: The sister nods, fear hardening into resolve. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Shot-reverse whisper — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Shot-reverse whisper — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S29",
@@ -1517,7 +1545,7 @@
             "dogs_A3_fused"
           ],
           "ref_scope": "image1: the fused master of the Sister — young woman, caring then envious and fearful — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Brother — kind young peasant in homespun clothes, gentle but brave — 100% identical; studio bg/pose/light NOT used; image3: the fused master of the Three Dogs — Kinisindzir, Krshizid and Vitkajzhelezo, three magical dogs of supernatural strength — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "palette",
             "light direction",
@@ -1549,7 +1577,8 @@
           "image_prompt_end": "photoreal cinematic: The brother looks hurt but dutifully to obey. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with dinner-table tension — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with dinner-table tension — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S30",
@@ -1566,7 +1595,7 @@
             "chains_prop_A5_prop"
           ],
           "ref_scope": "image1: the fused master of the Brother — kind young peasant in homespun clothes, gentle but brave — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Three Dogs — Kinisindzir, Krshizid and Vitkajzhelezo, three magical dogs of supernatural strength — 100% identical; studio bg/pose/light NOT used; image3: the leather straps and chains binding the dogs — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "palette",
             "light direction",
@@ -1599,7 +1628,8 @@
           "image_prompt_end": "photoreal cinematic: The dogs whine softly as the rope tightens around them. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Tracking out to the courtyard — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Tracking out to the courtyard — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S31",
@@ -1616,7 +1646,7 @@
             "apple_tree_prop_A2_prop"
           ],
           "ref_scope": "image1: the fused master of the Sister — young woman, caring then envious and fearful — 100% identical; studio bg/pose/light NOT used; image2: the palace garden — 100% identical; studio bg/pose/light NOT used; image3: the enchanted apple tree with one golden apple — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "palette",
             "light direction",
@@ -1649,7 +1679,8 @@
           "image_prompt_end": "photoreal cinematic: She points toward the golden apple, a sly look in her eyes. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static as she calls down — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static as she calls down — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S32",
@@ -1667,7 +1698,7 @@
             "golden_apple_prop_A3_prop"
           ],
           "ref_scope": "image1: the fused master of the Brother — kind young peasant in homespun clothes, gentle but brave — 100% identical; studio bg/pose/light NOT used; image2: the palace garden — 100% identical; studio bg/pose/light NOT used; image3: the enchanted apple tree with one golden apple — 100% identical; studio bg/pose/light NOT used; image4: the single golden apple — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "palette",
             "light direction",
@@ -1700,7 +1731,8 @@
           "image_prompt_end": "photoreal cinematic: The moment he plucks the apple, the air grows cold and still. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track-in as he picks the apple — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track-in as he picks the apple — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S33",
@@ -1717,7 +1749,7 @@
             "garden_env_A4_prop"
           ],
           "ref_scope": "image1: the fused master of the Seven-Headed Dragon — colossal beast with seven iron-scaled heads and smoke from its nostrils — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Brother — kind young peasant in homespun clothes, gentle but brave — 100% identical; studio bg/pose/light NOT used; image3: the palace garden — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "palette",
             "light direction",
@@ -1750,7 +1782,8 @@
           "image_prompt_end": "photoreal cinematic: The brother recoils, the beast blocking out the moon behind him. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with explosive lunge — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with explosive lunge — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "action"
+          "motion_intensity": "action",
+          "strength": 0.6
         },
         {
           "id": "S34",
@@ -1767,7 +1800,7 @@
             "palace_env_A3_prop"
           ],
           "ref_scope": "image1: the fused master of the Three Dogs — Kinisindzir, Krshizid and Vitkajzhelezo, three magical dogs of supernatural strength — 100% identical; studio bg/pose/light NOT used; image2: the leather straps and chains binding the dogs — 100% identical; studio bg/pose/light NOT used; image3: the grand abandoned Italian palace — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "palette",
             "light direction",
@@ -1800,7 +1833,8 @@
           "image_prompt_end": "photoreal cinematic: The three dogs erupt forward, freed and blazing with strength. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera pans right; the landscape streams past, parallax layers sliding at different speeds. Fast pan-right with debris — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera pans right; the landscape streams past, parallax layers sliding at different speeds. Fast pan-right with debris — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S35",
@@ -1816,7 +1850,7 @@
             "dragon_B1_sheet"
           ],
           "ref_scope": "image1: the fused master of the Three Dogs — Kinisindzir, Krshizid and Vitkajzhelezo, three magical dogs of supernatural strength — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Seven-Headed Dragon — colossal beast with seven iron-scaled heads and smoke from its nostrils — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "palette",
             "light direction",
@@ -1849,7 +1883,8 @@
           "image_prompt_end": "photoreal cinematic: The dragon recoils, its seven heads thrashing in panic. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Low-angle static with impact — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Low-angle static with impact — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S36",
@@ -1865,7 +1900,7 @@
             "palace_env_A3_prop"
           ],
           "ref_scope": "image1: the fused master of the Seven-Headed Dragon — colossal beast with seven iron-scaled heads and smoke from its nostrils — 100% identical; studio bg/pose/light NOT used; image2: the grand abandoned Italian palace — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "palette",
             "light direction",
@@ -1898,7 +1933,8 @@
           "image_prompt_end": "photoreal cinematic: The dragon disappears beyond the mountains, the storm breaking apart. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes up; the horizon re-settles as the vertical move completes. Crane-up following the fleeing dragon — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes up; the horizon re-settles as the vertical move completes. Crane-up following the fleeing dragon — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S37",
@@ -1914,7 +1950,7 @@
             "dogs_A3_fused"
           ],
           "ref_scope": "image1: the fused master of the Brother — kind young peasant in homespun clothes, gentle but brave — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Three Dogs — Kinisindzir, Krshizid and Vitkajzhelezo, three magical dogs of supernatural strength — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "palette",
             "light direction",
@@ -1946,7 +1982,8 @@
           "image_prompt_end": "photoreal cinematic: He laughs with relief, the dogs' tails wagging. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with warm relief — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with warm relief — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S38",
@@ -1962,7 +1999,7 @@
             "apple_tree_prop_A2_prop"
           ],
           "ref_scope": "image1: the palace garden — 100% identical; studio bg/pose/light NOT used; image2: the enchanted apple tree with one golden apple — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "palette",
             "light direction",
@@ -1994,7 +2031,8 @@
           "image_prompt_end": "photoreal cinematic: The tree's light intensifies, pulsing like a heartbeat. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with rising glow — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with rising glow — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         }
       ],
       "location_ref": "abandoned_palace_and_garden",
@@ -2066,7 +2104,8 @@
           "image_prompt_end": "photoreal cinematic: The light floods the garden, washing over the brother and dogs. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in toward the opening tree — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in toward the opening tree — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S40",
@@ -2113,7 +2152,8 @@
           "image_prompt_end": "photoreal cinematic: She opens her eyes and smiles down at the brother. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with radiant emergence — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with radiant emergence — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S41",
@@ -2161,7 +2201,8 @@
           "image_prompt_end": "photoreal cinematic: She reaches out toward the brother, gratitude in her face. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static as she speaks — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static as she speaks — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S42",
@@ -2209,7 +2250,8 @@
           "image_prompt_end": "photoreal cinematic: A slow smile breaks across his face. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static over-shoulder with awe — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static over-shoulder with awe — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S43",
@@ -2257,7 +2299,8 @@
           "image_prompt_end": "photoreal cinematic: The garden blooms, and warm light spills from every window. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Lateral pan-left with blossoming — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Lateral pan-left with blossoming — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S44",
@@ -2308,7 +2351,8 @@
           "image_prompt_end": "photoreal cinematic: Their hands are almost touching as they move together. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Tracking follow through the garden — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Tracking follow through the garden — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S45",
@@ -2355,7 +2399,8 @@
           "image_prompt_end": "photoreal cinematic: The whole estate glows beneath a clearing, star-bright sky. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes up; the horizon re-settles as the vertical move completes. Slow crane-up over the celebrating palace — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes up; the horizon re-settles as the vertical move completes. Slow crane-up over the celebrating palace — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S46",
@@ -2403,7 +2448,8 @@
           "image_prompt_end": "photoreal cinematic: Their eyes meet, every worry gone. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static intimate hold — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static intimate hold — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S47",
@@ -2454,7 +2500,8 @@
           "image_prompt_end": "photoreal cinematic: The brother, the maiden and the three dogs stand together on the palace steps. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Slow crane-down over the happy scene — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Slow crane-down over the happy scene — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S48",
@@ -2505,7 +2552,8 @@
           "image_prompt_end": "photoreal cinematic: The three dogs at their feet as the light softens into evening. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static closing frame — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static closing frame — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         }
       ],
       "location_ref": "blossoming_palace_garden",

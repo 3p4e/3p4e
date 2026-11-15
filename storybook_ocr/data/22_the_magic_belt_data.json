@@ -107,7 +107,7 @@
             "chapel_env_A2_prop"
           ],
           "ref_scope": "image1: the misty grey-green Breton forest — 100% identical; studio bg/pose/light NOT used; image2: the ivy-strangled Green Chapel glowing with faint green light — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "prop/creature design",
             "palette",
@@ -138,7 +138,8 @@
           "image_prompt_end": "photoreal cinematic: Crane just above the treetops, the chapel's green light pulsing like a heartbeat in the fog. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Slow crane-down from sky to treetops — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Slow crane-down from sky to treetops — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S02",
@@ -155,7 +156,7 @@
             "forest_env_A1_prop"
           ],
           "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used; image2: the green magic belt with a shimmering emerald weave — 100% identical; studio bg/pose/light NOT used; image3: the misty grey-green Breton forest — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -188,7 +189,8 @@
           "image_prompt_end": "photoreal cinematic: He strides forward, the green belt swaying gently, fog parting around his shoulders. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Steady forward track alongside the knight — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Steady forward track alongside the knight — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S03",
@@ -203,7 +205,7 @@
             "gawain_A1_fused"
           ],
           "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -235,7 +237,8 @@
           "image_prompt_end": "photoreal cinematic: on his eyes as resolve slowly overcomes the worry. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the eyes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the eyes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S04",
@@ -250,7 +253,7 @@
             "belt_B1_prop"
           ],
           "ref_scope": "image1: the green magic belt with a shimmering emerald weave — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "prop/creature design",
             "palette",
@@ -281,7 +284,8 @@
           "image_prompt_end": "photoreal cinematic: A soft pulse of green light travels along the belt's threads. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with a faint light pulse along the weave — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with a faint light pulse along the weave — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S05",
@@ -298,7 +302,7 @@
             "camelot_hall_env_A4_prop"
           ],
           "ref_scope": "image1: the fused master of the Lord of the Castle, the Green Knight — an imposing knight in green cloth and dark bronze armor with a long sword — 100% identical; studio bg/pose/light NOT used; image2: the great axe slammed into the round table — 100% identical; studio bg/pose/light NOT used; image3: Camelot's great hall with banners and golden light — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -331,7 +335,8 @@
           "image_prompt_end": "photoreal cinematic: the axe blade swinging down, the court reeling in shock. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera pans right; the landscape streams past, parallax layers sliding at different speeds. Pan-right following the axe blow — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera pans right; the landscape streams past, parallax layers sliding at different speeds. Pan-right following the axe blow — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S06",
@@ -347,7 +352,7 @@
             "forest_env_A1_prop"
           ],
           "ref_scope": "image1: the ivy-strangled Green Chapel glowing with faint green light — 100% identical; studio bg/pose/light NOT used; image2: the misty grey-green Breton forest — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "prop/creature design",
             "palette",
@@ -378,7 +383,8 @@
           "image_prompt_end": "photoreal cinematic: Fog rolls aside, fully exposing the chapel's looming facade. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with fog parting reveal — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with fog parting reveal — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S07",
@@ -395,7 +401,7 @@
             "chapel_env_A2_prop"
           ],
           "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used; image2: the green magic belt with a shimmering emerald weave — 100% identical; studio bg/pose/light NOT used; image3: the ivy-strangled Green Chapel glowing with faint green light — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -428,7 +434,8 @@
           "image_prompt_end": "photoreal cinematic: toward the dark arch as he steps closer. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in toward the arch — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in toward the arch — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S08",
@@ -445,7 +452,7 @@
             "chapel_env_A2_prop"
           ],
           "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used; image2: Gawain's silver sword with a firm hilt — 100% identical; studio bg/pose/light NOT used; image3: the ivy-strangled Green Chapel glowing with faint green light — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -478,7 +485,8 @@
           "image_prompt_end": "photoreal cinematic: Knuckles whiten as his grip firms, a slow exhale fogging the steel. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static grip tightening — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static grip tightening — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S09",
@@ -493,7 +501,7 @@
             "chapel_env_A2_prop"
           ],
           "ref_scope": "image1: the ivy-strangled Green Chapel glowing with faint green light — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "prop/creature design",
             "palette",
@@ -524,7 +532,8 @@
           "image_prompt_end": "photoreal cinematic: Crane to reveal the chapel's jagged roofline against a churning grey sky. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes up; the horizon re-settles as the vertical move completes. Slow crane-up along the facade — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes up; the horizon re-settles as the vertical move completes. Slow crane-up along the facade — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S10",
@@ -541,7 +550,7 @@
             "clearing_env_A3_prop"
           ],
           "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used; image2: the green magic belt with a shimmering emerald weave — 100% identical; studio bg/pose/light NOT used; image3: the misty clearing before the chapel bathed in green light — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -574,7 +583,8 @@
           "image_prompt_end": "photoreal cinematic: He halts in the open space, shoulders squared, gaze lifted to the arch. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Forward track to a halt — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Forward track to a halt — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S11",
@@ -589,7 +599,7 @@
             "gawain_A1_fused"
           ],
           "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -621,7 +631,8 @@
           "image_prompt_end": "photoreal cinematic: His expression hardens into calm acceptance. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. The scene breathes with ambient life — weight settles, small movements ripple through frame, nothing sits frozen. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. The scene breathes with ambient life — weight settles, small movements ripple through frame, nothing sits frozen. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S12",
@@ -638,7 +649,7 @@
             "clearing_env_A3_prop"
           ],
           "ref_scope": "image1: the fused master of the Lord of the Castle, the Green Knight — an imposing knight in green cloth and dark bronze armor with a long sword — 100% identical; studio bg/pose/light NOT used; image2: the ivy-strangled Green Chapel glowing with faint green light — 100% identical; studio bg/pose/light NOT used; image3: the misty clearing before the chapel bathed in green light — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -671,7 +682,8 @@
           "image_prompt_end": "photoreal cinematic: He steps fully into the green light, his shadow stretching toward Gawain. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Pan-left following his emergence — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Pan-left following his emergence — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S13",
@@ -687,7 +699,7 @@
             "lord_sword_B3_prop"
           ],
           "ref_scope": "image1: the fused master of the Lord of the Castle, the Green Knight — an imposing knight in green cloth and dark bronze armor with a long sword — 100% identical; studio bg/pose/light NOT used; image2: the Green Knight's long sword glowing with cold green light — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -720,7 +732,8 @@
           "image_prompt_end": "photoreal cinematic: on his calm, unreadable face beneath the dark green hood. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the face — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the face — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S14",
@@ -737,7 +750,7 @@
             "clearing_env_A3_prop"
           ],
           "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Lord of the Castle, the Green Knight — an imposing knight in green cloth and dark bronze armor with a long sword — 100% identical; studio bg/pose/light NOT used; image3: the misty clearing before the chapel bathed in green light — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -770,7 +783,8 @@
           "image_prompt_end": "photoreal cinematic: A long beat of stillness, green light bridging the gap between them. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static standoff — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static standoff — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         }
       ],
       "location_ref": "misty_breton_forest_and_green_chapel",
@@ -844,7 +858,8 @@
           "image_prompt_end": "photoreal cinematic: His arm lowers, indicating the ground where Gawain must kneel. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with the pointing gesture — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with the pointing gesture — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S16",
@@ -891,7 +906,8 @@
           "image_prompt_end": "photoreal cinematic: His pupils widen, a muscle in his jaw twitching. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the eyes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the eyes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S17",
@@ -942,7 +958,8 @@
           "image_prompt_end": "photoreal cinematic: Crane , Gawain's silver armor catching the green glow from above. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Slow crane-down to the kneeling figure — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Slow crane-down to the kneeling figure — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S18",
@@ -991,7 +1008,8 @@
           "image_prompt_end": "photoreal cinematic: The sword reaches its apex, held steady. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with the sword raised — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with the sword raised — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S19",
@@ -1037,7 +1055,8 @@
           "image_prompt_end": "photoreal cinematic: A bead of mist rolls off the blade's edge. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with a droplet rolling off — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with a droplet rolling off — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S20",
@@ -1087,7 +1106,8 @@
           "image_prompt_end": "photoreal cinematic: The blade arcs down in a blur, Gawain squeezing his eyes shut. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track following the descending swing — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track following the descending swing — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S21",
@@ -1134,7 +1154,8 @@
           "image_prompt_end": "photoreal cinematic: His body tenses and a fraction, eyes snapping open. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static flinch — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static flinch — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S22",
@@ -1185,7 +1206,8 @@
           "image_prompt_end": "photoreal cinematic: Green light ripples down the stalled blade. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with the blade halting short — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with the blade halting short — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S23",
@@ -1234,7 +1256,8 @@
           "image_prompt_end": "photoreal cinematic: The blade levels high again, perfectly controlled. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static raise — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static raise — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S24",
@@ -1284,7 +1307,8 @@
           "image_prompt_end": "photoreal cinematic: The blade descends true and straight. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with the descending arc — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with the descending arc — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S25",
@@ -1333,7 +1357,8 @@
           "image_prompt_end": "photoreal cinematic: Only a faint tremble through his shoulders. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with a held tremble — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with a held tremble — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S26",
@@ -1379,7 +1404,8 @@
           "image_prompt_end": "photoreal cinematic: The blade rests motionless, impossibly close. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static, the gap held — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static, the gap held — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S27",
@@ -1430,7 +1456,8 @@
           "image_prompt_end": "photoreal cinematic: The third strike lands, a thin red line appearing on Gawain's neck. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes up; the horizon re-settles as the vertical move completes. Crane-up following the third swing — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes up; the horizon re-settles as the vertical move completes. Crane-up following the third swing — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S28",
@@ -1477,7 +1504,8 @@
           "image_prompt_end": "photoreal cinematic: The drop swells and rolls down his collarbone. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with the blood drop — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with the blood drop — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S29",
@@ -1524,7 +1552,8 @@
           "image_prompt_end": "photoreal cinematic: The drop slides off the gorget and splashes onto the stone. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the cut — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the cut — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S30",
@@ -1573,7 +1602,8 @@
           "image_prompt_end": "photoreal cinematic: He into a fighting stance, blade leveled at the Lord. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Fast rising track into a stance — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Fast rising track into a stance — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S31",
@@ -1622,7 +1652,8 @@
           "image_prompt_end": "photoreal cinematic: The smile deepens, calm and kind. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static smile — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static smile — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S32",
@@ -1672,7 +1703,8 @@
           "image_prompt_end": "photoreal cinematic: He gestures toward Camelot far beyond the mist. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with the gesture — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with the gesture — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S33",
@@ -1722,7 +1754,8 @@
           "image_prompt_end": "photoreal cinematic: Gawain's hand reaches slowly toward the belt. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with the offering — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with the offering — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S34",
@@ -1772,7 +1805,8 @@
           "image_prompt_end": "photoreal cinematic: The belt glows as their hands meet. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static handoff — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static handoff — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S35",
@@ -1821,7 +1855,8 @@
           "image_prompt_end": "photoreal cinematic: The light pulses once then , the belt now his. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in as he ties it — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in as he ties it — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S36",
@@ -1871,7 +1906,8 @@
           "image_prompt_end": "photoreal cinematic: Golden light spills over them as the mist lifts. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Slow crane-up on the clasp — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Slow crane-up on the clasp — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S37",
@@ -1921,7 +1957,8 @@
           "image_prompt_end": "photoreal cinematic: He rides with ease, no longer burdened. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Forward track beside the horse — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Forward track beside the horse — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S38",
@@ -1968,7 +2005,8 @@
           "image_prompt_end": "photoreal cinematic: The road stretches toward the shining spires. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static establishing the return route — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static establishing the return route — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S39",
@@ -2014,7 +2052,8 @@
           "image_prompt_end": "photoreal cinematic: The glow pulses gently, a token of honor won. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static glowing belt — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static glowing belt — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         }
       ],
       "location_ref": "green_chapel_clearing_of_three_blows",
@@ -2055,7 +2094,7 @@
             "camelot_hall_env_A4_prop"
           ],
           "ref_scope": "image1: the fused master of King Arthur — a dignified king with a golden crown and purple mantle — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Knights of Camelot — noble knights in shining armor with colorful mantles — 100% identical; studio bg/pose/light NOT used; image3: Camelot's great hall with banners and golden light — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2088,7 +2127,8 @@
           "image_prompt_end": "photoreal cinematic: The on Arthur on his throne. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Pan-left across the hall — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Pan-left across the hall — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S41",
@@ -2105,7 +2145,7 @@
             "camelot_hall_env_A4_prop"
           ],
           "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Knights of Camelot — noble knights in shining armor with colorful mantles — 100% identical; studio bg/pose/light NOT used; image3: Camelot's great hall with banners and golden light — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2138,7 +2178,8 @@
           "image_prompt_end": "photoreal cinematic: The crowd parts to let him approach the throne. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track through the welcome — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track through the welcome — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S42",
@@ -2153,7 +2194,7 @@
             "arthur_A3_fused"
           ],
           "ref_scope": "image1: the fused master of King Arthur — a dignified king with a golden crown and purple mantle — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2185,7 +2226,8 @@
           "image_prompt_end": "photoreal cinematic: He leans slightly forward, listening. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static regal pose — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static regal pose — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S43",
@@ -2202,7 +2244,7 @@
             "camelot_hall_env_A4_prop"
           ],
           "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used; image2: the fused master of King Arthur — a dignified king with a golden crown and purple mantle — 100% identical; studio bg/pose/light NOT used; image3: Camelot's great hall with banners and golden light — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2235,7 +2277,8 @@
           "image_prompt_end": "photoreal cinematic: Arthur gestures for him to rise and speak. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static kneel — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static kneel — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S44",
@@ -2250,7 +2293,7 @@
             "gawain_A1_fused"
           ],
           "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2282,7 +2325,8 @@
           "image_prompt_end": "photoreal cinematic: His eyes glisten, but he does not look away. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the face — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the face — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S45",
@@ -2297,7 +2341,7 @@
             "arthur_A3_fused"
           ],
           "ref_scope": "image1: the fused master of King Arthur — a dignified king with a golden crown and purple mantle — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2329,7 +2373,8 @@
           "image_prompt_end": "photoreal cinematic: He descends a step toward Gawain. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static rise — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static rise — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S46",
@@ -2345,7 +2390,7 @@
             "arthur_A3_fused"
           ],
           "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used; image2: the fused master of King Arthur — a dignified king with a golden crown and purple mantle — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2377,7 +2422,8 @@
           "image_prompt_end": "photoreal cinematic: His expression softens with respect. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with the shoulder touch — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with the shoulder touch — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S47",
@@ -2394,7 +2440,7 @@
             "camelot_hall_env_A4_prop"
           ],
           "ref_scope": "image1: the fused master of the Knights of Camelot — noble knights in shining armor with colorful mantles — 100% identical; studio bg/pose/light NOT used; image2: the green magic belt with a shimmering emerald weave — 100% identical; studio bg/pose/light NOT used; image3: Camelot's great hall with banners and golden light — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2427,7 +2473,8 @@
           "image_prompt_end": "photoreal cinematic: on a sea of green belts raised toward the light. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera pans right; the landscape streams past, parallax layers sliding at different speeds. Pan-right across the celebration — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera pans right; the landscape streams past, parallax layers sliding at different speeds. Pan-right across the celebration — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S48",
@@ -2445,7 +2492,7 @@
             "camelot_hall_env_A4_prop"
           ],
           "ref_scope": "image1: the fused master of Sir Gawain — a young knight with dark hair and silver armor, wearing the green magic belt — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Knights of Camelot — noble knights in shining armor with colorful mantles — 100% identical; studio bg/pose/light NOT used; image3: the green magic belt with a shimmering emerald weave — 100% identical; studio bg/pose/light NOT used; image4: Camelot's great hall with banners and golden light — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2478,7 +2525,8 @@
           "image_prompt_end": "photoreal cinematic: lowers to the belt, its green light pulsing one final time. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Slow crane-down to the belt — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Slow crane-down to the belt — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         }
       ],
       "location_ref": "camelot_great_hall",

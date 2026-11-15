@@ -136,7 +136,7 @@
             "merchant_house_E1_prop"
           ],
           "ref_scope": "image1: the merchant-house design - a snow-covered Russian timber house with candlelit windows — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "subject identity",
             "prop design",
@@ -169,7 +169,8 @@
           "image_prompt_end": "photoreal cinematic: Crane at ground level on the carved front door as candle glow spills onto fresh snow. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Slow crane-down as snow falls — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Slow crane-down as snow falls — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "action"
+          "motion_intensity": "action",
+          "strength": 0.6
         },
         {
           "id": "S02",
@@ -184,7 +185,7 @@
             "mother_A4_fused"
           ],
           "ref_scope": "image1: the fused master of the Mother - a pale, gentle woman on her deathbed — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -217,7 +218,8 @@
           "image_prompt_end": "photoreal cinematic: on her wan face as her eyes open with tender resolve. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on her eyes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on her eyes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S03",
@@ -234,7 +236,7 @@
             "doll_A2_fused"
           ],
           "ref_scope": "image1: the fused master of the Mother - a pale, gentle woman on her deathbed — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used; image3: the fused master of the Magic Doll - a small carved wooden doll with a warm glow — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -267,7 +269,8 @@
           "image_prompt_end": "photoreal cinematic: The doll's painted eyes catching a flicker of candlelight as fingers curl around it. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Subtle flicker of light on the doll — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Subtle flicker of light on the doll — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S04",
@@ -283,7 +286,7 @@
             "mother_A4_fused"
           ],
           "ref_scope": "image1: the fused master of the Magic Doll - a small carved wooden doll with a warm glow — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Mother - a pale, gentle woman on her deathbed — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "subject identity",
             "palette",
@@ -315,7 +318,8 @@
           "image_prompt_end": "photoreal cinematic: A faint warm glow blooms in the doll's eyes as the whisper leaves her lips. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Macro push-in; faint glow pulse — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Macro push-in; faint glow pulse — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "action"
+          "motion_intensity": "action",
+          "strength": 0.6
         },
         {
           "id": "S05",
@@ -331,7 +335,7 @@
             "doll_A2_fused"
           ],
           "ref_scope": "image1: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Magic Doll - a small carved wooden doll with a warm glow — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -369,7 +373,8 @@
           "image_prompt_end": "photoreal cinematic: Her fingers tighten as a single tear rolls down her cheek. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Tear rolls, chest rises — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Tear rolls, chest rises — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S06",
@@ -385,7 +390,7 @@
             "vasilisa_A3_fused"
           ],
           "ref_scope": "image1: the merchant-house design - a snow-covered Russian timber house with candlelit windows — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -418,7 +423,8 @@
           "image_prompt_end": "photoreal cinematic: reveals Vasilisa small and alone in the vast quiet room. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pulls back; depth planes separate, near objects swelling past the lens. Dust motes drifting — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pulls back; depth planes separate, near objects swelling past the lens. Dust motes drifting — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S07",
@@ -434,7 +440,7 @@
             "stepsisters_A1_fused"
           ],
           "ref_scope": "image1: the fused master of the Stepmother - a stern, envious woman in dark Russian garments — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Stepsisters - two spoiled, haughty young women in costly clothes — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -467,7 +473,8 @@
           "image_prompt_end": "photoreal cinematic: The stepmother sweeps past Vasilisa as the daughters smirk, snow in the air. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Lateral track as the group crosses the courtyard — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Lateral track as the group crosses the courtyard — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S08",
@@ -483,7 +490,7 @@
             "stepsisters_A1_fused"
           ],
           "ref_scope": "image1: the fused master of the Stepmother - a stern, envious woman in dark Russian garments — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Stepsisters - two spoiled, haughty young women in costly clothes — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -516,7 +523,8 @@
           "image_prompt_end": "photoreal cinematic: One sister flips her hair dismissively as the stepmother folds her arms. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Contemptuous glances — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Contemptuous glances — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S09",
@@ -532,7 +540,7 @@
             "stepsisters_A1_fused"
           ],
           "ref_scope": "image1: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Stepsisters - two spoiled, haughty young women in costly clothes — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -565,7 +573,8 @@
           "image_prompt_end": "photoreal cinematic: She sets the pails down, breath fogging, glancing at the lit window. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track following her labor — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track following her labor — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S10",
@@ -581,7 +590,7 @@
             "vasilisa_A3_fused"
           ],
           "ref_scope": "image1: the fused master of the Stepmother - a stern, envious woman in dark Russian garments — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -614,7 +623,8 @@
           "image_prompt_end": "photoreal cinematic: Reverse to Vasilisa lowering her eyes, hands clasped, patient and still. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Shot-reverse between the two — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Shot-reverse between the two — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S11",
@@ -630,7 +640,7 @@
             "vasilisa_A3_fused"
           ],
           "ref_scope": "image1: the fused master of the Merchant Father - a bearded Russian merchant in a travel cloak — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -663,7 +673,8 @@
           "image_prompt_end": "photoreal cinematic: He clasps Vasilisa's hands in reassurance as the women look on coldly. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Father turns to Vasilisa — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Father turns to Vasilisa — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S12",
@@ -679,7 +690,7 @@
             "forest_E2_prop"
           ],
           "ref_scope": "image1: the merchant-house design - a snow-covered Russian timber house with candlelit windows — 100% identical; studio bg/pose/light NOT used; image2: the dark-forest design - towering birch trees with an ominous green glow deep within — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "subject identity",
             "prop design",
@@ -712,7 +723,8 @@
           "image_prompt_end": "photoreal cinematic: Crane revealing the dense shadowed treeline crowding the yard. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Forest shadow deepens — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Forest shadow deepens — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "action"
+          "motion_intensity": "action",
+          "strength": 0.6
         },
         {
           "id": "S13",
@@ -727,7 +739,7 @@
             "forest_E2_prop"
           ],
           "ref_scope": "image1: the dark-forest design - towering birch trees with an ominous green glow deep within — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "subject identity",
             "prop design",
@@ -760,7 +772,8 @@
           "image_prompt_end": "photoreal cinematic: on a faint, unnatural green glow deep between the trees. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Ravens scatter — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Ravens scatter — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "action"
+          "motion_intensity": "action",
+          "strength": 0.6
         },
         {
           "id": "S14",
@@ -777,7 +790,7 @@
             "forest_E2_prop"
           ],
           "ref_scope": "image1: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Magic Doll - a small carved wooden doll with a warm glow — 100% identical; studio bg/pose/light NOT used; image3: the dark-forest design - towering birch trees with an ominous green glow deep within — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -810,7 +823,8 @@
           "image_prompt_end": "photoreal cinematic: on her eyes reflecting the distant forest glow. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on her eyes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on her eyes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         }
       ],
       "location_ref": "merchant_house_and_dark_forest_edge",
@@ -882,7 +896,8 @@
           "image_prompt_end": "photoreal cinematic: She gestures toward the dead embers, eyes glinting in the dim. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Plotting glances — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Plotting glances — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S16",
@@ -930,7 +945,8 @@
           "image_prompt_end": "photoreal cinematic: to show the whole barren room, the family waiting in the dark. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pulls back; depth planes separate, near objects swelling past the lens. Macro pull-back; a last ember dies — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pulls back; depth planes separate, near objects swelling past the lens. Macro pull-back; a last ember dies — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "action"
+          "motion_intensity": "action",
+          "strength": 0.6
         },
         {
           "id": "S17",
@@ -978,7 +994,8 @@
           "image_prompt_end": "photoreal cinematic: Her finger points toward the door and the night forest beyond. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Authoritative gesture — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Authoritative gesture — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S18",
@@ -1027,7 +1044,8 @@
           "image_prompt_end": "photoreal cinematic: She pulls her shawl tight and steps toward the door, eyes steady. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Determined breath — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Determined breath — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S19",
@@ -1076,7 +1094,8 @@
           "image_prompt_end": "photoreal cinematic: The trees crowd closer behind her, swallowing the path in shadow. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track forward with her — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track forward with her — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S20",
@@ -1125,7 +1144,8 @@
           "image_prompt_end": "photoreal cinematic: A branch snaps and she whips her head around, breath visible in the cold. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. She startles — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. She startles — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S21",
@@ -1172,7 +1192,8 @@
           "image_prompt_end": "photoreal cinematic: The glow brightens briefly, like a heartbeat of courage. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Macro push-in; glow pulses — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Macro push-in; glow pulses — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "action"
+          "motion_intensity": "action",
+          "strength": 0.6
         },
         {
           "id": "S22",
@@ -1219,7 +1240,8 @@
           "image_prompt_end": "photoreal cinematic: The hut its weight, the legs creaking as it to face her. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. The hut shifts on its legs — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. The hut shifts on its legs — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S23",
@@ -1268,7 +1290,8 @@
           "image_prompt_end": "photoreal cinematic: on her wide, trembling eyes reflecting the green glow. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on her eyes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on her eyes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S24",
@@ -1315,7 +1338,8 @@
           "image_prompt_end": "photoreal cinematic: ends on a single skull, moss in its eye socket, faint mist drifting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Slow macro pan-left — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Slow macro pan-left — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "action"
+          "motion_intensity": "action",
+          "strength": 0.6
         },
         {
           "id": "S25",
@@ -1364,7 +1388,8 @@
           "image_prompt_end": "photoreal cinematic: Her small fist lands solidly and the echo rolls through the quiet. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Knock connects — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Knock connects — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S26",
@@ -1414,7 +1439,8 @@
           "image_prompt_end": "photoreal cinematic: frames Vasilisa tiny before the towering witch. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pulls back; depth planes separate, near objects swelling past the lens. Door swings; pull-back for scale — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pulls back; depth planes separate, near objects swelling past the lens. Door swings; pull-back for scale — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S27",
@@ -1462,7 +1488,8 @@
           "image_prompt_end": "photoreal cinematic: as her eyes narrow, studying the girl. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on her eyes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on her eyes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S28",
@@ -1511,7 +1538,8 @@
           "image_prompt_end": "photoreal cinematic: Reverse to Vasilisa speaking with her head bowed in respect. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Shot-reverse dialogue — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Shot-reverse dialogue — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S29",
@@ -1560,7 +1588,8 @@
           "image_prompt_end": "photoreal cinematic: She holds the offer in the air between them, smoke curling past. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Smoke drifts — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Smoke drifts — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S30",
@@ -1609,7 +1638,8 @@
           "image_prompt_end": "photoreal cinematic: She steadily, dust swirling in the green light. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track with her labor — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track with her labor — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S31",
@@ -1658,7 +1688,8 @@
           "image_prompt_end": "photoreal cinematic: The doll's eyes gleam as a spilled grain sweeps itself into a pile. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Slight magic shimmer — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Slight magic shimmer — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S32",
@@ -1706,7 +1737,8 @@
           "image_prompt_end": "photoreal cinematic: Her stern eyes soften for a beat. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Subtle approving nod — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Subtle approving nod — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S33",
@@ -1754,7 +1786,8 @@
           "image_prompt_end": "photoreal cinematic: lands on Vasilisa wiping her brow, the hut bright and orderly. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera pans right; the landscape streams past, parallax layers sliding at different speeds. The scene breathes with ambient life — weight settles, small movements ripple through frame, nothing sits frozen. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera pans right; the landscape streams past, parallax layers sliding at different speeds. The scene breathes with ambient life — weight settles, small movements ripple through frame, nothing sits frozen. The move completes in a single phase and holds.",
-          "motion_intensity": "action"
+          "motion_intensity": "action",
+          "strength": 0.6
         },
         {
           "id": "S34",
@@ -1802,7 +1835,8 @@
           "image_prompt_end": "photoreal cinematic: She toward a dark chest, opening its lid with a creak. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Chest opens — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Chest opens — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S35",
@@ -1849,7 +1883,8 @@
           "image_prompt_end": "photoreal cinematic: on the diamonds as they catch the green light and flare. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Macro push-in; diamond flare — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Macro push-in; diamond flare — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "action"
+          "motion_intensity": "action",
+          "strength": 0.6
         },
         {
           "id": "S36",
@@ -1899,7 +1934,8 @@
           "image_prompt_end": "photoreal cinematic: Vasilisa accepts, cradling the staff with reverence. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Hands meet — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Hands meet — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S37",
@@ -1949,7 +1985,8 @@
           "image_prompt_end": "photoreal cinematic: The hut recedes behind as she the path home. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track following her — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track following her — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S38",
@@ -2000,7 +2037,8 @@
           "image_prompt_end": "photoreal cinematic: The three women look at the staff with hunger and suspicion. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. The women leer — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. The women leer — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S39",
@@ -2051,7 +2089,8 @@
           "image_prompt_end": "photoreal cinematic: as the diamond eyes burst into blinding white-gold light. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Low-angle push-in; light intensifies — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Low-angle push-in; light intensifies — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S40",
@@ -2101,7 +2140,8 @@
           "image_prompt_end": "photoreal cinematic: as the light recedes, leaving only drifting embers and silence. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pulls back; depth planes separate, near objects swelling past the lens. High-angle pull-back; radiant flash — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pulls back; depth planes separate, near objects swelling past the lens. High-angle pull-back; radiant flash — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         }
       ],
       "location_ref": "dark_forest_and_baba_yaga_hut",
@@ -2140,7 +2180,7 @@
             "staff_B2_sheet"
           ],
           "ref_scope": "image1: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used; image2: the skull staff sheet - a carved staff crowned with a skull whose eyes are two brilliant diamonds — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2173,7 +2213,8 @@
           "image_prompt_end": "photoreal cinematic: She glances back once, then presses on toward the distant lights. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. She runs — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. She runs — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S42",
@@ -2189,7 +2230,7 @@
             "city_E3_prop"
           ],
           "ref_scope": "image1: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used; image2: the great-city design - white towers and golden domes at dawn — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "subject identity",
             "prop design",
@@ -2222,7 +2263,8 @@
           "image_prompt_end": "photoreal cinematic: Crane over the walls revealing the bustling city waking in golden light. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes up; the horizon re-settles as the vertical move completes. Day breaks — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes up; the horizon re-settles as the vertical move completes. Day breaks — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "action"
+          "motion_intensity": "action",
+          "strength": 0.6
         },
         {
           "id": "S43",
@@ -2238,7 +2280,7 @@
             "vasilisa_A3_fused"
           ],
           "ref_scope": "image1: the fused master of the Old Seamstress - a kind, skilled old woman — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2271,7 +2313,8 @@
           "image_prompt_end": "photoreal cinematic: The old woman places a warm hand on Vasilisa's shoulder with a smile. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Welcoming gesture — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Welcoming gesture — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S44",
@@ -2287,7 +2330,7 @@
             "doll_A2_fused"
           ],
           "ref_scope": "image1: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Magic Doll - a small carved wooden doll with a warm glow — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2320,7 +2363,8 @@
           "image_prompt_end": "photoreal cinematic: Needle glints as the doll's eyes gleam in approval. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Hands sew steadily — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Hands sew steadily — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S45",
@@ -2335,7 +2379,7 @@
             "vasilisa_A3_fused"
           ],
           "ref_scope": "image1: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2368,7 +2412,8 @@
           "image_prompt_end": "photoreal cinematic: on the finished pattern, gleaming like woven starlight. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Macro push-in; thread glints — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Macro push-in; thread glints — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S46",
@@ -2384,7 +2429,7 @@
             "palace_E4_prop"
           ],
           "ref_scope": "image1: the fused master of the Tsar - a regal young ruler who admires and loves Vasilisa — 100% identical; studio bg/pose/light NOT used; image2: the palace design - a grand hall with golden columns and opulent wedding light — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "subject identity",
             "prop design",
@@ -2417,7 +2462,8 @@
           "image_prompt_end": "photoreal cinematic: Crane on the Tsar's throne as the fabrics are unfurled before him. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Cloth unfurls — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Cloth unfurls — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "action"
+          "motion_intensity": "action",
+          "strength": 0.6
         },
         {
           "id": "S47",
@@ -2432,7 +2478,7 @@
             "tsar_A9_fused"
           ],
           "ref_scope": "image1: the fused master of the Tsar - a regal young ruler who admires and loves Vasilisa — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2465,7 +2511,8 @@
           "image_prompt_end": "photoreal cinematic: He to his court, commanding that the seamstress be summoned. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. He gestures to courtiers — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. He gestures to courtiers — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S48",
@@ -2481,7 +2528,7 @@
             "vasilisa_A3_fused"
           ],
           "ref_scope": "image1: the fused master of the Tsar - a regal young ruler who admires and loves Vasilisa — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2514,7 +2561,8 @@
           "image_prompt_end": "photoreal cinematic: on his softened face and her shy, radiant smile. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Their eyes meet — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Their eyes meet — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S49",
@@ -2531,7 +2579,7 @@
             "palace_E4_prop"
           ],
           "ref_scope": "image1: the fused master of the Tsar - a regal young ruler who admires and loves Vasilisa — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used; image3: the palace design - a grand hall with golden columns and opulent wedding light — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2564,7 +2612,8 @@
           "image_prompt_end": "photoreal cinematic: Crane to the vaulted ceiling as bells ring and petals fall. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes up; the horizon re-settles as the vertical move completes. Petals fall — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes up; the horizon re-settles as the vertical move completes. Petals fall — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S50",
@@ -2582,7 +2631,7 @@
             "seamstress_A8_fused"
           ],
           "ref_scope": "image1: the fused master of Vasilisa - a beautiful, gentle and brave young woman with the magic doll — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Magic Doll - a small carved wooden doll with a warm glow — 100% identical; studio bg/pose/light NOT used; image3: the fused master of the Merchant Father - a bearded Russian merchant in a travel cloak — 100% identical; studio bg/pose/light NOT used; image4: the fused master of the Old Seamstress - a kind, skilled old woman — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2615,7 +2664,8 @@
           "image_prompt_end": "photoreal cinematic: frames the whole happy gathering, the doll's eyes glowing warm and content. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pulls back; depth planes separate, near objects swelling past the lens. Doll glows warmly — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pulls back; depth planes separate, near objects swelling past the lens. Doll glows warmly — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         }
       ],
       "location_ref": "great_city_and_tsar_palace",

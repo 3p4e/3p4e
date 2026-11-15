@@ -142,7 +142,7 @@
             "palace_E1_prop"
           ],
           "ref_scope": "image1: the Thebes-palace design - white marble palace, olive groves and paved courtyards — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "prop design",
             "palette",
@@ -174,7 +174,8 @@
           "image_prompt_end": "photoreal cinematic: over the palace courtyard where a newborn cry echoes, warm torchlight in the windows. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Slow crane-down toward the palace — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Slow crane-down toward the palace — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S02",
@@ -190,7 +191,7 @@
             "olympus_E15_prop"
           ],
           "ref_scope": "image1: the fused master of Zeus - the king of Olympus, white beard and robes, commanding presence — 100% identical; studio bg/pose/light NOT used; image2: the Mount-Olympus design - divine marble halls and gold rooftops in eternal light — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -223,7 +224,8 @@
           "image_prompt_end": "photoreal cinematic: on the infant peaceful face wrapped in fine cloth, the god large hand sheltering it. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the father and child — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the father and child — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S03",
@@ -239,7 +241,7 @@
             "throne_E3_prop"
           ],
           "ref_scope": "image1: the fused master of Hera - the jealous queen of the gods in emerald regalia — 100% identical; studio bg/pose/light NOT used; image2: the throne-room design - a torchlit stone throne hall — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -272,7 +274,8 @@
           "image_prompt_end": "photoreal cinematic: Her clenched hand gripping the throne arm, emerald rings glinting, shadows deepening. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static cold stare — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static cold stare — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S04",
@@ -289,7 +292,7 @@
             "nursery_E2_prop"
           ],
           "ref_scope": "image1: the serpent design - the huge emerald-eyed serpents sent by Hera — 100% identical; studio bg/pose/light NOT used; image2: the cradle design - a carved wooden infant cradle in the moonlit nursery — 100% identical; studio bg/pose/light NOT used; image3: the nursery design - a moonlit marble nursery with a single window — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "prop design",
             "palette",
@@ -321,7 +324,8 @@
           "image_prompt_end": "photoreal cinematic: to the cradle as shadowy coils rise and loom over the sleeping infant. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape). Body-form canon: NO legs, NO human lower body, NO feet — the lower body is exactly as designed, never corrected to bipedal.",
           "video_prompt_start": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Pan-left following the serpents — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Pan-left following the serpents — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S05",
@@ -338,7 +342,7 @@
             "cradle_K3_prop"
           ],
           "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image2: the serpent design - the huge emerald-eyed serpents sent by Hera — 100% identical; studio bg/pose/light NOT used; image3: the cradle design - a carved wooden infant cradle in the moonlit nursery — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -371,7 +375,8 @@
           "image_prompt_end": "photoreal cinematic: The serpents going limp, the infant gurgling with delight, moonlight catching a soft smile. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape). Body-form canon: NO legs, NO human lower body, NO feet — the lower body is exactly as designed, never corrected to bipedal.",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static grip reveal — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static grip reveal — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S06",
@@ -388,7 +393,7 @@
             "palace_E1_prop"
           ],
           "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Alcmene - the mortal queen mother of Hercules, regal and warm — 100% identical; studio bg/pose/light NOT used; image3: the Thebes-palace design - white marble palace, olive groves and paved courtyards — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -421,7 +426,8 @@
           "image_prompt_end": "photoreal cinematic: revealing the full grand hall and the cheering household. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pulls back; depth planes separate, near objects swelling past the lens. Pull-back reveal of the hall — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pulls back; depth planes separate, near objects swelling past the lens. Pull-back reveal of the hall — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S07",
@@ -437,7 +443,7 @@
             "club_K1_prop"
           ],
           "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image2: the club design - Hercules massive knotted olive-wood club — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -470,7 +476,8 @@
           "image_prompt_end": "photoreal cinematic: He swings the club and fells a training post with one blow, leaves scattering. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Lateral track following the swing — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Lateral track following the swing — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S08",
@@ -487,7 +494,7 @@
             "throne_E3_prop"
           ],
           "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image2: the fused master of King Eurystheus - the cowardly king in purple robes, thin and twitchy — 100% identical; studio bg/pose/light NOT used; image3: the throne-room design - a torchlit stone throne hall — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -520,7 +527,8 @@
           "image_prompt_end": "photoreal cinematic: on the king Eurystheus trembling slightly, his crown glinting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on the nervous king — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on the nervous king — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S09",
@@ -537,7 +545,7 @@
             "throne_E3_prop"
           ],
           "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image2: the fused master of King Eurystheus - the cowardly king in purple robes, thin and twitchy — 100% identical; studio bg/pose/light NOT used; image3: the throne-room design - a torchlit stone throne hall — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -570,7 +578,8 @@
           "image_prompt_end": "photoreal cinematic: Reverse on the hero steady eyes as he nods once and to leave. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Shot-reverse dialogue — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Shot-reverse dialogue — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S10",
@@ -586,7 +595,7 @@
             "canyon_E4_prop"
           ],
           "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image2: the Nemea-canyon design - a harsh golden-brown stone canyon — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -619,7 +628,8 @@
           "image_prompt_end": "photoreal cinematic: as the landscape opens, revealing a shadowy cave mouth ahead. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes up; the horizon re-settles as the vertical move completes. Crane-up revealing the cave — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes up; the horizon re-settles as the vertical move completes. Crane-up revealing the cave — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S11",
@@ -635,7 +645,7 @@
             "cave_E5_prop"
           ],
           "ref_scope": "image1: the fused master of the Nemean Lion - a colossal golden-maned lion with impenetrable hide — 100% identical; studio bg/pose/light NOT used; image2: the cave design - a shadowy lion den mouth in the rock face — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -668,7 +678,8 @@
           "image_prompt_end": "photoreal cinematic: on the lion amber eyes narrowing before it roars. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on the lion eyes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on the lion eyes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S12",
@@ -685,7 +696,7 @@
             "club_K1_prop"
           ],
           "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Nemean Lion - a colossal golden-maned lion with impenetrable hide — 100% identical; studio bg/pose/light NOT used; image3: the club design - Hercules massive knotted olive-wood club — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -718,7 +729,8 @@
           "image_prompt_end": "photoreal cinematic: He drops the club and squares up, arms raised, eyes locked on the beast. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Fast lateral track of the fight — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Fast lateral track of the fight — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S13",
@@ -734,7 +746,7 @@
             "nemean_lion_A8_fused"
           ],
           "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Nemean Lion - a colossal golden-maned lion with impenetrable hide — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -767,7 +779,8 @@
           "image_prompt_end": "photoreal cinematic: The lion roar fading as its body stills, the hero holding firm. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static heroic hold — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static heroic hold — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S14",
@@ -783,7 +796,7 @@
             "canyon_E4_prop"
           ],
           "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image2: the Nemea-canyon design - a harsh golden-brown stone canyon — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -816,7 +829,8 @@
           "image_prompt_end": "photoreal cinematic: as he strides out of the canyon wearing the invincible lion-skin, head high. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Crane-down on the departing hero — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Crane-down on the departing hero — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         }
       ],
       "location_ref": "thebes_palace_nursery_and_nemea_canyon",
@@ -889,7 +903,8 @@
           "image_prompt_end": "photoreal cinematic: to a mass of snakelike heads rising from the swamp, silhouetted against the fog. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape). Body-form canon: NO legs, NO human lower body, NO feet — the lower body is exactly as designed, never corrected to bipedal.",
           "video_prompt_start": "The camera pans right; the landscape streams past, parallax layers sliding at different speeds. Pan-right revealing the hydra — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera pans right; the landscape streams past, parallax layers sliding at different speeds. Pan-right revealing the hydra — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S16",
@@ -938,7 +953,8 @@
           "image_prompt_end": "photoreal cinematic: All nine heads lunging at once, water exploding upward. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape). Body-form canon: NO legs, NO human lower body, NO feet — the lower body is exactly as designed, never corrected to bipedal.",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static wide of the beast — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static wide of the beast — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S17",
@@ -987,7 +1003,8 @@
           "image_prompt_end": "photoreal cinematic: The hero leaping back, realizing brute force feeds the monster. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape). Body-form canon: NO legs, NO human lower body, NO feet — the lower body is exactly as designed, never corrected to bipedal.",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Fast track of swordplay — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Fast track of swordplay — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S18",
@@ -1036,7 +1053,8 @@
           "image_prompt_end": "photoreal cinematic: on the torch flame reflecting in his determined gaze. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on the eyes with firelight — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on the eyes with firelight — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S19",
@@ -1087,7 +1105,8 @@
           "image_prompt_end": "photoreal cinematic: as the last head sinks beneath the surface and the marsh calms. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape). Body-form canon: NO legs, NO human lower body, NO feet — the lower body is exactly as designed, never corrected to bipedal.",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Crane-down as the fight ends — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Crane-down as the fight ends — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S20",
@@ -1136,7 +1155,8 @@
           "image_prompt_end": "photoreal cinematic: The arrowhead lifted, a faint green glow tracing the tip. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape). Body-form canon: NO legs, NO human lower body, NO feet — the lower body is exactly as designed, never corrected to bipedal.",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static macro of the dipping arrow — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static macro of the dipping arrow — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S21",
@@ -1185,7 +1205,8 @@
           "image_prompt_end": "photoreal cinematic: The hind leaping a stream, golden antlers flashing in the light. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Rapid track of the chase — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Rapid track of the chase — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S22",
@@ -1234,7 +1255,8 @@
           "image_prompt_end": "photoreal cinematic: The hind raising its head, sensing no threat, and resuming. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static patient wait — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static patient wait — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S23",
@@ -1283,7 +1305,8 @@
           "image_prompt_end": "photoreal cinematic: on the hero gentle hand at the hind neck. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on the gentle capture — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on the gentle capture — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S24",
@@ -1331,7 +1354,8 @@
           "image_prompt_end": "photoreal cinematic: as the boar charges toward the , tusks glinting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Crane-down on the charging boar — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Crane-down on the charging boar — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S25",
@@ -1381,7 +1405,8 @@
           "image_prompt_end": "photoreal cinematic: The boar closing in, the hero digging in his heels. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track toward the impact — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track toward the impact — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S26",
@@ -1430,7 +1455,8 @@
           "image_prompt_end": "photoreal cinematic: He strides into the village gate, the crowd parting in awe. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static wide of the return — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static wide of the return — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S27",
@@ -1477,7 +1503,8 @@
           "image_prompt_end": "photoreal cinematic: revealing the true scale of the king stables and the hero tiny at their edge. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes up; the horizon re-settles as the vertical move completes. Crane-up revealing scale — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes up; the horizon re-settles as the vertical move completes. Crane-up revealing scale — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S28",
@@ -1527,7 +1554,8 @@
           "image_prompt_end": "photoreal cinematic: The king laughing, the hero silently studying the surrounding hills. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static exchange — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static exchange — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S29",
@@ -1576,7 +1604,8 @@
           "image_prompt_end": "photoreal cinematic: as he plants the boulder, turning a river course. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on the heroic effort — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on the heroic effort — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S30",
@@ -1623,7 +1652,8 @@
           "image_prompt_end": "photoreal cinematic: as torrents gush through the stalls, carrying every scrap of filth away. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Crane-down on the cleansing flood — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Crane-down on the cleansing flood — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S31",
@@ -1673,7 +1703,8 @@
           "image_prompt_end": "photoreal cinematic: revealing the sparkling clean rows and the hero calm satisfaction. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pulls back; depth planes separate, near objects swelling past the lens. Pull-back reveal of the clean scene — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pulls back; depth planes separate, near objects swelling past the lens. Pull-back reveal of the clean scene — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S32",
@@ -1720,7 +1751,8 @@
           "image_prompt_end": "photoreal cinematic: The birds wheeling in a shrieking cloud over the water. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track along the lake shore — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track along the lake shore — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S33",
@@ -1771,7 +1803,8 @@
           "image_prompt_end": "photoreal cinematic: The hero receiving the rattle with a reverent nod. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static gift scene — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static gift scene — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S34",
@@ -1821,7 +1854,8 @@
           "image_prompt_end": "photoreal cinematic: the rising birds as the hero nocks a poisoned arrow. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes up; the horizon re-settles as the vertical move completes. Crane-up with the rising flock — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes up; the horizon re-settles as the vertical move completes. Crane-up with the rising flock — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S35",
@@ -1871,7 +1905,8 @@
           "image_prompt_end": "photoreal cinematic: The arrow striking, a bird tumbling, the hero already aiming again. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape). Body-form canon: NO legs, NO human lower body, NO feet — the lower body is exactly as designed, never corrected to bipedal.",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track following the arrow flight — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track following the arrow flight — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S36",
@@ -1921,7 +1956,8 @@
           "image_prompt_end": "photoreal cinematic: The king turning away, plotting the next impossible task. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static return scene — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static return scene — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S37",
@@ -1971,7 +2007,8 @@
           "image_prompt_end": "photoreal cinematic: The bull wheeling, horns lowered, the hero leaping onto its back. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track of the bull charge — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track of the bull charge — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S38",
@@ -2021,7 +2058,8 @@
           "image_prompt_end": "photoreal cinematic: on the bull slowing, his own wild strength tamed. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on the taming — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on the taming — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S39",
@@ -2071,7 +2109,8 @@
           "image_prompt_end": "photoreal cinematic: Reverse on the hero departing the hall, cloak sweeping, resolve hardening. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Shot-reverse dialogue — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Shot-reverse dialogue — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S40",
@@ -2120,7 +2159,8 @@
           "image_prompt_end": "photoreal cinematic: as their queen Hippolyta rides at the head, a jewelled belt at her waist. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Crane-down over the rider band — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Crane-down over the rider band — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S41",
@@ -2170,7 +2210,8 @@
           "image_prompt_end": "photoreal cinematic: The two warriors meeting eye to eye, a moment of respect. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static face-off — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static face-off — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S42",
@@ -2221,7 +2262,8 @@
           "image_prompt_end": "photoreal cinematic: The hero bowing his head in thanks, the belt gleaming at the exchange. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track of the exchange — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track of the exchange — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S43",
@@ -2270,7 +2312,8 @@
           "image_prompt_end": "photoreal cinematic: as the stars begin to appear, the road ahead still unending. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes up; the horizon re-settles as the vertical move completes. Crane-up transition to Act III — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes up; the horizon re-settles as the vertical move completes. Crane-up transition to Act III — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         }
       ],
       "location_ref": "lernea_marsh_erymanthos_mountains_augean_stables_stymphalian_lake_cretan_plain_and_amazon_steppe",
@@ -2310,7 +2353,7 @@
             "plain_E11_prop"
           ],
           "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image2: the cattle design - the crimson herd of Geryon — 100% identical; studio bg/pose/light NOT used; image3: the plain design - a sun-scorched open plain — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2343,7 +2386,8 @@
           "image_prompt_end": "photoreal cinematic: on the hero flame-lit face as the giant bellows. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on the hero resolve — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on the hero resolve — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S45",
@@ -2360,7 +2404,7 @@
             "plain_E11_prop"
           ],
           "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image2: the cattle design - the crimson herd of Geryon — 100% identical; studio bg/pose/light NOT used; image3: the plain design - a sun-scorched open plain — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2393,7 +2437,8 @@
           "image_prompt_end": "photoreal cinematic: The herd streaming forward, the hero steady at their side. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track of the herd drive — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track of the herd drive — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S46",
@@ -2410,7 +2455,7 @@
             "garden_E13_prop"
           ],
           "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image2: the golden-apple design - radiant golden apples glowing with inner light — 100% identical; studio bg/pose/light NOT used; image3: the Hesperides-garden design - a glowing orchard where apples shine like lanterns — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2443,7 +2488,8 @@
           "image_prompt_end": "photoreal cinematic: The apples glowing brighter as the hero steps closer. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape). Body-form canon: NO legs, NO human lower body, NO feet — the lower body is exactly as designed, never corrected to bipedal.",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static reveal of the garden — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static reveal of the garden — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S47",
@@ -2459,7 +2505,7 @@
             "underworld_E14_prop"
           ],
           "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image2: the Underworld-gate design - a massive iron gate with runes, torchlit stone passages — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2492,7 +2538,8 @@
           "image_prompt_end": "photoreal cinematic: to the hero descending the stone steps into shadow and ember light. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Pan-left into the descent — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Pan-left into the descent — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S48",
@@ -2508,7 +2555,7 @@
             "underworld_E14_prop"
           ],
           "ref_scope": "image1: the fused master of Cerberus - the three-headed hound of the Underworld with ember eyes — 100% identical; studio bg/pose/light NOT used; image2: the Underworld-gate design - a massive iron gate with runes, torchlit stone passages — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2541,7 +2588,8 @@
           "image_prompt_end": "photoreal cinematic: All three heads lunging, the hero standing his ground with bare chains. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static low-angle threat — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static low-angle threat — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S49",
@@ -2559,7 +2607,7 @@
             "underworld_E14_prop"
           ],
           "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Cerberus - the three-headed hound of the Underworld with ember eyes — 100% identical; studio bg/pose/light NOT used; image3: the bronze-chains design - heavy bronze restraints used to bind Cerberus — 100% identical; studio bg/pose/light NOT used; image4: the Underworld-gate design - a massive iron gate with runes, torchlit stone passages — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2592,7 +2640,8 @@
           "image_prompt_end": "photoreal cinematic: The hound three heads lowering in resignation, the hero holding fast. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track of the wrestling hold — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track of the wrestling hold — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S50",
@@ -2609,7 +2658,7 @@
             "underworld_E14_prop"
           ],
           "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Cerberus - the three-headed hound of the Underworld with ember eyes — 100% identical; studio bg/pose/light NOT used; image3: the Underworld-gate design - a massive iron gate with runes, torchlit stone passages — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2642,7 +2691,8 @@
           "image_prompt_end": "photoreal cinematic: as he ascends toward the waiting light, victorious and whole. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Crane-down on the ascent — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Crane-down on the ascent — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S51",
@@ -2658,7 +2708,7 @@
             "olympus_E15_prop"
           ],
           "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image2: the Mount-Olympus design - divine marble halls and gold rooftops in eternal light — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2691,7 +2741,8 @@
           "image_prompt_end": "photoreal cinematic: on his silhouette as the stars brighten around him. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on the silhouette — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on the silhouette — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S52",
@@ -2707,7 +2758,7 @@
             "olympus_E15_prop"
           ],
           "ref_scope": "image1: the fused master of Hercules - the mighty demigod in Nemean lion-skin cloak, towering build, great club — 100% identical; studio bg/pose/light NOT used; image2: the Mount-Olympus design - divine marble halls and gold rooftops in eternal light — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2740,7 +2791,8 @@
           "image_prompt_end": "photoreal cinematic: into the starry vault where a new constellation of the kneeling hero takes form. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes up; the horizon re-settles as the vertical move completes. Slow crane-up toward the stars — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes up; the horizon re-settles as the vertical move completes. Slow crane-up toward the stars — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         }
       ],
       "location_ref": "erytheia_plain_hesperides_garden_underworld_gate_and_mount_olympus",

@@ -132,7 +132,8 @@
           "image_prompt_end": "photoreal cinematic: toward the shop's wooden door as lanterns flicker and the shop sign swings gently. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Slow crane-down toward the door — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Slow crane-down toward the door — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S02",
@@ -179,7 +180,8 @@
           "image_prompt_end": "photoreal cinematic: past the shelves toward a shadowed alcove in the corner. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in through the shop — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in through the shop — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S03",
@@ -227,7 +229,8 @@
           "image_prompt_end": "photoreal cinematic: on the elf's gentle face as he blinks in the lamplight. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Subtle push-in on the elf's eyes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Subtle push-in on the elf's eyes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S04",
@@ -276,7 +279,8 @@
           "image_prompt_end": "photoreal cinematic: He sets the bowl down gently before the elf's corner. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Grocer moves toward the elf's corner — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Grocer moves toward the elf's corner — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S05",
@@ -323,7 +327,8 @@
           "image_prompt_end": "photoreal cinematic: The elf's small hand reaches in and takes a warm bite. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Steam drift; elf's hand enters — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Steam drift; elf's hand enters — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S06",
@@ -371,7 +376,8 @@
           "image_prompt_end": "photoreal cinematic: He opens his eyes and smiles warmly at the grocer. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Small satisfied nod — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Small satisfied nod — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S07",
@@ -420,7 +426,8 @@
           "image_prompt_end": "photoreal cinematic: The tracks slowly past the shelves as evening outside the window. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Gentle lateral track — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Gentle lateral track — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S08",
@@ -469,7 +476,8 @@
           "image_prompt_end": "photoreal cinematic: The student steps into the warm lamplight and approaches the counter. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Student walks to counter — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Student walks to counter — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S09",
@@ -518,7 +526,8 @@
           "image_prompt_end": "photoreal cinematic: The grocer reaches for a wheel of cheese behind him. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Grocer turns to fetch cheese — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Grocer turns to fetch cheese — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S10",
@@ -567,7 +576,8 @@
           "image_prompt_end": "photoreal cinematic: A torn page with faded ink is folded around the cheese. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Deliberate tearing and folding of paper — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Deliberate tearing and folding of paper — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S11",
@@ -615,7 +625,8 @@
           "image_prompt_end": "photoreal cinematic: on his earnest eyes. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. The scene breathes with ambient life — weight settles, small movements ripple through frame, nothing sits frozen. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. The scene breathes with ambient life — weight settles, small movements ripple through frame, nothing sits frozen. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S12",
@@ -665,7 +676,8 @@
           "image_prompt_end": "photoreal cinematic: The book passes from his hands into the student's. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Handing over the book — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Handing over the book — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S13",
@@ -715,7 +727,8 @@
           "image_prompt_end": "photoreal cinematic: The student tucks the book carefully into his satchel. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Book tucked away — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Book tucked away — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S14",
@@ -763,7 +776,8 @@
           "image_prompt_end": "photoreal cinematic: on the elf's determined, mischievous glare. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on the elf's face — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on the elf's face — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         }
       ],
       "location_ref": "grocers_shop_interior_and_exterior",
@@ -802,7 +816,7 @@
             "elf_A1_fused"
           ],
           "ref_scope": "image1: the fused master of the Student — young, kind reader with a satchel of books — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Elf — small, gentle, curious; earthy tunic, pointed ears — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -835,7 +849,8 @@
           "image_prompt_end": "photoreal cinematic: to reveal the tiny elf slipping through the door crack behind him. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pulls back; depth planes separate, near objects swelling past the lens. Pull-back revealing the elf — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pulls back; depth planes separate, near objects swelling past the lens. Pull-back revealing the elf — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S16",
@@ -851,7 +866,7 @@
             "elf_A1_fused"
           ],
           "ref_scope": "image1: the fused master of the Student — young, kind reader with a satchel of books — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Elf — small, gentle, curious; earthy tunic, pointed ears — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -884,7 +899,8 @@
           "image_prompt_end": "photoreal cinematic: continues as the elf hops from barrel to doorstep. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Lateral track following the pair — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Lateral track following the pair — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S17",
@@ -899,7 +915,7 @@
             "room_E3_prop"
           ],
           "ref_scope": "image1: the student-room design — modest desk, single bed, candle, stacked books — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "prop design",
             "palette",
@@ -931,7 +947,8 @@
           "image_prompt_end": "photoreal cinematic: The student enters and sets his satchel on the desk. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Student enters room — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Student enters room — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S18",
@@ -948,7 +965,7 @@
             "old_book_K2_prop"
           ],
           "ref_scope": "image1: the fused master of the Student — young, kind reader with a satchel of books — 100% identical; studio bg/pose/light NOT used; image2: the student-room design — modest desk, single bed, candle, stacked books — 100% identical; studio bg/pose/light NOT used; image3: the old-book design — aged leather binding, torn yellowed pages with faded ink — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -981,7 +998,8 @@
           "image_prompt_end": "photoreal cinematic: The pages fall open to a spread of faded ink. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Book opens — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Book opens — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S19",
@@ -996,7 +1014,7 @@
             "old_book_K2_prop"
           ],
           "ref_scope": "image1: the old-book design — aged leather binding, torn yellowed pages with faded ink — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "prop design",
             "palette",
@@ -1028,7 +1046,8 @@
           "image_prompt_end": "photoreal cinematic: The beam widens and brightens, washing the page in light. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Light grows — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Light grows — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S20",
@@ -1043,7 +1062,7 @@
             "student_A3_fused"
           ],
           "ref_scope": "image1: the fused master of the Student — young, kind reader with a satchel of books — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1076,7 +1095,8 @@
           "image_prompt_end": "photoreal cinematic: on his glimmering eyes reflecting the glow. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. The scene breathes with ambient life — weight settles, small movements ripple through frame, nothing sits frozen. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. The scene breathes with ambient life — weight settles, small movements ripple through frame, nothing sits frozen. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S21",
@@ -1092,7 +1112,7 @@
             "room_E3_prop"
           ],
           "ref_scope": "image1: the old-book design — aged leather binding, torn yellowed pages with faded ink — 100% identical; studio bg/pose/light NOT used; image2: the student-room design — modest desk, single bed, candle, stacked books — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "prop design",
             "palette",
@@ -1124,7 +1144,8 @@
           "image_prompt_end": "photoreal cinematic: as the beam expands, light particles dancing with a faint melodic shimmer. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes up; the horizon re-settles as the vertical move completes. Crane-up through the light — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes up; the horizon re-settles as the vertical move completes. Crane-up through the light — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S22",
@@ -1139,7 +1160,7 @@
             "light_tree_E1_prop"
           ],
           "ref_scope": "image1: the light-tree design — luminous trunk and branches, star-like blossoms and glowing fruit — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "prop design",
             "palette",
@@ -1171,7 +1192,8 @@
           "image_prompt_end": "photoreal cinematic: The tree grows taller, branches spreading across the room. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Tree grows and branches spread — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Tree grows and branches spread — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S23",
@@ -1186,7 +1208,7 @@
             "light_tree_E1_prop"
           ],
           "ref_scope": "image1: the light-tree design — luminous trunk and branches, star-like blossoms and glowing fruit — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "prop design",
             "palette",
@@ -1218,7 +1240,8 @@
           "image_prompt_end": "photoreal cinematic: as flowers open one by one, petals glowing. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Flowers open — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Flowers open — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S24",
@@ -1233,7 +1256,7 @@
             "light_tree_E1_prop"
           ],
           "ref_scope": "image1: the light-tree design — luminous trunk and branches, star-like blossoms and glowing fruit — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "prop design",
             "palette",
@@ -1265,7 +1288,8 @@
           "image_prompt_end": "photoreal cinematic: The bloom fully opens, a soft star-like glint at its heart. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Petals unfold — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Petals unfold — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S25",
@@ -1280,7 +1304,7 @@
             "light_tree_E1_prop"
           ],
           "ref_scope": "image1: the light-tree design — luminous trunk and branches, star-like blossoms and glowing fruit — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "prop design",
             "palette",
@@ -1312,7 +1336,8 @@
           "image_prompt_end": "photoreal cinematic: The fruit glows brighter, tiny sparkles drifting off its surface. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Gentle pulsing light — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Gentle pulsing light — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S26",
@@ -1327,7 +1352,7 @@
             "student_A3_fused"
           ],
           "ref_scope": "image1: the fused master of the Student — young, kind reader with a satchel of books — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1360,7 +1385,8 @@
           "image_prompt_end": "photoreal cinematic: on his awestruck expression. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. The scene breathes with ambient life — weight settles, small movements ripple through frame, nothing sits frozen. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. The scene breathes with ambient life — weight settles, small movements ripple through frame, nothing sits frozen. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S27",
@@ -1376,7 +1402,7 @@
             "light_tree_E1_prop"
           ],
           "ref_scope": "image1: the fused master of the Elf — small, gentle, curious; earthy tunic, pointed ears — 100% identical; studio bg/pose/light NOT used; image2: the light-tree design — luminous trunk and branches, star-like blossoms and glowing fruit — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1409,7 +1435,8 @@
           "image_prompt_end": "photoreal cinematic: He leans forward, one hand on his cheek, entranced. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Elf leans in — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Elf leans in — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S28",
@@ -1425,7 +1452,7 @@
             "room_E3_prop"
           ],
           "ref_scope": "image1: the light-tree design — luminous trunk and branches, star-like blossoms and glowing fruit — 100% identical; studio bg/pose/light NOT used; image2: the student-room design — modest desk, single bed, candle, stacked books — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "prop design",
             "palette",
@@ -1457,7 +1484,8 @@
           "image_prompt_end": "photoreal cinematic: closer to the tree's canopy of luminous fruit. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. The scene breathes with ambient life — weight settles, small movements ripple through frame, nothing sits frozen. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. The scene breathes with ambient life — weight settles, small movements ripple through frame, nothing sits frozen. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S29",
@@ -1473,7 +1501,7 @@
             "light_tree_E1_prop"
           ],
           "ref_scope": "image1: the fused master of the Elf — small, gentle, curious; earthy tunic, pointed ears — 100% identical; studio bg/pose/light NOT used; image2: the light-tree design — luminous trunk and branches, star-like blossoms and glowing fruit — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1506,7 +1534,8 @@
           "image_prompt_end": "photoreal cinematic: as he reaches a small hand toward a low flower. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Hand reaches — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Hand reaches — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S30",
@@ -1522,7 +1551,7 @@
             "light_tree_E1_prop"
           ],
           "ref_scope": "image1: the fused master of the Elf — small, gentle, curious; earthy tunic, pointed ears — 100% identical; studio bg/pose/light NOT used; image2: the light-tree design — luminous trunk and branches, star-like blossoms and glowing fruit — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1555,7 +1584,8 @@
           "image_prompt_end": "photoreal cinematic: The flower glows warmly at his touch. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Gentle contact, light sparks — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Gentle contact, light sparks — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S31",
@@ -1571,7 +1601,7 @@
             "light_tree_E1_prop"
           ],
           "ref_scope": "image1: the fused master of the Elf — small, gentle, curious; earthy tunic, pointed ears — 100% identical; studio bg/pose/light NOT used; image2: the light-tree design — luminous trunk and branches, star-like blossoms and glowing fruit — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1604,7 +1634,8 @@
           "image_prompt_end": "photoreal cinematic: He looks up into the glowing canopy, spellbound. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Elf gazes upward — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Elf gazes upward — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S32",
@@ -1619,7 +1650,7 @@
             "elf_A1_fused"
           ],
           "ref_scope": "image1: the fused master of the Elf — small, gentle, curious; earthy tunic, pointed ears — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1652,7 +1683,8 @@
           "image_prompt_end": "photoreal cinematic: He lowers his gaze thoughtfully. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Subtle head tilt down — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Subtle head tilt down — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S33",
@@ -1669,7 +1701,7 @@
             "student_A3_fused"
           ],
           "ref_scope": "image1: the light-tree design — luminous trunk and branches, star-like blossoms and glowing fruit — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Elf — small, gentle, curious; earthy tunic, pointed ears — 100% identical; studio bg/pose/light NOT used; image3: the fused master of the Student — young, kind reader with a satchel of books — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1702,7 +1734,8 @@
           "image_prompt_end": "photoreal cinematic: to show the student and elf on opposite sides of the same radiant tree. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pulls back; depth planes separate, near objects swelling past the lens. The scene breathes with ambient life — weight settles, small movements ripple through frame, nothing sits frozen. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pulls back; depth planes separate, near objects swelling past the lens. The scene breathes with ambient life — weight settles, small movements ripple through frame, nothing sits frozen. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S34",
@@ -1719,7 +1752,7 @@
             "old_book_K2_prop"
           ],
           "ref_scope": "image1: the fused master of the Student — young, kind reader with a satchel of books — 100% identical; studio bg/pose/light NOT used; image2: the light-tree design — luminous trunk and branches, star-like blossoms and glowing fruit — 100% identical; studio bg/pose/light NOT used; image3: the old-book design — aged leather binding, torn yellowed pages with faded ink — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1752,7 +1785,8 @@
           "image_prompt_end": "photoreal cinematic: Light notes drift like fireflies around him. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Light notes float — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Light notes float — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S35",
@@ -1768,7 +1802,7 @@
             "light_tree_E1_prop"
           ],
           "ref_scope": "image1: the fused master of the Elf — small, gentle, curious; earthy tunic, pointed ears — 100% identical; studio bg/pose/light NOT used; image2: the light-tree design — luminous trunk and branches, star-like blossoms and glowing fruit — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1801,7 +1835,8 @@
           "image_prompt_end": "photoreal cinematic: He slips out into the cool night. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Elf turns to leave — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Elf turns to leave — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S36",
@@ -1816,7 +1851,7 @@
             "shop_E2_prop"
           ],
           "ref_scope": "image1: the grocery-shop design — old-European corner shop, wooden shelves, warm lantern light — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "prop design",
             "palette",
@@ -1848,7 +1883,8 @@
           "image_prompt_end": "photoreal cinematic: The shop's lantern dims as first sunlight touches the door. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static dawn light — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static dawn light — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         }
       ],
       "location_ref": "students_room_with_light_tree",
@@ -1921,7 +1957,8 @@
           "image_prompt_end": "photoreal cinematic: The elf appears in his corner, eyes soft and sleepy. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Grocer places bowl — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Grocer places bowl — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S38",
@@ -1970,7 +2007,8 @@
           "image_prompt_end": "photoreal cinematic: He dips his hand in and eats contentedly. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Warm bite — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Warm bite — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S39",
@@ -2019,7 +2057,8 @@
           "image_prompt_end": "photoreal cinematic: Crossfade to the same street later, the elf hurrying toward the student's home. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Elf hurries along — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Elf hurries along — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S40",
@@ -2069,7 +2108,8 @@
           "image_prompt_end": "photoreal cinematic: A soft split-light shows both the warm bowl and the golden tree. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Gentle dissolve — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Gentle dissolve — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S41",
@@ -2116,7 +2156,8 @@
           "image_prompt_end": "photoreal cinematic: through the luminous canopy, blossoms like stars. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes up; the horizon re-settles as the vertical move completes. The scene breathes with ambient life — weight settles, small movements ripple through frame, nothing sits frozen. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes up; the horizon re-settles as the vertical move completes. The scene breathes with ambient life — weight settles, small movements ripple through frame, nothing sits frozen. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S42",
@@ -2165,7 +2206,8 @@
           "image_prompt_end": "photoreal cinematic: on his peaceful smile. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. The scene breathes with ambient life — weight settles, small movements ripple through frame, nothing sits frozen. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. The scene breathes with ambient life — weight settles, small movements ripple through frame, nothing sits frozen. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S43",
@@ -2215,7 +2257,8 @@
           "image_prompt_end": "photoreal cinematic: and away as the room's glow fills the frame. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes up; the horizon re-settles as the vertical move completes. Crane-up pull away — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes up; the horizon re-settles as the vertical move completes. Crane-up pull away — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S44",
@@ -2262,7 +2305,8 @@
           "image_prompt_end": "photoreal cinematic: down the cobblestone street until the shop is small and gentle in the morning. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pulls back; depth planes separate, near objects swelling past the lens. The scene breathes with ambient life — weight settles, small movements ripple through frame, nothing sits frozen. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pulls back; depth planes separate, near objects swelling past the lens. The scene breathes with ambient life — weight settles, small movements ripple through frame, nothing sits frozen. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         }
       ],
       "location_ref": "grocers_shop_and_students_room",

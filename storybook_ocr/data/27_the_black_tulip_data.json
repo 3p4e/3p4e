@@ -106,7 +106,7 @@
             "haarlem_E1_prop"
           ],
           "ref_scope": "image1: the 17th-century-Haarlem design - Dutch canals, windmills and tulip merchants' houses — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "prop design",
             "palette",
@@ -138,7 +138,8 @@
           "image_prompt_end": "photoreal cinematic: Crane over red tiled rooftops toward a single modest house with a glowing garden. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Slow crane-down from sky to rooftops — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Slow crane-down from sky to rooftops — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "action"
+          "motion_intensity": "action",
+          "strength": 0.6
         },
         {
           "id": "S02",
@@ -154,7 +155,7 @@
             "garden_E2_prop"
           ],
           "ref_scope": "image1: the fused master of Cornelius - young gentle flower-grower, calm and kind; linen clothes with a leather apron — 100% identical; studio bg/pose/light NOT used; image2: the flower-garden design - Cornelius lush tulip garden — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -187,7 +188,8 @@
           "image_prompt_end": "photoreal cinematic: He leans back to admire a pot of dark buds, smiling quietly at his work. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Gentle tending motion — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Gentle tending motion — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S03",
@@ -203,7 +205,7 @@
             "bulb_K2_prop"
           ],
           "ref_scope": "image1: the fused master of Cornelius - young gentle flower-grower, calm and kind; linen clothes with a leather apron — 100% identical; studio bg/pose/light NOT used; image2: the tulip-bulb design - a round golden-brown tulip bulb — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -236,7 +238,8 @@
           "image_prompt_end": "photoreal cinematic: His thumb brushes a dark shoot emerging from the bulb. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Thumb brushing the shoot — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Thumb brushing the shoot — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S04",
@@ -252,7 +255,7 @@
             "black_tulip_K1_prop"
           ],
           "ref_scope": "image1: the fused master of Cornelius - young gentle flower-grower, calm and kind; linen clothes with a leather apron — 100% identical; studio bg/pose/light NOT used; image2: the black-tulip design - a rare near-black tulip with deep violet undertones — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -285,7 +288,8 @@
           "image_prompt_end": "photoreal cinematic: on the flower as a beam of light touches the black bloom. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Light beam on bloom — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Light beam on bloom — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S05",
@@ -300,7 +304,7 @@
             "black_tulip_K1_prop"
           ],
           "ref_scope": "image1: the black-tulip design - a rare near-black tulip with deep violet undertones — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "prop design",
             "palette",
@@ -332,7 +336,8 @@
           "image_prompt_end": "photoreal cinematic: The dewdrop slides off the petal edge and vanishes into the dark bloom. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Dewdrop rolling — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Dewdrop rolling — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "action"
+          "motion_intensity": "action",
+          "strength": 0.6
         },
         {
           "id": "S06",
@@ -348,7 +353,7 @@
             "boxtel_house_E4_prop"
           ],
           "ref_scope": "image1: the villain sheet of Boxtel - the envious neighbor; pale skin, narrow face with jealous eyes — 100% identical; studio bg/pose/light NOT used; image2: the neighbor-house design - Boxtel's dark narrow house — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "subject identity",
             "prop design",
@@ -381,7 +386,8 @@
           "image_prompt_end": "photoreal cinematic: -right on the neighbor's window where a pale face peers out. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera pans right; the landscape streams past, parallax layers sliding at different speeds. Pan-right revealing the spying window — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera pans right; the landscape streams past, parallax layers sliding at different speeds. Pan-right revealing the spying window — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S07",
@@ -396,7 +402,7 @@
             "boxtel_B1_sheet"
           ],
           "ref_scope": "image1: the villain sheet of Boxtel - the envious neighbor; pale skin, narrow face with jealous eyes — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "subject identity",
             "palette",
@@ -428,7 +434,8 @@
           "image_prompt_end": "photoreal cinematic: on his squinting eyes as his lips press into a thin, bitter line. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the eyes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the eyes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S08",
@@ -444,7 +451,7 @@
             "garden_E2_prop"
           ],
           "ref_scope": "image1: the villain sheet of Boxtel - the envious neighbor; pale skin, narrow face with jealous eyes — 100% identical; studio bg/pose/light NOT used; image2: the flower-garden design - Cornelius lush tulip garden — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "subject identity",
             "prop design",
@@ -477,7 +484,8 @@
           "image_prompt_end": "photoreal cinematic: He weight, hands gripping the fence, a mean glint in his eye. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Stealthy shifting — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Stealthy shifting — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S09",
@@ -494,7 +502,7 @@
             "garden_E2_prop"
           ],
           "ref_scope": "image1: the villain sheet of Boxtel - the envious neighbor; pale skin, narrow face with jealous eyes — 100% identical; studio bg/pose/light NOT used; image2: the cloth-sack design - a dark cloth sack — 100% identical; studio bg/pose/light NOT used; image3: the flower-garden design - Cornelius lush tulip garden — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "subject identity",
             "prop design",
@@ -527,7 +535,8 @@
           "image_prompt_end": "photoreal cinematic: him to the garden workshop door as he tests the latch. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Lateral track following the creeping figure — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Lateral track following the creeping figure — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S10",
@@ -543,7 +552,7 @@
             "workshop_E3_prop"
           ],
           "ref_scope": "image1: the villain sheet of Boxtel - the envious neighbor; pale skin, narrow face with jealous eyes — 100% identical; studio bg/pose/light NOT used; image2: the flower-workshop design - Cornelius modest house and workroom — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "subject identity",
             "prop design",
@@ -581,7 +590,8 @@
           "image_prompt_end": "photoreal cinematic: He slips inside, the door closing softly behind him. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Door easing and closing — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Door easing and closing — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S11",
@@ -598,7 +608,7 @@
             "sack_K4_prop"
           ],
           "ref_scope": "image1: the villain sheet of Boxtel - the envious neighbor; pale skin, narrow face with jealous eyes — 100% identical; studio bg/pose/light NOT used; image2: the tulip-bulb design - a round golden-brown tulip bulb — 100% identical; studio bg/pose/light NOT used; image3: the cloth-sack design - a dark cloth sack — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "subject identity",
             "prop design",
@@ -631,7 +641,8 @@
           "image_prompt_end": "photoreal cinematic: The bulbs drop into the dark sack, the case left empty. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Bulbs dropping into sack — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Bulbs dropping into sack — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S12",
@@ -648,7 +659,7 @@
             "workshop_E3_prop"
           ],
           "ref_scope": "image1: the villain sheet of Boxtel - the envious neighbor; pale skin, narrow face with jealous eyes — 100% identical; studio bg/pose/light NOT used; image2: the forged-documents design - folded false papers — 100% identical; studio bg/pose/light NOT used; image3: the flower-workshop design - Cornelius modest house and workroom — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "subject identity",
             "prop design",
@@ -681,7 +692,8 @@
           "image_prompt_end": "photoreal cinematic: He eases the drawer shut, leaving the false proof in place. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Drawer sliding shut — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Drawer sliding shut — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S13",
@@ -697,7 +709,7 @@
             "sack_K4_prop"
           ],
           "ref_scope": "image1: the villain sheet of Boxtel - the envious neighbor; pale skin, narrow face with jealous eyes — 100% identical; studio bg/pose/light NOT used; image2: the cloth-sack design - a dark cloth sack — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "subject identity",
             "prop design",
@@ -730,7 +742,8 @@
           "image_prompt_end": "photoreal cinematic: as he melts into the deep shadows past the fence. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Fleeing into shadow — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Fleeing into shadow — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S14",
@@ -746,7 +759,7 @@
             "garden_E2_prop"
           ],
           "ref_scope": "image1: the royal-guards sheet - soldiers in blue coats and steel helmets with long batons — 100% identical; studio bg/pose/light NOT used; image2: the flower-garden design - Cornelius lush tulip garden — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "subject identity",
             "prop design",
@@ -779,7 +792,8 @@
           "image_prompt_end": "photoreal cinematic: Crane on the guards forming up at the door, a captain stepping forward with papers. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Slow crane-down to the door — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Slow crane-down to the door — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         }
       ],
       "location_ref": "haarlem_garden_workshop",
@@ -851,7 +865,8 @@
           "image_prompt_end": "photoreal cinematic: The fist pauses, then knocks once more, harder. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Repeated knocking — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Repeated knocking — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S16",
@@ -901,7 +916,8 @@
           "image_prompt_end": "photoreal cinematic: on his startled eyes as he sees the guards. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Dawning alarm — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Dawning alarm — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S17",
@@ -951,7 +967,8 @@
           "image_prompt_end": "photoreal cinematic: Cornelius struggles once, then goes still as the grip tightens. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Brief struggle then stillness — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Brief struggle then stillness — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S18",
@@ -1006,7 +1023,8 @@
           "image_prompt_end": "photoreal cinematic: across the crowd as the guards lead Cornelius away, the papers brandished. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Crowd watches, prisoner led away — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Crowd watches, prisoner led away — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S19",
@@ -1056,7 +1074,8 @@
           "image_prompt_end": "photoreal cinematic: The judge's gavel drops, sealing the verdict in cold lamplight. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Gavel dropping — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Gavel dropping — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S20",
@@ -1104,7 +1123,8 @@
           "image_prompt_end": "photoreal cinematic: on his downcast eyes as the word 'life' lands like a blow. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Downcast gaze — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Downcast gaze — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S21",
@@ -1153,7 +1173,8 @@
           "image_prompt_end": "photoreal cinematic: reveals the hulking stone walls and barred windows swallowing him. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes up; the horizon re-settles as the vertical move completes. Gate closing — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes up; the horizon re-settles as the vertical move completes. Gate closing — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S22",
@@ -1202,7 +1223,8 @@
           "image_prompt_end": "photoreal cinematic: He stays motionless, the light slowly dimming. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Light slowly dimming — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Light slowly dimming — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S23",
@@ -1250,7 +1272,8 @@
           "image_prompt_end": "photoreal cinematic: as he opens his eyes, a spark of hope igniting behind them. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Eyes opening — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Eyes opening — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S24",
@@ -1299,7 +1322,8 @@
           "image_prompt_end": "photoreal cinematic: her as the prison gate looms ahead. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track following Rosa — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track following Rosa — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S25",
@@ -1349,7 +1373,8 @@
           "image_prompt_end": "photoreal cinematic: The guards laugh and turn their backs, captivated, as Rosa glances toward the window. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Guards turning away — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Guards turning away — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S26",
@@ -1399,7 +1424,8 @@
           "image_prompt_end": "photoreal cinematic: on the bundle slipping into Cornelius's waiting hands. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Bundle passing through bars — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Bundle passing through bars — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S27",
@@ -1446,7 +1472,8 @@
           "image_prompt_end": "photoreal cinematic: The horse tosses its head, black mane rippling, ready to ride. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Mane rippling — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Mane rippling — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S28",
@@ -1496,7 +1523,8 @@
           "image_prompt_end": "photoreal cinematic: His face disappears beneath the hat brim, only his determined mouth visible. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Hat lowered — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Hat lowered — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S29",
@@ -1546,7 +1574,8 @@
           "image_prompt_end": "photoreal cinematic: beside the galloping horse as it rounds a bend toward the town. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Lateral track; galloping — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Lateral track; galloping — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S30",
@@ -1595,7 +1624,8 @@
           "image_prompt_end": "photoreal cinematic: on the steely gaze fixed on the road ahead. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Wind-blown hat — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Wind-blown hat — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S31",
@@ -1645,7 +1675,8 @@
           "image_prompt_end": "photoreal cinematic: The rider slips toward the door, coat flowing like a shadow. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Rider dismounting — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Rider dismounting — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S32",
@@ -1694,7 +1725,8 @@
           "image_prompt_end": "photoreal cinematic: The figure pauses, listening in the quiet hall. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Figure listening — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Figure listening — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S33",
@@ -1743,7 +1775,8 @@
           "image_prompt_end": "photoreal cinematic: The bulbs safely into the cloth as the hands close around them. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Hands closing over bulbs — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Hands closing over bulbs — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S34",
@@ -1793,7 +1826,8 @@
           "image_prompt_end": "photoreal cinematic: The papers fold away into the coat, secured as proof. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Papers folding away — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Papers folding away — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S35",
@@ -1840,7 +1874,8 @@
           "image_prompt_end": "photoreal cinematic: on his trembling lips as recognition dawns into fear. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Recognition to fear — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Recognition to fear — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S36",
@@ -1890,7 +1925,8 @@
           "image_prompt_end": "photoreal cinematic: Reverse shot: Boxtel backing against the table, raising his hands. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Boxtel backing away — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Boxtel backing away — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S37",
@@ -1940,7 +1976,8 @@
           "image_prompt_end": "photoreal cinematic: as Boxtel crumples against the chair, defeated and dazed. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Boxtel collapsing — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Boxtel collapsing — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S38",
@@ -1989,7 +2026,8 @@
           "image_prompt_end": "photoreal cinematic: The rider toward the door, leaving Boxtel struggling weakly. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Rider turning away — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Rider turning away — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S39",
@@ -2038,7 +2076,8 @@
           "image_prompt_end": "photoreal cinematic: on the bulbs as they gleam — the prize reclaimed. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Bulbs gleaming — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Bulbs gleaming — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S40",
@@ -2093,7 +2132,8 @@
           "image_prompt_end": "photoreal cinematic: as he swings onto the black horse and rides toward the rising dawn. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Mounting and riding off — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Mounting and riding off — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         }
       ],
       "location_ref": "court_prison_night_roads",
@@ -2133,7 +2173,7 @@
             "court_E6_prop"
           ],
           "ref_scope": "image1: the fused master of Cornelius - young gentle flower-grower, calm and kind; linen clothes with a leather apron — 100% identical; studio bg/pose/light NOT used; image2: the forged-documents design - folded false papers — 100% identical; studio bg/pose/light NOT used; image3: the courtroom design - a stern 17th-century court — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2166,7 +2206,8 @@
           "image_prompt_end": "photoreal cinematic: Crane over the court as the charges are lifted and the crowd sighs with relief. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes up; the horizon re-settles as the vertical move completes. Chains removed — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes up; the horizon re-settles as the vertical move completes. Chains removed — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S42",
@@ -2183,7 +2224,7 @@
             "market_E7_prop"
           ],
           "ref_scope": "image1: the fused master of Cornelius - young gentle flower-grower, calm and kind; linen clothes with a leather apron — 100% identical; studio bg/pose/light NOT used; image2: the black-tulip design - a rare near-black tulip with deep violet undertones — 100% identical; studio bg/pose/light NOT used; image3: the flower-market design - a bright flower market stall — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2216,7 +2257,8 @@
           "image_prompt_end": "photoreal cinematic: A customer smiles and pays, more coins glinting in Cornelius's palm. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Coins changing hands — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Coins changing hands — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S43",
@@ -2232,7 +2274,7 @@
             "bulb_K2_prop"
           ],
           "ref_scope": "image1: the golden-coins design - piled gold coins — 100% identical; studio bg/pose/light NOT used; image2: the tulip-bulb design - a round golden-brown tulip bulb — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "prop design",
             "palette",
@@ -2264,7 +2306,8 @@
           "image_prompt_end": "photoreal cinematic: A coin spins and atop the pile, reflecting warm light. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Coin spinning to rest — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Coin spinning to rest — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "action"
+          "motion_intensity": "action",
+          "strength": 0.6
         },
         {
           "id": "S44",
@@ -2281,7 +2324,7 @@
             "haarlem_E1_prop"
           ],
           "ref_scope": "image1: the fused master of Cornelius - young gentle flower-grower, calm and kind; linen clothes with a leather apron — 100% identical; studio bg/pose/light NOT used; image2: the golden-coins design - piled gold coins — 100% identical; studio bg/pose/light NOT used; image3: the 17th-century-Haarlem design - Dutch canals, windmills and tulip merchants' houses — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2314,7 +2357,8 @@
           "image_prompt_end": "photoreal cinematic: -right across smiling children and elders receiving his gifts. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera pans right; the landscape streams past, parallax layers sliding at different speeds. Pan-right across the grateful crowd — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera pans right; the landscape streams past, parallax layers sliding at different speeds. Pan-right across the grateful crowd — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S45",
@@ -2331,7 +2375,7 @@
             "garden_E2_prop"
           ],
           "ref_scope": "image1: the fused master of Cornelius - young gentle flower-grower, calm and kind; linen clothes with a leather apron — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Rosa - brave, clever and loyal; long hair with a scarf over her head — 100% identical; studio bg/pose/light NOT used; image3: the flower-garden design - Cornelius lush tulip garden — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2364,7 +2408,8 @@
           "image_prompt_end": "photoreal cinematic: They turn to each other and Rosa laughs, radiant with happiness. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Shared laugh — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Shared laugh — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S46",
@@ -2380,7 +2425,7 @@
             "black_tulip_K1_prop"
           ],
           "ref_scope": "image1: the fused master of Rosa - brave, clever and loyal; long hair with a scarf over her head — 100% identical; studio bg/pose/light NOT used; image2: the black-tulip design - a rare near-black tulip with deep violet undertones — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2413,7 +2458,8 @@
           "image_prompt_end": "photoreal cinematic: to Cornelius smiling at her, contentment in his gaze. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Smile to smile — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Smile to smile — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S47",
@@ -2430,7 +2476,7 @@
             "garden_E2_prop"
           ],
           "ref_scope": "image1: the fused master of Cornelius - young gentle flower-grower, calm and kind; linen clothes with a leather apron — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Rosa - brave, clever and loyal; long hair with a scarf over her head — 100% identical; studio bg/pose/light NOT used; image3: the flower-garden design - Cornelius lush tulip garden — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2463,7 +2509,8 @@
           "image_prompt_end": "photoreal cinematic: reveals the full garden bursting with flowers and the black tulip at its center. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes up; the horizon re-settles as the vertical move completes. Crane-up revealing the flower-filled house — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes up; the horizon re-settles as the vertical move completes. Crane-up revealing the flower-filled house — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S48",
@@ -2481,7 +2528,7 @@
             "garden_E2_prop"
           ],
           "ref_scope": "image1: the fused master of Cornelius - young gentle flower-grower, calm and kind; linen clothes with a leather apron — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Rosa - brave, clever and loyal; long hair with a scarf over her head — 100% identical; studio bg/pose/light NOT used; image3: the black-tulip design - a rare near-black tulip with deep violet undertones — 100% identical; studio bg/pose/light NOT used; image4: the flower-garden design - Cornelius lush tulip garden — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "L-to-R",
+          "screen_dir": "R-to-L",
           "positive_locks": [
             "face identity",
             "costume",
@@ -2514,7 +2561,8 @@
           "image_prompt_end": "photoreal cinematic: on the black tulip glowing in the last light, the story's emblem, as the frame gently rests. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Settle on the black tulip — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Settle on the black tulip — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         }
       ],
       "location_ref": "court_market_home_garden",

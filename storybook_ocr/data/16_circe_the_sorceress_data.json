@@ -144,7 +144,8 @@
           "image_prompt_end": "photoreal cinematic: toward three small Greek wooden ships tossed on towering waves below, sails torn. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Slow crane-down over boiling sea — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Slow crane-down over boiling sea — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S02",
@@ -190,7 +191,8 @@
           "image_prompt_end": "photoreal cinematic: on the roaring cloud visage as a trident bolt splits the sky. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on the cloud face; lightning strike — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on the cloud face; lightning strike — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "action"
+          "motion_intensity": "action",
+          "strength": 0.6
         },
         {
           "id": "S03",
@@ -239,7 +241,8 @@
           "image_prompt_end": "photoreal cinematic: The trio of ships lurches forward as a wall of water towers behind them. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Lateral track following the ships — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Lateral track following the ships — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S04",
@@ -286,7 +289,8 @@
           "image_prompt_end": "photoreal cinematic: on his steady eyes as calm golden light begins to bloom ahead. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the eyes; light blooms — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the eyes; light blooms — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S05",
@@ -333,7 +337,8 @@
           "image_prompt_end": "photoreal cinematic: revealing the three ships gliding through a calm channel toward the island harbor. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pulls back; depth planes separate, near objects swelling past the lens. Slow pull-back revealing the safe harbor — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pulls back; depth planes separate, near objects swelling past the lens. Slow pull-back revealing the safe harbor — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S06",
@@ -380,7 +385,8 @@
           "image_prompt_end": "photoreal cinematic: Same close-up as he leans forward with a welcoming question, eyes kind. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with subtle torchlight flicker — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with subtle torchlight flicker — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S07",
@@ -430,7 +436,8 @@
           "image_prompt_end": "photoreal cinematic: Shot-reverse to Aeolus listening intently, nodding as the banquet smoke curls. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Shot-reverse between the two speakers — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Shot-reverse between the two speakers — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S08",
@@ -479,7 +486,8 @@
           "image_prompt_end": "photoreal cinematic: on the sealed mouth of the bag as faint gusts ripple its surface from within. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Macro push-in toward the sealed cord — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Macro push-in toward the sealed cord — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S09",
@@ -529,7 +537,8 @@
           "image_prompt_end": "photoreal cinematic: on his hands cradling the bag as if it could burst. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the cradled gift — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the cradled gift — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S10",
@@ -576,7 +585,8 @@
           "image_prompt_end": "photoreal cinematic: as the ships shrink toward the open horizon, island receding. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes up; the horizon re-settles as the vertical move completes. Crane-up as ships sail away — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes up; the horizon re-settles as the vertical move completes. Crane-up as ships sail away — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S11",
@@ -623,7 +633,8 @@
           "image_prompt_end": "photoreal cinematic: closer as the homeland coast sharpens into view, gulls wheeling. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Smooth forward track toward the emerging shore — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Smooth forward track toward the emerging shore — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S12",
@@ -672,7 +683,8 @@
           "image_prompt_end": "photoreal cinematic: -left to the mysterious bag, its cord gleaming, tempting in the noon light. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Pan-left from the men to the tempting bag — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Pan-left from the men to the tempting bag — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         }
       ],
       "location_ref": "storm_sea_aeolus_island_and_feast_hall",
@@ -712,7 +724,7 @@
             "windbag_prop_B2_prop"
           ],
           "ref_scope": "image1: the fused master of the Sailors — Odysseus’s weary crew in torn tunics — 100% identical; studio bg/pose/light NOT used; image2: the sealed ox-hide bag of winds — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -745,7 +757,8 @@
           "image_prompt_end": "photoreal cinematic: on his fingers just grazing the knot as the others lean in behind. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the reaching hand — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the reaching hand — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S14",
@@ -760,7 +773,7 @@
             "windbag_prop_B2_prop"
           ],
           "ref_scope": "image1: the sealed ox-hide bag of winds — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "prop/creature design",
             "palette",
@@ -791,7 +804,8 @@
           "image_prompt_end": "photoreal cinematic: as the seam tears wider and white wind screams through the gap. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Macro push-in; cord slips; light erupts — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Macro push-in; cord slips; light erupts — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S15",
@@ -807,7 +821,7 @@
             "sailors_A5_fused"
           ],
           "ref_scope": "image1: the three Greek wooden ships — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Sailors — Odysseus’s weary crew in torn tunics — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -840,7 +854,8 @@
           "image_prompt_end": "photoreal cinematic: as the tornado swells to swallow the mast and sky. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pulls back; depth planes separate, near objects swelling past the lens. Rapid pull-back as the tornado grows — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pulls back; depth planes separate, near objects swelling past the lens. Rapid pull-back as the tornado grows — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S16",
@@ -855,7 +870,7 @@
             "ship_env_A2_prop"
           ],
           "ref_scope": "image1: the three Greek wooden ships — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "prop/creature design",
             "palette",
@@ -886,7 +901,8 @@
           "image_prompt_end": "photoreal cinematic: one ship as it is hurled outward across the waves. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Crane-down tracking the spinning hulls — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Crane-down tracking the spinning hulls — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S17",
@@ -901,7 +917,7 @@
             "isola_env_A5_prop"
           ],
           "ref_scope": "image1: the mist-shrouded island of Circe — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "prop/creature design",
             "palette",
@@ -932,7 +948,8 @@
           "image_prompt_end": "photoreal cinematic: toward the witch's island shore as a plume of green smoke lifts from the cliffs. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in toward the forbidding shore — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in toward the forbidding shore — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S18",
@@ -948,7 +965,7 @@
             "sailors_A5_fused"
           ],
           "ref_scope": "image1: the three Greek wooden ships — 100% identical; studio bg/pose/light NOT used; image2: the fused master of the Sailors — Odysseus’s weary crew in torn tunics — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -981,7 +998,8 @@
           "image_prompt_end": "photoreal cinematic: past the exhausted crew to the dark grove at the water's edge. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Lateral track across the landing cove — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Lateral track across the landing cove — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S19",
@@ -996,7 +1014,7 @@
             "hall_env_A6_prop"
           ],
           "ref_scope": "image1: the grand stone hall lit by emerald fire — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "prop/creature design",
             "palette",
@@ -1027,7 +1045,8 @@
           "image_prompt_end": "photoreal cinematic: past the threshold as enchantment light intensifies. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in toward the glowing threshold — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in toward the glowing threshold — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S20",
@@ -1043,7 +1062,7 @@
             "hall_env_A6_prop"
           ],
           "ref_scope": "image1: the fused master of Circe — elegant sorceress in crimson robes with a silver staff — 100% identical; studio bg/pose/light NOT used; image2: the grand stone hall lit by emerald fire — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1076,7 +1095,8 @@
           "image_prompt_end": "photoreal cinematic: -right as she crosses toward the entrance, her robes catching the emerald light. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera pans right; the landscape streams past, parallax layers sliding at different speeds. Pan-right following her entrance — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera pans right; the landscape streams past, parallax layers sliding at different speeds. Pan-right following her entrance — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S21",
@@ -1091,7 +1111,7 @@
             "circe_A2_fused"
           ],
           "ref_scope": "image1: the fused master of Circe — elegant sorceress in crimson robes with a silver staff — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1123,7 +1143,8 @@
           "image_prompt_end": "photoreal cinematic: as her eyes flash with emerald sorcery. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the flashing eyes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the flashing eyes — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S22",
@@ -1140,7 +1161,7 @@
             "sailors_A5_fused"
           ],
           "ref_scope": "image1: the fused master of Circe — elegant sorceress in crimson robes with a silver staff — 100% identical; studio bg/pose/light NOT used; image2: Circe’s silver glowing staff — 100% identical; studio bg/pose/light NOT used; image3: the fused master of the Sailors — Odysseus’s weary crew in torn tunics — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1173,7 +1194,8 @@
           "image_prompt_end": "photoreal cinematic: as the dust engulfs the men, twisting and crackling. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pulls back; depth planes separate, near objects swelling past the lens. Pull-back as the spell wave expands — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pulls back; depth planes separate, near objects swelling past the lens. Pull-back as the spell wave expands — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S23",
@@ -1188,7 +1210,7 @@
             "sailors_A5_fused"
           ],
           "ref_scope": "image1: the fused master of the Sailors — Odysseus’s weary crew in torn tunics — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1220,7 +1242,8 @@
           "image_prompt_end": "photoreal cinematic: as his face elongates toward a swine snout, ears rising. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the transforming face — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the transforming face — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S24",
@@ -1236,7 +1259,7 @@
             "hall_env_A6_prop"
           ],
           "ref_scope": "image1: the fused master of the Sailors — Odysseus’s weary crew in torn tunics — 100% identical; studio bg/pose/light NOT used; image2: the grand stone hall lit by emerald fire — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1269,7 +1292,8 @@
           "image_prompt_end": "photoreal cinematic: toward the frightened animals huddled in the emerald light. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Crane-down over the transformed hall — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Crane-down over the transformed hall — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S25",
@@ -1285,7 +1309,7 @@
             "circe_A2_fused"
           ],
           "ref_scope": "image1: the fused master of Odysseus — weathered Greek king in a sea-worn tunic — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Circe — elegant sorceress in crimson robes with a silver staff — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1317,7 +1341,8 @@
           "image_prompt_end": "photoreal cinematic: Shot-reverse to Circe smirking, staff lowered, unbothered. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Shot-reverse confrontation — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Shot-reverse confrontation — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S26",
@@ -1332,7 +1357,7 @@
             "circe_A2_fused"
           ],
           "ref_scope": "image1: the fused master of Circe — elegant sorceress in crimson robes with a silver staff — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1364,7 +1389,8 @@
           "image_prompt_end": "photoreal cinematic: on her cold profile as she speaks the threat. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on her profile — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on her profile — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S27",
@@ -1380,7 +1406,7 @@
             "grove_env_A7_prop"
           ],
           "ref_scope": "image1: the fused master of Odysseus — weathered Greek king in a sea-worn tunic — 100% identical; studio bg/pose/light NOT used; image2: the moonlit cypress grove — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1413,7 +1439,8 @@
           "image_prompt_end": "photoreal cinematic: Static as he pauses beneath a gnarled tree, moonlight breaking through the leaves. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with drifting moonbeams — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Static with drifting moonbeams — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S28",
@@ -1428,7 +1455,7 @@
             "hermes_A4_fused"
           ],
           "ref_scope": "image1: the fused master of Hermes — winged radiant messenger with a caduceus — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1460,7 +1487,8 @@
           "image_prompt_end": "photoreal cinematic: on him as he extends a hand in greeting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on the radiant messenger — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on the radiant messenger — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S29",
@@ -1476,7 +1504,7 @@
             "herb_prop_B4_prop"
           ],
           "ref_scope": "image1: the fused master of Hermes — winged radiant messenger with a caduceus — 100% identical; studio bg/pose/light NOT used; image2: the herb with black root and white blossoms — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1509,7 +1537,8 @@
           "image_prompt_end": "photoreal cinematic: on the white petals as dew of light beads on them. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Macro push-in on the luminous blossom — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Macro push-in on the luminous blossom — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S30",
@@ -1526,7 +1555,7 @@
             "herb_prop_B4_prop"
           ],
           "ref_scope": "image1: the fused master of Hermes — winged radiant messenger with a caduceus — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Odysseus — weathered Greek king in a sea-worn tunic — 100% identical; studio bg/pose/light NOT used; image3: the herb with black root and white blossoms — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1559,7 +1588,8 @@
           "image_prompt_end": "photoreal cinematic: on their joined hands as golden light passes from the god to the hero. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on the exchanged gift — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on the exchanged gift — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S31",
@@ -1576,7 +1606,7 @@
             "potion_prop_B5_prop"
           ],
           "ref_scope": "image1: the fused master of Odysseus — weathered Greek king in a sea-worn tunic — 100% identical; studio bg/pose/light NOT used; image2: the herb with black root and white blossoms — 100% identical; studio bg/pose/light NOT used; image3: the golden protective potion — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1609,7 +1639,8 @@
           "image_prompt_end": "photoreal cinematic: on the swirling potion as it glows faintly gold. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the brewing potion — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the brewing potion — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S32",
@@ -1625,7 +1656,7 @@
             "potion_prop_B5_prop"
           ],
           "ref_scope": "image1: the fused master of Odysseus — weathered Greek king in a sea-worn tunic — 100% identical; studio bg/pose/light NOT used; image2: the golden protective potion — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1658,7 +1689,8 @@
           "image_prompt_end": "photoreal cinematic: as he drinks, a thin golden aura shimmering over his skin. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in as the protective aura blooms — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in as the protective aura blooms — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S33",
@@ -1675,7 +1707,7 @@
             "sailors_A5_fused"
           ],
           "ref_scope": "image1: the fused master of Odysseus — weathered Greek king in a sea-worn tunic — 100% identical; studio bg/pose/light NOT used; image2: the grand stone hall lit by emerald fire — 100% identical; studio bg/pose/light NOT used; image3: the fused master of the Sailors — Odysseus’s weary crew in torn tunics — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1708,7 +1740,8 @@
           "image_prompt_end": "photoreal cinematic: toward Circe at the far end, her smile faltering. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Forward track toward the waiting sorceress — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Forward track toward the waiting sorceress — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S34",
@@ -1725,7 +1758,7 @@
             "odysseus_A1_fused"
           ],
           "ref_scope": "image1: the fused master of Circe — elegant sorceress in crimson robes with a silver staff — 100% identical; studio bg/pose/light NOT used; image2: Circe’s silver glowing staff — 100% identical; studio bg/pose/light NOT used; image3: the fused master of Odysseus — weathered Greek king in a sea-worn tunic — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1758,7 +1791,8 @@
           "image_prompt_end": "photoreal cinematic: as the blast shatters against his golden aura in a shower of harmless sparks. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in as the spell shatters against the aura — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in as the spell shatters against the aura — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S35",
@@ -1774,7 +1808,7 @@
             "odysseus_A1_fused"
           ],
           "ref_scope": "image1: the fused master of Circe — elegant sorceress in crimson robes with a silver staff — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Odysseus — weathered Greek king in a sea-worn tunic — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1806,7 +1840,8 @@
           "image_prompt_end": "photoreal cinematic: Shot-reverse to Odysseus advancing, unshaken, the golden aura steady. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Shot-reverse as power shifts — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Shot-reverse as power shifts — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S36",
@@ -1822,7 +1857,7 @@
             "circe_A2_fused"
           ],
           "ref_scope": "image1: the fused master of Odysseus — weathered Greek king in a sea-worn tunic — 100% identical; studio bg/pose/light NOT used; image2: the fused master of Circe — elegant sorceress in crimson robes with a silver staff — 100% identical; studio bg/pose/light NOT used",
-          "screen_dir": "R-to-L",
+          "screen_dir": "L-to-R",
           "positive_locks": [
             "face identity",
             "costume",
@@ -1854,7 +1889,8 @@
           "image_prompt_end": "photoreal cinematic: on his commanding gaze as Circe yields before him. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the commanding hero — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the commanding hero — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         }
       ],
       "location_ref": "windbag_disaster_and_circes_emerald_island",
@@ -1925,7 +1961,8 @@
           "image_prompt_end": "photoreal cinematic: on her calm face as the power gentle. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in as the spell softens — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in as the spell softens — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S38",
@@ -1974,7 +2011,8 @@
           "image_prompt_end": "photoreal cinematic: as bristles recede and human silhouettes re-enter the glow. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Crane-down over the restoring hall — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Crane-down over the restoring hall — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S39",
@@ -2021,7 +2059,8 @@
           "image_prompt_end": "photoreal cinematic: revealing more restored crewmen rising around him in wonder. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pulls back; depth planes separate, near objects swelling past the lens. Pull-back as more men are restored — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pulls back; depth planes separate, near objects swelling past the lens. Pull-back as more men are restored — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S40",
@@ -2069,7 +2108,8 @@
           "image_prompt_end": "photoreal cinematic: -left across their relieved faces to Odysseus watching proudly. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Pan-left across the reunited crew — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Pan-left across the reunited crew — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S41",
@@ -2117,7 +2157,8 @@
           "image_prompt_end": "photoreal cinematic: Shot-reverse to Circe bowing her head in assent, staff dimmed. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Shot-reverse of the truce — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Shot-reverse of the truce — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S42",
@@ -2163,7 +2204,8 @@
           "image_prompt_end": "photoreal cinematic: along the hulls as sails unfurl in the soft breeze. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Lateral track along the readying fleet — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Lateral track along the readying fleet — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S43",
@@ -2210,7 +2252,8 @@
           "image_prompt_end": "photoreal cinematic: past him into the open starlit sea stretching toward home. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes up; the horizon re-settles as the vertical move completes. Crane-up from the hero to the starry horizon — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes up; the horizon re-settles as the vertical move completes. Crane-up from the hero to the starry horizon — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S44",
@@ -2257,7 +2300,8 @@
           "image_prompt_end": "photoreal cinematic: on the quiet certainty in his gaze. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the peaceful face — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Slow push-in on the peaceful face — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "gentle"
+          "motion_intensity": "gentle",
+          "strength": 0.6
         },
         {
           "id": "S45",
@@ -2303,7 +2347,8 @@
           "image_prompt_end": "photoreal cinematic: as the ships shrink into the silver path of moonlight on the waves. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera cranes up; the horizon re-settles as the vertical move completes. Crane-up as the fleet sails into night — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera cranes up; the horizon re-settles as the vertical move completes. Crane-up as the fleet sails into night — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S46",
@@ -2349,7 +2394,8 @@
           "image_prompt_end": "photoreal cinematic: further as the island becomes a faint shadow on the horizon. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Forward track away from the fading island — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Forward track away from the fading island — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S47",
@@ -2396,7 +2442,8 @@
           "image_prompt_end": "photoreal cinematic: on a sailor's hand pointing toward the first pale light of dawn on the horizon. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in toward the pointing hand and dawn — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in toward the pointing hand and dawn — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         },
         {
           "id": "S48",
@@ -2443,7 +2490,8 @@
           "image_prompt_end": "photoreal cinematic: to a vast painterly sky as the ships become small specks approaching home. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
           "video_prompt_start": "The lens pulls back; depth planes separate, near objects swelling past the lens. Slow pull-back to the epic final frame — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
           "video_prompt_end": "The lens pulls back; depth planes separate, near objects swelling past the lens. Slow pull-back to the epic final frame — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
-          "motion_intensity": "moderate"
+          "motion_intensity": "moderate",
+          "strength": 0.6
         }
       ],
       "location_ref": "restored_hall_and_moonlit_voyage_home",
