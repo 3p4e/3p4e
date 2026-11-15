@@ -18,27 +18,29 @@ Length budget (47): callouts ≤14 EN words, narration ≤~16 EN words — all 7
 TTS: ElevenLabs `eleven_multilingual_v2` (MK+EN one model, verified #13/#23) or MOSS-TTS for MK;
 per-shot 48 kHz PCM16 mono WAV stems. D5/D6 are hard-synced to #44/#45 in both languages.
 
-## 2. Selectable language tracks — the container recipe (from 48_BILINGUAL_DELIVERY_SPEC)
+## 2. Selectable language tracks — container recipe (ALIGNED with the Perseus #23 dual-track pipeline)
 
-One MP4, TWO audio streams; SFX + ambience shared, TTS stem swapped per track:
+Same architecture as #23: ONE container, TWO tagged audio streams, MK default + EN one click away.
+Master container = **MKV** (most robust multi-audio across VLC/mpv/QuickTime; MP4 multi-audio is
+finicky in QuickTime/mobile browsers). Deliver the MKV as master + an MP4 twin if a player needs it.
+
+Pattern: mix ONE master WAV per language first (full film length, A/V-synced to the picture lock,
+−16 LUFS, beds ducked −12 dB under voice), then map both masters:
 
 ```
-ffmpeg -i picture_lock.mp4 -i narration_mk.wav -i narration_en.wav \
-  -i sfx.wav -i ambience_music.wav \
-  -filter_complex "[1:a][3:a][4:a]amix=inputs=3[a_mk];[2:a][3:a][4:a]amix=inputs=3[a_en]" \
-  -map 0:v -map "[a_mk]" -map "[a_en]" \
-  -c:v copy -c:a aac -b:a 192k \
-  -metadata:s:a:0 language=mkd -metadata:s:a:0 title="Macedonian" \
-  -metadata:s:a:1 language=eng -metadata:s:a:1 title="English" \
-  -disposition:a:0 default \
-  hollow_bloom_final.mp4
+ffmpeg -i picture_lock.mp4 \
+       -i mk_master.wav -i en_master.wav \
+       -map 0:v:0 -map 1:a:0 -map 2:a:0 \
+       -c:v copy -c:a aac -b:a 192k \
+       -metadata:s:a:0 language=mkd -metadata:s:a:0 title="Македонски" \
+       -metadata:s:a:1 language=eng -metadata:s:a:1 title="English" \
+       -disposition:a:0 default \
+       hollow_bloom_DUAL.mkv
+# optional twin: -map 0:v:0 -map 1:a -map 2:a ... hollow_bloom_DUAL.mp4
 ```
 
-Result: VLC / browser / QuickTime show a **track selector (Macedonian / English)** —
-standard MP4 multi-audio, no player hacks. Rule carried from spec §6: in EACH mix the
-score never masks voice or SFX; duck −12 dB under dialogue.
-
-Stems to produce per clip: tts_mk/SNN.wav, tts_en/SNN.wav (only the 7 line-shots),
-sfx/SNN.wav (spec §6 map), ambience+music per phase (P1/P2/P3 beds). The mixer
-(tools/mix_23_k6_audio.py pattern) amixes per language; the assembler maps the two
-finished mixes as streams 1 and 2.
+Result: player shows **Audio → Македонски / English**. No re-render, no duplicated video.
+Voice/SFX/ambience stems: tts_mk + tts_en (7 line-shots each), sfx per spec §6 map, P1/P2/P3
+music beds — one mixer pass per language (tools/mix_23_k6_audio.py pattern), both masters −16 LUFS.
+TTS stack note: #23 uses edge-TTS for EN; Hollow Bloom keeps ElevenLabs eleven_multilingual_v2
+(verified MK+EN) or MOSS-TTS for MK — engine variance is fine, MK line quality gets a render-day check.
