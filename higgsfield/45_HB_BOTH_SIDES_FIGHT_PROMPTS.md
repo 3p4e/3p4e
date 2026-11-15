@@ -106,7 +106,7 @@ Negative: duplicate face, extra limbs, new people, morphing, text, watermark.
 
 ### E3 · AZ-side · kf_E3_az_mechanic.png
 Attach: az set. INSERT, macro (reverse of E2). AZ's gauntleted fist DRIVES the greatsword point
-into the frozen tendril's base, the Execution-Sentence rune igniting and racing up the ice toward
+into the frozen tendril's length, the Execution-Sentence rune igniting and racing up the ice toward
 the Bloom's core. One phase: the mark landing. No other people in frame.
 Negative: duplicate face, extra limbs, new people, morphing, text, watermark.
 
@@ -127,6 +127,6 @@ in frame. One phase: the cleave connecting.
 Negative: duplicate face, extra limbs, a third person, severed-head gore, new people, morphing, text, watermark.
 
 ---
-END OF EXPANSION PACK — 14 both-sides keyframes (A1-F2) covering D4 arc beats A-F in DD+AZ
+END OF EXPANSION PACK — 13 both-sides keyframes (A1-F2) covering D4 arc beats A-F in DD+AZ
 perspective pairs. Render with K6 distilled (tools/vast/jobs/p23_hb_k6_50.json is the 50-shot base;
-these 14 extend it to 64 for the both-sides cut). Fire only on the user's GO.
+these 13 extend it to a 116-clip cut (103 spine + 13) for the both-sides cut). Fire only on the user's GO.
