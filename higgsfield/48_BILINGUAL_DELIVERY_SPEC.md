@@ -58,3 +58,28 @@ SFX + ambience are **language-independent** — one render serves both mixes.
 - #13 Fenrir: MK+EN stems already exist (99 files) — ready to mux at picture lock
 - #23 Perseus: MK+EN stems scripted (v3 65-clip) — generation gated on GO
 - Stories 01–40 (excl. 13/23): MK lines authored; **EN translation pass pending director GO** (see cost estimate in chat)
+
+---
+
+## STANDARD — dual-language audio tracks in ONE file (2026-11-15)
+
+**Rule: bilingual delivery is ONE video file with TWO (or more) selectable audio streams — never two separate videos.** Each audio stream is tagged with its ISO-639 language code + a human title; the player shows a track selector (VLC: Audio → Audio Track; mpv: `#`; QuickTime: right-click). MK is `disposition:a:0 default`; the dub is one click away.
+
+### The mux recipe (ffmpeg, no re-render)
+```
+ffmpeg -i picture_lock.mp4 \
+       -i mk_master.wav -i en_master.wav \
+       -map 0:v:0 -map 1:a:0 -map 2:a:0 \
+       -c:v copy -c:a aac -b:a 192k \
+       -metadata:s:a:0 language=mkd -metadata:s:a:0 title="Македонски" \
+       -metadata:s:a:1 language=eng -metadata:s:a:1 title="English" \
+       -disposition:a:0 default \
+       FILENAME_DUAL.mkv
+```
+
+### Rules
+- **Container: MKV** (most robust multi-audio across VLC/mpv/QuickTime). Ship an MP4 twin only if the target platform is finicky; MP4 multi-audio works in VLC/mpv but QuickTime's track menu is unreliable.
+- **Master each track separately to −16 LUFS / −1 dBTP** (per the v4 mix spec) BEFORE muxing — do not loudnorm across mixed-language streams.
+- **Each track is a full mix** (its narration + ducked ambient beds + SFX/score), not a narration-only stem over a shared bed.
+- `-disposition:a:0 default` sets MK as the played-by-default track; language metadata is REQUIRED (ISO-639-2: `mkd`/`eng`) for correct labeling.
+- First applied: VAST #23 Perseus → `media/perseus_assets/k6_master/p23_final_DUAL.mkv`.

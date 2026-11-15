@@ -130,3 +130,8 @@ count + 'no other people in frame'; single-character shots carry a subject ancho
 - **Batch runner:** `tools/vast/render_k6_batch.py` (resume-safe, skips existing >100KB clips, per-shot seed, native-audio mux).
 - **Master assembler:** `tools/assemble_23_k6_master.py` (picture-lock order S01–S20, F01–F10, S26–S60).
 - **Audio:** 3-layer mix per `23_AUDIO_MIX_SPEC_v4_K6.md`; script `23_AUDIO_SCRIPT_MK_EN_v3_65clips.md` (65 lines, ElevenLabs casting table; MOSS-TTS = free MK route).
+
+---
+
+## Delivery addendum — dual-language audio (2026-11-15)
+Bilingual delivery is ONE file with selectable audio tracks (MKV, per-stream language metadata, MK default). See 48_BILINGUAL_DELIVERY_SPEC.md for the mux recipe. Never ship two separate videos per language.
