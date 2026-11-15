@@ -135,3 +135,33 @@ count + 'no other people in frame'; single-character shots carry a subject ancho
 
 ## Delivery addendum — dual-language audio (2026-11-15)
 Bilingual delivery is ONE file with selectable audio tracks (MKV, per-stream language metadata, MK default). See 48_BILINGUAL_DELIVERY_SPEC.md for the mux recipe. Never ship two separate videos per language.
+
+---
+
+## 2026-11-15 (Hollow Bloom autopsy) — HARD RULES added after the measured slop failure
+Source: 50_HB_SLOP_AUTOPSY_20261115.md + 51_SLOP_FIX_RESEARCH_20261115.md. These override
+any earlier clause they contradict.
+
+1. **NEVER name concepts in negatives.** 'morphing, drift, new people, duplicate face,
+   extra limbs' in a negative list still fires the concept embeddings — T2V/I2V models
+   generate what is named. Measured: 53% of HB clips grew random people after the
+   negative-list tail was added. Negatives are for artifacts only: watermark, text, logo.
+   Control people/composition by POSITIVE anchors and the frame budget, not negation.
+2. **No global motion tails.** Per-shot prompt = ONE specific motion verb-phrase + camera
+   + endpoint (39 form). NEVER append global 'the movement stays strong and continuous
+   through the final frame / nothing settles into a held pose' clauses — they fight the
+   start-frame anchor and cause full scene re-dream (measured 78% REDREAM).
+3. **Hold-anchor instead:** add 'the composition, subjects and palette hold; only the
+   named action moves' — tells the model what NOT to touch.
+4. **Content gates are mandatory before any batch approval** (tools/analyze_hb_slop.py):
+   drift-drop ≤0.35 · faces ≤ kf_faces+1 (YuNet 0.75) · palette ≤0.5 · motion 4-20
+   (0-255 scale) · sharpness-last ≥100 · identity-sim vs hero centroid ≥0.30 (once the
+   SFace ref build is fixed). The PROOF clip must pass ALL gates; motion pass alone is
+   NOT approval.
+5. **Anchor tier rule:** Lite/2-step-distill models (K6 Lite, LTX-2B) are previs/motion-
+   blocking tiers ONLY. Finals render on the strongest available anchor (K6 Pro 29B,
+   Wan-FLF, LTX-2.3 22B) with the SAME model for proof and batch.
+6. **Identity is anchored, not described** (KB consensus: 'Text descriptions reduce
+   drift but do not fix it. Identity anchors do.'): keyframe gen uses InstantID/IP-Adapter
+   face-lock; finals add the per-clip SFace-centroid post pass or a per-hero LoRA
+   (Soul-ID pattern, self-hosted).
