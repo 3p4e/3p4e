@@ -7,137 +7,137 @@
 
 ## ACT 1 — ambience: hall
 
-**S01** N: „Високо над облаците, на врвот на светот, живееше еден коњ со крилја.” / ""
+**S01** N: „Високо над облаците, на врвот на светот, живееше еден коњ со крилја.” / "High above the clouds, at the top of the world, lived a horse with wings."
   SFX: room-tone · AMB: hall
 
-**S02** N: „Секој ден тој леташе по небото и ги носеше молњите на кралот на боговите.” / ""
+**S02** N: „Секој ден тој леташе по небото и ги носеше молњите на кралот на боговите.” / "Every day he flew across the sky and carried the thunderbolts of the king of gods."
   SFX: movement-rush · AMB: hall
 
-**S03** N: „Никој смртник не можеше да го јава овој посебен коњ.” / ""
+**S03** N: „Никој смртник не можеше да го јава овој посебен коњ.” / "No mortal could ride this special horse."
   SFX: room-tone · AMB: hall
 
-**S04** N: „Зевс, кралот на сите богови, сам ги примаше молњите.” / ""
+**S04** N: „Зевс, кралот на сите богови, сам ги примаше молњите.” / "Zeus, the king of all gods, himself received the thunderbolts."
   SFX: wind-bed · AMB: hall
 
-**S05** N: „Секоја молња бликаше со своствено небесно сијање.” / ""
+**S05** N: „Секоја молња бликаше со своствено небесно сијање.” / "Every bolt blazed with its own heavenly radiance."
   SFX: room-tone · AMB: hall
 
-**S06** N: „Но далеку под планината, живееше еден млад принц.” / ""
+**S06** N: „Но далеку под планината, живееше еден млад принц.” / "But far below the mountain, lived a young prince."
   SFX: room-tone · AMB: hall
 
-**S07** N: „Белерофон беше наречен за најтешката задача: да го победи легендарното чудовиште.” / ""
+**S07** N: „Белерофон беше наречен за најтешката задача: да го победи легендарното чудовиште.” / "Bellerophon was named for the hardest task: to defeat the legendary monster."
   SFX: room-tone · AMB: hall
 
-**S08** N: „Но во него се роди една смела замисла.” / ""
+**S08** N: „Но во него се роди една смела замисла.” / "But in him was born a bold idea."
   SFX: room-tone · AMB: hall
 
-**S09** N: „Далеку, во една задимена карпа, живееше страшно чудовиште.” / ""
+**S09** N: „Далеку, во една задимена карпа, живееше страшно чудовиште.” / "Far away, in a smoky rock, lived a terrible monster."
   SFX: fire-crackle+magic-shimmer · AMB: hall
 
-**S10** N: „Химера имаше тело на коза, глава на лав и змијска опашка, а захарот ја беше огнен.” / ""
+**S10** N: „Химера имаше тело на коза, глава на лав и змијска опашка, а захарот ја беше огнен.” / "The Chimera had the body of a goat, the head of a lion and a serpent's tail, and its jaw was fiery."
   SFX: fire-crackle+wind-bed · AMB: hall
 
-**S11** N: „Ниту еден смртник досега не беше го јавал крилестиот коњ.” / ""
+**S11** N: „Ниту еден смртник досега не беше го јавал крилестиот коњ.” / "Not a single mortal had yet ridden the winged horse."
   SFX: room-tone · AMB: hall
 
-**S12** CHAR: „Белерофон: „Тој крилест коњ ќе стане моето тајно оружје во борбата со Химера.“” / ""
+**S12** CHAR: „Белерофон: „Тој крилест коњ ќе стане моето тајно оружје во борбата со Химера.“” / "Bellerophon: "That winged horse shall become my secret weapon in the battle with the Chimera.""
   SFX: wind-bed · AMB: hall
 
 **S13** N: „over the shoulder toward the sword” / ""
   SFX: room-tone · AMB: hall
 
-**S14** N: „Набеден на мисла за својата тајна, тој замоли божицата за помош.” / ""
+**S14** N: „Набеден на мисла за својата тајна, тој замоли божицата за помош.” / "Bent on his secret thought, he begged the goddess for help."
   SFX: room-tone · AMB: hall
 
 ## ACT 2 — ambience: hall
 
-**S15** N: „Во сонот му се јави самата божица на мудроста.” / ""
+**S15** N: „Во сонот му се јави самата божица на мудроста.” / "In his dream appeared the goddess of wisdom herself."
   SFX: room-tone · AMB: hall
 
-**S16** N: „Атена го погледна со благ насмев и му прошепоти тајна.” / ""
+**S16** N: „Атена го погледна со благ насмев и му прошепоти тајна.” / "Athena looked upon him with a kind smile and whispered him a secret."
   SFX: wind-bed+intimate-breath · AMB: hall
 
 **S17** N: „her serene eyes hold the dream” / ""
   SFX: wind-bed+magic-shimmer · AMB: hall
 
-**S18** N: „the bridle takes shape in her open palms” / ""
+**S18** N: „the bridle takes shape in her open palms” / "In her hands gleamed pure gold."
   SFX: stone-groan · AMB: hall
 
-**S19** N: „В нејзините раце засвети чисто злато.” / ""
+**S19** N: „В нејзините раце засвети чисто злато.” / "Athena: "Take these golden bridles. Go to the spring Pirene. When Pegasus lands to drink, place them around his neck and tame him.""
   SFX: wind-bed+magic-shimmer · AMB: hall
 
-**S20** Атена: „„Земи ги овие златни узди. Оди кај изворот Пирен. Кога Пегаз ќе слета да пие вода, стави му ги околу вратот и појди го.“” / ""
+**S20** Атена: „„Земи ги овие златни узди. Оди кај изворот Пирен. Кога Пегаз ќе слета да пие вода, стави му ги околу вратот и појди го.“” / "When he woke, beside him he found the golden bridles, a gift from the goddess."
   SFX: wind-bed · AMB: hall
 
-**S21** N: „Кога се разбуди, покрај себе ги најде златните узди, дар од божицата.” / ""
+**S21** N: „Кога се разбуди, покрај себе ги најде златните узди, дар од божицата.” / "The gold gleamed in his hands."
   SFX: room-tone · AMB: hall
 
-**S22** N: „Златото засвети во неговите раце.” / ""
+**S22** N: „Златото засвети во неговите раце.” / "He went where the goddess had told him, toward the spring Pirene."
   SFX: room-tone · AMB: hall
 
-**S23** N: „Ојде таму каде што му рече божицата, кон изворот Пирен.” / ""
+**S23** N: „Ојде таму каде што му рече божицата, кон изворот Пирен.” / "There flowed pure, icy water through the green valley."
   SFX: room-tone · AMB: hall
 
-**S24** N: „Тамо отечеше чиста, ледена вода кроз зелената долина.” / ""
+**S24** N: „Тамо отечеше чиста, ледена вода кроз зелената долина.” / "Bellerophon hid behind the rocks and waited."
   SFX: room-tone · AMB: hall
 
-**S25** N: „Белерофон се притаи зад карпите и чекаше.” / ""
+**S25** N: „Белерофон се притаи зад карпите и чекаше.” / "A shadow descended upon the water, and the winged horse came down to the spring."
   SFX: wind-bed+intimate-breath · AMB: hall
 
-**S26** N: „Над водата се симна сенка, и крилестиот коњ се спушти кон изворот.” / ""
+**S26** N: „Над водата се симна сенка, и крилестиот коњ се спушти кон изворот.” / "There he saw it, calmly drinking its water."
   SFX: room-tone · AMB: hall
 
-**S27** N: „Тамо го виде спокојно како си пие вода.” / ""
+**S27** N: „Тамо го виде спокојно како си пие вода.” / "Bellerophon crept up behind it without a sound."
   SFX: wind-bed · AMB: hall
 
-**S28** N: „Белерофон нечујно му се прикраде одзади.” / ""
+**S28** N: „Белерофон нечујно му се прикраде одзади.” / "With one careful motion he placed the bridles around its neck."
   SFX: room-tone · AMB: hall
 
-**S29** N: „one sandaled foot lands” / ""
+**S29** N: „one sandaled foot lands” / "The creature did not grow alarmed and did not throw him off."
   SFX: room-tone · AMB: hall
 
-**S30** N: „Со едно внимателно движење ги стави уздите околу вратот.” / ""
+**S30** N: „Со едно внимателно движење ги стави уздите околу вратот.” / "Then he mounted the winged horse."
   SFX: room-tone · AMB: hall
 
 **S31** N: „the golden clasp closes” / ""
   SFX: room-tone · AMB: hall
 
-**S32** N: „Животното не се вознемири и не го отфрли.” / ""
+**S32** N: „Животното не се вознемири и не го отфрли.” / "The first beat of the wings lifted them toward the sky."
   SFX: wind-bed · AMB: hall
 
 ## ACT 3 — ambience: hall
 
-**S33** N: „Потоа го јавна крилестиот коњ.” / ""
+**S33** N: „Потоа го јавна крилестиот коњ.” / "They simply flew off into the morning sky."
   SFX: room-tone · AMB: hall
 
-**S34** N: „hands gather the reins” / ""
+**S34** N: „hands gather the reins” / "High above the clouds, the world became small."
   SFX: room-tone · AMB: hall
 
-**S35** N: „Првиот замав на крилјата ги крена кон небото.” / ""
+**S35** N: „Првиот замав на крилјата ги крена кон небото.” / "The wind fluttered his cloak as they flew."
   SFX: stone-groan · AMB: hall
 
-**S36** N: „Тие само одлетаа во утринското небо.” / ""
+**S36** N: „Тие само одлетаа во утринското небо.” / "Suddenly his gaze settled calmly upon the horizon."
   SFX: room-tone · AMB: hall
 
-**S37** N: „Високо над облаците, светот стана мал.” / ""
+**S37** N: „Високо над облаците, светот стана мал.” / "Far away, at the edge of sight, their adventure rose."
   SFX: water-bed · AMB: hall
 
 **S38** N: „Ветрот му развеа наментката додека летаа.” / ""
   SFX: wind-bed · AMB: hall
 
-**S39** N: „Наеднаш погледот му се смири кон хоризонтот.” / ""
+**S39** N: „Наеднаш погледот му се смири кон хоризонтот.” / "Suddenly the volcanic mountain rose before them, from which the monster came."
   SFX: wind-bed · AMB: hall
 
-**S40** N: „Далеку, на работ на видокот, се креваше нивната авантура.” / ""
+**S40** N: „Далеку, на работ на видокот, се креваше нивната авантура.” / "Bellerophon did not waver; his heart was full of courage."
   SFX: room-tone · AMB: hall
 
 **S41** N: „sunlight flares along the gold” / ""
   SFX: fire-crackle · AMB: hall
 
-**S42** N: „Однедечка го стрете вулканската планина од каде што се креваше чудовиштето.” / ""
+**S42** N: „Однедечка го стрете вулканската планина од каде што се креваше чудовиштето.” / "Before them lay a dangerous adventure."
   SFX: fire-crackle+magic-shimmer · AMB: hall
 
-**S43** N: „Белерофон не поколеба; срцето му беше полно со храброст.” / ""
+**S43** N: „Белерофон не поколеба; срцето му беше полно со храброст.” / "A great adventure awaited them."
   SFX: wind-bed · AMB: hall
 
 **S44** N: „the stallion's eye glints” / ""
