@@ -1625,3 +1625,51 @@ Negative: human face in the maw, teeth instead of pore-ring, cute flower, cartoo
 ---
 END — 3 CU-texture inserts. Each renders as a ~2.5s K6 clip (native audio: frost-crack / rune-ignition
 hum / deep spore-breath). They slot before shots 18, 22, 37 respectively.
+
+
+## PART 5 — THE SCRIPT / SCENARIO (for context)
+
+Title: Шупливиот Цвет (The Hollow Bloom) — ~4.5 min, 50 shots, photoreal boss fight.
+Logline: A demon hunter (DD) and a retribution paladin (AZ) enter a dying fungal marsh
+to face the Hollow Bloom — a grey corrupted bloom that speaks — and end it with a
+Freeze-and-Sunder combo.
+
+THE SEVEN DIALOGUE LINES (sparse, Macedonian canon + English delivery):
+  D1 after #07  BLOOM (spore-voice): „Дојдовте да расцветате во мене, како сите што
+                дојдоа пред вас.“ / "You came to bloom within me, like all who came
+                before you."
+  D2 after #19  BLOOM: „Мразот само го успорува гнилежот." / "Frost only slows the rot."
+  D3 #26        PALADIN (under breath): „Светлината не се гаси." / "The light does
+                not go out."
+  D4 #36        BLOOM: „Од трева сте — и во трева ќе ве вратам!" / "From grass you
+                are — and to grass I will return you!"
+  D5 #44        DD: „Замрзни." / "Freeze."
+  D6 #45        PALADIN: „Суди." / "Judge."
+  D7 #49        DD (epilogue, whispered): „И во најтоплото мочуриште, зимата наоѓа
+                пат." / "And even in the warmest marsh, winter finds a way."
+
+SCENARIO BEATS (phases):
+  P1 CONTACT #01-#16: dolly-in on the marsh; corruption advances; heroes enter;
+       first tendrils; DD Rime Beams freeze one; AZ Verdict shatters it (COMBO #19).
+  P2 ESCALATION #17-#34: spore rain; AZ Radiant Sweep; Bloom retaliates — maw opens,
+       tendril wave; heroes dodge; armor states (dd_armor_state, az_armor_state_a/b).
+  P3 CLIMAX #35-#50: both-sides coverage (13 angles A1-F2); heart exposed; DD all-in;
+       AZ final Verdict; Bloom collapses; aftermath — spores settle, marsh breathes;
+       D5 at #44, D6 at #45, D7 epilogue #49.
+  CU inserts: CU1 DD eye-ignite (before #18), CU2 AZ rune-wake (before #22),
+              CU3 Bloom maw-pore (before #37).
+
+## PART 6 — THE REFINED ASK (prompts-only output, named keyframes, cinematography)
+
+OUTPUT RULE: give ONLY the prompts you would use — no essays, no restating our material.
+Every prompt must NAME the keyframe file(s) it belongs to (kf_NN_start.png / kf_NN_end.png).
+
+  Q1 KEYFRAME PROMPTS: your full set of keyframe-image prompts for Grok image generation
+     (one per named kf_NN_start.png / kf_NN_end.png + the CU/both-sides frames), keeping
+     our canon, naming, and attachment map.
+  Q2 VIDEO-MOTION PROMPTS: your full set of per-clip motion prompts, each naming its
+     start keyframe, written so a start-frame I2V model HOLDS the scene (one specific
+     motion + HOLD-anchor; no global keep-moving tail; no named-concept negatives).
+  Q3 CINEMATOGRAPHY METHODOLOGY: anything you would do differently from our method
+     (shot grammar, blocking, lens/scale discipline, phase colour scripts, continuity
+     devices, verification gates per clip) — list your methodology.
