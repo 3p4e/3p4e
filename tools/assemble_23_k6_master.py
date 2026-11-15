@@ -2,7 +2,7 @@
 """Assemble the 65-clip K6 master in picture-lock order + verify joins."""
 import os, subprocess, sys, glob
 ORDER = ([f's{i:02d}' for i in range(1,21)] + [f'f{i:02d}' for i in range(1,11)]
-         + [f's{i}' for i in range(26,61)])
+         + [f's{i}' for i in range(31,66)])
 SRC = 'media/perseus_assets/k6_clips'
 def name(t): return f'{SRC}/p23_{t}_k6.mp4'
 missing = [t for t in ORDER if not (os.path.exists(name(t)) and os.path.getsize(name(t))>100000)]
