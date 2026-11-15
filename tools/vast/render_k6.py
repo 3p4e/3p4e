@@ -21,7 +21,7 @@ print(f'[K6] loaded in {time.time()-t0:.0f}s', flush=True)
 torch.manual_seed(int(j['seed']))
 t=time.time()
 out=pipe(prompt=j['prompt'], image=load_image(j['kf']), height=480, width=832,
-         num_frames=121, num_inference_steps=16, guidance_scale=1.0, sample_audio=True)
+         num_frames=int(j.get('frames',121)), num_inference_steps=16, guidance_scale=1.0, sample_audio=True)
 gen_s=time.time()-t
 os.makedirs('/workspace/out_k6', exist_ok=True)
 raw=f'/workspace/out_k6/p23_s{int(N):02d}_k6.mp4'
