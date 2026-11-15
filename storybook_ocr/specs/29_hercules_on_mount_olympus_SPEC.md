@@ -76,14 +76,14 @@ deformed, extra limbs, morphing, watermark, text, static frame, blurry, low qual
 |---|---|---|---|---|---|---|
 | S01 | WIDE | high-angle | crane-down | moderate | 3.5s | NAR |
 | S02 | MEDIUM | eye-level | push-in | moderate | 3.0s | NAR |
-| S03 | CLOSE | eye-level | static | gentle | 2.5s | NAR |
-| S04 | MEDIUM | low-angle | static | moderate | 3.0s | DLG |
-| S05 | WIDE | low-angle | static | moderate | 3.0s | NAR |
+| S03 | CLOSE | eye-level | track | gentle | 2.5s | NAR |
+| S04 | MEDIUM | low-angle | track | moderate | 3.0s | DLG |
+| S05 | WIDE | low-angle | push-in | moderate | 3.0s | NAR |
 | S06 | WIDE | high-angle | crane-up | moderate | 3.5s | NAR |
 | S07 | WIDE | eye-level | track | moderate | 3.5s | NAR |
-| S08 | CLOSE | eye-level | static | gentle | 2.5s | NAR |
-| S09 | MEDIUM | eye-level | static | moderate | 3.0s | NAR |
-| S10 | WIDE | low-angle | static | moderate | 3.0s | NAR |
+| S08 | CLOSE | eye-level | track | gentle | 2.5s | NAR |
+| S09 | MEDIUM | eye-level | push-in | moderate | 3.0s | NAR |
+| S10 | WIDE | low-angle | track | moderate | 3.0s | NAR |
 
 ### Act II — Пресврт
 
@@ -92,12 +92,12 @@ deformed, extra limbs, morphing, watermark, text, static frame, blurry, low qual
 | # | Size | Angle | Move | motion | t | cue |
 |---|---|---|---|---|---|---|
 | S11 | MEDIUM | eye-level | track | moderate | 3.5s | NAR |
-| S12 | CLOSE | eye-level | static | gentle | 2.5s | NAR |
-| S13 | MEDIUM | over-shoulder | static | moderate | 3.0s | NAR |
-| S14 | WIDE | eye-level | static | moderate | 3.5s | NAR |
-| S15 | WIDE | low-angle | static | moderate | 3.0s | NAR |
-| S16 | MEDIUM | eye-level | static | moderate | 3.0s | NAR |
-| S17 | CLOSE | eye-level | static | gentle | 2.5s | DLG |
+| S12 | CLOSE | eye-level | track | gentle | 2.5s | NAR |
+| S13 | MEDIUM | over-shoulder | track | moderate | 3.0s | NAR |
+| S14 | WIDE | eye-level | track | moderate | 3.5s | NAR |
+| S15 | WIDE | low-angle | track | moderate | 3.0s | NAR |
+| S16 | MEDIUM | eye-level | track | moderate | 3.0s | NAR |
+| S17 | CLOSE | eye-level | track | gentle | 2.5s | DLG |
 | S18 | WIDE | high-angle | crane-up | moderate | 3.5s | NAR |
 | S19 | MEDIUM | eye-level | track | moderate | 3.5s | NAR |
 | S20 | WIDE | low-angle | static | moderate | 3.5s | NAR |

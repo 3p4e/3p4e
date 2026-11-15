@@ -69,7 +69,7 @@ deformed, extra limbs, morphing, watermark, text, static frame, blurry, low qual
 
 ## 3. Acts & shot list (FLF)
 
-**50 shots · ~161.0s runtime · 252.0s rendered @ ~5s/clip.** Per-shot TWO-PROMPT model (43 sec.3): image-gen keyframe prompt (3a) + video-gen continuation prompt (3b); KF·A/KF·B keyframes, continuity and motion live in the machine layer (`data/*_data.json` + embedded JSON in the storyboard HTML).
+**50 shots · ~161.0s runtime · 162.5s rendered @ ~5s/clip.** Per-shot TWO-PROMPT model (43 sec.3): image-gen keyframe prompt (3a) + video-gen continuation prompt (3b); KF·A/KF·B keyframes, continuity and motion live in the machine layer (`data/*_data.json` + embedded JSON in the storyboard HTML).
 
 ### Act I — Заложба
 
@@ -77,20 +77,20 @@ deformed, extra limbs, morphing, watermark, text, static frame, blurry, low qual
 
 | # | Size | Angle | Move | motion | t | cue |
 |---|---|---|---|---|---|---|
-| S01 | WIDE | crane-down | crane-down | action | 3.5s | NAR |
-| S02 | MEDIUM | eye-level | push-in | moderate | 3.5s | NAR |
-| S03 | CLOSE | eye-level | static | gentle | 3.0s | NAR |
-| S04 | INSERT | macro | push-in | action | 3.0s | NAR |
-| S05 | CLOSE | eye-level | static | gentle | 3.0s | NAR |
-| S06 | WIDE | high-angle | pull-back | moderate | 3.5s | NAR |
-| S07 | WIDE | eye-level | track | moderate | 3.5s | NAR |
-| S08 | MEDIUM | eye-level | static | moderate | 3.0s | NAR |
-| S09 | WIDE | eye-level | track | moderate | 3.5s | NAR |
-| S10 | MEDIUM | over-shoulder | shot-reverse | moderate | 3.0s | NAR |
-| S11 | MEDIUM | eye-level | static | moderate | 3.0s | NAR |
-| S12 | WIDE | high-angle | crane-down | action | 3.5s | NAR |
-| S13 | WIDE | eye-level | pan-left | action | 3.0s | NAR |
-| S14 | CLOSE | eye-level | push-in | gentle | 3.0s | NAR |
+| S01 | WIDE | crane-down | crane-down | action | 3.7s | NAR |
+| S02 | MEDIUM | eye-level | push-in | moderate | 2.6s | NAR |
+| S03 | CLOSE | eye-level | static | gentle | 4.2s | NAR |
+| S04 | INSERT | macro | push-in | action | 3.1s | NAR |
+| S05 | CLOSE | eye-level | static | gentle | 2.1s | NAR |
+| S06 | WIDE | high-angle | pull-back | moderate | 3.7s | NAR |
+| S07 | WIDE | eye-level | track | moderate | 2.6s | NAR |
+| S08 | MEDIUM | eye-level | static | moderate | 4.2s | NAR |
+| S09 | WIDE | eye-level | track | moderate | 3.1s | NAR |
+| S10 | MEDIUM | over-shoulder | shot-reverse | moderate | 2.1s | NAR |
+| S11 | MEDIUM | eye-level | static | moderate | 3.7s | NAR |
+| S12 | WIDE | high-angle | crane-down | action | 2.6s | NAR |
+| S13 | WIDE | eye-level | pan-left | action | 4.2s | NAR |
+| S14 | CLOSE | eye-level | push-in | gentle | 3.1s | NAR |
 
 ### Act II — Искушението
 
@@ -98,31 +98,31 @@ deformed, extra limbs, morphing, watermark, text, static frame, blurry, low qual
 
 | # | Size | Angle | Move | motion | t | cue |
 |---|---|---|---|---|---|---|
-| S15 | MEDIUM | eye-level | static | moderate | 3.0s | NAR |
-| S16 | INSERT | macro | pull-back | action | 3.0s | NAR |
-| S17 | MEDIUM | low-angle | static | moderate | 3.0s | DLG |
-| S18 | CLOSE | eye-level | static | gentle | 3.0s | NAR |
-| S19 | WIDE | eye-level | track | moderate | 3.5s | NAR |
-| S20 | MEDIUM | eye-level | track | moderate | 3.5s | NAR |
-| S21 | INSERT | macro | push-in | action | 3.0s | NAR |
-| S22 | WIDE | low-angle | static | moderate | 3.5s | NAR |
-| S23 | MEDIUM | eye-level | push-in | moderate | 3.0s | NAR |
-| S24 | INSERT | macro | pan-left | action | 3.0s | NAR |
-| S25 | MEDIUM | eye-level | static | moderate | 3.0s | NAR |
-| S26 | WIDE | eye-level | pull-back | moderate | 3.5s | NAR |
-| S27 | CLOSE | eye-level | push-in | gentle | 3.0s | NAR |
-| S28 | MEDIUM | over-shoulder | shot-reverse | moderate | 3.0s | DLG |
-| S29 | MEDIUM | eye-level | static | moderate | 3.0s | DLG |
-| S30 | WIDE | eye-level | track | moderate | 3.5s | NAR |
-| S31 | MEDIUM | eye-level | static | moderate | 3.0s | NAR |
-| S32 | CLOSE | eye-level | static | gentle | 3.0s | NAR |
-| S33 | WIDE | eye-level | pan-right | action | 3.5s | NAR |
-| S34 | MEDIUM | eye-level | static | moderate | 3.0s | NAR |
-| S35 | INSERT | macro | push-in | action | 3.5s | NAR |
-| S36 | MEDIUM | eye-level | static | moderate | 3.0s | DLG |
-| S37 | WIDE | eye-level | track | moderate | 3.5s | NAR |
-| S38 | WIDE | eye-level | static | moderate | 3.0s | NAR |
-| S39 | LOW | low-angle | push-in | moderate | 3.0s | NAR |
+| S15 | MEDIUM | eye-level | static | moderate | 3.7s | NAR |
+| S16 | INSERT | macro | pull-back | action | 2.6s | NAR |
+| S17 | MEDIUM | low-angle | static | moderate | 4.2s | DLG |
+| S18 | CLOSE | eye-level | static | gentle | 3.2s | NAR |
+| S19 | WIDE | eye-level | track | moderate | 2.1s | NAR |
+| S20 | MEDIUM | eye-level | track | moderate | 3.7s | NAR |
+| S21 | INSERT | macro | push-in | action | 2.6s | NAR |
+| S22 | WIDE | low-angle | static | moderate | 4.2s | NAR |
+| S23 | MEDIUM | eye-level | push-in | moderate | 3.2s | NAR |
+| S24 | INSERT | macro | pan-left | action | 2.1s | NAR |
+| S25 | MEDIUM | eye-level | static | moderate | 3.7s | NAR |
+| S26 | WIDE | eye-level | pull-back | moderate | 2.6s | NAR |
+| S27 | CLOSE | eye-level | push-in | gentle | 4.2s | NAR |
+| S28 | MEDIUM | over-shoulder | shot-reverse | moderate | 3.2s | DLG |
+| S29 | MEDIUM | eye-level | static | moderate | 2.1s | DLG |
+| S30 | WIDE | eye-level | track | moderate | 3.7s | NAR |
+| S31 | MEDIUM | eye-level | static | moderate | 2.6s | NAR |
+| S32 | CLOSE | eye-level | static | gentle | 4.2s | NAR |
+| S33 | WIDE | eye-level | pan-right | action | 3.2s | NAR |
+| S34 | MEDIUM | eye-level | static | moderate | 2.1s | NAR |
+| S35 | INSERT | macro | push-in | action | 3.7s | NAR |
+| S36 | MEDIUM | eye-level | static | moderate | 2.6s | DLG |
+| S37 | WIDE | eye-level | track | moderate | 4.2s | NAR |
+| S38 | WIDE | eye-level | static | moderate | 3.2s | NAR |
+| S39 | LOW | low-angle | push-in | moderate | 2.1s | NAR |
 | S40 | WIDE | high-angle | pull-back | moderate | 3.5s | NAR |
 
 ### Act III — Нов живот
@@ -131,16 +131,16 @@ deformed, extra limbs, morphing, watermark, text, static frame, blurry, low qual
 
 | # | Size | Angle | Move | motion | t | cue |
 |---|---|---|---|---|---|---|
-| S41 | MEDIUM | eye-level | track | moderate | 3.5s | NAR |
-| S42 | WIDE | crane-up | crane-up | action | 3.5s | NAR |
-| S43 | MEDIUM | eye-level | static | moderate | 3.0s | NAR |
-| S44 | MEDIUM | eye-level | static | moderate | 3.5s | NAR |
-| S45 | CLOSE | macro | push-in | gentle | 3.0s | NAR |
-| S46 | WIDE | eye-level | crane-down | action | 3.5s | NAR |
-| S47 | MEDIUM | eye-level | static | moderate | 3.0s | NAR |
-| S48 | MEDIUM | over-shoulder | push-in | moderate | 3.5s | NAR |
-| S49 | WIDE | eye-level | crane-up | moderate | 3.5s | NAR |
-| S50 | CLOSE | eye-level | pull-back | gentle | 3.5s | NAR |
+| S41 | MEDIUM | eye-level | track | moderate | 3.9s | NAR |
+| S42 | WIDE | crane-up | crane-up | action | 2.8s | NAR |
+| S43 | MEDIUM | eye-level | static | moderate | 4.5s | NAR |
+| S44 | MEDIUM | eye-level | static | moderate | 3.4s | NAR |
+| S45 | CLOSE | macro | push-in | gentle | 2.2s | NAR |
+| S46 | WIDE | eye-level | crane-down | action | 3.9s | NAR |
+| S47 | MEDIUM | eye-level | static | moderate | 2.8s | NAR |
+| S48 | MEDIUM | over-shoulder | push-in | moderate | 4.5s | NAR |
+| S49 | WIDE | eye-level | crane-up | moderate | 3.4s | NAR |
+| S50 | CLOSE | eye-level | pull-back | gentle | 2.1s | NAR |
 
 ---
 

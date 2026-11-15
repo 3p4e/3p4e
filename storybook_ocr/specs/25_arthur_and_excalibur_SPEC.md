@@ -74,16 +74,16 @@ deformed, extra limbs, morphing, watermark, text, static frame, blurry, low qual
 | # | Size | Angle | Move | motion | t | cue |
 |---|---|---|---|---|---|---|
 | S01 | WIDE | high-angle | crane-down | moderate | 3.5s | NAR |
-| S02 | WIDE | eye-level | static | moderate | 3.0s | NAR |
+| S02 | WIDE | eye-level | track | moderate | 3.0s | NAR |
 | S03 | MEDIUM | eye-level | push-in | moderate | 3.5s | DLG |
-| S04 | INSERT | macro | static | gentle | 3.0s | NAR |
-| S05 | MEDIUM | eye-level | static | moderate | 3.5s | NAR |
+| S04 | INSERT | macro | track | gentle | 3.0s | NAR |
+| S05 | MEDIUM | eye-level | track | moderate | 3.5s | NAR |
 | S06 | CLOSE | eye-level | push-in | gentle | 3.5s | NAR |
-| S07 | MEDIUM | low-angle | static | moderate | 3.5s | DLG |
+| S07 | MEDIUM | low-angle | push-in | moderate | 3.5s | DLG |
 | S08 | WIDE | eye-level | track | moderate | 3.5s | NAR |
-| S09 | MEDIUM | eye-level | static | moderate | 3.5s | DLG |
+| S09 | MEDIUM | eye-level | track | moderate | 3.5s | DLG |
 | S10 | WIDE | eye-level | track | moderate | 3.0s | NAR |
-| S11 | INSERT | macro | static | gentle | 3.0s | NAR |
+| S11 | INSERT | macro | track | gentle | 3.0s | NAR |
 | S12 | MEDIUM | eye-level | track | moderate | 3.0s | NAR |
 | S13 | CLOSE | eye-level | push-in | gentle | 3.5s | NAR |
 
@@ -93,7 +93,7 @@ deformed, extra limbs, morphing, watermark, text, static frame, blurry, low qual
 
 | # | Size | Angle | Move | motion | t | cue |
 |---|---|---|---|---|---|---|
-| S14 | WIDE | eye-level | static | moderate | 3.0s | NAR |
+| S14 | WIDE | eye-level | track | moderate | 3.0s | NAR |
 | S15 | MEDIUM | high-angle | static | moderate | 3.5s | NAR |
 | S16 | WIDE | eye-level | pan-right | moderate | 3.5s | NAR |
 | S17 | MEDIUM | low-angle | static | action | 3.5s | DLG |

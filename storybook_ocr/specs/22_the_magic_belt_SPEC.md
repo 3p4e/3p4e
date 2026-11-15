@@ -75,17 +75,17 @@ deformed, extra limbs, morphing, watermark, text, static frame, blurry, low qual
 | S01 | WIDE | high-angle | crane-down | moderate | 3.5s | NAR |
 | S02 | MEDIUM | eye-level | track | moderate | 3.0s | NAR |
 | S03 | CLOSE | eye-level | push-in | gentle | 3.0s | NAR |
-| S04 | INSERT | macro | static | gentle | 2.5s | NAR |
+| S04 | INSERT | macro | track | gentle | 2.5s | NAR |
 | S05 | MEDIUM | low-angle | pan-right | moderate | 3.0s | NAR |
-| S06 | WIDE | eye-level | static | moderate | 3.0s | NAR |
+| S06 | WIDE | eye-level | track | moderate | 3.0s | NAR |
 | S07 | MEDIUM | eye-level | push-in | moderate | 3.0s | NAR |
-| S08 | CLOSE | over-shoulder | static | gentle | 2.5s | NAR |
+| S08 | CLOSE | over-shoulder | track | gentle | 2.5s | NAR |
 | S09 | WIDE | low-angle | crane-up | moderate | 3.0s | NAR |
 | S10 | MEDIUM | eye-level | track | moderate | 3.0s | NAR |
-| S11 | CLOSE | eye-level | static | gentle | 2.5s | NAR |
+| S11 | CLOSE | eye-level | push-in | gentle | 2.5s | NAR |
 | S12 | WIDE | eye-level | pan-left | moderate | 3.5s | NAR |
 | S13 | MEDIUM | low-angle | push-in | moderate | 3.0s | NAR |
-| S14 | CLOSE | eye-level | static | gentle | 2.5s | NAR |
+| S14 | CLOSE | eye-level | track | gentle | 2.5s | NAR |
 
 ### Act II — Трите замави
 

@@ -74,12 +74,12 @@ deformed, extra limbs, morphing, watermark, text, static frame, blurry, low qual
 | S01 | WIDE | high-angle | crane-down | moderate | 3.5s | NAR |
 | S02 | MEDIUM | eye-level | push-in | moderate | 3.0s | NAR |
 | S03 | CLOSE | eye-level | push-in | gentle | 3.0s | NAR |
-| S04 | MEDIUM | eye-level | static | moderate | 3.0s | NAR |
-| S05 | CLOSE | macro | static | gentle | 3.0s | NAR |
-| S06 | CLOSE | eye-level | static | gentle | 2.5s | DLG |
+| S04 | MEDIUM | eye-level | track | moderate | 3.0s | NAR |
+| S05 | CLOSE | macro | push-in | gentle | 3.0s | NAR |
+| S06 | CLOSE | eye-level | push-in | gentle | 2.5s | DLG |
 | S07 | WIDE | eye-level | slow track | moderate | 3.0s | NAR |
-| S08 | MEDIUM | eye-level | static | moderate | 3.0s | NAR |
-| S09 | MEDIUM | eye-level | static | moderate | 3.0s | DLG |
+| S08 | MEDIUM | eye-level | track | moderate | 3.0s | NAR |
+| S09 | MEDIUM | eye-level | track | moderate | 3.0s | DLG |
 | S10 | INSERT | macro | static | gentle | 3.0s | NAR |
 | S11 | CLOSE | eye-level | push-in | gentle | 2.5s | DLG |
 | S12 | SHOT-REVERSE | over-shoulder | static | gentle | 3.0s | DLG |
