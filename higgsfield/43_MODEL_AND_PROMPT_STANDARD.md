@@ -200,3 +200,37 @@ start-corr ≥0.92 (CLIP cosine) · drift-drop ≤15% (RAFT/Farneback) · face-c
 ### Reference jobfile
 p23_hb_wanfc_116.json (Hollow Bloom v2: 108 Wan FC + 8 LTX Dev; pose 29 / depth 25 /
 pose+depth 23 / none 21; chaos fallback flags 12).
+
+---
+
+## Wan 2.2 motion-control routes (research addendum 2026-11-16, from Grok)
+| Model | Use when | Notes |
+|---|---|---|
+| Wan 2.2 Fun Control | Combat / clear humanoid action, camera moves / environment | Primary. DWPose for body action, Video Depth Anything Large for space. Auto-detects control type. HOLD prompt essential. |
+| Wan Animate 2 | Long continuous takes | Better face/identity retention + viewpoint control; heavier, less mature tooling. |
+| Wan 2.1/2.2 VACE | Outfit + face consistency matters more than pure motion | Stronger identity/clothing lock, higher compute. |
+
+**Rule:** single control_video input. Multi-control (pose+depth) requires blending frames first or a custom node. Identity drift is a known Fun Control weakness — HOLD prompt + strong start-frame conditioning helps but is not perfect.
+
+## DWPose parameter tuning for Wan Fun Control (research addendum 2026-11-16, from Grok)
+| Parameter | Default | Recommended for combat |
+|---|---|---|
+| detect_body | true | true — keep on |
+| detect_hands | true | true (false if fingers jitter) |
+| detect_face | true | **false** — face keypoints cause identity/expression leakage |
+| score_threshold | 0.3-0.45 | 0.40 — raise to cut jitter, lower if limbs drop out |
+| detection_threshold | 0.45 | 0.45 — raise to kill background ghosts |
+| stick_width | 4 | 4 |
+
+**Starting profile:** body=true, hands=true, face=false, score=0.40, stick=4. Spot-check 5-10 frames: no black frames, no limb teleporting, hands present when needed, single clean skeleton. Jittery limbs → raise threshold; hands garbage → disable detect_hands; face fighting identity → keep detect_face off.
+
+## Temporal filtering for control videos (research addendum 2026-11-16, from Grok)
+| Method | Complexity | Best for |
+|---|---|---|
+| 5-frame median | Very low | Outlier spikes, combat clips |
+| Savitzky-Golay (window 5-9, poly 2) | Low | Most combat — preserves peaks |
+| EMA zero-lag | Low | Online |
+| Kalman | Medium | Limbs temporarily vanish |
+| SmoothNet | Medium | Offline high quality |
+
+**Chain for Hollow Bloom:** (1) re-extract DWPose with detect_face=false, score=0.40; (2) apply 5-frame median or SavGol window 7; (3) spot-check 10-15 frames for limb stability; (4) feed cleaned control video. Depth flicker → switch to Video Depth Anything (already standard, doc 55).
