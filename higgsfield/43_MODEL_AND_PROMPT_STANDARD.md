@@ -234,3 +234,21 @@ pose+depth 23 / none 21; chaos fallback flags 12).
 | SmoothNet | Medium | Offline high quality |
 
 **Chain for Hollow Bloom:** (1) re-extract DWPose with detect_face=false, score=0.40; (2) apply 5-frame median or SavGol window 7; (3) spot-check 10-15 frames for limb stability; (4) feed cleaned control video. Depth flicker → switch to Video Depth Anything (already standard, doc 55).
+
+---
+
+## Commercial-license decision matrix (research addendum 2026-11-16, from Grok)
+
+| Model | License | Commercial use | Hollow Bloom verdict |
+|---|---|---|---|
+| Wan 2.2 (Fun Control / I2V / Animate) | Apache 2.0 | YES — unrestricted, no revenue/territory/attribution clauses. 'We claim no rights over your generated contents.' | PRIMARY. Cleanest license among strong motion-control models. We own outputs. |
+| Mochi 1 / Open-Sora 2.0 | Apache 2.0 | Yes | Older / limited — not competitive. |
+| LTX-2.3 / 2.5 | LTX-2.x Community License (2026-08-11) | FREE under $10M annual revenue; paid license above. No rights claimed in outputs (§5). Derivatives must use same license. AI-disclosure required in some publishing contexts. | SECONDARY (identity CUs only) — usable commercially below the $10M threshold. |
+| MiniMax H3 | MiniMax H3 Community License (2026-08-02) | EXCLUDES US/EU/UK/KR (territory clause extends to outputs §V.4). 'MiniMax H3' display required on commercial UI (§IV.2). >$20M needs approval. | AVOID for this film — we are in the EU and deliver commercially. |
+| HunyuanVideo 1.5 | Tencent Community License | Excludes EU/UK/KR | AVOID — EU-excluded. |
+
+**Rule (binding):** For Hollow Bloom and any client/commercial VAST delivery, the PRIMARY renderer MUST be an
+Apache-2.0 model (Wan 2.2 family). LTX-2.x is permitted ONLY as the identity-CU fallback and only while the
+project stays under the $10M revenue threshold. MiniMax H3 / HunyuanVideo are NOT permitted for commercial
+delivery from the EU. Wan 2.2's Apache 2.0 means no revenue cap, no territory restriction, no required
+attribution — we own the outputs.
