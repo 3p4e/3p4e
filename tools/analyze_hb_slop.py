@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+# HOLLOW BLOOM slop/content verifier.
+# Q7 GATES (doc 57): drift-drop (Farneback) · palette HSV (histogram) · sharpness (Laplacian)
+# · face-count (YuNet local; InsightFace buffalo_l on-box) — all implemented HERE (cv2-only).
+# start-corr >=0.92 CLIP cosine runs ON-BOX via prov_hb_v2.sh step [4/6] (open_clip installed there).
+# Reject a clip on 2+ gate failures. Thresholds per doc 57 Q7; earlier calibration in doc 50.
 import cv2, os, json, glob, numpy as np
 ROOT='/a0/usr/projects/vast'
 CLIPS=os.path.join(ROOT,'media/dhpf_hb_clips')
