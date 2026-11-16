@@ -117,3 +117,18 @@ LTX-2.5 I2V two-stage template + Union/Pose IC-LoRA (ComfyUI-LTXVideo/example_wo
 **HB tips:** align pose-ref first frame to keyframe pose; one control type at a time (Pose for combat);
 identical character block across related shots; generate longer for D5/D6 sync beats and cut in post;
 save the graph once it passes gates (start-corr, ArcFace identity, palette, no extra people).
+
+---
+
+## 11. External validation (Grok, 2026-11-16) + encoder confirmation
+Grok independently validated the LTX-2.5-primary decision as "coherent, risks understood,
+priority correctly placed on identity + native audio — clean, decisive, defensible."
+
+**Encoder SETTLED:** LTX-2.5 uses a **custom Gemma 4 12B** text encoder (with projection), NOT Gemma 3.
+Pull `gemma4-12b-with-proj-ltx-2.5-comfy-int8-convrot.safetensors` (or the matching INT8/ConvRot variant).
+Caveat: most LTX-2.3 LoRAs transfer, but anything heavily conditioned on the older encoder (face/audio
+identity adapters) must be re-validated or retrained.
+
+Grok's recommended order (adopted): (1) stand up LTX-2.5 box + confirm full weight set,
+(2) train DD character LoRA on the Dev checkpoint, (3) prove one combat shot end-to-end through
+two-stage I2V + Pose IC-LoRA + character LoRA, (4) only then re-point the jobfile + batch.
