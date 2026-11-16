@@ -252,3 +252,32 @@ Apache-2.0 model (Wan 2.2 family). LTX-2.x is permitted ONLY as the identity-CU 
 project stays under the $10M revenue threshold. MiniMax H3 / HunyuanVideo are NOT permitted for commercial
 delivery from the EU. Wan 2.2's Apache 2.0 means no revenue cap, no territory restriction, no required
 attribution — we own the outputs.
+
+---
+
+## MODEL ASSIGNMENT UPDATE (director decision 2026-11-16, supersedes the Wan-2.2-primary rule above)
+
+**LTX-2.5 is the PRIMARY renderer for ALL Hollow Bloom clips** — bulk, combat, close-ups, atmosphere,
+everything. The director explicitly chose LTX-2.5 for everything ("i want LTX 2.5 for everything").
+
+Rationale (director's call, recorded):
+- Strongest identity lock + native synced audio + first/last-frame support in the open-weights tier.
+- Commercially usable under the $10M revenue threshold — the director is comfortable with that threshold
+  ("glad to reach $1M", threshold is 10x that).
+- One pipeline, one prompt standard, one verification stack — simpler than a dual-model split.
+
+**Revised routing:**
+| Role | Model | License |
+|---|---|---|
+| PRIMARY (everything) | LTX-2.5 (Distilled + IC-LoRA control, Dev for LoRA training) | LTX-2.x Community (<$10M) |
+| Backup / fallback if LTX-2.5 fails a class of shots | Wan 2.2 Fun Control | Apache 2.0 |
+| Depth control | Video Depth Anything Large | Apache 2.0 |
+| Pose control | DWPose (face off, score 0.40) | — |
+
+**Standard for every LTX-2.5 shot** (per doc 59):
+- First-frame I2V lock (strength 0.75-0.85) + DD character LoRA (once trained) on hero shots.
+- IC-LoRA control: DWPose for combat action, Video Depth Anything for environment/spatial.
+- Cinematic prompt standard (5-part: camera → environment → single action → audio → style anchors).
+- HOLD discipline: one action, composition/subjects/palette hold, positive constraints only.
+- Two-stage sampling (8-step distilled + x2 spatial upscale) at 1280×720, 121 frames @ 24fps.
+- Verification gates from doc 59 §7 before accepting any clip.
