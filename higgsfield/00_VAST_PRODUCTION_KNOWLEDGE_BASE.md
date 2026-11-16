@@ -674,3 +674,19 @@ Identity-silent continuation prompts are MODEL-SPECIFIC, not universal:
   ADDS people (shot 01 grew a random third person). The fix is a LIGHT count/subject anchor with NO
   full identity restatement: '...the two armored figures ... no other people in frame.'
   Verified: shot 02 with the anchor (ltx23_s02_kf02.mp4) — user to confirm the extra person is gone.
+
+## §23 Hollow Bloom v2 — the Fun Control era (2026-11-16)
+The 2026-11-15 K6 batch failed on content (78% scene re-dream, 53% extra people, 19%
+palette flip — autopsy doc 50). Root causes: global motion tails + named-concept negatives
+in every prompt (hard rules now in doc 43) and motion-only verification. Fix pipeline,
+all committed:
+  50 autopsy → 51 fix research → 53 Grok production package → 55 Video Depth Anything
+  (depth-control standard) → 56 official Wan2.2 Fun Control tutorial → 57 Q1-Q8 operational
+  values → p23_hb_wanfc_116.json (the v2 jobfile, built from the current 100 keyframes).
+Primary renderer is now Wan 2.2 Fun Control (doc 43 new section); LTX-2.3 demoted to
+CU/chaos fallback. Gates: doc 57 Q7 numbers. Sync beats: #44 40f impact@28-30,
+#45 35f impact@24-26. Escalation ladder: doc 57 Q8 (max 4 attempts).
+Open before v2 render: pose control videos for the 3 human actions (Q2), depth controls
+from setting plates via VDA (on-box). No GPU rented; render waits for explicit GO.
+Rename settled FINAL: armor = dd_armor_base.jpg / az_armor_base.jpg,
+hash-immune; '_base' = the complete character card.

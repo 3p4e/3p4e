@@ -165,3 +165,38 @@ any earlier clause they contradict.
    drift but do not fix it. Identity anchors do.'): keyframe gen uses InstantID/IP-Adapter
    face-lock; finals add the per-clip SFace-centroid post pass or a per-hero LoRA
    (Soul-ID pattern, self-hosted).
+
+## 2026-11-16 — Wan 2.2 Fun Control locked as PRIMARY renderer (HB v2 + all future films)
+Source: official ComfyUI tutorial (docs.comfy.org, doc 56) + Grok production package (doc 53)
++ operational clarifications (doc 57). This section supersedes the 'K6-Lite bulk' default.
+
+### The v2 canonical stack
+- PRIMARY: Wan 2.2 Fun Control (Alibaba PAI, Apache 2.0). Models
+  wan2.2_fun_control_high/low_noise_14B_fp8_scaled.safetensors; acceleration
+  wan2.2_i2v_lightx2v_4steps_lora_v1_high/low_noise.safetensors (HIGH↔HIGH, LOW↔LOW only);
+  umt5_xxl_fp8_e4m3fn_scaled.safetensors; wan_2.1_vae.safetensors.
+  Template: ComfyUI Workflow → Browse Templates → Video → Wan2.2 Fun Control.
+- CONTROL VIDEOS (the anti-re-dream mechanism):
+  · body action (heroes) → DWPose control video, clean single-subject real reference footage
+  · space/environment (marsh, Bloom, wide geometry) → Video Depth Anything LARGE
+    (doc 55; temporal-consistent, never frame-by-frame DAv2 for >2-3s)
+  · both → pose+depth. atmosphere → none (start frame + HOLD only).
+- FALLBACK: LTX-2.3 Dev 30-40 steps CFG 3.0-3.5 start-strength 0.7-0.8 for extreme CUs
+  (face/hair/tattoo); LTX Distilled 8-12 steps for violent chaos where drift reads as energy.
+  Identity escalation: start-strength → TASS-RoPE tools (LTX-Best-Face-ID / Likeness Guide).
+
+### The canonical video prompt (HOLD form — every clip, asserted in the jobfile builder)
+"Using start frame kf_XX_start.png. Composition, subjects, lighting direction, palette and
+subject count hold. Only <one concrete action>. Driven by <pose/depth> control video.
+Camera: <move or locked>."
+Builder: tools/build_hb_wanfc_jobfile.py — the build FAILS on any banned tail, scene
+restatement, or named-concept negative.
+
+### Verification gates (Q7 — reject on 2+ failures, per clip, BEFORE batch)
+start-corr ≥0.92 (CLIP cosine) · drift-drop ≤15% (RAFT/Farneback) · face-count exact
+(InsightFace/MTCNN vs keyframe) · palette HSV ≤12 (OpenCV hist) · motion band 2-18 px/frame
+· sharpness ≥80 (Laplacian var).
+
+### Reference jobfile
+p23_hb_wanfc_116.json (Hollow Bloom v2: 108 Wan FC + 8 LTX Dev; pose 29 / depth 25 /
+pose+depth 23 / none 21; chaos fallback flags 12).
