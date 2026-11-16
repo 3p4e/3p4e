@@ -244,14 +244,14 @@ pose+depth 23 / none 21; chaos fallback flags 12).
 | Wan 2.2 (Fun Control / I2V / Animate) | Apache 2.0 | YES — unrestricted, no revenue/territory/attribution clauses. 'We claim no rights over your generated contents.' | PRIMARY. Cleanest license among strong motion-control models. We own outputs. |
 | Mochi 1 / Open-Sora 2.0 | Apache 2.0 | Yes | Older / limited — not competitive. |
 | LTX-2.3 / 2.5 | LTX-2.x Community License (2026-08-11) | FREE under $10M annual revenue; paid license above. No rights claimed in outputs (§5). Derivatives must use same license. AI-disclosure required in some publishing contexts. | SECONDARY (identity CUs only) — usable commercially below the $10M threshold. |
-| MiniMax H3 | MiniMax H3 Community License (2026-08-02) | EXCLUDES US/EU/UK/KR (territory clause extends to outputs §V.4). 'MiniMax H3' display required on commercial UI (§IV.2). >$20M needs approval. | AVOID for this film — we are in the EU and deliver commercially. |
-| HunyuanVideo 1.5 | Tencent Community License | Excludes EU/UK/KR | AVOID — EU-excluded. |
+| MiniMax H3 | MiniMax H3 Community License (2026-08-02) | EXCLUDES US/EU/UK/KR (territory clause extends to outputs §V.4). 'MiniMax H3' display required on commercial UI (§IV.2). >$20M needs approval. | **CORRECTION 2026-11-16:** North Macedonia is NOT an EU member (candidate only) — the territory exclusion does NOT apply. H3 is legally usable from MK under $20M, BUT stays OUT of Hollow Bloom for production reasons (API-only, no local IC-LoRA control). |
+| HunyuanVideo 1.5 | Tencent Community License | Excludes EU/UK/KR | **CORRECTION 2026-11-16:** Same as H3 — North Macedonia is not an EU member, so the exclusion does not apply from MK. Production-unfit for Hollow Bloom (no local control), not legally banned. |
 
-**Rule (binding):** For Hollow Bloom and any client/commercial VAST delivery, the PRIMARY renderer MUST be an
-Apache-2.0 model (Wan 2.2 family). LTX-2.x is permitted ONLY as the identity-CU fallback and only while the
-project stays under the $10M revenue threshold. MiniMax H3 / HunyuanVideo are NOT permitted for commercial
-delivery from the EU. Wan 2.2's Apache 2.0 means no revenue cap, no territory restriction, no required
-attribution — we own the outputs.
+**Rule (binding):** For Hollow Bloom and any client/commercial VAST delivery, LTX-2.5 is the PRIMARY renderer
+(director decision 2026-11-16). LTX-2.x is usable commercially under $10M annual revenue; we accept the threshold.
+Wan 2.2 (Apache 2.0) is the BACKUP. MiniMax H3 / HunyuanVideo are NOT banned for North Macedonia (not an EU
+member) — they remain excluded from Hollow Bloom for PRODUCTION reasons (API-only, no local control). Wan 2.2's
+Apache 2.0 means no revenue cap, no territory restriction, no required attribution — we own the outputs.
 
 ---
 
