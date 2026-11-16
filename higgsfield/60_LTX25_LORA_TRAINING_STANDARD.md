@@ -44,3 +44,35 @@ to_k/q/v/out.0 = attention projections → strongest influence on identity/appea
 
 ## Inference
 Load via LoraLoaderModelOnly, strength 0.8-1.2. Works on Distilled AND Dev paths. Combine with first-frame I2V for strongest lock. Keep trigger out of prompts unless forcing the character.
+
+---
+
+## GENERALIZATION — this standard applies to ANY character / face card, not just DD
+
+The recipe above is written for DD, but every rule is **character-agnostic**. For any new hero,
+villain, or recurring character, parameterize only these — the config, workflow, gates, and
+validation protocol do NOT change:
+
+| Slot | DD example | Any character |
+|---|---|---|
+| `<CHAR>` name | dd_demon_hunter | short lowercase snake token, e.g. `az_paladin`, `perseus_hero`, `fenrir_wolf` |
+| `<CHAR>` trigger | `dd_demon_hunter` | the same token; keep it unique, never a real word |
+| Dataset source | `faces/dd_cards_final/` + DD originals | that character's `faces/<name>_cards_final/` + originals (enrolled, identity-locked) |
+| Distinctive features | floating teal-blue hair, frost-arcane armor | the 2-4 features that define the character — prioritize these in captions |
+| Armor/weapon views | included | include if they must stay locked across shots |
+
+**Universal steps (unchanged for every character):**
+1. Confirm the character's face cards / originals are enrolled + identity-locked (SFace centroid in `faces/identity_index.json`).
+2. Build the dataset: 20-30+ multi-angle images/clips, captions + `<CHAR>` trigger, ÷32 buckets, (F-1)%8==0 frames.
+3. Train on the **ltx-2.5-22b-dev** transformer with **Gemma-4-LTX** encoder — never vanilla Gemma.
+4. Config exactly: `rank 32 / alpha 32 / dropout 0.0 / target [to_k,to_q,to_v,to_out.0]`; 1000-2000 steps, lr 1e-4.
+5. Validate per doc 61 (two samples, keep all checkpoints, pick latest-holds-identity).
+6. Deploy: `LoraLoaderModelOnly` strength 0.8-1.2 on Distilled or Dev + first-frame I2V + IC-LoRA control.
+
+**Multi-character films (e.g. DD + AZ in the same shot):**
+- Train **one LoRA per character** (do NOT combine two identities into one adapter — it blends them).
+- Load each via its own `LoraLoaderModelOnly`; keep the **total stack under ~2.0** combined strength.
+- If VRAM won't fit two full LoRAs on the 48GB path, use the 80GB box or run two passes with a shared scene plate.
+
+**Face-card → LoRA handoff rule:** a character is ready to train when it has (a) enrolled face cards,
+(b) an SFace centroid in `identity_index.json`, and (c) 20-30 usable multi-angle assets. No card, no LoRA.
