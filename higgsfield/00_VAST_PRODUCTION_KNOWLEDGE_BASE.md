@@ -690,3 +690,35 @@ Open before v2 render: pose control videos for the 3 human actions (Q2), depth c
 from setting plates via VDA (on-box). No GPU rented; render waits for explicit GO.
 Rename settled FINAL: armor = dd_armor_base.jpg / az_armor_base.jpg,
 hash-immune; '_base' = the complete character card.
+
+---
+
+## §24 — Hollow Bloom v2 Wan-Fun-Control session, 2026-11-16 (PROOFS + 2 DEFECTS FOUND)
+
+**Box:** contract 60895689 (Q RTX 8000 48GB, $0.268/h) — DESTROYED on director order after proofs; 0 live.
+
+**What WORKED (verified):**
+- Official Wan2.2 Fun Control stack on 48GB: ComfyUI 0.45.0 + fp8 high/low 14B + lightx2v 4-step
+  LoRA pair (HIGH↔HIGH / LOW↔LOW) + umt5 + wan_2.1 VAE. No-control start-frame route renders clean.
+- **s01 proof (atmosphere, no control): ALL 6 GATES PASS** — start-corr +0.933, motion 4.63, sharpness
+  1302→1057 held, no re-dream. File: media/dhpf_hb_v2_proofs/wanfc_s01_proof.mp4.
+- Graph wiring: positive=["fc",0], negative=["fc",1], latent=["fc",2] into the high/low samplers.
+  MY EARLIER 'list indices must be integers' error was MY bug — I fed string "0" not int 0. ComfyUI fine.
+
+**DEFECTS FOUND on s19 (Freeze-and-Sunder, pose+depth control) — NOT yet fixed:**
+1. **Palette flip to warm** — dominant hue slid f000 H=0 (red/black) → f080 H=30 (orange/gold); value
+   39→48, teal coverage only 3-5%. Teal-slate marsh NOT held. Fix: pin Q1 palette-value lock clause
+   into the HOLD prompt ('teal-slate palette, pale-blue bioluminescence remain exactly as the start frame').
+2. **Random extra people** — 2 large skin blobs appear f020-f040 (second figure). Root cause: the Mixkit
+   sword_strike reference has TWO fighters; default DWPose drew BOTH as skeletons → Wan reproduced two
+   bodies. Fix applied + saved: single-subject DWPose isolation (keep largest person per frame, trimmed
+   window, face off). Clean single-skeleton pose controls saved:
+   media/dhpf_hb_v2_proofs/pose_refs/ (crossbow_draw_pose, sword_strike_pose, vault_land_pose,
+   sword_strike_single) — all SHA-256 verified.
+
+**NOT yet re-fired:** s19 with palette-lock + single-subject pose. The two fixes are staged but the box
+was destroyed before the re-fire. Next box: re-fire s19 (or a clean single-character hero action like
+s03 crossbow-cock that maps 1:1 to the pose ref) to confirm both defects are dead before any batch.
+
+**Doc 43 addenda committed (a9e42ca):** Wan motion-control routes (Fun Control/Animate2/VACE), DWPose
+combat tuning profile (body=T, hands=T, face=F, score 0.40), temporal filtering chain (median/SavGol).
