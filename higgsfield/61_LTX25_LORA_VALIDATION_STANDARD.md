@@ -36,3 +36,12 @@ ALWAYS two samples: (1) first-frame conditioned, (2) text-only with trigger in a
 - Trainer validation runner is single-stage; production two-stage (ltx-pipelines/ComfyUI) is more representative.
 - First-frame conditioned validation is more reliable than pure T2V for identity.
 - Review auto-generated captions before preprocessing — poor captions are the most common weak-identity cause.
+
+
+---
+
+## Sunder 60s Validation Sequence
+
+1. Train AZ LoRA → validate (3 seeds vs az_cards_final) → pass/fail
+2. Train DD LoRA → validate (3 seeds vs dd_cards_final) → pass/fail
+3. Only proceed to batch when BOTH LoRAs pass identity gates

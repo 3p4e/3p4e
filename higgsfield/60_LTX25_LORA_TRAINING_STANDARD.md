@@ -76,3 +76,13 @@ validation protocol do NOT change:
 
 **Face-card → LoRA handoff rule:** a character is ready to train when it has (a) enrolled face cards,
 (b) an SFace centroid in `identity_index.json`, and (c) 20-30 usable multi-angle assets. No card, no LoRA.
+
+
+---
+
+## Training Order (Sunder 60s cut)
+
+Train **AZ first**, then **DD**. Both LoRAs must pass identity validation before batch rendering.
+- **AZ LoRA**: source from `faces/az_cards_final/`, reference `az_armor_base.jpg`
+- **DD LoRA**: source from `faces/dd_cards_final/`, reference `dd_armor_base.jpg`
+- Validate each with 3 seed renders against enrolled face cards before proceeding
