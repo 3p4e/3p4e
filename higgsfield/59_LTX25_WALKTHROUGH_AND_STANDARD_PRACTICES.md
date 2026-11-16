@@ -80,3 +80,40 @@ Structure: (1) shot type + camera move (2) full environment/ lighting/palette (3
 7. Post: color, grain, dialogue timing, AI disclosure
 
 **This is the strongest cinematic + identity + motion + commercial-usable open-weights stack on 48GB.**
+
+---
+
+## 10. Concrete node chain — LTX-2.5 combat shot (I2V + Pose IC-LoRA)
+Production chain for a Hollow Bloom combat shot (DD crossbow / AZ greatsword). Base: official
+LTX-2.5 I2V two-stage template + Union/Pose IC-LoRA (ComfyUI-LTXVideo/example_workflows/2.5/).
+
+1. **Model loading**
+   - UNETLoader → ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors (or BF16 if VRAM)
+   - CLIPLoader (type ltxv) → gemma4-12b-with-proj-ltx-2.5-comfy-int8-convrot.safetensors
+   - VAELoader → ltx-2.5-video-vae-bf16.safetensors AND ltx-2.5-audio-vae-bf16.safetensors
+   - Optional 2nd CLIPLoader for prompt enhancer (gemma4_e2b_it_int8_convrot)
+2. **Character LoRA (DD — recommended)**
+   - LoraLoaderModelOnly after UNET → trained DD LoRA, strength 0.8-1.2, feed to all sampler stages
+3. **First-frame identity lock**
+   - LoadImage → kf_XX_start.png into the I2V conditioning path (strength 0.75-0.85 stage 1, higher stage 2)
+4. **Pose control (IC-LoRA)**
+   - LoadVideo → reference action video → DWPreprocessor/DWPose Estimator (skeletons) → resize ÷32
+   - LTXICLoRALoaderModelOnly → pose/union IC-LoRA (ltx-2.5-22b-ic-lora-union-control-ref0.5.safetensors) strength 1.0
+   - LTXAddVideoICLoRAGuide → injects pose guide frames
+5. **Prompt** — style/lighting/environment/audio, NOT body motion. CLIPTextEncode positive; optional prompt_enhance.
+6. **Two-stage sampling** — Stage 1: 8 steps, CFG 1.0, euler_ancestral. LTXVCropGuides. Stage 2: x2 spatial upscale (ltx-2.5-latent-spatial-upscaler-x2) + 3-4 refine steps, re-inject first frame at higher strength.
+7. **Decode + output** — video VAE + audio VAE decode → VideoCombine/official output → MP4 with synced audio. Optional Diffusion Video Decoder for sharper faces.
+
+| Setting | Value | Notes |
+|---|---|---|
+| Steps (stage 1) | 8 | distilled fixed |
+| CFG | 1.0 | baked in |
+| Frames | 121 (8n+1) | ~5s @ 24fps |
+| Resolution | 1280×720 / 736 | ÷32 |
+| IC-LoRA strength | 1.0 | lower only if it fights first frame |
+| First-frame strength | 0.75-0.85 (stg1) | higher stg2 |
+| Character LoRA | 0.8-1.2 | total stack < ~2.0 |
+
+**HB tips:** align pose-ref first frame to keyframe pose; one control type at a time (Pose for combat);
+identical character block across related shots; generate longer for D5/D6 sync beats and cut in post;
+save the graph once it passes gates (start-corr, ArcFace identity, palette, no extra people).
