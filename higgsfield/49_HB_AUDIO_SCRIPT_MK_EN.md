@@ -18,6 +18,8 @@ Length budget (47): callouts ≤14 EN words, narration ≤~16 EN words — all 7
 TTS: ElevenLabs `eleven_multilingual_v2` (MK+EN one model, verified #13/#23) or MOSS-TTS for MK;
 per-shot 48 kHz PCM16 mono WAV stems. D5/D6 are hard-synced to #44/#45 in both languages.
 
+SYNC FRAME CONTRACT (v2, doc 57 Q6 — 24fps): clip #44 = 40 frames (1.67s), D5 impact lands on frames 28-30; clip #45 = 35 frames (1.46s), D6 impact lands on frames 24-26. MK stems D5 (1.68s) / D6 (1.44s) are aligned so the word onset hits the impact frame; the mix is timed to frame, not to wall-clock.
+
 ## 2. Selectable language tracks — container recipe (ALIGNED with the Perseus #23 dual-track pipeline)
 
 Same architecture as #23: ONE container, TWO tagged audio streams, MK default + EN one click away.
