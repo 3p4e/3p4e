@@ -1,0 +1,51 @@
+<!doctype html><html lang="mk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ABRACADABRA — Упатство / Instructions</title>
+<style>body{font:16px/1.55 system-ui,Arial,sans-serif;max-width:820px;margin:24px auto;padding:0 16px;color:#1b1b1f}
+h1{margin-bottom:0}h2{margin-top:28px;border-bottom:2px solid #e5e5ea;padding-bottom:4px}code{background:#f0f0f4;padding:1px 5px;border-radius:4px}
+.box{background:#fff7e0;border-left:4px solid #e0a800;padding:8px 12px;margin:12px 0}ol li,ul li{margin:4px 0}.en{color:#444}</style></head><body>
+<h1>ABRACADABRA</h1><p>Дигитално мени за 2 ТВ · Digital menu for 2 TVs · работи без интернет / works offline</p>
+
+<h2>1. Што има на USB / What is on the stick</h2>
+<ul>
+<li><code>TV1.html</code> — ТВ 1 (бургери, сендвичи, тостови) · <span class="en">TV 1</span></li>
+<li><code>TV2.html</code> — ТВ 2 (врапови, скара, десерти, додатоци) · <span class="en">TV 2</span></li>
+<li><code>TV1_classic.html</code>, <code>TV2_classic.html</code> — класичен изглед · <span class="en">classic look</span></li>
+<li><code>admin.html</code> — уредник за цени · <span class="en">price editor</span></li>
+<li><code>menu-data.js</code> — <b>целото мени</b> (јадења, цени, промоции, текст) · <span class="en">the whole menu</span></li>
+<li><code>assets/</code> — видеа, слики, фонтови · <span class="en">videos, images, fonts (do not rename or delete)</span></li>
+</ul>
+<div class="box">Сите датотеки мора да останат заедно во истата папка. · <span class="en">Keep all files together in the same folder.</span></div>
+
+<h2>2. Прикажување на ТВ / Show it on the TV</h2>
+<ol>
+<li>Копирајте ја папката <code>ABRACADABRA_MENU</code> на USB. · <span class="en">Copy the folder to the USB stick.</span></li>
+<li>Ставете го USB во ТВ. Отворете ја апликацијата за интернет-прелистувач или „Медиа/USB“. · <span class="en">Plug it in and open the TV's browser or Media/USB app.</span></li>
+<li>На ТВ 1 отворете <code>TV1.html</code>, на ТВ 2 отворете <code>TV2.html</code>. · <span class="en">Open TV1.html on the first TV and TV2.html on the second.</span></li>
+<li>Прикажете преку цел екран (F11 или „Fullscreen“). Потребен е екран 16:9 (1920×1080). · <span class="en">Use full screen; a 16:9 screen is needed.</span></li>
+</ol>
+<div class="box"><b>Ако ТВ-прелистувачот не ги отвора локалните датотеки или не пушта видео:</b> користете Android TV box / Fire Stick / мини-компјутер со Chrome. Команда за киоск-режим (Windows, USB е буква E:):<br>
+<code>chrome --kiosk --autoplay-policy=no-user-gesture-required --allow-file-access-from-files file:///E:/ABRACADABRA_MENU/TV1.html</code><br>
+<span class="en">If the TV browser blocks local files or video autoplay, use a TV box or mini PC with Chrome and the command above.</span></div>
+<p>Автоматски: ноќен изглед од 19:00 до 06:00, кинематски клип на секои 2 минути, заштита од „burn-in“. · <span class="en">Automatic night mode 19:00–06:00, a cinematic clip every 2 minutes, anti burn-in.</span></p>
+
+<h2>3. Менување на цени / Change prices</h2>
+<ol>
+<li>На компјутер отворете <code>admin.html</code> од USB во Chrome или Edge. · <span class="en">On a computer open admin.html in Chrome or Edge.</span></li>
+<li>Променете цени, јадења, промоции или текст. · <span class="en">Edit prices, items, promos or ticker text.</span></li>
+<li>Притиснете <b>„⬇ menu-data.js“</b>. Прелистувачот ќе симне нова датотека <code>menu-data.js</code>. · <span class="en">Press "⬇ menu-data.js"; a new file is downloaded.</span></li>
+<li>Копирајте ја <b>преку</b> старата <code>menu-data.js</code> на USB (потврдете „Replace“). · <span class="en">Copy it over the old menu-data.js on the stick.</span></li>
+<li>Ставете го USB во ТВ и освежете ја страницата (F5) или рестартирајте. · <span class="en">Plug it back in and reload the page.</span></li>
+</ol>
+<div class="box"><b>Внимание:</b> копчето „Зачувај“ во <code>admin.html</code> зачувува само во тој прелистувач на компјутерот — ТВ <b>не</b> го гледа. Важна е само симнатата <code>menu-data.js</code>.<br>
+<span class="en">The Save button only stores in that browser; the TV never sees it. Only the downloaded menu-data.js counts.</span></div>
+<p>Брза измена: <code>menu-data.js</code> може да се отвори и во Notepad; променете го само бројот на цената, не ги бришете наводниците и запирките. · <span class="en">You can also edit menu-data.js in Notepad; change only the numbers and keep the quotes and commas.</span></p>
+<p>Пред да го користите на ресторан, пробајте една промена на цена на компјутер. · <span class="en">Test one price change on a computer before relying on it.</span></p>
+
+<h2>4. Ако нешто не работи / Troubleshooting</h2>
+<ul>
+<li>Празен екран или нема видео → користете Chrome (точка 2). · <span class="en">Blank or no video → use Chrome.</span></li>
+<li>Старите цени се прикажуваат → освежете со Ctrl+F5, проверете дали <code>menu-data.js</code> е заменета. · <span class="en">Old prices → hard refresh and check the file was replaced.</span></li>
+<li>Чудни букви или текст → не ја преименувајте папката <code>assets/fonts</code>. · <span class="en">Odd text → do not rename assets/fonts.</span></li>
+<li>Опции во адресата: <code>?mode=day</code> или <code>?mode=night</code>, <code>&amp;cine=0</code> исклучува кинематски клипови, <code>&amp;cine=5</code> на секои 5 минути. · <span class="en">URL options for day/night and clip interval.</span></li>
+</ul>
+</body></html>
