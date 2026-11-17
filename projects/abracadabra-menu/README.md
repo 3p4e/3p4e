@@ -5,18 +5,18 @@ same page with a different `screen` parameter:
 
 | TV | Address | Shows |
 |---|---|---|
-| Left  | `index.html?screen=1` | Бургери, Сендвичи, Тостови (+ Поховано, Веге when they have prices) |
-| Right | `index.html?screen=2` | Врапови, Скара, Салати, Десерти, Додатоци, Кафе, Пијалоци |
+| Left  | `cinematic-board.html?screen=1` | Бургери, Сендвичи, Тостови (+ Поховано, Веге when they have prices) |
+| Right | `cinematic-board.html?screen=2` | Врапови, Скара, Салати, Десерти, Додатоци, Кафе, Пијалоци |
 | Editor | `admin.html` | Change prices, items, promos, ticker text |
 
 ## Two board designs (same data, same features)
 Both boards read the same `menu-data.js`, the same admin overrides and the same Google Sheet, and both play every video layer below.
-Pick one per TV. Changing a price in `admin.html` updates either board.
+The TVs run **`cinematic-board.html`**; `index.html` stays as the alternative look. Changing a price in `admin.html` updates either board.
 
 | Board | Address | Look |
 |---|---|---|
-| **Classic cinematic** (production) | `index.html?screen=1` / `?screen=2` | Gold-framed inventory panels, an arcane portal for the wand, tilted in 3D. |
-| **Cinematic Board** (Open Design draft, completed) | `cinematic-board.html?screen=1` / `?screen=2` | A "game main menu" look: parallax stage with a slow camera drift, volumetric light shafts, glass-and-gold panels with corner brackets, a swaying 3D plane, and a hero card with rotating rings. |
+| **Classic cinematic** (alternative) | `index.html?screen=1` / `?screen=2` | Gold-framed inventory panels, an arcane portal for the wand, tilted in 3D. |
+| **Cinematic Board** (**used on the TVs**) | `cinematic-board.html?screen=1` / `?screen=2` | A "game main menu" look: parallax stage with a slow camera drift, volumetric light shafts, glass-and-gold panels with corner brackets, a swaying 3D plane, and a hero card with rotating rings. |
 
 Both boards support `&mode=day|night` to force a look and `&cine=<minutes>` to change how often the full-screen cinematic plays (`0` turns it off).
 `cinematic-board.html` started as a draft written by DeepSeek inside Open Design and was then extended to match `index.html` feature for feature.
@@ -93,7 +93,7 @@ Sources: [System1 — The Seven Habits of Highly Effective Characters](https://s
   3–6 m, go with 50–65".
 - **Player:** a cheap Android TV box or stick per screen, running a kiosk browser such as
   **Fully Kiosk Browser**. Set it to auto-start, go fullscreen, never sleep and reload on errors, with
-  the start URL `…/index.html?screen=1` (or `screen=2`). Most commercial "smart signage" displays have a
+  the start URL `…/cinematic-board.html?screen=1` (or `screen=2`). Most commercial "smart signage" displays have a
   built-in browser that can open the page directly.
 - **Design rules applied:**
   - **Legibility:** large, high-contrast sans-serif text on a dark background, with content inside a
