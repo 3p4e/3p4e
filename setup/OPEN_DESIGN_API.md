@@ -101,9 +101,41 @@ Backup of the pre-fix config: `/opt/open-design/backups/20261025-193947-provider
 - Agent home is persistent: `/opt/open-design/home` → `/home/open-design` (was tmpfs, which wiped CLI logins on every restart).
 - Daemon heap: `NODE_OPTIONS=--max-old-space-size=1024` (was 256).
 - DeepSeek: wrapper `/home/open-design/.local/bin/deepseek` (moves `--model` before `exec` for codewhale), set via `DEEPSEEK_BIN`. ✅
-- OpenCode: default model `deepseek/deepseek-v4-pro` (`~/.config/opencode/opencode.json`). ✅
+- OpenCode: default model is now NVIDIA NIM (see "NVIDIA NIM" below); DeepSeek stays available as a provider. ✅
 - Codex: logged in with `OPENAI_API_KEY`. The OpenAI account has no credits; top up billing.
 - Kimi: Moonshot provider for now. For the Kimi For Coding (Allegretto) plan, put that key in `.env` as
   `KIMI_API_KEY`, recreate the container, then run `sh /opt/open-design/kimi-code-setup.sh`.
 - Claude Code: the binary under `/root` is unreadable for uid 1001, and the Anthropic key returns 401. Needs a valid key or login.
 - Gemini: `GEMINI_API_KEY` is empty.
+
+## NVIDIA NIM (configured 17.11.2026)
+
+NVIDIA NIM is OpenAI-compatible at `https://integrate.api.nvidia.com/v1`. The key is `NVIDIA_API_KEY` in
+`/opt/open-design/.env`, passed through `docker-compose.yml` into the container. No value is recorded here.
+Backup of the previous config: `/opt/open-design/backups/20261117-130833-nvidia-nim/`.
+
+| Function in Open Design | Model |
+|---|---|
+| Default design/code agent (`agentId=opencode`, app-config) and memory extractor | `nvidia/nemotron-3-ultra-550b-a55b` |
+| OpenCode small/background model (titles, summaries) | `nvidia/nemotron-3.5-bolt-e4b` |
+| Fast code edits (selectable) | `poolside/laguna-xs-2.1` |
+| Long, hard tasks (selectable) | `mistralai/mistral-large-4-1t-a52b` |
+| Reasoning (selectable) | `nvidia/nemotron-3-nano-omni-30b-a3b-reasoning` |
+| Vision / image input (selectable) | `google/gemma-4-31b-it`, `nvidia/nemotron-3.5-super-vl-120b-a12b` |
+
+How it is wired:
+
+- OpenCode: provider `nvidia-nim` in `/opt/open-design/home/.config/opencode/opencode.json` (npm `@ai-sdk/openai-compatible`,
+  `apiKey` read from `{env:NVIDIA_API_KEY}`).
+- Default agent: `PUT /api/app-config` with a partial body (`agentId`, `agentModels`).
+- Memory extraction: `PATCH /api/memory/config {extraction:{provider,baseUrl,model}}`. Leave `apiKey` out to keep the stored one.
+
+Lessons:
+
+- Memory extraction has a 30 s timeout and asks for `response_format: json_object`. Gemma 4 31B took 32.6 s on long input and
+  timed out; Nemotron 3 Ultra answered in 5.2 s. Pick the extractor for latency, not size.
+- The first run on a NIM model after a restart can fail without a message (cold start). Retry once.
+- Not covered: Open Design's media providers (openai, grok, nanobanana, openrouter, fal, minimax, elevenlabs) have no NIM
+  equivalent, and NIM embeddings do not fit the 1536-dim Open Brain column. Image and video generation stay with Higgsfield.
+- Server disk was 100% full at the time (about 800 MB free). `/opt/open-design/home` held 1.9 GB, mostly caches
+  (puppeteer 1.2 GB, npm 492 MB). Clear those before the next large upload.
