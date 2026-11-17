@@ -586,7 +586,7 @@
     const portal = mv.parentElement;
     mv.addEventListener("playing", () => portal.classList.add("video"));
     mv.addEventListener("error", () => portal.classList.remove("video"));
-    const clip = (!night() && p && p.video) ? String(p.video).replace(/^fox_/, "wand_") : idleClip();
+    const clip = (p && p.video) ? String(p.video).replace(/^fox_/, "wand_") : idleClip();
     const loop = clip === idleClip();
     mv.loop = loop;
     mv.onended = loop ? null : () => { mv.loop = true; mv.onended = null; mv.src = V(idleClip()); mv.play().catch(() => {}); };
@@ -709,8 +709,7 @@
   function playCinematic() {
     if (cineBusy) return;
     let name, promo = null;
-    if (night()) name = "cine_neon_night";
-    else if (cineN++ % 2 === 0) name = "cine_awakening_day";
+    if (cineN++ % 2 === 0) name = night() ? "cine_neon_night" : "cine_awakening_day";   // ambient scene, then a food summon (day and night)
     else {
       const summonable = promoList().filter(p => SUMMON[p.video]);          // rotate through promos that have a summon clip
       promo = summonable.length ? summonable[(cineN >> 1) % summonable.length] : null;
