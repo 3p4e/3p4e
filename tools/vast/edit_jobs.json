@@ -1,0 +1,42 @@
+[
+  {
+    "tag": "dd_look_idle",
+    "seed": 1101,
+    "width": 1280,
+    "height": 720,
+    "steps": 40,
+    "refs": ["ddface_a.jpg", "ddface_b.jpg"],
+    "prompt": "Photoreal full-body character costume reference of the exact man in the reference photos, three-quarter view, centered in a dark charcoal studio void. He wears blackened frost-etched leather and segmented plate demon-hunter armour, and he wears NO HELMET and NO HOOD of any kind. His bare head and full face are completely visible and unobstructed, matching the reference face exactly. His hair is short, cropped close at the sides with a slightly longer swept top, no longer than jaw level, glowing a blue-to-teal neon gradient, azure at the roots and teal at the tips, lifting weightlessly as if suspended in water though the air is dry. Over each shoulder rise enormous folded frost demon wings, feathers tipped in glowing blue. Two ornate infernal crossbows are holstered, one at each hip. Faint drifting snow motes, cold white-blue rim light, sharp focus on the face. Full figure head to boots in frame.",
+    "negative": "helmet, hood, hoodie, head covering, mask, visor, cloth over face, shadow over face, hidden face, obscured face, long hair, hair past shoulders, ponytail, braid, deformed face, distorted eyes, different person, wrong identity, blurry, extra limbs, extra fingers, melted armour, cartoon, illustration, plastic skin, text, watermark, low quality, low resolution, overexposed, oversaturated"
+  },
+  {
+    "tag": "dd_look_glacier",
+    "seed": 1202,
+    "width": 1280,
+    "height": 720,
+    "steps": 40,
+    "refs": ["ddface_a.jpg", "ddface_b.jpg"],
+    "prompt": "Photoreal full-body character costume reference of the exact man in the reference photos, three-quarter view, centered in a dark studio void. He is transformed into a glacier demon-hunter form: black ice armour fused with jagged white frost sheathing his body, and he wears NO HELMET and NO MASK. His bare head and full face are completely visible and unobstructed, matching the reference face exactly, lit by cold blue-violet light. His hair is short, cropped close at the sides with a slightly longer swept top, no longer than jaw level, burning a white-blue glow with orbiting teal sigil rings, lifting weightlessly as if underwater though the air is dry. Enormous Immortal demon wings fully spread behind him, feathers of blue-tipped frost shedding snow. Both ornate infernal crossbows remain in his hands, frost-rimed. A localised snowstorm, ice shards, sharp focus on the face. Full figure in frame.",
+    "negative": "helmet, hood, hoodie, head covering, mask, visor, face covering, faceless, shadow over face, hidden face, obscured face, long hair, hair past shoulders, ponytail, braid, deformed face, distorted eyes, different person, wrong identity, blurry, extra limbs, extra fingers, melted armour, cartoon, illustration, plastic skin, text, watermark, low quality, low resolution, overexposed, oversaturated"
+  },
+  {
+    "tag": "az_look_idle",
+    "seed": 1303,
+    "width": 1280,
+    "height": 720,
+    "steps": 40,
+    "refs": ["azface_a.jpg", "azface_b.jpg"],
+    "prompt": "Photoreal full-body character costume reference of the exact clean-shaven man in the reference photos, three-quarter view, centered in a dark charcoal studio void. He is a broad-shouldered retribution paladin in ornate gold-and-white plate armour with a white tabard, both gauntleted hands resting on the pommel of a massive two-handed greatsword planted tip-down before him. His helmet is OPEN-FACED with the faceplate fully retracted and folded back into the collar, so his bare head and full face are completely visible and unobstructed, matching the reference face exactly. No plate, mask or visor covers any part of his face. A single-sided molten-gold rune-tattoo maze crosses his face from brow over one eye, down the cheek, across the mouth and to the chin, and continues down the same side of the neck and forearm, glowing at a subtle ember-gold. Short cropped hair. Dramatic gold rim light, faint floating ember particles, sharp focus on the face. Full figure head to boots in frame.",
+    "negative": "helmet covering face, closed helm, faceplate over face, visor down, mask, obscured face, hidden face, faceless, shadow over face, templar cross, religious cross, crucifix, emblem on faceplate, tattoo on both sides, symmetric tattoo, deformed face, distorted eyes, different person, wrong identity, blurry, extra limbs, extra fingers, melted armour, cartoon, illustration, plastic skin, text, watermark, low quality, low resolution, overexposed, oversaturated"
+  },
+  {
+    "tag": "az_look_wrath",
+    "seed": 1404,
+    "width": 1280,
+    "height": 720,
+    "steps": 40,
+    "refs": ["azface_a.jpg", "azface_b.jpg"],
+    "prompt": "Photoreal full-body character costume reference of the exact clean-shaven man in the reference photos, three-quarter view, centered in a dark studio void. He is a retribution paladin in ornate gold-and-white plate armour, identical armour design and identical open-faced helmet to the idle look, with the faceplate retracted so his bare head and full face are completely visible and unobstructed, matching the reference face exactly. His arms are spread wide. A single-sided molten-gold rune-tattoo maze crosses his face from brow over one eye, down the cheek, across the mouth to the chin, and down the same side of neck and arm, surging to blazing white-gold as energy floods along every rune pathway. Huge translucent golden angelic wings bloom wide behind him, white-gold light spilling from his open eyes. Sharp focus on the face. Full figure in frame, gold-white bloom lighting.",
+    "negative": "helmet covering face, closed helm, faceplate over face, visor down, mask, obscured face, hidden face, faceless, templar cross, religious cross, crucifix, emblem on faceplate, tattoo on both sides, symmetric tattoo, deformed face, distorted eyes, different person, wrong identity, blurry, extra limbs, extra fingers, melted armour, cartoon, illustration, plastic skin, text, watermark, low quality, low resolution, overexposed, oversaturated"
+  }
+]

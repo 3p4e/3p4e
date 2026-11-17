@@ -1,0 +1,2758 @@
+{
+  "num": "36",
+  "title_mk": "Чудниот свирач од Хамелин",
+  "title_en": "The Pied Piper of Hamelin",
+  "genre": "Легенда · таинствена бајка",
+  "logline": "Мистериозен свирач ја ослободува Хамелин од стаорците, а кога градот ја крши зделката, неговата освета ги одведува децата — сè додека едно мало дете не го допре неговото добро срце.",
+  "spec": {
+    "aspect": "16:9",
+    "resolution": "1216x704",
+    "fps": 24,
+    "model": "model-agnostic (chosen at generation)",
+    "style": "photoreal",
+    "flf": true,
+    "language": "mk",
+    "shot_floor": 40,
+    "shot_max": 60,
+    "seed_policy": "fixed-per-shot (same seed → reproducible shot; re-roll per shot id)",
+    "style_anchor": [
+      "Diablo 2 cinematic",
+      "World of Warcraft cinematic",
+      "StarCraft cinematic"
+    ],
+    "negative_prompt": "deformed, extra limbs, morphing, watermark, text, static frame, blurry, low quality, cropped head, cut-off face",
+    "frames": 121,
+    "frames_fallback": 81,
+    "routes": [
+      {
+        "model": "Wan2.1-FLF2V-14B-720P",
+        "input": "start+end native (run START-ONLY)",
+        "status": "WORKING (lead for 14B quality)"
+      },
+      {
+        "model": "Kandinsky 6.0 Lite/Pro",
+        "input": "start-image-only",
+        "status": "WORKING (Pro-distill untested at scale)"
+      },
+      {
+        "model": "SkyReels-V3 R2V-14B",
+        "input": "start-image-only",
+        "status": "WORKING (fallback)"
+      },
+      {
+        "model": "LTX-Video 2B v0.9.5",
+        "input": "start-image-only",
+        "status": "WORKING (small/fast, low ceiling)"
+      },
+      {
+        "model": "Mochi-1",
+        "input": "start-image-only",
+        "status": "untested here"
+      },
+      {
+        "model": "LTX-2.3 22B distilled",
+        "input": "start-image-only",
+        "status": "DEAD (nanobind native-crash, 42 note)"
+      }
+    ],
+    "model_note": "Model chosen per story at generation (43 sec.4). Keyframes + continuation prompts are generator-agnostic; only the render command differs per model.",
+    "keyframe_type": "Grok START keyframes (story-generic characters)"
+  },
+  "cast": [
+    {
+      "role": "Свирачот / The Piper",
+      "trait": "Мистериозен, слаб патник во шарени крпени алишта; носи стара дрвена шупелка и има проникливи, тажни очи.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Градоначалникот / The Mayor",
+      "trait": "Полничка, горделива градска старешина во скапи плишани плашти со златен синџир.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Децата / The Children",
+      "trait": "Група мали деца од Хамелин во едноставни, светли градски кошули и капи.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Малото дете / The Little Child",
+      "trait": "Најмалото, побледо и побавно дете со босо стапало и извеано капче; срцето на приказната.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Жителите / The Townsfolk",
+      "trait": "Очајни граѓани и родители на Хамелин во средновековни волнени алишта.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    },
+    {
+      "role": "Стаорците / The Rats",
+      "trait": "Безброј свиленкасто-сиви глодачи со црвени очи; нечовечки ликови што ги преплавуваат улиците.",
+      "source": "story-suggested",
+      "face_lock": "AI-default"
+    }
+  ],
+  "acts": [
+    {
+      "id": "act1",
+      "num": "Act I",
+      "title": "Наездата",
+      "color": "#2dd4bf",
+      "pct": 28,
+      "synopsis": "Утрото на наездата: стаорците го преплавуваат Хамелин; очајниот градоначалник ветува награда; се појавува таинствениот свирач во шарени крпени алишта и ја склучува зделката.",
+      "location_ref": "hamelin_town_square_and_gates",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#1a2a4a",
+        "#b45309",
+        "#2dd4bf"
+      ],
+      "light_direction": "key light from screen-left, cool dawn breaking into warm amber",
+      "time_of_day": "dawn",
+      "shots": [
+        {
+          "id": "S01",
+          "shot_type": "BOSS-ONLY",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.8,
+          "clip_s": 3.8,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "hamelin_town_E1"
+          ],
+          "ref_scope": "image1: the half-timbered riverside town of Hamelin at dawn — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "subject identity",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              2.0,
+              "slow crane-down over rooftops"
+            ],
+            [
+              2.0,
+              3.8,
+              "mist drifts over the river"
+            ]
+          ],
+          "narration_mk": "Некогаш, покрај реката Весер, лежеше малиот град Хамелин.",
+          "dialogue_mk": "",
+          "kf_first": "High crane-down wide of a medieval half-timbered town at misty dawn, a river curving past stone walls, warm windows igniting one by one, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "Crane settles over the town gate and clock tower as pale amber light spills across the cobbled market square",
+          "continuity": "Establishing dawn palette: cool blue mist over warm stone",
+          "motion": "slow crane-down; drifting mist",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high crane-down wide of a medieval half-timbered town at misty dawn, a river curving past stone walls, warm windows igniting one by one, photoreal cinematic, Diablo2/WoW/StarCraft grade then slow crane-down over rooftops, then mist drifts over the river settling into crane settles over the town gate and clock tower as pale amber light spills across the cobbled market square continuity held: Establishing dawn palette: cool blue mist over warm stone",
+          "image_prompt_start": "Cinematic film still, photoreal: wide of Hamelin Town, a figure, high-angle.\nAction: High crane-down wide of a medieval half-timbered town at misty dawn, a river curving past stone walls, warm windows igniting one by one.\nEnvironment: a spires setting in the story's palette, spire-lit cold light.\nCamera: WIDE shot at high-angle, composed as the frozen opening frame of a crane-down move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: Crane over the town gate and clock tower as pale amber light spills across the cobbled market square. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Drifting mist — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Drifting mist — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "action",
+          "strength": 0.6
+        },
+        {
+          "id": "S02",
+          "shot_type": "BOSS-ONLY",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 2.7,
+          "clip_s": 2.7,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "rats_R1_swarm",
+            "hamelin_town_E1"
+          ],
+          "ref_scope": "image1: the rat swarm design — grey-furred rats with small red eyes — 100% identical; image2: Hamelin street set; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "rat swarm look",
+            "fur tone",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "rats pour along gutter"
+            ],
+            [
+              1.6,
+              2.7,
+              "mass surges over a doorstep"
+            ]
+          ],
+          "narration_mk": "Едно утро градот се разбуди опколен од стаорци.",
+          "dialogue_mk": "",
+          "kf_first": "Eye-level wide of a narrow medieval street teeming with hundreds of grey rats, swarming over cobbles and doorsteps, morning light, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "The rat tide thickens and rolls down the street like a living grey flood",
+          "continuity": "Rat swarm holdover; stone-and-timber street from S01",
+          "motion": "lateral track with the swarm",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: eye-level wide of a narrow medieval street teeming with hundreds of grey rats, swarming over cobbles and doorsteps, morning light, photoreal cinematic, Diablo2/WoW/StarCraft grade then rats pour along gutter, then mass surges over a doorstep the camera track settling into the rat tide thickens and rolls down the street like a living grey flood continuity held: Rat swarm holdover; stone-and-timber street from S01",
+          "image_prompt_start": "Cinematic film still, photoreal: wide of Rats R1 Swarm and Hamelin Town, a figure, eye-level.\nAction: Eye-level wide of a narrow medieval street teeming with hundreds of grey rats, swarming over cobbles and doorsteps, morning light.\nEnvironment: a spires setting in the story's palette, spire-lit cold light.\nCamera: WIDE shot at eye-level, composed as the frozen opening frame of a track move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: The rat tide thickens and rolls down the street like a living grey flood. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Lateral track with the swarm — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Lateral track with the swarm — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "action",
+          "strength": 0.6
+        },
+        {
+          "id": "S03",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 4.4,
+          "clip_s": 4.4,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "rats_R1_swarm"
+          ],
+          "ref_scope": "image1: single close rat from the swarm — grey fur, red eye, whiskers — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "rat swarm look",
+            "fur tone",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.7,
+              "rat gnaws at a wooden table leg"
+            ],
+            [
+              1.7,
+              4.4,
+              "its head snaps toward camera"
+            ]
+          ],
+          "narration_mk": "Беа насекаде: во складиштата, во кујните, дури и покрај јадењето.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle close-up of a grey rat gnawing a wooden table leg, dust filtering through a cellar window, photoreal macro detail, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "The rat freezes and snaps its head toward the lens, whiskers twitching, red eye gleaming",
+          "continuity": "Same rat fur tone from S02; warm cellar shadow",
+          "motion": "push-in on the rat's eye",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle close-up of a grey rat gnawing a wooden table leg, dust filtering through a cellar window, photoreal macro detail, photoreal cinematic, Diablo2/WoW/StarCraft grade then rat gnaws at a wooden table leg, then its head snaps toward camera the camera push-in settling into the rat freezes and snaps its head toward the lens, whiskers twitching, red eye gleaming continuity held: Same rat fur tone from S02; warm cellar shadow",
+          "image_prompt_start": "Cinematic film still, photoreal: close-up of Rats R1 Swarm, low-angle.\nAction: Low-angle close-up of a grey rat gnawing a wooden table leg, dust filtering through a cellar window, photoreal macro detail.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: CLOSE-UP shot at low-angle, composed as the frozen opening frame of a push-in move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: The rat freezes and snaps its head toward the lens, whiskers twitching, red eye gleaming. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on the rat's eye — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Push-in on the rat's eye — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "gentle",
+          "strength": 0.7
+        },
+        {
+          "id": "S04",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.3,
+          "clip_s": 3.3,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "rats_R1_swarm"
+          ],
+          "ref_scope": "image1: rat swarm at a child's crib — same grey rats — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "rat swarm look",
+            "fur tone",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "crane lowers toward the crib"
+            ],
+            [
+              1.6,
+              3.3,
+              "two rats creep along the blanket edge"
+            ]
+          ],
+          "narration_mk": "Дојдоа и до креветчината на децата.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle close view of a wooden child's crib, two grey rats creeping along the folded blanket, soft nursery light, photoreal, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "The rats slip over the crib rail and disappear into shadow as a small toy rocks gently",
+          "continuity": "Rat identity; warm nursery amber vs cold hallway",
+          "motion": "slow crane-down; rats creep",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle close view of a wooden child's crib, two grey rats creeping along the folded blanket, soft nursery light, photoreal, photoreal cinematic, Diablo2/WoW/StarCraft grade then crane lowers toward the crib, then two rats creep along the blanket edge the camera crane-down settling into the rats slip over the crib rail and disappear into shadow as a small toy rocks gently continuity held: Rat identity; warm nursery amber vs cold hallway",
+          "image_prompt_start": "Cinematic film still, photoreal: close-up of Rats R1 Swarm, high-angle.\nAction: High-angle close view of a wooden child's crib, two grey rats creeping along the folded blanket, soft nursery light.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: CLOSE-UP shot at high-angle, composed as the frozen opening frame of a crane-down move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: The rats slip over the crib rail and disappear into shadow as a small toy rocks gently. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Rats creep — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Rats creep — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "gentle",
+          "strength": 0.7
+        },
+        {
+          "id": "S05",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "pan-left",
+          "dur": 2.2,
+          "clip_s": 2.2,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "townsfolk_T1_fused"
+          ],
+          "ref_scope": "image1: the townsfolk group — fearful medieval townspeople — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "townsfolk group identity",
+            "period costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "pan across terrified faces"
+            ],
+            [
+              1.8,
+              2.2,
+              "a woman clutches her child"
+            ]
+          ],
+          "narration_mk": "Луѓето стоеја пред вратите, преплашени и немоќни.",
+          "dialogue_mk": "",
+          "kf_first": "Medium pan across a handful of terrified medieval townsfolk huddled in a doorway, a mother clutching her child, morning dread, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "Pan settles on a mother lifting her child away from a rat scurrying at their feet",
+          "continuity": "Townsfolk faces and woolen costume lock",
+          "motion": "pan-left; crowd recoil",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium pan across a handful of terrified medieval townsfolk huddled in a doorway, a mother clutching her child, morning dread, photoreal cinematic, Diablo2/WoW/StarCraft grade then pan across terrified faces, then a woman clutches her child the camera pan-left settling into pan settles on a mother lifting her child away from a rat scurrying at their feet continuity held: Townsfolk faces and woolen costume lock",
+          "image_prompt_start": "Cinematic film still, photoreal: medium of Townsfolk, a robed old man, wearing a cloak, eye-level.\nAction: Medium pan across a handful of terrified medieval townsfolk huddled in a doorway, a mother clutching her child, morning dread.\nLoadout: Townsfolk — Elder Loadout \"The Mountain Does Not Hurry\"\nMaterials: cloak weave; dyed #6b7280; weathered leather trim; story-linen.\nAbilities: Cleave, Bulwark, War Cry, Overload, Last Stand.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: MEDIUM shot at eye-level, composed as the frozen opening frame of a pan-left move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: on a mother lifting her child away from a rat scurrying at their feet. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Crowd recoil — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Crowd recoil — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "moderate",
+          "strength": 0.6
+        },
+        {
+          "id": "S06",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.8,
+          "clip_s": 3.8,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "mayor_M1_fused"
+          ],
+          "ref_scope": "image1: the Mayor fused master — stout burgher in plush robe with gold chain — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "mayor face identity",
+            "mayor robe & gold chain",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "mayor wrings his hands"
+            ],
+            [
+              1.8,
+              3.8,
+              "he slumps into his chair"
+            ]
+          ],
+          "narration_mk": "И градоначалникот беше очаен: завитка раце и се сожали на судбината.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the stout Mayor in his plush robe, wringing his hands beside a ledger in a wood-panelled hall, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "He slumps into his carved chair, gold chain catching the candlelight, brow heavy with worry",
+          "continuity": "Mayor face and gold chain lock; hall candlelight",
+          "motion": "push-in; body slump",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the stout Mayor in his plush robe, wringing his hands beside a ledger in a wood-panelled hall, photoreal cinematic, Diablo2/WoW/StarCraft grade then mayor wrings his hands, then he slumps into his chair the camera push-in settling into he slumps into his carved chair, gold chain catching the candlelight, brow heavy with worry continuity held: Mayor face and gold chain lock; hall candlelight",
+          "image_prompt_start": "Cinematic film still, photoreal: medium of Mayor, a robed king, wearing a cloak and a beard, eye-level.\nAction: Medium of the stout Mayor in his plush robe, wringing his hands beside a ledger in a wood-panelled hall.\nLoadout: Mayor — Monarch Loadout \"The Crown Remembers\"\nMaterials: cloak weave; dyed #7c2d12; weathered leather trim; story-linen.\nAbilities: Cleave, Bulwark, War Cry, Overload, Last Stand.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: MEDIUM shot at eye-level, composed as the frozen opening frame of a push-in move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: He slumps into his carved chair, gold chain catching the candlelight, brow heavy with worry. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Body slump — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Body slump — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "moderate",
+          "strength": 0.6
+        },
+        {
+          "id": "S07",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.7,
+          "clip_s": 2.7,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "mayor_M1_fused",
+            "townsfolk_T1_fused"
+          ],
+          "ref_scope": "image1: Mayor; image2: townsfolk — both 100% identical to their fused masters; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "mayor face identity",
+            "mayor robe & gold chain",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "mayor raises a proclamation"
+            ],
+            [
+              1.8,
+              2.7,
+              "crowd murmurs and leans in"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Градоначалник: „Илјада златници за оној што ќе нè спаси од оваа напаст!“",
+          "kf_first": "Wide of the town square, the Mayor on the hall steps raising a parchment proclamation, anxious townsfolk gathered below, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "The crowd leans forward as the Mayor plants his staff, the parchment snapping in the wind",
+          "continuity": "Mayor and townsfolk locks; square from S01",
+          "motion": "static; crowd lean",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide of the town square, the Mayor on the hall steps raising a parchment proclamation, anxious townsfolk gathered below, photoreal cinematic, Diablo2/WoW/StarCraft grade then mayor raises a proclamation, then crowd murmurs and leans in the camera static settling into the crowd leans forward as the Mayor plants his staff, the parchment snapping in the wind a voice speaks in Macedonian: \"Градоначалник: „Илјада златници за оној што ќе нè спаси од оваа напаст!“\" continuity held: Mayor and townsfolk locks; square from S01",
+          "image_prompt_start": "Cinematic film still, photoreal: wide of Mayor, a robed king, wearing a cloak and a beard and Townsfolk, a robed old man, wearing a cloak, eye-level.\nAction: Wide of the town square, the Mayor on the hall steps raising a parchment proclamation, anxious townsfolk gathered below.\nLoadout: Mayor — Monarch Loadout \"The Crown Remembers\"\nMaterials: cloak weave; dyed #7c2d12; weathered leather trim; story-linen.\nAbilities: Cleave, Bulwark, War Cry, Overload, Last Stand.\nLoadout: Townsfolk — Elder Loadout \"The Mountain Does Not Hurry\"\nMaterials: cloak weave; dyed #6b7280; weathered leather trim; story-linen.\nAbilities: Cleave, Bulwark, War Cry, Overload, Last Stand.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: WIDE shot at eye-level, composed as the frozen opening frame of a static move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: The crowd leans forward as the Mayor plants his staff, the parchment snapping in the wind. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Crowd lean — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Crowd lean — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "moderate",
+          "strength": 0.6
+        },
+        {
+          "id": "S08",
+          "shot_type": "BOSS-ONLY",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "static",
+          "dur": 4.4,
+          "clip_s": 4.4,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "hamelin_town_E1"
+          ],
+          "ref_scope": "image1: the empty Hamelin market square — 100% identical set; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "subject identity",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "empty square; a crop of crows"
+            ],
+            [
+              1.6,
+              4.4,
+              "a hanging sign creaks in the wind"
+            ]
+          ],
+          "narration_mk": "Поминаа неколку денови, а никој не доаѓаше.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of the deserted market square, a few crows picking at cobbles, grey overcast afternoon, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "A wooden shop sign creaks in the wind as the crows scatter",
+          "continuity": "Square set continuity; overcast light",
+          "motion": "static; crows scatter",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of the deserted market square, a few crows picking at cobbles, grey overcast afternoon, photoreal cinematic, Diablo2/WoW/StarCraft grade then empty square; a crop of crows, then a hanging sign creaks in the wind the camera static settling into a wooden shop sign creaks in the wind as the crows scatter continuity held: Square set continuity; overcast light",
+          "image_prompt_start": "Cinematic film still, photoreal: wide of Hamelin Town, a figure, high-angle.\nAction: High-angle wide of the deserted market square, a few crows picking at cobbles, grey overcast afternoon.\nEnvironment: a spires setting in the story's palette, spire-lit cold light.\nCamera: WIDE shot at high-angle, composed as the frozen opening frame of a static move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: A wooden shop sign creaks in the wind as the crows scatter. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Crows scatter — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Crows scatter — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "action",
+          "strength": 0.6
+        },
+        {
+          "id": "S09",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "track",
+          "dur": 3.3,
+          "clip_s": 3.3,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "piper_P1_fused"
+          ],
+          "ref_scope": "image1: the Piper fused master — tall gaunt traveler in motley patchwork rags — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "piper face identity",
+            "piper costume (motley patches)",
+            "wooden pipe design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "a lone figure strides through the gate"
+            ],
+            [
+              1.8,
+              3.3,
+              "motley cape billows behind him"
+            ]
+          ],
+          "narration_mk": "Тогаш на портата се појави чуден, тесен силует.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of a lone tall figure in a flowing motley patchwork cape striding through the town gate, townsfolk peering from windows, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "The Piper's cape billows as he plants his boot on the cobbles, the whole street falling silent",
+          "continuity": "Piper identity and motley costume lock",
+          "motion": "lateral track; cape billow",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of a lone tall figure in a flowing motley patchwork cape striding through the town gate, townsfolk peering from windows, photoreal cinematic, Diablo2/WoW/StarCraft grade then a lone figure strides through the gate, then motley cape billows behind him the camera track settling into the Piper's cape billows as he plants his boot on the cobbles, the whole street falling silent continuity held: Piper identity and motley costume lock",
+          "image_prompt_start": "Cinematic film still, photoreal: wide of Piper, a slender trickster, wearing a cloak, with a soft golden glow, a ring of glowing runes, low-angle.\nAction: Low-angle wide of a lone tall figure in a flowing motley patchwork cape striding through the town gate, townsfolk peering from windows.\nLoadout: Piper — Trickster Loadout \"Every Promise Has a Second Edge\"\nMaterials: cloak weave; dyed #2dd4bf; weathered leather trim; story-linen.\nAbilities: Aurum Halo, Sigil Circle, Cleave, Bulwark, War Cry.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: WIDE shot at low-angle, composed as the frozen opening frame of a track move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: The Piper's cape billows as he plants his boot on the cobbles, the whole street falling silent. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Lateral track; cape billow — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Lateral track; cape billow — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "moderate",
+          "strength": 0.6
+        },
+        {
+          "id": "S10",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 2.2,
+          "clip_s": 2.2,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "piper_P1_fused",
+            "pipe_prop"
+          ],
+          "ref_scope": "image1: Piper; image2: the old wooden pipe — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "piper face identity",
+            "piper costume (motley patches)",
+            "wooden pipe design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "piper taps the wooden pipe in his palm"
+            ],
+            [
+              1.8,
+              2.2,
+              "he raises it slowly"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Свирач: „Ќе го ослободам Хамелин од стаорците… но во замена сакам илјада златници.“",
+          "kf_first": "Medium of the Piper tapping the old wooden pipe in his palm, eyes calm and knowing, townsfolk ringed behind him, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "He raises the pipe to his chest as his eyes narrow with quiet confidence",
+          "continuity": "Piper face + pipe lock; street light",
+          "motion": "push-in; pipe raise",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the Piper tapping the old wooden pipe in his palm, eyes calm and knowing, townsfolk ringed behind him, photoreal cinematic, Diablo2/WoW/StarCraft grade then piper taps the wooden pipe in his palm, then he raises it slowly the camera push-in settling into he raises the pipe to his chest as his eyes narrow with quiet confidence a voice speaks in Macedonian: \"Свирач: „Ќе го ослободам Хамелин од стаорците… но во замена сакам илјада златници.“\" continuity held: Piper face + pipe lock; street light",
+          "image_prompt_start": "Cinematic film still, photoreal: medium of Piper, a slender trickster, wearing a cloak, with a soft golden glow, a ring of glowing runes, eye-level.\nAction: Medium of the Piper tapping the old wooden pipe in his palm, eyes calm and knowing, townsfolk ringed behind him.\nLoadout: Piper — Trickster Loadout \"Every Promise Has a Second Edge\"\nMaterials: cloak weave; dyed #2dd4bf; weathered leather trim; story-linen.\nAbilities: Aurum Halo, Sigil Circle, Cleave, Bulwark, War Cry.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: MEDIUM shot at eye-level, composed as the frozen opening frame of a push-in move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: He raises the pipe to his chest as his eyes narrow with quiet confidence. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Pipe raise — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Pipe raise — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "moderate",
+          "strength": 0.6
+        },
+        {
+          "id": "S11",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.8,
+          "clip_s": 3.8,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "mayor_M1_fused"
+          ],
+          "ref_scope": "image1: the Mayor fused master — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "mayor face identity",
+            "mayor robe & gold chain",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "mayor's face lights with relief"
+            ],
+            [
+              1.8,
+              3.8,
+              "he thrusts out an open hand"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Градоначалник: „Договорено! Направи го тоа, и ќе добиеш сè што сакаш!“",
+          "kf_first": "Medium of the Mayor, face lighting with eagerness, thrusting an open ringed hand toward the Piper, hall candlelight, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "His fingers curl as if already counting coins, a greedy gleam crossing his eye",
+          "continuity": "Mayor face/robe lock",
+          "motion": "push-in; hand thrust",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the Mayor, face lighting with eagerness, thrusting an open ringed hand toward the Piper, hall candlelight, photoreal cinematic, Diablo2/WoW/StarCraft grade then mayor's face lights with relief, then he thrusts out an open hand the camera push-in settling into his fingers curl as if already counting coins, a greedy gleam crossing his eye a voice speaks in Macedonian: \"Градоначалник: „Договорено! Направи го тоа, и ќе добиеш сè што сакаш!“\" continuity held: Mayor face/robe lock",
+          "image_prompt_start": "Cinematic film still, photoreal: medium of Mayor, a robed king, wearing a cloak and a beard, eye-level.\nAction: Medium of the Mayor, face lighting with eagerness, thrusting an open ringed hand toward the Piper, hall candlelight.\nLoadout: Mayor — Monarch Loadout \"The Crown Remembers\"\nMaterials: cloak weave; dyed #7c2d12; weathered leather trim; story-linen.\nAbilities: Cleave, Bulwark, War Cry, Overload, Last Stand.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: MEDIUM shot at eye-level, composed as the frozen opening frame of a push-in move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: His fingers curl as if already counting coins, a greedy gleam crossing his eye. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Hand thrust — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Hand thrust — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "moderate",
+          "strength": 0.6
+        },
+        {
+          "id": "S12",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.9,
+          "clip_s": 2.9,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "piper_P1_fused",
+            "mayor_M1_fused"
+          ],
+          "ref_scope": "image1: Piper hand; image2: Mayor hand — both 100% identical to fused masters; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "piper face identity",
+            "piper costume (motley patches)",
+            "wooden pipe design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.5,
+              "two hands clasp in pact"
+            ],
+            [
+              1.5,
+              2.9,
+              "grip tightens once"
+            ]
+          ],
+          "narration_mk": "Така, со еден стисок, зделката беше склучена.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the Mayor's ringed hand clasping the Piper's lean hand over the parchment, sealing the pact, dramatic side-light, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "The grip tightens as the two hands part, a gold coin glinting on the ledger",
+          "continuity": "Hand and prop continuity; hall light",
+          "motion": "static; clasp",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the Mayor's ringed hand clasping the Piper's lean hand over the parchment, sealing the pact, dramatic side-light, photoreal cinematic, Diablo2/WoW/StarCraft grade then two hands clasp in pact, then grip tightens once the camera static settling into the grip tightens as the two hands part, a gold coin glinting on the ledger continuity held: Hand and prop continuity; hall light",
+          "image_prompt_start": "Cinematic film still, photoreal: close-up of Piper, a slender trickster, wearing a cloak, with a soft golden glow, a ring of glowing runes and Mayor, a robed king, wearing a cloak and a beard, eye-level.\nAction: Close-up of the Mayor's ringed hand clasping the Piper's lean hand over the parchment, sealing the pact, dramatic side-light.\nLoadout: Piper — Trickster Loadout \"Every Promise Has a Second Edge\"\nMaterials: cloak weave; dyed #2dd4bf; weathered leather trim; story-linen.\nAbilities: Aurum Halo, Sigil Circle, Cleave, Bulwark, War Cry.\nLoadout: Mayor — Monarch Loadout \"The Crown Remembers\"\nMaterials: cloak weave; dyed #7c2d12; weathered leather trim; story-linen.\nAbilities: Cleave, Bulwark, War Cry, Overload, Last Stand.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: CLOSE-UP shot at eye-level, composed as the frozen opening frame of a static move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: The grip tightens as the two hands part, a gold coin glinting on the ledger. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Clasp — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Clasp — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "gentle",
+          "strength": 0.7
+        }
+      ]
+    },
+    {
+      "id": "act2",
+      "num": "Act II",
+      "title": "Волшебната мелодија",
+      "color": "#f59e0b",
+      "pct": 44,
+      "synopsis": "Свирачот ја свири волшебната мелодија; стаорците, маѓепсани, го следат од градот до реката и исчезнуваат во водата; враќајќи се по наградата, свирачот е одбиен и навреден.",
+      "location_ref": "hamelin_streets_to_veser_river_and_town_hall",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#f59e0b",
+        "#7c2d12",
+        "#6b7280"
+      ],
+      "light_direction": "key light from screen-left, golden morning over silver river then hall candlelight",
+      "time_of_day": "day",
+      "shots": [
+        {
+          "id": "S13",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.7,
+          "clip_s": 3.7,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "piper_P1_fused",
+            "pipe_prop"
+          ],
+          "ref_scope": "image1: Piper; image2: wooden pipe — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "piper face identity",
+            "piper costume (motley patches)",
+            "wooden pipe design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "piper strides to the square's heart"
+            ],
+            [
+              1.8,
+              3.7,
+              "he raises the pipe to his lips"
+            ]
+          ],
+          "narration_mk": "Утрото свирачот излезе на средината на плоштадот.",
+          "dialogue_mk": "",
+          "kf_first": "Wide tracking shot of the Piper striding to the heart of the cobbled square, townsfolk parting around him, raising the wooden pipe, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "He halts, lifts the old pipe to his lips, and the crowd holds its breath",
+          "continuity": "Piper + pipe lock; square daylight",
+          "motion": "lateral track; arms raise",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide tracking shot of the Piper striding to the heart of the cobbled square, townsfolk parting around him, raising the wooden pipe, photoreal cinematic, Diablo2/WoW/StarCraft grade then piper strides to the square's heart, then he raises the pipe to his lips the camera track settling into he halts, lifts the old pipe to his lips, and the crowd holds its breath continuity held: Piper + pipe lock; square daylight",
+          "image_prompt_start": "Cinematic film still, photoreal: wide of Piper, a slender trickster, wearing a cloak, with a soft golden glow, a ring of glowing runes, eye-level.\nAction: Wide tracking shot of the Piper striding to the heart of the cobbled square, townsfolk parting around him, raising the wooden pipe.\nLoadout: Piper — Trickster Loadout \"Every Promise Has a Second Edge\"\nMaterials: cloak weave; dyed #2dd4bf; weathered leather trim; story-linen.\nAbilities: Aurum Halo, Sigil Circle, Cleave, Bulwark, War Cry.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: WIDE shot at eye-level, composed as the frozen opening frame of a track move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: He halts, lifts the old pipe to his lips, and the crowd holds its breath. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Lateral track; arms raise — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Lateral track; arms raise — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "moderate",
+          "strength": 0.6
+        },
+        {
+          "id": "S14",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 2.6,
+          "clip_s": 2.6,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "piper_P1_fused",
+            "pipe_prop"
+          ],
+          "ref_scope": "image1: Piper's lips and pipe in tight close — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "piper face identity",
+            "piper costume (motley patches)",
+            "wooden pipe design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "lips meet the worn wooden mouthpiece"
+            ],
+            [
+              1.6,
+              2.6,
+              "fingers lift over the holes"
+            ]
+          ],
+          "narration_mk": "И почна да свири една чудна, милозвучна мелодија.",
+          "dialogue_mk": "",
+          "kf_first": "Tight close-up of the Piper's lips and the weathered wooden pipe, fingers lifting over the finger-holes, soft morning rim-light, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "A faint warm shimmer begins to rise from the pipe's bell as the tune starts",
+          "continuity": "Pipe and Piper face lock",
+          "motion": "push-in; fingers lift",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: tight close-up of the Piper's lips and the weathered wooden pipe, fingers lifting over the finger-holes, soft morning rim-light, photoreal cinematic, Diablo2/WoW/StarCraft grade then lips meet the worn wooden mouthpiece, then fingers lift over the holes the camera push-in settling into a faint warm shimmer begins to rise from the pipe's bell as the tune starts continuity held: Pipe and Piper face lock",
+          "image_prompt_start": "Cinematic film still, photoreal: close-up of Piper, a slender trickster, wearing a cloak, with a soft golden glow, a ring of glowing runes, eye-level.\nAction: Tight close-up of the Piper's lips and the weathered wooden pipe, fingers lifting over the finger-holes, soft morning rim-light.\nLoadout: Piper — Trickster Loadout \"Every Promise Has a Second Edge\"\nMaterials: cloak weave; dyed #2dd4bf; weathered leather trim; story-linen.\nAbilities: Aurum Halo, Sigil Circle, Cleave, Bulwark, War Cry.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: CLOSE-UP shot at eye-level, composed as the frozen opening frame of a push-in move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: A faint warm shimmer begins to rise from the pipe's bell as the tune starts. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Fingers lift — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Fingers lift — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "gentle",
+          "strength": 0.7
+        },
+        {
+          "id": "S15",
+          "shot_type": "BOSS-ONLY",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 4.2,
+          "clip_s": 4.2,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "hamelin_town_E1"
+          ],
+          "ref_scope": "image1: Hamelin rooftops aglow with faint golden ripple — 100% identical set; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "subject identity",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "invisible music ripples the air"
+            ],
+            [
+              1.6,
+              4.2,
+              "golden light pulses from the square"
+            ]
+          ],
+          "narration_mk": "Гласот на шупелката се разлеа низ улиците како топол ветер.",
+          "dialogue_mk": "",
+          "kf_first": "High crane-down over Hamelin rooftops as an unseen melody sends faint golden ripples through the morning air, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "The golden pulse gathers over the square and rolls outward across the tiled roofs",
+          "continuity": "Town set continuity; warm magic glow",
+          "motion": "crane-down; light pulse",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high crane-down over Hamelin rooftops as an unseen melody sends faint golden ripples through the morning air, photoreal cinematic, Diablo2/WoW/StarCraft grade then invisible music ripples the air, then golden light pulses from the square the camera crane-down settling into the golden pulse gathers over the square and rolls outward across the tiled roofs continuity held: Town set continuity; warm magic glow",
+          "image_prompt_start": "Cinematic film still, photoreal: wide of Hamelin Town, a figure, high-angle.\nAction: High crane-down over Hamelin rooftops as an unseen melody sends faint golden ripples through the morning air.\nEnvironment: a spires setting in the story's palette, spire-lit cold light.\nCamera: WIDE shot at high-angle, composed as the frozen opening frame of a crane-down move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: The golden pulse gathers over the square and rolls outward across the tiled roofs. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Light pulse — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Light pulse — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "action",
+          "strength": 0.6
+        },
+        {
+          "id": "S16",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 3.2,
+          "clip_s": 3.2,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "rats_R1_swarm"
+          ],
+          "ref_scope": "image1: rat in a dark burrow — same grey fur/red-eye lock — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "rat swarm look",
+            "fur tone",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "a rat's head rises from a floor gap"
+            ],
+            [
+              1.6,
+              3.2,
+              "red eyes gleam in the dark"
+            ]
+          ],
+          "narration_mk": "Во темните дувла стаорците наострија уши.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle close of a grey rat's head rising from a floorboard gap in a dark pantry, red eyes glinting, a sliver of golden light crossing it, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "The rat's red eyes widen and it begins to creep toward the light",
+          "continuity": "Rat lock; golden music light vs dark burrow",
+          "motion": "push-in; rat rises",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle close of a grey rat's head rising from a floorboard gap in a dark pantry, red eyes glinting, a sliver of golden light crossing it, photoreal cinematic, Diablo2/WoW/StarCraft grade then a rat's head rises from a floor gap, then red eyes gleam in the dark the camera push-in settling into the rat's red eyes widen and it begins to creep toward the light continuity held: Rat lock; golden music light vs dark burrow",
+          "image_prompt_start": "Cinematic film still, photoreal: close-up of Rats R1 Swarm, low-angle.\nAction: Low-angle close of a grey rat's head rising from a floorboard gap in a dark pantry, red eyes glinting, a sliver of golden light crossing it.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: CLOSE-UP shot at low-angle, composed as the frozen opening frame of a push-in move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: The rat's red eyes widen and it begins to creep toward the light. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Rat rises — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Rat rises — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "gentle",
+          "strength": 0.7
+        },
+        {
+          "id": "S17",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "pan-right",
+          "dur": 2.1,
+          "clip_s": 2.1,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "rats_R1_swarm"
+          ],
+          "ref_scope": "image1: rats emerging through the doorway — same swarm lock — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "rat swarm look",
+            "fur tone",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "rats pour one by one from a doorway"
+            ],
+            [
+              1.6,
+              2.1,
+              "the column thickens into a stream"
+            ]
+          ],
+          "narration_mk": "Еден по еден, тие излегоа од сенките.",
+          "dialogue_mk": "",
+          "kf_first": "Medium pan-right as grey rats pour one by one from a dark doorway into the golden morning street, snouts lifted toward the music, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "The single-file column thickens into a rippling grey stream flowing downhill",
+          "continuity": "Rat lock; music-glow continuity",
+          "motion": "pan-right; stream growth",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium pan-right as grey rats pour one by one from a dark doorway into the golden morning street, snouts lifted toward the music, photoreal cinematic, Diablo2/WoW/StarCraft grade then rats pour one by one from a doorway, then the column thickens into a stream the camera pan-right settling into the single-file column thickens into a rippling grey stream flowing downhill continuity held: Rat lock; music-glow continuity",
+          "image_prompt_start": "Cinematic film still, photoreal: medium of Rats R1 Swarm, eye-level.\nAction: Medium pan-right as grey rats pour one by one from a dark doorway into the golden morning street, snouts lifted toward the music.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: MEDIUM shot at eye-level, composed as the frozen opening frame of a pan-right move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: The single-file column thickens into a rippling grey stream flowing downhill. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The camera pans right; the landscape streams past, parallax layers sliding at different speeds. Stream growth — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The camera pans right; the landscape streams past, parallax layers sliding at different speeds. Stream growth — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "moderate",
+          "strength": 0.6
+        },
+        {
+          "id": "S18",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "track",
+          "dur": 3.7,
+          "clip_s": 3.7,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "piper_P1_fused",
+            "rats_R1_swarm"
+          ],
+          "ref_scope": "image1: Piper; image2: rat swarm — both 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "piper face identity",
+            "piper costume (motley patches)",
+            "wooden pipe design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "rat tide encircles the piper"
+            ],
+            [
+              1.8,
+              3.7,
+              "piper walks, rats at his heels"
+            ]
+          ],
+          "narration_mk": "Стаорците, како маѓепсани, се собраа околу свирачот.",
+          "dialogue_mk": "",
+          "kf_first": "High-angle wide of the Piper standing in the square as a grey rat tide swirls around his boots, tuning toward the pipe, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "The Piper steps forward and the massed rats follow at his heels like a living train",
+          "continuity": "Piper + rat locks",
+          "motion": "track with procession",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle wide of the Piper standing in the square as a grey rat tide swirls around his boots, tuning toward the pipe, photoreal cinematic, Diablo2/WoW/StarCraft grade then rat tide encircles the piper, then piper walks, rats at his heels the camera track settling into the Piper steps forward and the massed rats follow at his heels like a living train continuity held: Piper + rat locks",
+          "image_prompt_start": "Cinematic film still, photoreal: wide of Piper, a slender trickster, wearing a cloak, with a soft golden glow, a ring of glowing runes and Rats R1 Swarm, high-angle.\nAction: High-angle wide of the Piper standing in the square as a grey rat tide swirls around his boots, tuning toward the pipe.\nLoadout: Piper — Trickster Loadout \"Every Promise Has a Second Edge\"\nMaterials: cloak weave; dyed #2dd4bf; weathered leather trim; story-linen.\nAbilities: Aurum Halo, Sigil Circle, Cleave, Bulwark, War Cry.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: WIDE shot at high-angle, composed as the frozen opening frame of a track move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: The Piper steps forward and the massed rats at his heels like a living train. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track with procession — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Track with procession — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "moderate",
+          "strength": 0.6
+        },
+        {
+          "id": "S19",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "pan-left",
+          "dur": 2.6,
+          "clip_s": 2.6,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "townsfolk_T1_fused"
+          ],
+          "ref_scope": "image1: townsfolk watching from doorways — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "townsfolk group identity",
+            "period costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "men and women peer from windows"
+            ],
+            [
+              1.6,
+              2.6,
+              "a child points, eyes wide"
+            ]
+          ],
+          "narration_mk": "Луѓето гледаа, скаменети, од прозорците.",
+          "dialogue_mk": "",
+          "kf_first": "Medium pan of townsfolk peering from windows and doorways, mouths agape, as the rat procession passes below, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "Pan lands on a small child pointing at the stream of rats, eyes wide with wonder",
+          "continuity": "Townsfolk lock; street daylight",
+          "motion": "pan-left; reactions",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium pan of townsfolk peering from windows and doorways, mouths agape, as the rat procession passes below, photoreal cinematic, Diablo2/WoW/StarCraft grade then men and women peer from windows, then a child points, eyes wide the camera pan-left settling into pan lands on a small child pointing at the stream of rats, eyes wide with wonder continuity held: Townsfolk lock; street daylight",
+          "image_prompt_start": "Cinematic film still, photoreal: medium of Townsfolk, a robed old man, wearing a cloak, eye-level.\nAction: Medium pan of townsfolk peering from windows and doorways, mouths agape, as the rat procession passes below.\nLoadout: Townsfolk — Elder Loadout \"The Mountain Does Not Hurry\"\nMaterials: cloak weave; dyed #6b7280; weathered leather trim; story-linen.\nAbilities: Cleave, Bulwark, War Cry, Overload, Last Stand.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: MEDIUM shot at eye-level, composed as the frozen opening frame of a pan-left move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: lands on a small child pointing at the stream of rats, eyes wide with wonder. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Reactions — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Reactions — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "moderate",
+          "strength": 0.6
+        },
+        {
+          "id": "S20",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 4.2,
+          "clip_s": 4.2,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "piper_P1_fused",
+            "rats_R1_swarm"
+          ],
+          "ref_scope": "image1: Piper leading; image2: rat column — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "piper face identity",
+            "piper costume (motley patches)",
+            "wooden pipe design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "procession approaches the town gate"
+            ],
+            [
+              1.8,
+              4.2,
+              "piper raises pipe higher"
+            ]
+          ],
+          "narration_mk": "Свирачот ги поведе кон градската порта.",
+          "dialogue_mk": "",
+          "kf_first": "Wide track of the Piper leading the rat column toward the great town gate, his pipe raised high, the crowd shrinking back, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "The procession closes on the gate as the Piper flings one arm wide, urging the rats onward",
+          "continuity": "Piper + rat locks; gate from S01",
+          "motion": "lateral track toward gate",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide track of the Piper leading the rat column toward the great town gate, his pipe raised high, the crowd shrinking back, photoreal cinematic, Diablo2/WoW/StarCraft grade then procession approaches the town gate, then piper raises pipe higher the camera track settling into the procession closes on the gate as the Piper flings one arm wide, urging the rats onward continuity held: Piper + rat locks; gate from S01",
+          "image_prompt_start": "Cinematic film still, photoreal: wide of Piper, a slender trickster, wearing a cloak, with a soft golden glow, a ring of glowing runes and Rats R1 Swarm, eye-level.\nAction: Wide track of the Piper leading the rat column toward the great town gate, his pipe raised high, the crowd shrinking back.\nLoadout: Piper — Trickster Loadout \"Every Promise Has a Second Edge\"\nMaterials: cloak weave; dyed #2dd4bf; weathered leather trim; story-linen.\nAbilities: Aurum Halo, Sigil Circle, Cleave, Bulwark, War Cry.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: WIDE shot at eye-level, composed as the frozen opening frame of a track move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: The procession closes on the gate as the Piper flings one arm wide, urging the rats onward. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Lateral track toward gate — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Lateral track toward gate — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "moderate",
+          "strength": 0.6
+        },
+        {
+          "id": "S21",
+          "shot_type": "BOSS-ONLY",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 3.2,
+          "clip_s": 3.2,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "gates_G1"
+          ],
+          "ref_scope": "image1: the great wooden town gate and stone arch — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "subject identity",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "the iron-bound gates swing inward"
+            ],
+            [
+              1.6,
+              3.2,
+              "sunlight floods the arch"
+            ]
+          ],
+          "narration_mk": "Портата се отвори широко пред нив.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of the great iron-bound wooden gate swinging inward, golden daylight flooding the stone arch, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "The gates thud open fully as the rat column pours through into the light",
+          "continuity": "Gate prop lock; golden light",
+          "motion": "static; gates swing",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of the great iron-bound wooden gate swinging inward, golden daylight flooding the stone arch, photoreal cinematic, Diablo2/WoW/StarCraft grade then the iron-bound gates swing inward, then sunlight floods the arch the camera static settling into the gates thud open fully as the rat column pours through into the light continuity held: Gate prop lock; golden light",
+          "image_prompt_start": "Cinematic film still, photoreal: wide of Gates, a figure, low-angle.\nAction: Low-angle wide of the great iron-bound wooden gate swinging inward, golden daylight flooding the stone arch.\nEnvironment: a gate setting in the story's palette, cold gate light.\nCamera: WIDE shot at low-angle, composed as the frozen opening frame of a static move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: The gates thud open fully as the rat column pours through into the light. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Gates swing — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Gates swing — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "action",
+          "strength": 0.6
+        },
+        {
+          "id": "S22",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 2.1,
+          "clip_s": 2.1,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "piper_P1_fused",
+            "rats_R1_swarm",
+            "river_RV1"
+          ],
+          "ref_scope": "image1: Piper; image2: rats; image3: the Veser river — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "piper face identity",
+            "piper costume (motley patches)",
+            "wooden pipe design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "piper leads the column down the river road"
+            ],
+            [
+              1.8,
+              2.1,
+              "the river glints ahead"
+            ]
+          ],
+          "narration_mk": "Ги одведе надвор, по патот што води кон реката.",
+          "dialogue_mk": "",
+          "kf_first": "High crane-up over the Piper leading the rat column down a winding river road, the silver river glittering ahead through fields, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "The crane rises to reveal the river curve and the dark procession pouring toward its banks",
+          "continuity": "Piper + rat + river locks",
+          "motion": "crane-up; procession",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high crane-up over the Piper leading the rat column down a winding river road, the silver river glittering ahead through fields, photoreal cinematic, Diablo2/WoW/StarCraft grade then piper leads the column down the river road, then the river glints ahead the camera crane-up settling into the crane rises to reveal the river curve and the dark procession pouring toward its banks with water washes past continuity held: Piper + rat + river locks",
+          "image_prompt_start": "Cinematic film still, photoreal: wide of Piper, a slender trickster, wearing a cloak, with a soft golden glow, a ring of glowing runes and Rats R1 Swarm and River Rv1, high-angle.\nAction: High crane-up over the Piper leading the rat column down a winding river road, the silver river glittering ahead through fields.\nLoadout: Piper — Trickster Loadout \"Every Promise Has a Second Edge\"\nMaterials: cloak weave; dyed #2dd4bf; weathered leather trim; story-linen.\nAbilities: Aurum Halo, Sigil Circle, Cleave, Bulwark, War Cry.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: WIDE shot at high-angle, composed as the frozen opening frame of a crane-up move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: The crane to reveal the river curve and the dark procession pouring toward its banks. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The camera cranes up; the horizon re-settles as the vertical move completes. Procession — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The camera cranes up; the horizon re-settles as the vertical move completes. Procession — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "moderate",
+          "strength": 0.6
+        },
+        {
+          "id": "S23",
+          "shot_type": "CLOSE-UP",
+          "size": "MACRO",
+          "angle": "macro",
+          "move": "push-in",
+          "dur": 3.7,
+          "clip_s": 3.7,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "rats_R1_swarm"
+          ],
+          "ref_scope": "image1: extreme macro of mesmerized rat eyes — same red-eye lock — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "rat swarm look",
+            "fur tone",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "macro on a rat's unblinking red eyes"
+            ],
+            [
+              1.6,
+              3.7,
+              "a golden note reflects in the pupil"
+            ]
+          ],
+          "narration_mk": "Очите им беа празни и сјајни, како заслепени од музиката.",
+          "dialogue_mk": "",
+          "kf_first": "Extreme macro of a grey rat's unblinking red eyes, a golden musical shimmer reflected in the pupil, photoreal detail, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "A warm note glides across the eyeball as the rat sways, hypnotized",
+          "continuity": "Rat macro lock; magic shimmer",
+          "motion": "push-in; pupil glint",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: extreme macro of a grey rat's unblinking red eyes, a golden musical shimmer reflected in the pupil, photoreal detail, photoreal cinematic, Diablo2/WoW/StarCraft grade then macro on a rat's unblinking red eyes, then a golden note reflects in the pupil the camera push-in settling into a warm note glides across the eyeball as the rat sways, hypnotized continuity held: Rat macro lock; magic shimmer",
+          "image_prompt_start": "Cinematic film still, photoreal: macro of Rats R1 Swarm, macro.\nAction: Extreme macro of a grey rat's unblinking red eyes, a golden musical shimmer reflected in the pupil, photoreal detail.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: MACRO shot at macro, composed as the frozen opening frame of a push-in move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: A warm note glides across the eyeball as the rat sways, hypnotized. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Pupil glint — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Pupil glint — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "gentle",
+          "strength": 0.6
+        },
+        {
+          "id": "S24",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 2.6,
+          "clip_s": 2.6,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "piper_P1_fused",
+            "pipe_prop"
+          ],
+          "ref_scope": "image1: Piper at the riverbank; image2: pipe — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "piper face identity",
+            "piper costume (motley patches)",
+            "wooden pipe design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "piper stands at the water's edge"
+            ],
+            [
+              1.6,
+              2.6,
+              "he plays one final, cascading phrase"
+            ]
+          ],
+          "narration_mk": "На самиот брег, свирачот не престануваше да свири.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the Piper standing at the river's edge, playing the old pipe with closed eyes, water light flickering across his face, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "He plays a final cascading phrase and lowers the pipe, gaze fixed on the water",
+          "continuity": "Piper + pipe lock; river daylight",
+          "motion": "push-in; phrase ending",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the Piper standing at the river's edge, playing the old pipe with closed eyes, water light flickering across his face, photoreal cinematic, Diablo2/WoW/StarCraft grade then piper stands at the water's edge, then he plays one final, cascading phrase the camera push-in settling into he plays a final cascading phrase and lowers the pipe, gaze fixed on the water continuity held: Piper + pipe lock; river daylight",
+          "image_prompt_start": "Cinematic film still, photoreal: medium of Piper, a slender trickster, wearing a cloak, with a soft golden glow, a ring of glowing runes, eye-level.\nAction: Medium of the Piper standing at the river's edge, playing the old pipe with closed eyes, water light flickering across his face.\nLoadout: Piper — Trickster Loadout \"Every Promise Has a Second Edge\"\nMaterials: cloak weave; dyed #2dd4bf; weathered leather trim; story-linen.\nAbilities: Aurum Halo, Sigil Circle, Cleave, Bulwark, War Cry.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: MEDIUM shot at eye-level, composed as the frozen opening frame of a push-in move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: He plays a final cascading phrase and lowers the pipe, gaze fixed on the water. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Phrase ending — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Phrase ending — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "moderate",
+          "strength": 0.6
+        },
+        {
+          "id": "S25",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "pan-right",
+          "dur": 4.2,
+          "clip_s": 4.2,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "rats_R1_swarm",
+            "river_RV1"
+          ],
+          "ref_scope": "image1: rats leaping into the river — same swarm lock — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "rat swarm look",
+            "fur tone",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "the first rats leap into the current"
+            ],
+            [
+              1.8,
+              4.2,
+              "the whole swarm follows in waves"
+            ]
+          ],
+          "narration_mk": "И тогаш, како едно, сите се фрлија во брзата вода.",
+          "dialogue_mk": "",
+          "kf_first": "Wide pan of the rat swarm pouring over the bank and leaping into the fast silver current in rolling waves, no cruelty, only motion, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "The water closes over the last ripples as the river sweeps onward, empty and calm",
+          "continuity": "Rat + river lock; child-safe tone",
+          "motion": "pan-right; leap waves",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide pan of the rat swarm pouring over the bank and leaping into the fast silver current in rolling waves, no cruelty, only motion, photoreal cinematic, Diablo2/WoW/StarCraft grade then the first rats leap into the current, then the whole swarm follows in waves the camera pan-right settling into the water closes over the last ripples as the river sweeps onward, empty and calm with water washes past continuity held: Rat + river lock; child-safe tone",
+          "image_prompt_start": "Cinematic film still, photoreal: wide of Rats R1 Swarm and River Rv1, eye-level.\nAction: Wide pan of the rat swarm pouring over the bank and leaping into the fast silver current in rolling waves, no cruelty, only motion.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: WIDE shot at eye-level, composed as the frozen opening frame of a pan-right move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: The water closes over the last ripples as the river sweeps onward, empty and calm. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The camera pans right; the landscape streams past, parallax layers sliding at different speeds. Leap waves — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The camera pans right; the landscape streams past, parallax layers sliding at different speeds. Leap waves — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "moderate",
+          "strength": 0.6
+        },
+        {
+          "id": "S26",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.2,
+          "clip_s": 3.2,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "piper_P1_fused"
+          ],
+          "ref_scope": "image1: Piper walking back through the gate — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "piper face identity",
+            "piper costume (motley patches)",
+            "wooden pipe design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "piper strides back through the gate"
+            ],
+            [
+              1.6,
+              3.2,
+              "townsfolk bow in relief"
+            ]
+          ],
+          "narration_mk": "За неколку минути во Хамелин не остана ниту еден стаорец.",
+          "dialogue_mk": "",
+          "kf_first": "Medium track of the Piper striding back alone through the town gate, relieved townsfolk bowing as he passes, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "He moves toward the town hall, the empty street gleaming in the sun",
+          "continuity": "Piper lock; gate + street",
+          "motion": "lateral track",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium track of the Piper striding back alone through the town gate, relieved townsfolk bowing as he passes, photoreal cinematic, Diablo2/WoW/StarCraft grade then piper strides back through the gate, then townsfolk bow in relief the camera track settling into he moves toward the town hall, the empty street gleaming in the sun continuity held: Piper lock; gate + street",
+          "image_prompt_start": "Cinematic film still, photoreal: medium of Piper, a slender trickster, wearing a cloak, with a soft golden glow, a ring of glowing runes, eye-level.\nAction: Medium track of the Piper striding back alone through the town gate, relieved townsfolk bowing as he passes.\nLoadout: Piper — Trickster Loadout \"Every Promise Has a Second Edge\"\nMaterials: cloak weave; dyed #2dd4bf; weathered leather trim; story-linen.\nAbilities: Aurum Halo, Sigil Circle, Cleave, Bulwark, War Cry.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: MEDIUM shot at eye-level, composed as the frozen opening frame of a track move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: He toward the town hall, the empty street gleaming in the sun. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Lateral track — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Lateral track — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "moderate",
+          "strength": 0.6
+        },
+        {
+          "id": "S27",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.1,
+          "clip_s": 2.1,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "piper_P1_fused",
+            "hall_H1"
+          ],
+          "ref_scope": "image1: Piper before the town hall; image2: hall facade — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "piper face identity",
+            "piper costume (motley patches)",
+            "wooden pipe design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "piper climbs the hall steps"
+            ],
+            [
+              1.6,
+              2.1,
+              "he stands before the heavy doors"
+            ]
+          ],
+          "narration_mk": "И гордо се упати кон градското собрание да си го земе ветеното.",
+          "dialogue_mk": "",
+          "kf_first": "Wide of the Piper climbing the steps of the stone town hall, its heavy doors dwarfing him, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "He stands before the carved doors, cape settling, then presses them open",
+          "continuity": "Piper + hall lock",
+          "motion": "static; door push",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide of the Piper climbing the steps of the stone town hall, its heavy doors dwarfing him, photoreal cinematic, Diablo2/WoW/StarCraft grade then piper climbs the hall steps, then he stands before the heavy doors the camera static settling into he stands before the carved doors, cape settling, then presses them open with stone groans continuity held: Piper + hall lock",
+          "image_prompt_start": "Cinematic film still, photoreal: wide of Piper, a slender trickster, wearing a cloak, with a soft golden glow, a ring of glowing runes and Hall, a figure, eye-level.\nAction: Wide of the Piper climbing the steps of the stone town hall, its heavy doors dwarfing him.\nLoadout: Piper — Trickster Loadout \"Every Promise Has a Second Edge\"\nMaterials: cloak weave; dyed #2dd4bf; weathered leather trim; story-linen.\nAbilities: Aurum Halo, Sigil Circle, Cleave, Bulwark, War Cry.\nEnvironment: a hall setting in the story's palette, arched hall light.\nCamera: WIDE shot at eye-level, composed as the frozen opening frame of a static move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: He stands before the carved doors, cape settling, then presses them open. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Door push — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Door push — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "moderate",
+          "strength": 0.6
+        },
+        {
+          "id": "S28",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.7,
+          "clip_s": 3.7,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "mayor_M1_fused"
+          ],
+          "ref_scope": "image1: the Mayor at his desk — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "mayor face identity",
+            "mayor robe & gold chain",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "mayor shifts behind the ledger"
+            ],
+            [
+              1.6,
+              3.7,
+              "his eyes slide away"
+            ]
+          ],
+          "narration_mk": "Но во собранието го чекаше сосема друг пречек.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the Mayor sitting behind the heavy ledger, gaze sliding away from the door, candlelight carving his face, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "He shifts in his chair, fingers drumming the desk, a cold decision forming",
+          "continuity": "Mayor lock; hall candlelight",
+          "motion": "push-in; eyes avert",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the Mayor sitting behind the heavy ledger, gaze sliding away from the door, candlelight carving his face, photoreal cinematic, Diablo2/WoW/StarCraft grade then mayor shifts behind the ledger, then his eyes slide away the camera push-in settling into he shifts in his chair, fingers drumming the desk, a cold decision forming continuity held: Mayor lock; hall candlelight",
+          "image_prompt_start": "Cinematic film still, photoreal: medium of Mayor, a robed king, wearing a cloak and a beard, eye-level.\nAction: Medium of the Mayor sitting behind the heavy ledger, gaze sliding away from the door, candlelight carving his face.\nLoadout: Mayor — Monarch Loadout \"The Crown Remembers\"\nMaterials: cloak weave; dyed #7c2d12; weathered leather trim; story-linen.\nAbilities: Cleave, Bulwark, War Cry, Overload, Last Stand.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: MEDIUM shot at eye-level, composed as the frozen opening frame of a push-in move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: He in his chair, fingers drumming the desk, a cold decision forming. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Eyes avert — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Eyes avert — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "moderate",
+          "strength": 0.6
+        },
+        {
+          "id": "S29",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 2.6,
+          "clip_s": 2.6,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "piper_P1_fused"
+          ],
+          "ref_scope": "image1: the Piper demanding payment — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "piper face identity",
+            "piper costume (motley patches)",
+            "wooden pipe design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "piper extends an open palm"
+            ],
+            [
+              1.8,
+              2.6,
+              "his jaw sets with quiet gravity"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Свирач: „Дојдов за моите илјада златници.“",
+          "kf_first": "Medium of the Piper extending an open palm across the Mayor's desk, face grave and still, candlelight on his lean features, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "His fingers remain open and steady as his jaw sets with quiet gravity",
+          "continuity": "Piper lock; hall light",
+          "motion": "push-in; palm extend",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the Piper extending an open palm across the Mayor's desk, face grave and still, candlelight on his lean features, photoreal cinematic, Diablo2/WoW/StarCraft grade then piper extends an open palm, then his jaw sets with quiet gravity the camera push-in settling into his fingers remain open and steady as his jaw sets with quiet gravity a voice speaks in Macedonian: \"Свирач: „Дојдов за моите илјада златници.“\" continuity held: Piper lock; hall light",
+          "image_prompt_start": "Cinematic film still, photoreal: medium of Piper, a slender trickster, wearing a cloak, with a soft golden glow, a ring of glowing runes, eye-level.\nAction: Medium of the Piper extending an open palm across the Mayor's desk, face grave and still, candlelight on his lean features.\nLoadout: Piper — Trickster Loadout \"Every Promise Has a Second Edge\"\nMaterials: cloak weave; dyed #2dd4bf; weathered leather trim; story-linen.\nAbilities: Aurum Halo, Sigil Circle, Cleave, Bulwark, War Cry.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: MEDIUM shot at eye-level, composed as the frozen opening frame of a push-in move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: His fingers remain open and steady as his jaw sets with quiet gravity. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Palm extend — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Palm extend — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "moderate",
+          "strength": 0.6
+        },
+        {
+          "id": "S30",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "push-in",
+          "dur": 4.2,
+          "clip_s": 4.2,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "mayor_M1_fused"
+          ],
+          "ref_scope": "image1: the Mayor refusing, enraged — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "mayor face identity",
+            "mayor robe & gold chain",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "mayor shoves the ledger back"
+            ],
+            [
+              1.8,
+              4.2,
+              "he points a shaking finger"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Градоначалник: „Бегај оттука, несреќен скитнику! Никогаш нема да го платам тоа!“",
+          "kf_first": "Low-angle medium of the Mayor thrusting to his feet, red-faced, pointing a shaking finger, the candle flame lurching, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "He sweeps his arm to the door, the gold chain swinging with fury",
+          "continuity": "Mayor lock; hall light",
+          "motion": "push-in; arm sweep",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of the Mayor thrusting to his feet, red-faced, pointing a shaking finger, the candle flame lurching, photoreal cinematic, Diablo2/WoW/StarCraft grade then mayor shoves the ledger back, then he points a shaking finger the camera push-in settling into he sweeps his arm to the door, the gold chain swinging with fury a voice speaks in Macedonian: \"Градоначалник: „Бегај оттука, несреќен скитнику! Никогаш нема да го платам тоа!“\" continuity held: Mayor lock; hall light",
+          "image_prompt_start": "Cinematic film still, photoreal: medium of Mayor, a robed king, wearing a cloak and a beard, low-angle.\nAction: Low-angle medium of the Mayor thrusting to his feet, red-faced, pointing a shaking finger, the candle flame lurching.\nLoadout: Mayor — Monarch Loadout \"The Crown Remembers\"\nMaterials: cloak weave; dyed #7c2d12; weathered leather trim; story-linen.\nAbilities: Cleave, Bulwark, War Cry, Overload, Last Stand.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: MEDIUM shot at low-angle, composed as the frozen opening frame of a push-in move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: He sweeps his arm to the door, the gold chain swinging with fury. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Arm sweep — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Arm sweep — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "moderate",
+          "strength": 0.6
+        },
+        {
+          "id": "S31",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.2,
+          "clip_s": 3.2,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "piper_P1_fused"
+          ],
+          "ref_scope": "image1: the Piper's hardened face — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "piper face identity",
+            "piper costume (motley patches)",
+            "wooden pipe design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "the Piper's eyes narrow to slits"
+            ],
+            [
+              1.6,
+              3.2,
+              "his hand closes hard around the pipe"
+            ]
+          ],
+          "narration_mk": "Во очите на свирачот се разгоре ладен жар.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the Piper's face as his eyes narrow to slits, jaw tight, and his hand closes hard around the wooden pipe, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "A cold ember-light kindles in his stare as he turns slowly away",
+          "continuity": "Piper face + pipe lock",
+          "motion": "push-in; fist tightens",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the Piper's face as his eyes narrow to slits, jaw tight, and his hand closes hard around the wooden pipe, photoreal cinematic, Diablo2/WoW/StarCraft grade then the Piper's eyes narrow to slits, then his hand closes hard around the pipe the camera push-in settling into a cold ember-light kindles in his stare as he turns slowly away continuity held: Piper face + pipe lock",
+          "image_prompt_start": "Cinematic film still, photoreal: close-up of Piper, a slender trickster, wearing a cloak, with a soft golden glow, a ring of glowing runes, eye-level.\nAction: Close-up of the Piper's face as his eyes narrow to slits, jaw tight, and his hand closes hard around the wooden pipe.\nLoadout: Piper — Trickster Loadout \"Every Promise Has a Second Edge\"\nMaterials: cloak weave; dyed #2dd4bf; weathered leather trim; story-linen.\nAbilities: Aurum Halo, Sigil Circle, Cleave, Bulwark, War Cry.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: CLOSE-UP shot at eye-level, composed as the frozen opening frame of a push-in move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: A cold ember-light kindles in his stare as he slowly away. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Fist tightens — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Fist tightens — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "gentle",
+          "strength": 0.7
+        },
+        {
+          "id": "S32",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "static",
+          "dur": 2.1,
+          "clip_s": 2.1,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "hall_H1"
+          ],
+          "ref_scope": "image1: the slamming hall door — 100% identical prop; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "subject identity",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "the heavy door swings shut"
+            ],
+            [
+              1.6,
+              2.1,
+              "the iron latch slams down"
+            ]
+          ],
+          "narration_mk": "Вратата на собранието се тресна зад него.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the heavy carved hall door swinging shut, the iron latch slamming down with final dull weight, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "The door booms closed, dust puffing from the jamb as the latch locks",
+          "continuity": "Door prop lock",
+          "motion": "static; door slam",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the heavy carved hall door swinging shut, the iron latch slamming down with final dull weight, photoreal cinematic, Diablo2/WoW/StarCraft grade then the heavy door swings shut, then the iron latch slams down the camera static settling into the door booms closed, dust puffing from the jamb as the latch locks with stone groans continuity held: Door prop lock",
+          "image_prompt_start": "Cinematic film still, photoreal: close-up of Hall, a figure, eye-level.\nAction: Close-up of the heavy carved hall door swinging shut, the iron latch slamming down with final dull weight.\nEnvironment: a hall setting in the story's palette, arched hall light.\nCamera: CLOSE-UP shot at eye-level, composed as the frozen opening frame of a static move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: The door booms closed, dust puffing from the jamb as the latch locks. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Door slam — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Door slam — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "action",
+          "strength": 0.7
+        },
+        {
+          "id": "S33",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "track",
+          "dur": 3.8,
+          "clip_s": 3.8,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "piper_P1_fused",
+            "pipe_prop"
+          ],
+          "ref_scope": "image1: the Piper on the steps raising the pipe — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "piper face identity",
+            "piper costume (motley patches)",
+            "wooden pipe design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "piper stands on the hall steps"
+            ],
+            [
+              1.8,
+              3.8,
+              "he raises the pipe toward the square"
+            ]
+          ],
+          "narration_mk": "А тој, молчејќи, го крена инструментот уште еднаш.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of the Piper standing on the town hall steps, the pipe raised toward the square, his motley cape stirring around him, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "He lowers the pipe, a darker determination settling over his features",
+          "continuity": "Piper + pipe lock; dusk light",
+          "motion": "lateral track",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of the Piper standing on the town hall steps, the pipe raised toward the square, his motley cape stirring around him, photoreal cinematic, Diablo2/WoW/StarCraft grade then piper stands on the hall steps, then he raises the pipe toward the square the camera track settling into he lowers the pipe, a darker determination settling over his features continuity held: Piper + pipe lock; dusk light",
+          "image_prompt_start": "Cinematic film still, photoreal: wide of Piper, a slender trickster, wearing a cloak, with a soft golden glow, a ring of glowing runes, low-angle.\nAction: Low-angle wide of the Piper standing on the town hall steps, the pipe raised toward the square, his motley cape stirring around him.\nLoadout: Piper — Trickster Loadout \"Every Promise Has a Second Edge\"\nMaterials: cloak weave; dyed #2dd4bf; weathered leather trim; story-linen.\nAbilities: Aurum Halo, Sigil Circle, Cleave, Bulwark, War Cry.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: WIDE shot at low-angle, composed as the frozen opening frame of a track move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: He lowers the pipe, a darker determination settling over his features. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Lateral track — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Lateral track — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "moderate",
+          "strength": 0.6
+        }
+      ]
+    },
+    {
+      "id": "act3",
+      "num": "Act III",
+      "title": "Децата",
+      "color": "#8b5cf6",
+      "pct": 28,
+      "synopsis": "Налутен, свирачот свири повторно и децата го следат во шумата; малото дете го моли за милост; свирачот, со добро срце, му ја подарува шупелката и ги враќа децата дома; градот ја памети лекцијата.",
+      "location_ref": "hamelin_to_forest_cave_and_return",
+      "global_locks": [
+        "palette",
+        "light direction",
+        "lens class"
+      ],
+      "palette": [
+        "#8b5cf6",
+        "#111827",
+        "#fde68a"
+      ],
+      "light_direction": "key light from screen-left, violet dusk into moonlit forest, warm cave glow, then golden dawn",
+      "time_of_day": "dusk",
+      "shots": [
+        {
+          "id": "S34",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 3.9,
+          "clip_s": 3.9,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "piper_P1_fused",
+            "pipe_prop"
+          ],
+          "ref_scope": "image1: Piper playing in the evening street; image2: pipe — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "piper face identity",
+            "piper costume (motley patches)",
+            "wooden pipe design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "piper walks the evening street, playing"
+            ],
+            [
+              1.8,
+              3.9,
+              "the tune turns warm and beckoning"
+            ]
+          ],
+          "narration_mk": "Па повторно засвири — но овојпат со друга, повеклива мелодија.",
+          "dialogue_mk": "",
+          "kf_first": "Wide track of the Piper walking the dimming street playing the old pipe, a warm beckoning tune filling the air, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "The melody swells and curls through doorways and windows like an unseen thread",
+          "continuity": "Piper + pipe lock; dusk palette",
+          "motion": "track; music thread",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide track of the Piper walking the dimming street playing the old pipe, a warm beckoning tune filling the air, photoreal cinematic, Diablo2/WoW/StarCraft grade then piper walks the evening street, playing, then the tune turns warm and beckoning the camera track settling into the melody swells and curls through doorways and windows like an unseen thread continuity held: Piper + pipe lock; dusk palette",
+          "image_prompt_start": "Cinematic film still, photoreal: wide of Piper, a slender trickster, wearing a cloak, with a soft golden glow, a ring of glowing runes, eye-level.\nAction: Wide track of the Piper walking the dimming street playing the old pipe, a warm beckoning tune filling the air.\nLoadout: Piper — Trickster Loadout \"Every Promise Has a Second Edge\"\nMaterials: cloak weave; dyed #2dd4bf; weathered leather trim; story-linen.\nAbilities: Aurum Halo, Sigil Circle, Cleave, Bulwark, War Cry.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: WIDE shot at eye-level, composed as the frozen opening frame of a track move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: The melody swells and curls through doorways and windows like an unseen thread. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Music thread — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Music thread — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "moderate",
+          "strength": 0.6
+        },
+        {
+          "id": "S35",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "pan-left",
+          "dur": 2.8,
+          "clip_s": 2.8,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "children_GRP_fused"
+          ],
+          "ref_scope": "image1: the children group — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "children group identity",
+            "period costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "a boy lifts his head from a game"
+            ],
+            [
+              1.6,
+              2.8,
+              "his eyes shine and he stands"
+            ]
+          ],
+          "narration_mk": "Децата ги кренаа главите, а очите им светнаа.",
+          "dialogue_mk": "",
+          "kf_first": "Medium pan of children in a lamplit room, a boy lifting his head from a wooden game, eyes shining as the tune reaches them, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "One by one they rise, drawn toward the door as if pulled by a thread",
+          "continuity": "Children lock; warm lamp vs dusk",
+          "motion": "pan-left; children rise",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium pan of children in a lamplit room, a boy lifting his head from a wooden game, eyes shining as the tune reaches them, photoreal cinematic, Diablo2/WoW/StarCraft grade then a boy lifts his head from a game, then his eyes shine and he stands the camera pan-left settling into one by one they rise, drawn toward the door as if pulled by a thread continuity held: Children lock; warm lamp vs dusk",
+          "image_prompt_start": "Cinematic film still, photoreal: medium of Children Grp, eye-level.\nAction: Medium pan of children in a lamplit room, a boy lifting his head from a wooden game, eyes shining as the tune reaches them.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: MEDIUM shot at eye-level, composed as the frozen opening frame of a pan-left move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: One by one they rise, drawn toward the door as if pulled by a thread. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Children rise — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Children rise — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "moderate",
+          "strength": 0.6
+        },
+        {
+          "id": "S36",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 4.4,
+          "clip_s": 4.4,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "children_GRP_fused"
+          ],
+          "ref_scope": "image1: children pouring from their homes — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "children group identity",
+            "period costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "children spill laughing from doorways"
+            ],
+            [
+              1.8,
+              4.4,
+              "the little crowd fills the street"
+            ]
+          ],
+          "narration_mk": "Смеејќи се, тие излегоа на улица и тргнаа по звукот.",
+          "dialogue_mk": "",
+          "kf_first": "Wide track of children spilling laughing from their doorways into the dim street, gathering into a bright little crowd, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "The crowd fills the street and sways after the receding melody",
+          "continuity": "Children lock; dusk street",
+          "motion": "track; crowd gather",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide track of children spilling laughing from their doorways into the dim street, gathering into a bright little crowd, photoreal cinematic, Diablo2/WoW/StarCraft grade then children spill laughing from doorways, then the little crowd fills the street the camera track settling into the crowd fills the street and sways after the receding melody continuity held: Children lock; dusk street",
+          "image_prompt_start": "Cinematic film still, photoreal: wide of Children Grp, eye-level.\nAction: Wide track of children spilling laughing from their doorways into the dim street, gathering into a bright little crowd.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: WIDE shot at eye-level, composed as the frozen opening frame of a track move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: The crowd fills the street and sways after the receding melody. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Crowd gather — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Crowd gather — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "moderate",
+          "strength": 0.6
+        },
+        {
+          "id": "S37",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 3.3,
+          "clip_s": 3.3,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "piper_P1_fused",
+            "children_GRP_fused"
+          ],
+          "ref_scope": "image1: Piper; image2: children following — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "piper face identity",
+            "piper costume (motley patches)",
+            "wooden pipe design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "piper leads the children through the gate"
+            ],
+            [
+              1.8,
+              3.3,
+              "the crane lifts over the procession"
+            ]
+          ],
+          "narration_mk": "И сите мали деца го следеа свирачот кон портата.",
+          "dialogue_mk": "",
+          "kf_first": "High crane-up over the Piper leading the bright crowd of children through the town gate as dusk deepens, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "The crane lifts to show the long, single-file procession threading out of Hamelin",
+          "continuity": "Piper + children locks; gate",
+          "motion": "crane-up; procession",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high crane-up over the Piper leading the bright crowd of children through the town gate as dusk deepens, photoreal cinematic, Diablo2/WoW/StarCraft grade then piper leads the children through the gate, then the crane lifts over the procession the camera crane-up settling into the crane lifts to show the long, single-file procession threading out of Hamelin continuity held: Piper + children locks; gate",
+          "image_prompt_start": "Cinematic film still, photoreal: wide of Piper, a slender trickster, wearing a cloak, with a soft golden glow, a ring of glowing runes and Children Grp, high-angle.\nAction: High crane-up over the Piper leading the bright crowd of children through the town gate as dusk deepens.\nLoadout: Piper — Trickster Loadout \"Every Promise Has a Second Edge\"\nMaterials: cloak weave; dyed #2dd4bf; weathered leather trim; story-linen.\nAbilities: Aurum Halo, Sigil Circle, Cleave, Bulwark, War Cry.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: WIDE shot at high-angle, composed as the frozen opening frame of a crane-up move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: The crane lifts to show the long, single-file procession threading out of Hamelin. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The camera cranes up; the horizon re-settles as the vertical move completes. Procession — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The camera cranes up; the horizon re-settles as the vertical move completes. Procession — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "moderate",
+          "strength": 0.6
+        },
+        {
+          "id": "S38",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "pan-right",
+          "dur": 2.2,
+          "clip_s": 2.2,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "townsfolk_T1_fused"
+          ],
+          "ref_scope": "image1: parents bursting into the street — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "townsfolk group identity",
+            "period costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "a mother shouts from a window"
+            ],
+            [
+              1.6,
+              2.2,
+              "parents rush to the gate"
+            ]
+          ],
+          "narration_mk": "Мајките и татковците, со ужас, сфатија што се случува.",
+          "dialogue_mk": "",
+          "kf_first": "Medium pan of parents bursting into the street, one mother shouting from a window, as they rush toward the closing gate, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "The pan lands on a father stumbling to a halt at the empty gate, arms outstretched",
+          "continuity": "Townsfolk/parents lock; dusk",
+          "motion": "pan-right; rush",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium pan of parents bursting into the street, one mother shouting from a window, as they rush toward the closing gate, photoreal cinematic, Diablo2/WoW/StarCraft grade then a mother shouts from a window, then parents rush to the gate the camera pan-right settling into the pan lands on a father stumbling to a halt at the empty gate, arms outstretched continuity held: Townsfolk/parents lock; dusk",
+          "image_prompt_start": "Cinematic film still, photoreal: medium of Townsfolk, a robed old man, wearing a cloak, eye-level.\nAction: Medium pan of parents bursting into the street, one mother shouting from a window, as they rush toward the closing gate.\nLoadout: Townsfolk — Elder Loadout \"The Mountain Does Not Hurry\"\nMaterials: cloak weave; dyed #6b7280; weathered leather trim; story-linen.\nAbilities: Cleave, Bulwark, War Cry, Overload, Last Stand.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: MEDIUM shot at eye-level, composed as the frozen opening frame of a pan-right move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: The lands on a father stumbling to a halt at the empty gate, arms outstretched. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The camera pans right; the landscape streams past, parallax layers sliding at different speeds. Rush — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The camera pans right; the landscape streams past, parallax layers sliding at different speeds. Rush — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "moderate",
+          "strength": 0.6
+        },
+        {
+          "id": "S39",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "low-angle",
+          "move": "track",
+          "dur": 3.9,
+          "clip_s": 3.9,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "child_C1_fused"
+          ],
+          "ref_scope": "image1: the little child struggling along the road — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "children group identity",
+            "period costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "one small child stumbles far behind"
+            ],
+            [
+              1.8,
+              3.9,
+              "he falls, then scrambles up"
+            ]
+          ],
+          "narration_mk": "Само едно мало дете заостана и не можеше да го стигне чекорот.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle medium of one small child struggling along the road far behind the procession, chest heaving, a bare foot scuffing the stones, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "He stumbles to his knees, then scrambles up and limps onward, refusing to stop",
+          "continuity": "Little child lock; dusk road",
+          "motion": "track; stumble-recover",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle medium of one small child struggling along the road far behind the procession, chest heaving, a bare foot scuffing the stones, photoreal cinematic, Diablo2/WoW/StarCraft grade then one small child stumbles far behind, then he falls, then scrambles up the camera track settling into he stumbles to his knees, then scrambles up and limps onward, refusing to stop continuity held: Little child lock; dusk road",
+          "image_prompt_start": "Cinematic film still, photoreal: medium of Child, a slender child, with a soft golden glow, low-angle.\nAction: Low-angle medium of one small child struggling along the road far behind the procession, chest heaving, a bare foot scuffing the stones.\nLoadout: Child — Child Loadout \"Small Hands, Long Shadow\"\nMaterials: dyed #fef3c7; weathered leather trim; story-linen; oiled hide.\nAbilities: Aurum Halo, Cleave, Bulwark, War Cry, Overload.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: MEDIUM shot at low-angle, composed as the frozen opening frame of a track move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: He stumbles to his knees, then scrambles up and limps onward, refusing to stop. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Stumble-recover — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Stumble-recover — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "moderate",
+          "strength": 0.6
+        },
+        {
+          "id": "S40",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "pan-left",
+          "dur": 2.8,
+          "clip_s": 2.8,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "mayor_M1_fused",
+            "townsfolk_T1_fused"
+          ],
+          "ref_scope": "image1: Mayor; image2: pleading parents — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "mayor face identity",
+            "mayor robe & gold chain",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "parents surround the Mayor, begging"
+            ],
+            [
+              1.8,
+              2.8,
+              "he lowers his head"
+            ]
+          ],
+          "narration_mk": "Очајните родители побараа помош од градоначалникот.",
+          "dialogue_mk": "",
+          "kf_first": "Medium pan of desperate parents crowding the Mayor at the hall doors, hands raised, as he stands frozen in the torchlight, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "The Mayor lowers his head, unable to meet their eyes — it is already too late",
+          "continuity": "Mayor + townsfolk locks; night torches",
+          "motion": "pan-left; crowd plead",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium pan of desperate parents crowding the Mayor at the hall doors, hands raised, as he stands frozen in the torchlight, photoreal cinematic, Diablo2/WoW/StarCraft grade then parents surround the Mayor, begging, then he lowers his head the camera pan-left settling into the Mayor lowers his head, unable to meet their eyes — it is already too late continuity held: Mayor + townsfolk locks; night torches",
+          "image_prompt_start": "Cinematic film still, photoreal: medium of Mayor, a robed king, wearing a cloak and a beard and Townsfolk, a robed old man, wearing a cloak, eye-level.\nAction: Medium pan of desperate parents crowding the Mayor at the hall doors, hands raised, as he stands frozen in the torchlight.\nLoadout: Mayor — Monarch Loadout \"The Crown Remembers\"\nMaterials: cloak weave; dyed #7c2d12; weathered leather trim; story-linen.\nAbilities: Cleave, Bulwark, War Cry, Overload, Last Stand.\nLoadout: Townsfolk — Elder Loadout \"The Mountain Does Not Hurry\"\nMaterials: cloak weave; dyed #6b7280; weathered leather trim; story-linen.\nAbilities: Cleave, Bulwark, War Cry, Overload, Last Stand.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: MEDIUM shot at eye-level, composed as the frozen opening frame of a pan-left move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: The Mayor lowers his head, unable to meet their eyes — it is already too late. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Crowd plead — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Crowd plead — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "moderate",
+          "strength": 0.6
+        },
+        {
+          "id": "S41",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 4.4,
+          "clip_s": 4.4,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "mayor_M1_fused"
+          ],
+          "ref_scope": "image1: the Mayor's troubled face — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "mayor face identity",
+            "mayor robe & gold chain",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "torch flame reflects in his eye"
+            ],
+            [
+              1.6,
+              4.4,
+              "his mouth opens but no words come"
+            ]
+          ],
+          "narration_mk": "Но гласот му заглави во грлото.",
+          "dialogue_mk": "",
+          "kf_first": "Close-up of the Mayor's face in torchlight, the flame reflected in his eye, his mouth opening but no words coming, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "He blinks and turns away, the fight gone from his shoulders",
+          "continuity": "Mayor face lock; night torchlight",
+          "motion": "push-in; mouth quiver",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: close-up of the Mayor's face in torchlight, the flame reflected in his eye, his mouth opening but no words coming, photoreal cinematic, Diablo2/WoW/StarCraft grade then torch flame reflects in his eye, then his mouth opens but no words come the camera push-in settling into he blinks and turns away, the fight gone from his shoulders continuity held: Mayor face lock; night torchlight",
+          "image_prompt_start": "Cinematic film still, photoreal: close-up of Mayor, a robed king, wearing a cloak and a beard, eye-level.\nAction: Close-up of the Mayor's face in torchlight, the flame reflected in his eye, his mouth opening but no words coming.\nLoadout: Mayor — Monarch Loadout \"The Crown Remembers\"\nMaterials: cloak weave; dyed #7c2d12; weathered leather trim; story-linen.\nAbilities: Cleave, Bulwark, War Cry, Overload, Last Stand.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: CLOSE-UP shot at eye-level, composed as the frozen opening frame of a push-in move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: He blinks and away, the fight gone from his shoulders. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Mouth quiver — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Mouth quiver — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "gentle",
+          "strength": 0.7
+        },
+        {
+          "id": "S42",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-down",
+          "dur": 3.3,
+          "clip_s": 3.3,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "piper_P1_fused",
+            "children_GRP_fused",
+            "cave_CAV1"
+          ],
+          "ref_scope": "image1: Piper; image2: children; image3: the forest cave — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "piper face identity",
+            "piper costume (motley patches)",
+            "wooden pipe design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "the procession enters the dark forest"
+            ],
+            [
+              1.8,
+              3.3,
+              "a great cave mouth looms ahead"
+            ]
+          ],
+          "narration_mk": "Децата го следеа свирачот длабоко во шумата.",
+          "dialogue_mk": "",
+          "kf_first": "High crane-down over the procession threading into a dark pine forest, a great cave mouth looming ahead through the trees, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "The crane descends to reveal the children gathered, small against the vast cave entrance",
+          "continuity": "Piper + children + cave locks; moonlit forest",
+          "motion": "crane-down; reveal",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high crane-down over the procession threading into a dark pine forest, a great cave mouth looming ahead through the trees, photoreal cinematic, Diablo2/WoW/StarCraft grade then the procession enters the dark forest, then a great cave mouth looms ahead the camera crane-down settling into the crane descends to reveal the children gathered, small against the vast cave entrance with echoes roll continuity held: Piper + children + cave locks; moonlit forest",
+          "image_prompt_start": "Cinematic film still, photoreal: wide of Piper, a slender trickster, wearing a cloak, with a soft golden glow, a ring of glowing runes and Children Grp and Cave Cav1, high-angle.\nAction: High crane-down over the procession threading into a dark pine forest, a great cave mouth looming ahead through the trees.\nLoadout: Piper — Trickster Loadout \"Every Promise Has a Second Edge\"\nMaterials: cloak weave; dyed #2dd4bf; weathered leather trim; story-linen.\nAbilities: Aurum Halo, Sigil Circle, Cleave, Bulwark, War Cry.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: WIDE shot at high-angle, composed as the frozen opening frame of a crane-down move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: The crane descends to reveal the children gathered, small against the vast cave entrance. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. The scene breathes with ambient life — weight settles, small movements ripple through frame, nothing sits frozen. The move completes in a single phase and holds.",
+          "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. The scene breathes with ambient life — weight settles, small movements ripple through frame, nothing sits frozen. The move completes in a single phase and holds.",
+          "motion_intensity": "moderate",
+          "strength": 0.6
+        },
+        {
+          "id": "S43",
+          "shot_type": "BOSS-ONLY",
+          "size": "WIDE",
+          "angle": "low-angle",
+          "move": "static",
+          "dur": 2.2,
+          "clip_s": 2.2,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "cave_CAV1"
+          ],
+          "ref_scope": "image1: the great cave entrance — 100% identical prop; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "subject identity",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "moonlight spills across the stone mouth"
+            ],
+            [
+              1.6,
+              2.2,
+              "a faint warm glow comes from within"
+            ]
+          ],
+          "narration_mk": "И застанаа пред влезот на една огромна пештера.",
+          "dialogue_mk": "",
+          "kf_first": "Low-angle wide of a colossal cave entrance, moonlight spilling across its stone mouth, a faint warm glow breathing from within, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "The warm light pulses once, casting the children's long shadows across the rock",
+          "continuity": "Cave lock; moonlit night",
+          "motion": "static; light pulse",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: low-angle wide of a colossal cave entrance, moonlight spilling across its stone mouth, a faint warm glow breathing from within, photoreal cinematic, Diablo2/WoW/StarCraft grade then moonlight spills across the stone mouth, then a faint warm glow comes from within the camera static settling into the warm light pulses once, casting the children's long shadows across the rock with echoes roll continuity held: Cave lock; moonlit night",
+          "image_prompt_start": "Cinematic film still, photoreal: wide of Cave Cav1, low-angle.\nAction: Low-angle wide of a colossal cave entrance, moonlight spilling across its stone mouth, a faint warm glow breathing from within.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: WIDE shot at low-angle, composed as the frozen opening frame of a static move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: The warm light pulses once, casting the children's long shadows across the rock. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Light pulse — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Light pulse — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "action",
+          "strength": 0.6
+        },
+        {
+          "id": "S44",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "push-in",
+          "dur": 3.9,
+          "clip_s": 3.9,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "piper_P1_fused",
+            "child_C1_fused"
+          ],
+          "ref_scope": "image1: Piper; image2: the little child at his feet — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "piper face identity",
+            "piper costume (motley patches)",
+            "wooden pipe design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "the little child bursts from the trees"
+            ],
+            [
+              1.8,
+              3.9,
+              "he throws himself at the Piper's feet"
+            ]
+          ],
+          "narration_mk": "Тогаш малото дете конечно ги стигна и се фрли пред нозете на свирачот.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the little child bursting from the trees and throwing himself at the Piper's feet, clutching his ankle, cave light behind, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "The child clings on, weeping, as the Piper pauses and looks down",
+          "continuity": "Piper + child locks; cave light",
+          "motion": "push-in; collapse",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the little child bursting from the trees and throwing himself at the Piper's feet, clutching his ankle, cave light behind, photoreal cinematic, Diablo2/WoW/StarCraft grade then the little child bursts from the trees, then he throws himself at the Piper's feet the camera push-in settling into the child clings on, weeping, as the Piper pauses and looks down continuity held: Piper + child locks; cave light",
+          "image_prompt_start": "Cinematic film still, photoreal: medium of Piper, a slender trickster, wearing a cloak, with a soft golden glow, a ring of glowing runes and Child, a slender child, with a soft golden glow, eye-level.\nAction: Medium of the little child bursting from the trees and throwing himself at the Piper's feet, clutching his ankle, cave light behind.\nLoadout: Piper — Trickster Loadout \"Every Promise Has a Second Edge\"\nMaterials: cloak weave; dyed #2dd4bf; weathered leather trim; story-linen.\nAbilities: Aurum Halo, Sigil Circle, Cleave, Bulwark, War Cry.\nLoadout: Child — Child Loadout \"Small Hands, Long Shadow\"\nMaterials: dyed #fef3c7; weathered leather trim; story-linen; oiled hide.\nAbilities: Aurum Halo, Cleave, Bulwark, War Cry, Overload.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: MEDIUM shot at eye-level, composed as the frozen opening frame of a push-in move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: The child clings on, weeping, as the Piper pauses and looks down. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Collapse — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Collapse — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "moderate",
+          "strength": 0.6
+        },
+        {
+          "id": "S45",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "high-angle",
+          "move": "push-in",
+          "dur": 2.8,
+          "clip_s": 2.8,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "child_C1_fused"
+          ],
+          "ref_scope": "image1: the little child's pleading face — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "children group identity",
+            "period costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "tears track over the child's cheek"
+            ],
+            [
+              1.6,
+              2.8,
+              "he looks up, voice breaking"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Малото дете: „Те молам… немој да нè одведеш!“",
+          "kf_first": "High-angle close-up of the little child's tear-streaked face turned up to the Piper, firelight-flecked eyes wide with fear, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "His lip trembles as he whispers his plea into the cold air",
+          "continuity": "Child face lock; cave light",
+          "motion": "push-in; tear track",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle close-up of the little child's tear-streaked face turned up to the Piper, firelight-flecked eyes wide with fear, photoreal cinematic, Diablo2/WoW/StarCraft grade then tears track over the child's cheek, then he looks up, voice breaking the camera push-in settling into his lip trembles as he whispers his plea into the cold air a voice speaks in Macedonian: \"Малото дете: „Те молам… немој да нè одведеш!“\" continuity held: Child face lock; cave light",
+          "image_prompt_start": "Cinematic film still, photoreal: close-up of Child, a slender child, with a soft golden glow, high-angle.\nAction: High-angle close-up of the little child's tear-streaked face turned up to the Piper, firelight-flecked eyes wide with fear.\nLoadout: Child — Child Loadout \"Small Hands, Long Shadow\"\nMaterials: dyed #fef3c7; weathered leather trim; story-linen; oiled hide.\nAbilities: Aurum Halo, Cleave, Bulwark, War Cry, Overload.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: CLOSE-UP shot at high-angle, composed as the frozen opening frame of a push-in move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: His lip trembles as he whispers his plea into the cold air. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Tear track — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The lens pushes in; foreground detail sharpens as the background melts into soft blur. Tear track — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "gentle",
+          "strength": 0.7
+        },
+        {
+          "id": "S46",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "crane-down",
+          "dur": 4.4,
+          "clip_s": 4.4,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "piper_P1_fused",
+            "child_C1_fused"
+          ],
+          "ref_scope": "image1: Piper kneeling; image2: little child — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "piper face identity",
+            "piper costume (motley patches)",
+            "wooden pipe design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "the Piper kneels beside the child"
+            ],
+            [
+              1.8,
+              4.4,
+              "he rests a gentle hand on the boy's head"
+            ]
+          ],
+          "narration_mk": "А свирачот, кој имаше добро срце, се наведна до него.",
+          "dialogue_mk": "",
+          "kf_first": "Medium of the Piper kneeling beside the little child, resting a gentle hand on the boy's head, the motley cape pooling around them, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "A soft warmth enters the Piper's eyes as he draws the child upright",
+          "continuity": "Piper + child locks; cave light",
+          "motion": "crane-down; hand on head",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium of the Piper kneeling beside the little child, resting a gentle hand on the boy's head, the motley cape pooling around them, photoreal cinematic, Diablo2/WoW/StarCraft grade then the Piper kneels beside the child, then he rests a gentle hand on the boy's head the camera crane-down settling into a soft warmth enters the Piper's eyes as he draws the child upright continuity held: Piper + child locks; cave light",
+          "image_prompt_start": "Cinematic film still, photoreal: medium of Piper, a slender trickster, wearing a cloak, with a soft golden glow, a ring of glowing runes and Child, a slender child, with a soft golden glow, eye-level.\nAction: Medium of the Piper kneeling beside the little child, resting a gentle hand on the boy's head, the motley cape pooling around them.\nLoadout: Piper — Trickster Loadout \"Every Promise Has a Second Edge\"\nMaterials: cloak weave; dyed #2dd4bf; weathered leather trim; story-linen.\nAbilities: Aurum Halo, Sigil Circle, Cleave, Bulwark, War Cry.\nLoadout: Child — Child Loadout \"Small Hands, Long Shadow\"\nMaterials: dyed #fef3c7; weathered leather trim; story-linen; oiled hide.\nAbilities: Aurum Halo, Cleave, Bulwark, War Cry, Overload.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: MEDIUM shot at eye-level, composed as the frozen opening frame of a crane-down move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: A soft warmth enters the Piper's eyes as he draws the child upright. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The camera cranes down; the horizon re-settles as the vertical move completes. Hand on head — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The camera cranes down; the horizon re-settles as the vertical move completes. Hand on head — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "moderate",
+          "strength": 0.6
+        },
+        {
+          "id": "S47",
+          "shot_type": "CLOSE-UP",
+          "size": "CLOSE-UP",
+          "angle": "high-angle",
+          "move": "static",
+          "dur": 3.3,
+          "clip_s": 3.3,
+          "face_floor_px": 200,
+          "asset_refs": [
+            "piper_P1_fused",
+            "child_C1_fused",
+            "pipe_prop"
+          ],
+          "ref_scope": "image1: Piper hands; image2: child's hands; image3: the wooden pipe — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "piper face identity",
+            "piper costume (motley patches)",
+            "wooden pipe design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.6,
+              "the Piper presses the pipe into the child's hands"
+            ],
+            [
+              1.6,
+              3.3,
+              "small fingers close around it"
+            ]
+          ],
+          "narration_mk": "",
+          "dialogue_mk": "Свирач: „Ти свири на неа, тврдоглаво детенце. Ти ја подарувам. Ајде, со сите врати се дома.“",
+          "kf_first": "High-angle close-up of the Piper pressing the old wooden pipe into the child's small hands, the boy's fingers closing around it, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "The child clasps the pipe to his chest as the Piper's hands withdraw",
+          "continuity": "Piper + child + pipe locks; cave light",
+          "motion": "static; gift",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high-angle close-up of the Piper pressing the old wooden pipe into the child's small hands, the boy's fingers closing around it, photoreal cinematic, Diablo2/WoW/StarCraft grade then the Piper presses the pipe into the child's hands, then small fingers close around it the camera static settling into the child clasps the pipe to his chest as the Piper's hands withdraw a voice speaks in Macedonian: \"Свирач: „Ти свири на неа, тврдоглаво детенце. Ти ја подарувам. Ајде, со сите врати се дома.“\" continuity held: Piper + child + pipe locks; cave light",
+          "image_prompt_start": "Cinematic film still, photoreal: close-up of Piper, a slender trickster, wearing a cloak, with a soft golden glow, a ring of glowing runes and Child, a slender child, with a soft golden glow, high-angle.\nAction: High-angle close-up of the Piper pressing the old wooden pipe into the child's small hands, the boy's fingers closing around it.\nLoadout: Piper — Trickster Loadout \"Every Promise Has a Second Edge\"\nMaterials: cloak weave; dyed #2dd4bf; weathered leather trim; story-linen.\nAbilities: Aurum Halo, Sigil Circle, Cleave, Bulwark, War Cry.\nLoadout: Child — Child Loadout \"Small Hands, Long Shadow\"\nMaterials: dyed #fef3c7; weathered leather trim; story-linen; oiled hide.\nAbilities: Aurum Halo, Cleave, Bulwark, War Cry, Overload.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: CLOSE-UP shot at high-angle, composed as the frozen opening frame of a static move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: The child clasps the pipe to his chest as the Piper's hands withdraw. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Gift — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The frame holds steady — only the action moves; dust motes drift through the light, loose fabric and hair breathing with a faint breeze. Gift — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "gentle",
+          "strength": 0.7
+        },
+        {
+          "id": "S48",
+          "shot_type": "WIDE",
+          "size": "WIDE",
+          "angle": "eye-level",
+          "move": "track",
+          "dur": 2.2,
+          "clip_s": 2.2,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "children_GRP_fused",
+            "child_C1_fused"
+          ],
+          "ref_scope": "image1: children; image2: little child leading with the pipe — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "children group identity",
+            "period costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "the children turn back toward home"
+            ],
+            [
+              1.8,
+              2.2,
+              "the little child raises the pipe high"
+            ]
+          ],
+          "narration_mk": "И така децата тргнаа назад, дома, кон своите родители.",
+          "dialogue_mk": "",
+          "kf_first": "Wide track of the children walking back through the moonlit forest, the little child at their head raising the wooden pipe high, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "The procession exits the trees as dawn light begins to warm the horizon",
+          "continuity": "Children + child locks; moon-to-dawn",
+          "motion": "track; return",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: wide track of the children walking back through the moonlit forest, the little child at their head raising the wooden pipe high, photoreal cinematic, Diablo2/WoW/StarCraft grade then the children turn back toward home, then the little child raises the pipe high the camera track settling into the procession exits the trees as dawn light begins to warm the horizon continuity held: Children + child locks; moon-to-dawn",
+          "image_prompt_start": "Cinematic film still, photoreal: wide of Children Grp and Child, a slender child, with a soft golden glow, eye-level.\nAction: Wide track of the children walking back through the moonlit forest, the little child at their head raising the wooden pipe high.\nLoadout: Child — Child Loadout \"Small Hands, Long Shadow\"\nMaterials: dyed #fef3c7; weathered leather trim; story-linen; oiled hide.\nAbilities: Aurum Halo, Cleave, Bulwark, War Cry, Overload.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: WIDE shot at eye-level, composed as the frozen opening frame of a track move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: The procession exits the trees as dawn light begins to warm the horizon. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Return — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The camera tracks; foreground elements slide past, the subject holding center as the world moves. Return — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "moderate",
+          "strength": 0.6
+        },
+        {
+          "id": "S49",
+          "shot_type": "MEDIUM",
+          "size": "MEDIUM",
+          "angle": "eye-level",
+          "move": "pan-left",
+          "dur": 3.9,
+          "clip_s": 3.9,
+          "face_floor_px": 120,
+          "asset_refs": [
+            "townsfolk_T1_fused",
+            "children_GRP_fused"
+          ],
+          "ref_scope": "image1: parents; image2: children — 100% identical; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "townsfolk group identity",
+            "period costume",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "families rush together at the gate"
+            ],
+            [
+              1.8,
+              3.9,
+              "parents lift their children high"
+            ]
+          ],
+          "narration_mk": "На портата, воздишки и смеа — секое дете најде прегратка.",
+          "dialogue_mk": "",
+          "kf_first": "Medium pan of families rushing together at the gate, parents lifting their children high, dawn light golden on their faces, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "The pan settles on the little child being swept into a mother's arms, the pipe still clutched tight",
+          "continuity": "Townsfolk + children locks; dawn",
+          "motion": "pan-left; embrace",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: medium pan of families rushing together at the gate, parents lifting their children high, dawn light golden on their faces, photoreal cinematic, Diablo2/WoW/StarCraft grade then families rush together at the gate, then parents lift their children high the camera pan-left settling into the pan settles on the little child being swept into a mother's arms, the pipe still clutched tight continuity held: Townsfolk + children locks; dawn",
+          "image_prompt_start": "Cinematic film still, photoreal: medium of Townsfolk, a robed old man, wearing a cloak and Children Grp, eye-level.\nAction: Medium pan of families rushing together at the gate, parents lifting their children high, dawn light golden on their faces.\nLoadout: Townsfolk — Elder Loadout \"The Mountain Does Not Hurry\"\nMaterials: cloak weave; dyed #6b7280; weathered leather trim; story-linen.\nAbilities: Cleave, Bulwark, War Cry, Overload, Last Stand.\nEnvironment: the story setting, matched to the shot's palette and light direction.\nCamera: MEDIUM shot at eye-level, composed as the frozen opening frame of a pan-left move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: The on the little child being swept into a mother's arms, the pipe still clutched tight. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Embrace — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The camera pans left; the landscape streams past, parallax layers sliding at different speeds. Embrace — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "moderate",
+          "strength": 0.6
+        },
+        {
+          "id": "S50",
+          "shot_type": "BOSS-ONLY",
+          "size": "WIDE",
+          "angle": "high-angle",
+          "move": "crane-up",
+          "dur": 2.8,
+          "clip_s": 2.8,
+          "face_floor_px": 0,
+          "asset_refs": [
+            "hamelin_town_E1"
+          ],
+          "ref_scope": "image1: Hamelin in quiet morning calm — 100% identical set; studio bg/pose/light NOT used",
+          "screen_dir": "L-to-R",
+          "positive_locks": [
+            "subject identity",
+            "prop design",
+            "palette",
+            "light direction",
+            "screen_dir L-to-R",
+            "motion continuity"
+          ],
+          "beat_timeline": [
+            [
+              0.0,
+              1.8,
+              "the crane rises over the peaceful town"
+            ],
+            [
+              1.8,
+              2.8,
+              "light floods the empty cobbles"
+            ]
+          ],
+          "narration_mk": "А од тој ден, Хамелин секогаш ги држеше своите ветувања. За чудниот свирач веќе никој не слушна.",
+          "dialogue_mk": "",
+          "kf_first": "High crane-up over Hamelin in quiet morning calm, golden light flooding the empty cobbles, the town at peace, photoreal cinematic, Diablo2/WoW/StarCraft grade, 1216x704",
+          "kf_last": "The crane rises past the clock tower into clear sky, leaving the small town serene below",
+          "continuity": "Town set continuity; golden morning",
+          "motion": "crane-up; exit",
+          "frames": 121,
+          "ltx_prompt": "photoreal cinematic: high crane-up over Hamelin in quiet morning calm, golden light flooding the empty cobbles, the town at peace, photoreal cinematic, Diablo2/WoW/StarCraft grade then the crane rises over the peaceful town, then light floods the empty cobbles the camera crane-up settling into the crane rises past the clock tower into clear sky, leaving the small town serene below continuity held: Town set continuity; golden morning",
+          "image_prompt_start": "Cinematic film still, photoreal: wide of Hamelin Town, a figure, high-angle.\nAction: High crane-up over Hamelin in quiet morning calm, golden light flooding the empty cobbles, the town at peace.\nEnvironment: a spires setting in the story's palette, spire-lit cold light.\nCamera: WIDE shot at high-angle, composed as the frozen opening frame of a crane-up move — subject sharp, background softly blurred, shallow depth of field.\nPhotoreal Diablo 2 / World of Warcraft / StarCraft cinematic grade, 35mm anamorphic, real skin and fur texture, visible film grain, dramatic cinematic lighting. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "image_prompt_end": "photoreal cinematic: The crane past the clock tower into clear sky, leaving the small town serene below. Generate at 2432x1408 minimum, ideally 3840x2160 (4K landscape).",
+          "video_prompt_start": "The camera cranes up; the horizon re-settles as the vertical move completes. Exit — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "video_prompt_end": "The camera cranes up; the horizon re-settles as the vertical move completes. Exit — the motion carries real weight, follow-through readable in fabric, debris and light. The move completes in a single phase and holds.",
+          "motion_intensity": "action",
+          "strength": 0.6
+        }
+      ]
+    }
+  ],
+  "director_corrections": {
+    "issued": "2026-11-07",
+    "source": "KB §13 DIRECTOR CORRECTIONS — overrides all prior asset/keyframe guidance",
+    "rules": [
+      "DD HEADWEAR: no cap/hood/bandana/mask on head; hood = back-cowl only (cape-like); bare head + teal-blue glowing hair always visible; any head/face covering = REJECT",
+      "LEGENDARY WEAPONS MUST APPEAR: DD = twin Frostbite-class hand crossbows (ice-blue arcane crystal limbs, frost runes, frozen-light string, teal-blue glow); AZ = Dawnbreaker-class greatsword (pale sunsteel, molten-gold runes, golden holy fire edge, sunburst crossguard); hero sheet/keyframe without weapon = INCOMPLETE",
+      "WEAPON ANTI-SLOP: fantasy construction only; crossbow must NEVER read as firearm (no barrel/magazine/stock/Uzi/SMG silhouette = REJECT); anti-slop negatives always appended",
+      "BOSS FACE: Mal'garot HAS a prolific molten-lava face (lava dripping/running, drops falling to ground); faceless boss sheets SUPERSEDED",
+      "LOCATION BRIGHTNESS FLOOR: environment plates silhouette-readable at thumbnail; no murk-dark grades"
+    ],
+    "applies_when": "Activates when face_lock changes from AI-default to an enrolled identity (DD/AZ). AI-default packages carry this as a forward constraint, not a current defect.",
+    "anti_slop_negatives": "firearm, gun, machinegun, Uzi, barrel, magazine, ammo clip, muzzle, modern weapon"
+  },
+  "character_designs": {
+    "piper": {
+      "archetype": "trickster",
+      "build": "slender",
+      "scale": "human",
+      "palette": {
+        "primary": "#2dd4bf",
+        "secondary": "#b45309",
+        "glow": "#fde68a"
+      },
+      "costume": [
+        "cloak"
+      ],
+      "props": [],
+      "fx": [
+        "golden_glow",
+        "rune_ring"
+      ]
+    },
+    "mayor": {
+      "archetype": "monarch",
+      "build": "robed",
+      "scale": "human",
+      "palette": {
+        "primary": "#7c2d12",
+        "secondary": "#fbbf24",
+        "glow": "#f59e0b"
+      },
+      "costume": [
+        "cloak",
+        "beard"
+      ],
+      "props": [],
+      "fx": []
+    },
+    "townsfolk": {
+      "archetype": "elder",
+      "build": "robed",
+      "scale": "human",
+      "palette": {
+        "primary": "#6b7280",
+        "secondary": "#78350f",
+        "glow": "#cbd5e1"
+      },
+      "costume": [
+        "cloak"
+      ],
+      "props": [],
+      "fx": []
+    },
+    "children": {
+      "archetype": "child",
+      "build": "slender",
+      "scale": "human",
+      "palette": {
+        "primary": "#2dd4bf",
+        "secondary": "#fbbf24",
+        "glow": "#fde68a"
+      },
+      "costume": [],
+      "props": [],
+      "fx": []
+    },
+    "child": {
+      "archetype": "child",
+      "build": "slender",
+      "scale": "human",
+      "palette": {
+        "primary": "#fef3c7",
+        "secondary": "#2dd4bf",
+        "glow": "#fde68a"
+      },
+      "costume": [],
+      "props": [],
+      "fx": [
+        "golden_glow"
+      ]
+    },
+    "rats": {
+      "archetype": "beast",
+      "build": "slender",
+      "scale": "human",
+      "palette": {
+        "primary": "#94a3b8",
+        "secondary": "#cbd5e1",
+        "glow": "#ef4444"
+      },
+      "costume": [
+        "fur"
+      ],
+      "props": [],
+      "fx": [
+        "shadow_smoke"
+      ]
+    },
+    "hamelin_town": {
+      "motif": "spires",
+      "tone": "#1a2a4a"
+    },
+    "gates": {
+      "motif": "gate",
+      "tone": "#f59e0b"
+    },
+    "river": {
+      "motif": "ocean",
+      "tone": "#6b7280"
+    },
+    "hall": {
+      "motif": "hall",
+      "tone": "#b45309"
+    },
+    "cave": {
+      "motif": "cavern",
+      "tone": "#8b5cf6"
+    }
+  }
+}

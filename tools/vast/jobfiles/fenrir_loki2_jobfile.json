@@ -1,0 +1,40 @@
+{
+ "jobs": [
+  {
+   "job_id": "fenrir_s03",
+   "shot": "S03",
+   "act": "act1",
+   "start_frame": "media/fenrir_assets/keyframes/kf_03_start.png",
+   "prompt": "photoreal cinematic: wide eye-level of Loki the trickster stepping forward in the great hall, a sly smile on his face, three small figures following behind him, photoreal cinematic Loki slender, trickster, in cloak, wreathed in shadow smoke Fenrir hulking, beast, wreathed in shadow smoke Jormungandr hulking, serpent Hel robed, monarch, in hood, cloak, wreathed in shadow smoke then wide of Loki stepping forward, a sly smile on his face, then three small figures come into view behind him \u2014 wolf, serpent, pale girl the camera static settling into the three children come into view: a young wolf, a coiling serpent, and a pale girl with shadows whisper, stone groans continuity held: Loki's sharp features, green-gold clothing; great hall light",
+   "negative_prompt": "deformed, extra limbs, morphing, watermark, text, static frame, blurry, low quality, cropped head, cut-off face",
+   "resolution": "1216x704",
+   "frames": 121,
+   "fps": 24,
+   "steps": 8,
+   "cfg": 1.0,
+   "seed": 2003,
+   "size": "WIDE",
+   "move": "static",
+   "image_strength": 0.85,
+   "rerun_of": "fenrir_s03_likeness"
+  },
+  {
+   "job_id": "fenrir_s14",
+   "shot": "S14",
+   "act": "act1",
+   "start_frame": "media/fenrir_assets/keyframes/kf_14_start.png",
+   "prompt": "photoreal cinematic: eye-level medium of Odin facing Loki, the trickster's smirk gone, his eyes lowered in refusal, photoreal cinematic Odin athletic, divine, in cloak, hood, beard, carrying spear, wreathed in storm aura, rune ring Loki slender, trickster, in cloak, wreathed in shadow smoke then medium of Odin facing Loki, the trickster\u2019s smirk gone, then Loki shakes his head and steps back into shadow the camera static settling into loki slowly shakes his head and steps back into the shadow with the spear whistles through the air, thunder rolls a voice speaks in Macedonian: \"\u041e\u0434\u0438\u043d: \u201e\u041b\u043e\u043a\u0438, \u043c\u043e\u0436\u0435\u0448 \u0442\u0438 \u0434\u0430 \u0433\u043e \u043d\u0430\u043f\u0440\u0430\u0432\u0438\u0448 \u0442\u043e\u0430?\u201c\" continuity held: Loki's fallen expression; Odin's expectation",
+   "negative_prompt": "deformed, extra limbs, morphing, watermark, text, static frame, blurry, low quality, cropped head, cut-off face",
+   "resolution": "1216x704",
+   "frames": 121,
+   "fps": 24,
+   "steps": 8,
+   "cfg": 1.0,
+   "seed": 2014,
+   "size": "MEDIUM",
+   "move": "static",
+   "image_strength": 0.85,
+   "rerun_of": "fenrir_s14_likeness"
+  }
+ ]
+}

@@ -1,0 +1,70 @@
+[
+ {
+  "tag": "crossbow_sheet_v3",
+  "refs": [],
+  "prompt": "Legendary fantasy HAND CROSSBOW weapon reference sheet: a matched TWIN PAIR of compact hand crossbows for a demon hunter. Pistol-grip hand crossbows with a curved bow limb of translucent ice-blue arcane crystal glowing teal-blue from within; slender dark steel body with engraved frost runes; bowstring is a line of frozen pale-blue light; faint frost mist curls off the limbs; matching pair, mirror-imaged left and right. This is a medieval-fantasy hand crossbow strung with a bowstring that fires bolts \u2014 NO barrel, NO magazine, NO gun parts of any kind. Orthographic multi-view weapon reference sheet on a plain neutral grey studio background, soft even lighting, weapon rendered full-frame and centered in each view, consistent scale across views, no hands, no person, no text, no watermark. Views arranged in a 2x3 grid: (1) front three-quarter view, (2) side profile, (3) top view, (4) rear three-quarter view, (5) detail close-up of the weapon head, (6) detail close-up of the grip.",
+  "negative": "firearm, gun, machinegun, Uzi, SMG, barrel, magazine, ammo clip, muzzle, gun stock, modern weapon, blurry, deformed, text, watermark, low quality",
+  "steps": 50,
+  "seed": 8301,
+  "stage": 1,
+  "id": "crossbow_sheet_v3",
+  "width": 1024,
+  "height": 1024,
+  "cfg": 4.0
+ },
+ {
+  "tag": "greatsword_sheet_v1",
+  "refs": [],
+  "prompt": "Legendary fantasy TWO-HANDED GREATSWORD weapon reference sheet: a massive retribution-paladin greatsword, blade of pale sunsteel with a broad fuller, molten-gold runes glowing and running the full length of the blade, the edge wreathed in soft golden holy fire; a sunburst crossguard of gold and steel; a long two-handed grip wrapped in dark leather with a gold pommel; faint golden light aura around the whole weapon. Oversized heroic scale, clearly a two-handed sword, no firearm parts. Orthographic multi-view weapon reference sheet on a plain neutral grey studio background, soft even lighting, weapon rendered full-frame and centered in each view, consistent scale across views, no hands, no person, no text, no watermark. Views arranged in a 2x3 grid: (1) front three-quarter view, (2) side profile, (3) top view, (4) rear three-quarter view, (5) detail close-up of the weapon head, (6) detail close-up of the grip.",
+  "negative": "firearm, gun, machinegun, Uzi, SMG, barrel, magazine, ammo clip, muzzle, gun stock, modern weapon, blurry, deformed, text, watermark, low quality",
+  "steps": 50,
+  "seed": 8302,
+  "stage": 1,
+  "id": "greatsword_sheet_v1",
+  "width": 1024,
+  "height": 1024,
+  "cfg": 4.0
+ },
+ {
+  "tag": "boss_sheet_v3",
+  "refs": [],
+  "prompt": "Full-body character reference sheet of an epic fantasy demon boss on a plain grey studio background: a colossal molten-forge demon. His face is a prolific molten-lava face \u2014 a skull-like visage of cracked black volcanic crust over blinding molten lava, lava dripping and running down the face and body everywhere, drops of molten rock falling from his jaw and shoulders to the ground, small fires where the drops land. Massive obsidian-plated shoulders, one arm ending in a long molten whip-crack of living lava. Front three-quarter and back views side by side, consistent design across views, full-frame, game-cinematic concept-art quality, photoreal materials, no text, no watermark.",
+  "negative": "blurry, deformed face, distorted eyes, extra limbs, extra fingers, melted or smudged armour, cartoon, illustration, plastic skin, text, watermark, low quality, different person, wrong identity",
+  "steps": 50,
+  "seed": 8303,
+  "stage": 1,
+  "id": "boss_sheet_v3",
+  "width": 1024,
+  "height": 1024,
+  "cfg": 4.0
+ },
+ {
+  "tag": "loc_canyon_plate_v2",
+  "refs": [],
+  "prompt": "Epic fantasy environment establishing shot: a vast basalt canyon gorge at late golden afternoon, bright and clearly readable exposure \u2014 deep shadows but luminous highlights, sun striking the canyon rim, drifting ash motes glowing in the light, scorched ground with cooling lava veins far below, ruined stone bridge spanning the gorge in the mid-distance. Cinematic wide composition, subjects silhouette-readable at thumbnail size, photoreal, high dynamic range, no murk-dark grade, no text.",
+  "negative": "too dark, murky, underexposed, pitch black, muddy shadows, text, watermark",
+  "steps": 50,
+  "seed": 8304,
+  "stage": 1,
+  "id": "loc_canyon_plate_v2",
+  "width": 1024,
+  "height": 1024,
+  "cfg": 4.0
+ },
+ {
+  "tag": "dd_fused_glacier_v2",
+  "refs": [
+   "dd_look_glacier_v3.png",
+   "ddface_a.jpg"
+  ],
+  "prompt": "Full-body character reference sheet of a fantasy demon hunter woman on a plain grey studio background: she wears the glacier-blue arcane combat outfit \u2014 fitted ice-blue and dark leather armour, twin hand crossbows of ice-blue crystal held at her sides. The character from image 1 keeps the exact same outfit, armour, weapons, and palette; the face from image 2 is her face. CRITICAL: her head is completely BARE \u2014 no helmet, no hood, no bandana, no mask, nothing on her head or face; a loose hood hangs as a BACK PIECE only, draped over her shoulders and back like a cowl. Her teal-to-blue hair is fully visible, glowing softly and waving weightlessly as if underwater. Front and back views, consistent across views, photoreal, no text. Appearance, texture and color reference ONLY; ignore the reference's background and lighting. Grey studio background never appears in output.",
+  "negative": "helmet, hood on head, headwear, bandana, mask, head covering, blurry, deformed face, distorted eyes, extra limbs, extra fingers, melted or smudged armour, cartoon, illustration, plastic skin, text, watermark, low quality, different person, wrong identity",
+  "steps": 50,
+  "seed": 8305,
+  "stage": 1,
+  "id": "dd_fused_glacier_v2",
+  "width": 1024,
+  "height": 1024,
+  "cfg": 4.0
+ }
+]

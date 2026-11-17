@@ -1,0 +1,24 @@
+[
+ {
+  "tag": "dd_look_card",
+  "seed": 9201,
+  "steps": 50,
+  "prompt": "Photoreal cinematic keyframe, 35mm. A waist-up portrait of a demon hunter woman in a neutral three-quarter stance, facing camera, calm expression. FACE: use the EXACT face of the woman in image 1 \u2014 identical features, identical teal-to-blue glowing hair waving weightlessly as if underwater. HEAD BARE: no helmet, no hood, no mask, no bandana \u2014 hair and face fully visible. ARMOR: rebuild the EXACT armor design from image 2 on her body \u2014 identical silhouette, materials, colors and details, unchanged. Shot description: in the 'Blighted Marsh' \u2014 a dusk fungal marsh of giant teal mushroom towers and drifting luminous spore-mist, shallow water glowing faintly teal; in the middle distance a patch of grey corrupted blight ground with black spreading veins. Shallow depth of field, soft spore-mist behind her, moody teal dusk light.",
+  "negative": "cartoon, illustration, painting, helmet, hood on head, mask, extra limbs, deformed hands, two faces, text, watermark, logo",
+  "refs": [
+   "dd_card_a.jpg",
+   "dd_armor_sheet.jpg"
+  ]
+ },
+ {
+  "tag": "az_look_card",
+  "seed": 9202,
+  "steps": 50,
+  "prompt": "Photoreal cinematic keyframe, 35mm. A waist-up portrait of a retribution paladin man in a neutral three-quarter stance, facing camera, calm resolute expression. FACE: use the EXACT face of the man in image 1 \u2014 identical features. Face fully visible, open-face helm only. ARMOR: rebuild the EXACT armor design from image 2 on his body \u2014 identical silhouette, materials, colors and details, unchanged. Shot description: in the 'Blighted Marsh' \u2014 a dusk fungal marsh of giant teal mushroom towers and drifting luminous spore-mist, shallow water glowing faintly teal; in the middle distance a patch of grey corrupted blight ground with black spreading veins. Shallow depth of field, soft spore-mist behind him, moody teal dusk light, faint warm gold rim-light from the holy-fire runes.",
+  "negative": "cartoon, illustration, painting, full-face helmet, face covered, hood, mask, extra limbs, deformed hands, two faces, text, watermark, logo",
+  "refs": [
+   "az_card_a.jpg",
+   "az_armor_sheet.jpg"
+  ]
+ }
+]

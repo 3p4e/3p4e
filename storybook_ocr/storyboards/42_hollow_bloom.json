@@ -1,0 +1,414 @@
+{
+ "film": "hollow_bloom_v3",
+ "shots": [
+  {
+   "shot": 1,
+   "size": "W",
+   "cast": "both",
+   "action": "stand on a hummock at the corruption ring edge, mist drifting",
+   "ability": "",
+   "mover": "dolly-in"
+  },
+  {
+   "shot": 2,
+   "size": "W",
+   "cast": "both",
+   "action": "face the creeping grey edge; the corruption advances a handspan",
+   "ability": "",
+   "mover": "slow push"
+  },
+  {
+   "shot": 3,
+   "size": "I",
+   "cast": "dd",
+   "action": "hand cocks a crossbow; a frost-arrow crystallises in the groove",
+   "ability": "Frost bolt",
+   "mover": "insert"
+  },
+  {
+   "shot": 4,
+   "size": "I",
+   "cast": "dd",
+   "action": "hair rolls in a slow weightless wave; neon teal brightens; spores near her freeze and fall",
+   "ability": "Glacial hair",
+   "mover": "insert"
+  },
+  {
+   "shot": 5,
+   "size": "I",
+   "cast": "az",
+   "action": "gauntlet grips the greatsword hilt; rune-tattoo ember-gold wakes along the wrist",
+   "ability": "Tattoo surge",
+   "mover": "insert"
+  },
+  {
+   "shot": 6,
+   "size": "W",
+   "cast": "boss",
+   "action": "rises from the corrupted patch; spore-sacs inflate; maw opens",
+   "ability": "Bloom rise",
+   "mover": "low rise"
+  },
+  {
+   "shot": 7,
+   "size": "C",
+   "cast": "boss",
+   "action": "a thorned tendril coils tight, then snaps",
+   "ability": "Tendril Whip",
+   "mover": "whip crack"
+  },
+  {
+   "shot": 8,
+   "size": "M",
+   "cast": "dd",
+   "action": "raises an arm; a rotating frost-and-sigil ring blooms; drifting spores crystallize and fall",
+   "ability": "Glacial Aura",
+   "mover": "aura pull"
+  },
+  {
+   "shot": 9,
+   "size": "W",
+   "cast": "boss",
+   "action": "tendril whip gouges a blight-furrow across the marsh",
+   "ability": "Tendril Whip",
+   "mover": "whip-pan"
+  },
+  {
+   "shot": 10,
+   "size": "M",
+   "cast": "dd",
+   "action": "kicks off in a comet of rime over the water",
+   "ability": "Frost Rush",
+   "mover": "sprint smear"
+  },
+  {
+   "shot": 11,
+   "size": "C",
+   "cast": "dd",
+   "action": "fires both crossbows; three crystalline frost-bolts streak",
+   "ability": "Frost bolts",
+   "mover": "slow-mo to realtime"
+  },
+  {
+   "shot": 12,
+   "size": "I",
+   "cast": "dd",
+   "action": "bolts strike a tendril; flash-freeze spreads; the vine goes brittle white",
+   "ability": "Flash-freeze",
+   "mover": "crash-zoom"
+  },
+  {
+   "shot": 13,
+   "size": "W",
+   "cast": "az",
+   "action": "plants the greatsword tip; a gold shockwave cracks the corrupted floor",
+   "ability": "Judgement ring",
+   "mover": "low hold"
+  },
+  {
+   "shot": 14,
+   "size": "M",
+   "cast": "az",
+   "action": "swings a radiant two-handed arc; it detonates on the bloom",
+   "ability": "Templar's Verdict",
+   "mover": "orbit"
+  },
+  {
+   "shot": 15,
+   "size": "C",
+   "cast": "boss",
+   "action": "reels; maw twists; spore-sacs flare brighter",
+   "ability": "Recoil",
+   "mover": "push-in"
+  },
+  {
+   "shot": 16,
+   "size": "W",
+   "cast": "both",
+   "action": "the bloom sweeps a tendril across the arena; both heroes vault opposite ways",
+   "ability": "Group evade",
+   "mover": "cross-cut"
+  },
+  {
+   "shot": 17,
+   "size": "M",
+   "cast": "dd",
+   "action": "flips back and lands in a crouch, frost-smoke curling",
+   "ability": "Vault",
+   "mover": "whip-pan"
+  },
+  {
+   "shot": 18,
+   "size": "C",
+   "cast": "dd",
+   "action": "eyes ignite; twin white-blue lances slash out",
+   "ability": "Rime Beams",
+   "mover": "rack"
+  },
+  {
+   "shot": 19,
+   "size": "W",
+   "cast": "both",
+   "action": "COMBO Freeze-and-Sunder: her Rime Beams freeze a tendril mid-swing; his Verdict shatters it in a golden shockwave through ice",
+   "ability": "Freeze-and-Sunder",
+   "mover": "track"
+  },
+  {
+   "shot": 20,
+   "size": "M",
+   "cast": "boss",
+   "action": "staggers; the frozen vine fractures; the maw opens in a silent roar",
+   "ability": "Stagger",
+   "mover": "push"
+  },
+  {
+   "shot": 21,
+   "size": "W",
+   "cast": "boss",
+   "action": "hunches; spore-sacs rupture one after another",
+   "ability": "Spore Burst",
+   "mover": "wide"
+  },
+  {
+   "shot": 22,
+   "size": "C",
+   "cast": "az",
+   "action": "raises the sword; a light-blade summons above",
+   "ability": "Blade of Justice",
+   "mover": "tilt"
+  },
+  {
+   "shot": 23,
+   "size": "M",
+   "cast": "az",
+   "action": "the light-blade plunges; the bloom staggers under a white pillar",
+   "ability": "Blade fall",
+   "mover": "pan"
+  },
+  {
+   "shot": 24,
+   "size": "W",
+   "cast": "boss",
+   "action": "slams root-feet; spore rain begins; the sky dims green",
+   "ability": "Spore Rain",
+   "mover": "crane"
+  },
+  {
+   "shot": 25,
+   "size": "M",
+   "cast": "dd",
+   "action": "curls under her wings in a Glacial Aura; spores hiss to snow on the membrane",
+   "ability": "Glacial shield",
+   "mover": "close"
+  },
+  {
+   "shot": 26,
+   "size": "M",
+   "cast": "az",
+   "action": "strides through the spore rain; light sheds it like water; the ground flushes teal at his boots",
+   "ability": "Radiant stride",
+   "mover": "dolly-back"
+  },
+  {
+   "shot": 27,
+   "size": "I",
+   "cast": "boss",
+   "action": "exhales a choking green spore gout in a rising column",
+   "ability": "Spore gout",
+   "mover": "insert"
+  },
+  {
+   "shot": 28,
+   "size": "W",
+   "cast": "both",
+   "action": "she vaults the gout while he charges through its shadow",
+   "ability": "Group split",
+   "mover": "wide"
+  },
+  {
+   "shot": 29,
+   "size": "W",
+   "cast": "az",
+   "action": "stands square; a white-gold cone scours the ground; blight recedes in a wave",
+   "ability": "Wake of Light",
+   "mover": "sweep"
+  },
+  {
+   "shot": 30,
+   "size": "C",
+   "cast": "dd",
+   "action": "winds up; wings fold; snow coils concentrate around her",
+   "ability": "The Hunt wind-up",
+   "mover": "push"
+  },
+  {
+   "shot": 31,
+   "size": "W",
+   "cast": "dd",
+   "action": "dives lance-first, crossbows leading, a frozen trail behind",
+   "ability": "The Hunt dive",
+   "mover": "aerial"
+  },
+  {
+   "shot": 32,
+   "size": "M",
+   "cast": "boss",
+   "action": "impact crater; spore-sacs flicker; the bloom is forced to one root-knee",
+   "ability": "Impact",
+   "mover": "shake"
+  },
+  {
+   "shot": 33,
+   "size": "C",
+   "cast": "both",
+   "action": "COMBO Hoarfrost Judgement: he marks the sac-cluster with a rune; her frost locks it; the rune detonates in a light column through ice",
+   "ability": "Hoarfrost Judgement",
+   "mover": "orbit"
+  },
+  {
+   "shot": 34,
+   "size": "C",
+   "cast": "az",
+   "action": "regrips the sword; holy runes blaze up the blade",
+   "ability": "Runes blaze",
+   "mover": "orbit"
+  },
+  {
+   "shot": 35,
+   "size": "W",
+   "cast": "boss",
+   "action": "enrages; swells open; spores spiral into a vortex",
+   "ability": "Enrage vortex",
+   "mover": "wide"
+  },
+  {
+   "shot": 36,
+   "size": "CU",
+   "cast": "boss",
+   "action": "the maw opens full; a spore-voice speaks (subtitle D4)",
+   "ability": "Bloom voice",
+   "mover": "CU"
+  },
+  {
+   "shot": 37,
+   "size": "W",
+   "cast": "boss",
+   "action": "ignites the Pollen Nova; a spore supernova rises, drowning the marsh light",
+   "ability": "Pollen Nova",
+   "mover": "crane"
+  },
+  {
+   "shot": 38,
+   "size": "M",
+   "cast": "dd",
+   "action": "wing-flare, crossbows raised; glacier energy peaks",
+   "ability": "Glacier peak",
+   "mover": "orbit"
+  },
+  {
+   "shot": 39,
+   "size": "M",
+   "cast": "az",
+   "action": "plants his hands; the tattoo surges gold-to-white; golden wings bloom",
+   "ability": "Avenging Wrath",
+   "mover": "rack"
+  },
+  {
+   "shot": 40,
+   "size": "W",
+   "cast": "both",
+   "action": "still-beat: the two hold under the rising spore-nova",
+   "ability": "Group hold",
+   "mover": "held wide"
+  },
+  {
+   "shot": 41,
+   "size": "M",
+   "cast": "dd",
+   "action": "leaps in full Glacier Form; Immortal wings wide; snowstorm against the spores",
+   "ability": "Glacier Form",
+   "mover": "aerial"
+  },
+  {
+   "shot": 42,
+   "size": "M",
+   "cast": "az",
+   "action": "rises radiant; greatsword burning white-gold",
+   "ability": "Radiant rise",
+   "mover": "tilt"
+  },
+  {
+   "shot": 43,
+   "size": "W",
+   "cast": "both",
+   "action": "COMBO Blizzard & Verdict: both launch together; a frost streak and a gold streak winding around each other",
+   "ability": "Blizzard & Verdict",
+   "mover": "twin dive"
+  },
+  {
+   "shot": 44,
+   "size": "C",
+   "cast": "dd",
+   "action": "fires Rime Beams and both crossbows at once; a violet-white lance punches through the bloom heart",
+   "ability": "Final lance",
+   "mover": "slow-mo"
+  },
+  {
+   "shot": 45,
+   "size": "C",
+   "cast": "az",
+   "action": "the final Verdict arc splits the bloom; light floods out",
+   "ability": "Final Verdict",
+   "mover": "crash"
+  },
+  {
+   "shot": 46,
+   "size": "W",
+   "cast": "boss",
+   "action": "the Pollen Nova collapses inward; light versus spore",
+   "ability": "Collapse",
+   "mover": "wide pull"
+  },
+  {
+   "shot": 47,
+   "size": "I",
+   "cast": "boss",
+   "action": "the corpse-flower head cracks, folds shut, wilts",
+   "ability": "Bloom wilt",
+   "mover": "inset"
+  },
+  {
+   "shot": 48,
+   "size": "W",
+   "cast": "both",
+   "action": "spores settle like grey snow; two silhouettes over the purifying patch",
+   "ability": "Aftermath",
+   "mover": "wide"
+  },
+  {
+   "shot": 49,
+   "size": "C",
+   "cast": "dd",
+   "action": "exhales a wisp of frost; hair dims to the idle gradient; she almost smiles",
+   "ability": "Epilogue breath",
+   "mover": "CU"
+  },
+  {
+   "shot": 50,
+   "size": "W",
+   "cast": "az",
+   "action": "turns, greatsword over his shoulder; dawn breaks; the marsh water glows teal again",
+   "ability": "Dawn return",
+   "mover": "dolly"
+  }
+ ],
+ "dialogue": {
+  "D1": "\u201e\u0414\u043e\u0458\u0434\u043e\u0432\u0442\u0435 \u0434\u0430 \u0440\u0430\u0441\u0446\u0432\u0435\u0442\u0430\u0442\u0435 \u0432\u043e \u043c\u0435\u043d\u0435, \u043a\u0430\u043a\u043e \u0441\u0438\u0442\u0435 \u0448\u0442\u043e \u0434\u043e\u0458\u0434\u043e\u0430 \u043f\u0440\u0435\u0434 \u0432\u0430\u0441.\u201c",
+  "D2": "\u201e\u041c\u0440\u0430\u0437\u043e\u0442 \u0441\u0430\u043c\u043e \u0433\u043e \u0443\u0441\u043f\u043e\u0440\u0443\u0432\u0430 \u0433\u043d\u0438\u043b\u0435\u0436\u043e\u0442.\u201c",
+  "D3": "\u201e\u0421\u0432\u0435\u0442\u043b\u0438\u043d\u0430\u0442\u0430 \u043d\u0435 \u0441\u0435 \u0433\u0430\u0441\u0438.\u201c",
+  "D4": "\u201e\u041e\u0434 \u0442\u0440\u0435\u0432\u0430 \u0441\u0442\u0435 \u2014 \u0438 \u0432\u043e \u0442\u0440\u0435\u0432\u0430 \u045c\u0435 \u0432\u0435 \u0432\u0440\u0430\u0442\u0430\u043c!\u201c",
+  "D5": "\u201e\u0417\u0430\u043c\u0440\u0437\u043d\u0438.\u201c",
+  "D6": "\u201e\u0421\u0443\u0434\u0438.\u201c",
+  "D7": "\u201e\u0418 \u0432\u043e \u043d\u0430\u0458\u0442\u043e\u043f\u043b\u043e\u0442\u043e \u043c\u043e\u0447\u0443\u0440\u0438\u0448\u0442\u0435, \u0437\u0438\u043c\u0430\u0442\u0430 \u043d\u0430\u043e\u0453\u0430 \u043f\u0430\u0442.\u201c"
+ }
+}

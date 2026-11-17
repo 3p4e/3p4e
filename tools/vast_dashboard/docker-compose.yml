@@ -1,0 +1,31 @@
+# Vast.ai dashboard on KVM4 (or anywhere with docker compose)
+#
+#   cp .env.example .env && \$EDITOR .env      # set VASTAI_API + VAST_DASH_TOKEN
+#   docker compose up -d --build
+#   docker compose logs -f
+#
+# The container is unprivileged, read-only, and exposes one port.
+
+services:
+  vast-dashboard:
+    build: .
+    image: vast-dashboard:1.0
+    container_name: vast-dashboard
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "${DASH_BIND:-127.0.0.1}:${DASH_PORT:-8090}:8090"
+    read_only: true
+    tmpfs:
+      - /tmp:size=8m
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    mem_limit: 128m
+    cpus: 0.50
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "2"

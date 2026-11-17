@@ -1,0 +1,42 @@
+[
+  {
+    "tag": "gate_dd_idle",
+    "seed": 3301,
+    "width": 1280,
+    "height": 720,
+    "steps": 40,
+    "refs": ["ddface_a.jpg", "ddface_b.jpg"],
+    "prompt": "Photoreal HEAD-AND-SHOULDERS portrait of the exact man in the reference photos, centered, facing the camera, filling most of the frame from the top of his chest to above his head, with his face large and clearly readable in sharp focus. He is a demon hunter: black frost-etched leather-and-plate armour across his shoulders and chest, and he wears NO HELMET, NO HOOD and NO MASK. His bare head and full unobstructed face are completely visible, matching the reference face exactly. His hair is short, cropped close at the sides with a slightly longer swept top, no longer than jaw level, coloured bright cyan fading to teal. Frost-white feathered wing tips spread behind his shoulders, glowing teal sigil rings and drifting ice particles, dark studio background, cold blue-violet rim light on the face, ultra-detailed skin texture, natural eyes.",
+    "negative": "helmet, hood, hoodie, head covering, mask, visor, face covering, faceless, shadow over face, hidden face, obscured face, small face, distant figure, full body, wide shot, long hair, hair past shoulders, ponytail, braid, deformed face, distorted eyes, different person, wrong identity, blurry, extra limbs, cartoon, illustration, painting, plastic skin, text, watermark, low quality, low resolution, overexposed"
+  },
+  {
+    "tag": "gate_dd_glacier",
+    "seed": 3302,
+    "width": 1280,
+    "height": 720,
+    "steps": 40,
+    "refs": ["ddface_a.jpg", "ddface_b.jpg"],
+    "prompt": "Photoreal HEAD-AND-SHOULDERS portrait of the exact man in the reference photos, centered, facing the camera, filling most of the frame from the top of his chest to above his head, with his face large and clearly readable in sharp focus. Glacier form: jagged white ice fused over black armour at his shoulders and chest, and he wears NO HELMET, NO HOOD and NO MASK. His bare head and full unobstructed face are completely visible, matching the reference face exactly. Short cropped hair, no longer than jaw level, glowing white-blue. Enormous Immortal demon wings of blue-tipped frost rising behind him, orbiting teal sigil rings, falling snow, dark background, cold blue and violet lighting on his face, ultra-detailed skin texture, natural eyes.",
+    "negative": "helmet, hood, hoodie, head covering, mask, visor, face covering, faceless, shadow over face, hidden face, obscured face, small face, distant figure, full body, wide shot, long hair, hair past shoulders, ponytail, braid, deformed face, distorted eyes, different person, wrong identity, blurry, extra limbs, cartoon, illustration, painting, plastic skin, text, watermark, low quality, low resolution, overexposed"
+  },
+  {
+    "tag": "gate_az_idle",
+    "seed": 3303,
+    "width": 1280,
+    "height": 720,
+    "steps": 40,
+    "refs": ["azface_a.jpg", "azface_b.jpg"],
+    "prompt": "Photoreal HEAD-AND-SHOULDERS portrait of the exact man in the reference photos, centered, facing the camera, filling most of the frame from the top of his chest to above his head, with his face large and clearly readable in sharp focus. He is a paladin: ornate white-and-gold plate armour with a white cloak across his shoulders. He wears NO HELMET, NO VISOR and NO FACE PLATE — his bare head and full unobstructed face are completely visible, matching the reference face exactly. A single molten-gold glowing labyrinth rune tattoo crosses one side of his face from brow over the eye and cheek down past the mouth to the chin, and matching gold rune script runs along his neck and one forearm. Dark studio background, warm gold rim light, drifting ember particles, ultra-detailed skin texture, natural eyes.",
+    "negative": "helmet, helm, visor, face plate, faceplate, mask, head covering, hood, faceless, shadow over face, hidden face, obscured face, small face, distant figure, full body, wide shot, symmetrical tattoo, cross symbol, christian cross, crusader cross, deformed face, distorted eyes, different person, wrong identity, blurry, extra limbs, cartoon, illustration, painting, plastic skin, text, watermark, low quality, low resolution, overexposed"
+  },
+  {
+    "tag": "gate_az_wrath",
+    "seed": 3304,
+    "width": 1280,
+    "height": 720,
+    "steps": 40,
+    "refs": ["azface_a.jpg", "azface_b.jpg"],
+    "prompt": "Photoreal HEAD-AND-SHOULDERS portrait of the exact man in the reference photos, centered, facing the camera, filling most of the frame from the top of his chest to above his head, with his face large and clearly readable in sharp focus. Avenging Wrath form: white-and-gold plate armour with the gold rune etching blazing hot across his chest and shoulders. He wears NO HELMET of any kind and NO VISOR and NO FACE PLATE — no metal at his temple, no helmet fragment, nothing covering his head. His bare head and full unobstructed face are completely visible, matching the reference face exactly. Molten-gold rune maze blazes on one side of his face, down his neck and along one forearm, glowing with internal fire. Enormous translucent golden wings of light spread behind him, embers rising, dark background, warm gold lighting on his face, ultra-detailed skin texture, natural eyes.",
+    "negative": "helmet, helm, visor, face plate, faceplate, mask, head covering, helmet fragment, temple guard, light beam from eye, laser eyes, glow beam, faceless, shadow over face, hidden face, obscured face, small face, distant figure, full body, wide shot, symmetrical tattoo, cross symbol, christian cross, crusader cross, deformed face, distorted eyes, different person, wrong identity, blurry, extra limbs, cartoon, illustration, painting, plastic skin, text, watermark, low quality, low resolution, overexposed"
+  }
+]

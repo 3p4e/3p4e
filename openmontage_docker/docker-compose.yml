@@ -1,0 +1,39 @@
+# docker-compose.openmontage.yml
+# OpenMontage (calesthio/OpenMontage) - AGPL-3.0
+version: '3.8'
+
+services:
+  openmontage:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: openmontage
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
+      - PYTHONPATH=/home/openmontage/OpenMontage
+    volumes:
+      - ./openmontage_data:/home/openmontage/OpenMontage/data
+      - ./openmontage_output:/home/openmontage/OpenMontage/output
+      - ./openmontage_env:/home/openmontage/OpenMontage/.env
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+
+  # Optional: Add a web UI service if you build one
+  # openmontage-ui:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.ui
+  #   ports:
+  #     - "3000:3000"
+  #   depends_on:
+  #     - openmontage

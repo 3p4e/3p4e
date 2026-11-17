@@ -1,0 +1,516 @@
+How to Keep Characters and Locations Consistent Across AI Shots
+Higgsfield
+Explore
+Image
+Video
+Audio
+MCP
+API
+Genjutsu
+New
+Shorts Studio
+New
+Content Factory
+Playable
+Mangaka
+New
+AI Influencer
+Academy
+New
+Katana
+ChatGPT Plugin
+Ads Studio
+Effects
+Cinema Studio
+Contests
+Marketing Studio
+Supercomputer
+Edit
+Community
+Plugins
+Canvas
+Originals
+Creator Hub
+Help Center
+Blog
+Changelog
+Customer Stories
+Back
+Blog
+How to Keep Characters and Locations Consistent Across AI Shots
+Nov 4, 2026
+How to Keep Characters and Locations Consistent Across AI Shots
+Higgsfield
+10 min
+To keep characters and locations consistent across AI shots, give the model the same two references every time: one for the person and one for the place. In Cinema Studio 4.0, you save both as Elements and add them with @ to each prompt, so every new angle starts from the same face and the same space.
+Elements store characters, locations, and props once and work across all your Cinema Studio projects.
+One Cinema Studio 4.0 generation accepts up to 50 references.
+In our test, one 20-second generation kept the same cave and character across five shots. The version we kept took 3 attempts.
+Why Location Consistency Is the Harder Half
+Locations are harder to keep consistent than faces. A face has one thing to hold: identity. A location has many details that must stay fixed at once: where the furniture sits, which direction the light comes from, the color and texture of the walls, what's visible through the window, the time of day, and the objects on a shelf. Every one of those details has to stay fixed while the camera moves around inside the space across multiple shots.
+Text descriptions handle this worse than they handle faces, and the reason is structural. "A cozy kitchen with morning light" gives the model almost nothing concrete to anchor to, so it invents a slightly different kitchen on every generation: the window shifts a few feet, the cabinet color changes, the counter material is different. None of it is wrong enough to notice in a single shot on its own. All of it is wrong enough that the moment you cut between two angles of the same supposed room, the sequence falls apart.
+Why Location Consistency Is the Harder Half
+Criteria
+Face
+Location
+What has to stay fixed
+Bone structure, skin tone, facial geometry
+Furniture position, light direction, wall color, visible landmarks, time of day
+What a text prompt gives the model
+A rough description the model reinterprets each time
+Almost nothing concrete to anchor to
+What "drift" looks like
+A subtly different person shot to shot
+A subtly different room, window, or light source shot to shot
+What fixes it
+A Character element (or a Soul ID) added to every prompt
+A Location element made from one establishing shot
+Why it's harder to fix
+One variable to hold constant
+Many variables that all have to hold constant at once, across every camera angle
+What Are Elements in Cinema Studio?
+Elements are saved references in Cinema Studio 4.0. Each element is a character, a location, or a prop built from your images or videos. Once saved, it gets its own @ tag, so you add it to any prompt instead of uploading and describing the same reference again for every shot.
+Music producer Oliver Alge works this way on his music videos and TV ads: he builds characters and locations as stills, then saves them as Elements in Cinema Studio so they stay consistent across shots. Read
+Oliver Alge’s story.
+Cinema Studio is the filmmaking workspace on Higgsfield, a generative platform for creative production, with 35+ frontier models for generating images and turning them into video scenes. Elements live in My elements in the Cinema Studio sidebar.
+What Are Elements in Cinema Studio?
+Field
+What it does
+Category
+Auto, Character, Location, or Prop. Auto lets Higgsfield choose.
+Media
+One or more images (JPG, PNG, WebP) or videos (MP4, MOV)
+Name and Element ID
+The ID is the @ tag you type in a prompt
+Description
+Notes about the element, for example “window on the left, red neon sign”
+Custom properties
+Extra fields you define yourself
+Elements are not the same as Soul ID. Soul ID trains an identity from 20 to 80 photos of one person. An element is a saved reference that can start from a single image, and it can hold a place or an object as well as a person.
+Reference, Elements, Popcorn, or 3D Jutsu: Which Do You Need?
+A single reference image is enough for one shot. Popcorn fits a short storyboard of one scene in a single pass. Elements are worth setting up when a person or place returns across sessions or projects. 3D Jutsu fits when the layout must match exactly.
+Reference, Elements, Popcorn, or 3D Jutsu: Which Do You Need?
+If you
+Use
+Why
+Need one shot of a character in a place
+A reference image in the prompt
+There is nothing to reuse later
+Want 1 to 8 frames of one scene at once
+Popcorn
+Up to 4 reference images; Auto, Manual, and Instadump modes
+Return to the same location across days or projects
+A Location element
+Saved once, added with @ in every prompt
+Put several characters in one space
+Character elements plus a Location element
+Each person and the place get their own tag
+Need the layout to match exactly from every angle
+3D Jutsu
+Builds the location as a 3D scene from a prompt; you adjust props and cameras, then turn the scene into a video
+Need the same real face in many images
+Soul ID
+A trained identity built from 20 to 80 photos
+The choice is not permanent. A frame you like from
+Popcorn
+or from a single reference shot can become the source image for a new element.
+Step 1: Create a Clear Establishing Shot of the Location
+Start with one wide image that shows the whole space: the layout, where the light comes from, and three or four details that are easy to spot. If the place does not exist yet, generate it first. This image becomes the reference every later angle is compared against.
+What makes a good establishing shot:
+The full space is visible, not a corner of it.
+The light source is clear, for example a window or a lamp.
+Distinct objects are easy to check later: a sign, a colored wall, a piece of furniture.
+Nobody stands in the frame, so the element stores only the place.
+Step 2: Save the Location as an Element
+Open My elements in Cinema Studio and click Add new. Drop in the establishing shot, set the category to Location, give it a short name, and click Create. Higgsfield fills in the Element ID from the category and name, for example loc_corner-cafe for a Location named Corner Cafe. The Element ID is the @ tag you use in prompts. You can change it before you click Create.
+You can add several images or a video of the same place to one element.
+Use the description to list the details that must not change, for example “window on the right, green walls, brass lamp.”
+Step 3: Add Your Character
+Save the character the same way, with the category set to Character. A character sheet works well as the source: a full-length view and a close-up portrait in one image. If your character already exists as a Soul ID, you don’t need to save it again. Trained Soul ID characters appear in My elements as Character elements automatically.
+Use an image with a clearly visible face and the full outfit.
+Keep the outfit and any props you want on screen in that image.
+Double Shots used the same approach on music videos for the pop idol Ivy: the crew photographed the artist and key props during the shoot, so the shots made in Cinema Studio would carry the same faces, wardrobe, and objects as the live footage. Read the Double Shots story.
+In our example, the character sheet was made with Soul 2.0 and saved as a Character element.
+Step 4: Generate Each Angle With Both Tags
+Open a Cinema Studio project. The prompt field reads “use @ to add characters & locations”: type @, pick the character and the location, then describe the angle and the action. You can generate one angle at a time or describe several shots in one prompt: a Cinema Studio 4.0 video runs from 4 to 30 seconds, so one generation can hold several angles of the same scene.
+A prompt can follow this pattern:
+“@Character + action + @Location + camera angle + light, for example: “@char_mira sits in the red armchair in @loc_corner-cafe, wide shot from the door, morning light from the window.””
+Film setup, Camera, Color palette, and Lighting sit above the prompt. Keep them the same for every angle of one scene.
+Change only the camera angle and the action between shots.
+SCENE CONTEXT
+A 20-second cinematic sequence of six shots, grounded and believable, with the weight and patience of a large-format feature film. In a vast, dark, wet cave, a lone swordswoman of immense strength walks out of a tunnel and crosses a colossal 100-meter rope bridge over a bottomless chasm, dragging an enormous sword behind her. The bridge groans under its weight, but she moves with total, unbothered power. On the far ledge she stops, steam hisses from the sword's grille, and without turning around she cuts the bridge loose with one stroke behind her, then walks on into the darkness as it falls away. Quiet, heavy, completely nonchalant.
+ACTIVE REFERENCES
+<<<image_1>>>: the location only: the kind of place, its geometry and materials:
+- the rock ledges with rope-lashed wooden posts
+- the long sagging rope bridge with wooden planks and twisted hemp rope rails
+- the opening in the cave behind the bridge
+- thin streams of water falling from the ceiling
+- the white river at the bottom of the chasm
+- the massive wet rock walls
+Its camera angle, its scale and its brightness are not used: every shot is filmed from a new angle, the cave and the bridge are far larger, and the cave is much darker.
+<<<image_2>>>: the single source of truth for the heroine and her sword, 100% identical in every shot: her face, platinum-blonde bob with dark roots, blunt bangs and small braid, her full outfit, and the oversized sword with its broad black bolted blade, beige edge stripe, boxy beige mechanical guard housing with a round mesh grille and two small cylinders, and long black grip. The white studio background of <<<image_2>>> never appears.
+ADDITIONS TO THE LOCATION
+- A dark tunnel in the rock just behind the left posts; she emerges from it.
+- At the right end of the bridge, a narrow stone ledge with a second pair of rope-lashed wooden posts, and a dark narrow crevice in the wall directly behind them, leading deep into the rock.
+SCALE
+- The cave is colossal, a cathedral-sized void of rock.
+- The bridge is about 100 meters long and sags deeply in the middle. It is made of several hundred narrow wooden planks, each about 25 cm wide, with rope rails at her waist height. Its far end fades into the mist.
+- The river churns about 150 meters below, so deep that it is only a faint white thread in the darkness.
+- She is a normal 1.75 m person in her platform boots, and the sword is about her own height. Against the bridge and the cave she is tiny.
+- In the wide shots she occupies only 3 to 5 percent of the frame height, dwarfed by the rock, with layers of mist and falling water hanging between the camera and her.
+HEROINE: POWER AND WEIGHT
+- The sword is massively heavy, and its weight shows in the world around her: the planks bend and crack under it, the bridge dips with each step, and the blade gouges the wood as it drags.
+- She herself moves with complete, effortless strength: upright, shoulders square, a long, steady, heavy stride. She never hesitates, never checks her footing and never holds the rails.
+- She holds the sword only in her right hand by the long grip, her arm relaxed and straight, the blade dragging behind her on a low diagonal, its tip scraping the planks about a meter behind her heels.
+- When the tip snags on a plank edge, she yanks it free with a casual one-handed tug, without glancing back.
+- Her face is calm, tired and blank, her eyes fixed ahead, her mouth closed. No sighs, no exhales and no visible breath.
+- Her hair, straps, belt tails and gaiter flaps swing heavily with each step, and wet drops darken her shoulders.
+- Screen direction: in every side shot she moves from screen-left to screen-right. The image is never mirrored.
+- She never looks into the lens.
+FORMAT MODE
+Controlled multi-shot sequence, 20.0 seconds, six shots joined by hard cuts at 3.0s, 6.5s, 8.5s, 11.5s and 16.0s. Every shot uses a different camera position and angle, and no angle is ever repeated.
+CAMERA LANGUAGE
+- Shot like a large-format feature film: the camera sits on a tripod, dolly, crane or a rigid body-mounted rig, with deliberate, weighted moves and precise framing. No handheld shake, no drone glide, no fast pans.
+- Real large-format film texture: fine grain, soft highlight halation, deep blacks and true-to-life color.
+LIGHTING
+- A dark cave. The only light is the dim, diffuse daylight that seeps in from the distant opening and spreads softly through the mist. It is present everywhere but weak, like natural light deep inside a real cave: no visible beams, no spotlight, no bright pools and no studio look.
+- Most of every frame is deep, near-black shadow. Shapes read through soft gradations, the faint pale glow of the mist, thin specular glints on wet rock, and the dim white thread of the river far below.
+- She is lit only by that faint ambient glow: a subtle, soft rim on her hair, shoulders and blade, with her face mostly in soft shadow and only gently readable in the close shots. There is no fill light and no added colored light.
+- The palette is cold, muted and naturalistic: blue-grey and black stone, pale mist and muted earth tones. Underexposed, moody and real.
+SHOT 1 — 0.0s to 3.0s, medium, the emergence
+- Camera: on a tripod low on the rock floor just outside the tunnel mouth, a low 3/4 front angle looking slightly up, a normal lens, about 3 meters from her.
+- From the pitch-black tunnel she walks out toward the camera into the faint light, steady and unhurried, the heavy sword dragging behind her and its tip grinding across the stone with a little dust.
+- She passes the camera and steps between the posts onto the first planks, and the bridge visibly sinks under her weight.
+SHOT 2 — 3.0s to 6.5s, extreme wide, side, the scale
+- Camera: on a tripod far out on the opposite cave wall, level with the bridge, a wide shot from the side with a very slow pan to the right.
+- The whole 100-meter bridge crosses the frame as a long, thin, deeply sagging line over the black chasm, its far end fading into the mist.
+- She is a tiny figure near the left third of the bridge, only 3 to 5 percent of the frame height, striding steadily from screen-left to screen-right. Each of her steps sends a slow wave rippling along the enormous bridge.
+- Falling water and drifting mist hang soft in the foreground between the camera and her.
+SHOT 3 — 6.5s to 8.5s, beneath the bridge
+- Camera: rigidly mounted under the deck, looking straight up through the gaps between the planks. A wide lens.
+- Her heavy platform boots pass overhead across the gaps, the planks flexing down toward the lens under each step.
+- Right after them, the sword's blade drags across the planks just above the lens, gouging the wood; sand and splinters trickle down through the gaps, and drops of water fall past.
+SHOT 4 — 8.5s to 11.5s, extreme wide from below, the depth
+- Camera: on a tripod far down near the river at the bottom of the chasm, looking straight up. A wide lens with a very slow push-in.
+- High above, the bridge is a thin dark thread against the dim glow of the opening, and she is barely a dot on it.
+- 8.8s: one rotten plank slips out of its lashing behind her and falls. It tumbles slowly toward the camera through the mist and falling water, growing larger, for about three seconds, and splashes into the white river near the lens just before the cut.
+SHOT 5 — 11.5s to 16.0s, the head rig, the stop and the grille
+- Camera: one continuous shot on a rigid rig fixed in front of her face, about 80 cm away at eye level, moving exactly with her. A normal lens.
+- Her head stays in the same place in the frame while the world moves behind her: the last planks, the enormous sagging bridge stretching back into the mist, and then the rock of the right ledge.
+- Her face is steady and blank, her eyes looking past the lens into the distance, her hair swinging with each heavy step.
+- 14.0s: she steps off the bridge onto the stone, takes two more strides past the right posts, and stops dead. The rig stops with her.
+- 14.5s: the camera detaches from her face and glides smoothly down along her right shoulder and her relaxed arm, to her gloved hand on the grip and the guard housing of the sword resting behind her.
+- 15.3s: the round mesh grille on the beige housing fills the frame in close-up. With a sharp hiss, dense white steam forces out through the mesh holes in a thick jet, and the two small cylinders beside it twitch. Her gloved fingers tighten on the grip.
+SHOT 6 — 16.0s to 20.0s, from behind, the cut and the exit
+- Camera: on a tripod low on the right ledge, just behind the two right posts on the bridge side, looking past the posts at her back and the black crevice ahead of her. A normal lens.
+- 16.3s: without turning around, she swings the sword back in one effortless, lazy stroke. The steam jet from the grille drives the blade around behind her in a short, low, tight arc that passes cleanly through both wooden posts right in front of the camera, and the momentum carries it straight back into its trailing position in her hand.
+- The cut posts tip over, the ropes whip loose, and the end of the enormous bridge drops away out of the bottom of the frame into the chasm.
+- A thin arc of steam hangs in the air behind her and slowly dissolves.
+- Her body never turns. She simply walks on into the black depth of the crevice, the sword scraping behind her, until the darkness swallows her.
+- The frame holds on the dark crevice and the drifting steam until the last frame, with the long groan of the falling bridge echoing from below.
+PHYSICS
+- The bridge: each of her heavy steps presses the deck down, sending a slow wave along its great length, and the whole bridge sways sideways with a delay. The hangers stretch and slacken, and the rope rails creak and twist.
+- The sword has real mass: it drags, gouges and catches on the plank edges. Wood on metal makes a dry scrape with no sparks.
+- The steam comes only from the round mesh grille on the guard housing, as a dense white jet pointing opposite to the blade's motion, like thrust. It billows, hangs along the arc and fades.
+- The cut: one fluid, effortless flick driven by the steam thrust, not a muscular swing. Her feet stay planted and her body faces away from the bridge.
+- The collapse: with the right anchors cut, the 100-meter bridge falls away from the ledge into the chasm like a heavy chain, slowly, because of its enormous size, with planks shedding and snapped ropes recoiling with frayed ends. It is purely mechanical: wood and rope, with no explosions, sparks or debris near her.
+- Falling objects take as long to fall as the real height demands, without floating.
+- Water drips fall in straight fast streams, the river churns and throws up fine mist, and the wet rock glistens faintly.
+AUDIO
+- No music.
+- The cave: the deep, distant roar of the river, the hiss of falling water, echoing drips and a cold draft.
+- Her crossing: heavy boot thuds, cracking planks, groaning ropes and the long dry grind of the sword, all with long cave echo.
+- The plank's splash arrives late from far below.
+- The grille: a sharp, building steam hiss.
+- The cut: a whoosh and a double wooden crack, then the long groan and distant crash of the falling bridge echoing through the cave, while her footsteps fade into the crevice.
+- No breathing sounds.
+POSITIVE LOCKS
+- Six cinematic shots, each from a different angle, never using the camera angle of <<<image_1>>>.
+- A dark cave lit only by dim, diffuse natural light, with deep shadows everywhere.
+- The bridge is 100 meters long and she is tiny against it in the wide shots.
+- She is identical to <<<image_2>>> in every shot, moving with effortless strength. The sword is massively heavy and always in her right hand, and she always moves from screen-left to screen-right.
+- The steam comes only from the round grille.
+- Shot 5 is one continuous head-rig shot that ends on the grille close-up.
+- She stops on the ledge, cuts the bridge without ever turning around, and walks into the dark. She never sighs and never looks into the lens.
+Copy
+Recreate
+Step 5: Check Each Frame Against the Establishing Shot
+Put every new frame next to the establishing shot and check the details you listed in Step 2. If one detail drifts, name it directly in the next prompt or regenerate that angle.
+Step 5: Check Each Frame Against the Establishing Shot
+Check
+What to look for
+Light
+Comes from the same side in every frame
+Key objects
+Same objects, same position relative to each other
+Surfaces
+Same wall color and materials
+Character
+Same face, hair, and clothing
+Example: One Location, Five Shots in One Generation
+We saved a cave with a rope bridge as a Location element and a character sheet as a Character element. Then we generated one 20-second video in Cinema Studio 4.0 (1080p, 16:9, sound on) with both tags in the prompt. The version we kept took 3 attempts. We ran this test on November 5, 2026, on a paid plan.
+Example: One Location, Five Shots in One Generation
+Shot
+Time
+Camera
+0:00 to 0:02
+On the bridge, looking toward the character as she steps onto it
+0:03 to 0:05
+Wide shot of the cave and the bridge from the ledge
+0:06 to 0:10
+From under the bridge, then up from the river toward the light opening
+0:11 to 0:15
+Close-up of the character with the bridge behind her, then her hand on the weapon
+0:16 to 0:20
+Reverse angle: from behind as she walks back toward the bridge posts
+Across the five shots, the same details came back: the wooden bridge and its ropes, the dark rock walls, the light opening above, and the river below. What changed from shot to shot was the camera angle.
+Your browser does not support the video.
+To keep characters and locations consistent across AI shots, give the model the same two references every time: one for the person and one for the place. This guide shows why locations drift more than faces and how to save both as Elements in Cinema Studio 4.0, then add them with @ to every prompt. It walks through a real 20-second, five-shot example in one cave location. It also covers when a single reference, Popcorn, Soul ID or 3D Jutsu fits better, and what it costs.
+The Consistency Checklist
+Before generating a multi-shot scene, confirm:
+Location element is saved: an establishing shot that shows the layout, light direction, and key details.
+Character element is saved: a clear portrait or character sheet, or your Soul ID character, which is already in My elements.
+Description lists the fixed details: the things that must not change between angles.
+Settings are the same for every angle: Film setup, Camera, Color palette, Lighting.
+Each prompt has both tags: @Character and @Location, plus the angle of every shot.
+Every frame is checked: against the establishing shot, before you move on.
+How Much Does It Cost?
+A Cinema Studio 4.0 video at 1080p, 16:9, with sound costs 16 credits per second. Our 20-second clip cost 320 credits per generation (≈ $15.68). With 3 attempts, the clip we kept cost 960 credits (≈ $47.04).
+How Much Does It Cost?
+Video length
+Credits
+Approx. cost
+5 seconds
+$3.92
+10 seconds
+160
+$7.84
+20 seconds
+320
+$15.68
+20 seconds, 3 attempts
+960
+$47.04
+Approx. cost is based on $49 for 1,000 credits. Prices checked on November 5, 2026. Prices and plan details may change, and the exact cost shows on the Generate button. The table covers the video only, not the images used to build the elements.
+Faces and places drift for the same reason: the model reinterprets a text description every time. The fix is to give it the same saved references for every shot. Elements in Cinema Studio 4.0 make that a one-time setup instead of a re-upload for each angle.
+For choosing a character tool, see our guide to tools for consistent AI characters. For a recurring brand character, see how to create a brand mascot.
+How to Keep Characters and Locations Consistent Across AI Shots (2026 Guide)
+Try Cinema Studio 4.0
+Got any questions left?
+How do you keep the same location across multiple AI shots?
+Save one clear establishing image of the place as a Location element, then add its @ tag to every prompt with the character. One Cinema Studio 4.0 generation accepts up to 50 references, so props can join too.
+Can I use a video as a location reference?
+Yes. Elements accept MP4 and MOV videos as well as JPG, PNG, and WebP images, so a short walkthrough of a real space can become a Location element.
+What if my location doesn’t exist yet?
+Generate a concept image of the place first, then save it as a Location element. After that, the generated place is reused the same way as a photo of a real one.
+How do I put the same character in two different locations?
+Save each place as its own Location element and keep one Character element. Change only the location tag between prompts, so the character reference stays the same while the setting changes.
+Do Elements work across projects?
+Yes. Elements live in My elements, not inside one project, so a location saved for one film is available in every new Cinema Studio project.
+How many frames can Popcorn generate with references?
+Popcorn generates 1 to 8 frames per run and accepts up to 4 reference images. Reference images lower the maximum number of frames, so a reference-heavy scene fits into fewer frames.
+Higgsfield Academy
+Want the full walkthrough?
+Learn it step by step with short interactive video lessons.
+Go to Academy
+by Higgsfield
+GPT Image 2.6 on Higgsfield: Animated GIFs, SVG Vectors, and Transparent Images
+Higgsfield Introduces Shorts Studio: Create Shorts With an AI Presenter
+Contents
+Why Location Consistency Is the Harder Half
+What Are Elements in Cinema Studio?
+Reference, Elements, Popcorn, or 3D Jutsu: Which Do You Need?
+Step 1: Create a Clear Establishing Shot of the Location
+Step 2: Save the Location as an Element
+Step 3: Add Your Character
+Step 4: Generate Each Angle With Both Tags
+Step 5: Check Each Frame Against the Establishing Shot
+Example: One Location, Five Shots in One Generation
+The Consistency Checklist
+How Much Does It Cost?
+Discover more
+View all
+Guides
+Higgsfield Cinema Studio 4.0: Complete Guide
+10 min
+Oct 27, 2026
+Guides
+How to Master AI Filmmaking (Full Guide)
+7 min
+Oct 23, 2026
+Comparisons
+9 Best AI Filmmaking Tools for Short Films in 2026
+12 min
+Oct 30, 2026
+Comparisons
+7 Top-Tier AI Video Plans Serious Filmmakers Actually Pay For in 2026
+10 min
+Oct 5, 2026
+Guides
+How to Edit Videos with AI (Full Guide)
+10 min
+Oct 24, 2026
+Comparisons
+7 Tools for Consistent AI Characters Across Every Scene in 2026
+10 min
+June 21st, 2026
+AI-native creative suite
+Create
+AI Video
+AI Video Effects
+AI Image to Video
+AI Text to Video
+AI Video Editor
+Genjutsu for Reels
+Faceless Studio
+AI Explainer
+AI Image
+Edit Image
+Inpaint
+Upscale
+AI Video Upscaler
+Mixed Media
+AI Face Swap
+AI Influencer
+Apps
+Video Models
+Seedance 2.5
+Seedance 2.0
+Kling 3.0
+Kling 4.0
+Veo 3.1 Introduction
+WAN 2.6
+Grok Imagine 1.5
+Gemini Omni Flash
+Image Models
+Nano Banana
+Flux 2
+Seedream 5
+GPT Image 2.6
+GPT Image 2
+Ideogram 4.5
+Studios
+Cinema Studio
+Marketing Studio
+Lipsync Studio
+Higgsfield Popcorn
+Higgsfield Canvas
+Higgsfield Mangaka
+Soul
+Soul 2.0
+Soul ID Character
+Soul Cinema
+Platform
+Supercomputer
+AI Motion Designer
+MCP/CLI
+API
+Collab
+Games
+Reference Extension
+Resources
+Blog
+Help Center
+Academy
+Prompt Guide
+Company
+About
+Trust
+Report a vulnerability
+Enterprise
+Team
+Pricing
+Careers
+Contact
+Community
+Contests
+Creative Partners
+X / Twitter
+Youtube
+LinkedIn
+Tiktok
+Discord
+Create
+AI Video
+AI Video Effects
+AI Image to Video
+AI Text to Video
+AI Video Editor
+Genjutsu for Reels
+Faceless Studio
+AI Explainer
+AI Image
+Edit Image
+Inpaint
+Upscale
+AI Video Upscaler
+Mixed Media
+AI Face Swap
+AI Influencer
+Apps
+Video Models
+Seedance 2.5
+Seedance 2.0
+Kling 3.0
+Kling 4.0
+Veo 3.1 Introduction
+WAN 2.6
+Grok Imagine 1.5
+Gemini Omni Flash
+Image Models
+Nano Banana
+Flux 2
+Seedream 5
+GPT Image 2.6
+GPT Image 2
+Ideogram 4.5
+Studios
+Cinema Studio
+Marketing Studio
+Lipsync Studio
+Higgsfield Popcorn
+Higgsfield Canvas
+Higgsfield Mangaka
+Soul
+Soul 2.0
+Soul ID Character
+Soul Cinema
+Platform
+Supercomputer
+AI Motion Designer
+MCP/CLI
+API
+Collab
+Games
+Reference Extension
+Resources
+Blog
+Help Center
+Academy
+Prompt Guide
+Company
+About
+Trust
+Report a vulnerability
+Enterprise
+Team
+Pricing
+Careers
+Contact
+Community
+Contests
+Creative Partners
+535 Mission St, 14th floor, San Francisco, CA, 94105
+X / Twitter
+Youtube
+LinkedIn
+Tiktok
+Discord
+2026
+Higgsfield, Inc.
+All rights reserved.
+Help center
+Cookie Notice
+Terms
+Privacy
+Report a vulnerability

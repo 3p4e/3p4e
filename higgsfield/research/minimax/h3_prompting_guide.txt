@@ -1,0 +1,574 @@
+MiniMax Hailuo H3 Prompting Guide: The Official Format for Writing Video and Sound Together
+HeyMarmot
+AI Video
+AI Image
+AI Tools
+Effects
+Resources
+Pricing
+Sign In
+Start for Free
+AI Video
+Gemini Omni 1.1 Flash
+Google multimodal video with first and last frame control, up to 4K.
+Wan 3.0
+Generate up to 30 seconds with multimodal references and synchronized audio.
+Hailuo H3
+MiniMax 2K video with native synced audio and multimodal references.
+Seedance 2.5
+Direct 30-second multimodal video with timestamps and native audio.
+Veo 3.1
+Cinematic AI video with native synced audio, from text, frames or references.
+Seedance 2.0
+Multimodal video generation for text, image, reference video and audio.
+Seedance 2.0 Mini
+Faster and lower-cost Seedance video generation for quick iterations.
+HappyHorse 1.1
+Open-source video model with 1080p output and multi-image references.
+Grok Imagine Video
+Animate any image with Grok Imagine 1.5
+AI Image
+GPT Image 2.5 Sunburst
+OpenAI's 4K image model with up to 16 references
+GPT Image 2.5 Flare
+OpenAI's 4K text-to-image model with ultra-wide ratios
+Grok Imagine Image 2.0
+xAI's fast, highly stylized text-to-image model
+Seedream 5.0 Pro
+ByteDance Seed's reasoning-first image model
+Meta Muse Image
+Meta Superintelligence Labs' first AI image model
+Nano Banana 2 Lite
+Create images faster with Nano Banana 2 Lite, Google's lightweight Gemini image model. Turn text prompts into 1K visuals and edit reference images online without a Gemini app or API key.
+Nano Banana Pro
+Create studio-quality images with Google's Gemini 3 Pro Image model.
+Nano Banana 2
+Generate images with Google's Gemini Nano Banana 2 model.
+GPT Image 2
+Generate photoreal images with OpenAI's GPT Image 2.
+AI Tools
+Suno V5 Music
+Turn a prompt or your own lyrics into two full AI songs.
+Text to Speech AI
+Create natural speech and clone voices from a short audio sample.
+Text to Image AI
+Turn simple prompts into polished AI images for products, posts, and concepts.
+Image to Image AI
+Transform a reference image into a new AI image with a prompt.
+Image to Video AI
+Animate a still image into a realistic, dynamic video.
+Text to Video AI
+Turn simple text prompts into a stunning, captivating video.
+Effects
+All Effects
+Browse every one-click video effect
+AI Hug Video
+Turn two photos into a warm hug
+Resources
+Inspiration
+Prompts and results from the community
+Blog
+Guides, comparisons and product news
+FAQ
+Credits, plans and common questions
+Contact Us
+Talk to the team
+Pricing
+Language
+العربية
+English
+Español
+Français
+हिन्दी
+日本語
+한국어
+Sign In
+Start for Free
+Blog
+GUIDE
+Aug 19, 2026
+14 min read
+MiniMax Hailuo H3 Prompting Guide: The Official Format for Writing Video and Sound Together
+Most AI video models ask you to describe a picture. MiniMax Hailuo H3 asks you to describe a
+scene
+— picture, dialogue, sound effects, ambience, and score, all generated in one pass and already locked to the action.
+That changes how the prompt has to be written. A sentence like "a woman on a train, cinematic" gives H3 almost nothing to work with on the audio track, so it invents one. Write the same shot in H3's own format and you decide what the wheels sound like, when she speaks, what she says, and whether the audience hears a score the character can't.
+H3 expects a specific prompt structure, and it rewards you for using it. This guide walks through that structure in plain language, field by field, with complete examples you can copy and adapt.
+What You'll Learn
+The
+five input modes
+— T2VA, I2VA, FL2VA, L2VA, and full-reference Ref2VA — and how each one changes the top of your prompt
+The
+three core fields
+every base prompt uses, and why sound is split into two of them
+Shot and cut notation
+: when to cut, when to move the camera instead
+Camera language
+the model actually parses: motion type, amplitude, speed
+Dialogue, voiceover, and on-screen text
+notation, including lines that cross a cut
+Full-reference mode
+: reference labels, retention analysis, and task types
+copy-paste template
+and the mistakes that quietly ruin good prompts
+First: Pick Your Mode
+Everything starts with what you're feeding the model. H3's format names five modes, and the first line of your prompt depends entirely on which one you're in.
+Mode
+Input
+What the prompt has to do
+T2VA
+Text only
+Build the whole audiovisual timeline from scratch
+I2VA
+Text + first frame
+Anchor to the image at 0.00s, then develop forward
+FL2VA
+Text + first and last frames
+Describe the continuous path between the two
+L2VA
+Text + last frame
+Invent a plausible opening that converges on the image
+Ref2VA
+Text + reference images, video, audio
+Define labeled references and place them along the timeline
+The first four are "base modes" and share one structure. Ref2VA is a different, six-section format covered later in this guide.
+HeyMarmot
+, the clip length you request is 5 to 15 seconds — every timestamp you write has to fall inside that window, and the description has to actually fill it.
+The Three Core Fields
+Every base-mode prompt ends with the same three fields, in this order:
+integrated_multimodal_description: [Shot 1] ...
+overall_soundscape: ...
+non_diegetic_music: ...
+integrated_multimodal_description
+— the body. Visuals, actions, shots, camera moves, who speaks, what they say, and any sound tied to a specific moment.
+overall_soundscape
+— ambience and physical sound across the whole clip: wind, rain, traffic, footsteps, fabric, impacts, breathing, laughter.
+non_diegetic_music
+— score that only the audience hears. The characters cannot hear it.
+That last split is the part people get wrong most often, so it's worth being blunt about it:
+If a character in the scene could hear it, it is
+not
+non_diegetic_music
+. A radio in the kitchen, a busker's guitar, a phone ringtone, someone singing — all of those are events in the scene and belong in the multimodal description. Only the invisible film score goes in
+non_diegetic_music
+Both audio fields accept
+N/A
+. Use it for
+non_diegetic_music
+whenever there's no score, and for
+overall_soundscape
+only when you genuinely want silence.
+Anchoring Keyframes: The Instruction Line
+T2VA starts directly with
+integrated_multimodal_description
+. The other three base modes need an alignment instruction as the
+first line
+, followed by a blank line. The wording is fixed — the model is trained on these exact strings, so don't paraphrase them.
+I2VA
+— your image is the actual first frame:
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+FL2VA
+— first and last frames:
+How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot N) aligns with the S.SS-second mark of the target video.
+L2VA
+— last frame only:
+How the reference pictures align with the target video — <Picture 1> (from [Shot N]) aligns with the S.SS-second mark of the target video.
+is the index of the actual final shot.
+S.SS
+is the clip duration written to exactly two decimals —
+8.00
+, not
+8.0s
+Each mode also implies a different narrative shape:
+I2VA
+: first-frame anchor → action onset → continuous development → result or reaction
+FL2VA
+: first-frame state → intermediate changes → narrowing differences → last-frame state
+L2VA
+: plausible preceding state → transition path → gradual convergence → last-frame landing
+One practical note on FL2VA: prefer a
+single shot
+unless you explicitly want cuts. A single continuous shot lets the model interpolate cleanly from one image to the other, and the last frame must be reached at the very end of the final shot.
+Writing the Timeline
+Open with style and framing
+The first thing after
+[Shot 1]
+is the visual register and the opening composition:
+[Shot 1] Live-action, cinematic, a medium-wide shot frames...
+Useful style words:
+Cinematic
+live-action
+2D-animated
+3D CG
+claymation
+watercolor
+vintage film
+. For keyframe modes, derive the style from your reference image rather than fighting it.
+Shots and cut timestamps
+[Shot 1]
+never gets a timestamp — it starts at zero by definition. Every later shot opens with a strictly increasing cut time inside the clip duration:
+[Shot 2] At 00:03.500, the camera cuts to...
+Accepted transition phrasing:
+the camera cuts to
+the shot cuts to
+the shot transitions to
+the shot changes to
+the shot switches to
+. Cross-dissolves, fades, and wipes are available when you actually want them.
+The rule that improves most prompts immediately:
+A cut should deliver
+new information
+— a new subject, space, state, viewpoint, or time. If all you need is a closer framing or a slightly different angle, move the camera instead of cutting.
+Camera motion: type + amplitude + speed
+H3 reads camera motion as three dimensions. Motion type is required; amplitude and speed are optional and should be added only when they matter — medium amplitude at normal speed is the default and is usually left unwritten.
+Dimension
+Expression
+Meaning
+Motion type
+Zoom In / Zoom Out
+Focal length changes, camera body stays put
+Motion type
+Push In / Pull Out
+Camera physically moves forward / backward
+Motion type
+Pan Left / Pan Right
+Camera pivots horizontally in place
+Motion type
+Truck Left / Truck Right
+Camera translates horizontally
+Motion type
+Tilt Up / Tilt Down
+Camera pivots vertically in place
+Motion type
+Pedestal Up / Pedestal Down
+Whole camera rises / lowers
+Motion type
+Arc Shot
+Camera arcs around the subject
+Motion type
+Tracking Shot
+Camera follows a moving subject
+Motion type
+Static Shot
+Nothing moves
+Motion type
+Shake Slightly / Shake Strongly
+Camera shake
+Motion type
+POV
+The subject's point of view
+Motion type
+Roll Clockwise / Roll Counterclockwise
+Camera rolls around the lens axis
+Amplitude
+with small amplitude
+with large amplitude
+Range of compositional change
+Speed
+at slow speed
+at fast speed
+Pacing of that change
+Write them as natural sentences inside the shot, not as tags bolted onto the end:
+The camera pushes in with small amplitude at slow speed toward the folded letter in her hands.
+The camera pans right with large amplitude at fast speed, revealing the open doorway.
+The camera holds a static shot as the runner exits the frame.
+Dialogue, Voices, and Text
+Speaker IDs
+Anyone who speaks, sings, or produces an off-screen human voice gets a stable ID —
+(S1)
+(S2)
+, and so on — assigned in the order they first vocalize. Characters who never make a sound get no ID at all. When two already-numbered speakers vocalize together, combine them:
+(S1,S2)
+The first time a speaker appears, establish the voice: type of character, age, gender, on-screen or not, pitch, timbre, pace, accent. That description is what keeps the voice consistent across shots.
+The
+<d>
+tag
+Spoken content goes inside
+<d>
+with a language tag. Everything else — who is speaking, how they deliver it, what they're doing — stays outside:
+The young woman with a quiet, breathy voice (S1) says: <d>[English] I get off at the next station.</d>
+The two children (S1,S2) shout together, <d>[English] Wait for us!</d>
+Inside
+<d>
+, preserve the original wording and punctuation
+verbatim
+. Do not translate it, do not tidy it up. This is also true when the rest of your prompt is in English and the line is not:
+The taxi driver (S2) answers without turning around, <d>[Chinese] 前面路口就到了。</d>
+Voiceover
+Use the exact phrase
+says in an off-screen voiceover
+, and immediately after the
+<d>
+block, state that the on-screen character's lips stay closed. Skipping that second half is how you end up with an accidental lip-sync:
+The man (S1) says in an off-screen voiceover: <d>[English] I still remember that road.</d> while his lips remain completely closed.
+Lines that cross a cut
+When one line of dialogue or lyrics spans a transition, mark both sides with
+<scenetrans>
+and say in words that the audio continues —
+continues seamlessly across the cut
+carries over from the previous shot
+remains audible across the transition
+. If speech gets chopped off by the end of the clip, mark it
+<cutoff>
+On-screen text
+Anything actually legible in frame — a sign, banner, subtitle, neon, label — goes in English double quotes, with the original characters and punctuation preserved:
+A red neon sign reading "营业中" glows above the doorway.
+Writing the Two Audio Fields
+overall_soundscape
+— one paragraph, one to four sentences, summarizing ambience and physical sound across the whole clip. Do not repeat dialogue, singing, or diegetic music here; those already live in the description.
+overall_soundscape: Steady rain taps against the café windows while low room ambience continues underneath. The entrance bell rings once, followed by wet footsteps and the soft scrape of a chair.
+non_diegetic_music
+— one to three sentences on instrumentation, tempo, rhythm, and dynamics. Resist mood words. "Melancholy and emotional" tells the model nothing it can play; "sparse piano at a slow tempo with sustained low strings that swell then fade" does.
+non_diegetic_music: Sparse piano notes at a slow tempo, joined by sustained low strings that gradually increase in volume before fading out.
+Four Worked Examples
+T2VA — building from nothing
+integrated_multimodal_description: [Shot 1] Live-action, cinematic, a medium-wide shot frames a night-shift nurse pushing a supply cart down an empty hospital corridor lit by cold overhead panels. The camera trucks left with small amplitude at slow speed, keeping pace with the cart as one wheel rattles against the floor seams. The nurse, a woman in her forties with a low, tired voice (S1), glances at a chart and says: <d>[English] Room twelve is still awake.</d> [Shot 2] At 00:06.000, the shot cuts to a close-up of her hand pausing on a door handle as light from the room falls across her sleeve.
+overall_soundscape: A low ventilation hum runs beneath the corridor's flat room tone. Cart wheels rattle over floor seams, paper shifts against a clipboard, and a distant monitor beeps twice.
+non_diegetic_music: Two sustained synth tones at a slow tempo, joined by a single low piano note near the end, decreasing in volume.
+I2VA — starting from your image
+For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.
+integrated_multimodal_description: [Shot 1] Live-action, cinematic, the man in the yellow rain jacket shown in <Picture 1> remains at the harbour railing, preserving his appearance, clothing, position in the frame, and the moored fishing boats behind him. The camera pushes in with small amplitude at slow speed as he turns his head toward the water and tightens his grip on the wet railing. Spray catches the light along the rail while the man, whose voice is low and slightly hoarse (S1), says: <d>[English] They should have been back by now.</d> He lowers his gaze toward the empty berth.
+overall_soundscape: Waves slap against the harbour wall under a steady wind. Rigging lines tap against metal masts, a gull calls twice, and wet fabric shifts as he moves.
+non_diegetic_music: A single sustained cello note at a slow tempo, joined by low sustained strings that hold without swelling.
+FL2VA — the path between two frames
+How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 1) aligns with the 8.00-second mark of the target video.
+integrated_multimodal_description: [Shot 1] Live-action, cinematic, a barista begins in the position and framing established by Picture 1, holding a steel pitcher above an untouched cup of espresso. The camera holds a static shot with a slight downward angle as she lowers the spout toward the surface, starts the pour, and lets the white circle open at the centre. She raises the pitcher, draws it back through the foam in one continuous stroke, and the pattern resolves into the exact leaf shape, cup position, hand placement, and composition established by Picture 2 at the end of the shot.
+overall_soundscape: Espresso-machine steam hisses briefly before settling into low café room tone. Milk pours with a soft continuous rush, the pitcher taps once against the saucer rim, and quiet conversation continues in the background.
+non_diegetic_music: N/A
+L2VA — landing on your image
+How the reference pictures align with the target video — <Picture 1> (from [Shot 1]) aligns with the 6.00-second mark of the target video.
+integrated_multimodal_description: [Shot 1] Live-action, cinematic, a close shot begins on an unopened envelope resting on the same wooden desk and under the same warm lamp visible in <Picture 1>, with the hands and sleeves from the reference entering from the lower right. The camera pushes in with small amplitude at slow speed as the fingers lift the envelope, tear the flap, and pull the folded page free. The page unfolds, the hands flatten the crease, and toward the end the paper, hand position, lamp angle, and framing settle into the exact arrangement established by <Picture 1>.
+overall_soundscape: Quiet room tone with a faint electrical hum from the lamp. Paper tears once, then rustles as it unfolds and is pressed flat against the desk.
+non_diegetic_music: A slow, sparse music-box pattern that thins to a single repeated note at the end.
+Full-Reference Mode (Ref2VA)
+When you bring reference images, video, or audio into the job, H3 switches to a six-section format. The extra sections exist for one reason: with multiple assets in play, the model needs to know
+what each one is
+and
+how faithfully to keep it
+before it reads the timeline.
+The six sections, in order:
+Section
+Purpose
+subject_definitions
+Defines each referenced item and its label
+summary
+One paragraph: task type, target video, main reference relationships
+retention_analysis
+How faithfully each reference is preserved
+detailed_description
+The timeline body (replaces
+integrated_multimodal_description
+overall_soundscape
+Ambience and physical sound
+non_diegetic_music
+Audience-only score
+The four label types
+Label
+Use it for
+<Subject N>
+Reusable visible content: a person, animal, object, environment, outfit, prop, style, action
+<Picture N>
+An image acting as a concrete frame or composition anchor
+<Video N>
+A source video being edited, continued, or structurally referenced
+<Audio N>
+An audio signal being copied or referenced
+The distinction that trips people up:
+<Subject N>
+content
+<Picture N>
+and
+<Video N>
+are
+assets
+. If an image only defines what a character looks like, don't give it its own
+<Picture>
+line — cite it inside the subject definition:
+<Subject 1> is the young woman in <Picture 1>, with long dark hair, a blue cardigan, and a thin silver necklace.
+<Subject 2> is the woman whose appearance comes from <Picture 1> and whose walking motion comes from <Video 1>.
+Give an image its own entry only when the image itself is a frame:
+<Picture 2> is the first frame of [Shot 1], showing a woman seated beside a café window.
+Once a label is assigned, it means the same thing in every section. Never introduce a new label after
+subject_definitions
+, and never leave one unresolved.
+Task types in
+summary
+The summary opens with a bracketed task type. Combine multiple types with
+Task type
+When
+keyframe completion
+An image is a concrete frame of the output
+reference generation
+An asset guides a character, scene, style, action, or camera without being a frame or a source video
+video editing
+An existing source video is directly modified
+video continuation
+New content continues or extends an existing video
+audio reuse
+The same audio signal is reused, whole or in part
+audio reference
+Only the style, timbre, content, texture, or beat is referenced
+Two rules worth memorizing: a reference video that only supplies camera movement or pacing is
+reference generation
+, not
+video editing
+. And if you edit a video while keeping its original sound, that's
+video editing + audio reuse
+Retention markers
+retention_analysis
+gets one line per label, with a fixed marker. Visible content uses:
+fully_preserved
+partially_preserved
+attribute_transfer
+weak_reference
+Audio uses a different set:
+fully_copy
+partially_copy
+reference
+weak_reference
+<Subject 1> (appears in [Shot 1], [Shot 3]): fully_preserved - her long dark hair, blue cardigan, and silver necklace are retained.
+<Video 1> (cut and pacing structure): weak_reference - only the rhythm of the cuts is followed.
+<Audio 2>: reference - the target speaker follows its timbre and measured delivery without copying the original signal.
+Note: new actions or new backgrounds you add in the target video are
+not
+losses of fidelity.
+partially_preserved
+means a defined characteristic changed, not that the scene evolved.
+A compact Ref2VA example
+subject_definitions:
+<Subject 1> is the workshop interior in <Picture 1>, with a long birch workbench, pegboard tool wall, and a window with afternoon light from the left.
+<Subject 2> is the grey tabby cat in <Picture 2>, with dark stripes, a white chest patch, and a short bent tail.
+<Subject 3> is the bearded man in <Video 1>, with a grey canvas apron over a dark t-shirt.
+<Audio 1> is the voice-timbre reference for <Subject 3> (S1).
+summary:
+[reference generation + audio reference] The target video shows <Subject 3> sanding a small wooden box in <Subject 1> while <Subject 2> settles onto the workbench beside him. The two-shot exchange uses <Audio 1> as the voice-timbre reference for <Subject 3>.
+retention_analysis:
+<Subject 1> (appears in [Shot 1], [Shot 2]): fully_preserved - the birch workbench, pegboard tool wall, and left-side window light are retained.
+<Subject 2> (appears in [Shot 1], [Shot 2]): fully_preserved - the grey tabby striping, white chest patch, and short bent tail are retained.
+<Subject 3> (appears in [Shot 1]): fully_preserved - the beard, grey canvas apron, and dark t-shirt are retained.
+<Audio 1>: reference - its warm low timbre guides the delivery of <Subject 3> without copying the original signal.
+detailed_description:
+The target video uses a warm, naturalistic documentary style with soft afternoon light.
+[Shot 1] A medium shot establishes <Subject 1>, the workshop with its birch workbench, pegboard tool wall, and window light falling from the left. <Subject 3> (S1), the bearded man in the grey canvas apron, stands at the bench sanding the lid of a small wooden box in short, even strokes. The camera pushes in with small amplitude at slow speed as <Subject 2>, the grey tabby with the short bent tail, steps into frame from the right and sits at the edge of the bench. Using the warm low timbre referenced from <Audio 1>, <Subject 3> (S1) says without looking up, <d>[English] You always show up for the loud part.</d> He closes his lips and blows the dust off the lid.
+[Shot 2] At 00:05.000, the shot cuts to a close-up of the sanded surface as <Subject 2> lowers its head toward the wood and its whiskers catch the light.
+overall_soundscape:
+Quiet workshop room tone continues throughout, with sandpaper moving in steady rhythmic strokes over wood. Dust is blown once in a short breath, and a faint street hum sits behind the window.
+non_diegetic_music:
+A slow fingerpicked acoustic-guitar pattern with widely spaced notes, holding a steady volume without swelling.
+Common Mistakes Checklist
+Run through this before you generate:
+Timing that doesn't match the clip.
+Every cut timestamp must fall inside the requested duration, and the description must fill it — not stop at second four of a twelve-second video.
+Diegetic music in
+non_diegetic_music
+A radio, a busker, a phone speaker: those are scene events.
+Abstract words doing the work.
+"Cinematic," "beautiful," "emotional," "epic." Replace each one with something visible or audible.
+Dialogue repeated in the sound fields.
+Lines live inside
+<d>
+, once.
+Translated or tidied dialogue.
+Preserve the source wording and punctuation exactly.
+Voiceover without the closed-lips clause.
+You'll get unintended lip movement.
+Inconsistent labels.
+<Picture 1>
+in one section and
+Picture1
+in another is two different things to the model.
+Cutting when you meant to move.
+Small framing changes are camera moves, not cuts.
+Unresolved references.
+Every label used in the body must be defined in
+subject_definitions
+Timestamped first shot.
+[Shot 1]
+never carries a time.
+A Template to Start From
+integrated_multimodal_description: [Shot 1] <style>, <opening framing> of <subject> in <environment>.
+The camera <motion type> with <amplitude> at <speed> as <action>. <Character description>
+(S1) says: <d>[English] <line></d> <what happens next>
+[Shot 2] At 00:0X.X00, the camera cuts to <new information — subject, space, state, or viewpoint>.
+overall_soundscape: <ambience>. <physical action sounds>. <non-verbal human sounds>.
+non_diegetic_music: <instrumentation> at <tempo>, <how it develops>.
+For keyframe modes, paste the matching alignment line above it and leave one blank line.
+Conclusion
+H3's format looks bureaucratic on first read — labels, brackets, two-decimal timestamps. It isn't bureaucracy. Each piece removes one specific ambiguity the model would otherwise resolve on its own: which image is a frame versus a character sheet, whether a sound is in the room or on the soundtrack, whether a change is a cut or a camera move, whose voice is speaking.
+Start smaller than you think. Take a shot you've already generated, rewrite it as one
+[Shot 1]
+with a real camera move, split the audio into the two fields, and generate it again. Then add a second shot with a cut timestamp. Then add a reference. The format scales up cleanly, but only if the first layer is solid.
+Ready to direct? MiniMax Hailuo H3 is available now on
+HeyMarmot
+— write your shot, add your references, and get the sound in the same take.
+HeyMarmot
+HeyMarmot AI, your all-in-one AI creative assistant, designed to simplify your creative process.
+Features
+Text to Image
+Image to Image
+Text to Video
+Image to Video
+Text to Speech AI
+Text to Music
+Image to Music
+AI Video
+Gemini Omni 1.1 Flash
+Hot
+Wan 3.0
+Hot
+MiniMax Hailuo H3
+Hot
+Seedance 2.5
+Hot
+Seedance 2
+Hot
+Seedance 2.0 Mini
+Hot
+Seedance 1.5 Pro
+Veo 3.1
+Hot
+Kling 3.0
+Sora 2
+HappyHorse 1.1
+Hot
+HappyHorse 1.0
+Hot
+Grok Imagine Video 1.5
+Hot
+AI Image
+GPT Image 2.5 Sunburst
+Hot
+GPT Image 2.5 Flare
+Hot
+Grok Imagine Image 2.0
+Hot
+Seedream 5.0 Pro
+Hot
+Meta Muse Image
+Hot
+Nano Banana 2 Lite
+Hot
+Nano Banana Pro
+Hot
+Nano Banana 2
+Hot
+Nano Banana
+Seedream 5.0
+GPT Image 2
+Hot
+Grok Imagine
+z-image
+AI Music
+Suno V5
+Hot
+Lyria 3 Clip
+Lyria 3 Pro
+Platform
+Pricing
+Blog
+Contact Us
+Privacy Policy
+Terms of Service
+Refund Policy
+As Seen On
+© 2026 HeyMarmot AI. All rights reserved.

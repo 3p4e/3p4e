@@ -1,0 +1,26 @@
+# Biometric data (GDPR Art. 9) and large binaries never go into git
+tools/models/
+faces/
+face_dataset/
+keyframes/
+*.onnx
+output/
+*.mp4
+*.wav
+*.mp3
+private/
+media/
+
+# Local-only state and private artifacts (never git): secrets, biometrics, OCR, caches, instance state
+.a0proj/
+storybook_ocr/
+*.bak
+__pycache__/
+.*_instance.json
+/kory_*.json
+.recs.json
+/simA.npy
+/E.npy
+tools/vast/jobs/*.png
+tools/vast/jobs/*.jpg
+tools/vast/seed.png

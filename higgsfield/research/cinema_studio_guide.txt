@@ -1,0 +1,402 @@
+Higgsfield Cinema Studio 4.0: Complete Guide
+Higgsfield
+Explore
+Image
+Video
+Audio
+MCP
+API
+Genjutsu
+New
+Shorts Studio
+New
+Content Factory
+Playable
+Mangaka
+New
+AI Influencer
+Academy
+New
+Katana
+ChatGPT Plugin
+Ads Studio
+Effects
+Cinema Studio
+Contests
+Marketing Studio
+Supercomputer
+Edit
+Community
+Plugins
+Canvas
+Originals
+Creator Hub
+Help Center
+Blog
+Changelog
+Customer Stories
+Back
+Blog
+Higgsfield Cinema Studio 4.0: Complete Guide
+Oct 27, 2026
+Higgsfield Cinema Studio 4.0: Complete Guide
+Higgsfield
+10 min
+Cinema Studio 4.0
+creates clips of up to 30 seconds from text, images, videos, and audio references in Higgsfield. Settings for genre, era, tempo, camera, lens, aperture, lighting, color, and emotion shape the look before generation. This guide explains how it works and gives a step-by-step workflow and example prompts. It covers credit costs by resolution and duration, and access through
+MCP
+and
+API
+What Is Cinema Studio 4.0?
+Cinema Studio 4.0 is Higgsfield’s AI filmmaking workspace for creating and directing scenes. It combines references with controls for camera movement, lenses, lighting, pacing, and character performance. It suits commercials, music videos, short films, and series, where the look of a shot matters as much as its content.
+Start by describing your scene and adding references for characters, products, or locations. Choose your visual settings, then generate the video with native audio in the same pass.
+Cinema Studio 4.0 Settings Explained
+Setting
+What It Controls
+When to Use It
+Genre, Era, and Tempo
+Genre (General, Action, Epic, Drama, Comedy, Horror, Noir) shapes light, blocking, and pacing. Era sets the decade (1960s, 1980s, 1990s, 2000s, 2020s). Tempo sets how fast the edit cuts: Auto, Chaotic, Dynamic, Calm, or Single shot
+Genre first, because it affects every later choice. Era for period looks, and Single shot for continuous takes with no cuts
+Camera, Lens, and Aperture
+Camera body (Modern, 35mm Film, 8mm Film, DV Camcorder), five lenses (Clean Sharp, Anamorphic, Vintage Anamorphic, Warm Vintage, Halation Vintage), and aperture (f/1.4 Wide Open, f/4 Moderate, f/11 Deep Focus)
+The optical look: film grain, highlight character, and how much of the frame stays in focus
+Camera Movement
+30+ presets, including POV, Robot arm, Pan left, Dolly in, Helicopter shot
+One movement per shot, matched to the intention of the scene
+Emotion Wheel, Color Palette, and Lighting
+Eight emotions (Hope, Anger, Joy, Trust, Fear, Surprise, Sadness, Disgust) tagged to a character with @character_name, 50+ color templates, and lighting presets (Silhouette, Practicals, Window, Overhead fall, Contre jour, Soft cross) or manual control of color, brightness, diffusion, and angle
+Performance, tonal direction, and the light source of the scene
+References, Duration, and Resolution
+Up to 50 references per generation, clips up to 30 seconds, and output up to 1080p
+Characters, products, and locations that must stay consistent, and the length and quality of the final clip
+Elements saved in earlier Cinema Studio versions can be added as references. In Cinema Studio's Image mode, AI Cast creates customizable AI actors that help keep the same look across scenes. When a setting is left on Auto, Cinema Studio selects it based on the scene context.
+How to Use Cinema Studio 4.0: Step-by-Step
+This example builds a short noir scene: a detective at a rain-streaked window who is interrupted by a knock at the door. It uses a character reference and a location reference.
+Step 1: Open
+Cinema Studio 4.0
+Cinema Studio 4.0 is the default version whenever Cinema Studio opens.
+Step 2: Add the references.
+Upload one image of the detective and one image of the office as references. You can add up to 50 references per generation. Use only images of people, products and places you have the right to use.
+Step 3: Choose the scene and camera settings.
+Set Tempo to Calm, Camera to 35mm Film, Lens to Clean Sharp, and Camera Aperture to f/4 Moderate.
+Step 4: Write the prompt.
+With the technical settings in place, the prompt describes the scene.
+SCENE CONTEXT: a calm late night at an outdoor drive-in cinema. A young woman walks to her lifted vintage pickup with a brown paper sack of popcorn, unlocks it with a key, climbs in, opens the bag and settles in to watch the movie. Chill, unhurried, real.
+ACTIVE REFERENCES: @Image 1 is the character sheet of the woman: keep her face, the small mole, hair, very slim petite build and outfit exactly: grey paisley bandana with brass goggles pushed up on it, waist-length black hair, black ribbed tank top tucked in, two thin silver chains, black grommet belt, baggy dirty vintage-wash jeans, chunky cream skate sneakers with navy toe tips. It controls identity and outfit only, not pose, framing or background. @Image 2 is the location: the night drive-in lot with the lifted white vintage pickup, four round chrome lights on its roof bar, worn orange vinyl interior, the tall red-and-white lamp post with a warm sodium light, the small lit booth, rows of parked old sedans, the dark pine line and the deep blue sky. It controls the place, the truck design, materials and light only, not the camera angle; it is never shown as a still frame: every shot is live handheld footage with her in it.
+PROPS: a plain unprinted brown kraft-paper sack, like a grocery lunch bag, the top rolled down, full of fresh popcorn; it is always this brown paper sack, never a striped popcorn box; one small truck key on a ring.
+LIGHT: night. The giant movie screen stands in front of the truck's nose: its cold flickering silver-white light washes over the hood and windshield and, once she is inside, over her face through the glass; the film's moving image reflects as a soft ghost on the windshield. Around: deep navy sky, one warm sodium lamp, the warm-lit booth. Real night exposure, faces stay readable, never over-brightened.
+RENDER: real night footage on 35mm film, fine grain, natural skin with pores, no plastic look, not over-graded.
+CAMERA: handheld operator throughout: breathing sway, small micro-corrections, gentle weight shifts, calm and steady, no zooms.
+SHOT 1 (0.0s to 3.0s), WIDE exterior: camera low at the truck's rear left corner, looking forward along its left flank; the white truck and its huge rear tire fill the right side of the frame; she walks into frame from screen-left across the gravel toward the driver's door, the paper sack against her hip, the key dangling from her other hand; the glowing screen far ahead beyond the hood.
+SHOT 2 (3.0s to 5.0s), CLOSE-UP: her fingers slide the key into the chrome lock under the driver's door handle and turn it with a soft click; the paper sack crinkles against her side.
+SHOT 3 (5.0s to 7.5s), MEDIUM exterior: she pulls the heavy door open, steps up on the running board and climbs into the tall cab in one easy move, the sack held up in her other hand.
+SHOT 4 (7.5s to 10.0s), INTERIOR MEDIUM, camera low in the passenger seat: she drops onto the orange bench seat, pulls the door shut with a heavy thud, unrolls the top of the paper sack; popcorn visible.
+SHOT 5 (10.0s to 12.5s), EXTERIOR, camera on the hood about 1 meter from the windshield, looking in: she is clearly visible through the glass from the chest up, eating popcorn from the sack; the film's reflection drifts softly across the glass over her.
+SHOT 6 (12.5s to 15.0s), INTERIOR CLOSE-UP in profile from the passenger side: she pops a few kernels into her mouth and chews, eyes on the screen ahead, the movie light flickering cold on her face, a tiny relaxed smile; the camera breathes gently on her face to the last frame.
+AUDIO: no music. Night ambience: soft wind, distant crickets, faint muffled movie dialogue and score from far speakers; gravel crunch under her sneakers, key jingle, metal click of the lock, door creak and heavy thud, paper bag rustle, popcorn crunch. She does not speak.
+POSITIVE LOCKS: the same woman in the same outfit in every shot, the same white truck, the same brown paper sack; she stays calm and unhurried; no text, no logos, no brand badges.
+01:42
+Copy
+Recreate
+Step 5: Select duration, resolution, and aspect ratio.
+Choose 15 seconds, 1080p quality, and a 16:9 aspect ratio. Turn Sound on and set Bitrate to Standard. Check the credit cost next to the Generate button before starting.
+Step 6: Generate, review, and refine.
+Compare the generated clip with your references and check the action, character appearance, and camera movement. Use Edit Video to change a specific object or detail, or Extend to continue the clip: Sequel adds what happens next, and Prequel adds what happens before.
+Step 7: Apply final adjustments and download.
+Use Change Color Palette to change the colors of the finished clip. Review the clip, then download it.
+Your browser does not support the video.
+How to Write a Strong Cinema Studio Prompt
+The settings carry the technical direction, so the prompt covers the scene. A strong prompt names the subject, the setting, the action, and the sequence of events, in that order, and keeps the wording consistent with the chosen settings.
+Example prompt:
+"A detective in a long coat stands at a rain-streaked office window at night and reads a letter. A knock sounds at the door. He folds the letter, turns slowly toward the door, and stops as the handle begins to turn."
+Tips for stronger prompts:
+Describe action in sequence.
+Short sentences in the order events happen give the model a clear timeline.
+Name the environment.
+Weather, time of day, and key objects set the scene without repeating the lighting settings.
+Avoid conflicting instructions.
+If Tempo is set to Single shot, don’t ask for rapid cuts between multiple angles.
+Keep the action focused.
+Give the scene a clear sequence of events that fits the selected duration.
+Use references to guide appearance.
+Add clear character and location references, then use the prompt to describe what happens and which visual details should stay consistent.
+Cinema Studio 4.0 Pricing by Resolution and Duration
+Cinema Studio generations are billed in credits, and the cost appears next to the Generate button before generation starts. The table shows pricing with native audio in a 16:9 frame as of October 2026. Estimated dollar costs use the mid-tier plan’s monthly price of $49 for 1,000 credits, equivalent to $0.049 per credit.
+Cinema Studio 4.0 Pricing by Resolution and Duration
+Duration
+Resolution
+Credits per Generation
+Estimated Cost
+10 seconds
+480p
+$1.47
+10 seconds
+720p
+$3.43
+10 seconds
+1080p
+160
+$7.84
+15 seconds
+480p
+$2.21
+15 seconds
+720p
+105
+$5.15
+15 seconds
+1080p
+240
+$11.76
+30 seconds
+480p
+$4.41
+30 seconds
+720p
+210
+$10.29
+30 seconds
+1080p
+480
+$23.52
+The table shows pricing with native audio in a 16:9 frame. Estimated dollar costs use the Plus plan rate of 49 for 1,000 credits (0.049 per credit). Pricing checked on October 24, 2026.
+These estimates apply to generations in the Higgsfield web app. API usage is billed separately.
+Using Cinema Studio 4.0 Through MCP and API
+Cinema Studio 4.0 can be used outside the web app in two ways: through Higgsfield MCP in an AI assistant, and through the Higgsfield API in code.
+Through MCP
+Higgsfield MCP lets you use Cinema Studio from a Claude conversation. Generations use credits from your existing Higgsfield account, with no separate API key required.
+higgsfield.ai
+To connect, open the
+Higgsfield MCP page
+and click
+Connect Higgsfield
+, or add a custom connector in Claude using
+https://mcp.higgsfield.ai/mcp
+. Sign in to your Higgsfield account and authorize the connection.
+higgsfield.ai
+Then describe the scene and specify Cinema Studio 4.0 in your request. For example:
+Use Higgsfield Cinema Studio 4.0 to create a 15-second noir scene of a detective at a rain-streaked office window. Use a 1980s setting, a 35mm film look, and calm pacing. Tell me the credit cost and wait for my approval before generating.
+Copy
+Recreate
+Generated assets are also available in your Higgsfield account.
+Through API
+Cinema Studio 4.0 is available through the Higgsfield API for generating videos from a text prompt with optional references. You can set the duration from 4 to 30 seconds, choose 480p or 720p resolution, adjust the aspect ratio, and enable audio. Visit the
+API
+page for a code example, documentation, and pricing.
+Higgsfield Cinema Studio 4.0: Complete Guide
+Try Cinema Studio
+Got any questions left?
+How long can Cinema Studio 4.0 videos be?
+Up to 30 seconds in a single generation. Through the API, duration runs from 4 to 30 seconds.
+What resolutions does Cinema Studio 4.0 support?
+The web app goes up to 1080p, with 480p and 720p also available. The API offers 480p and 720p.
+How many references can I use?
+Up to 50 references per generation in the app. Through the API, the limits are 30 images, 10 videos, and 10 audio files, with at most 50 items in total.
+How much does a Cinema Studio 4.0 generation cost?
+Cost depends on resolution and duration, and it shows next to the Generate button before rendering. With native audio in a 16:9 frame, a 10-second clip costs 30 credits at 480p, 70 at 720p, and 160 at 1080p, and a 30-second clip costs 90, 210, and 480 credits.
+Can I extend an existing video?
+Yes. In the app, Extend continues a clip: Sequel adds what happens next, and Prequel adds what happens before.
+Can I use Cinema Studio 4.0 through MCP and API?
+Yes. Higgsfield MCP works with assistants such as Claude and ChatGPT using the existing Higgsfield account, and the API endpoint higgsfield/cinema-studio/4.0 accepts requests from code.
+Higgsfield Academy
+Want the full walkthrough?
+Learn it step by step with short interactive video lessons.
+Go to Academy
+by Higgsfield
+David Bianchi: Directing for a Top 10 Global DJ on Higgsfield
+Meet Higgsfield Playable Ads and Games: Create Interactive Experiences with AI
+Contents
+What Is Cinema Studio 4.0?
+Cinema Studio 4.0 Settings Explained
+How to Use Cinema Studio 4.0: Step-by-Step
+How to Write a Strong Cinema Studio Prompt
+Cinema Studio 4.0 Pricing by Resolution and Duration
+Using Cinema Studio 4.0 Through MCP and API
+Through MCP
+Through API
+Discover more
+View all
+Guides
+How to Make AI Video Look Like It Was Actually Filmed
+7 min
+Oct 24, 2026
+Guides
+How to Edit Videos with AI (Full Guide)
+10 min
+Oct 24, 2026
+Guides
+How to Master AI Filmmaking (Full Guide)
+7 min
+Oct 23, 2026
+Guides
+How to Put Yourself in an AI Video
+8 min
+Oct 22, 2026
+Guides
+How to Automate AI Video Creation Without Coding
+9 min
+Oct 12, 2026
+Guides
+How to Create AI Real Estate Videos from Photos
+10 min
+Oct 20, 2026
+AI-native creative suite
+Create
+AI Video
+AI Video Effects
+AI Image to Video
+AI Text to Video
+AI Video Editor
+Genjutsu for Reels
+Faceless Studio
+AI Explainer
+AI Image
+Edit Image
+Inpaint
+Upscale
+AI Video Upscaler
+Mixed Media
+AI Face Swap
+AI Influencer
+Apps
+Video Models
+Seedance 2.5
+Seedance 2.0
+Kling 3.0
+Kling 4.0
+Veo 3.1 Introduction
+WAN 2.6
+Grok Imagine 1.5
+Gemini Omni Flash
+Image Models
+Nano Banana
+Flux 2
+Seedream 5
+GPT Image 2.6
+GPT Image 2
+Ideogram 4.5
+Studios
+Cinema Studio
+Marketing Studio
+Lipsync Studio
+Higgsfield Popcorn
+Higgsfield Canvas
+Higgsfield Mangaka
+Soul
+Soul 2.0
+Soul ID Character
+Soul Cinema
+Platform
+Supercomputer
+AI Motion Designer
+MCP/CLI
+API
+Collab
+Games
+Reference Extension
+Resources
+Blog
+Help Center
+Academy
+Prompt Guide
+Company
+About
+Trust
+Report a vulnerability
+Enterprise
+Team
+Pricing
+Careers
+Contact
+Community
+Contests
+Creative Partners
+X / Twitter
+Youtube
+LinkedIn
+Tiktok
+Discord
+Create
+AI Video
+AI Video Effects
+AI Image to Video
+AI Text to Video
+AI Video Editor
+Genjutsu for Reels
+Faceless Studio
+AI Explainer
+AI Image
+Edit Image
+Inpaint
+Upscale
+AI Video Upscaler
+Mixed Media
+AI Face Swap
+AI Influencer
+Apps
+Video Models
+Seedance 2.5
+Seedance 2.0
+Kling 3.0
+Kling 4.0
+Veo 3.1 Introduction
+WAN 2.6
+Grok Imagine 1.5
+Gemini Omni Flash
+Image Models
+Nano Banana
+Flux 2
+Seedream 5
+GPT Image 2.6
+GPT Image 2
+Ideogram 4.5
+Studios
+Cinema Studio
+Marketing Studio
+Lipsync Studio
+Higgsfield Popcorn
+Higgsfield Canvas
+Higgsfield Mangaka
+Soul
+Soul 2.0
+Soul ID Character
+Soul Cinema
+Platform
+Supercomputer
+AI Motion Designer
+MCP/CLI
+API
+Collab
+Games
+Reference Extension
+Resources
+Blog
+Help Center
+Academy
+Prompt Guide
+Company
+About
+Trust
+Report a vulnerability
+Enterprise
+Team
+Pricing
+Careers
+Contact
+Community
+Contests
+Creative Partners
+535 Mission St, 14th floor, San Francisco, CA, 94105
+X / Twitter
+Youtube
+LinkedIn
+Tiktok
+Discord
+2026
+Higgsfield, Inc.
+All rights reserved.
+Help center
+Cookie Notice
+Terms
+Privacy
+Report a vulnerability
