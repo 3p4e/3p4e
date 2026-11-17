@@ -1,5 +1,6 @@
 ABRACADABRA - дигитално мени / digital menu (works fully offline, no internet needed)
 
+See УПАТСТВО_INSTRUCTIONS.html for the full user guide (Macedonian + English).
 TV 1: open TV1.html      TV 2: open TV2.html     (copy this whole folder to the USB stick, keep files together)
 Classic look instead: TV1_classic.html / TV2_classic.html
 Edit prices: open admin.html in a browser on a computer, change items, press save, then
