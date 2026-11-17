@@ -1,0 +1,760 @@
+<!doctype html>
+<html lang="mk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ABRACADABRA — Кинематографско мени</title>
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<style>
+  /* ============================================================
+     ABRACADABRA — cinematic "AAA game main menu" digital board
+     1920x1080 stage, scaled to any TV. Day = warm gold/orange/red.
+     Night = magenta/violet neon. 100% offline, no WebGL, no heavy blur.
+     ============================================================ */
+  :root {
+    --bg: #0a0610;
+    --gold-1: #fff3c9;      /* light gold text */
+    --gold-2: #f6c95b;      /* mid gold chrome */
+    --gold-3: #9a6b1c;      /* dark gold extrusion */
+    --accent: #f39a1e;
+    --glow: rgba(243, 154, 30, .5);
+    --rim: rgba(255, 214, 130, .5);
+    --text: #fff9ef;
+    --muted: #e8dcc6;
+    --panel-a: rgba(255, 196, 92, .12);
+    --panel-b: rgba(20, 12, 8, .94);
+    --beam: rgba(255, 205, 120, .34);
+    --beam-2: rgba(255, 140, 60, .26);
+    --fs: 42px;             /* item text size; auto-shrinks to fit */
+  }
+  body.night {
+    --bg: #0a0416;
+    --gold-1: #ffe3f7;
+    --gold-2: #ff8ad8;
+    --gold-3: #7c2f8f;
+    --accent: #ff4fc0;
+    --glow: rgba(255, 47, 179, .5);
+    --rim: rgba(255, 120, 210, .5);
+    --text: #fff6fb;
+    --muted: #ead7e6;
+    --panel-a: rgba(255, 90, 190, .12);
+    --panel-b: rgba(20, 8, 26, .94);
+    --beam: rgba(255, 80, 200, .34);
+    --beam-2: rgba(150, 90, 255, .3);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 100%; height: 100%; overflow: hidden; background: #000; cursor: none; }
+  body { font-family: "Rubik", system-ui, sans-serif; color: var(--text); }
+
+  /* ---------- 1920x1080 stage, scaled to the display ---------- */
+  #stage { position: absolute; left: 50%; top: 50%; width: 1920px; height: 1080px;
+    transform-origin: center center; background: var(--bg); overflow: hidden; perspective: 1500px; }
+
+  /* ---------- far parallax plane: cinematic stage with slow camera drift ---------- */
+  .bg-plane { position: absolute; inset: -4%; z-index: 0; will-change: transform;
+    background: var(--bg) url(assets/stage_day.jpg) center / cover no-repeat;
+    animation: cam 48s ease-in-out infinite alternate; }
+  body.night .bg-plane { background-image: url(assets/stage_night.jpg); }
+  @keyframes cam { from { transform: scale(1.03) translate(0, 0); } to { transform: scale(1.12) translate(-1.6%, -1.2%); } }
+
+  /* ---------- volumetric light shafts (gradient beams, no blur) ---------- */
+  .beams { position: absolute; inset: 0; z-index: 1; mix-blend-mode: screen; pointer-events: none; overflow: hidden; }
+  .beam { position: absolute; top: -10%; height: 120%; width: 30%;
+    background: linear-gradient(to bottom, var(--beam), transparent 80%);
+    clip-path: polygon(34% 0, 66% 0, 100% 100%, 0 100%); }
+  .beam.b1 { left: 16%; width: 24%; animation: beamSway 16s ease-in-out infinite alternate; }
+  .beam.b2 { left: 42%; width: 20%; opacity: .8; animation: beamSway 22s ease-in-out infinite alternate-reverse; }
+  .beam.b3 { left: 62%; width: 26%; opacity: .7; animation: beamSway 19s ease-in-out infinite alternate; }
+  @keyframes beamSway { from { transform: rotate(-4deg); opacity: .45; } to { transform: rotate(4deg); opacity: .85; } }
+  .rays { position: absolute; left: 30%; top: -28%; width: 56%; height: 118%; z-index: 1;
+    mix-blend-mode: screen; pointer-events: none; opacity: .5;
+    background: conic-gradient(from 180deg at 50% 0%,
+      transparent 0deg, var(--beam) 7deg, transparent 15deg,
+      transparent 24deg, var(--beam-2) 30deg, transparent 38deg,
+      transparent 52deg, var(--beam) 58deg, transparent 66deg);
+    animation: rays 16s ease-in-out infinite alternate; transform-origin: 50% 0; }
+  @keyframes rays { from { transform: rotate(-5deg); opacity: .3; } to { transform: rotate(5deg); opacity: .55; } }
+
+  /* ---------- readability vignette ---------- */
+  .shade { position: absolute; inset: 0; z-index: 2; pointer-events: none;
+    background:
+      radial-gradient(ellipse 76% 62% at 55% 42%, transparent 26%, rgba(4,2,8,.5) 62%, rgba(2,1,4,.9) 100%),
+      linear-gradient(90deg, rgba(4,2,8,.55) 0%, rgba(4,2,8,.26) 40%, rgba(4,2,8,.12) 62%, rgba(4,2,8,.44) 100%); }
+
+  /* ---------- particle canvas: embers + crystal shards ---------- */
+  #fx { position: absolute; inset: 0; z-index: 4; pointer-events: none; }
+
+  /* ---------- UI world: a gently swaying 3D plane (parallax vs background) ---------- */
+  .world { position: absolute; inset: 0; z-index: 5; transform-style: preserve-3d; will-change: transform;
+    animation: sway 34s ease-in-out infinite alternate; }
+  @keyframes sway { from { transform: rotateY(-1.5deg); } to { transform: rotateY(2.4deg); } }
+
+  /* ---------- header / title ---------- */
+  header { position: absolute; left: 64px; right: 64px; top: 26px; height: 122px; z-index: 6;
+    display: flex; align-items: center; gap: 22px; }
+  .logo { height: 122px; width: 122px; object-fit: contain;
+    filter: drop-shadow(0 0 20px var(--glow)) drop-shadow(0 8px 12px rgba(0,0,0,.7));
+    animation: float 5.5s ease-in-out infinite; }
+  @keyframes float { 0%, 100% { transform: translateY(0) rotateY(0); } 50% { transform: translateY(-5px) rotateY(12deg); } }
+  .wordmark { position: relative; font-family: "Russo One", sans-serif; font-size: 86px; letter-spacing: 6px; line-height: .98;
+    color: var(--gold-1);
+    text-shadow:
+      0 1px 0 var(--gold-2), 0 2px 0 var(--gold-2), 0 3px 0 var(--gold-3),
+      0 5px 0 var(--gold-3), 0 7px 0 rgba(0,0,0,.55), 0 10px 0 rgba(0,0,0,.45),
+      0 16px 22px rgba(0,0,0,.75), 0 0 38px var(--glow); }
+  .wordmark::after { content: "ABRACADABRA"; position: absolute; inset: 0;
+    background: linear-gradient(100deg, transparent 42%, rgba(255,255,255,.95) 50%, transparent 58%) no-repeat;
+    background-size: 250% 100%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    animation: shine 7s ease-in-out infinite; }
+  @keyframes shine { 0%, 66% { background-position: 125% 0; } 100% { background-position: -85% 0; } }
+  .tag { margin-left: auto; text-align: right; font-family: "Russo One", sans-serif; font-size: 23px; line-height: 1.28;
+    color: var(--muted); letter-spacing: 1px; text-shadow: 0 3px 8px #000; }
+  .tag b { display: block; font-weight: 400; font-size: 33px; color: var(--gold-1);
+    text-shadow: 0 0 16px var(--glow), 0 3px 8px #000; }
+
+  /* ---------- content: menu + hero promo ---------- */
+  .content { position: absolute; left: 60px; right: 60px; top: 172px; bottom: 120px; z-index: 5;
+    display: flex; gap: 34px; transform-style: preserve-3d; }
+  main#menu { flex: 1; min-width: 0; display: flex; gap: 28px; transform-style: preserve-3d;
+    transform: rotateY(4deg); transform-origin: 0 50%; }
+  main .col { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+  aside { flex: 0 0 560px; width: 560px; transform-style: preserve-3d;
+    transform: rotateY(-4deg); transform-origin: 100% 50%; }
+
+  /* ---------- glass-and-gold game UI panels ---------- */
+  .cat { position: relative; flex-shrink: 0; margin-bottom: 22px; border-radius: 16px; overflow: hidden;
+    background:
+      linear-gradient(180deg, var(--panel-a), rgba(255,255,255,.02) 36%, rgba(0,0,0,.28)),
+      linear-gradient(158deg, var(--panel-b), rgba(8, 5, 7, .96));
+    border: 1px solid var(--rim);
+    box-shadow: 0 0 0 1px rgba(0,0,0,.65), inset 0 1px 0 rgba(255,255,255,.24),
+      inset 0 -14px 28px rgba(0,0,0,.35), 0 16px 34px rgba(0,0,0,.5), 0 0 30px var(--glow);
+    animation: rise .8s cubic-bezier(.2,.7,.2,1) both; animation-delay: var(--d, 0s); }
+  /* transform-based entry is paused while autoFit measures, so it never skews the fit check */
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  body.measuring .cat { animation: none; }
+  body.measuring main#menu { transform: none; }
+  .cat::before, .cat::after { content: ""; position: absolute; width: 26px; height: 26px; pointer-events: none; z-index: 3; }
+  .cat::before { top: -1px; left: -1px; border-top: 3px solid var(--gold-2); border-left: 3px solid var(--gold-2); border-top-left-radius: 16px; }
+  .cat::after { bottom: -1px; right: -1px; border-bottom: 3px solid var(--gold-2); border-right: 3px solid var(--gold-2); border-bottom-right-radius: 16px; }
+
+  .cat h2 { position: relative; display: flex; align-items: baseline; gap: 10px;
+    font-family: "Russo One", sans-serif; font-weight: 400; font-size: calc(var(--fs) * .96);
+    padding: 12px 18px 11px 64px; color: #fff;
+    background: linear-gradient(180deg, rgba(255,255,255,.15), rgba(255,255,255,.02) 60%, rgba(0,0,0,.3)), rgba(16, 10, 8, .55);
+    border-bottom: 2px solid var(--catline, var(--gold-3));
+    text-shadow: 0 2px 0 rgba(0,0,0,.55); }
+  .cat h2 .gem { position: absolute; left: 20px; top: 50%; width: 26px; height: 26px; margin-top: -13px;
+    transform: rotate(45deg); border-radius: 5px;
+    background: radial-gradient(circle at 35% 30%, #fff 0 16%, var(--catc, var(--gold-2)) 42%, rgba(0,0,0,.5) 100%);
+    box-shadow: 0 0 0 3px rgba(0,0,0,.35), 0 0 15px #fff, 0 0 26px var(--catc, var(--gold-2));
+    animation: gem 3.2s ease-in-out infinite; }
+  @keyframes gem { 0%, 100% { filter: brightness(1); } 50% { filter: brightness(1.5); } }
+  .cat h2 .note { font-family: "Rubik", sans-serif; font-weight: 500; font-size: .5em; color: var(--muted); }
+  .cat h2 .cur { margin-left: auto; font-family: "Rubik", sans-serif; font-weight: 700; font-size: .5em;
+    color: var(--gold-2); text-transform: uppercase; letter-spacing: 1px; }
+
+  .cat ul { list-style: none; padding: 10px 20px 14px; position: relative; }
+  .cat li { display: flex; align-items: baseline; gap: 12px; font-size: var(--fs); font-weight: 500;
+    padding: calc(var(--fs) * .16) 0; text-shadow: 0 2px 6px rgba(0,0,0,.85); }
+  .cat li + li { border-top: 1px solid rgba(255,255,255,.06); }
+  .cat li .n { white-space: nowrap; }
+  body.wrap .cat li .n { white-space: normal; line-height: 1.12; }
+  .cat li .badge { flex: 0 0 auto; font-family: "Russo One", sans-serif; font-weight: 400; font-size: .46em;
+    letter-spacing: 1px; padding: 4px 9px 3px; border-radius: 7px; color: #180b02; line-height: 1;
+    box-shadow: 0 0 12px var(--glow); }
+  .badge.hit { background: linear-gradient(180deg, #ffd56b, #f39a1e); }
+  .badge.novo { background: linear-gradient(180deg, #d8f06a, #8fbf2e); }
+  .badge.vege { background: linear-gradient(180deg, #a8f0b0, #3fbf5a); }
+  body.night .badge.hit { background: linear-gradient(180deg, #ffc2ea, #ff4fc0); color: #3a052b; }
+  body.night .badge.novo { background: linear-gradient(180deg, #e8d0ff, #9a5bff); color: #2b0840; }
+  body.night .badge.vege { background: linear-gradient(180deg, #c8ffd6, #2fae7a); color: #06301d; }
+  .cat li .dots { flex: 1; height: 2px; transform: translateY(-.28em); min-width: 18px;
+    background: linear-gradient(90deg, rgba(255,255,255,.05), var(--rim)); }
+  .cat li .p { font-family: "Russo One", sans-serif; font-weight: 400; color: var(--gold-1); white-space: nowrap;
+    text-shadow: 0 0 12px var(--glow), 0 2px 4px rgba(0,0,0,.7); }
+
+  /* brand filler for unbalanced columns */
+  .filler { margin-top: 22px; display: flex; align-items: center; justify-content: center; gap: 18px;
+    border-radius: 16px; border: 1px dashed var(--rim); background: linear-gradient(160deg, rgba(255,255,255,.05), rgba(0,0,0,.18)); }
+  .filler img { height: 62px; width: 62px; object-fit: contain; opacity: .92; }
+  .filler span { font-family: "Rubik", sans-serif; font-weight: 500; font-size: 23px; color: var(--muted); }
+  .filler b { display: block; font-family: "Russo One", sans-serif; font-weight: 400; font-size: 25px; color: var(--gold-2); }
+
+  /* ---------- hero promo card ---------- */
+  .promo { position: relative; height: 100%; border-radius: 20px; padding: 24px;
+    display: flex; flex-direction: column; align-items: center; text-align: center; overflow: hidden;
+    background:
+      linear-gradient(180deg, var(--panel-a), rgba(255,255,255,.02) 30%, rgba(0,0,0,.3)),
+      linear-gradient(160deg, var(--panel-b), rgba(8, 5, 7, .96));
+    border: 1px solid var(--rim);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.25), inset 0 0 60px rgba(0,0,0,.5),
+      0 26px 60px rgba(0,0,0,.6), 0 0 46px var(--glow);
+    transition: transform .45s cubic-bezier(.2,.8,.2,1), opacity .45s ease; }
+  .promo.out { transform: translateX(46px) rotateY(-10deg); opacity: 0; }
+  .promo .frame { position: absolute; inset: 10px; border: 1px solid rgba(255,220,150,.28); border-radius: 14px; pointer-events: none; }
+  .promo .portal { position: relative; height: 372px; width: 100%; flex: 0 0 auto;
+    display: flex; align-items: center; justify-content: center; }
+  .promo .halo { position: absolute; width: 420px; height: 420px; border-radius: 50%;
+    background: radial-gradient(circle, var(--glow) 0%, transparent 62%); }
+  .promo .ring { position: absolute; width: 300px; height: 300px; border-radius: 50%;
+    border: 2px solid var(--rim); box-shadow: 0 0 34px var(--glow), inset 0 0 34px var(--glow);
+    animation: spin 14s linear infinite; }
+  .promo .ring.r2 { width: 258px; height: 258px; border-style: dashed; opacity: .7;
+    animation: spin 22s linear infinite reverse; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .promo .mascot { position: relative; z-index: 2; height: 100%; max-width: 96%; object-fit: contain;
+    filter: drop-shadow(0 0 26px var(--glow)) drop-shadow(0 12px 18px rgba(0,0,0,.6));
+    animation: float 5.5s ease-in-out infinite; }
+  .promo .kicker { margin-top: 14px; font-family: "Russo One", sans-serif; font-weight: 400; font-size: 22px;
+    letter-spacing: 3px; color: var(--muted); }
+  .promo h3 { margin-top: 8px; font-family: "Russo One", sans-serif; font-weight: 400; font-size: 44px; line-height: 1.04;
+    color: var(--gold-1); text-shadow: 0 2px 0 var(--gold-3), 0 6px 12px rgba(0,0,0,.7), 0 0 22px var(--glow); }
+  .promo p { margin-top: 8px; font-size: 24px; line-height: 1.3; color: var(--muted); }
+  .promo .price { margin-top: auto; font-family: "Russo One", sans-serif; font-weight: 400; font-size: 76px; line-height: 1;
+    color: var(--gold-1); text-shadow: 0 0 26px var(--glow), 0 4px 0 var(--gold-3), 0 10px 16px rgba(0,0,0,.7); }
+  .promo .price small { font-size: .4em; color: var(--muted); margin-left: 10px; }
+
+  /* ---------- ticker ---------- */
+  footer { position: absolute; left: 60px; right: 60px; bottom: 26px; height: 70px; z-index: 6;
+    border-radius: 14px; overflow: hidden; display: flex; align-items: center;
+    background: linear-gradient(180deg, var(--panel-a), rgba(0,0,0,.4)), linear-gradient(160deg, var(--panel-b), rgba(8,5,7,.94));
+    border: 1px solid var(--rim);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.22), 0 10px 26px rgba(0,0,0,.55), 0 0 26px var(--glow); }
+  .ticker { width: 100%; height: 100%; overflow: hidden; display: flex; align-items: center; }
+  .track { display: inline-block; white-space: nowrap; will-change: transform; animation: marq 46s linear infinite; }
+  .track .seg { font-family: "Rubik", sans-serif; font-weight: 700; font-size: 29px; color: var(--gold-1);
+    text-shadow: 0 0 14px var(--glow); }
+  .track .sep { margin: 0 24px; color: var(--muted); }
+  @keyframes marq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ---------- video layers (Higgsfield clips in assets/video; the page works without them) ---------- */
+  .bg-vid { position: absolute; inset: -4%; width: 108%; height: 108%; object-fit: cover; z-index: 0; opacity: 0;
+    transition: opacity 1.4s; animation: cam 48s ease-in-out infinite alternate; }
+  .bg-vid.on { opacity: .9; }
+  .promo .mascot.vid { position: absolute; left: 50%; top: 0; height: 100%; width: auto; max-width: none; z-index: 2;
+    transform: translateX(-50%); opacity: 0; animation: none; filter: none; mix-blend-mode: screen;
+    -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 66%, transparent 100%);
+            mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 66%, transparent 100%); }
+  .promo .portal.video .mascot.vid { opacity: 1; }
+  .promo .portal.video img.mascot { opacity: 0; }
+
+  /* wand-slash transition over the whole board (black = transparent via screen blend) */
+  #fxv { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 50; opacity: 0;
+    mix-blend-mode: screen; pointer-events: none; transition: opacity .6s; }
+  #fxv.on { opacity: 1; }
+  .flashfx { position: absolute; inset: 0; z-index: 52; pointer-events: none; opacity: 0; mix-blend-mode: screen;
+    background: radial-gradient(ellipse at 50% 45%, rgba(255,240,200,.85), rgba(255,160,60,.35) 45%, transparent 75%); }
+  body.night .flashfx { background: radial-gradient(ellipse at 50% 45%, rgba(255,220,250,.85), rgba(255,60,190,.35) 45%, transparent 75%); }
+  #stage.flash .flashfx { animation: flash .8s ease-out; }
+  @keyframes flash { 0% { opacity: 0; } 25% { opacity: 1; } 100% { opacity: 0; } }
+
+  /* full-screen Blizzard-style cinematic: the wand performs, then the board comes back */
+  #cine { position: absolute; inset: 0; z-index: 58; background: #000; opacity: 0; pointer-events: none; transition: opacity .8s; }
+  #cine.on { opacity: 1; }
+  #cine video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  #cine::after { content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse 80% 75% at 50% 50%, transparent 55%, rgba(0,0,0,.55) 100%); }
+  .cine-card { position: absolute; left: 50%; bottom: 120px; transform: translate(-50%, 30px); z-index: 2; text-align: center;
+    opacity: 0; transition: opacity .7s, transform .7s; padding: 18px 54px 22px; border-radius: 20px;
+    background: linear-gradient(180deg, rgba(20,14,30,.55), rgba(8,5,12,.88));
+    border: 1px solid var(--rim); box-shadow: 0 0 0 3px var(--gold-3), 0 0 60px var(--glow); }
+  .cine-card.on { opacity: 1; transform: translate(-50%, 0); }
+  .cine-card h4 { font-family: "Russo One", sans-serif; font-weight: 400; font-size: 64px; line-height: 1.05; color: var(--gold-1);
+    text-shadow: 0 3px 0 var(--gold-3), 0 0 24px var(--glow); }
+  .cine-card .price { font-family: "Russo One", sans-serif; font-size: 110px; line-height: 1.05; color: var(--gold-1);
+    text-shadow: 0 4px 0 var(--gold-3), 0 0 28px var(--glow); }
+  .cine-card .price small { font-size: .36em; margin-left: 8px; color: var(--muted); }
+
+  /* ---------- film grain + letterbox ---------- */
+  .grain { position: absolute; inset: 0; z-index: 60; opacity: .06; mix-blend-mode: overlay; pointer-events: none;
+    background-image: repeating-radial-gradient(circle at 17% 32%, #fff 0 1px, transparent 1px 3px); }
+  .letterbox { position: absolute; left: 0; right: 0; height: 16px; background: #000; z-index: 61; }
+  .letterbox.t { top: 0; } .letterbox.b { bottom: 0; }
+</style>
+</head>
+<body>
+<div id="stage" data-od-id="cinematic-board">
+  <div class="bg-plane"></div>
+  <video id="bgv" class="bg-vid" muted loop playsinline></video>
+  <div class="beams">
+    <div class="beam b1"></div><div class="beam b2"></div><div class="beam b3"></div>
+  </div>
+  <div class="rays"></div>
+  <div class="shade"></div>
+  <canvas id="fx"></canvas>
+
+  <div class="world">
+    <header data-od-id="board-header">
+      <img class="logo" src="assets/logo.png" alt="ABRACADABRA" onerror="this.style.display='none'">
+      <div class="wordmark" data-od-id="wordmark">ABRACADABRA</div>
+      <div class="tag" id="tag"></div>
+    </header>
+
+    <div class="content">
+      <main id="menu" data-od-id="menu"></main>
+      <aside data-od-id="promo-panel">
+        <div class="promo" id="promo" data-od-id="promo"></div>
+      </aside>
+    </div>
+
+    <footer data-od-id="ticker">
+      <div class="ticker"><div class="track" id="ticktrack"></div></div>
+    </footer>
+  </div>
+
+  <video id="fxv" muted playsinline></video>
+  <div class="flashfx"></div>
+  <div id="cine"><video id="cv" muted playsinline></video><div class="cine-card" id="cineCard"></div></div>
+  <div class="grain"></div>
+  <div class="letterbox t"></div>
+  <div class="letterbox b"></div>
+</div>
+
+<script src="menu-data.js"></script>
+<script>
+(function () {
+  "use strict";
+  const q = new URLSearchParams(location.search);
+  const SCREEN = q.get("screen") === "2" ? 2 : 1;
+  // data: built-in menu-data.js, an override saved by admin.html on this device, or a Google Sheet (CSV)
+  let DATA = window.MENU_DATA || { categories: [], promos: [], currency: "ден", nightFrom: 19, nightTo: 6 };
+  try { const o = localStorage.getItem("abra_menu_override"); if (o) DATA = JSON.parse(o); } catch (e) {}
+  const V = n => `assets/video/${n}.mp4`;
+  const stage = document.getElementById("stage");
+
+  // ---------- scale the 1920x1080 stage to whatever the TV reports ----------
+  function fitStage() {
+    const s = Math.min(innerWidth / 1920, innerHeight / 1080);
+    stage.style.transform = `translate(-50%, -50%) scale(${s})`;
+  }
+  let refitTimer = 0;
+  addEventListener("resize", () => {
+    fitStage();
+    clearTimeout(refitTimer);
+    refitTimer = setTimeout(autoFit, 120);
+  });
+  fitStage();
+
+  // ---------- helpers ----------
+  const esc = s => String(s).replace(/[&<>"]/g, m => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[m]));
+  const shown = it => it.price !== null && it.price !== undefined && it.price !== "" && it.available !== false;
+  const BADGE = { "ХИТ": "hit", "НОВО": "novo", "ВЕГЕ": "vege" };
+  // muted category accents — used only for the gem + a thin header rule, gold stays dominant
+  const CATCOLOR = { red: "#d0503f", orange: "#e08a2e", lime: "#9bbf45", yellow: "#d6b23e",
+    green: "#4fae72", magenta: "#d15fb0", brown: "#c08a54" };
+  const GAP = 22;
+
+  function parseCSV(text) {
+    const rows = []; let row = [], cell = "", inq = false;
+    for (let i = 0; i < text.length; i++) {
+      const c = text[i];
+      if (inq) { if (c === '"') { if (text[i + 1] === '"') { cell += '"'; i++; } else inq = false; } else cell += c; }
+      else if (c === '"') inq = true;
+      else if (c === ",") { row.push(cell); cell = ""; }
+      else if (c === "\n" || c === "\r") { if (c === "\r" && text[i + 1] === "\n") i++; row.push(cell); rows.push(row); row = []; cell = ""; }
+      else cell += c;
+    }
+    if (cell || row.length) { row.push(cell); rows.push(row); }
+    return rows.filter(r => r.some(x => x.trim() !== ""));
+  }
+  // Sheet columns: category | name | price | available | badge
+  function applySheet(base, rows) {
+    const head = rows.shift().map(h => h.trim().toLowerCase());
+    const col = n => head.indexOf(n);
+    const cats = base.categories.map(c => ({ ...c, items: [] }));
+    for (const r of rows) {
+      const catKey = (r[col("category")] || "").trim();
+      let cat = cats.find(c => c.id === catKey || c.name.toLowerCase() === catKey.toLowerCase());
+      if (!cat) { cat = { id: catKey, name: catKey, screen: SCREEN, color: "orange", note: "", items: [] }; cats.push(cat); }
+      const pr = (r[col("price")] || "").replace(/[^\d.]/g, "");
+      const av = (r[col("available")] || "").trim().toLowerCase();
+      cat.items.push({ name: (r[col("name")] || "").trim(), price: pr ? Number(pr) : null,
+        available: !["no", "не", "false", "0", "x"].includes(av), badge: (r[col("badge")] || "").trim() });
+    }
+    return { ...base, categories: cats };
+  }
+  async function loadSheet() {
+    if (!DATA.sheetCsvUrl) return;
+    try {
+      const res = await fetch(DATA.sheetCsvUrl + (DATA.sheetCsvUrl.includes("?") ? "&" : "?") + "t=" + Date.now());
+      if (!res.ok) return;
+      DATA = applySheet(window.MENU_DATA, parseCSV(await res.text()));
+      render(); applyMode();
+    } catch (e) { /* offline: keep showing the last menu */ }
+  }
+
+  function night() {
+    const m = q.get("mode"); if (m) return m === "night";
+    const h = new Date().getHours(), a = DATA.nightFrom ?? 19, b = DATA.nightTo ?? 6;
+    return a > b ? (h >= a || h < b) : (h >= a && h < b);
+  }
+
+  function countUp(el, to, delay) {
+    const n = Number(to);
+    const run = () => {
+      if (!n) { el.textContent = to; return; }
+      const t0 = performance.now();
+      (function step(t) {
+        const k = Math.min(1, (t - t0) / 700);
+        el.textContent = Math.round(n * (1 - Math.pow(1 - k, 3)));
+        if (k < 1) requestAnimationFrame(step);
+      })(t0);
+    };
+    delay ? setTimeout(run, delay) : run();
+  }
+
+  // ---------- render menu ----------
+  let cats = [];
+  let pricesAnimated = false;
+  function render() {
+    const cur = DATA.currency || "ден";
+    cats = DATA.categories.filter(c => (c.screen || 1) === SCREEN && c.items.some(shown));
+    const html = cats.map((c, ci) => {
+      const color = CATCOLOR[c.color] || CATCOLOR.orange;
+      const items = c.items.filter(shown).map(it => `
+        <li><span class="n">${esc(it.name)}</span>${it.badge ? `<span class="badge ${BADGE[it.badge] || ""}">${esc(it.badge)}</span>` : ""}
+        <span class="dots"></span><span class="p" data-price="${esc(it.price)}">${esc(it.price)}</span></li>`).join("");
+      return `<section class="cat" data-od-id="cat-${esc(c.id)}" style="--catc:${color};--catline:${color};--d:${(ci * 0.09).toFixed(2)}s">
+        <h2><span class="gem"></span><span class="name">${esc(c.name)}</span>${c.note ? `<span class="note">${esc(c.note)}</span>` : ""}<span class="cur">${esc(cur)}</span></h2>
+        <ul>${items}</ul>
+      </section>`;
+    });
+    window.__cats = html;
+    pricesAnimated = false;
+    buildTicker();
+    autoFit();
+  }
+
+  function buildTicker() {
+    const tk = (DATA.ticker && DATA.ticker.length ? DATA.ticker :
+      ["Сите бургери, сендвичи и тостови се со помфрит", "Магијата е во вкусот!",
+       "Прашај за денешната понуда", "Работиме до доцна — дојди и ноќе"]);
+    const body = tk.map(esc).join('<span class="sep">✦</span>');
+    const seg = `<span class="seg">${body}<span class="sep">✦</span></span>`;
+    document.getElementById("ticktrack").innerHTML = seg + `<span class="seg" aria-hidden="true">${body}<span class="sep">✦</span></span>`;
+  }
+
+  // ---------- auto-fit: shrink text until every visible item fits, no truncation ----------
+  const MIN_FS = 22, START_FS = 46, MENU_GAP = 28;
+  function autoFit() {
+    const menu = document.getElementById("menu");
+    const html = window.__cats || [];
+    if (!html.length) return;
+    document.body.classList.add("measuring");
+
+    const nextFrame = () => new Promise(res => requestAnimationFrame(() => requestAnimationFrame(res)));
+    const colWidth = cols => (menu.clientWidth - MENU_GAP * (cols - 1)) / cols;
+
+    // Natural height of every card, measured at the exact column width for the
+    // requested column count, so the wrap pass uses real wrapped heights too.
+    const cardHeights = cols => {
+      const w = colWidth(cols);
+      menu.innerHTML = `<div class="col" style="flex:0 0 ${w}px; width:${w}px; min-width:0;">${html.join("")}</div>`;
+      return [...menu.querySelectorAll(".cat")].map(s => s.offsetHeight + GAP);
+    };
+
+    // Split category indices into `cols` contiguous runs in reading order so the
+    // tallest resulting column is as short as possible.
+    const balancedSplit = (hs, cols) => {
+      const n = hs.length;
+      const res = Array.from({ length: cols }, () => []);
+      if (!n) return res;
+      if (n <= cols) { hs.forEach((_, i) => res[i].push(i)); return res; }
+      const prefix = [0];
+      hs.forEach(h => prefix.push(prefix[prefix.length - 1] + h));
+      const columnMax = idxs => {
+        const b = [0, ...idxs, n];
+        let mx = 0;
+        for (let k = 0; k < b.length - 1; k++) mx = Math.max(mx, prefix[b[k + 1]] - prefix[b[k]]);
+        return mx;
+      };
+      let bestIdxs = null, bestMax = Infinity;
+      if (cols === 2) {
+        for (let i = 1; i < n; i++) { const m = columnMax([i]); if (m < bestMax) { bestMax = m; bestIdxs = [i]; } }
+      } else {
+        for (let i = 1; i < n - 1; i++) for (let j = i + 1; j < n; j++) {
+          const m = columnMax([i, j]); if (m < bestMax) { bestMax = m; bestIdxs = [i, j]; }
+        }
+      }
+      const b = [0, ...bestIdxs, n];
+      for (let k = 0; k < cols; k++) for (let i = b[k]; i < b[k + 1]; i++) res[k].push(i);
+      return res;
+    };
+
+    const renderColumns = (cols, buckets) => {
+      menu.innerHTML = buckets.map(b => `<div class="col">${b.map(i => html[i]).join("")}</div>`).join("");
+    };
+
+    // Fits only when every row is fully visible: no name/row overflows its
+    // column horizontally and no column runs past the bottom of the menu area.
+    const fits = () => {
+      const mBottom = menu.getBoundingClientRect().bottom;
+      for (const c of menu.querySelectorAll(".col")) {
+        const last = c.lastElementChild;
+        if (last && last.getBoundingClientRect().bottom > mBottom + 1) return false;
+        for (const n of c.querySelectorAll(".n")) if (n.scrollWidth > n.clientWidth + 1) return false;
+        for (const li of c.querySelectorAll("li")) if (li.scrollWidth > li.clientWidth + 1) return false;
+      }
+      return true;
+    };
+
+    const tryFS = (fs, wrap, cols) => {
+      document.documentElement.style.setProperty("--fs", fs + "px");
+      document.body.classList.toggle("wrap", wrap);
+      renderColumns(cols, balancedSplit(cardHeights(cols), cols));
+      return fits();
+    };
+
+    let best = null;
+    const search = wrap => {
+      for (let cols = 2; cols <= 3; cols++) {
+        for (let fs = START_FS; fs >= MIN_FS; fs--) {
+          if (tryFS(fs, wrap, cols)) {
+            if (!best || fs > best.fs || (fs === best.fs && cols < best.cols)) best = { fs, wrap, cols };
+            break;
+          }
+        }
+      }
+    };
+
+    (async () => {
+      if (document.fonts && document.fonts.ready) await document.fonts.ready;
+      await nextFrame();
+      search(false);
+      if (!best) search(true);
+      if (best) {
+        document.documentElement.style.setProperty("--fs", best.fs + "px");
+        document.body.classList.toggle("wrap", best.wrap);
+        renderColumns(best.cols, balancedSplit(cardHeights(best.cols), best.cols));
+        addFillers();
+      } else {
+        document.documentElement.style.setProperty("--fs", MIN_FS + "px");
+        document.body.classList.add("wrap");
+        renderColumns(2, balancedSplit(cardHeights(2), 2));
+      }
+      document.body.classList.remove("measuring");
+      requestAnimationFrame(() => {
+        if (pricesAnimated) return;
+        pricesAnimated = true;
+        document.querySelectorAll(".p[data-price]").forEach((el, i) => countUp(el, el.getAttribute("data-price"), i * 70));
+      });
+    })();
+  }
+
+  function addFillers() {
+    const menu = document.getElementById("menu");
+    const cols = [...menu.querySelectorAll(".col")];
+    const bottoms = cols.map(c => c.lastElementChild ? c.lastElementChild.getBoundingClientRect().bottom : 0);
+    const maxB = Math.max.apply(null, bottoms);
+    const scale = menu.getBoundingClientRect().height / menu.clientHeight;
+    cols.forEach(c => {
+      const last = c.lastElementChild;
+      if (!last) return;
+      const free = (maxB - last.getBoundingClientRect().bottom) / (scale || 1);
+      if (free > 150) {
+        const h = Math.min(free - 60, 300);
+        c.insertAdjacentHTML("beforeend",
+          `<div class="filler" style="height:${Math.round(h)}px"><img src="assets/logo.png" alt="">
+           <div><span>${esc(DATA.slogan || "Магија во секој залак")}</span><b>ABRACADABRA</b></div></div>`);
+      }
+    });
+  }
+
+  // ---------- hero promo carousel ----------
+  let pi = 0;
+  function promoList() { return (DATA.promos || []).filter(p => p.price !== null && p.price !== "" && p.price !== undefined); }
+  function promoHtml(p) {
+    const n = night();
+    return `<div class="frame"></div>
+      <div class="portal">
+        <div class="halo"></div><div class="ring"></div><div class="ring r2"></div>
+        <video class="mascot vid" id="mv" muted playsinline></video>
+        <img class="mascot" id="mascot" src="${n ? "assets/mascot_night.png" : "assets/mascot_day.png"}" alt="" onerror="this.style.opacity='0'">
+      </div>
+      <div class="kicker">${n ? "НОЌНА МАГИЈА" : "ПРЕПОРАКА"}</div>
+      <h3>${esc(p.title)}</h3>
+      <p>${esc(p.subtitle || "")}</p>
+      <div class="price"><span id="pp">0</span><small>${esc(DATA.currency || "ден")}</small></div>`;
+  }
+  // the wand idles; for a featured item it casts the matching reveal (burger / waffle / wrap) once, then goes back to idling
+  let curPromo = null;
+  const idleClip = () => night() ? "wand_idle_night" : "wand_idle_day";
+  function startMascot(p) {
+    const mv = document.getElementById("mv"); if (!mv) return;
+    const portal = mv.parentElement;
+    mv.addEventListener("playing", () => portal.classList.add("video"));
+    mv.addEventListener("error", () => portal.classList.remove("video"));
+    const clip = (!night() && p && p.video) ? String(p.video).replace(/^fox_/, "wand_") : idleClip();
+    const loop = clip === idleClip();
+    mv.loop = loop;
+    mv.onended = loop ? null : () => { mv.loop = true; mv.onended = null; mv.src = V(idleClip()); mv.play().catch(() => {}); };
+    mv.src = V(clip);
+    mv.play().catch(() => {});
+  }
+  function fillPromo(p, animate) {
+    const promo = document.getElementById("promo");
+    curPromo = p;
+    const swap = () => {
+      promo.innerHTML = promoHtml(p);
+      promo.classList.remove("out");
+      countUp(document.getElementById("pp"), p.price);
+      startMascot(p);
+      burst();
+    };
+    if (animate) { promo.classList.add("out"); setTimeout(swap, 420); }
+    else swap();
+  }
+  // every 4th change (offset per screen) the whole board does the wand-slash transition
+  const fxv = document.getElementById("fxv");
+  function magicTransition(then) {
+    fxv.src = V("fx_slash"); fxv.currentTime = 0;
+    fxv.play().then(() => {
+      fxv.classList.add("on");
+      setTimeout(() => { stage.classList.add("flash"); burst(); then(); }, 2450);   // the slash explodes at ~2.5 s
+      setTimeout(() => stage.classList.remove("flash"), 3300);
+    }).catch(then);
+    fxv.ontimeupdate = () => { if (fxv.currentTime > fxv.duration - .6) fxv.classList.remove("on"); };
+    fxv.onended = () => fxv.classList.remove("on");
+  }
+  let shownN = 0;
+  function rotatePromo() {
+    const list = promoList();
+    if (!list.length) return;
+    const p = list[pi % list.length];
+    pi++;
+    const go = () => fillPromo(p, true);
+    if (++shownN % 4 === (SCREEN === 2 ? 2 : 0)) magicTransition(go); else go();
+  }
+
+  // ---------- day / night ----------
+  function screenTag() {
+    const top = cats.slice(0, 4).map(c => c.name.toUpperCase()).join(" · ");
+    const sub = SCREEN === 1 ? "МАГИЈА ВО СЕКОЈ ЗАЛАК" : "ЗА КРАЈ — СЛАТКА МАГИЈА";
+    return `${esc(top)}<b>${esc(sub)}</b>`;
+  }
+  const bgv = document.getElementById("bgv");
+  bgv.addEventListener("playing", () => bgv.classList.add("on"));
+  bgv.addEventListener("error", () => bgv.classList.remove("on"));
+  let lastNight = null;
+  function applyMode() {
+    const n = night();
+    document.body.classList.toggle("night", n);
+    document.getElementById("tag").innerHTML = screenTag();
+    const m = document.getElementById("mascot");
+    if (m) m.src = n ? "assets/mascot_night.png" : "assets/mascot_day.png";
+    const want = V(n ? "bg_night" : "bg_day");
+    if (!bgv.src.endsWith(want)) { bgv.classList.remove("on"); bgv.src = want; bgv.play().catch(() => {}); }
+    if (lastNight !== null && lastNight !== n && curPromo) fillPromo(curPromo, false);
+    lastNight = n;
+  }
+
+  // ---------- particles: embers + crystal shards (lightweight 2D canvas) ----------
+  const cv = document.getElementById("fx"), cx = cv.getContext("2d");
+  cv.width = 1920; cv.height = 1080;
+  const DAY = ["#e5262b", "#f39a1e", "#ffd76b", "#ff7a3c"];
+  const NIGHT = ["#ff2fb3", "#ff6fd0", "#b14bff", "#ffd6f2"];
+  const shards = Array.from({ length: 26 }, () => newShard(true));
+  const embers = Array.from({ length: 54 }, () => newEmber(true));
+  function newShard(any) {
+    const z = Math.random() < .2 ? 2 : Math.random() < .5 ? 1 : 0;
+    return { x: Math.random() * 1920, y: any ? Math.random() * 1080 : 1140, z, s: [7, 14, 30][z] * (.7 + Math.random() * .6),
+      r: Math.random() * 6.28, vr: (Math.random() - .5) * .012, vy: -[.16, .32, .7][z] * (.6 + Math.random() * .8),
+      vx: (Math.random() - .5) * .25, c: Math.floor(Math.random() * 4), a: [.35, .55, .5][z] };
+  }
+  function newEmber(any) {
+    return { x: Math.random() * 1920, y: any ? Math.random() * 1080 : 1090, s: .8 + Math.random() * 2.4,
+      vy: -(.3 + Math.random() * 1), ph: Math.random() * 6.28, a: .3 + Math.random() * .6 };
+  }
+  let boost = 0, t = 0;
+  function burst() { boost = 1; }
+  function draw() {
+    t += .016;
+    cx.clearRect(0, 0, 1920, 1080);
+    const n = document.body.classList.contains("night"), pal = n ? NIGHT : DAY;
+    cx.globalCompositeOperation = "lighter";
+    for (const e of embers) {
+      e.y += e.vy * (1 + boost * 5); e.x += Math.sin(t * 1.3 + e.ph) * .4;
+      if (e.y < -10) Object.assign(e, newEmber(false));
+      const g = cx.createRadialGradient(e.x, e.y, 0, e.x, e.y, e.s * 4);
+      g.addColorStop(0, n ? "rgba(255,170,235," + e.a + ")" : "rgba(255,220,140," + e.a + ")");
+      g.addColorStop(1, "rgba(0,0,0,0)");
+      cx.fillStyle = g; cx.fillRect(e.x - e.s * 4, e.y - e.s * 4, e.s * 8, e.s * 8);
+    }
+    cx.globalCompositeOperation = "source-over";
+    for (const p of shards) {
+      p.x += p.vx * (1 + boost * 6); p.y += p.vy * (1 + boost * 6); p.r += p.vr * (1 + boost * 4);
+      if (p.y < -60) Object.assign(p, newShard(false));
+      cx.save(); cx.translate(p.x, p.y); cx.rotate(p.r);
+      cx.shadowColor = pal[p.c]; cx.shadowBlur = p.z === 0 ? 0 : 14;
+      cx.globalAlpha = p.a;
+      const sq = Math.abs(Math.cos(p.r * 1.7));
+      cx.scale(1, .35 + .65 * sq);
+      const gr = cx.createLinearGradient(-p.s, -p.s, p.s, p.s);
+      gr.addColorStop(0, "#fff"); gr.addColorStop(.35, pal[p.c]); gr.addColorStop(1, "rgba(0,0,0,.6)");
+      cx.fillStyle = gr;
+      cx.beginPath(); cx.moveTo(0, -p.s); cx.lineTo(p.s * .9, p.s * .7); cx.lineTo(-p.s * .9, p.s * .7); cx.closePath(); cx.fill();
+      cx.restore();
+    }
+    boost *= .96;
+    requestAnimationFrame(draw);
+  }
+
+  // ---------- full-screen cinematics: by day the wand awakens or summons the featured food, at night the neon storm ----------
+  const cine = document.getElementById("cine"), cineV = document.getElementById("cv"), cineCard = document.getElementById("cineCard");
+  const SUMMON = { wand_burger: "cine_summon_burger", wand_waffle: "cine_summon_waffle", wand_wrap: "cine_summon_wrap",
+                   fox_burger: "cine_summon_burger", fox_waffle: "cine_summon_waffle", fox_wrap: "cine_summon_wrap" };
+  let cineN = 0, cineBusy = false;
+  function playCinematic() {
+    if (cineBusy) return;
+    let name, promo = null;
+    if (night()) name = "cine_neon_night";
+    else if (cineN++ % 2 === 0) name = "cine_awakening_day";
+    else {
+      const summonable = promoList().filter(p => SUMMON[p.video]);          // rotate through promos that have a summon clip
+      promo = summonable.length ? summonable[(cineN >> 1) % summonable.length] : null;
+      name = promo ? SUMMON[promo.video] : "cine_awakening_day";
+    }
+    cineBusy = true;
+    const done = () => { cine.classList.remove("on"); cineCard.classList.remove("on"); setTimeout(() => { cineBusy = false; burst(); }, 800); };
+    cineCard.classList.remove("on");
+    cineCard.innerHTML = promo ? `<h4>${esc(promo.title)}</h4><div class="price">${esc(promo.price)}<small>${esc(DATA.currency || "ден")}</small></div>` : "";
+    cineV.onended = done; cineV.onerror = done;
+    cineV.ontimeupdate = () => { if (promo && cineV.currentTime > cineV.duration - 3.6) cineCard.classList.add("on"); };
+    cineV.src = V(name);
+    cineV.play().then(() => cine.classList.add("on")).catch(done);
+  }
+  const cineMin = Number(q.get("cine") ?? DATA.cinematicMinutes ?? 2);        // &cine=0.5 for testing, 0 = off
+  if (cineMin > 0) setTimeout(() => { playCinematic(); setInterval(playCinematic, cineMin * 60000); },
+                              (SCREEN === 2 ? cineMin * 30000 : 0) + 20000);   // screen 2 runs half an interval later
+
+  // ---------- anti burn-in: nudge the whole picture a few px every 3 minutes ----------
+  let shift = 0;
+  setInterval(() => {
+    shift = (shift + 1) % 4;
+    const d = [[0, 0], [4, 3], [-3, 4], [3, -4]][shift];
+    stage.style.marginLeft = d[0] + "px";
+    stage.style.marginTop = d[1] + "px";
+  }, 180000);
+
+  // ---------- boot ----------
+  document.body.classList.toggle("night", night());
+  render();
+  applyMode();
+  const pl = promoList();
+  if (pl.length) {
+    pi = SCREEN === 2 ? 1 : 0;
+    fillPromo(pl[pi], false);
+    pi++;
+  }
+  draw(); loadSheet();
+  setInterval(rotatePromo, 10000);
+  setInterval(applyMode, 60000);
+  setInterval(loadSheet, (DATA.refreshMinutes || 5) * 60000);
+  // when hosted online, reload periodically so an edited menu-data.js is picked up
+  if (location.protocol.startsWith("http")) setInterval(() => navigator.onLine && location.reload(), 30 * 60000);
+})();
+</script>
+</body>
+</html>
