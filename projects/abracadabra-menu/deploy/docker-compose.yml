@@ -1,0 +1,18 @@
+name: abracadabra-menu
+
+services:
+  web:
+    image: nginx:alpine
+    container_name: abracadabra-menu
+    restart: unless-stopped
+    volumes:
+      - /opt/stacks/abracadabra-menu/site:/usr/share/nginx/html:ro
+      - /opt/stacks/abracadabra-menu/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    mem_limit: 96m
+    pids_limit: 64
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.abracadabra-menu.rule=Host(`abracadabra.srv1231216.hstgr.cloud`)
+      - traefik.http.routers.abracadabra-menu.entrypoints=websecure
+      - traefik.http.routers.abracadabra-menu.tls.certresolver=letsencrypt
+      - traefik.http.services.abracadabra-menu.loadbalancer.server.port=80

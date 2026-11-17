@@ -9,6 +9,20 @@ same page with a different `screen` parameter:
 | Right | `cinematic-board.html?screen=2` | Врапови, Скара, Салати, Десерти, Додатоци, Кафе, Пијалоци |
 | Editor | `admin.html` | Change prices, items, promos, ticker text |
 
+## Public address (hosted on KVM4)
+The board is also served from the VPS behind Traefik, so a TV only needs the web address (no USB stick):
+
+| TV | Short address | Full address |
+|---|---|---|
+| Left | `https://abracadabra.srv1231216.hstgr.cloud/1` | `…/cinematic-board.html?screen=1` |
+| Right | `https://abracadabra.srv1231216.hstgr.cloud/2` | `…/cinematic-board.html?screen=2` |
+| Editor | `https://abracadabra.srv1231216.hstgr.cloud/admin` | `…/admin.html` |
+
+- **Where it lives:** `/opt/stacks/abracadabra-menu/` on KVM4 (an `nginx:alpine` container, TLS from Let's Encrypt through Traefik, certificate renewed automatically). The site files are in `site/`, the config in `nginx.conf`. The same `docker-compose.yml` and `nginx.conf` are kept in this repo under `deploy/`; to set it up elsewhere, copy the project into `site/` next to them and run `docker compose up -d`.
+- **Changing prices for every TV:** edit `site/menu-data.js` on the server (or use the Google Sheet link, which needs no server access). The TVs reload by themselves every 30 minutes, and re-read a Google Sheet every few minutes. Saving in `admin.html` only changes the device you are using, so it is for testing.
+- **Search engines:** pages send `noindex` and `robots.txt` disallows everything. Remove those lines in `nginx.conf` if the shop wants the menu to appear in search results.
+- **Update the site:** upload the new files into `site/` (no restart needed). Change `nginx.conf` or the compose file, then run `docker compose up -d` in the stack folder.
+
 ## Two board designs (same data, same features)
 Both boards read the same `menu-data.js`, the same admin overrides and the same Google Sheet, and both play every video layer below.
 The TVs run **`cinematic-board.html`**; `index.html` stays as the alternative look. Changing a price in `admin.html` updates either board.
