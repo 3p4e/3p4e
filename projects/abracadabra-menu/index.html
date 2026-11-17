@@ -244,7 +244,7 @@
     <div class="promo" id="promo"></div>
   </aside>
   <footer><div class="ticker" id="ticker"></div></footer>
-  <video id="fx" muted playsinline src="assets/video/fx_slash.mp4"></video>
+  <video id="fx" muted playsinline ></video>
   <div id="cine"><video id="cv" muted playsinline></video><div class="cine-card" id="cineCard"></div></div>
   <div class="grain"></div><div class="letterbox t"></div><div class="letterbox b"></div>
 </div>
@@ -373,9 +373,21 @@
   }
 
   // ---------- video layers (Higgsfield clips in assets/video; the page still works without them) ----------
-  const V = n => `assets/video/${n}.mp4`;
+  // Chromium on Linux has no H.264: fall back to the WebM (VP9) copies of every clip when MP4 cannot be played
+  // canPlayType can claim H.264 on builds that cannot decode it, so a failed MP4 also flips to WebM (remembered per session)
+  let MP4_OK = !!document.createElement("video").canPlayType('video/mp4; codecs="avc1.42E01E"');
+  try { if (sessionStorage.getItem("abra_webm")) MP4_OK = false; } catch (e) {}
+  const V = n => `assets/video/${n}.${MP4_OK ? "mp4" : "webm"}`;
+  document.addEventListener("error", e => {
+    const v = e.target;
+    if (!v || v.tagName !== "VIDEO" || !/\.mp4(\?|$)/.test(v.currentSrc || v.src || "")) return;
+    e.stopImmediatePropagation();
+    MP4_OK = false; try { sessionStorage.setItem("abra_webm", "1"); } catch (x) {}
+    v.src = (v.currentSrc || v.src).replace(/\.mp4/, ".webm"); v.play().catch(() => {});
+  }, true);
   const mv = document.getElementById("mv"), aside = document.querySelector("aside");
   const bgv = document.getElementById("bgv"), fx = document.getElementById("fx");
+  fx.src = V("fx_slash");
   mv.addEventListener("playing", () => aside.classList.add("video"));
   mv.addEventListener("error", () => aside.classList.remove("video"));
   bgv.addEventListener("error", () => bgv.style.display = "none");

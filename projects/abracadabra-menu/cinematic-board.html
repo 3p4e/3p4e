@@ -321,7 +321,18 @@
   // data: built-in menu-data.js, an override saved by admin.html on this device, or a Google Sheet (CSV)
   let DATA = window.MENU_DATA || { categories: [], promos: [], currency: "ден", nightFrom: 19, nightTo: 6 };
   try { const o = localStorage.getItem("abra_menu_override"); if (o) DATA = JSON.parse(o); } catch (e) {}
-  const V = n => `assets/video/${n}.mp4`;
+  // Chromium on Linux has no H.264: fall back to the WebM (VP9) copies of every clip when MP4 cannot be played
+  // canPlayType can claim H.264 on builds that cannot decode it, so a failed MP4 also flips to WebM (remembered per session)
+  let MP4_OK = !!document.createElement("video").canPlayType('video/mp4; codecs="avc1.42E01E"');
+  try { if (sessionStorage.getItem("abra_webm")) MP4_OK = false; } catch (e) {}
+  const V = n => `assets/video/${n}.${MP4_OK ? "mp4" : "webm"}`;
+  document.addEventListener("error", e => {
+    const v = e.target;
+    if (!v || v.tagName !== "VIDEO" || !/\.mp4(\?|$)/.test(v.currentSrc || v.src || "")) return;
+    e.stopImmediatePropagation();
+    MP4_OK = false; try { sessionStorage.setItem("abra_webm", "1"); } catch (x) {}
+    v.src = (v.currentSrc || v.src).replace(/\.mp4/, ".webm"); v.play().catch(() => {});
+  }, true);
   const stage = document.getElementById("stage");
 
   // ---------- scale the 1920x1080 stage to whatever the TV reports ----------
