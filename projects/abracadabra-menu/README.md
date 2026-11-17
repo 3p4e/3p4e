@@ -9,6 +9,18 @@ same page with a different `screen` parameter:
 | Right | `index.html?screen=2` | Врапови, Скара, Салати, Десерти, Додатоци, Кафе, Пијалоци |
 | Editor | `admin.html` | Change prices, items, promos, ticker text |
 
+## Two board designs (same data, same features)
+Both boards read the same `menu-data.js`, the same admin overrides and the same Google Sheet, and both play every video layer below.
+Pick one per TV. Changing a price in `admin.html` updates either board.
+
+| Board | Address | Look |
+|---|---|---|
+| **Classic cinematic** (production) | `index.html?screen=1` / `?screen=2` | Gold-framed inventory panels, an arcane portal for the wand, tilted in 3D. |
+| **Cinematic Board** (Open Design draft, completed) | `cinematic-board.html?screen=1` / `?screen=2` | A "game main menu" look: parallax stage with a slow camera drift, volumetric light shafts, glass-and-gold panels with corner brackets, a swaying 3D plane, and a hero card with rotating rings. |
+
+Both boards support `&mode=day|night` to force a look and `&cine=<minutes>` to change how often the full-screen cinematic plays (`0` turns it off).
+`cinematic-board.html` started as a draft written by DeepSeek inside Open Design and was then extended to match `index.html` feature for feature.
+
 ## Cinematic look (game main-menu style)
 The board is built like the main menu of a AAA game, not like a flat slideshow. The menu text and prices
 stay live HTML, so they are always editable. Everything around them is 3D, cinematic motion made with Higgsfield:
@@ -106,7 +118,8 @@ Sources:
 
 ## Files
 ```
-index.html        the player (both screens)
+index.html        the player (both screens, classic cinematic look)
+cinematic-board.html   the alternative player (both screens, game-main-menu look)
 admin.html        the editor
 menu-data.js      menu content (prices, items, promos, settings)
 assets/logo.png   clean redraw of the logo emblem
