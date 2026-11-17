@@ -424,8 +424,7 @@
         countUp(el.querySelector(".price"), p.price);
         burst();
       }, 500);
-      if (night()) playMascot(IDLE(), true);
-      else if (p.video) playMascot(p.video, false);
+      if (p.video) playMascot(p.video, false);
       else playMascot(IDLE(), true);
     };
     // every 4th change (offset per screen) the whole board does the magic transition
@@ -508,8 +507,7 @@
     if (cineBusy) return;
     const promos = (DATA.promos || []).filter(p => p.price !== null && p.price !== "");
     let name, promo = null;
-    if (night()) name = "cine_neon_night";
-    else if (cineN++ % 2 === 0) name = "cine_awakening_day";
+    if (cineN++ % 2 === 0) name = night() ? "cine_neon_night" : "cine_awakening_day";   // ambient scene, then a food summon (day and night)
     else { const summonable = promos.filter(p => SUMMON[p.video]);       // rotate through the promos that have a summon clip
            promo = summonable.length ? summonable[(cineN >> 1) % summonable.length] : null;
            name = promo ? SUMMON[promo.video] : "cine_awakening_day"; }
