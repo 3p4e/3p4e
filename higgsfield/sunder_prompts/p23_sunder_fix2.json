@@ -1,0 +1,50 @@
+{
+ "shots": [
+  {
+   "model": "ltx25",
+   "fps": 24,
+   "resolution": "768x448",
+   "sampler": "euler_ancestral",
+   "steps": 8,
+   "cfg": 1.0,
+   "audio": false,
+   "id": "s17",
+   "shot": 17,
+   "timecode": "54.0\u201357.38s",
+   "start": "kf_17_start.png",
+   "frames": 81,
+   "first_frame_strength": 0.68,
+   "prompt": "Both fighters lower their weapons from raised guard down to their sides in one continuous motion, straightening out of their fighting stances as the spore-mist thins by a full layer and their breath clouds visibly in the cold. The camera pulls back smoothly to open the settling space between them. Wind returns with distant water, a joint exhale, and a last spore fall.",
+   "negative": "blurry, low detail, deformed face, extra people, morphing, flicker, jitter, watermark, text, duplicate, cartoon, static, frozen, motionless, still image, slideshow",
+   "frame_contract": "8n+1",
+   "duration_s": 3.375,
+   "identity": "keyframe-anchor",
+   "audio_note": "LTX-2.5 native audio is not decoded in the v1 render path; restore via audio VAE + AV-latent nodes to enable."
+  },
+  {
+   "model": "ltx25",
+   "fps": 24,
+   "resolution": "768x448",
+   "sampler": "euler_ancestral",
+   "steps": 8,
+   "cfg": 1.0,
+   "audio": false,
+   "id": "s18",
+   "shot": 18,
+   "timecode": "57.38\u201360.75s",
+   "start": "kf_18_start.png",
+   "frames": 81,
+   "first_frame_strength": 0.68,
+   "prompt": "DD and AZ turn their heads the last few degrees to face one another fully, each lowering their weapon to rest at their side and meeting in a slow shared glance as the spore-mist sinks to ankle height. The camera eases in just enough to frame the exchange. Steady breath and marsh ambience mix with a faint armor shift and wind.",
+   "negative": "blurry, low detail, deformed face, extra people, morphing, flicker, jitter, watermark, text, duplicate, cartoon, static, frozen, motionless, still image, slideshow",
+   "frame_contract": "8n+1",
+   "duration_s": 3.375,
+   "identity": "keyframe-anchor",
+   "audio_note": "LTX-2.5 native audio is not decoded in the v1 render path; restore via audio VAE + AV-latent nodes to enable."
+  }
+ ],
+ "meta": {
+  "purpose": "sub-motion fix retest s17/s18 @ strength 0.68",
+  "count": 2
+ }
+}
