@@ -19,7 +19,7 @@
     "two_stage": true,
     "spatial_upscaler": "ltx-2.5-latent-spatial-upscaler-x2",
     "audio": true,
-    "first_frame_strength": 0.80,
+    "first_frame_strength": 0.8,
     "character_loras": {
       "az": "az_demon_hunter_lora.safetensors (strength 1.0)",
       "dd": "dd_demon_hunter_lora.safetensors (strength 1.0)"
@@ -33,12 +33,12 @@
       "phase": "I",
       "beat": "Establish - DD+AZ on causeway",
       "start": "kf_01_start.png",
-      "end": "kf_01_end.png",
       "frames": 105,
-      "control": "pose+depth",
-      "characters": ["DD", "AZ"],
-      "loras": ["dd", "az"],
-      "prompt": "The composition, subjects, teal-slate palette, pale-blue bioluminescence, dusk light and one molten-gold accent remain exactly as in the start frame. Only the named action moves. DD shifts weight forward and half-raises both crystal crossbows; AZ lifts Oathkeeper two centimeters off the blackrock; spore-mist thickens one layer. Audio: soft armor creak and quiet water lap under low wind and distant spore hiss."
+      "prompt": "The composition, subjects, teal-slate palette, pale-blue bioluminescence, dusk light and one molten-gold accent remain exactly as in the start frame. Only the named action moves. DD shifts weight forward and half-raises both crystal crossbows; AZ lifts Oathkeeper two centimeters off the blackrock; spore-mist thickens one layer. Audio: soft armor creak and quiet water lap under low wind and distant spore hiss.",
+      "resolution": "1280x704",
+      "identity": "keyframe-anchor",
+      "audio": false,
+      "audio_note": "LTX-2.5 native audio is not decoded in the v1 render path; restore via audio VAE + AV-latent nodes to enable."
     },
     {
       "id": "vx02",
@@ -46,12 +46,12 @@
       "phase": "I",
       "beat": "DD crossbow draw",
       "start": "kf_02_start.png",
-      "end": "kf_02_end.png",
       "frames": 105,
-      "control": "pose",
-      "characters": ["DD"],
-      "loras": ["dd"],
-      "prompt": "The composition, subjects, teal-slate palette, pale-blue bioluminescence, dusk light and one molten-gold accent remain exactly as in the start frame. Only the named action moves. DD completes the parallel twin-crossbow draw until bolts are fully nocked and floating teal hair settles. Audio: rising string tension creak ending in a final latch click."
+      "prompt": "The composition, subjects, teal-slate palette, pale-blue bioluminescence, dusk light and one molten-gold accent remain exactly as in the start frame. Only the named action moves. DD completes the parallel twin-crossbow draw until bolts are fully nocked and floating teal hair settles. Audio: rising string tension creak ending in a final latch click.",
+      "resolution": "1280x704",
+      "identity": "keyframe-anchor",
+      "audio": false,
+      "audio_note": "LTX-2.5 native audio is not decoded in the v1 render path; restore via audio VAE + AV-latent nodes to enable."
     },
     {
       "id": "vx03",
@@ -59,12 +59,12 @@
       "phase": "I",
       "beat": "AZ rune wake",
       "start": "kf_03_start.png",
-      "end": "kf_03_end.png",
       "frames": 105,
-      "control": "pose",
-      "characters": ["AZ"],
-      "loras": ["az"],
-      "prompt": "The composition, subjects, teal-slate palette, pale-blue bioluminescence, dusk light and one molten-gold accent remain exactly as in the start frame. Only the named action moves. AZ raises Oathkeeper to forty-five degrees as the forearm molten-gold rune ignites and his jaw sets. Audio: armor groan, stone shift, then rune hum beginning."
+      "prompt": "The composition, subjects, teal-slate palette, pale-blue bioluminescence, dusk light and one molten-gold accent remain exactly as in the start frame. Only the named action moves. AZ raises Oathkeeper to forty-five degrees as the forearm molten-gold rune ignites and his jaw sets. Audio: armor groan, stone shift, then rune hum beginning.",
+      "resolution": "1280x704",
+      "identity": "keyframe-anchor",
+      "audio": false,
+      "audio_note": "LTX-2.5 native audio is not decoded in the v1 render path; restore via audio VAE + AV-latent nodes to enable."
     },
     {
       "id": "vx04",
@@ -72,12 +72,12 @@
       "phase": "I",
       "beat": "DD eye ignite (CU)",
       "start": "kf_04_start.png",
-      "end": "kf_04_end.png",
       "frames": 105,
-      "control": "none",
-      "characters": ["DD"],
-      "loras": ["dd"],
-      "prompt": "The composition, subjects, teal-slate palette, pale-blue bioluminescence, dusk light and one molten-gold accent remain exactly as in the start frame. Only the named action moves. DD's pupil constricts as frost-arcane white-blue light blooms in the iris and frost crystallises on the lower lashes. Audio: soft breath becoming a sharp inhale."
+      "prompt": "The composition, subjects, teal-slate palette, pale-blue bioluminescence, dusk light and one molten-gold accent remain exactly as in the start frame. Only the named action moves. DD's pupil constricts as frost-arcane white-blue light blooms in the iris and frost crystallises on the lower lashes. Audio: soft breath becoming a sharp inhale.",
+      "resolution": "1280x704",
+      "identity": "keyframe-anchor",
+      "audio": false,
+      "audio_note": "LTX-2.5 native audio is not decoded in the v1 render path; restore via audio VAE + AV-latent nodes to enable."
     },
     {
       "id": "vx05",
@@ -85,12 +85,12 @@
       "phase": "I",
       "beat": "First clash - crossbow vs greatsword",
       "start": "kf_06_start.png",
-      "end": "kf_06_end.png",
       "frames": 105,
-      "control": "pose+depth",
-      "characters": ["DD", "AZ"],
-      "loras": ["dd", "az"],
-      "prompt": "The composition, subjects, teal-slate palette, pale-blue bioluminescence, dusk light and one molten-gold accent remain exactly as in the start frame. Only the named action moves. DD recoils from the twin-crossbow shot while AZ braces into the block as impact spores burst between them; crossbows stay in DD's hands, greatsword stays in AZ's hands. Audio: crossbow snap, sword ring, impact echo, spore hiss burst."
+      "prompt": "The composition, subjects, teal-slate palette, pale-blue bioluminescence, dusk light and one molten-gold accent remain exactly as in the start frame. Only the named action moves. DD recoils from the twin-crossbow shot while AZ braces into the block as impact spores burst between them; crossbows stay in DD's hands, greatsword stays in AZ's hands. Audio: crossbow snap, sword ring, impact echo, spore hiss burst.",
+      "resolution": "1280x704",
+      "identity": "keyframe-anchor",
+      "audio": false,
+      "audio_note": "LTX-2.5 native audio is not decoded in the v1 render path; restore via audio VAE + AV-latent nodes to enable."
     },
     {
       "id": "vx06",
@@ -98,12 +98,12 @@
       "phase": "II",
       "beat": "Vault - DD mid-air",
       "start": "kf_16_start.png",
-      "end": "kf_16_end.png",
       "frames": 105,
-      "control": "pose",
-      "characters": ["DD"],
-      "loras": ["dd"],
-      "prompt": "The composition, subjects, teal-slate palette, pale-blue bioluminescence, dusk light and one molten-gold accent remain exactly as in the start frame. Only the named action moves. DD completes the vault and lands in a crouch while re-nocking both crossbows; boots splash teal water. Audio: armor whoosh, breath grunt, boot splash, string pull."
+      "prompt": "The composition, subjects, teal-slate palette, pale-blue bioluminescence, dusk light and one molten-gold accent remain exactly as in the start frame. Only the named action moves. DD completes the vault and lands in a crouch while re-nocking both crossbows; boots splash teal water. Audio: armor whoosh, breath grunt, boot splash, string pull.",
+      "resolution": "1280x704",
+      "identity": "keyframe-anchor",
+      "audio": false,
+      "audio_note": "LTX-2.5 native audio is not decoded in the v1 render path; restore via audio VAE + AV-latent nodes to enable."
     },
     {
       "id": "vx07",
@@ -111,12 +111,12 @@
       "phase": "II",
       "beat": "Freeze-and-Sunder - DD speaks Замрзни",
       "start": "kf_17_start.png",
-      "end": "kf_17_end.png",
       "frames": 105,
-      "control": "none",
-      "characters": ["DD"],
-      "loras": ["dd"],
-      "prompt": "The composition, subjects, teal-slate palette, pale-blue bioluminescence, dusk light and one molten-gold accent remain exactly as in the start frame. Only the named action moves. DD finishes speaking as frost energy releases from the crossbow tips and his visible breath freezes in the air. Audio: DD speaks Замрзни, then frost-release hiss into silence."
+      "prompt": "The composition, subjects, teal-slate palette, pale-blue bioluminescence, dusk light and one molten-gold accent remain exactly as in the start frame. Only the named action moves. DD finishes speaking as frost energy releases from the crossbow tips and his visible breath freezes in the air. Audio: DD speaks Замрзни, then frost-release hiss into silence.",
+      "resolution": "1280x704",
+      "identity": "keyframe-anchor",
+      "audio": false,
+      "audio_note": "LTX-2.5 native audio is not decoded in the v1 render path; restore via audio VAE + AV-latent nodes to enable."
     },
     {
       "id": "vx08",
@@ -124,12 +124,12 @@
       "phase": "II",
       "beat": "Light-blade - AZ speaks Суди",
       "start": "kf_18_start.png",
-      "end": "kf_18_end.png",
       "frames": 105,
-      "control": "pose",
-      "characters": ["AZ"],
-      "loras": ["az"],
-      "prompt": "The composition, subjects, teal-slate palette, pale-blue bioluminescence, dusk light and one molten-gold accent remain exactly as in the start frame. Only the named action moves. AZ completes the word as Oathkeeper accelerates downward and the molten-gold rune peaks. Audio: AZ speaks Суди, sword whoosh peaks, rune hum crescendo."
+      "prompt": "The composition, subjects, teal-slate palette, pale-blue bioluminescence, dusk light and one molten-gold accent remain exactly as in the start frame. Only the named action moves. AZ completes the word as Oathkeeper accelerates downward and the molten-gold rune peaks. Audio: AZ speaks Суди, sword whoosh peaks, rune hum crescendo.",
+      "resolution": "1280x704",
+      "identity": "keyframe-anchor",
+      "audio": false,
+      "audio_note": "LTX-2.5 native audio is not decoded in the v1 render path; restore via audio VAE + AV-latent nodes to enable."
     },
     {
       "id": "vx09",
@@ -137,12 +137,12 @@
       "phase": "II",
       "beat": "Glacial Aura - combined strike",
       "start": "kf_19_start.png",
-      "end": "kf_19_end.png",
       "frames": 105,
-      "control": "pose+depth",
-      "characters": ["DD", "AZ"],
-      "loras": ["dd", "az"],
-      "prompt": "The composition, subjects, teal-slate palette, pale-blue bioluminescence, dusk light and one molten-gold accent remain exactly as in the start frame. Only the named action moves. The frost-and-gold collision expands into a shockwave as Bloom's fungal maw fully emerges and both fighters brace; crossbows in DD's hands, greatsword in AZ's hands. Audio: collision boom, spore eruption, shockwave, maw shriek."
+      "prompt": "The composition, subjects, teal-slate palette, pale-blue bioluminescence, dusk light and one molten-gold accent remain exactly as in the start frame. Only the named action moves. The frost-and-gold collision expands into a shockwave as Bloom's fungal maw fully emerges and both fighters brace; crossbows in DD's hands, greatsword in AZ's hands. Audio: collision boom, spore eruption, shockwave, maw shriek.",
+      "resolution": "1280x704",
+      "identity": "keyframe-anchor",
+      "audio": false,
+      "audio_note": "LTX-2.5 native audio is not decoded in the v1 render path; restore via audio VAE + AV-latent nodes to enable."
     },
     {
       "id": "vx10",
@@ -150,12 +150,12 @@
       "phase": "III",
       "beat": "Spore rain - Bloom enrage",
       "start": "kf_26_start.png",
-      "end": "kf_26_end.png",
       "frames": 105,
-      "control": "depth",
-      "characters": ["Bloom"],
-      "loras": [],
-      "prompt": "The composition, subjects, teal-slate palette, pale-blue bioluminescence, dusk light and one molten-gold accent remain exactly as in the start frame. Only the named action moves. Bloom's fungal maw pulses as pale-blue spore-rain cascades from the mushroom towers, saturating the causeway. Audio: wet spore deluge, tower creak, distant thunder."
+      "prompt": "The composition, subjects, teal-slate palette, pale-blue bioluminescence, dusk light and one molten-gold accent remain exactly as in the start frame. Only the named action moves. Bloom's fungal maw pulses as pale-blue spore-rain cascades from the mushroom towers, saturating the causeway. Audio: wet spore deluge, tower creak, distant thunder.",
+      "resolution": "1280x704",
+      "identity": "keyframe-anchor",
+      "audio": false,
+      "audio_note": "LTX-2.5 native audio is not decoded in the v1 render path; restore via audio VAE + AV-latent nodes to enable."
     },
     {
       "id": "vx11",
@@ -163,12 +163,12 @@
       "phase": "III",
       "beat": "Dive - DD+AZ coordinated",
       "start": "kf_27_start.png",
-      "end": "kf_27_end.png",
       "frames": 105,
-      "control": "pose+depth",
-      "characters": ["DD", "AZ"],
-      "loras": ["dd", "az"],
-      "prompt": "The composition, subjects, teal-slate palette, pale-blue bioluminescence, dusk light and one molten-gold accent remain exactly as in the start frame. Only the named action moves. DD dives low under spore-rain while AZ leaps high, crossbows and greatsword tracing complementary arcs; weapons stay in their hands. Audio: crossbow whoosh, sword slash, synchronized breath."
+      "prompt": "The composition, subjects, teal-slate palette, pale-blue bioluminescence, dusk light and one molten-gold accent remain exactly as in the start frame. Only the named action moves. DD dives low under spore-rain while AZ leaps high, crossbows and greatsword tracing complementary arcs; weapons stay in their hands. Audio: crossbow whoosh, sword slash, synchronized breath.",
+      "resolution": "1280x704",
+      "identity": "keyframe-anchor",
+      "audio": false,
+      "audio_note": "LTX-2.5 native audio is not decoded in the v1 render path; restore via audio VAE + AV-latent nodes to enable."
     },
     {
       "id": "vx12",
@@ -176,12 +176,12 @@
       "phase": "III",
       "beat": "Hoarfrost Judgement - DD ultimate",
       "start": "kf_28_start.png",
-      "end": "kf_28_end.png",
       "frames": 105,
-      "control": "pose",
-      "characters": ["DD"],
-      "loras": ["dd"],
-      "prompt": "The composition, subjects, teal-slate palette, pale-blue bioluminescence, dusk light and one molten-gold accent remain exactly as in the start frame. Only the named action moves. DD unleashes Hoarfrost Judgement — twin crossbows discharge converging frost beams that crystallize Bloom's spore-cloud; crossbows stay in DD's hands. Audio: frost beam charge, crystalline shatter, DD's focused exhale."
+      "prompt": "The composition, subjects, teal-slate palette, pale-blue bioluminescence, dusk light and one molten-gold accent remain exactly as in the start frame. Only the named action moves. DD unleashes Hoarfrost Judgement — twin crossbows discharge converging frost beams that crystallize Bloom's spore-cloud; crossbows stay in DD's hands. Audio: frost beam charge, crystalline shatter, DD's focused exhale.",
+      "resolution": "1280x704",
+      "identity": "keyframe-anchor",
+      "audio": false,
+      "audio_note": "LTX-2.5 native audio is not decoded in the v1 render path; restore via audio VAE + AV-latent nodes to enable."
     },
     {
       "id": "vx13",
@@ -189,12 +189,12 @@
       "phase": "IV",
       "beat": "Pollen Nova - Bloom final form",
       "start": "kf_36_start.png",
-      "end": "kf_36_end.png",
       "frames": 105,
-      "control": "depth",
-      "characters": ["Bloom"],
-      "loras": [],
-      "prompt": "The composition, subjects, teal-slate palette, pale-blue bioluminescence, dusk light and one molten-gold accent remain exactly as in the start frame. Only the named action moves. Bloom's maw erupts in Pollen Nova — golden spores expanding in a spherical shockwave that flattens mushroom towers. Audio: nova boom, tower collapse, spore hurricane."
+      "prompt": "The composition, subjects, teal-slate palette, pale-blue bioluminescence, dusk light and one molten-gold accent remain exactly as in the start frame. Only the named action moves. Bloom's maw erupts in Pollen Nova — golden spores expanding in a spherical shockwave that flattens mushroom towers. Audio: nova boom, tower collapse, spore hurricane.",
+      "resolution": "1280x704",
+      "identity": "keyframe-anchor",
+      "audio": false,
+      "audio_note": "LTX-2.5 native audio is not decoded in the v1 render path; restore via audio VAE + AV-latent nodes to enable."
     },
     {
       "id": "vx14",
@@ -202,12 +202,12 @@
       "phase": "IV",
       "beat": "Dual ultimates - combined kill",
       "start": "kf_37_start.png",
-      "end": "kf_37_end.png",
       "frames": 105,
-      "control": "pose+depth",
-      "characters": ["DD", "AZ"],
-      "loras": ["dd", "az"],
-      "prompt": "The composition, subjects, teal-slate palette, pale-blue bioluminescence, dusk light and one molten-gold accent remain exactly as in the start frame. Only the named action moves. DD's frost beam and AZ's gold-rune greatsword strike converge on Bloom's core in perfect synchronization; crossbows in DD's hands, greatsword in AZ's hands. Audio: dual strike resonance, core fracture, silence after."
+      "prompt": "The composition, subjects, teal-slate palette, pale-blue bioluminescence, dusk light and one molten-gold accent remain exactly as in the start frame. Only the named action moves. DD's frost beam and AZ's gold-rune greatsword strike converge on Bloom's core in perfect synchronization; crossbows in DD's hands, greatsword in AZ's hands. Audio: dual strike resonance, core fracture, silence after.",
+      "resolution": "1280x704",
+      "identity": "keyframe-anchor",
+      "audio": false,
+      "audio_note": "LTX-2.5 native audio is not decoded in the v1 render path; restore via audio VAE + AV-latent nodes to enable."
     },
     {
       "id": "vx15",
@@ -215,12 +215,12 @@
       "phase": "IV",
       "beat": "Kill - Bloom collapses",
       "start": "kf_48_start.png",
-      "end": "kf_48_end.png",
       "frames": 105,
-      "control": "depth",
-      "characters": ["Bloom", "DD", "AZ"],
-      "loras": ["dd", "az"],
-      "prompt": "The composition, subjects, teal-slate palette, pale-blue bioluminescence, dusk light and one molten-gold accent remain exactly as in the start frame. Only the named action moves. Bloom's fungal form collapses into pale-blue dust as DD and AZ stand exhausted but unbroken, weapons lowered; crossbows in DD's hands, greatsword in AZ's hands. Audio: dust settling, final breath, distant tower echo."
+      "prompt": "The composition, subjects, teal-slate palette, pale-blue bioluminescence, dusk light and one molten-gold accent remain exactly as in the start frame. Only the named action moves. Bloom's fungal form collapses into pale-blue dust as DD and AZ stand exhausted but unbroken, weapons lowered; crossbows in DD's hands, greatsword in AZ's hands. Audio: dust settling, final breath, distant tower echo.",
+      "resolution": "1280x704",
+      "identity": "keyframe-anchor",
+      "audio": false,
+      "audio_note": "LTX-2.5 native audio is not decoded in the v1 render path; restore via audio VAE + AV-latent nodes to enable."
     },
     {
       "id": "vx16",
@@ -228,12 +228,12 @@
       "phase": "IV",
       "beat": "Aftermath - Dawn acknowledgment",
       "start": "kf_50_start.png",
-      "end": "kf_50_end.png",
       "frames": 105,
-      "control": "pose",
-      "characters": ["DD", "AZ"],
-      "loras": ["dd", "az"],
-      "prompt": "The composition, subjects, teal-slate palette, pale-blue bioluminescence, dusk light and one molten-gold accent remain exactly as in the start frame. Only the named action moves. DD and AZ turn slightly toward each other in faint acknowledgment as first dawn light catches their armor; spore-mist settles, weapons stay lowered in their hands. Audio: dawn wind, armor shift, final acknowledgment breath."
+      "prompt": "The composition, subjects, teal-slate palette, pale-blue bioluminescence, dusk light and one molten-gold accent remain exactly as in the start frame. Only the named action moves. DD and AZ turn slightly toward each other in faint acknowledgment as first dawn light catches their armor; spore-mist settles, weapons stay lowered in their hands. Audio: dawn wind, armor shift, final acknowledgment breath.",
+      "resolution": "1280x704",
+      "identity": "keyframe-anchor",
+      "audio": false,
+      "audio_note": "LTX-2.5 native audio is not decoded in the v1 render path; restore via audio VAE + AV-latent nodes to enable."
     }
   ]
 }
