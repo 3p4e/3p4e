@@ -32,7 +32,7 @@ import urllib.request
 
 # --- model constants (byte-verified on box 61265703, doc 64 #4/#6) ---
 UNET = "ltx-2.5-22b-distilled-transformer-comfy-int8-convrot.safetensors"
-TE = "gemma4-12b-with-proj-ltx-2.5-comfy-int8-convrot.safetensors"
+TE = "gemma4-12b-with-proj-ltx-2.5-bf16.safetensors"
 VVAE = "ltx-2.5-video-vae-bf16.safetensors"
 
 DEFAULT_NEG = (
