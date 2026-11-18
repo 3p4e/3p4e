@@ -24,3 +24,21 @@ __pycache__/
 tools/vast/jobs/*.png
 tools/vast/jobs/*.jpg
 tools/vast/seed.png
+
+# --- Vast.ai deployment runtime state + secrets (never commit) ---
+core
+core.*
+*.box.json
+.sunder_*.json
+.hb_v2_box.json
+.ltx23_box.json
+.wanflf_ssh.json
+.fenrir_*.json
+.p23_ltx23_instance.json
+.k6_instance.json
+.ab_box.json
+.p2_sample_box.txt
+.p23_ltx23_instance.json
+
+# baked LoRA tensors (large binaries, kept local only)
+higgsfield/az_lora_preprocessed/
