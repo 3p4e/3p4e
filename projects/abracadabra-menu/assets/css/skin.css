@@ -1,0 +1,553 @@
+/* ============================================================
+   ABRACADABRA — "The Grand Bistro of Illusions"
+   New skin for the two TV menu screens.
+   Replaces the game-lobby register with a candlelit restaurant.
+   Offline-safe: no webfont requests. See --font-display stack.
+   ============================================================ */
+
+:root {
+  /* ---- core palette (day) ---- */
+  --bg:          #0b0a12;
+  --bg-deep:     #06040d;
+  --surface:     rgba(28, 22, 38, .72);
+  --surface-2:   rgba(38, 30, 50, .55);
+  --gold:        #d9a441;
+  --gold-soft:   rgba(217, 164, 65, .38);
+  --gold-line:   rgba(217, 164, 65, .22);
+  --ember:       #e0733a;
+  --sage:        #7fa88b;
+  --clay:        #b9764f;
+  --sand:        #c9a97a;
+  --crimson:     #a8443f;
+  --rose:        #c98a9b;
+  --cocoa:       #9d7355;
+  --cyan:        #7fb3bd;
+  --ink:         #f5efe3;
+  --ink-soft:    #cfc3b4;
+  --ink-mute:    #9a8f83;
+  --arcane:      #7b6bd6;
+
+  /* ---- type ---- */
+  --font-display: "Cormorant Garamond", "Playfair Display", Georgia, "DejaVu Serif", "Noto Serif", serif;
+  --font-body: "Rubik", "Manrope", "Noto Sans", system-ui, -apple-system, sans-serif;
+
+  /* ---- metrics (1920x1080 stage) ---- */
+  --fs: 40px;
+  --pad: 42px;
+  --gap: 26px;
+  --radius: 14px;
+  --header-h: 96px;
+  --ticker-h: 62px;
+  --aside-w: 560px;
+
+  /* ---- motion ---- */
+  --ease-soft: cubic-bezier(.22, .61, .36, 1);
+  --ease-lift: cubic-bezier(.16, .84, .44, 1);
+}
+
+/* ---- night grade: same markup, warm gold -> candle + neon violet ---- */
+body.night {
+  --bg:        #06040d;
+  --surface:   rgba(18, 12, 30, .78);
+  --surface-2: rgba(28, 18, 44, .6);
+  --gold:      #f0c46a;
+  --gold-soft: rgba(240, 196, 106, .42);
+  --gold-line: rgba(240, 196, 106, .26);
+  --ember:     #ff8a4c;
+  --sage:      #8fc9a4;
+  --ink:       #fff6e6;
+  --arcane:    #b48cff;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0; padding: 0;
+  height: 100%; width: 100%;
+  overflow: hidden;
+  background: var(--bg-deep);
+  color: var(--ink);
+  font-family: var(--font-body);
+  cursor: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ============================================================
+   STAGE — fixed 1920x1080 canvas, scaled by JS
+   ============================================================ */
+#stage {
+  position: fixed;
+  top: 50%; left: 50%;
+  width: 1920px; height: 1080px;
+  transform-origin: center center;
+  background: var(--bg) center / cover;
+  overflow: hidden;
+}
+
+/* ---- layer 1: defocused stage video (was sharp in v1 = legibility defect) ---- */
+#bgv {
+  position: absolute; inset: -4%;
+  width: 108%; height: 108%;
+  object-fit: cover;
+  filter: blur(22px) saturate(.85) brightness(.55);
+  opacity: .55;
+  z-index: 0;
+}
+
+/* ---- layer 2: vignette + arcane ornament ---- */
+.vignette {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background:
+    radial-gradient(120% 90% at 50% 8%, rgba(0,0,0,0) 38%, rgba(0,0,0,.62) 100%),
+    linear-gradient(180deg, rgba(6,4,13,.72) 0%, rgba(6,4,13,.18) 22%, rgba(6,4,13,.2) 72%, rgba(6,4,13,.86) 100%);
+}
+
+/* hairline ornament rule drawn in CSS, no image dependency */
+.ornament {
+  position: absolute; left: var(--pad); right: var(--pad); top: calc(var(--header-h) - 14px);
+  height: 1px; z-index: 2; pointer-events: none;
+  background: linear-gradient(90deg, rgba(217,164,65,0) 0%, var(--gold-line) 12%, var(--gold-line) 88%, rgba(217,164,65,0) 100%);
+}
+.ornament::after {
+  content: "\2726";
+  position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 15px; color: var(--gold); opacity: .75;
+  background: var(--bg); padding: 0 14px;
+}
+
+/* ---- layer 3: particles canvas ---- */
+#bg { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+header {
+  position: absolute; z-index: 6;
+  top: 0; left: 0; right: 0; height: var(--header-h);
+  display: flex; align-items: center; gap: 24px;
+  padding: 0 var(--pad);
+}
+header img { height: 58px; width: auto; opacity: .95; filter: drop-shadow(0 0 14px var(--gold-soft)); }
+
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 46px;
+  letter-spacing: .34em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-shadow: 0 0 26px var(--gold-soft), 0 2px 0 rgba(0,0,0,.55);
+  white-space: nowrap;
+}
+.wordmark i { font-style: normal; color: var(--gold); }
+
+.tag {
+  margin-left: auto;
+  text-align: right;
+  font-size: 15px;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  line-height: 1.7;
+}
+.tag b { display: block; color: var(--gold); font-weight: 600; letter-spacing: .3em; }
+
+/* ============================================================
+   MENU AREA — two balanced columns of floating cards
+   ============================================================ */
+main#menu {
+  position: absolute; z-index: 5;
+  top: calc(var(--header-h) + 26px);
+  left: var(--pad);
+  bottom: calc(var(--ticker-h) + 26px);
+  right: calc(var(--aside-w) + var(--pad) + 18px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
+  align-content: start;
+}
+body.no-aside main#menu { right: var(--pad); }
+
+main#menu .col { display: flex; flex-direction: column; gap: var(--gap); min-width: 0; }
+/* JS fallback path uses a single .col pair too; keep both working */
+main#menu > .col { display: flex; flex-direction: column; gap: var(--gap); min-width: 0; }
+
+/* ---- category card ---- */
+.cat {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--gold-line);
+  border-radius: var(--radius);
+  padding: 20px 24px 16px;
+  backdrop-filter: blur(10px) saturate(1.1);
+  -webkit-backdrop-filter: blur(10px) saturate(1.1);
+  box-shadow:
+    0 18px 44px rgba(0,0,0,.45),
+    inset 0 1px 0 rgba(255,255,255,.05);
+  animation: cardIn .7s var(--ease-lift) both;
+  animation-delay: var(--d, 0s);
+}
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(18px) scale(.985); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* category accent — a thin arcane bar, not a loud colour block */
+.cat::before {
+  content: "";
+  position: absolute; left: 0; top: 14px; bottom: 14px;
+  width: 3px; border-radius: 3px;
+  background: linear-gradient(180deg, var(--cat, var(--gold)), transparent);
+  box-shadow: 0 0 16px var(--cat, var(--gold));
+  opacity: .9;
+}
+
+.cat h2 {
+  margin: 0 0 12px;
+  display: flex; align-items: center; gap: 12px;
+  font-family: var(--font-display);
+  font-size: calc(var(--fs) * .82);
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--ink);
+  line-height: 1.1;
+}
+.cat h2 small {
+  font-family: var(--font-body);
+  font-size: calc(var(--fs) * .34);
+  letter-spacing: .1em;
+  text-transform: none;
+  color: var(--ink-mute);
+  font-weight: 400;
+}
+.cat h2 .cur {
+  margin-left: auto;
+  font-family: var(--font-body);
+  font-size: calc(var(--fs) * .3);
+  letter-spacing: .3em;
+  color: var(--gold);
+  opacity: .8;
+}
+
+.cat ul { margin: 0; padding: 0; list-style: none; }
+
+.cat li {
+  display: flex; align-items: center;
+  font-size: var(--fs);
+  line-height: 1.34;
+  padding: 3px 0;
+  color: var(--ink-soft);
+}
+.cat li .n { flex: 0 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* leader dots — hairline, restaurant menu convention */
+.cat li .dots {
+  flex: 1 1 auto;
+  min-width: 18px;
+  margin: 0 12px;
+  height: 1em;
+  background-image: radial-gradient(circle, var(--gold-line) 1px, transparent 1.2px);
+  background-size: 9px 9px;
+  background-position: 0 72%;
+  background-repeat: repeat-x;
+  opacity: .8;
+}
+
+.cat li .p {
+  flex: 0 0 auto;
+  font-family: var(--font-display);
+  font-size: calc(var(--fs) * 1.04);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--gold);
+  letter-spacing: .02em;
+}
+
+/* badge — small, restrained */
+.badge {
+  flex: 0 0 auto;
+  margin-left: 10px;
+  font-size: calc(var(--fs) * .3);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid currentColor;
+  color: var(--gold);
+  align-self: center;
+  white-space: nowrap;
+}
+.badge.ХИТ { color: var(--ember); }
+.badge.НОВО { color: var(--sage); }
+.badge.ВЕГЕ { color: var(--sage); }
+
+/* featured item gets a faint ember wash, not a full inversion */
+.cat li.hit .n { color: var(--ink); font-weight: 500; }
+.cat li.hit .p { color: var(--ember); text-shadow: 0 0 18px rgba(224,115,58,.35); }
+
+/* category accent colours from the new palette */
+.cat.c-red     { --cat: var(--ember); }
+.cat.c-orange  { --cat: var(--clay); }
+.cat.c-lime    { --cat: var(--sage); }
+.cat.c-yellow  { --cat: var(--sand); }
+.cat.c-magenta { --cat: var(--rose); }
+.cat.c-green   { --cat: var(--sage); }
+.cat.c-brown   { --cat: var(--cocoa); }
+
+/* ---- filler card (fills a short column) ---- */
+.filler {
+  display: flex; align-items: center; gap: 20px;
+  padding: 22px 24px;
+  border: 1px dashed var(--gold-line);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  opacity: .85;
+}
+.filler img { height: 66px; filter: drop-shadow(0 0 16px var(--gold-soft)); }
+.filler div {
+  font-size: 16px; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--ink-mute); line-height: 1.7;
+}
+.filler b { display: block; font-family: var(--font-display); font-size: 26px; color: var(--gold); letter-spacing: .26em; }
+
+/* ============================================================
+   ASIDE — Абра and the promo panel
+   ============================================================ */
+aside {
+  position: absolute; z-index: 6;
+  top: calc(var(--header-h) + 26px);
+  right: var(--pad);
+  bottom: calc(var(--ticker-h) + 26px);
+  width: var(--aside-w);
+  display: flex; flex-direction: column; gap: 22px;
+}
+
+/* ---- Абра stage ---- */
+.abra-stage {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 300px;
+  border-radius: var(--radius);
+  border: 1px solid var(--gold-line);
+  background:
+    radial-gradient(70% 60% at 50% 62%, rgba(217,164,65,.13) 0%, rgba(0,0,0,0) 70%),
+    var(--surface-2);
+  overflow: hidden;
+  display: flex; align-items: flex-end; justify-content: center;
+}
+
+/* soft light pool the character stands in */
+.abra-pool {
+  position: absolute; bottom: -12%; left: 50%; transform: translateX(-50%);
+  width: 78%; height: 46%;
+  background: radial-gradient(closest-side, rgba(240,196,106,.22), rgba(240,196,106,0) 72%);
+  filter: blur(6px);
+  animation: poolBreath 5.2s ease-in-out infinite;
+}
+@keyframes poolBreath { 0%,100% { opacity: .6; transform: translateX(-50%) scale(.96); } 50% { opacity: 1; transform: translateX(-50%) scale(1.04); } }
+
+/* the character clip (Абра) — LTX clip or PNG fallback */
+#abra {
+  position: relative;
+  height: 96%; width: auto;
+  object-fit: contain;
+  z-index: 2;
+  filter: drop-shadow(0 18px 30px rgba(0,0,0,.6));
+  transform-origin: 50% 92%;
+  animation: abraBreath 4.6s var(--ease-soft) infinite;
+}
+@keyframes abraBreath {
+  0%, 100% { transform: translateY(0) rotate(-.6deg); }
+  50%      { transform: translateY(-7px) rotate(.6deg); }
+}
+
+/* gesture states applied by abra.js */
+#abra.present { animation: abraPresent 1.5s var(--ease-lift) both; }
+@keyframes abraPresent {
+  0%   { transform: translateY(0) scale(1); }
+  35%  { transform: translateY(-16px) scale(1.045); }
+  62%  { transform: translateY(-6px) scale(1.02) rotate(2deg); }
+  100% { transform: translateY(0) scale(1); }
+}
+#abra.bow { animation: abraBow 1.8s var(--ease-soft) both; }
+@keyframes abraBow {
+  0%   { transform: rotate(0) translateY(0); }
+  45%  { transform: rotate(-13deg) translateY(9px); }
+  100% { transform: rotate(0) translateY(0); }
+}
+#abra.tap { animation: abraTap .9s ease-in-out both; }
+@keyframes abraTap {
+  0%,100% { transform: translateY(0); }
+  30%     { transform: translateY(-9px) rotate(-3deg); }
+  55%     { transform: translateY(1px) rotate(2deg); }
+  75%     { transform: translateY(-3px); }
+}
+
+/* crystal tip glow — the character's "face" */
+.abra-crystal {
+  position: absolute; z-index: 3;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: radial-gradient(circle, #fff 0%, var(--gold) 38%, var(--ember) 70%, transparent 72%);
+  box-shadow: 0 0 18px var(--gold), 0 0 44px rgba(240,196,106,.5);
+  animation: crystalPulse 2.6s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes crystalPulse {
+  0%,100% { opacity: .75; transform: scale(.9); }
+  50%     { opacity: 1; transform: scale(1.16); }
+}
+body.night .abra-crystal { box-shadow: 0 0 18px var(--arcane), 0 0 46px rgba(180,140,255,.55); }
+
+/* ---- promo panel ---- */
+.promo {
+  flex: 0 0 auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--gold-line);
+  background: var(--surface);
+  padding: 22px 24px 24px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 18px 44px rgba(0,0,0,.45);
+  transition: opacity .5s ease, transform .5s var(--ease-soft);
+}
+.promo.out { opacity: 0; transform: translateY(12px); }
+
+.promo .kicker {
+  font-size: 13px; letter-spacing: .34em; text-transform: uppercase;
+  color: var(--gold); opacity: .85; margin-bottom: 8px;
+}
+.promo h3 {
+  margin: 0 0 6px;
+  font-family: var(--font-display);
+  font-size: 40px; font-weight: 600; line-height: 1.08;
+  letter-spacing: .06em; text-transform: uppercase;
+  color: var(--ink);
+}
+.promo p { margin: 0 0 14px; font-size: 17px; color: var(--ink-mute); line-height: 1.5; }
+.promo .price {
+  font-family: var(--font-display);
+  font-size: 58px; font-weight: 700;
+  color: var(--gold);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  text-shadow: 0 0 30px var(--gold-soft);
+}
+.promo .price small { font-size: 20px; font-family: var(--font-body); letter-spacing: .2em; margin-left: 8px; opacity: .75; }
+
+/* ============================================================
+   FOOTER TICKER
+   ============================================================ */
+footer {
+  position: absolute; z-index: 6; left: 0; right: 0; bottom: 0;
+  height: var(--ticker-h);
+  display: flex; align-items: center;
+  border-top: 1px solid var(--gold-line);
+  background: linear-gradient(180deg, rgba(6,4,13,.2), rgba(6,4,13,.85));
+  overflow: hidden;
+}
+.ticker {
+  white-space: nowrap;
+  font-size: 19px;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  animation: tickerRun 44s linear infinite;
+  padding-left: 100vw;
+}
+.ticker span { color: var(--gold); margin: 0 26px; }
+@keyframes tickerRun { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+body.reduced .ticker { animation: none; padding-left: var(--pad); }
+
+/* ============================================================
+   OVERLAYS — item reveal, cinematic, transition
+   ============================================================ */
+
+/* item reveal: plays the per-item LTX clip over the board */
+#itemreveal {
+  position: absolute; inset: 0; z-index: 8;
+  display: grid; place-items: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity .6s var(--ease-soft);
+  background: radial-gradient(80% 70% at 50% 50%, rgba(6,4,13,.5), rgba(6,4,13,.94));
+}
+#itemreveal.on { opacity: 1; }
+#itemreveal video {
+  max-width: 74%; max-height: 74%;
+  border-radius: 10px;
+  box-shadow: 0 40px 90px rgba(0,0,0,.7), 0 0 0 1px var(--gold-line);
+}
+#itemreveal .label {
+  margin-top: 18px; text-align: center;
+  font-family: var(--font-display); font-size: 42px; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--ink);
+}
+#itemreveal .label small { display: block; font-family: var(--font-body); font-size: 16px; letter-spacing: .3em; color: var(--gold); margin-top: 8px; }
+
+/* full-screen cinematic takeover */
+#cine {
+  position: absolute; inset: 0; z-index: 9;
+  opacity: 0; pointer-events: none;
+  transition: opacity .8s var(--ease-soft);
+  background: #000;
+}
+#cine.on { opacity: 1; }
+#cine video { width: 100%; height: 100%; object-fit: cover; }
+.cine-card {
+  position: absolute; left: 60px; bottom: 74px;
+  opacity: 0; transform: translateY(20px);
+  transition: opacity .7s ease .1s, transform .7s var(--ease-lift) .1s;
+}
+.cine-card.on { opacity: 1; transform: none; }
+.cine-card h4 {
+  margin: 0 0 8px;
+  font-family: var(--font-display); font-size: 62px; letter-spacing: .1em;
+  text-transform: uppercase; color: #fff;
+  text-shadow: 0 6px 30px rgba(0,0,0,.8);
+}
+.cine-card .price {
+  font-family: var(--font-display); font-size: 54px; font-weight: 700;
+  color: var(--gold); text-shadow: 0 6px 30px rgba(0,0,0,.8);
+}
+
+/* wand-slash transition */
+#fx {
+  position: absolute; inset: 0; z-index: 10;
+  width: 100%; height: 100%; object-fit: cover;
+  opacity: 0; pointer-events: none;
+  transition: opacity .25s ease;
+  mix-blend-mode: screen;
+}
+#fx.on { opacity: 1; }
+
+#stage.flash::after {
+  content: ""; position: absolute; inset: 0; z-index: 11;
+  background: radial-gradient(circle at 50% 50%, #fff 0%, var(--gold) 30%, transparent 70%);
+  animation: flashOut .7s ease-out both; pointer-events: none;
+}
+@keyframes flashOut { from { opacity: .85; } to { opacity: 0; } }
+
+/* grain + letterbox */
+.grain {
+  position: absolute; inset: 0; z-index: 12; pointer-events: none; opacity: .05;
+  background-image: repeating-conic-gradient(rgba(255,255,255,.7) 0% .0006%, transparent .0006% .0012%);
+  mix-blend-mode: overlay;
+}
+.letterbox { position: absolute; left: 0; right: 0; height: 42px; background: #000; z-index: 12; pointer-events: none; }
+.letterbox.t { top: 0; } .letterbox.b { bottom: 0; }
+
+/* ============================================================
+   ACCESSIBILITY / FALLBACKS
+   ============================================================ */
+body.reduced *,
+body.reduced *::before,
+body.reduced *::after { animation: none !important; transition: none !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+}
+
+/* legacy class names kept so the old renderer keeps working */
+.wrap { }
+.rays, .shade, .portal, .ring, .mwrap, .mask { display: none; }

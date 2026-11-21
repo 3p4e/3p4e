@@ -250,6 +250,7 @@
 </div>
 
 <script src="menu-data.js"></script>
+<script src="assets/clip-map-ltx25.js"></script>
 <script>
 (function () {
   const q = new URLSearchParams(location.search);
@@ -322,7 +323,7 @@
       <section class="cat c-${esc(c.color || "orange")}" style="--d:${(ci * 1.3).toFixed(1)}s">
         <h2>${esc(c.name)}${c.note ? `<small>${esc(c.note)}</small>` : ""}<span class="cur">${esc(cur)}</span></h2>
         <ul>${c.items.filter(shown).map(it => `
-          <li class="${it.badge === "ХИТ" ? "hit" : ""}"><span class="n">${esc(it.name)}</span>${it.badge ? `<span class="badge ${esc(it.badge)}">${esc(it.badge)}</span>` : ""}
+          <li data-key="${esc(c.id)}::${esc(it.name)}" class="${it.badge === "ХИТ" ? "hit" : ""}"><span class="n">${esc(it.name)}</span>${it.badge ? `<span class="badge ${esc(it.badge)}">${esc(it.badge)}</span>` : ""}
           <span class="dots"></span><span class="p">${esc(it.price)}</span></li>`).join("")}
         </ul>
       </section>`);
@@ -377,7 +378,12 @@
   // canPlayType can claim H.264 on builds that cannot decode it, so a failed MP4 also flips to WebM (remembered per session)
   let MP4_OK = !!document.createElement("video").canPlayType('video/mp4; codecs="avc1.42E01E"');
   try { if (sessionStorage.getItem("abra_webm")) MP4_OK = false; } catch (e) {}
-  const V = n => `assets/video/${n}.${MP4_OK ? "mp4" : "webm"}`;
+  const L25 = window.CLIP_MAP_LTX25 || { top: {}, items: {}, full: {} };
+  const V = n => {
+    const t = L25.top[n];
+    const p = t || (n.indexOf("/") >= 0 ? n : null);
+    return `assets/video/${p || n}.${MP4_OK ? "mp4" : "webm"}`;
+  };
   document.addEventListener("error", e => {
     const v = e.target;
     if (!v || v.tagName !== "VIDEO" || !/\.mp4(\?|$)/.test(v.currentSrc || v.src || "")) return;
@@ -398,6 +404,23 @@
     if (!mv.src.endsWith(V(name))) mv.src = V(name);
     mv.currentTime = 0; mv.play().catch(() => {});
   }
+
+  // LTX-2.5 per-item golden-spawn: hover or tap a menu row to summon its dish in the mascot panel
+  function playSpawn(key) {
+    const e = (L25.items || {})[key];
+    if (!e) return;
+    const name = e.clip.replace(/^assets\/video\//, "").replace(/\.(mp4|webm)$/, "");
+    mv.loop = false; mv.onended = () => playMascot(IDLE(), true);
+    const src2 = V(name);
+    if (!mv.src.endsWith(src2)) mv.src = src2;
+    mv.currentTime = 0; mv.play().catch(() => {});
+  }
+  document.getElementById("menu").addEventListener("pointerover", ev => {
+    const li = ev.target.closest("li[data-key]"); if (li) playSpawn(li.dataset.key);
+  });
+  document.getElementById("menu").addEventListener("click", ev => {
+    const li = ev.target.closest("li[data-key]"); if (li) playSpawn(li.dataset.key);
+  });
 
   // full-screen magic transition: logo swirl bursts into shards over the whole board
   function magicTransition(then) {
@@ -520,6 +543,13 @@
     const promos = (DATA.promos || []).filter(p => p.price !== null && p.price !== "");
     let name, promo = null;
     if (cineN++ % 2 === 0) name = night() ? "cine_neon_night" : "cine_awakening_day";   // ambient scene, then a food summon (day and night)
+    else if (Object.keys(L25.full || {}).length && (cineN >> 1) % 3 === 2) {
+           const fk = Object.keys(L25.full); const cat = fk[(cineN >> 2) % fk.length];
+           name = L25.full[cat].replace(/^assets\/video\//, "").replace(/\.mp4$/, "");
+           const cc = (DATA.categories || []).find(x => x.id === cat);
+           const its = cc ? cc.items.filter(shown) : [];
+           const pick = its[(cineN >> 2) % (its.length || 1)];
+           promo = pick ? { title: pick.name, price: pick.price } : null; }
     else { const summonable = promos.filter(p => SUMMON[p.video]);       // rotate through the promos that have a summon clip
            promo = summonable.length ? summonable[(cineN >> 1) % summonable.length] : null;
            name = promo ? SUMMON[promo.video] : "cine_awakening_day"; }

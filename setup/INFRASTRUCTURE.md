@@ -81,3 +81,15 @@ cd /docker/<project> && docker compose -p <project> up -d
 Always pass `-p <project>` — without it, compose derives the project name
 from the working directory and creates a **duplicate** stack with fresh,
 empty volumes instead of updating the running one.
+
+## kvm4-runner — host shell/file API (ABRA deploy 2026-11-21)
+
+| | |
+|---|---|
+| Endpoint | `https://runner.srv1231216.hstgr.cloud` |
+| Token | current value lives in the kvm4-runner compose env — read it fresh; do NOT trust a stored copy |
+| Auth | `Authorization: Bearer <token>` |
+| Endpoints | `POST /shell {cmd}`, `POST /file/write {path, content_b64}` (overwrite only, no append) |
+| Large files | 400MB tarball PUT as ONE base64 body worked; chunked append does NOT (write overwrites). Runner serves host /tmp over its own nginx for pull-back if needed. |
+| ABRA stack | `/opt/stacks/abra` — nginx serving patched menu board + 87 LTX-2.5 clips. Compose project `abra`. Published like other projects via Traefik (`https://abra.<reverse-dns>`). Old `abracadabra-menu` stack untouched. |
+
