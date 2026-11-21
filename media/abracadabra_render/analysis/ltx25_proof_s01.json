@@ -1,0 +1,30 @@
+{
+  "clip": "media/dhpf_hb3_sample/ltx25_proof_s01.mp4",
+  "tag": "ltx25_proof_s01",
+  "video": {
+    "codec": "h264",
+    "w": 768,
+    "h": 448,
+    "fps": 24.0,
+    "frames": 97,
+    "dur": 4.042
+  },
+  "audio": null,
+  "motion": {
+    "frames": 97,
+    "mean": 6.225,
+    "min": 0.783,
+    "max": 10.003,
+    "frozen": 0,
+    "frozen_pct": 0.0
+  },
+  "luma": {
+    "mean": 89.13,
+    "std": 4.1,
+    "min": 80.65,
+    "max": 94.79,
+    "black": 0,
+    "detail_std_mean": 32.51
+  },
+  "strip": "media/abracadabra_render/analysis/ltx25_proof_s01_strip.png"
+}

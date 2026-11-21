@@ -1,0 +1,30 @@
+{
+  "clip": "media/abracadabra_render/i2v/abra_i2v_proof_00001_.mp4",
+  "tag": "abra_i2v_proof",
+  "video": {
+    "codec": "h264",
+    "w": 1280,
+    "h": 736,
+    "fps": 24.0,
+    "frames": 121,
+    "dur": 5.042
+  },
+  "audio": null,
+  "motion": {
+    "frames": 121,
+    "mean": 2.564,
+    "min": 0.86,
+    "max": 19.001,
+    "frozen": 0,
+    "frozen_pct": 0.0
+  },
+  "luma": {
+    "mean": 50.31,
+    "std": 14.94,
+    "min": 33.65,
+    "max": 74.11,
+    "black": 0,
+    "detail_std_mean": 48.82
+  },
+  "strip": "media/abracadabra_render/analysis/abra_i2v_proof_strip.png"
+}

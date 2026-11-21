@@ -43,5 +43,14 @@ core.*
 # baked LoRA tensors (large binaries, kept local only)
 higgsfield/az_lora_preprocessed/
 
-# ltx25 clip binaries are deployment artifacts (served from /opt/stacks/abra/site)
-projects/abracadabra-menu/assets/video/ltx25/
+
+# ABRA deliverables are committed (director request 2026-11-21)
+
+# --- ABRA deliverables committed (director request 2026-11-21) ---
+!projects/abracadabra-menu/assets/video/ltx25/
+!projects/abracadabra-menu/assets/video/ltx25/**
+# re-include the parent chain, git cannot descend into an ignored dir
+!media/
+media/*
+!media/abracadabra_render/
+!media/abracadabra_render/**

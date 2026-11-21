@@ -1,0 +1,30 @@
+{
+  "clip": "media/abracadabra_render/test/abra_testD_chiz_00001_.mp4",
+  "tag": "abra_testD_chiz_00001_",
+  "video": {
+    "codec": "h264",
+    "w": 1216,
+    "h": 704,
+    "fps": 24.0,
+    "frames": 121,
+    "dur": 5.042
+  },
+  "audio": null,
+  "motion": {
+    "frames": 121,
+    "mean": 3.76,
+    "min": 1.695,
+    "max": 5.84,
+    "frozen": 0,
+    "frozen_pct": 0.0
+  },
+  "luma": {
+    "mean": 81.16,
+    "std": 6.15,
+    "min": 70.0,
+    "max": 92.26,
+    "black": 0,
+    "detail_std_mean": 48.13
+  },
+  "strip": "media/abracadabra_render/analysis/abra_testD_chiz_00001__strip.png"
+}

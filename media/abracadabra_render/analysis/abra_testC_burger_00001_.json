@@ -1,0 +1,30 @@
+{
+  "clip": "media/abracadabra_render/test/abra_testC_burger_00001_.mp4",
+  "tag": "abra_testC_burger_00001_",
+  "video": {
+    "codec": "h264",
+    "w": 1216,
+    "h": 704,
+    "fps": 24.0,
+    "frames": 121,
+    "dur": 5.042
+  },
+  "audio": null,
+  "motion": {
+    "frames": 121,
+    "mean": 4.062,
+    "min": 0.176,
+    "max": 7.69,
+    "frozen": 0,
+    "frozen_pct": 0.0
+  },
+  "luma": {
+    "mean": 65.13,
+    "std": 4.13,
+    "min": 58.19,
+    "max": 73.73,
+    "black": 0,
+    "detail_std_mean": 46.07
+  },
+  "strip": "media/abracadabra_render/analysis/abra_testC_burger_00001__strip.png"
+}
