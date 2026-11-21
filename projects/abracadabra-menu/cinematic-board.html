@@ -312,6 +312,7 @@
   <div class="letterbox b"></div>
 </div>
 
+<script src="assets/clip-map-ltx25.js"></script>
 <script src="menu-data.js"></script>
 <script>
 (function () {
@@ -325,7 +326,10 @@
   // canPlayType can claim H.264 on builds that cannot decode it, so a failed MP4 also flips to WebM (remembered per session)
   let MP4_OK = !!document.createElement("video").canPlayType('video/mp4; codecs="avc1.42E01E"');
   try { if (sessionStorage.getItem("abra_webm")) MP4_OK = false; } catch (e) {}
-  const V = n => `assets/video/${n}.${MP4_OK ? "mp4" : "webm"}`;
+  // LTX-2.5 package: map legacy top-level names (bg_day, fx_slash, ...) to the new clip paths
+  const L25 = (window.CLIP_MAP_LTX25 && window.CLIP_MAP_LTX25.top) || {};
+  const SPAWN = (window.CLIP_MAP_LTX25 && window.CLIP_MAP_LTX25.items) || {};
+  const V = n => { const p = L25[n] || n; return `assets/video/${p}.${MP4_OK ? "mp4" : "webm"}`; };
   document.addEventListener("error", e => {
     const v = e.target;
     if (!v || v.tagName !== "VIDEO" || !/\.mp4(\?|$)/.test(v.currentSrc || v.src || "")) return;
@@ -425,7 +429,7 @@
     const html = cats.map((c, ci) => {
       const color = CATCOLOR[c.color] || CATCOLOR.orange;
       const items = c.items.filter(shown).map(it => `
-        <li><span class="n">${esc(it.name)}</span>${it.badge ? `<span class="badge ${BADGE[it.badge] || ""}">${esc(it.badge)}</span>` : ""}
+        <li data-key="${esc(c.id)}::${esc(it.name)}"><span class="n">${esc(it.name)}</span>${it.badge ? `<span class="badge ${BADGE[it.badge] || ""}">${esc(it.badge)}</span>` : ""}
         <span class="dots"></span><span class="p" data-price="${esc(it.price)}">${esc(it.price)}</span></li>`).join("");
       return `<section class="cat" data-od-id="cat-${esc(c.id)}" style="--catc:${color};--catline:${color};--d:${(ci * 0.09).toFixed(2)}s">
         <h2><span class="gem"></span><span class="name">${esc(c.name)}</span>${c.note ? `<span class="note">${esc(c.note)}</span>` : ""}<span class="cur">${esc(cur)}</span></h2>
@@ -617,6 +621,28 @@
     if (animate) { promo.classList.add("out"); setTimeout(swap, 420); }
     else swap();
   }
+  // per-item golden-spawn clip: hover or tap a menu row, the wand panel casts that item
+  function playSpawn(key) {
+    const e = SPAWN[key]; if (!e || !e.clip) return;
+    const mv = document.getElementById("mv"); if (!mv) return;
+    const ext = MP4_OK ? "mp4" : "webm";
+    const src2 = `${e.clip}.${ext}`;
+    if (mv.getAttribute("src") === src2) return;
+    mv.loop = false; mv.onended = null;
+    mv.onended = () => { mv.loop = true; mv.src = V(idleClip()); mv.play().catch(() => {}); };
+    mv.src = src2; mv.currentTime = 0; mv.play().catch(() => {});
+    mv.parentElement.classList.add("video");
+  }
+  const MENU_EL = document.getElementById("menu");
+  if (MENU_EL) {
+    MENU_EL.addEventListener("pointerover", ev => {
+      const li = ev.target.closest("li[data-key]"); if (li) playSpawn(li.dataset.key);
+    });
+    MENU_EL.addEventListener("click", ev => {
+      const li = ev.target.closest("li[data-key]"); if (li) playSpawn(li.dataset.key);
+    });
+  }
+
   // every 4th change (offset per screen) the whole board does the wand-slash transition
   const fxv = document.getElementById("fxv");
   function magicTransition(then) {

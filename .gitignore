@@ -42,3 +42,6 @@ core.*
 
 # baked LoRA tensors (large binaries, kept local only)
 higgsfield/az_lora_preprocessed/
+
+# ltx25 clip binaries are deployment artifacts (served from /opt/stacks/abra/site)
+projects/abracadabra-menu/assets/video/ltx25/
