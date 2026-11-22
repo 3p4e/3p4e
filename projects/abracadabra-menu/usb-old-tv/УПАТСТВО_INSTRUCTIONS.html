@@ -1,0 +1,45 @@
+<!doctype html><html lang="mk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ABRACADABRA — Стар ТВ / Older TV guide</title>
+<style>body{font:16px/1.55 system-ui,Arial,sans-serif;max-width:820px;margin:24px auto;padding:0 16px;color:#1b1b1f}
+h1{margin-bottom:0}h2{margin-top:28px;border-bottom:2px solid #e5e5ea;padding-bottom:4px}code{background:#f0f0f4;padding:1px 5px;border-radius:4px}
+.box{background:#fff7e0;border-left:4px solid #e0a800;padding:8px 12px;margin:12px 0}li{margin:4px 0}.en{color:#444}</style></head><body>
+<h1>ABRACADABRA</h1><p>Мени за стар (не-смарт) ТВ преку USB · Menu for an older, non-smart TV via USB</p>
+
+<h2>1. Што има на USB / What is on the stick</h2>
+<ul>
+<li><code>TV1_DAY.MP4</code>, <code>TV1_NIGHT.MP4</code> — ТВ 1 (бургери, сендвичи, тостови) · <span class="en">TV 1, day / night look</span></li>
+<li><code>TV2_DAY.MP4</code>, <code>TV2_NIGHT.MP4</code> — ТВ 2 (врапови, скара, десерти…) · <span class="en">TV 2, day / night look</span></li>
+<li><code>720p/</code> — истите четири датотеки во помала резолуција, за многу стари ТВ · <span class="en">the same four in 720p for very old TVs</span></li>
+</ul>
+<p>Ова се обични видеа (H.264 MP4, 30 fps, 4 минути, без интернет). Менито е „печено“ во видеото: ТВ-то само го пушта во круг. Во секој круг волшебниот стап ги „создава“ бургерот, вафлата и врапот преку цел екран. · <span class="en">These are plain 4-minute videos. The menu is baked into the picture and the TV just loops it. In every loop the wand conjures the burger, the waffle and the wrap full-screen.</span></p>
+
+<h2>2. На ТВ / On the TV</h2>
+<ol>
+<li>Ставете го USB во ТВ. Изберете извор „USB“ / „Media“ / „Мултимедија“. · <span class="en">Plug it in and pick the USB / Media source.</span></li>
+<li>Изберете видео и пуштете го <code>TV1_DAY.MP4</code> (на втор ТВ: <code>TV2_DAY.MP4</code>). · <span class="en">Play TV1_DAY.MP4 on the first TV and TV2_DAY.MP4 on the second.</span></li>
+<li>Вклучете <b>Repeat / Loop / Повторување</b> (често копче со стрелки во круг, или во менито за опции). Без тоа ТВ-то запира на крајот. · <span class="en">Turn on Repeat / Loop, otherwise the TV stops at the end.</span></li>
+<li>Исклучете го скринсејверот/„auto standby“ на ТВ ако има. · <span class="en">Disable sleep timers and screensavers if the TV has them.</span></li>
+</ol>
+<div class="box"><b>Ден / ноќ:</b> ТВ-то не знае колку е часот. Користете ги <code>_DAY</code> датотеките за дење, а <code>_NIGHT</code> од вечер (околу 19:00). Сменете датотека рачно, или оставете една ако е ок. · <span class="en">The TV cannot switch by itself: play _DAY in the daytime and _NIGHT in the evening.</span></div>
+
+<h2>3. Менување цени / Changing prices</h2>
+<p>Видеата се прават на компјутер од датотеката <code>menu-data.js</code>, со алатката од пакетот <code>ABRACADABRA_OLD_TV_PRICE_EDITOR.zip</code> (оваа папка <code>PRICE_EDITOR</code> стои на компјутерот, не на USB). Еднаш поставете (точка А), потоа секој пат: точки Б–Г. · <span class="en">Videos are rendered on a computer from menu-data.js using the PRICE_EDITOR package (keep it on the computer, not on the stick). Set up once (A), then each time do B to D.</span></p>
+<ol type="A">
+<li><b>Еднаш:</b> инсталирајте <b>Node.js LTS</b> (nodejs.org) и <b>ffmpeg</b> (Windows: во терминал <code>winget install Gyan.FFmpeg</code>), па во папката <code>PRICE_EDITOR/tools</code> кликнете двапати <code>SETUP.bat</code>. · <span class="en">Once: install Node.js LTS and ffmpeg, then double-click tools\SETUP.bat.</span></li>
+</ol>
+<ol start="2" type="A">
+<li>Отворете <code>PRICE_EDITOR/admin.html</code> во Chrome. Променете цени/јадења, притиснете <b>„⬇ menu-data.js“</b>. · <span class="en">Open admin.html in Chrome, edit, press "⬇ menu-data.js".</span></li>
+<li>Ископирајте го симнатиот <code>menu-data.js</code> преку оној во <code>PRICE_EDITOR/</code> (Replace). · <span class="en">Copy it over the old menu-data.js in price-editor.</span></li>
+<li>Кликнете двапати <code>PRICE_EDITOR/tools/RENDER_ALL.bat</code>. Чекајте (околу 5–15 минути по видео, зависно од компјутерот). Новите видеа се во <code>PRICE_EDITOR/output/</code>. Ископирајте ги на USB. · <span class="en">Double-click RENDER_ALL.bat, wait, then copy the 4 new files from the output folder onto the stick.</span></li>
+</ol>
+<div class="box"><b>Ако ова е тешко:</b> испратете ги новите цени и добијте нови видеа. · <span class="en">If this is too technical, send the new prices to whoever built this and get new videos back.</span></div>
+
+<h2>4. Ако не работи / Troubleshooting</h2>
+<ul>
+<li>„Неподдржан формат“ → пробајте ги датотеките од <code>720p/</code>. · <span class="en">"Unsupported format" → try the 720p folder.</span></li>
+<li>USB мора да е форматиран <b>FAT32</b> (многу стари ТВ не читаат exFAT/NTFS). · <span class="en">Format the stick as FAT32.</span></li>
+<li>Ставете ги датотеките директно на USB (не во длабока папка). · <span class="en">Put files at the top level of the stick.</span></li>
+<li>Нема звук е нормално: видеото е без звук. · <span class="en">No sound is normal; the videos are silent.</span></li>
+<li>Видеото запира на крајот → вклучете Repeat. · <span class="en">Stops at the end → switch Repeat on.</span></li>
+</ul>
+</body></html>
