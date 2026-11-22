@@ -294,9 +294,11 @@
       const catKey = (r[col("category")] || "").trim();
       let cat = cats.find(c => c.id === catKey || c.name.toLowerCase() === catKey.toLowerCase());
       if (!cat) { cat = { id: catKey, name: catKey, screen: SCREEN, color: "orange", note: "", items: [] }; cats.push(cat); }
-      const pr = (r[col("price")] || "").replace(/[^\d.]/g, "");
+      // decimal-comma safe: "350,00 ден" -> 350.00, not 35000; guard NaN
+      const pr = (r[col("price")] || "").replace(/\s/g, "").replace(/,/g, ".").replace(/[^\d.]/g, "");
+      const pv = pr ? Number(pr) : null;
       const av = (r[col("available")] || "").trim().toLowerCase();
-      cat.items.push({ name: (r[col("name")] || "").trim(), price: pr ? Number(pr) : null,
+      cat.items.push({ name: (r[col("name")] || "").trim(), price: (pv !== null && Number.isFinite(pv)) ? pv : null,
         available: !["no", "не", "false", "0", "x"].includes(av), badge: (r[col("badge")] || "").trim() });
     }
     return { ...base, categories: cats };
@@ -307,7 +309,9 @@
     try {
       const res = await fetch(DATA.sheetCsvUrl + (DATA.sheetCsvUrl.includes("?") ? "&" : "?") + "t=" + Date.now());
       if (!res.ok) return;
-      DATA = applySheet(window.MENU_DATA, parseCSV(await res.text()));
+      // overlay the sheet on LIVE DATA — re-basing on window.MENU_DATA silently
+      // clobbers an admin.html localStorage override every refresh
+      DATA = applySheet(DATA, parseCSV(await res.text()));
       render();
     } catch (e) { /* offline: keep showing the last menu */ }
   }
@@ -406,13 +410,20 @@
   }
 
   // LTX-2.5 per-item golden-spawn: hover or tap a menu row to summon its dish in the mascot panel
+  let curSpawnKey = null;
   function playSpawn(key) {
     const e = (L25.items || {})[key];
     if (!e) return;
+    // dedupe by KEY — the mp4→webm fallback rewrites src to an absolute URL, so a
+    // src comparison stops matching and the clip would restart on every sub-element hover
+    if (curSpawnKey === key && !mv.ended) return;
+    curSpawnKey = key;
     const name = e.clip.replace(/^assets\/video\//, "").replace(/\.(mp4|webm)$/, "");
-    mv.loop = false; mv.onended = () => playMascot(IDLE(), true);
-    const src2 = V(name);
-    if (!mv.src.endsWith(src2)) mv.src = src2;
+    mv.loop = false;
+    mv.onended = () => { curSpawnKey = null; playMascot(IDLE(), true); };
+    // a dead/404 spawn must not freeze the mascot panel
+    mv.onerror = () => { curSpawnKey = null; playMascot(IDLE(), true); };
+    mv.src = V(name);
     mv.currentTime = 0; mv.play().catch(() => {});
   }
   document.getElementById("menu").addEventListener("pointerover", ev => {
