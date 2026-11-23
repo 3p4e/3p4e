@@ -16,12 +16,15 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 
 const arg = (k, d) => { const i = process.argv.indexOf("--" + k); return i > 0 ? process.argv[i + 1] : d; };
 const SCREEN = arg("screen", "1") === "2" ? 2 : 1, MODE = String(arg("mode", "day")).toLowerCase() === "night" ? "night" : "day";
-const T = Math.round(Number(arg("minutes", "4")) * 60), FPS = Number(arg("fps", "30")), SIZE = Number(arg("size", "1080"));
+let T = Math.round(Number(arg("minutes", "4")) * 60); const FPS = Number(arg("fps", "30")), SIZE = Number(arg("size", "1080"));
 const OUT = path.resolve(arg("out", `TV${SCREEN}_${MODE.toUpperCase()}.MP4`));
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");           // folder with cinematic-board.html, menu-data.js, assets/
 let TOPMAP = {};
 try { const c = { window: {} }; vm.createContext(c); vm.runInContext(fs.readFileSync(path.join(root, "assets", "clip-map-ltx25.js"), "utf8"), c); TOPMAP = (c.window.CLIP_MAP_LTX25 || {}).top || {}; } catch {}
-const V = (n) => path.join(root, "assets", "video", (TOPMAP[n] || n) + ".mp4");        // same name -> file mapping as the board
+let V3 = {};
+try { const c = { window: {} }; vm.createContext(c); vm.runInContext(fs.readFileSync(path.join(root, "assets", "clip-map-v3.js"), "utf8"), c); V3 = c.window.CLIP_MAP_V3 || {}; } catch {}
+const V3TOP = V3.top || {}, V3ITEMS = V3.items || {};
+const V = (n) => path.join(root, "assets", "video", (V3TOP[n] || TOPMAP[n] || n) + ".mp4");        // same name -> file mapping as the board
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "abra-"));
 const T_ = (n) => path.join(tmp, n);
 const sh = (cmd, args) => { const r = spawnSync(cmd, args, { stdio: ["ignore", "inherit", "inherit"] }); if (r.status !== 0) { console.error(`${cmd} failed`); process.exit(1); } };
@@ -30,11 +33,22 @@ if (spawnSync("ffmpeg", ["-version"]).status !== 0) { console.error("ffmpeg not 
 // ---- read the menu data exactly like the board does
 const ctx = { window: {} }; vm.createContext(ctx); vm.runInContext(fs.readFileSync(path.join(root, "menu-data.js"), "utf8"), ctx);
 const DATA = ctx.window.MENU_DATA;
-const promos = (DATA.promos || []).filter((p) => p.price !== null && p.price !== "" && p.price !== undefined);
+// same list as the board: menu promos first, then (v3) every priced item on this screen with its own clips
+const shown = (it) => it.price !== null && it.price !== undefined && it.price !== "" && it.available !== false;
+const lc = (x) => String(x || "").toLocaleLowerCase("mk").replace(/\s+/g, " ").trim();
+const keyFor = (title) => { for (const c of DATA.categories || []) for (const it of c.items || []) if (lc(it.name) === lc(title) && V3ITEMS[`${c.id}::${it.name}`]) return `${c.id}::${it.name}`; return null; };
+const promos = (DATA.promos || []).filter((p) => p.price !== null && p.price !== "" && p.price !== undefined).map((p) => ({ ...p, key: p.key || keyFor(p.title) }));
+if (Object.keys(V3ITEMS).length && DATA.itemShowcase !== false) {
+  const seen = new Set(promos.map((p) => p.key).filter(Boolean));
+  for (const c of (DATA.categories || []).filter((c) => (c.screen || 1) === SCREEN && c.items.some(shown)))
+    for (const it of c.items) { const key = `${c.id}::${it.name}`; if (shown(it) && !seen.has(key) && V3ITEMS[key]) { seen.add(key); promos.push({ title: it.name, subtitle: c.name, price: it.price, key }); } }
+}
 if (!promos.length) { console.error("No promos with a price in menu-data.js"); process.exit(1); }
 const cineMin = 2, N = promos.length, SEG = 10;
 const SUMMON = { wand_burger: "cine_summon_burger", wand_waffle: "cine_summon_waffle", wand_wrap: "cine_summon_wrap", fox_burger: "cine_summon_burger", fox_waffle: "cine_summon_waffle", fox_wrap: "cine_summon_wrap" };
-const wandName = (p) => (p.video ? String(p.video).replace(/^fox_/, "wand_") : MODE === "night" ? "wand_idle_night" : "wand_idle_day");
+const wandName = (p) => (p.key && V3ITEMS[p.key] ? V3ITEMS[p.key].wand : p.video ? String(p.video).replace(/^fox_/, "wand_") : MODE === "night" ? "wand_idle_night" : "wand_idle_day");
+const summonName = (p) => (p.key && V3ITEMS[p.key] ? V3ITEMS[p.key].summon : SUMMON[p.video]);
+T = Math.max(T, N * SEG);                                    // show every item at least once per loop
 const idleName = MODE === "night" ? "wand_idle_night" : "wand_idle_day";
 
 // ---- 1. transparent snapshots of the live board's text layers
@@ -83,7 +97,7 @@ for (let k = 0; k < N; k++) {
   await page.close();
 }
 // price cards for the summon cinematics
-const summonable = promos.filter((p) => SUMMON[p.video]);
+const summonable = promos.filter((p) => summonName(p));
 for (let k = 0; k < summonable.length; k++) {
   const page = await open();
   await page.addStyleTag({ content: `header,#menu,aside,footer{display:none!important}#cine{display:block!important;opacity:1!important;background:transparent!important}#cine::after,#cv{display:none!important}.cine-card{opacity:1!important;transform:translate(-50%,0)!important}` });
@@ -118,7 +132,7 @@ const slashAt = []; for (let k = 1; k * SEG < T; k++) if (k % 4 === (SCREEN === 
 // full-screen cinematics: one ambient scene, then each food summoned once (burger, waffle, wrap), 60 s apart
 const cineAt = []; {
   const seen = new Set(), list = [];
-  promos.forEach((p, i) => { const nm = SUMMON[p.video]; if (nm && !seen.has(nm)) { seen.add(nm); list.push({ name: nm, card: summonable.indexOf(p) }); } });
+  summonable.forEach((p) => { const nm = summonName(p); if (nm && !seen.has(nm)) { seen.add(nm); list.push({ name: nm, card: summonable.indexOf(p) }); } });
   const seq = [{ name: MODE === "night" ? "cine_neon_night" : "cine_awakening_day", card: null }, ...list];
   let t = 20 + (SCREEN === 2 ? 30 : 0);
   for (const c of seq) { if (t + 10 <= T) cineAt.push({ t, ...c }); t += 60; }

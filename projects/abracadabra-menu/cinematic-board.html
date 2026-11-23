@@ -313,6 +313,7 @@
 </div>
 
 <script src="assets/clip-map-ltx25.js"></script>
+<script src="assets/clip-map-v3.js" onerror="void 0"></script>
 <script src="menu-data.js"></script>
 <script>
 (function () {
@@ -329,7 +330,10 @@
   // LTX-2.5 package: map legacy top-level names (bg_day, fx_slash, ...) to the new clip paths
   const L25 = (window.CLIP_MAP_LTX25 && window.CLIP_MAP_LTX25.top) || {};
   const SPAWN = (window.CLIP_MAP_LTX25 && window.CLIP_MAP_LTX25.items) || {};
-  const V = n => { const p = L25[n] || n; return `assets/video/${p}.${MP4_OK ? "mp4" : "webm"}`; };
+  // v3 (per-item wand casts + per-item summons, start+end keyframed LTX-2.5) wins over the LTX package, which wins over the originals
+  const V3 = window.CLIP_MAP_V3 || {};
+  const V3TOP = V3.top || {}, V3ITEMS = V3.items || {};
+  const V = n => { const p = V3TOP[n] || L25[n] || n; return `assets/video/${p}.${MP4_OK ? "mp4" : "webm"}`; };
   document.addEventListener("error", e => {
     const v = e.target;
     if (!v || v.tagName !== "VIDEO" || !/\.mp4(\?|$)/.test(v.currentSrc || v.src || "")) return;
@@ -583,7 +587,24 @@
 
   // ---------- hero promo carousel ----------
   let pi = 0;
-  function promoList() { return (DATA.promos || []).filter(p => p.price !== null && p.price !== "" && p.price !== undefined); }
+  // promos from the menu data first, then (v3) every priced item on this screen, each with its own wand cast and summon
+  const lc = x => String(x || "").toLocaleLowerCase("mk").replace(/\s+/g, " ").trim();
+  function itemKeyFor(title) {
+    for (const c of DATA.categories || []) for (const it of c.items || []) if (lc(it.name) === lc(title) && V3ITEMS[`${c.id}::${it.name}`]) return `${c.id}::${it.name}`;
+    return null;
+  }
+  function promoList() {
+    const base = (DATA.promos || []).filter(p => p.price !== null && p.price !== "" && p.price !== undefined)
+      .map(p => ({ ...p, key: p.key || itemKeyFor(p.title) }));
+    if (!Object.keys(V3ITEMS).length || DATA.itemShowcase === false) return base;
+    const seen = new Set(base.map(p => p.key).filter(Boolean)), out = base.slice();
+    for (const c of cats) for (const it of c.items) {
+      const key = `${c.id}::${it.name}`;
+      if (!shown(it) || seen.has(key) || !V3ITEMS[key]) continue;
+      seen.add(key); out.push({ title: it.name, subtitle: c.name, price: it.price, key });
+    }
+    return out;
+  }
   function promoHtml(p) {
     const n = night();
     return `<div class="frame"></div>
@@ -605,10 +626,12 @@
     const portal = mv.parentElement;
     mv.addEventListener("playing", () => portal.classList.add("video"));
     mv.addEventListener("error", () => portal.classList.remove("video"));
-    const clip = (p && p.video) ? String(p.video).replace(/^fox_/, "wand_") : idleClip();
+    const own = p && p.key && V3ITEMS[p.key] && V3ITEMS[p.key].wand;
+    const clip = own || ((p && p.video) ? String(p.video).replace(/^fox_/, "wand_") : idleClip());
     const loop = clip === idleClip();
     mv.loop = loop;
     mv.onended = loop ? null : () => { mv.loop = true; mv.onended = null; mv.src = V(idleClip()); mv.play().catch(() => {}); };
+    mv.onerror = loop ? null : () => { mv.onerror = null; mv.loop = true; mv.src = V(idleClip()); mv.play().catch(() => {}); };
     mv.src = V(clip);
     mv.play().catch(() => {});
   }
@@ -633,7 +656,8 @@
     curSpawnKey = null;
   }
   function playSpawn(key) {
-    const e = SPAWN[key]; if (!e || !e.clip) return;
+    const v3 = V3ITEMS[key] && V3ITEMS[key].wand;
+    const e = v3 ? { clip: "assets/video/" + v3 } : SPAWN[key]; if (!e || !e.clip) return;
     const mv = document.getElementById("mv"); if (!mv) return;
     // dedupe by KEY, not by src: the capture fallback rewrites src to an absolute
     // .webm URL, so comparing the attribute never matches again on H.264-less TVs
@@ -763,9 +787,11 @@
     let name, promo = null;
     if (cineN++ % 2 === 0) name = night() ? "cine_neon_night" : "cine_awakening_day";   // ambient scene, then a food summon (day and night)
     else {
-      const summonable = promoList().filter(p => SUMMON[p.video]);          // rotate through promos that have a summon clip
+      // v3: every item on this screen has its own summon; otherwise the three original summons
+      const own = promoList().filter(p => p.key && V3ITEMS[p.key] && V3ITEMS[p.key].summon);
+      const summonable = own.length ? own : promoList().filter(p => SUMMON[p.video]);
       promo = summonable.length ? summonable[(cineN >> 1) % summonable.length] : null;
-      name = promo ? SUMMON[promo.video] : "cine_awakening_day";
+      name = !promo ? "cine_awakening_day" : (own.length ? V3ITEMS[promo.key].summon : SUMMON[promo.video]);
     }
     cineBusy = true;
     const done = () => { cine.classList.remove("on"); cineCard.classList.remove("on"); setTimeout(() => { cineBusy = false; burst(); }, 800); };
