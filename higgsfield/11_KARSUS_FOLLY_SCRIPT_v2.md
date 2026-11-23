@@ -2,7 +2,7 @@
 
 > Unofficial Fan Content permitted under the Wizards of the Coast Fan Content Policy. Not approved or endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. (c) Wizards of the Coast LLC. The film must stay free to watch.
 
-**Format:** 16:9, about 122 s. **Hero:** Karsus, greatest archwizard of Netheril, played by Blagoj Nikolov from the authentic base face (`Blagoj-Base`). **Rule set by the author:** Karsus never leaves his tower. He stands on the high balcony of the tallest spire of his floating city for the whole film.
+**Format:** 16:9, about 122 s. **Hero:** Karsus, greatest archwizard of Netheril, played by the director from the authentic base face (`director-base`). **Rule set by the author:** Karsus never leaves his tower. He stands on the high balcony of the tallest spire of his floating city for the whole film.
 
 ## 1. What changed from v1/v4 (author's direction, 2026-11-01)
 1. **The "moving sand" scene is removed completely.**
@@ -45,7 +45,7 @@ Join: 1.2 s dissolve between SP5a and SP5b (fixes the earlier glitch at the blac
 Voices: Karsus `eRZqsCTgtEziOSM3QNPu`, Mystryl `Q3LkydeY4oUZN16c5aMd` (ElevenLabs Voice Design previews; saved-voice slots full). Existing line audio: `keyframes/karsus/voices/{K1,K2,K3,M12,M3}.wav`, echo `video/E.wav`.
 
 ## 5. Locks (repeat verbatim)
-- **KARSUS LOCK:** the man from the Blagoj-Base reference, same face, completely hairless shaved head, clean-shaven, light grey-green eyes, real skin; Netherese archwizard in floor-length high-collared indigo silk robes with silver glyphs, layered dark-blue mantle with silver edging, small silver crown, silver rings on every finger.
+- **KARSUS LOCK:** the man from the director-base reference, same face, completely hairless shaved head, clean-shaven, light grey-green eyes, real skin; Netherese archwizard in floor-length high-collared indigo silk robes with silver glyphs, layered dark-blue mantle with silver edging, small silver crown, silver rings on every finger.
 - **MONSTER LOCK:** pale grey scorpion-like monsters the size of horses, segmented bodies, many clawed limbs, long tails, mouths ringed with writhing tendrils, drawing glowing blue-white threads of magic from trees and water.
 - **ENCLAVE LOCK:** a city of white stone towers and gold domes on a gigantic inverted mountain, floating above a sea of clouds, waterfalls spilling off its edges.
 - **STYLE LOCK:** photorealistic AAA game cinematic, volumetric light, natural film grain, anamorphic framing, no text.

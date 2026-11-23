@@ -14,7 +14,7 @@
 A ~2-minute, photoreal, Macedonian-language boss-fight cinematic.
 
 - **Hero 1 — DD ("Demon Hunter")**: dual-crossbow hunter, cold/arcane theme, glowing underwater-wave hair, Immortal-style wings.
-- **Hero 2 — Azulon (body) / Blagoj (face)**: greatsword Retribution Paladin, gold rune tattoo that surges with each ability.
+- **Hero 2 — Azulon (body) / the director (face)**: greatsword Retribution Paladin, gold rune tattoo that surges with each ability.
 - **Boss — Mal'garot ("Lord of Ash")**: faceless, forge-core, molten whip-arm. **Must remain faceless.**
 - **Scale**: 50 shots (start/end frame each → 100 keyframes → 50 FLF video clips).
 - **Look**: photoreal. Stylised/game-art is rejected. (Known unresolved risk — see §7.)

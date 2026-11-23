@@ -1,12 +1,12 @@
 # Character system: one authentic base, many characters
 
-Every character played by Blagoj Nikolov is built in layers. The **neutral base** never changes. Race, marks and costume are added per character, **in text only**.
+Every character played by the director is built in layers. The **neutral base** never changes. Race, marks and costume are added per character, **in text only**.
 
 ```
-BASE (Blagoj-Base)  →  + RACE / MARKS layer  →  + COSTUME layer  →  scene
+BASE (director-base)  →  + RACE / MARKS layer  →  + COSTUME layer  →  scene
 ```
 
-## Layer 0: `Blagoj-Base` = `f5e2e917-3a91-4213-a01a-ffbca43c7d4c` (2026-10-30)
+## Layer 0: `director-base` = `f5e2e917-3a91-4213-a01a-ffbca43c7d4c` (2026-10-30)
 
 Generated directly from five real selfies (08, 14, 06, 03 or 05, 11 or 02). **No generated face was used as an input**, so nothing from Azulon (ears, tattoo) can leak in.
 
@@ -34,7 +34,7 @@ Then add the character's hair state, race layer and costume.
 | Character | Layer | Element |
 |---|---|---|
 | Azulon (Forgotten Realms) | long swept-back high-elf ears + low-contrast Selûne tattoo + super mode | `Azulon-Master` `5b059323…` (see [AZULON_CANON.md](AZULON_CANON.md)) |
-| Human hero (Norse, Slavic, Vedic, Egyptian…) | none. Optionally a beard or moustache per role ("short ginger-brown moustache and stubble"), or the original Soul `b3ba42a8…`, which already carries the moustache | `Blagoj-Base` + text |
+| Human hero (Norse, Slavic, Vedic, Egyptian…) | none. Optionally a beard or moustache per role ("short ginger-brown moustache and stubble"), or the original Soul `b3ba42a8…`, which already carries the moustache | `director-base` + text |
 
 ## Rules (learned the hard way)
 1. **Never pass a generated face as a reference image for a feature** (ears, tattoo, costume). The edit model copies the face as well. Describe features in words.

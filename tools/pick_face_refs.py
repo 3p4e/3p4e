@@ -26,7 +26,7 @@ OUT = ROOT / "media" / "dhpf_refs"
 
 PEOPLE = [
     ("dd", ROOT / "faces" / "dd" / "centroid.npz", ROOT / "faces" / "dd_cards_final"),
-    ("az", ROOT / "faces" / "blagoj" / "centroid.npz", ROOT / "faces" / "blagoj_cards_final"),
+    ("az", ROOT / "faces" / "the director" / "centroid.npz", ROOT / "faces" / "the director_cards_final"),
 ]
 
 

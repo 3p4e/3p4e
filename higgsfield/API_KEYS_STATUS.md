@@ -15,5 +15,5 @@ Names only. **Never write key values into the repository.** Tested by listing mo
 | `FALAI_API_KEY` | not verified (profile endpoint 404) | possible video route, untested |
 | Gemini key list | no Veo models | |
 
-Karsus costume test (Gemini `gemini-3-pro-image`, 4 reference images: Blagoj-Base front, crown, two costume references):
+Karsus costume test (Gemini `gemini-3-pro-image`, 4 reference images: director-base front, crown, two costume references):
 output `keyframes/karsus/k_gemini_BN_GEMINI_API.png` (local, git-ignored). Authenticity mean 0.508 (limit 0.50), nose-mouth geometry +32 % (full-length framing makes the face small).

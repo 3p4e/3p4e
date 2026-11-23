@@ -124,7 +124,7 @@ Scale: ● good, ◐ partial, ○ failing.
 6. **SHAR**: "They chose to forget. Let them rest."
 7. **PILGRIM** *(kneeling, palms on the sand, the prayer)*: "Lady of Silver, keep the drowned and the lost. Turn the tide. Bring them home."
 8. **AELYRA (fallen)** *(confused)*: "…that… prayer…"
-9. **YSOLDE (restored)** *(eyes opening)*: "…Blagoj?" *(or any name you choose for your character)*
+9. **YSOLDE (restored)** *(eyes opening)*: "…the director?" *(or any name you choose for your character)*
 10. **SELÛNE** *(final)*: "Nothing I love is ever truly lost."
 
 ### B.6 Shot list (18 shots ≈ 85 s)
@@ -184,7 +184,7 @@ Identity rule: **your face appears only in shots where you're alone in frame (�
 ### B.10 What I need from you (approval gate)
 1. Approve the **story and dialogue** (B.3, B.5), or change any line.
 2. **The Pilgrim's voice:** designed (B.4) or cloned from your recording?
-3. **The name** the restored Shard says at the climax: "Blagoj", or another name for your character?
+3. **The name** the restored Shard says at the climax: "the director", or another name for your character?
 4. Approve the **≈ 240-credit** video budget.
 
 ---

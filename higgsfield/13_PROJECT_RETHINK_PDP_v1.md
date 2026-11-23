@@ -44,7 +44,7 @@ C is parked until B is proven complete. The model is not the critical path.
 
 ## The real #1 risk: likeness, not the model
 
-The film stars a real person (Blagoj). Canon requires likeness verification; current state is **UNVERIFIED** with no reference photos. This is a persona-integrity/consent issue, not cosmetics. It must be resolved before "complete" or "publishable" can be claimed.
+The film stars a real person (the director). Canon requires likeness verification; current state is **UNVERIFIED** with no reference photos. This is a persona-integrity/consent issue, not cosmetics. It must be resolved before "complete" or "publishable" can be claimed.
 
 Blocker: the real reference photos (gitignored by design). This is a human-input dependency.
 

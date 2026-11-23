@@ -12,8 +12,8 @@ Target stack: rented GPU on Vast.ai, ComfyUI, **Wan 2.2 14B I2V** (Apache-2.0, t
 | 3 | 1.3 has two subjects: hero glowing + skeleton king recoiling in the background | Two movers, soft-focus second subject morphs | Hero only; the king's reaction moves into 1.4 |
 | 4 | 1.2 has a 3 m skeleton striding while dragging a sword | Locomotion and foot contact fail in I2V; sword-in-ice trail is a small-object effect | Low-angle, king nearly still, slow forward lean; camera does the work |
 | 5 | 1.4 asks for a 180 deg orbit, an expanding ring, and a burning king in one 8 s clip | Camera + ring + burn = three movers; no model does this reliably | Start/end frames carry the change (first-last-frame); static wide camera; ring bursting in keyframe A, ash column in keyframe B |
-| 6 | Hero locked as bald + ginger-brown moustache + stubble | Our authentic base (`Blagoj-Base`) is clean-shaven; you asked for that earlier | Default: clean-shaven bald, light stubble optional (decision below) |
-| 7 | "Use my soul_id" | Higgsfield-only; not available here | Reference-image edit from `Blagoj-Base` + SFace gate |
+| 6 | Hero locked as bald + ginger-brown moustache + stubble | Our authentic base (`director-base`) is clean-shaven; you asked for that earlier | Default: clean-shaven bald, light stubble optional (decision below) |
+| 7 | "Use my soul_id" | Higgsfield-only; not available here | Reference-image edit from `director-base` + SFace gate |
 | 8 | No reason the light kills the king | Same weakness we fixed in Karsus | One beat: the iron crown is the source; the light burns it first (ends as the fallen crown in keyframe B) |
 | 9 | Silent | Film needs sound to read as finished | Procedural wind, drone, impact hit and ember hiss from ffmpeg (no model, no cost); music optional later |
 | 10 | Two lock-text blocks repeated in every prompt | Long prompts dilute the one instruction | Keyframe prompts keep the lock; motion prompts stay under 40 words |
@@ -39,7 +39,7 @@ Order and timing: 1.1 (5 s) > 1.2 (5 s) > 1.3 (5 s) > 1.4 (5 s). Hard cuts. Soun
 
 1. Rent on-demand 32 GB card (about $0.41/h), start ComfyUI.
 2. Download once: Wan 2.2 14B I2V fp8 + lightx2v LoRAs (38 GB, already scripted), FLUX.2 klein 4B (about 12 GB) and its text encoder and VAE.
-3. **Keyframes**: 4 seeds per keyframe (A+B for 1.4). Hero shots via reference edit from the `Blagoj-Base` render. Best seed picked by SFace against the base render (no real photos go to the GPU).
+3. **Keyframes**: 4 seeds per keyframe (A+B for 1.4). Hero shots via reference edit from the `director-base` render. Best seed picked by SFace against the base render (no real photos go to the GPU).
 4. **Video**: Wan 2.2 I2V per shot at 832x480 (draft), then 1280x720 for the winner; FLF graph for 1.4.
 5. Return keyframes and clips to KVM4 over SSH, pull here, run the real-photo likeness check on all hero frames.
 6. Assemble with ffmpeg (cuts, grade, procedural sound), save to KVM4 and send to you.

@@ -54,7 +54,7 @@ across the film; ground the heroes stood on in Phase 1 is grey by Phase 3.
 | Role | Identity | Weapon / kit | The look | Source |
 |---|---|---|---|---|
 | **Ловецот — Демоно-ловец** | **DD** | twin crystal hand crossbows | bare head ALWAYS; glowing teal-blue hair waving weightlessly as if underwater; ICE/ARCANE palette; new armor from the director's pack | face `media/dhpf_refs/v2/dd_card_a.jpg` (+b,c); armor `design_v5/dd_armor_base.jpg`, state `dd_armor_state.jpg`, weapon `dd_weapon.jpg` |
-| **Паладинот** | **AZ (Blagoj)** | legendary two-handed greatsword | face fully visible ALWAYS (open helm); molten-gold rune-tattoo on forearm; gold holy-fire kit | face `media/dhpf_refs/v2/az_card_a.jpg`; armor `design_v5/az_armor_base.jpg`, states `az_armor_state_a.jpg`/`_b.jpg`, weapon `az_weapon.jpg` |
+| **Паладинот** | **AZ (the director)** | legendary two-handed greatsword | face fully visible ALWAYS (open helm); molten-gold rune-tattoo on forearm; gold holy-fire kit | face `media/dhpf_refs/v2/az_card_a.jpg`; armor `design_v5/az_armor_base.jpg`, states `az_armor_state_a.jpg`/`_b.jpg`, weapon `az_weapon.jpg` |
 | **Шупливиот Цвет — бос** | AI-default, ZERO human faces | tendril whips, spore-sacs, root-feet | corpse-flower maw, braided black-green vine body, grey blight ground | `design_v5/Monster/` (7 sheets) |
 
 **DD constants (never change):** bare head — no helmet, hood, bandana, or mask in any

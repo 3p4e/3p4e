@@ -26,13 +26,13 @@
 
 | Role | Power colour | `25` | `26 v2` (canonical) | storyboard `#41` as first built | **LOCKED** |
 | --- | --- | --- | --- | --- | --- |
-| **Ловецот / Demon Hunter** | ❄️ ICE (cold/arcane) | DD | **DD** | ~~Blagoj~~ ✗ | **DD** |
-| **Паладинот / Азулон** | ✨ LIGHT (gold) | Azulon-Master `5b059323…` | **Blagoj** (`Blagoj-shaven` `454a359e…`) | ~~DD~~ ✗ | **Blagoj** |
+| **Ловецот / Demon Hunter** | ❄️ ICE (cold/arcane) | DD | **DD** | ~~the director~~ ✗ | **DD** |
+| **Паладинот / Азулон** | ✨ LIGHT (gold) | Azulon-Master `5b059323…` | **the director** (`the director-shaven` `454a359e…`) | ~~DD~~ ✗ | **the director** |
 | **Мал‘гарот / boss** | 🔥 FIRE (ash) | AI-default | AI-default | AI-default ✓ | **AI-default** |
 
 - The power/colour mapping was **correct** in my storyboard (Hunter=ice, Paladin=gold); only the **face assignment was swapped**.
-- `25` named the paladin **Azulon-Master**; `26 v2` re-cast him to **Blagoj** (the user's own face). v2 wins.
-- **Lock:** DD = Demon Hunter (cold/arcane). Blagoj = Paladin (light). Boss = AI-default, always zero faces.
+- `25` named the paladin **Azulon-Master**; `26 v2` re-cast him to **the director** (the user's own face). v2 wins.
+- **Lock:** DD = Demon Hunter (cold/arcane). the director = Paladin (light). Boss = AI-default, always zero faces.
 
 ### 1b. Ability names — canonicalized to v2 (cold/arcane re-skin)
 
@@ -75,11 +75,11 @@ Full dialogue lock (from `26 v2 §5`, 7 lines):
 
 ## 2. Authoritative locks (single source of truth)
 
-1. **Identity** — DD = Demon Hunter (ice/arcane); Blagoj (`Blagoj-shaven` `454a359e…`) = Paladin/Azulon (gold light); boss AI-default. *(see §1a)*
+1. **Identity** — DD = Demon Hunter (ice/arcane); the director (`the director-shaven` `454a359e…`) = Paladin/Azulon (gold light); boss AI-default. *(see §1a)*
 2. **Elemental triangle** — ice × fire → shatter; light × fire → purify; ice × light → three tag combos. *(26_v2 §0, §2)*
 3. **Ability names** — canonical v2 set only. *(§1b)*
 4. **Beat spine** — 52 shots / 3 phases / 3 combos / 7 dialogue lines. *(26_v2 §4–§5)*
-5. **Identity gates** — DD ≥ 0.50 vs `dd` centroid; Paladin ≥ 0.50 vs `Blagoj-shaven` centroid; boss = 0 faces. *(26_v2 §8)*
+5. **Identity gates** — DD ≥ 0.50 vs `dd` centroid; Paladin ≥ 0.50 vs `the director-shaven` centroid; boss = 0 faces. *(26_v2 §8)*
 6. **DD look** — glowing blue→teal → weightless under-water-waving hair (never static), SUIT is hooded. *(26_v2 §1)*
 6a. **BARE HEAD (absolute)** — DD never wears helmet, hood, bandana, mask, or ANY head/face covering. Reason: the hair IS the signature — teal→blue, magically glowing, waving as if underwater with every move — and it must stay visible in every frame and every asset. Headwear of any kind hides the one feature that makes DD read as DD. (director standing order 2026-11-07)
 6b. **Immortal wings** — Diablo-Immortal-style Immortal wings on the hunter, rendered in his own cold/arcane magic energy color (blue→teal), matching the hair and the entire ICE style system. Present in combat states; scale/wing language per Diablo Immortal Immortal-wing reference (internet-sourced prop reference, CC0/PB).
@@ -115,7 +115,7 @@ Open questions carried over from `26_v2 §10` (still pending user):
 
 ## 4. Corrections applied to the storyboard (#41)
 
-- [x] Cast swapped to match lock: **Hunter = DD**, **Paladin = Blagoj**.
+- [x] Cast swapped to match lock: **Hunter = DD**, **Paladin = the director**.
 - [x] Machine ability terms aligned to v2 (Glacial Aura, Rime Beams, Freeze-and-Sunder, Hoarfrost Judgement, Glacier Form, Avenging Wrath).
 - [ ] D3 „Светлината не се гаси." and a dedicated Combo #2 „Hoarfrost Judgement" beat — **deferred to the 52-shot expansion** (they belong to full-film density, not the 20-shot proof board).
 

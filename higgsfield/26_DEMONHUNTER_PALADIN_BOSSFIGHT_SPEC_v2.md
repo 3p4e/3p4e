@@ -23,7 +23,7 @@ built on that triangle — ice locks, fire consumes, light judges — and on the
 | Role | Identity | Weapon / kit | The look | Source |
 |---|---|---|---|---|
 | **Ловецот — Демоно-ловец (Demon Hunter)** | **DD** | dual infernal crossbows + Immortal wings | **COLD / ARCANE**: white-blue frost, violet-arcane core; hair glowing blue-to-teal neon, constantly waving as if underwater (the world is NOT underwater — the hair moves on its own, suspensor-magic) | `faces/dd_cards_final/` (9 enrolled) · identity_index → `dd` |
-| **Азулон — Паладинот-осветник (Retribution Paladin)** | **Blagoj** (`Blagoj-shaven` `454a359e…`, alt `Blagoj-Base` `f5e2e917…`) | two-handed greatsword | bald, clean-shaven real face + **one-sided molten-gold rune-tattoo** (below); Avenging Wrath = summoned golden wings | `IDENTITY.md` · `CHARACTER_SYSTEM.md` |
+| **Азулон — Паладинот-осветник (Retribution Paladin)** | **the director** (`the director-shaven` `454a359e…`, alt `director-base` `f5e2e917…`) | two-handed greatsword | bald, clean-shaven real face + **one-sided molten-gold rune-tattoo** (below); Avenging Wrath = summoned golden wings | `IDENTITY.md` · `CHARACTER_SYSTEM.md` |
 | **Мал‘гарот — Господарот на Пепелта (boss)** | AI-default | molten whip-arm, forge-core, ember-lever form | fire/ash demon, 3 phase-forms, no real face | original (§3) |
 
 **DD COLD/ARCANE identity (the defining look):**
@@ -90,8 +90,8 @@ DD SUIT base    "demon-hunter plate suit card"  hooded, head covered;
 DD SUIT ult     "Glacier Form suit card"  hood down, full Glacier Form,
                 Immortal wings wide, snowstorm, hair white-blue bloom + teal rings
 
-AZULON FACE     Blagoj — `Blagoj-shaven` 454a359e… (clean-shaven default hero)
-                or `Blagoj-Base` f5e2e917… (neutral 4-view). REMOTE ONLY:
+AZULON FACE     the director — `the director-shaven` 454a359e… (clean-shaven default hero)
+                or `director-base` f5e2e917… (neutral 4-view). REMOTE ONLY:
                 Higgsfield Cloud UUIDs, NOT on local disk. Must be retrieved
                 and centroid-gated before any suit card or keyframe → primary
 AZULON SUIT     "paladin plate suit card"  full helm (head covered);
@@ -322,7 +322,7 @@ Signature VFX: {ability} = {ice/gold surge description}.
 5. **Ability legibility** — each signature matches its VFX (§2) incl. surge pattern for Azulon.
 6. **Ice/light/fire triangle** reads visually: cold shatters, light purifies.
 7. **Group + combo coverage** — ≥1 series where all three fight together + 3 tag combos verified.
-8. **Identity gates** — DD ≥0.50 vs dd centroid; Paladin ≥0.50 vs Blagoj centroid; boss = 0 faces.
+8. **Identity gates** — DD ≥0.50 vs dd centroid; Paladin ≥0.50 vs the director centroid; boss = 0 faces.
 9. **Visual-first** — mute audio, the fight still reads.
 10. **Audio** — spatial SFX + restrained score; Macedonian-only voices; 7 lines.
 11. **DD hair** waves like underwater in every DD shot; **Azulon tattoo** surges per ability.

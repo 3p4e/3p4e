@@ -1,11 +1,11 @@
-# Hero identity: Blagoj Nikolov (use these IDs for every future generation with my face)
+# Hero identity: the director (use these IDs for every future generation with my face)
 
 | Asset | ID | Use with | How |
 |---|---|---|---|
 | **Soul Cinema** (trained, 20 photos) | `b3ba42a8-305b-465a-b867-83432e48687c` | `soul_cinematic` image model only | `generate_image` `model: soul_cinematic`, `soul_id: <id>`, `quality: 2k` |
-| **Reference Element** `Blagoj-face` | `319ccd19-46b7-4d9b-9d51-d74403161d64` | Nano Banana Pro / 2, GPT Image 2, Seedream 4.5 / 5 lite, Cinema Studio Image 2.5, Cinema Studio Video 2 / 3.0, Seedance 2.0, Kling 3.0 (Kling only together with a `start_image`) | put `<<<319ccd19-46b7-4d9b-9d51-d74403161d64>>>` inside the prompt text |
+| **Reference Element** `the director-face` | `319ccd19-46b7-4d9b-9d51-d74403161d64` | Nano Banana Pro / 2, GPT Image 2, Seedream 4.5 / 5 lite, Cinema Studio Image 2.5, Cinema Studio Video 2 / 3.0, Seedance 2.0, Kling 3.0 (Kling only together with a `start_image`) | put `<<<319ccd19-46b7-4d9b-9d51-d74403161d64>>>` inside the prompt text |
 
-Higgsfield also auto-created an element named `Blagoj` (`8519f8e0-4e1e-4a62-89f3-21767456e5ec`) from one training photo. Prefer `Blagoj-face`: it was hand-picked as frontal, eyes open and evenly lit.
+Higgsfield also auto-created an element named `the director` (`8519f8e0-4e1e-4a62-89f3-21767456e5ec`) from one training photo. Prefer `the director-face`: it was hand-picked as frontal, eyes open and evenly lit.
 
 ## Mandatory prompt phrase (verified)
 
@@ -90,7 +90,7 @@ Requirement (B. Nikolov): it **must be the same real person** as in the photos. 
 
 | Asset | ID | Likeness |
 |---|---|---|
-| Element **`Blagoj-shaven`** (use this) | `454a359e-cf57-4a41-b088-6d85b15ed816` | 3 images below |
+| Element **`the director-shaven`** (use this) | `454a359e-cf57-4a41-b088-6d85b15ed816` | 3 images below |
 | A: the real photo, shaved | job `5a95787b-dcd4-4afd-b4b0-f3e3fc9da9aa` | 0.806 |
 | B: frontal, gambeson + gorget | job `1fd0df86-7485-4b9d-816c-5ad5c458f09e` | 0.796 |
 | C: shrine, ¾ | job `33681019-b299-45cf-98b1-41acd06a052c` | 0.788 |

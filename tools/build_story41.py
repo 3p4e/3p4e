@@ -219,7 +219,7 @@ data = dict(
     negative_prompt='cartoon, anime, illustration, low poly, blurry, extra fingers, distorted face, watermark, text, gore, blood spray, child-unfriendly'),
   cast=[
     dict(role='Ловецот / The Hunter', trait='Две пеколни самострели; сино-тиркизни влакна што лебдат; мраз-магија', source='faces/dd_cards_final (9 enrolled) · identity_index→dd', face_lock='DD (заклучување подоцна)'),
-    dict(role='Паладинот / The Paladin', trait='Ќелав, златен вез; лавиринт од руни преку лице/врат/тело; светлосна магија', source='Blagoj-shaven 454a359e · IDENTITY.md/CHARACTER_SYSTEM.md', face_lock='Blagoj (заклучување подоцна)'),
+    dict(role='Паладинот / The Paladin', trait='Ќелав, златен вез; лавиринт од руни преку лице/врат/тело; светлосна магија', source='the director-shaven 454a359e · IDENTITY.md/CHARACTER_SYSTEM.md', face_lock='the director (заклучување подоцна)'),
     dict(role='Мал’гарот / Mal\'garot', trait='Господар на Пепелта; роговидна пепел сенка, огнено јадро, круна од мртви јаглени', source='story-suggested', face_lock='AI-default'),
   ],
   acts=acts,

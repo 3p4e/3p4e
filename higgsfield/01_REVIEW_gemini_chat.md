@@ -1,6 +1,6 @@
 # Review of the Gemini conversation: what holds up and what doesn't
 
-**Prepared for:** Blagoj Nikolov
+**Prepared for:** the director
 **Date:** 2026-10-30
 **Scope:** The four cinematic scenarios, the prompt formats Gemini proposed, the identity ("face") workflow, and the AI model advice. Every technical claim was checked against the live Higgsfield MCP tool specifications in this session [R1]. Every lore claim was checked against the published sourcebooks, with page numbers [R2–R12].
 

@@ -5,7 +5,7 @@
 
 **Runtime:** about 100 s. **Format:** 16:9, 1080p.
 **Style:** photoreal game cinematic. Magic is shown as **long, continuous events** (critique of *The Remembering* v1, 2026-10-30).
-**Hero:** Karsus, the greatest archwizard of Netheril, played by Blagoj Nikolov from **`Blagoj-Base`** (`f5e2e917…`). He is human, so the race layer is empty and likeness is as high as it gets.
+**Hero:** Karsus, the greatest archwizard of Netheril, played by the director from **`director-base`** (`f5e2e917…`). He is human, so the race layer is empty and likeness is as high as it gets.
 
 ## 1. Lore spine (canon; everything else is original)
 - **Netheril** was a human empire of archwizards who lived in **flying cities ("enclaves") carved from inverted mountains**, kept aloft by magical engines called *mythallars*.
@@ -90,7 +90,7 @@ Compare the 3 previews per voice with `tools/voice_stats.py` (pitch, pace, brigh
 
 | Step | Model / tool | Notes |
 |---|---|---|
-| 1. Lock the look | **GPT Image 2.5** (`gpt_image_2_5`, quality high or max, 2k) with reference images: `Blagoj-Base` views, the Karsus costume sheet, the crown, the Enclave | **Must be tested against Nano Banana Pro first**: keep whichever scores higher on `authenticity_check.py` for the hero. Environments have no face, so GPT Image 2.5 can go straight ahead. |
+| 1. Lock the look | **GPT Image 2.5** (`gpt_image_2_5`, quality high or max, 2k) with reference images: `director-base` views, the Karsus costume sheet, the crown, the Enclave | **Must be tested against Nano Banana Pro first**: keep whichever scores higher on `authenticity_check.py` for the hero. Environments have no face, so GPT Image 2.5 can go straight ahead. |
 | 2. Animate | **Seedance 2.5, `omni_reference`, 4-30 s, 1080p**: one clip per set piece, with the keyframes, costume sheet and crown as image references | A 22 s set piece becomes **one** clip, **no seam**. Set `generate_audio: false` (we mix our own). |
 | 2b. Controlled moves | **Kling 3.0 Pro, start + end frame, 3-15 s** | For transitions that need an exact end frame (lit to dark blackout, the stone epitaph) and for the short inserts. |
 | 2c. Cheap iteration | Seedance 2.5 **`draft: true`** (480p), finalised at 1080p only if approved | Judge motion for a fraction of the cost. |
@@ -122,7 +122,7 @@ Images and voices run outside Higgsfield (Gemini key; ElevenLabs).
 1. **A 22 s continuous magic event is the hardest thing to make in AI video.** Two chained 11 s clips can show a seam where they join. Mitigation: the end frame of clip A is literally the start frame of clip B, and I check every join frame by frame. If a join shows, I hide it with a 2 s insert.
 2. **"Every light goes out" is hard to prompt.** Models like to *add* light, not remove it. Mitigation: two keyframes (lit and dark) as start and end, so the model is forced to interpolate the blackout.
 3. **Mystryl as a woman made of light** is my artistic choice. Canon gives no single physical form. It's kept abstract to avoid a "generic goddess" look.
-4. **Your likeness** appears only in the inserts and two push-ins. If those fail the authenticity check, they're re-made from the `Blagoj-Base` views before any video is generated.
+4. **Your likeness** appears only in the inserts and two push-ins. If those fail the authenticity check, they're re-made from the `director-base` views before any video is generated.
 
 ## 10. Approval gate
 Reply **"approved"** (or with changes) on:

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Gate the 4 proof keyframes against DD + Blagoj centroids; build a contact sheet."""
+"""Gate the 4 proof keyframes against DD + the director centroids; build a contact sheet."""
 import sys
 from pathlib import Path
 import cv2
@@ -14,7 +14,7 @@ ROOT = Path('/a0/usr/projects/vast')
 PROOF = ROOT / 'media/dhpf_proof_v3'
 
 DD_CEN = np.load(ROOT / 'faces/dd/centroid.npz')['centroid']
-BL_CEN = np.load(ROOT / 'faces/blagoj/centroid.npz')['centroid']
+BL_CEN = np.load(ROOT / 'faces/the director/centroid.npz')['centroid']
 DD_CEN = DD_CEN / np.linalg.norm(DD_CEN)
 BL_CEN = BL_CEN / np.linalg.norm(BL_CEN)
 

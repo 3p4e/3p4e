@@ -1,6 +1,6 @@
 # Production prompts: four films for Claude Code + Higgsfield MCP
 
-**Hero:** Blagoj Nikolov (trained Soul Cinema identity)
+**Hero:** the director (trained Soul Cinema identity)
 **Format:** 16:9, 4 shots per film, 5–8 s per shot, ~25–30 s per film, silent (score added in post)
 **Background reasoning:** see `01_REVIEW_gemini_chat.md`
 **Identity (verified 2026-10-30):** Soul Cinema `b3ba42a8-305b-465a-b867-83432e48687c`. The Soul fixes the **face** only. Without an explicit description it invented hair, including long hair and earrings. So every HERO LOCK must keep the phrase *"completely shaved bald head, short ginger-brown moustache and light stubble, eyes open"*. Smoke test with it: likeness 0.87 / 0.86 (without it: 0.79 / 0.74 and wrong hair). See `IDENTITY.md`.
@@ -43,7 +43,7 @@ TASK: Train my Soul Cinema identity on Higgsfield and prepare the QC baseline.
 3. Upload the SELECTED 1024px crops from ./face_dataset/ with media_upload -> PUT bytes ->
    media_confirm. Collect the media_id UUIDs.
 
-4. Train: show_characters  action=train  type=soul_cinematic  name="Blagoj"  images=[all media_ids]
+4. Train: show_characters  action=train  type=soul_cinematic  name="the director"  images=[all media_ids]
    Wait until status=ready (about 10 min). Report the soul_id.
 
 5. Identity smoke test: generate_image model=soul_cinematic soul_id=<id> aspect_ratio=16:9 quality=2k

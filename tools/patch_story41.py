@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Apply reconciliation corrections to build_story41.py, then regenerate the HTML storyboard.
-Corrections: casting swap (DD=Hunter/ice, Blagoj=Paladin/light) + canonical v2 ability names.
+Corrections: casting swap (DD=Hunter/ice, the director=Paladin/light) + canonical v2 ability names.
 Also applies two small honesty fixes to 27_MASTER_SPEC.md (combo count)."""
 import pathlib, importlib.util, re, json as J, html as H
 
@@ -9,11 +9,11 @@ p = pathlib.Path('/a0/usr/projects/vast/tools/build_story41.py')
 txt = p.read_text(encoding='utf-8')
 
 repls = [
-    # casting (critical: DD=Hunter/ice, Blagoj=Paladin/light)
-    ("source='ВАСТ canon · в. блегој сет', face_lock='Blagoj (заклучување подоцна)'",
+    # casting (critical: DD=Hunter/ice, the director=Paladin/light)
+    ("source='ВАСТ canon · в. блегој сет', face_lock='the director (заклучување подоцна)'",
      "source='faces/dd_cards_final (9 enrolled) · identity_index→dd', face_lock='DD (заклучување подоцна)'"),
     ("source='ВАСТ canon · в. дд сет', face_lock='DD (заклучување подоцна)'",
-     "source='Blagoj-shaven 454a359e · IDENTITY.md/CHARACTER_SYSTEM.md', face_lock='Blagoj (заклучување подоцна)'"),
+     "source='the director-shaven 454a359e · IDENTITY.md/CHARACTER_SYSTEM.md', face_lock='the director (заклучување подоцна)'"),
     # canonical ability names (machine fields only)
     ("ICE HALO", "Glacial Aura"),
     ("ICE FORM", "Glacier Form"),
