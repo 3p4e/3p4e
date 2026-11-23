@@ -174,7 +174,9 @@ fixed-per-shot seeds, negative_prompt, style_anchor (external refs only)
 ```
 Keyframes    Qwen-Image-Edit-2511 fp8, 50 steps, on Vast (native-FP8 GPU)
 Video        Wan2.1-FLF2V-14B-720P, 8 steps (96% of 20-step motion, ~$0.166/clip)
-Audio        OmniVoice/MOSS-TTS (Macedonian) + ffmpeg assembly; VoxCPM2 for EN
+Audio        MOSS-TTS-v1.5 (Apache-2.0, has Macedonian) + ffmpeg assembly; VoxCPM2 for EN
+             OmniVoice: model weights are CC-BY-NC (non-commercial) -> internal/tests only
+             (checked on the model card 2026-11-23; only its code is Apache-2.0)
 Gates        SFace regression detector + director's eyes (identity),
              frame-diff motion check (no static frames), faceless gate (boss)
 Alternative  MiniMax H3 (open-weights, native audio, FL2VA + Ref2VA) —

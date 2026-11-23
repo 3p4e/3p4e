@@ -321,8 +321,8 @@ STEP 9  (local)  Assemble film + narration + score locally (zero GPU).
 - Faces < ~120px are below gate reliability — three-figure wides need bigger faces or a different gate.
 
 ### TTS (for later assembly)
-- OmniVoice (Apache-2.0, 646 langs incl. Macedonian) — primary.
-- MOSS-TTS-v1.5 (Apache-2.0, Macedonian) — secondary.
+- OmniVoice (code Apache-2.0, but the pre-trained MODEL is CC-BY-NC = non-commercial; 600+ langs incl. Macedonian) — internal/tests only, not for client work (corrected 2026-11-23).
+- MOSS-TTS-v1.5 (Apache-2.0, Macedonian; no Serbian/Albanian) — primary for commercial Macedonian.
 - VoxCPM2 (48kHz) — cloned voice only; Macedonian NOT an official language.
 
 ### Audio / score
