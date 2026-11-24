@@ -111,3 +111,5 @@ Concept videos for pitching, built from Gemini 3 Pro Image keyframes and LTX-2.5
 **Shot 2 keyframe:** A team celebration in a modern office lounge, young colleagues laughing and toasting with coffee cups.
 
 **LTX prompt:** Locked medium shot. The group raises their cups, laughs and one colleague pats another on the back. The happy group holds on the final frame. Photorealistic commercial cinematography, natural light, shallow depth of field, crisp detail, calm premium pacing.
+
+> **Note (2026-11-24):** the KAM concept films were re-branded to **Žito Marketi** (green brand matches the generated green staff uniforms). Pitch them to Žito Marketi instead of KAM.

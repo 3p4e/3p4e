@@ -22,3 +22,8 @@ Comparison set 22/22 done (downloaded by the owner). Main queue 158 clips, ~7.5 
 
 ## Next
 Pull and QC batches 6–10 → cut commercials with VO, logo end card, "concept only" disclaimer and AI label.
+
+## Update 2026-11-24 ~08:30 UTC
+- LTX commercial batch 1 (13 films) and batch 2 (31 films) cut: shots + local-language Gemini VO + end card (logo/name, tagline, concept-only disclaimer, AI label). Scripts: `cut/`, `vo/batch2.py`.
+- **KAM → Žito Marketi:** the generated store staff wear green, KAM's brand is red; Žito Marketi's brand is green (official logo, zito.com.mk), so both KAM films were re-branded to Žito Marketi (new last VO line + end card), no re-render. Use Žito Marketi as the retail prospect for these films.
+- H3: replacement box 62300392 rendering the remaining 117 clips; old box 62239345 (41 clips) blocked by a host fault, Vast support engaged.
