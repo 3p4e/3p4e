@@ -128,7 +128,7 @@ for c in O["companies"]:
     src = f"{S}/final_music/{first}.mp4"; du = float(subprocess.run(["ffprobe","-v","error","-show_entries","format=duration","-of","csv=p=0",src],capture_output=True,text=True).stdout)
     subprocess.run(["ffmpeg","-v","error","-y","-ss",f"{du*0.12:.2f}","-t","8","-i",src,"-vf","scale=1280:-2,fade=t=in:st=0:d=0.5,fade=t=out:st=7.5:d=0.5","-an","-c:v","libx264","-crf","24","-preset","slow","-pix_fmt","yuv420p","-movflags","+faststart",f"{d}/hero.mp4"],check=True)
     subprocess.run(["ffmpeg","-v","error","-y","-ss",f"{du*0.12+1:.2f}","-i",src,"-frames:v","1","-vf","scale=1280:-2","-q:v","4",f"{d}/hero.jpg"],check=True)
-    shutil.copy(f"{S}/offers_pdf/{c['id']}_offer.pdf", f"{d}/offer.pdf"); shutil.copy(f"{S}/brand/logo.png", f"{d}/logo.png")
+    shutil.copy(f"{S}/offers_pdf/{c['id']}_offer.pdf", f"{d}/offer.pdf"); shutil.copy(f"{S}/brand/logo.png", f"{d}/logo.png"); shutil.copy(f"{S}/brand/icon_512.png", f"{d}/icon.png")
     films = ""
     for fid, label in c["films"]:
         shutil.copy(f"{S}/pitch/{fid}_pitch.mp4", f"{d}/{fid}.mp4"); shutil.copy(f"{S}/pitch_9x16/{fid}_pitch_9x16.mp4", f"{d}/{fid}_9x16.mp4")
@@ -144,7 +144,7 @@ for c in O["companies"]:
     title = tx["title"].replace("{c}", c["name"])
     page = f"""<!doctype html><html lang="{L}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow,noarchive,nosnippet"><meta name="referrer" content="no-referrer"><meta name="theme-color" content="{t['bg']}">
-<title>{E(title)} · {E(B['name'])}</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>{E(title)} · {E(B['name'])}</title><link rel="icon" type="image/png" href="icon.png"><link rel="apple-touch-icon" href="icon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <style>{css(t)}</style></head><body>
 <nav><div class="wrap"><img src="logo.png" alt="{E(B['name'])}"><div class="links"><a href="#films">{u['films']}</a><a href="#how">{u['how']}</a><a href="#offer">{u['offer']}</a></div><a class="btn a" href="{wa}">{u['cta']}</a></div></nav>
 <header class="hero"><video autoplay muted loop playsinline poster="hero.jpg" src="hero.mp4"></video>

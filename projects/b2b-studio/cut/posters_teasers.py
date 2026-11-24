@@ -28,6 +28,6 @@ for f in sorted(os.listdir(SRC)):
         f"scale=960:540,drawtext=fontfile={FONTB}:text='{t}':fontsize=40:fontcolor=white:x=30:y=h-70:box=1:boxcolor=black@0.45:boxborderw=10,fade=t=in:st=0:d=0.3,fade=t=out:st=5.6:d=0.4",
         "-an","-c:v","libx264","-crf","23","-pix_fmt","yuv420p","-movflags","+faststart",mp], check=True)
     gif = f"{OUT}/{n}_teaser6s.gif"
-    subprocess.run(["ffmpeg","-v","error","-y","-i",mp,"-vf","fps=12,scale=480:-1:flags=lanczos,split[a][b];[a]palettegen=max_colors=128[p];[b][p]paletteuse=dither=bayer:bayer_scale=4",gif], check=True)
+    subprocess.run(["ffmpeg","-v","error","-y","-i",mp,"-vf","fps=10,scale=400:-1:flags=lanczos,split[a][b];[a]palettegen=max_colors=96[p];[b][p]paletteuse=dither=bayer:bayer_scale=4",gif], check=True)
     print("OK", n, flush=True)
 print("PREVIEWS_DONE")
