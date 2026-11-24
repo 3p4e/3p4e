@@ -1,6 +1,6 @@
 # Studio brand
 
-- `mark.svg`: studio mark, traced from the founder's hand-drawn triangle (play-button) tattoo. Vector, single path, `currentColor` fill.
+- `mark.svg`: studio mark, traced from the close-up photo of the founder's hand-drawn triangle (play-button) tattoo (`source_tattoo_closeup.png`). Vector, single path, `currentColor` fill.
 - `mark_bold.svg`: thicker strokes for small sizes (favicon, app icon, watermark).
 - `logo.png`: 1200×400 lockup (gold mark + name), transparent background. Rendered by `render_logo.js` from `logo.html` and `brand.json`.
 - `mark_gold.png`, `mark_white.png`, `mark_black.png`: 1024 px mark, transparent background.
