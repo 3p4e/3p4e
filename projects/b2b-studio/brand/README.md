@@ -9,9 +9,10 @@
 
 ## Name and type
 
-- Name: **DOGMA** (Latin) / **ДОГМА** (Cyrillic). Lockup: `DOGMA` + `STUDIO · SKOPJE`.
-- Typeface: **Russo One** (Google Fonts, SIL Open Font License), one weight, for the wordmark, video titles and PDF headings. Covers Macedonian/Serbian Cyrillic and Albanian/Serbian Latin. File in `fonts/`.
+- Name: **BIG DOGMA** (Latin) / **БИГ ДОГМА** (Cyrillic, if needed). Lockup: `BIG DOGMA` + `AI STUDIO  |  Skopje`.
+- Monogram **BD**: the **D** is the original tattoo triangle (`mark_D_single.svg`, traced from `source_tattoo_closeup.png`); the **B** is two smaller, newly drawn triangles in the same hand-drawn style, stacked, each different (`gen_b_triangles.py`, option 1: seeds 11 and 23). Combined mark: `mark.svg` (single path), `mark_bold.svg` for small sizes.
+- Typeface: **Russo One** (Google Fonts, SIL Open Font License), one weight, for the wordmark, video titles and PDF headings. File in `fonts/`.
 
 ## Animated logo (`../fx/dogma_logo.js`)
 
-The mark ignites stroke by stroke (red-hot -> white-hot -> gold), then glows like heated metal and cycles through three colours (gold -> arcane blue -> violet). Each colour change lands on a power burst: shockwave ring, light rays, spark shower and a glint across the wordmark. Embers drift throughout. 3.5 s intro, then a seamless 12 s loop. The same code runs live on the pitch sites (preloader, nav mark) and renders the video exports via `fx/render_logo_anim.js` + `fx/export.sh`.
+The monogram ignites stroke by stroke (red-hot -> white-hot -> gold), then glows like heated metal and cycles through three colours (gold -> arcane blue -> violet). Each colour change lands on a power burst: shockwave ring, light rays, spark shower and a glint across the wordmark. Embers drift throughout. 3.5 s intro, then a seamless 12 s loop. The same code runs live on the pitch sites (preloader, nav mark) and renders the video exports via `fx/render_logo_anim.js` + `fx/export.sh`.

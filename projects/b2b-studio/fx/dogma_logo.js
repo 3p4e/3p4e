@@ -29,20 +29,22 @@
   function bursts(t) { const out = []; if (t < INTRO) return out; const k = Math.floor((t - INTRO) / SEG); for (let j = Math.max(0, k - 1); j <= k; j++) out.push(INTRO + j * SEG); return out; }
 
   function DogmaLogo(canvas, o) {
-    o = Object.assign({ layout: 'lockup', transparent: false, font: 'Russo', title: 'DOGMA', sub: 'STUDIO · SKOPJE', lite: false, bg: '#0d0d0f' }, o || {});
+    o = Object.assign({ layout: 'lockup', transparent: false, font: 'Russo', title: 'BIG DOGMA', sub: 'AI STUDIO  |  Skopje', lite: false, bg: '#0d0d0f' }, o || {});
     const ctx = canvas.getContext('2d');
     let W, H, mw, mh, mx, my, cx, cy, mc, mctx, img, A, IG, PH, idx, samples, igSamples, embers, fs, tx, ty, tc, tctx;
     const path = new Path2D(o.d);
     function setup() {
       W = canvas.width; H = canvas.height;
       const lock = o.layout === 'lockup';
-      mh = Math.round(lock ? H * 0.5 : H * 0.8); mw = Math.round(mh * o.vbW / o.vbH);
-      fs = Math.round(mh * 0.36);
-      ctx.font = `${fs}px ${o.font}`; ctx.letterSpacing = `${Math.round(fs * 0.06)}px`;
-      const tw = lock ? ctx.measureText(o.title).width : 0, gap = lock ? mh * 0.16 : 0;
+      mh = Math.round(lock ? H * 0.5 : H * 0.8); let tw = 0, gap = 0;
+      for (let it = 0; it < 4; it++) {   // shrink until the whole lockup (or the mark alone) fits 88% of the width
+        mw = Math.round(mh * o.vbW / o.vbH); fs = Math.round(mh * 0.36);
+        ctx.font = `${fs}px ${o.font}`; ctx.letterSpacing = `${Math.round(fs * 0.06)}px`;
+        tw = lock ? ctx.measureText(o.title).width : 0; gap = lock ? mh * 0.16 : 0;
+        const tot = mw + gap + tw; if (tot <= W * 0.88) break; mh = Math.floor(mh * (W * 0.88) / tot); }
       mx = Math.round((W - (mw + gap + tw)) / 2); my = Math.round((H - mh) / 2);
       tx = mx + mw + gap; ty = H / 2 + fs * 0.12;
-      cx = mx + mw * 0.42; cy = my + mh * 0.5;
+      cx = mx + mw * 0.5; cy = my + mh * 0.5;
       mc = document.createElement('canvas'); mc.width = mw; mc.height = mh; mctx = mc.getContext('2d');
       mctx.setTransform(mw / o.vbW, 0, 0, mh / o.vbH, 0, 0); mctx.fillStyle = '#fff'; mctx.fill(path, 'evenodd'); mctx.setTransform(1, 0, 0, 1, 0, 0);
       const src = mctx.getImageData(0, 0, mw, mh).data; img = mctx.createImageData(mw, mh);
@@ -117,7 +119,7 @@
         tctx.clearRect(0, 0, W, H); tctx.globalCompositeOperation = 'source-over';
         tctx.font = `${fs}px ${o.font}`; tctx.letterSpacing = `${Math.round(fs * (0.06 + 0.2 * (1 - ft)))}px`; tctx.textBaseline = 'alphabetic';
         tctx.fillStyle = '#fff'; tctx.fillText(o.title, tx, ty); const tw = tctx.measureText(o.title).width;
-        tctx.font = `${Math.round(fs * 0.2)}px ${o.font}`; tctx.letterSpacing = `${Math.round(fs * 0.075)}px`; tctx.fillStyle = rgba(acc, 1); tctx.fillText(o.sub, tx + fs * 0.02, ty + fs * 0.42);
+        tctx.font = `${Math.round(fs * 0.26)}px ${o.font}`; tctx.letterSpacing = `${Math.round(fs * 0.05)}px`; tctx.fillStyle = rgba(acc, 1); tctx.fillText(o.sub, tx + fs * 0.02, ty + fs * 0.46);
         const lb = bl.filter(tb => t >= tb).pop(); const dt = lb === undefined ? 9 : t - lb;
         if (dt < 1.1) { const gx = tx - tw * 0.3 + tw * 1.6 * (dt / 1.1), g = tctx.createLinearGradient(gx - tw * 0.12, 0, gx + tw * 0.12, 0);
           g.addColorStop(0, 'rgba(255,255,255,0)'); g.addColorStop(0.5, rgba(mix(acc, [255, 255, 255], 0.5), 1)); g.addColorStop(1, 'rgba(255,255,255,0)');

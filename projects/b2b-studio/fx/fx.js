@@ -19,7 +19,7 @@
   }
   // nav mark: always-on glow, colour cycle and bursts
   const nm = $('.brand canvas');
-  if (nm) { nm.width = 96; nm.height = 96; fontReady.then(() => { const L = logo(nm, { layout: 'mark', transparent: true, lite: true }); if (RM) L.render(DogmaLogo.INTRO + 2); else L.play(DogmaLogo.INTRO + 0.5); }); }
+  if (nm) { nm.width = 148; nm.height = 92; fontReady.then(() => { const L = logo(nm, { layout: 'mark', transparent: true, lite: true }); if (RM) L.render(DogmaLogo.INTRO + 2); else L.play(DogmaLogo.INTRO + 0.5); }); }
   // nav background on scroll
   const nav = $('nav'); addEventListener('scroll', () => nav.classList.toggle('s', scrollY > 40), { passive: true });
   // hero embers
