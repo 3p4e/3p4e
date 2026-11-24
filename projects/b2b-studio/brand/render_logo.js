@@ -1,6 +1,6 @@
 const { chromium } = require('playwright'); const fs = require('fs');
 const b = JSON.parse(fs.readFileSync(__dirname + '/brand.json'));
-const ff = [[700,'Oswald-700'],[400,'Oswald-400']].map(([w,n]) => `@font-face{font-family:'Oswald';font-weight:${w};src:url(data:font/ttf;base64,${fs.readFileSync(__dirname + '/fonts/' + n + '.ttf').toString('base64')}) format('truetype')}`).join('');
+const ff = [[400,'RussoOne-400']].map(([w,n]) => `@font-face{font-family:'Russo';font-weight:${w};src:url(data:font/ttf;base64,${fs.readFileSync(__dirname + '/fonts/' + n + '.ttf').toString('base64')}) format('truetype')}`).join('');
 const mark = fs.readFileSync(__dirname + '/mark.svg', 'utf8'), bold = fs.readFileSync(__dirname + '/mark_bold.svg', 'utf8');
 (async () => {
   const br = await chromium.launch(); const p = await br.newPage({ viewport: { width: 1200, height: 400 } });

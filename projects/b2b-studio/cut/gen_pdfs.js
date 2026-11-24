@@ -3,7 +3,7 @@ const { chromium } = require('playwright'); const fs = require('fs'); const path
 const S = '/tmp/claude-0/-home-user-3p4e/50442171-da10-52d9-9948-b5cc07f6bc8a/scratchpad';
 const O = JSON.parse(fs.readFileSync(S + '/cut/offers.json')); const B = JSON.parse(fs.readFileSync(S + '/brand/brand.json'));
 const b64 = f => 'data:image/' + (f.endsWith('.png') ? 'png' : 'jpeg') + ';base64,' + fs.readFileSync(f).toString('base64');
-const OSW = w => 'data:font/ttf;base64,' + fs.readFileSync(S + '/brand/fonts/Oswald-' + w + '.ttf').toString('base64');
+const OSW = w => 'data:font/ttf;base64,' + fs.readFileSync(S + '/brand/fonts/RussoOne-400.ttf').toString('base64');
 const OUT = S + '/offers_pdf'; fs.mkdirSync(OUT, { recursive: true });
 (async () => {
   const br = await chromium.launch(); const pg = await br.newPage();
@@ -11,10 +11,10 @@ const OUT = S + '/offers_pdf'; fs.mkdirSync(OUT, { recursive: true });
     const t = O.text[c.lang], p = O.prices[c.lang], f = x => x.replace('{c}', c.name);
     const posters = c.films.map(([id, label]) => `<div class="film"><img src="${b64(`${S}/previews/${id}_poster.jpg`)}"><div>${label}</div></div>`).join('');
     const html = `<!doctype html><html><head><meta charset="utf-8"><style>
-      @font-face{font-family:Oswald;font-weight:600;src:url(${OSW(600)})} @page{size:A4;margin:0} body{margin:0;font-family:'DejaVu Sans',sans-serif;color:#1d1d22;font-size:12.2px}
+      @font-face{font-family:Russo;font-weight:400;src:url(${OSW(600)})} @page{size:A4;margin:0} body{margin:0;font-family:'DejaVu Sans',sans-serif;color:#1d1d22;font-size:12.2px}
       .top{background:${B.bg};color:#fff;padding:22px 34px;display:flex;align-items:center;justify-content:space-between}
       .top img{height:54px} .top .c{font-size:11px;color:#bbb;text-align:right;line-height:1.6}
-      .wrap{padding:22px 34px} h1{font-family:Oswald;font-weight:600;font-size:30px;margin:4px 0 8px;letter-spacing:.5px} h2{font-family:Oswald;font-weight:600;font-size:16px;margin:18px 0 8px;color:#b7791f;text-transform:uppercase;letter-spacing:1px}
+      .wrap{padding:22px 34px} h1{font-family:Russo;font-weight:400;font-size:30px;margin:4px 0 8px;letter-spacing:.5px} h2{font-family:Russo;font-weight:400;font-size:16px;margin:18px 0 8px;color:#b7791f;text-transform:uppercase;letter-spacing:1px}
       .intro{font-size:13px;line-height:1.55} .films{display:flex;gap:14px} .film{flex:1;font-size:11.5px;font-weight:bold} .film img{width:100%;border-radius:8px;display:block;margin-bottom:5px}
       table{width:100%;border-collapse:collapse} td{padding:9px 10px;border-bottom:1px solid #eee;vertical-align:top} td.p{font-weight:bold;white-space:nowrap;color:#b7791f;text-align:right}
       td.n{font-weight:bold;width:120px} .small{font-size:10.5px;color:#666;line-height:1.5} .cta{margin-top:18px;background:#fff7e0;border-left:5px solid ${B.accent};padding:12px 16px;font-size:13.5px}

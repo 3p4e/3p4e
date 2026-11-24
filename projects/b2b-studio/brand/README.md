@@ -10,5 +10,8 @@
 ## Name and type
 
 - Name: **DOGMA** (Latin) / **ДОГМА** (Cyrillic). Lockup: `DOGMA` + `STUDIO · SKOPJE`.
-- Typeface: **Oswald** (Google Fonts, SIL Open Font License): Bold 700 for the wordmark, SemiBold 600 for video titles and PDF headings, Regular 400 for small lines. Covers Macedonian/Serbian Cyrillic and Albanian/Serbian Latin (ѓ ќ ѕ џ љ њ ј š ć č ž đ ç ë). Files in `fonts/`.
-- Why: tall condensed capitals read as film titles and credits; the strict letterforms contrast with the raw hand-drawn mark (rule vs. gesture).
+- Typeface: **Russo One** (Google Fonts, SIL Open Font License), one weight, for the wordmark, video titles and PDF headings. Covers Macedonian/Serbian Cyrillic and Albanian/Serbian Latin. File in `fonts/`.
+
+## Animated logo (`../fx/dogma_logo.js`)
+
+The mark ignites stroke by stroke (red-hot -> white-hot -> gold), then glows like heated metal and cycles through three colours (gold -> arcane blue -> violet). Each colour change lands on a power burst: shockwave ring, light rays, spark shower and a glint across the wordmark. Embers drift throughout. 3.5 s intro, then a seamless 12 s loop. The same code runs live on the pitch sites (preloader, nav mark) and renders the video exports via `fx/render_logo_anim.js` + `fx/export.sh`.
