@@ -175,7 +175,7 @@ open(f"{S}/pitch_site/nginx.conf", "w").write("""server {
   add_header X-Content-Type-Options "nosniff" always;
   location = / { return 404; }
   location = /robots.txt { }
-  location ~ ^/[A-Za-z0-9_-]{8,}/ { try_files $uri $uri/index.html =404; expires 1h; }
+  location ~ "^/[A-Za-z0-9_-]{8,}/" { try_files $uri $uri/index.html =404; expires 1h; }
   location / { return 404; }
 }
 """)
