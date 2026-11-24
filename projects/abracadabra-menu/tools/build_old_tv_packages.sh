@@ -14,7 +14,9 @@ cp usb-old-tv/УПАТСТВО_INSTRUCTIONS.html "$OUT/ABRACADABRA_OLD_TV/"
 cp admin.html menu-data.js cinematic-board.html "$OUT/PRICE_EDITOR/"
 [ -d assets/css ] && cp -r assets/css "$OUT/PRICE_EDITOR/assets/" || true
 cp -r assets/fonts assets/logo.png assets/mascot_day.png assets/mascot_night.png assets/stage_day.jpg assets/stage_night.jpg "$OUT/PRICE_EDITOR/assets/"
-cp assets/clip-map-ltx25.js "$OUT/PRICE_EDITOR/assets/"
+cp assets/clip-map-ltx25.js assets/clip-map-v3.js "$OUT/PRICE_EDITOR/assets/"
+mkdir -p "$OUT/PRICE_EDITOR/assets/video/v3"
+for f in assets/video/v3/*.mp4; do cp "$f" "$OUT/PRICE_EDITOR/assets/video/v3/"; done
 for n in bg_day bg_night wand_idle_day wand_idle_night wand_burger wand_waffle wand_wrap fx_slash cine_awakening_day cine_neon_night cine_summon_burger cine_summon_waffle cine_summon_wrap; do
   cp "assets/video/ltx25/$n.mp4" "$OUT/PRICE_EDITOR/assets/video/ltx25/"
 done
