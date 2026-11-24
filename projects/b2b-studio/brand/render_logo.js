@@ -1,10 +1,11 @@
 const { chromium } = require('playwright'); const fs = require('fs');
 const b = JSON.parse(fs.readFileSync(__dirname + '/brand.json'));
+const ff = [[700,'Oswald-700'],[400,'Oswald-400']].map(([w,n]) => `@font-face{font-family:'Oswald';font-weight:${w};src:url(data:font/ttf;base64,${fs.readFileSync(__dirname + '/fonts/' + n + '.ttf').toString('base64')}) format('truetype')}`).join('');
 const mark = fs.readFileSync(__dirname + '/mark.svg', 'utf8'), bold = fs.readFileSync(__dirname + '/mark_bold.svg', 'utf8');
 (async () => {
   const br = await chromium.launch(); const p = await br.newPage({ viewport: { width: 1200, height: 400 } });
-  const html = fs.readFileSync(__dirname + '/logo.html', 'utf8').replace('MARK_SVG', mark).replace('NAME_SHORT', b.name_short).replace('CITY', b.city);
-  await p.setContent(html); await p.screenshot({ path: __dirname + '/logo.png', omitBackground: true });
+  const html = fs.readFileSync(__dirname + '/logo.html', 'utf8').replace('FONTFACES', ff).replace('MARK_SVG', mark).replace('NAME_SHORT', b.name_short).replace('CITY', b.subline || b.city);
+  await p.setContent(html); await p.evaluate(() => document.fonts.ready); await p.waitForTimeout(300); await p.screenshot({ path: __dirname + '/logo.png', omitBackground: true });
   // mark-only assets: gold, white, black (large), bold gold square icon for favicon / watermark
   for (const [name, col, svg, size] of [['mark_gold', b.accent, mark, 1024], ['mark_white', '#ffffff', mark, 1024], ['mark_black', '#111111', mark, 1024], ['icon_512', b.accent, bold, 512]]) {
     const q = await br.newPage({ viewport: { width: size, height: size } });

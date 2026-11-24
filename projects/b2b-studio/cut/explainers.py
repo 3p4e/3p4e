@@ -2,7 +2,7 @@
 import os, json, subprocess
 S = "/tmp/claude-0/-home-user-3p4e/50442171-da10-52d9-9948-b5cc07f6bc8a/scratchpad"
 OUT = f"{S}/explainers"; TMP = f"{S}/cut/tmp_expl"; os.makedirs(OUT, exist_ok=True); os.makedirs(TMP, exist_ok=True)
-FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"; FONTB = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"; LOGO = f"{S}/brand/logo.png"
+FONT = "/tmp/claude-0/-home-user-3p4e/50442171-da10-52d9-9948-b5cc07f6bc8a/scratchpad/brand/fonts/Oswald-400.ttf"; FONTB = "/tmp/claude-0/-home-user-3p4e/50442171-da10-52d9-9948-b5cc07f6bc8a/scratchpad/brand/fonts/Oswald-600.ttf"; LOGO = f"{S}/brand/logo.png"
 B = json.load(open(f"{S}/brand/brand.json"))
 def esc(t): return t.replace("\\","\\\\").replace(":","\\:").replace("'","\u2019").replace("%","\\%").replace(",","\\,")
 def run(a): subprocess.run(a, check=True)

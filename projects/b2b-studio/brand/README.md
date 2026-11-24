@@ -6,3 +6,9 @@
 - `mark_gold.png`, `mark_white.png`, `mark_black.png`: 1024 px mark, transparent background.
 - `icon_512.png`: app icon / favicon (bold mark on the studio background).
 - Name, city, contacts and colours come from `brand.json` (still placeholders: `placeholder: true`).
+
+## Name and type
+
+- Name: **DOGMA** (Latin) / **ДОГМА** (Cyrillic). Lockup: `DOGMA` + `STUDIO · SKOPJE`.
+- Typeface: **Oswald** (Google Fonts, SIL Open Font License): Bold 700 for the wordmark, SemiBold 600 for video titles and PDF headings, Regular 400 for small lines. Covers Macedonian/Serbian Cyrillic and Albanian/Serbian Latin (ѓ ќ ѕ џ љ њ ј š ć č ž đ ç ë). Files in `fonts/`.
+- Why: tall condensed capitals read as film titles and credits; the strict letterforms contrast with the raw hand-drawn mark (rule vs. gesture).

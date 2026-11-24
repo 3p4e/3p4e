@@ -3,7 +3,7 @@
 import os, sys, json, subprocess
 S = "/tmp/claude-0/-home-user-3p4e/50442171-da10-52d9-9948-b5cc07f6bc8a/scratchpad"
 SRC = f"{S}/final_music"; OUT = f"{S}/previews"; os.makedirs(OUT, exist_ok=True)
-LOGO = f"{S}/brand/logo.png"; FONTB = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+LOGO = f"{S}/brand/logo.png"; FONTB = "/tmp/claude-0/-home-user-3p4e/50442171-da10-52d9-9948-b5cc07f6bc8a/scratchpad/brand/fonts/Oswald-600.ttf"
 TITLES = {"zito_commercial": "Жито маркети", "zito_opening_film": "Жито маркети", "alkaloid_commercial": "Алкалоид", "alkaloid_employer_film": "Алкалоид · Кариера",
  "replek_commercial": "Реплек", "replek_export_film": "Реплек · Извоз", "vincinni_family_ad": "Vincinni", "vincinni_factory_ad": "Vincinni · Фабрика",
  "foton_tunland_v9_specs": "Foton Tunland V9", "foton_showreel_v2": "Foton Македонија", "bw_commercial": "Beograd na vodi", "bw_riverside_film": "Beograd na vodi",

@@ -5,7 +5,7 @@ S = "/tmp/claude-0/-home-user-3p4e/50442171-da10-52d9-9948-b5cc07f6bc8a/scratchp
 B = json.load(open(f"{S}/brand/brand.json")); LOGO = f"{S}/brand/logo.png"
 SRC = f"{S}/final_music"; OUT = f"{S}/pitch"; VOUT = f"{S}/pitch_9x16"; TMP = f"{S}/cut/tmp_pitch"
 for d in (OUT, VOUT, TMP): os.makedirs(d, exist_ok=True)
-FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"; FONTB = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
+FONT = "/tmp/claude-0/-home-user-3p4e/50442171-da10-52d9-9948-b5cc07f6bc8a/scratchpad/brand/fonts/Oswald-400.ttf"; FONTB = "/tmp/claude-0/-home-user-3p4e/50442171-da10-52d9-9948-b5cc07f6bc8a/scratchpad/brand/fonts/Oswald-600.ttf"
 sys.path.insert(0, f"{S}/vo"); from vo_lines import VO; from batch2 import CUTS
 LANG = {f"{k}_commercial": v[0] for k, v in VO.items()}
 LANG.update({"zito_commercial": "mk", "vincinni_family_ad": "mk", "vincinni_factory_ad": "mk", "foton_tunland_v9_specs": "mk", "studio_showreel_ltx": "mk"})
