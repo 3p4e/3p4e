@@ -29,7 +29,14 @@ for pair in sys.argv[2:]:
     B = crop(B)
     if os.environ.get("INK"):                                     # ink pooling like the photo D: blur + lower threshold fills the acute corners
         sg = float(os.environ.get("INK_SIGMA", 9)); th = float(os.environ.get("INK_TH", .42))   # where strokes cross; parallel lines stay apart
-        B = crop(cv2.GaussianBlur(np.pad(B, 80).astype(np.float32), (0, 0), sg) > th)
+        if os.environ.get("INK") == "net":                        # heavy 'saturated' look: strokes joined along their directions into an ink net
+            def lk(angle, L):
+                k = np.zeros((L, L), np.uint8); c = L // 2; dx, dy = np.cos(np.radians(angle)), -np.sin(np.radians(angle))
+                cv2.line(k, (int(round(c - dx * c)), int(round(c - dy * c))), (int(round(c + dx * c)), int(round(c + dy * c))), 1, 1); return k
+            b8 = np.pad(B.astype(np.uint8), 80); j = b8.copy()
+            for ang in list(range(-44, -26, 4)) + list(range(28, 46, 4)) + list(range(82, 100, 4)): j |= cv2.morphologyEx(b8, cv2.MORPH_CLOSE, lk(ang, 67))
+            B = crop(cv2.GaussianBlur(j.astype(np.float32), (0, 0), 5.4) > .5)
+        else: B = crop(cv2.GaussianBlur(np.pad(B, 80).astype(np.float32), (0, 0), sg) > th)
     # place B left of the D, vertically centred on the D, as close as the gap allows
     by = max(0, (DH - B.shape[0]) // 2); Bdil = cv2.dilate(B.astype(np.uint8), ker) > 0
     Hc = max(DH, by + B.shape[0]) + GAP

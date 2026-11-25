@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BIG DOGMA logo FX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d0d0f;--fg:#eee;--mu:#9a9aa3;--ac:#f2c14e}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.4 system-ui,sans-serif;min-height:100vh;display:flex;flex-direction:column}
+body.chk{background:repeating-conic-gradient(#2a2a30 0 25%,#1b1b20 0 50%) 0 0/28px 28px}
+header{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:12px 16px}
+h1{font:400 18px "Russo One",sans-serif;margin:0 10px 0 0;letter-spacing:.5px}
+button,select{background:#1d1d22;color:var(--fg);border:1px solid #33333a;border-radius:8px;padding:7px 11px;font:inherit;cursor:pointer}
+button:hover{border-color:var(--ac)}
+#name{font-weight:600;color:var(--ac)}#cat{color:var(--mu);font-size:13px}
+#stage{flex:1;min-height:60vh;position:relative}
+</style>
+</head>
+<body>
+<header>
+  <h1>BIG DOGMA · logo FX</h1>
+  <button id="prev" aria-label="Previous animation">◀</button><button id="next" aria-label="Next animation">▶</button>
+  <span><span id="num"></span> <span id="name"></span> <span id="cat"></span></span>
+  <select id="pick" aria-label="Jump to animation"></select>
+  <button id="bg">Checkerboard</button><button id="txt">Text on/off</button>
+</header>
+<div id="stage"></div>
+<script src="mark_data.js"></script>
+<script src="logo_fx.js"></script>
+<script>
+const q = new URLSearchParams(location.search), stage = document.getElementById('stage');
+let fx, text = q.get('text') !== '0';
+function mount(i) {
+  stage.innerHTML = '';
+  fx = DogmaLogoFX.mount(stage, { text: text ? 'BIG DOGMA' : '', paused: q.has('qc'), onchange: (e, i, n) => {
+    document.getElementById('num').textContent = `${i + 1}/${n}`; document.getElementById('name').textContent = e.name; document.getElementById('cat').textContent = e.cat;
+    document.getElementById('pick').value = i; } });
+  if (i != null) fx.next(i);
+}
+const pick = document.getElementById('pick');
+DogmaLogoFX.effects.forEach((e, i) => pick.add(new Option(`${i + 1}. ${e.name}`, i)));
+pick.onchange = () => fx.next(+pick.value);
+document.getElementById('prev').onclick = () => fx.next(fx.i - 1);
+document.getElementById('next').onclick = () => fx.next(fx.i + 1);
+document.getElementById('bg').onclick = () => document.body.classList.toggle('chk');
+document.getElementById('txt').onclick = () => { text = !text; const i = fx.i; mount(i); };
+mount(q.has('i') ? +q.get('i') : null);
+window.FX = () => fx;
+</script>
+</body>
+</html>

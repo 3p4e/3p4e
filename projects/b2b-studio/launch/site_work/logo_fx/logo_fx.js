@@ -27,15 +27,16 @@
   // ---------- engine ----------
   class FX {
     constructor(el, o) {
-      this.o = Object.assign({ color: '#f2c14e', text: 'BIG DOGMA', font: 'Russo One', mode: 'sequence', only: null, dur: 1, pad: .14, textRoom: .2, onchange: null }, o || {});
-      this.cv = document.createElement('canvas'); this.cv.style.cssText = 'width:100%;height:100%;display:block;background:transparent;pointer-events:none';
+      this.o = Object.assign({ color: '#f2c14e', text: 'BIG DOGMA', font: 'Russo One', mode: 'sequence', only: null, dur: 1, pad: .08, textRoom: .13, onchange: null }, o || {});
+      if (getComputedStyle(el).position === 'static') el.style.position = 'relative';
+      this.cv = document.createElement('canvas'); this.cv.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;display:block;background:transparent;pointer-events:none';
       this.cv.setAttribute('aria-hidden', 'true'); el.appendChild(this.cv); this.c = this.cv.getContext('2d');
       this.off = document.createElement('canvas'); this.oc = this.off.getContext('2d');
       this.fc = document.createElement('canvas'); this.fcx = this.fc.getContext('2d');
       this.path = new Path2D(M.d); this.list = EFFECTS.filter(e => !this.o.only || this.o.only.includes(e.name));
       this.i = -1; this.next(); this.ro = new ResizeObserver(() => this.resize()); this.ro.observe(el); this.resize();
       this.reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-      this.raf = requestAnimationFrame(t => this.frame(t));
+      if (!this.o.paused) this.raf = requestAnimationFrame(t => this.frame(t));
       document.addEventListener('visibilitychange', () => { if (!document.hidden) this.t0 = performance.now() - this.el * 1000; });
     }
     resize() {
@@ -45,6 +46,7 @@
       this.k = Math.min(aw / VB[2], ah / VB[3]); this.bw = VB[2] * this.k; this.bh = VB[3] * this.k;
       this.ox = (this.W - this.bw) / 2; this.oy = (this.H * (1 - tr) - this.bh) / 2 + this.H * this.o.pad * .25;
       this.ty = this.oy + this.bh + this.H * tr * .55; this.ts = Math.min(this.H * tr * .5, this.W * .085);
+      if (this.o.paused && this.e && this.lastNow != null) this.draw(this.lastNow);   // resizing clears the canvas
     }
     next(i) {
       const n = this.list.length; this.i = i != null ? (i + n) % n : this.o.mode === 'random' ? Math.floor(Math.random() * n) : (this.i + 1) % n;
@@ -52,10 +54,15 @@
       if (this.o.onchange) this.o.onchange(this.e, this.i, n);
     }
     mt(c) { c.setTransform(this.k, 0, 0, this.k, this.ox - VB[0] * this.k, this.oy - VB[1] * this.k); }   // mark units -> device px
+    renderAt(i, sec) { this.resize(); this.next(i); this.t0 = 0; this.draw(sec * 1000); }        // deterministic frame for QC / thumbnails
     frame(now) {
       this.raf = requestAnimationFrame(t => this.frame(t));
       const e = this.e, dur = (e.dur || 7) * this.o.dur; this.el = (now - this.t0) / 1000;
       if (this.el >= dur) { this.next(); return; }
+      this.draw(now);
+    }
+    draw(now) {
+      this.lastNow = now; const e = this.e, dur = (e.dur || 7) * this.o.dur; this.el = (now - this.t0) / 1000;
       const c = this.c; c.setTransform(1, 0, 0, 1, 0, 0); c.clearRect(0, 0, this.W, this.H);
       const p = this.el / dur, env = { fx: this, c, t: this.el, p, dur, W: this.W, H: this.H, k: this.k, st: this.st,
         f: ss(0, .13, p) * (1 - ss(.86, 1, p)),                     // effect intensity envelope (0 at both ends)
@@ -100,6 +107,19 @@
       });
       c.restore();
     }
+    skin(i) {
+      const L = window.DOGMA_SKINS; if (!L || !L.length) return null; i = ((i % L.length) + L.length) % L.length;
+      const k = L[i]; if (!k.p) k.p = new Path2D(k.d); return k;
+    }
+    // draw variant i (falls back to the main mark) in mark units; sx = horizontal squash for flips
+    drawSkin(i, a = 1, col, c = this.c, sx = 1, glow = 0) {
+      const k = this.skin(i); if (!k) return this.mark(a, col, c, glow);
+      if (a <= 0) return; c.save(); this.mt(c); const cx = VB[0] + VB[2] / 2, cy = VB[1] + VB[3] / 2, s = Math.min(VB[2] / k.vb[2], VB[3] / k.vb[3]);
+      c.translate(cx, cy); c.scale(s * sx, s); c.translate(-(k.vb[0] + k.vb[2] / 2), -(k.vb[1] + k.vb[3] / 2));
+      c.globalAlpha = a; c.fillStyle = col || this.o.color; if (glow) { c.shadowColor = col || this.o.color; c.shadowBlur = glow * this.dpr; }
+      c.fill(k.p, 'evenodd'); c.restore();
+    }
+    skinIndex(name) { const L = window.DOGMA_SKINS || []; const i = L.findIndex(k => k.name === name); return i < 0 ? 0 : i; }
     // exact mark while still, segments while moving
     lines(env, tf, base, glow) { const m = env.m; this.mark(1 - ss(0, .08, m)); if (m > 0) { const c = env.c; c.save(); c.globalAlpha = ss(0, .08, m); this.segs(env, tf, base, glow); c.restore(); } }
     text(env, a = 1, col, opts = {}) {
@@ -133,9 +153,9 @@
   const FIRE = lut([[0, [0, 0, 0]], [.3, [120, 0, 0]], [.55, [255, 60, 0]], [.78, [255, 170, 0]], [1, [255, 255, 210]]]);
   add('Fire', 'stencil', E => E.fx.stencil(E, o => E.fx.field(o, (u, v, t, r) => { const n = fbm(u * 6, v * 3 + t * 1.6, 4); const h = clamp((v * 1.25 - .15) + n * .65 - .35); const i = (h * h * 255) | 0; r[0] = FIRE[i * 3]; r[1] = FIRE[i * 3 + 1]; r[2] = FIRE[i * 3 + 2]; }, E.t), '#ff7a00', 24));
   function bolt(o, x1, y1, x2, y2, d, w) { if (d <= 0) { o.lineWidth = w; o.beginPath(); o.moveTo(x1, y1); o.lineTo(x2, y2); o.stroke(); return; } const mx = (x1 + x2) / 2 + rr(-1, 1) * Math.hypot(x2 - x1, y2 - y1) * .22, my = (y1 + y2) / 2 + rr(-1, 1) * Math.hypot(x2 - x1, y2 - y1) * .22; bolt(o, x1, y1, mx, my, d - 1, w); bolt(o, mx, my, x2, y2, d - 1, w); if (rnd() < .25) bolt(o, mx, my, mx + rr(-1, 1) * 80, my + rr(0, 1) * 120, d - 2, w * .6); }
-  add('Lightning', 'stencil', E => E.fx.stencil(E, o => { const { W, H } = E; o.fillStyle = '#120a35'; o.fillRect(0, 0, W, H); const k = Math.floor(E.t * 7); seed = 99 + k;
+  add('Lightning', 'stencil', E => E.fx.stencil(E, o => { const { W, H } = E; o.fillStyle = '#3a2a8a'; o.fillRect(0, 0, W, H); const k = Math.floor(E.t * 7); seed = 99 + k;
     if (rnd() < .7) { o.strokeStyle = '#e8dcff'; o.shadowColor = '#9f7bff'; o.shadowBlur = 20; for (let b = 0; b < 3; b++) bolt(o, rr(0, W), 0, rr(0, W), H, 7, 4 * E.fx.dpr); o.shadowBlur = 0; o.fillStyle = `rgba(180,150,255,${rnd() * .35})`; o.fillRect(0, 0, W, H); } }, '#b9a0ff', 26, .25));
-  add('Shooting star', 'stencil', E => E.fx.stencil(E, o => { const { W, H } = E, hue = (E.t * 50 + 200) % 360; o.fillStyle = hsl(hue + 180, 60, 8); o.fillRect(0, 0, W, H);
+  add('Shooting star', 'stencil', E => E.fx.stencil(E, o => { const { W, H } = E, hue = (E.t * 50 + 200) % 360; o.fillStyle = hsl(hue + 180, 55, 26); o.fillRect(0, 0, W, H);
     for (let s = 0; s < 3; s++) { const q = ((E.t / 2.2 + s / 3) % 1), x = lerp(-W * .2, W * 1.2, q), y = lerp(H * (.1 + s * .3), H * (.5 + s * .2), q), hh = (hue + s * 120) % 360;
       const g = o.createLinearGradient(x - W * .45, y - H * .2, x, y); g.addColorStop(0, hsl(hh, 100, 60, 0)); g.addColorStop(1, hsl(hh, 100, 75, 1)); o.strokeStyle = g; o.lineWidth = H * .05; o.lineCap = 'round'; o.beginPath(); o.moveTo(x - W * .45, y - H * .2); o.lineTo(x, y); o.stroke();
       const r = o.createRadialGradient(x, y, 0, x, y, H * .22); r.addColorStop(0, '#fff'); r.addColorStop(.25, hsl(hh, 100, 70, .9)); r.addColorStop(1, hsl(hh, 100, 50, 0)); o.fillStyle = r; o.fillRect(x - H * .22, y - H * .22, H * .44, H * .44); } }, '#fff', 20, .22));
@@ -144,12 +164,12 @@
   add('Gold shimmer', 'stencil', E => E.fx.stencil(E, o => { const { W, H } = E; const x = lerp(-.3, 1.3, (E.t / 2.3) % 1) * W; const g = o.createLinearGradient(x - W * .3, 0, x + W * .3, H * .4); g.addColorStop(0, '#6b4a10'); g.addColorStop(.42, '#c9922a'); g.addColorStop(.5, '#fff6cf'); g.addColorStop(.58, '#e0aa3e'); g.addColorStop(1, '#6b4a10'); o.fillStyle = g; o.fillRect(0, 0, W, H); }, '#ffd36b', 16, .3));
   add('Plasma', 'stencil', E => E.fx.stencil(E, o => E.fx.field(o, (u, v, t, r) => { const a = Math.sin(u * 10 + t) + Math.sin(v * 10 + t * 1.3) + Math.sin((u + v) * 10 + t * .7) + Math.sin(Math.hypot(u - .5, v - .5) * 18 - t * 2); r[0] = 128 + 127 * Math.sin(a * Math.PI); r[1] = 128 + 127 * Math.sin(a * Math.PI + 2.1); r[2] = 128 + 127 * Math.sin(a * Math.PI + 4.2); }, E.t), '#ff6bd6', 18));
   add('Nebula', 'stencil', E => E.fx.stencil(E, o => E.fx.field(o, (u, v, t, r) => { const n = fbm(u * 3 + t * .1, v * 3 - t * .05, 5), m = fbm(u * 5 - t * .07 + 9, v * 5, 3); const st = vn(u * 140, v * 140) > .985 ? 255 * (.6 + .4 * Math.sin(t * 5 + u * 99)) : 0; r[0] = Math.min(255, 255 * n * n * 1.4 + st); r[1] = Math.min(255, 60 * m + st); r[2] = Math.min(255, 255 * m * 1.1 + 40 + st); }, E.t, 170), '#b06bff', 22, .2));
-  add('Matrix rain', 'stencil', E => E.fx.stencil(E, o => { const { W, H } = E, fs = Math.max(10, H / 26), cols = Math.ceil(W / fs), ch = 'BIGDOGMA▲△◢◣'; o.fillStyle = '#001a08'; o.fillRect(0, 0, W, H); o.font = `${fs}px monospace`;
+  add('Matrix rain', 'stencil', E => E.fx.stencil(E, o => { const { W, H } = E, fs = Math.max(10, H / 26), cols = Math.ceil(W / fs), ch = 'BIGDOGMA▲△◢◣'; o.fillStyle = '#04501f'; o.fillRect(0, 0, W, H); o.font = `bold ${fs}px monospace`;
     for (let i = 0; i < cols; i++) { const sp = 3 + (i * 7) % 5, hd = ((E.t * sp + i * 1.7) % 30) * fs; for (let j = 0; j < 14; j++) { const y = hd - j * fs; if (y < -fs || y > H + fs) continue; o.fillStyle = j ? `rgba(40,255,120,${1 - j / 14})` : '#d8ffe8'; o.fillText(ch[(i * 3 + j + Math.floor(E.t * 8)) % ch.length], i * fs, y); } } }, '#2dff7a', 14, .25));
   add('Neon pulse', 'stencil', E => { const h = (E.t * 60) % 360, b = .5 + .5 * Math.sin(E.t * 6); E.fx.stencil(E, o => { o.fillStyle = hsl(h, 100, 55 + b * 20); o.fillRect(0, 0, E.W, E.H); }, hsl(h, 100, 60), 18 + b * 30, .1); });
   add('Laser scan', 'stencil', E => E.fx.stencil(E, o => { const { W, H } = E; o.fillStyle = '#200006'; o.fillRect(0, 0, W, H); for (const k of [0, .5]) { const y = ((E.t / 1.6 + k) % 1) * H; const g = o.createLinearGradient(0, y - H * .12, 0, y + H * .02); g.addColorStop(0, 'rgba(255,0,40,0)'); g.addColorStop(.85, 'rgba(255,40,60,.9)'); g.addColorStop(1, '#fff'); o.fillStyle = g; o.fillRect(0, y - H * .12, W, H * .14); } }, '#ff2040', 22, .2));
   add('Ocean waves', 'stencil', E => E.fx.stencil(E, o => { const { W, H } = E; o.fillStyle = '#bfefff'; o.fillRect(0, 0, W, H); for (let l = 0; l < 5; l++) { const lvl = H * (.35 + l * .13 + .08 * Math.sin(E.t * .8 + l)); o.fillStyle = `rgba(${10 + l * 8},${90 + l * 25},${170 + l * 15},.85)`; o.beginPath(); o.moveTo(0, H); for (let x = 0; x <= W; x += W / 60) o.lineTo(x, lvl + Math.sin(x / W * 9 + E.t * (1.2 + l * .3) + l) * H * .03 + Math.sin(x / W * 23 - E.t * 2) * H * .01); o.lineTo(W, H); o.fill(); } }, '#46c3ff', 16));
-  add('Sunrise', 'stencil', E => E.fx.stencil(E, o => { const { W, H } = E, sy = lerp(H * 1.05, H * .25, ss(0, .7, E.p)); const g = o.createLinearGradient(0, 0, 0, H); g.addColorStop(0, '#2b1b5a'); g.addColorStop(.6, '#ff6a5b'); g.addColorStop(1, '#ffc46b'); o.fillStyle = g; o.fillRect(0, 0, W, H);
+  add('Sunrise', 'stencil', E => E.fx.stencil(E, o => { const { W, H } = E, sy = lerp(H * .9, H * .2, ss(0, .45, E.p)); const g = o.createLinearGradient(0, 0, 0, H); g.addColorStop(0, '#2b1b5a'); g.addColorStop(.6, '#ff6a5b'); g.addColorStop(1, '#ffc46b'); o.fillStyle = g; o.fillRect(0, 0, W, H);
     o.save(); o.translate(W / 2, sy); for (let i = 0; i < 18; i++) { o.rotate(TAU / 18 + E.t * .02); o.fillStyle = 'rgba(255,230,160,.25)'; o.beginPath(); o.moveTo(0, 0); o.lineTo(W, -W * .06); o.lineTo(W, W * .06); o.fill(); } o.restore(); const r = o.createRadialGradient(W / 2, sy, 0, W / 2, sy, H * .3); r.addColorStop(0, '#fffbe0'); r.addColorStop(.5, '#ffd27a'); r.addColorStop(1, 'rgba(255,150,60,0)'); o.fillStyle = r; o.fillRect(0, 0, W, H); }, '#ffb35a', 20));
   add('Toxic bubbles', 'stencil', E => E.fx.stencil(E, o => { E.fx.field(o, (u, v, t, r) => { const n = fbm(u * 6, v * 6 + t * .5, 3); r[0] = 40 + 90 * n; r[1] = 160 + 95 * n; r[2] = 20; }, E.t, 110);
     for (let i = 0; i < 40; i++) { const x = ((i * 0.618) % 1) * E.W, y = E.H - ((E.t * (40 + i % 9 * 12) + i * 37) % (E.H * 1.2)), rr2 = (4 + (i % 5) * 4) * E.fx.dpr; o.strokeStyle = 'rgba(230,255,180,.9)'; o.lineWidth = 2 * E.fx.dpr; o.beginPath(); o.arc(x + Math.sin(E.t * 3 + i) * 8, y, rr2, 0, TAU); o.stroke(); } }, '#9dff2e', 22));
@@ -161,11 +181,11 @@
   add('Kintsugi veins', 'stencil', E => E.fx.stencil(E, o => E.fx.field(o, (u, v, t, r) => { const n = Math.abs(fbm(u * 5, v * 5, 4) - .5) * 2, vein = clamp(1 - n * 8), sweep = ss(-.2, .1, ((u + v * .5) - E.p * 1.6)) * (1 - ss(.1, .4, (u + v * .5) - E.p * 1.6)); r[0] = 30 + 225 * vein + 80 * sweep; r[1] = 25 + 180 * vein + 60 * sweep; r[2] = 20 + 60 * vein; }, E.t, 160), '#ffcf5a', 18, .25));
   add('Electric arcs', 'stencil', E => E.fx.stencil(E, o => { const { W, H } = E; o.fillStyle = '#04061a'; o.fillRect(0, 0, W, H); seed = 5 + Math.floor(E.t * 14); o.strokeStyle = '#a8f0ff'; o.shadowColor = '#38d9ff'; o.shadowBlur = 16;
     const [cx, cy] = E.fx.px(DC.cx, DC.cy); for (let i = 0; i < 7; i++) { const s = SEGS[(rnd() * SEGS.length) | 0], [x, y] = E.fx.px(s[0], s[1]); bolt(o, cx, cy, x, y, 5, 2.5 * E.fx.dpr); } o.shadowBlur = 0; }, '#5fe2ff', 22, .25));
-  add('Blood moon', 'stencil', E => E.fx.stencil(E, o => { const { W, H } = E, mx = lerp(-W * .2, W * 1.2, E.p); o.fillStyle = '#1a0003'; o.fillRect(0, 0, W, H); const r = o.createRadialGradient(mx, H * .45, 0, mx, H * .45, H * .7); r.addColorStop(0, '#ffb09a'); r.addColorStop(.3, '#d0201a'); r.addColorStop(1, 'rgba(60,0,0,0)'); o.fillStyle = r; o.fillRect(0, 0, W, H); }, '#ff3018', 24, .2));
+  add('Blood moon', 'stencil', E => E.fx.stencil(E, o => { const { W, H } = E, mx = lerp(W * .1, W * .9, E.p); o.fillStyle = '#4a0008'; o.fillRect(0, 0, W, H); const r = o.createRadialGradient(mx, H * .45, 0, mx, H * .45, H * .7); r.addColorStop(0, '#ffb09a'); r.addColorStop(.3, '#d0201a'); r.addColorStop(1, 'rgba(60,0,0,0)'); o.fillStyle = r; o.fillRect(0, 0, W, H); }, '#ff3018', 24, .2));
   add('Warp speed', 'stencil', E => E.fx.stencil(E, o => { const { W, H } = E; o.fillStyle = '#000014'; o.fillRect(0, 0, W, H); o.lineCap = 'round';
     for (let i = 0; i < 160; i++) { const a = i * 2.39996, z = (i * .137 + E.t * .5) % 1, r1 = Math.pow(z, 2) * W, r2 = r1 + W * .04 * (1 + z * 3); o.strokeStyle = hsl(200 + (i % 60), 80, 70 + z * 30, z); o.lineWidth = (1 + z * 3) * E.fx.dpr; o.beginPath(); o.moveTo(W / 2 + Math.cos(a) * r1, H / 2 + Math.sin(a) * r1); o.lineTo(W / 2 + Math.cos(a) * r2, H / 2 + Math.sin(a) * r2); o.stroke(); } }, '#9fdcff', 16, .2));
   add('Prism split', 'stencil', E => E.fx.stencil(E, o => { const { W, H } = E; for (let i = 0; i < 7; i++) { const x = ((i / 7 + E.t * .12) % 1) * W * 1.4 - W * .2; o.fillStyle = hsl(i * 51, 100, 60); o.save(); o.translate(x, 0); o.transform(1, 0, -.4, 1, 0, 0); o.fillRect(0, 0, W * .2, H); o.restore(); } }, '#fff', 14));
-  add('Fireflies', 'stencil', E => E.fx.stencil(E, o => { const { W, H } = E; o.fillStyle = '#04120a'; o.fillRect(0, 0, W, H); for (let i = 0; i < 60; i++) { const x = (fbm(i * 3.1, E.t * .15) * 1.6 - .3) * W, y = (fbm(i * 7.3 + 4, E.t * .15 + 2) * 1.6 - .3) * H, b = .5 + .5 * Math.sin(E.t * 4 + i); const r = o.createRadialGradient(x, y, 0, x, y, H * .08); r.addColorStop(0, `rgba(230,255,120,${b})`); r.addColorStop(1, 'rgba(230,255,120,0)'); o.fillStyle = r; o.fillRect(x - H * .08, y - H * .08, H * .16, H * .16); } }, '#e6ff78', 20, .25));
+  add('Fireflies', 'stencil', E => E.fx.stencil(E, o => { const { W, H } = E; o.fillStyle = '#1d4a2a'; o.fillRect(0, 0, W, H); for (let i = 0; i < 60; i++) { const x = (fbm(i * 3.1, E.t * .15) * 1.6 - .3) * W, y = (fbm(i * 7.3 + 4, E.t * .15 + 2) * 1.6 - .3) * H, b = .5 + .5 * Math.sin(E.t * 4 + i); const r = o.createRadialGradient(x, y, 0, x, y, H * .08); r.addColorStop(0, `rgba(230,255,120,${b})`); r.addColorStop(1, 'rgba(230,255,120,0)'); o.fillStyle = r; o.fillRect(x - H * .08, y - H * .08, H * .16, H * .16); } }, '#e6ff78', 20, .25));
   add('Galaxy spiral', 'stencil', E => E.fx.stencil(E, o => E.fx.field(o, (u, v, t, r) => { const x = (u - .5) * 2, y = (v - .5) * 1.6, d = Math.hypot(x, y), a = Math.atan2(y, x) + t * .6 - d * 4; const arm = Math.pow(.5 + .5 * Math.cos(a * 2), 3) * Math.exp(-d * 1.2); const st = vn(u * 120 + t, v * 120) > .98 ? 200 : 0; r[0] = Math.min(255, 60 + 255 * arm + st); r[1] = Math.min(255, 30 + 170 * arm + st); r[2] = Math.min(255, 120 + 255 * arm + st); }, E.t, 170), '#c98bff', 20, .2));
 
   // ===== LINE MOTION (the strokes move, then return to the exact mark) =====
@@ -252,6 +272,28 @@
     const tw = c.measureText(t).width; let x = E.W / 2 - tw / 2; for (let i = 0; i < n; i++) { const w = c.measureText(t[i]).width, q = clamp(ss(.05 + i * .03, .3 + i * .03, E.p)) * (1 - ss(.82, .97, E.p)), y = E.fx.ty - (1 - easeOutBack(q)) * E.H * .5;
       c.globalAlpha = q; c.fillText(t[i], x, y); x += w; } c.restore(); }, 6);
 
+  // ===== VARIANTS (all hand-drawn versions of the BD, same size; owner's request) =====
+  const nSk = () => (window.DOGMA_SKINS || []).length;
+  add('Variant carousel', 'variant', E => { const n = nSk(); if (!n) return E.fx.mark(1); const turns = 4, q = ss(.06, .94, E.p) * turns, k = Math.floor(q), f = q - k, sx = Math.cos(f * Math.PI);
+    const front = k === 0 ? -1 : (E.st.base ??= Math.floor(rnd() * n)) + k - 1, back = k === turns - 1 ? -1 : (E.st.base ??= Math.floor(rnd() * n)) + k;
+    const idx = sx >= 0 ? front : back, col = sx >= 0 ? E.fx.o.color : hsl((k * 70 + 30) % 360, 85, 65); if (q >= turns || q <= 0) return E.fx.mark(1);
+    if (idx < 0) { const c = E.c; c.save(); const [cx] = E.fx.px(VB[0] + VB[2] / 2, 0); c.translate(cx, 0); c.scale(Math.abs(sx), 1); c.translate(-cx, 0); E.fx.mark(1, col, c); c.restore(); }
+    else E.fx.drawSkin(idx, 1, col, E.c, Math.abs(sx), 8); }, 8);
+  add('Ink saturation', 'variant', E => { const c = E.c, q = ss(.1, .45, E.p) * (1 - ss(.6, .92, E.p)), [cx, cy] = E.fx.px(VB[0] + VB[2] / 2, VB[1] + VB[3] / 2), R = Math.hypot(E.W, E.H) * q * .6;
+    E.fx.mark(1); if (q <= 0 || !nSk()) return; const o = E.fx.oc; o.setTransform(1, 0, 0, 1, 0, 0); o.clearRect(0, 0, E.W, E.H); E.fx.drawSkin(E.fx.skinIndex('inknet_31_47'), 1, '#111', o);
+    o.globalCompositeOperation = 'destination-in'; const g = o.createRadialGradient(cx, cy, R * .7, cx, cy, R); g.addColorStop(0, '#000'); g.addColorStop(1, 'rgba(0,0,0,0)'); o.fillStyle = g; o.fillRect(0, 0, E.W, E.H); o.globalCompositeOperation = 'source-over';
+    c.save(); c.globalCompositeOperation = 'destination-out'; c.drawImage(E.fx.off, 0, 0); c.restore(); c.save(); c.globalAlpha = 1; const o2 = E.fx.oc;
+    o2.globalCompositeOperation = 'source-in'; o2.fillStyle = E.fx.o.color; o2.fillRect(0, 0, E.W, E.H); o2.globalCompositeOperation = 'source-over'; c.shadowColor = '#ff9a3c'; c.shadowBlur = 14 * E.fx.dpr * q; c.drawImage(E.fx.off, 0, 0); c.restore(); }, 7);
+  add("Tattooist's flip-book", 'variant', E => { const n = nSk(); if (!n) return E.fx.mark(1); const on = ss(.08, .14, E.p) * (1 - ss(.86, .92, E.p)); if (on < .5) return E.fx.mark(1);
+    const ink = (window.DOGMA_SKINS || []).map((k, i) => [k.name, i]).filter(([nm]) => /^(ink|tattoo|straight|organic)/.test(nm)).map(x => x[1]); const i = ink[Math.floor(E.t * 8) % ink.length];
+    E.fx.drawSkin(i, 1, undefined, E.c, 1, 4); }, 6);
+  add('Dream crossfade', 'variant', E => { const gem = (window.DOGMA_SKINS || []).map((k, i) => [k.name, i]).filter(([nm]) => /^gemini/.test(nm)).map(x => x[1]); if (!gem.length) return E.fx.mark(1);
+    const q = ss(.08, .92, E.p) * (gem.length + 1), k = Math.floor(q), f = ss(.6, 1, q - k), cur = k === 0 ? -1 : gem[(k - 1) % gem.length], nxt = k >= gem.length ? -1 : gem[k], h = (E.t * 40) % 360;
+    const draw = (i, a) => i < 0 ? E.fx.mark(a, undefined, undefined, 12) : E.fx.drawSkin(i, a, hsl(h, 70, 72), E.c, 1, 20); draw(cur, 1 - f); draw(nxt, f); }, 9);
+  add('Deck shuffle', 'variant', E => { const n = nSk(); if (!n) return E.fx.mark(1); const c = E.c, m = ss(.05, .2, E.p) * (1 - ss(.8, .95, E.p)), base = (E.st.b ??= Math.floor(rnd() * n));
+    E.fx.mark(1 - m); for (let j = 0; j < 4; j++) { const ph = (E.t * .9 + j / 4) % 1, x = Math.sin(ph * TAU) * E.fx.bw * .42 * m, sc = .55 + .25 * Math.cos(ph * TAU), a = m * (.35 + .65 * (Math.cos(ph * TAU) * .5 + .5));
+      c.save(); const [cx, cy] = E.fx.px(VB[0] + VB[2] / 2, VB[1] + VB[3] / 2); c.translate(cx + x, cy); c.scale(sc, sc); c.translate(-cx, -cy); E.fx.drawSkin(base + j, a, j % 2 ? '#ffffff' : undefined, c, 1, 6); c.restore(); } }, 7);
+
   // ---------- stick-men fight ----------
   const SK = ['head0', 'head1', 'head2', 'head3', 'head4', 'head5', 'torso', 'uarmL', 'larmL', 'uarmR', 'larmR', 'ulegL', 'llegL', 'ulegR', 'llegR'];
   function pose(t, side) {        // joint angles (rad) for a simple fight loop; side = +1 faces right, -1 faces left
@@ -295,5 +337,10 @@
       c.beginPath(); c.moveTo(lerp(s[0], b[0], o2), lerp(s[1], b[1], o2)); c.lineTo(lerp(s[2], b[2], o2), lerp(s[3], b[3], o2)); c.stroke(); }); c.restore();
   }
 
+  (function loadSkins() {
+    if (window.DOGMA_SKINS) return; const me = document.currentScript && document.currentScript.src; if (!me) return;
+    const go = () => { const sc = document.createElement('script'); sc.src = me.replace(/logo_fx(\.min)?\.js.*$/, 'skins.js'); sc.async = true; document.head.appendChild(sc); };
+    document.readyState === 'complete' ? setTimeout(go, 400) : addEventListener('load', () => setTimeout(go, 400));
+  })();
   window.DogmaLogoFX = { mount: (el, o) => new FX(el, o), effects: EFFECTS };
 })();
