@@ -16,7 +16,7 @@ ROLE = {"01_zito_marketi_MK": "Marketing Director / Head of Marketing", "02_alka
         "09_gener2_AL": "Marketing Director; Sales Director", "10_concord_AL": "Sales & Marketing Manager", "11_viva_fresh_XK": "Marketing Director",
         "12_speeex_XK": "HR Director / Employer Branding Lead"}
 COUNTRY = {"MK": "North Macedonia", "RS": "Serbia", "AL": "Albania", "XK": "Kosovo"}
-SIG = f"{B['name']} · {B['subline'].replace('  ', ' ')}\n{B['phone']} · {B['email']} · {B['web']}"
+SIG = f"{B['name']} · {B['subline'].replace('  ', ' ')}\n" + " · ".join(x for x in (B["phone"], B["email"], B["web"]) if x)
 T = {
  "mk": dict(
   subj="{c}: два кратки AI филма, направени само за вас (концепт)",

@@ -131,7 +131,8 @@ for c in O["companies"]:
     if expl and L == "mk":
         shutil.copy(f"{S}/explainers/{expl}.mp4", f"{d}/how.mp4"); explh = f"""<div class="expl rv"><video controls playsinline preload="none" src="how.mp4" poster="kf.jpg"></video></div>"""
     steps = [s.split(". ", 1)[-1] for s in tx["how_d"].split(" → ")]
-    wa = f"https://wa.me/{B['whatsapp']}?text=" + (c["name"] + " - " + u["cta"]).replace(" ", "%20")
+    from urllib.parse import quote
+    wa = (f"https://wa.me/{B['whatsapp']}?text=" + quote(c["name"] + " - " + u["cta"])) if B.get("whatsapp") else f"mailto:{B['email']}?subject=" + quote(c["name"] + " - " + u["cta"])
     title = tx["title"].replace("{c}", c["name"])
     h1 = f"{E(title.split(c['name'])[0])}<em>{name}</em>" if c["name"] in title else E(title)
     marq = "".join(f"<span>{E(m)}</span>" for m in u2["marq"]) * 2
@@ -171,7 +172,7 @@ for c in O["companies"]:
 <p class="terms rv">{E(tx['terms'])} {E(tx['price_note'])}</p></div></section>
 <section class="final"><div class="wrap"><video class="logo-loop" autoplay muted loop playsinline src="logo_loop.mp4" aria-hidden="true"></video><h2 class="sh rv">{E(u['final'])}</h2><p class="rv">{E(u['final_p'])}</p>
 <div class="btns rv"><a class="btn a" href="{wa}">{u['cta']}</a><a class="btn b" href="mailto:{E(B['email'])}">{u['mail']}</a><a class="btn b" href="offer.pdf">{u['pdf']}</a></div></div></section>
-<footer><div class="wrap"><img src="logo.png" alt="{E(B['name'])}"><p>{E(u['note'])}</p><p>{E(B['phone'])} · {E(B['email'])} · {E(B['web'])}</p></div></footer>
+<footer><div class="wrap"><img src="logo.png" alt="{E(B['name'])}"><p>{E(u['note'])}</p><p>{E(' · '.join(x for x in (B['phone'], B['email'], B['web']) if x))}</p></div></footer>
 <script src="dogma_logo.js"></script><script src="mark.js"></script><script src="fx.js"></script></body></html>"""
     open(f"{d}/index.html", "w").write(page); print("OK", c["id"], sec, flush=True)
 json.dump(tokens, open(tokfile, "w"), indent=1)

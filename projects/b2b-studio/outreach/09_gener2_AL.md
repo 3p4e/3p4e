@@ -25,7 +25,7 @@ Nëse ju pëlqen drejtimi, do të na vinte mirë t'ju tregonim për 15 minuta si
 Me respekt,
 [Emri dhe mbiemri]
 BIG DOGMA · AI STUDIO | Skopje
-+389 7X XXX XXX · studio@example.mk · www.example.mk
+inf.unit@proton.me
 ```
 
 ## 2. LinkedIn (day 0, connection note, 230 characters)
@@ -51,7 +51,7 @@ Nëse nuk jeni personi i duhur për këtë, do të na vinte mirë nëse na drejt
 Me respekt,
 [Emri dhe mbiemri]
 BIG DOGMA · AI STUDIO | Skopje
-+389 7X XXX XXX · studio@example.mk · www.example.mk
+inf.unit@proton.me
 ```
 
 ## 5. Mesazhi i fundit (dita 10)
@@ -67,5 +67,5 @@ Nëse tani nuk është momenti i duhur, do t'ju kontaktojmë pas disa muajsh.
 Me respekt,
 [Emri dhe mbiemri]
 BIG DOGMA · AI STUDIO | Skopje
-+389 7X XXX XXX · studio@example.mk · www.example.mk
+inf.unit@proton.me
 ```

@@ -3,7 +3,7 @@
 One file per company (`01_zito_marketi_MK.md` … `12_speeex_XK.md`), in the company's language: cold email, LinkedIn connection note (under 300 characters), WhatsApp message, two follow-ups. Tracker: `outreach_tracker.xlsx` (follow-up dates fill in automatically from the "Day 0 sent" date; status has a drop-down).
 
 ## Before the first send
-1. Replace the placeholders: `[Име и презиме]` / `[Ime i prezime]` / `[Emri dhe mbiemri]`, `[Име]` / `[Ime]` / `[Emri]`, and the studio phone, email and web in the signature (still `+389 7X XXX XXX`, `studio@example.mk`, `www.example.mk`). The same placeholders are in the films' end cards, PDFs and pages: send the real details and everything is re-rendered once.
+1. Replace the name placeholders: `[Име и презиме]` / `[Ime i prezime]` / `[Emri dhe mbiemri]` and `[Име]` / `[Ime]` / `[Emri]`. The studio contact is the email inf.unit@proton.me (phone, WhatsApp and website are left out until they exist; add them to `brand/brand.json` and re-run the generators).
 2. Find the right person: the "Who to contact" role in each file. Company website (About / Contact / Press), LinkedIn search "<company> marketing", or the reception phone asking for the marketing department. Write the name and email into the tracker.
 3. Send from a real domain mailbox (not Gmail), with a short signature and no attachments on the first email (the link carries everything; attachments trigger spam filters). The offer PDF is a button on the page.
 

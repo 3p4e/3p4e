@@ -24,8 +24,8 @@ def intro(out, d=2.2):
 def outro(out, lang, d=3.2):
     lines = [f"drawtext=fontfile={FONT}:text='{esc(TAG[lang])}':fontsize=36:fontcolor=white:x=(w-tw)/2:y=360",
              f"drawtext=fontfile={FONT}:text='{esc(CALL[lang])}':fontsize=26:fontcolor=0xbbbbbb:x=(w-tw)/2:y=440",
-             f"drawtext=fontfile={FONTB}:text='{esc(B['phone'] + '  ·  ' + B['email'])}':fontsize=30:fontcolor=0xf2c14e:x=(w-tw)/2:y=485",
-             f"drawtext=fontfile={FONT}:text='{esc(B['web'])}':fontsize=24:fontcolor=0x999999:x=(w-tw)/2:y=540"]
+             f"drawtext=fontfile={FONTB}:text='{esc('  ·  '.join(x for x in (B['phone'], B['email']) if x))}':fontsize=30:fontcolor=0xf2c14e:x=(w-tw)/2:y=485"]
+    if B.get('web'): lines.append(f"drawtext=fontfile={FONT}:text='{esc(B['web'])}':fontsize=24:fontcolor=0x999999:x=(w-tw)/2:y=540")
     fc = f"[1:v]scale=600:-1[l];[0:v][l]overlay=(W-w)/2:110," + ",".join(lines) + ",fade=t=in:st=0:d=0.4[v]"
     run(["ffmpeg","-v","error","-y","-f","lavfi","-i",f"color=c=0x0d0d0f:s=1280x720:r=24:d={d}","-loop","1","-t",str(d),"-i",LOGO,
          "-f","lavfi","-t",str(d),"-i","anullsrc=r=48000:cl=stereo","-filter_complex",fc,"-map","[v]","-map","2:a","-t",str(d)] + enc() + [out])

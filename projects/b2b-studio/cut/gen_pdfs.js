@@ -20,7 +20,7 @@ const OUT = S + '/offers_pdf'; fs.mkdirSync(OUT, { recursive: true });
       td.n{font-weight:bold;width:120px} .small{font-size:10.5px;color:#666;line-height:1.5} .cta{margin-top:18px;background:#fff7e0;border-left:5px solid ${B.accent};padding:12px 16px;font-size:13.5px}
       .foot{position:absolute;bottom:18px;left:34px;right:34px;font-size:9.5px;color:#888;border-top:1px solid #eee;padding-top:8px}
     </style></head><body>
-      <div class="top"><img src="${b64(S + '/brand/logo.png')}"><div class="c">${B.phone}<br>${B.email}<br>${B.web}</div></div>
+      <div class="top"><img src="${b64(S + '/brand/logo.png')}"><div class="c">${[B.phone, B.email, B.web].filter(Boolean).join('<br>')}</div></div>
       <div class="wrap"><h1>${f(t.title)}</h1><div class="intro">${f(t.intro)}</div>
       <h2>${t.made}</h2><div class="films">${posters}</div><div class="small" style="margin-top:6px">${t.formats}</div>
       <h2>${t.offer}</h2><table>
@@ -29,7 +29,7 @@ const OUT = S + '/offers_pdf'; fs.mkdirSync(OUT, { recursive: true });
         <tr><td class="n">${t.monthly}</td><td>${t.monthly_d}</td><td class="p">${p.monthly}</td></tr></table>
       <div class="small" style="margin-top:6px">${t.terms} ${t.price_note}</div>
       <h2>${t.how}</h2><div class="small" style="font-size:12px;color:#333">${t.how_d}</div>
-      <div class="cta"><b>${t.next}</b><br>${B.phone} · ${B.email}</div></div>
+      <div class="cta"><b>${t.next}</b><br>${[B.phone, B.email].filter(Boolean).join(' · ')}</div></div>
       <div class="foot">${B.name} · ${f(t.intro).split('.').slice(-2).join('.').trim()}</div></body></html>`;
     await pg.setContent(html, { waitUntil: 'load' });
     await pg.pdf({ path: `${OUT}/${c.id}_offer.pdf`, format: 'A4', printBackground: true });
