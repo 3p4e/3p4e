@@ -20,6 +20,14 @@ for sid, cap, a, b, mo in SC:
     for k in ("start", "end"):
         if j.get(k): shutil.copy(f"{KF}/{j[k]}", f"{B}/kf/{j[k]}")
     jobs.append(j)
+# header-logo effect loops: logo alone on black, start = end keyframe so each clip returns to its first frame and loops seamlessly
+from fx_scenes import FX
+LOCK = " Locked-off static camera, the logo stays exactly in place and keeps its exact shape; pure black background, nothing else in frame."
+for fid, _, mo in FX:
+    seed = int(hashlib.sha1(fid.encode()).hexdigest()[:6], 16) % 100000
+    shutil.copy(f"{S}/logo_ai/kf_fx/{fid}.png", f"{B}/kf/fx_{fid}.png")
+    jobs.append({"id": "hdr_" + fid, "w": 1280, "h": 704, "frames": 121, "seed": seed, "strength": .85,
+                 "start": f"fx_{fid}.png", "end": f"fx_{fid}.png", "prompt": mo + LOCK + STY})
 json.dump({"fps": 24, "steps": 8, "cfg": 1.0, "strength": .8, "negative": NEG, "jobs": jobs}, open(f"{B}/jobs.json", "w"), indent=1)
 with tarfile.open(f"{S}/logo_ai/logo_bundle.tgz", "w:gz") as t: t.add(B, arcname=".")
 print("jobs", len(jobs), "flf", sum(1 for j in jobs if j.get("end")), os.path.getsize(f"{S}/logo_ai/logo_bundle.tgz"))

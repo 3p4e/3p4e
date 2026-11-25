@@ -1,5 +1,5 @@
 /* BIG DOGMA logo FX engine: a transparent, frameless canvas that cycles 50+ animations of the tattoo mark.
-   Needs window.DOGMA_MARK (mark_data.js: exact path, viewBox, stroke centre lines grouped by triangle 0 = B top, 1 = B bottom, 2 = D).
+   Needs window.DOGMA_FXMARK (mark_data.js: exact path, viewBox, stroke centre lines grouped by triangle 0 = B top, 1 = B bottom, 2 = D).
    Families: STENCIL (the lines are the only openings; elemental light flows behind them), LINE (the strokes move: fold, scatter,
    stick-men fight, ...), MAGIC (bursts and enchantments on the lines), TEXT (the wordmark joins in).
    Every animation starts and ends on the exact mark, so they chain seamlessly.
@@ -7,7 +7,7 @@
 */
 (function () {
   'use strict';
-  const M = window.DOGMA_MARK; if (!M) { console.warn('DogmaLogoFX: mark_data.js missing'); return; }
+  const M = window.DOGMA_FXMARK; if (!M) { console.warn('DogmaLogoFX: mark_data.js missing'); return; }
   const VB = M.viewBox, SEGS = M.segs, TRIS = M.tris, TAU = Math.PI * 2;
   const clamp = (v, a = 0, b = 1) => v < a ? a : v > b ? b : v, lerp = (a, b, t) => a + (b - a) * t;
   const ss = (a, b, x) => { const t = clamp((x - a) / (b - a)); return t * t * (3 - 2 * t); };
@@ -27,13 +27,13 @@
   // ---------- engine ----------
   class FX {
     constructor(el, o) {
-      this.o = Object.assign({ color: '#f2c14e', text: 'BIG DOGMA', font: 'Russo One', mode: 'sequence', only: null, dur: 1, pad: .08, textRoom: .13, onchange: null }, o || {});
+      this.o = Object.assign({ color: '#f2c14e', text: 'BIG DOGMA', font: 'Russo One', mode: 'sequence', only: null, skip: null, res: 150, dur: 1, pad: .08, textRoom: .13, onchange: null }, o || {});
       if (getComputedStyle(el).position === 'static') el.style.position = 'relative';
       this.cv = document.createElement('canvas'); this.cv.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;display:block;background:transparent;pointer-events:none';
       this.cv.setAttribute('aria-hidden', 'true'); el.appendChild(this.cv); this.c = this.cv.getContext('2d');
       this.off = document.createElement('canvas'); this.oc = this.off.getContext('2d');
       this.fc = document.createElement('canvas'); this.fcx = this.fc.getContext('2d');
-      this.path = new Path2D(M.d); this.list = EFFECTS.filter(e => !this.o.only || this.o.only.includes(e.name));
+      this.path = new Path2D(M.d); this.list = EFFECTS.filter(e => (!this.o.only || this.o.only.includes(e.name)) && !(this.o.skip || []).includes(e.cat) && !(this.o.skip || []).includes(e.name));
       this.i = -1; this.next(); this.ro = new ResizeObserver(() => this.resize()); this.ro.observe(el); this.resize();
       this.reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (!this.o.paused) this.raf = requestAnimationFrame(t => this.frame(t));
@@ -42,9 +42,9 @@
     resize() {
       const r = this.cv.getBoundingClientRect(), d = Math.min(2, window.devicePixelRatio || 1);
       this.W = this.cv.width = this.off.width = Math.max(2, Math.round(r.width * d)); this.H = this.cv.height = this.off.height = Math.max(2, Math.round(r.height * d)); this.dpr = d;
-      const tr = this.o.text ? this.o.textRoom : 0, aw = this.W * (1 - 2 * this.o.pad), ah = this.H * (1 - 2 * this.o.pad - tr);
+      const tr = this.o.text ? this.o.textRoom : 0, padY = this.o.padY ?? this.o.pad, aw = this.W * (1 - 2 * this.o.pad), ah = this.H * (1 - 2 * padY - tr);
       this.k = Math.min(aw / VB[2], ah / VB[3]); this.bw = VB[2] * this.k; this.bh = VB[3] * this.k;
-      this.ox = (this.W - this.bw) / 2; this.oy = (this.H * (1 - tr) - this.bh) / 2 + this.H * this.o.pad * .25;
+      this.ox = (this.W - this.bw) / 2; this.oy = (this.H * (1 - tr) - this.bh) / 2 + (tr ? this.H * padY * .25 : 0);
       this.ty = this.oy + this.bh + this.H * tr * .55; this.ts = Math.min(this.H * tr * .5, this.W * .085);
       if (this.o.paused && this.e && this.lastNow != null) this.draw(this.lastNow);   // resizing clears the canvas
     }
@@ -53,6 +53,8 @@
       this.e = this.list[this.i]; this.t0 = performance.now(); this.el = 0; seed = 1 + this.i * 7919; this.st = {};
       if (this.o.onchange) this.o.onchange(this.e, this.i, n);
     }
+    pause() { cancelAnimationFrame(this.raf); this.raf = 0; this.c.setTransform(1, 0, 0, 1, 0, 0); this.c.clearRect(0, 0, this.W, this.H); }   // hand the slot to another player
+    resume() { if (this.raf) return; this.next(); this.raf = requestAnimationFrame(t => this.frame(t)); }
     mt(c) { c.setTransform(this.k, 0, 0, this.k, this.ox - VB[0] * this.k, this.oy - VB[1] * this.k); }   // mark units -> device px
     renderAt(i, sec) { this.resize(); this.next(i); this.t0 = 0; this.draw(sec * 1000); }        // deterministic frame for QC / thumbnails
     frame(now) {
@@ -81,13 +83,13 @@
       const o = this.oc; o.setTransform(1, 0, 0, 1, 0, 0); o.globalCompositeOperation = 'source-over'; o.globalAlpha = 1; o.clearRect(0, 0, this.W, this.H);
       paint(o); o.globalCompositeOperation = 'destination-in'; this.mt(o); o.fill(this.path, 'evenodd');
       o.setTransform(1, 0, 0, 1, 0, 0); o.globalCompositeOperation = 'source-over';
-      this.mark(1 - env.f + env.f * under);
+      this.mark(Math.max(this.o.minMark || 0, 1 - env.f + env.f * under));   // header: keep the mark readable at small sizes
       const c = env.c; c.save(); c.globalAlpha = env.f; c.shadowColor = glowCol; c.shadowBlur = glow * this.dpr; c.drawImage(this.off, 0, 0);
       c.shadowBlur = 0; c.globalCompositeOperation = 'lighter'; c.globalAlpha = env.f * .35; c.drawImage(this.off, 0, 0); c.restore();
     }
     // low-res per-pixel field over the mark box; fn(u, v, t, out) writes r,g,b,a (0..255) into out
-    field(o, fn, t, res = 150) {
-      const w = res, h = Math.max(8, Math.round(res * this.bh / this.bw)), F = this.fc;
+    field(o, fn, t, res) {
+      const w = Math.min(res || 150, this.o.res), h = Math.max(8, Math.round(res * this.bh / this.bw)), F = this.fc;
       if (F.width !== w || F.height !== h) { F.width = w; F.height = h; this.img = this.fcx.createImageData(w, h); }
       const d = this.img.data, out = [0, 0, 0, 255]; let i = 0;
       for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) { out[3] = 255; fn(x / w, y / h, t, out); d[i] = out[0]; d[i + 1] = out[1]; d[i + 2] = out[2]; d[i + 3] = out[3]; i += 4; }

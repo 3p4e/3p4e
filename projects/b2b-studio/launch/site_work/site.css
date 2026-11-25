@@ -393,3 +393,9 @@ body.lb-open,body.menu-open{overflow:hidden}
 @media(min-width:1000px){.plans.bundles{grid-template-columns:repeat(3,1fr)}}
 .plan.sm{padding:24px 22px 22px}.plan.sm h3{font-size:19px}.plan.sm .amt{font-size:clamp(28px,2.6vw,34px);margin:14px 0 6px}
 .plan.sm ul{margin:16px 0 20px}
+
+/* header mark (logo_fx): the canvas is larger than the slot and transparent, so glows and bursts spill out; the mark stays in place */
+.brand .lfx{position:relative;display:block;flex:none;width:74px;height:46px}
+.brand .lfx-in{position:absolute;inset:-27% -22%;pointer-events:none}
+@media(max-width:400px){.brand .lfx{width:60px;height:38px}}
+@media(max-width:340px){.brand .lfx{width:46px;height:29px}}

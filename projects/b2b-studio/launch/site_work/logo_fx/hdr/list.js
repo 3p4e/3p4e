@@ -1,0 +1,1 @@
+window.DOGMA_HDR=[];
