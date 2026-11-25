@@ -2,11 +2,11 @@
 # hand-inked triangles of the same size (original B style, gen_bd_equal.tri); nothing touches: B-to-D and top-to-bottom gaps equal
 # the line-to-line spacing inside a bundle (GAP), measured on the real ink (rasterised D + B raster, dilation test).
 #   python3 gen_bd_final.py <out_dir> <seed_top>,<seed_bottom> [...]
-import sys, re, json, subprocess, numpy as np, cv2
+import sys, os, re, json, subprocess, numpy as np, cv2
 S = "/tmp/claude-0/-home-user-3p4e/50442171-da10-52d9-9948-b5cc07f6bc8a/scratchpad"; sys.path.insert(0, f"{S}/brand"); sys.path.insert(0, "/home/user/3p4e/projects/b2b-studio/brand")
 import gen_b_triangles as G
 from gen_bd_equal import tri
-OUT = sys.argv[1]; GAP = 120; w = 40
+OUT = sys.argv[1]; GAP = int(os.environ.get("GAP", 120)); w = float(os.environ.get("BW", 40))
 import os; DSRC = os.environ.get("DSRC", f"{S}/brand/mark_D_single.svg"); Dsvg = open(DSRC).read(); DW, DH = map(int, re.search(r'viewBox="0 0 (\d+) (\d+)"', Dsvg).groups())
 dpath = re.search(r' d="([^"]+)"', Dsvg).group(1)
 mask_png = f"{OUT}/_D_mask.png"
@@ -27,6 +27,9 @@ for pair in sys.argv[2:]:
         if not (a & b).any(): break
     B = np.zeros((max(top.shape[0], oy + bot.shape[0]), Wb), bool); B[:top.shape[0], :top.shape[1]] |= top; B[oy:oy + bot.shape[0], :bot.shape[1]] |= bot
     B = crop(B)
+    if os.environ.get("INK"):                                     # ink pooling like the photo D: blur + lower threshold fills the acute corners
+        sg = float(os.environ.get("INK_SIGMA", 9)); th = float(os.environ.get("INK_TH", .42))   # where strokes cross; parallel lines stay apart
+        B = crop(cv2.GaussianBlur(np.pad(B, 80).astype(np.float32), (0, 0), sg) > th)
     # place B left of the D, vertically centred on the D, as close as the gap allows
     by = max(0, (DH - B.shape[0]) // 2); Bdil = cv2.dilate(B.astype(np.uint8), ker) > 0
     Hc = max(DH, by + B.shape[0]) + GAP
@@ -34,6 +37,13 @@ for pair in sys.argv[2:]:
         Wc = dx + DW + GAP; c1 = np.zeros((Hc, Wc), bool); c2 = np.zeros_like(c1)
         c1[by:by + Bdil.shape[0], :Bdil.shape[1]] = Bdil[:Hc - by, :Wc]; c2[:DH, dx:dx + DW] = Dm
         if not (c1 & c2).any(): break
+    if os.environ.get("RASTER"):                                 # one canvas, one trace (no fill-rule cancellation between the pieces)
+        Wc = dx + DW + 80; Hc = max(DH, by + B.shape[0]) + 80; cv_ = np.zeros((Hc, Wc), bool)
+        cv_[40 + by:40 + by + B.shape[0], 40:40 + B.shape[1]] |= B; cv_[40:40 + DH, 40 + dx:40 + dx + DW] |= Dm
+        r_, c_ = np.where(cv_.any(axis=1))[0], np.where(cv_.any(axis=0))[0]; cv_ = cv_[r_.min() - 40:r_.max() + 40, c_.min() - 40:c_.max() + 40]
+        dd = G.trace(cv_, 0, 0)
+        open(f"{OUT}/mark_{st}_{sb}.svg", "w").write(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {cv_.shape[1]} {cv_.shape[0]}"><path fill="currentColor" fill-rule="evenodd" d="{dd}"/></svg>')
+        print("ok", pair, "raster", cv_.shape); continue
     m = 60; dB = G.trace(np.pad(B, m), -m, by - m)
     dD = re.sub(r"(-?\d+(?:\.\d+)?) (-?\d+(?:\.\d+)?)", lambda q: f"{float(q.group(1)) + dx:.0f} {q.group(2)}", dpath)
     nums = [float(v) for v in re.findall(r"-?\d+(?:\.\d+)?", dB + " " + dD)]; xs, ys = nums[0::2], nums[1::2]
