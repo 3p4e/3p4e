@@ -386,3 +386,10 @@ body.lb-open,body.menu-open{overflow:hidden}
  .few .bsteps img{width:100%;height:auto;max-height:none;border-radius:0}
  .few .bsteps button>span{padding:8px 10px}
 }
+
+.bh{font-size:clamp(24px,2.6vw,32px);margin-top:64px}
+.plans.bundles{margin-top:28px}
+@media(min-width:640px){.plans.bundles{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.plans.bundles{grid-template-columns:repeat(3,1fr)}}
+.plan.sm{padding:24px 22px 22px}.plan.sm h3{font-size:19px}.plan.sm .amt{font-size:clamp(28px,2.6vw,34px);margin:14px 0 6px}
+.plan.sm ul{margin:16px 0 20px}

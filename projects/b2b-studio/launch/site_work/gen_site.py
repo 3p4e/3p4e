@@ -137,6 +137,20 @@ TX = {
  "p3.l1": ("6–8 нови клипови секој месец", "6–8 new clips every month"), "p3.l2": ("Формати за Reels, TikTok и Stories", "Formats for Reels, TikTok and Stories"),
  "p3.l3": ("Минимум 3 месеци", "Minimum 3 months"), "p3.l4": ("Постојан визуелен стил", "A consistent visual style"),
  "price.vat": ("без ДДВ", "excl. VAT"),
+ "bund.h": ("Пакети по сектор", "Packages by sector"),
+ "bund.p": ("Готови пакети за најчестите проекти. Секој почнува со вашите фотографии, планови или рендери.", "Ready-made packages for the most common projects. Each one starts from your own photos, plans or renders."),
+ "b1.n": ("Девелопер", "Developer"), "b1.a": ("€1.500–4.000", "€1,500–4,000"), "b1.u": ("по проект", "per project"),
+ "b1.l1": ("Тајмлапс на градбата, од ископ до клучеви", "Construction timelapse, from excavation to keys"), "b1.l2": ("Продажен филм за станови пред изградба", "Sales film for off-plan apartments"), "b1.l3": ("Формати за огласи, мрежи и продажна канцеларија", "Formats for ads, social media and the sales office"),
+ "b2.n": ("Опремување станови", "Apartment staging"), "b2.a": ("€300–800", "€300–800"), "b2.u": ("по стан", "per apartment"),
+ "b2.l1": ("Од празен до целосно опремен стан", "From an empty to a fully furnished apartment"), "b2.l2": ("Од фотографиите на вашите станови", "From photos of your apartments"), "b2.l3": ("Пакет од 5 станови: €1.500", "Bundle of 5 apartments: €1,500"),
+ "b3.n": ("Ентериер и реновирање", "Interiors and renovation"), "b3.a": ("€300–1.000", "€300–1,000"), "b3.u": ("по простор", "per space"),
+ "b3.l1": ("Пред и потоа, во еден тајмлапс", "Before and after in one timelapse"), "b3.l2": ("Од голи ѕидови до готов простор", "From bare walls to a finished space"), "b3.l3": ("За студија за ентериер, кујни и бањи", "For interior studios, kitchens and bathrooms"),
+ "b4.n": ("Тајмлапс проект", "Project timelapse"), "b4.a": ("€500–2.000", "€500–2,000"), "b4.u": ("по проект", "per project"),
+ "b4.l1": ("Сончеви централи, патишта и дворови", "Solar plants, roads and gardens"), "b4.l2": ("Уредување продавници и саемски штандови", "Shop fit-outs and exhibition stands"), "b4.l3": ("Фаза по фаза, со вашето лого", "Stage by stage, with your logo"),
+ "b5.n": ("Сезонска кампања", "Seasonal campaign"), "b5.a": ("€2.500–6.000", "€2,500–6,000"), "b5.u": ("по кампања", "per campaign"),
+ "b5.l1": ("Семеен рекламен филм", "A family ad film"), "b5.l2": ("Филм од производството", "A film from your production"), "b5.l3": ("Сезонски спотови за празници и акции", "Seasonal spots for holidays and promotions"),
+ "b6.n": ("Бренд на работодавач", "Employer branding"), "b6.a": ("€1.500–3.500", "€1,500–3,500"), "b6.u": ("по пакет", "per package"),
+ "b6.l1": ("Филм за вработување", "A recruitment film"), "b6.l2": ("Филм за вашиот тим и процес", "A film about your team and process"), "b6.l3": ("Кратки клипови за огласи за работа", "Short clips for job ads"),
  "price.cta": ("Побарајте понуда", "Get a quote"),
  "price.terms": ("Цените се во евра, без ДДВ. Рок 7–10 дена од одобрувањето на клучните кадри · 1 рунда корекции · права за веб, социјални мрежи и екрани (ТВ и платени кампањи по договор) · секое видео е означено како изработено со AI.",
                  "Prices in euro, excluding VAT. Delivery 7–10 days after key-frame approval · 1 round of revisions · usage rights for web, social media and screens (TV and paid campaigns by agreement) · every video is labelled as AI-generated."),
@@ -242,6 +256,11 @@ def plan(n, hot=False):
     lis = "".join(f'<li>{CHECK}<span @="p{n}.l{i}"></span></li>' for i in range(1, 5))
     return f"""<article class="plan rv{' hot' if hot else ''}">{tag}<h3 @="p{n}.n"></h3><div class="amt" @="p{n}.a"></div>{per}<ul>{lis}</ul>
 <a class="btn {'a' if hot else 'b'}" href="#contact" data-pkg="p{n}.n" @="price.cta"></a></article>"""
+def bundle(n):
+    lis = "".join(f'<li>{CHECK}<span @="b{n}.l{i}"></span></li>' for i in range(1, 4))
+    return f"""<article class="plan sm rv"><h3 @="b{n}.n"></h3><div class="amt" @="b{n}.a"></div><span class="per"><span @="b{n}.u"></span> · <span @="price.vat"></span></span><ul>{lis}</ul>
+<a class="btn b" href="#contact" data-pkg="b{n}.n" @="price.cta"></a></article>"""
+BUNDLES = "".join(bundle(i) for i in range(1, 7))
 FAQ = "".join(f'<details class="rv"><summary><span @="q{i}"></span><i aria-hidden="true"></i></summary><p @="a{i}"></p></details>' for i in range(1, 7))
 STEPS = "".join(f'<li class="step rv"><span class="n">0{i}</span><h3 @="s{i}.h"></h3><p @="s{i}.p"></p></li>' for i in range(1, 5))
 I_PHONE = '<svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1z"/></svg>'
@@ -485,6 +504,9 @@ PAGE = f"""<!doctype html>
   <h2 class="sh rv" @="price.h"></h2>
   <p class="sp rv" @="price.p"></p>
   <div class="plans">{plan(1)}{plan(2, True)}{plan(3)}</div>
+  <h3 class="bh rv" @="bund.h"></h3>
+  <p class="sp rv" @="bund.p"></p>
+  <div class="plans bundles">{BUNDLES}</div>
   <p class="terms rv" @="price.terms"></p>
  </div>
 </section>
@@ -516,7 +538,7 @@ PAGE = f"""<!doctype html>
      <label><span @="fm.email"></span><input name="email" type="email" autocomplete="email" required></label>
      <label><span @="fm.phone"></span><input name="phone" type="tel" autocomplete="tel"></label>
     </div>
-    <label><span @="fm.pkg"></span><select name="package"><option value="p0" @="fm.pkg0"></option><option value="p1" @="p1.n"></option><option value="p2" @="p2.n"></option><option value="p3" @="p3.n"></option></select></label>
+    <label><span @="fm.pkg"></span><select name="package"><option value="p0" @="fm.pkg0"></option><option value="p1" @="p1.n"></option><option value="p2" @="p2.n"></option><option value="p3" @="p3.n"></option><option value="b1" @="b1.n"></option><option value="b2" @="b2.n"></option><option value="b3" @="b3.n"></option><option value="b4" @="b4.n"></option><option value="b5" @="b5.n"></option><option value="b6" @="b6.n"></option></select></label>
     <label><span @="fm.msg"></span><textarea name="message" rows="4" required @a="placeholder:fm.msg.ph"></textarea></label>
     <p class="err" role="alert" hidden @="fm.err"></p>
     <button class="btn a" type="submit" @="fm.send"></button>

@@ -138,7 +138,7 @@
 
   // ---------- pricing buttons preselect the package in the form
   const form = $('#qf');
-  if (form) $$('.plan a[data-pkg]').forEach(a => a.addEventListener('click', () => { const sel = form.querySelector('select'); const n = a.dataset.pkg.slice(1, 2); sel.value = 'p' + n; }));
+  if (form) $$('.plan a[data-pkg]').forEach(a => a.addEventListener('click', () => { const sel = form.querySelector('select'); sel.value = a.dataset.pkg.split('.')[0]; }));
 
   // ---------- mailto form (no backend). The form ships `hidden` (and with a mailto: action as a safety net): it is shown only
   // here, after the submit handler is attached, so a blocked or broken site.js can never let a native submit reach the server.
