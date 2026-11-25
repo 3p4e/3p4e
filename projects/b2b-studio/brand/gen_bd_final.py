@@ -7,10 +7,10 @@ S = "/tmp/claude-0/-home-user-3p4e/50442171-da10-52d9-9948-b5cc07f6bc8a/scratchp
 import gen_b_triangles as G
 from gen_bd_equal import tri
 OUT = sys.argv[1]; GAP = 120; w = 40
-Dsvg = open(f"{S}/brand/mark_D_single.svg").read(); DW, DH = map(int, re.search(r'viewBox="0 0 (\d+) (\d+)"', Dsvg).groups())
+import os; DSRC = os.environ.get("DSRC", f"{S}/brand/mark_D_single.svg"); Dsvg = open(DSRC).read(); DW, DH = map(int, re.search(r'viewBox="0 0 (\d+) (\d+)"', Dsvg).groups())
 dpath = re.search(r' d="([^"]+)"', Dsvg).group(1)
 mask_png = f"{OUT}/_D_mask.png"
-subprocess.run(["node", f"{S}/logo2/svg2png.js", f"{S}/brand/mark_D_single.svg", mask_png, str(DW), "#000", "#fff"], check=True)
+subprocess.run(["node", f"{S}/logo2/svg2png.js", DSRC, mask_png, str(DW), "#000", "#fff"], check=True)
 Dm = cv2.imread(mask_png, cv2.IMREAD_GRAYSCALE)[:DH, :DW] < 128
 ker = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (2 * GAP + 1, 2 * GAP + 1))
 def crop(a):
