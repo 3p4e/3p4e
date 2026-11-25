@@ -15,19 +15,19 @@ Everything that was planned is rendered, cut and delivered. No GPU box is rented
 
 Audio standard: all films -16 LUFS integrated, true peak <= -1.5 dBTP, 48 kHz stereo (two-pass, applied 2026-11-25 to all six film folders). Social launch reels -14 LUFS.
 
-Pitch materials zip (all of the above for the 12 companies, brand kit, logo animation, subtitles, private outreach files with the real page links): private download folder on KVM4 (`abracadabra-v3/site/_dl_<private-token>/`). The token was rotated on 2026-11-25; the link is shared with the owner only.
+Pitch materials zip `BIG_DOGMA_LTX.zip` (3.3 GB: all of the above, brand kit, logo animation, subtitles, launch kit, private outreach files with the real page links): `dl.bigdogma.tech/_dl_<private-token>/`. The token was rotated on 2026-11-25; the link is shared with the owner only.
 
-## Web (KVM4, Docker + Traefik)
+## Web (bigdogma.tech: Hostinger KVM 1, Mumbai, Docker + Traefik + Let's Encrypt; old KVM4 addresses redirect here)
 | Stack | URL | Notes |
 |---|---|---|
 | `ai-studio-pitch` | `pitch.bigdogma.tech/<private-token>/` | 12 private pages (one per company), noindex; tokens rotated 2026-11-25, real links never committed |
 | `bigdogma-site` | `bigdogma.tech` | studio website MK/EN, unlisted (noindex) until launch |
-| `abracadabra-v3` | `_dl_<private-token>/` | download folder |
+| `bigdogma-dl` | `dl.bigdogma.tech/_dl_<private-token>/` | private downloads, no listing, noindex |
 
 Private backup of non-H3 masters (animated logo exports, launch videos and images): `/opt/bigdogma_backup/` on KVM4 (not served).
 
 ## MiniMax H3 (licence-restricted road)
-44 H3 films, each with pitch 16:9 / 9:16, 1:1, 4:5 and subtitles mk/sr/sq/en, plus the Foton "FALCON" action set (30 s film, 15 s reel, 6 s bumpers 16:9 + 9:16) and the raw clips. Rendered on Vast boxes in permitted territory, finished on the box (`h3_post/`), downloaded by the owner (byte totals verified) and the box destroyed. H3 files exist only on the owner's computer. Rules: `MINIMAX_H3_LICENCE_AND_PLAN.md`, knowledge base §25.
+44 H3 films, each with pitch 16:9 / 9:16, 1:1, 4:5 and subtitles mk/sr/sq/en, plus the Foton "FALCON" action set (30 s film, 15 s reel, 6 s bumpers 16:9 + 9:16) and the raw clips. Rendered on Vast boxes in permitted territory, finished on the box (`h3_post/`), downloaded by the owner (byte totals verified) and the box destroyed. H3 files exist only on the owner's computer and, optionally, in the private `/opt/h3` folder on the Mumbai server (India is outside the restricted regions; never served on the web). Rules: `MINIMAX_H3_LICENCE_AND_PLAN.md`, knowledge base §25.
 
 ## Launch kit
 `launch/`: social images and captions (email-only contact), showreel 16:9 + 9:16, 6 reels, 5 posts, studio website source. Reviewed and fixed in two independent rounds.
