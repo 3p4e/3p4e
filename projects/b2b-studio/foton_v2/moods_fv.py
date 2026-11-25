@@ -1,0 +1,26 @@
+# ACE-Step 1.5 music beds for the 10 Foton v2 films (same format as music/moods2.py: caption + fixed bpm/key, 4/4, instrumental).
+# BPM must equal the film's bpm in films.py (cuts are beat-snapped).
+MOODS2 = {
+ "fv_dust": dict(caption="hard-hitting hybrid trailer rock, distorted baritone guitar riffs, huge taiko and stomp percussion, deep sub drops, braams and risers, aggressive, cinematic automotive commercial, off-road pickup, broadcast quality mix, instrumental",
+                 bpm=124, key="D minor", brief="aggressive, trailer rock, taiko, sub drops"),
+ "fv_night": dict(caption="dark modern synthwave, driving pulsing bass, tight electronic drums, glossy arpeggiated synths, sleek urban night drive, confident, premium car commercial, broadcast quality mix, instrumental",
+                  bpm=124, key="A minor", brief="night drive, synthwave, sleek, pulsing"),
+ "fv_river": dict(caption="energetic indie rock anthem, stomp-clap percussion, driving electric guitars, big floor toms, adventurous, uplifting, outdoor freedom, broadcast quality mix, instrumental",
+                  bpm=128, key="E major", brief="adventurous, uplifting, stomp-clap indie rock"),
+ "fv_storm": dict(caption="epic cinematic hybrid orchestral, pounding war drums, low brass hits, driving string ostinato, thunder-like impacts, tension then triumph, broadcast quality mix, instrumental",
+                  bpm=120, key="C minor", brief="epic, storm, pounding drums, brass"),
+ "fv_snow": dict(caption="modern cinematic electronic hybrid, crisp trap hi-hats, deep 808 bass, icy bell synth plucks, wide pads, cold and bold, winter adventure, broadcast quality mix, instrumental",
+                 bpm=124, key="F minor", brief="icy, bold, hybrid electronic, 808"),
+ "fv_detail": dict(caption="minimal premium tech house, tight punchy kick, metallic percussion, precise clicks, deep rolling bassline, sleek design, luxury product reveal, broadcast quality mix, instrumental",
+                   bpm=124, key="G minor", brief="precise, minimal tech house, premium"),
+ "fv_purple": dict(caption="bold electro future bass, wide supersaw chords, punchy drops, sidechained synths, glossy and confident, neon city night, broadcast quality mix, instrumental",
+                   bpm=126, key="B minor", brief="bold, glossy, future bass, neon"),
+ "fv_tow": dict(caption="gritty blues rock stomp, slide guitar riff, heavy kick and handclaps, overdriven bass, swagger, summer lake road trip, broadcast quality mix, instrumental",
+                bpm=118, key="E minor", brief="gritty, swagger, blues rock stomp"),
+ "fv_work": dict(caption="driving modern rock, heavy live drums, chugging electric guitars, determined anthemic build, early morning hard work, broadcast quality mix, instrumental",
+                 bpm=122, key="A minor", brief="determined, driving rock, anthemic"),
+ "fv_colour": dict(caption="upbeat electro funk, slap bass, bright brass stabs, punchy drums, colourful and fun, energetic product showcase, broadcast quality mix, instrumental",
+                   bpm=124, key="D major", brief="fun, colourful, electro funk, brass"),
+ "fv_alpine": dict(caption="soaring cinematic folk electronic, Balkan kaval flute melody, driving tom drums, warm analog synth pulse, wide strings, majestic mountains, adventure and freedom, broadcast quality mix, instrumental",
+                   bpm=120, key="D minor", brief="soaring, mountain, kaval flute, driving drums"),
+}

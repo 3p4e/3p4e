@@ -103,6 +103,7 @@ def build(film, vertical):
     for k, (vid, bpos) in enumerate(film["vo"]):
         vf = f"{HERE}/vo/{film['id']}_{vid}.wav"
         if not os.path.exists(vf): print("MISSING VO", film["id"], vid, flush=True); continue
+        if vid == "cta": bpos = sum(s[2] for s in film["shots"]) + 1.5   # always just after the end card appears
         ins += ["-i", vf]; n = base + len(vo_tags); ms_ = int(bpos * beat * 1000)
         fc.append(f"[{n}:a]aformat=sample_rates=48000:channel_layouts=stereo,adelay={ms_}|{ms_},volume=1.7[vo{k}]"); vo_tags.append(f"[vo{k}]")
     fo = max(0, total - 1.4)
