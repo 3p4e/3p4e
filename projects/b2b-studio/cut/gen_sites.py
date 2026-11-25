@@ -2,7 +2,8 @@
 # live logo preloader, glowing nav mark, AI-render HUD over the hero film with typed prompt, aurora light, grain,
 # capability marquee, count-up stats, glowing film cards, prompt -> key frame -> AI video pipeline + compare slider,
 # animated logo loop at the close. v3: every LTX shot per company (gallery, key frame -> motion pairs, 9:16 phones, GIF teasers, montage). Private: unguessable path per company, root 404, noindex. LTX films only.
-import os, re, json, shutil, secrets, html, subprocess, ast
+import os, re, json, shutil, secrets, html, subprocess, ast, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import bundles_html
 S = "/tmp/claude-0/-home-user-3p4e/50442171-da10-52d9-9948-b5cc07f6bc8a/scratchpad"
 REPO = "/home/user/3p4e/projects/b2b-studio"
 V1 = ast.parse(open(f"{S}/cut/gen_sites_v1.py").read())
@@ -317,7 +318,7 @@ for c in O["companies"]:
 <meta name="robots" content="noindex,nofollow,noarchive,nosnippet"><meta name="referrer" content="no-referrer"><meta name="theme-color" content="{t['bg']}">
 <title>{E(title)} · {E(B['name'])}</title><link rel="icon" type="image/png" href="icon.png"><link rel="apple-touch-icon" href="icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" href="russo.ttf" as="font" type="font/ttf" crossorigin>
-<style>{css(t)}{CSS3}</style><link rel="stylesheet" href="fx.css"></head><body>
+<style>{css(t)}{CSS3}{bundles_html.CSS}</style><link rel="stylesheet" href="fx.css"></head><body>
 <div class="pre" aria-hidden="true"><canvas></canvas><button type="button">{u2['skip']}</button></div>
 <div class="aurora" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="grain" aria-hidden="true"></div><div class="spot" aria-hidden="true"></div>
 <nav><div class="wrap"><a class="brand" href="#top" aria-label="{E(B['name'])}"><canvas aria-hidden="true"></canvas><b>{E(B['name_short'])}</b></a>
@@ -346,6 +347,7 @@ for c in O["companies"]:
 <div class="price"><div class="card rv"><h3>{E(tx['pilot'])}</h3><div class="amt">{E(p['pilot'])}</div><p>{E(tx['pilot_d'])}</p></div>
 <div class="card hot rv"><span class="tag">{u['popular']}</span><h3>{E(tx['launch'])}</h3><div class="amt">{E(p['launch'])}</div><p>{E(tx['launch_d'])}</p></div>
 <div class="card rv"><h3>{E(tx['monthly'])}</h3><div class="amt">{E(p['monthly'])}</div><p>{E(tx['monthly_d'])}</p></div></div>
+{bundles_html.block(c["id"], L)}
 <p class="terms rv">{E(tx['terms'])} {E(tx['price_note'])}</p></div></section>
 <section class="final"><div class="wrap"><video class="logo-loop" autoplay muted loop playsinline src="logo_loop.mp4" aria-hidden="true"></video><h2 class="sh rv">{E(u['final'])}</h2><p class="rv">{E(u['final_p'])}</p>
 <div class="btns rv"><a class="btn a" href="{wa}">{u['cta']}</a><a class="btn b" href="mailto:{E(B['email'])}">{u['mail']}</a><a class="btn b" href="offer.pdf">{u['pdf']}</a></div></div></section>
