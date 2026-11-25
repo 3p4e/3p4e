@@ -1,0 +1,992 @@
+{
+ "tl_01_dig": {
+  "mk": "Багери копаат, камиони одвезуваат земја, создавајќи длабока јама за темелите.",
+  "sr": "Bageri kopaju, kamioni odvoze zemlju, stvarajući duboku jamu za temelj.",
+  "sq": "Ekskavatorët gërmojnë, kamionët largojnë tokën, duke krijuar gropën e thellë.",
+  "en": "Excavators dig and trucks haul earth, forming a deep pit for the building's foundation."
+ },
+ "tl_02_pour": {
+  "mk": "Бетон се излева за основа, столбови растат, а кран се издига над градилиштето.",
+  "sr": "Beton se izliva za temeljnu ploču, stubovi rastu, a kran se uzdiže.",
+  "sq": "Betoni derdhet për pllakën themelore, kolonat rriten, vinçi ngrihet lart.",
+  "en": "Concrete pours to form a solid slab, then columns rise as a crane appears."
+ },
+ "tl_03_frame": {
+  "mk": "Катови се издигаат на мрежа од столбови, скеле се качува, кран носи материјали.",
+  "sr": "Spratovi se dižu na mreži stubova, skele se uzdižu, kran donosi materijale.",
+  "sq": "Katet ngrihen mbi rrjetën e kolonave, skelat ngrihen, vinçi sjell materiale.",
+  "en": "Floors rise on the column grid as scaffolding climbs and a crane swings materials."
+ },
+ "tl_04_glaze": {
+  "mk": "Стаклени панели и фасадни облоги ја комплетираат структурата, скелето се отстранува.",
+  "sr": "Stakleni paneli i fasadne obloge zatvaraju strukturu, skele se uklanjaju.",
+  "sq": "Panelet e qelqit dhe veshjet e fasadës mbyllin strukturën, skelat hiqen.",
+  "en": "Glass panels and facade bands enclose the structure as scaffolding is removed."
+ },
+ "tl_05_finish": {
+  "mk": "Финалните доработки ја комплетираат структурата, кранот се демонтира, околината се уредува.",
+  "sr": "Finalni radovi kompletiraju strukturu, kran se demontira, okolina se uređuje.",
+  "sq": "Punimet përfundimtare plotësojnë strukturën, vinçi çmontohet, rrethina zbukurohet.",
+  "en": "Finishing touches complete the structure as the crane is dismantled and surroundings are graded."
+ },
+ "tl_06_handover": {
+  "mk": "Пејзажот се шири, вечерна светлина ја топли фасадата, прозорците светат, автомобили пристигнуваат.",
+  "sr": "Pejzažno uređenje se širi, večernje svetlo greje fasadu, prozori svetle, automobili pristižu.",
+  "sq": "Peizazhi shtrihet, drita e mbrëmjes ngroh fasadën, dritaret ndriçojnë, makinat mbërrijnë.",
+  "en": "Landscaping spreads, evening light warms the facade, and windows illuminate as cars arrive."
+ },
+ "fit_v2": {
+  "mk": "Работници го расчистуваат просторот, подот се чисти, светлата го осветлуваат празниот простор.",
+  "sr": "Radnici čiste prostor, pod se čisti, svetla osvetljavaju praznu kancelariju.",
+  "sq": "Punëtorët pastrojnë hapësirën, dyshemeja fshihet, dritat ndriçojnë zyrën e zbrazët.",
+  "en": "Workers clear the space, the floor is cleaned, and lights illuminate the empty office."
+ },
+ "st_01_wave1": {
+  "mk": "Килим се одмотува, софа и масичка за кафе нежно се поставуваат.",
+  "sr": "Tepih se odmotava, sofa i stočić za kafu klize na svoje mesto.",
+  "sq": "Tapeti shpaloset, divani dhe tavolina e kafesë vendosen me lehtësi.",
+  "en": "A rug unrolls, then a sofa and coffee table slide into place."
+ },
+ "st_02_wave2": {
+  "mk": "Конзола и фотелја, како и друг мебел, се поставуваат околу софата.",
+  "sr": "Konzola i fotelja, uz ostali nameštaj, klize na svoje mesto oko sofe.",
+  "sq": "Konsola dhe kolltuku, bashkë me mobilje të tjera, vendosen rreth divanit.",
+  "en": "Furniture pieces, including a console and armchair, glide into position around the sofa."
+ },
+ "st_03_styled": {
+  "mk": "Уметност, растенија и меки детали го комплетираат просторот, исполнет со топла светлина.",
+  "sr": "Umetnost, biljke i mekani detalji upotpunjuju sobu, ispunjenu toplom večernjom svetlošću.",
+  "sq": "Art, bimë dhe detaje të buta plotësojnë hapësirën, ndriçuar nga drita e mbrëmjes.",
+  "en": "Art, plants, and soft furnishings appear as warm evening light fills the room."
+ },
+ "foton_A1_dawn-teaser": {
+  "mk": "Светлата полека светат, магла се движи, а изгрејсонцето се лизга по хаубата.",
+  "sr": "Svetla se polako pale, magla se kreće, a sunce klizi po haubi.",
+  "sq": "Dritat ndriçojnë ngadalë, mjegulla lëviz, drita e agimit rrëshqet mbi kapak.",
+  "en": "Headlights slowly brighten as mist drifts and sunrise light slides across the hood."
+ },
+ "foton_A2_drive-by": {
+  "mk": "Пикапот забрзува непречено по патот, прашина се крева, сонцето блеска.",
+  "sr": "Pikap ubrzava glatko po putu, prašina se diže, sunce bljeska.",
+  "sq": "Kamionçina përshpejton butësisht në rrugë, pluhuri ngrihet, dielli shkëlqen.",
+  "en": "The pickup accelerates smoothly along the road, dust lifting and sunlight flaring."
+ },
+ "foton_A3_studio-turn": {
+  "mk": "Светлина се движи по контурите на возилото, рефлексии се лизгаат по подот.",
+  "sr": "Svetlost se kreće po konturama vozila, refleksije klize po podu.",
+  "sq": "Drita kalon përgjatë kontureve të automjetit, reflektime rrëshqasin në dysheme.",
+  "en": "Light sweeps along the vehicle's contours as reflections glide across the floor."
+ },
+ "foton_B1_v9-character": {
+  "mk": "Улични светла се рефлектираат на хаубата, LED светлата полека се палат.",
+  "sr": "Ulična svetla se reflektuju na haubi, LED svetla polako se pale.",
+  "sq": "Dritat e rrugës reflektohen në kapak, dritat LED ndizen ngadalë.",
+  "en": "Street lights reflect on the hood as LED headlights slowly blink awake."
+ },
+ "foton_B2_v7-character": {
+  "mk": "Пикапот поминува покрај порта, рака мавта, дрвјата нежно се нишаат.",
+  "sr": "Pikap prolazi pored kapije, ruka maše, drveće se nežno njiše.",
+  "sq": "Kamionçina kalon pranë portës, një dorë përshëndet, pemët lëkunden butësisht.",
+  "en": "The pickup rolls past a gate, a hand waves, and trees sway gently."
+ },
+ "foton_B3_g7-character": {
+  "mk": "Возило вози по чакал, кревајќи прашина, следено одблизу.",
+  "sr": "Vozilo vozi po šljunku, podižući prašinu, praćeno izbliza.",
+  "sq": "Automjeti lëviz mbi zhavorr, duke ngritur pluhur, i ndjekur nga afër.",
+  "en": "A vehicle drives across gravel, kicking up dust as the camera tracks alongside."
+ },
+ "foton_C1_approach": {
+  "mk": "Пикапот напушта пат, вози на каллива патека, гумите го држат теренот.",
+  "sr": "Pikap napušta put, vozi na blatnjavu stazu, gume čvrsto drže teren.",
+  "sq": "Kamionçina lëviz nga rruga, vozit në shteg me baltë, gomat kapin terrenin.",
+  "en": "A pickup leaves the road, driving onto a muddy track, tires gripping the terrain."
+ },
+ "foton_C2_climb": {
+  "mk": "Моќен пикап се качува по карпеста нагорнина, калта прска, гумите се виткаат.",
+  "sr": "Snažan pikap se penje uz kamenitu uzbrdicu, blato prska, gume se savijaju.",
+  "sq": "Kamionçina e fuqishme ngjitet në shkëmbinj, balta spërkatet, gomat përkulen.",
+  "en": "A powerful pickup climbs a rocky incline, mud spraying as tires flex over obstacles."
+ },
+ "foton_C3_summit": {
+  "mk": "Пикап застанува на живописен поглед, топла изгрејсончева светлина го гали.",
+  "sr": "Pikap se zaustavlja na slikovitom vidikovcu, topla svetlost izlaska sunca obasjava ga.",
+  "sq": "Kamionçina ndalon në pikëpamje piktoreske, drita e ngrohtë e agimit e ndriçon.",
+  "en": "A pickup stops at a scenic viewpoint as warm sunrise light illuminates the vehicle."
+ },
+ "foton_D1_cockpit-reveal": {
+  "mk": "Екранот на контролната табла се буди со мек, амбиентален сјај.",
+  "sr": "Ekran kontrolne table se budi mekim, ambijentalnim sjajem.",
+  "sq": "Ekrani i pultit zgjohet me një shkëlqim të butë, ambiental.",
+  "en": "The camera pushes in as the dashboard display awakens with a soft, ambient glow."
+ },
+ "foton_D2_details": {
+  "mk": "Рака прецизно врти метален бројчаник, екранот се активира со мек сјај.",
+  "sr": "Ruka precizno okreće metalni točkić, ekran se aktivira mekim sjajem.",
+  "sq": "Dora rrotullon saktësisht numratorin, ekrani aktivizohet me shkëlqim të butë.",
+  "en": "A hand precisely turns a metal dial, activating the display with a smooth, soft glow."
+ },
+ "foton_D3_seats": {
+  "mk": "Амбиентална светлина се движи низ седиштата, нагласувајќи ја фината изработка.",
+  "sr": "Ambijentalno svetlo se graciozno pomera preko sedišta, ističući finu izradu.",
+  "sq": "Drita ambientale lëviz me elegancë nëpër sedilje, duke theksuar qepjet e holla.",
+  "en": "Ambient light gracefully shifts across the vehicle's interior seats, highlighting fine stitching."
+ },
+ "foton_E1_auman-tractor": {
+  "mk": "Голем теглич вози по автопат, утринска светлина блеска низ решетката.",
+  "sr": "Veliki tegljač vozi autoputem, jutarnja svetlost bljeska preko rešetke.",
+  "sq": "Një kamion i madh vozit në autostradë, drita e mëngjesit shkëlqen në grilë.",
+  "en": "A large tractor trailer drives down the highway, morning light flaring across its grille."
+ },
+ "foton_E2_aumark-city-delivery": {
+  "mk": "Работник ја затвора товарната врата; камионот за испорака влегува во градска улица.",
+  "sr": "Radnik zatvara teretna vrata; dostavni kamion ulazi u gradsku ulicu.",
+  "sq": "Punëtori mbyll derën e ngarkesës; kamioni i shpërndarjes hyn në rrugën e qytetit.",
+  "en": "A worker closes the cargo door; the delivery truck pulls into a city street."
+ },
+ "foton_E3_eme4-electric": {
+  "mk": "Кабел за полнење се поврзува, мек син индикатор пулсира на возилото.",
+  "sr": "Kabl za punjenje se povezuje, meki plavi indikator pulsira na vozilu.",
+  "sq": "Kablloja e karikimit lidhet, treguesi blu pulson në automjet.",
+  "en": "A charging cable connects, and a soft blue indicator pulses on the vehicle."
+ },
+ "foton_E4_cargo-van": {
+  "mk": "Задни врати се отвораат; курир доставува пакет од комбето до продавница.",
+  "sr": "Zadnja vrata se otvaraju; kurir isporučuje paket iz kombija u prodavnicu.",
+  "sq": "Dyert e pasme hapen; korrieri dorëzon paketën nga furgoni në dyqan.",
+  "en": "Rear doors open; a courier delivers a package from the van to a shop."
+ },
+ "foton_F1_showroom-arrival": {
+  "mk": "Советник ја отвора вратата, пречекувајќи клиент да му пријде на возилото.",
+  "sr": "Savetnik otvara vrata, dočekujući kupca da priđe vozilu.",
+  "sq": "Këshilltari hap derën, duke mirëpritur klientin të afrohet me automjetin.",
+  "en": "An advisor opens the door, welcoming a customer to approach the vehicle."
+ },
+ "foton_F2_test-drive": {
+  "mk": "Клиент се насмевнува додека вози, советникот покажува карактеристика на возилото.",
+  "sr": "Kupac se smeši dok vozi, savetnik pokazuje karakteristiku vozila.",
+  "sq": "Klienti buzëqesh gjatë vozitjes, këshilltari tregon një veçori.",
+  "en": "A customer smiles while driving, as an advisor points out a vehicle feature."
+ },
+ "foton_F3_key-handover": {
+  "mk": "Советник го предава клучот, се ракува со новиот сопственик на возилото.",
+  "sr": "Savetnik predaje ključ, rukujući se sa novim vlasnikom vozila.",
+  "sq": "Këshilltari dorëzon çelësin, shtrëngon duart me pronarin e ri.",
+  "en": "An advisor hands over the key, shaking hands with the new vehicle owner."
+ },
+ "foton_G1_service-bay": {
+  "mk": "Техничар проверува одоздола, потоа го спушта возилото во добро осветлен сервис.",
+  "sr": "Tehničar pregleda odozdo, zatim spušta vozilo u dobro osvetljen servis.",
+  "sq": "Tekniku inspekton poshtë, pastaj ul automjetin në servis të ndriçuar mirë.",
+  "en": "A technician inspects underneath, then lowers the vehicle in a well-lit service bay."
+ },
+ "foton_G2_fleet-lineup": {
+  "mk": "Возилата се редат, светлата се палат, фаќајќи го утринското сонце.",
+  "sr": "Vozila se ređaju, svetla se pale, hvatajući jutarnje sunce.",
+  "sq": "Automjetet rreshtohen, dritat ndizen, duke kapur diellin e mëngjesit.",
+  "en": "A camera glides along a vehicle lineup as headlights illuminate, catching the morning sun."
+ },
+ "prop_bw_belgrade_waterfront_s1": {
+  "mk": "Поглед од воздух се лизга по реката кон кулите, златното светло се рефлектира.",
+  "sr": "Pogled iz vazduha klizi duž reke ka kulama, zlatno svetlo se reflektuje.",
+  "sq": "Pamje ajrore rrëshqet përgjatë lumit drejt kullave, drita e artë reflektohet.",
+  "en": "An aerial view glides along the river towards towers as golden light reflects."
+ },
+ "prop_bw_belgrade_waterfront_s2": {
+  "mk": "Додека небото се затемнува, градските светла преку реката светат топло.",
+  "sr": "Dok se nebo smračuje, gradska svetla preko reke toplo svetle.",
+  "sq": "Ndërsa qielli errësohet, dritat e qytetit përtej lumit ndriçojnë ngrohtësisht.",
+  "en": "As the sky darkens, city lights across the river illuminate, glowing warmly."
+ },
+ "prop_gener2_albania_s1": {
+  "mk": "Кранови се нишаат, кули брзо се издигаат, сонцето се движи над планините.",
+  "sr": "Kranovi se njišu, kule brzo se izdižu, sunce se kreće iznad planina.",
+  "sq": "Vinçat lëkunden, kullat ngrihen shpejt, dielli lëviz mbi male.",
+  "en": "Cranes swing and towers rise quickly as the sun moves over the mountains."
+ },
+ "prop_gener2_albania_s2": {
+  "mk": "Инженер погледнува, клима со главата, покажува додека товар поминува над него.",
+  "sr": "Inženjer pogleda, klimne glavom, pokaže dok teret prolazi iznad njega.",
+  "sq": "Inxhinieri shikon, tund kokën, tregon ndërsa ngarkesa kalon sipër.",
+  "en": "An engineer looks up, nods, and points as a crane load passes overhead."
+ },
+ "prop_concord_kastrati_tirana_s1": {
+  "mk": "Апартман брзо се трансформира: се поставуваат подови, мебел се појавува.",
+  "sr": "Apartman se brzo transformiše: postavljaju se podovi, nameštaj se pojavljuje.",
+  "sq": "Apartamenti transformohet shpejt: shtrohen dyshemetë, mobiljet shfaqen në vend.",
+  "en": "An apartment quickly transforms as floors are laid and furniture appears in place."
+ },
+ "prop_concord_kastrati_tirana_s2": {
+  "mk": "Поглед од воздух се повлекува, светлата ги осветлуваат балконите, брановите се тркалаат на плажа.",
+  "sr": "Pogled iz vazduha se povlači, svetla osvetljavaju balkone, talasi se kotrljaju na plažu.",
+  "sq": "Pamje ajrore tërhiqet, dritat ndriçojnë ballkonet, valët rrotullohen në plazh.",
+  "en": "An aerial view pulls back as lights illuminate balconies and waves roll onto the beach."
+ },
+ "prop_kam_skopje_s1": {
+  "mk": "Персоналот реди производи, светлата се палат во продавницата.",
+  "sr": "Osoblje slaže proizvode, svetla se pale u prodavnici.",
+  "sq": "Stafi rregullon prodhimet, dritat ndizen në dyqan.",
+  "en": "A camera moves along an aisle as staff arrange produce and lights turn on."
+ },
+ "prop_kam_skopje_s2": {
+  "mk": "Касиерка поздравува клиент, предава торба, споделува насмевка.",
+  "sr": "Kasirka pozdravlja kupca, predaje torbu, deli osmeh.",
+  "sq": "Arkëtarja përshëndet klientin, i jep çantën, shkëmben një buzëqeshje.",
+  "en": "A cashier greets a customer, hands over a bag, and shares a smile."
+ },
+ "prop_viva_fresh_kosovo_s1": {
+  "mk": "Поглед од воздух кон влез, купувачи влегуваат, светлата се осветлуваат.",
+  "sr": "Pogled iz vazduha ka ulazu, kupci ulaze, svetla se pojačavaju.",
+  "sq": "Pamje ajrore drejt hyrjes, blerësit hyjnë, dritat ndriçohen.",
+  "en": "An aerial view pushes toward an entrance as shoppers walk in and lights brighten."
+ },
+ "prop_viva_fresh_kosovo_s2": {
+  "mk": "Пекар става топла тава на шанкот, клиент посегнува по леб.",
+  "sr": "Pekar stavlja vruću tepsiju na pult, kupac poseže za hlebom.",
+  "sq": "Bukëpjekësi vendos tabaka me avull në banak, klienti zgjat dorën për bukë.",
+  "en": "A baker slides a steaming tray onto the counter as a customer reaches for bread."
+ },
+ "prop_alkaloid_skopje_s1": {
+  "mk": "Научник работи, проверува таблет, се насмевнува на колега.",
+  "sr": "Naučnik radi, proverava tablet, smeši se kolegi.",
+  "sq": "Shkencëtari punon, kontrollon tabletin dhe i buzëqesh një kolegu.",
+  "en": "A camera tracks as a scientist works, checks a tablet, and smiles at a colleague."
+ },
+ "prop_alkaloid_skopje_s2": {
+  "mk": "Вработени пристигнуваат, се поздравуваат и влегуваат во зградата.",
+  "sr": "Zaposleni stižu, pozdravljaju se i ulaze u zgradu.",
+  "sq": "Punonjësit mbërrijnë, përshëndeten dhe hyjnë brenda.",
+  "en": "A camera moves toward an entrance as employees arrive, greet, and walk in."
+ },
+ "prop_replek_skopje_s1": {
+  "mk": "Вилушкар крева палета со кутии додека се движи по патека.",
+  "sr": "Viljuškar podiže paletu kutija, krećući se duž prolaza.",
+  "sq": "Një pirun ngre paleta me kuti, duke u lëvizur përgjatë korridorit.",
+  "en": "A camera tracks along an aisle as a forklift lifts a pallet of boxes."
+ },
+ "prop_replek_skopje_s2": {
+  "mk": "Светлечки рути се шират на мапа, тим клима со главите.",
+  "sr": "Svetleće rute se šire na mapi, tim kima glavom.",
+  "sq": "Rrugët ndriçuese shpërndahen në hartë, një ekip tund kokën.",
+  "en": "A camera pushes in as glowing routes spread on a map and a team nods."
+ },
+ "prop_millennium_team_belgrade_s1": {
+  "mk": "Кула се издига, стаклени панели ја затвораат фасадата, кранови се нишаат во зајдисонце.",
+  "sr": "Kula se uzdiže, stakleni paneli zatvaraju fasadu, kranovi se njišu u zalazak sunca.",
+  "sq": "Një kullë ngrihet, panele xhami mbyllin fasadën, vinçat lëkunden në perëndim.",
+  "en": "A tower rises, glass panels closing its facade as cranes swing at sunset."
+ },
+ "prop_millennium_team_belgrade_s2": {
+  "mk": "Менаџерот објаснува, тимот се смее, става ракавици и почнува со работа.",
+  "sr": "Menadžer objašnjava, tim se smeje, stavlja rukavice i počinje sa radom.",
+  "sq": "Menaxheri shpjegon, ekipi qesh, vesh dorezat dhe fillon punën.",
+  "en": "The manager explains, the team laughs, then puts on gloves and starts working."
+ },
+ "prop_nelt_group_s1": {
+  "mk": "Кутии се движат на ленти, вилушкар крева палети, работници постојано скенираат стока.",
+  "sr": "Kutije se kreću na trakama, viljuškar podiže palete, radnici stalno skeniraju robu.",
+  "sq": "Kutitë lëvizin në shirita, një pirun ngre paleta, punëtorët vazhdimisht skanojnë mallrat.",
+  "en": "Boxes move on conveyors, a forklift lifts pallets, workers scan goods steadily."
+ },
+ "prop_nelt_group_s2": {
+  "mk": "Камиони излегуваат од центарот на автопат во зори.",
+  "sr": "Kamioni izlaze iz centra na auto-put u zoru.",
+  "sq": "Kamionët dalin nga qendra në autostradë në agim.",
+  "en": "Trucks roll out of the hub onto the highway as the sun rises."
+ },
+ "prop_speeex_kosovo_s1": {
+  "mk": "Агенти разговараат, соиграч дава палец нагоре, лидер поминува со кафе.",
+  "sr": "Agenti razgovaraju, saigrač daje palac gore, lider prolazi sa kafom.",
+  "sq": "Agjentët flasin, një shok ekipi jep gishtin lart, një lider kalon me kafe.",
+  "en": "Agents talk, a teammate gives a thumbs up, a leader passes with coffee."
+ },
+ "prop_speeex_kosovo_s2": {
+  "mk": "Колеги креваат чаши, се смеат, еден тапка друг по грб среќно.",
+  "sr": "Kolege podižu čaše, smeju se, jedan tapše drugog po leđima srećno.",
+  "sq": "Kolegët ngrenë gota, qeshin, njëri godet tjetrin në shpinë.",
+  "en": "Colleagues raise cups, laugh, and one pats another on the back happily."
+ },
+ "prop_bw_belgrade_waterfront_s3": {
+  "mk": "Семејства шетаат, велосипедист поминува, кафулињата светат, кулите светат позади.",
+  "sr": "Porodice šetaju, biciklista prolazi, kafići sjaje, kule svetle pozadi.",
+  "sq": "Familjet shëtisin, çiklisti kalon, dritat e kafeneve shkëlqejnë, kullat ndriçojnë pas.",
+  "en": "Families stroll, a cyclist passes, cafe lights glow, towers light up behind."
+ },
+ "prop_bw_belgrade_waterfront_s4": {
+  "mk": "Брановите фаќаат портокалова светлина, градскиот хоризонт свети зад базенот.",
+  "sr": "Talasi hvataju narandžasto svetlo, gradski horizont sija iza bazena.",
+  "sq": "Valët kapin dritën portokalli, silueta e qytetit shkëlqen pas pishinës.",
+  "en": "Ripples catch orange light, the city skyline glows beyond the pool edge."
+ },
+ "prop_gener2_albania_s3": {
+  "mk": "Асфалтер поставува асфалт, валјаци следат, камиони се движат по новиот пат.",
+  "sr": "Asfalter postavlja asfalt, valjci prate, kamioni se kreću po novom putu.",
+  "sq": "Shtruesi vendos asfalt, rrotullat ndjekin, kamionët lëvizin në rrugën e re.",
+  "en": "A paver lays asphalt, rollers follow, trucks move on the completed road."
+ },
+ "prop_gener2_albania_s4": {
+  "mk": "Деца трчаат, прозорците светат, сонцето заоѓа зад планините над комплексот.",
+  "sr": "Deca trče, prozori se pale, sunce zalazi iza planina nad kompleksom.",
+  "sq": "Fëmijët vrapojnë, dritaret ndizen, dielli perëndon pas maleve mbi kompleks.",
+  "en": "Children run, windows light up, the sun sets behind mountains over the complex."
+ },
+ "prop_concord_kastrati_tirana_s3": {
+  "mk": "Балконските светла се палат кат по кат, небото станува темно сино.",
+  "sr": "Balkonska svetla se pale sprat po sprat, nebo postaje tamno plavo.",
+  "sq": "Dritat e ballkoneve ndizen kat pas kati, qielli bëhet blu e thellë.",
+  "en": "Balcony lights switch on floor by floor, the sky turns deep blue."
+ },
+ "prop_concord_kastrati_tirana_s4": {
+  "mk": "Агент предава клучеви, среќна двојка се смее и ракува.",
+  "sr": "Agent predaje ključeve, srećan par se smeje i rukuje.",
+  "sq": "Agjenti dorëzon çelësat, një çift i lumtur buzëqesh dhe shtrëngon duart.",
+  "en": "An agent hands over keys, a happy couple smiles and shakes hands."
+ },
+ "prop_kam_skopje_s3": {
+  "mk": "Вратите се отвораат, менаџерот ги пречекува насмеаните клиенти.",
+  "sr": "Vrata se otvaraju, menadžer dočekuje nasmejane kupce.",
+  "sq": "Dyert hapen, menaxheri mirëpret klientët që hyjnë me buzëqeshje.",
+  "en": "Doors slide open, the manager welcomes customers who walk in smiling."
+ },
+ "prop_kam_skopje_s4": {
+  "mk": "Работник предава гајби, возач затвора врати, камион заминува во зори.",
+  "sr": "Radnik predaje gajbe, vozač zatvara vrata, kamion odlazi u zoru.",
+  "sq": "Punëtori kalon arka, shoferi mbyll dyert, kamioni largohet në agim.",
+  "en": "Worker passes crates, driver closes doors, a truck departs as sun rises."
+ },
+ "prop_viva_fresh_kosovo_s3": {
+  "mk": "Магла се спушта над зеленило, вработени редат портокали, дете бере јаболко.",
+  "sr": "Magla se spušta nad zelenilom, osoblje ređa pomorandže, dete bira jabuku.",
+  "sq": "Mjegulla shtrihet mbi gjelbërim, stafi rregullon portokalle, fëmija zgjedh mollën.",
+  "en": "Mist drifts over greens, staff stacks oranges, a child picks an apple."
+ },
+ "prop_viva_fresh_kosovo_s4": {
+  "mk": "Семејство товари намирници во автомобил, дете ужива во количка за пазарење.",
+  "sr": "Porodica tovari namirnice u auto, dok dete uživa u kolicima za kupovinu.",
+  "sq": "Familja ngarkon blerjet në makinë, fëmija argëtohet në karrocë pazari.",
+  "en": "A family loads groceries into their car as a child rides in the cart."
+ },
+ "prop_alkaloid_skopje_s3": {
+  "mk": "Блистер пакувањата се лизгаат по линија, техничар проверува картон.",
+  "sr": "Blister pakovanja klize linijom, tehničar proverava karton.",
+  "sq": "Paketime flluskash rrëshqasin në linjë, tekniku inspekton një kuti.",
+  "en": "Blister packs glide along a line as a technician inspects a finished carton."
+ },
+ "prop_alkaloid_skopje_s4": {
+  "mk": "Ментор покажува примерок, млади научници земаат белешки и се смешкаат.",
+  "sr": "Mentor pokazuje uzorak, mladi naučnici beleže i smeše se.",
+  "sq": "Mentori tregon një mostër, shkencëtarët e rinj shënojnë dhe buzëqeshin.",
+  "en": "A mentor points at a sample as young scientists take notes and smile."
+ },
+ "prop_replek_skopje_s3": {
+  "mk": "Оператори проверуваат мерачи и запечатуваат контејнери додека сад се меша.",
+  "sr": "Operateri proveravaju merače i zatvaraju kontejnere dok se posuda meša.",
+  "sq": "Operatorët kontrollojnë matësit dhe vulosin enët ndërsa një enë trazohet.",
+  "en": "Operators check gauges and seal containers while a vessel stirs in a hall."
+ },
+ "prop_replek_skopje_s4": {
+  "mk": "Вилушкар поставува палети, вратите се затвораат и камион заминува.",
+  "sr": "Viljuškar postavlja palete, vrata se zatvaraju i kamion odlazi.",
+  "sq": "Një pirunier vendos paleta, dyert mbyllen dhe një kamion largohet.",
+  "en": "A forklift places pallets, doors close, and a truck drives off."
+ },
+ "prop_millennium_team_belgrade_s3": {
+  "mk": "Сегменти од покрив се креваат на место додека челичен прстен се затвора.",
+  "sr": "Segmenti krova se podižu na mesto dok se čelični prsten zatvara.",
+  "sq": "Segmentet e çatisë ngrihen në vend ndërsa një unazë çeliku mbyllet.",
+  "en": "Roof segments are lifted into place as a steel ring closes."
+ },
+ "prop_millennium_team_belgrade_s4": {
+  "mk": "Луѓе минуваат низ светла сала, сонцето сјае и лифтови се отвораат.",
+  "sr": "Ljudi prelaze svetli lobi, sunce sija i liftovi se otvaraju.",
+  "sq": "Njerëzit kalojnë një holl të ndritshëm, dielli shkëlqen dhe ashensorët hapen.",
+  "en": "People cross a bright lobby as sunlight streams and lifts open."
+ },
+ "prop_nelt_group_s3": {
+  "mk": "Возач предава кутии, сопственик на продавница потпишува и се ракуваат.",
+  "sr": "Vozač predaje kutije, vlasnik radnje potpisuje i rukuju se.",
+  "sq": "Një shofer dorëzon kuti, një pronar dyqani firmos dhe shtrëngojnë duart.",
+  "en": "A driver hands over boxes, a shop owner signs, and they shake hands."
+ },
+ "prop_nelt_group_s4": {
+  "mk": "Рути пулсираат на екрани, оператор покажува и колега клима со глава.",
+  "sr": "Rute pulsiraju ekranima, operater pokazuje i kolega klima glavom.",
+  "sq": "Rrugët pulsojnë në ekrane, një operator tregon, një koleg tund kokën.",
+  "en": "Routes pulse across screens as an operator points and a colleague nods."
+ },
+ "prop_speeex_kosovo_s3": {
+  "mk": "Лице влегува, рецепционер пречекува и тим лидер се ракува.",
+  "sr": "Osoba ulazi, recepcioner dočekuje i tim lider se rukuje.",
+  "sq": "Një person hyn, recepsionisti mirëpret dhe një udhëheqës ekipi shtrëngon duart.",
+  "en": "A person enters, a receptionist welcomes, and a team leader shakes hands."
+ },
+ "prop_speeex_kosovo_s4": {
+  "mk": "Тренер објаснува, обучувачи земаат белешки, еден крева рака.",
+  "sr": "Trener objašnjava, polaznici beleže, jedan podiže ruku.",
+  "sq": "Një trajner shpjegon, praktikantët mbajnë shënime, njëri ngre dorën.",
+  "en": "A coach explains as trainees take notes and one raises a hand."
+ },
+ "x_ren_x1": {
+  "mk": "Стари кабинети се отстрануваат, модерна кујна со апарати се појавува.",
+  "sr": "Stari ormari se uklanjaju, moderna kuhinja sa aparatima se pojavljuje.",
+  "sq": "Kabinetet e vjetra hiqen, një kuzhinë moderne me pajisje të reja shfaqet.",
+  "en": "Old cabinets are removed as a modern kitchen with new appliances appears."
+ },
+ "x_ren_x2": {
+  "mk": "Плочките исчезнуваат, се појавува модерна бања со стаклен туш.",
+  "sr": "Pločice nestaju, otkriva se moderno kupatilo sa staklenim tušem.",
+  "sq": "Pllakat zhduken, shfaqet një banjo moderne me dush xhami.",
+  "en": "Tiles are stripped as a modern bathroom with a glass shower appears."
+ },
+ "x_auto_x1": {
+  "mk": "Роботска рака прецизно зема и поставува делови на подвижна лента.",
+  "sr": "Robotska ruka precizno uzima i postavlja delove na pokretnu traku.",
+  "sq": "Një krah roboti merr dhe vendos pjesë saktësisht në shiritin transportues.",
+  "en": "A robot arm picks and places parts precisely on a moving conveyor."
+ },
+ "x_auto_x2": {
+  "mk": "Инспектор скенира ознаки и проверува приклучоци покрај редови полни лавици.",
+  "sr": "Inspektor skenira oznake i proverava konektore duž redova punih polica.",
+  "sq": "Një inspektor skanon etiketa dhe kontrollon lidhësit përgjatë rreshtave të rafteve.",
+  "en": "An inspector scans tags and checks connectors along rows of full racks."
+ },
+ "x_pharma_x1": {
+  "mk": "Игли полнат ампули, тапи се поставуваат додека редот напредува.",
+  "sr": "Igle pune ampule, čepovi se postavljaju dok red napreduje.",
+  "sq": "Gjilpërat mbushin shishet, tapët vendosen ndërsa rreshti ecën.",
+  "en": "Needles fill vials, stoppers press into place as the row of sealed vials advances."
+ },
+ "x_pharma_x2": {
+  "mk": "Шатл се лизга, зема кутија, па непречено се спушта до станицата.",
+  "sr": "Šatl klizi, uzima kutiju, pa se glatko spušta do stanice.",
+  "sq": "Një anije lëviz, merr një kuti dhe zbret butësisht në stacion.",
+  "en": "A shuttle glides, takes a box, then descends smoothly to the pick station."
+ },
+ "x_food_x1": {
+  "mk": "Шишиња се полнат со млеко, капачиња се ставаат, па стабилно се движат.",
+  "sr": "Boce se pune mlekom, čepovi se stavljaju, pa stabilno klize.",
+  "sq": "Shishet mbushen me qumësht, kapakët vendosen dhe lëvizin vazhdimisht.",
+  "en": "Bottles fill with milk, caps spin on, then glide forward steadily."
+ },
+ "x_food_x2": {
+  "mk": "Готвач става сос, реди билки и внимателно го брише работ на чинијата.",
+  "sr": "Kuvar sipa sos, ređa začinsko bilje i pažljivo briše ivicu tanjira.",
+  "sq": "Një kuzhinier vendos salcë, barishte dhe pastron buzën e pjatës me kujdes.",
+  "en": "A chef spoons sauce, places herbs, and wipes the plate rim carefully."
+ },
+ "x_wine_x1": {
+  "mk": "Вино тече во чаша, се врти, се смирува, свеќата нежно свети.",
+  "sr": "Vino teče u čašu, vrti se, smiruje, svetlost sveće blista.",
+  "sq": "Vera derdhet në gotë, rrotullohet, qetësohet, drita shkëlqen.",
+  "en": "Wine streams into a glass, swirls, settles, and candlelight glints on the rim."
+ },
+ "x_wine_x2": {
+  "mk": "Долги сенки се протегаат низ лозјата, прозорците на имотот топло светат.",
+  "sr": "Duge senke se protežu kroz vinograde, prozori imanja toplo sijaju.",
+  "sq": "Hijet e gjata shtrihen mbi vreshta, dritaret e pronës shkëlqejnë ngrohtësisht.",
+  "en": "Long shadows stretch across vine rows, and estate windows glow warmly."
+ },
+ "x_steel_x1": {
+  "mk": "Заварувач влече линија, искри прскаат, чад се крева во светлина.",
+  "sr": "Zavarivač povlači liniju, varnice prskaju, dim se diže kroz svetlost.",
+  "sq": "Saldatori tërheq vijën, shkëndijat bien, tymi ngrihet në dritë.",
+  "en": "A welder draws a steady bead, sparks shower, and smoke rises through light."
+ },
+ "x_steel_x2": {
+  "mk": "Бетон се истура во барабан, се врти, камион поминува покрај силоси.",
+  "sr": "Beton se sipa u bubanj, okreće se, kamion prolazi pored silosa.",
+  "sq": "Betoni derdhet në kazan, rrotullohet, kamioni kalon pranë siloseve.",
+  "en": "Concrete pours into a drum, it turns, and a truck pulls past silos."
+ },
+ "x_re_x1": {
+  "mk": "Жител поздравува портир, врати од лифт се отвораат, топла светлина го исполнува фоајето.",
+  "sr": "Stanar pozdravlja portira, vrata lifta se otvaraju, topla svetlost ispunjava lobi.",
+  "sq": "Një banor përshëndet portierin, dyert e ashensorit hapen, drita mbush hollin.",
+  "en": "A resident greets concierge, lift doors open, and warm light fills the lobby."
+ },
+ "x_re_x2": {
+  "mk": "Светилки трепкаат, ветре движи растенија, а градски светла се појавуваат долу.",
+  "sr": "Sijalice trepere, povetarac pomera biljke, a gradska svetla se pojavljuju dole.",
+  "sq": "Dritat ndizen, një fllad lëviz bimët, dhe dritat e qytetit shfaqen poshtë.",
+  "en": "String lights flicker on, a breeze moves plants, and city lights appear below."
+ },
+ "x_int_x1": {
+  "mk": "Раце ставаат примероци од мермер, ткаенина, дрво, уредно ги редат на план.",
+  "sr": "Ruke postavljaju uzorke mermera, tkanine, drveta, uredno ih raspoređujući na plan.",
+  "sq": "Duart vendosin mostra mermeri, pëlhure, druri, duke i rregulluar bukur në plan.",
+  "en": "Hands place samples of marble, fabric, wood, arranging them neatly on a plan."
+ },
+ "x_int_x2": {
+  "mk": "Дизајнер поставува вазна, исправува перница и вклучува светилка.",
+  "sr": "Dizajner postavlja vazu, ispravlja jastuk i uključuje lampu.",
+  "sq": "Një dizajner vendos vazon, drejton jastëkun dhe ndez llambën.",
+  "en": "A designer sets a vase, straightens a cushion, and switches on a lamp."
+ },
+ "x_rec_x1": {
+  "mk": "Техничар покажува, чирак притиска копче, машина стартува, двајцата се насмевнуваат.",
+  "sr": "Tehničar pokazuje, šegrt pritiska dugme, mašina počinje, obojica se smeju.",
+  "sq": "Një teknik tregon, nxënësi shtyp butonin, makina niset, të dy buzëqeshin.",
+  "en": "A technician points, apprentice presses button, machine starts, and both smile."
+ },
+ "x_rec_x2": {
+  "mk": "Колеги мавтаат за збогум, еден отклучува велосипед, сонцето заоѓа.",
+  "sr": "Kolege mašu za pozdrav, jedan otključava bicikl, sunce zalazi.",
+  "sq": "Kolegët përshëndeten, njëri zhbllokon biçikletën, dhe dielli perëndon.",
+  "en": "Colleagues wave goodbye, one unlocks a bicycle, and the sun sets."
+ },
+ "x_prod_x1": {
+  "mk": "Капки се лизгаат по шишето додека светлина се движи по површината.",
+  "sr": "Kapljice klize niz bocu dok svetlost prelazi preko površine.",
+  "sq": "Piklat rrëshqasin poshtë shishes ndërsa drita kalon mbi sipërfaqen.",
+  "en": "Droplets slide down a bottle as light sweeps across its surface."
+ },
+ "x_prod_x2": {
+  "mk": "Раце нежно откриваат предмет, кревајќи го на светлина од пакувањето.",
+  "sr": "Ruke nežno otkrivaju predmet, podižući ga na svetlo iz pakovanja.",
+  "sq": "Duart zbulojnë butësisht një send, duke e ngritur në dritë nga paketimi.",
+  "en": "Hands gently reveal an item, lifting it into the light from its packaging."
+ },
+ "x_con_x1": {
+  "mk": "Поглед од воздух се спушта додека работници израмнуваат бетон, сонцето изгрева.",
+  "sr": "Pogled iz vazduha se spušta dok radnici ravnaju beton, sunce izlazi.",
+  "sq": "Pamje nga ajri zbret ndërsa punëtorët rrafshojnë beton, dielli lind.",
+  "en": "Aerial view descends as workers level concrete, sun rising over the city."
+ },
+ "x_con_x2": {
+  "mk": "Поглед се движи кон прозорец; кука спушта товар за работници што го водат.",
+  "sr": "Pogled se kreće ka prozoru; kuka spušta teret za radnike koji ga vode.",
+  "sq": "Pamja shtyn drejt dritares; një grep ul ngarkesën për punëtorët që e drejtojnë.",
+  "en": "View pushes toward window; a hook lowers a load for guiding workers."
+ },
+ "x_apt_x1": {
+  "mk": "Мебел се појавува и се поставува, празен простор станува стилска кујна-трпезарија.",
+  "sr": "Nameštaj se pojavljuje i postavlja, prazan prostor postaje stilska kuhinja-trpezarija.",
+  "sq": "Mobiljet shfaqen dhe vendosen, hapësira boshe shndërrohet në kuzhinë-ngrënie elegante.",
+  "en": "Furniture appears and settles, transforming an empty space into a stylish kitchen-diner."
+ },
+ "x_apt_x2": {
+  "mk": "Мебел се појавува, создавајќи пријатна спална соба со топла вечерна светлина.",
+  "sr": "Nameštaj se pojavljuje, stvarajući udobnu spavaću sobu ispunjenu toplom večernjom svetlošću.",
+  "sq": "Mobiljet shfaqen, duke krijuar një dhomë gjumi komode me dritë të ngrohtë mbrëmjeje.",
+  "en": "Furniture appears, creating a cosy bedroom as warm evening light fills the space."
+ },
+ "comm_bw_1": {
+  "mk": "Пар шета по шеталиштето, восхитувајќи им се на кулите и светкавата река.",
+  "sr": "Par šeta šetalištem, diveći se kulama i blistavoj reci.",
+  "sq": "Një çift ecën përgjatë shëtitores, duke admiruar kullat dhe lumin vezullues.",
+  "en": "A couple walks along the promenade, admiring towers and the glittering river beside them."
+ },
+ "comm_bw_2": {
+  "mk": "Консиержот ги пречекува кон лифт, капени во сончева светлина.",
+  "sr": "Konsijerž ih dočekuje ka liftu, okupani suncem.",
+  "sq": "Portieri i mirëpret drejt ashensorit, të larë në dritën e diellit.",
+  "en": "A concierge welcomes them as they walk toward a lift, bathed in streaming sunlight."
+ },
+ "comm_bw_3": {
+  "mk": "Одат до прозорецот, таа го допира стаклото, градот свети портокалово.",
+  "sr": "Hoda do prozora, dodiruje staklo, grad se otkriva u narandžastoj svetlosti.",
+  "sq": "Ecin drejt dritares, ajo prek xhamin, qyteti shfaqet në dritë portokalli.",
+  "en": "They walk to the window; she touches the glass, revealing the city in orange light."
+ },
+ "comm_bw_4": {
+  "mk": "Тој налева, наздравуваат, потпрени на оградата додека светат градските светла.",
+  "sr": "On sipa, nazdravljaju, naslonjeni na ogradu dok gradska svetla sijaju.",
+  "sq": "Ai derdh, ngrenë dolli, mbështetur në parmak ndërsa dritat e qytetit ndizen.",
+  "en": "He pours, they toast, leaning on the railing as city lights begin to glow."
+ },
+ "comm_bw_5": {
+  "mk": "Поглед од воздух се повлекува, откривајќи светлечка панорама со кули и бродови.",
+  "sr": "Pogled iz vazduha se povlači, otkrivajući svetleću panoramu sa kulama i brodovima.",
+  "sq": "Një pamje ajrore tërhiqet, duke zbuluar një horizont shkëlqyes me kulla dhe anije.",
+  "en": "An aerial view pulls back, revealing a glowing skyline with shimmering tower lights and boats."
+ },
+ "comm_gener2_1": {
+  "mk": "Тој ги одвиткува плановите, го надгледува земјиштето додека сонцето изгрева.",
+  "sr": "On odmotava planove, nadgleda parcelu dok sunce izlazi nad planinama.",
+  "sq": "Ai shpalos planet, duke vëzhguar parcelën ndërsa dielli lind mbi malet.",
+  "en": "He unrolls plans, surveying the plot as the sun breaks over distant mountains."
+ },
+ "comm_gener2_2": {
+  "mk": "Багери копаат, бетон се излева, се гради темел, водачот го води тимот.",
+  "sr": "Bageri kopaju, beton se izliva, gradi se temelj, vođa vodi ekipu.",
+  "sq": "Ekskavatorët gërmojnë, betoni derdhet, ndërtohet themeli, udhëheqësi drejton.",
+  "en": "Excavators dig and concrete pours, building a foundation while a leader guides the crew."
+ },
+ "comm_gener2_3": {
+  "mk": "Кулите се издигнуваат кат по кат, кранови се нишаат, облаци брзаат.",
+  "sr": "Kule se dižu sprat po sprat, kranovi se njišu, oblaci jure.",
+  "sq": "Kullat ngrihen kat pas kati, vinça lëkunden, retë kalojnë.",
+  "en": "Floors rise on towers, cranes swing, and clouds race past, showing rapid construction."
+ },
+ "comm_gener2_4": {
+  "mk": "Тој дели чаши, екипата се смее, споделувајќи другарство и благодарност.",
+  "sr": "On deli šolje, ekipa se smeje, deleći drugarstvo i zahvalnost.",
+  "sq": "Ai shpërndan gota, ekipi qesh, duke ndarë shoqëri dhe vlerësim.",
+  "en": "He hands out cups, the crew laughs, sharing a moment of camaraderie and appreciation."
+ },
+ "comm_gener2_5": {
+  "mk": "Поглед од воздух се повлекува, откривајќи светлечки комплекс со деца што си играат.",
+  "sr": "Pogled iz vazduha se povlači, otkrivajući svetleći kompleks sa decom koja se igraju.",
+  "sq": "Një pamje ajrore tërhiqet, duke zbuluar një kompleks shkëlqyes me fëmijë që luajnë.",
+  "en": "An aerial view pulls back, revealing a glowing complex where children play."
+ },
+ "comm_concord_1": {
+  "mk": "Таа се наведнува, трасирајќи план на станот со прст и насмевка.",
+  "sr": "Ona se naginje, prstom iscrtava tlocrt i smeši se.",
+  "sq": "Ajo përkulet, duke vizatuar planin e dyshemesë me gisht dhe buzëqesh.",
+  "en": "She leans in, tracing a floor plan with her finger and smiling."
+ },
+ "comm_concord_2": {
+  "mk": "Станот се трансформира околу неа, се појавуваат подови и мебел.",
+  "sr": "Stan se transformiše oko nje, pojavljuju se podovi i nameštaj.",
+  "sq": "Apartamenti transformohet rreth saj, shfaqen dyshemeja dhe mobiljet.",
+  "en": "The apartment transforms around her in a timelapse, as floors and furniture appear."
+ },
+ "comm_concord_3": {
+  "mk": "Пие кафе при изгрејсонце, нежен ветар ѝ ја движи косата.",
+  "sr": "Pije kafu pri izlasku sunca, nežan vetar joj pomera kosu.",
+  "sq": "Ajo pi kafe në lindje të diellit, flladi i lëviz flokët.",
+  "en": "She sips coffee as the sun rises, a gentle breeze moving her hair."
+ },
+ "comm_concord_4": {
+  "mk": "Таа ги прима клучевите, се смее среќно, па се ракува со агентот.",
+  "sr": "Ona prima ključeve, srećno se smeje, pa se rukuje sa agentom.",
+  "sq": "Ajo merr çelësat, qesh me lumturi, pastaj shtrëngon duart me agjentin.",
+  "en": "She receives the keys, laughs happily, then shakes hands with the agent."
+ },
+ "comm_concord_5": {
+  "mk": "Светлата на балконите се палат кат по кат, откривајќи светлечка кула.",
+  "sr": "Svetla na balkonima se pale sprat po sprat, otkrivajući svetleću kulu.",
+  "sq": "Dritat e ballkoneve ndizen kat pas kati, duke zbuluar një kullë vezulluese.",
+  "en": "Balcony lights switch on floor by floor, revealing a glowing tower at dusk."
+ },
+ "comm_kam_1": {
+  "mk": "Отвора продавница, а светлата се палат ред по ред.",
+  "sr": "Otvara prodavnicu, svetla se pale jedno za drugim.",
+  "sq": "Hap dyqanin, dritat ndizen rresht pas rreshti me radhë.",
+  "en": "She unlocks and opens the store, lights turning on row by row."
+ },
+ "comm_kam_2": {
+  "mk": "Средува свеж зеленчук, го прска и кимнува на колега.",
+  "sr": "Sređuje sveže proizvode, osvežava zeleniš i kima kolegi.",
+  "sq": "Rregullon prodhimet e freskëta, spërkat perimet dhe i bën me kokë kolegut.",
+  "en": "She arranges fresh produce, mists greens, and nods to a colleague."
+ },
+ "comm_kam_3": {
+  "mk": "Реди топол леб што се пуши, вдишувајќи ја свежата арома.",
+  "sr": "Ređa topao, sveže pečen hleb, udišući svežu aromu.",
+  "sq": "Vendos bukë të ngrohtë, me avull në raft, duke thithur aromën.",
+  "en": "She places warm, steaming loaves on a shelf, inhaling the fresh aroma."
+ },
+ "comm_kam_4": {
+  "mk": "Дава јаболко на дете, бабата се смее, а тие мавтаат.",
+  "sr": "Daje jabuku detetu, baka se smeje i oni mašu.",
+  "sq": "I jep një mollë fëmijës, gjyshja buzëqesh dhe ata i bëjnë me dorë.",
+  "en": "She hands an apple to a child, the grandmother smiles, and they wave."
+ },
+ "comm_kam_5": {
+  "mk": "Купувачите си одат со торби, таа мавта, а продавницата свети во самрак.",
+  "sr": "Kupci odlaze sa torbama, ona maše, a prodavnica svetli u sumrak.",
+  "sq": "Klientët largohen me çanta, ajo u bën me dorë, dyqani shkëlqen në muzg.",
+  "en": "Customers leave with bags, she waves, and the glowing store recedes at dusk."
+ },
+ "comm_viva_1": {
+  "mk": "Семејство пристигнува, момчето навива, а девојчето возбудено покажува напред.",
+  "sr": "Porodica stiže, dečak navija, a devojčica uzbuđeno pokazuje napred.",
+  "sq": "Një familje mbërrin, djali brohorit, vajza tregon me gisht përpara.",
+  "en": "A family rolls in, the boy cheers, and the girl points excitedly forward."
+ },
+ "comm_viva_2": {
+  "mk": "Семејство купува свежи производи; девојчето избира јаболко, таткото го крева момчето.",
+  "sr": "Porodica kupuje sveže proizvode; devojčica bira jabuku, otac podiže dečaka.",
+  "sq": "Familja blen prodhime të freskëta; vajza zgjedh mollë, babai ngre djalin.",
+  "en": "A family shops for fresh produce; the girl picks an apple, father lifts the boy."
+ },
+ "comm_viva_3": {
+  "mk": "Пекарот предава топол, миризлив пакет, а детските очи се шират.",
+  "sr": "Pekar predaje topao, mirisni paket, dok se dečije oči šire.",
+  "sq": "Furrtari dorëzon një pako të ngrohtë, aromatike, ndërsa sytë e fëmijëve zgjerohen.",
+  "en": "The baker hands over a warm, steaming parcel as children's eyes widen."
+ },
+ "comm_viva_4": {
+  "mk": "Касиерот се шегува со децата, таткото среќно пакува кеси.",
+  "sr": "Kasir se šali sa decom, otac srećno pakuje kese.",
+  "sq": "Arkëtari bën shaka me fëmijët, babai paketon çantat i lumtur.",
+  "en": "The cashier jokes with children, and the father packs bags happily."
+ },
+ "comm_viva_5": {
+  "mk": "Ја товарат последната торба, децата влегуваат, а продавницата свети зад нив.",
+  "sr": "Tovare poslednju torbu, deca ulaze, a prodavnica svetli iza njih.",
+  "sq": "Ngarkojnë çantën e fundit, fëmijët hipin, dyqani shkëlqen pas tyre.",
+  "en": "They load the last bag, children climb in, and the glowing store recedes."
+ },
+ "comm_alkaloid_1": {
+  "mk": "Жена чекори низ светол ходник кон вратата на лабораторијата.",
+  "sr": "Žena korača niz sunčani hodnik ka vratima laboratorije.",
+  "sq": "Një grua ecën në korridorin plot dritë drejt derës së laboratorit.",
+  "en": "A woman walks down a sunlit corridor towards a lab door."
+ },
+ "comm_alkaloid_2": {
+  "mk": "Таа работи со пипета, па држи ампула пред светлина, бележи резултат.",
+  "sr": "Ona radi sa pipetom, drži bočicu pod svetlom, zapisuje rezultat.",
+  "sq": "Ajo punon me pipetë, mban shishen para dritës, shënon rezultatin.",
+  "en": "She pipettes, then holds a vial to the light, noting a result."
+ },
+ "comm_alkaloid_3": {
+  "mk": "Блистер пакувања поминуваат, таа проверува екран и клима со главата.",
+  "sr": "Blister pakovanja prolaze, ona proverava ekran i klima glavom.",
+  "sq": "Paketime me flluska kalojnë, ajo kontrollon ekranin dhe tund kokën.",
+  "en": "Blister packs move past as she checks a screen and nods."
+ },
+ "comm_alkaloid_4": {
+  "mk": "Менторот покажува, тимот разменува погледи и насмевки.",
+  "sr": "Mentor pokazuje, tim razmenjuje poglede i osmehe.",
+  "sq": "Mentori tregon, ekipi shkëmben shikime dhe buzëqeshje.",
+  "en": "A mentor points, then a team exchanges looks and smiles."
+ },
+ "comm_alkaloid_5": {
+  "mk": "Фармацевтот подава кутија, мажот се насмевнува со олеснување.",
+  "sr": "Farmaceut predaje kutiju, muškarac se osmehuje sa olakšanjem.",
+  "sq": "Farmacisti jep një kuti, burri buzëqesh me lehtësim.",
+  "en": "A pharmacist hands a box, a man smiles with relief."
+ },
+ "comm_replek_1": {
+  "mk": "Става игла, нови светлечки рути се шират по мапата.",
+  "sr": "Stavlja iglu, nove svetleće rute se šire po mapi.",
+  "sq": "Vendos një kunj, rrugë të reja ndriçuese shtrihen në hartë.",
+  "en": "He places a pin, new glowing routes extend across a map."
+ },
+ "comm_replek_2": {
+  "mk": "Поминува покрај садови за мешање, оператор дава палец нагоре.",
+  "sr": "Prolazi pored posuda za mešanje, operater daje palac gore.",
+  "sq": "Kalon pranë enëve të përzierjes, operatori jep gishtin lart.",
+  "en": "He passes mixing vessels, an operator gives a thumbs up."
+ },
+ "comm_replek_3": {
+  "mk": "Тој скенира етикета, потоа вилушкар крева палета.",
+  "sr": "On skenira etiketu, zatim viljuškar podiže paletu.",
+  "sq": "Skanon një etiketë, pastaj piruni ngre një paletë.",
+  "en": "He scans a label, then a forklift lifts a pallet."
+ },
+ "comm_replek_4": {
+  "mk": "Тие проверуваат документи, се ракуваат, возач влегува.",
+  "sr": "Oni proveravaju dokumenta, rukuju se, vozač ulazi.",
+  "sq": "Kontrollojnë dokumentet, shtrëngojnë duart, shoferi futet brenda.",
+  "en": "They check paperwork, shake hands, and a driver climbs in."
+ },
+ "comm_replek_5": {
+  "mk": "Камион се приклучува на автопат додека сонцето изгрева.",
+  "sr": "Kamion se priključuje na auto-put dok sunce izlazi.",
+  "sq": "Një kamion bashkohet me autostradën, dielli lind.",
+  "en": "A truck joins the highway as the sun rises."
+ },
+ "comm_millennium_1": {
+  "mk": "Градот се губи во далечина, сонцето изгрева над реката.",
+  "sr": "Grad se gubi u daljini, sunce izlazi iznad reke.",
+  "sq": "Qyteti largohet, ndërsa dielli lind mbi lumë.",
+  "en": "The city drops away as the sun breaks over the river."
+ },
+ "comm_millennium_2": {
+  "mk": "Таа сигнализира, кран спушта челик, работници го водат.",
+  "sr": "Ona signalizira, kran spušta čelik, radnici ga vode.",
+  "sq": "Sinjalizon, një vinç ul çelik, punëtorët e drejtojnë.",
+  "en": "She signals, a crane lowers steel, and workers guide it."
+ },
+ "comm_millennium_3": {
+  "mk": "Стаклени панели ја затвораат фасадата кат по кат, таа проверува.",
+  "sr": "Stakleni paneli zatvaraju fasadu sprat po sprat, ona proverava.",
+  "sq": "Panele xhami mbyllin fasadën kat pas kati, ajo inspekton.",
+  "en": "Glass panels close the facade floor by floor as she inspects."
+ },
+ "comm_millennium_4": {
+  "mk": "Екипата се собира, некој крева шлем, сите навиваат.",
+  "sr": "Ekipa se okuplja, neko podiže šlem, svi navijaju.",
+  "sq": "Ekipi mblidhet, dikush ngre kapele, të gjithë brohorasin.",
+  "en": "The crew gathers, someone raises a hard hat, and they cheer."
+ },
+ "comm_millennium_5": {
+  "mk": "Светлата се палат, осветлувајќи ја кулата од долу нагоре.",
+  "sr": "Svetla se pale, osvetljavajući kulu od dna ka vrhu.",
+  "sq": "Dritat ndizen, duke ndriçuar kullën nga poshtë lart.",
+  "en": "Lights come on, illuminating the tower from bottom to top."
+ },
+ "comm_nelt_1": {
+  "mk": "Светлата на докот светат, тој проверува таблет, вратата се крева.",
+  "sr": "Svetla na doku svetle, on proverava tablet, vrata se podižu.",
+  "sq": "Dritat e portit shkëlqejnë, ai kontrollon tabletin, dera ngrihet.",
+  "en": "Dock lights glow as he checks his tablet and the door slowly rises."
+ },
+ "comm_nelt_2": {
+  "mk": "Кутии се движат по ленти, вилушкар носи натоварена палета.",
+  "sr": "Kutije klize po trakama, viljuškar donosi natovarenu paletu.",
+  "sq": "Kutitë rrëshqasin në shirita, piruni sjell një paletë të ngarkuar.",
+  "en": "Boxes glide on conveyors as a forklift brings a loaded pallet forward."
+ },
+ "comm_nelt_3": {
+  "mk": "Вози стабилно додека сонцето изгрева, други камиони следат.",
+  "sr": "Vozi stabilno dok sunce izlazi, drugi kamioni prate.",
+  "sq": "Ngas me qetësi ndërsa dielli lind, kamionët e tjerë ndjekin.",
+  "en": "He drives steadily as the sun rises and other trucks follow behind."
+ },
+ "comm_nelt_4": {
+  "mk": "Предава кутии, сопственикот потпишува, тие се ракуваат.",
+  "sr": "Predaje kutije, vlasnik potpisuje, oni se rukuju.",
+  "sq": "Dorëzon kutitë, pronari firmos, ata shtrëngojnë duart.",
+  "en": "He hands over boxes, the owner signs, and they complete the handshake."
+ },
+ "comm_nelt_5": {
+  "mk": "Рака зема производ од полицата, камион поминува надвор.",
+  "sr": "Ruka uzima proizvod sa police, kamion prolazi napolju.",
+  "sq": "Një dorë merr produkt nga rafti, një kamion kalon jashtë.",
+  "en": "A hand takes a product from the shelf as a truck passes outside."
+ },
+ "comm_speeex_1": {
+  "mk": "Вдишува, се насмевнува и самоуверено чекори низ стаклените врати.",
+  "sr": "Udahne, nasmeši se i samouvereno prođe kroz staklena vrata.",
+  "sq": "Ajo merr frymë, buzëqesh dhe me besim kalon dyert e xhamit.",
+  "en": "She takes a breath, smiles, and confidently walks through the glass doors."
+ },
+ "comm_speeex_2": {
+  "mk": "Тренерот објаснува, таа крева рака, а другите одобруваат со главите.",
+  "sr": "Trener objašnjava, ona diže ruku, a ostali odobravaju klimanjem glave.",
+  "sq": "Trajneri shpjegon, ajo ngre dorën, të tjerët pohojnë me kokë.",
+  "en": "The coach explains, she raises her hand, and others nod in agreement."
+ },
+ "comm_speeex_3": {
+  "mk": "Зборува, пишува и со палец одобрува насмеан соиграч.",
+  "sr": "Govori, kuca i palcem odobrava nasmejanom saigraču.",
+  "sq": "Flet, shkruan dhe me gisht lart i jep miratim shokut të ekipit.",
+  "en": "She speaks, types, and gives a thumbs up to a smiling teammate."
+ },
+ "comm_speeex_4": {
+  "mk": "Тимот наздравува, се смее, а лидерот ѝ честита за успехот.",
+  "sr": "Tim nazdravlja, smeje se, a lider joj čestita uspeh.",
+  "sq": "Ekipi ngre dolli, qesh, ndërsa udhëheqësi e uron për suksesin.",
+  "en": "The team toasts, laughs, and a leader congratulates her success."
+ },
+ "comm_speeex_5": {
+  "mk": "Се ракува со новодојденец и топло ги поканува внатре.",
+  "sr": "Rukuje se sa pridošlicom i toplo ih poziva unutra.",
+  "sq": "Shtrëngon dorën e të riut dhe me ngrohtësi i fton brenda.",
+  "en": "She shakes a newcomer's hand and warmly gestures them inside."
+ },
+ "foton_B2_v7_fix": {
+  "mk": "Пикапот се движи напред, семејство мавта, лисја нежно се нишаат.",
+  "sr": "Pikap se kreće napred, porodica maše, lišće se nežno njiše.",
+  "sq": "Kamionçina ecën përpara, familja valëvit, gjethet lëkunden butësisht.",
+  "en": "A pickup rolls forward as a family waves and leaves sway gently."
+ },
+ "foton_B3_g7_fix": {
+  "mk": "Пикапот работи во лер, прашина се движи, натоварувач работи, сонце сјае.",
+  "sr": "Pikap radi u leru, prašina se diže, utovarivač radi, sunce sija.",
+  "sq": "Kamionçina punon në vend, pluhuri lëviz, ngarkuesi punon, dielli shkëlqen.",
+  "en": "A pickup idles as dust drifts, a loader moves, and sun glints."
+ },
+ "foton_C1_approach_fix": {
+  "mk": "Пикап се движи по каллива патека, тркалата газат, водата прска.",
+  "sr": "Pikap se probija blatnjavom stazom, točkovi gaze, voda prska.",
+  "sq": "Kamionçina ecën në shteg me baltë, rrotat shtypen, uji spërkatet.",
+  "en": "A pickup creeps onto a muddy track, wheels pressing and water splashing."
+ },
+ "foton_E2_aumark_fix": {
+  "mk": "Работник ја затвора задната врата, чука на страна, камионот се движи.",
+  "sr": "Radnik zatvara zadnja vrata, kuca sa strane, kamion se kreće.",
+  "sq": "Punëtori mbyll derën e pasme, troket, kamioni ecën përpara.",
+  "en": "A worker closes the tailgate, taps the side, and the truck rolls forward."
+ },
+ "vc1_1": {
+  "mk": "Таа го остава ранецот, трча во кујната и ја гушка мајка си.",
+  "sr": "Ona ostavlja ranac, trči u kuhinju i grli majku.",
+  "sq": "Ajo lë çantën, vrapon në kuzhinë dhe përqafon nënën.",
+  "en": "She drops her backpack, runs to the kitchen, and hugs her mother."
+ },
+ "vc1_2": {
+  "mk": "Мајка нуди посластица, очите на девојчето светнуваат додека ја зема.",
+  "sr": "Majka nudi poslasticu, devojčicine oči zasijaju dok je uzima.",
+  "sq": "Nëna ofron një ëmbëlsirë, sytë e vajzës ndriçojnë ndërsa e merr.",
+  "en": "A mother offers a treat, and a girl's eyes light up, picking it up."
+ },
+ "vc1_3": {
+  "mk": "Вкусен ролат се дели, откривајќи кремаст фил и нежни трошки.",
+  "sr": "Ukusan rolat se lomi, otkrivajući kremasti fil i nežne mrvice.",
+  "sq": "Një rolat i shijshëm thyhet, zbulon mbushjen kremoze dhe thërrime delikate.",
+  "en": "A delicious roll breaks, revealing creamy filling and delicate crumbs falling."
+ },
+ "vc1_4": {
+  "mk": "Баба точи чај, девојче нуди посластица, сите тројца се смеат заедно.",
+  "sr": "Baka sipa čaj, devojčica nudi poslasticu, svi se smeju zajedno.",
+  "sq": "Gjyshja derdh çaj, vajza ofron një ëmbëlsirë, të tre qeshin së bashku.",
+  "en": "Grandmother pours tea, a girl offers a treat, and all three laugh together."
+ },
+ "vc1_5": {
+  "mk": "Топла светлина ја осветлува масата, рака го става последниот мини ролат.",
+  "sr": "Topla svetlost obasjava sto, ruka postavlja poslednji mini rolat.",
+  "sq": "Drita e ngrohtë ndriçon tryezën, një dorë vendos rolatin e fundit.",
+  "en": "Warm light illuminates the table as a hand places the final mini roll."
+ },
+ "vc2_1": {
+  "mk": "Сонцето изгрева над полињата, се движи кон фабрика додека работник чекори.",
+  "sr": "Sunce izlazi iznad polja, kreće se ka fabrici dok radnik korača.",
+  "sq": "Dielli lind mbi fusha, lëviz drejt fabrikës ndërsa një punëtor ecën.",
+  "en": "The sun rises over fields, gliding towards a factory as a worker walks."
+ },
+ "vc2_2": {
+  "mk": "Чоколадо се излева врз плочки, кои сјајно излегуваат додека работник кима.",
+  "sr": "Čokolada se izliva preko štanglica, koje sjajno izlaze dok radnik kima.",
+  "sq": "Çokollata derdhet mbi shufra, të cilat dalin me shkëlqim ndërsa punëtori miraton.",
+  "en": "Chocolate pours over bars, which glide out glossy as a worker nods."
+ },
+ "vc2_3": {
+  "mk": "Џиновски регал се ротира, листови обланди се лизгаат, работник допира екран.",
+  "sr": "Džinovski regal se rotira, listovi oblandi klize, radnik dodiruje ekran.",
+  "sq": "Rafti gjigant rrotullohet, fletët e vafereve rrëshqasin, punëtorja prek ekranin.",
+  "en": "A giant rack rotates, wafer sheets glide, and a worker taps a screen."
+ },
+ "vc2_4": {
+  "mk": "Работници пакуваат картони, роботска рака ефикасно ги реди на палета.",
+  "sr": "Radnici pakuju kartone, robotska ruka ih efikasno slaže na paletu.",
+  "sq": "Punëtorët paketojnë kartona, krahu robotik i rregullon me efikasitet në paletë.",
+  "en": "Workers fill cartons, and a robot arm efficiently stacks them onto a pallet."
+ },
+ "vc2_5": {
+  "mk": "Црвени правци засветуваат на мапа додека работник распоредува пратка.",
+  "sr": "Crveni pravci svetle na mapi dok radnik slaže paket.",
+  "sq": "Rrugët e kuqe ndriçojnë në hartë ndërsa punëtori sistemon një pako.",
+  "en": "Red routes light up on a map as a worker places a pack."
+ },
+ "fs1": {
+  "mk": "Фарови се палат, светлина се движи по каросеријата, магла се врти кај тркалата.",
+  "sr": "Farovi se pale, svetlost se kreće po karoseriji, magla se vrti kod točkova.",
+  "sq": "Fenerët ndizen, drita kalon përgjatë trupit, mjegulla rrotullohet te rrotat.",
+  "en": "Headlights ignite, light sweeps across the body, and mist swirls at wheels."
+ },
+ "fs2": {
+  "mk": "Моторот се врти, клипови пумпаат, турбо се врти, сина енергија пулсира.",
+  "sr": "Motor se okreće, klipovi pumpaju, turbo se vrti, plava energija pulsira.",
+  "sq": "Motori rrotullohet, pistonat pompojnë, turbo rrotullohet, energjia blu pulson.",
+  "en": "The engine orbits, pistons pump, turbo spins, and blue energy pulses."
+ },
+ "fs3": {
+  "mk": "Пикапот се искачува по нагорнина, чакал прска, суспензијата ги апсорбира нерамнините.",
+  "sr": "Pikap juri uzbrdo, šljunak prska, vešanje apsorbuje neravnine.",
+  "sq": "Kamionçina ngjitet në shpat, zhavorri spërkatet, amortizatorët thithin gungat.",
+  "en": "The pickup surges up a slope, gravel sprays, and suspension absorbs bumps."
+ },
+ "fs4": {
+  "mk": "Шасијата се врти, светлечки линии покажуваат проток на вртежен момент, диференцијалот се заклучува.",
+  "sr": "Šasija se okreće, svetleće linije pokazuju protok obrtnog momenta, diferencijal se zaključava.",
+  "sq": "Shasia rrotullohet, linjat shkëlqyese tregojnë rrjedhën e çiftit rrotullues, diferenciali kyçet.",
+  "en": "The chassis orbits, glowing lines show torque flow, and the differential locks."
+ },
+ "fs5": {
+  "mk": "Кабината се движи, екранот се буди, светлината трепери, рака врти копче.",
+  "sr": "Kabina se kreće, ekran se budi, svetlost treperi, ruka okreće dugme.",
+  "sq": "Kabina lëviz, ekrani zgjohet, drita shkëlqen, një dorë rrotullon pullën.",
+  "en": "The cabin moves, screen wakes, light ripples, and a hand turns a knob."
+ },
+ "fs6": {
+  "mk": "Поглед кон камионот, салонските светла светат, клучот светка.",
+  "sr": "Pogled ka kamionu, salonska svetla se pojačavaju, ključ svetluca.",
+  "sq": "Pamje drejt kamionit, dritat e sallonit ndriçojnë, çelësi shkëlqen.",
+  "en": "A push-in towards the truck, showroom lights brighten, and a key glints."
+ }
+}

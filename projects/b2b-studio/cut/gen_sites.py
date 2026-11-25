@@ -25,19 +25,19 @@ THEMES["fmcg"].update(bg="#150a06", sf="#22130d", fg="#fbefe4", mu="#c3a594", in
 ACCENT_FIX = {"02_alkaloid_MK": "#2f8fe0", "03_replek_MK": "#19b3a3", "01_zito_marketi_MK": "#2bb35a", "11_viva_fresh_XK": "#ff4d3d", "04_vincinni_MK": "#e0283f"}
 
 UI2 = {
- "mk": dict(skip="Прескокни", render="AI рендер", prompt="Промпт", gen="Генерирање…", done="Готово ✓", pipe_e="AI процес", pipe_h="Од текст до филм",
+ "mk": dict(skip="Прескокни", render="AI рендер", prompt="Сцена", gen="Генерирање…", done="Готово ✓", pipe_e="AI процес", pipe_h="Од текст до филм",
             pipe_p="Еден кадар од вашиот филм: опишан со текст, претворен во клучен кадар за ваше одобрување, па оживеан со AI.",
-            s1="01 · Промпт", s2="02 · Клучен кадар", s3="03 · AI видео", c1="Слика", c2="AI видео", hint="Повлечете за да споредите статичниот кадар и AI анимацијата.",
+            s1="01 · Идеја", s2="02 · Клучен кадар", s3="03 · AI видео", c1="Слика", c2="AI видео", hint="Повлечете за да споредите статичниот кадар и AI анимацијата.",
             marq=["Текст → Видео", "Слика → Видео", "AI глас на македонски", "Оригинална музика", "16:9 · 9:16", "Одобрување на кадри", "MK · SR · SQ", "Full HD"],
             stats=[("7–10", None, "дена до готов филм"), ("0", 0, "дена снимање"), ("2", 2, "формати: 16:9 и 9:16"), ("3", 3, "јазици: MK · SR · SQ")]),
- "sr": dict(skip="Preskoči", render="AI render", prompt="Prompt", gen="Generisanje…", done="Gotovo ✓", pipe_e="AI proces", pipe_h="Od teksta do filma",
+ "sr": dict(skip="Preskoči", render="AI render", prompt="Scena", gen="Generisanje…", done="Gotovo ✓", pipe_e="AI proces", pipe_h="Od teksta do filma",
             pipe_p="Jedan kadar iz vašeg filma: opisan tekstom, pretvoren u ključni kadar za vaše odobrenje, pa oživljen uz AI.",
-            s1="01 · Prompt", s2="02 · Ključni kadar", s3="03 · AI video", c1="Slika", c2="AI video", hint="Prevucite da uporedite statični kadar i AI animaciju.",
+            s1="01 · Ideja", s2="02 · Ključni kadar", s3="03 · AI video", c1="Slika", c2="AI video", hint="Prevucite da uporedite statični kadar i AI animaciju.",
             marq=["Tekst → Video", "Slika → Video", "AI glas na srpskom", "Originalna muzika", "16:9 · 9:16", "Odobrenje kadrova", "MK · SR · SQ", "Full HD"],
             stats=[("7–10", None, "dana do gotovog filma"), ("0", 0, "dana snimanja"), ("2", 2, "formata: 16:9 i 9:16"), ("3", 3, "jezika: MK · SR · SQ")]),
- "sq": dict(skip="Kalo", render="Render AI", prompt="Prompti", gen="Gjenerim…", done="Gati ✓", pipe_e="Procesi AI", pipe_h="Nga teksti te filmi",
+ "sq": dict(skip="Kalo", render="Render AI", prompt="Skena", gen="Gjenerim…", done="Gati ✓", pipe_e="Procesi AI", pipe_h="Nga teksti te filmi",
             pipe_p="Një kuadër nga filmi juaj: i përshkruar me tekst, i kthyer në kuadër kryesor për miratimin tuaj, pastaj i gjallëruar me AI.",
-            s1="01 · Prompti", s2="02 · Kuadri kryesor", s3="03 · Video AI", c1="Imazh", c2="Video AI", hint="Tërhiqni për të krahasuar kuadrin statik me animacionin AI.",
+            s1="01 · Ideja", s2="02 · Kuadri kryesor", s3="03 · Video AI", c1="Imazh", c2="Video AI", hint="Tërhiqni për të krahasuar kuadrin statik me animacionin AI.",
             marq=["Tekst → Video", "Imazh → Video", "Zë AI në shqip", "Muzikë origjinale", "16:9 · 9:16", "Miratim i kuadrove", "MK · SR · SQ", "Full HD"],
             stats=[("7–10", None, "ditë deri te filmi"), ("0", 0, "ditë xhirimi"), ("2", 2, "formate: 16:9 dhe 9:16"), ("3", 3, "gjuhë: MK · SR · SQ")])}
 
@@ -129,11 +129,11 @@ def montage(clips, out, seglen):
 OTHER = {"01_zito_marketi_MK": ["Жито", "Zito", "Žito"], "02_alkaloid_MK": ["Alkaloid", "Алкалоид"], "03_replek_MK": ["Replek", "Реплек"], "04_vincinni_MK": ["Vincinni", "Makprogres", "Макпрогрес"],
          "05_foton_MK": ["Foton", "Tunland", "Auman", "Aumark"], "06_beograd_na_vodi_RS": ["Beograd na vodi", "Belgrade Waterfront"], "07_millennium_team_RS": ["Millennium"],
          "08_nelt_RS": ["Nelt"], "09_gener2_AL": ["Gener"], "10_concord_AL": ["Concord"], "11_viva_fresh_XK": ["Viva"], "12_speeex_XK": ["Speeex", "SPEEEX"], "_x": ["KAM", "КАМ", "Kastrati"]}
-def caption(sid, cid):  # first sentence of the LTX motion prompt, dropped if it names anyone else
-    p = PROMPTS.get(sid, "")
-    if not p: return ""
-    s = p.split(". ")[0].rstrip(".") + "."
-    if len(s) < 40 and len(p.split(". ")) > 1: s = ". ".join(p.split(". ")[:2]).rstrip(".") + "."
+DESC = json.load(open(f"{S}/cut/shot_desc.json"))  # public descriptions (cut/make_desc.py); the prompts themselves are never shown
+PROMPT_SID = {v: k for k, v in PROMPTS.items() if v}
+def caption(sid, cid, lang="mk"):  # short description of the shot in the page language, dropped if it names anyone else
+    s = DESC.get(sid, {}).get(lang, "")
+    if not s: return ""
     for k, names in OTHER.items():
         if k != cid and any(n.lower() in s.lower() for n in names): return ""
     return s if len(s) <= 150 else s[:147].rsplit(" ", 1)[0] + "…"
@@ -251,7 +251,7 @@ for c in O["companies"]:
     prompt, kf, clip = shot(c["id"])
     run(["ffmpeg","-v","error","-y","-i",kf,"-vf","scale=1280:-2","-q:v","3",f"{d}/kf.jpg"])
     run(["ffmpeg","-v","error","-y","-i",clip,"-vf","scale=1280:-2","-an","-c:v","libx264","-crf","24","-preset","slow","-pix_fmt","yuv420p","-movflags","+faststart",f"{d}/shot.mp4"])
-    sp = short_prompt(prompt)
+    sp = DESC.get(PROMPT_SID.get(prompt, ""), {}).get(L) or u2['pipe_h']
     films = ""
     for fid, label in c["films"]:
         label = re.sub(r"\((\d+)(\s*\w+\.?)\)", lambda m: f"({round(dur(f'{S}/pitch/{fid}_pitch.mp4'))}{m.group(2)})", label)
@@ -276,7 +276,7 @@ for c in O["companies"]:
         tl = ""; gt = flabel.get(g, u3["t2v"])
         for (cl, kf, sid) in items:
             n += 1; k = f"c{n:02d}"; mp, jp = webloop(cl); shutil.copy(mp, f"{X}/{k}.mp4"); shutil.copy(jp, f"{X}/{k}.jpg"); ncl += 1
-            cap = E(caption(sid, c["id"])) or "&nbsp;"
+            cap = E(caption(sid, c["id"], L)) or "&nbsp;"
             tl += (f'<figure class="tile rv"><video muted loop playsinline preload="none" poster="x/{k}.jpg" data-lz="x/{k}.mp4" aria-label="{E(u3["ai"])} {n:02d}"></video>'
                    f'<div class="b"><i class="ai">AI</i><i>{E(u3["shot"])} {n:02d}</i></div><figcaption><span>{cap}</span></figcaption></figure>')
             if kf:
