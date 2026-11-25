@@ -9,15 +9,17 @@ BRIEF = """Design a logo mark: the monogram "BD" for the studio BIG DOGMA, drawn
 
 THE D: use the triangle tattoo from the reference photo (and its black-and-white extraction) as the letter D, exactly as it is: one big triangle pointing to the right like a play button, its left side vertical. Each side is a bundle of 2 to 4 roughly straight, slightly shaky hand-tattooed ink lines that run past the corners and cross each other there; short extra strokes beside the left side; ink pooling into small dark blobs where lines cross or nearly touch. Keep its line style, thickness and character exactly.
 
-THE B: to the left of the D, draw two triangles of exactly the same size stacked one above the other, both pointing right with their left sides vertical and aligned, so together they read as the letter B. Draw them by the same hand and in exactly the same tattoo style as the D: bundles of 2 to 4 roughly straight, slightly shaky ink lines per side that overshoot and cross at the corners, the same line thickness as the D, ink pooling at the crossings. The two B triangles together are as tall as the D.
+THE B: to the left of the D, draw TWO SEPARATE triangles of exactly the same size stacked one above the other (the third reference image shows this layout), both pointing right with their left sides vertical and aligned, so together they read as the letter B. Draw them by the same hand and in exactly the same tattoo style as the D: bundles of 2 to 4 roughly straight, slightly shaky ink lines per side that overshoot and cross at the corners, the same line thickness as the D, ink pooling at the crossings. The two B triangles together are as tall as the D.
+
+THE TWO B TRIANGLES MUST BE COMPLETELY SEPARATE: each triangle has its own three sides with their own lines; the bottom side of the upper triangle and the top side of the lower triangle are different lines with a clear white gap between them; no line is shared, no lines cross from one B triangle into the other, they are not fused or merged into one shape, they do not touch at all.
 
 SPACING: nothing touches. The gap between the B and the D, and between the two B triangles, is the same as the gap between two neighbouring lines inside a bundle.
 
-FORMAT: flat solid black ink only, no grey, no shading, no skin texture, no paper texture, no colour, no text, no letters, no frame, no watermark. Centered, generous white margin, the whole mark visible. It must look like a clean scan of a real tattoo design, ready to be vectorised."""
+FORMAT: flat solid black ink only, no grey, no shading, no skin texture, no paper texture, no colour, no text, no letters, no frame, no watermark. Centered with a wide white margin on every side (at least 10% of the image): no line may touch or be cut by the image edge; the whole mark visible. It must look like a clean scan of a real tattoo design, ready to be vectorised."""
 def b64(p): return base64.b64encode(open(p, "rb").read()).decode()
-REFS = [("image/jpeg", f"{S}/glogo/ref_tattoo.jpg"), ("image/png", f"{S}/glogo/ref_D.png")]
+REFS = [("image/jpeg", f"{S}/glogo/ref_tattoo.jpg"), ("image/png", f"{S}/glogo/ref_D.png"), ("image/png", f"{S}/glogo/ref_layout.png")]
 def one(k):
-    out = f"{OUT}/gem_bd_{k}.png"
+    out = f"{OUT}/gem_bd2_{k}.png"
     if os.path.exists(out): return
     body = {"contents": [{"parts": [{"text": BRIEF + f"\n\nVariant {k}: draw your own hand for the B triangles (different stroke placement from other variants)."}]
                           + [{"inline_data": {"mime_type": m, "data": b64(p)}} for m, p in REFS]}],
