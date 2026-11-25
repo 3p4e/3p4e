@@ -87,7 +87,7 @@ else:
 
 # ---- H3: films in every format, subtitles, Foton action, raw clips
 H3SUB = ("films_16x9", "films_9x16", "pitch_16x9", "pitch_9x16", "feed_1x1", "feed_4x5")
-for part in sorted(glob.glob(f"{H3}/BIG_DOGMA_H3_part*")):
+for part in sorted(glob.glob(f"{H3}/BIG_DOGMA_H3_part*"), reverse=True):  # newest part first, so re-made pitch versions (part5) win
     for sub in H3SUB:
         for p in glob.glob(f"{part}/{sub}/*.mp4"):
             fid = fid_of(os.path.basename(p)); g = group_of(fid) if fid else None
