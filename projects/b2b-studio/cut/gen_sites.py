@@ -161,8 +161,8 @@ CSS3 = """
 .tile video,.tile img{width:100%;aspect-ratio:872/480;object-fit:cover;background:#000}
 .tile .b{position:absolute;top:8px;left:8px;display:flex;gap:6px;pointer-events:none} .tile .b i{font:600 10.5px/1 ui-monospace,Menlo,monospace;letter-spacing:.08em;text-transform:uppercase;font-style:normal;padding:5px 7px;border-radius:999px;background:rgba(0,0,0,.6);color:#fff;backdrop-filter:blur(4px)}
 .tile .b i.ai{background:color-mix(in srgb,var(--ac) 85%,#000);color:var(--ink)}
-.tile figcaption{padding:10px 12px 12px;font:12.5px/1.45 ui-monospace,Menlo,monospace;color:var(--mu);background:var(--sf);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;min-height:3.2em}
-@media(max-width:560px){.tile figcaption{font-size:11px;-webkit-line-clamp:2;padding:8px 9px 10px}}
+.tile figcaption{padding:10px 12px 12px;font:12.5px/1.45 ui-monospace,Menlo,monospace;color:var(--mu);background:var(--sf);min-height:calc(3*1.45em + 22px)} .tile figcaption span{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+@media(max-width:560px){.tile figcaption{font-size:11px;padding:8px 9px 10px;min-height:calc(2*1.45em + 18px)} .tile figcaption span{-webkit-line-clamp:2}}
 .mont{position:relative;margin-top:40px;border-radius:calc(var(--r) + 4px);overflow:hidden;background:#000;box-shadow:0 30px 80px -40px var(--ac)} .mont video{width:100%;aspect-ratio:872/480;object-fit:cover}
 .mont .lbl{position:absolute;left:14px;bottom:14px;padding:7px 12px;border-radius:999px;background:rgba(0,0,0,.6);color:#fff;font:600 12.5px system-ui;letter-spacing:.06em;backdrop-filter:blur(6px)}
 .mont .lbl b{color:var(--ac)}
@@ -278,7 +278,7 @@ for c in O["companies"]:
             n += 1; k = f"c{n:02d}"; mp, jp = webloop(cl); shutil.copy(mp, f"{X}/{k}.mp4"); shutil.copy(jp, f"{X}/{k}.jpg"); ncl += 1
             cap = E(caption(sid, c["id"])) or "&nbsp;"
             tl += (f'<figure class="tile rv"><video muted loop playsinline preload="none" poster="x/{k}.jpg" data-lz="x/{k}.mp4" aria-label="{E(u3["ai"])} {n:02d}"></video>'
-                   f'<div class="b"><i class="ai">AI</i><i>{E(u3["shot"])} {n:02d}</i></div><figcaption>{cap}</figcaption></figure>')
+                   f'<div class="b"><i class="ai">AI</i><i>{E(u3["shot"])} {n:02d}</i></div><figcaption><span>{cap}</span></figcaption></figure>')
             if kf:
                 webkf(kf, f"{X}/k{n:02d}.jpg"); nkf += 1
                 pairs += (f'<figure class="pair"><div class="cmp"><video muted loop playsinline preload="none" poster="x/k{n:02d}.jpg" data-lz="x/{k}.mp4"></video>'
