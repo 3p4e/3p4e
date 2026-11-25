@@ -1,0 +1,49 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Big,Russo One,124,&H00FFFFFF,&H00FFFFFF,&H70000000,&H90000000,0,0,0,0,100,100,2,0,1,3,5,5,0,0,0,1
+Style: Sector,Russo One,68,&H00FFFFFF,&H00FFFFFF,&H70000000,&H90000000,0,0,0,0,100,100,2,0,1,2.5,4,1,0,0,0,1
+Style: Kick,Oswald,32,&H004EC1F2,&H00FFFFFF,&H90000000,&H90000000,1,0,0,0,100,100,6,0,1,2,2,1,0,0,0,1
+Style: Bar,Russo One,10,&H004EC1F2,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,7,0,0,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.00,0:00:02.05,Big,,0,0,0,,{\an5\pos(960,540)\fad(0,120)}ОВА НЕ Е СНИМЕНО.
+Dialogue: 1,0:00:02.09,0:00:04.13,Big,,0,0,0,,{\an5\pos(960,540)\fad(90,140)\fscx120\fscy120\t(0,190,\fscx100\fscy100)}ОВА Е {\c&H4EC1F2&}AI.
+Dialogue: 1,0:00:04.29,0:00:08.25,Kick,,0,0,0,,{\an1\pos(114,908)\fad(160,140)}AI ВИДЕО ЗА
+Dialogue: 1,0:00:04.35,0:00:08.25,Sector,,0,0,0,,{\an1\move(70,990,110,990,0,240)\fad(180,140)}ГРАДЕЖНИШТВО
+Dialogue: 1,0:00:04.35,0:00:08.25,Bar,,0,0,0,,{\an7\pos(114,1008)\fad(0,140)\fscx0\t(60,420,\fscx100)\p1}m 0 0 l 150 0 150 7 0 7{\p0}
+Dialogue: 1,0:00:08.47,0:00:12.42,Kick,,0,0,0,,{\an1\pos(114,908)\fad(160,140)}AI ВИДЕО ЗА
+Dialogue: 1,0:00:08.53,0:00:12.42,Sector,,0,0,0,,{\an1\move(70,990,110,990,0,240)\fad(180,140)}НЕДВИЖНОСТИ
+Dialogue: 1,0:00:08.53,0:00:12.42,Bar,,0,0,0,,{\an7\pos(114,1008)\fad(0,140)\fscx0\t(60,420,\fscx100)\p1}m 0 0 l 150 0 150 7 0 7{\p0}
+Dialogue: 1,0:00:12.64,0:00:16.60,Kick,,0,0,0,,{\an1\pos(114,908)\fad(160,140)}AI ВИДЕО ЗА
+Dialogue: 1,0:00:12.70,0:00:16.60,Sector,,0,0,0,,{\an1\move(70,990,110,990,0,240)\fad(180,140)}ВНАТРЕШЕН ДИЗАЈН
+Dialogue: 1,0:00:12.70,0:00:16.60,Bar,,0,0,0,,{\an7\pos(114,1008)\fad(0,140)\fscx0\t(60,420,\fscx100)\p1}m 0 0 l 150 0 150 7 0 7{\p0}
+Dialogue: 1,0:00:16.82,0:00:20.77,Kick,,0,0,0,,{\an1\pos(114,908)\fad(160,140)}AI ВИДЕО ЗА
+Dialogue: 1,0:00:16.88,0:00:20.77,Sector,,0,0,0,,{\an1\move(70,990,110,990,0,240)\fad(180,140)}ХРАНА
+Dialogue: 1,0:00:16.88,0:00:20.77,Bar,,0,0,0,,{\an7\pos(114,1008)\fad(0,140)\fscx0\t(60,420,\fscx100)\p1}m 0 0 l 150 0 150 7 0 7{\p0}
+Dialogue: 1,0:00:21.00,0:00:24.95,Kick,,0,0,0,,{\an1\pos(114,908)\fad(160,140)}AI ВИДЕО ЗА
+Dialogue: 1,0:00:21.05,0:00:24.95,Sector,,0,0,0,,{\an1\move(70,990,110,990,0,240)\fad(180,140)}ВИНО
+Dialogue: 1,0:00:21.05,0:00:24.95,Bar,,0,0,0,,{\an7\pos(114,1008)\fad(0,140)\fscx0\t(60,420,\fscx100)\p1}m 0 0 l 150 0 150 7 0 7{\p0}
+Dialogue: 1,0:00:25.17,0:00:29.12,Kick,,0,0,0,,{\an1\pos(114,908)\fad(160,140)}AI ВИДЕО ЗА
+Dialogue: 1,0:00:25.23,0:00:29.12,Sector,,0,0,0,,{\an1\move(70,990,110,990,0,240)\fad(180,140)}ЧЕЛИК И ЦЕМЕНТ
+Dialogue: 1,0:00:25.23,0:00:29.12,Bar,,0,0,0,,{\an7\pos(114,1008)\fad(0,140)\fscx0\t(60,420,\fscx100)\p1}m 0 0 l 150 0 150 7 0 7{\p0}
+Dialogue: 1,0:00:29.34,0:00:31.21,Kick,,0,0,0,,{\an1\pos(114,908)\fad(160,140)}AI ВИДЕО ЗА
+Dialogue: 1,0:00:29.40,0:00:31.21,Sector,,0,0,0,,{\an1\move(70,990,110,990,0,240)\fad(180,140)}ЕНЕРГЕТИКА
+Dialogue: 1,0:00:29.40,0:00:31.21,Bar,,0,0,0,,{\an7\pos(114,1008)\fad(0,140)\fscx0\t(60,420,\fscx100)\p1}m 0 0 l 150 0 150 7 0 7{\p0}
+Dialogue: 1,0:00:33.52,0:00:37.47,Kick,,0,0,0,,{\an1\pos(114,908)\fad(160,140)}AI ВИДЕО ЗА
+Dialogue: 1,0:00:33.58,0:00:37.47,Sector,,0,0,0,,{\an1\move(70,990,110,990,0,240)\fad(180,140)}ЛАНСИРАЊЕ НА ПРОИЗВОДИ
+Dialogue: 1,0:00:33.58,0:00:37.47,Bar,,0,0,0,,{\an7\pos(114,1008)\fad(0,140)\fscx0\t(60,420,\fscx100)\p1}m 0 0 l 150 0 150 7 0 7{\p0}
+Dialogue: 1,0:00:37.69,0:00:41.65,Kick,,0,0,0,,{\an1\pos(114,908)\fad(160,140)}AI ВИДЕО ЗА
+Dialogue: 1,0:00:37.75,0:00:41.65,Sector,,0,0,0,,{\an1\move(70,990,110,990,0,240)\fad(180,140)}ИНДУСТРИЈА
+Dialogue: 1,0:00:37.75,0:00:41.65,Bar,,0,0,0,,{\an7\pos(114,1008)\fad(0,140)\fscx0\t(60,420,\fscx100)\p1}m 0 0 l 150 0 150 7 0 7{\p0}
+Dialogue: 1,0:00:31.31,0:00:33.36,Big,,0,0,0,,{\an5\pos(960,415)\fs100\fad(90,140)\fscx120\fscy120\t(0,190,\fscx100\fscy100)}БЕЗ КАМЕРА.
+Dialogue: 1,0:00:31.83,0:00:33.36,Big,,0,0,0,,{\an5\pos(960,540)\fs100\fad(90,140)\fscx120\fscy120\t(0,190,\fscx100\fscy100)}БЕЗ ЕКИПА.
+Dialogue: 1,0:00:32.36,0:00:33.36,Big,,0,0,0,,{\an5\pos(960,665)\fs100\fad(90,140)\fscx120\fscy120\t(0,190,\fscx100\fscy100)}{\c&H4EC1F2&}БЕЗ ЧЕКАЊЕ.
+Dialogue: 1,0:00:41.75,0:00:45.88,Big,,0,0,0,,{\an5\pos(960,540)\fad(90,140)\fscx120\fscy120\t(0,190,\fscx100\fscy100)}ВАШАТА ПРИКАЗНА\N{\c&H4EC1F2&}Е СЛЕДНА.
