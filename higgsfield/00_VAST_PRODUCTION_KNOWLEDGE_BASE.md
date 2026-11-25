@@ -724,3 +724,53 @@ s03 crossbow-cock that maps 1:1 to the pose ref) to confirm both defects are dea
 
 **Doc 43 addenda committed (a9e42ca):** Wan motion-control routes (Fun Control/Animate2/VACE), DWPose
 combat tuning profile (body=T, hands=T, face=F, score 0.40), temporal filtering chain (median/SavGol).
+
+## §25 BIG DOGMA b2b studio: MiniMax H3 + LTX dual pipeline, standard practice (2026-11-25)
+
+Project: projects/b2b-studio (12 companies in MK/RS/AL/XK; every film in an LTX version and an H3 version).
+
+**H3 licence handling (binding).** H3 output (video, frames, audio) never leaves the GPU box except by the
+owner's own scp/rsync to their PC. Not to the sandbox, not to KVM4 (Germany = EU), not to Gemini, not to
+Drive by us. No display or use in EU/UK/USA/South Korea, no public posting, no training on outputs, credit
+"Made with MiniMax H3" on every end card. Inputs (keyframes, VO wav, music, cut scripts, intro/outro clips)
+go *to* the box; only text comes back (counts, durations, ffprobe/ebur128, logs). Do not ask Cowork/Claude
+to open H3 files. Public material (site, social, pitch pages, zips) is LTX-only.
+
+**H3 box recipe (sglang).** Image lmsysorg/sglang:dev, disk 300 GB, runtype ssh. Model ~135 GB:
+`hf download MiniMaxAI/MiniMax-H3 model_index.json "FL2VA/*"` (HF_XET_HIGH_PERFORMANCE=1).
+Serve: `sglang serve --model-path MiniMaxAI/MiniMax-H3 --model-variant fl2va --num-gpus 2 --tp-size 2
+--ulysses-degree 1 --performance-mode speed --port 30010`. Jobs: POST /v1/videos, poll, download content.
+768p 5 s = ~6 min/shot on 2x RTX PRO 6000 (Quebec, $3.18/h); ~7.5-8 min on 2x A100/H100.
+Failures seen: UAE 2xA100 "GPU requires reset" + NCCL hang; a box with bad authorized_keys ownership;
+a box without /workspace (mkdir it). Destroy faulty boxes at once; never destroy a working H3 box before
+the owner has downloaded and confirmed (byte totals compared).
+
+**Orchestrator bug to avoid.** A go-script that starts the server with `setsid nohup ... &` and ends with
+`wait; echo DONE` never prints DONE: `wait` waits for the server. Use `wait <pid>` of the real jobs or
+write the marker right after the last foreground step. Downstream steps keyed on that marker stall.
+
+**Remote shell hygiene.** `pkill -f pattern` inside `bash -c "...pattern..."` kills its own shell; put
+restarts in a small script file. `pgrep -f` needs the `[x]yz` trick. rsh/ssh with a trailing `&` can
+hang the call: launch with `(setsid nohup cmd > /dev/null 2>&1 < /dev/null &)` from a script.
+
+**Finishing on the box (projects/b2b-studio/h3_post).** cut_h3.py builds film 16:9 + 9:16 from clips in
+CLIPDIRS (skips a film whose VO shot has no clip). h3_post.py per film: pitch version (intro 2.2 s +
+body normalised to 1280x720/24 fps/48 kHz + concept watermark + email outro 3.2 s, concat filter,
+re-encode), 9:16 blur-fill of the pitch, 1:1 and 4:5 blur-fill feeds, SRT mk/sr/sq/en by FFT
+cross-correlation of each VO wav against the film soundtrack at 8 kHz (score > 0.25; all 160 lines hit).
+pack.sh hard-links only new outputs into BIG_DOGMA_H3_partN with a licence README. drive_watch.py polls
+the owner's link-shared Drive folder (embeddedfolderview + drive.usercontent download) straight onto the box.
+
+**Owner download.** Linux: `rsync -avP -e "ssh -p PORT" 'root@sshN.vast.ai:/workspace/BIG_DOGMA_H3_part*' ~/Videos/BIG_DOGMA_H3/`
+then compare file count and byte total per part with the box. Attach the owner's keys via
+POST /instances/{id}/ssh/ (keys: h3-download, and the email-labelled Windows key).
+
+**LTX side standards.** Russo One headings; brand.json is the single source of contacts (generators drop
+empty fields; email-only = inf.unit@proton.me). Pitch pages: one private token per company, noindex
+header + meta, nginx regex location quoted. Every public video carries an AI disclosure from frame 1.
+No client brands in public material. Social reels -14 LUFS / TP <= -1 dBTP; site -16 LUFS. Review
+every built lane adversarially (contacts, disclosure, artefacts, safe areas, loudness) before shipping.
+
+**Open items at close of 2026-11-25.** Private pitch tokens and the download token are committed in the
+public repo 3p4e/3p4e (outreach files, tracker, HANDOFF doc): rotate on KVM4 and keep tokens out of git.
+LTX masters average -18.2 LUFS (target -16). Old DOGMA zip and site.prev-* copies on KVM4 to clean.
