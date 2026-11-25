@@ -5,7 +5,7 @@
 import os, re, json, html, shutil, subprocess, hashlib
 S = "/tmp/claude-0/-home-user-3p4e/50442171-da10-52d9-9948-b5cc07f6bc8a/scratchpad"
 OUT = f"{S}/launch/site"; WORK = f"{S}/launch/site_work"
-SITE_URL = "https://bigdogma.srv1231216.hstgr.cloud"
+SITE_URL = "https://bigdogma.tech"
 E = html.escape
 import sys; sys.path.insert(0, f"{S}/launch/site_work"); import gallery_data as G
 

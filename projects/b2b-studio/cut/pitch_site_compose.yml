@@ -11,7 +11,7 @@ services:
     pids_limit: 64
     labels:
       - traefik.enable=true
-      - traefik.http.routers.ai-studio-pitch.rule=Host(`pitch.srv1231216.hstgr.cloud`)
+      - traefik.http.routers.ai-studio-pitch.rule=Host(`pitch.bigdogma.tech`)
       - traefik.http.routers.ai-studio-pitch.entrypoints=websecure
       - traefik.http.routers.ai-studio-pitch.tls.certresolver=letsencrypt
       - traefik.http.services.ai-studio-pitch.loadbalancer.server.port=80

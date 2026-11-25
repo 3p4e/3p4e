@@ -20,8 +20,8 @@ Pitch materials zip (all of the above for the 12 companies, brand kit, logo anim
 ## Web (KVM4, Docker + Traefik)
 | Stack | URL | Notes |
 |---|---|---|
-| `ai-studio-pitch` | `pitch.srv1231216.hstgr.cloud/<private-token>/` | 12 private pages (one per company), noindex; tokens rotated 2026-11-25, real links never committed |
-| `bigdogma-site` | `bigdogma.srv1231216.hstgr.cloud` | studio website MK/EN, unlisted (noindex) until launch |
+| `ai-studio-pitch` | `pitch.bigdogma.tech/<private-token>/` | 12 private pages (one per company), noindex; tokens rotated 2026-11-25, real links never committed |
+| `bigdogma-site` | `bigdogma.tech` | studio website MK/EN, unlisted (noindex) until launch |
 | `abracadabra-v3` | `_dl_<private-token>/` | download folder |
 
 Private backup of non-H3 masters (animated logo exports, launch videos and images): `/opt/bigdogma_backup/` on KVM4 (not served).

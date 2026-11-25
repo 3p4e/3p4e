@@ -10,7 +10,7 @@ V1 = ast.parse(open(f"{S}/cut/gen_sites_v1.py").read()); NS = {}
 for n in V1.body:
     if isinstance(n, ast.Assign) and getattr(n.targets[0], "id", "") in ("CO", "SEC"): NS[n.targets[0].id] = eval(compile(ast.Expression(n.value), "v1", "eval"))
 CO, SEC = NS["CO"], NS["SEC"]
-BASE = "https://pitch.srv1231216.hstgr.cloud"
+BASE = "https://pitch.bigdogma.tech"
 ROLE = {"01_zito_marketi_MK": "Marketing Director / Head of Marketing", "02_alkaloid_MK": "Corporate Communications Director; HR / Employer Branding",
         "03_replek_MK": "Marketing Manager; Export Business Development", "04_vincinni_MK": "Brand Manager Vincinni; Marketing Director (Makprogres)",
         "05_foton_MK": "Sales Director / Marketing Manager (Foton importer)", "06_beograd_na_vodi_RS": "Sales & Marketing Director",
