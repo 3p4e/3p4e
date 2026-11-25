@@ -2,7 +2,7 @@
 
 Интерен работен документ. Текстовите во блоковите се подготвени за копирање. Секој текст има македонска (MK) и англиска (EN) верзија.
 
-> **Контакт:** единствениот контакт во текстовите е е-поштата `inf.unit@proton.me` (од `brand/brand.json`); други контакт-податоци не се објавуваат. Видете го делот „Правила“ на крајот.
+> **Контакт:** единствениот контакт во текстовите е е-поштата `inf.unit@bigdogma.tech` (од `brand/brand.json`); други контакт-податоци не се објавуваат. Видете го делот „Правила“ на крајот.
 
 ---
 
@@ -64,7 +64,7 @@ BIG DOGMA е AI видео студио од Скопје. Изработува�
 
 Секое видео е јасно означено како изработено со вештачка интелигенција.
 
-Контакт: inf.unit@proton.me
+Контакт: inf.unit@bigdogma.tech
 ```
 
 Детален опис, EN:
@@ -79,7 +79,7 @@ What you get:
 
 Every video is clearly labelled as made with artificial intelligence.
 
-Contact: inf.unit@proton.me
+Contact: inf.unit@bigdogma.tech
 ```
 
 ### LinkedIn: tagline (макс. 120 знаци) и About (~600 знаци)
@@ -102,7 +102,7 @@ BIG DOGMA е AI видео студио од Скопје. Изработува�
 
 Секое видео е јасно означено како изработено со AI.
 
-Пишете ни за пилот-филм: inf.unit@proton.me
+Пишете ни за пилот-филм: inf.unit@bigdogma.tech
 ```
 
 About EN (548 chars):
@@ -113,7 +113,7 @@ From your photos, renders or products we prepare key frames for your approval, t
 
 Every video is clearly labelled as AI-generated.
 
-Ask us about a pilot film: inf.unit@proton.me
+Ask us about a pilot film: inf.unit@bigdogma.tech
 ```
 
 ### YouTube: опис на каналот
@@ -131,7 +131,7 @@ BIG DOGMA е AI видео студио од Скопје.
 
 Сите видеа на каналот се изработени со вештачка интелигенција и така се означени.
 
-Пилот-филм за вашиот бизнис: inf.unit@proton.me
+Пилот-филм за вашиот бизнис: inf.unit@bigdogma.tech
 ```
 
 EN:
@@ -147,7 +147,7 @@ We work with businesses in North Macedonia and the region:
 
 Every video on this channel is AI-generated and labelled as such.
 
-Pilot film for your business: inf.unit@proton.me
+Pilot film for your business: inf.unit@bigdogma.tech
 ```
 
 ### X: био (макс. 160 знаци)
@@ -546,7 +546,7 @@ AI видео за вашиот бизнис: почнете со пилот-ф�
 
 Готов филм за 7–10 дена од одобрувањето на клучните кадри, со една рунда корекции. Без снимање на терен. Цените се во евра, без ДДВ.
 
-Пишете ни во порака или на inf.unit@proton.me.
+Пишете ни во порака или на inf.unit@bigdogma.tech.
 
 Секое наше видео е изработено со вештачка интелигенција и така е означено.
 
@@ -563,7 +563,7 @@ Monthly content, from €400/month: 6–8 new clips every month, 3-month minimum
 
 Finished film 7–10 days after you approve the key frames, with one round of revisions. No on-location shoot. Prices in euros, excl. VAT.
 
-Send us a message or write to inf.unit@proton.me.
+Send us a message or write to inf.unit@bigdogma.tech.
 
 Every video we make is AI-generated and labelled as such.
 
@@ -706,7 +706,7 @@ YouTube бара наслов за секое видео, па и за Shorts. �
    - YouTube: во полето „Altered content“ одберете „Yes“;
    - LinkedIn и X немаат посебно копче: доволен е редот во текстот и ознаката во видеото.
    (Имињата на опциите може малку да се разликуваат зависно од верзијата на апликацијата.)
-3. **Контакт: само е-пошта.** Единствениот контакт е `inf.unit@proton.me` (од `brand/brand.json`). Се појавува во деталниот опис на Facebook, LinkedIn About, описот на YouTube каналот и во текстот на post_offer, а на сликите `post_offer.png` и `post_hello.png` и на завршната картичка на showreel-от. Не додавајте други контакт-податоци и не измислувајте линк, ни во Stories (види ја интерната белешка во делот 1). Насловните слики и профилните слики (PNG) не содржат контакт-податоци.
+3. **Контакт: само е-пошта.** Единствениот контакт е `inf.unit@bigdogma.tech` (од `brand/brand.json`). Се појавува во деталниот опис на Facebook, LinkedIn About, описот на YouTube каналот и во текстот на post_offer, а на сликите `post_offer.png` и `post_hello.png` и на завршната картичка на showreel-от. Не додавајте други контакт-податоци и не измислувајте линк, ни во Stories (види ја интерната белешка во делот 1). Насловните слики и профилните слики (PNG) не содржат контакт-податоци.
 4. **Без претерани тврдења.** Не пишуваме „најдобри на Балканот“, „број 1“ и слично, ниту споменуваме клиенти без нивна писмена дозвола. Ги наведуваме само конкретните придобивки: 7–10 дена, без снимање на терен, 16:9 + 9:16, глас на македонски, оригинална музика, една рунда корекции. Не користиме ознаки како „најчест избор“ или „најпопуларно“; пакетот Лансирање е означен како „Препорачан“, исто како на страницата. Цени се наведуваат само овие (исти на сликите, во текстовите и на страницата): Пилот од €600, Лансирање од €1.800, Месечна содржина од €400/месец, сите без ДДВ.
 5. **Јазик.** Македонските текстови се во кирилица. Не мешајте латиница во македонскиот текст, освен за имиња (BIG DOGMA, AI, Reels, TikTok) и хаштагови на англиски.
 6. **Хаштагови: најмногу 5 по објава.** Од декември 2025 Instagram дозволува најмногу 5 хаштагови на објава или Reel, па секој текст во делот 2 има точно 5. Не додавајте нови при копирање. Истите 5 важат и за TikTok, Facebook и LinkedIn; на X користете ја X верзијата (1–2 хаштага).
