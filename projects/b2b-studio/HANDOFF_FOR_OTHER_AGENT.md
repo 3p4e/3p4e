@@ -18,7 +18,7 @@ From the Claude session that built the ABRACADABRA v3 clips and the B2B research
 | `higgsfield/59, 64, 67` | LTX 2.5 methodology and lessons (doc 67 sec.2 = prompt structure) |
 
 Foton keyframes (21 JPG, 1280x704, plus 2 contact sheets), temporary link:
-`https://abracadabra.srv1231216.hstgr.cloud/_dl_0b36174741a10446e2cd630f/FOTON_KEYFRAMES.zip`
+`https://abracadabra.srv1231216.hstgr.cloud/_dl_<private-token>/FOTON_KEYFRAMES.zip`
 The folder is scheduled for removal about 24 h after 2026-11-23 17:04 UTC; download it now.
 
 ## 3. Foton keyframes: status and caveats

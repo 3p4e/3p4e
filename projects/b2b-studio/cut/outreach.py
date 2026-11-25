@@ -2,7 +2,9 @@
 # plus a tracker spreadsheet. Links are the private LTX pitch pages. H3 material is never sent by email or uploaded.
 import os, json, ast, csv
 S = "/tmp/claude-0/-home-user-3p4e/50442171-da10-52d9-9948-b5cc07f6bc8a/scratchpad"
-OUT = "/home/user/3p4e/projects/b2b-studio/outreach"; os.makedirs(OUT, exist_ok=True)
+# PRIVATE=1 writes the real private page links to S/outreach_private (never committed); the repo copy gets a placeholder.
+PRIVATE = os.environ.get("PRIVATE") == "1"
+OUT = f"{S}/outreach_private" if PRIVATE else "/home/user/3p4e/projects/b2b-studio/outreach"; os.makedirs(OUT, exist_ok=True)
 O = json.load(open(f"{S}/cut/offers.json")); B = json.load(open(f"{S}/brand/brand.json")); TOK = json.load(open(f"{S}/cut/page_tokens.json"))
 V1 = ast.parse(open(f"{S}/cut/gen_sites_v1.py").read()); NS = {}
 for n in V1.body:
@@ -134,7 +136,7 @@ LBL = {"mk": ("Е-пошта", "LinkedIn", "WhatsApp", "Потсетник (де
        "sq": ("Email", "LinkedIn", "WhatsApp", "Kujtesë (dita 4)", "Mesazhi i fundit (dita 10)", "Subjekti")}
 rows = []
 for c in O["companies"]:
-    L = c["lang"]; t = T[L]; sec = CO[c["id"]][0]; hook = SEC[(sec, L)][0]; link = f"{BASE}/{TOK[c['id']]}/"
+    L = c["lang"]; t = T[L]; sec = CO[c["id"]][0]; hook = SEC[(sec, L)][0]; link = f"{BASE}/{TOK[c['id']]}/" if PRIVATE else "[PITCH_PAGE_LINK]"
     pilot = O["prices"][L]["pilot"].split("–")[0]
     f = dict(c=c["name"], hook=hook, link=link, pilot=pilot, sig=SIG)
     msg = {k: v.format(**f) for k, v in t.items()}

@@ -1,6 +1,6 @@
 # BIG DOGMA outreach kit
 
-One file per company (`01_zito_marketi_MK.md` … `12_speeex_XK.md`), in the company's language: cold email, LinkedIn connection note (under 300 characters), WhatsApp message, two follow-ups. Tracker: `outreach_tracker.xlsx` (follow-up dates fill in automatically from the "Day 0 sent" date; status has a drop-down).
+One file per company (`01_zito_marketi_MK.md` … `12_speeex_XK.md`), in the company's language: cold email, LinkedIn connection note (under 300 characters), WhatsApp message, two follow-ups. The files in this repo show `[PITCH_PAGE_LINK]` where each company's private page link goes: the real links are never committed (the repo is public). The ready-to-send versions with the real links are in `outreach_private/` inside the pitch materials zip. Tracker: `outreach_tracker.xlsx` (follow-up dates fill in automatically from the "Day 0 sent" date; status has a drop-down).
 
 ## Before the first send
 1. Replace the name placeholders: `[Име и презиме]` / `[Ime i prezime]` / `[Emri dhe mbiemri]` and `[Име]` / `[Ime]` / `[Emri]`. The studio contact is the email inf.unit@proton.me (phone, WhatsApp and website are left out until they exist; add them to `brand/brand.json` and re-run the generators).

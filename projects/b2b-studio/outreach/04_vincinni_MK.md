@@ -2,7 +2,7 @@
 
 - Country: North Macedonia · Sector: fmcg · Language: mk
 - Who to contact: **Brand Manager Vincinni; Marketing Director (Makprogres)**
-- Private page (LTX films only): https://pitch.srv1231216.hstgr.cloud/OEn8Av9GuWoE/
+- Private page (LTX films only): [PITCH_PAGE_LINK]
 - Offer PDF: on the page (button), or attach `offers_pdf/04_vincinni_MK_offer.pdf`
 - Films: Секогаш по твој вкус (28 сек.), It's Good. It's Vincinni. (33 сек.)
 
@@ -16,7 +16,7 @@
 
 Вашиот производ и вашето пакување, во сцени што будат апетит.
 
-Погледнете ги тука (приватна страница, 2 минути): https://pitch.srv1231216.hstgr.cloud/OEn8Av9GuWoE/
+Погледнете ги тука (приватна страница, 2 минути): [PITCH_PAGE_LINK]
 
 Секој филм е готов во хоризонтален (16:9) и вертикален (9:16) формат, со глас на македонски и оригинална музика. Ништо од ова не е објавено и нема да биде без ваше писмено одобрение.
 
@@ -28,14 +28,14 @@ BIG DOGMA · AI STUDIO | Skopje
 inf.unit@proton.me
 ```
 
-## 2. LinkedIn (day 0, connection note, 234 characters)
+## 2. LinkedIn (day 0, connection note, 201 characters)
 ```
-Добар ден, [Име]. Направивме два кратки AI рекламни филма за Vincinni / Макпрогрес, концепт само за вас, без снимање. Приватна страница: https://pitch.srv1231216.hstgr.cloud/OEn8Av9GuWoE/ Би ми било драго да го слушнам вашето мислење.
+Добар ден, [Име]. Направивме два кратки AI рекламни филма за Vincinni / Макпрогрес, концепт само за вас, без снимање. Приватна страница: [PITCH_PAGE_LINK] Би ми било драго да го слушнам вашето мислење.
 ```
 
 ## 3. WhatsApp (only if you already have the number from a business card, website or referral)
 ```
-Добар ден! Јас сум [Име] од BIG DOGMA, AI видео студио од Скопје. Подготвивме два кратки рекламни филма за Vincinni / Макпрогрес (концепт, необјавени): https://pitch.srv1231216.hstgr.cloud/OEn8Av9GuWoE/ Дали имате 15 минути оваа или следната недела да ви покажеме како би изгледало со ваши материјали?
+Добар ден! Јас сум [Име] од BIG DOGMA, AI видео студио од Скопје. Подготвивме два кратки рекламни филма за Vincinni / Макпрогрес (концепт, необјавени): [PITCH_PAGE_LINK] Дали имате 15 минути оваа или следната недела да ви покажеме како би изгледало со ваши материјали?
 ```
 
 ## 4. Потсетник (ден 4)
@@ -44,7 +44,7 @@ inf.unit@proton.me
 ```
 Почитувани,
 
-Само кратко потсетување за концепт-филмовите за Vincinni / Макпрогрес: https://pitch.srv1231216.hstgr.cloud/OEn8Av9GuWoE/
+Само кратко потсетување за концепт-филмовите за Vincinni / Макпрогрес: [PITCH_PAGE_LINK]
 
 Ако не сте вистинската личност за ова, ќе ни биде драго ако нè упатите до колегата задолжен за маркетинг.
 
@@ -60,7 +60,7 @@ inf.unit@proton.me
 ```
 Почитувани,
 
-Ова е нашата последна порака на оваа тема. Страницата со филмовите останува активна уште 14 дена: https://pitch.srv1231216.hstgr.cloud/OEn8Av9GuWoE/
+Ова е нашата последна порака на оваа тема. Страницата со филмовите останува активна уште 14 дена: [PITCH_PAGE_LINK]
 
 Ако сега не е вистинскиот момент, ќе ви се јавиме за неколку месеци.
 

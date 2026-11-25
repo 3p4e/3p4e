@@ -226,7 +226,7 @@ CT_JS = json.dumps({k: CONTACT[k] for k in ("email",) if CONTACT[k]})
 
 # site.js validates the form and opens a mailto: link (no backend). The form ships `hidden` and site.js shows it only after the submit
 # handler is attached; the mailto: action is a second safety net, so a native submit can never send the fields to this web server.
-FORM_OPEN, FORM_CLOSE = (f'<form class="form rv" id="qf" action="mailto:{C["email"]}" method="post" enctype="text/plain" novalidate hidden>', '') if CONTACT["email"] else ('<!-- no email in brand.json: quote form left out', ' -->')
+FORM_OPEN, FORM_CLOSE = (f'<form class="form rv" id="qf" novalidate hidden>', '') if CONTACT["email"] else ('<!-- no email in brand.json: quote form left out', ' -->')
 PAGE = f"""<!doctype html>
 <html lang="mk">
 <head>

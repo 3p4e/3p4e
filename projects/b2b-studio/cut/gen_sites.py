@@ -106,6 +106,7 @@ section{{padding:clamp(64px,10vw,120px) 0;position:relative}} .eyebrow{{color:va
 footer{{padding:36px 0 48px;color:var(--mu);font-size:13.5px;border-top:1px solid color-mix(in srgb,var(--fg) 8%,transparent)}} footer .wrap{{display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start}} footer img{{height:30px;width:auto;opacity:.9}} footer p{{margin:0;flex:1 1 300px}}
 .rv{{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}} .rv.in{{opacity:1;transform:none}}
 @media(max-width:720px){{nav .links{{display:none}} nav .btn{{margin-left:auto}} body{{font-size:16px}}}}
+@media(max-width:480px){{nav .wrap{{gap:10px}} .brand b{{font-size:15px;letter-spacing:.06em;white-space:nowrap}} nav .btn{{padding:8px 11px;font-size:12.5px;white-space:nowrap}}}}
 @media(prefers-reduced-motion:reduce){{.rv{{opacity:1;transform:none;transition:none}} html{{scroll-behavior:auto}} .btn,.card{{transition:none}}}}"""
 
 for c in O["companies"]:
@@ -124,6 +125,7 @@ for c in O["companies"]:
     sp = short_prompt(prompt)
     films = ""
     for fid, label in c["films"]:
+        label = re.sub(r"\((\d+)(\s*\w+\.?)\)", lambda m: f"({round(dur(f'{S}/pitch/{fid}_pitch.mp4'))}{m.group(2)})", label)
         shutil.copy(f"{S}/pitch/{fid}_pitch.mp4", f"{d}/{fid}.mp4"); shutil.copy(f"{S}/pitch_9x16/{fid}_pitch_9x16.mp4", f"{d}/{fid}_9x16.mp4"); shutil.copy(f"{S}/previews/{fid}_poster.jpg", f"{d}/{fid}.jpg")
         films += f"""<article class="film rv"><div class="vw"><video controls playsinline preload="none" poster="{fid}.jpg" src="{fid}.mp4"></video></div>
 <div class="meta"><h3>{E(label)}</h3><div class="seg"><button class="on" data-src="{fid}.mp4">{u['h']}</button><button data-v="1" data-src="{fid}_9x16.mp4">{u['v']}</button></div></div></article>"""

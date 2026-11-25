@@ -2,7 +2,7 @@
 
 - Country: Serbia · Sector: logistics · Language: sr
 - Who to contact: **Marketing / Corporate Communications Director**
-- Private page (LTX films only): https://pitch.srv1231216.hstgr.cloud/Iu-zAZwpqrMY/
+- Private page (LTX films only): [PITCH_PAGE_LINK]
 - Offer PDF: on the page (button), or attach `offers_pdf/08_nelt_RS_offer.pdf`
 - Films: Na polici, na vreme (33 sek.), Do svake prodavnice (24 sek.)
 
@@ -16,7 +16,7 @@ Pripremili smo dva kratka reklamna filma za Nelt Group: koncept samo za vas, nap
 
 Od skladišta do police: vaša mreža u jednom kratkom filmu.
 
-Pogledajte ih ovde (privatna stranica, 2 minuta): https://pitch.srv1231216.hstgr.cloud/Iu-zAZwpqrMY/
+Pogledajte ih ovde (privatna stranica, 2 minuta): [PITCH_PAGE_LINK]
 
 Svaki film je spreman u horizontalnom (16:9) i vertikalnom (9:16) formatu, sa glasom na srpskom i originalnom muzikom. Ništa od ovoga nije objavljeno i neće biti bez vašeg pisanog odobrenja.
 
@@ -28,14 +28,14 @@ BIG DOGMA · AI STUDIO | Skopje
 inf.unit@proton.me
 ```
 
-## 2. LinkedIn (day 0, connection note, 222 characters)
+## 2. LinkedIn (day 0, connection note, 189 characters)
 ```
-Dobar dan, [Ime]. Napravili smo dva kratka AI reklamna filma za Nelt Group, koncept samo za vas, bez snimanja. Privatna stranica: https://pitch.srv1231216.hstgr.cloud/Iu-zAZwpqrMY/ Bilo bi mi drago da čujem vaše mišljenje.
+Dobar dan, [Ime]. Napravili smo dva kratka AI reklamna filma za Nelt Group, koncept samo za vas, bez snimanja. Privatna stranica: [PITCH_PAGE_LINK] Bilo bi mi drago da čujem vaše mišljenje.
 ```
 
 ## 3. WhatsApp (only if you already have the number from a business card, website or referral)
 ```
-Dobar dan! Ja sam [Ime] iz BIG DOGMA, AI video studija iz Skoplja. Pripremili smo dva kratka reklamna filma za Nelt Group (koncept, neobjavljeni): https://pitch.srv1231216.hstgr.cloud/Iu-zAZwpqrMY/ Da li imate 15 minuta ove ili sledeće nedelje da vam pokažemo kako bi izgledalo sa vašim materijalima?
+Dobar dan! Ja sam [Ime] iz BIG DOGMA, AI video studija iz Skoplja. Pripremili smo dva kratka reklamna filma za Nelt Group (koncept, neobjavljeni): [PITCH_PAGE_LINK] Da li imate 15 minuta ove ili sledeće nedelje da vam pokažemo kako bi izgledalo sa vašim materijalima?
 ```
 
 ## 4. Podsetnik (dan 4)
@@ -44,7 +44,7 @@ Dobar dan! Ja sam [Ime] iz BIG DOGMA, AI video studija iz Skoplja. Pripremili sm
 ```
 Poštovani,
 
-Samo kratak podsetnik na koncept-filmove za Nelt Group: https://pitch.srv1231216.hstgr.cloud/Iu-zAZwpqrMY/
+Samo kratak podsetnik na koncept-filmove za Nelt Group: [PITCH_PAGE_LINK]
 
 Ako niste prava osoba za ovo, biće nam drago ako nas uputite na kolegu zaduženog za marketing.
 
@@ -60,7 +60,7 @@ inf.unit@proton.me
 ```
 Poštovani,
 
-Ovo je naša poslednja poruka na ovu temu. Stranica sa filmovima ostaje aktivna još 14 dana: https://pitch.srv1231216.hstgr.cloud/Iu-zAZwpqrMY/
+Ovo je naša poslednja poruka na ovu temu. Stranica sa filmovima ostaje aktivna još 14 dana: [PITCH_PAGE_LINK]
 
 Ako sada nije pravi trenutak, javićemo vam se za nekoliko meseci.
 
