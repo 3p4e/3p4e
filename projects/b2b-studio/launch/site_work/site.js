@@ -23,6 +23,7 @@
     if (save && window.BD_HUD) window.BD_HUD.restart(); else { const hs = $('.hud .st'); if (hs) hs.textContent = hs.dataset.gen; }
     if (save) { try { localStorage.setItem('bd_lang', lang); } catch (e) {} }
     if (lb.open && cur >= 0) setTracks();
+    if (window.BD_RELABEL) window.BD_RELABEL();
   }
   $$('.lang button').forEach(b => b.addEventListener('click', () => apply(b.dataset.lang, true)));
 
@@ -69,10 +70,71 @@
   $$('.pn button', lb).forEach(b => b.addEventListener('click', () => step(+b.dataset.step)));
   function step(d) { const vis = visible(); if (!vis.length) return; let k = vis.indexOf(ids[cur]); k = (k + d + vis.length) % vis.length; show(ids.indexOf(vis[k])); }
   lb.addEventListener('keydown', e => { if (e.target.tagName === 'VIDEO') return; if (e.key === 'ArrowRight') step(1); if (e.key === 'ArrowLeft') step(-1); });
-  $$('#grid a[data-film]').forEach(a => a.addEventListener('click', e => { if (e.metaKey || e.ctrlKey || e.shiftKey || e.button) return; e.preventDefault(); openFilm(a.dataset.film, a); }));
+  $$('a[data-film]').forEach(a => a.addEventListener('click', e => { if (e.metaKey || e.ctrlKey || e.shiftKey || e.button) return; e.preventDefault(); openFilm(a.dataset.film, a); }));
 
   // only one video with sound at a time
   document.addEventListener('play', e => { $$('video').forEach(x => { if (x !== e.target && !x.muted && !x.paused) x.pause(); }); }, true);
+
+  // ---------- muted in-view loops (gallery, sector shots, image -> motion): the src is set when a clip nears the viewport,
+  // it plays only while visible and pauses off screen; reduced motion keeps the posters
+  const lio = new IntersectionObserver(es => es.forEach(e => { const x = e.target;
+    if (e.isIntersecting) { if (RM) return; if (!x.getAttribute('src')) x.src = x.dataset.loop; const p = x.play(); if (p && p.catch) p.catch(() => {}); }
+    else if (!x.paused) x.pause(); }), { rootMargin: '120px 0px', threshold: 0.01 });
+  $$('video[data-loop]').forEach(x => lio.observe(x));
+
+  // ---------- gallery: the first rows only until "show all"; sector filter
+  const gw = $('#gw'), gmore = $('#gmore');
+  if (gw) {
+    const tiles = $$('.gt', gw);
+    if (tiles.some(li => li.classList.contains('x'))) { gw.classList.add('clip'); gmore.hidden = false; }
+    gmore.addEventListener('click', () => { gw.classList.remove('clip'); gmore.hidden = true; });
+    $$('.gchips .chip').forEach(c => c.addEventListener('click', () => {
+      const f = c.dataset.g; $$('.gchips .chip').forEach(x => x.setAttribute('aria-pressed', String(x === c)));
+      if (f !== 'all') { gw.classList.remove('clip'); gmore.hidden = true; }
+      gw.classList.toggle('flt', f !== 'all');
+      tiles.forEach(li => { li.hidden = !(f === 'all' || li.dataset.sec === f); });
+    }));
+  }
+
+  // ---------- tabs (sectors, build-up projects): click or arrow keys
+  function tabs(list) {
+    if (!list) return; const ts = $$('[role=tab]', list);
+    const sel = t => ts.forEach(x => { const on = x === t; x.setAttribute('aria-selected', String(on)); x.tabIndex = on ? 0 : -1;
+      const pn = document.getElementById(x.getAttribute('aria-controls')); if (pn) pn.hidden = !on; });
+    ts.forEach((t, i) => { t.addEventListener('click', () => sel(t)); t.addEventListener('keydown', e => {
+      const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0; if (!d) return; e.preventDefault(); const n = ts[(i + d + ts.length) % ts.length]; n.focus(); sel(n); }); });
+  }
+  tabs($('.stabs'));
+
+  // ---------- build-up viewer: key frame -> its clip -> next key frame ..., runs only while on screen
+  const views = $$('.bview').map(v => {
+    const st = $('.bstage', v), img = $('.bk', st), vid = $('video', st), bl = $('.bl', st), bn = $('.bn b', st), bar = $('.bprog i', st), bp = $('.bp', st);
+    const steps = $$('.bsteps button', v); let i = 0, tm = 0, seen = false, paused = RM, tok = 0;
+    const lab = k => steps[k].querySelector('span span').textContent;
+    const setBtn = () => { bp.classList.toggle('on', !paused); bp.setAttribute('aria-label', paused ? bp.dataset.play : bp.dataset.pause); };
+    const prog = () => { bar.style.width = (100 * (i + (vid.duration && st.classList.contains('play') ? Math.min(1, vid.currentTime / vid.duration) : 0)) / steps.length) + '%'; };
+    vid.addEventListener('timeupdate', prog);
+    function go(k, quick) {
+      const my = ++tok; clearTimeout(tm); i = k; const b = steps[k];
+      steps.forEach(x => x === b ? x.setAttribute('aria-current', 'step') : x.removeAttribute('aria-current'));
+      img.src = b.dataset.kf; st.classList.remove('play'); vid.pause(); bl.textContent = lab(k); bn.textContent = String(k + 1).padStart(2, '0'); prog();
+      if (paused || !seen) return;
+      tm = setTimeout(() => { if (my !== tok) return;
+        if (b.dataset.clip) { vid.src = b.dataset.clip; const p = vid.play(); if (p && p.catch) p.catch(() => {}); }
+        else tm = setTimeout(() => { if (my === tok) go(0); }, 2600); }, quick ? 150 : 1100);
+    }
+    vid.addEventListener('playing', () => st.classList.add('play'));
+    vid.addEventListener('ended', () => { if (i + 1 < steps.length) go(i + 1); else tm = setTimeout(() => go(0), 2200); });
+    steps.forEach((b, k) => b.addEventListener('click', () => { if (paused) { paused = false; setBtn(); } go(k, true); }));
+    bp.addEventListener('click', () => { paused = !paused; setBtn();
+      if (paused) { clearTimeout(tm); vid.pause(); } else if (st.classList.contains('play') && !vid.ended) vid.play().catch(() => {}); else go(i, true); });
+    new IntersectionObserver(es => es.forEach(e => { seen = e.isIntersecting;
+      if (seen) { if (!paused) { if (st.classList.contains('play') && !vid.ended) vid.play().catch(() => {}); else go(i); } } else { clearTimeout(tm); vid.pause(); } }), { threshold: 0.35 }).observe(st);
+    setBtn(); bl.textContent = lab(0);
+    return () => { bl.textContent = lab(i); setBtn(); };
+  });
+  tabs($('.btabs'));
+  window.BD_RELABEL = () => views.forEach(f => f());
 
   // ---------- pricing buttons preselect the package in the form
   const form = $('#qf');

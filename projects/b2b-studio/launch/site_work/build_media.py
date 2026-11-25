@@ -123,6 +123,30 @@ def extras():
               "-frames:v", "1", "-q:v", "3", f"{OUT}/media/og.jpg"])
     print("extras done", flush=True)
 
+
+def gallery():
+    # AI gallery / sector shots / image-to-motion / build-up viewer: brand-neutral LTX clips from gallery_data.py.
+    # 960x528 (the 1280x704 masters at 3/4), 5 s, CRF 28, no audio, faststart; a 640 px poster per clip; key frames as JPEG.
+    sys.path.insert(0, f"{S}/launch/site_work"); import gallery_data as G
+    os.makedirs(f"{OUT}/media/g", exist_ok=True); os.makedirs(f"{OUT}/media/k", exist_ok=True)
+    def enc(cid):
+        src = f"{S}/{G.SRC[cid]}/{cid}.mp4"; out = f"{OUT}/media/g/{cid}.mp4"
+        if not os.path.exists(out):
+            run(FF + ["-i", src, "-an", "-t", "5", "-vf", "scale=960:528,fps=24,setsar=1", "-c:v", "libx264", "-preset", "slow", "-crf", "28",
+                      "-pix_fmt", "yuv420p", "-g", "48", "-movflags", "+faststart", "-map_metadata", "-1", "-threads", "2", out])
+        run(FF + ["-ss", "1.5", "-i", src, "-frames:v", "1", "-vf", "scale=640:352", "-q:v", "6", f"{OUT}/media/g/{cid}.jpg"])
+    with ThreadPoolExecutor(3) as ex: list(ex.map(enc, list(G.SRC)))
+    for k in G.KEYFRAMES:
+        kid = G.kf_id(k)
+        run(FF + ["-i", f"{S}/{k}", "-vf", "scale=960:528", "-q:v", "4", f"{OUT}/media/k/{kid}.jpg"])
+        run(FF + ["-i", f"{S}/{k}", "-vf", "scale=320:176", "-q:v", "6", f"{OUT}/media/k/{kid}_t.jpg"])
+    for cid, *_ in G.I2V:   # image -> motion: the poster is the clip's last frame, so the "AI video" panel shows the result before it plays
+        run(FF + ["-sseof", "-0.2", "-i", f"{S}/{G.SRC[cid]}/{cid}.mp4", "-frames:v", "1", "-vf", "scale=640:352", "-q:v", "6", f"{OUT}/media/g/{cid}_end.jpg"])
+    keep = {f"{c}.mp4" for c in G.SRC} | {f"{c}.jpg" for c in G.SRC} | {f"{c}_end.jpg" for c, *_ in G.I2V}
+    for f in os.listdir(f"{OUT}/media/g"):
+        if f not in keep: os.remove(f"{OUT}/media/g/{f}")
+    print("gallery", len(G.SRC), "clips", len(G.KEYFRAMES), "key frames", flush=True)
+
 if step in ("all", "hero"): hero()
 if step in ("all", "extras"): extras()
 if step == "howto": howto()
@@ -134,4 +158,5 @@ if step in ("all", "films"):
             if os.path.exists(f): os.remove(f)
 if step in ("all", "showreel"): showreel()
 if step == "thumbs": thumbs()
+if step in ("all", "gallery"): gallery()
 print("MEDIA_DONE", step, flush=True)

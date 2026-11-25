@@ -7,6 +7,7 @@ S = "/tmp/claude-0/-home-user-3p4e/50442171-da10-52d9-9948-b5cc07f6bc8a/scratchp
 OUT = f"{S}/launch/site"; WORK = f"{S}/launch/site_work"
 SITE_URL = "https://bigdogma.srv1231216.hstgr.cloud"
 E = html.escape
+import sys; sys.path.insert(0, f"{S}/launch/site_work"); import gallery_data as G
 
 # ------------------------------------------------------------------ contact details: brand/brand.json is the only source
 # Only fields that hold a real value are rendered. A field that still looks like a placeholder (an example.* domain, XXX digits)
@@ -181,6 +182,41 @@ TX = {
 }
 for k, f in (("c.phone", "phone"), ("c.wa", "whatsapp"), ("c.wa.v", "whatsapp"), ("c.web", "web")):
     if not CONTACT[f]: TX.pop(k)
+TX.update({
+ "nav.gal": ("Галерија", "Gallery"),
+ "ai.note": ("Видео изработено со вештачка интелигенција · AI-generated video.", "AI-generated video · Видео изработено со вештачка интелигенција."),
+ "sec.e": ("Сектори", "Sectors"),
+ "sec.h": ("Вашиот сектор, кадар по кадар", "Your sector, shot by shot"),
+ "sec.p": ("Покрај секој демо филм има уште кадри од истиот свет. Од ваков материјал ја монтираме вашата реклама, само со вашите производи, простори и лого.",
+           "Beside every demo film are more shots from the same world. This is the kind of material we cut your ad from, only with your products, sites and logo."),
+ "sec.tabs": ("Изберете сектор", "Choose a sector"),
+ "sec.film": ("Демо филм · глас, музика и титлови", "Demo film · voice, music and subtitles"),
+ "sec.shots": ("Уште кадри од истиот сектор", "More shots from the same sector"),
+ "gal.e": ("AI галерија", "AI gallery"),
+ "gal.h": (f"{len(G.CLIPS)} кадри. Ниту една камера.", f"{len(G.CLIPS)} shots. Not one camera."),
+ "gal.p": ("Кратки кадри генерирани со вештачка интелигенција за различни индустрии. Се пуштаат сами, без звук, кога ќе се појават на екранот.",
+           "Short AI-generated shots for different industries. They play on their own, muted, as they scroll into view."),
+ "gal.filter": ("Филтер по сектор", "Filter by sector"),
+ "gal.more": (f"Прикажете ги сите {len(G.CLIPS)} кадри", f"Show all {len(G.CLIPS)} shots"),
+ "i2v.e": ("Слика → движење", "Image → motion"),
+ "i2v.h": ("Од една слика до живо видео", "From one image to living video"),
+ "i2v.p": ("Секој кадар почнува како слика: ваша фотографија, рендер или клучен кадар што вие го одобрувате. Потоа AI ја анимира според краток опис на движењето.",
+           "Every shot starts as an image: your photo, a render or a key frame you approve. AI then animates it from a short description of the motion."),
+ "i2v.img": ("Клучен кадар", "Key frame"), "i2v.vid": ("AI видео", "AI video"), "i2v.prompt": ("Опис на движењето:", "Motion prompt:"),
+ "bu.e": ("Тајмлапс", "Timelapse"),
+ "bu.h": ("Фаза по фаза, од нула до клучеви", "Stage by stage, from zero to the keys"),
+ "bu.p": ("Секоја фаза е клучен кадар, а AI го анимира преминот до следната. Изберете проект, па гледајте како расте или кликнете на која било фаза.",
+          "Each stage is a key frame, and AI animates the move to the next one. Choose a project and watch it grow, or click any stage."),
+ "bu.tabs": ("Изберете проект", "Choose a project"),
+ "bu.steps": ("Фази на проектот", "Project stages"),
+ "bu.pause": ("Паузирајте", "Pause"), "bu.play": ("Пуштете", "Play"),
+})
+for k, mk_, en_ in G.SECTORS: TX[f"g.{k}"] = (mk_, en_)
+for cid, _src, _sec, cmk, cen in G.CLIPS: TX[f"cl.{cid}"] = (cmk, cen)
+for cid, _k, tmk, ten, pmk, pen in G.I2V: TX[f"i2v.{cid}.t"] = (tmk, ten); TX[f"i2v.{cid}.p"] = (pmk, pen)
+for bk, bmk, ben, stages in G.BUILDS:
+    TX[f"bu.{bk}"] = (bmk, ben)
+    for i, (_k, _c, smk, sen) in enumerate(stages): TX[f"bu.{bk}.{i}"] = (smk, sen)
 for fid, cat, tmk, ten, lmk, len_ in FILMS:
     TX[f"{fid}.t"] = (tmk, ten); TX[f"{fid}.l"] = (lmk, len_)
     TX[f"{fid}.alt"] = (f"Кадар од демо филмот: {tmk}", f"Still from the demo film: {ten}")
@@ -224,6 +260,44 @@ FOOT_CT = "".join(x for x in (C["phone"] and f'<a href="tel:{C["tel"]}">{C["phon
                               C["web"] and f'<a href="{C["web_href"]}" rel="noopener">{C["web"]}</a>') if x)
 CT_JS = json.dumps({k: CONTACT[k] for k in ("email",) if CONTACT[k]})
 
+# ------------------------------------------------------------------ AI gallery, sectors, image -> motion, build-up
+CLIP = {c[0]: c for c in G.CLIPS}
+def loop(cid, cls="lv", poster=None):
+    # muted in-view loop: no src until site.js sees it near the viewport; the poster shows first
+    return f'<video class="{cls}" muted loop playsinline preload="none" poster="{u(poster or f"media/g/{cid}.jpg")}" data-loop="{u(f"media/g/{cid}.mp4")}" aria-hidden="true" tabindex="-1"></video>'
+# gallery order: round-robin over the sectors, so the first rows already show the range
+_by = {k: [c for c in G.CLIPS if c[2] == k] for k, *_ in G.SECTORS}; ORDER = []
+while any(_by.values()):
+    for k, *_ in G.SECTORS:
+        if _by[k]: ORDER.append(_by[k].pop(0))
+GAL_N0 = 12
+GAL = "\n".join(f'''<li class="gt{' x' if i >= GAL_N0 else ''}{' w' if i % 9 == 0 else ''}" data-sec="{sec}"><figure>{loop(cid)}<span class="aib" aria-hidden="true">AI</span><figcaption><b @="g.{sec}"></b><span @="cl.{cid}"></span></figcaption></figure></li>''' for i, (cid, _s, sec, *_r) in enumerate(ORDER))
+GAL_CHIPS = f'<button type="button" class="chip" data-g="all" aria-pressed="true"><span @="f.all"></span> <b>{len(G.CLIPS)}</b></button>' + "".join(
+    f'<button type="button" class="chip" data-g="{k}" aria-pressed="false"><span @="g.{k}"></span> <b>{sum(1 for c in G.CLIPS if c[2] == k)}</b></button>' for k, *_ in G.SECTORS)
+FILM_BY = {f[0]: f for f in FILMS}
+SEC_TABS = "".join(f'<button type="button" role="tab" id="st-{fid}" aria-controls="sp-{fid}" aria-selected="{str(i == 0).lower()}" tabindex="{0 if i == 0 else -1}" @="{fid}.t"></button>' for i, (fid, _sh) in enumerate(G.SECTOR_SHOTS))
+SEC_PANELS = "\n".join(f'''<div class="spanel" role="tabpanel" id="sp-{fid}" aria-labelledby="st-{fid}"{'' if i == 0 else ' hidden'}>
+ <a class="sfilm" href="{u(f'films/{fid}.mp4')}" data-film="{fid}"><span class="im"><img src="{u(f'films/{fid}.jpg')}" @a="alt:{fid}.alt" width="960" height="540" loading="lazy" decoding="async"><span class="pl" aria-hidden="true"></span><span class="du">{mmss(DUR[fid])}</span></span>
+  <span class="tx"><small @="sec.film"></small><span class="h3" @="{fid}.t"></span><span class="ln" @="{fid}.l"></span></span><span class="sr" @="work.play"></span></a>
+ <div class="sside"><p class="sl" @="sec.shots"></p><ul class="sshots">{"".join(f'<li><figure>{loop(c)}<figcaption @="cl.{c}"></figcaption></figure></li>' for c in shots)}</ul></div>
+</div>''' for i, (fid, shots) in enumerate(G.SECTOR_SHOTS))
+I2V_CARDS = "\n".join(f'''<li class="pair rv"><div class="pp">
+ <figure class="pi"><img src="{u(f'media/k/{G.kf_id(k)}.jpg')}" @a="alt:i2v.{cid}.t" width="960" height="528" loading="lazy" decoding="async"><span class="t" @="i2v.img"></span></figure>
+ <span class="arr" aria-hidden="true"></span>
+ <figure class="pv">{loop(cid, poster=f"media/g/{cid}_end.jpg")}<span class="t" @="i2v.vid"></span></figure></div>
+ <div class="pc"><b @="i2v.{cid}.t"></b><p><small @="i2v.prompt"></small> <span @="i2v.{cid}.p"></span></p></div></li>''' for cid, k, *_ in G.I2V)
+BU_TABS = "".join(f'<button type="button" role="tab" id="bt-{bk}" aria-controls="bv-{bk}" aria-selected="{str(i == 0).lower()}" tabindex="{0 if i == 0 else -1}" @="bu.{bk}"></button>' for i, (bk, *_r) in enumerate(G.BUILDS))
+def bview(i, bk, stages):
+    k0 = u(f"media/k/{G.kf_id(stages[0][0])}.jpg"); n = len(stages)
+    steps = "".join(f'''<li><button type="button" data-kf="{u(f'media/k/{G.kf_id(k)}.jpg')}" data-clip="{u(f'media/g/{c}.mp4') if c else ''}"{' aria-current="step"' if j == 0 else ''}><img src="{u(f'media/k/{G.kf_id(k)}_t.jpg')}" alt="" width="320" height="176" loading="lazy" decoding="async"><span><i>{j + 1:02d}</i> <span @="bu.{bk}.{j}"></span></span></button></li>''' for j, (k, c, *_r) in enumerate(stages))
+    return f'''<div class="bview{' few' if n <= 3 else ''}" role="tabpanel" id="bv-{bk}" aria-labelledby="bt-{bk}"{'' if i == 0 else ' hidden'}>
+ <div class="bstage"><img class="bk" src="{k0}" alt="" width="960" height="528" loading="lazy" decoding="async"><video muted playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+  <span class="bn" aria-hidden="true"><b>01</b> / {n:02d}</span><span class="bl" aria-live="polite"></span><span class="aib" aria-hidden="true">AI</span>
+  <button type="button" class="bp" @a="aria-label:bu.pause;data-pause:bu.pause;data-play:bu.play"></button><div class="bprog"><i></i></div></div>
+ <ol class="bsteps" style="--n:{n}" @a="aria-label:bu.steps">{steps}</ol>
+</div>'''
+BU_VIEWS = "\n".join(bview(i, bk, st) for i, (bk, _m, _e, st) in enumerate(G.BUILDS))
+
 # site.js validates the form and opens a mailto: link (no backend). The form ships `hidden` and site.js shows it only after the submit
 # handler is attached; the mailto: action is a second safety net, so a native submit can never send the fields to this web server.
 FORM_OPEN, FORM_CLOSE = (f'<form class="form rv" id="qf" novalidate hidden>', '') if CONTACT["email"] else ('<!-- no email in brand.json: quote form left out', ' -->')
@@ -264,7 +338,7 @@ PAGE = f"""<!doctype html>
  <div class="wrap">
   <a class="brand" href="#top" @a="aria-label:nav.home"><canvas aria-hidden="true"></canvas><b>BIG DOGMA</b></a>
   <div class="links" id="menu">
-   <a href="#showreel" @="nav.reel"></a><a href="#films" @="nav.work"></a><a href="#process" @="nav.how"></a><a href="#pricing" @="nav.price"></a><a href="#faq" @="nav.faq"></a><a href="#contact" @="nav.contact"></a>
+   <a href="#showreel" @="nav.reel"></a><a href="#films" @="nav.work"></a><a href="#gallery" @="nav.gal"></a><a href="#process" @="nav.how"></a><a href="#pricing" @="nav.price"></a><a href="#faq" @="nav.faq"></a><a href="#contact" @="nav.contact"></a>
    <a class="btn a mcta" href="#contact" @="nav.cta"></a>
   </div>
   <div class="lang" role="group" @a="aria-label:nav.lang"><button type="button" data-lang="mk" aria-pressed="true" lang="mk">MK</button><button type="button" data-lang="en" aria-pressed="false" lang="en">EN</button></div>
@@ -330,6 +404,58 @@ PAGE = f"""<!doctype html>
 {FILM_CARDS}
   </ul>
   <p class="hint rv" @="work.note"></p>
+ </div>
+</section>
+
+<section id="sectors" class="sec-s">
+ <div class="wrap">
+  <div class="eyebrow rv" @="sec.e"></div>
+  <h2 class="sh rv" @="sec.h"></h2>
+  <p class="sp rv" @="sec.p"></p>
+  <div class="tabs stabs rv" role="tablist" @a="aria-label:sec.tabs">{SEC_TABS}</div>
+  <div class="spanels rv">
+{SEC_PANELS}
+  </div>
+  <p class="hint rv" @="ai.note"></p>
+ </div>
+</section>
+
+<section id="gallery" class="alt gal-s">
+ <div class="wrap">
+  <div class="eyebrow rv" @="gal.e"></div>
+  <h2 class="sh rv" @="gal.h"></h2>
+  <p class="sp rv" @="gal.p"></p>
+  <div class="chips gchips rv" role="group" @a="aria-label:gal.filter">{GAL_CHIPS}</div>
+  <ul class="gw" id="gw">
+{GAL}
+  </ul>
+  <div class="gmore"><button type="button" class="btn b" id="gmore" hidden @="gal.more"></button></div>
+  <p class="hint rv" @="ai.note"></p>
+ </div>
+</section>
+
+<section id="i2v" class="i2v-s">
+ <div class="wrap">
+  <div class="eyebrow rv" @="i2v.e"></div>
+  <h2 class="sh rv" @="i2v.h"></h2>
+  <p class="sp rv" @="i2v.p"></p>
+  <ul class="pairs">
+{I2V_CARDS}
+  </ul>
+  <p class="hint rv" @="ai.note"></p>
+ </div>
+</section>
+
+<section id="buildup" class="alt bu-s">
+ <div class="wrap">
+  <div class="eyebrow rv" @="bu.e"></div>
+  <h2 class="sh rv" @="bu.h"></h2>
+  <p class="sp rv" @="bu.p"></p>
+  <div class="tabs btabs rv" role="tablist" @a="aria-label:bu.tabs">{BU_TABS}</div>
+  <div class="bviews rv">
+{BU_VIEWS}
+  </div>
+  <p class="hint rv" @="ai.note"></p>
  </div>
 </section>
 
@@ -408,7 +534,7 @@ PAGE = f"""<!doctype html>
    <div class="fc2">
     {FOOT_CT}
    </div>
-   <div class="fl"><a href="#showreel" @="nav.reel"></a><a href="#films" @="nav.work"></a><a href="#process" @="nav.how"></a><a href="#pricing" @="nav.price"></a><a href="#faq" @="nav.faq"></a><a href="#contact" @="nav.contact"></a></div>
+   <div class="fl"><a href="#showreel" @="nav.reel"></a><a href="#films" @="nav.work"></a><a href="#gallery" @="nav.gal"></a><a href="#process" @="nav.how"></a><a href="#pricing" @="nav.price"></a><a href="#faq" @="nav.faq"></a><a href="#contact" @="nav.contact"></a></div>
   </div>
   <div class="fb"><span @="ft.rights"></span><a href="#top" @="ft.top"></a></div>
  </div>
