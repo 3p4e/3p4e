@@ -25,7 +25,7 @@
 Со почит,
 [Име и презиме]
 BIG DOGMA · AI STUDIO | Skopje
-inf.unit@proton.me
+inf.unit@bigdogma.tech
 ```
 
 ## 2. LinkedIn (day 0, connection note, 192 characters)
@@ -51,7 +51,7 @@ inf.unit@proton.me
 Со почит,
 [Име и презиме]
 BIG DOGMA · AI STUDIO | Skopje
-inf.unit@proton.me
+inf.unit@bigdogma.tech
 ```
 
 ## 5. Последна порака (ден 10)
@@ -67,5 +67,5 @@ inf.unit@proton.me
 Со почит,
 [Име и презиме]
 BIG DOGMA · AI STUDIO | Skopje
-inf.unit@proton.me
+inf.unit@bigdogma.tech
 ```

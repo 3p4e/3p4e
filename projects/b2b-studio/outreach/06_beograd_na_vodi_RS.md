@@ -25,7 +25,7 @@ Ako vam se dopada pravac, rado bismo vam za 15 minuta pokazali kako to izgleda s
 Srdačan pozdrav,
 [Ime i prezime]
 BIG DOGMA · AI STUDIO | Skopje
-inf.unit@proton.me
+inf.unit@bigdogma.tech
 ```
 
 ## 2. LinkedIn (day 0, connection note, 194 characters)
@@ -51,7 +51,7 @@ Ako niste prava osoba za ovo, biće nam drago ako nas uputite na kolegu zadužen
 Srdačan pozdrav,
 [Ime i prezime]
 BIG DOGMA · AI STUDIO | Skopje
-inf.unit@proton.me
+inf.unit@bigdogma.tech
 ```
 
 ## 5. Poslednja poruka (dan 10)
@@ -67,5 +67,5 @@ Ako sada nije pravi trenutak, javićemo vam se za nekoliko meseci.
 Srdačan pozdrav,
 [Ime i prezime]
 BIG DOGMA · AI STUDIO | Skopje
-inf.unit@proton.me
+inf.unit@bigdogma.tech
 ```
