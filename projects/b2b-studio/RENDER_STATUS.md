@@ -1,29 +1,38 @@
-# Render status (2026-11-24, ~01:00 UTC)
+# Render and delivery status (2026-11-25, ~08:00 UTC)
 
-## LTX-2.5 (two Vast boxes)
-| Batch | Content | Clips | Status |
-|---|---|---|---|
-| 2–3 | timelapse transitions, construction fixes | 41 | done, on KVM4 `/opt/abra-v3/ltx_out` |
-| 4 | branch commercials | 46 | done, on KVM4 |
-| 5 | extras | 20 | done, on KVM4 |
-| 6 | Balkan 5-shot commercials | 44 | 18 done (KVM4); rest rendering on new box 62264286 |
-| 7 | timelapse sets (tl2) | 50 | queued on new box after batch 6 |
-| 8 | Vincinni ads | 10 | queued on old box 62228169 |
-| 9 | Foton fix shots | 4 | queued on old box |
-| 10 | Foton V9 specs film + extras | 16 | rendering first on old box |
+Everything that was planned is rendered, cut and delivered. No GPU box is rented.
 
-Old box 62228169 was stopped by the host, then restarted on its own; all its finished clips were pulled. Scripts: `render/`.
+## LTX (public-safe road)
+| Deliverable | Count | Where |
+|---|---|---|
+| Films with music and local-language voice-over (16:9) | 45 | scratchpad `final_music/` |
+| 9:16, 1:1, 4:5 versions | 45 each | `final_music_9x16/`, `final_1x1/`, `final_4x5/` |
+| Pitch versions (BIG DOGMA intro, concept watermark, email outro), 16:9 and 9:16 | 45 + 45 | `pitch/`, `pitch_9x16/` |
+| Posters, 6 s GIFs, silent 6 s teasers | 45 each | `previews/` |
+| Offer PDFs (MK / RS / AL) | 12 | `offers_pdf/` |
+| How-it's-made explainers | 5 | `explainers/` |
+| Subtitles mk / sr / sq / en | 176 (44 films) | `subtitles/` in this repo |
 
-## MiniMax-H3 (self-hosted, Japan)
-Comparison set 22/22 done (downloaded by the owner). Main queue 158 clips, ~7.5 min each; outputs stay in the permitted territory.
+Audio standard: all films -16 LUFS integrated, true peak <= -1.5 dBTP, 48 kHz stereo (two-pass, applied 2026-11-25 to all six film folders). Social launch reels -14 LUFS.
 
-## Voice-over (Gemini TTS, verified by transcription)
-66/66 lines: 10 Balkan commercials (mk/sr/sq), Vincinni vc1 + vc2 (mk), Foton specs (mk, numbers spelled out). Concord line 1 changed to "Gjithçka fillon si një ide." Scripts: `vo/`.
+Pitch materials zip (all of the above for the 12 companies, brand kit, logo animation, subtitles, private outreach files with the real page links): private download folder on KVM4 (`abracadabra-v3/site/_dl_<private-token>/`). The token was rotated on 2026-11-25; the link is shared with the owner only.
 
-## Next
-Pull and QC batches 6–10 → cut commercials with VO, logo end card, "concept only" disclaimer and AI label.
+## Web (KVM4, Docker + Traefik)
+| Stack | URL | Notes |
+|---|---|---|
+| `ai-studio-pitch` | `pitch.srv1231216.hstgr.cloud/<private-token>/` | 12 private pages (one per company), noindex; tokens rotated 2026-11-25, real links never committed |
+| `bigdogma-site` | `bigdogma.srv1231216.hstgr.cloud` | studio website MK/EN, unlisted (noindex) until launch |
+| `abracadabra-v3` | `_dl_<private-token>/` | download folder |
 
-## Update 2026-11-24 ~08:30 UTC
-- LTX commercial batch 1 (13 films) and batch 2 (31 films) cut: shots + local-language Gemini VO + end card (logo/name, tagline, concept-only disclaimer, AI label). Scripts: `cut/`, `vo/batch2.py`.
-- **KAM → Žito Marketi:** the generated store staff wear green, KAM's brand is red; Žito Marketi's brand is green (official logo, zito.com.mk), so both KAM films were re-branded to Žito Marketi (new last VO line + end card), no re-render. Use Žito Marketi as the retail prospect for these films.
-- H3: replacement box 62300392 rendering the remaining 117 clips; old box 62239345 (41 clips) blocked by a host fault, Vast support engaged.
+Private backup of non-H3 masters (animated logo exports, launch videos and images): `/opt/bigdogma_backup/` on KVM4 (not served).
+
+## MiniMax H3 (licence-restricted road)
+44 H3 films, each with pitch 16:9 / 9:16, 1:1, 4:5 and subtitles mk/sr/sq/en, plus the Foton "FALCON" action set (30 s film, 15 s reel, 6 s bumpers 16:9 + 9:16) and the raw clips. Rendered on Vast boxes in permitted territory, finished on the box (`h3_post/`), downloaded by the owner (byte totals verified) and the box destroyed. H3 files exist only on the owner's computer. Rules: `MINIMAX_H3_LICENCE_AND_PLAN.md`, knowledge base §25.
+
+## Launch kit
+`launch/`: social images and captions (email-only contact), showreel 16:9 + 9:16, 6 reels, 5 posts, studio website source. Reviewed and fixed in two independent rounds.
+
+## Open (owner)
+- Outreach: 0 of 12 sent. Use the files in `outreach_private/` from the zip (real links); this repo's copies show `[PITCH_PAGE_LINK]`.
+- Studio website goes public: remove the noindex header and meta (see `launch/site_work`).
+- Optional: "how we work" video with sr/sq voice-over for the 7 RS/AL/XK pitch pages; Vast refund request for the faulty UAE box.
