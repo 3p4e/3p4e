@@ -3,9 +3,9 @@
 One file per company (`01_zito_marketi_MK.md` … `12_speeex_XK.md`), in the company's language: cold email, LinkedIn connection note (under 300 characters), WhatsApp message, two follow-ups. The files in this repo show `[PITCH_PAGE_LINK]` where each company's private page link goes: the real links are never committed (the repo is public). The ready-to-send versions with the real links are in `outreach_private/` inside the pitch materials zip. Tracker: `outreach_tracker.xlsx` (follow-up dates fill in automatically from the "Day 0 sent" date; status has a drop-down).
 
 ## Before the first send
-1. Replace the name placeholders: `[Име и презиме]` / `[Ime i prezime]` / `[Emri dhe mbiemri]` and `[Име]` / `[Ime]` / `[Emri]`. The studio contact is the email inf.unit@proton.me (phone, WhatsApp and website are left out until they exist; add them to `brand/brand.json` and re-run the generators).
+1. Replace the name placeholders: `[Име и презиме]` / `[Ime i prezime]` / `[Emri dhe mbiemri]` and `[Име]` / `[Ime]` / `[Emri]`. The studio contact is the email inf.unit@bigdogma.tech (phone, WhatsApp and website are left out until they exist; add them to `brand/brand.json` and re-run the generators).
 2. Find the right person: the "Who to contact" role in each file. Company website (About / Contact / Press), LinkedIn search "<company> marketing", or the reception phone asking for the marketing department. Write the name and email into the tracker.
-3. Send from inf.unit@proton.me (a mailbox on the studio's own domain later, e.g. info@bigdogma.mk, improves deliverability and trust), with a short signature and no attachments on the first email (the link carries everything; attachments trigger spam filters). The offer PDF is a button on the page.
+3. Send from inf.unit@bigdogma.tech (the studio mailbox on its own domain, with SPF, DKIM and DMARC set up; webmail at mail.hostinger.com), with a short signature and no attachments on the first email (the link carries everything; attachments trigger spam filters). The offer PDF is a button on the page.
 
 ## Sequence
 | Day | Channel | Message |

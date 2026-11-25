@@ -71,7 +71,7 @@ bash intro916/build_intro.sh <S> [all|9x16|16x9]   # post_hello_intro_9x16.mp4 +
 
 ## Open points
 
-- Contact is email-only: `inf.unit@proton.me`, taken from `brand/brand.json`; `social_copy.md` uses no other contact. Profile link fields stay empty until the studio has its own domain.
+- Contact is email-only: `inf.unit@bigdogma.tech`, taken from `brand/brand.json`; `social_copy.md` uses no other contact. Profile link fields stay empty until the studio has its own domain.
 - The post images are in the video kit: `launch/video/post_offer.png` (price card), `launch/video/post_process_1.png` to `post_process_3.png` (3-slide carousel) and `launch/video/post_hello.png` (still alternative to the post_hello video). `social_copy.md` lists the exact file for every post and matches the text on these images.
 - `post_hello_intro_9x16.mp4` and `_16x9.mp4` are code-rendered logo animations with no AI footage; they still carry the AI line because the kit rule is that every public video carries it (labelling more than needed does no harm).
 - LinkedIn and X overlay positions (company logo, avatar) are approximations; check once after upload on desktop and mobile.

@@ -34,7 +34,7 @@ Same layout as the H3 set on the owner's computer (BIG_DOGMA/H3), folder for fol
 13_launch_kit      studio showreel 16:9 + 9:16, 6 reels, post images, profile/cover images, social_copy.md (captions + calendar)
 PITCH_PAGE_LINKS.txt  the 12 private pitch pages (each company gets only its own link)
 DELIVERY_AND_LICENCE.md  licence and delivery terms
-Audio: films -16 LUFS, 48 kHz stereo. Contact: inf.unit@proton.me
+Audio: films -16 LUFS, 48 kHz stereo. Contact: inf.unit@bigdogma.tech
 """)
 n = 0; z = f"{DL}/BIG_DOGMA_LTX.zip.part"
 with zipfile.ZipFile(z, "w", zipfile.ZIP_STORED, allowZip64=True) as zf:

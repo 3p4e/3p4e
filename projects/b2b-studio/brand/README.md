@@ -5,7 +5,7 @@
 - `logo.png`: 1600×400 lockup (gold BD mark + BIG DOGMA + AI STUDIO  |  Skopje), transparent background. Rendered by `render_logo.js` from `logo.html` and `brand.json`.
 - `mark_gold.png`, `mark_white.png`, `mark_black.png`: 1024 px mark, transparent background.
 - `icon_512.png`: app icon / favicon (bold mark on the studio background).
-- Name, city, contacts and colours come from `brand.json`, the single source for every generator. Contact is email only: inf.unit@proton.me (phone, WhatsApp and web are empty and are left out everywhere until they exist).
+- Name, city, contacts and colours come from `brand.json`, the single source for every generator. Contact is email only: inf.unit@bigdogma.tech (phone, WhatsApp and web are empty and are left out everywhere until they exist).
 
 ## Name and type
 

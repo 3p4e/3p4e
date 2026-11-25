@@ -1,6 +1,6 @@
 # BIG DOGMA launch kit (public-safe)
 
-Only studio demo material and generic clips; no client films, no client brands, no MiniMax H3. The only contact everywhere is the email from `brand/brand.json` (inf.unit@proton.me).
+Only studio demo material and generic clips; no client films, no client brands, no MiniMax H3. The only contact everywhere is the email from `brand/brand.json` (inf.unit@bigdogma.tech).
 
 - `static/`: profile pictures, covers and banners (Facebook, LinkedIn, X, YouTube), `social_copy.md` (bios, captions, X versions, YouTube titles, posting calendar, rules), render scripts in `_work/`.
 - `video/`: post images (offer, 3-slide carousel, hello), README with every video's duration and loudness, build scripts in `_work/`. The videos themselves (showreel 16:9 and 9:16, reels 01-06) are not in git; rebuild them with the scripts in `_work/`.

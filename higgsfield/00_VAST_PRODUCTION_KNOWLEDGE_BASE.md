@@ -766,7 +766,7 @@ then compare file count and byte total per part with the box. Attach the owner's
 POST /instances/{id}/ssh/ (keys: h3-download, and the email-labelled Windows key).
 
 **LTX side standards.** Russo One headings; brand.json is the single source of contacts (generators drop
-empty fields; email-only = inf.unit@proton.me). Pitch pages: one private token per company, noindex
+empty fields; email-only = inf.unit@bigdogma.tech). Pitch pages: one private token per company, noindex
 header + meta, nginx regex location quoted. Every public video carries an AI disclosure from frame 1.
 No client brands in public material. Social reels -14 LUFS / TP <= -1 dBTP; site -16 LUFS. Review
 every built lane adversarially (contacts, disclosure, artefacts, safe areas, loudness) before shipping.
