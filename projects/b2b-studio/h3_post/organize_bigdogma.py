@@ -7,7 +7,7 @@ Inputs (defaults; pass other paths as arguments):
   2) the downloaded H3 parts:    ~/Videos/H3_Assets/BIG_DOGMA_H3     (BIG_DOGMA_H3_part1..4)
   The 12 films finished on the Japan box are found by name anywhere under ~/Videos.
 Files are hard-linked (no extra disk space; originals untouched). Safe to run again."""
-import os, sys, re, shutil, glob
+import os, sys, re, shutil, glob, subprocess
 
 HOME = os.path.expanduser("~")
 LTX = sys.argv[1] if len(sys.argv) > 1 else f"{HOME}/Videos/BIG_DOGMA_LTX"
@@ -44,9 +44,14 @@ def fid_of(name):
     return None
 
 n = {"linked": 0, "skipped": 0}
+DONE = set()  # files placed in this run: the first source wins (newest H3 part first, LTX package before anything else)
 def link(src, dst_dir, name=None):
     os.makedirs(dst_dir, exist_ok=True); dst = os.path.join(dst_dir, name or os.path.basename(src))
-    if os.path.exists(dst): n["skipped"] += 1; return
+    if dst in DONE: n["skipped"] += 1; return
+    DONE.add(dst)
+    if os.path.exists(dst):
+        if os.path.samefile(src, dst): n["skipped"] += 1; return
+        os.remove(dst); n["replaced"] = n.get("replaced", 0) + 1  # an older version: replace it
     try: os.link(src, dst)
     except OSError: shutil.copy2(src, dst)
     n["linked"] += 1
@@ -101,8 +106,9 @@ for part in sorted(glob.glob(f"{H3}/BIG_DOGMA_H3_part*"), reverse=True):  # newe
 for fid in FILM_GROUP.keys() | {"timelapse_construction", "timelapse_apartment_staging", "showreel_macedonian_industry"}:
     for v in ("", "_9x16"):
         name = f"{fid}_H3{v}.mp4"; g = group_of(fid)
-        if os.path.exists(f"{OUT}/{g}/H3/{name}"): continue
-        hits = [p for p in glob.glob(f"{HOME}/Videos/**/{name}", recursive=True) if not p.startswith(OUT)]
+        if f"{OUT}/{g}/H3/{name}" in DONE: continue
+        hits = [p for p in subprocess.run(["find", f"{HOME}/Videos", "-type", "f", "-name", name], capture_output=True, text=True).stdout.split("\n")
+                if p and not p.startswith(OUT + "/")]
         if hits: link(hits[0], f"{OUT}/{g}/H3")
 
 open(f"{OUT}/README.txt", "w").write("""BIG DOGMA - all films, both versions, arranged by company
@@ -120,7 +126,7 @@ H3 RULES (MiniMax H3 licence): show H3 files only in person, outside the EU, UK,
 post, email or link them, never put them on Google Drive or any cloud, never let an AI assistant open them.
 For anything online, email or the pitch pages, use LTX only. Each company gets only its own link.
 """)
-print(f"done: {n['linked']} files linked, {n['skipped']} already there -> {OUT}")
+print(f"done: {n['linked']} files linked, {n.get('replaced', 0)} outdated files replaced, {n['skipped']} already up to date -> {OUT}")
 for g in sorted(os.listdir(OUT)):
     p = f"{OUT}/{g}"
     if os.path.isdir(p):
