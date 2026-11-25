@@ -305,7 +305,7 @@ for c in O["companies"]:
                 f'<p class="sp rv">{E(u3["vert_p"])}</p><div class="phones">{phones}</div>{f"<div class=teasers>{teas}</div>" if teas else ""}</div></section>')
     STATS3[c["id"]] = (ncl, nkf)
     explh = ""
-    if expl and L == "mk":
+    if expl:
         shutil.copy(f"{S}/explainers/{expl}.mp4", f"{d}/how.mp4"); explh = f"""<div class="expl rv"><video controls playsinline preload="none" src="how.mp4" poster="kf.jpg"></video></div>"""
     steps = [s.split(". ", 1)[-1] for s in tx["how_d"].split(" → ")]
     from urllib.parse import quote

@@ -1,3 +1,4 @@
-# Crawling is allowed so that crawlers can read the noindex in the page and in the X-Robots-Tag header (the site is unlisted for now).
 User-agent: *
 Allow: /
+
+Sitemap: https://bigdogma.tech/sitemap.xml

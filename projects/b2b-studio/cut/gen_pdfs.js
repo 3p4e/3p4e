@@ -4,6 +4,8 @@ const S = '/tmp/claude-0/-home-user-3p4e/50442171-da10-52d9-9948-b5cc07f6bc8a/sc
 const O = JSON.parse(fs.readFileSync(S + '/cut/offers.json')); const B = JSON.parse(fs.readFileSync(S + '/brand/brand.json'));
 const b64 = f => 'data:image/' + (f.endsWith('.png') ? 'png' : 'jpeg') + ';base64,' + fs.readFileSync(f).toString('base64');
 const OSW = w => 'data:font/ttf;base64,' + fs.readFileSync(S + '/brand/fonts/RussoOne-400.ttf').toString('base64');
+const BU = JSON.parse(fs.readFileSync(S + '/cut/bundles.json'));
+const FIT = JSON.parse(require('child_process').execFileSync('python3', ['-c', 'import sys,json; sys.path.insert(0, sys.argv[1]); import bundles_html; print(json.dumps(bundles_html.FIT))', S + '/cut']).toString());
 const OUT = S + '/offers_pdf'; fs.mkdirSync(OUT, { recursive: true });
 (async () => {
   const br = await chromium.launch(); const pg = await br.newPage();
@@ -17,7 +19,7 @@ const OUT = S + '/offers_pdf'; fs.mkdirSync(OUT, { recursive: true });
       .wrap{padding:22px 34px} h1{font-family:Russo;font-weight:400;font-size:30px;margin:4px 0 8px;letter-spacing:.5px} h2{font-family:Russo;font-weight:400;font-size:16px;margin:18px 0 8px;color:#b7791f;text-transform:uppercase;letter-spacing:1px}
       .intro{font-size:13px;line-height:1.55} .films{display:flex;gap:14px} .film{flex:1;font-size:11.5px;font-weight:bold} .film img{width:100%;border-radius:8px;display:block;margin-bottom:5px}
       table{width:100%;border-collapse:collapse} td{padding:9px 10px;border-bottom:1px solid #eee;vertical-align:top} td.p{font-weight:bold;white-space:nowrap;color:#b7791f;text-align:right}
-      td.n{font-weight:bold;width:120px} .small{font-size:10.5px;color:#666;line-height:1.5} .cta{margin-top:18px;background:#fff7e0;border-left:5px solid ${B.accent};padding:12px 16px;font-size:13.5px}
+      td.n{font-weight:bold;width:120px} td.p .u{font-weight:normal;color:#888;font-size:10px} .small{font-size:10.5px;color:#666;line-height:1.5} .cta{margin-top:18px;background:#fff7e0;border-left:5px solid ${B.accent};padding:12px 16px;font-size:13.5px}
       .foot{position:absolute;bottom:18px;left:34px;right:34px;font-size:9.5px;color:#888;border-top:1px solid #eee;padding-top:8px}
     </style></head><body>
       <div class="top"><img src="${b64(S + '/brand/logo.png')}"><div class="c">${[B.phone, B.email, B.web].filter(Boolean).join('<br>')}</div></div>
@@ -27,6 +29,7 @@ const OUT = S + '/offers_pdf'; fs.mkdirSync(OUT, { recursive: true });
         <tr><td class="n">${t.pilot}</td><td>${t.pilot_d}</td><td class="p">${p.pilot}</td></tr>
         <tr><td class="n">${t.launch}</td><td>${t.launch_d}</td><td class="p">${p.launch}</td></tr>
         <tr><td class="n">${t.monthly}</td><td>${t.monthly_d}</td><td class="p">${p.monthly}</td></tr></table>
+      ${(FIT[c.id] || []).length ? `<h2>${BU[c.lang].head}</h2><table>${FIT[c.id].map(k => { const b = BU[c.lang][k]; return `<tr><td class="n">${b.n}</td><td>${b.d}</td><td class="p">${b.a}<br><span class="u">${b.u}</span></td></tr>`; }).join('')}</table>` : ''}
       <div class="small" style="margin-top:6px">${t.terms} ${t.price_note}</div>
       <h2>${t.how}</h2><div class="small" style="font-size:12px;color:#333">${t.how_d}</div>
       <div class="cta"><b>${t.next}</b><br>${[B.phone, B.email].filter(Boolean).join(' · ')}</div></div>

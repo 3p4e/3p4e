@@ -15,10 +15,13 @@ def still(img, n, txt, out, d=3.2, fit="pad"):
     run(["ffmpeg","-v","error","-y","-framerate","24","-loop","1","-t",str(d),"-i",img,"-vf",f"{sc},zoompan=z='min(1+0.0008*on,1.06)':d=1:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s=1280x720:fps=24,{label(n, txt)},fade=t=in:st=0:d=0.3","-an"] + ENC + [out])
 def clipseg(src, n, txt, out, ss=0.5, d=3.6):
     run(["ffmpeg","-v","error","-y","-ss",str(ss),"-t",str(d),"-i",src,"-vf",f"scale=1280:720:force_original_aspect_ratio=increase,crop=1280:720,{label(n, txt)}","-an"] + ENC + [out])
-def build(name, title, steps, music, film, film_ss):
+TXT = {"mk": ("Како настанува рекламата", "Готова реклама: глас, музика, 16:9 и 9:16"),
+       "sr": ("Kako nastaje reklama", "Gotova reklama: glas, muzika, 16:9 i 9:16"),
+       "sq": ("Si krijohet reklama", "Reklama e gatshme: zë, muzikë, 16:9 dhe 9:16")}
+def build(name, title, steps, music, film, film_ss, lang="mk"):
     parts = []; film_ss = round(dur(film) * 0.4, 2)
     run(["ffmpeg","-v","error","-y","-f","lavfi","-i","color=c=0x0d0d0f:s=1280x720:r=24:d=2","-loop","1","-t","2","-i",LOGO,"-filter_complex",
-         f"[1:v]scale=420:-1[l];[0:v][l]overlay=(W-w)/2:200,drawtext=fontfile={FONTB}:text='{esc('Како настанува рекламата')}':fontsize=46:fontcolor=white:x=(w-tw)/2:y=380,"
+         f"[1:v]scale=420:-1[l];[0:v][l]overlay=(W-w)/2:200,drawtext=fontfile={FONTB}:text='{esc(TXT[lang][0])}':fontsize=46:fontcolor=white:x=(w-tw)/2:y=380,"
          f"drawtext=fontfile={FONT}:text='{esc(title)}':fontsize=30:fontcolor=0xf2c14e:x=(w-tw)/2:y=450","-an"] + ENC + [f"{TMP}/{name}_0.mp4"]); parts.append(f"{TMP}/{name}_0.mp4")
     for i, s in enumerate(steps, 1):
         p = f"{TMP}/{name}_{i}.mp4"
@@ -26,7 +29,7 @@ def build(name, title, steps, music, film, film_ss):
         else: clipseg(s[1], str(i), s[2], p, s[3] if len(s) > 3 else 0.5)
         parts.append(p)
     fin = f"{TMP}/{name}_fin.mp4"
-    run(["ffmpeg","-v","error","-y","-ss",str(film_ss),"-t","4.5","-i",film,"-vf",f"scale=1280:720,{label(str(len(steps)+1), 'Готова реклама: глас, музика, 16:9 и 9:16')}","-an"] + ENC + [fin]); parts.append(fin)
+    run(["ffmpeg","-v","error","-y","-ss",str(film_ss),"-t","4.5","-i",film,"-vf",f"scale=1280:720,{label(str(len(steps)+1), TXT[lang][1])}","-an"] + ENC + [fin]); parts.append(fin)
     lst = f"{TMP}/{name}.txt"; open(lst, "w").write("".join(f"file '{p}'\n" for p in parts))
     silent = f"{TMP}/{name}_v.mp4"; run(["ffmpeg","-v","error","-y","-f","concat","-safe","0","-i",lst,"-c","copy",silent])
     d = dur(silent); fa = d - 4.5
@@ -35,20 +38,36 @@ def build(name, title, steps, music, film, film_ss):
          f"[m][f]amix=inputs=2:duration=first:normalize=0,loudnorm=I=-16:TP=-1.5,aresample=48000[a]",
          "-map","0:v","-map","[a]","-c:v","copy","-c:a","aac","-b:a","192k","-movflags","+faststart",f"{OUT}/{name}.mp4"])
     print("OK", name, round(dur(f"{OUT}/{name}.mp4"), 1), flush=True)
+import sys
+ONLY = sys.argv[1] if len(sys.argv) > 1 else "all"
 M = f"{S}/music/ace_final"; F = f"{S}/final_music"; L6 = f"{S}/ltx610"; L25 = f"{S}/ltx25"
-build("howto_automotive", "Автомобили · Foton Tunland V9",
-      [("img", f"{S}/foton/ref/v9.png", "Ваша официјална фотографија"), ("img", f"{S}/fotonspec/kf/fs1.png", "Клучен кадар за ваше одобрување", "crop"),
-       ("clip", f"{L6}/fs1.mp4", "AI анимација")], f"{M}/4_automotive.mp3", f"{F}/foton_tunland_v9_specs.mp4", 36.5)
-build("howto_fmcg", "Прехранбена индустрија · Vincinni",
-      [("img", f"{S}/vincinni/assets/a009.png", "Ваше вистинско пакување"), ("img", f"{S}/vincinni/kf/vc1_2.png", "Клучен кадар за ваше одобрување", "crop"),
-       ("clip", f"{L6}/vc1_2.mp4", "AI анимација")], f"{M}/1_family.mp3", f"{F}/vincinni_family_ad.mp4", 22.5)
-build("howto_construction", "Градежништво · timelapse",
-      [("img", f"{S}/construction/kf/con_01_excavation_start.png", "Ваш рендер или фотографија од плацот", "crop"),
-       ("clip", f"{L25}/tl_03_frame.mp4", "AI timelapse по фази", 1.0)], f"{M}/3_construction.mp3", f"{F}/timelapse_construction.mp4", 33.0)
-build("howto_retail", "Малопродажба · Жито маркети",
-      [("img", f"{S}/comm/kf/kam_2.png", "Клучен кадар за ваше одобрување", "crop"), ("clip", f"{L6}/comm_kam_2.mp4", "AI анимација")],
-      f"{M}/1_family.mp3", f"{F}/zito_commercial.mp4", 27.5)
-build("howto_pharma", "Фармација · Алкалоид",
-      [("img", f"{S}/comm/kf/alkaloid_2.png", "Клучен кадар за ваше одобрување", "crop"), ("clip", f"{L6}/comm_alkaloid_2.mp4", "AI анимација")],
-      f"{M}/2_corporate.mp3", f"{F}/alkaloid_commercial.mp4", 27.5)
+if ONLY in ("all", "mk"):
+    build("howto_automotive", "Автомобили · Foton Tunland V9",
+          [("img", f"{S}/foton/ref/v9.png", "Ваша официјална фотографија"), ("img", f"{S}/fotonspec/kf/fs1.png", "Клучен кадар за ваше одобрување", "crop"),
+           ("clip", f"{L6}/fs1.mp4", "AI анимација")], f"{M}/4_automotive.mp3", f"{F}/foton_tunland_v9_specs.mp4", 36.5)
+    build("howto_fmcg", "Прехранбена индустрија · Vincinni",
+          [("img", f"{S}/vincinni/assets/a009.png", "Ваше вистинско пакување"), ("img", f"{S}/vincinni/kf/vc1_2.png", "Клучен кадар за ваше одобрување", "crop"),
+           ("clip", f"{L6}/vc1_2.mp4", "AI анимација")], f"{M}/1_family.mp3", f"{F}/vincinni_family_ad.mp4", 22.5)
+    build("howto_construction", "Градежништво · timelapse",
+          [("img", f"{S}/construction/kf/con_01_excavation_start.png", "Ваш рендер или фотографија од плацот", "crop"),
+           ("clip", f"{L25}/tl_03_frame.mp4", "AI timelapse по фази", 1.0)], f"{M}/3_construction.mp3", f"{F}/timelapse_construction.mp4", 33.0)
+    build("howto_retail", "Малопродажба · Жито маркети",
+          [("img", f"{S}/comm/kf/kam_2.png", "Клучен кадар за ваше одобрување", "crop"), ("clip", f"{L6}/comm_kam_2.mp4", "AI анимација")],
+          f"{M}/1_family.mp3", f"{F}/zito_commercial.mp4", 27.5)
+    build("howto_pharma", "Фармација · Алкалоид",
+          [("img", f"{S}/comm/kf/alkaloid_2.png", "Клучен кадар за ваше одобрување", "crop"), ("clip", f"{L6}/comm_alkaloid_2.mp4", "AI анимација")],
+          f"{M}/2_corporate.mp3", f"{F}/alkaloid_commercial.mp4", 27.5)
+# RS / AL / XK pages: one explainer per company, built from that company's own key frame, its AI clip and its finished ad.
+INTL = [("06_beograd_na_vodi_RS", "sr", "Nekretnine · Beograd na vodi", "bw", "5_luxury"),
+        ("07_millennium_team_RS", "sr", "Građevinarstvo · Millennium Team", "millennium", "3_construction"),
+        ("08_nelt_RS", "sr", "Logistika · Nelt", "nelt", "6_industrial"),
+        ("09_gener2_AL", "sq", "Patundshmëri · Gener 2", "gener2", "5_luxury"),
+        ("10_concord_AL", "sq", "Patundshmëri · Concord", "concord", "5_luxury"),
+        ("11_viva_fresh_XK", "sq", "Shitje me pakicë · Viva Fresh", "viva", "1_family"),
+        ("12_speeex_XK", "sq", "Shërbime biznesi · SPEEEX", "speeex", "2_corporate")]
+STEP = {"sr": ("Ključni kadar za vaše odobrenje", "AI animacija"), "sq": ("Kuadri kyç për miratimin tuaj", "Animacion me AI")}
+if ONLY in ("all", "intl"):
+    for cid, lang, title, k, mus in INTL:
+        build(f"howto_{cid}", title, [("img", f"{S}/comm/kf/{k}_2.png", STEP[lang][0], "crop"), ("clip", f"{L6}/comm_{k}_2.mp4", STEP[lang][1])],
+              f"{M}/{mus}.mp3", f"{F}/{k}_commercial.mp4", 27.5, lang)
 print("EXPLAINERS_DONE")

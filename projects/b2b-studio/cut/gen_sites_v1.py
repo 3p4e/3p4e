@@ -20,10 +20,10 @@ THEMES = {  # bg, surface, fg, muted, accent, ink-on-accent, head font, body fon
 CO = {  # company id -> sector, accent override, explainer
  "01_zito_marketi_MK": ("retail", "#138a3e", "howto_retail"), "02_alkaloid_MK": ("pharma", "#0a5fae", "howto_pharma"),
  "03_replek_MK": ("pharma", "#00897b", "howto_pharma"), "04_vincinni_MK": ("fmcg", "#c8102e", "howto_fmcg"),
- "05_foton_MK": ("automotive", "#d71920", "howto_automotive"), "06_beograd_na_vodi_RS": ("realestate", None, None),
- "07_millennium_team_RS": ("construction", None, None), "08_nelt_RS": ("logistics", None, None),
- "09_gener2_AL": ("realestate", None, None), "10_concord_AL": ("realestate", None, None),
- "11_viva_fresh_XK": ("retail", "#d6312b", None), "12_speeex_XK": ("bpo", None, None)}
+ "05_foton_MK": ("automotive", "#d71920", "howto_automotive"), "06_beograd_na_vodi_RS": ("realestate", None, "howto_06_beograd_na_vodi_RS"),
+ "07_millennium_team_RS": ("construction", None, "howto_07_millennium_team_RS"), "08_nelt_RS": ("logistics", None, "howto_08_nelt_RS"),
+ "09_gener2_AL": ("realestate", None, "howto_09_gener2_AL"), "10_concord_AL": ("realestate", None, "howto_10_concord_AL"),
+ "11_viva_fresh_XK": ("retail", "#d6312b", "howto_11_viva_fresh_XK"), "12_speeex_XK": ("bpo", None, "howto_12_speeex_XK")}
 UI = {
  "mk": dict(films="Филмови", how="Како работиме", offer="Понуда", pill="Концепт · не е за објава", watch="Погледнете ги филмовите",
             cta="Закажи 15 минути", mail="Пиши е-пошта", pdf="Понуда (PDF)", h="16:9", v="9:16 мобилен", films_h="Два филма за {c}",
@@ -34,13 +34,13 @@ UI = {
  "sr": dict(films="Filmovi", how="Kako radimo", offer="Ponuda", pill="Koncept · nije za objavu", watch="Pogledajte filmove",
             cta="Zakaži 15 minuta", mail="Pošalji e-poštu", pdf="Ponuda (PDF)", h="16:9", v="9:16 mobilni", films_h="Dva filma za {c}",
             films_p="Svaki film postoji horizontalno (YouTube, ekrani) i vertikalno (Reels, TikTok, Stories). Izaberite format.",
-            why="Šta dobijate", popular="Najčešći izbor", expl="", expl_p="",
+            why="Šta dobijate", popular="Najčešći izbor", expl="Od fotografije do reklame", expl_p="Ovako izgleda proces za vaš projekat, korak po korak.",
             final="Da napravimo pravu verziju?", final_p="15 minuta, uživo ili onlajn. Pokazaćemo kako izgleda sa vašim fotografijama i proizvodima.",
             note="Koncept samo za prezentaciju. Nije objavljen i neće biti objavljen bez vašeg izričitog pisanog odobrenja. Video snimci su napravljeni uz pomoć veštačke inteligencije (LTX-Video). Logotipi i robne marke pripadaju njihovim vlasnicima."),
  "sq": dict(films="Filmat", how="Si punojmë", offer="Oferta", pill="Koncept · jo për publikim", watch="Shikoni filmat",
             cta="Cakto 15 minuta", mail="Dërgo email", pdf="Oferta (PDF)", h="16:9", v="9:16 celular", films_h="Dy filma për {c}",
             films_p="Çdo film ekziston horizontal (YouTube, ekrane) dhe vertikal (Reels, TikTok, Stories). Zgjidhni formatin.",
-            why="Çfarë fitoni", popular="Zgjedhja më e shpeshtë", expl="", expl_p="",
+            why="Çfarë fitoni", popular="Zgjedhja më e shpeshtë", expl="Nga fotografia te reklama", expl_p="Kështu duket procesi për projektin tuaj, hap pas hapi.",
             final="Ta bëjmë versionin e vërtetë?", final_p="15 minuta, ballë për ballë ose online. Ju tregojmë si duket me fotot dhe produktet tuaja.",
             note="Koncept vetëm për prezantim. Nuk është publikuar dhe nuk do të publikohet pa miratimin tuaj të shprehur me shkrim. Videot janë krijuar me inteligjencë artificiale (LTX-Video). Logot dhe markat u përkasin pronarëve të tyre.")}
 SEC = {  # (sector, lang) -> hero hook, 3 benefits

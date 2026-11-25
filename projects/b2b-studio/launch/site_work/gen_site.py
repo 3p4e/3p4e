@@ -325,8 +325,8 @@ PAGE = f"""<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<!-- UNLISTED for now: to allow indexing remove this noindex and the X-Robots-Tag header in nginx.conf (robots.txt already allows crawling, so crawlers can see both). -->
-<meta name="robots" content="noindex,nofollow">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="{SITE_URL}/">
 <title @="meta.title"></title>
 <meta name="description" @a="content:meta.desc">
 <meta name="theme-color" content="#0d0d0f">
@@ -640,6 +640,10 @@ for f in ("dogma_logo.js", "mark.js"): shutil.copy(f"{S}/fx/{f}", f"{OUT}/{f}")
 shutil.copy(f"{S}/brand/fonts/RussoOne-400.ttf", f"{OUT}/russo.ttf")
 for f in ("manrope-cyr.woff2", "manrope-lat.woff2", "manrope-latx.woff2"): shutil.copy(f"{WORK}/fonts/{f}", f"{OUT}/{f}")
 for f in ("site.css", "site.js", "robots.txt", "404.html"): shutil.copy(f"{WORK}/{f}", f"{OUT}/{f}")
+import datetime
+open(f"{OUT}/sitemap.xml", "w").write(f'''<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>{SITE_URL}/</loc><lastmod>{datetime.date.today()}</lastmod></url></urlset>
+''')
 pub = page + open(f"{OUT}/i18n.js", encoding="utf-8").read()
 bad = ["example.mk", "example.com", "XXX", "googleapis", "gstatic"] + [x for x, f in (("tel:", "phone"), ("WhatsApp", "whatsapp"), ("wa.me", "whatsapp")) if not CONTACT[f]]
 leak = [x for x in bad if x.lower() in pub.lower()]
