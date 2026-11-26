@@ -359,3 +359,15 @@ open(f"{ROOT}/robots.txt", "w").write("User-agent: *\nDisallow: /\n")
 shutil.copy(f"{REPO}/cut/pitch_site_nginx.conf", f"{S}/pitch_site/nginx.conf"); shutil.copy(f"{REPO}/cut/pitch_site_compose.yml", f"{S}/pitch_site/docker-compose.yml")
 for k, (a, b) in STATS3.items(): print("ASSETS", k, "clips", a, "keyframes", b)
 print("SITES_DONE")
+
+# Pitch pages v3 (2026-11-26): the page built above becomes classic.html and pitch_v3.py writes the new index.html
+# (BD splash -> company content, campaign package, BD gallery); it reads the classic page and the file list of each company.
+import subprocess as _sp
+for _cid, _tok in tokens.items():
+    _d = f"{ROOT}/{_tok}"
+    if not os.path.exists(f"{_d}/index.html"): continue
+    shutil.copy(f"{_d}/index.html", f"{_d}/classic.html")
+    _w = f"{S}/pv3/{_cid}"; os.makedirs(_w, exist_ok=True); shutil.copy(f"{_d}/index.html", f"{_w}/classic.html")
+    open(f"{_w}/files.txt", "w").write(" ".join(sorted(os.listdir(_d)) + (sorted(os.listdir(f"{_d}/x")) if os.path.isdir(f"{_d}/x") else [])))
+    _sp.run(["/usr/bin/python3", f"{REPO}/cut/pitch_v3.py", "foton" if _cid.startswith("05_foton") else _cid, _d], check=True)
+print("pitch v3 pages built")

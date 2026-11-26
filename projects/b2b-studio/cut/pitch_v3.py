@@ -32,11 +32,13 @@ T = {"mk": dict(
   kpi=["Досег и прегледи (ThruPlay)", "Клик кон вашата страница или телефон", "Барања за понуда / тест возења", "Цена по контакт"],
   o_e="Понуда", i_e="Од вашата индустрија", i_h="Уште AI филмови од вашата индустрија", i_p="Примери од нашето студио кои можеме да ги прилагодиме за вас.",
   b_e="BD галерија", b_h="Што може AI со едно лого", b_p="{n} филмови и ефекти со нашето лого: материјали, светлина, природа, магија. Истото можеме за вашето лого.",
-  b_all="Сите", b_f="Лого филмови", b_x="Лого ефекти", b_f1="Лого филм", b_x1="Лого ефект",
+  b_all="Сите", b_f="Лого филмови", b_x="Лого ефекти",
   end_h="Следен чекор: 15 минути разговор", end_p="Во Скопје или онлајн. Кажете ни кој филм ви се допаѓа најмногу: го прилагодуваме за вашата кампања.",
   mail="Пишете ни", legal="Концепт само за презентација. Не е објавен и нема да биде објавен без ваше изречно писмено одобрение. Видеата се изработени со вештачка интелигенција. Логата и марките им припаѓаат на нивните сопственици.",
-  close="Затвори", subj="{c} - Закажи 15 минути")}
-DAYS = ["Пон", "Вто", "Сре", "Чет", "Пет", "Саб", "Нед"]
+  close="Затвори", subj="{c} - Закажи 15 минути", b_f1="Лого филм", b_x1="Лого ефект", days=["Пон", "Вто", "Сре", "Чет", "Пет", "Саб", "Нед"], more="Повеќе на",
+  ind_types={"social": "9:16", "explainer": "Објаснувачки", "story": "Приказна", "transform": "Пред / потоа"}, ai_film="AI филм")}
+for _l in ("sr", "sq"): T[_l] = json.load(open(f"{HERE}/pitch_v3_data/strings_{_l}.json", encoding="utf-8"))   # written by hand 2026-11-26
+XL = json.load(open(f"{P}/launch/site_work/i18n_extra.json", encoding="utf-8"))   # site translations (BD and industry film titles)
 
 # ------------------------------------------------------------------ companies
 def foton():
@@ -48,24 +50,55 @@ def foton():
     caps = json.load(open(f"{HERE}/pitch_v3_data/foton_caps.json", encoding="utf-8"))
     return dict(key="foton", name="Foton Македонија", lang="mk", accent="#d71920", films=films, caps=caps, shots=27, stills=10, gifs=2,
                 industry=["automotive", "product_launch"], tags="#Foton #Tunland #4x4 #Пикап #Македонија #Скопје", cta_site="foton.mk")
-COMPANIES = {"foton": foton}
+import re
+CO = {  # key: (industry categories on bigdogma.tech, hashtags)
+ "01_zito_marketi_MK": (["food", "horeca"], "#Жито #Маркети #Македонија #Скопје"), "02_alkaloid_MK": (["pharma", "health"], "#Алкалоид #Здравје #Македонија"),
+ "03_replek_MK": (["pharma", "health"], "#Реплек #Здравје #Македонија"), "04_vincinni_MK": (["food", "product_launch"], "#Винчини #Македонија"),
+ "06_beograd_na_vodi_RS": (["real_estate", "developer"], "#BeogradNaVodi #Beograd #Srbija"), "07_millennium_team_RS": (["construction", "steel_cement"], "#MillenniumTeam #Beograd #Srbija"),
+ "08_nelt_RS": (["industry_showreel", "food"], "#Nelt #Logistika #Srbija"), "09_gener2_AL": (["construction", "developer"], "#Gener2 #Tirana #Shqipëri"),
+ "10_concord_AL": (["real_estate", "developer"], "#Concord #Tirana #Shqipëri"), "11_viva_fresh_XK": (["food", "horeca"], "#VivaFresh #Prishtina #Kosova"),
+ "12_speeex_XK": (["industry_showreel", "it"], "#Speeex #Prishtina #Kosova")}
+SCRP = f"{SCR}/pv3"
+def generic(cid):
+    old = open(f"{SCRP}/{cid}/classic.html", encoding="utf-8").read(); files = open(f"{SCRP}/{cid}/files.txt").read().split()
+    lang = re.search(r'<html lang="(\w+)"', old).group(1); name = html.unescape(re.sub(r"<[^>]+>", "", re.search(r"<h1[^>]*>.*?<em>(.*?)</em>", old, re.S).group(1))).strip()
+    acc = (re.findall(r"--(?:ac|co|accent)\s*:\s*(#[0-9a-fA-F]{3,6})", old) or ["#f2c14e"])[0]
+    films = []
+    for a in re.findall(r'<article class="film.*?</article>', re.search(r'<section id="films".*?</section>', old, re.S).group(0), re.S):
+        src = re.search(r'<video[^>]*\ssrc="([^"]+)"', a).group(1); poster = re.search(r'poster="([^"]+)"', a).group(1)
+        t = html.unescape(re.search(r"<h3>(.*?)</h3>", a).group(1)); t = re.sub(r"\s*\([^)]*\)\s*$", "", t).strip()
+        v = re.search(r'data-v="1" data-src="([^"]+)"', a); films.append(dict(id=src[:-4], t=t, l=t, src=src, v=v.group(1) if v else None, poster=poster))
+    caps = {}
+    sec = re.search(r'<section id="shots"(.*?)</section>', old, re.S)
+    if sec:
+        for f in re.findall(r"<figure.*?</figure>", sec.group(1), re.S):
+            c = re.search(r"x/(c\d\d)\.jpg", f)
+            if c: caps[c.group(1)] = [x.strip() for x in re.sub(r"<[^>]+>", "|", html.unescape(f)).split("|") if x.strip()]
+    n = lambda pre, ext: len([f for f in files if re.fullmatch(pre + r"\d\d" + ext, f)])
+    ind, tags = CO[cid]
+    return dict(key=cid, name=name, lang=lang, accent=acc, films=films, caps=caps, shots=n("c", r"\.mp4"), stills=n("a", r"\.jpg"), gifs=len([f for f in files if re.fullmatch(r"t\d\.gif", f)]),
+                keys=n("k", r"\.jpg"), industry=ind, tags=tags, cta_site=None)
+COMPANIES = {"foton": foton, **{k: (lambda k=k: generic(k)) for k in CO}}
 
 # ------------------------------------------------------------------ campaign: 4 weeks from the company's films
 def campaign(c, s):
     F = c["films"]; rows = []; slots = [(0, "YouTube + Facebook", "16:9"), (1, "Instagram Reels + TikTok", "9:16"), (3, "Instagram + Facebook Stories", "9:16"), (5, "Reels + TikTok", "9:16")]
     order = F[2:] + F[:2] if len(F) > 6 else F
+    if len(F) < 6 and c.get("shots"):   # few films: alternate them with single AI shots as short teaser posts
+        sh = [dict(t=(c["caps"].get(f"c{i:02d}", ["", f"AI {i:02d}"])[1] if len(c["caps"].get(f"c{i:02d}", [])) > 2 else f"AI {i:02d}"), l=(c["caps"].get(f"c{i:02d}", [""])[-1] or F[0]["l"]), src=f"x/c{i:02d}.mp4", v=None) for i in range(1, c["shots"] + 1, 2)]   # t: the shot's own label
+        order = [x for pair in zip(sh, F * 8) for x in pair]
     k = 0
     for w in range(4):
         for d, ch, fm in slots:
             f = order[k % len(order)]; k += 1
-            cap = f"{f['l']} {('Повеќе на ' + c['cta_site'] + '.') if c.get('cta_site') else ''} {c['tags']}".replace("  ", " ").strip()
-            rows.append((w + 1, DAYS[d], ch, fm, f, cap))
+            cap = f"{f['l']} {(s['more'] + ' ' + c['cta_site'] + '.') if c.get('cta_site') else ''} {c['tags']}".replace("  ", " ").strip()
+            rows.append((w + 1, s["days"][d], ch, fm, f, cap))
     tb = []
     for w in range(1, 5):
         tb.append(f'<tr class="wk"><th colspan="5">{s["week"]} {w}</th></tr>')
         for ww, d, ch, fm, f, cap in rows:
             if ww != w: continue
-            tb.append(f'<tr><td>{d}</td><td>{E(ch)}</td><td><span class="fm">{fm}</span></td><td><a href="#" data-play="{f["v"] if fm == "9:16" else f["src"]}" data-t="{E(f["t"])}">{E(f["t"])}</a></td><td class="cap">{E(cap)}</td></tr>')
+            tb.append(f'<tr><td>{d}</td><td>{E(ch)}</td><td><span class="fm">{fm if f.get("v") else "16:9"}</span></td><td><a href="#" data-play="{(f.get("v") or f["src"]) if fm == "9:16" else f["src"]}" data-t="{E(f["t"])}">{E(f["t"])}</a></td><td class="cap">{E(cap)}</td></tr>')
     head = "".join(f"<th>{E(x)}</th>" for x in s["c_cols"])
     bud = "".join(f'<div class="card"><h3>{E(n)}</h3><div class="amt">{E(a)}</div><p>{E(p)}</p></div>' for n, a, p in s["bud"])
     kpi = "".join(f"<li>{E(x)}</li>" for x in s["kpi"])
@@ -75,11 +108,12 @@ def campaign(c, s):
 # ------------------------------------------------------------------ page
 def build(key, out):
     c = COMPANIES[key](); s = T[c["lang"]]; n_f = len(c["films"]); name = E(c["name"])
-    old = open(f"{out}/classic.html", encoding="utf-8").read() if os.path.exists(f"{out}/classic.html") else open(f"{out}/index.html", encoding="utf-8").read()
+    old = open(f"{SCRP}/{key}/classic.html", encoding="utf-8").read() if key != "foton" else open(f"{out}/classic.html", encoding="utf-8").read() if os.path.exists(f"{out}/classic.html") else open(f"{out}/index.html", encoding="utf-8").read()
     import re
     offer = re.search(r'<section id="offer".*?</section>', old, re.S).group(0)
     # BD gallery and splash playlist (public files on bigdogma.tech)
-    bd = [(f"{SITE}/media/intro/{k}", v, "f") for k, v in BDT.FILMS.items()] + [(f"{SITE}/media/bd/{k}", v, "x") for k, v in BDT.FX.items()]
+    tl = lambda key, v: (v if c["lang"] == "mk" else (XL.get(c["lang"], {}).get(key, "BD · " + v[1])[5:], v[1]))
+    bd = [(f"{SITE}/media/intro/{k}", tl(f"bd_{k}.t", v), "f") for k, v in BDT.FILMS.items()] + [(f"{SITE}/media/bd/{k}", tl(f"bdx_{k}.t", v), "x") for k, v in BDT.FX.items()]
     intro = [f"{SITE}/media/intro/{k}.mp4" for k in BDT.FILMS]
     # industry films (bigdogma.tech, category films v2)
     ind = []
@@ -87,19 +121,21 @@ def build(key, out):
         p = f"{P}/catfilms/plan/{cat}.json"
         if os.path.exists(p):
             for f in json.load(open(p, encoding="utf-8"))["films"]:
-                if os.path.exists(f"{SCR}/launch/site/films/{f['id']}.mp4"): ind.append((f"{SITE}/films/{f['id']}", f["title_mk"], f["line_mk"], f["type"]))
+                if os.path.exists(f"{SCR}/launch/site/films/{f['id']}.mp4"): ind.append((f"{SITE}/films/{f['id']}", (f["title_mk"] if c["lang"] == "mk" else XL.get(c["lang"], {}).get(f"{f['id']}.t", f["title_en"])), (f["line_mk"] if c["lang"] == "mk" else XL.get(c["lang"], {}).get(f"{f['id']}.l", f["line_en"])), f["type"]))
     def card(src, poster, t, l, tag, v=None, vposter=None):
         dv = f' data-v="{v}" data-vp="{vposter or poster}"' if v else ""
         return (f'<li class="fc"><a href="{src}" data-play="{src}" data-t="{E(t)}" data-p="{poster}"{dv}><span class="im"><img src="{poster}" alt="" loading="lazy">'
                 f'<span class="ct">{E(tag)}</span><span class="pl"></span></span><span class="tx"><b>{E(t)}</b><span>{E(l)}</span></span></a></li>')
-    films = "".join(card(f["src"], f["poster"], f["t"], f["l"], "AI филм", f.get("v"), f.get("vposter")) for f in c["films"])
+    films = "".join(card(f["src"], f["poster"], f["t"], f["l"], s["ai_film"], f.get("v"), f.get("vposter")) for f in c["films"])
     vert = "".join(f'<li><video data-src="{f["v"]}" poster="{f.get("vposter", f["poster"])}" muted loop playsinline preload="none"></video><span>{E(f["t"])}</span></li>' for f in c["films"] if f.get("v"))
     vert += "".join(f'<li class="gif"><img src="x/t{i}.gif" alt="" loading="lazy"><span>{E(s["gif"])}</span></li>' for i in range(1, c["gifs"] + 1))
     shots = "".join(f'<li><video data-src="x/c{i:02d}.mp4" poster="x/c{i:02d}.jpg" muted loop playsinline preload="none"></video><span><b>{E(c["caps"].get(f"c{i:02d}", ["", ""])[1] if len(c["caps"].get(f"c{i:02d}", [])) > 1 else f"{i:02d}")}</b> {E(c["caps"].get(f"c{i:02d}", ["", "", ""])[-1])}</span></li>' for i in range(1, c["shots"] + 1))
-    pairs = "".join(f'<li class="cmp" style="--x:50%"><video data-src="x/c{i:02d}.mp4" muted loop playsinline preload="none" poster="x/c{i:02d}.jpg"></video><img src="x/k{i:02d}.jpg" alt="" loading="lazy"><input type="range" min="0" max="100" value="50" aria-label="{E(s["img"])} / {E(s["vid"])}"><span class="l">{E(s["img"])}</span><span class="r">{E(s["vid"])}</span></li>' for i in (1, 4, 7, 10, 13, 16))
+    pairs = "".join(f'<li class="cmp" style="--x:50%"><video data-src="x/c{i:02d}.mp4" muted loop playsinline preload="none" poster="x/c{i:02d}.jpg"></video><img src="x/k{i:02d}.jpg" alt="" loading="lazy"><input type="range" min="0" max="100" value="50" aria-label="{E(s["img"])} / {E(s["vid"])}"><span class="l">{E(s["img"])}</span><span class="r">{E(s["vid"])}</span></li>' for i in [x for x in (1, 4, 7, 10, 13, 16) if x <= c.get("keys", 27)])
     stills = "".join(f'<li><img src="x/a{i:02d}.jpg" alt="" loading="lazy"></li>' for i in range(1, c["stills"] + 1))
-    indc = "".join(card(f"{u}.mp4", f"{u}.jpg", t, l, {"social": "9:16", "explainer": "Објаснувачки", "story": "Приказна", "transform": "Пред / потоа"}[ty]) for u, t, l, ty in ind)
+    indc = "".join(card(f"{u}.mp4", f"{u}.jpg", t, l, s["ind_types"][ty]) for u, t, l, ty in ind)
     bdc = "".join(f'<li class="fc" data-k="{k}"><a href="{u}.mp4" data-play="{u}.mp4" data-t="BD · {E(m)}" data-p="{u}.jpg"><span class="im"><img src="{u}.jpg" alt="" loading="lazy"><span class="ct">{s["b_f1"] if k == "f" else s["b_x1"]}</span><span class="pl"></span></span><span class="tx"><b>BD · {E(m)}</b></span></a></li>' for u, (m, e), k in bd)
+    stills_sec = (f'<section><div class="wrap"><div class="eyebrow rv">{E(s["a_e"])}</div><h2 class="sh rv">{E(s["a_h"])}</h2><p class="sp rv">{E(s["a_p"])}</p><ul class="stills">{stills}</ul></div></section>') if c["stills"] else ""
+    mont = '<div class="mont rv"><video controls muted playsinline preload="none" poster="x/m.jpg"><source src="x/m.mp4" type="video/mp4"></video></div>' if c["shots"] else ""
     mailto = f"mailto:{MAIL}?subject=" + urllib.parse.quote(s["subj"].format(c=c["name"]))
     pts = "".join(f"<li>{E(x.format(n=n_f))}</li>" for x in s["pts"])
     navl = "".join(f'<a href="#{a}">{E(b)}</a>' for a, b in s["nav"])
@@ -191,9 +227,9 @@ dialog .x{{position:absolute;right:0;top:-44px;background:none;border:0;color:#f
 <ul class="grid" id="fg">{films}</ul></div></section>
 <section class="alt"><div class="wrap"><div class="eyebrow rv">{E(s["v_e"])}</div><h2 class="sh rv">{E(s["v_h"])}</h2><p class="sp rv">{E(s["v_p"])}</p><ul class="vrow">{vert}</ul></div></section>
 <section id="shots"><div class="wrap"><div class="eyebrow rv">{E(s["s_e"])}</div><h2 class="sh rv">{E(s["s_h"])}</h2><p class="sp rv">{E(s["s_p"].format(n=c["shots"], c=c["name"]))}</p>
-<div class="mont rv"><video controls muted playsinline preload="none" poster="x/m.jpg"><source src="x/m.mp4" type="video/mp4"></video></div><ul class="shots">{shots}</ul></div></section>
+{mont}<ul class="shots">{shots}</ul></div></section>
 <section class="alt"><div class="wrap"><div class="eyebrow rv">{E(s["k_e"])}</div><h2 class="sh rv">{E(s["k_h"])}</h2><p class="sp rv">{E(s["k_p"])}</p><ul class="cmps">{pairs}</ul></div></section>
-<section><div class="wrap"><div class="eyebrow rv">{E(s["a_e"])}</div><h2 class="sh rv">{E(s["a_h"])}</h2><p class="sp rv">{E(s["a_p"])}</p><ul class="stills">{stills}</ul></div></section>
+{stills_sec}
 <section id="campaign" class="alt"><div class="wrap"><div class="eyebrow rv">{E(s["c_e"])}</div><h2 class="sh rv">{E(s["c_h"])}</h2><p class="sp rv">{E(s["c_p"])}</p>{campaign(c, s)}</div></section>
 {offer.replace('<section id="offer"', '<section id="offer" ')}
 <section class="alt"><div class="wrap"><div class="eyebrow rv">{E(s["i_e"])}</div><h2 class="sh rv">{E(s["i_h"])}</h2><p class="sp rv">{E(s["i_p"])}</p><ul class="grid">{indc}</ul></div></section>
@@ -247,6 +283,7 @@ $$('.cmp input').forEach(function(r){{r.addEventListener('input',function(){{r.p
 var ro=new IntersectionObserver(function(es){{es.forEach(function(e){{if(e.isIntersecting){{e.target.classList.add('in');ro.unobserve(e.target)}}}})}},{{threshold:.12}});$$('.rv').forEach(function(x){{ro.observe(x)}});
 }})();
 </script></body></html>'''
+    os.makedirs(out, exist_ok=True)
     if not os.path.exists(f"{out}/classic.html"): open(f"{out}/classic.html", "w", encoding="utf-8").write(old)
     open(f"{out}/index.html", "w", encoding="utf-8").write(page)
     print("ok", key, len(page), "films", n_f, "bd", len(bd), "industry", len(ind))
