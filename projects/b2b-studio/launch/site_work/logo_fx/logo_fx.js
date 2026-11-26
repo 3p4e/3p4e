@@ -89,7 +89,7 @@
     }
     // low-res per-pixel field over the mark box; fn(u, v, t, out) writes r,g,b,a (0..255) into out
     field(o, fn, t, res) {
-      const w = Math.min(res || 150, this.o.res), h = Math.max(8, Math.round(res * this.bh / this.bw)), F = this.fc;
+      const w = Math.min(res || 150, this.o.res), h = Math.max(8, Math.round(w * this.bh / this.bw)), F = this.fc;   // height from the clamped width (res may be undefined)
       if (F.width !== w || F.height !== h) { F.width = w; F.height = h; this.img = this.fcx.createImageData(w, h); }
       const d = this.img.data, out = [0, 0, 0, 255]; let i = 0;
       for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) { out[3] = 255; fn(x / w, y / h, t, out); d[i] = out[0]; d[i + 1] = out[1]; d[i + 2] = out[2]; d[i + 3] = out[3]; i += 4; }
