@@ -12,11 +12,15 @@ def dur(f): return float(subprocess.run(["ffprobe", "-v", "error", "-show_entrie
 def esc(t): return t.replace("\\", "\\\\").replace("'", "’").replace(":", "\\:").replace("%", "\\%").replace(",", "\\,")
 def card(f, W, H, d, out):
     v = H > W; cy = H // 2 - (60 if v else 40)
-    L = [(FH, f["line_mk"], 66 if v else 64, "white", cy, .15), (FR, "BIG DOGMA · AI видео студио · Скопје", 34 if v else 30, "0xf2c14e", cy + (100 if v else 80), .5),
+    t = f["line_mk"]; fs = 66 if v else 64; L = []; top = cy
+    if v and len(t) > 15:   # vertical: wrap the slogan on two lines at the space nearest the middle
+        sp = [i for i, ch in enumerate(t) if ch == " "]; k = min(sp, key=lambda i: abs(i - len(t) / 2)) if sp else len(t)
+        L.append((FH, t[:k], 56, "white", cy - 70, .15)); t = t[k + 1:]; fs = 56; top = cy - 70
+    L += [(FH, t, fs, "white", cy, .15), (FR, "BIG DOGMA · AI видео студио · Скопје", 34 if v else 30, "0xf2c14e", cy + (100 if v else 80), .5),
          (FR, "Демо филм. Сите кадри се генерирани со AI.", 24 if v else 19, "0x9a9a9a", H - (120 if v else 40), .3)]
     vf = ",".join(f"drawtext=fontfile={ft}:text='{esc(t)}':fontsize={s}:fontcolor={c}:x=(w-tw)/2:y={y}:alpha='min(1,max(0,(t-{a})/0.3))'" for ft, t, s, c, y, a in L)
     run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", f"color=c=0x0b0b0d:s={W}x{H}:r=24:d={d:.2f}", "-vf",
-         f"drawbox=x=(iw-160)/2:y={cy - 34}:w=160:h=4:color=0xf2c14e:t=fill,{vf}", "-an"] + ENC + [out])
+         f"drawbox=x=(iw-160)/2:y={top - 34}:w=160:h=4:color=0xf2c14e:t=fill,{vf}", "-an"] + ENC + [out])
 def cut(f):
     n = len(f["shots"]); clips = [f"{CLIPS}/{f['id']}_s{i}.mp4" for i in range(1, n + 1)]
     if not all(os.path.exists(c) for c in clips): return "wait"
