@@ -15,14 +15,14 @@ SITE = "https://bigdogma.tech"; MAIL = "inf.unit@bigdogma.tech"
 # ------------------------------------------------------------------ strings (company language)
 T = {"mk": dict(
   for_="Подготвено за", lead="AI видео студио од Скопје. Реклами и брендирани филмови без снимање: готови за 7–10 дена по одобрување на клучните кадри.",
-  pts=["{n} AI филмови направени само за вас", "Предлог-распоред за објава за 4 недели", "16:9 за YouTube и екрани, плус 9:16 за Stories"], pt_nv="16:9 за YouTube, веб и екрани",
+  pts=["{n} AI филмови направени само за вас", "Предлог-распоред за објава за 4 недели", "16:9 и вистинска 9:16 верзија за телефон"], pt_nv="16:9 за YouTube, веб и екрани",
   f_p_nv="Филмовите се во 16:9 за YouTube, веб и екрани.", enter="Отворете ја презентацијата",
   scroll="Сите кадри на оваа страница се генерирани со AI.",
   nav=[("films", "Филмови"), ("shots", "Кадри"), ("campaign", "Распоред"), ("offer", "Понуда"), ("dl", "Преземање"), ("bd", "BD галерија")], cta="Закажи 15 минути",
   h1="Концепт-видео за <em>{c}</em>", sub="Сè на оваа страница е направено со AI специјално за вас: филмови, кадри, клучни кадри и предлог-распоред за објава.",
-  f_e="Филмови", f_h="{n} филмови за {c}", f_p="Филмовите се во 16:9 (YouTube, веб, екрани). Копчето 9:16 го прикажува истиот филм за Stories и Reels: оригиналниот кадар, центриран, со заматена позадина.",
+  f_e="Филмови", f_h="{n} филмови за {c}", f_p="Филмовите се во 16:9 (YouTube, веб, екрани). Со копчето 9:16 ги гледате вертикалните верзии: секој кадар е генериран одново за телефон, не исечен од хоризонталниот филм.",
   h169="16:9", v916="9:16", play="Пушти",
-  v_e="9:16 за Stories", v_h="Истиот филм за телефон", v_p="Оригиналниот 16:9 кадар, центриран во 9:16 со заматена позадина горе и долу, плус GIF тизери за порака или е-пошта.", gif="Тизер · GIF",
+  v_e="9:16 за Reels, TikTok и Stories", v_h="Генерирано за телефон", v_p="Секој кадар е генериран одново во вертикален формат: главниот мотив е блиску и го полни екранот, а текстовите стојат над копчињата на апликациите. Истиот глас и музика.", gif="Тизер · GIF",
   s_e="Секој кадар", s_h="Сите AI кадри", s_p="{n} кадри генерирани специјално за {c}. Поминете со глувчето (или допрете) за да оживеат.", mont="Сите кадри во еден монтаж",
   k_e="AI процес", k_h="Од клучен кадар до движење", k_p="Прво го одобрувате статичниот клучен кадар, па AI го анимира. Повлечете за да споредите.", img="Слика", vid="AI видео",
   a_e="Следен концепт", a_h="Акциски клучни кадри", a_p="Клучни кадри за следниот филм, подготвени за ваше одобрување пред анимација.",
@@ -108,7 +108,8 @@ def campaign(c, s):
 
 # ------------------------------------------------------------------ page
 # films with a native vertical version (generated for 9:16, not the 16:9 film on a blurred background): id -> (file, poster)
-NATIVE_V = {}
+NATIVE_V = {"foton_tunland_v9_specs": ("foton_tunland_v9_specs_9x16.mp4", "foton_tunland_v9_specs_9x16.jpg"),   # vertical/ pilot 2026-11-26
+            "foton_showreel_v2": ("foton_showreel_v2_9x16.mp4", "foton_showreel_v2_9x16.jpg")}
 def build(key, out):
     c = COMPANIES[key](); s = dict(T[c["lang"]]); n_f = len(c["films"]); name = E(c["name"])
     for f in c["films"]:   # drop blur-fill 9:16 files
@@ -255,7 +256,7 @@ dialog .x{{position:absolute;right:0;top:-44px;background:none;border:0;color:#f
 </main>
 <footer><div class="wrap">{E(s["legal"])}<br>© 2026 BIG DOGMA · AI STUDIO | MK · <a href="{SITE}">bigdogma.tech</a> · <a href="classic.html">classic</a></div></footer>
 <dialog id="lb"><button class="x" type="button" aria-label="{E(s["close"])}">×</button><video controls playsinline controlslist="nodownload noplaybackrate" disablepictureinpicture></video><p></p></dialog>
-<script>window.H3V={json.dumps(has_v)};window.H3T={json.dumps({"ad": s["h3_ad"], "film": s["h3_film"], "ai": s["ai_film"], "mark": SITE + "/media/h3_mark.png"}, ensure_ascii=False)};</script>
+<script>window.H3V=false;window.H3T={json.dumps({"ad": s["h3_ad"], "film": s["h3_film"], "ai": s["ai_film"], "mark": SITE + "/media/h3_mark.png"}, ensure_ascii=False)};</script>
 <script>window.DOGMA_HDR_BASE="{SITE}/logo_fx/hdr/";window.DOGMA_INTRO={json.dumps(intro)};</script>
 <script src="{SITE}/logo_fx/mark_data.js"></script><script src="{SITE}/logo_fx/logo_fx.js"></script><script src="{SITE}/logo_fx/hdr/list.js"></script><script src="{SITE}/logo_fx/hdr.js"></script><script src="{SITE}/logo_fx/reel_bb.js"></script><script src="{SITE}/reel.js"></script>
 <script>

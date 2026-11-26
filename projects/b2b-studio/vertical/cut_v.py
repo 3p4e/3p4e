@@ -15,7 +15,9 @@ def run(a): subprocess.run(a, check=True)
 def dur(f): return float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", f], capture_output=True, text=True).stdout)
 ENC = ["-an", "-c:v", "libx264", "-preset", "medium", "-crf", "19", "-pix_fmt", "yuv420p", "-r", "24"]
 
-def seg(clip, d, out, caption=None):   # vertical shot, held on its last frame if the line is longer; caption in the phone-safe zone
+PLAN = {}   # part -> intended length: the 16:9 join timed its crossfades from these (audio-led), not from frame-rounded video
+def seg(clip, d, out, caption=None):
+    PLAN[out] = d   # vertical shot, held on its last frame if the line is longer; caption in the phone-safe zone
     vf = f"scale={W}:{H}:force_original_aspect_ratio=increase:flags=lanczos,crop={W}:{H},fps=24"
     pad = max(0, d - dur(clip))
     if pad: vf += f",tpad=stop_mode=clone:stop_duration={pad:.2f}"
@@ -25,6 +27,7 @@ def seg(clip, d, out, caption=None):   # vertical shot, held on its last frame i
     run(["ffmpeg", "-v", "error", "-y", "-i", clip, "-vf", vf, "-t", f"{d:.3f}"] + ENC + [out])
 
 def card(out, lang, company, title, tagline, d=5.0):
+    PLAN[out] = d
     l1, l2, l3, ai = DIS[lang]; l1 = l1.format(c=company); y0 = int(H * .30)
     vf = [f"drawtext=fontfile={DJB}:text='{esc(title)}':fontsize=84:fontcolor=white:x=(w-tw)/2:y={y0}",
           f"drawtext=fontfile={DJ}:text='{esc(tagline)}':fontsize=52:fontcolor=0xf2c14e:x=(w-tw)/2:y={y0+150}",
@@ -35,7 +38,7 @@ def card(out, lang, company, title, tagline, d=5.0):
     run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", f"color=c=0x0d0d0f:s={W}x{H}:r=24:d={d}", "-vf", ",".join(vf), "-t", str(d)] + ENC + [out])
 
 def join(parts, out, xf):
-    ds = [dur(p) for p in parts]; a = ["ffmpeg", "-v", "error", "-y"]
+    ds = [PLAN.get(p) or dur(p) for p in parts]; a = ["ffmpeg", "-v", "error", "-y"]
     for p in parts: a += ["-i", p]
     v = "[0:v]"; off = 0; fc = []
     for i in range(1, len(parts)):
@@ -86,14 +89,15 @@ def build(name):
             p = f"{TMP}/{name}_{i}.mp4"; seg(f"{VCLIPS}/v_{cid}.mp4", d, p); parts.append(p)
         title, tagline, xf = c[4], c[5], 0.35
     cp = f"{TMP}/{name}_card.mp4"; card(cp, "mk", "Foton Македонија", title, tagline); parts.append(cp)
-    j = f"{TMP}/{name}_join.mp4"; join(parts, j, xf); b = f"{TMP}/{name}_body.mp4"; body_wm(j, b, "mk")
+    j = f"{TMP}/{name}_join.mp4"; join(parts, j, xf); [os.remove(p) for p in parts]   # intermediates go as soon as used (disk allowance)
+    b = f"{TMP}/{name}_body.mp4"; body_wm(j, b, "mk"); os.remove(j)
     intro(f"{TMP}/intro.mp4"); outro(f"{TMP}/outro_mk.mp4", "mk")
     lst = f"{TMP}/{name}_list.txt"; open(lst, "w").write("".join(f"file '{p}'\n" for p in (f"{TMP}/intro.mp4", b, f"{TMP}/outro_mk.mp4")))
-    pic = f"{TMP}/{name}_pic.mp4"; run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", lst, "-c", "copy", pic])
+    pic = f"{TMP}/{name}_pic.mp4"; run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", lst, "-c", "copy", pic]); os.remove(b)
     master = f"{S}/pitch/{name}_pitch.mp4"; out = f"{V}/{name}_9x16_native.mp4"
     # hold the last frame a few frames so the soundtrack (the master's audio) is never cut
     run(["ffmpeg", "-v", "error", "-y", "-i", pic, "-i", master, "-filter_complex", "[0:v]tpad=stop_mode=clone:stop_duration=0.3[v]", "-map", "[v]", "-map", "1:a",
          "-c:v", "libx264", "-preset", "medium", "-crf", "19", "-pix_fmt", "yuv420p", "-c:a", "copy", "-shortest", "-movflags", "+faststart", out])
-    print(name, "picture", round(dur(pic), 2), "s | 16:9 master", round(dur(master), 2), "s | out", round(dur(out), 2), "s")
+    print(name, "picture", round(dur(pic), 2), "s | 16:9 master", round(dur(master), 2), "s | out", round(dur(out), 2), "s"); os.remove(pic)
 
 if __name__ == "__main__": build(sys.argv[1])
