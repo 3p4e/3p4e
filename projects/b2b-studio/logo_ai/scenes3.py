@@ -2,9 +2,9 @@
 # Same format as scenes.py: (id, capability, start keyframe, end keyframe or None, motion prompt).
 from scenes import LOGO
 S3 = [
- ("cathedral_window", "light: cathedral stained glass", f"Inside a vast Gothic cathedral in the style of Notre-Dame de Paris and Sainte-Chapelle, a huge real stained-glass window in the stone wall whose lead lines and coloured glass panes form {LOGO} in deep gold, ruby and sapphire glass, stone tracery around it, dim nave before sunrise.",
-  f"The same cathedral nave at sunrise, the sun shining through the stained-glass window shaped as {LOGO}, its coloured light projected across the stone floor and pillars, dust glowing in the beams.",
-  "The sun rises behind the cathedral window; coloured light floods through the glass, beams sweep across the nave and dust sparkles; slow push-in."),
+ # take 2 (owner: "the actual logo BD must BE the vitrage"): the window opening itself is the BD mark; keyframes kf_window/w1_a -> w1_b (genkf_window.py)
+ ("cathedral_window", "light: cathedral stained glass", "kf_window/w1_a.png", "kf_window/w1_b.png",
+  "Dawn turns to sunrise: the BD-shaped stained-glass window in the cathedral wall slowly fills with light, the coloured glass ignites piece by piece and brilliant beams of red, gold and blue light stream through the haze into the nave; slow push-in."),
  ("byzantine_mosaic", "art: Byzantine mosaic", f"Inside an old Byzantine church in Ohrid, candle light, a wall mosaic of tiny gold and lapis tesserae half finished: the outline of {LOGO}, loose tesserae on the scaffold.",
   f"The same church wall where a finished glittering gold-leaf Byzantine mosaic shows {LOGO}, candle light flickering on the tesserae.",
   "Golden tesserae fly onto the wall and click into place one by one until the mosaic logo glitters in the candle light."),
