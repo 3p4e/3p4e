@@ -18,7 +18,7 @@ Od skladišta do police: vaša mreža u jednom kratkom filmu.
 
 Pogledajte ih ovde (privatna stranica, 2 minuta): [PITCH_PAGE_LINK]
 
-Svaki film je spreman u horizontalnom (16:9) i vertikalnom (9:16) formatu, sa glasom na srpskom i originalnom muzikom. Ništa od ovoga nije objavljeno i neće biti bez vašeg pisanog odobrenja.
+Filmovi imaju glas na srpskom i originalnu muziku. Ništa od ovoga nije objavljeno i neće biti bez vašeg pisanog odobrenja.
 
 Ako vam se dopada pravac, rado bismo vam za 15 minuta pokazali kako to izgleda sa vašim pravim fotografijama i proizvodima. Pilot-film košta od €700.
 

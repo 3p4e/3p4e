@@ -18,7 +18,7 @@ Shisni pamjen, dritën dhe jetën në apartament para se ndërtesa të përfundo
 
 Shikojini këtu (faqe private, 2 minuta): [PITCH_PAGE_LINK]
 
-Çdo film është gati në format horizontal (16:9) dhe vertikal (9:16), me zë në shqip dhe muzikë origjinale. Asgjë nga kjo nuk është publikuar dhe nuk do të publikohet pa miratimin tuaj me shkrim.
+Filmat kanë zë në shqip dhe muzikë origjinale. Asgjë nga kjo nuk është publikuar dhe nuk do të publikohet pa miratimin tuaj me shkrim.
 
 Nëse ju pëlqen drejtimi, do të na vinte mirë t'ju tregonim për 15 minuta si duket e njëjta gjë me fotot dhe produktet tuaja të vërteta. Një film pilot kushton nga €600.
 
