@@ -59,12 +59,12 @@
     renderAt(i, sec) { this.resize(); this.next(i); this.t0 = 0; this.draw(sec * 1000); }        // deterministic frame for QC / thumbnails
     frame(now) {
       this.raf = requestAnimationFrame(t => this.frame(t));
-      const e = this.e, dur = (e.dur || 7) * this.o.dur; this.el = (now - this.t0) / 1000;
+      const e = this.e, dur = this.o.fixed || (e.dur || 7) * this.o.dur; this.el = (now - this.t0) / 1000;
       if (this.el >= dur) { this.next(); return; }
       this.draw(now);
     }
     draw(now) {
-      this.lastNow = now; const e = this.e, dur = (e.dur || 7) * this.o.dur; this.el = (now - this.t0) / 1000;
+      this.lastNow = now; const e = this.e, dur = this.o.fixed || (e.dur || 7) * this.o.dur; this.el = (now - this.t0) / 1000;
       const c = this.c; c.setTransform(1, 0, 0, 1, 0, 0); c.clearRect(0, 0, this.W, this.H);
       const p = this.el / dur, env = { fx: this, c, t: this.el, p, dur, W: this.W, H: this.H, k: this.k, st: this.st,
         f: ss(0, .13, p) * (1 - ss(.86, 1, p)),                     // effect intensity envelope (0 at both ends)

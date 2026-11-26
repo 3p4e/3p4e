@@ -395,10 +395,30 @@ body.lb-open,body.menu-open{overflow:hidden}
 .plan.sm ul{margin:16px 0 20px}
 
 /* header mark (logo_fx): the canvas is larger than the slot and transparent, so glows and bursts spill out; the mark stays in place */
-.brand .lfx{position:relative;display:block;flex:none;width:74px;height:46px}
+.brand .lfx{position:relative;display:block;flex:none}
 .brand .lfx-in{position:absolute;inset:-27% -22%;pointer-events:none}
-@media(max-width:400px){.brand .lfx{width:60px;height:38px}}
-@media(max-width:340px){.brand .lfx{width:46px;height:29px}}
 /* industry films (category films v2): vertical social films keep the 16:9 card, poster centred on the subject; long chip row scrolls on phones */
 .fc.vt .im img{object-position:center 40%}
 @media(max-width:700px){.cchips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:4px}.cchips::-webkit-scrollbar{display:none}.cchips .chip{flex:none}}
+
+/* language menu (7 languages) */
+.lang{position:relative;display:inline-flex;border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:0;flex:none}
+.langsel{appearance:none;-webkit-appearance:none;background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='white' stroke-width='1.5'/%3E%3C/svg%3E") right 11px center/9px no-repeat;
+ border:0;color:var(--fg);font:700 12.5px/1 var(--bf);letter-spacing:.06em;padding:9px 28px 9px 14px;border-radius:999px;cursor:pointer}
+.langsel option{color:#111;background:#fff}
+.langsel:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+/* header wordmark: BIG / DOGMA / AI STUDIO | MK, mark as tall as the three rows */
+.brand .bt{display:flex;flex-direction:column;justify-content:center;line-height:.92;gap:1px}
+.brand .bt b{font-family:'DogmaRusso',sans-serif;font-weight:400;font-size:19px;letter-spacing:.11em}
+.brand .bt small{font:700 8.5px/1.2 var(--bf);letter-spacing:.2em;color:var(--ac);margin-top:3px;white-space:nowrap}
+.brand .lfx{width:96px;height:60px}
+@media(max-width:400px){.brand .bt b{font-size:16px}.brand .bt small{font-size:7.5px}.brand .lfx{width:80px;height:50px}}
+@media(max-width:340px){.brand .bt b{font-size:13.5px}.brand .bt small{font-size:6.5px;letter-spacing:.12em}.brand .lfx{width:64px;height:40px}}
+/* hero headline smaller so the film behind it shows (owner, 2026-11-26) */
+.hero h1{font-size:clamp(30px,4.3vw,62px);max-width:16ch}
+@media(max-width:600px){.hero h1{font-size:clamp(28px,8vw,38px)}}
+.hero .sub{font-size:clamp(16px,1.5vw,19px)}
+.brand .bt small .sep{display:inline-block;width:1px;height:.95em;background:currentColor;opacity:.7;margin:0 .55em;vertical-align:-.12em}
+.brand .lfx{width:86px;height:56px}
+@media(max-width:400px){.brand .lfx{width:72px;height:48px}}
+@media(max-width:340px){.brand .lfx{width:58px;height:38px}}

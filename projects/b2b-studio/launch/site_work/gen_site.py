@@ -190,7 +190,7 @@ TX = {
  "fm.err": ("Пополнете име, е-пошта и порака.", "Please fill in your name, email and message."),
  "ft.ai": ("Видео изработено со вештачка интелигенција · AI-generated video. Сите филмови и кадри на оваа страница се демо концепти на студиото, генерирани со AI; не прикажуваат вистински објекти, производи или луѓе.",
            "AI-generated video · Видео изработено со вештачка интелигенција. All films and shots on this page are studio demo concepts generated with AI; they do not show real sites, products or people."),
- "ft.rights": ("© 2026 BIG DOGMA · AI STUDIO | Skopje", "© 2026 BIG DOGMA · AI STUDIO | Skopje"),
+ "ft.rights": ("© 2026 BIG DOGMA · AI STUDIO | MK", "© 2026 BIG DOGMA · AI STUDIO | MK"),
  "ft.top": ("Нагоре", "Back to top"),
  "logo.alt": ("BIG DOGMA, AI студио, Скопје", "BIG DOGMA, AI studio, Skopje"),
 }
@@ -242,6 +242,10 @@ def u(rel):
 
 # ------------------------------------------------------------------ template
 mk = lambda k: TX[k][0]
+# language menu: MK and EN always; sq/sr/hr/sl/bg once translate_site.py has translated at least 95 % of the strings
+_XL = json.load(open(f"{WORK}/i18n_extra.json", encoding="utf-8")) if os.path.exists(f"{WORK}/i18n_extra.json") else {}
+LANGS_ON = ["mk", "en"] + [l for l in ("sq", "sr", "hr", "sl", "bg") if len(_XL.get(l, {})) >= .95 * len(TX)]
+LANG_OPTS = "".join(f'<option value="{l}" lang="{l}">{l.upper()}</option>' for l in LANGS_ON)
 # ------------------------------------------------------------------ category films v2 (catfilms/: plans, cuts; catfilms/site_media.py encodes)
 CF_PLAN = "/home/user/3p4e/projects/b2b-studio/catfilms/plan"
 CF_CATS, CF = [], []
@@ -252,12 +256,21 @@ for _p in sorted(glob.glob(f"{CF_PLAN}/*.json"), key=lambda p: json.load(open(p)
     for f in _fs:
         CF.append(f); TX[f"{f['id']}.t"] = (f["title_mk"], f["title_en"]); TX[f"{f['id']}.l"] = (f["line_mk"], f["line_en"])
         TX[f"{f['id']}.alt"] = (f"{f['title_mk']}: кадар од AI филмот", f"{f['title_en']}: a frame from the AI film")
-TX.update({"cf.e": ("Нови AI филмови", "New AI films"), "cf.h": (f"{len(CF)} филмови за {len(CF_CATS)} индустрии", f"{len(CF)} films for {len(CF_CATS)} industries"),
+TX.update({"cf.e": ("Нови AI филмови", "New AI films"), "cf.h": (f"{len(CF)} филмови за {len(CF_CATS)} индустрии + BD лого", f"{len(CF)} films for {len(CF_CATS)} industries + the BD logo"),
            "cf.p": ("Четири формати за секоја индустрија: социјална реклама 9:16, објаснувачки филм, приказна за брендот и пред/потоа. Изберете индустрија: и позадината горе се менува.",
                     "Four formats for every industry: a 9:16 social ad, an explainer, a brand story and a before/after. Pick an industry: the background at the top changes with it."),
            "cf.filter": ("Филтер по индустрија", "Filter by industry"),
            "ty.social": ("Социјална 9:16", "Social 9:16"), "ty.explainer": ("Објаснувачки", "Explainer"), "ty.story": ("Приказна", "Brand story"), "ty.transform": ("Пред / потоа", "Before / after")})
-CF_CHIPS = f'<button type="button" class="chip" data-c="all" aria-pressed="true"><span @="f.all"></span> <b>{len(CF)}</b></button>' + "".join(
+# "BD logo" gallery (owner, 2026-11-26): every AI logo film (media/intro) and logo-only effect (media/bd), with the industry films
+sys.path.insert(0, "/home/user/3p4e/projects/b2b-studio/logo_ai"); import bd_titles as BDT
+BD = [("bd_" + k, f"media/intro/{k}", BDT.FILMS[k], "bdfilm") for k in BDT.FILMS if os.path.exists(f"{OUT}/media/intro/{k}.mp4")] + \
+     [("bdx_" + k, f"media/bd/{k}", BDT.FX[k], "bdfx") for k in BDT.FX if os.path.exists(f"{OUT}/media/bd/{k}.mp4")]
+for _id, _p, (_m, _e), _t in BD:
+    TX[f"{_id}.t"] = (f"BD · {_m}", f"BD · {_e}"); TX[f"{_id}.l"] = (("AI лого филм" if _t == "bdfilm" else "AI ефект на логото"), ("AI logo film" if _t == "bdfilm" else "AI logo effect"))
+    TX[f"{_id}.alt"] = (f"Логото BD: {_m}", f"The BD logo: {_e}")
+TX.update({"cc.bd": ("BD лого", "BD logo"), "ty.bdfilm": ("Лого филм", "Logo film"), "ty.bdfx": ("Лого ефект", "Logo effect")})
+CF_CATS.insert(0, ("bd", "BD лого", "BD logo", len(BD)))
+CF_CHIPS = f'<button type="button" class="chip" data-c="all" aria-pressed="true"><span @="f.all"></span> <b>{len(CF) + len(BD)}</b></button>' + "".join(
     f'<button type="button" class="chip" data-c="{k}" aria-pressed="false"><span @="cc.{k}"></span> <b>{n}</b></button>' for k, _m, _e, n in CF_CATS)
 FILM_CARDS = "\n".join(f"""<li class="fc rv" data-cat="{cat}"><a href="{u(f'films/{fid}.mp4')}" data-film="{fid}">
 <span class="im"><img src="{u(f'films/{fid}.jpg')}" @a="alt:{fid}.alt" width="960" height="540" loading="lazy" decoding="async"><span class="ct" @="cat.{cat}"></span><span class="pl" aria-hidden="true"></span><span class="du">{mmss(DUR[fid])}</span></span>
@@ -269,6 +282,10 @@ def _cfdur(fid): return _probe(f"{OUT}/films/{fid}.mp4")
 CF_CARDS = "\n".join(f"""<li class="fc rv{' vt' if f['type'] == 'social' else ''}" data-c="{f['cat']}"><a href="{u(f'films/{f["id"]}.mp4')}" data-film="{f['id']}">
 <span class="im"><img src="{u(f'films/{f["id"]}.jpg')}" @a="alt:{f['id']}.alt" loading="lazy" decoding="async"><span class="ct" @="ty.{f['type']}"></span><span class="pl" aria-hidden="true"></span><span class="du">{mmss(_cfdur(f['id']))}</span></span>
 <span class="tx"><span class="h3" @="{f['id']}.t"></span><span class="ln" @="{f['id']}.l"></span></span><span class="sr" @="work.play"></span></a></li>""" for f in CF)
+CF_CARDS = "\n".join(f"""<li class="fc rv" data-c="bd"><a href="{u(p + '.mp4')}" data-film="{i}">
+<span class="im"><img src="{u(p + '.jpg')}" @a="alt:{i}.alt" loading="lazy" decoding="async"><span class="ct" @="ty.{t}"></span><span class="pl" aria-hidden="true"></span><span class="du">{mmss(_probe(f"{OUT}/{p}.mp4"))}</span></span>
+<span class="tx"><span class="h3" @="{i}.t"></span><span class="ln" @="{i}.l"></span></span><span class="sr" @="work.play"></span></a></li>""" for i, p, _n, t in BD) + "\n" + CF_CARDS
+FILM_JSON = FILM_JSON[:-1] + "".join(", " + json.dumps({"id": i, "src": u(p + ".mp4"), "poster": u(p + ".jpg"), "sub": {}}) for i, p, _n, _t in BD) + "]"
 FILM_JSON = FILM_JSON[:-1] + "".join(", " + json.dumps({"id": f["id"], "src": u(f"films/{f['id']}.mp4"), "poster": u(f"films/{f['id']}.jpg"), "sub": {}}) for f in CF) + "]"
 MARQ = "".join(f'<span @="m{i}"></span>' for i in range(1, 10))
 CHECK = '<svg aria-hidden="true" viewBox="0 0 20 20" width="18" height="18"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
@@ -308,6 +325,7 @@ _HC = {k: [f"media/g/{c[0]}.mp4" for c in G.CLIPS if c[2] == k] for k, *_ in G.S
 _HC["sec"] = [x for k in ("food", "wine", "steel", "auto", "pharma", "rec", "prod") for x in _HC[k]]
 _HC["tl"] = [x for k in ("con", "re", "int", "energy") for x in _HC[k]]
 for _k, *_x in CF_CATS: _HC[_k] = [f"films/{f['id']}.mp4" for f in CF if f["cat"] == _k]
+_HC["bd"] = [p + ".mp4" for _i, p, _n, _t in BD]
 HERO_JSON = json.dumps({"intro": [f"media/intro/{f}" for f in _INTRO], "cat": _HC}, separators=(",", ":"))
 def loop(cid, cls="lv", poster=None):
     # muted in-view loop: no src until site.js sees it near the viewport; the poster shows first
@@ -374,7 +392,7 @@ PAGE = f"""<!doctype html>
 <link rel="stylesheet" href="fx.css?v={{V}}">
 <link rel="stylesheet" href="site.css?v={{V}}">
 <noscript><style>.pre{{display:none}}.rv{{opacity:1;transform:none}}#qf{{display:none}}</style></noscript>
-<script>try{{var l=new URLSearchParams(location.search).get('lang')||localStorage.getItem('bd_lang');if(l==='en'){{var d=document.documentElement;d.classList.add('l-en');setTimeout(function(){{d.classList.add('i18n')}},2500)}}}}catch(e){{}}</script>
+<script>try{{var l=new URLSearchParams(location.search).get('lang')||localStorage.getItem('bd_lang');if(l&&l!=='mk'&&['en','sq','sr','hr','sl','bg'].indexOf(l)>=0){{var d=document.documentElement;d.classList.add('l-en');setTimeout(function(){{d.classList.add('i18n')}},2500)}}}}catch(e){{}}</script>
 </head>
 <body>
 <a class="skip" href="#main" @="skip"></a>
@@ -383,12 +401,12 @@ PAGE = f"""<!doctype html>
 
 <nav class="nav" @a="aria-label:nav.label">
  <div class="wrap">
-  <a class="brand" href="#top" @a="aria-label:nav.home"><span class="lfx" aria-hidden="true"><span class="lfx-in"></span></span><b>BIG DOGMA</b></a>
+  <a class="brand" href="#top" @a="aria-label:nav.home"><span class="lfx" aria-hidden="true"><span class="lfx-in"></span></span><span class="bt"><b>BIG</b><b>DOGMA</b><small>AI STUDIO<i class="sep"></i>MK</small></span></a>
   <div class="links" id="menu">
    <a href="#showreel" @="nav.reel"></a><a href="#films" @="nav.work"></a><a href="#gallery" @="nav.gal"></a><a href="#process" @="nav.how"></a><a href="#pricing" @="nav.price"></a><a href="#faq" @="nav.faq"></a><a href="#contact" @="nav.contact"></a>
    <a class="btn a mcta" href="#contact" @="nav.cta"></a>
   </div>
-  <div class="lang" role="group" @a="aria-label:nav.lang"><button type="button" data-lang="mk" aria-pressed="true" lang="mk">MK</button><button type="button" data-lang="en" aria-pressed="false" lang="en">EN</button></div>
+  <label class="lang"><span class="sr" @="nav.lang"></span><select class="langsel" @a="aria-label:nav.lang">{LANG_OPTS}</select></label>
   <a class="btn a cta" href="#contact" @="nav.cta"></a>
   <button class="burger" type="button" aria-expanded="false" aria-controls="menu" @a="aria-label:nav.menu"><i></i><i></i><i></i></button>
  </div>
@@ -650,6 +668,11 @@ page = expand(PAGE.replace("{V}", V))
 missing = set(TX) - used
 open(f"{OUT}/index.html", "w", encoding="utf-8").write(page)
 i18n = {"mk": {k: v[0] for k, v in TX.items()}, "en": {k: v[1] for k, v in TX.items()}}
+# five more languages (owner, 2026-11-26): sq, sr, hr, sl, bg come from translate_site.py (Gemini, cached per English string);
+# the source strings are exported here, and a key without a translation yet falls back to English
+json.dump({k: list(v) for k, v in TX.items()}, open(f"{WORK}/tx_src.json", "w", encoding="utf-8"), ensure_ascii=False, indent=0)
+_X = json.load(open(f"{WORK}/i18n_extra.json", encoding="utf-8")) if os.path.exists(f"{WORK}/i18n_extra.json") else {}
+for _l in ("sq", "sr", "hr", "sl", "bg"): i18n[_l] = {k: _X.get(_l, {}).get(k) or v[1] for k, v in TX.items()}
 open(f"{OUT}/i18n.js", "w", encoding="utf-8").write("window.BD_I18N=" + json.dumps(i18n, ensure_ascii=False, separators=(",", ":")) + ";\n")
 
 # fx layer: copy, with three small adaptations (re-read the HUD prompt per run so the language toggle reaches it,

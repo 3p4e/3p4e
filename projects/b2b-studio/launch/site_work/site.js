@@ -11,13 +11,13 @@
   function apply(l, save) {
     lang = D[l] ? l : 'mk';
     document.documentElement.lang = lang;
-    document.documentElement.classList.toggle('l-en', lang === 'en');
+    document.documentElement.classList.toggle('l-en', lang !== 'mk');   // any non-MK visit: MK text hidden until applied
     $$('[data-i]').forEach(e => { e.textContent = t(e.dataset.i); });
     $$('[data-ih]').forEach(e => { e.innerHTML = t(e.dataset.ih); });
     $$('[data-ia]').forEach(e => e.dataset.ia.split(';').forEach(p => { const [a, k] = p.split(':'); e.setAttribute(a, t(k)); }));
     document.documentElement.classList.add('i18n');   // site.css hides the MK text of a ?lang=en visit until this point
-    $$('.lang button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
-    const og = $('meta[property="og:locale"]'); if (og) og.content = lang === 'en' ? 'en_GB' : 'mk_MK';
+    $$('.langsel').forEach(x => { x.value = lang; });
+    const og = $('meta[property="og:locale"]'); if (og) og.content = { mk: 'mk_MK', en: 'en_GB', sq: 'sq_AL', sr: 'sr_RS', hr: 'hr_HR', sl: 'sl_SI', bg: 'bg_BG' }[lang] || 'mk_MK';
     // hero HUD prompt: the status span has no data-i (it is driven by data-gen / data-done); on a switch the prompt is retyped
     // at once in the new language instead of keeping the old text until the next 5 s cycle
     if (save && window.BD_HUD) window.BD_HUD.restart(); else { const hs = $('.hud .st'); if (hs) hs.textContent = hs.dataset.gen; }
@@ -25,7 +25,7 @@
     if (lb.open && cur >= 0) setTracks();
     if (window.BD_RELABEL) window.BD_RELABEL();
   }
-  $$('.lang button').forEach(b => b.addEventListener('click', () => apply(b.dataset.lang, true)));
+  $$('.langsel').forEach(x => x.addEventListener('change', () => apply(x.value, true)));
 
   // ---------- mobile menu
   const nav = $('.nav'), burger = $('.burger');
@@ -50,13 +50,14 @@
   const lb = $('#lb'), v = $('video', lb), ttl = $('#lbT'), line = $('.mt p', lb);
   const ids = FILMS.map(f => f.id); let cur = -1, opener = null;
   const visible = () => $$('.fc:not([hidden]) a', (opener && opener.closest('ul')) || $('#grid')).map(a => a.dataset.film);   // step within the grid the film was opened from
+  function subLang(langs) { if (langs.includes(lang)) return lang; const p = ['sr', 'hr', 'sl', 'bg'].includes(lang) ? 'mk' : 'en'; return langs.includes(p) ? p : langs[0]; }
   function setTracks() {
     $$('track', v).forEach(tr => tr.remove());
     const f = FILMS[cur]; if (!f) return; const langs = Object.keys(f.sub || {});
     langs.forEach(L => { const tr = document.createElement('track'); tr.kind = 'subtitles'; tr.srclang = L; tr.label = L === 'mk' ? 'Македонски' : 'English';
-      tr.src = f.sub[L]; if (L === lang || (lang === 'en' && !langs.includes('en') && L === 'mk')) tr.default = true; v.appendChild(tr); });
+      tr.src = f.sub[L]; if (L === subLang(langs)) tr.default = true; v.appendChild(tr); });
     // some browsers ignore `default` on tracks added after load: set the modes explicitly
-    setTimeout(() => { for (const tt of v.textTracks) tt.mode = (tt.language === lang) ? 'showing' : 'disabled'; }, 50);
+    setTimeout(() => { const sl = subLang(langs); for (const tt of v.textTracks) tt.mode = (tt.language === sl) ? 'showing' : 'disabled'; }, 50);
   }
   function show(i) {
     cur = i; const id = ids[i];
@@ -178,6 +179,6 @@
 
   // ---------- initial language: ?lang= beats the saved choice, MK is the default
   let l0 = 'mk';
-  try { const q = new URLSearchParams(location.search).get('lang'); l0 = (q === 'en' || q === 'mk') ? q : (localStorage.getItem('bd_lang') || 'mk'); } catch (e) {}
+  try { const q = new URLSearchParams(location.search).get('lang'); l0 = ['mk', 'en', 'sq', 'sr', 'hr', 'sl', 'bg'].includes(q) ? q : (localStorage.getItem('bd_lang') || 'mk'); } catch (e) {}
   apply(l0, false);
 })();
