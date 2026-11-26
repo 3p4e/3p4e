@@ -74,11 +74,11 @@ def note(t):
             f'font:14px/1.55 {T["font"]};color:{T["mu"]}">{E(t)}</p>')
 
 
-def signature(s):   # Name (role), the BD lockup under it, then contacts
-    who = E(s.get("name") or "")
-    if s.get("role"): who += f' <span class="xmu" style="font-weight:400;color:{T["mu"]}">({E(s["role"])})</span>'
+def signature(s):   # Name, the role under it (smaller, grey), the BD lockup, then contacts
+    who = (f'<p class="xfg" style="margin:0;font:700 15px/1.4 {T["font"]};color:{T["fg"]}">{E(s["name"])}</p>' if s.get("name") else "")
+    if s.get("role"): who += f'<p class="xmu" style="margin:1px 0 0;font:13px/1.4 {T["font"]};color:{T["mu"]}">{E(s["role"])}</p>'
     return (f'<table role="presentation" cellpadding="0" cellspacing="0" style="margin:8px 0 0;width:100%"><tr><td class="xln" style="padding-top:18px;border-top:1px solid {T["line"]}">'
-            + (f'<p class="xfg" style="margin:0 0 12px;font:700 15px/1.4 {T["font"]};color:{T["fg"]}">{who}</p>' if who else "")
+            + (f'<div style="margin:0 0 12px">{who}</div>' if who else "")
             + logo("bd_logo_sig", 150, 58) +
             f'<p class="xmu" style="margin:10px 0 0;font:13px/1.5 {T["font"]};color:{T["mu"]}">'
             f'<a href="mailto:inf.unit@bigdogma.tech" class="xmu" style="color:{T["mu"]};text-decoration:none">inf.unit@bigdogma.tech</a> &middot; '
@@ -124,7 +124,6 @@ def render(c):
     tx = [c["greeting"], ""] + [p.replace("{link}", link) for p in c["paras"][:2]] + [""]
     tx += [f'- {f["title"]} ({f.get("meta", "")})' for f in c.get("films", [])] + ["", f'{c["cta"]["label"]}: {link}', ""]
     tx += [p.replace("{link}", link) for p in c["paras"][2:]] + ([c["note"]] if c.get("note") else [])
-    nm = c["sign"].get("name") or ""; nm += f' ({c["sign"]["role"]})' if c["sign"].get("role") else ""
-    tx += ["", c.get("closing", "Со почит,")] + ([nm] if nm else [])
+    tx += ["", c.get("closing", "Со почит,")] + [x for x in (c["sign"].get("name"), c["sign"].get("role")) if x]
     tx += ["BIG DOGMA · AI STUDIO | MK", "inf.unit@bigdogma.tech · bigdogma.tech", "", c["optout"]]
     return html, "\n".join(tx)
