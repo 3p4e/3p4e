@@ -23,7 +23,8 @@ def cut(f):
     v = f["type"] == "social"; W, H = (720, 1280) if v else (1280, 720); X = 0.0 if v else 0.5; SH = 5.0
     lines = [f"{VO}/{f['id']}_l{i}.wav" for i in range(1, len(f["vo_mk"]) + 1)]
     if not all(os.path.exists(l) for l in lines) or not os.path.exists(f"{MUS}/{f['id']}.wav"): return "no audio yet"
-    main = n * SH - (n - 1) * X
+    XE = X or 0.04   # hard cuts are a 1-frame fade (xfade needs a duration)
+    main = n * SH - (n - 1) * XE
     # VO layout: evenly spread over the shots, never overlapping, first line after 0.6 s
     starts, t = [], 0.6
     for i, l in enumerate(lines):
@@ -35,10 +36,10 @@ def cut(f):
     a += ["-i", f"{T}/{f['id']}_card.mp4"]
     fc = [f"[{i}:v]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},setsar=1,fps=24,trim=0:{SH},setpts=PTS-STARTPTS[v{i}]" for i in range(n)]
     fc.append(f"[{n}:v]setsar=1,fps=24,setpts=PTS-STARTPTS[v{n}]")
-    cur, off = "v0", 0.0
+    cur = "v0"
     for i in range(1, n + 1):
-        off += SH - X if i < n + 1 else 0; xd = X if X else 0.04; o = f"x{i}"
-        fc.append(f"[{cur}][v{i}]xfade=transition=fade:duration={xd if i < n else 0.5}:offset={(i * SH - i * X) if i < n else main - 0.5:.3f}[{o}]"); cur = o
+        o = f"x{i}"; d_ = XE if i < n else 0.5; off = i * (SH - XE) if i < n else main - 0.5
+        fc.append(f"[{cur}][v{i}]xfade=transition=fade:duration={d_}:offset={off:.3f}[{o}]"); cur = o
     run(a + ["-filter_complex", ";".join(fc), "-map", f"[{cur}]", "-an", "-t", f"{total:.2f}"] + ENC + [f"{T}/{f['id']}_v.mp4"])
     # audio: VO lines + music ducked under them
     a = ["ffmpeg", "-v", "error", "-y", "-i", f"{MUS}/{f['id']}.wav"] + sum([["-i", l] for l in lines], [])
