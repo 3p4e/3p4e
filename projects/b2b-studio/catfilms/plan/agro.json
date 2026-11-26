@@ -123,6 +123,100 @@
    ],
    "id": "cf_agro_3_social",
    "cat": "agro"
+  },
+  {
+   "type": "commercial",
+   "title_mk": "Модерната жетва",
+   "title_en": "The Modern Harvest",
+   "line_mk": "Ја сееме иднината на земјоделството.",
+   "line_en": "Sowing the future of farming.",
+   "desc_en": "A cinematic commercial following a modern agronomist in the Pelagonia valley, showcasing the blend of nature and advanced farming machinery.",
+   "music": "Uplifting cinematic acoustic guitar and strings 110 bpm",
+   "voice": "male, deep, confident",
+   "vo_mk": [
+    "Утрото во Пелагонија носи нови предизвици.",
+    "Земјата бара наша посветеност и труд.",
+    "Со модерна технологија, работата станува полесна.",
+    "Резултатот е секогаш богат и златен.",
+    "Ја сееме иднината на земјоделството."
+   ],
+   "shots": [
+    {
+     "char": true,
+     "kf": "Cinematic wide shot of a male agronomist, mid-30s, short beard, wearing a flat cap and dark blue denim jacket, standing in a vast ploughed field in the Pelagonia valley. Early morning mist, warm sunrise lighting casting long shadows. Shot on 35mm lens, photorealistic, rich earth tones.",
+     "motion": "Slow drone camera pushes forward toward the agronomist. The mist gently rolls across the ploughed earth while the man stands perfectly still."
+    },
+    {
+     "char": false,
+     "kf": "Low angle macro shot of dry, cracked rich brown soil with small, vibrant green wheat sprouts pushing through the earth. Soft morning sunlight beautifully highlights the rough texture of the dirt. Shallow depth of field, warm earthy color palette, highly detailed, photorealistic.",
+     "motion": "The camera slowly pans right along the ground. The bright green sprouts sway very slightly in a gentle morning breeze."
+    },
+    {
+     "char": true,
+     "kf": "A sleek, generic modern green tractor moving through a lush, bright green wheat field. In the foreground, the male agronomist, mid-30s, short beard, flat cap, dark blue denim jacket, watches it pass. Clear blue sky, midday sun, sharp focus, vibrant greens, photorealistic.",
+     "motion": "Slow camera tracking shot moving left to right, following the slow-moving tractor in the background while the agronomist turns his head slightly."
+    },
+    {
+     "char": false,
+     "kf": "Close-up of tall, golden wheat stalks ready for harvest, catching the warm, golden hour sunlight. The background is a beautifully blurred landscape of rolling hills. Rich amber and gold color palette, cinematic lighting, 85mm lens, highly detailed, photorealistic.",
+     "motion": "The camera slowly tilts up. The heavy golden wheat stalks sway smoothly and rhythmically in the gentle evening wind."
+    },
+    {
+     "char": true,
+     "kf": "Medium portrait of the male agronomist, mid-30s, short beard, flat cap, dark blue denim jacket, standing in the golden wheat field. He looks off-camera towards the horizon with a subtle, proud smile. Warm, cinematic golden hour lighting, soft bokeh background, photorealistic.",
+     "motion": "Slow camera push-in on the agronomist's face. The wind gently rustles his denim jacket and the wheat in the background."
+    }
+   ],
+   "id": "cf_agro_4_commercial",
+   "cat": "agro",
+   "batch": "v3"
+  },
+  {
+   "type": "commercial",
+   "title_mk": "Совршената капка",
+   "title_en": "The Perfect Drop",
+   "line_mk": "Совршенството на природата, внимателно одгледано.",
+   "line_en": "Nature's perfection, carefully nurtured.",
+   "desc_en": "A beautiful showcase of organic viticulture in the Tikvesh region, following a dedicated female viticulturist tending to premium grapes with modern irrigation.",
+   "music": "Gentle acoustic guitar and light percussion 90 bpm",
+   "voice": "female, warm, elegant",
+   "vo_mk": [
+    "Тиквешкото сонце буди нов живот во лозјата.",
+    "Секоја лоза бара нежност и правилна нега.",
+    "Нашиот систем за наводнување ја чува свежината.",
+    "Грозјето зрее совршено, полно со сладок сок.",
+    "Совршенството на природата, внимателно одгледано."
+   ],
+   "shots": [
+    {
+     "char": true,
+     "kf": "A cinematic wide shot of a female viticulturist in her late 40s, with sun-kissed skin, dark tied-back hair, wearing a white linen shirt and dark green apron. She is walking down a lush row of grapevines in the Tikvesh region. Warm morning sunlight, glowing greens, photorealistic.",
+     "motion": "Slow camera tracking backward as the woman walks forward at a steady, relaxed pace. The grapevine leaves flutter gently in the breeze."
+    },
+    {
+     "char": false,
+     "kf": "Extreme close-up of a single, slightly dry green grapevine leaf illuminated by the strong midday sun. The background is a soft, blurry mix of brown soil and green leaves. High contrast, warm lighting, macro lens, photorealistic nature photography.",
+     "motion": "Slow camera pan across the surface of the dry leaf. The leaf barely moves, emphasizing the stillness of the hot, dry day."
+    },
+    {
+     "char": true,
+     "kf": "Medium shot of the female viticulturist, late 40s, white linen shirt, dark green apron, standing in the vineyard, looking down at a sleek black drip irrigation pipe watering the roots. Sparkling water droplets catch the light. Cinematic composition, rich earthy tones, photorealistic.",
+     "motion": "The camera slowly pushes in on the pipe. A single, clear drop of water falls in slow motion from the black pipe to the soil."
+    },
+    {
+     "char": false,
+     "kf": "Macro close-up of a heavy, flawless bunch of dark purple grapes hanging from a vine. Tiny, crystal-clear water droplets rest on the skin of the grapes, reflecting the afternoon sun. Rich purples and vibrant greens, 100mm macro lens, photorealistic.",
+     "motion": "Very slow camera orbit around the bunch of grapes. The water droplets slowly slide down the smooth, purple skin of the fruit."
+    },
+    {
+     "char": true,
+     "kf": "Medium portrait of the female viticulturist, late 40s, white linen shirt, dark green apron, standing in the vineyard holding a generic wooden basket. She smiles gently, looking at the healthy vines. Golden hour lighting, soft glowing bokeh background, photorealistic.",
+     "motion": "The camera slowly glides to the right. The woman turns her head very slightly to observe the vines, smiling softly in the golden light."
+    }
+   ],
+   "id": "cf_agro_5_commercial",
+   "cat": "agro",
+   "batch": "v3"
   }
  ]
 }

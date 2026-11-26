@@ -80,6 +80,100 @@
    ],
    "id": "cf_steel_cement_2_social",
    "cat": "steel_cement"
+  },
+  {
+   "type": "commercial",
+   "title_mk": "Цврста Основа",
+   "title_en": "Solid Foundation",
+   "line_mk": "Твојот проект, наша цврста основа.",
+   "line_en": "Your project, our solid foundation.",
+   "desc_en": "A character-led commercial following an experienced foreman overseeing the reliable integration of concrete and steel on a Skopje construction site.",
+   "music": "Slow, confident orchestral build with rhythmic industrial percussion, 85 bpm",
+   "voice": "male, deep, reassuring",
+   "vo_mk": [
+    "Секоја голема визија започнува од темел.",
+    "Потребна е сила за да се издржи.",
+    "Челикот и бетонот го носат товарот.",
+    "Градиме сигурност за генерациите што доаѓаат.",
+    "Твојот проект, наша цврста основа."
+   ],
+   "shots": [
+    {
+     "kf": "A 50-year-old construction foreman with short grey hair, wearing a dark blue safety jacket and a bright yellow hard hat. He stands in profile, looking out over a vast, empty dirt construction site in Skopje at dawn. Soft blue and gold cinematic lighting, 50mm lens, photorealistic.",
+     "motion": "The foreman stands perfectly still, observing the site, while the camera slowly pushes in towards his face.",
+     "char": true
+    },
+    {
+     "kf": "Heavy, wet, dark grey concrete pours smoothly from a large industrial metal pipe into a deep wooden formwork trench. The wet texture of the concrete catches the early morning sunlight. Cinematic high-contrast lighting, close-up macro lens, photorealistic texture.",
+     "motion": "Thick concrete flows continuously downwards in a heavy, viscous stream. The camera slowly pans right along the wooden trench.",
+     "char": false
+    },
+    {
+     "kf": "Massive, ribbed steel rebars bundled together are suspended by thick, heavy-duty chains against a dramatic, cloudy grey sky. The cold metallic texture of the raw steel contrasts with the soft clouds. Low angle perspective, 35mm lens, photorealistic.",
+     "motion": "The bundle of steel rebars slowly descends downwards through the frame. The camera gently tilts down to follow the movement.",
+     "char": false
+    },
+    {
+     "kf": "The same 50-year-old foreman with short grey hair, dark blue safety jacket, and yellow hard hat. He stands next to a newly poured, perfectly smooth grey concrete wall, gently resting his palm on the solid surface. Warm golden hour sunlight illuminates the dust in the air. 50mm lens, photorealistic.",
+     "motion": "The foreman slowly nods in approval without moving his hand. The camera smoothly tracks horizontally to the left.",
+     "char": true
+    },
+    {
+     "kf": "Wide shot of the same 50-year-old foreman in his dark blue jacket and yellow hard hat. He stands proudly on a high, finished concrete floor framed by thick steel pillars, silhouetted against a beautiful orange and purple sunset over the Skopje skyline. 24mm lens, photorealistic.",
+     "motion": "The foreman stands completely still like a statue. The camera slowly pulls back to reveal the massive scale of the concrete structure.",
+     "char": true
+    }
+   ],
+   "id": "cf_steel_cement_3_commercial",
+   "cat": "steel_cement",
+   "batch": "v3"
+  },
+  {
+   "type": "commercial",
+   "title_mk": "Нескршлива Моќ",
+   "title_en": "Unbreakable Power",
+   "line_mk": "Челик што не познава граници.",
+   "line_en": "Steel that knows no boundaries.",
+   "desc_en": "A product-focused commercial tracking a distinctive steel I-beam from its fiery creation in the mill to its final placement.",
+   "music": "Pulsing electronic drone with heavy metallic hits, 90 bpm",
+   "voice": "female, sharp, confident",
+   "vo_mk": [
+    "Од оган се раѓа вистинската моќ.",
+    "Се обликува низ притисок и топлина.",
+    "Се кали за да остане вечно.",
+    "Совршена поддршка за вашите најголеми идеи.",
+    "Челик што не познава граници."
+   ],
+   "shots": [
+    {
+     "kf": "A massive, glowing orange-hot steel I-beam featuring a distinct row of hexagonal cutouts along its web. It rests on heavy, dark iron rollers inside a shadowy, industrial steel mill. Glowing embers and deep shadows. Cinematic rim lighting, 50mm lens, photorealistic.",
+     "motion": "The glowing hot I-beam glides steadily forward along the mechanical rollers. The camera slowly tracks alongside it.",
+     "char": true
+    },
+    {
+     "kf": "The same glowing hot I-beam with hexagonal cutouts passes under a heavy industrial cooling shower. Thick, dramatic white steam billows out as cold water hits the bright orange steel. High contrast between the dark mill and the bright steam. 85mm lens, photorealistic.",
+     "motion": "Water continuously sprays over the hot metal, generating thick, rising clouds of steam. The camera slowly pushes in.",
+     "char": true
+    },
+    {
+     "kf": "The distinctive steel I-beam with hexagonal cutouts is shown cooling down in a dim factory bay. It is half glowing dull red and half solid, cold, dark grey metallic. Ambient industrial lighting emphasizes the rough, premium texture of the cooling steel. 50mm lens, photorealistic.",
+     "motion": "The dull red glow slowly fades out, turning completely dark grey. The camera slowly pans right across the beam's surface.",
+     "char": true
+    },
+    {
+     "kf": "The cold, dark grey steel I-beam with its signature hexagonal cutouts is suspended mid-air by a thick yellow crane hook. The background is a vibrant, clear blue Macedonian sky with no clouds. Sharp, crisp sunlight catches the metallic edges. 35mm lens, photorealistic.",
+     "motion": "The massive steel beam rotates very slowly in the air as it is hoisted upwards. The camera slowly tilts up.",
+     "char": true
+    },
+    {
+     "kf": "The distinctive dark grey steel I-beam with hexagonal cutouts rests perfectly interlocked inside a massive, brutalist grey concrete pillar on a modern construction site. Bright afternoon sunlight casts sharp shadows across the clean geometry of the concrete and steel. 50mm lens, photorealistic.",
+     "motion": "Dust motes drift slowly in the bright sunlight around the perfectly still beam. The camera slowly pulls back.",
+     "char": true
+    }
+   ],
+   "id": "cf_steel_cement_4_commercial",
+   "cat": "steel_cement",
+   "batch": "v3"
   }
  ]
 }

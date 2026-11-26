@@ -89,6 +89,100 @@
    ],
    "id": "cf_solar_2_transform",
    "cat": "solar"
+  },
+  {
+   "type": "commercial",
+   "title_mk": "Паметен Дом",
+   "title_en": "Smart Home",
+   "line_mk": "Вашата енергија, ваша независност.",
+   "line_en": "Your energy, your independence.",
+   "desc_en": "A residential commercial focusing on a homeowner achieving peace of mind and independence through premium rooftop solar panels.",
+   "music": "Optimistic, warm acoustic guitar and light percussion, 95 bpm",
+   "voice": "male, warm, reassuring",
+   "vo_mk": [
+    "Сонцето над Македонија е наш најголем природен ресурс.",
+    "Време е да го искористите паметно за вашиот дом.",
+    "Врвни соларни панели кои создаваат чиста енергија секој ден.",
+    "Намалете ги трошоците и уживајте во вашиот личен мир.",
+    "Вашата енергија, ваша независност."
+   ],
+   "shots": [
+    {
+     "kf": "Photorealistic medium portrait of a 40-year-old man with short brown hair wearing a casual navy blue sweater. He stands in a lush garden on the slopes of Mount Vodno, Skopje. Bright morning sunlight illuminates his face. Shot on 50mm lens, cinematic composition, warm natural color palette with vibrant greens.",
+     "motion": "The man slowly tilts his head up towards the sunlight with a gentle smile. The camera slowly pushes in on his face.",
+     "char": true
+    },
+    {
+     "kf": "Photorealistic wide shot of the same 40-year-old man with short brown hair and a navy blue sweater, standing on a modern outdoor patio. He is looking thoughtfully at the large, empty terracotta roof of his Mediterranean-style house. Soft midday shadows, 35mm lens, high contrast, warm earthy tones.",
+     "motion": "The man stands completely still, observing the roof, while the tree leaves cast slowly moving shadows. Slow camera pan from left to right.",
+     "char": true
+    },
+    {
+     "kf": "Photorealistic close-up of premium, sleek black solar panels installed on a traditional terracotta roof. The highly reflective dark glass contrasts with the orange tiles. The bright midday sun creates a glowing lens flare on the edge of the panel. Shot on 85mm lens, sharp focus, rich deep blues and oranges.",
+     "motion": "The clouds slowly drift across the reflection on the sleek black glass of the solar panel. The camera smoothly glides upwards along the roof.",
+     "char": false
+    },
+    {
+     "kf": "Photorealistic medium shot of the same 40-year-old man with short brown hair in a navy blue sweater, sitting in a comfortable patio chair holding a ceramic mug. He looks completely relaxed in the soft afternoon shade. 50mm lens, shallow depth of field, cool and calming color palette.",
+     "motion": "The man slowly brings the mug down to his lap, exhaling peacefully. The camera slowly tracks backward to reveal more of the patio.",
+     "char": true
+    },
+    {
+     "kf": "Photorealistic wide shot of the 40-year-old man with short brown hair and navy blue sweater standing proudly in his front yard. Behind him, the house roof is covered in modern solar panels, glowing under a spectacular golden hour sunset sky. 24mm lens, cinematic lighting, warm golden and deep purple tones.",
+     "motion": "The man slowly crosses his arms, looking confidently forward. The camera slowly cranes up to emphasize the glowing solar panels on the roof.",
+     "char": true
+    }
+   ],
+   "id": "cf_solar_3_commercial",
+   "cat": "solar",
+   "batch": "v3"
+  },
+  {
+   "type": "commercial",
+   "title_mk": "Моќно Сонце",
+   "title_en": "Powerful Sun",
+   "line_mk": "Моќно сонце, сигурна иднина.",
+   "line_en": "Powerful sun, secure future.",
+   "desc_en": "An inspiring commercial about a local landowner transforming an empty sun-baked field into a lucrative and sustainable solar business.",
+   "music": "Cinematic, steady rhythmic strings and deep synth, 105 bpm",
+   "voice": "female, confident, authoritative",
+   "vo_mk": [
+    "Земјоделието бара нови начини за сигурна и стабилна иднина.",
+    "Искористете ја огромната моќ на сонцето на вашата земја.",
+    "Инсталација на моќни соларни системи за вашиот напреден бизнис.",
+    "Заштедете значително и инвестирајте во она што навистина вреди.",
+    "Моќно сонце, сигурна иднина."
+   ],
+   "shots": [
+    {
+     "kf": "Photorealistic medium portrait of a 50-year-old woman with tied-back grey hair wearing a dark green canvas jacket. She stands in a vast, dry agricultural field in the Pelagonia region. The harsh, bright sun illuminates her determined face. 50mm lens, eye-level composition, dusty yellow and pale blue color palette.",
+     "motion": "The woman slightly squints against the bright sun, the wind gently moving stray hairs. The camera slowly pushes in towards her face.",
+     "char": true
+    },
+    {
+     "kf": "Photorealistic wide shot of the same 50-year-old woman with tied-back grey hair and dark green jacket, walking slowly through a massive, empty, sun-baked field with dry grass. The horizon is wide under a clear, cloudless sky. 35mm lens, low angle, high contrast, warm amber and desolate brown tones.",
+     "motion": "The woman walks forward at a slow, deliberate pace through the dry grass. The camera smoothly tracks backward, staying just ahead of her.",
+     "char": true
+    },
+    {
+     "kf": "Photorealistic wide shot of massive, modern solar arrays installed in rows across the previously empty field. The metallic frames and deep blue photovoltaic cells gleam brilliantly under the intense sun. Distant mountains frame the background. 24mm lens, deep depth of field, vibrant blue, silver, and green color palette.",
+     "motion": "The mechanical mounts of the solar panels subtly and slowly tilt upward to follow the sun's trajectory. The camera glides slowly from left to right.",
+     "char": false
+    },
+    {
+     "kf": "Photorealistic medium shot of the same 50-year-old woman with tied-back grey hair and dark green jacket standing directly beneath the towering solar panels. She looks up with a satisfied expression, standing in the cool, crisp shadow cast by the array. 50mm lens, soft diffuse lighting, cool blue and green tones.",
+     "motion": "The woman slowly turns her head to admire the massive structure above her. The camera slowly orbits around her, revealing the metallic framework.",
+     "char": true
+    },
+    {
+     "kf": "Photorealistic extreme wide drone-style shot of the 50-year-old woman with tied-back grey hair and dark green jacket standing proudly at the edge of a massive, beautiful solar farm. The sky is painted with a dramatic, colorful sunset. 16mm lens, sweeping cinematic composition, vivid orange, magenta, and dark blue tones.",
+     "motion": "The woman stands still as a silhouette against the vibrant sky. The camera slowly pulls high up and away, revealing the vast scale of the solar farm.",
+     "char": true
+    }
+   ],
+   "id": "cf_solar_4_commercial",
+   "cat": "solar",
+   "batch": "v3"
   }
  ]
 }

@@ -89,6 +89,100 @@
    ],
    "id": "cf_pharma_2_transform",
    "cat": "pharma"
+  },
+  {
+   "type": "commercial",
+   "title_mk": "Вашата аптека",
+   "title_en": "Your Pharmacy",
+   "line_mk": "Вашата доверлива локална аптека.",
+   "line_en": "Your trusted local pharmacy.",
+   "desc_en": "A warm, character-driven commercial highlighting the premium and caring experience at a modern local pharmacy.",
+   "music": "Warm, uplifting acoustic corporate ambient, 110 bpm",
+   "voice": "female, warm reassuring professional",
+   "vo_mk": [
+    "Здравјето е вашето најголемо богатство.",
+    "Кога ви е потребна вистинска грижа.",
+    "Ние нудиме сигурност и врвен квалитет.",
+    "За вас и за вашите најблиски.",
+    "Вашата доверлива локална аптека."
+   ],
+   "shots": [
+    {
+     "kf": "A female pharmacist in her 30s with short brown hair, wearing a crisp white lab coat over a light blue silk blouse. She stands in a modern, sunlit pharmacy in Skopje. Soft natural lighting, 50mm lens, shallow depth of field. Clean, premium, photorealistic.",
+     "motion": "The pharmacist turns her head slowly toward the camera with a warm smile, gentle slow zoom.",
+     "char": true
+    },
+    {
+     "kf": "Close-up of pristine, unbranded white medicine bottles neatly arranged on an illuminated glass shelf inside a premium pharmacy. Warm ambient lighting, soft reflections on the glass, 85mm lens, macro detail, beautiful blurred background. Clean, modern, highly detailed, photorealistic.",
+     "motion": "The camera slides slowly and smoothly along the glass shelf, highlighting the pristine medicine bottles.",
+     "char": false
+    },
+    {
+     "kf": "A female pharmacist in her 30s with short brown hair, wearing a crisp white lab coat over a light blue silk blouse. She stands behind a bright glass counter, looking warmly and professionally towards the camera. Cinematic lighting, 35mm lens, photorealistic.",
+     "motion": "Subtle movement of the pharmacist breathing while maintaining eye contact, paired with a slow camera push-in.",
+     "char": true
+    },
+    {
+     "kf": "A female pharmacist in her 30s with short brown hair, wearing a crisp white lab coat over a light blue silk blouse. She gently holds a blank, pristine white medicine box in front of her. Soft glowing backlight, 50mm lens, photorealistic.",
+     "motion": "The white box remains steady in her gentle grip while the camera slowly tracks to the right.",
+     "char": true
+    },
+    {
+     "kf": "Wide shot of the female pharmacist in her 30s with short brown hair, wearing a crisp white lab coat over a light blue silk blouse. She stands proudly in the center of a spacious, glowing modern pharmacy with large windows. Photorealistic.",
+     "motion": "The camera slowly pans from left to right, revealing the sleek and clean pharmacy interior around her.",
+     "char": true
+    }
+   ],
+   "id": "cf_pharma_3_commercial",
+   "cat": "pharma",
+   "batch": "v3"
+  },
+  {
+   "type": "commercial",
+   "title_mk": "Безбеден транспорт",
+   "title_en": "Secure Transport",
+   "line_mk": "Сигурност која спасува животи.",
+   "line_en": "Security that saves lives.",
+   "desc_en": "A dynamic logistics commercial following a highly secure, temperature-controlled medical transport box across scenic routes to a clinic.",
+   "music": "Pulsing electronic driving cinematic beat, 120 bpm",
+   "voice": "male, confident deep authoritative",
+   "vo_mk": [
+    "Времето е клучно за секој лек.",
+    "Безбеден транспорт низ цела Македонија.",
+    "Заштитени услови во секој еден момент.",
+    "Доставуваме здравје таму каде што треба.",
+    "Сигурност која спасува животи."
+   ],
+   "shots": [
+    {
+     "kf": "A sleek, unbranded silver metallic temperature-controlled medical transport box with a glowing blue LED ring on top. It sits on a sterile brushed steel table inside a bright, modern warehouse. Cool daylight, 35mm lens, hyper-detailed, photorealistic.",
+     "motion": "The camera slowly arcs around the metallic medical box, emphasizing its premium design and glowing LED.",
+     "char": true
+    },
+    {
+     "kf": "The sleek, unbranded silver metallic medical transport box resting securely on a white shelf inside a moving vehicle. Golden hour sunbeams pass through a window, casting dynamic shadows over the polished silver surface. Cinematic lighting, 50mm lens, photorealistic.",
+     "motion": "Sunlight and shadows sweep smoothly across the surface of the metallic box to simulate forward driving motion.",
+     "char": true
+    },
+    {
+     "kf": "Wide exterior shot of a pristine, unbranded white delivery van driving smoothly on a scenic road next to the deep blue waters of Lake Ohrid, North Macedonia. High angle, bright midday sun, lush green mountains in the background. Photorealistic.",
+     "motion": "The white van drives forward steadily along the scenic coastal road while the camera tracks alongside it.",
+     "char": false
+    },
+    {
+     "kf": "The sleek, unbranded silver metallic medical transport box sitting on a polished white reception desk in a modern, sunlit medical clinic. The blue LED ring glows softly. Bright, airy atmosphere, 50mm lens, architectural lighting, photorealistic.",
+     "motion": "A slow, deliberate camera push-in towards the glowing blue LED light on the pristine metallic box.",
+     "char": true
+    },
+    {
+     "kf": "Close-up of the sleek, unbranded silver metallic medical transport box. The LED ring on top now glows a warm, solid green. The box rests on a doctor's wooden desk, shallow depth of field, 85mm lens, highly detailed, photorealistic.",
+     "motion": "The green LED light softly pulsates while the camera slowly tracks backwards to reveal the desk.",
+     "char": true
+    }
+   ],
+   "id": "cf_pharma_4_commercial",
+   "cat": "pharma",
+   "batch": "v3"
   }
  ]
 }
