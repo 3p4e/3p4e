@@ -327,6 +327,39 @@
     const ph = tt % 4; if (on > .9 && ((ph > .45 && ph < .6) || (ph > 2.45 && ph < 2.6))) { c.globalCompositeOperation = 'lighter'; const xx = (x1 + x2) / 2, yy = cy - H * .55; const g = c.createRadialGradient(xx, yy, 0, xx, yy, H * .18); g.addColorStop(0, 'rgba(255,255,255,1)'); g.addColorStop(.4, 'rgba(255,210,90,.8)'); g.addColorStop(1, 'rgba(255,120,0,0)'); c.fillStyle = g; c.fillRect(xx - H * .2, yy - H * .2, H * .4, H * .4); }
     c.restore();
   }
+  // ---------- energy blades (owner, 2026-11-26): every stroke is a glowing blade; B and D blades duel, then lay down as the mark ----------
+  function blades(E, colB, colD) {
+    const q = E.p, ign = ss(0, .1, q), lift = ease(ss(.1, .24, q)), down = ease(ss(.74, .9, q)), on = lift * (1 - down), t = E.t, c = E.c;
+    const cB = [(TRIS[0].cx + TRIS[1].cx) / 2, (TRIS[0].cy + TRIS[1].cy) / 2], cD = [DC.cx, DC.cy], mid = [(cB[0] + cD[0]) / 2, (cB[1] + cD[1]) / 2];
+    const fin = ss(.9, .985, q);   // the blades settle into the real inked mark at the end
+    E.fx.mark(Math.max(1 - ign, fin)); c.save(); E.fx.mt(c); c.lineCap = 'round'; c.globalCompositeOperation = 'lighter';
+    const R = E.st.R || (E.st.R = SEGS.map((s, i) => [Math.random() * TAU, .6 + Math.random() * .9, Math.random()]));
+    const hum = 1 + .08 * Math.sin(t * 40) * Math.sin(t * 13);
+    let clash = 0;
+    SEGS.forEach((s, i) => {
+      const isB = s[4] !== 2, col = isB ? colB : colD, cx0 = (s[0] + s[2]) / 2, cy0 = (s[1] + s[3]) / 2, L = Math.hypot(s[2] - s[0], s[3] - s[1]) / 2, a0 = Math.atan2(s[3] - s[1], s[2] - s[0]);
+      // duel: each side gathers towards the middle and swings in arcs; the two sides swing in counter-phase so blades cross
+      const home = isB ? cB : cD, toward = .32 * on, sw = Math.sin(t * 3.2 * R[i][1] + R[i][0] + (isB ? 0 : Math.PI)) * 1.15 * on;
+      const px = lerp(cx0, lerp(home[0], mid[0], .55), toward) + Math.cos(t * 2 + R[i][0]) * VB[2] * .03 * on, py = lerp(cy0, lerp(home[1], mid[1], .55), toward) + Math.sin(t * 2.6 + R[i][0]) * VB[3] * .04 * on;
+      const a = a0 + sw + (isB ? -.5 : .5) * on, len = L * (ign < 1 ? ign : 1) * (1 + .15 * on);
+      const x1 = px - Math.cos(a) * len, y1 = py - Math.sin(a) * len, x2 = px + Math.cos(a) * len, y2 = py + Math.sin(a) * len;
+      if (on > .6 && Math.abs(Math.sin(t * 3.2 * R[i][1] + R[i][0])) > .985) clash = Math.max(clash, on);
+      const fl = (.85 + .15 * Math.sin(t * 60 + i)) * hum * (1 - fin * .85), w = s[5];
+      c.globalAlpha = .28 * fl; c.strokeStyle = col; c.lineWidth = w * 3.2; c.beginPath(); c.moveTo(x1, y1); c.lineTo(x2, y2); c.stroke();
+      c.globalAlpha = .7 * fl; c.lineWidth = w * 1.5; c.beginPath(); c.moveTo(x1, y1); c.lineTo(x2, y2); c.stroke();
+      c.globalAlpha = 1 - fin; c.strokeStyle = '#fff'; c.lineWidth = w * .55; c.beginPath(); c.moveTo(x1, y1); c.lineTo(x2, y2); c.stroke();
+    });
+    // clash: a white flash and a spray of sparks where the two sides meet
+    if (clash > 0) { const g = c.createRadialGradient(mid[0], mid[1], 0, mid[0], mid[1], VB[2] * .22); g.addColorStop(0, 'rgba(255,255,255,.9)'); g.addColorStop(.3, 'rgba(255,240,200,.35)'); g.addColorStop(1, 'rgba(255,255,255,0)');
+      c.globalAlpha = clash; c.fillStyle = g; c.fillRect(mid[0] - VB[2] * .25, mid[1] - VB[2] * .25, VB[2] * .5, VB[2] * .5); E.st.sp = (E.st.sp || []).concat(Array.from({ length: 14 }, () => [mid[0], mid[1], (Math.random() - .5) * VB[2] * .02, (Math.random() - .8) * VB[3] * .02, 1])); }
+    c.fillStyle = '#fff'; E.st.sp = (E.st.sp || []).filter(p => (p[4] -= .04) > 0);
+    E.st.sp.forEach(p => { p[0] += p[2]; p[1] += p[3]; p[3] += VB[3] * .0012; c.globalAlpha = p[4]; c.fillRect(p[0], p[1], VB[2] * .006, VB[2] * .006); });
+    c.restore();
+  }
+  add('Energy blades · red / blue', 'line', E => blades(E, '#ff2a2a', '#2f8bff'), 8);
+  add('Energy blades · blue / red', 'line', E => blades(E, '#2f8bff', '#ff2a2a'), 8);
+  add('Energy blades · green / purple', 'line', E => blades(E, '#38ff5a', '#b04bff'), 8);
+  add('Energy blades · purple / green', 'line', E => blades(E, '#b04bff', '#38ff5a'), 8);
   // ---------- strokes become the letters B I G  D O G M A (an angular stroke font in the mark's spirit) ----------
   const FONT = { B: [[0, 0, 0, 1], [0, 0, .8, .25], [.8, .25, 0, .5], [0, .5, .9, .75], [.9, .75, 0, 1]], I: [[.4, 0, .4, 1]], G: [[.9, .1, .3, 0], [.3, 0, 0, .5], [0, .5, .3, 1], [.3, 1, .9, .85], [.9, .85, .9, .55], [.9, .55, .55, .55]],
     D: [[0, 0, 0, 1], [0, 0, .9, .5], [.9, .5, 0, 1]], O: [[.5, 0, 0, .3], [0, .3, 0, .7], [0, .7, .5, 1], [.5, 1, 1, .7], [1, .7, 1, .3], [1, .3, .5, 0]], M: [[0, 1, 0, 0], [0, 0, .5, .6], [.5, .6, 1, 0], [1, 0, 1, 1]], A: [[0, 1, .5, 0], [.5, 0, 1, 1], [.2, .62, .8, .62]], ' ': [] };
