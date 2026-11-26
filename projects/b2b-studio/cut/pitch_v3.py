@@ -39,6 +39,9 @@ T = {"mk": dict(
   dl_p="Деталната понуда во PDF. Филмовите ги гледате на оваа страница.", dl_pdf="Понуда (PDF)", dl_zip="Сите филмови (ZIP, {s} MB)", b_f1="Лого филм", b_x1="Лого ефект", days=["Пон", "Вто", "Сре", "Чет", "Пет", "Саб", "Нед"], more="Повеќе на",
   ind_types={"social": "9:16", "explainer": "Објаснувачки", "story": "Приказна", "transform": "Пред / потоа"}, ai_film="AI филм")}
 for _l in ("sr", "sq"): T[_l] = json.load(open(f"{HERE}/pitch_v3_data/strings_{_l}.json", encoding="utf-8"))   # written by hand 2026-11-26
+# H3 section strings (geo-gated, see cut/h3_geo)
+H3S = {"mk": {"h3_e": "Made with MiniMax H3", "h3_h": "Уште филмови за {c}", "h3_p": "Дополнителни AI филмови направени со моделот MiniMax H3, хоризонтално и вертикално. Се прикажуваат само во региони каде што лиценцата на моделот го дозволува тоа.", "h3_ad": "Реклама", "h3_film": "Филм", "h3_lbl": "AI · Made with MiniMax H3"}, "sr": {"h3_e": "Made with MiniMax H3", "h3_h": "Još filmova za {c}", "h3_p": "Dodatni AI filmovi napravljeni modelom MiniMax H3, horizontalno i vertikalno. Prikazuju se samo u regionima u kojima licenca modela to dozvoljava.", "h3_ad": "Reklama", "h3_film": "Film", "h3_lbl": "AI · Made with MiniMax H3"}, "sq": {"h3_e": "Made with MiniMax H3", "h3_h": "Më shumë filma për {c}", "h3_p": "Filma shtesë AI të krijuar me modelin MiniMax H3, horizontalisht dhe vertikalisht. Shfaqen vetëm në rajonet ku licenca e modelit e lejon.", "h3_ad": "Reklamë", "h3_film": "Film", "h3_lbl": "AI · Made with MiniMax H3"}}
+for _l in H3S: T[_l].update(H3S[_l])
 XL = json.load(open(f"{P}/launch/site_work/i18n_extra.json", encoding="utf-8"))   # site translations (BD and industry film titles)
 
 # ------------------------------------------------------------------ companies
@@ -227,6 +230,7 @@ dialog .x{{position:absolute;right:0;top:-44px;background:none;border:0;color:#f
 <section id="films"><div class="wrap"><div class="eyebrow rv">{E(s["f_e"])}</div><h2 class="sh rv">{E(s["f_h"].format(n=n_f, c=c["name"]))}</h2><p class="sp rv">{E(s["f_p"])}</p>
 <div class="fmt rv" role="group"><button type="button" data-fmt="h" aria-pressed="true">{s["h169"]}</button><button type="button" data-fmt="v" aria-pressed="false">{s["v916"]}</button></div>
 <ul class="grid" id="fg">{films}</ul></div></section>
+<section id="h3" hidden><div class="wrap"><div class="eyebrow">{E(s["h3_e"])}</div><h2 class="sh">{E(s["h3_h"].format(c=c["name"]))}</h2><p class="sp">{E(s["h3_p"])}</p><ul class="grid" id="h3g"></ul></div></section>
 <section class="alt"><div class="wrap"><div class="eyebrow rv">{E(s["v_e"])}</div><h2 class="sh rv">{E(s["v_h"])}</h2><p class="sp rv">{E(s["v_p"])}</p><ul class="vrow">{vert}</ul></div></section>
 <section id="shots"><div class="wrap"><div class="eyebrow rv">{E(s["s_e"])}</div><h2 class="sh rv">{E(s["s_h"])}</h2><p class="sp rv">{E(s["s_p"].format(n=c["shots"], c=c["name"]))}</p>
 {mont}<ul class="shots">{shots}</ul></div></section>
@@ -244,6 +248,7 @@ dialog .x{{position:absolute;right:0;top:-44px;background:none;border:0;color:#f
 </main>
 <footer><div class="wrap">{E(s["legal"])}<br>© 2026 BIG DOGMA · AI STUDIO | MK · <a href="{SITE}">bigdogma.tech</a> · <a href="classic.html">classic</a></div></footer>
 <dialog id="lb"><button class="x" type="button" aria-label="{E(s["close"])}">×</button><video controls playsinline controlslist="nodownload noplaybackrate" disablepictureinpicture></video><p></p></dialog>
+<script>window.H3T={json.dumps({"ad": s["h3_ad"], "film": s["h3_film"], "lbl": s["h3_lbl"]}, ensure_ascii=False)};</script>
 <script>window.DOGMA_HDR_BASE="{SITE}/logo_fx/hdr/";window.DOGMA_INTRO={json.dumps(intro)};</script>
 <script src="{SITE}/logo_fx/mark_data.js"></script><script src="{SITE}/logo_fx/logo_fx.js"></script><script src="{SITE}/logo_fx/hdr/list.js"></script><script src="{SITE}/logo_fx/hdr.js"></script>
 <script>
@@ -269,6 +274,13 @@ addEventListener('keydown',function(e){{if((e.key==='Enter'||e.key===' ')&&!sp.c
 /* films are for viewing on this page only (owner, 2026-11-26): no context menu on videos, no drag */
 document.addEventListener('contextmenu',function(e){{if(e.target.closest&&e.target.closest('video,.im,.vrow,.shots,.cmp'))e.preventDefault()}});
 document.addEventListener('dragstart',function(e){{if(e.target.tagName==='VIDEO'||e.target.tagName==='IMG')e.preventDefault()}});
+/* H3 films: only where the server serves them (geo-gated: not in the EU, UK, USA or South Korea); view-only, credited */
+fetch('h3/',{{cache:'no-store'}}).then(function(r){{return r.ok?r.json():[]}}).then(function(d){{var N={{}},T=window.H3T;
+ (d||[]).forEach(function(f){{var m=/^(.+?)(_9x16)?\\.mp4$/.exec(f.name);if(m){{N[m[1]]=N[m[1]]||{{}};N[m[1]][m[2]?'v':'h']=1}}}});
+ var ad=function(k){{return /commercial|_ad$/.test(k)?1:0}},ks=Object.keys(N).filter(function(k){{return N[k].h}}).sort(function(a,b){{return ad(b)-ad(a)||(a<b?-1:1)}});if(!ks.length)return;var n=0;
+ $('#h3g').innerHTML=ks.map(function(k){{var t=ad(k)?T.ad:T.film+' '+(++n),h='h3/'+k,dv=N[k].v?' data-v="'+h+'_9x16.mp4" data-vp="'+h+'_9x16.jpg"':'';
+  return '<li class="fc"><a href="'+h+'.mp4" data-play="'+h+'.mp4" data-t="'+t+' · Made with MiniMax H3" data-p="'+h+'.jpg"'+dv+'><span class="im"><img src="'+h+'.jpg" alt="" loading="lazy"><span class="ct">'+T.lbl+'</span><span class="pl"></span></span><span class="tx"><b>'+t+'</b><span>Made with MiniMax H3</span></span></a></li>'}}).join('');
+ $('#h3').hidden=false}}).catch(function(){{}});
 /* nav */
 var nav=$('.nav');addEventListener('scroll',function(){{nav.classList.toggle('s',scrollY>40)}},{{passive:true}});
 /* lightbox */
@@ -278,7 +290,7 @@ lb.addEventListener('close',function(){{lv.pause();lv.removeAttribute('src');lv.
 document.addEventListener('click',function(e){{var a=e.target.closest&&e.target.closest('[data-play]');if(!a)return;e.preventDefault();
  var src=a.dataset.play,p=a.dataset.p;if(fmt==='v'&&a.dataset.v){{src=a.dataset.v;p=a.dataset.vp}}open(src,a.dataset.t,p)}});
 $$('.fmt button').forEach(function(x){{x.onclick=function(){{fmt=x.dataset.fmt;$$('.fmt button').forEach(function(y){{y.setAttribute('aria-pressed',String(y===x))}});
- $$('#fg a[data-v]').forEach(function(a){{$('img',a).src=fmt==='v'?a.dataset.vp:a.dataset.p}})}}}});
+ $$('#fg a[data-v],#h3g a[data-v]').forEach(function(a){{$('img',a).src=fmt==='v'?a.dataset.vp:a.dataset.p}})}}}});
 /* BD gallery filter */
 $$('#bd .chips button').forEach(function(x){{x.onclick=function(){{var k=x.dataset.k;$$('#bd .chips button').forEach(function(y){{y.setAttribute('aria-pressed',String(y===x))}});$$('#bdg li').forEach(function(li){{li.hidden=!(k==='all'||li.dataset.k===k)}})}}}});
 /* in-view muted loops + hover */

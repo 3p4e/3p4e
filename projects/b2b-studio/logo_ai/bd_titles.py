@@ -7,7 +7,7 @@ FILMS = {
  "chalkboard": ("Со креда", "In chalk"), "origami": ("Оригами", "Origami"), "ink_water": ("Мастило во вода", "Ink in water"),
  "laser_steel": ("Ласер во челик", "Laser in steel"), "vodno_monument": ("Споменик на Водно", "Monument on Vodno"), "constellation": ("Соѕвездие", "Constellation"),
  "stickmen": ("Борба на ликови", "Stick-figure fight"), "embroidery": ("Златен вез", "Gold embroidery"), "snow_reveal": ("Под снегот", "Under the snow"),
- "cathedral_window": ("Витраж во катедрала", "Cathedral window"), "byzantine_mosaic": ("Византиски мозаик", "Byzantine mosaic"), "lanterns": ("Фенери над Охрид", "Lanterns over Ohrid"),
+ "cathedral_window": ("Витраж во катедрала", "Cathedral window"), "blades_red_blue": ("Енергетски сечила · црвено / сино", "Energy blades · red / blue"), "blades_blue_red": ("Енергетски сечила · сино / црвено", "Energy blades · blue / red"), "byzantine_mosaic": ("Византиски мозаик", "Byzantine mosaic"), "lanterns": ("Фенери над Охрид", "Lanterns over Ohrid"),
  "neon_street": ("Неонска улица", "Neon street"), "latte_art": ("Лате арт", "Latte art"), "glassblowing": ("Дување стакло", "Glassblowing"),
  "canyon_carving": ("Во карпите на Матка", "In the Matka cliffs"), "light_painting": ("Сликање со светлина", "Light painting"), "dominoes": ("Домино", "Dominoes"),
  "crop_circle": ("Во житото", "In the wheat"), "laser_show": ("Ласерско шоу", "Laser show"),
