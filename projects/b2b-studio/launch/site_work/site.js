@@ -31,7 +31,7 @@
   // ---------- BD reel (owner, 2026-11-26): all BD videos (logo films + logo effects) in random rotation with the header transition, no text,
   // as the first-visit splash and as a screensaver after 3 minutes without input (reel.js)
   if (window.BDReel) {
-    const reelList = () => BDReel.all('', FILMS.filter(f => /^bd_/.test(f.id)).map(f => f.src));   // all BD videos: logo films + logo effects
+    const reelList = () => BDReel.all('', FILMS.filter(f => /^bd_/.test(f.id)).map(f => f.src.replace('media/intro/', 'media/lite/intro/').replace(/\?.*$/, '')));   // light copies (the gallery keeps full quality)
     const H = document.documentElement;
     const whenReady = f => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', f) : setTimeout(f, 0);
     if (H.classList.contains('reel1')) whenReady(() => {   // after every script (mark geometry, effect boxes) and the initial language

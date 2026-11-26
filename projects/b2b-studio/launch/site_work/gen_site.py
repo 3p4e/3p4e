@@ -326,7 +326,8 @@ _HC["sec"] = [x for k in ("food", "wine", "steel", "auto", "pharma", "rec", "pro
 _HC["tl"] = [x for k in ("con", "re", "int", "energy") for x in _HC[k]]
 for _k, *_x in CF_CATS: _HC[_k] = [f"films/{f['id']}.mp4" for f in CF if f["cat"] == _k]
 _HC["bd"] = [p + ".mp4" for _i, p, _n, _t in BD]
-HERO_JSON = json.dumps({"intro": [f"media/intro/{f}" for f in _INTRO], "cat": _HC}, separators=(",", ":"))
+subprocess.run([sys.executable, f"{WORK}/lite_encode.py", OUT], check=True)   # light copies for hero, splash and screensaver (gallery keeps full quality)
+HERO_JSON = json.dumps({"intro": [f"media/lite/intro/{f}" for f in _INTRO], "cat": _HC}, separators=(",", ":"))
 def loop(cid, cls="lv", poster=None):
     # muted in-view loop: no src until site.js sees it near the viewport; the poster shows first
     return f'<video class="{cls}" muted loop playsinline preload="none" poster="{u(poster or f"media/g/{cid}.jpg")}" data-loop="{u(f"media/g/{cid}.mp4")}" aria-hidden="true" tabindex="-1"></video>'

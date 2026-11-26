@@ -125,7 +125,7 @@ def build(key, out):
     tl = lambda key, v: (v if c["lang"] == "mk" else (XL.get(c["lang"], {}).get(key, "BD · " + v[1])[5:], v[1]))
     live = lambda rel: os.path.exists(f"{SCR}/launch/site/{rel}.mp4")
     bd = [(f"{SITE}/media/intro/{k}", tl(f"bd_{k}.t", v), "f") for k, v in BDT.FILMS.items() if live(f"media/intro/{k}")] + [(f"{SITE}/media/bd/{k}", tl(f"bdx_{k}.t", v), "x") for k, v in BDT.FX.items()]
-    intro = [f"{SITE}/media/intro/{k}.mp4" for k in BDT.FILMS if os.path.exists(f"{SCR}/launch/site/media/intro/{k}.mp4")]
+    intro = [f"{SITE}/media/lite/intro/{k}.mp4" for k in BDT.FILMS if os.path.exists(f"{SCR}/launch/site/media/lite/intro/{k}.mp4")]   # light copies
     # industry films (bigdogma.tech, category films v2)
     ind = []
     for cat in c["industry"]:
@@ -265,8 +265,10 @@ var $=function(q,e){{return(e||document).querySelector(q)}},$$=function(q,e){{re
 var RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
 /* splash: BD logo films, two videos crossfading */
 var sp=$('#splash'),sv=$$('video',sp),L=(window.DOGMA_INTRO||[]).slice().sort(function(){{return Math.random()-.5}}),k=0,cur=0;
-function nx(){{if(!L.length)return;var n=sv[1-cur],o=sv[cur];n.src=L[k++%L.length];n.play().catch(function(){{}});n.style.opacity=1;o.style.opacity=0;cur=1-cur}}
-sv.forEach(function(v){{v.addEventListener('ended',nx)}});if(!RM){{sv[0].src=L[k++];sv[0].play().catch(function(){{}})}}
+function pre(){{if(!L.length)return;var n=sv[1-cur];n.src=L[k++%L.length];n.preload='auto';n.load()}}   /* next film loads while this one plays */
+function nx(){{if(!L.length)return;var n=sv[1-cur],o=sv[cur],go=function(){{n.removeEventListener('playing',go);n.style.opacity=1;o.style.opacity=0;cur=1-cur;setTimeout(function(){{o.pause();if(!sp.classList.contains('out'))pre()}},900)}};
+ n.addEventListener('playing',go);n.currentTime=0;n.play().catch(function(){{}})}}   /* fade only once the next film really plays */
+sv.forEach(function(v){{v.addEventListener('ended',function(){{if(v===sv[cur])nx()}})}});if(!RM){{sv[0].src=L[k++];sv[0].play().catch(function(){{}});setTimeout(pre,300)}}
 /* enter: burst + flash, then the content */
 var bc=$('#burst'),b=bc.getContext('2d');
 function burst(done){{var W=bc.width=innerWidth*Math.min(2,devicePixelRatio||1),H=bc.height=innerHeight*Math.min(2,devicePixelRatio||1),cx=W/2,cy=H/2,R=Math.hypot(W,H)/2,t0=performance.now(),P=[];

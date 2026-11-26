@@ -65,9 +65,11 @@
     }
     t.shadowBlur = 0; t.globalCompositeOperation = 'source-over';
   }
-  function swap() {   // the incoming video (loaded and started at the transition's start) becomes current
+  let ready = null, waited = 0;   // the item already loading in the hidden video
+  function prep() { ready = pick(); const v = vs[1 - cur]; v.loop = !!ready.bb; load(v, ready); }
+  function swap() {   // the incoming video (started at the transition's start) becomes current; the next one starts loading right away
     const v = vs[1 - cur], o = vs[cur]; v.classList.add('v'); o.classList.remove('v'); cur = 1 - cur; curItem = nextItem;
-    setTimeout(() => { if (!o.classList.contains('v')) o.pause(); }, 600);
+    setTimeout(() => { if (!o.classList.contains('v')) o.pause(); if (on) prep(); }, 600);
   }
   // a logo film plays whole (it ends on the formed logo); an effect loop shows SHOW ms
   function startSeg(now) { const v = vs[cur], d = v.duration || 0; segEnd = now + (curItem && !curItem.bb && d ? Math.max(3000, d * 1000 - 300) - (performance.now() - now) : SHOW); swapped = false; }
@@ -75,7 +77,10 @@
     raf = requestAnimationFrame(frame); if (!on) return;
     const left = segEnd - now;
     if (left <= TR) {
-      if (!inT) { inT = true; nextItem = pick(); const v = vs[1 - cur]; v.loop = !!nextItem.bb; load(v, nextItem); v.currentTime = 0; v.play().catch(() => {});
+      if (!inT) {
+        const v = vs[1 - cur]; if (!ready) prep();
+        if (v.readyState < 3 && waited < 3000) { waited += 100; segEnd = now + TR + 100; return; }   // not playable yet: hold the current video a moment
+        inT = true; waited = 0; nextItem = ready; ready = null; v.currentTime = 0; v.play().catch(() => {});
         colOut = (curItem && curItem.col) || GOLD; colIn = nextItem.col || GOLD; spawn(); }
       const q = Math.min(1, 1 - left / TR); trans(q);
       if (q >= .5 && !swapped) { swapped = true; swap(); }
@@ -88,6 +93,7 @@
     const old = el.querySelector('.sk'); if (old) old.remove();
     if (skipLabel) { const b = document.createElement('button'); b.type = 'button'; b.className = 'sk'; b.textContent = skipLabel; b.onclick = hide; el.appendChild(b); el.style.cursor = 'default'; } else el.style.cursor = 'none';
     vs.forEach(v => v.classList.remove('v')); curItem = pick(); const v = vs[cur]; v.loop = !!curItem.bb; load(v, curItem); v.classList.add('v'); v.play().catch(() => {});
+    ready = null; waited = 0; setTimeout(() => { if (on && !ready) prep(); }, 400);   // the second video starts loading almost at once
     el.classList.add('on'); segEnd = performance.now() + SHOW;
     if (!curItem.bb) v.onloadedmetadata = () => { v.onloadedmetadata = null; if (on && !inT) startSeg(performance.now()); };
     cancelAnimationFrame(raf); raf = requestAnimationFrame(frame);
@@ -121,7 +127,7 @@
     idle(fn, ms) { if (RM || SAVE) return; idleList = fn; idleMs = ms || 180000; arm(); },
     // all BD videos: the logo films (URLs given) + every logo effect in logo_fx/reel_bb.js; base = the site root URL ('' on bigdogma.tech)
     all(base, films) {
-      const fx = (window.DOGMA_REEL_FX || []).map(x => ({ src: base + 'media/bd/' + x.id + '.mp4', poster: base + 'media/bd/' + x.id + '.jpg', bb: x.bb, col: x.col }));
+      const fx = (window.DOGMA_REEL_FX || []).map(x => ({ src: base + 'media/lite/bd/' + x.id + '.mp4', poster: base + 'media/bd/' + x.id + '.jpg', bb: x.bb, col: x.col }));   // light copies
       return films.map(u => ({ src: u, poster: u.replace(/\.mp4(\?.*)?$/, '.jpg') })).concat(fx);
     }
   };
