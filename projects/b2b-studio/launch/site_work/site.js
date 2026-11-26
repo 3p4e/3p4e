@@ -36,15 +36,20 @@
   addEventListener('resize', () => { if (innerWidth > 1080) setMenu(false); }, { passive: true });
 
   // ---------- film filter
-  $$('.chip').forEach(c => c.addEventListener('click', () => {
-    const f = c.dataset.f; $$('.chip').forEach(x => x.setAttribute('aria-pressed', String(x === c)));
+  $$('.chip[data-f]').forEach(c => c.addEventListener('click', () => {
+    const f = c.dataset.f; $$('.chip[data-f]').forEach(x => x.setAttribute('aria-pressed', String(x === c)));
     $$('#grid .fc').forEach(li => { li.hidden = !(f === 'all' || li.dataset.cat === f); if (!li.hidden) li.classList.add('in'); });
+  }));
+  // industry films (category films v2): same pattern, own grid
+  $$('.chip[data-c]').forEach(c => c.addEventListener('click', () => {
+    const f = c.dataset.c; $$('.chip[data-c]').forEach(x => x.setAttribute('aria-pressed', String(x === c)));
+    $$('#cgrid .fc').forEach(li => { li.hidden = !(f === 'all' || li.dataset.c === f); if (!li.hidden) li.classList.add('in'); });
   }));
 
   // ---------- lightbox
   const lb = $('#lb'), v = $('video', lb), ttl = $('#lbT'), line = $('.mt p', lb);
   const ids = FILMS.map(f => f.id); let cur = -1, opener = null;
-  const visible = () => $$('#grid .fc:not([hidden]) a').map(a => a.dataset.film);
+  const visible = () => $$('.fc:not([hidden]) a', (opener && opener.closest('ul')) || $('#grid')).map(a => a.dataset.film);   // step within the grid the film was opened from
   function setTracks() {
     $$('track', v).forEach(tr => tr.remove());
     const f = FILMS[cur]; if (!f) return; const langs = Object.keys(f.sub || {});

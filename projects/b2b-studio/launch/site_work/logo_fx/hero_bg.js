@@ -23,6 +23,6 @@
   use('all');
   document.addEventListener('click', function (e) {
     var c = e.target.closest && e.target.closest('.chip'); if (!c) return;
-    use(c.dataset.g || c.dataset.f || 'all');
+    use(c.dataset.c || c.dataset.g || c.dataset.f || 'all');
   });
 })();

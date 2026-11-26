@@ -242,12 +242,34 @@ def u(rel):
 
 # ------------------------------------------------------------------ template
 mk = lambda k: TX[k][0]
+# ------------------------------------------------------------------ category films v2 (catfilms/: plans, cuts; catfilms/site_media.py encodes)
+CF_PLAN = "/home/user/3p4e/projects/b2b-studio/catfilms/plan"
+CF_CATS, CF = [], []
+for _p in sorted(glob.glob(f"{CF_PLAN}/*.json"), key=lambda p: json.load(open(p))["mk"]):
+    _d = json.load(open(_p)); _fs = [f for f in _d["films"] if os.path.exists(f"{OUT}/films/{f['id']}.mp4")]
+    if not _fs: continue
+    CF_CATS.append((_d["key"], _d["mk"], _d["en"], len(_fs))); TX[f"cc.{_d['key']}"] = (_d["mk"], _d["en"])
+    for f in _fs:
+        CF.append(f); TX[f"{f['id']}.t"] = (f["title_mk"], f["title_en"]); TX[f"{f['id']}.l"] = (f["line_mk"], f["line_en"])
+        TX[f"{f['id']}.alt"] = (f"{f['title_mk']}: кадар од AI филмот", f"{f['title_en']}: a frame from the AI film")
+TX.update({"cf.e": ("Нови AI филмови", "New AI films"), "cf.h": (f"{len(CF)} филмови за {len(CF_CATS)} индустрии", f"{len(CF)} films for {len(CF_CATS)} industries"),
+           "cf.p": ("Четири формати за секоја индустрија: социјална реклама 9:16, објаснувачки филм, приказна за брендот и пред/потоа. Изберете индустрија: и позадината горе се менува.",
+                    "Four formats for every industry: a 9:16 social ad, an explainer, a brand story and a before/after. Pick an industry: the background at the top changes with it."),
+           "cf.filter": ("Филтер по индустрија", "Filter by industry"),
+           "ty.social": ("Социјална 9:16", "Social 9:16"), "ty.explainer": ("Објаснувачки", "Explainer"), "ty.story": ("Приказна", "Brand story"), "ty.transform": ("Пред / потоа", "Before / after")})
+CF_CHIPS = f'<button type="button" class="chip" data-c="all" aria-pressed="true"><span @="f.all"></span> <b>{len(CF)}</b></button>' + "".join(
+    f'<button type="button" class="chip" data-c="{k}" aria-pressed="false"><span @="cc.{k}"></span> <b>{n}</b></button>' for k, _m, _e, n in CF_CATS)
 FILM_CARDS = "\n".join(f"""<li class="fc rv" data-cat="{cat}"><a href="{u(f'films/{fid}.mp4')}" data-film="{fid}">
 <span class="im"><img src="{u(f'films/{fid}.jpg')}" @a="alt:{fid}.alt" width="960" height="540" loading="lazy" decoding="async"><span class="ct" @="cat.{cat}"></span><span class="pl" aria-hidden="true"></span><span class="du">{mmss(DUR[fid])}</span></span>
 <span class="tx"><span class="h3" @="{fid}.t"></span><span class="ln" @="{fid}.l"></span></span><span class="sr" @="work.play"></span></a></li>""" for fid, cat, *_ in FILMS)
 n_sec = sum(1 for f in FILMS if f[1] == "sec"); n_tl = len(FILMS) - n_sec
 FILM_JSON = json.dumps([{"id": f[0], "src": u(f"films/{f[0]}.mp4"), "poster": u(f"films/{f[0]}.jpg"),
                          "sub": {L: u(f"subs/{f[0]}.{L}.vtt") for L in ("mk", "en") if os.path.exists(f"{OUT}/subs/{f[0]}.{L}.vtt")}} for f in FILMS])
+def _cfdur(fid): return _probe(f"{OUT}/films/{fid}.mp4")
+CF_CARDS = "\n".join(f"""<li class="fc rv{' vt' if f['type'] == 'social' else ''}" data-c="{f['cat']}"><a href="{u(f'films/{f["id"]}.mp4')}" data-film="{f['id']}">
+<span class="im"><img src="{u(f'films/{f["id"]}.jpg')}" @a="alt:{f['id']}.alt" loading="lazy" decoding="async"><span class="ct" @="ty.{f['type']}"></span><span class="pl" aria-hidden="true"></span><span class="du">{mmss(_cfdur(f['id']))}</span></span>
+<span class="tx"><span class="h3" @="{f['id']}.t"></span><span class="ln" @="{f['id']}.l"></span></span><span class="sr" @="work.play"></span></a></li>""" for f in CF)
+FILM_JSON = FILM_JSON[:-1] + "".join(", " + json.dumps({"id": f["id"], "src": u(f"films/{f['id']}.mp4"), "poster": u(f"films/{f['id']}.jpg"), "sub": {}}) for f in CF) + "]"
 MARQ = "".join(f'<span @="m{i}"></span>' for i in range(1, 10))
 CHECK = '<svg aria-hidden="true" viewBox="0 0 20 20" width="18" height="18"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
 def plan(n, hot=False):
@@ -285,6 +307,7 @@ _INTRO = sorted(os.path.basename(f) for f in glob.glob(f"{OUT}/media/intro/*.mp4
 _HC = {k: [f"media/g/{c[0]}.mp4" for c in G.CLIPS if c[2] == k] for k, *_ in G.SECTORS}
 _HC["sec"] = [x for k in ("food", "wine", "steel", "auto", "pharma", "rec", "prod") for x in _HC[k]]
 _HC["tl"] = [x for k in ("con", "re", "int", "energy") for x in _HC[k]]
+for _k, *_x in CF_CATS: _HC[_k] = [f"films/{f['id']}.mp4" for f in CF if f["cat"] == _k]
 HERO_JSON = json.dumps({"intro": [f"media/intro/{f}" for f in _INTRO], "cat": _HC}, separators=(",", ":"))
 def loop(cid, cls="lv", poster=None):
     # muted in-view loop: no src until site.js sees it near the viewport; the poster shows first
@@ -428,6 +451,17 @@ PAGE = f"""<!doctype html>
 {FILM_CARDS}
   </ul>
   <p class="hint rv" @="work.note"></p>
+ </div>
+</section>
+<section id="industries" class="sec cfs">
+ <div class="wrap">
+  <div class="eyebrow rv" @="cf.e"></div>
+  <h2 class="sh rv" @="cf.h"></h2>
+  <p class="sp rv" @="cf.p"></p>
+  <div class="chips cchips rv" role="group" @a="aria-label:cf.filter">{CF_CHIPS}</div>
+  <ul class="grid" id="cgrid">
+{CF_CARDS}
+  </ul>
  </div>
 </section>
 

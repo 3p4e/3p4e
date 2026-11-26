@@ -399,3 +399,6 @@ body.lb-open,body.menu-open{overflow:hidden}
 .brand .lfx-in{position:absolute;inset:-27% -22%;pointer-events:none}
 @media(max-width:400px){.brand .lfx{width:60px;height:38px}}
 @media(max-width:340px){.brand .lfx{width:46px;height:29px}}
+/* industry films (category films v2): vertical social films keep the 16:9 card, poster centred on the subject; long chip row scrolls on phones */
+.fc.vt .im img{object-position:center 40%}
+@media(max-width:700px){.cchips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:4px}.cchips::-webkit-scrollbar{display:none}.cchips .chip{flex:none}}
