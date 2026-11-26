@@ -244,7 +244,7 @@ def u(rel):
 mk = lambda k: TX[k][0]
 # language menu: MK and EN always; sq/sr/hr/sl/bg once translate_site.py has translated at least 95 % of the strings
 _XL = json.load(open(f"{WORK}/i18n_extra.json", encoding="utf-8")) if os.path.exists(f"{WORK}/i18n_extra.json") else {}
-LANGS_ON = ["mk", "en"] + [l for l in ("sq", "sr", "hr", "sl", "bg") if len(_XL.get(l, {})) >= .95 * len(TX)]
+LANGS_ON = ["mk", "en"] + [l for l in ("sq", "sr", "hr", "sl", "bg") if len(_XL.get(l, {})) >= .85 * len(TX)]   # missing keys fall back to English
 LANG_OPTS = "".join(f'<option value="{l}" lang="{l}">{l.upper()}</option>' for l in LANGS_ON)
 # ------------------------------------------------------------------ category films v2 (catfilms/: plans, cuts; catfilms/site_media.py encodes)
 CF_PLAN = "/home/user/3p4e/projects/b2b-studio/catfilms/plan"
