@@ -4,7 +4,7 @@
 - Who to contact: **Sales Director / Marketing Manager (Foton importer)**
 - Private page (LTX films only): [PITCH_PAGE_LINK]
 - Offer PDF: on the page (button), or attach `offers_pdf/05_foton_MK_offer.pdf`
-- Films: Tunland V9: моќ и спецификации (42 сек.), Foton: целата палета (63 сек.)
+- Films: Tunland V9: моќ и спецификации (48 сек.), Foton: целата палета (58 сек., само Tunland)
 
 ## 1. Е-пошта (day 0)
 **Наслов:** Foton Македонија: два кратки AI филма, направени само за вас (концепт)

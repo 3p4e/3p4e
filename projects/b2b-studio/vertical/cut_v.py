@@ -76,11 +76,10 @@ def build(name):
             p = f"{TMP}/{name}_{i}.mp4"; seg(f"{VCLIPS}/v_fs{i}.mp4", d, p, caps[i - 1]); parts.append(p)
         title, tagline, xf = "FOTON · TUNLAND V9", "Закажи тест возење.", 0.4
     else:
-        sys.path.insert(0, f"{S}/vo"); from batch2 import CUTS
-        c = [c for c in CUTS if c[0] == name][0]; shots, trim = c[6], (c[8] if len(c) > 8 else None); li = 0
-        for i, (cid, line) in enumerate(shots):   # 16:9 rule (cut2.py seg2)
-            vo = None
-            if line: li += 1; vo = f"{TR}/b2_{name}_{li}.wav"
+        # the Tunland-only shot list of the 16:9 film (showreel_tunland.py), original voice-over takes
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); from showreel_tunland import shots as tunland_shots
+        c, sh = tunland_shots(); trim = c[8] if len(c) > 8 else None
+        for i, (cid, vo) in enumerate(sh):   # 16:9 rule (cut2.py seg2)
             src16 = first_existing(f"{S}/ltx610/{cid}.mp4", f"{S}/ltx25/{cid}.mp4"); vd = dur(vo) if vo else 0
             d = max(dur(src16), vd + 0.9)
             if trim: d = max(trim, vd + 0.9) if vo else trim
