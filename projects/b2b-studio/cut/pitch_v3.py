@@ -110,6 +110,8 @@ def campaign(c, s):
 # films with a native vertical version (generated for 9:16, not the 16:9 film on a blurred background): id -> (file, poster)
 NATIVE_V = {"foton_tunland_v9_specs": ("foton_tunland_v9_specs_9x16.mp4", "foton_tunland_v9_specs_9x16.jpg"),   # vertical/ pilot 2026-11-26
             "foton_showreel_v2": ("foton_showreel_v2_9x16.mp4", "foton_showreel_v2_9x16.jpg")}
+_NV = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "vertical", "native_v.json")   # the 11 other companies' films, as uploaded (vertical/upload_v.py)
+if os.path.exists(_NV): NATIVE_V.update({k: (f"{k}_9x16.mp4", f"{k}_9x16.jpg") for k in json.load(open(_NV))})
 def build(key, out):
     c = COMPANIES[key](); s = dict(T[c["lang"]]); n_f = len(c["films"]); name = E(c["name"])
     for f in c["films"]:   # drop blur-fill 9:16 files
