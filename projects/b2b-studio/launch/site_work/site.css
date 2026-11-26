@@ -422,3 +422,11 @@ body.lb-open,body.menu-open{overflow:hidden}
 .brand .lfx{width:86px;height:56px}
 @media(max-width:400px){.brand .lfx{width:72px;height:48px}}
 @media(max-width:340px){.brand .lfx{width:58px;height:38px}}
+/* header logo v3 fix (owner, 2026-11-26): the mark and every effect stay inside the 70 px nav strip (nothing cut at the top or
+   spilling onto the content below); wordmark left-aligned and vertically centred on the mark */
+.brand{align-items:center;gap:8px}
+.brand .lfx{width:74px;height:52px}
+.brand .lfx-in{inset:-6px -8px;overflow:hidden;border-radius:10px}
+.brand .bt{justify-content:center;align-items:flex-start;text-align:left}
+@media(max-width:400px){.brand .lfx{width:62px;height:44px}.brand .lfx-in{inset:-4px -6px}}
+@media(max-width:340px){.brand .lfx{width:52px;height:37px}}

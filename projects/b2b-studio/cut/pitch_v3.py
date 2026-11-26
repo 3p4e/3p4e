@@ -113,8 +113,9 @@ def build(key, out):
     offer = re.search(r'<section id="offer".*?</section>', old, re.S).group(0)
     # BD gallery and splash playlist (public files on bigdogma.tech)
     tl = lambda key, v: (v if c["lang"] == "mk" else (XL.get(c["lang"], {}).get(key, "BD · " + v[1])[5:], v[1]))
-    bd = [(f"{SITE}/media/intro/{k}", tl(f"bd_{k}.t", v), "f") for k, v in BDT.FILMS.items()] + [(f"{SITE}/media/bd/{k}", tl(f"bdx_{k}.t", v), "x") for k, v in BDT.FX.items()]
-    intro = [f"{SITE}/media/intro/{k}.mp4" for k in BDT.FILMS]
+    live = lambda rel: os.path.exists(f"{SCR}/launch/site/{rel}.mp4")
+    bd = [(f"{SITE}/media/intro/{k}", tl(f"bd_{k}.t", v), "f") for k, v in BDT.FILMS.items() if live(f"media/intro/{k}")] + [(f"{SITE}/media/bd/{k}", tl(f"bdx_{k}.t", v), "x") for k, v in BDT.FX.items()]
+    intro = [f"{SITE}/media/intro/{k}.mp4" for k in BDT.FILMS if os.path.exists(f"{SCR}/launch/site/media/intro/{k}.mp4")]
     # industry films (bigdogma.tech, category films v2)
     ind = []
     for cat in c["industry"]:
@@ -152,8 +153,8 @@ body.lock{{overflow:hidden}}a{{color:inherit}}img,video{{max-width:100%;display:
 /* nav + header logo (same engine as bigdogma.tech) */
 .nav{{position:fixed;top:0;left:0;right:0;z-index:30;transition:background .3s}}.nav.s{{background:rgba(11,11,13,.86);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}}
 .nav .wrap{{display:flex;align-items:center;gap:18px;height:72px}}
-.brand{{display:flex;align-items:center;gap:6px;text-decoration:none;flex:none}}.brand .lfx{{position:relative;display:block;width:86px;height:56px}}.brand .lfx-in{{position:absolute;inset:-27% -22%;pointer-events:none}}
-.brand .bt{{display:flex;flex-direction:column;line-height:.92;gap:1px}}.brand .bt b{{font:400 19px R,sans-serif;letter-spacing:.11em}}
+.brand{{display:flex;align-items:center;gap:8px;text-decoration:none;flex:none}}.brand .lfx{{position:relative;display:block;width:74px;height:52px}}.brand .lfx-in{{position:absolute;inset:-6px -8px;pointer-events:none;overflow:hidden;border-radius:10px}}
+.brand .bt{{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;text-align:left;line-height:.92;gap:1px}}.brand .bt b{{font:400 19px R,sans-serif;letter-spacing:.11em}}
 .brand .bt small{{font:700 8.5px/1.2 M,sans-serif;letter-spacing:.2em;color:var(--ac);margin-top:3px;white-space:nowrap}}.sep{{display:inline-block;width:1px;height:.95em;background:currentColor;opacity:.7;margin:0 .55em;vertical-align:-.12em}}
 .links{{display:flex;gap:20px;margin-left:auto;font-weight:600;font-size:14.5px}}.links a{{text-decoration:none;opacity:.86}}.links a:hover{{opacity:1;color:var(--ac)}}
 .btn{{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:13px 24px;font:700 15px M,sans-serif;text-decoration:none;border:0;cursor:pointer}}
@@ -161,7 +162,7 @@ body.lock{{overflow:hidden}}a{{color:inherit}}img,video{{max-width:100%;display:
 @keyframes pulse{{70%{{box-shadow:0 0 0 14px rgba(242,193,78,0)}}100%{{box-shadow:0 0 0 0 rgba(242,193,78,0)}}}}
 .nav .btn{{padding:10px 18px;font-size:14px}}
 @media(max-width:980px){{.links{{display:none}}.nav .btn{{margin-left:auto}}}}
-@media(max-width:420px){{.brand .bt b{{font-size:16px}}.brand .lfx{{width:72px;height:48px}}.nav .btn{{padding:9px 13px;font-size:13px}}}}
+@media(max-width:420px){{.brand .bt b{{font-size:16px}}.brand .lfx{{width:62px;height:44px}}.nav .btn{{padding:9px 13px;font-size:13px}}}}
 /* splash */
 #splash{{position:fixed;inset:0;z-index:20;background:#000;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;transition:opacity .9s .25s,visibility 0s 1.2s}}
 #splash.out{{opacity:0;visibility:hidden}}#splash video{{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none;transition:opacity 1s}}
@@ -234,7 +235,7 @@ dialog .x{{position:absolute;right:0;top:-44px;background:none;border:0;color:#f
 {offer.replace('<section id="offer"', '<section id="offer" ')}
 <section class="alt"><div class="wrap"><div class="eyebrow rv">{E(s["i_e"])}</div><h2 class="sh rv">{E(s["i_h"])}</h2><p class="sp rv">{E(s["i_p"])}</p><ul class="grid">{indc}</ul></div></section>
 <section id="bd"><div class="wrap"><div class="eyebrow rv">{E(s["b_e"])}</div><h2 class="sh rv">{E(s["b_h"])}</h2><p class="sp rv">{E(s["b_p"].format(n=len(bd)))}</p>
-<div class="chips" role="group"><button type="button" data-k="all" aria-pressed="true">{E(s["b_all"])} {len(bd)}</button><button type="button" data-k="f" aria-pressed="false">{E(s["b_f"])} {len(BDT.FILMS)}</button><button type="button" data-k="x" aria-pressed="false">{E(s["b_x"])} {len(BDT.FX)}</button></div>
+<div class="chips" role="group"><button type="button" data-k="all" aria-pressed="true">{E(s["b_all"])} {len(bd)}</button><button type="button" data-k="f" aria-pressed="false">{E(s["b_f"])} {sum(1 for x in bd if x[2] == "f")}</button><button type="button" data-k="x" aria-pressed="false">{E(s["b_x"])} {len(BDT.FX)}</button></div>
 <ul class="grid" id="bdg">{bdc}</ul></div></section>
 <section class="end"><div class="wrap"><h2 class="sh rv">{E(s["end_h"])}</h2><p class="sp rv" style="margin:0 auto 26px">{E(s["end_p"])}</p><div class="btns"><a class="btn a" href="{mailto}">{E(s["cta"])}</a><a class="btn b" href="mailto:{MAIL}">{E(s["mail"])}: {MAIL}</a></div></div></section>
 </main>

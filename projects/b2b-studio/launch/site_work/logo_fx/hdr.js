@@ -6,12 +6,12 @@
   var el = document.querySelector('.brand .lfx-in'); if (!el) return;
   var CL = (window.DOGMA_HDR || []).slice(), BASE = window.DOGMA_HDR_BASE || 'logo_fx/hdr/', fx = null;   // pitch pages load the loops from bigdogma.tech
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches, save = navigator.connection && navigator.connection.saveData;
-  if (window.DogmaLogoFX) fx = DogmaLogoFX.mount(el, { text: '', pad: .1, padY: .14, res: 70, dur: .6, fixed: 4.6, minMark: .55, skip: ['text'], mode: 'random' });
+  if (window.DogmaLogoFX) fx = DogmaLogoFX.mount(el, { text: '', pad: .08, padY: .1, res: 70, dur: .6, fixed: 4.6, minMark: .55, skip: ['text'], mode: 'random' });
   if (reduce || !fx || !fx.pause) return;
   if (save) CL = [];
   function mk(z) { var c = document.createElement('canvas'); c.setAttribute('aria-hidden', 'true'); c.style.cssText = 'position:absolute;pointer-events:none;display:block;' + z; el.appendChild(c); return c; }
-  var cv = mk('inset:-6% -9%;width:118%;height:112%;opacity:0'), c = cv.getContext('2d', { willReadFrequently: true });
-  var bv = mk('inset:-30%;width:160%;height:160%;z-index:2'), b = bv.getContext('2d');   // burst layer, larger than the slot
+  var cv = mk('inset:-4% -6%;width:112%;height:108%;opacity:0'), c = cv.getContext('2d', { willReadFrequently: true });
+  var bv = mk('inset:0;width:100%;height:100%;z-index:2'), b = bv.getContext('2d');   // burst layer, larger than the slot
   var vids = [0, 1].map(function () { var v = document.createElement('video'); v.muted = v.defaultMuted = true; v.playsInline = true; v.setAttribute('playsinline', ''); v.setAttribute('muted', ''); v.preload = 'auto'; v.crossOrigin = 'anonymous'; return v; });
   var cur = null, mode = '', segEnd = 0, swapped = false, nextKind = '', last = '', tStyle = 0, parts = [], t0 = performance.now();
   var STY = ['flash', 'burst', 'ring', 'swirl', 'bolt'], GOLD = [242, 193, 78];

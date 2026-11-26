@@ -1,22 +1,129 @@
-{"for_": "Përgatitur për", "lead": "Studio video AI nga Shkupi. Reklama dhe filma të markës pa xhirime: gati për 7–10 ditë pas miratimit të kuadrove kryesore.",
- "pts": ["{n} filma AI të bërë vetëm për ju", "Fushatë e gatshme për 4 javë", "16:9 dhe 9:16 për të gjitha kanalet"], "enter": "Hapni prezantimin",
+{
+ "for_": "Përgatitur për",
+ "lead": "Studio video AI nga Shkupi. Reklama dhe filma për marka pa xhirime: gati për 7–10 ditë pas miratimit të kuadrove kryesore.",
+ "pts": [
+  "{n} filma AI të bërë vetëm për ju",
+  "Fushatë e gatshme për 4 javë",
+  "16:9 dhe 9:16 për të gjitha kanalet"
+ ],
+ "enter": "Hapni prezantimin",
  "scroll": "Të gjitha kuadrot në këtë faqe janë gjeneruar me AI.",
- "nav": [["films", "Filma"], ["shots", "Kuadro"], ["campaign", "Fushata"], ["offer", "Oferta"], ["bd", "Galeria BD"]], "cta": "Rezervoni 15 minuta",
- "h1": "Video-koncept për <em>{c}</em>", "sub": "Gjithçka në këtë faqe është bërë me AI posaçërisht për ju: filma, versione vertikale, kuadro, kuadro kryesore dhe fushatë.",
- "f_e": "Filma", "f_h": "{n} filma për {c}", "f_p": "Çdo film ekziston horizontalisht (YouTube, ekrane) dhe vertikalisht (Reels, TikTok, Stories).",
- "h169": "16:9", "v916": "9:16", "play": "Luaj",
- "v_e": "Vertikal 9:16", "v_h": "Gati për telefon", "v_p": "Të njëjtët filma për Reels, TikTok dhe Stories, plus teaser GIF për mesazh ose email.", "gif": "Teaser · GIF",
- "s_e": "Çdo kuadër", "s_h": "Të gjitha kuadrot AI", "s_p": "{n} kuadro të gjeneruara posaçërisht për {c}. Kaloni me maus (ose prekni) që të gjallërohen.", "mont": "Të gjitha kuadrot në një montazh",
- "k_e": "Procesi AI", "k_h": "Nga kuadri kryesor te lëvizja", "k_p": "Fillimisht miratoni kuadrin statik, pastaj AI e animon. Tërhiqni për të krahasuar.", "img": "Imazh", "vid": "Video AI",
- "a_e": "Koncepti tjetër", "a_h": "Kuadro kryesore aksioni", "a_p": "Kuadro kryesore për filmin e radhës, gati për miratimin tuaj para animacionit.",
- "c_e": "Paketa e marketingut", "c_h": "Fushatë 4-javore, gati për publikim", "c_p": "Plan sipas kanaleve me tekste dhe hashtag-ë të gatshëm. I publikoni ju ose ne.",
- "c_cols": ["Dita", "Kanali", "Formati", "Filmi", "Teksti i postimit"], "week": "Java", "c_bud": "Promovim me pagesë (Meta + YouTube)", "c_kpi": "Çfarë matim",
- "bud": [["Start", "€300 / muaj", "Targetim: vendi juaj, 25–60, interesa sipas veprimtarisë suaj; ritargetim i shikuesve."], ["Rritje", "€600 / muaj", "+ YouTube in-stream, audiencë lookalike, test A/B me 3 kuadro."], ["Lider", "€1.200 / muaj", "+ të gjitha formatet, fushata sezonale, raport mujor."]],
- "kpi": ["Shtrirja dhe shikimet (ThruPlay)", "Klikime drejt faqes ose telefonit tuaj", "Kërkesa për ofertë", "Kosto për kontakt"],
- "o_e": "Oferta", "i_e": "Nga industria juaj", "i_h": "Më shumë filma AI nga industria juaj", "i_p": "Shembuj nga studioja jonë që mund t'i përshtatim për ju.",
- "b_e": "Galeria BD", "b_h": "Çfarë mund të bëjë AI me një logo", "b_p": "{n} filma dhe efekte me logon tonë: materiale, dritë, natyrë, magji. Të njëjtën mund ta bëjmë për logon tuaj.",
- "b_all": "Të gjitha", "b_f": "Filma logo", "b_x": "Efekte logo", "b_f1": "Film logo", "b_x1": "Efekt logo",
- "end_h": "Hapi tjetër: bisedë 15 minuta", "end_p": "Takim ose online. Na tregoni cili film ju pëlqen më shumë: e përshtatim për fushatën tuaj.",
- "mail": "Na shkruani", "legal": "Koncept vetëm për prezantim. Nuk është publikuar dhe nuk do të publikohet pa miratimin tuaj të shprehur me shkrim. Videot janë bërë me inteligjencë artificiale. Logot dhe markat u përkasin pronarëve të tyre.",
- "close": "Mbyll", "subj": "{c} - Rezervoni 15 minuta", "days": ["Hën", "Mar", "Mër", "Enj", "Pre", "Sht", "Die"], "more": "Më shumë në",
- "ind_types": {"social": "9:16", "explainer": "Shpjegues", "story": "Histori", "transform": "Para / pas"}, "ai_film": "Film AI"}
+ "nav": [
+  [
+   "films",
+   "Filma"
+  ],
+  [
+   "shots",
+   "Kuadro"
+  ],
+  [
+   "campaign",
+   "Fushata"
+  ],
+  [
+   "offer",
+   "Oferta"
+  ],
+  [
+   "bd",
+   "Galeria BD"
+  ]
+ ],
+ "cta": "Rezervoni 15 minuta",
+ "h1": "Video-koncept për <em>{c}</em>",
+ "sub": "Gjithçka në këtë faqe është bërë me AI posaçërisht për ju: filma, versione vertikale, kuadro, kuadro kryesore dhe fushatë.",
+ "f_e": "Filma",
+ "f_h": "{n} filma për {c}",
+ "f_p": "Çdo film është i disponueshëm në format horizontal (YouTube, ekrane) dhe vertikal (Reels, TikTok, Stories).",
+ "h169": "16:9",
+ "v916": "9:16",
+ "play": "Luaj",
+ "v_e": "Vertikal 9:16",
+ "v_h": "Gati për celular",
+ "v_p": "Të njëjtët filma për Reels, TikTok dhe Stories, plus GIF ngacmues për mesazhe ose email.",
+ "gif": "Teaser · GIF",
+ "s_e": "Çdo kuadër",
+ "s_h": "Të gjitha kuadrot AI",
+ "s_p": "{n} kuadro të gjeneruara posaçërisht për {c}. Kaloni mausin sipër (ose prekni) që të animohen.",
+ "mont": "Të gjitha kuadrot në një montazh",
+ "k_e": "Procesi AI",
+ "k_h": "Nga kuadri kryesor tek animacioni",
+ "k_p": "Fillimisht miratoni kuadrin statik, pastaj AI e animon. Tërhiqni për të krahasuar.",
+ "img": "Imazh",
+ "vid": "Video AI",
+ "a_e": "Koncepti tjetër",
+ "a_h": "Kuadro kryesore të aksionit",
+ "a_p": "Kuadro kryesore për filmin e radhës, gati për miratimin tuaj para animacionit.",
+ "c_e": "Paketa e marketingut",
+ "c_h": "Fushatë 4-javore, gati për publikim",
+ "c_p": "Plan sipas kanaleve me tekste dhe hashtage të gatshme. Mund t'i publikoni ju ose ne.",
+ "c_cols": [
+  "Dita",
+  "Kanali",
+  "Formati",
+  "Filmi",
+  "Teksti i postimit"
+ ],
+ "week": "Java",
+ "c_bud": "Promovim me pagesë (Meta + YouTube)",
+ "c_kpi": "Çfarë matim",
+ "bud": [
+  [
+   "Start",
+   "€300 / muaj",
+   "Targetim: vendi juaj, 25–60 vjeç, interesa të lidhura me biznesin tuaj; ritargetim i shikuesve."
+  ],
+  [
+   "Rritje",
+   "€600 / muaj",
+   "+ YouTube in-stream, audiencë lookalike, test A/B me 3 kuadro."
+  ],
+  [
+   "Lider",
+   "€1.200 / muaj",
+   "+ të gjitha formatet, fushata sezonale, raport mujor."
+  ]
+ ],
+ "kpi": [
+  "Shtrirja dhe shikimet (ThruPlay)",
+  "Klikime në faqen ose telefonin tuaj",
+  "Kërkesa për ofertë",
+  "Kostoja për kontakt"
+ ],
+ "o_e": "Oferta",
+ "i_e": "Nga industria juaj",
+ "i_h": "Më shumë filma AI nga industria juaj",
+ "i_p": "Shembuj nga studioja jonë që mund t'i përshtatim për ju.",
+ "b_e": "Galeria BD",
+ "b_h": "Çfarë mund të bëjë AI me një logo",
+ "b_p": "{n} filma dhe efekte me logon tonë: materiale, dritë, natyrë, magji. Të njëjtën gjë mund ta bëjmë për logon tuaj.",
+ "b_all": "Të gjitha",
+ "b_f": "Filma me logo",
+ "b_x": "Efekte me logo",
+ "b_f1": "Film me logo",
+ "b_x1": "Efekt me logo",
+ "end_h": "Hapi tjetër: bisedë 15-minutëshe",
+ "end_p": "Takim fizik ose online. Na tregoni cili film ju pëlqen më shumë dhe ne e përshtatim për fushatën tuaj.",
+ "mail": "Na shkruani",
+ "legal": "Koncept vetëm për prezantim. Nuk është publikuar dhe nuk do të publikohet pa miratimin tuaj të shprehur me shkrim. Videot janë bërë me inteligjencë artificiale. Logot dhe markat u përkasin pronarëve të tyre.",
+ "close": "Mbyll",
+ "subj": "{c} - Rezervoni 15 minuta",
+ "days": [
+  "Hën",
+  "Mar",
+  "Mër",
+  "Enj",
+  "Pre",
+  "Sht",
+  "Die"
+ ],
+ "more": "Më shumë në",
+ "ind_types": {
+  "social": "9:16",
+  "explainer": "Shpjegues",
+  "story": "Histori",
+  "transform": "Para / pas"
+ },
+ "ai_film": "Film AI"
+}
