@@ -77,9 +77,9 @@ def note(t):
 def signature(s):   # Name, the role under it (smaller, grey), the BD lockup, then contacts
     who = (f'<p class="xfg" style="margin:0;font:700 15px/1.4 {T["font"]};color:{T["fg"]}">{E(s["name"])}</p>' if s.get("name") else "")
     if s.get("role"): who += f'<p class="xmu" style="margin:1px 0 0;font:13px/1.4 {T["font"]};color:{T["mu"]}">{E(s["role"])}</p>'
-    return (f'<table role="presentation" cellpadding="0" cellspacing="0" style="margin:8px 0 0;width:100%"><tr><td class="xln" style="padding-top:18px;border-top:1px solid {T["line"]}">'
+    return (f'<table role="presentation" cellpadding="0" cellspacing="0" style="margin:0;width:100%"><tr><td style="padding-top:2px">'
             + (f'<div style="margin:0 0 12px">{who}</div>' if who else "")
-            + logo("bd_logo_sig", 150, 58) +
+            + logo("bd_logo_sig", 170, 65) +
             f'<p class="xmu" style="margin:10px 0 0;font:13px/1.5 {T["font"]};color:{T["mu"]}">'
             f'<a href="mailto:inf.unit@bigdogma.tech" class="xmu" style="color:{T["mu"]};text-decoration:none">inf.unit@bigdogma.tech</a> &middot; '
             f'<a href="https://bigdogma.tech" class="xmu" style="color:{T["mu"]};text-decoration:none">bigdogma.tech</a></p></td></tr></table>')
@@ -98,7 +98,8 @@ def render(c):
     body += button(c["cta"]["label"], link)
     body += "".join(para(p, link) for p in c["paras"][2:])
     if c.get("note"): body += note(c["note"])
-    body += para(c.get("closing", "Со почит,")) + signature(c["sign"])
+    body += (f'<p class="xfg" style="margin:6px 0 10px;font:{T["size"]}/{T["lh"]} {T["font"]};color:{T["fg"]}">{E(c.get("closing", "Со почит,"))}</p>'
+             + signature(c["sign"]))
     pre = (f'<div style="display:none;max-height:0;overflow:hidden;opacity:0;color:transparent">{E(c["preheader"])}'
            + "&#847; &zwnj; " * 40 + '</div>')
     html = f'''<!doctype html><html lang="{c["lang"]}" xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8">
