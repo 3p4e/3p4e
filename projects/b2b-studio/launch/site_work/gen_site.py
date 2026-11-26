@@ -257,8 +257,8 @@ for _p in sorted(glob.glob(f"{CF_PLAN}/*.json"), key=lambda p: json.load(open(p)
         CF.append(f); TX[f"{f['id']}.t"] = (f["title_mk"], f["title_en"]); TX[f"{f['id']}.l"] = (f["line_mk"], f["line_en"])
         TX[f"{f['id']}.alt"] = (f"{f['title_mk']}: кадар од AI филмот", f"{f['title_en']}: a frame from the AI film")
 TX.update({"cf.e": ("Нови AI филмови", "New AI films"), "cf.h": (f"{len(CF)} филмови за {len(CF_CATS)} индустрии + BD лого", f"{len(CF)} films for {len(CF_CATS)} industries + the BD logo"),
-           "cf.p": ("Пет формати за секоја индустрија: реклами од 30 секунди, социјална реклама 9:16, објаснувачки филм, приказна за брендот и пред/потоа. Изберете индустрија: и позадината горе се менува.",
-                    "Five formats for every industry: 30-second commercials, a 9:16 social ad, an explainer, a brand story and a before/after. Pick an industry: the background at the top changes with it."),
+           "cf.p": ("Пет формати за секоја индустрија: реклами од 30 секунди, социјална реклама 9:16, објаснувачки филм, приказна за брендот и пред/потоа. Изберете индустрија.",
+                    "Five formats for every industry: 30-second commercials, a 9:16 social ad, an explainer, a brand story and a before/after. Pick an industry."),
            "cf.filter": ("Филтер по индустрија", "Filter by industry"),
            "ty.social": ("Социјална 9:16", "Social 9:16"), "ty.explainer": ("Објаснувачки", "Explainer"), "ty.story": ("Приказна", "Brand story"), "ty.transform": ("Пред / потоа", "Before / after"), "ty.commercial": ("Реклама", "Commercial")})
 # "BD logo" gallery (owner, 2026-11-26): every AI logo film (media/intro) and logo-only effect (media/bd), with the industry films
@@ -397,6 +397,7 @@ PAGE = f"""<!doctype html>
 <script>try{{var l=new URLSearchParams(location.search).get('lang')||localStorage.getItem('bd_lang');if(l&&l!=='mk'&&['en','sq','sr','hr','sl','bg','zh'].indexOf(l)>=0){{var d=document.documentElement;d.classList.add('l-en');setTimeout(function(){{d.classList.add('i18n')}},2500)}}}}catch(e){{}}</script>
 </head>
 <body>
+<div id="bdbg" aria-hidden="true"><video autoplay muted loop playsinline preload="auto" poster="{u('media/hero.jpg')}" aria-hidden="true" tabindex="-1"><source src="{u('media/hero.mp4')}" type="video/mp4"></video></div>
 <a class="skip" href="#main" @="skip"></a>
 <span hidden @="pre.skip"></span>
 <div class="aurora" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="grain" aria-hidden="true"></div><div class="spot" aria-hidden="true"></div>
@@ -415,7 +416,6 @@ PAGE = f"""<!doctype html>
 </nav>
 
 <header class="hero" id="top">
- <video autoplay muted loop playsinline preload="auto" poster="{u('media/hero.jpg')}" aria-hidden="true" tabindex="-1"><source src="{u('media/hero.mp4')}" type="video/mp4"></video>
  <canvas class="embers" aria-hidden="true"></canvas>
  <div class="hud" aria-hidden="true"><i class="c c1"></i><i class="c c2"></i><i class="c c3"></i><i class="c c4"></i><div class="scan"></div>
   <div class="tag"><span class="rec"></span><span @="hud.tag"></span></div><div class="tc">TC 00:00:00:00</div>

@@ -465,3 +465,14 @@ html:lang(zh) h1,html:lang(zh) h2,html:lang(zh) h3{letter-spacing:0;word-break:n
 /* first visit: black cover from the first paint until the film reel (reel.js) is up; CSS lifts it after 4 s if a script fails */
 .reel1 body::after{content:"";position:fixed;inset:0;z-index:199;background:#000;animation:reelCover .5s 4s forwards}
 @keyframes reelCover{to{opacity:0;visibility:hidden}}
+
+/* BD logo films behind the whole page (owner, 2026-11-26: "always the BD logo videos in the background, like on the top of the page"):
+   a fixed layer under everything; the hero shows it as before, the sections below lie over it as a dark translucent panel for reading. */
+body{background:transparent}
+#bdbg{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none;background:#000 url(media/hero.jpg) center/cover no-repeat}
+#bdbg video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none}
+.hero{background:transparent}
+.hero::after{background:linear-gradient(180deg,rgba(13,13,15,.6) 0%,rgba(13,13,15,.08) 26%,rgba(13,13,15,.2) 52%,rgba(13,13,15,.62) 88%,rgba(13,13,15,.7) 100%),radial-gradient(ellipse 70% 60% at 18% 82%,rgba(13,13,15,.55),transparent 70%)}
+main>section:not(.hero),body>section:not(.hero){background:rgba(13,13,15,.58)}
+main>section:not(.hero) :is(h2,h3,p,.eyebrow,.sh,.sp,li){text-shadow:0 1px 14px rgba(0,0,0,.55),0 1px 2px rgba(0,0,0,.4)}
+.foot{background:rgba(13,13,15,.82)}

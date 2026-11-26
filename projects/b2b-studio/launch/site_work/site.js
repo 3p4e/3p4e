@@ -28,10 +28,11 @@
   }
   $$('.langsel').forEach(x => x.addEventListener('change', () => apply(x.value, true)));
 
-  // ---------- BD reel (owner, 2026-11-26): all BD videos (logo films + logo effects) in random rotation with the header transition, no text,
-  // as the first-visit splash and as a screensaver after 3 minutes without input (reel.js)
+  // ---------- BD splash (owner, 2026-11-26): the BD logo films in random rotation with the header transition, no text, on the first visit
+  // only (reel.js). No logo-effect animations and no screensaver (owner: "discontinue the screensaver"); the logo films play behind the whole
+  // page instead (logo_fx/hero_bg.js).
   if (window.BDReel) {
-    const reelList = () => BDReel.all('', FILMS.filter(f => /^bd_/.test(f.id)).map(f => f.src.replace('media/intro/', 'media/lite/intro/').replace(/\?.*$/, '')));   // light copies (the gallery keeps full quality)
+    const reelList = () => FILMS.filter(f => /^bd_/.test(f.id)).map(f => f.src.replace(/\?.*$/, '')).map(u => ({ src: u.replace('media/intro/', 'media/lite/intro/'), poster: u.replace(/\.mp4$/, '.jpg') }));   // light copies (the gallery keeps full quality)
     const H = document.documentElement;
     const whenReady = f => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', f) : setTimeout(f, 0);
     if (H.classList.contains('reel1')) whenReady(() => {   // after every script (mark geometry, effect boxes) and the initial language
@@ -39,7 +40,6 @@
       const shown = BDReel.splash(reelList(), t('pre.skip') || 'Skip', 12000);
       setTimeout(() => H.classList.remove('reel1'), shown ? 900 : 0);
     });
-    BDReel.idle(reelList, 180000);
   } else document.documentElement.classList.remove('reel1');
 
   // ---------- mobile menu
