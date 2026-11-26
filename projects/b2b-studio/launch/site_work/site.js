@@ -17,7 +17,8 @@
     $$('[data-ia]').forEach(e => e.dataset.ia.split(';').forEach(p => { const [a, k] = p.split(':'); e.setAttribute(a, t(k)); }));
     document.documentElement.classList.add('i18n');   // site.css hides the MK text of a ?lang=en visit until this point
     $$('.langsel').forEach(x => { x.value = lang; });
-    const og = $('meta[property="og:locale"]'); if (og) og.content = { mk: 'mk_MK', en: 'en_GB', sq: 'sq_AL', sr: 'sr_RS', hr: 'hr_HR', sl: 'sl_SI', bg: 'bg_BG' }[lang] || 'mk_MK';
+    if (window.BD_LANGDD) window.BD_LANGDD(lang);
+    const og = $('meta[property="og:locale"]'); if (og) og.content = { mk: 'mk_MK', en: 'en_GB', sq: 'sq_AL', sr: 'sr_RS', hr: 'hr_HR', sl: 'sl_SI', bg: 'bg_BG', zh: 'zh_CN' }[lang] || 'mk_MK';
     // hero HUD prompt: the status span has no data-i (it is driven by data-gen / data-done); on a switch the prompt is retyped
     // at once in the new language instead of keeping the old text until the next 5 s cycle
     if (save && window.BD_HUD) window.BD_HUD.restart(); else { const hs = $('.hud .st'); if (hs) hs.textContent = hs.dataset.gen; }
@@ -179,10 +180,37 @@
 
   // ---------- initial language: ?lang= beats the saved choice, MK is the default
   let l0 = 'mk';
-  try { const q = new URLSearchParams(location.search).get('lang'); l0 = ['mk', 'en', 'sq', 'sr', 'hr', 'sl', 'bg'].includes(q) ? q : (localStorage.getItem('bd_lang') || 'mk'); } catch (e) {}
+  try { const q = new URLSearchParams(location.search).get('lang'); l0 = ['mk', 'en', 'sq', 'sr', 'hr', 'sl', 'bg', 'zh'].includes(q) ? q : (localStorage.getItem('bd_lang') || 'mk'); } catch (e) {}
   apply(l0, false);
 })();
 
 // films are for viewing on this site only (owner, 2026-11-26): no "save video as" menu and no dragging on videos and film cards
 document.addEventListener('contextmenu', e => { if (e.target.closest && e.target.closest('video, .fc, .gal, .bstage, .cmp')) e.preventDefault(); });
 document.addEventListener('dragstart', e => { if (e.target.tagName === 'VIDEO' || (e.target.closest && e.target.closest('.fc'))) e.preventDefault(); });
+
+// ---------- language menu with flags (owner, 2026-11-26): button + list over the native select, which stays the source of truth
+(function () {
+  const NAMES = { mk: 'Македонски', en: 'English', sq: 'Shqip', sr: 'Srpski', hr: 'Hrvatski', sl: 'Slovenščina', bg: 'Български', zh: '中文' };
+  document.querySelectorAll('.langsel').forEach(sel => {
+    const box = sel.closest('.lang'); if (!box) return; box.classList.add('dd');
+    const btn = document.createElement('button'); btn.type = 'button'; btn.className = 'ldb'; btn.setAttribute('aria-haspopup', 'listbox'); btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', sel.getAttribute('aria-label') || 'Language');
+    const ul = document.createElement('ul'); ul.className = 'ldl'; ul.setAttribute('role', 'listbox'); ul.hidden = true;
+    [...sel.options].forEach(o => { const li = document.createElement('li'); li.setAttribute('role', 'option'); li.tabIndex = -1; li.dataset.v = o.value; li.lang = o.value;
+      li.innerHTML = '<i class="fl fl-' + o.value + '"></i><b>' + o.value.toUpperCase() + '</b><span>' + (NAMES[o.value] || '') + '</span>'; ul.appendChild(li); });
+    box.appendChild(btn); box.appendChild(ul);
+    const show = v => { btn.innerHTML = '<i class="fl fl-' + v + '"></i><b>' + v.toUpperCase() + '</b>'; ul.querySelectorAll('li').forEach(li => li.setAttribute('aria-selected', String(li.dataset.v === v))); };
+    const open = o => { ul.hidden = !o; btn.setAttribute('aria-expanded', String(o)); if (o) (ul.querySelector('[aria-selected="true"]') || ul.firstChild).focus(); };
+    const pick = v => { open(false); btn.focus(); if (sel.value !== v) { sel.value = v; sel.dispatchEvent(new Event('change')); } show(v); };
+    btn.addEventListener('click', e => { e.stopPropagation(); open(ul.hidden); });
+    ul.addEventListener('click', e => { const li = e.target.closest('li'); if (li) pick(li.dataset.v); });
+    ul.addEventListener('keydown', e => { const items = [...ul.children], i = items.indexOf(document.activeElement);
+      if (e.key === 'ArrowDown') { e.preventDefault(); items[Math.min(items.length - 1, i + 1)].focus(); }
+      else if (e.key === 'ArrowUp') { e.preventDefault(); items[Math.max(0, i - 1)].focus(); }
+      else if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if (i >= 0) pick(items[i].dataset.v); }
+      else if (e.key === 'Escape' || e.key === 'Tab') { open(false); if (e.key === 'Escape') btn.focus(); } });
+    document.addEventListener('click', e => { if (!box.contains(e.target)) open(false); });
+    show(sel.value);
+    const prev = window.BD_LANGDD; window.BD_LANGDD = v => { if (prev) prev(v); show(v); };
+  });
+})();

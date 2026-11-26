@@ -244,7 +244,7 @@ def u(rel):
 mk = lambda k: TX[k][0]
 # language menu: MK and EN always; sq/sr/hr/sl/bg once translate_site.py has translated at least 95 % of the strings
 _XL = json.load(open(f"{WORK}/i18n_extra.json", encoding="utf-8")) if os.path.exists(f"{WORK}/i18n_extra.json") else {}
-LANGS_ON = ["mk", "en"] + [l for l in ("sq", "sr", "hr", "sl", "bg") if len(_XL.get(l, {})) >= .85 * len(TX)]   # missing keys fall back to English
+LANGS_ON = ["mk", "en"] + [l for l in ("sq", "sr", "hr", "sl", "bg", "zh") if len(_XL.get(l, {})) >= .85 * len(TX)]   # missing keys fall back to English
 LANG_OPTS = "".join(f'<option value="{l}" lang="{l}">{l.upper()}</option>' for l in LANGS_ON)
 # ------------------------------------------------------------------ category films v2 (catfilms/: plans, cuts; catfilms/site_media.py encodes)
 CF_PLAN = "/home/user/3p4e/projects/b2b-studio/catfilms/plan"
@@ -392,7 +392,7 @@ PAGE = f"""<!doctype html>
 <link rel="stylesheet" href="fx.css?v={{V}}">
 <link rel="stylesheet" href="site.css?v={{V}}">
 <noscript><style>.pre{{display:none}}.rv{{opacity:1;transform:none}}#qf{{display:none}}</style></noscript>
-<script>try{{var l=new URLSearchParams(location.search).get('lang')||localStorage.getItem('bd_lang');if(l&&l!=='mk'&&['en','sq','sr','hr','sl','bg'].indexOf(l)>=0){{var d=document.documentElement;d.classList.add('l-en');setTimeout(function(){{d.classList.add('i18n')}},2500)}}}}catch(e){{}}</script>
+<script>try{{var l=new URLSearchParams(location.search).get('lang')||localStorage.getItem('bd_lang');if(l&&l!=='mk'&&['en','sq','sr','hr','sl','bg','zh'].indexOf(l)>=0){{var d=document.documentElement;d.classList.add('l-en');setTimeout(function(){{d.classList.add('i18n')}},2500)}}}}catch(e){{}}</script>
 </head>
 <body>
 <a class="skip" href="#main" @="skip"></a>
@@ -672,7 +672,7 @@ i18n = {"mk": {k: v[0] for k, v in TX.items()}, "en": {k: v[1] for k, v in TX.it
 # the source strings are exported here, and a key without a translation yet falls back to English
 json.dump({k: list(v) for k, v in TX.items()}, open(f"{WORK}/tx_src.json", "w", encoding="utf-8"), ensure_ascii=False, indent=0)
 _X = json.load(open(f"{WORK}/i18n_extra.json", encoding="utf-8")) if os.path.exists(f"{WORK}/i18n_extra.json") else {}
-for _l in ("sq", "sr", "hr", "sl", "bg"): i18n[_l] = {k: _X.get(_l, {}).get(k) or v[1] for k, v in TX.items()}
+for _l in ("sq", "sr", "hr", "sl", "bg", "zh"): i18n[_l] = {k: _X.get(_l, {}).get(k) or v[1] for k, v in TX.items()}
 open(f"{OUT}/i18n.js", "w", encoding="utf-8").write("window.BD_I18N=" + json.dumps(i18n, ensure_ascii=False, separators=(",", ":")) + ";\n")
 
 # fx layer: copy, with three small adaptations (re-read the HUD prompt per run so the language toggle reaches it,

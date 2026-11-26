@@ -230,7 +230,6 @@ dialog .x{{position:absolute;right:0;top:-44px;background:none;border:0;color:#f
 <section id="films"><div class="wrap"><div class="eyebrow rv">{E(s["f_e"])}</div><h2 class="sh rv">{E(s["f_h"].format(n=n_f, c=c["name"]))}</h2><p class="sp rv">{E(s["f_p"])}</p>
 <div class="fmt rv" role="group"><button type="button" data-fmt="h" aria-pressed="true">{s["h169"]}</button><button type="button" data-fmt="v" aria-pressed="false">{s["v916"]}</button></div>
 <ul class="grid" id="fg">{films}</ul></div></section>
-<section id="h3" hidden><div class="wrap"><div class="eyebrow">{E(s["h3_e"])}</div><h2 class="sh">{E(s["h3_h"].format(c=c["name"]))}</h2><p class="sp">{E(s["h3_p"])}</p><ul class="grid" id="h3g"></ul></div></section>
 <section class="alt"><div class="wrap"><div class="eyebrow rv">{E(s["v_e"])}</div><h2 class="sh rv">{E(s["v_h"])}</h2><p class="sp rv">{E(s["v_p"])}</p><ul class="vrow">{vert}</ul></div></section>
 <section id="shots"><div class="wrap"><div class="eyebrow rv">{E(s["s_e"])}</div><h2 class="sh rv">{E(s["s_h"])}</h2><p class="sp rv">{E(s["s_p"].format(n=c["shots"], c=c["name"]))}</p>
 {mont}<ul class="shots">{shots}</ul></div></section>
@@ -274,13 +273,17 @@ addEventListener('keydown',function(e){{if((e.key==='Enter'||e.key===' ')&&!sp.c
 /* films are for viewing on this page only (owner, 2026-11-26): no context menu on videos, no drag */
 document.addEventListener('contextmenu',function(e){{if(e.target.closest&&e.target.closest('video,.im,.vrow,.shots,.cmp'))e.preventDefault()}});
 document.addEventListener('dragstart',function(e){{if(e.target.tagName==='VIDEO'||e.target.tagName==='IMG')e.preventDefault()}});
-/* H3 films: only where the server serves them (geo-gated: not in the EU, UK, USA or South Korea); view-only, credited */
-fetch('h3/',{{cache:'no-store'}}).then(function(r){{return r.ok?r.json():[]}}).then(function(d){{var N={{}},T=window.H3T;
+/* H3 versions sit next to the same film (grid + 9:16 row); the server only answers h3/ outside the EU, UK, USA and South Korea */
+fetch('h3/',{{cache:'no-store'}}).then(function(r){{return r.ok?r.json():[]}}).then(function(d){{var N={{}},T=window.H3T,fg=$('#fg'),vr=$('.vrow');
  (d||[]).forEach(function(f){{var m=/^(.+?)(_9x16)?\\.mp4$/.exec(f.name);if(m){{N[m[1]]=N[m[1]]||{{}};N[m[1]][m[2]?'v':'h']=1}}}});
- var ad=function(k){{return /commercial|_ad$/.test(k)?1:0}},ks=Object.keys(N).filter(function(k){{return N[k].h}}).sort(function(a,b){{return ad(b)-ad(a)||(a<b?-1:1)}});if(!ks.length)return;var n=0;
- $('#h3g').innerHTML=ks.map(function(k){{var t=ad(k)?T.ad:T.film+' '+(++n),h='h3/'+k,dv=N[k].v?' data-v="'+h+'_9x16.mp4" data-vp="'+h+'_9x16.jpg"':'';
-  return '<li class="fc"><a href="'+h+'.mp4" data-play="'+h+'.mp4" data-t="'+t+' · Made with MiniMax H3" data-p="'+h+'.jpg"'+dv+'><span class="im"><img src="'+h+'.jpg" alt="" loading="lazy"><span class="ct">'+T.lbl+'</span><span class="pl"></span></span><span class="tx"><b>'+t+'</b><span>Made with MiniMax H3</span></span></a></li>'}}).join('');
- $('#h3').hidden=false}}).catch(function(){{}});
+ var nice=function(k){{return k.replace(/^[a-z0-9]+_/,'').replace(/_/g,' ').replace(/\\b\\w/g,function(c){{return c.toUpperCase()}})}};
+ Object.keys(N).sort().forEach(function(k){{var h='h3/'+k,x=N[k],tw=fg&&fg.querySelector('a[data-play="'+k+'.mp4"]'),t=tw?tw.dataset.t:nice(k),li;
+  if(x.h&&fg){{li=document.createElement('li');li.className='fc h3';
+   li.innerHTML='<a href="'+h+'.mp4" data-play="'+h+'.mp4" data-t="'+t+' · Made with MiniMax H3" data-p="'+h+'.jpg"'+(x.v?' data-v="'+h+'_9x16.mp4" data-vp="'+h+'_9x16.jpg"':'')+'><span class="im"><img src="'+(fmt==='v'&&x.v?h+'_9x16.jpg':h+'.jpg')+'" alt="" loading="lazy"><span class="ct">'+T.lbl+'</span><span class="pl"></span></span><span class="tx"><b>'+t+'</b><span>Made with MiniMax H3</span></span></a>';
+   var at=tw&&tw.closest('li');at?at.after(li):fg.appendChild(li)}}
+  if(x.v&&vr){{li=document.createElement('li');li.innerHTML='<video data-src="'+h+'_9x16.mp4" poster="'+h+'_9x16.jpg" muted loop playsinline preload="none"></video><span>'+t+' · MiniMax H3</span>';
+   var tv=vr.querySelector('video[data-src="'+k+'_9x16.mp4"]'),av=tv&&tv.closest('li');av?av.after(li):vr.insertBefore(li,vr.querySelector('.gif'));io.observe($('video',li))}}
+ }})}}).catch(function(){{}});
 /* nav */
 var nav=$('.nav');addEventListener('scroll',function(){{nav.classList.toggle('s',scrollY>40)}},{{passive:true}});
 /* lightbox */
@@ -290,7 +293,7 @@ lb.addEventListener('close',function(){{lv.pause();lv.removeAttribute('src');lv.
 document.addEventListener('click',function(e){{var a=e.target.closest&&e.target.closest('[data-play]');if(!a)return;e.preventDefault();
  var src=a.dataset.play,p=a.dataset.p;if(fmt==='v'&&a.dataset.v){{src=a.dataset.v;p=a.dataset.vp}}open(src,a.dataset.t,p)}});
 $$('.fmt button').forEach(function(x){{x.onclick=function(){{fmt=x.dataset.fmt;$$('.fmt button').forEach(function(y){{y.setAttribute('aria-pressed',String(y===x))}});
- $$('#fg a[data-v],#h3g a[data-v]').forEach(function(a){{$('img',a).src=fmt==='v'?a.dataset.vp:a.dataset.p}})}}}});
+ $$('#fg a[data-v]').forEach(function(a){{$('img',a).src=fmt==='v'?a.dataset.vp:a.dataset.p}})}}}});
 /* BD gallery filter */
 $$('#bd .chips button').forEach(function(x){{x.onclick=function(){{var k=x.dataset.k;$$('#bd .chips button').forEach(function(y){{y.setAttribute('aria-pressed',String(y===x))}});$$('#bdg li').forEach(function(li){{li.hidden=!(k==='all'||li.dataset.k===k)}})}}}});
 /* in-view muted loops + hover */

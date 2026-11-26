@@ -4,7 +4,7 @@
 import json, os, sys, urllib.request, concurrent.futures as cf
 HERE = os.path.dirname(os.path.abspath(__file__)); S = "/tmp/claude-0/-home-user-3p4e/50442171-da10-52d9-9948-b5cc07f6bc8a/scratchpad"
 K = open(f"{S}/.gemini_paid").read().strip()
-LANG = {"sq": "Albanian", "sr": "Serbian (Latin script)", "hr": "Croatian", "sl": "Slovenian", "bg": "Bulgarian (Cyrillic)"}
+LANG = {"sq": "Albanian", "sr": "Serbian (Latin script)", "hr": "Croatian", "sl": "Slovenian", "bg": "Bulgarian (Cyrillic)", "zh": "modern Simplified Chinese (Mandarin, as used in mainland China; natural marketing copy, not word-for-word)"}
 WORK = f"{S}/launch/site_work"   # gen_site.py builds from this copy
 src = json.load(open(f"{WORK}/tx_src.json", encoding="utf-8"))
 cp = f"{HERE}/i18n_extra.json"; X = json.load(open(cp, encoding="utf-8")) if os.path.exists(cp) else {}

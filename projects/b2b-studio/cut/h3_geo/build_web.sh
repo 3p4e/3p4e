@@ -8,7 +8,10 @@ declare -A MAP=( [mh40CJuLNCeMzLTm]="zito_commercial zito_opening_film" [i74MTMT
  [PwJCNU7XqCl7qemN]="millennium_commercial millennium_capability_film" [omhXHETbScMqI9fQ]="nelt_commercial nelt_logistics_film"
  [5hrXPXG9VgvRb6Zv]="gener2_commercial gener2_builder_film" [CgkdpzGtS0AYMLuG]="concord_commercial concord_offplan_film"
  [GScktP6h2Xg5Z2Qt]="viva_commercial viva_expansion_film" [T3yr_acSjgRXjO8A]="speeex_commercial speeex_recruitment_film" )
-enc() { [ -s "$2" ] || ffmpeg -v error -y -i "$1" -vf "scale='if(gt(iw,ih),1280,-2)':'if(gt(iw,ih),-2,1280)'" -c:v libx264 -crf 24 -preset medium -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart "$2"
+# Every web copy carries the small MiniMax H3 credit (tools/h3_mark.png: official MiniMax logo + "H3 · AI", 62 % opacity), bottom right,
+# about 3 % of the short side high.
+MK=/opt/h3/tools/h3_mark.png
+enc() { [ -s "$2" ] || ffmpeg -v error -y -i "$1" -i $MK -filter_complex "[0]scale='if(gt(iw,ih),1280,-2)':'if(gt(iw,ih),-2,1280)'[v];[1]scale=-1:22[m];[v][m]overlay=W-w-18:H-h-16[o]" -map "[o]" -map 0:a? -c:v libx264 -crf 24 -preset medium -pix_fmt yuv420p -c:a aac -b:a 128k -movflags +faststart "$2"
         [ -s "${2%.mp4}.jpg" ] || ffmpeg -v error -y -ss 3 -i "$2" -frames:v 1 -vf "scale='if(gt(iw,ih),960,-2)':'if(gt(iw,ih),-2,960)'" -q:v 4 "${2%.mp4}.jpg"; }
 for tok in "${!MAP[@]}"; do mkdir -p $W/$tok
   for f in ${MAP[$tok]}; do enc $SRC/pitch_16x9/${f}_H3_pitch.mp4 $W/$tok/${f}.mp4; [ -f $SRC/pitch_9x16/${f}_H3_pitch_9x16.mp4 ] && enc $SRC/pitch_9x16/${f}_H3_pitch_9x16.mp4 $W/$tok/${f}_9x16.mp4 || true; done
