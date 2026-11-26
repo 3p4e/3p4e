@@ -10,7 +10,7 @@ def sh(cmd, t=300):
 sent = set(); n = 0
 while True:
     done = os.path.exists(f"{KF}/KF_DONE")
-    new = sorted(f for f in os.listdir(KF) if f.endswith(".png") and f not in sent)[:60]
+    new = sorted(f for f in os.listdir(KF) if f.endswith(".png") and f not in sent and time.time() - os.path.getmtime(f"{KF}/{f}") > 10)[:60]   # skip files still being written
     if new:
         buf = io.BytesIO()
         with tarfile.open(fileobj=buf, mode="w:gz") as tf:
