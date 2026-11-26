@@ -633,7 +633,7 @@ PAGE = f"""<!doctype html>
 <script>window.BD_FILMS={FILM_JSON};window.BD_CONTACT={CT_JS};</script>
 <script src="i18n.js?v={{V}}"></script>
 <script src="dogma_logo.js?v={{V}}"></script><script src="mark.js?v={{V}}"></script><script src="fx.js?v={{V}}"></script><script src="reel.js?v={{V}}"></script><script src="site.js?v={{V}}"></script>
-<script src="logo_fx/mark_data.js?v={{V}}"></script><script src="logo_fx/logo_fx.js?v={{V}}"></script><script src="logo_fx/hdr/list.js?v={{V}}"></script><script src="logo_fx/hdr.js?v={{V}}"></script>
+<script src="logo_fx/mark_data.js?v={{V}}"></script><script src="logo_fx/logo_fx.js?v={{V}}"></script><script src="logo_fx/hdr/list.js?v={{V}}"></script><script src="logo_fx/reel_bb.js?v={{V}}"></script><script src="logo_fx/hdr.js?v={{V}}"></script>
 <script>window.DOGMA_HERO={HERO_JSON};</script><script src="logo_fx/hero_bg.js?v={{V}}"></script>
 </body>
 </html>
@@ -703,7 +703,7 @@ css = open(f"{S}/fx/fx.css", encoding="utf-8").read().replace("DOGMA pitch-site 
 open(f"{OUT}/fx.css", "w", encoding="utf-8").write(css)
 for f in ("dogma_logo.js", "mark.js"): shutil.copy(f"{S}/fx/{f}", f"{OUT}/{f}")
 os.makedirs(f"{OUT}/logo_fx", exist_ok=True)
-for f in ("mark_data.js", "logo_fx.js", "skins.js", "hdr.js", "hero_bg.js"): shutil.copy(f"{WORK}/logo_fx/{f}", f"{OUT}/logo_fx/{f}")
+for f in ("mark_data.js", "logo_fx.js", "skins.js", "hdr.js", "hero_bg.js", "reel_bb.js"): shutil.copy(f"{WORK}/logo_fx/{f}", f"{OUT}/logo_fx/{f}")
 shutil.rmtree(f"{OUT}/logo_fx/hdr", ignore_errors=True); shutil.copytree(f"{WORK}/logo_fx/hdr", f"{OUT}/logo_fx/hdr")
 shutil.copy(f"{S}/brand/fonts/RussoOne-400.ttf", f"{OUT}/russo.ttf")
 for f in ("manrope-cyr.woff2", "manrope-lat.woff2", "manrope-latx.woff2"): shutil.copy(f"{WORK}/fonts/{f}", f"{OUT}/{f}")

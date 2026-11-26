@@ -30,17 +30,22 @@ E = lambda s: _h.escape(s, quote=True)
 
 
 # ------------------------------------------------------------------ components
-def header():
-    return (f'<tr><td style="padding:0;background:{T["bg"]}"><a href="https://bigdogma.tech" style="text-decoration:none">'
-            f'<img src="{ASSETS}/bd_header.png" width="600" height="100" alt="BIG DOGMA · AI STUDIO | MK" '
-            f'style="display:block;width:100%;max-width:600px;height:auto;border:0;color:{T["gold"]};font:700 22px {T["font"]}"></a></td></tr>')
+def logo(name, w, h):   # transparent lockup pair: white letters for the dark design, near-black letters for light mode
+    st = f'display:block;width:{w}px;height:auto;border:0;color:{T["gold"]};font:700 16px {T["font"]}'
+    return (f'<a href="https://bigdogma.tech" style="text-decoration:none"><img class="xdk" src="{ASSETS}/{name}.png" width="{w}" height="{h}" alt="BIG DOGMA · AI STUDIO | MK" style="{st}">'
+            f'<!--[if !mso]><!--><div class="xlt" style="display:none;max-height:0;overflow:hidden;mso-hide:all">'
+            f'<img src="{ASSETS}/{name}_light.png" width="{w}" height="{h}" alt="BIG DOGMA · AI STUDIO | MK" style="{st}"></div><!--<![endif]--></a>')
+
+
+def header():   # BD mark + BIG / DOGMA + AI STUDIO | MK (as wide as DOGMA)
+    return f'<tr><td class="xbg" style="padding:6px 4px 20px;background:{T["bg"]}">{logo("bd_logo_header", 220, 84)}</td></tr>'
 
 
 def para(t, link=None):
     t = E(t)
     if link and "{link}" in t:
-        t = t.replace("{link}", f'<a href="{E(link)}" style="color:{T["gold"]};text-decoration:underline">{E(link.split("://")[-1].rstrip("/"))}</a>')
-    return f'<p style="margin:0 0 18px;font:{T["size"]}/{T["lh"]} {T["font"]};color:{T["fg"]}">{t}</p>'
+        t = t.replace("{link}", f'<a href="{E(link)}" class="xgd" style="color:{T["gold"]};text-decoration:underline">{E(link.split("://")[-1].rstrip("/"))}</a>')
+    return f'<p class="xfg" style="margin:0 0 18px;font:{T["size"]}/{T["lh"]} {T["font"]};color:{T["fg"]}">{t}</p>'
 
 
 def films(items):
@@ -51,8 +56,8 @@ def films(items):
             f'<td class="col" width="50%" valign="top" style="padding:0 6px">'
             f'<a href="{E(f["href"])}" style="text-decoration:none"><img src="{E(f["img"])}" width="262" alt="{E(f["title"])} (видео)" '
             f'style="display:block;width:100%;height:auto;border:0;border-radius:10px"></a>'
-            f'<p style="margin:10px 0 0;font:700 15px/1.35 {T["font"]};color:{T["fg"]}">{E(f["title"])}</p>'
-            f'<p style="margin:2px 0 0;font:13px/1.4 {T["font"]};color:{T["mu"]}">{E(f.get("meta", ""))}</p></td>')
+            f'<p class="xfg" style="margin:10px 0 0;font:700 15px/1.35 {T["font"]};color:{T["fg"]}">{E(f["title"])}</p>'
+            f'<p class="xmu" style="margin:2px 0 0;font:13px/1.4 {T["font"]};color:{T["mu"]}">{E(f.get("meta", ""))}</p></td>')
     return (f'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:4px 0 22px"><tr>'
             + "".join(cells) + '</tr></table>')
 
@@ -65,25 +70,23 @@ def button(label, href):   # bulletproof button (VML-free; padding on the <a> wo
 
 
 def note(t):
-    return (f'<p style="margin:0 0 22px;padding:14px 16px;border-left:3px solid {T["gold"]};background:#1b1b21;'
+    return (f'<p class="xnote" style="margin:0 0 22px;padding:14px 16px;border-left:3px solid {T["gold"]};background:#1b1b21;'
             f'font:14px/1.55 {T["font"]};color:{T["mu"]}">{E(t)}</p>')
 
 
-def signature(s):
-    name = f'<p style="margin:0;font:700 15px/1.4 {T["font"]};color:{T["fg"]}">{E(s["name"])}</p>' if s.get("name") else ""
-    role = f'<p style="margin:0;font:13px/1.4 {T["font"]};color:{T["mu"]}">{E(s["role"])}</p>' if s.get("role") else ""
-    return (f'<table role="presentation" cellpadding="0" cellspacing="0" style="margin:8px 0 0;border-top:1px solid {T["line"]};padding-top:18px;width:100%"><tr>'
-            f'<td width="64" valign="top" style="padding:18px 14px 0 0"><img src="{ASSETS}/bd_mark_sig.png" width="60" alt="BD" style="display:block;border:0;width:60px;height:auto"></td>'
-            f'<td valign="top" style="padding-top:18px">{name}{role}'
-            f'<p style="margin:{6 if name else 0}px 0 0;font:700 14px/1.4 {T["font"]};color:{T["fg"]};letter-spacing:.08em">BIG DOGMA</p>'
-            f'<p style="margin:0;font:12px/1.5 {T["font"]};color:{T["gold"]};letter-spacing:.16em">AI STUDIO | MK</p>'
-            f'<p style="margin:6px 0 0;font:13px/1.5 {T["font"]};color:{T["mu"]}">'
-            f'<a href="mailto:inf.unit@bigdogma.tech" style="color:{T["mu"]};text-decoration:none">inf.unit@bigdogma.tech</a> &middot; '
-            f'<a href="https://bigdogma.tech" style="color:{T["mu"]};text-decoration:none">bigdogma.tech</a></p></td></tr></table>')
+def signature(s):   # Name (role), the BD lockup under it, then contacts
+    who = E(s.get("name") or "")
+    if s.get("role"): who += f' <span class="xmu" style="font-weight:400;color:{T["mu"]}">({E(s["role"])})</span>'
+    return (f'<table role="presentation" cellpadding="0" cellspacing="0" style="margin:8px 0 0;width:100%"><tr><td class="xln" style="padding-top:18px;border-top:1px solid {T["line"]}">'
+            + (f'<p class="xfg" style="margin:0 0 12px;font:700 15px/1.4 {T["font"]};color:{T["fg"]}">{who}</p>' if who else "")
+            + logo("bd_logo_sig", 150, 58) +
+            f'<p class="xmu" style="margin:10px 0 0;font:13px/1.5 {T["font"]};color:{T["mu"]}">'
+            f'<a href="mailto:inf.unit@bigdogma.tech" class="xmu" style="color:{T["mu"]};text-decoration:none">inf.unit@bigdogma.tech</a> &middot; '
+            f'<a href="https://bigdogma.tech" class="xmu" style="color:{T["mu"]};text-decoration:none">bigdogma.tech</a></p></td></tr></table>')
 
 
 def footer(t):
-    return (f'<tr><td style="padding:18px {T["pad"]}px 28px;font:12px/1.5 {T["font"]};color:#6e6e78;text-align:center">'
+    return (f'<tr><td class="xbg xft" style="padding:18px {T["pad"]}px 28px;background:{T["bg"]};font:12px/1.5 {T["font"]};color:#6e6e78;text-align:center">'
             f'{E(t)}</td></tr>')
 
 
@@ -99,15 +102,20 @@ def render(c):
     pre = (f'<div style="display:none;max-height:0;overflow:hidden;opacity:0;color:transparent">{E(c["preheader"])}'
            + "&#847; &zwnj; " * 40 + '</div>')
     html = f'''<!doctype html><html lang="{c["lang"]}" xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><meta name="supported-color-schemes" content="dark">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><meta name="supported-color-schemes" content="light dark">
 <title>{E(c.get("subject", "BIG DOGMA"))}</title>
 <style>body{{margin:0;padding:0;background:{T["bg"]}}}a{{color:{T["gold"]}}}
+/* light mode (Apple Mail, iOS Mail, Outlook for Mac and others that support it): white card, dark text, the black-letter logo.
+   Clients without prefers-color-scheme (Gmail) keep the dark design, where the white-letter logo is correct. */
+@media (prefers-color-scheme: light){{.xbg{{background:#f3f3f5!important}}.xcard{{background:#ffffff!important;border-color:#e4e4e8!important}}
+.xfg{{color:#16161a!important}}.xmu{{color:#5b5b66!important}}.xgd{{color:#9a6d0a!important}}.xft{{color:#8a8a94!important}}.xln{{border-color:#e4e4e8!important}}
+.xnote{{background:#faf6ea!important;color:#4a4a52!important}}.xdk{{display:none!important}}.xlt{{display:block!important;max-height:none!important;overflow:visible!important}}}}
 @media(max-width:620px){{.wrap{{width:100%!important}}.in{{padding:24px 20px!important}}.col{{display:block!important;width:100%!important;padding:0 0 16px!important}}}}</style></head>
-<body style="margin:0;padding:0;background:{T["bg"]}">{pre}
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:{T["bg"]}"><tr><td align="center" style="padding:24px 12px">
+<body class="xbg" style="margin:0;padding:0;background:{T["bg"]}">{pre}
+<table role="presentation" class="xbg" width="100%" cellpadding="0" cellspacing="0" style="background:{T["bg"]}"><tr><td align="center" style="padding:24px 12px">
 <table role="presentation" class="wrap" width="{T["w"]}" cellpadding="0" cellspacing="0" style="width:{T["w"]}px;max-width:100%">
 {header()}
-<tr><td class="in" style="padding:{T["pad"]}px;background:{T["card"]};border-radius:14px;border:1px solid {T["line"]}">
+<tr><td class="in xcard" style="padding:{T["pad"]}px;background:{T["card"]};border-radius:14px;border:1px solid {T["line"]}">
 {para(c["greeting"])}{body}
 </td></tr>
 {footer(c["optout"])}
@@ -116,6 +124,7 @@ def render(c):
     tx = [c["greeting"], ""] + [p.replace("{link}", link) for p in c["paras"][:2]] + [""]
     tx += [f'- {f["title"]} ({f.get("meta", "")})' for f in c.get("films", [])] + ["", f'{c["cta"]["label"]}: {link}', ""]
     tx += [p.replace("{link}", link) for p in c["paras"][2:]] + ([c["note"]] if c.get("note") else [])
-    tx += ["", c.get("closing", "Со почит,")] + [x for x in (c["sign"].get("name"), c["sign"].get("role")) if x]
+    nm = c["sign"].get("name") or ""; nm += f' ({c["sign"]["role"]})' if c["sign"].get("role") else ""
+    tx += ["", c.get("closing", "Со почит,")] + ([nm] if nm else [])
     tx += ["BIG DOGMA · AI STUDIO | MK", "inf.unit@bigdogma.tech · bigdogma.tech", "", c["optout"]]
     return html, "\n".join(tx)
