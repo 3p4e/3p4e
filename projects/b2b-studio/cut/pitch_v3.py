@@ -51,7 +51,8 @@ def foton():
         films.append(dict(id=f["id"], t=f"{f['title']} · Tunland {f['model']}", l=f["card"][1], src=f"v2/f/{f['id']}.mp4", v=f"v2/f/{f['id']}_9x16.mp4", poster=f"v2/f/{f['id']}.jpg", vposter=f"v2/f/{f['id']}_9x16.jpg"))
     caps = json.load(open(f"{HERE}/pitch_v3_data/foton_caps.json", encoding="utf-8"))
     return dict(key="foton", name="Foton Македонија", lang="mk", accent="#d71920", films=films, caps=caps, shots=27, stills=10, gifs=2,
-                industry=["automotive", "product_launch"], tags="#Foton #Tunland #4x4 #Пикап #Македонија #Скопје", cta_site="foton.mk")
+                industry=["automotive", "product_launch"], tags="#Foton #Tunland #4x4 #Пикап #Македонија #Скопје", cta_site="foton.mk",
+                skip_shots={19, 20, 21, 22}, skip_ind={"cf_automotive_1_social"})   # Auman, Aumark, EME4, cargo van; a sports car: Tunland only (owner)
 import re
 CO = {  # key: (industry categories on bigdogma.tech, hashtags)
  "01_zito_marketi_MK": (["food", "horeca"], "#Жито #Маркети #Македонија #Скопје"), "02_alkaloid_MK": (["pharma", "health"], "#Алкалоид #Здравје #Македонија"),
@@ -130,7 +131,7 @@ def build(key, out):
         p = f"{P}/catfilms/plan/{cat}.json"
         if os.path.exists(p):
             for f in json.load(open(p, encoding="utf-8"))["films"]:
-                if os.path.exists(f"{SCR}/launch/site/films/{f['id']}.mp4"): ind.append((f"{SITE}/films/{f['id']}", (f["title_mk"] if c["lang"] == "mk" else XL.get(c["lang"], {}).get(f"{f['id']}.t", f["title_en"])), (f["line_mk"] if c["lang"] == "mk" else XL.get(c["lang"], {}).get(f"{f['id']}.l", f["line_en"])), f["type"]))
+                if os.path.exists(f"{SCR}/launch/site/films/{f['id']}.mp4") and f["id"] not in c.get("skip_ind", ()): ind.append((f"{SITE}/films/{f['id']}", (f["title_mk"] if c["lang"] == "mk" else XL.get(c["lang"], {}).get(f"{f['id']}.t", f["title_en"])), (f["line_mk"] if c["lang"] == "mk" else XL.get(c["lang"], {}).get(f"{f['id']}.l", f["line_en"])), f["type"]))
     def card(src, poster, t, l, tag, v=None, vposter=None):
         dv = f' data-v="{v}" data-vp="{vposter or poster}"' if v else ""
         return (f'<li class="fc"><a href="{src}" data-play="{src}" data-t="{E(t)}" data-p="{poster}"{dv}><span class="im"><img src="{poster}" alt="" loading="lazy">'
@@ -138,7 +139,8 @@ def build(key, out):
     films = "".join(card(f["src"], f["poster"], f["t"], f["l"], s["ai_film"], f.get("v"), f.get("vposter")) for f in c["films"])
     vert = "".join(f'<li><video data-src="{f["v"]}" poster="{f.get("vposter", f["poster"])}" muted loop playsinline preload="none"></video><span>{E(f["t"])}</span></li>' for f in c["films"] if f.get("v"))
     vert += "".join(f'<li class="gif"><img src="x/t{i}.gif" alt="" loading="lazy"><span>{E(s["gif"])}</span></li>' for i in range(1, c["gifs"] + 1))
-    shots = "".join(f'<li><video data-src="x/c{i:02d}.mp4" poster="x/c{i:02d}.jpg" muted loop playsinline preload="none"></video><span><b>{E(c["caps"].get(f"c{i:02d}", ["", ""])[1] if len(c["caps"].get(f"c{i:02d}", [])) > 1 else f"{i:02d}")}</b> {E(c["caps"].get(f"c{i:02d}", ["", "", ""])[-1])}</span></li>' for i in range(1, c["shots"] + 1))
+    SHOTS = [i for i in range(1, c["shots"] + 1) if i not in c.get("skip_shots", ())]
+    shots = "".join(f'<li><video data-src="x/c{i:02d}.mp4" poster="x/c{i:02d}.jpg" muted loop playsinline preload="none"></video><span><b>{E(c["caps"].get(f"c{i:02d}", ["", ""])[1] if len(c["caps"].get(f"c{i:02d}", [])) > 1 else f"{i:02d}")}</b> {E(c["caps"].get(f"c{i:02d}", ["", "", ""])[-1])}</span></li>' for i in SHOTS)
     pairs = "".join(f'<li class="cmp" style="--x:50%"><video data-src="x/c{i:02d}.mp4" muted loop playsinline preload="none" poster="x/c{i:02d}.jpg"></video><img src="x/k{i:02d}.jpg" alt="" loading="lazy"><input type="range" min="0" max="100" value="50" aria-label="{E(s["img"])} / {E(s["vid"])}"><span class="l">{E(s["img"])}</span><span class="r">{E(s["vid"])}</span></li>' for i in [x for x in (1, 4, 7, 10, 13, 16) if x <= c.get("keys", 27)])
     stills = "".join(f'<li><img src="x/a{i:02d}.jpg" alt="" loading="lazy"></li>' for i in range(1, c["stills"] + 1))
     indc = "".join(card(f"{u}.mp4", f"{u}.jpg", t, l, s["ind_types"][ty]) for u, t, l, ty in ind)
@@ -235,7 +237,7 @@ dialog .x{{position:absolute;right:0;top:-44px;background:none;border:0;color:#f
 {f'<div class="fmt rv" role="group"><button type="button" data-fmt="h" aria-pressed="true">{s["h169"]}</button><button type="button" data-fmt="v" aria-pressed="false">{s["v916"]}</button></div>' if has_v else ""}
 <ul class="grid" id="fg">{films}</ul></div></section>
 {f'<section class="alt"><div class="wrap"><div class="eyebrow rv">{E(s["v_e"])}</div><h2 class="sh rv">{E(s["v_h"])}</h2><p class="sp rv">{E(s["v_p"])}</p><ul class="vrow">{vert}</ul></div></section>' if has_v else ""}
-<section id="shots"><div class="wrap"><div class="eyebrow rv">{E(s["s_e"])}</div><h2 class="sh rv">{E(s["s_h"])}</h2><p class="sp rv">{E(s["s_p"].format(n=c["shots"], c=c["name"]))}</p>
+<section id="shots"><div class="wrap"><div class="eyebrow rv">{E(s["s_e"])}</div><h2 class="sh rv">{E(s["s_h"])}</h2><p class="sp rv">{E(s["s_p"].format(n=len(SHOTS), c=c["name"]))}</p>
 {mont}<ul class="shots">{shots}</ul></div></section>
 <section class="alt"><div class="wrap"><div class="eyebrow rv">{E(s["k_e"])}</div><h2 class="sh rv">{E(s["k_h"])}</h2><p class="sp rv">{E(s["k_p"])}</p><ul class="cmps">{pairs}</ul></div></section>
 {stills_sec}
