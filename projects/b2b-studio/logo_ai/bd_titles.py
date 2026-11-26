@@ -7,7 +7,6 @@ FILMS = {
  "chalkboard": ("Со креда", "In chalk"), "origami": ("Оригами", "Origami"), "ink_water": ("Мастило во вода", "Ink in water"),
  "laser_steel": ("Ласер во челик", "Laser in steel"), "vodno_monument": ("Споменик на Водно", "Monument on Vodno"), "constellation": ("Соѕвездие", "Constellation"),
  "stickmen": ("Борба на ликови", "Stick-figure fight"), "embroidery": ("Златен вез", "Gold embroidery"), "snow_reveal": ("Под снегот", "Under the snow"),
- "stained_glass": ("Витраж", "Stained glass"),
  "cathedral_window": ("Витраж во катедрала", "Cathedral window"), "byzantine_mosaic": ("Византиски мозаик", "Byzantine mosaic"), "lanterns": ("Фенери над Охрид", "Lanterns over Ohrid"),
  "neon_street": ("Неонска улица", "Neon street"), "latte_art": ("Лате арт", "Latte art"), "glassblowing": ("Дување стакло", "Glassblowing"),
  "canyon_carving": ("Во карпите на Матка", "In the Matka cliffs"), "light_painting": ("Сликање со светлина", "Light painting"), "dominoes": ("Домино", "Dominoes"),
@@ -21,7 +20,6 @@ FX = {
  "phoenix": ("Феникс", "Phoenix"), "dragon_breath": ("Змејски оган", "Dragon fire"), "black_hole": ("Црна дупка", "Black hole"), "crystal": ("Кристали", "Crystals"),
  "runes": ("Магиски руни", "Magic runes"), "vortex": ("Вртлог", "Vortex"), "storm": ("Бура", "Storm"), "stardust": ("Ѕвездена прашина", "Stardust"),
  "magma_crack": ("Магма", "Magma"), "frost_bloom": ("Ледени цвеќиња", "Frost bloom"), "emerald_magic": ("Смарагдна магија", "Emerald magic"),
- "blood_moon": ("Крвава месечина", "Blood moon"), "solar_flare": ("Сончев оган", "Solar flare"), "butterflies": ("Пеперутки", "Butterflies"),
- "sakura": ("Цреши", "Cherry blossom"), "shadow": ("Сенка", "Shadow"), "holy_light": ("Света светлина", "Holy light"), "circuit": ("Коло", "Circuit"),
+ "blood_moon": ("Крвава месечина", "Blood moon"), "solar_flare": ("Сончев оган", "Solar flare"), "sakura": ("Цреши", "Cherry blossom"), "shadow": ("Сенка", "Shadow"), "holy_light": ("Света светлина", "Holy light"), "circuit": ("Коло", "Circuit"),
  "diamond": ("Дијамант", "Diamond"), "nebula_fire": ("Космички оган", "Cosmic fire"),
 }
