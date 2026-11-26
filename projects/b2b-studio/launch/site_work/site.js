@@ -79,6 +79,30 @@
   lb.addEventListener('keydown', e => { if (e.target.tagName === 'VIDEO') return; if (e.key === 'ArrowRight') step(1); if (e.key === 'ArrowLeft') step(-1); });
   $$('a[data-film]').forEach(a => a.addEventListener('click', e => { if (e.metaKey || e.ctrlKey || e.shiftKey || e.button) return; e.preventDefault(); openFilm(a.dataset.film, a); }));
 
+  // ---------- H3 versions of the studio films (owner, 2026-11-26), placed right after the same film in every grid.
+  // The server answers h3/ only outside the EU, the UK, the USA and South Korea (MiniMax H3 licence), so elsewhere nothing is added.
+  fetch('h3/', { cache: 'no-store' }).then(r => r.ok ? r.json() : []).then(list => {
+    (list || []).map(f => f.name).filter(n => /\.mp4$/.test(n)).forEach(n => {
+      const id = n.slice(0, -4), hid = 'h3_' + id, src = 'h3/' + n, poster = 'h3/' + id + '.jpg';
+      if (!ids.includes(id) || ids.includes(hid)) return;
+      FILMS.push({ id: hid, src, poster, sub: {} }); ids.push(hid);
+      $$('a[data-film="' + id + '"]').forEach(a0 => {
+        const li0 = a0.closest('li'); if (!li0) return; const li = li0.cloneNode(true), a = $('a', li);
+        li.classList.add('h3', 'in'); a.href = src; a.dataset.film = hid;
+        const img = $('img', li); if (img) { img.src = poster; img.removeAttribute('srcset'); }
+        const du = $('.du', li); if (du) du.remove();
+        const im = $('.im', li); if (im) { const b = document.createElement('span'); b.className = 'h3b'; b.textContent = 'MiniMax H3 · AI'; im.appendChild(b); }
+        a.addEventListener('click', e => { if (e.metaKey || e.ctrlKey || e.shiftKey || e.button) return; e.preventDefault(); openFilm(hid, a); });
+        li0.after(li);
+      });
+      // and in its industry in the category grid (#cgrid, chips by data-c)
+      const cat = id === 'showreel_macedonian_industry' ? 'industry_showreel' : id.replace(/^(sector|timelapse)_/, ''), cg = $('#cgrid'), src0 = $('a[data-film="' + hid + '"]');
+      const last = cg && [...cg.querySelectorAll('li[data-c="' + cat + '"]')].pop();
+      if (last && src0) { const li = src0.closest('li').cloneNode(true), a = $('a', li); li.removeAttribute('data-cat'); li.dataset.c = cat; li.hidden = last.hidden;
+        a.addEventListener('click', e => { if (e.metaKey || e.ctrlKey || e.shiftKey || e.button) return; e.preventDefault(); openFilm(hid, a); }); last.after(li); }
+    });
+  }).catch(() => {});
+
   // only one video with sound at a time
   document.addEventListener('play', e => { $$('video').forEach(x => { if (x !== e.target && !x.muted && !x.paused) x.pause(); }); }, true);
 
