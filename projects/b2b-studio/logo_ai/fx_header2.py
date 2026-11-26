@@ -7,7 +7,7 @@
 import sys, os, glob, json, subprocess, numpy as np, cv2
 from PIL import Image
 SRC = sys.argv[1]; OUT = "/home/user/3p4e/projects/b2b-studio/launch/site_work/logo_fx/hdr"; os.makedirs(OUT, exist_ok=True)
-DROP = {"black_hole", "blood_moon", "storm", "holy_light", "phoenix", "lightning", "butterflies", "ink"}   # objects slapped behind the mark / mark deforms
+DROP = {"black_hole", "blood_moon", "storm", "holy_light", "phoenix", "lightning", "butterflies", "ink", "dominoes"}   # objects slapped behind the mark / mark deforms
 ref = np.array(Image.open("/home/user/3p4e/projects/b2b-studio/brand/mark_bd_M2_P3.png").convert("RGBA"))
 a = ref[..., 3] if ref[..., 3].min() < 250 else (255 - ref[..., :3].mean(axis=2))
 ys, xs = np.where(a > 60); ref = (a[ys.min():ys.max() + 1, xs.min():xs.max() + 1] > 60).astype(np.float32)
