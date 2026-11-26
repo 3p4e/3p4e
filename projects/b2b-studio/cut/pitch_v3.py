@@ -17,7 +17,7 @@ T = {"mk": dict(
   for_="Подготвено за", lead="AI видео студио од Скопје. Реклами и брендирани филмови без снимање: готови за 7–10 дена по одобрување на клучните кадри.",
   pts=["{n} AI филмови направени само за вас", "Готова кампања за 4 недели", "16:9 и 9:16 за сите канали"], enter="Отворете ја презентацијата",
   scroll="Сите кадри на оваа страница се генерирани со AI.",
-  nav=[("films", "Филмови"), ("shots", "Кадри"), ("campaign", "Кампања"), ("offer", "Понуда"), ("bd", "BD галерија")], cta="Закажи 15 минути",
+  nav=[("films", "Филмови"), ("shots", "Кадри"), ("campaign", "Кампања"), ("offer", "Понуда"), ("dl", "Преземање"), ("bd", "BD галерија")], cta="Закажи 15 минути",
   h1="Концепт-видео за <em>{c}</em>", sub="Сè на оваа страница е направено со AI специјално за вас: филмови, вертикални верзии, кадри, клучни кадри и кампања.",
   f_e="Филмови", f_h="{n} филмови за {c}", f_p="Секој филм постои хоризонтално (YouTube, екрани) и вертикално (Reels, TikTok, Stories).",
   h169="16:9", v916="9:16", play="Пушти",
@@ -35,9 +35,11 @@ T = {"mk": dict(
   b_all="Сите", b_f="Лого филмови", b_x="Лого ефекти",
   end_h="Следен чекор: 15 минути разговор", end_p="Во Скопје или онлајн. Кажете ни кој филм ви се допаѓа најмногу: го прилагодуваме за вашата кампања.",
   mail="Пишете ни", legal="Концепт само за презентација. Не е објавен и нема да биде објавен без ваше изречно писмено одобрение. Видеата се изработени со вештачка интелигенција. Логата и марките им припаѓаат на нивните сопственици.",
-  close="Затвори", subj="{c} - Закажи 15 минути", b_f1="Лого филм", b_x1="Лого ефект", days=["Пон", "Вто", "Сре", "Чет", "Пет", "Саб", "Нед"], more="Повеќе на",
+  close="Затвори", subj="{c} - Закажи 15 минути", dl_e="Преземање", dl_h="Сè за вас, за преземање",
+  dl_p="Понудата и сите ваши филмови во 16:9 и 9:16, во еден ZIP. Слободно споделете ги во вашиот тим.", dl_pdf="Понуда (PDF)", dl_zip="Сите филмови (ZIP, {s} MB)", b_f1="Лого филм", b_x1="Лого ефект", days=["Пон", "Вто", "Сре", "Чет", "Пет", "Саб", "Нед"], more="Повеќе на",
   ind_types={"social": "9:16", "explainer": "Објаснувачки", "story": "Приказна", "transform": "Пред / потоа"}, ai_film="AI филм")}
 for _l in ("sr", "sq"): T[_l] = json.load(open(f"{HERE}/pitch_v3_data/strings_{_l}.json", encoding="utf-8"))   # written by hand 2026-11-26
+ZMB = json.load(open(f"{HERE}/pitch_v3_data/zip_mb.json"))   # size of each company's films.zip (built on the server)
 XL = json.load(open(f"{P}/launch/site_work/i18n_extra.json", encoding="utf-8"))   # site translations (BD and industry film titles)
 
 # ------------------------------------------------------------------ companies
@@ -233,6 +235,8 @@ dialog .x{{position:absolute;right:0;top:-44px;background:none;border:0;color:#f
 {stills_sec}
 <section id="campaign" class="alt"><div class="wrap"><div class="eyebrow rv">{E(s["c_e"])}</div><h2 class="sh rv">{E(s["c_h"])}</h2><p class="sp rv">{E(s["c_p"])}</p>{campaign(c, s)}</div></section>
 {offer.replace('<section id="offer"', '<section id="offer" ')}
+<section id="dl" class="alt"><div class="wrap"><div class="eyebrow rv">{E(s["dl_e"])}</div><h2 class="sh rv">{E(s["dl_h"])}</h2><p class="sp rv">{E(s["dl_p"])}</p>
+<div class="btns rv"><a class="btn a" href="films.zip" download>{E(s["dl_zip"].format(s=ZMB.get(key, "")))}</a><a class="btn b" href="offer.pdf" target="_blank" rel="noopener">{E(s["dl_pdf"])}</a></div></div></section>
 <section class="alt"><div class="wrap"><div class="eyebrow rv">{E(s["i_e"])}</div><h2 class="sh rv">{E(s["i_h"])}</h2><p class="sp rv">{E(s["i_p"])}</p><ul class="grid">{indc}</ul></div></section>
 <section id="bd"><div class="wrap"><div class="eyebrow rv">{E(s["b_e"])}</div><h2 class="sh rv">{E(s["b_h"])}</h2><p class="sp rv">{E(s["b_p"].format(n=len(bd)))}</p>
 <div class="chips" role="group"><button type="button" data-k="all" aria-pressed="true">{E(s["b_all"])} {len(bd)}</button><button type="button" data-k="f" aria-pressed="false">{E(s["b_f"])} {sum(1 for x in bd if x[2] == "f")}</button><button type="button" data-k="x" aria-pressed="false">{E(s["b_x"])} {len(BDT.FX)}</button></div>
