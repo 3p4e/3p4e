@@ -22,6 +22,8 @@ MAP = {
  "sector_automotive": AUTO, "sector_pharma": CORP, "sector_food": FAM, "sector_wine": LUX, "sector_steel_cement": IND,
  "sector_recruitment": UP, "sector_product_launch": SHOW, "sector_real_estate": LUX,
  "showreel_macedonian_industry": IND, "studio_showreel_ltx": SHOW, "foton_showreel_v2": AUTO,
+ # Telekom MK pitch (2026-11-26): warm family film, inspiring network film
+ "telekom_magenta1": FAM, "telekom_network": CORP,
 }
 def dur(f): return float(subprocess.run(["ffprobe","-v","error","-show_entries","format=duration","-of","csv=p=0",f],capture_output=True,text=True).stdout)
 def mix(film, track, out):

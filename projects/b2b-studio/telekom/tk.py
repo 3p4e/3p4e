@@ -62,10 +62,10 @@ def gem(out, prompt, aspect, size, src=None):
     for a in range(4):
         try:
             r = json.loads(urllib.request.urlopen(urllib.request.Request(
-                f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-image:generateContent?key={KEY}",
-                data=json.dumps(body).encode(), headers={"Content-Type": "application/json"}), timeout=300).read())
+                "https://generativelanguage.googleapis.com/v1beta/models/gemini-3-pro-image:generateContent",
+                data=json.dumps(body).encode(), headers={"Content-Type": "application/json", "x-goog-api-key": KEY}), timeout=300).read())
             d = [p for p in r["candidates"][0]["content"]["parts"] if "inlineData" in p][0]
-            g = Image.open(io.BytesIO(base64.b64decode(d["inlineData"]["data"]))).convert("RGB"); g.save(f"{D}/kf_full/{os.path.basename(os.path.dirname(out))}_{os.path.basename(out)}")
+            g = Image.open(io.BytesIO(base64.b64decode(d["inlineData"]["data"]))).convert("RGB"); g.save(f"{D}/kf_full/{os.path.basename(os.path.dirname(out))}_{os.path.basename(out)[:-4]}.jpg", quality=92)   # JPEG: the session disk is nearly full
             s = max(W / g.width, H / g.height); g = g.resize((round(g.width * s), round(g.height * s)), Image.LANCZOS)
             l, t = (g.width - W) // 2, (g.height - H) // 2; g.crop((l, t, l + W, t + H)).save(out); print("ok", out[len(D) + 1:], flush=True); return
         except urllib.error.HTTPError as e: print("ERR", out, e.code, e.read()[:200].decode(errors="ignore"), flush=True); time.sleep(20)
