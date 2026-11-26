@@ -2,7 +2,7 @@
 # All copy lives in TX (key -> (mk, en)); the template marks elements with @="key" (text), @h="key" (HTML)
 # and @a="attr:key;attr2:key2" (attributes). MK is rendered into the HTML, both languages go to i18n.js.
 # Run:  /usr/bin/python3 gen_site.py    (media is built separately by build_media.py)
-import os, re, json, html, shutil, subprocess, hashlib
+import os, re, json, html, shutil, subprocess, hashlib, glob
 S = "/tmp/claude-0/-home-user-3p4e/50442171-da10-52d9-9948-b5cc07f6bc8a/scratchpad"
 OUT = f"{S}/launch/site"; WORK = f"{S}/launch/site_work"
 SITE_URL = "https://bigdogma.tech"
@@ -69,8 +69,8 @@ TX = {
  "hud.tag": ("AI рендер · 720p · 24 fps", "AI render · 720p · 24 fps"),
  "hud.prompt": ("Сцена", "Scene"),
  "hud.gen": ("Генерирање…", "Generating…"), "hud.done": ("Готово ✓", "Done ✓"),
- "hud.text": ("Кинематографски монтаж: усвитен челик во фабрика, градилиште над градот, лозја и покриви на зајдисонце. Топло светло, бавно движење на камерата.",
-              "Cinematic montage: molten steel in a factory, a building site above the city, vineyards and rooftops at sunset. Warm light, slow camera moves."),
+ "hud.text": ("Лого филм: знакот BD излеан во злато, издлабен во мраз, нацртан со огномет, тетовиран на кожа. Секој кадар е генериран со AI.",
+              "Logo film: the BD mark cast in gold, carved in ice, drawn by fireworks, tattooed on skin. Every shot generated with AI."),
  "hero.pill": ("AI видео студио · Скопје", "AI video studio · Skopje"),
  "hero.h1": ("AI видео за <em>вашиот бизнис</em>", "AI video for <em>your business</em>"),
  "hero.sub": ("Готова реклама за 7–10 дена по одобрување на клучните кадри, без снимање.", "A finished ad 7–10 days after you approve the key frames, with no filming."),
@@ -281,6 +281,11 @@ CT_JS = json.dumps({k: CONTACT[k] for k in ("email",) if CONTACT[k]})
 
 # ------------------------------------------------------------------ AI gallery, sectors, image -> motion, build-up
 CLIP = {c[0]: c for c in G.CLIPS}
+_INTRO = sorted(os.path.basename(f) for f in glob.glob(f"{OUT}/media/intro/*.mp4"))
+_HC = {k: [f"media/g/{c[0]}.mp4" for c in G.CLIPS if c[2] == k] for k, *_ in G.SECTORS}
+_HC["sec"] = [x for k in ("food", "wine", "steel", "auto", "pharma", "rec", "prod") for x in _HC[k]]
+_HC["tl"] = [x for k in ("con", "re", "int", "energy") for x in _HC[k]]
+HERO_JSON = json.dumps({"intro": [f"media/intro/{f}" for f in _INTRO], "cat": _HC}, separators=(",", ":"))
 def loop(cid, cls="lv", poster=None):
     # muted in-view loop: no src until site.js sees it near the viewport; the poster shows first
     return f'<video class="{cls}" muted loop playsinline preload="none" poster="{u(poster or f"media/g/{cid}.jpg")}" data-loop="{u(f"media/g/{cid}.mp4")}" aria-hidden="true" tabindex="-1"></video>'
@@ -576,6 +581,7 @@ PAGE = f"""<!doctype html>
 <script src="i18n.js?v={{V}}"></script>
 <script src="dogma_logo.js?v={{V}}"></script><script src="mark.js?v={{V}}"></script><script src="fx.js?v={{V}}"></script><script src="site.js?v={{V}}"></script>
 <script src="logo_fx/mark_data.js?v={{V}}"></script><script src="logo_fx/logo_fx.js?v={{V}}"></script><script src="logo_fx/hdr/list.js?v={{V}}"></script><script src="logo_fx/hdr.js?v={{V}}"></script>
+<script>window.DOGMA_HERO={HERO_JSON};</script><script src="logo_fx/hero_bg.js?v={{V}}"></script>
 </body>
 </html>
 """
@@ -639,7 +645,7 @@ css = open(f"{S}/fx/fx.css", encoding="utf-8").read().replace("DOGMA pitch-site 
 open(f"{OUT}/fx.css", "w", encoding="utf-8").write(css)
 for f in ("dogma_logo.js", "mark.js"): shutil.copy(f"{S}/fx/{f}", f"{OUT}/{f}")
 os.makedirs(f"{OUT}/logo_fx", exist_ok=True)
-for f in ("mark_data.js", "logo_fx.js", "skins.js", "hdr.js"): shutil.copy(f"{WORK}/logo_fx/{f}", f"{OUT}/logo_fx/{f}")
+for f in ("mark_data.js", "logo_fx.js", "skins.js", "hdr.js", "hero_bg.js"): shutil.copy(f"{WORK}/logo_fx/{f}", f"{OUT}/logo_fx/{f}")
 shutil.rmtree(f"{OUT}/logo_fx/hdr", ignore_errors=True); shutil.copytree(f"{WORK}/logo_fx/hdr", f"{OUT}/logo_fx/hdr")
 shutil.copy(f"{S}/brand/fonts/RussoOne-400.ttf", f"{OUT}/russo.ttf")
 for f in ("manrope-cyr.woff2", "manrope-lat.woff2", "manrope-latx.woff2"): shutil.copy(f"{WORK}/fonts/{f}", f"{OUT}/{f}")

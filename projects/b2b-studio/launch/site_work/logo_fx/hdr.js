@@ -9,7 +9,7 @@
     onchange: function () { if (mode === 'canvas' && ++shown > 1 && CL.length) toVideo(); } });
   if (!CL.length || reduce || save || !fx || !fx.pause) return;
   var cv = document.createElement('canvas'), c = cv.getContext('2d', { willReadFrequently: true }), v = document.createElement('video'), raf = 0;
-  cv.setAttribute('aria-hidden', 'true'); cv.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;opacity:0;transition:opacity .35s';
+  cv.setAttribute('aria-hidden', 'true'); cv.style.cssText = 'position:absolute;inset:19% 20%;width:60%;height:62%;display:block;pointer-events:none;opacity:0;transition:opacity .35s';
   v.muted = v.defaultMuted = true; v.playsInline = true; v.setAttribute('playsinline', ''); v.setAttribute('muted', ''); v.preload = 'auto'; v.crossOrigin = 'anonymous';
   el.appendChild(cv);
   function pick() { var o = CL.filter(function (x) { return x !== last; }); last = o[Math.floor(Math.random() * o.length)] || CL[0]; return last; }
