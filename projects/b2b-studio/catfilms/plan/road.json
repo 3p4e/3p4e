@@ -1,0 +1,88 @@
+{
+ "key": "road",
+ "mk": "Патна инфраструктура",
+ "en": "Road infrastructure",
+ "films": [
+  {
+   "type": "transform",
+   "title_mk": "Патот кон иднината",
+   "title_en": "Path to the Future",
+   "line_mk": "Градиме нови врски.",
+   "line_en": "Building new connections.",
+   "desc_en": "A seamless visual journey showcasing the dramatic transformation of rugged Macedonian terrain into a modern, highly engineered highway.",
+   "music": "Uplifting ambient electronic, steady rhythmic pulse, 110 bpm",
+   "voice": "male, authoritative, deep, reassuring",
+   "vo_mk": [
+    "Од тежок терен до отворен пат.",
+    "Поврзуваме срца и градови."
+   ],
+   "shots": [
+    {
+     "kf": "A rugged, unpaved dirt trail winding through the dry, rocky hills of the Veles region at golden hour. Dusty earth, sparse yellow grass, and deep shadows. Cinematic wide shot, 24mm lens, earthy brown and ochre color palette, photorealistic.",
+     "end_kf": "The exact same landscape at golden hour, but the dirt trail is now a freshly paved, sleek two-lane asphalt highway. Clean white lane lines reflect the setting sun. Smooth surface, identical lighting and framing, earthy ochre and dark grey palette, photorealistic.",
+     "motion": "The dirt road morphs seamlessly into fresh asphalt like a timelapse. Slow, smooth drone-like push forward into the landscape."
+    },
+    {
+     "kf": "A deep, rocky gorge over the Radika river, untouched and wild. Steep limestone cliffs covered in wild green vegetation under a cloudy overcast sky. Mid-shot from the riverbank looking up, 35mm lens, moody green and grey palette, photorealistic.",
+     "end_kf": "The exact same gorge under the same cloudy sky, now spanned by a massive, elegant concrete highway bridge. Massive pillars anchor into the cliffs, sleek modern engineering blending with nature. Identical framing, green, grey, and pale concrete palette, photorealistic.",
+     "motion": "The concrete bridge structure fades into existence over the river. Subtle, slow camera pan from left to right across the rocky gorge."
+    },
+    {
+     "kf": "A chaotic muddy construction site on a steep mountain slope near Mavrovo. Generic excavators parked without logos, massive piles of gravel, exposed brown earth, and scattered rocks under bright midday sun. Wide angle, 16mm lens, high contrast, industrial colors, photorealistic.",
+     "end_kf": "The exact same mountain slope, now featuring a modern highway entering a smooth concrete tunnel portal embedded in the mountain. Paved road, safety barriers, and restored green grass on the slopes. Bright midday sun, identical framing, photorealistic.",
+     "motion": "The muddy mounds and machinery dissolve into the clean tunnel entrance. Very slow, steady camera tilt up from the ground toward the sky."
+    },
+    {
+     "kf": "An aerial top-down view of a dense, untouched pine forest in the Pelister mountains. A thin, barely visible walking path cuts through the dark green canopy. Late afternoon light casting long tree shadows. 50mm lens, rich emerald green and shadow black palette, photorealistic.",
+     "end_kf": "The exact same top-down aerial view, but a smooth, sweeping curve of a modern highway now elegantly slices through the forest. Pristine grey asphalt contrasts beautifully with the dark green pine trees. Identical lighting and framing, photorealistic.",
+     "motion": "The dark forest path expands and solidifies into the wide highway. Slow, majestic camera rotation looking straight down at the forest floor."
+    }
+   ],
+   "id": "cf_road_1_transform",
+   "cat": "road"
+  },
+  {
+   "type": "story",
+   "title_mk": "Патување до дома",
+   "title_en": "Journey Home",
+   "line_mk": "Секој пат води некаде важно.",
+   "line_en": "Every road leads somewhere important.",
+   "desc_en": "An emotional, music-driven sequence capturing the serenity and human connection enabled by modern road infrastructure through breathtaking Macedonian landscapes.",
+   "music": "Soft cinematic piano and sweeping strings, emotional crescendo, 80 bpm",
+   "voice": "female, warm, soft, emotional",
+   "vo_mk": [
+    "Патиштата не се само асфалт.",
+    "Тие се нашите приказни.",
+    "Враќање кон она што вреди."
+   ],
+   "shots": [
+    {
+     "kf": "A lone, generic dark grey sedan driving smoothly along a sweeping curved highway through the lush green mountains of Bistra. Early morning mist hangs low in the valleys. Cinematic wide tracking shot, 85mm lens, cool morning blues and lush greens, photorealistic.",
+     "motion": "The car drives steadily forward along the curve. The camera smoothly tracks alongside the vehicle from a slightly elevated angle."
+    },
+    {
+     "kf": "An abstract, extreme close-up of a fresh asphalt surface on a new highway. A crisp, glowing white painted lane line leads into a softly blurred background. Golden hour sunlight catches the textural grains of the road. Macro photography, 100mm lens, warm golden and deep grey palette, photorealistic.",
+     "motion": "The camera glides very slowly forward, hovering just inches above the painted white line. The sunlight reflects softly off the textured asphalt."
+    },
+    {
+     "kf": "Silhouette of a generic female traveler with her back to the camera, leaning against a modern highway guardrail at a scenic rest stop. She looks out over the expansive Tikvesh lake at sunset. Warm backlighting, cinematic medium shot, 50mm lens, vibrant orange and deep shadow palette, photorealistic.",
+     "motion": "The woman's hair blows gently in the evening wind. The camera executes a very slow, subtle push-in toward her dark silhouette."
+    },
+    {
+     "kf": "A modern highway viaduct elevated above a vast valley filled with autumn-colored trees in shades of red, orange, and yellow. A single unbranded truck crosses the bridge. Soft, diffused afternoon light. Epic ultra-wide aerial shot, 24mm lens, warm earthy autumn palette, photorealistic.",
+     "motion": "The truck moves slowly across the bridge from left to right. The drone camera slowly tracks horizontally, following the truck's direction."
+    },
+    {
+     "kf": "Inside a generic car, looking out through the front windshield from the passenger seat. The modern highway stretches ahead, passing cleanly through a sleek mountain tunnel entrance. The dashboard is dark and out of focus. Point-of-view shot, 35mm lens, dark interior contrasting with bright road ahead, photorealistic.",
+     "motion": "The car moves smoothly forward, approaching the tunnel entrance. The camera remains fixed, capturing the forward driving motion through the glass."
+    },
+    {
+     "kf": "A breathtaking twilight view of a newly built highway interchange in the Macedonian countryside. The road is illuminated by sleek, modern streetlights casting a warm amber glow on the grey asphalt, contrasting with the deep blue evening sky. Wide establishing shot, 35mm lens, amber and navy blue palette, photorealistic.",
+     "motion": "Distant blurred car headlights move smoothly along the curves of the interchange. The camera slowly pulls back to reveal the grand infrastructure scale."
+    }
+   ],
+   "id": "cf_road_2_story",
+   "cat": "road"
+  }
+ ]
+}

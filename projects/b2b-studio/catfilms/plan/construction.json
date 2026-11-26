@@ -1,0 +1,74 @@
+{
+ "key": "construction",
+ "mk": "Градба",
+ "en": "Construction",
+ "films": [
+  {
+   "type": "transform",
+   "title_mk": "Раѓање на дом",
+   "title_en": "Birth of a Home",
+   "line_mk": "Од празен простор до совршен дом.",
+   "line_en": "From empty space to a perfect home.",
+   "desc_en": "A seamless timelapse morph showcasing the transformation of a barren plot in Skopje into a premium residential complex.",
+   "music": "slow cinematic ambient building up to grand orchestral swell, 75 bpm",
+   "voice": "male, deep, reassuring",
+   "vo_mk": [
+    "Темелите на вашата иднина почнуваат овде.",
+    "Градиме домови кои траат засекогаш."
+   ],
+   "shots": [
+    {
+     "kf": "Wide angle landscape shot of an empty construction plot in Skopje, Mount Vodno in the background. Early morning golden hour light, misty atmosphere. Earth and gravel textures, warm earthy color palette. Shot on 35mm lens, photorealistic, cinematic lighting.",
+     "end_kf": "Wide angle landscape shot of the exact same framing, now featuring the concrete foundation and ground floor of a modern residential building. Midday sunlight, clear skies, sharp shadows. Industrial gray and warm sunlight. Shot on 35mm lens, photorealistic.",
+     "motion": "Static camera. The morning mist clears and shadows shift quickly as the empty ground morphs into the solid concrete foundation."
+    },
+    {
+     "kf": "Medium shot looking up at exposed concrete pillars and steel rebar of the first floor. Overcast soft lighting, industrial brutalist aesthetic, cool gray and metallic tones. Shot on 50mm lens, photorealistic, strong geometric composition.",
+     "end_kf": "Medium shot of the exact same framing, now showing completed brickwork and installed glass windows on the floors. Warm late afternoon sunlight reflecting off the glass, rich terracotta and deep blue tones. Shot on 50mm lens, photorealistic.",
+     "motion": "Very slow pan right. The bare concrete structure seamlessly fills with solid bricks and reflective glass as the lighting warms up."
+    },
+    {
+     "kf": "Close up of rough, unfinished exterior wall insulation, gray concrete textures and green protective mesh. Flat, diffused daylight. Muted green and gray color palette. Shot on 85mm lens, shallow depth of field, photorealistic.",
+     "end_kf": "Close up of the exact same framing, revealing premium dark wood cladding and sleek black metal balcony railings. Sharp, contrasty sunlight casting diagonal shadows. Warm wood and dark metal palette. Shot on 85mm lens, photorealistic.",
+     "motion": "Extremely slow tilt up. The rough construction mesh and insulation morph smoothly into the polished premium wood and dark metal finish."
+    },
+    {
+     "kf": "Wide architectural shot of the residential building under scaffolding and white protective wraps. Twilight blue hour, floodlights illuminating the site. Cool blue and harsh white lighting. Shot on 24mm lens, photorealistic, cinematic scale.",
+     "end_kf": "Wide architectural shot of the exact same framing, showing the fully finished, luxurious residential building. Warm interior lights glowing through the windows, twilight sky. Sleek modern architecture, premium feel. Shot on 24mm lens, photorealistic.",
+     "motion": "Slow zoom out. The scaffolding and wraps melt away to reveal the glowing, beautifully finished residential building against the evening sky."
+    }
+   ],
+   "id": "cf_construction_1_transform",
+   "cat": "construction"
+  },
+  {
+   "type": "social",
+   "title_mk": "Вашиот нов простор",
+   "title_en": "Your New Space",
+   "line_mk": "Модерно живеење во срцето на Скопје.",
+   "line_en": "Modern living in the heart of Skopje.",
+   "desc_en": "A fast-paced, vertical teaser designed for social media, highlighting the sleek architectural details of a new residential development.",
+   "music": "upbeat electronic punchy bass heavy modern rhythm, 120 bpm",
+   "voice": "female, confident, energetic",
+   "vo_mk": [
+    "Искусете вистинска елеганција во современото живеење."
+   ],
+   "shots": [
+    {
+     "kf": "Vertical 9:16 composition. Centered massive yellow crane hook hanging against a bright blue Skopje sky. Sun flare hitting the metallic surface. High contrast, vivid yellow and deep blue palette. Shot on 50mm lens, photorealistic, sharp focus on the heavy metal.",
+     "motion": "Fast tilt down as the heavy crane hook lowers smoothly through the frame, sun flares shifting across the camera lens."
+    },
+    {
+     "kf": "Vertical 9:16 composition. Centered view looking straight down into a deep foundation trench with geometric steel rebar grids. Wet, fresh dark concrete contrasting with rusty orange steel. High contrast industrial lighting. Shot on 35mm lens, photorealistic, gritty textures.",
+     "motion": "Slow push in on the center of the steel grid while tiny dust particles float gently in the ambient air."
+    },
+    {
+     "kf": "Vertical 9:16 composition. Centered sleek, modern balcony with frameless glass railings and warm wooden ceiling panels. Reflected sunset light on the pristine glass. Premium, luxurious aesthetic, warm orange and deep shadow palette. Shot on 50mm lens, photorealistic, elegant.",
+     "motion": "Slow pan up focusing on the glass reflecting the sunset, emphasizing the premium architectural finish and peaceful evening atmosphere."
+    }
+   ],
+   "id": "cf_construction_2_social",
+   "cat": "construction"
+  }
+ ]
+}

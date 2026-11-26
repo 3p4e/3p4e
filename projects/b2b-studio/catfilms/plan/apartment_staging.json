@@ -1,0 +1,74 @@
+{
+ "key": "apartment_staging",
+ "mk": "Опремување станови",
+ "en": "Apartment staging",
+ "films": [
+  {
+   "type": "transform",
+   "title_mk": "Трансформација на просторот",
+   "title_en": "Space Transformation",
+   "line_mk": "Од празен стан до ваш дом.",
+   "line_en": "From empty flat to your home.",
+   "desc_en": "A seamless timelapse journey showing a bare Skopje apartment blooming into a warm, premium living space.",
+   "music": "Ambient cinematic acoustic guitar, slow build, 80 bpm",
+   "voice": "female, warm, reassuring",
+   "vo_mk": [
+    "Секој празен простор крие бескраен потенцијал.",
+    "Дозволете ни да го создадеме вашиот дом."
+   ],
+   "shots": [
+    {
+     "kf": "Wide angle shot of a completely empty, bare-bones living room in a modern Skopje high-rise. Grey concrete floors, white unpainted walls, exposed wires. Large floor-to-ceiling windows showing a hazy view of Mount Vodno. Overcast, flat natural light. 24mm lens, eye-level composition, desaturated cool grey and white color palette, photorealistic.",
+     "end_kf": "Wide angle shot of the same living room, now fully furnished in a premium mid-century modern style. Warm oak hardwood floors, a plush mustard-yellow velvet sofa, an artisanal wooden coffee table, and a large woven rug. Sunbeams hitting the sofa. 24mm lens, eye-level composition, warm earthy tones, photorealistic.",
+     "motion": "Slow, steady push-in camera move towards the window. Dust motes gently float in the air as shadows slowly shift across the floor."
+    },
+    {
+     "kf": "Medium wide shot of a bare kitchen corner. Plaster walls, exposed plumbing pipes sticking out of the floor, no tiles, dusty concrete subfloor. Soft, diffused daylight coming from off-camera right. 35mm lens, centered composition, cold and industrial atmosphere, monochromatic grey palette, highly detailed and photorealistic.",
+     "end_kf": "Medium wide shot of the same kitchen corner, now featuring sleek matte-black cabinetry, a white marble countertop, and a glowing LED backsplash. A ceramic bowl of fresh green apples sits on the counter. Warm under-cabinet lighting. 35mm lens, centered composition, high-contrast black, white, and wood palette, photorealistic.",
+     "motion": "Slow camera pan from left to right. Soft reflections shimmer across the polished marble countertop under the steady lighting."
+    },
+    {
+     "kf": "Wide shot of an empty, echoey bedroom space. Bare drywall, no baseboards, a single lightbulb hanging from a wire in the ceiling. A bare window on the left. Cold morning light casting long, harsh shadows. 28mm lens, symmetrical composition, pale blue and grey palette, raw and unfinished, photorealistic.",
+     "end_kf": "Wide shot of the same bedroom, transformed into a cozy sanctuary. A large king-size bed with crisp white linens and heavy olive-green throw pillows. Floor-to-ceiling linen curtains framing the window, a modern wooden nightstand with a glowing warm lamp. 28mm lens, symmetrical composition, warm olive and cream palette, photorealistic.",
+     "motion": "Slow pedestal up camera move rising vertically. The heavy linen curtain fabric rustles very slightly as if caught in a faint breeze."
+    },
+    {
+     "kf": "Medium shot of an empty concrete balcony overlooking the Skopje cityscape. Chipped grey paint on the railing, bare cement floor with a few dry leaves. Dull afternoon lighting, flat sky. 50mm lens, slightly angled composition, drab grey and faded blue color palette, photorealistic.",
+     "end_kf": "Medium shot of the same balcony, now styled as a lush urban oasis. Wooden deck tiles, two modern rattan lounge chairs with plush white cushions, and large terracotta pots filled with vibrant green ferns. Golden hour sunlight casting warm, long shadows. 50mm lens, slightly angled composition, rich green, terracotta, and gold palette, photorealistic.",
+     "motion": "Slow pull-back camera move. The leaves of the potted ferns sway gently in a soft, continuous breeze against the city backdrop."
+    }
+   ],
+   "id": "cf_apartment_staging_1_transform",
+   "cat": "apartment_staging"
+  },
+  {
+   "type": "social",
+   "title_mk": "Модерен живот",
+   "title_en": "Modern Living",
+   "line_mk": "Вашиот простор, совршено опремен.",
+   "line_en": "Your space, perfectly staged.",
+   "desc_en": "A fast-paced vertical showcase of a stylishly staged apartment designed to grab attention on social feeds.",
+   "music": "Upbeat electronic lo-fi house, punchy bass, 115 bpm",
+   "voice": "male, energetic, confident",
+   "vo_mk": [
+    "Опремување кое го оживува вашиот нов стан!"
+   ],
+   "shots": [
+    {
+     "kf": "Vertical format, 9:16. Medium shot centered on a striking, luxurious emerald green velvet armchair placed perfectly in a bright, modern minimalist room. A sleek gold standing lamp is positioned right beside it. Vibrant, high-contrast lighting with strong directional sunlight. 35mm lens, low angle looking slightly up, rich jewel tones, highly photorealistic.",
+     "motion": "Fast, dynamic push-in camera move towards the armchair. The sunlight casts a sharp, slowly moving shadow across the rich velvet texture."
+    },
+    {
+     "kf": "Vertical format, 9:16. Medium close-up centered on a perfectly set, round dining table made of dark walnut wood. A sleek ceramic vase with tall, dry pampas grass sits in the exact center. Blurred modern kitchen in the background. Soft, warm overhead pendant lighting. 50mm lens, eye-level, warm beige and dark wood palette, photorealistic.",
+     "motion": "Slow, elegant camera orbit around the central ceramic vase. The dry pampas grass trembles very slightly in the still indoor air."
+    },
+    {
+     "kf": "Vertical format, 9:16. Wide shot centered on a cozy reading nook next to a tall vertical window overlooking an abstract city skyline. A fluffy white bouclé accent chair sits on a textured cream rug. Golden hour sunlight streams through the glass, painting the room in orange hues. 24mm lens, straight-on composition, warm amber and cream palette, photorealistic.",
+     "motion": "Slow tilt-down camera move from the tall window to the chair. Dust particles glitter and dance brightly in the warm sunbeams."
+    }
+   ],
+   "id": "cf_apartment_staging_2_social",
+   "cat": "apartment_staging"
+  }
+ ]
+}
