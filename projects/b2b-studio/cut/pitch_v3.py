@@ -15,7 +15,8 @@ SITE = "https://bigdogma.tech"; MAIL = "inf.unit@bigdogma.tech"
 # ------------------------------------------------------------------ strings (company language)
 T = {"mk": dict(
   for_="Подготвено за", lead="AI видео студио од Скопје. Реклами и брендирани филмови без снимање: готови за 7–10 дена по одобрување на клучните кадри.",
-  pts=["{n} AI филмови направени само за вас", "Предлог-распоред за објава за 4 недели", "16:9 за YouTube и екрани, плус 9:16 за Stories"], enter="Отворете ја презентацијата",
+  pts=["{n} AI филмови направени само за вас", "Предлог-распоред за објава за 4 недели", "16:9 за YouTube и екрани, плус 9:16 за Stories"], pt_nv="16:9 за YouTube, веб и екрани",
+  f_p_nv="Филмовите се во 16:9 за YouTube, веб и екрани.", enter="Отворете ја презентацијата",
   scroll="Сите кадри на оваа страница се генерирани со AI.",
   nav=[("films", "Филмови"), ("shots", "Кадри"), ("campaign", "Распоред"), ("offer", "Понуда"), ("dl", "Преземање"), ("bd", "BD галерија")], cta="Закажи 15 минути",
   h1="Концепт-видео за <em>{c}</em>", sub="Сè на оваа страница е направено со AI специјално за вас: филмови, кадри, клучни кадри и предлог-распоред за објава.",
@@ -105,8 +106,16 @@ def campaign(c, s):
     return f'''<div class="tw"><table class="plan"><thead><tr>{head}</tr></thead><tbody>{"".join(tb)}</tbody></table></div>'''
 
 # ------------------------------------------------------------------ page
+# films with a native vertical version (generated for 9:16, not the 16:9 film on a blurred background): id -> (file, poster)
+NATIVE_V = {}
 def build(key, out):
-    c = COMPANIES[key](); s = T[c["lang"]]; n_f = len(c["films"]); name = E(c["name"])
+    c = COMPANIES[key](); s = dict(T[c["lang"]]); n_f = len(c["films"]); name = E(c["name"])
+    for f in c["films"]:   # drop blur-fill 9:16 files
+        nv = NATIVE_V.get(f.get("id") or os.path.basename(f["src"])[:-4])
+        if nv: f["v"], f["vposter"] = nv
+        else: f.pop("v", None); f.pop("vposter", None)
+    has_v = any(f.get("v") for f in c["films"])
+    if not has_v: s["pts"] = s["pts"][:2] + [s["pt_nv"]]; s["f_p"] = s["f_p_nv"]
     old = open(f"{SCRP}/{key}/classic.html", encoding="utf-8").read() if key != "foton" else open(f"{out}/classic.html", encoding="utf-8").read() if os.path.exists(f"{out}/classic.html") else open(f"{out}/index.html", encoding="utf-8").read()
     import re
     offer = re.search(r'<section id="offer".*?</section>', old, re.S).group(0)
@@ -223,9 +232,9 @@ dialog .x{{position:absolute;right:0;top:-44px;background:none;border:0;color:#f
 <header class="hero"><video autoplay muted loop playsinline poster="hero.jpg"><source src="hero.mp4" type="video/mp4"></video>
 <div class="wrap"><h1>{s["h1"].format(c=name)}</h1><p>{E(s["sub"])}</p><div class="btns"><a class="btn a" href="#films">{E(s["f_e"])}</a><a class="btn b" href="#campaign">{E(s["c_e"])}</a></div></div></header>
 <section id="films"><div class="wrap"><div class="eyebrow rv">{E(s["f_e"])}</div><h2 class="sh rv">{E(s["f_h"].format(n=n_f, c=c["name"]))}</h2><p class="sp rv">{E(s["f_p"])}</p>
-<div class="fmt rv" role="group"><button type="button" data-fmt="h" aria-pressed="true">{s["h169"]}</button><button type="button" data-fmt="v" aria-pressed="false">{s["v916"]}</button></div>
+{f'<div class="fmt rv" role="group"><button type="button" data-fmt="h" aria-pressed="true">{s["h169"]}</button><button type="button" data-fmt="v" aria-pressed="false">{s["v916"]}</button></div>' if has_v else ""}
 <ul class="grid" id="fg">{films}</ul></div></section>
-<section class="alt"><div class="wrap"><div class="eyebrow rv">{E(s["v_e"])}</div><h2 class="sh rv">{E(s["v_h"])}</h2><p class="sp rv">{E(s["v_p"])}</p><ul class="vrow">{vert}</ul></div></section>
+{f'<section class="alt"><div class="wrap"><div class="eyebrow rv">{E(s["v_e"])}</div><h2 class="sh rv">{E(s["v_h"])}</h2><p class="sp rv">{E(s["v_p"])}</p><ul class="vrow">{vert}</ul></div></section>' if has_v else ""}
 <section id="shots"><div class="wrap"><div class="eyebrow rv">{E(s["s_e"])}</div><h2 class="sh rv">{E(s["s_h"])}</h2><p class="sp rv">{E(s["s_p"].format(n=c["shots"], c=c["name"]))}</p>
 {mont}<ul class="shots">{shots}</ul></div></section>
 <section class="alt"><div class="wrap"><div class="eyebrow rv">{E(s["k_e"])}</div><h2 class="sh rv">{E(s["k_h"])}</h2><p class="sp rv">{E(s["k_p"])}</p><ul class="cmps">{pairs}</ul></div></section>
@@ -242,7 +251,7 @@ dialog .x{{position:absolute;right:0;top:-44px;background:none;border:0;color:#f
 </main>
 <footer><div class="wrap">{E(s["legal"])}<br>© 2026 BIG DOGMA · AI STUDIO | MK · <a href="{SITE}">bigdogma.tech</a> · <a href="classic.html">classic</a></div></footer>
 <dialog id="lb"><button class="x" type="button" aria-label="{E(s["close"])}">×</button><video controls playsinline controlslist="nodownload noplaybackrate" disablepictureinpicture></video><p></p></dialog>
-<script>window.H3T={json.dumps({"ad": s["h3_ad"], "film": s["h3_film"], "lbl": s["h3_lbl"]}, ensure_ascii=False)};</script>
+<script>window.H3V={json.dumps(has_v)};window.H3T={json.dumps({"ad": s["h3_ad"], "film": s["h3_film"], "lbl": s["h3_lbl"]}, ensure_ascii=False)};</script>
 <script>window.DOGMA_HDR_BASE="{SITE}/logo_fx/hdr/";window.DOGMA_INTRO={json.dumps(intro)};</script>
 <script src="{SITE}/logo_fx/mark_data.js"></script><script src="{SITE}/logo_fx/logo_fx.js"></script><script src="{SITE}/logo_fx/hdr/list.js"></script><script src="{SITE}/logo_fx/hdr.js"></script><script src="{SITE}/logo_fx/reel_bb.js"></script><script src="{SITE}/reel.js"></script>
 <script>
@@ -270,7 +279,7 @@ document.addEventListener('contextmenu',function(e){{if(e.target.closest&&e.targ
 document.addEventListener('dragstart',function(e){{if(e.target.tagName==='VIDEO'||e.target.tagName==='IMG')e.preventDefault()}});
 /* H3 versions sit next to the same film (grid + 9:16 row); the server only answers h3/ outside the EU, UK, USA and South Korea */
 fetch('h3/',{{cache:'no-store'}}).then(function(r){{return r.ok?r.json():[]}}).then(function(d){{var N={{}},T=window.H3T,fg=$('#fg'),vr=$('.vrow');
- (d||[]).forEach(function(f){{var m=/^(.+?)(_9x16)?\\.mp4$/.exec(f.name);if(m){{N[m[1]]=N[m[1]]||{{}};N[m[1]][m[2]?'v':'h']=1}}}});
+ (d||[]).forEach(function(f){{var m=/^(.+?)(_9x16)?\\.mp4$/.exec(f.name);if(m){{N[m[1]]=N[m[1]]||{{}};if(!m[2]||window.H3V)N[m[1]][m[2]?'v':'h']=1}}}});
  var nice=function(k){{return k.replace(/^[a-z0-9]+_/,'').replace(/_/g,' ').replace(/\\b\\w/g,function(c){{return c.toUpperCase()}})}};
  Object.keys(N).sort().forEach(function(k){{var h='h3/'+k,x=N[k],tw=fg&&fg.querySelector('a[data-play="'+k+'.mp4"]'),t=tw?tw.dataset.t:nice(k),li;
   if(x.h&&fg){{li=document.createElement('li');li.className='fc h3';
