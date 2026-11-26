@@ -2,7 +2,7 @@
 # ~$0.017 per 1K image; owner, 2026-11-26: "find a cheaper keyframe model"). Two rounds: round 1 = every frame that needs no reference;
 # round 2 = commercial shots that show the recurring character (made from that film's first character frame, so the person stays the same)
 # and transform end frames (made from their start frame). Output: <scratch>/catfilms/kf_v3/<film>_s<n>.jpg (+ s<n>e.jpg), 1280x704 or
-# 704x1280, exactly what make_bundle expects.  python3 genkf_v3.py [--sync] [cat ...]
+# 704x1280, exactly what make_bundle expects.  python3 genkf_v3.py [--sync | --openai] [cat ...]
 import json, glob, os, sys, base64, io, time, urllib.request, urllib.error, concurrent.futures as cf
 from PIL import Image
 S = "/tmp/claude-0/-home-user-3p4e/50442171-da10-52d9-9948-b5cc07f6bc8a/scratchpad"; KEY = open(f"{S}/.gemini_paid").read().strip()
@@ -37,6 +37,28 @@ def sync_one(j):
             if e.code == 402: raise SystemExit("GEMINI_402")
             time.sleep(5 * (a + 1)); err = e
         except Exception as e: time.sleep(5 * (a + 1)); err = e
+    return f"FAIL {err}"
+
+OA_MODEL = os.environ.get("OA_IMAGE_MODEL", "gpt-image-1-mini")   # owner, 2026-11-26: "use open ai api" while Gemini has no credit (~$0.015/frame)
+def oa_one(j):
+    """OpenAI image: generations for a plain frame, edits with the reference picture for character shots and transform end frames."""
+    import requests
+    out, prompt, ar, ref = j; size = "1024x1536" if ar == "9:16" else "1536x1024"; H = {"Authorization": "Bearer " + os.environ["OPENAI_API_KEY"]}
+    err = None
+    for a in range(4):
+        r = None
+        try:
+            if ref:
+                with open(ref, "rb") as fh:
+                    r = requests.post("https://api.openai.com/v1/images/edits", headers=H, timeout=300, files={"image[]": (os.path.basename(ref), fh, "image/jpeg")},
+                                      data={"model": OA_MODEL, "prompt": prompt + STYLE, "size": size, "quality": "medium", "n": "1"})
+            else:
+                r = requests.post("https://api.openai.com/v1/images/generations", headers=H, timeout=300,
+                                  json={"model": OA_MODEL, "prompt": prompt + STYLE, "size": size, "quality": "medium", "n": 1})
+            if r.status_code == 429 and "quota" in r.text: raise SystemExit("OPENAI_QUOTA " + r.text[:200])
+            r.raise_for_status(); save(out, ar, r.json()["data"][0]["b64_json"]); return "ok"
+        except SystemExit: raise
+        except Exception as e: err = f"{e} {(r.text[:160] if r is not None else '')}"; time.sleep(8 * (a + 1))
     return f"FAIL {err}"
 
 def batch_run(jobs, tag):
@@ -89,16 +111,16 @@ def plan_jobs(cats):
     return r1, r2
 
 if __name__ == "__main__":
-    sync = "--sync" in sys.argv; cats = [a for a in sys.argv[1:] if not a.startswith("--")] or [os.path.basename(p)[:-5] for p in sorted(glob.glob(f"{HERE}/plan/*.json"))]
+    sync = "--sync" in sys.argv; oa = "--openai" in sys.argv; cats = [a for a in sys.argv[1:] if not a.startswith("--")] or [os.path.basename(p)[:-5] for p in sorted(glob.glob(f"{HERE}/plan/*.json"))]
     r1, r2 = plan_jobs(cats)
     for tag, jobs in (("r1", r1), ("r2", r2)):
         todo = [j for j in jobs if not os.path.exists(j[0]) and (not j[3] or os.path.exists(j[3]))]
         if not todo: continue
-        left = todo if sync else batch_run(todo, tag)
+        left = todo if (sync or oa) else batch_run(todo, tag)
         if left:
             print("direct calls for", len(left), flush=True)
             with cf.ThreadPoolExecutor(4) as ex:
-                for res, j in zip(ex.map(sync_one, left), left):
+                for res, j in zip(ex.map(oa_one if oa else sync_one, left), left):
                     if res != "ok": print(res, os.path.basename(j[0]), flush=True)
     need = r1 + r2; have = sum(os.path.exists(j[0]) for j in need)
     print("KF_V3", have, "/", len(need), "frames", flush=True)
