@@ -708,6 +708,7 @@ shutil.rmtree(f"{OUT}/logo_fx/hdr", ignore_errors=True); shutil.copytree(f"{WORK
 shutil.copy(f"{S}/brand/fonts/RussoOne-400.ttf", f"{OUT}/russo.ttf")
 for f in ("manrope-cyr.woff2", "manrope-lat.woff2", "manrope-latx.woff2"): shutil.copy(f"{WORK}/fonts/{f}", f"{OUT}/{f}")
 for f in ("site.css", "site.js", "reel.js", "robots.txt", "404.html"): shutil.copy(f"{WORK}/{f}", f"{OUT}/{f}")
+os.makedirs(f"{OUT}/media", exist_ok=True); shutil.copy(f"{WORK}/h3_mark.png", f"{OUT}/media/h3_mark.png")   # the MiniMax H3 mark for H3 thumbnails (site + pitch pages)
 import datetime
 open(f"{OUT}/sitemap.xml", "w").write(f'''<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>{SITE_URL}/</loc><lastmod>{datetime.date.today()}</lastmod></url></urlset>

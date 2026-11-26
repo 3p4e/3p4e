@@ -160,6 +160,8 @@ def build(key, out):
 *{{box-sizing:border-box}}html{{scroll-behavior:smooth}}body{{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 M,system-ui,sans-serif;-webkit-font-smoothing:antialiased}}
 body.lock{{overflow:hidden}}a{{color:inherit}}img,video{{max-width:100%;display:block}}
 .wrap{{max-width:1240px;margin:0 auto;padding:0 20px}}
+/* MiniMax H3 mark on H3 thumbnails (the only H3 attribution on the page) */
+.h3m{{position:absolute;right:8px;bottom:8px;height:13px;width:auto;z-index:2;pointer-events:none;filter:drop-shadow(0 0 3px rgba(0,0,0,.6))}}.vrow li{{position:relative}}
 /* nav + header logo (same engine as bigdogma.tech) */
 .nav{{position:fixed;top:0;left:0;right:0;z-index:30;transition:background .3s}}.nav.s{{background:rgba(11,11,13,.86);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}}
 .nav .wrap{{display:flex;align-items:center;gap:18px;height:72px}}
@@ -253,7 +255,7 @@ dialog .x{{position:absolute;right:0;top:-44px;background:none;border:0;color:#f
 </main>
 <footer><div class="wrap">{E(s["legal"])}<br>© 2026 BIG DOGMA · AI STUDIO | MK · <a href="{SITE}">bigdogma.tech</a> · <a href="classic.html">classic</a></div></footer>
 <dialog id="lb"><button class="x" type="button" aria-label="{E(s["close"])}">×</button><video controls playsinline controlslist="nodownload noplaybackrate" disablepictureinpicture></video><p></p></dialog>
-<script>window.H3V={json.dumps(has_v)};window.H3T={json.dumps({"ad": s["h3_ad"], "film": s["h3_film"], "lbl": s["h3_lbl"]}, ensure_ascii=False)};</script>
+<script>window.H3V={json.dumps(has_v)};window.H3T={json.dumps({"ad": s["h3_ad"], "film": s["h3_film"], "ai": s["ai_film"], "mark": SITE + "/media/h3_mark.png"}, ensure_ascii=False)};</script>
 <script>window.DOGMA_HDR_BASE="{SITE}/logo_fx/hdr/";window.DOGMA_INTRO={json.dumps(intro)};</script>
 <script src="{SITE}/logo_fx/mark_data.js"></script><script src="{SITE}/logo_fx/logo_fx.js"></script><script src="{SITE}/logo_fx/hdr/list.js"></script><script src="{SITE}/logo_fx/hdr.js"></script><script src="{SITE}/logo_fx/reel_bb.js"></script><script src="{SITE}/reel.js"></script>
 <script>
@@ -283,11 +285,11 @@ document.addEventListener('dragstart',function(e){{if(e.target.tagName==='VIDEO'
 fetch('h3/',{{cache:'no-store'}}).then(function(r){{return r.ok?r.json():[]}}).then(function(d){{var N={{}},T=window.H3T,fg=$('#fg'),vr=$('.vrow');
  (d||[]).forEach(function(f){{var m=/^(.+?)(_9x16)?\\.mp4$/.exec(f.name);if(m){{N[m[1]]=N[m[1]]||{{}};if(!m[2]||window.H3V)N[m[1]][m[2]?'v':'h']=1}}}});
  var nice=function(k){{return k.replace(/^[a-z0-9]+_/,'').replace(/_/g,' ').replace(/\\b\\w/g,function(c){{return c.toUpperCase()}})}};
- Object.keys(N).sort().forEach(function(k){{var h='h3/'+k,x=N[k],tw=fg&&fg.querySelector('a[data-play="'+k+'.mp4"]'),t=tw?tw.dataset.t:nice(k),li;
+ Object.keys(N).sort().forEach(function(k){{var h='h3/'+k,x=N[k],tw=fg&&fg.querySelector('a[data-play="'+k+'.mp4"]'),t=tw?tw.dataset.t:nice(k),ln=(tw&&tw.querySelector('.tx span'))?tw.querySelector('.tx span').textContent:'',li;
   if(x.h&&fg){{li=document.createElement('li');li.className='fc h3';
-   li.innerHTML='<a href="'+h+'.mp4" data-play="'+h+'.mp4" data-t="'+t+' · Made with MiniMax H3" data-p="'+h+'.jpg"'+(x.v?' data-v="'+h+'_9x16.mp4" data-vp="'+h+'_9x16.jpg"':'')+'><span class="im"><img src="'+(fmt==='v'&&x.v?h+'_9x16.jpg':h+'.jpg')+'" alt="" loading="lazy"><span class="ct">'+T.lbl+'</span><span class="pl"></span></span><span class="tx"><b>'+t+'</b><span>Made with MiniMax H3</span></span></a>';
+   li.innerHTML='<a href="'+h+'.mp4" data-play="'+h+'.mp4" data-t="'+t+'" data-p="'+h+'.jpg"'+(x.v?' data-v="'+h+'_9x16.mp4" data-vp="'+h+'_9x16.jpg"':'')+'><span class="im"><img src="'+(fmt==='v'&&x.v?h+'_9x16.jpg':h+'.jpg')+'" alt="" loading="lazy"><span class="ct">'+T.ai+'</span><span class="pl"></span><img class="h3m" src="'+T.mark+'" alt="MiniMax H3"></span><span class="tx"><b>'+t+'</b><span>'+ln+'</span></span></a>';
    var at=tw&&tw.closest('li');at?at.after(li):fg.appendChild(li)}}
-  if(x.v&&vr){{li=document.createElement('li');li.innerHTML='<video data-src="'+h+'_9x16.mp4" poster="'+h+'_9x16.jpg" muted loop playsinline preload="none"></video><span>'+t+' · MiniMax H3</span>';
+  if(x.v&&vr){{li=document.createElement('li');li.innerHTML='<video data-src="'+h+'_9x16.mp4" poster="'+h+'_9x16.jpg" muted loop playsinline preload="none"></video><span>'+t+'</span><img class="h3m" src="'+T.mark+'" alt="MiniMax H3">';
    var tv=vr.querySelector('video[data-src="'+k+'_9x16.mp4"]'),av=tv&&tv.closest('li');av?av.after(li):vr.insertBefore(li,vr.querySelector('.gif'));io.observe($('video',li))}}
  }})}}).catch(function(){{}});
 /* nav */

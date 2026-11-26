@@ -105,7 +105,7 @@
         li.classList.add('h3', 'in'); a.href = src; a.dataset.film = hid;
         const img = $('img', li); if (img) { img.src = poster; img.removeAttribute('srcset'); }
         const du = $('.du', li); if (du) du.remove();
-        const im = $('.im', li); if (im) { const b = document.createElement('span'); b.className = 'h3b'; b.textContent = 'MiniMax H3 · AI'; im.appendChild(b); }
+        const im = $('.im', li); if (im) { const b = document.createElement('img'); b.className = 'h3m'; b.src = 'media/h3_mark.png'; b.alt = 'MiniMax H3'; im.appendChild(b); }
         a.addEventListener('click', e => { if (e.metaKey || e.ctrlKey || e.shiftKey || e.button) return; e.preventDefault(); openFilm(hid, a); });
         li0.after(li);
       });
