@@ -28,6 +28,19 @@
   }
   $$('.langsel').forEach(x => x.addEventListener('change', () => apply(x.value, true)));
 
+  // ---------- BD film reel (owner, 2026-11-26): the BD logo films (media/intro) in random rotation, full screen, no text,
+  // as the first-visit splash and as a screensaver after 3 minutes without input (reel.js)
+  if (window.BDReel) {
+    const reelList = () => FILMS.filter(f => /^bd_/.test(f.id)).map(f => ({ src: f.src, poster: f.poster }));
+    const H = document.documentElement;
+    if (H.classList.contains('reel1')) setTimeout(() => {   // after the initial language is applied, so "skip" is in the visitor's language
+      try { sessionStorage.setItem('dogma_pre', '1'); } catch (e) {}
+      const shown = BDReel.splash(reelList(), t('pre.skip') || 'Skip', 10000);
+      setTimeout(() => H.classList.remove('reel1'), shown ? 900 : 0);
+    }, 0);
+    BDReel.idle(reelList, 180000);
+  } else document.documentElement.classList.remove('reel1');
+
   // ---------- mobile menu
   const nav = $('.nav'), burger = $('.burger');
   const setMenu = o => { nav.classList.toggle('open', o); burger.setAttribute('aria-expanded', String(o)); document.body.classList.toggle('menu-open', o); };

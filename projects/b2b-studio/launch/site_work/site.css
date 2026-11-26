@@ -461,3 +461,7 @@ html:lang(zh) h1,html:lang(zh) h2,html:lang(zh) h3{letter-spacing:0;word-break:n
 /* H3 versions of the studio films: small credit on the card (the film itself carries the MiniMax H3 corner mark) */
 .fc.h3 .im{position:relative}
 .fc .h3b{position:absolute;right:8px;bottom:8px;z-index:2;font:700 10px/1 var(--bf);letter-spacing:.08em;padding:5px 8px;border-radius:999px;background:rgba(0,0,0,.6);color:#fff;pointer-events:none}
+
+/* first visit: black cover from the first paint until the film reel (reel.js) is up; CSS lifts it after 4 s if a script fails */
+.reel1 body::after{content:"";position:fixed;inset:0;z-index:199;background:#000;animation:reelCover .5s 4s forwards}
+@keyframes reelCover{to{opacity:0;visibility:hidden}}

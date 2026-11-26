@@ -249,7 +249,7 @@ dialog .x{{position:absolute;right:0;top:-44px;background:none;border:0;color:#f
 <dialog id="lb"><button class="x" type="button" aria-label="{E(s["close"])}">×</button><video controls playsinline controlslist="nodownload noplaybackrate" disablepictureinpicture></video><p></p></dialog>
 <script>window.H3T={json.dumps({"ad": s["h3_ad"], "film": s["h3_film"], "lbl": s["h3_lbl"]}, ensure_ascii=False)};</script>
 <script>window.DOGMA_HDR_BASE="{SITE}/logo_fx/hdr/";window.DOGMA_INTRO={json.dumps(intro)};</script>
-<script src="{SITE}/logo_fx/mark_data.js"></script><script src="{SITE}/logo_fx/logo_fx.js"></script><script src="{SITE}/logo_fx/hdr/list.js"></script><script src="{SITE}/logo_fx/hdr.js"></script>
+<script src="{SITE}/logo_fx/mark_data.js"></script><script src="{SITE}/logo_fx/logo_fx.js"></script><script src="{SITE}/logo_fx/hdr/list.js"></script><script src="{SITE}/logo_fx/hdr.js"></script><script src="{SITE}/reel.js"></script>
 <script>
 (function(){{
 var $=function(q,e){{return(e||document).querySelector(q)}},$$=function(q,e){{return[].slice.call((e||document).querySelectorAll(q))}};
@@ -267,7 +267,7 @@ function burst(done){{var W=bc.width=innerWidth*Math.min(2,devicePixelRatio||1),
   P.forEach(function(p){{var r=R*p[1]*q,a=1-q;b.fillStyle=p[2]>.5?'rgba(255,255,255,'+a+')':'rgba(242,193,78,'+a+')';b.beginPath();b.arc(cx+Math.cos(p[0])*r,cy+Math.sin(p[0])*r*.8,p[3]*W/900,0,6.283);b.fill()}});
   b.strokeStyle='rgba(255,230,170,'+(1-q)+')';b.lineWidth=W/300*(1-q);b.beginPath();b.ellipse(cx,cy,R*q*.9,R*q*.55,0,0,6.283);b.stroke();
   if(q>.3&&!sw){{sw=true;done()}}if(q<1)requestAnimationFrame(f);else b.clearRect(0,0,W,H)}})(t0)}}
-function enter(){{if(sp.classList.contains('out'))return;var go=function(){{sp.classList.add('out');document.body.classList.remove('lock');sv.forEach(function(v){{setTimeout(function(){{v.pause();v.removeAttribute('src');v.load()}},1300)}})}};RM?go():burst(go)}}
+function enter(){{if(sp.classList.contains('out'))return;var go=function(){{sp.classList.add('out');document.body.classList.remove('lock');if(window.BDReel)BDReel.idle(function(){{return (window.DOGMA_INTRO||[]).map(function(u){{return{{src:u,poster:u.replace(/\\.mp4$/,'.jpg')}}}})}},180000);sv.forEach(function(v){{setTimeout(function(){{v.pause();v.removeAttribute('src');v.load()}},1300)}})}};RM?go():burst(go)}}
 $('#enter').addEventListener('click',enter);sp.addEventListener('click',function(e){{if(e.target===sp||e.target.classList.contains('shade'))enter()}});
 addEventListener('keydown',function(e){{if((e.key==='Enter'||e.key===' ')&&!sp.classList.contains('out')&&document.activeElement===document.body){{e.preventDefault();enter()}}}});
 /* films are for viewing on this page only (owner, 2026-11-26): no context menu on videos, no drag */

@@ -391,12 +391,13 @@ PAGE = f"""<!doctype html>
 <link rel="preload" href="{u('media/hero.jpg')}" as="image">
 <link rel="stylesheet" href="fx.css?v={{V}}">
 <link rel="stylesheet" href="site.css?v={{V}}">
-<noscript><style>.pre{{display:none}}.rv{{opacity:1;transform:none}}#qf{{display:none}}</style></noscript>
+<script>try{{if(!sessionStorage.getItem('dogma_pre')&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&!(navigator.connection&&navigator.connection.saveData))document.documentElement.classList.add('reel1')}}catch(e){{}}</script>
+<noscript><style>.reel1 body::after{{display:none}}.pre{{display:none}}.rv{{opacity:1;transform:none}}#qf{{display:none}}</style></noscript>
 <script>try{{var l=new URLSearchParams(location.search).get('lang')||localStorage.getItem('bd_lang');if(l&&l!=='mk'&&['en','sq','sr','hr','sl','bg','zh'].indexOf(l)>=0){{var d=document.documentElement;d.classList.add('l-en');setTimeout(function(){{d.classList.add('i18n')}},2500)}}}}catch(e){{}}</script>
 </head>
 <body>
 <a class="skip" href="#main" @="skip"></a>
-<div class="pre" aria-hidden="true"><canvas></canvas><button type="button" @="pre.skip"></button></div>
+<span hidden @="pre.skip"></span>
 <div class="aurora" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div class="grain" aria-hidden="true"></div><div class="spot" aria-hidden="true"></div>
 
 <nav class="nav" @a="aria-label:nav.label">
@@ -631,7 +632,7 @@ PAGE = f"""<!doctype html>
 
 <script>window.BD_FILMS={FILM_JSON};window.BD_CONTACT={CT_JS};</script>
 <script src="i18n.js?v={{V}}"></script>
-<script src="dogma_logo.js?v={{V}}"></script><script src="mark.js?v={{V}}"></script><script src="fx.js?v={{V}}"></script><script src="site.js?v={{V}}"></script>
+<script src="dogma_logo.js?v={{V}}"></script><script src="mark.js?v={{V}}"></script><script src="fx.js?v={{V}}"></script><script src="reel.js?v={{V}}"></script><script src="site.js?v={{V}}"></script>
 <script src="logo_fx/mark_data.js?v={{V}}"></script><script src="logo_fx/logo_fx.js?v={{V}}"></script><script src="logo_fx/hdr/list.js?v={{V}}"></script><script src="logo_fx/hdr.js?v={{V}}"></script>
 <script>window.DOGMA_HERO={HERO_JSON};</script><script src="logo_fx/hero_bg.js?v={{V}}"></script>
 </body>
@@ -706,7 +707,7 @@ for f in ("mark_data.js", "logo_fx.js", "skins.js", "hdr.js", "hero_bg.js"): shu
 shutil.rmtree(f"{OUT}/logo_fx/hdr", ignore_errors=True); shutil.copytree(f"{WORK}/logo_fx/hdr", f"{OUT}/logo_fx/hdr")
 shutil.copy(f"{S}/brand/fonts/RussoOne-400.ttf", f"{OUT}/russo.ttf")
 for f in ("manrope-cyr.woff2", "manrope-lat.woff2", "manrope-latx.woff2"): shutil.copy(f"{WORK}/fonts/{f}", f"{OUT}/{f}")
-for f in ("site.css", "site.js", "robots.txt", "404.html"): shutil.copy(f"{WORK}/{f}", f"{OUT}/{f}")
+for f in ("site.css", "site.js", "reel.js", "robots.txt", "404.html"): shutil.copy(f"{WORK}/{f}", f"{OUT}/{f}")
 import datetime
 open(f"{OUT}/sitemap.xml", "w").write(f'''<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>{SITE_URL}/</loc><lastmod>{datetime.date.today()}</lastmod></url></urlset>
