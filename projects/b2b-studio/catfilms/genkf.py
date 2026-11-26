@@ -35,7 +35,7 @@ films = [f for c in cats for f in json.load(open(f"{HERE}/plan/{c}.json"))["film
 starts, ends = [], []
 for f in films:
     for j in film_jobs(f): (ends if j[3] else starts).append(j)
-with cf.ThreadPoolExecutor(6) as ex:
+with cf.ThreadPoolExecutor(3) as ex:
     for r, j in zip(ex.map(lambda j: gen(*j), starts), starts):
         if r.startswith("FAIL"): print(r, os.path.basename(j[0]), flush=True)
     for r, j in zip(ex.map(lambda j: gen(*j), ends), ends):

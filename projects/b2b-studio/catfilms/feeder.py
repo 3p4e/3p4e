@@ -20,7 +20,7 @@ while True:
         n += 1; name = f"cffeed_{n}.tgz"
         try:
             urllib.request.urlopen(urllib.request.Request(url + "/file/write", data=json.dumps({"path": f"/opt/abra-v3/{name}", "content_b64": base64.b64encode(buf.getvalue()).decode(), "mkdir": True}).encode(), headers=H), timeout=300)
-            out = sh(f"cd /opt/abra-v3 && for b in A B; do ./fv$b.sh 'mkdir -p /workspace/cfbundle/kf && cd /workspace/cfbundle/kf && tar xzf - && ls | wc -l' < {name} | tail -1; done; rm -f {name}")
+            out = sh(f"cd /opt/abra-v3 && for b in A B; do timeout 120 ./fv$b.sh 'mkdir -p /workspace/cfbundle/kf && cd /workspace/cfbundle/kf && tar xzf - && ls | wc -l' < {name} | tail -1; done; rm -f {name}")
             print(time.strftime("%H:%M:%S"), name, len(new), out.split(), flush=True); sent.update(new); continue
         except Exception as e: print("feed error", e, flush=True)
     elif done:
