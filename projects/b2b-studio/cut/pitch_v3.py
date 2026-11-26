@@ -153,7 +153,7 @@ body.lock{{overflow:hidden}}a{{color:inherit}}img,video{{max-width:100%;display:
 /* nav + header logo (same engine as bigdogma.tech) */
 .nav{{position:fixed;top:0;left:0;right:0;z-index:30;transition:background .3s}}.nav.s{{background:rgba(11,11,13,.86);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}}
 .nav .wrap{{display:flex;align-items:center;gap:18px;height:72px}}
-.brand{{display:flex;align-items:center;gap:8px;text-decoration:none;flex:none}}.brand .lfx{{position:relative;display:block;width:74px;height:52px}}.brand .lfx-in{{position:absolute;inset:-6px -8px;pointer-events:none;overflow:hidden;border-radius:10px}}
+.brand{{display:flex;align-items:center;gap:8px;text-decoration:none;flex:none}}.brand .lfx{{position:relative;display:block;width:80px;height:52px}}.brand .lfx-in{{position:absolute;inset:-6px -10px;pointer-events:none;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent),linear-gradient(180deg,transparent,#000 10%,#000 90%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent),linear-gradient(180deg,transparent,#000 10%,#000 90%,transparent);mask-composite:intersect}}
 .brand .bt{{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;text-align:left;line-height:.92;gap:1px}}.brand .bt b{{font:400 19px R,sans-serif;letter-spacing:.11em}}
 .brand .bt small{{font:700 8.5px/1.2 M,sans-serif;letter-spacing:.2em;color:var(--ac);margin-top:3px;white-space:nowrap}}.sep{{display:inline-block;width:1px;height:.95em;background:currentColor;opacity:.7;margin:0 .55em;vertical-align:-.12em}}
 .links{{display:flex;gap:20px;margin-left:auto;font-weight:600;font-size:14.5px}}.links a{{text-decoration:none;opacity:.86}}.links a:hover{{opacity:1;color:var(--ac)}}
@@ -162,7 +162,7 @@ body.lock{{overflow:hidden}}a{{color:inherit}}img,video{{max-width:100%;display:
 @keyframes pulse{{70%{{box-shadow:0 0 0 14px rgba(242,193,78,0)}}100%{{box-shadow:0 0 0 0 rgba(242,193,78,0)}}}}
 .nav .btn{{padding:10px 18px;font-size:14px}}
 @media(max-width:980px){{.links{{display:none}}.nav .btn{{margin-left:auto}}}}
-@media(max-width:420px){{.brand .bt b{{font-size:16px}}.brand .lfx{{width:62px;height:44px}}.nav .btn{{padding:9px 13px;font-size:13px}}}}
+@media(max-width:420px){{.brand .bt b{{font-size:16px}}.brand .lfx{{width:66px;height:44px}}.nav .btn{{padding:9px 13px;font-size:13px}}}}
 /* splash */
 #splash{{position:fixed;inset:0;z-index:20;background:#000;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;transition:opacity .9s .25s,visibility 0s 1.2s}}
 #splash.out{{opacity:0;visibility:hidden}}#splash video{{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none;transition:opacity 1s}}
