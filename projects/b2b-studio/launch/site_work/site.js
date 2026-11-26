@@ -182,3 +182,7 @@
   try { const q = new URLSearchParams(location.search).get('lang'); l0 = ['mk', 'en', 'sq', 'sr', 'hr', 'sl', 'bg'].includes(q) ? q : (localStorage.getItem('bd_lang') || 'mk'); } catch (e) {}
   apply(l0, false);
 })();
+
+// films are for viewing on this site only (owner, 2026-11-26): no "save video as" menu and no dragging on videos and film cards
+document.addEventListener('contextmenu', e => { if (e.target.closest && e.target.closest('video, .fc, .gal, .bstage, .cmp')) e.preventDefault(); });
+document.addEventListener('dragstart', e => { if (e.target.tagName === 'VIDEO' || (e.target.closest && e.target.closest('.fc'))) e.preventDefault(); });

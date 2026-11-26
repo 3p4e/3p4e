@@ -446,7 +446,7 @@ PAGE = f"""<!doctype html>
   <h2 class="sh rv" @="reel.h"></h2>
   <p class="sp rv" @="reel.p"></p>
   <article class="film rv">
-   <div class="vw"><video controls playsinline preload="none" poster="{u('media/showreel.jpg')}" src="{u('media/showreel.mp4')}" @a="aria-label:reel.vid"></video></div>
+   <div class="vw"><video controls playsinline controlslist="nodownload noplaybackrate" disablepictureinpicture preload="none" poster="{u('media/showreel.jpg')}" src="{u('media/showreel.mp4')}" @a="aria-label:reel.vid"></video></div>
    <div class="meta"><h3 @="reel.t"></h3><span class="du">0:56</span>
     <div class="seg" role="group" @a="aria-label:reel.fmt"><button type="button" class="on" data-src="{u('media/showreel.mp4')}" data-poster="{u('media/showreel.jpg')}" @="reel.h169"></button><button type="button" data-v="1" data-src="{u('media/showreel_9x16.mp4')}" data-poster="{u('media/showreel_9x16.jpg')}" @="reel.v916"></button></div>
    </div>
@@ -543,7 +543,7 @@ PAGE = f"""<!doctype html>
   <ol class="steps">{STEPS}</ol>
   <div class="pm">
    <figure class="rv">
-    <div class="box"><video controls playsinline preload="none" poster="{u('media/howto.jpg')}" src="{u('media/howto.mp4')}" @a="aria-label:how.vid"></video></div>
+    <div class="box"><video controls playsinline controlslist="nodownload noplaybackrate" disablepictureinpicture preload="none" poster="{u('media/howto.jpg')}" src="{u('media/howto.mp4')}" @a="aria-label:how.vid"></video></div>
     <figcaption><b @="how.vt"></b><span @="how.vc"></span></figcaption>
    </figure>
    <figure class="rv">
@@ -622,7 +622,7 @@ PAGE = f"""<!doctype html>
 <dialog class="lb" id="lb" aria-labelledby="lbT">
  <div class="in">
   <button class="x" type="button" data-close @a="aria-label:lb.close">×</button>
-  <div class="lv"><video controls playsinline preload="metadata"></video></div>
+  <div class="lv"><video controls playsinline controlslist="nodownload noplaybackrate" disablepictureinpicture preload="metadata"></video></div>
   <div class="meta"><div class="mt"><h3 id="lbT"></h3><p></p></div>
    <div class="pn"><button type="button" data-step="-1" @a="aria-label:lb.prev">‹</button><button type="button" data-step="1" @a="aria-label:lb.next">›</button></div></div>
   <p class="ai" @="lb.ai"></p>

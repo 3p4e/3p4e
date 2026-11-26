@@ -35,11 +35,10 @@ T = {"mk": dict(
   b_all="Сите", b_f="Лого филмови", b_x="Лого ефекти",
   end_h="Следен чекор: 15 минути разговор", end_p="Во Скопје или онлајн. Кажете ни кој филм ви се допаѓа најмногу: го прилагодуваме за вашата кампања.",
   mail="Пишете ни", legal="Концепт само за презентација. Не е објавен и нема да биде објавен без ваше изречно писмено одобрение. Видеата се изработени со вештачка интелигенција. Логата и марките им припаѓаат на нивните сопственици.",
-  close="Затвори", subj="{c} - Закажи 15 минути", dl_e="Преземање", dl_h="Сè за вас, за преземање",
-  dl_p="Понудата и сите ваши филмови во 16:9 и 9:16, во еден ZIP. Слободно споделете ги во вашиот тим.", dl_pdf="Понуда (PDF)", dl_zip="Сите филмови (ZIP, {s} MB)", b_f1="Лого филм", b_x1="Лого ефект", days=["Пон", "Вто", "Сре", "Чет", "Пет", "Саб", "Нед"], more="Повеќе на",
+  close="Затвори", subj="{c} - Закажи 15 минути", dl_e="Преземање", dl_h="Понуда за преземање",
+  dl_p="Деталната понуда во PDF. Филмовите ги гледате на оваа страница.", dl_pdf="Понуда (PDF)", dl_zip="Сите филмови (ZIP, {s} MB)", b_f1="Лого филм", b_x1="Лого ефект", days=["Пон", "Вто", "Сре", "Чет", "Пет", "Саб", "Нед"], more="Повеќе на",
   ind_types={"social": "9:16", "explainer": "Објаснувачки", "story": "Приказна", "transform": "Пред / потоа"}, ai_film="AI филм")}
 for _l in ("sr", "sq"): T[_l] = json.load(open(f"{HERE}/pitch_v3_data/strings_{_l}.json", encoding="utf-8"))   # written by hand 2026-11-26
-ZMB = json.load(open(f"{HERE}/pitch_v3_data/zip_mb.json"))   # size of each company's films.zip (built on the server)
 XL = json.load(open(f"{P}/launch/site_work/i18n_extra.json", encoding="utf-8"))   # site translations (BD and industry film titles)
 
 # ------------------------------------------------------------------ companies
@@ -138,7 +137,7 @@ def build(key, out):
     indc = "".join(card(f"{u}.mp4", f"{u}.jpg", t, l, s["ind_types"][ty]) for u, t, l, ty in ind)
     bdc = "".join(f'<li class="fc" data-k="{k}"><a href="{u}.mp4" data-play="{u}.mp4" data-t="BD · {E(m)}" data-p="{u}.jpg"><span class="im"><img src="{u}.jpg" alt="" loading="lazy"><span class="ct">{s["b_f1"] if k == "f" else s["b_x1"]}</span><span class="pl"></span></span><span class="tx"><b>BD · {E(m)}</b></span></a></li>' for u, (m, e), k in bd)
     stills_sec = (f'<section><div class="wrap"><div class="eyebrow rv">{E(s["a_e"])}</div><h2 class="sh rv">{E(s["a_h"])}</h2><p class="sp rv">{E(s["a_p"])}</p><ul class="stills">{stills}</ul></div></section>') if c["stills"] else ""
-    mont = '<div class="mont rv"><video controls muted playsinline preload="none" poster="x/m.jpg"><source src="x/m.mp4" type="video/mp4"></video></div>' if c["shots"] else ""
+    mont = '<div class="mont rv"><video controls muted playsinline controlslist="nodownload" disablepictureinpicture preload="none" poster="x/m.jpg"><source src="x/m.mp4" type="video/mp4"></video></div>' if c["shots"] else ""
     mailto = f"mailto:{MAIL}?subject=" + urllib.parse.quote(s["subj"].format(c=c["name"]))
     pts = "".join(f"<li>{E(x.format(n=n_f))}</li>" for x in s["pts"])
     navl = "".join(f'<a href="#{a}">{E(b)}</a>' for a, b in s["nav"])
@@ -236,7 +235,7 @@ dialog .x{{position:absolute;right:0;top:-44px;background:none;border:0;color:#f
 <section id="campaign" class="alt"><div class="wrap"><div class="eyebrow rv">{E(s["c_e"])}</div><h2 class="sh rv">{E(s["c_h"])}</h2><p class="sp rv">{E(s["c_p"])}</p>{campaign(c, s)}</div></section>
 {offer.replace('<section id="offer"', '<section id="offer" ')}
 <section id="dl" class="alt"><div class="wrap"><div class="eyebrow rv">{E(s["dl_e"])}</div><h2 class="sh rv">{E(s["dl_h"])}</h2><p class="sp rv">{E(s["dl_p"])}</p>
-<div class="btns rv"><a class="btn a" href="films.zip" download>{E(s["dl_zip"].format(s=ZMB.get(key, "")))}</a><a class="btn b" href="offer.pdf" target="_blank" rel="noopener">{E(s["dl_pdf"])}</a></div></div></section>
+<div class="btns rv"><a class="btn a" href="offer.pdf" target="_blank" rel="noopener" download>{E(s["dl_pdf"])}</a></div></div></section>
 <section class="alt"><div class="wrap"><div class="eyebrow rv">{E(s["i_e"])}</div><h2 class="sh rv">{E(s["i_h"])}</h2><p class="sp rv">{E(s["i_p"])}</p><ul class="grid">{indc}</ul></div></section>
 <section id="bd"><div class="wrap"><div class="eyebrow rv">{E(s["b_e"])}</div><h2 class="sh rv">{E(s["b_h"])}</h2><p class="sp rv">{E(s["b_p"].format(n=len(bd)))}</p>
 <div class="chips" role="group"><button type="button" data-k="all" aria-pressed="true">{E(s["b_all"])} {len(bd)}</button><button type="button" data-k="f" aria-pressed="false">{E(s["b_f"])} {sum(1 for x in bd if x[2] == "f")}</button><button type="button" data-k="x" aria-pressed="false">{E(s["b_x"])} {len(BDT.FX)}</button></div>
@@ -244,7 +243,7 @@ dialog .x{{position:absolute;right:0;top:-44px;background:none;border:0;color:#f
 <section class="end"><div class="wrap"><h2 class="sh rv">{E(s["end_h"])}</h2><p class="sp rv" style="margin:0 auto 26px">{E(s["end_p"])}</p><div class="btns"><a class="btn a" href="{mailto}">{E(s["cta"])}</a><a class="btn b" href="mailto:{MAIL}">{E(s["mail"])}: {MAIL}</a></div></div></section>
 </main>
 <footer><div class="wrap">{E(s["legal"])}<br>© 2026 BIG DOGMA · AI STUDIO | MK · <a href="{SITE}">bigdogma.tech</a> · <a href="classic.html">classic</a></div></footer>
-<dialog id="lb"><button class="x" type="button" aria-label="{E(s["close"])}">×</button><video controls playsinline></video><p></p></dialog>
+<dialog id="lb"><button class="x" type="button" aria-label="{E(s["close"])}">×</button><video controls playsinline controlslist="nodownload noplaybackrate" disablepictureinpicture></video><p></p></dialog>
 <script>window.DOGMA_HDR_BASE="{SITE}/logo_fx/hdr/";window.DOGMA_INTRO={json.dumps(intro)};</script>
 <script src="{SITE}/logo_fx/mark_data.js"></script><script src="{SITE}/logo_fx/logo_fx.js"></script><script src="{SITE}/logo_fx/hdr/list.js"></script><script src="{SITE}/logo_fx/hdr.js"></script>
 <script>
@@ -267,6 +266,9 @@ function burst(done){{var W=bc.width=innerWidth*Math.min(2,devicePixelRatio||1),
 function enter(){{if(sp.classList.contains('out'))return;var go=function(){{sp.classList.add('out');document.body.classList.remove('lock');sv.forEach(function(v){{setTimeout(function(){{v.pause();v.removeAttribute('src');v.load()}},1300)}})}};RM?go():burst(go)}}
 $('#enter').addEventListener('click',enter);sp.addEventListener('click',function(e){{if(e.target===sp||e.target.classList.contains('shade'))enter()}});
 addEventListener('keydown',function(e){{if((e.key==='Enter'||e.key===' ')&&!sp.classList.contains('out')&&document.activeElement===document.body){{e.preventDefault();enter()}}}});
+/* films are for viewing on this page only (owner, 2026-11-26): no context menu on videos, no drag */
+document.addEventListener('contextmenu',function(e){{if(e.target.closest&&e.target.closest('video,.im,.vrow,.shots,.cmp'))e.preventDefault()}});
+document.addEventListener('dragstart',function(e){{if(e.target.tagName==='VIDEO'||e.target.tagName==='IMG')e.preventDefault()}});
 /* nav */
 var nav=$('.nav');addEventListener('scroll',function(){{nav.classList.toggle('s',scrollY>40)}},{{passive:true}});
 /* lightbox */

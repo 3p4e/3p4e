@@ -38,13 +38,13 @@ footer{{color:var(--mu);font-size:13px;padding:0 0 40px}}</style></head><body>
 <p class="s">Концепт подготвен за Фотон Македонија: 11 енергични реклами со Tunland V9, G7 и V7 во различни бои, во Скопје, Матка, Водно, Треска и на Пелистерски Очи. Секој филм има свој глас и оригинална музика, во 16:9 и 9:16. Сите кадри се генерирани со AI; ништо не е снимено.</p>
 <div class="t" role="group" aria-label="Формат"><button type="button" aria-pressed="true" data-v="">16:9</button><button type="button" aria-pressed="false" data-v="_9x16">9:16 мобилен</button></div></header>
 <main class="w"><ul id="g">{"".join(cards)}</ul></main>
-<div id="lb" role="dialog" aria-modal="true" aria-label="Видео"><button id="x" type="button" aria-label="Затвори">×</button><video controls playsinline></video></div>
+<div id="lb" role="dialog" aria-modal="true" aria-label="Видео"><button id="x" type="button" aria-label="Затвори">×</button><video controls playsinline controlslist="nodownload noplaybackrate" disablepictureinpicture></video></div>
 <footer class="w">Концепт · не е за објава · BIG DOGMA AI видео студио, Скопје</footer>
 <script>(function(){{var suf='',lb=document.getElementById('lb'),v=lb.querySelector('video'),op=null;
 document.querySelectorAll('.t button').forEach(function(b){{b.onclick=function(){{suf=b.dataset.v;document.querySelectorAll('.t button').forEach(function(x){{x.setAttribute('aria-pressed',String(x===b))}});
 document.body.classList.toggle('v',!!suf);document.querySelectorAll('.c').forEach(function(c){{c.querySelector('img').src='f/'+c.dataset.id+suf+'.jpg'}})}}}});
 document.querySelectorAll('.pl').forEach(function(p){{p.onclick=function(){{op=p;v.src='f/'+p.parentNode.dataset.id+suf+'.mp4';lb.classList.add('o');v.play();document.getElementById('x').focus()}}}});
 function cl(){{v.pause();v.removeAttribute('src');v.load();lb.classList.remove('o');if(op)op.focus()}}
-document.getElementById('x').onclick=cl;lb.onclick=function(e){{if(e.target===lb)cl()}};addEventListener('keydown',function(e){{if(e.key==='Escape'&&lb.classList.contains('o'))cl()}});}})();</script>
+document.getElementById('x').onclick=cl;document.addEventListener('contextmenu',function(e){{if(e.target.closest&&e.target.closest('video,.c'))e.preventDefault()}});lb.onclick=function(e){{if(e.target===lb)cl()}};addEventListener('keydown',function(e){{if(e.key==='Escape'&&lb.classList.contains('o'))cl()}});}})();</script>
 </body></html>'''
 open(f"{W}/index.html", "w").write(page); print("ok", len(FILMS), "films")
