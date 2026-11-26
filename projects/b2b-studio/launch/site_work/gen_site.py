@@ -257,10 +257,10 @@ for _p in sorted(glob.glob(f"{CF_PLAN}/*.json"), key=lambda p: json.load(open(p)
         CF.append(f); TX[f"{f['id']}.t"] = (f["title_mk"], f["title_en"]); TX[f"{f['id']}.l"] = (f["line_mk"], f["line_en"])
         TX[f"{f['id']}.alt"] = (f"{f['title_mk']}: кадар од AI филмот", f"{f['title_en']}: a frame from the AI film")
 TX.update({"cf.e": ("Нови AI филмови", "New AI films"), "cf.h": (f"{len(CF)} филмови за {len(CF_CATS)} индустрии + BD лого", f"{len(CF)} films for {len(CF_CATS)} industries + the BD logo"),
-           "cf.p": ("Четири формати за секоја индустрија: социјална реклама 9:16, објаснувачки филм, приказна за брендот и пред/потоа. Изберете индустрија: и позадината горе се менува.",
-                    "Four formats for every industry: a 9:16 social ad, an explainer, a brand story and a before/after. Pick an industry: the background at the top changes with it."),
+           "cf.p": ("Пет формати за секоја индустрија: реклами од 30 секунди, социјална реклама 9:16, објаснувачки филм, приказна за брендот и пред/потоа. Изберете индустрија: и позадината горе се менува.",
+                    "Five formats for every industry: 30-second commercials, a 9:16 social ad, an explainer, a brand story and a before/after. Pick an industry: the background at the top changes with it."),
            "cf.filter": ("Филтер по индустрија", "Filter by industry"),
-           "ty.social": ("Социјална 9:16", "Social 9:16"), "ty.explainer": ("Објаснувачки", "Explainer"), "ty.story": ("Приказна", "Brand story"), "ty.transform": ("Пред / потоа", "Before / after")})
+           "ty.social": ("Социјална 9:16", "Social 9:16"), "ty.explainer": ("Објаснувачки", "Explainer"), "ty.story": ("Приказна", "Brand story"), "ty.transform": ("Пред / потоа", "Before / after"), "ty.commercial": ("Реклама", "Commercial")})
 # "BD logo" gallery (owner, 2026-11-26): every AI logo film (media/intro) and logo-only effect (media/bd), with the industry films
 sys.path.insert(0, "/home/user/3p4e/projects/b2b-studio/logo_ai"); import bd_titles as BDT
 BD = [("bd_" + k, f"media/intro/{k}", BDT.FILMS[k], "bdfilm") for k in BDT.FILMS if os.path.exists(f"{OUT}/media/intro/{k}.mp4")] + \

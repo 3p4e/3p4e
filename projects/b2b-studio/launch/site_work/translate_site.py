@@ -15,6 +15,15 @@ def ask(lang, items):
               "entity, placeholder like {c} or {n}, number, price, currency, email, URL, and brand/product names (BIG DOGMA, LTX, Foton, Tunland, AI) unchanged. "
               "For names of North Macedonian places keep the usual local spelling in that language. Return ONLY a JSON object {key: translation}.\n\n"
               + json.dumps({k: {"mk": v[0], "en": v[1]} for k, v in items}, ensure_ascii=False))
+    if os.environ.get("TRANSLATE_WITH") == "openai":   # owner, 2026-11-26: "use open ai api" while Gemini has no credit
+        import requests
+        for a in range(4):
+            try:
+                r = requests.post("https://api.openai.com/v1/chat/completions", headers={"Authorization": "Bearer " + os.environ["OPENAI_API_KEY"]}, timeout=400,
+                                  json={"model": "gpt-5.4-mini", "response_format": {"type": "json_object"}, "messages": [{"role": "user", "content": prompt}]})
+                r.raise_for_status(); out = json.loads(r.json()["choices"][0]["message"]["content"]); return {k: out[k] for k, _ in items if isinstance(out.get(k), str)}
+            except Exception as e: err = e
+        print("FAIL", lang, len(items), err, flush=True); return {}
     body = {"contents": [{"parts": [{"text": prompt}]}], "generationConfig": {"responseMimeType": "application/json", "temperature": 0.2}}
     for a in range(4):
         try:
