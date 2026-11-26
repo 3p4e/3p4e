@@ -60,7 +60,8 @@ CO = {  # key: (industry categories on bigdogma.tech, hashtags)
  "06_beograd_na_vodi_RS": (["real_estate", "developer"], "#BeogradNaVodi #Beograd #Srbija"), "07_millennium_team_RS": (["construction", "steel_cement"], "#MillenniumTeam #Beograd #Srbija"),
  "08_nelt_RS": (["industry_showreel", "food"], "#Nelt #Logistika #Srbija"), "09_gener2_AL": (["construction", "developer"], "#Gener2 #Tirana #Shqipëri"),
  "10_concord_AL": (["real_estate", "developer"], "#Concord #Tirana #Shqipëri"), "11_viva_fresh_XK": (["food", "horeca"], "#VivaFresh #Prishtina #Kosova"),
- "12_speeex_XK": (["industry_showreel", "it"], "#Speeex #Prishtina #Kosova")}
+ "12_speeex_XK": (["industry_showreel", "it"], "#Speeex #Prishtina #Kosova"),
+ "13_telekom_MK": (["telecom", "it"], "#МакедонскиТелеком #Magenta1 #Македонија")}
 SCRP = f"{SCR}/pv3"
 def generic(cid):
     old = open(f"{SCRP}/{cid}/classic.html", encoding="utf-8").read(); files = open(f"{SCRP}/{cid}/files.txt").read().split()
