@@ -1,0 +1,49 @@
+{
+ "type": "story",
+ "title_mk": "Пат до насмевка",
+ "title_en": "A Path to a Smile",
+ "line_mk": "Насмевка без страв.",
+ "line_en": "A smile without fear.",
+ "desc_en": "A single patient journey from nervous arrival to calm consultation and confident exit, grounded in Skopje’s Old Bazaar and a real clinic interior. One recurring hero, consistent wardrobe and look, with a clear emotional arc and a simple transformation beat.",
+ "music": "Warm modern piano with soft Balkan percussion, steady 78 bpm, hopeful build",
+ "voice": "female, warm, reassuring",
+ "vo_mk": [
+  "Стигнувам со малку страв.",
+  "Во рацете на докторот, се смирувам.",
+  "Секој чекор е јасен и нежен.",
+  "Светло, чисто, и готово.",
+  "Излегувам со насмевка без страв."
+ ],
+ "shots": [
+  {
+   "kf": "Early morning in Skopje Old Bazaar on a narrow stone street, signage-free. A 28-year-old woman with dark brown hair in a low ponytail, wearing the same beige trench coat and black scarf, pauses at the edge of the street. Medium-wide 35mm, eye level, soft overcast daylight, muted stone-and-warm-beige palette, shallow depth of field, photorealistic, calm but tense expression, simple hands visible.",
+   "motion": "She takes a steady breath and steps forward, gripping her bag strap once. Camera performs a slow forward dolly-in from medium-wide to medium shot, keeping her centered and background softly drifting.",
+   "char": true
+  },
+  {
+   "kf": "Interior clinic waiting area in Skopje, minimal modern design with identical neutral walls, pale wood bench, and frosted glass door; no readable text or logos. The same woman sits upright, coat still on, hands clasped on her lap. Medium shot 50mm, soft diffused ceiling light, clean whites and warm wood tones, quiet atmosphere, photorealistic, face clearly readable with nervous eyes and controlled breathing.",
+   "motion": "She relaxes her shoulders and uncrosses her hands into an open palm. Camera makes a gentle lateral slide to the right, revealing more of the calm room while maintaining her in the foreground.",
+   "char": true
+  },
+  {
+   "kf": "Consultation room, same clinic, neutral wall and a simple dental chair behind her, no signage. The same woman now without the coat but wearing the same black top underneath; hair and makeup unchanged. She sits facing a doctor’s hands (doctor mostly out of frame), holding a small dental shade guide near her mouth; no text visible. Tight-medium 85mm, soft key light from the side, warm skin tones, photorealistic, her expression turning relieved.",
+   "motion": "She nods once while the doctor’s hand gently points to the shade guide. Camera executes a slow push-in toward her face and the guide, keeping focus on her eyes and calm expression.",
+   "char": true
+  },
+  {
+   "kf": "Treatment room, same clinic, same wall color and lighting setup, matching camera angle for transformation. The woman reclines slightly in the dental chair, wearing a plain light bib with no branding. A gloved hand holds a small curing light near her front teeth; the light is OFF. Close-up 100mm macro look, soft ambient fill, clean white and pale blue palette, photorealistic, her face relaxed, hands resting still.",
+   "motion": "The gloved hand brings the curing light into position near her teeth. Camera makes a subtle tilt down to follow the tool, holding steady for a precise, controlled clinical feel.",
+   "char": true,
+   "end_kf": "Treatment room, identical framing and angle, same woman and bib, same lighting and background. The curing light is ON, emitting a soft blue glow reflecting on her teeth; her lips curve into a small, confident smile. Close-up remains consistent, photorealistic, clean palette unchanged, only the blue illumination and her expression shifted to relief and trust."
+  },
+  {
+   "kf": "Late afternoon golden light at the edge of Skopje Old Bazaar leading toward the Vardar quay, stone textures and warm sun flare, signage-free. The same woman, same beige trench coat and black scarf again, walks toward camera with an easy posture. Medium-wide 35mm, backlit warm sunlight, amber-and-stone palette, photorealistic, clear genuine smile, simple hands visible swinging naturally.",
+   "motion": "She walks past the camera, smiling openly as she turns her head slightly toward the sun. Camera performs a smooth handheld follow for two steps, then eases into a gentle upward tilt to catch the warm light around her.",
+   "char": true
+  }
+ ],
+ "id": "cf_health_3_story",
+ "cat": "health",
+ "batch": "v3",
+ "regen": true
+}

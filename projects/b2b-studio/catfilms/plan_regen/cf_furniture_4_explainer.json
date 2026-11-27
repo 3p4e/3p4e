@@ -1,0 +1,49 @@
+{
+ "type": "explainer",
+ "title_mk": "Вградени Плакари",
+ "title_en": "Built-in Wardrobes",
+ "line_mk": "Плакар по мерка. Твој.",
+ "line_en": "Made-to-measure. Yours.",
+ "desc_en": "A single, coherent Skopje story: one recurring craftsperson measures a real apartment wall, designs on a tablet, cuts panels on a CNC, installs, and reveals the finished built-in wardrobe. Same room and same angle for before/after transformation. North Macedonian texture, no signage, no generic stock feel.",
+ "music": "Warm Balkan-modern downtempo with light percussion and soft analog synth, 100 bpm",
+ "voice": "male, warm and confident",
+ "vo_mk": [
+  "Прво мериме прецизно, во вашиот дом.",
+  "Потоа го цртаме плакарот, по мерка.",
+  "Во работилница сечеме точно, без отстапки.",
+  "На монтажа, сè влегува како ракавица.",
+  "Плакар по мерка. Твој."
+ ],
+ "shots": [
+  {
+   "kf": "Interior, real Skopje apartment bedroom near the Vardar quay: same pale warm-grey wall, light oak floor, one small window with sheer curtain, soft morning daylight. A single hero craftsperson (male, early 30s, short dark hair, clean-shaven, charcoal hoodie, black work pants) measures the wall niche with a metal tape and pencil marks. 28mm lens, eye-level, natural color palette (oak, beige, graphite), photorealistic, no readable text.",
+   "motion": "He pulls the measuring tape to full width and taps the wall mark once; camera makes a gentle left-to-right dolly of 40 cm, keeping the niche centered, steady and realistic over 5 seconds.",
+   "char": true
+  },
+  {
+   "kf": "Same bedroom, same wall niche and floor, same hero and outfit. He kneels by a simple wooden stool holding a tablet; on-screen is a clean 3D wardrobe model with compartments and sliding doors (no text, no logos). Morning light still soft and consistent, subtle reflections on the screen. 35mm lens, medium close-up on hands/face and tablet, shallow depth of field, warm neutral palette, photorealistic, clear simple facial features.",
+   "motion": "He drags one finger to rotate the 3D model and nods once; camera performs a slow push-in of about 30 cm toward the tablet, keeping his hands and screen in sharp focus for 5 seconds.",
+   "char": true
+  },
+  {
+   "kf": "Small woodworking workshop in Skopje Old Bazaar backstreets, signage-free: textured plaster walls, worn concrete floor, stacked MDF sheets, warm overhead bulbs mixed with daylight from a high window. Same hero (same clothes) stands at a CNC router, guiding placement of an MDF panel while the machine head hovers ready. 24mm lens, three-quarter wide shot, gritty warm-brown palette with graphite accents, photorealistic, no readable markings.",
+   "motion": "He slides the MDF sheet flush to the machine stops and presses a single large unlabeled button; camera tilts down slightly then tracks right 30 cm to follow the CNC head beginning a smooth cut, plausible in 5 seconds.",
+   "char": true
+  },
+  {
+   "kf": "Back in the same Skopje bedroom, same wall niche, same oak floor, same window and morning light now slightly brighter. The hero installs: one vertical side panel is already anchored; he holds a sliding track and aligns it carefully at the top edge with a compact drill-driver (no logos). 35mm lens, medium shot from the same side angle as shot 1, warm neutral palette, photorealistic, hands clear and unambiguous.",
+   "motion": "He drives two screws in a controlled motion and checks alignment with a quick glance; camera makes a slow upward tilt from his hands to the top track, ending on the track line over 5 seconds.",
+   "char": true
+  },
+  {
+   "kf": "Same bedroom, identical camera position and framing as shot 1: the wall niche is now transformed into a finished floor-to-ceiling built-in wardrobe in matte warm-beige with slim black trim. The hero stands to the side, then gently slides one door open to reveal neat shelves (no visible text). Soft morning daylight, calm warm palette, photorealistic, minimal decor unchanged, no logos or signage.",
+   "motion": "He slides the door fully open in one smooth movement and rests his hand on the handle edge; camera performs a slow pull-back of 40 cm to reveal the full wardrobe face, steady within 5 seconds.",
+   "char": true,
+   "end_kf": "Same bedroom, same angle: finished built-in wardrobe fully visible, door left half-open showing shelves; the hero steps out of frame leaving the clean, seamless wardrobe as the final hero object. Morning light consistent, warm neutral palette, photorealistic, no readable text or logos."
+  }
+ ],
+ "id": "cf_furniture_4_explainer",
+ "cat": "furniture",
+ "batch": "v3",
+ "regen": true
+}

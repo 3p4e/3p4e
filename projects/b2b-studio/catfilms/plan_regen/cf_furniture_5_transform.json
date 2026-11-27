@@ -1,0 +1,53 @@
+{
+ "type": "transform",
+ "title_mk": "Една соба. Еден дом.",
+ "title_en": "One Room. One Home.",
+ "line_mk": "Дом по мерка.",
+ "line_en": "A home made for you.",
+ "desc_en": "A single coherent transformation: one Skopje apartment living room goes from empty to fully furnished, piece by piece, guided by one recurring hero. Same room, same palette, same camera axis; only the meaningful changes happen. Subtle Skopje context through light and architecture—no signage, no logos, no generic stock feel.",
+ "music": "Warm Balkan-inspired modern beat with light percussion and strings, 92 bpm",
+ "voice": "female, calm and confident",
+ "vo_mk": [
+  "Ова беше само празна соба.",
+  "Прво, основата: удобна софа.",
+  "Потоа масичка, тепих, светло — сè се вклопува.",
+  "Последно: детали што носат топлина.",
+  "Дом по мерка."
+ ],
+ "shots": [
+  {
+   "kf": "Photorealistic interior of a real Skopje apartment living room, empty but clean: pale warm plaster walls, oak parquet, one large window with sheer curtains and soft morning haze; outside only blurred Vardar-quay trees and concrete blocks, no readable text. Static eye-level wide shot, 24mm lens, gentle natural light, muted beige and oak palette, a single wall outlet visible, no decor yet.",
+   "motion": "A young woman (late 20s) in a plain cream sweater and dark jeans steps in from frame left, measures the wall with a folded tape measure, then looks to the empty corner. Camera makes a slow 10 cm push-in on tripod, steady and realistic.",
+   "char": true,
+   "end_kf": "Same room, same framing and light; still empty, but a discreet pencil mark and a small folded tape measure now rest on the floor near the wall, indicating planning without changing anything else."
+  },
+  {
+   "kf": "Same Skopje living room, identical camera position and morning light, 24mm lens. The woman appears in the same cream sweater and dark jeans, hair tied back the same way. The room is still mostly empty; only the tape measure on the floor remains. Color palette stays warm neutral: beige walls, oak floor, soft grey shadows, no readable text or logos anywhere.",
+   "motion": "She drags in a modular light-beige sofa from off-screen right, rotates it carefully into position against the back wall, and sits briefly to test it. Camera performs a slow pan right-to-left of about 15 degrees, then settles back to center, all in one continuous move.",
+   "char": true,
+   "end_kf": "Same room and angle; the sofa now sits centered against the back wall, cushions neatly placed, all other surfaces still bare and undecorated, maintaining the minimal staged look."
+  },
+  {
+   "kf": "Same exact living room and framing, photorealistic 24mm lens, soft morning light through sheers. The woman, unchanged wardrobe and hair, kneels in front of the sofa. The sofa is present; the rest remains empty. Warm beige, oak, and soft grey palette continues; no signage, no readable labels, no logos. Hands and face are simple and clear, natural expression.",
+   "motion": "She unrolls a textured off-white rug toward camera and slides a small round oak coffee table into the center, aligning it with the sofa. Camera stays low and makes a smooth tilt down from sofa height to the rug, ending on the table’s placement.",
+   "char": true,
+   "end_kf": "Same angle; rug is fully laid flat with clean edges, the round oak coffee table is centered on it, perfectly aligned with the sofa, while the walls and corners remain intentionally uncluttered."
+  },
+  {
+   "kf": "Same Skopje living room, identical camera placement and 24mm lens; the daylight is slightly warmer as if late morning, still soft and realistic. The woman in the same cream sweater and dark jeans stands near the corner by the window. Sofa, rug, and coffee table remain. The palette stays cohesive: beige, oak, off-white, and a single muted olive accent pillow now visible but subtle.",
+   "motion": "She lifts a slim oak floor lamp into place beside the sofa, then hangs a single framed abstract print (no text) on the wall using the earlier pencil mark. Camera performs a gentle handheld-style micro-dolly left about 20 cm, stabilizing at the end to feel intimate and real.",
+   "char": true,
+   "end_kf": "Same room and composition; floor lamp stands beside the sofa, the abstract frame is level on the wall, and one muted olive pillow rests on the sofa, adding a restrained accent without changing anything else."
+  },
+  {
+   "kf": "Same living room, same camera axis and 24mm lens, now with warm late-afternoon sun stripes across the oak parquet, still photorealistic and natural. The woman, same outfit and hairstyle, places final touches on the coffee table. Sofa, rug, table, lamp, and abstract frame are all present. No readable text, no logos, no signage; outside window remains soft and indistinct.",
+   "motion": "She sets a ceramic vase with dried wild grasses on the coffee table, steps back, and exhales with a small satisfied smile. Camera locks into a slow, steady push-in of about 25 cm toward the finished seating area, ending on the balanced composition.",
+   "char": true,
+   "end_kf": "Exact same framing and room; the finished setup is complete: sofa with one olive pillow, centered rug and oak table, floor lamp, and one abstract frame, with the vase as the final focal detail—cozy, cohesive, and unmistakably real."
+  }
+ ],
+ "id": "cf_furniture_5_transform",
+ "cat": "furniture",
+ "batch": "v3",
+ "regen": true
+}

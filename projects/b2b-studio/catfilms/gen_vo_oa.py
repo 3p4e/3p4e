@@ -5,7 +5,7 @@
 #   python3 gen_vo_oa.py [film_id ...]
 import os, sys, json, glob, re, subprocess, time, concurrent.futures as cf
 import requests
-HERE = os.path.dirname(os.path.abspath(__file__)); S = "/tmp/claude-0/-home-user-3p4e/50442171-da10-52d9-9948-b5cc07f6bc8a/scratchpad"; OUT = f"{S}/catfilms/vo"
+HERE = os.path.dirname(os.path.abspath(__file__)); S = "/tmp/claude-0/-home-user-3p4e/50442171-da10-52d9-9948-b5cc07f6bc8a/scratchpad"; REGEN = bool(os.environ.get("REGEN")); OUT = f"{S}/catfilms/" + ("vo_regen" if REGEN else "vo"); os.makedirs(OUT, exist_ok=True)
 H = {"Authorization": "Bearer " + os.environ["OPENAI_API_KEY"]}
 FEM, MAL = ["marin"], ["ash"]   # voice test on hard Macedonian lines: ash 92 %, marin 67 % (best female), the others 28-72 %
 SYS = ("You are a native Macedonian voice actor recording a TV commercial ({tone}). Read the user's Macedonian text aloud exactly, word for word, "
@@ -44,7 +44,7 @@ def tts(line, tr, voice, tone):
         except Exception as e: print("retry", os.path.basename(tr), str(e)[:120], flush=True); time.sleep(6 * (a + 1))
     return "FAIL"
 
-films = [f for p in sorted(glob.glob(f"{HERE}/plan/*.json")) for f in json.load(open(p, encoding="utf-8"))["films"] if f.get("batch") == "v3"]
+films = ([json.load(open(p, encoding="utf-8")) for p in sorted(glob.glob(f"{HERE}/plan_regen/*.json"))] if REGEN else [f for p in sorted(glob.glob(f"{HERE}/plan/*.json")) for f in json.load(open(p, encoding="utf-8"))["films"] if f.get("batch") == "v3"])
 only = set(sys.argv[1:]); voices = json.load(open(f"{OUT}/voices.json")) if os.path.exists(f"{OUT}/voices.json") else {}
 jobs = []
 for k, f in enumerate(films):

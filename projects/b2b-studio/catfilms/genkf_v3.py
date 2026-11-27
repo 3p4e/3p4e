@@ -6,7 +6,7 @@
 import json, glob, os, sys, base64, io, time, urllib.request, urllib.error, concurrent.futures as cf
 from PIL import Image
 S = "/tmp/claude-0/-home-user-3p4e/50442171-da10-52d9-9948-b5cc07f6bc8a/scratchpad"; KEY = open(f"{S}/.gemini_paid").read().strip()
-HERE = os.path.dirname(os.path.abspath(__file__)); OUT = f"{S}/catfilms/kf_v3"; os.makedirs(OUT, exist_ok=True)
+HERE = os.path.dirname(os.path.abspath(__file__)); REGEN = bool(os.environ.get("REGEN")); OUT = f"{S}/catfilms/" + ("kf_regen" if REGEN else "kf_v3"); os.makedirs(OUT, exist_ok=True)
 MODEL = "gemini-3.1-flash-lite-image"; API = "https://generativelanguage.googleapis.com"
 STYLE = " Photorealistic premium commercial photography, natural skin and materials, no text, no letters, no logos, no signage, no watermark."
 CHAR = "The same main character as in the reference image: identical face, age, hair, build and clothes. New shot, new framing: "
@@ -98,12 +98,12 @@ def _walk(o):
 def plan_jobs(cats):
     r1, r2 = [], []
     for c in cats:
-        for f in json.load(open(f"{HERE}/plan/{c}.json", encoding="utf-8"))["films"]:
+        for f in ([json.load(open(x, encoding="utf-8")) for x in sorted(glob.glob(f"{HERE}/plan_regen/cf_{c}_*.json"))] if REGEN else json.load(open(f"{HERE}/plan/{c}.json", encoding="utf-8"))["films"]):
             if f.get("batch") != "v3": continue
             ar = "9:16" if f["type"] == "social" else "16:9"; first_char = None
             for n, s in enumerate(f["shots"], 1):
                 out = f"{OUT}/{f['id']}_s{n}.jpg"
-                if f["type"] == "commercial" and s.get("char"):
+                if (f["type"] == "commercial" or REGEN and f["type"] != "transform") and s.get("char"):
                     if first_char: r2.append((out, CHAR + s["kf"], ar, first_char))
                     else: first_char = out; r1.append((out, s["kf"], ar, None))
                 else: r1.append((out, s["kf"], ar, None))
@@ -111,7 +111,7 @@ def plan_jobs(cats):
     return r1, r2
 
 if __name__ == "__main__":
-    sync = "--sync" in sys.argv; oa = "--openai" in sys.argv; cats = [a for a in sys.argv[1:] if not a.startswith("--")] or [os.path.basename(p)[:-5] for p in sorted(glob.glob(f"{HERE}/plan/*.json"))]
+    sync = "--sync" in sys.argv; oa = "--openai" in sys.argv; cats = [a for a in sys.argv[1:] if not a.startswith("--")] or sorted({m for p in glob.glob(f"{HERE}/plan_regen/*.json") for m in [os.path.basename(p)[3:].rsplit("_",2)[0]]} if REGEN else [os.path.basename(p)[:-5] for p in glob.glob(f"{HERE}/plan/*.json")])
     r1, r2 = plan_jobs(cats)
     for tag, jobs in (("r1", r1), ("r2", r2)):
         todo = [j for j in jobs if not os.path.exists(j[0]) and (not j[3] or os.path.exists(j[3]))]

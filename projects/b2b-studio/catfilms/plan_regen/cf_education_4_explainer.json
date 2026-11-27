@@ -1,0 +1,49 @@
+{
+ "type": "explainer",
+ "title_mk": "Еден ден, една идеја",
+ "title_en": "One Day, One Idea",
+ "line_mk": "Учи. Создавај. Води.",
+ "line_en": "Learn. Build. Lead.",
+ "desc_en": "A single student’s day-in-the-life in Skopje: from the Old Bazaar to a simple workshop room, showing one clear making process step-by-step (a small solar desk lamp prototype). Same hero, same outfit, same room, same workbench props and color palette. Ends with a transformation: the same frame before/after—lamp off vs. lamp on.",
+ "music": "Modern Balkan-tinged ambient with subtle percussion, 92 bpm",
+ "voice": "male, warm, confident, conversational",
+ "vo_mk": [
+  "Утрото почнува во Чаршија, со идеја во џеб.",
+  "Од скица до делови—сè на една маса.",
+  "Лемам, тестирам, и ја гледам искрата.",
+  "На кејот проверувам: светло, едноставно, мое.",
+  "Учи. Создавај. Води."
+ ],
+ "shots": [
+  {
+   "kf": "Photorealistic morning on a narrow stone street in Skopje Old Bazaar, signage-free and timeless. A 20-year-old student (short dark hair, light stubble, olive skin) in the same outfit throughout: dark green hoodie, black jeans, worn brown sneakers, grey backpack. Medium-wide framing, 35mm lens. Warm sunrise side-light, earthy browns and muted greens. He walks with purpose, pulling a folded sketch from his pocket, calm focus on his face.",
+   "motion": "He unfolds the sketch and glances ahead while walking. Camera tracks backward smoothly in front of him at chest height, keeping him centered as the bazaar stones pass beneath.",
+   "char": true
+  },
+  {
+   "kf": "Interior: a small workshop/studio room with the same wooden workbench, matte beige wall, single window with thin curtain, and a green desk lamp used as ambient prop (unbranded). No readable text anywhere. The same student sits at the bench. Overhead practical light plus soft window daylight. 50mm lens, close medium on hands and face. Neutral, slightly warm palette: wood, beige, olive, black. On the table: a small solar panel, LED, battery pack, wires, soldering iron, and a simple black lamp housing.",
+   "motion": "He places the solar panel, LED, and battery in a neat line, then points to each part in order. Camera makes a slow top-down tilt into a tighter over-the-shoulder view, ending on his hands.",
+   "char": true
+  },
+  {
+   "kf": "Same workshop room, same bench, same props positions now partly assembled. Tight close-up on his hands and the small lamp housing while his face is partially visible at frame edge, expression focused. 85mm lens with shallow depth of field. Warm practical light highlights skin tones and metal reflections; background falls into soft blur. Color palette stays consistent: wood browns, olive hoodie, matte black housing, copper wire. No logos, no text. Clear, simple hands and tools.",
+   "motion": "He solders one wire connection, then lifts the piece to inspect it with a small nod. Camera performs a gentle push-in of about 20 cm, maintaining focus on the solder joint and his fingertips.",
+   "char": true
+  },
+  {
+   "kf": "Early evening at Vardar quay in Skopje, near the river railing with a clean, signage-free view. The same student stands alone, holding the finished small solar desk lamp prototype in both hands. Medium shot, 35mm lens. Golden-hour light fading toward blue hour; soft reflections on the water. Muted palette: river blues, stone greys, olive hoodie. He angles the lamp toward the last sun, face relaxed and proud, eyes on the device.",
+   "motion": "He tilts the lamp toward the sunlight and presses a small switch with his thumb. Camera arcs slowly 30 degrees around him from left to right, keeping the lamp in the foreground.",
+   "char": true
+  },
+  {
+   "kf": "kf = Same workshop room, identical camera angle as earlier: straight-on view of the workbench against the beige wall, window to the left with soft dusk light. The student sits centered behind the bench, same outfit, hands resting near the lamp. The finished lamp is on the table but OFF; no glow. 35mm lens, symmetrical framing, calm mood, warm practical light reduced. end_kf = Same exact framing and room, same pose and props, but the lamp is ON, casting a soft warm circle of light onto the wood and his hands, subtly brightening his face. No other changes.",
+   "motion": "He pauses, then taps the switch once and holds still, watching the light. Camera remains locked-off with a subtle 5-second exposure bloom as the lamp’s glow fills the frame.",
+   "char": true,
+   "end_kf": "Same workshop room, identical straight-on framing: workbench, beige wall, window left, student centered in dark green hoodie. The finished lamp is now ON, emitting a warm amber glow that pools on the wooden surface and gently illuminates his hands and face; props remain in the same positions, no other changes, no text or logos."
+  }
+ ],
+ "id": "cf_education_4_explainer",
+ "cat": "education",
+ "batch": "v3",
+ "regen": true
+}

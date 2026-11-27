@@ -1,0 +1,49 @@
+{
+ "type": "explainer",
+ "title_mk": "Софтвер што стигнува до вас",
+ "title_en": "Software Delivered to You",
+ "line_mk": "Од идеја до апликација.",
+ "line_en": "From idea to app.",
+ "desc_en": "One coherent, step-by-step software delivery story with a single recurring hero in a real Skopje setting. We stay in one location (a small studio workspace near the Old Bazaar), showing brief, build, test/security, deploy, and real-world handoff to a client on Vardar quay. No stock metaphors, no blank screens, no logos or readable text.",
+ "music": "Modern warm minimal electronic, light Balkan percussion accents, steady 92 bpm, confident and human",
+ "voice": "female, warm confident conversational, natural Macedonian cadence",
+ "vo_mk": [
+  "Почнуваме со краток бриф, лице в лице.",
+  "Ја градиме апликацијата чекор по чекор.",
+  "Тестираме и ја заклучуваме безбедноста.",
+  "Пуштаме верзија и ја носиме кај вас.",
+  "Од идеја до апликација."
+ ],
+ "shots": [
+  {
+   "kf": "Inside a small Skopje studio workspace near the Old Bazaar, warm afternoon window light and soft tungsten practicals. Our single hero, a Macedonian woman in her early 30s with dark bob hair, black crewneck and olive jacket, sits at a wooden desk. She points to a sketchbook with simple wireframes (no readable text) beside a closed laptop. Medium-wide, 35mm lens, earthy palette, photorealistic, clean hands and clear face.",
+   "motion": "She slides the sketchbook toward camera and taps one box decisively; camera makes a gentle handheld push-in of about 30 cm, settling on her hands and the page in one smooth move.",
+   "char": true
+  },
+  {
+   "kf": "Same room, same desk and props, matching warm color palette. The hero now types on the laptop while a second screen shows abstract code-like blocks that are intentionally unreadable. A small ceramic coffee cup, the same sketchbook, and a coiled cable sit exactly where they were. Medium shot from over her right shoulder, 50mm lens, shallow depth of field, photorealistic textures, no logos, no readable UI text, calm focused expression.",
+   "motion": "She writes a short burst of code and hits a single key with intent; camera performs a slow lateral slider move left about 20 cm, maintaining over-shoulder framing and ending on the keyboard and her concentrated face profile.",
+   "char": true
+  },
+  {
+   "kf": "Same room and angle family, evening-blue light outside the window with the same warm desk lamp on. The hero runs a test on the laptop: on-screen are simple colored bars and check icons that are not readable as text. She picks up her smartphone and uses her thumb to confirm a security step (no text visible). Tight medium, 65mm lens, higher contrast but still warm, photorealistic, hands clear, face calm and assured.",
+   "motion": "She taps the phone once to approve, then places it down beside the laptop; camera tilts down subtly from her eyes to her hands, ending on the phone landing next to the trackpad in one continuous 5-second move.",
+   "char": true
+  },
+  {
+   "kf": "Transform moment in the same exact room and camera angle as Shot 1: the desk layout is identical, but now the laptop is open and the phone lies beside it, both showing a clean app interface with no readable text. The hero sits in the same position, posture more relaxed. Warm afternoon light returns to match Shot 1, same earthy palette. Medium-wide, 35mm lens, photorealistic, no signage, no logos, no readable screens.",
+   "motion": "She rotates the open laptop slightly toward camera to present the finished app; camera performs a slow pull-back of about 40 cm, revealing the unchanged desk setup while emphasizing the single new difference: the app is now live on both devices.",
+   "char": true,
+   "end_kf": "Same room, same camera angle and desk placement, unchanged props and lighting continuity. The hero smiles subtly as she closes the sketchbook gently, leaving the laptop and phone open with the app visible (still no readable text). Photorealistic, warm inviting palette, 35mm lens, clean uncluttered composition focused on the delivered result."
+  },
+  {
+   "kf": "Exterior on Vardar quay at golden hour, Skopje skyline softly blurred, no readable signs anywhere. The same hero in the same black crewneck and olive jacket stands beside a client (only client hands visible, no face) near the stone railing. She holds her smartphone showing the app interface without readable text. Medium shot, 50mm lens, warm sun rim light, natural skin tones, photorealistic, real Balkan street feel without branding.",
+   "motion": "She hands the phone to the client and nods once; camera pans gently right to follow the phone transfer, ending on the client’s hands holding the device against the glowing river background.",
+   "char": true
+  }
+ ],
+ "id": "cf_it_3_explainer",
+ "cat": "it",
+ "batch": "v3",
+ "regen": true
+}
