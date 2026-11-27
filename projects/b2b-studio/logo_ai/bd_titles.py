@@ -12,15 +12,15 @@ FILMS = {
  "canyon_carving": ("Во карпите на Матка", "In the Matka cliffs"), "light_painting": ("Сликање со светлина", "Light painting"), "dominoes": ("Домино", "Dominoes"),
  "crop_circle": ("Во житото", "In the wheat"), "laser_show": ("Ласерско шоу", "Laser show"),
  "blades2_red_blue": ("Енергетски сечила · црвено / сино", "Energy blades · red / blue"), "blades2_blue_red": ("Енергетски сечила · сино / црвено", "Energy blades · blue / red"),
- "ships_sunrise": ("Флота над облаците", "Fleet above the clouds"), "ships_orbit": ("Флота во орбита", "Fleet in orbit"),
- "ships_storm": ("Флота во бурата", "Fleet in the storm"), "ships_below": ("Флота над нас", "Fleet overhead"),
+ 
+ "ships_storm": ("Флота во бурата", "Fleet in the storm"), 
  "nazca_lines": ("Линии во Наска", "Nazca lines"), "nazca_dawn": ("Наска во зори", "Nazca at dawn"),
  # round 6 (owner, 2026-11-27: "More alien spaceships.")
- "ships_city": ("Флота над градот", "Fleet over the city"), "ships_moon": ("Флота над Месечината", "Fleet over the Moon"),
- "ships_desert": ("Флота над пустината", "Fleet over the desert"), "ships_ocean": ("Флота над океанот", "Fleet over the ocean"),
- "ships_aurora": ("Флота под аурората", "Fleet under the aurora"), "ships_saturn": ("Флота кај Сатурн", "Fleet at Saturn"),
+ 
+ 
+ "ships_aurora": ("Флота под аурората", "Fleet under the aurora"), 
  "ships_warp": ("Флота од хиперпросторот", "Fleet out of hyperspace"), "ships_peaks": ("Флота над врвовите", "Fleet above the peaks"),
- "ships_gold": ("Златна флота", "Golden fleet"), "ships_eclipse": ("Флота во помрачувањето", "Fleet in the eclipse"),
+ 
 }
 FX = {
  "gold": ("Течно злато", "Liquid gold"), "fire": ("Оган", "Fire"), "ice": ("Мраз", "Ice"), "neon": ("Неон", "Neon"), "embers": ("Жар", "Embers"),
@@ -38,4 +38,18 @@ FX = {
  "laser_cut": ("Ласерски рез", "Laser cut"), "constellation": ("Соѕвездие", "Constellation"), "snow_glow": ("Снег", "Snow"), "mosaic": ("Мозаик", "Mosaic"),
  "lanterns": ("Фенери", "Lanterns"), "latte_foam": ("Млечна пена", "Latte foam"), "molten_glass": ("Растопено стакло", "Molten glass"),
  "light_trails": ("Траги од светлина", "Light trails"), "wheat": ("Жито", "Wheat"), "laser_beams": ("Ласери", "Laser beams"), "stained_glass": ("Витраж", "Stained glass"),
+}
+
+# retired 2026-11-27 (owner: the fleet films were repetitive 'slop'): ten of the fourteen alien-fleet logo films were removed from FILMS; storm, warp, aurora and peaks stay.
+RETIRED_FLEET = {
+ "ships_sunrise": ("Флота над облаците", "Fleet above the clouds"),
+ "ships_orbit": ("Флота во орбита", "Fleet in orbit"),
+ "ships_below": ("Флота над нас", "Fleet overhead"),
+ "ships_city": ("Флота над градот", "Fleet over the city"),
+ "ships_moon": ("Флота над Месечината", "Fleet over the Moon"),
+ "ships_desert": ("Флота над пустината", "Fleet over the desert"),
+ "ships_ocean": ("Флота над океанот", "Fleet over the ocean"),
+ "ships_saturn": ("Флота кај Сатурн", "Fleet at Saturn"),
+ "ships_gold": ("Златна флота", "Golden fleet"),
+ "ships_eclipse": ("Флота во помрачувањето", "Fleet in the eclipse"),
 }
