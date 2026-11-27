@@ -48,13 +48,13 @@ def para(t, link=None):
     return f'<p class="xfg" style="margin:0 0 18px;font:{T["size"]}/{T["lh"]} {T["font"]};color:{T["fg"]}">{t}</p>'
 
 
-def films(items):
+def films(items, vw="видео"):
     if not items: return ""
     cells = []
     for f in items:
         cells.append(
             f'<td class="col" width="50%" valign="top" style="padding:0 6px">'
-            f'<a href="{E(f["href"])}" style="text-decoration:none"><img src="{E(f["img"])}" width="262" alt="{E(f["title"])} (видео)" '
+            f'<a href="{E(f["href"])}" style="text-decoration:none"><img src="{E(f["img"])}" width="262" alt="{E(f["title"])} ({E(vw)})" '
             f'style="display:block;width:100%;height:auto;border:0;border-radius:10px"></a>'
             f'<p class="xfg" style="margin:10px 0 0;font:700 15px/1.35 {T["font"]};color:{T["fg"]}">{E(f["title"])}</p>'
             f'<p class="xmu" style="margin:2px 0 0;font:13px/1.4 {T["font"]};color:{T["mu"]}">{E(f.get("meta", ""))}</p></td>')
@@ -94,7 +94,7 @@ def footer(t):
 def render(c):
     link = c["cta"]["href"]
     body = "".join(para(p, link) for p in c["paras"][:2])
-    body += films(c.get("films"))
+    body += films(c.get("films"), c.get("video_word", "видео"))
     body += button(c["cta"]["label"], link)
     body += "".join(para(p, link) for p in c["paras"][2:])
     if c.get("note"): body += note(c["note"])
