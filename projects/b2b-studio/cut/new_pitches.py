@@ -19,6 +19,23 @@ OFFER_TXT = {
             pk=dict(b4=("Časovni zamik projekta", "po projektu", "Vaš projekt korak za korakom, od začetka do konca, z vašim logotipom: objekti, predori, mostovi, ceste."),
                     b6=("Blagovna znamka delodajalca", "po paketu", "Film za zaposlovanje, film o vaši ekipi in procesu ter kratki posnetki za oglase za delo."))),
 }
+OFFER_TXT["en"] = dict(eb="Offer", pil="Pilot", pild="1 film 20–30 s, 16:9 + 9:16, music, logo, call to action", hot="Most common", lan="Launch",
+            land="Main film 45–60 s + 3 spots + 10 short clips for social", mon="Monthly content", mond="6–8 new clips a month, minimum 3 months", mo="month",
+            head="Packages for your sector", terms="Delivery: 7–10 days after key-frame approval · 2 rounds of revisions · rights: web, social media, screens, showrooms and trade fairs (TV and paid campaigns by agreement) · every video is labelled as made with AI. Prices in euros excluding VAT.",
+            pk=dict(b4=("Project timelapse", "per project", "Your project step by step, from start to finish, with your logo: product lines, installations, cities."),
+                    b5=("Seasonal campaign", "per campaign", "A brand commercial, a factory or product film and short spots for trade fairs and launches.")))
+_LED = dict(lang="en", accent="#3da9fc", cats=["it", "product_launch"], tags="#LED #TransparentLED #FlexibleLED #AIcontent", site=None, pk=["b4", "b5"], cc=[], dur={"cn_showreel": 29, "cn_maker": 31}, films=[
+     ("led_showreel", "cn_showreel", "Content for transparent and flexible LED", "Facade, window, column, curved wall and 3D corner: original loops built for each shape."),
+     ("led_maker", "cn_maker", "Light, made to order", "A commercial about your screens: from the factory floor to the skyline.")],
+    greeting="Hello,", cta="Watch the films", role="Founder and creative director", sec="s", voice="English voice-over", closing="Best regards,", vw="video")
+def _led(key, name, to):
+    return dict(_LED, key=key, name=name, to=[to],
+      subject=f"{name}: two short AI films made for your LED screens (concept)",
+      paras=[f"We prepared two short films for {name}: a content reel for transparent, flexible and creative LED screens, and a commercial about the screens themselves. Both are made with AI, with no shoot.",
+             "Most makers show the same stock loops at fairs and in showrooms. We make original content for each screen shape (film on glass, curved walls, columns, 3D corners), so your demo is not the one everybody else is playing. We also make commercials for the brand itself.",
+             "Nothing here is published and nothing will be without your written approval. If you like the direction, we would be glad to show you in 15 minutes what the same work looks like on your own screens and products. A pilot film starts from €900."],
+      note=f"A private page only for {name}: the films, a publishing plan and the offer as a PDF.",
+      optout=f"This message was sent only to {name}. If you do not want more messages from us, reply with “no, thank you” and we will not write again.")
 CO = {
  "autonesi": dict(key="autonesi", name="AutoNesi", lang="mk", accent="#e0b04a", cats=["automotive", "product_launch"], tags="#AutoNesi #Скопје #Македонија #половниАвтомобили", site="autonesi.mk", pk=["b5"],
     to=["info@autonesi.mk"], cc=[], dur={"an_evoque": 19, "an_jaguar": 19, "an_discovery": 19}, films=[
@@ -43,6 +60,8 @@ CO = {
     optout="To sporočilo je bilo poslano samo Drugemu tiru (2TDK). Če ne želite več sporočil od nas, odgovorite z »ne, hvala« in vam ne bomo več pisali.", closing="Lep pozdrav,", vw="video"),
 }
 
+CO.update({k: _led(k, n, t) for k, n, t in (("nexnovo", "Nexnovo", "sale@nexnovo.com"), ("muxwave", "Muxwave", "info@muxwave.com"), ("sostron", "SoStron", "info@sostron.com"), ("gloshine", "Gloshine", "international@gloshine.cn"), ("yestech", "YES TECH", "yestech@yes-led.com"))})
+
 def offer_section(c):
     t = OFFER_TXT[c["lang"]]; pr = PRICES[c["lang"]]; mo = t["mo"]
     cards = lambda ids: "".join(f'<div class="card rv"><h3>{H.escape(t["pk"][i][0])}</h3><div class="amt">{pr[i + ".a"]}</div><span class="u">{H.escape(t["pk"][i][1])}</span><p>{H.escape(t["pk"][i][2])}</p></div>' for i in ids)
@@ -57,25 +76,27 @@ def thumb(src, dst):
     d.polygon([(cx - r * 0.3, cy - r * 0.5), (cx - r * 0.3, cy + r * 0.5), (cx + r * 0.55, cy)], fill=(17, 17, 17, 255)); im.save(dst, quality=88)
 
 def main(key):
-    c = CO[key]; FIN = {"autonesi": "/dev/shm/vall/an/final", "drugitir": "/dev/shm/vall/dt/final"}[key]
+    c = CO[key]; FIN = {"autonesi": "/dev/shm/vall/an/final", "drugitir": "/dev/shm/vall/dt/final"}.get(key, "/dev/shm/vall/cn/final")
     tokf = f"{S}/cut/page_tokens_new.json"; T = json.load(open(tokf)) if os.path.exists(tokf) else {}
     tok = T.setdefault(key, secrets.token_urlsafe(12)); json.dump(T, open(tokf, "w"))
     pub = f"/dev/shm/pub/{tok}"; shutil.rmtree(pub, ignore_errors=True); os.makedirs(f"{pub}/email")
     films = []
     for fid, src, title, line in c["films"]:
         for ar, suf in (("16x9", ""), ("9x16", "_9x16")):
+            if not os.path.exists(f"{FIN}/{src}_{ar}.mp4"): continue
             shutil.copy(f"{FIN}/{src}_{ar}.mp4", f"{pub}/{fid}{suf}.mp4")
             subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", "4", "-i", f"{pub}/{fid}{suf}.mp4", "-frames:v", "1", "-vf", "scale=" + ("1280:-2" if not suf else "-2:1280"), f"{pub}/{fid}{suf}.jpg"], check=True)
         thumb(f"{pub}/{fid}.jpg", f"{pub}/email/{fid}.jpg")
-        films.append(dict(id=fid, t=title, l=line, src=f"{fid}.mp4", v=f"{fid}_9x16.mp4", poster=f"{fid}.jpg", vposter=f"{fid}_9x16.jpg"))
-        PV.NATIVE_V[fid] = (f"{fid}_9x16.mp4", f"{fid}_9x16.jpg")
+        hv = os.path.exists(f"{pub}/{fid}_9x16.mp4")
+        films.append(dict(id=fid, t=title, l=line, src=f"{fid}.mp4", poster=f"{fid}.jpg", **(dict(v=f"{fid}_9x16.mp4", vposter=f"{fid}_9x16.jpg") if hv else {})))
+        if hv: PV.NATIVE_V[fid] = (f"{fid}_9x16.mp4", f"{fid}_9x16.jpg")
     PV.COMPANIES[key] = lambda: dict(key=key, name=c["name"], lang=c["lang"], accent=c["accent"], films=[dict(f) for f in films], caps={}, shots=0, stills=0, gifs=0, industry=c["cats"], tags=c["tags"], cta_site=c["site"])
     PV.SCRP = f"{S}/pv3"; os.makedirs(f"{PV.SCRP}/{key}", exist_ok=True)
     open(f"{PV.SCRP}/{key}/classic.html", "w", encoding="utf-8").write(f'<html lang="{c["lang"]}"><body>{offer_section(c)}</body></html>')
     PV.build(key, pub)
     # email
     page = f"https://pitch.bigdogma.tech/{tok}/"
-    x = dict(mk=dict(pre="Три кратки AI филма направени само за {n}, без снимање. Приватна страница, 2 минути."), sl=dict(pre="Dva kratka AI-filma, narejena samo za {n}, brez snemanja. Zasebna stran, 2 minuti."))[c["lang"]]
+    x = dict(en=dict(pre="Two short AI films made only for {n}, with no shoot. Private page, 2 minutes."), mk=dict(pre="Три кратки AI филма направени само за {n}, без снимање. Приватна страница, 2 минути."), sl=dict(pre="Dva kratka AI-filma, narejena samo za {n}, brez snemanja. Zasebna stran, 2 minuti."))[c["lang"]]
     src_of = {fid: src for fid, src, _, _ in c["films"]}
     items = [dict(title=f["t"], meta=f'{c["dur"][src_of[f["id"]]]} {c["sec"]} · {c["voice"]}', img=f"{page}email/{f['id']}.jpg", href=page + "#films") for f in films]
     content = dict(lang=c["lang"], subject=c["subject"], preheader=x["pre"].format(n=c["name"]), greeting=c["greeting"], paras=c["paras"], films=items, cta=dict(label=c["cta"], href=page), note=c["note"],
