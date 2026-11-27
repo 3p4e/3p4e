@@ -11,6 +11,10 @@ FILMS = {
  "neon_street": ("Неонска улица", "Neon street"), "latte_art": ("Лате арт", "Latte art"), "glassblowing": ("Дување стакло", "Glassblowing"),
  "canyon_carving": ("Во карпите на Матка", "In the Matka cliffs"), "light_painting": ("Сликање со светлина", "Light painting"), "dominoes": ("Домино", "Dominoes"),
  "crop_circle": ("Во житото", "In the wheat"), "laser_show": ("Ласерско шоу", "Laser show"),
+ "blades2_red_blue": ("Енергетски сечила · црвено / сино", "Energy blades · red / blue"), "blades2_blue_red": ("Енергетски сечила · сино / црвено", "Energy blades · blue / red"),
+ "ships_sunrise": ("Флота над облаците", "Fleet above the clouds"), "ships_orbit": ("Флота во орбита", "Fleet in orbit"),
+ "ships_storm": ("Флота во бурата", "Fleet in the storm"), "ships_below": ("Флота над нас", "Fleet overhead"),
+ "nazca_lines": ("Линии во Наска", "Nazca lines"), "nazca_dawn": ("Наска во зори", "Nazca at dawn"),
 }
 FX = {
  "gold": ("Течно злато", "Liquid gold"), "fire": ("Оган", "Fire"), "ice": ("Мраз", "Ice"), "neon": ("Неон", "Neon"), "embers": ("Жар", "Embers"),
