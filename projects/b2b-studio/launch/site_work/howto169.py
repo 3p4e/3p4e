@@ -36,6 +36,7 @@ HEAD = ("[Script Info]\nScriptType: v4.00+\nPlayResX: 1280\nPlayResY: 720\nWrapS
         "Style: Title,Russo One,60,&H00FFFFFF,&H00FFFFFF,&H50000000,&H90000000,0,0,0,0,100,100,1,0,1,2,3,8,0,0,0,1\n"
         f"Style: Topic,Oswald,32,{GOLD},&H00FFFFFF,&H70000000,&H90000000,1,0,0,0,100,100,3,0,1,1.5,2,8,0,0,0,1\n"
         "Style: Disc,Oswald,27,&H00C6D1D6,&H00FFFFFF,&H80000000,&H90000000,0,0,0,0,100,100,0.6,0,1,1.2,1.5,2,0,0,0,1\n"
+        "Style: Tag,Oswald,34,&H00E6EFF3,&H00FFFFFF,&H90000000,&H90000000,1,0,0,0,100,100,8,0,1,0.8,1.5,5,0,0,0,1\n"
         f"Style: Kick,Oswald,28,{GOLD},&H00FFFFFF,&H200F0D0D,&H00000000,1,0,0,0,100,100,4,0,3,9,0,7,0,0,0,1\n"
         "Style: Step,Russo One,34,&H00FFFFFF,&H00FFFFFF,&H70000000,&H90000000,0,0,0,0,100,100,0.5,0,1,2.4,2.5,7,0,0,0,1\n"
         "Style: Sub,Russo One,36,&H00FFFFFF,&H00FFFFFF,&H30000000,&H90000000,0,0,0,0,100,100,0.5,0,1,2.6,2,2,80,80,46,1\n"
@@ -43,7 +44,8 @@ HEAD = ("[Script Info]\nScriptType: v4.00+\nPlayResX: 1280\nPlayResY: 720\nWrapS
 ev = [f"Dialogue: 1,{tc(0)},{tc(o1 - 0.02)},Title,,0,0,0,,{{\\pos(640,318)}}Како настанува рекламата",
       f"Dialogue: 1,{tc(0)},{tc(o1 - 0.02)},Topic,,0,0,0,,{{\\pos(640,404)}}ГРАДЕЖНИШТВО · ТАЈМЛАПС",
       f"Dialogue: 1,{tc(0)},{tc(o1 - 0.02)},Disc,,0,0,0,,{{\\pos(640,640)}}{DISC}",
-      f"Dialogue: 1,{tc(o4 + 0.6)},{tc(total)},Disc,,0,0,0,,{{\\pos(640,696)\\fad(400,0)}}{DISC}"]
+      f"Dialogue: 1,{tc(o4 + 0.6)},{tc(total)},Disc,,0,0,0,,{{\\pos(640,696)\\fad(400,0)}}{DISC}",
+      f"Dialogue: 1,{tc(o4 + 1.0)},{tc(total)},Tag,,0,0,0,,{{\\pos(640,548)\\fad(450,0)\\c&H4EC1F2&}}—  {{\\c&HE6EFF3&}}BREAK THE DOGMA.{{\\c&H4EC1F2&}}  —"]
 steps = [("КОРАК 1", "Ваш рендер или фотографија од плацот", o1, o2), ("КОРАК 2", "AI тајмлапс по фази", o2, o3),
          ("КОРАК 3", "Готова реклама: глас, музика, 16:9 и 9:16", o3, o4)]
 for kick, txt, a, b in steps:

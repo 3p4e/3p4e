@@ -21,6 +21,11 @@ GRAIN = ("url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' 
          "<feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>\")")
 DISC_MK = "Видео изработено со вештачка интелигенција"
 DISC_EN = "AI-generated video"
+TAGLINE = "Break the dogma."          # studio sign-off on every outro (owner 2026-11-27); English in every language
+def tagline(top, fs, ls):
+    rule = f'<span style="display:inline-block;width:{fs * 1.3:.0f}px;height:2px;background:var(--gold);opacity:.7;vertical-align:middle;margin:0 {fs * .55:.0f}px {fs * .12:.0f}px"></span>'
+    return (f'<div class="abs c" style="top:{top}px;font-size:{fs}px;font-weight:600;letter-spacing:{ls}px;color:#f3efe6;text-transform:uppercase;'
+            f'text-shadow:0 0 18px rgba(242,193,78,.35),0 2px 14px rgba(0,0,0,.6)">{rule}{TAGLINE}{rule}</div>')
 
 def page(w, h, body, css="", transparent=False):
     return f"""<!doctype html><html><head><meta charset="utf-8"><style>
@@ -54,10 +59,10 @@ for name, mw in [("wm_110", 110), ("wm_96", 96)]:
 # ---------- end card layers
 glow = "radial-gradient(ellipse 60% 45% at 50% 32%, rgba(242,193,78,.17), rgba(242,193,78,0) 70%)"
 vign = "radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0) 55%, rgba(0,0,0,.55) 100%)"
-def endcard(tag, w, h, logo_w, logo_top, head_html, head_top, head_fs, pill_top, pill_fs, contact_html, contact_top, contact_fs, disc_html, disc_top, disc_fs, disc_col="#9b978e"):
+def endcard(tag, w, h, logo_w, logo_top, tag_top, tag_fs, head_html, head_top, head_fs, pill_top, pill_fs, contact_html, contact_top, contact_fs, disc_html, disc_top, disc_fs, disc_col="#9b978e"):
     add(f"end_{tag}_A", w, h, f'<div class="abs" style="inset:0;background:{glow}"></div><div class="abs" style="inset:0;background:{vign}"></div>'
         f'<img class="abs" src="{LOGO}" style="width:{logo_w}px;left:{(w - logo_w) // 2}px;top:{logo_top}px;filter:drop-shadow(0 0 28px rgba(242,193,78,.28))">'
-        f'<div class="grain"></div>')
+        + tagline(tag_top, tag_fs, round(tag_fs * .3)) + '<div class="grain"></div>')
     add(f"end_{tag}_B", w, h, f'<div class="abs c russo" style="top:{head_top}px;font-size:{head_fs}px;line-height:1.12;letter-spacing:.5px;text-shadow:0 4px 30px rgba(0,0,0,.6)">{head_html}</div>'
         f'<div class="abs c" style="top:{pill_top}px"><span class="pill" style="font-size:{pill_fs}px;padding:{pill_fs*0.32:.0f}px {pill_fs*0.85:.0f}px">Пилот-филм од €600</span></div>', transparent=True)
     crow = (f'<div class="abs c" style="top:{contact_top}px;font-size:{contact_fs}px;font-weight:600;letter-spacing:1px;color:#ece7dc;line-height:1.5">{contact_html}</div>'
@@ -65,11 +70,11 @@ def endcard(tag, w, h, logo_w, logo_top, head_html, head_top, head_fs, pill_top,
     add(f"end_{tag}_C", w, h, crow + f'<div class="abs c" style="top:{disc_top}px;font-size:{disc_fs}px;color:{disc_col};letter-spacing:.6px;line-height:1.45">{disc_html}</div>',
         transparent=True)
 dot = '<span class="gold" style="padding:0 .7em">·</span>'
-endcard("16x9", 1920, 1080, 700, 150, "AI видео за вашиот бизнис", 440, 88, 590, 50,
+endcard("16x9", 1920, 1080, 700, 150, 366, 34, "AI видео за вашиот бизнис", 470, 88, 618, 50,
         dot.join(CONTACT), 790, 38, f"{DISC_MK}{dot}{DISC_EN}", 975, 27)
 # 9:16: lockup 740 px wide (x 170-910, clear of the right-hand action rail); contact lines stacked, disclosure right under them
 C9_TOP = 1110; C9_H = round(len(CONTACT) * 42 * 1.5)
-endcard("9x16", 1080, 1920, 740, 380, "AI видео за<br>вашиот бизнис", 700, 96, 960, 52,
+endcard("9x16", 1080, 1920, 740, 370, 600, 36, "AI видео за<br>вашиот бизнис", 728, 96, 984, 52,
         "<br>".join(CONTACT), C9_TOP, 42, f"{DISC_MK}<br>{DISC_EN}", C9_TOP + C9_H + (50 if CONTACT else 0), 30, disc_col="#b9b4aa")
 
 # ---------- native 9:16 end cards for reels 01-05 (replace the DejaVu end card baked into the 9:16 film masters)
@@ -133,7 +138,10 @@ add("howto_title_9x16_t", 1080, 1920,
 
 # ---------- outro disclosure overlay (transparent strip used on reel_06 outro)
 # (sits under the stacked vertical lockup of seg/logo_9x16.mp4, whose subline ends near y 1220)
-add("outro_disc_9x16", 1080, 1920, f'<div class="abs c" style="top:1320px;font-size:31px;font-weight:600;color:#cfcabf;letter-spacing:.4px;line-height:1.45">{DISC_MK}<br>{DISC_EN}</div>', transparent=True)
+add("outro_disc_9x16", 1080, 1920, tagline(1262, 38, 11) + f'<div class="abs c" style="top:1352px;font-size:31px;font-weight:600;color:#cfcabf;letter-spacing:.4px;line-height:1.45">{DISC_MK}<br>{DISC_EN}</div>', transparent=True)
+
+# tagline only, for laying over reels already built with the old outro_disc (disclosure at y 1320): ends above it
+add("outro_tag_9x16", 1080, 1920, tagline(1244, 38, 11), transparent=True)
 
 # ---------- posts 1080x1350
 PW, PH = 1080, 1350
