@@ -48,32 +48,39 @@
   },
   {
    "type": "social",
-   "title_mk": "Модерен ритам",
-   "title_en": "Modern Rhythm",
-   "line_mk": "Индустрија која не запира.",
-   "line_en": "Industry that never stops.",
-   "desc_en": "A high-energy, vertical showcase of automated manufacturing and modern logistics designed for social media impact.",
-   "music": "Pounding electronic bass, heavy industrial synth beats, fast tempo, 120 bpm",
-   "voice": "female, sharp confident modern",
+   "title_mk": "Железо. Рака. Скопје.",
+   "title_en": "Steel. Hands. Skopje.",
+   "line_mk": "Сила што се создава.",
+   "line_en": "Strength, made here.",
+   "desc_en": "A tight, vertical, craft-to-finished-part story in one real Skopje metal workshop near the Old Bazaar: one worker, one steel plate, one process shown step-by-step. Gritty orange-black grade, real sparks, no generic stock locations, no signage, no logos, physically plausible actions.",
+   "music": "Industrial percussion with low analog bass, steady 105 bpm, metallic hits, minimal melody, gritty texture",
+   "voice": "female, calm confident, grounded Skopje accent",
    "vo_mk": [
-    "Новата македонска индустрија во движење."
+    "Во Скопје, железото почнува од рака.",
+    "Го сечеме прецизно, милиметар по милиметар.",
+    "Сила што се создава."
    ],
    "shots": [
     {
-     "kf": "Close-up of glowing molten metal pouring from a massive industrial crucible into a dark metallic mold. Intense bright orange and yellow light against pitch-black shadows with flying sparks. Vertical 9:16 framing, subject dead center. 85mm macro lens, shallow depth of field. Photorealistic, dramatic high contrast.",
-     "motion": "Thick liquid metal pours continuously downward in a smooth stream, bright glowing sparks drift upward, and the camera slowly pushes in."
+     "kf": "Photorealistic vertical 9:16. Inside a small Skopje metal workshop with bare concrete walls, worn steel workbench, and one overhead tungsten lamp casting warm orange pools into deep shadows; no readable text anywhere. Same hero: male 35, short dark hair, light stubble, black jacket, gray work pants, brown gloves. Medium close-up on his hands placing a single rectangular raw steel plate on the bench, measuring it with a plain metal square. 50mm lens, shallow depth, gritty orange-black palette, evening feel.",
+     "motion": "He slides the steel plate flush to the square with one deliberate push; the camera makes a slow handheld push-in of about 20 cm, keeping his gloved hands centered and steady.",
+     "char": true
     },
     {
-     "kf": "Inside a high-tech modern electrical grid control room. A glowing server rack with rhythmic blinking blue and neon green LED lights fills the frame. Symmetrical vertical 9:16 composition, subject centered, high contrast, sleek dark metallic textures. 35mm lens, deep depth of field. Photorealistic.",
-     "motion": "The neon LED lights pulse in a steady, energetic rhythm, while the camera performs a smooth, continuous vertical tilt down the rack."
+     "kf": "Photorealistic vertical 9:16 in the exact same workshop corner and bench, identical lighting and color grade, no logos or readable markings. The same man, same clothing and gloves. Tight close-up of a compact handheld angle grinder touching the marked edge of the same steel plate; first sparks appear, bright orange against black shadows. 85mm lens, very shallow depth of field, focus locked on the contact point, background falls to soft darkness, simple clean hands and tool silhouettes.",
+     "motion": "He begins one clean cut line, producing a controlled fan of sparks; the camera performs a smooth lateral slide right about 15 cm, tracking the sparks while maintaining focus on the cutting edge.",
+     "char": true
     },
     {
-     "kf": "Drone view looking straight down at a sprawling solar farm in the sunny Macedonian countryside. Rows of dark blue photovoltaic panels form geometric patterns against dry, golden earth. Vertical 9:16 framing, perfect central symmetry. 14mm drone lens, bright midday sunlight casting sharp shadows. Photorealistic.",
-     "motion": "Slow, smooth rotation of the drone camera looking straight down, while white clouds cast slowly moving shadows over the bright solar panels."
+     "kf": "Photorealistic vertical 9:16, same bench and tungsten top-light, same orange-black grade, no signage or text. The same man leans in, face partially visible but simple and unambiguous, wearing the same black jacket and gloves. Medium shot: he steadies the steel plate in a vise and runs a single short weld bead along a seam; crisp sparks and tiny molten droplets, realistic smoke curling upward. 35mm lens, moderate depth, warm highlights on metal, cool shadows in the room.",
+     "motion": "He completes one continuous weld bead for a few seconds; the camera tilts down slowly from his concentrated face to the glowing seam, ending on the brightest point of the weld.",
+     "char": true
     }
    ],
    "id": "cf_industry_showreel_2_social",
-   "cat": "industry_showreel"
+   "cat": "industry_showreel",
+   "batch": "v3",
+   "regen": true
   },
   {
    "type": "commercial",

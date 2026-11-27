@@ -54,75 +54,101 @@
   },
   {
    "type": "social",
-   "title_mk": "Блескава Насмевка",
-   "title_en": "Radiant Smile",
-   "line_mk": "Совршена насмевка за еден ден.",
-   "line_en": "Perfect smile in one day.",
-   "desc_en": "A fast-paced, high-energy vertical social media ad showcasing the modern aesthetic of a premium dental clinic.",
-   "music": "Upbeat electronic pop, driving bass, punchy rhythm, 125 bpm",
-   "voice": "male, energetic and confident",
+   "title_mk": "Насмевка, без драма",
+   "title_en": "Smile, No Drama",
+   "line_mk": "Насмевка за еден ден.",
+   "line_en": "A smile in one day.",
+   "desc_en": "Vertical smile-makeover story set in a real Skopje Old Bazaar street and a clean dental room. One recurring hero patient moves through a simple, believable veneer try-in process: check, shade match, placement, reveal. Photorealistic, Balkan texture, no stock look, no readable signage.",
+   "music": "Modern Balkan-pop beat with clean percussion and warm synths, 118 bpm, minimal and confident",
+   "voice": "female, warm, calm and confident",
    "vo_mk": [
-    "Вашата совршена насмевка е на дофат."
+    "Скопје, утро. Само сакам природна насмевка.",
+    "Преглед, боја и план — без компликации.",
+    "Проба на фасети, прецизно и нежно.",
+    "Еднаш гледаш — и знаеш дека е твоја.",
+    "Насмевка за еден ден."
    ],
    "shots": [
     {
-     "kf": "Vertical 9:16 composition. A bright, glowing LED ring light used in professional dental photography, perfectly centered against a dark studio background. High contrast, dramatic lighting, 85mm lens, striking vertical alignment, neon white and deep black colour palette. Hyper-detailed and photorealistic.",
-     "motion": "The camera slowly zooms into the center of the glowing ring light while the LED intensity subtly increases in brightness."
+     "kf": "Vertical 9:16, photorealistic. In a quiet stone alley of Skopje Old Bazaar, signage-free walls and warm worn cobblestones. Our hero: woman, 28, chestnut bob haircut, beige trench coat over white top, small gold hoops, neutral makeup. Medium close-up, 50mm lens. She pauses, touches her lips lightly, nervous but hopeful. Soft morning sun, warm beige and terracotta palette, shallow depth of field, no readable text anywhere.",
+     "motion": "She exhales and gives a small, uncertain smile while lowering her hand from her mouth. Camera makes a gentle handheld push-in about 30 cm, keeping her face centered and steady.",
+     "char": true
     },
     {
-     "kf": "Vertical portrait composition. A sleek, futuristic dental water jet tool spraying a fine, elegant mist against a stark black background. Crisp, dramatic side lighting illuminating the water droplets. 100mm macro lens, centered framing, cool cyan and silver colour palette. High-speed photography style, photorealistic.",
-     "motion": "The fine water mist continuously sprays from the nozzle while the camera slowly tilts upwards along the sleek metallic tool."
+     "kf": "Vertical 9:16, photorealistic. Cut to inside a bright, minimal dental room with off-white walls and pale wood accents, no logos, no readable text. Same hero now seated in a dental chair, beige trench still visible at shoulders. Dentist hands only in clean white gloves hold a small mirror near her mouth. Tight close-up on her smile area, 100mm macro lens, soft clinical key light, neutral color temperature, clean highlights, simple unambiguous mouth and hands.",
+     "motion": "Dentist gently tilts the small mirror to inspect her front teeth while the hero opens then relaxes her lips. Camera performs a slow micro-slide left to right, maintaining tight framing on the smile.",
+     "char": true
     },
     {
-     "kf": "Vertical portrait composition. A perfectly clean, glowing white ceramic dental crown resting on a soft, deep blue velvet cushion. Spotlight illumination highlighting the pristine texture of the crown. 85mm macro lens, centered subject, luxurious and clinical colour palette. Crisp and photorealistic.",
-     "motion": "The camera slowly orbits around the pristine ceramic crown, capturing the gleaming light reflections on its smooth, polished white surface."
+     "kf": "Vertical 9:16, photorealistic. Same dental room, same lighting. A stainless tray on a pale wood counter holds two thin porcelain veneers on a neutral ceramic dish, plus a shade guide without readable markings. Gloved hands enter frame, selecting a veneer carefully with tweezers. Macro close-up, 90mm lens, clean white and warm wood palette, crisp detail, no text or branding visible anywhere.",
+     "motion": "A gloved hand lifts one veneer with tweezers and rotates it slightly to catch the light. Camera makes a controlled push-in, focusing from tray edge to the veneer surface in one smooth move.",
+     "char": false
+    },
+    {
+     "kf": "Vertical 9:16, photorealistic. Back to the dental chair, same hero and same room. Tight close-up on her mouth and lower face, 100mm macro lens. Dentist’s gloved hands position the veneer at the edge of her front tooth; her expression stays calm, eyes softly focused upward out of frame. Soft diffused overhead light, natural tooth color, gentle shadows, no tools with logos, no readable text.",
+     "motion": "Dentist presses the veneer into place with a steady, gentle motion; the hero remains still and breathes slowly. Camera makes a slow tilt up a few degrees from lips toward her relaxed cheeks, staying close.",
+     "char": true
+    },
+    {
+     "kf": "Vertical 9:16, photorealistic. Same dental room, same hero, same outfit. Medium close-up framed through a clean handheld mirror: her reflected face fills the mirror, smiling naturally with improved symmetry. Background falls softly out of focus—off-white wall and pale wood only. 50mm lens, flattering soft key light, warm-neutral palette. Hands are simple: her fingers hold the mirror at chin level, no jewelry changes, no readable text anywhere.",
+     "motion": "She breaks into a genuine laugh, then settles into a confident smile while lowering the mirror slightly. Camera performs a subtle pull-back to reveal more of her shoulders and relaxed posture in one smooth move.",
+     "char": true,
+     "end_kf": "Vertical 9:16, photorealistic. Match the previous framing and room, same hero and outfit. The mirror remains centered but lower, showing her full smile without obstruction. She holds a calm, confident expression, shoulders relaxed. Same soft key light and warm-neutral palette, clean background, no logos or readable text. This frame feels like the final reveal end card moment."
     }
    ],
    "id": "cf_health_2_social",
-   "cat": "health"
+   "cat": "health",
+   "batch": "v3",
+   "regen": true
   },
   {
    "type": "story",
-   "title_mk": "Радост Во Животот",
-   "title_en": "Joy in Life",
-   "line_mk": "Уживајте во секој момент слободно.",
-   "line_en": "Enjoy every moment freely.",
-   "desc_en": "An emotional cinematic journey highlighting the freedom and joy of life following a transformative dental procedure.",
-   "music": "Slow cinematic ambient piano, warm and uplifting, 75 bpm",
-   "voice": "female, warm and poetic",
+   "title_mk": "Пат до насмевка",
+   "title_en": "A Path to a Smile",
+   "line_mk": "Насмевка без страв.",
+   "line_en": "A smile without fear.",
+   "desc_en": "A single patient journey from nervous arrival to calm consultation and confident exit, grounded in Skopje’s Old Bazaar and a real clinic interior. One recurring hero, consistent wardrobe and look, with a clear emotional arc and a simple transformation beat.",
+   "music": "Warm modern piano with soft Balkan percussion, steady 78 bpm, hopeful build",
+   "voice": "female, warm, reassuring",
    "vo_mk": [
-    "Насмевката е почеток на секоја убава приказна.",
-    "Уживајте во вкусовите и моментите без грижи.",
-    "Откријте ја повторно радоста на животот."
+    "Стигнувам со малку страв.",
+    "Во рацете на докторот, се смирувам.",
+    "Секој чекор е јасен и нежен.",
+    "Светло, чисто, и готово.",
+    "Излегувам со насмевка без страв."
    ],
    "shots": [
     {
-     "kf": "A crisp, bright green apple sitting on a rustic wooden table, overlooking the calm, expansive waters of Lake Ohrid at sunrise. Soft, warm morning light, 50mm lens, cinematic framing, vibrant green and deep blue colour palette. Highly detailed, evoking health and vitality. Photorealistic.",
-     "motion": "The camera slowly pushes in towards the green apple while the morning light reflects softly on the calm lake waters behind."
+     "kf": "Early morning in Skopje Old Bazaar on a narrow stone street, signage-free. A 28-year-old woman with dark brown hair in a low ponytail, wearing the same beige trench coat and black scarf, pauses at the edge of the street. Medium-wide 35mm, eye level, soft overcast daylight, muted stone-and-warm-beige palette, shallow depth of field, photorealistic, calm but tense expression, simple hands visible.",
+     "motion": "She takes a steady breath and steps forward, gripping her bag strap once. Camera performs a slow forward dolly-in from medium-wide to medium shot, keeping her centered and background softly drifting.",
+     "char": true
     },
     {
-     "kf": "A soft, sheer white linen curtain gently blowing in the wind beside an open window inside a sunlit, luxurious recovery suite. Bright, ethereal daylight, 35mm lens, rule of thirds composition, soft whites and warm beige colour palette. Peaceful, serene atmosphere, photorealistic.",
-     "motion": "The sheer curtain billows softly and rhythmically in the gentle breeze as the camera slowly pans to the right."
+     "kf": "Interior clinic waiting area in Skopje, minimal modern design with identical neutral walls, pale wood bench, and frosted glass door; no readable text or logos. The same woman sits upright, coat still on, hands clasped on her lap. Medium shot 50mm, soft diffused ceiling light, clean whites and warm wood tones, quiet atmosphere, photorealistic, face clearly readable with nervous eyes and controlled breathing.",
+     "motion": "She relaxes her shoulders and uncrosses her hands into an open palm. Camera makes a gentle lateral slide to the right, revealing more of the calm room while maintaining her in the foreground.",
+     "char": true
     },
     {
-     "kf": "A high-end espresso coffee being poured into a pristine white ceramic cup, with rich, golden crema forming on top. Warm cafe lighting, 85mm macro lens, tight close-up composition, rich brown and creamy white colour palette. Inviting, comforting, and highly photorealistic.",
-     "motion": "The thick, rich coffee continuously pours into the cup, creating swirling patterns in the crema while the camera holds a steady close-up."
+     "kf": "Consultation room, same clinic, neutral wall and a simple dental chair behind her, no signage. The same woman now without the coat but wearing the same black top underneath; hair and makeup unchanged. She sits facing a doctor’s hands (doctor mostly out of frame), holding a small dental shade guide near her mouth; no text visible. Tight-medium 85mm, soft key light from the side, warm skin tones, photorealistic, her expression turning relieved.",
+     "motion": "She nods once while the doctor’s hand gently points to the shade guide. Camera executes a slow push-in toward her face and the guide, keeping focus on her eyes and calm expression.",
+     "char": true
     },
     {
-     "kf": "A pristine, modern white clinic corridor bathed in warm, golden hour light streaming through large windows. The space is completely empty, peaceful, and quiet. Wide-angle 24mm lens, deep depth of field, symmetrical one-point perspective composition, golden and pure white colour palette. Photorealistic.",
-     "motion": "The camera tracks forward smoothly and slowly down the center of the quiet, sunlit corridor, creating a calming and reassuring journey."
+     "kf": "Treatment room, same clinic, same wall color and lighting setup, matching camera angle for transformation. The woman reclines slightly in the dental chair, wearing a plain light bib with no branding. A gloved hand holds a small curing light near her front teeth; the light is OFF. Close-up 100mm macro look, soft ambient fill, clean white and pale blue palette, photorealistic, her face relaxed, hands resting still.",
+     "motion": "The gloved hand brings the curing light into position near her teeth. Camera makes a subtle tilt down to follow the tool, holding steady for a precise, controlled clinical feel.",
+     "char": true,
+     "end_kf": "Treatment room, identical framing and angle, same woman and bib, same lighting and background. The curing light is ON, emitting a soft blue glow reflecting on her teeth; her lips curve into a small, confident smile. Close-up remains consistent, photorealistic, clean palette unchanged, only the blue illumination and her expression shifted to relief and trust."
     },
     {
-     "kf": "A fresh, elegant bouquet of white lilies arranged in a crystal vase on a sleek waiting room reception desk. Soft, diffused ambient lighting, 50mm lens, centered elegant composition, pure white and subtle green colour palette. A symbol of care and luxury, photorealistic.",
-     "motion": "The camera slowly orbits the crystal vase, capturing the soft light passing through the delicate white petals of the lilies."
-    },
-    {
-     "kf": "Golden sunbeams sparkling on the gentle ripples of Lake Ohrid. The horizon is clear, conveying a sense of profound peace, restored health, and a bright future. Warm, brilliant sunset lighting, 85mm lens, abstract and textured composition, gold and deep blue colour palette. Photorealistic.",
-     "motion": "The sparkling water ripples continuously catch the golden sunlight as the camera glides smoothly and slowly over the lake surface."
+     "kf": "Late afternoon golden light at the edge of Skopje Old Bazaar leading toward the Vardar quay, stone textures and warm sun flare, signage-free. The same woman, same beige trench coat and black scarf again, walks toward camera with an easy posture. Medium-wide 35mm, backlit warm sunlight, amber-and-stone palette, photorealistic, clear genuine smile, simple hands visible swinging naturally.",
+     "motion": "She walks past the camera, smiling openly as she turns her head slightly toward the sun. Camera performs a smooth handheld follow for two steps, then eases into a gentle upward tilt to catch the warm light around her.",
+     "char": true
     }
    ],
    "id": "cf_health_3_story",
-   "cat": "health"
+   "cat": "health",
+   "batch": "v3",
+   "regen": true
   },
   {
    "type": "commercial",

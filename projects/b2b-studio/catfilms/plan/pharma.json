@@ -5,52 +5,51 @@
  "films": [
   {
    "type": "explainer",
-   "title_mk": "Чистота и Прецизност",
-   "title_en": "Purity and Precision",
-   "line_mk": "Врвен квалитет за вашето здравје.",
-   "line_en": "Premium quality for your health.",
-   "desc_en": "A visual journey through a state-of-the-art pharmaceutical cleanroom, highlighting the sterile production and automated packaging of premium capsules.",
-   "music": "Pulsing ambient electronic, clinical and precise, 90 bpm",
-   "voice": "female, reassuring, professional",
+   "title_mk": "Од лабораторија до вас",
+   "title_en": "From Lab to You",
+   "line_mk": "Чисто. Точно. Ваше.",
+   "line_en": "Clean. Precise. Yours.",
+   "desc_en": "One coherent, step-by-step journey of a single medicine box: filled and inspected in a sterile lab, packaged, then handed to a customer in a real Skopje Old Bazaar pharmacy. Same hero technician throughout; warm-to-clean palette shift that stays Balkan-real and signage-free.",
+   "music": "Minimal ambient pulse with soft percussion, clean and human, 92 bpm",
+   "voice": "female, calm, trustworthy, Macedonian accent",
    "vo_mk": [
-    "Секоја капсула започнува во строго контролирани услови на чистота.",
-    "Напредната технологија гарантира апсолутна стерилност во секој чекор.",
-    "Роботските системи овозможуваат беспрекорна прецизност при пакувањето.",
-    "Ова осигурува максимална безбедност и ефикасност на производот.",
-    "Врвен квалитет, создаден со грижа за вашето здравје."
+    "Сè почнува во стерилна, контролирана просторија.",
+    "Го полниме секое шишенце прецизно, без допир.",
+    "Потоа, рачно ја проверуваме секоја серија.",
+    "Го пакуваме и го носиме до аптеката во Скопје.",
+    "Чисто. Точно. Ваше."
    ],
    "shots": [
     {
-     "kf": "Wide shot of a sterile pharmaceutical cleanroom in Skopje. Gleaming stainless steel vats and glowing blue LED indicator lights. Smooth epoxy floor reflecting the bright, diffused overhead lighting. Minimalist, premium, photorealistic, cool white and cyan color palette, cinematic 35mm lens.",
-     "motion": "Very slow forward camera push. Gentle bubbling or fluid motion is visible through a thick glass portal on the main vat."
+     "kf": "Interior, sterile pharmaceutical cleanroom in Skopje outskirts, stainless steel filling line and enclosed conveyor behind clear safety glass. A single female technician, early 30s, dark hair in a tight bun under a white hood, blue nitrile gloves, white gown and mask, stands camera-left monitoring the line. Cool white light, pale blue-gray palette, 35mm lens, medium-wide framing, photorealistic, no readable text or logos.",
+     "motion": "Technician taps a single green-lit start button and watches vials begin moving. Camera makes a slow, steady dolly-in through the glass, stopping as the first empty vial reaches the filling station.",
+     "char": true
     },
     {
-     "kf": "Close-up of a sleek, metallic robotic arm moving above a tray of generic, unbranded white capsules. The lighting is pristine and clinical, casting soft shadows. Extremely sharp focus, macro lens, beautiful bokeh background, photorealistic, pristine white and silver tones.",
-     "motion": "The robotic arm smoothly glides horizontally from left to right. Slow camera pan following the arm's precise movement."
+     "kf": "Tight close-up of the filling station: a clear glass vial held in a metal nest under a stainless nozzle, transparent liquid forming a clean meniscus inside. The same technician’s blue-gloved hands appear at frame edge only, steadying the tray without blocking the view. Clinical overhead diffuse light, crisp reflections, shallow depth of field, 85mm macro look, cool whites and steel tones, photorealistic, no labels or text visible.",
+     "motion": "Liquid dispenses in one continuous stream until it reaches a marked level, then stops cleanly. Camera performs a gentle micro push-in and slight tilt to keep the rising liquid level centered.",
+     "char": true
     },
     {
-     "kf": "Medium shot of rows of transparent glass vials moving along a polished aluminum conveyor belt. Soft blue ambient lighting reflecting off the curved glass. Deep depth of field, photorealistic, 50mm lens, symmetrical composition, clinical cool tones, pristine manufacturing environment.",
-     "motion": "Vials slide smoothly forward on the metallic belt. The camera remains static, emphasizing the continuous, hypnotic flow of the objects."
+     "kf": "Medium close-up at an inspection bench inside the same cleanroom: the technician, same outfit and bun, holds one filled vial up to a circular inspection lamp, rotating it slowly between thumb and forefinger. Background shows softly blurred stainless equipment and clean surfaces. Neutral-cool lighting with a focused highlight through the vial, 50mm lens, eye-level framing, restrained blue-gray palette, photorealistic, face simple and unambiguous, no text anywhere.",
+     "motion": "She rotates the vial once, then places it into a clean tray with a single decisive movement. Camera pans slightly right to follow the vial from lamp to tray, staying smooth and realistic.",
+     "char": true
     },
     {
-     "kf": "Close-up of a generic, translucent liquid filling a glass vial from a stainless steel nozzle. Bright, crisp lighting highlighting the absolute purity of the liquid. Macro photography, photorealistic, soft focus background, cool white and subtle blue specular highlights.",
-     "motion": "The thick liquid pours smoothly in a continuous, viscous stream. Very slow push-in camera movement towards the filling vial."
+     "kf": "Packaging area connected to the cleanroom: the same technician stands beside a compact, enclosed packaging machine feeding plain, matte-white medicine cartons (no printing). She slides one carton into a clear tray; next to it, a few identical cartons stack neatly. Bright, even overhead light, cool neutral palette with a small warm accent from a safety beacon, 35mm lens, medium framing, photorealistic, no readable markings or logos.",
+     "motion": "She closes the tray lid with one click and pushes it forward onto the conveyor. Camera makes a slow lateral move left-to-right, revealing the neat stack of identical cartons without showing any text.",
+     "char": true
     },
     {
-     "kf": "Medium shot of an automated capping machine pressing metallic seals onto the glass vials. Sparks of light reflecting off the shiny aluminum caps. High-contrast sterile lighting, dynamic low angle, 85mm lens, photorealistic, metallic and cool gray professional color palette.",
-     "motion": "The mechanical press moves slowly up and down in a rhythmic, precise motion. The camera slowly pans right along the machine."
-    },
-    {
-     "kf": "Wide shot of a generic, premium white cardboard medication box sitting on an illuminated frosted glass table. No text or logos, just embossed abstract geometric patterns. Warm rim light contrasting with the cool room, 50mm lens, photorealistic, elegant minimalist composition.",
-     "motion": "The generic box remains completely static. The camera slowly orbits around the box, revealing the subtle embossed texture on the cardboard."
-    },
-    {
-     "kf": "Wide architectural shot of a modern, generic pharmacy interior in Skopje at dusk. Large glass windows, warm wooden shelves lined with generic white boxes, glowing LED strips. Soft twilight lighting, ultra-wide 14mm lens, photorealistic, cozy yet highly clinical atmosphere.",
-     "motion": "A very slow, smooth camera pull-back. Soft dust motes drift gently in the warm interior light against the cool evening backdrop."
+     "kf": "Interior, small neighborhood pharmacy in Skopje Old Bazaar, stone and wood textures, warm tungsten practicals, shelves softly out of focus with unbranded white boxes and glass jars, absolutely no readable signage. The same technician now without mask but still in clean white coat, dark hair bun unchanged, stands behind the counter. She gently hands one plain white carton to a customer’s hands (customer mostly off-frame). 50mm lens, medium shot, warm-beige and amber palette, photorealistic, natural Balkan atmosphere.",
+     "motion": "She slides the carton across the counter into the customer’s hands, then gives a small reassuring nod. Camera performs a slow push-in toward the handover moment, stopping on the carton centered between hands.",
+     "char": true
     }
    ],
    "id": "cf_pharma_1_explainer",
-   "cat": "pharma"
+   "cat": "pharma",
+   "batch": "v3",
+   "regen": true
   },
   {
    "type": "transform",
@@ -139,50 +138,51 @@
   },
   {
    "type": "commercial",
-   "title_mk": "Безбеден транспорт",
-   "title_en": "Secure Transport",
-   "line_mk": "Сигурност која спасува животи.",
-   "line_en": "Security that saves lives.",
-   "desc_en": "A dynamic logistics commercial following a highly secure, temperature-controlled medical transport box across scenic routes to a clinic.",
-   "music": "Pulsing electronic driving cinematic beat, 120 bpm",
-   "voice": "male, confident deep authoritative",
+   "title_mk": "Ладен ланец, сигурна нега",
+   "title_en": "Cold Chain, Safe Care",
+   "line_mk": "Ладен ланец. Живот.",
+   "line_en": "Cold chain. Life.",
+   "desc_en": "A grounded cold-chain delivery story in one coherent route: dawn loading at Vardar quay in Skopje, drive to Lake Ohrid road, handover to a nurse. One hero courier, one realistic insulated medical case with a small temperature display; step-by-step process shown clearly, no sci-fi gimmicks.",
+   "music": "Tense but warm cinematic pulse with subtle Balkan percussion, 112 bpm",
+   "voice": "male, calm, trustworthy, mid-low",
    "vo_mk": [
-    "Времето е клучно за секој лек.",
-    "Безбеден транспорт низ цела Македонија.",
-    "Заштитени услови во секој еден момент.",
-    "Доставуваме здравје таму каде што треба.",
-    "Сигурност која спасува животи."
+    "Секоја минута го чува ладниот ланец.",
+    "Кутијата е запечатена, температурата е под контрола.",
+    "Тргнуваме пред изгрејсонце, без застој.",
+    "Во Охрид, испорака директно до сестрата.",
+    "Ладен ланец. Живот."
    ],
    "shots": [
     {
-     "kf": "A sleek, unbranded silver metallic temperature-controlled medical transport box with a glowing blue LED ring on top. It sits on a sterile brushed steel table inside a bright, modern warehouse. Cool daylight, 35mm lens, hyper-detailed, photorealistic.",
-     "motion": "The camera slowly arcs around the metallic medical box, emphasizing its premium design and glowing LED.",
+     "kf": "Dawn at Vardar quay in Skopje, quiet riverside cobblestones and soft mist, signage-free. A single courier, early 30s, short dark hair, clean-shaven, wearing the same navy jacket and grey pants, kneels beside a white unbranded insulated medical case with a small digital temperature window (numbers not readable). Medium-wide, 35mm, cool blue-grey palette, soft natural dawn light, photorealistic.",
+     "motion": "Courier closes the lid and snaps two latches shut; camera makes a slow 30 cm push-in from waist height to emphasize the seal and steady hands, staying physically stable in 5 seconds.",
      "char": true
     },
     {
-     "kf": "The sleek, unbranded silver metallic medical transport box resting securely on a white shelf inside a moving vehicle. Golden hour sunbeams pass through a window, casting dynamic shadows over the polished silver surface. Cinematic lighting, 50mm lens, photorealistic.",
-     "motion": "Sunlight and shadows sweep smoothly across the surface of the metallic box to simulate forward driving motion.",
+     "kf": "Same dawn location and hero. Close-up on the courier’s hands applying a plain tamper-evident seal strip across the case latch, no text on the strip. The case surface is matte white with light scuffs, realistic. Shallow depth of field, 85mm lens, cool dawn light with gentle rim from the river, restrained palette, photorealistic, simple unambiguous hands.",
+     "motion": "Courier presses the seal firmly with his thumb along the latch; camera slides laterally 20 cm left-to-right in a smooth macro move, keeping the seal centered and in focus.",
      "char": true
     },
     {
-     "kf": "Wide exterior shot of a pristine, unbranded white delivery van driving smoothly on a scenic road next to the deep blue waters of Lake Ohrid, North Macedonia. High angle, bright midday sun, lush green mountains in the background. Photorealistic.",
-     "motion": "The white van drives forward steadily along the scenic coastal road while the camera tracks alongside it.",
-     "char": false
-    },
-    {
-     "kf": "The sleek, unbranded silver metallic medical transport box sitting on a polished white reception desk in a modern, sunlit medical clinic. The blue LED ring glows softly. Bright, airy atmosphere, 50mm lens, architectural lighting, photorealistic.",
-     "motion": "A slow, deliberate camera push-in towards the glowing blue LED light on the pristine metallic box.",
+     "kf": "Cut to a narrow Balkan side street near the quay, still signage-free. The same courier lifts the same sealed case into the back of an unbranded white panel van. The van interior is clean but utilitarian with tie-down straps; the case sits flat. Medium shot, 40mm lens, cool early morning light, muted blues and whites, photorealistic realism.",
+     "motion": "Courier sets the case down and pulls one strap tight; camera tilts down slightly and follows the case’s descent, then settles as the strap clicks into tension within 5 seconds.",
      "char": true
     },
     {
-     "kf": "Close-up of the sleek, unbranded silver metallic medical transport box. The LED ring on top now glows a warm, solid green. The box rests on a doctor's wooden desk, shallow depth of field, 85mm lens, highly detailed, photorealistic.",
-     "motion": "The green LED light softly pulsates while the camera slowly tracks backwards to reveal the desk.",
+     "kf": "Exterior on the Lake Ohrid road: a curving lakeside stretch with water to one side and rocky hillside to the other, no visible signs or logos. The same unbranded white van drives steadily; through the windshield we glimpse the same courier in navy jacket. Wide tracking shot, 24mm, late morning clean sunlight, natural color palette of stone, blue water, and white van, photorealistic.",
+     "motion": "Van continues forward around the bend; camera tracks parallel on a smooth vehicle-to-vehicle move, maintaining constant distance and speed for 5 seconds, no impossible acceleration.",
+     "char": true
+    },
+    {
+     "kf": "Outside a small clinic-style entrance near Ohrid, neutral walls, signage-free. The same courier hands the sealed white medical case to a nurse in light blue scrubs; both faces simple and clear. Medium close-up, 50mm lens, soft midday shade, calm cool palette. We see the nurse’s hands open the latches and lift the lid to reveal neatly packed vials in a foam insert with cold packs; no labels readable, photorealistic.",
+     "motion": "Courier passes the case into the nurse’s hands; camera makes a gentle 15 cm push-in as the nurse flips both latches and lifts the lid, revealing the vials in one continuous, plausible 5-second action.",
      "char": true
     }
    ],
    "id": "cf_pharma_4_commercial",
    "cat": "pharma",
-   "batch": "v3"
+   "batch": "v3",
+   "regen": true
   }
  ]
 }

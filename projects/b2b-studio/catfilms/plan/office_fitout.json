@@ -139,50 +139,52 @@
   },
   {
    "type": "commercial",
-   "title_mk": "Паметни Простори",
-   "title_en": "Smart Spaces",
-   "line_mk": "Креираме канцеларии на иднината.",
-   "line_en": "We create offices of the future.",
-   "desc_en": "A commercial highlighting tech-forward ergonomic office solutions, centered around a premium modular smart desk.",
-   "music": "Sleek electronic pulse, deep synth bass, 110 bpm",
-   "voice": "male, deep, confident",
+   "title_mk": "Од Празно до Работно",
+   "title_en": "From Empty to Working",
+   "line_mk": "Од празно до работно.",
+   "line_en": "From empty to working.",
+   "desc_en": "A single, step-by-step fitout story in one real Skopje location: a raw office floor plate overlooking the Vardar quay transforms into a bright, finished workspace. One recurring hero (same person, same outfit) guides the process from inspection to handover, ending on the same wide angle as the opening shot for a clear before/after payoff.",
+   "music": "Warm modern indie-electronic, light percussion, 105 bpm",
+   "voice": "male, calm, trustworthy",
    "vo_mk": [
-    "Празниот простор е само почеток на приказната.",
-    "Хаосот бара паметни решенија.",
-    "Воведуваме иновативни и модуларни системи.",
-    "Совршена хармонија на технологија и дизајн.",
-    "Креираме канцеларии на иднината."
+    "Празниот кат е нашиот старт.",
+    "Поставуваме плафон и светло, без компромис.",
+    "Потоа мебелот влегува точно по план.",
+    "Последно: детали, чисто, подготвено за луѓе.",
+    "Од празно до работно."
    ],
    "shots": [
     {
-     "kf": "An empty, grey concrete office floor with exposed ceiling pipes and thick hanging wires. Harsh daytime sunlight streams through dirty glass windows, creating sharp shadows on the raw floor. Industrial setting, 24mm lens, wide symmetrical composition, cold monochromatic grey palette, photorealistic.",
-     "motion": "A slow, steady camera push forward through the center of the vast, empty concrete space.",
-     "char": false
+     "kf": "Wide establishing interior of a real raw office floor plate in Skopje, large windows facing the Vardar quay with soft out-of-focus river and hills beyond, no readable signage. Clean concrete slab, exposed ceiling, stacked ceiling-grid packs on one side. Our single hero, Macedonian man early 30s, short dark hair, neat stubble, beige work jacket and dark jeans, stands centered holding rolled plans. 24mm lens, eye-level, warm morning sunlight, neutral warm-gray palette, photorealistic.",
+     "motion": "Hero walks three steps toward the window and stops, glancing from the plans to the ceiling. Camera makes a slow, steady push-in on a gimbal, keeping him centered and level for five seconds.",
+     "char": true,
+     "end_kf": "Same wide framing and room: the identical space now finished as a bright office. Clean white ceiling grid installed, linear LED lights on, smooth light floor, two simple wooden desks placed near the window, a small plant on one desk. The hero stands in the exact same spot with the same clothes, now relaxed with plans folded at his side. Warm late-afternoon sunlight, airy neutral palette, photorealistic."
     },
     {
-     "kf": "Close up of a tangled pile of thick black industrial cables lying on a dusty, raw concrete floor. A single beam of sunlight hits the cables, highlighting the floating dust particles in the air. Macro lens, shallow depth of field, gritty texture, photorealistic.",
-     "motion": "Dust motes slowly drift through the sunbeam while the camera pans gently to the left over the cables.",
-     "char": false
-    },
-    {
-     "kf": "A standalone sleek matte-black smart desk with integrated glowing orange LED strips along its edges. It sits proudly in the exact center of the raw, unfinished concrete room. Dramatic spotlight effect, 35mm lens, high contrast, cyberpunk-lite corporate aesthetic, photorealistic, ultra-detailed.",
-     "motion": "The camera slowly orbits around the glowing smart desk, contrasting its high-tech finish with the rough room.",
+     "kf": "Medium shot under the same ceiling area: the hero stands on a low safe platform ladder, fastening a white ceiling-grid main runner into place. A second unopened box of grid parts sits on the floor behind him, no branding visible. 35mm lens, slight low angle, crisp daylight from windows, soft shadows, clean construction look without mess, warm whites and concrete grays, photorealistic, simple face and hands clearly defined.",
+     "motion": "Hero lifts one grid piece and clicks it into alignment with a single firm push. Camera performs a gentle right-to-left slide on a dolly, keeping his hands and the connection point in frame for five seconds.",
      "char": true
     },
     {
-     "kf": "A perfect row of identical sleek matte-black smart desks with glowing orange LED strips, now situated in a pristine, finished modern office with frosted glass walls. Even, soft architectural lighting from above, 50mm lens, leading lines composition, premium tech aesthetic, photorealistic.",
-     "motion": "A slow tracking shot gliding just above the surface level of the desks, emphasizing their perfect alignment.",
+     "kf": "Close, clean detail shot of hands installing a linear LED light module into the white ceiling grid; the hero’s sleeves and beige jacket are visible to confirm continuity. No labels, no text. 50mm lens, shallow depth of field, soft window light with a subtle warm bounce, white and light-gray palette, photorealistic with unambiguous fingers and simple geometry, the grid lines perfectly straight.",
+     "motion": "Hero rotates the light module once and snaps it into the grid with a single click. Camera tilts up slightly to follow the module into place, then holds steady as the light turns on softly within five seconds.",
      "char": true
     },
     {
-     "kf": "Wide shot of the finished high-tech open-plan office at dusk. The glowing orange edges of the matte-black desks reflect beautifully in the floor-to-ceiling windows, which display the sparkling city lights of Skopje. Cinematic twilight lighting, 24mm lens, deep focus, photorealistic.",
-     "motion": "The camera slowly pulls back, taking in the full scale of the beautifully illuminated, futuristic workspace.",
+     "kf": "Wide-medium interior of the same room, now with a clean finished floor surface partially visible. The hero guides a single wooden desk on felt sliders into position, aligning it parallel to the windows. Two identical chairs wait stacked neatly at the side, no logos. 28mm lens, eye-level, bright midday sunlight, natural warm palette of wood, white ceiling, and soft gray walls, photorealistic, practical and real Balkan interior.",
+     "motion": "Hero pushes the desk forward exactly half a meter until it meets a taped alignment mark on the floor. Camera makes a smooth lateral tracking move matching the desk’s motion, keeping the desk edge straight in frame for five seconds.",
+     "char": true
+    },
+    {
+     "kf": "Return to the exact same wide angle as Shot 1: finished office looking out toward the Vardar quay, no readable signage outside. Ceiling grid complete, lights on, two desks neatly arranged, one laptop closed with no logo, a small plant, tidy cable management hidden. The hero stands in the same spot, same clothes, holding a keycard-sized blank card with no markings, smiling subtly. 24mm lens, eye-level, warm late-afternoon sun, clean airy palette, photorealistic.",
+     "motion": "Hero lowers the blank card to his pocket and gives a small nod toward the finished desks. Camera slowly pulls back a step to reveal the full symmetry of the room, ending on a stable hero-centered frame in five seconds.",
      "char": true
     }
    ],
    "id": "cf_office_fitout_4_commercial",
    "cat": "office_fitout",
-   "batch": "v3"
+   "batch": "v3",
+   "regen": true
   }
  ]
 }

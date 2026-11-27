@@ -101,90 +101,86 @@
    "type": "social",
    "title_mk": "Зборувај Течно",
    "title_en": "Speak Fluently",
-   "line_mk": "Зборувај течно, патувај слободно низ светот!",
-   "line_en": "Speak fluently, travel freely around the world!",
-   "desc_en": "A fast-paced, energetic vertical ad for a language school, inspiring viewers to learn a language and travel.",
-   "music": "Fast upbeat pop electronic rhythm, highly energetic, 128 bpm",
-   "voice": "female, energetic, fast, enthusiastic",
+   "line_mk": "Зборувај течно, патувај слободно",
+   "line_en": "Speak fluently, travel freely",
+   "desc_en": "Vertical social spot set in Skopje Old Bazaar: one recurring learner transforms from hesitant phone-phrasebook dependence to confident, natural conversation with a visiting traveler, using clear body language and a single continuous setting. No signage, no subtitles, no stock-travel clichés—just a believable local moment that becomes effortless through language learning.",
+   "music": "Fast upbeat pop electronic rhythm, highly energetic, 128 bpm with light Balkan percussion accents",
+   "voice": "female, energetic, friendly, confident",
    "vo_mk": [
-    "Зборувај течно, патувај слободно низ светот!"
+    "Секогаш гледаш во телефонот?",
+    "Вежбај малку—и зборовите доаѓаат сами.",
+    "Зборувај течно, патувај слободно"
    ],
    "shots": [
     {
-     "char": false,
-     "kf": "Vertical composition. A classic vintage globe sits on a minimalist white desk against a vibrant teal wall. A bright spotlight illuminates the globe, creating a strong diagonal shadow. Close-up, 50mm lens, bold and punchy color palette, high contrast, photorealistic.",
-     "motion": "The vintage globe spins rapidly on its axis. The camera remains completely static to emphasize the spinning motion."
+     "kf": "Vertical 9:16 photorealistic shot in Skopje Old Bazaar, small outdoor cafe table on worn cobblestones. Same hero in every shot: 26-year-old Macedonian woman, dark brown hair in a low ponytail, beige trench coat, black top. She sits alone, slightly tense, holding a smartphone close, thumb scrolling a phrasebook app (screen not readable). Tight medium close-up, 50mm lens, soft late-afternoon sunlight, warm stone and muted earth-tone palette, shallow depth of field, no logos or readable text.",
+     "motion": "She glances down, silently mouths a phrase, then exhales. Camera makes a slow handheld push-in of about 20 cm, keeping her face and phone centered, natural micro-shake, 5 seconds.",
+     "char": true
     },
     {
-     "char": false,
-     "kf": "Vertical composition. A pristine, blank navy-blue passport booklet and a pair of sleek silver wireless headphones rest on a rustic wooden table. Warm overhead light casts soft shadows. Top-down flat lay perspective, 35mm lens, rich textures of wood and leather, photorealistic.",
-     "motion": "A soft breeze rustles the cover of the passport very slightly. The camera slowly rotates clockwise over the flat lay."
+     "kf": "Vertical 9:16 photorealistic shot, same cafe table and hero outfit. A visiting traveler (30s, simple face, neutral clothes) stands at the table edge, politely waiting, hands visible holding a small paper map with no readable markings. The hero looks up with an uncertain half-smile, phone still in her hand. Medium two-shot, 35mm lens, golden-hour side light creating gentle rim on hair, warm browns and beige palette, background shows blurred bazaar stone arches without any signs or text.",
+     "motion": "The traveler gestures a simple question with an open palm; the hero hesitates and points to the phone. Camera performs a subtle right-to-left slider move of about 30 cm, keeping both faces in frame, 5 seconds.",
+     "char": true
     },
     {
-     "char": false,
-     "kf": "Vertical composition. A young woman with long blonde hair, wearing a red jacket, stands in a modern, expansive airport terminal with large glass windows showing a blue sky. Bright, airy lighting. Medium shot, centered subject, 24mm lens, vibrant red contrasting with cool glass tones, photorealistic.",
-     "motion": "The woman turns her head towards the camera and smiles warmly. The camera slowly pushes in on her face."
+     "kf": "Vertical 9:16 photorealistic shot, same table and continuity. Close-up on the hero’s hands and face: she sets the phone face-down on the table (screen not visible), straightens her posture, and makes steady eye contact with the traveler. The traveler’s hands enter frame with a friendly, encouraging gesture. 55mm lens, intimate framing, soft bounce light from a pale stone wall, warm natural tones, crisp skin texture, no jewelry logos, no readable text anywhere.",
+     "motion": "She places the phone down decisively, then nods once. Camera tilts up slightly from her hands to her face, a controlled 10-degree tilt with a gentle push-in, 5 seconds.",
+     "char": true
     }
    ],
    "id": "cf_education_3_social",
    "cat": "education",
-   "batch": "v3"
+   "batch": "v3",
+   "regen": true
   },
   {
    "type": "explainer",
-   "title_mk": "Модерен Кампус",
-   "title_en": "Modern Campus",
-   "line_mk": "Лидери подготвени за предизвиците на утрешнината.",
-   "line_en": "Leaders ready for the challenges of tomorrow.",
-   "desc_en": "A visually striking explainer video highlighting the advanced facilities and modern lifestyle of a premium university campus.",
-   "music": "Inspiring orchestral strings with a modern ambient undertone, 90 bpm",
-   "voice": "male, authoritative, inspiring, professional",
+   "title_mk": "Еден ден, една идеја",
+   "title_en": "One Day, One Idea",
+   "line_mk": "Учи. Создавај. Води.",
+   "line_en": "Learn. Build. Lead.",
+   "desc_en": "A single student’s day-in-the-life in Skopje: from the Old Bazaar to a simple workshop room, showing one clear making process step-by-step (a small solar desk lamp prototype). Same hero, same outfit, same room, same workbench props and color palette. Ends with a transformation: the same frame before/after—lamp off vs. lamp on.",
+   "music": "Modern Balkan-tinged ambient with subtle percussion, 92 bpm",
+   "voice": "male, warm, confident, conversational",
    "vo_mk": [
-    "Модерното образование бара современи услови и иновативен пристап.",
-    "Нашиот кампус нуди најнова технологија за секој студент.",
-    "Практичната настава се одвива во врвни лаборатории.",
-    "Создаваме лидери подготвени за предизвиците на утрешнината."
+    "Утрото почнува во Чаршија, со идеја во џеб.",
+    "Од скица до делови—сè на една маса.",
+    "Лемам, тестирам, и ја гледам искрата.",
+    "На кејот проверувам: светло, едноставно, мое.",
+    "Учи. Создавај. Води."
    ],
    "shots": [
     {
-     "char": false,
-     "kf": "A breathtaking aerial view of a modern, geometric university building with a sweeping green grass roof, situated in a valley resembling the landscape near Štip. Clear blue sky, harsh midday sunlight casting sharp shadows. Wide drone shot, 14mm lens, vibrant greens and stark concrete greys, photorealistic.",
-     "motion": "The drone camera slowly glides forward and slightly downward over the massive architectural structure."
+     "kf": "Photorealistic morning on a narrow stone street in Skopje Old Bazaar, signage-free and timeless. A 20-year-old student (short dark hair, light stubble, olive skin) in the same outfit throughout: dark green hoodie, black jeans, worn brown sneakers, grey backpack. Medium-wide framing, 35mm lens. Warm sunrise side-light, earthy browns and muted greens. He walks with purpose, pulling a folded sketch from his pocket, calm focus on his face.",
+     "motion": "He unfolds the sketch and glances ahead while walking. Camera tracks backward smoothly in front of him at chest height, keeping him centered as the bazaar stones pass beneath.",
+     "char": true
     },
     {
-     "char": false,
-     "kf": "An empty, sunlit university courtyard paved with large grey stones, flanked by tall, modern glass facades reflecting the sky. Small, newly planted green trees line the pathway. Wide shot, 35mm lens, geometric composition, bright and airy lighting, cool blue and grey palette, photorealistic.",
-     "motion": "The leaves of the small trees rustle gently in the wind. The camera slowly pans across the courtyard from left to right."
+     "kf": "Interior: a small workshop/studio room with the same wooden workbench, matte beige wall, single window with thin curtain, and a green desk lamp used as ambient prop (unbranded). No readable text anywhere. The same student sits at the bench. Overhead practical light plus soft window daylight. 50mm lens, close medium on hands and face. Neutral, slightly warm palette: wood, beige, olive, black. On the table: a small solar panel, LED, battery pack, wires, soldering iron, and a simple black lamp housing.",
+     "motion": "He places the solar panel, LED, and battery in a neat line, then points to each part in order. Camera makes a slow top-down tilt into a tighter over-the-shoulder view, ending on his hands.",
+     "char": true
     },
     {
-     "char": false,
-     "kf": "A vast, modern library interior featuring towering wooden bookshelves and sleek white reading tables. Shafts of sunlight stream through tall vertical windows, illuminating dust motes in the air. Wide shot, 24mm lens, warm wood tones and bright white light, serene atmosphere, photorealistic.",
-     "motion": "The camera moves slowly forward down the central aisle of the quiet, sunlit library space."
+     "kf": "Same workshop room, same bench, same props positions now partly assembled. Tight close-up on his hands and the small lamp housing while his face is partially visible at frame edge, expression focused. 85mm lens with shallow depth of field. Warm practical light highlights skin tones and metal reflections; background falls into soft blur. Color palette stays consistent: wood browns, olive hoodie, matte black housing, copper wire. No logos, no text. Clear, simple hands and tools.",
+     "motion": "He solders one wire connection, then lifts the piece to inspect it with a small nod. Camera performs a gentle push-in of about 20 cm, maintaining focus on the solder joint and his fingertips.",
+     "char": true
     },
     {
-     "char": false,
-     "kf": "A sleek, metallic microscope sits on a pristine white laboratory bench. The background is a blurred, sterile environment with cool blue lighting. Close-up, 85mm macro lens, shallow depth of field, clinical and precise atmosphere, silver and blue color palette, photorealistic.",
-     "motion": "The focus slowly pulls from the background to sharply reveal the intricate mechanical details of the microscope."
+     "kf": "Early evening at Vardar quay in Skopje, near the river railing with a clean, signage-free view. The same student stands alone, holding the finished small solar desk lamp prototype in both hands. Medium shot, 35mm lens. Golden-hour light fading toward blue hour; soft reflections on the water. Muted palette: river blues, stone greys, olive hoodie. He angles the lamp toward the last sun, face relaxed and proud, eyes on the device.",
+     "motion": "He tilts the lamp toward the sunlight and presses a small switch with his thumb. Camera arcs slowly 30 degrees around him from left to right, keeping the lamp in the foreground.",
+     "char": true
     },
     {
-     "char": false,
-     "kf": "A glowing, futuristic 3D printer nozzle extruding a thick layer of bright orange plastic onto a dark, textured print bed. Dramatic, low-key lighting with a strong rim light on the nozzle. Extreme close-up, 100mm macro lens, stark contrast of neon orange against deep black, photorealistic.",
-     "motion": "The 3D printer nozzle moves slowly in a smooth, circular motion as it extrudes the plastic. The camera slightly tilts down."
-    },
-    {
-     "char": false,
-     "kf": "A simple, modern wooden bench sits under the shade of a large, leafy oak tree on a lush green lawn. Dappled sunlight filters through the leaves onto the empty bench. Medium shot, 50mm lens, peaceful and tranquil mood, rich organic greens and warm browns, photorealistic.",
-     "motion": "The shadows of the leaves dance slowly across the wooden bench. The camera slowly dollies to the right."
-    },
-    {
-     "char": false,
-     "kf": "The modern university building silhouetted against a dramatic, fiery sunset sky filled with vibrant orange, pink, and purple clouds. The glass windows reflect the colors of the setting sun. Wide shot, 24mm lens, cinematic twilight lighting, rich and majestic color palette, photorealistic.",
-     "motion": "The clouds drift almost imperceptibly as the golden light shimmers on the glass. The camera slowly tracks backward."
+     "kf": "kf = Same workshop room, identical camera angle as earlier: straight-on view of the workbench against the beige wall, window to the left with soft dusk light. The student sits centered behind the bench, same outfit, hands resting near the lamp. The finished lamp is on the table but OFF; no glow. 35mm lens, symmetrical framing, calm mood, warm practical light reduced. end_kf = Same exact framing and room, same pose and props, but the lamp is ON, casting a soft warm circle of light onto the wood and his hands, subtly brightening his face. No other changes.",
+     "motion": "He pauses, then taps the switch once and holds still, watching the light. Camera remains locked-off with a subtle 5-second exposure bloom as the lamp’s glow fills the frame.",
+     "char": true,
+     "end_kf": "Same workshop room, identical straight-on framing: workbench, beige wall, window left, student centered in dark green hoodie. The finished lamp is now ON, emitting a warm amber glow that pools on the wooden surface and gently illuminates his hands and face; props remain in the same positions, no other changes, no text or logos."
     }
    ],
    "id": "cf_education_4_explainer",
    "cat": "education",
-   "batch": "v3"
+   "batch": "v3",
+   "regen": true
   },
   {
    "type": "story",

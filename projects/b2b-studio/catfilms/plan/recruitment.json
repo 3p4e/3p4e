@@ -50,30 +50,37 @@
    "type": "social",
    "title_mk": "Твојот следен чекор",
    "title_en": "Your Next Step",
-   "line_mk": "Време е за твојот следен предизвик.",
-   "line_en": "It's time for your next challenge.",
-   "desc_en": "A fast-paced, high-energy social media hook aimed at young IT professionals in urban Macedonia.",
-   "music": "Upbeat electronic pulse, heavy bass, energetic, 120 bpm",
-   "voice": "male, confident, energetic",
+   "line_mk": "Следниот чекор е тука.",
+   "line_en": "Your next step is here.",
+   "desc_en": "Handheld, vertical, one continuous-feeling day-in-the-office micro-story in Skopje Old Bazaar: a young employee arrives to a small studio office, connects laptop, high-fives a colleague, and ends on a simple team lunch moment. Natural light, Balkan textures, no neon, no VFX, no stock-corporate look.",
+   "music": "Warm upbeat indie pop with light percussion, 110 bpm, optimistic and natural",
+   "voice": "female, warm, conversational",
    "vo_mk": [
-    "Твојот следен голем предизвик почнува денес."
+    "Еве ме — стигнав во Чаршија.",
+    "Тука се гради иднина.",
+    "Ајде, заедно до крај."
    ],
    "shots": [
     {
-     "kf": "Vertical 9:16 portrait, close-up. A young professional male in a stylish dark t-shirt stands perfectly centered in a modern, neon-lit IT office in Skopje. He holds a pair of premium wireless headphones just above his ears. Vibrant cyberpunk-inspired magenta and cyan lighting, shallow depth of field beautifully blurring the background, photorealistic.",
-     "motion": "The man smoothly brings the headphones down onto his ears. The camera executes a fast-paced push-in toward his face."
+     "kf": "Vertical 9:16, handheld documentary feel. A young Macedonian woman (mid‑20s, straight dark-brown shoulder-length hair, olive skin) in the same beige jacket, white T‑shirt, black jeans, white sneakers enters a small studio office on Skopje Old Bazaar cobblestone street. Framed from behind then to three-quarter profile, 24mm lens, natural morning sunlight, warm stone-and-wood palette, shallow depth, no readable text anywhere.",
+     "motion": "She pushes the wooden door open and steps inside, turning her head toward the room. Camera follows close behind with a gentle handheld walk-in and a slight right pan to reveal the workspace in one move.",
+     "char": true
     },
     {
-     "kf": "Vertical 9:16 portrait, medium full shot. A young woman in a sharp modern suit walks confidently toward the camera down a sleek, bright glass corridor of a corporate headquarters. Bright daylight streams through large windows, creating a clean white and light grey color palette. Centered subject, highly detailed, highly premium, photorealistic.",
-     "motion": "The woman walks forward with a confident, smooth stride. The camera tracks backward at the exact same speed to keep her perfectly centered."
+     "kf": "Vertical 9:16, medium shot from the same desk corner inside the same office. The same woman sets down a canvas tote and places a closed laptop on a worn wooden table. A white ceramic mug, a small plant, and a plain whiteboard sit in the background, all consistent. 35mm lens, soft window light from frame left, midday neutral-warm tones, realistic skin texture, no logos or readable writing.",
+     "motion": "She opens the laptop lid with one hand and exhales a small smile. Camera makes a slow, steady push-in of about 20 cm, keeping her hands and face clearly visible and centered.",
+     "char": true
     },
     {
-     "kf": "Vertical 9:16 portrait, medium close-up. A young male developer stands perfectly centered, looking up with subtle awe. His expressive face is beautifully illuminated by a dynamic, floating stream of abstract golden light particles. Dark modern office background. High contrast, magical cinematic lighting, premium corporate tech aesthetic, stunningly photorealistic.",
-     "motion": "The abstract golden light particles slowly drift upwards around his face. The camera slowly tilts up, keeping the subject's face perfectly framed and illuminated."
+     "kf": "Vertical 9:16, medium two-shot near the doorway inside the same office. The same woman steps toward a colleague (only the colleague’s forearm and shoulder visible, neutral clothing), raising her hand for a greeting. The room remains identical: same table edge, same whiteboard, same soft daylight. 28mm lens, natural contrast, warm wood and muted beige palette, clean realistic faces and hands, no text anywhere.",
+     "motion": "She completes one crisp high-five with the colleague. Camera performs a short left-to-right sidestep to keep the hands in frame, ending on her satisfied grin.",
+     "char": true
     }
    ],
    "id": "cf_recruitment_2_social",
-   "cat": "recruitment"
+   "cat": "recruitment",
+   "batch": "v3",
+   "regen": true
   },
   {
    "type": "commercial",

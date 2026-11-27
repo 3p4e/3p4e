@@ -175,48 +175,49 @@
    "type": "commercial",
    "title_mk": "Совршената капка",
    "title_en": "The Perfect Drop",
-   "line_mk": "Совршенството на природата, внимателно одгледано.",
-   "line_en": "Nature's perfection, carefully nurtured.",
-   "desc_en": "A beautiful showcase of organic viticulture in the Tikvesh region, following a dedicated female viticulturist tending to premium grapes with modern irrigation.",
-   "music": "Gentle acoustic guitar and light percussion 90 bpm",
-   "voice": "female, warm, elegant",
+   "line_mk": "Капка што зрее.",
+   "line_en": "A drop that ripens.",
+   "desc_en": "A grounded, non-stock Tikvesh vineyard story: one recurring female viticulturist shows a simple, tactile process—check ripeness, pick, taste—captured in warm late-afternoon light with consistent wardrobe and a clear through-line. No signage, no generic cutaways, all action is hers and connected.",
+   "music": "Warm Balkan acoustic strings with soft frame drum, 92 bpm, intimate and earthy",
+   "voice": "female, warm, grounded, contemporary",
    "vo_mk": [
-    "Тиквешкото сонце буди нов живот во лозјата.",
-    "Секоја лоза бара нежност и правилна нега.",
-    "Нашиот систем за наводнување ја чува свежината.",
-    "Грозјето зрее совршено, полно со сладок сок.",
-    "Совршенството на природата, внимателно одгледано."
+    "Во Тиквеш, денот зрее со лозјето.",
+    "Ги бирам најзрелите гроздови, рачно.",
+    "Една бобинка — вкусот ја кажува вистината.",
+    "Кога е совршено, внимателно го собирам.",
+    "Капка што зрее."
    ],
    "shots": [
     {
-     "char": true,
-     "kf": "A cinematic wide shot of a female viticulturist in her late 40s, with sun-kissed skin, dark tied-back hair, wearing a white linen shirt and dark green apron. She is walking down a lush row of grapevines in the Tikvesh region. Warm morning sunlight, glowing greens, photorealistic.",
-     "motion": "Slow camera tracking backward as the woman walks forward at a steady, relaxed pace. The grapevine leaves flutter gently in the breeze."
+     "kf": "Photorealistic wide establishing shot in a real Tikvesh vineyard, late afternoon golden light. One female viticulturist (late 40s, dark hair in low bun, white linen shirt, dark green apron, tan trousers) walks between vine rows holding a small wicker basket. Dry soil, low hills in background, natural Balkan landscape, warm greens and ochres, 35mm lens, no readable text or logos.",
+     "motion": "She walks toward camera, brushing vine leaves lightly with her fingertips. Camera tracks backward smoothly on a gimbal at walking pace, keeping her centered as sunlight flares softly through leaves.",
+     "char": true
     },
     {
-     "char": false,
-     "kf": "Extreme close-up of a single, slightly dry green grapevine leaf illuminated by the strong midday sun. The background is a soft, blurry mix of brown soil and green leaves. High contrast, warm lighting, macro lens, photorealistic nature photography.",
-     "motion": "Slow camera pan across the surface of the dry leaf. The leaf barely moves, emphasizing the stillness of the hot, dry day."
+     "kf": "Photorealistic medium close-up at vine level in the same Tikvesh row. The same woman, same outfit, pauses and lifts one grape cluster with her left hand while her right hand gently separates leaves to reveal the fruit. Shallow depth of field, 50mm lens, warm backlight, dust motes in air, palette of deep greens and sunlit golds, no signs or text.",
+     "motion": "She rotates the cluster slowly to inspect ripeness. Camera makes a small, deliberate push-in of about 20 cm, maintaining focus on her hands and the grapes while background vines fall into creamy bokeh.",
+     "char": true
     },
     {
-     "char": true,
-     "kf": "Medium shot of the female viticulturist, late 40s, white linen shirt, dark green apron, standing in the vineyard, looking down at a sleek black drip irrigation pipe watering the roots. Sparkling water droplets catch the light. Cinematic composition, rich earthy tones, photorealistic.",
-     "motion": "The camera slowly pushes in on the pipe. A single, clear drop of water falls in slow motion from the black pipe to the soil."
+     "kf": "Photorealistic tight close-up on hands and fruit: same woman pinches a single grape off the cluster with clean, unambiguous fingers; her simple wedding band visible, no brand marks. The grape skin is slightly translucent in sun. 85mm macro look, soft golden rim light, earthy tones, vine leaves framing the edges, no readable elements anywhere.",
+     "motion": "She plucks one grape and brings it to her lips, then bites once. Camera pans subtly upward from her hands to her mouth in one continuous move, staying steady and realistic within 5 seconds.",
+     "char": true
     },
     {
-     "char": false,
-     "kf": "Macro close-up of a heavy, flawless bunch of dark purple grapes hanging from a vine. Tiny, crystal-clear water droplets rest on the skin of the grapes, reflecting the afternoon sun. Rich purples and vibrant greens, 100mm macro lens, photorealistic.",
-     "motion": "Very slow camera orbit around the bunch of grapes. The water droplets slowly slide down the smooth, purple skin of the fruit."
+     "kf": "Photorealistic medium shot in the same vine row: the woman decisively harvests the selected cluster and places it into the same wicker basket. The basket already holds a few clusters of identical variety, reinforcing continuity. 35mm lens, warm low sun, gentle contrast, natural skin tones, Balkan vineyard realism, no signage or logos.",
+     "motion": "She cuts and lowers the cluster into the basket in one clean action. Camera performs a slow left-to-right slide about half a meter, revealing the basket filling as leaves pass softly in the foreground.",
+     "char": true
     },
     {
-     "char": true,
-     "kf": "Medium portrait of the female viticulturist, late 40s, white linen shirt, dark green apron, standing in the vineyard holding a generic wooden basket. She smiles gently, looking at the healthy vines. Golden hour lighting, soft glowing bokeh background, photorealistic.",
-     "motion": "The camera slowly glides to the right. The woman turns her head very slightly to observe the vines, smiling softly in the golden light."
+     "kf": "Photorealistic medium portrait at the end of the same vineyard row, identical wardrobe and basket. The woman holds the basket at waist height, looking down with a small satisfied smile, then glances toward the vines. Golden hour glow, 50mm lens, soft background hills, warm greens and amber palette, no readable text or branding, clean simple face and hands.",
+     "motion": "She lifts the basket slightly as if feeling its weight, then stills. Camera makes a gentle push-in and settles, ending on her calm expression and the harvested grapes in frame.",
+     "char": true
     }
    ],
    "id": "cf_agro_5_commercial",
    "cat": "agro",
-   "batch": "v3"
+   "batch": "v3",
+   "regen": true
   }
  ]
 }

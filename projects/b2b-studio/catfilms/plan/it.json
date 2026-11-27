@@ -48,81 +48,89 @@
   },
   {
    "type": "social",
-   "title_mk": "Твојот Следен Чекор",
-   "title_en": "Your Next Step",
-   "line_mk": "Стани дел од нашиот тим.",
-   "line_en": "Become part of our team.",
-   "desc_en": "A high-energy vertical social media hook designed to recruit top tech talent in Macedonia.",
-   "music": "Upbeat electronic synth-wave, driving bassline, punchy and energetic, 120 bpm",
-   "voice": "male, energetic confident bold",
+   "title_mk": "Новиот тимски спринт",
+   "title_en": "Your Next Team Sprint",
+   "line_mk": "Кодирај со нас.",
+   "line_en": "Code with us.",
+   "desc_en": "Vertical recruitment spot set in Skopje’s Old Bazaar at night: one recurring hero developer walks from the cobblestone street into a small studio corner and turns a messy bug into a working app demo. Same hoodie, same backpack, same laptop across shots; no logos, no readable text, no signage.",
+   "music": "Tight modern electronic beat with warm Balkan percussion accents, 124 bpm, minimal and driving",
+   "voice": "male, calm confident, conversational, modern",
    "vo_mk": [
-    "Време е за твојот следен голем предизвик!"
+    "Скопје, доцна. Идеја што не чека.",
+    "Еден баг. Еден фокус. Пет минути.",
+    "Кога ќе проработи — славиме заедно.",
+    "Кодирај со нас."
    ],
    "shots": [
     {
-     "kf": "Vertical composition. A glowing, floating holographic 3D cube in the center of a dark, modern industrial brick room. Neon purple and cyan backlighting creates a striking contrast. Subject is perfectly centered. 24mm wide angle, aggressive lighting, moody cyber aesthetic, highly detailed, photorealistic.",
-     "motion": "The glowing holographic cube rotates slowly and smoothly on its axis, while the camera slowly pushes in toward it."
+     "kf": "Vertical 9:16, Skopje Old Bazaar cobblestone lane at night, signage-free stone walls and warm street lamps, wet pavement reflections. One hero: Macedonian male, 28, short dark hair, light stubble, same olive hoodie and dark jeans, carrying a black backpack and closed laptop under arm. Medium-wide 28mm, eye-level, photorealistic, warm amber palette with deep blues, soft mist in air.",
+     "motion": "Hero walks toward camera then passes frame-left, tightening his backpack strap. Camera does a slow handheld follow-in, keeping him centered for five seconds, street lamps streaking gently in the background.",
+     "char": true
     },
     {
-     "kf": "Vertical composition. A sleek matte black pair of premium wireless headphones resting on a minimalist concrete desk. Vibrant orange ambient light is spilling from the edge of the frame, highlighting the curves. Centered subject, 50mm lens, commercial product photography style, highly detailed, photorealistic.",
-     "motion": "Slow cinematic orbit around the headphones, with the warm orange light reflecting softly on the matte black surface."
+     "kf": "Vertical 9:16, interior of a small studio corner carved in old stone, consistent warm tungsten desk lamp, same wooden desk, same chair, same black laptop, same ceramic cup, same cables. Hero sits down, hoodie unchanged, opens laptop with both hands. Medium shot 35mm, slight top light from lamp, shadows soft, color palette warm amber and charcoal, photorealistic, no readable text on screen.",
+     "motion": "Hero flips the laptop open and leans in, shoulders settling. Camera makes a subtle push-in on a slider from mid shot to tighter framing, stopping as his hands reach the keyboard.",
+     "char": true
     },
     {
-     "kf": "Vertical composition. A bright glowing neon arrow pointing upward, mounted on a raw concrete wall in a stylish tech office. High contrast, cinematic lighting, deep shadows, rich saturated colors. Subject perfectly centered in the frame. 35mm lens, urban tech aesthetic, highly detailed, photorealistic.",
-     "motion": "The neon light flickers slightly, while the camera executes a smooth, slow tilt up following the direction of the arrow."
+     "kf": "Vertical 9:16, same desk, same lamp, same hero and outfit. Tight close-up on hands typing on the black laptop keyboard; a faintly lit screen glow reflects on fingers, but screen content is abstract and unreadable. 50mm macro-like close framing, shallow depth of field, warm tungsten mixed with cool screen light, photorealistic, clean simple hands, no logos, no text.",
+     "motion": "Hands type rapidly, then pause for one decisive key press. Camera performs a gentle lateral slide right-to-left, staying locked on the fingers while the background lamp bokeh drifts slightly.",
+     "char": true
     }
    ],
    "id": "cf_it_2_social",
-   "cat": "it"
+   "cat": "it",
+   "batch": "v3",
+   "regen": true
   },
   {
    "type": "explainer",
-   "title_mk": "Паметни Софтверски Решенија",
-   "title_en": "Smart Software Solutions",
-   "line_mk": "Процес кој гарантира врвен квалитет.",
-   "line_en": "A process that guarantees top quality.",
-   "desc_en": "A clear, visually engaging breakdown of our agile software development and deployment methodology.",
-   "music": "Clean corporate ambient, ticking percussion, modern and professional, 90 bpm",
-   "voice": "female, professional clear articulate",
+   "title_mk": "Софтвер што стигнува до вас",
+   "title_en": "Software Delivered to You",
+   "line_mk": "Од идеја до апликација.",
+   "line_en": "From idea to app.",
+   "desc_en": "One coherent, step-by-step software delivery story with a single recurring hero in a real Skopje setting. We stay in one location (a small studio workspace near the Old Bazaar), showing brief, build, test/security, deploy, and real-world handoff to a client on Vardar quay. No stock metaphors, no blank screens, no logos or readable text.",
+   "music": "Modern warm minimal electronic, light Balkan percussion accents, steady 92 bpm, confident and human",
+   "voice": "female, warm confident conversational, natural Macedonian cadence",
    "vo_mk": [
-    "Секој успешен проект започнува со јасна визија и прецизна стратегија.",
-    "Нашите тимови ги трансформираат вашите барања во стабилна архитектура.",
-    "Ние користиме најнови технологии за брз и сигурен развој.",
-    "Строгото тестирање гарантира беспрекорно функционирање на секој систем.",
-    "Резултатот е совршен производ кој го забрзува вашиот бизнис."
+    "Почнуваме со краток бриф, лице в лице.",
+    "Ја градиме апликацијата чекор по чекор.",
+    "Тестираме и ја заклучуваме безбедноста.",
+    "Пуштаме верзија и ја носиме кај вас.",
+    "Од идеја до апликација."
    ],
    "shots": [
     {
-     "kf": "Top-down overhead view of a perfectly organized minimalist white desk featuring neat stacks of blank blueprint paper and a sleek metallic pen. Soft, diffused overhead daylight creates gentle, elegant shadows across the surface. Clean, clinical, symmetrical composition, 50mm lens, conveying organization and precise planning, highly detailed, photorealistic.",
-     "motion": "Slow push-in toward the exact center of the white desk, causing the soft shadows to shift slightly across the paper."
+     "kf": "Inside a small Skopje studio workspace near the Old Bazaar, warm afternoon window light and soft tungsten practicals. Our single hero, a Macedonian woman in her early 30s with dark bob hair, black crewneck and olive jacket, sits at a wooden desk. She points to a sketchbook with simple wireframes (no readable text) beside a closed laptop. Medium-wide, 35mm lens, earthy palette, photorealistic, clean hands and clear face.",
+     "motion": "She slides the sketchbook toward camera and taps one box decisively; camera makes a gentle handheld push-in of about 30 cm, settling on her hands and the page in one smooth move.",
+     "char": true
     },
     {
-     "kf": "Wide shot of a bright, spacious modern meeting room in Skopje with glass walls and no people. A clean whiteboard on the wall reflects the morning sun. 24mm lens, architectural lighting, clean corporate aesthetic, modern minimalist furniture, highly detailed, realistic textures, completely photorealistic.",
-     "motion": "Slow dolly right parallel to the modern glass wall, with gentle sunlight flaring softly through the large windows."
+     "kf": "Same room, same desk and props, matching warm color palette. The hero now types on the laptop while a second screen shows abstract code-like blocks that are intentionally unreadable. A small ceramic coffee cup, the same sketchbook, and a coiled cable sit exactly where they were. Medium shot from over her right shoulder, 50mm lens, shallow depth of field, photorealistic textures, no logos, no readable UI text, calm focused expression.",
+     "motion": "She writes a short burst of code and hits a single key with intent; camera performs a slow lateral slider move left about 20 cm, maintaining over-shoulder framing and ending on the keyboard and her concentrated face profile.",
+     "char": true
     },
     {
-     "kf": "Close-up of floating abstract geometric glass shapes in mid-air, refracting bright blue and white light. A strong visual metaphor for complex software architecture and coding structures. Dark background, premium studio lighting, 85mm macro lens, highly detailed glass textures, cinematic corporate style, perfectly photorealistic.",
-     "motion": "The glass geometric shapes slowly rotate and hover in place, refracting the studio light dynamically across their surfaces."
+     "kf": "Same room and angle family, evening-blue light outside the window with the same warm desk lamp on. The hero runs a test on the laptop: on-screen are simple colored bars and check icons that are not readable as text. She picks up her smartphone and uses her thumb to confirm a security step (no text visible). Tight medium, 65mm lens, higher contrast but still warm, photorealistic, hands clear, face calm and assured.",
+     "motion": "She taps the phone once to approve, then places it down beside the laptop; camera tilts down subtly from her eyes to her hands, ending on the phone landing next to the trackpad in one continuous 5-second move.",
+     "char": true
     },
     {
-     "kf": "Medium shot of a sleek, modern robotic arm in a pristine clean laboratory setting, symbolizing advanced automation and modern technology. Soft teal and white lighting highlights the metallic joints. 50mm lens, shallow depth of field, futuristic but grounded aesthetic, highly detailed, photorealistic.",
-     "motion": "The sleek robotic arm smoothly and slowly pivots on its sturdy base, while the camera remains completely static."
+     "kf": "Transform moment in the same exact room and camera angle as Shot 1: the desk layout is identical, but now the laptop is open and the phone lies beside it, both showing a clean app interface with no readable text. The hero sits in the same position, posture more relaxed. Warm afternoon light returns to match Shot 1, same earthy palette. Medium-wide, 35mm lens, photorealistic, no signage, no logos, no readable screens.",
+     "motion": "She rotates the open laptop slightly toward camera to present the finished app; camera performs a slow pull-back of about 40 cm, revealing the unchanged desk setup while emphasizing the single new difference: the app is now live on both devices.",
+     "char": true,
+     "end_kf": "Same room, same camera angle and desk placement, unchanged props and lighting continuity. The hero smiles subtly as she closes the sketchbook gently, leaving the laptop and phone open with the app visible (still no readable text). Photorealistic, warm inviting palette, 35mm lens, clean uncluttered composition focused on the delivered result."
     },
     {
-     "kf": "Macro shot of a shiny heavy metallic padlock resting on top of a dark, textured server chassis, strongly representing cybersecurity and data protection. Blue LED lights are glowing softly in the blurred background. 100mm macro lens, cinematic contrast, premium commercial lighting, highly detailed, photorealistic.",
-     "motion": "Slow camera slide to the right, while the blue server lights twinkle softly out of focus in the background."
-    },
-    {
-     "kf": "Medium shot of a large, blank digital dashboard screen securely mounted on a dark modern wall. The pristine screen emits a soft, pulsing golden light that warmly illuminates the surrounding dark wall texture. 35mm lens, minimalist composition, corporate tech environment, highly detailed, photorealistic.",
-     "motion": "The soft golden light slowly pulses in brightness on the screen, accompanied by a very slow camera zoom out."
-    },
-    {
-     "kf": "Wide shot of a sleek, futuristic high-speed train moving across a modern concrete bridge, symbolizing fast product delivery and technological progress. Bright midday daylight, clear blue sky over a scenic Macedonian landscape. 24mm lens, dynamic high-angle perspective, rich vibrant colors, highly detailed, photorealistic.",
-     "motion": "The sleek train glides smoothly across the frame from left to right, with a slow camera pan tracking its movement."
+     "kf": "Exterior on Vardar quay at golden hour, Skopje skyline softly blurred, no readable signs anywhere. The same hero in the same black crewneck and olive jacket stands beside a client (only client hands visible, no face) near the stone railing. She holds her smartphone showing the app interface without readable text. Medium shot, 50mm lens, warm sun rim light, natural skin tones, photorealistic, real Balkan street feel without branding.",
+     "motion": "She hands the phone to the client and nods once; camera pans gently right to follow the phone transfer, ending on the client’s hands holding the device against the glowing river background.",
+     "char": true
     }
    ],
    "id": "cf_it_3_explainer",
-   "cat": "it"
+   "cat": "it",
+   "batch": "v3",
+   "regen": true
   },
   {
    "type": "commercial",
