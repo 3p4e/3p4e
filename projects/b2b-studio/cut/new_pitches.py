@@ -1,6 +1,6 @@
 # Pitch pages + emails for the companies that have no classic page (AutoNesi MK 2026-11-27, Drugi tir SI 2026-11-27).
 # Reuses pitch_v3.build (same look as the other 13 pages) with a synthetic classic.html that only carries the offer section.
-#   python3 new_pitches.py autonesi|drugitir     -> /dev/shm/pub/<token>/ (page, films, posters, email thumbs, offer.pdf) and email in /dev/shm/pub/email_<key>.{html,txt,json}
+#   python3 new_pitches.py autonesi|drugitir     -> /dev/shm/pub/<token>/ (page, films, posters, email thumbs, offer.pdf) and email in /tmp/claude-0/-home-user-3p4e/50442171-da10-52d9-9948-b5cc07f6bc8a/scratchpad/email_new/email_<key>.{html,txt,json}
 # Tokens live in the scratchpad (cut/page_tokens_new.json), never in the repo.
 import os, sys, json, secrets, subprocess, shutil, html as H
 HERE = os.path.dirname(os.path.abspath(__file__)); P = os.path.dirname(HERE); sys.path.insert(0, HERE); sys.path.insert(0, f"{P}/outreach/email")
@@ -102,8 +102,8 @@ def main(key):
     content = dict(lang=c["lang"], subject=c["subject"], preheader=x["pre"].format(n=c["name"]), greeting=c["greeting"], paras=c["paras"], films=items, cta=dict(label=c["cta"], href=page), note=c["note"],
                    sign=dict(name="Blagoj N.", role=c["role"]), closing=c["closing"], optout=c["optout"], video_word=c["vw"])
     h, t = M.render(content)
-    for ext, body in (("html", h), ("txt", t)): open(f"/dev/shm/pub/email_{key}.{ext}", "w", encoding="utf-8").write(body)
-    json.dump({"subject": c["subject"], "lang": c["lang"], "name": c["name"], "films": [f["t"] for f in films]}, open(f"/dev/shm/pub/email_{key}.json", "w"), ensure_ascii=False)
+    for ext, body in (("html", h), ("txt", t)): open(f"/tmp/claude-0/-home-user-3p4e/50442171-da10-52d9-9948-b5cc07f6bc8a/scratchpad/email_new/email_{key}.{ext}", "w", encoding="utf-8").write(body)
+    json.dump({"subject": c["subject"], "lang": c["lang"], "name": c["name"], "films": [f["t"] for f in films]}, open(f"/tmp/claude-0/-home-user-3p4e/50442171-da10-52d9-9948-b5cc07f6bc8a/scratchpad/email_new/email_{key}.json", "w"), ensure_ascii=False)
     print("built", key, tok[:4] + "…", len(films), "films")
 
 if __name__ == "__main__":
