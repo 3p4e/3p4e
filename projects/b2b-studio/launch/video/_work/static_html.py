@@ -150,9 +150,9 @@ def wordmark(top, fs, sub_gap, sub_fs):
             f'text-shadow:0 2px 12px rgba(0,0,0,.7)">AI STUDIO&nbsp;&nbsp;|&nbsp;&nbsp;Skopje</div>')
 add("outro_word_16x9", 1920, 1080, wordmark(768, 96, 18, 30) + tagline(944, 38, 12), transparent=True)
 add("outro_word_9x16", 1080, 1920, wordmark(1084, 104, 16, 30), transparent=True)
-def mask(w, h): return f'<div class="abs" style="inset:0;background:radial-gradient(ellipse 50% 50% at 50% 50%,#fff 58%,#000 100%)"></div>'
+def mask(w, h, core=58): return f'<div class="abs" style="inset:0;background:radial-gradient(ellipse 50% 50% at 50% 50%,#fff {core}%,#000 100%)"></div>'
 add("outro_mask_16x9", 1400, 770, mask(1400, 770))
-add("outro_mask_9x16", 1240, 682, mask(1240, 682))
+add("outro_mask_9x16", 1240, 682, mask(1240, 682, 34))   # longer falloff: the smoke at the film top must not show an edge
 # reel outro overlay: tagline + disclosure under the 9:16 wordmark (outro_word_9x16 ends near y 1230)
 add("outro_disc_9x16", 1080, 1920, tagline(1272, 40, 12) + f'<div class="abs c" style="top:1348px;font-size:31px;font-weight:600;color:#cfcabf;letter-spacing:.4px;line-height:1.45">{DISC_MK}<br>{DISC_EN}</div>', transparent=True)
 
