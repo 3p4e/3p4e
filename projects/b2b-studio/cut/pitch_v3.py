@@ -18,7 +18,7 @@ T = {"mk": dict(
   pts=["{n} AI филмови направени само за вас", "Предлог-распоред за објава за 4 недели", "16:9 и вистинска 9:16 верзија за телефон"], pt_nv="16:9 за YouTube, веб и екрани",
   f_p_nv="Филмовите се во 16:9 за YouTube, веб и екрани.", enter="Отворете ја презентацијата",
   scroll="Сите кадри на оваа страница се генерирани со AI.",
-  nav=[("films", "Филмови"), ("shots", "Кадри"), ("campaign", "Распоред"), ("offer", "Понуда"), ("dl", "Преземање"), ("bd", "BD галерија")], cta="Закажи 15 минути",
+  nav=[("films", "Филмови"), ("shots", "Кадри"), ("campaign", "Распоред"), ("offer", "Понуда"), ("dl", "Преземање"), ("bd", "BD галерија")], cta="I WANT IT!",
   sub_ns="Сè на оваа страница е направено со AI специјално за вас: филмови и предлог-распоред за објава.", h1="Концепт-видео за <em>{c}</em>", sub="Сè на оваа страница е направено со AI специјално за вас: филмови, кадри, клучни кадри и предлог-распоред за објава.",
   f_e="Филмови", f_h="{n} филмови за {c}", f_p="Филмовите се во 16:9 (YouTube, веб, екрани). Со копчето 9:16 ги гледате вертикалните верзии: секој кадар е генериран одново за телефон, не исечен од хоризонталниот филм.",
   h169="16:9", v916="9:16", play="Пушти",
@@ -185,6 +185,12 @@ body.lock{{overflow:hidden}}a{{color:inherit}}img,video{{max-width:100%;display:
 .links{{display:flex;gap:20px;margin-left:auto;font-weight:600;font-size:14.5px}}.links a{{text-decoration:none;opacity:.86}}.links a:hover{{opacity:1;color:var(--ac)}}
 .btn{{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:13px 24px;font:700 15px M,sans-serif;text-decoration:none;border:0;cursor:pointer}}
 .btn.a{{background:var(--ac);color:#111;box-shadow:0 0 0 0 rgba(242,193,78,.5);animation:pulse 2.6s infinite}}.btn.b{{background:transparent;color:var(--fg);border:1px solid rgba(255,255,255,.3)}}
+.btn.want{{position:relative;overflow:hidden;font-weight:800;letter-spacing:.07em;animation:wantbeat 2.4s ease-in-out infinite,pulse 2.6s infinite}}
+.btn.want::after{{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.7),transparent);transform:skewX(-20deg);animation:wantshine 3.2s ease-in-out infinite;pointer-events:none}}
+@keyframes wantbeat{{0%,40%,100%{{transform:scale(1)}}8%{{transform:scale(1.07)}}16%{{transform:scale(1)}}24%{{transform:scale(1.05)}}32%{{transform:scale(1)}}}}
+@keyframes wantshine{{0%,55%{{left:-60%}}100%{{left:130%}}}}
+.btn.want:hover{{transform:scale(1.08);animation-play-state:paused}}
+@media(prefers-reduced-motion:reduce){{.btn.want,.btn.want::after{{animation:none}}}}
 @keyframes pulse{{70%{{box-shadow:0 0 0 14px rgba(242,193,78,0)}}100%{{box-shadow:0 0 0 0 rgba(242,193,78,0)}}}}
 .nav .btn{{padding:10px 18px;font-size:14px}}
 @media(max-width:980px){{.links{{display:none}}.nav .btn{{margin-left:auto}}}}
@@ -243,7 +249,7 @@ dialog .x{{position:absolute;right:0;top:-44px;background:none;border:0;color:#f
 @media(prefers-reduced-motion:reduce){{.rv{{opacity:1;transform:none}}.btn.a{{animation:none}}}}
 </style></head><body class="lock"><div id="bdbg" aria-hidden="true"><video muted playsinline preload="none"></video></div>
 <nav class="nav"><div class="wrap"><a class="brand" href="#top" aria-label="BIG DOGMA"><span class="lfx" aria-hidden="true"><span class="lfx-in"></span></span><span class="bt"><b>BIG</b><b>DOGMA</b><small>AI STUDIO<i class="sep"></i>MK</small></span></a>
-<div class="links">{navl}</div><a class="btn a" href="{mailto}">{E(s["cta"])}</a></div></nav>
+<div class="links">{navl}</div><a class="btn a want" href="{mailto}">{E(s["cta"])}</a></div></nav>
 <div id="splash" role="dialog" aria-label="BIG DOGMA × {name}"><video muted playsinline autoplay></video><video muted playsinline style="opacity:0"></video><div class="shade"></div>
 <div class="sp-in"><p class="for">{E(s["for_"])}</p><h1>{name}</h1><p class="lead">{E(s["lead"])}</p><ul class="pts">{pts}</ul>
 <button class="btn a" id="enter" type="button">{E(s["enter"])}</button><p class="note">{E(s["scroll"])} · bigdogma.tech</p></div></div>
@@ -267,7 +273,7 @@ dialog .x{{position:absolute;right:0;top:-44px;background:none;border:0;color:#f
 <section id="bd"><div class="wrap"><div class="eyebrow rv">{E(s["b_e"])}</div><h2 class="sh rv">{E(s["b_h"])}</h2><p class="sp rv">{E(s["b_p"].format(n=len(bd)))}</p>
 <div class="chips" role="group"><button type="button" data-k="all" aria-pressed="true">{E(s["b_all"])} {len(bd)}</button><button type="button" data-k="f" aria-pressed="false">{E(s["b_f"])} {sum(1 for x in bd if x[2] == "f")}</button><button type="button" data-k="x" aria-pressed="false">{E(s["b_x"])} {len(BDT.FX)}</button></div>
 <ul class="grid" id="bdg">{bdc}</ul><div class="more-wrap"><button type="button" class="btn b bdmore" hidden>{ {"mk": "Покажи уште", "sr": "Prikaži još", "sq": "Shfaq më shumë"}.get(c["lang"], "Show more") } <b></b></button></div></div></section>
-<section class="end"><div class="wrap"><h2 class="sh rv">{E(s["end_h"])}</h2><p class="sp rv" style="margin:0 auto 26px">{E(s["end_p"])}</p><div class="btns"><a class="btn a" href="{mailto}">{E(s["cta"])}</a><a class="btn b" href="mailto:{MAIL}">{E(s["mail"])}: {MAIL}</a></div></div></section>
+<section class="end"><div class="wrap"><h2 class="sh rv">{E(s["end_h"])}</h2><p class="sp rv" style="margin:0 auto 26px">{E(s["end_p"])}</p><div class="btns"><a class="btn a want" href="{mailto}">{E(s["cta"])}</a><a class="btn b" href="mailto:{MAIL}">{E(s["mail"])}: {MAIL}</a></div></div></section>
 </main>
 <footer><div class="wrap">{E(s["legal"])}<br>© 2026 BIG DOGMA · AI STUDIO | MK · <a href="{SITE}">bigdogma.tech</a> · <a href="classic.html">classic</a></div></footer>
 <dialog id="lb"><button class="x" type="button" aria-label="{E(s["close"])}">×</button><video controls playsinline controlslist="nodownload noplaybackrate" disablepictureinpicture></video><p></p></dialog>
