@@ -136,12 +136,16 @@ add("howto_title_9x16_t", 1080, 1920,
     f'<div class="abs c" style="top:1075px;font-size:44px;font-weight:600;letter-spacing:2px;color:var(--gold);text-shadow:0 2px 16px rgba(0,0,0,.9)">ГРАДЕЖНИШТВО · ТАЈМЛАПС</div>'
     f'<div class="abs c" style="top:1300px;font-size:31px;font-weight:600;color:#e2ddd2;letter-spacing:.4px;line-height:1.45;text-shadow:0 2px 10px rgba(0,0,0,.9)">{DISC_MK}<br><span class="gold">{DISC_EN}</span></div>', transparent=True)
 
-# ---------- outro disclosure overlay (transparent strip used on reel_06 outro)
-# (sits under the stacked vertical lockup of seg/logo_9x16.mp4, whose subline ends near y 1220)
-add("outro_disc_9x16", 1080, 1920, tagline(1262, 38, 11) + f'<div class="abs c" style="top:1352px;font-size:31px;font-weight:600;color:#cfcabf;letter-spacing:.4px;line-height:1.45">{DISC_MK}<br>{DISC_EN}</div>', transparent=True)
-
-# tagline only, for laying over reels already built with the old outro_disc (disclosure at y 1320): ends above it
-add("outro_tag_9x16", 1080, 1920, tagline(1244, 38, 11), transparent=True)
+# ---------- still outro (owner 2026-11-27: the drawn logo ignition is gone): background, lockup and tagline as separate layers,
+# composed and faded in by outro_still.py into seg/outro_16x9.mp4 and seg/outro_9x16.mp4
+outro_bg = f'<div class="abs" style="inset:0;background:{glow}"></div><div class="abs" style="inset:0;background:{vign}"></div><div class="grain"></div>'
+add("outro_bg_16x9", 1920, 1080, outro_bg.replace("at 50% 32%", "at 50% 42%"))   # glow behind the lockup
+add("outro_bg_9x16", 1080, 1920, outro_bg.replace("at 50% 32%", "at 50% 47%"))
+add("outro_logo_16x9", 1920, 1080, f'<img class="abs" src="{LOGO}" style="width:1000px;left:460px;top:330px;filter:drop-shadow(0 0 30px rgba(242,193,78,.3))">', transparent=True)
+add("outro_tag_16x9", 1920, 1080, tagline(668, 40, 12), transparent=True)
+add("outro_logo_9x16", 1080, 1920, f'<img class="abs" src="{LOGO}" style="width:860px;left:110px;top:780px;filter:drop-shadow(0 0 30px rgba(242,193,78,.3))">', transparent=True)
+# reel outro overlay: tagline + disclosure under the 9:16 lockup (outro_logo_9x16 ends near y 1013)
+add("outro_disc_9x16", 1080, 1920, tagline(1075, 40, 12) + f'<div class="abs c" style="top:1175px;font-size:31px;font-weight:600;color:#cfcabf;letter-spacing:.4px;line-height:1.45">{DISC_MK}<br>{DISC_EN}</div>', transparent=True)
 
 # ---------- posts 1080x1350
 PW, PH = 1080, 1350

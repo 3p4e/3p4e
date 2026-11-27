@@ -16,7 +16,7 @@ import os, sys, json, re, subprocess
 import numpy as np
 S = "/tmp/claude-0/-home-user-3p4e/50442171-da10-52d9-9948-b5cc07f6bc8a/scratchpad"
 W = f"{S}/launch/video/_work"; OUT = f"{S}/launch/video"; SEG = f"{W}/seg"; FONTS = f"{S}/brand/fonts"
-FPS = 24; OUTRO_F = 67                                   # 2.79 s of logo_9x16.mp4 (logo t = 1.5 .. 4.29)
+FPS = 24; OUTRO_F = 67                                   # 2.79 s of seg/outro_9x16.mp4 (still lockup fading in, outro_still.py)
 STING = (f"{S}/music/ace_final/8_showreel.mp3", 50.04)   # same hit the showreel logo lands on
 WM = f"{W}/png/wm_110.png"; WMX, WMY = 34, 196
 DISC_TOP = f"{W}/png/disc_top_9x16.png"; DISC_T = 3.8     # top-band disclosure on the reel body: 0 .. 3.8 s (fades out over the last 0.4 s)
@@ -154,7 +154,7 @@ def reel(num, topic, film):
           f"fade=t=out:st={te - 0.25:.3f}:d=0.25,setsar=1,settb=1/{FPS}[end];"
           f"[main][end]xfade=transition=fade:duration={X / FPS:.4f}:offset={(nc - X) / FPS:.4f},settb=1/{FPS}[me];"
           f"{outro_chain(2, disc=8)};[out]settb=1/{FPS}[o2];[me][o2]concat=n=2:v=1:a=0[v]")
-    run(["nice", "-n", "10", "ffmpeg", "-v", "error", "-y", "-i", src, "-loop", "1", "-t", str(d + 1), "-i", WM, "-i", f"{SEG}/logo_9x16.mp4", "-i", audn,
+    run(["nice", "-n", "10", "ffmpeg", "-v", "error", "-y", "-i", src, "-loop", "1", "-t", str(d + 1), "-i", WM, "-i", f"{SEG}/outro_9x16.mp4", "-i", audn,
          "-loop", "1", "-t", f"{DISC_T}", "-i", DISC_TOP,                                    # 4 disclosure pill (top band)
          "-loop", "1", "-t", f"{te + 1:.2f}", "-i", f"{E}_A.png", "-loop", "1", "-t", f"{te + 1:.2f}", "-i", f"{E}_B.png",
          "-loop", "1", "-t", f"{te + 1:.2f}", "-i", f"{E}_C.png",                           # 5-7 native end card layers
@@ -209,7 +209,7 @@ def howto():
          "-ss", "1.0", "-i", f"{S}/ltx25/tl_03_frame.mp4",                             # 3 step 2 clip
          "-ss", str(FILM_SS), "-i", film,                                              # 4 step 3 finished ad (9:16 master)
          "-loop", "1", "-t", "20", "-i", WM,                                           # 5 watermark
-         "-i", f"{SEG}/logo_9x16.mp4",                                                 # 6 outro
+         "-i", f"{SEG}/outro_9x16.mp4",                                                 # 6 outro
          "-i", audn,                                                                   # 7 audio
          "-loop", "1", "-t", "4", "-i", f"{W}/png/outro_disc_9x16.png",                # 8 disclosure on outro
          "-filter_complex", fc, "-map", "[v]", "-map", "7:a", "-c:v", "libx264", "-preset", "slow", "-crf", "19", "-profile:v", "high",

@@ -2,7 +2,7 @@
 # Same steps and sources as reel_06 (launch/video/_work/reels.py howto()), rebuilt natively at 1280x720:
 #   title card with the AI disclosure (first frame, so it is also the poster) -> step 1 key frame -> step 2 AI time-lapse
 #   -> step 3 the finished ad: timelapse_construction from 28.70 s (finished building + closing VO, subtitled)
-#   -> 3 s animated BIG DOGMA outro with the disclosure again and the kit's sonic sting.
+#   -> 3 s still BIG DOGMA outro (lockup + "Break the dogma.", seg/outro_16x9.mp4) with the disclosure again and the kit's sonic sting.
 # Output: site_work/howto/howto_16x9.mp4 (master; build_media.py extras encodes it for the web at -16 LUFS).
 # Run: /usr/local/bin/python3 howto169.py
 import os, re, subprocess
@@ -11,7 +11,7 @@ WORK = f"{S}/launch/site_work"; OUTD = f"{WORK}/howto"; TMP = "/dev/shm/bd_howto
 os.makedirs(OUTD, exist_ok=True); os.makedirs(TMP, exist_ok=True)
 FPS = 24; Wd, Ht = 1280, 720
 FILM = f"{S}/final_music/timelapse_construction.mp4"; FILM_SS = 28.70
-LOGO_SEG = f"{S}/launch/video/_work/seg/logo_16x9.mp4"                 # horizontal lockup ignition (same as the showreel close)
+LOGO_SEG = f"{S}/launch/video/_work/seg/outro_16x9.mp4"                # still lockup + tagline fading in (outro_still.py)
 STING = (f"{S}/music/ace_final/8_showreel.mp3", 50.04)                  # same sting as the reels' outro
 DISC = "Видео изработено со вештачка интелигенција · AI-generated video"
 T0, T1, T2, T3, T4 = 2.2, 3.2, 3.6, 4.6, 3.0                           # title, step 1, step 2, step 3, outro
@@ -36,7 +36,6 @@ HEAD = ("[Script Info]\nScriptType: v4.00+\nPlayResX: 1280\nPlayResY: 720\nWrapS
         "Style: Title,Russo One,60,&H00FFFFFF,&H00FFFFFF,&H50000000,&H90000000,0,0,0,0,100,100,1,0,1,2,3,8,0,0,0,1\n"
         f"Style: Topic,Oswald,32,{GOLD},&H00FFFFFF,&H70000000,&H90000000,1,0,0,0,100,100,3,0,1,1.5,2,8,0,0,0,1\n"
         "Style: Disc,Oswald,27,&H00C6D1D6,&H00FFFFFF,&H80000000,&H90000000,0,0,0,0,100,100,0.6,0,1,1.2,1.5,2,0,0,0,1\n"
-        "Style: Tag,Oswald,34,&H00E6EFF3,&H00FFFFFF,&H90000000,&H90000000,1,0,0,0,100,100,8,0,1,0.8,1.5,5,0,0,0,1\n"
         f"Style: Kick,Oswald,28,{GOLD},&H00FFFFFF,&H200F0D0D,&H00000000,1,0,0,0,100,100,4,0,3,9,0,7,0,0,0,1\n"
         "Style: Step,Russo One,34,&H00FFFFFF,&H00FFFFFF,&H70000000,&H90000000,0,0,0,0,100,100,0.5,0,1,2.4,2.5,7,0,0,0,1\n"
         "Style: Sub,Russo One,36,&H00FFFFFF,&H00FFFFFF,&H30000000,&H90000000,0,0,0,0,100,100,0.5,0,1,2.6,2,2,80,80,46,1\n"
@@ -44,8 +43,7 @@ HEAD = ("[Script Info]\nScriptType: v4.00+\nPlayResX: 1280\nPlayResY: 720\nWrapS
 ev = [f"Dialogue: 1,{tc(0)},{tc(o1 - 0.02)},Title,,0,0,0,,{{\\pos(640,318)}}Како настанува рекламата",
       f"Dialogue: 1,{tc(0)},{tc(o1 - 0.02)},Topic,,0,0,0,,{{\\pos(640,404)}}ГРАДЕЖНИШТВО · ТАЈМЛАПС",
       f"Dialogue: 1,{tc(0)},{tc(o1 - 0.02)},Disc,,0,0,0,,{{\\pos(640,640)}}{DISC}",
-      f"Dialogue: 1,{tc(o4 + 0.6)},{tc(total)},Disc,,0,0,0,,{{\\pos(640,696)\\fad(400,0)}}{DISC}",
-      f"Dialogue: 1,{tc(o4 + 1.0)},{tc(total)},Tag,,0,0,0,,{{\\pos(640,548)\\fad(450,0)\\c&H4EC1F2&}}—  {{\\c&HE6EFF3&}}BREAK THE DOGMA.{{\\c&H4EC1F2&}}  —"]
+      f"Dialogue: 1,{tc(o4 + 0.6)},{tc(total)},Disc,,0,0,0,,{{\\pos(640,696)\\fad(400,0)}}{DISC}"]
 steps = [("КОРАК 1", "Ваш рендер или фотографија од плацот", o1, o2), ("КОРАК 2", "AI тајмлапс по фази", o2, o3),
          ("КОРАК 3", "Готова реклама: глас, музика, 16:9 и 9:16", o3, o4)]
 for kick, txt, a, b in steps:
@@ -86,4 +84,6 @@ run(["ffmpeg", "-v", "error", "-y",
      "-i", aud,                                                                        # 6 audio
      "-filter_complex", fc, "-map", "[v]", "-map", "6:a", "-c:v", "libx264", "-preset", "slow", "-crf", "18", "-profile:v", "high",
      "-pix_fmt", "yuv420p", "-r", str(FPS), "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-shortest", "-movflags", "+faststart", out])
+got = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", out], capture_output=True, text=True).stdout)
+assert got > total - 0.1, f"howto came out {got:.2f} s, expected {total:.2f} s (a short encode once cut the outro): run again"
 print("OK", out, f"{total:.2f} s; step 3 at {o3:.2f} s, outro at {o4:.2f} s", flush=True)
