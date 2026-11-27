@@ -1,6 +1,6 @@
-# Replaces the outro of reels that were already built (owner 2026-11-27: no drawn logo animation; the 9:16 film masters are
+# Replaces the outro of reels that were already built (owner 2026-11-27: no drawn logo animation, the AI logo render instead; the 9:16 film masters are
 # archived off this machine, so a full reels.py rebuild is not possible here). Each reel = body + 67-frame outro (reels.py):
-# the body frames are kept, the old outro is swapped for the still one (seg/outro_9x16.mp4 + png/outro_disc_9x16.png with the
+# the body frames are kept, the old outro is swapped for the AI-render one (seg/outro_9x16.mp4 + png/outro_disc_9x16.png with the
 # tagline and the AI disclosure), using the same fades as reels.py outro_chain(). Audio (incl. the sting) is copied untouched.
 # usage: python3 reels_outro.py <dir with the original reels> [out_dir]   (default out: /dev/shm/vall/reels_still)
 import os, sys, glob, subprocess

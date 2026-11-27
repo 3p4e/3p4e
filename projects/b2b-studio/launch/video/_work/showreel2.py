@@ -15,8 +15,8 @@ FPS = 24; BEAT = 2.0875 / 4                                       # ~115 bpm, ba
 def fb(b): return round(b * BEAT * FPS)
 LOGO_B, END_B = 88, 96; END_T = 55.7
 N_END = round(END_T * FPS) - fb(END_B)
-# logo close: an AI logo film (16:9) from LOGO_SS for 8 beats; 9:16 (the BD mark is wider than a 9:16 crop): the end card's own lockup layer
-# fading in (seg/outro_end_9x16.mp4 from outro_still.py), so the offer then simply joins it (no drawn logo animation, owner 2026-11-27)
+# logo close: an AI logo film (16:9) from LOGO_SS for 8 beats; 9:16 (the BD mark is wider than a 9:16 crop): the AI logo render smoke_reveal
+# (seg/outro_end_9x16.mp4 from outro_ai.py), then the end card (no drawn logo animation, owner 2026-11-27)
 LOGO16 = os.environ.get("LOGO16", f"{W}/seg/logo_16x9.mp4"); LOGO_SS = float(os.environ.get("LOGO_SS", "0"))
 LOGO9 = f"{W}/seg/outro_end_9x16.mp4"
 def run(a, **k): subprocess.run(a, check=True, **k)

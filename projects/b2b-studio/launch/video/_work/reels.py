@@ -16,7 +16,7 @@ import os, sys, json, re, subprocess
 import numpy as np
 S = "/tmp/claude-0/-home-user-3p4e/50442171-da10-52d9-9948-b5cc07f6bc8a/scratchpad"
 W = f"{S}/launch/video/_work"; OUT = f"{S}/launch/video"; SEG = f"{W}/seg"; FONTS = f"{S}/brand/fonts"
-FPS = 24; OUTRO_F = 67                                   # 2.79 s of seg/outro_9x16.mp4 (still lockup fading in, outro_still.py)
+FPS = 24; OUTRO_F = 67                                   # 2.79 s of seg/outro_9x16.mp4 (AI logo render + wordmark, outro_ai.py)
 STING = (f"{S}/music/ace_final/8_showreel.mp3", 50.04)   # same hit the showreel logo lands on
 WM = f"{W}/png/wm_110.png"; WMX, WMY = 34, 196
 DISC_TOP = f"{W}/png/disc_top_9x16.png"; DISC_T = 3.8     # top-band disclosure on the reel body: 0 .. 3.8 s (fades out over the last 0.4 s)

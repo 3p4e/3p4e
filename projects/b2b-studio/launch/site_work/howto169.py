@@ -2,7 +2,7 @@
 # Same steps and sources as reel_06 (launch/video/_work/reels.py howto()), rebuilt natively at 1280x720:
 #   title card with the AI disclosure (first frame, so it is also the poster) -> step 1 key frame -> step 2 AI time-lapse
 #   -> step 3 the finished ad: timelapse_construction from 28.70 s (finished building + closing VO, subtitled)
-#   -> 3 s still BIG DOGMA outro (lockup + "Break the dogma.", seg/outro_16x9.mp4) with the disclosure again and the kit's sonic sting.
+#   -> 3 s BIG DOGMA outro: the AI logo render smoke_reveal + wordmark + "Break the dogma." (seg/outro_16x9.mp4, outro_ai.py) with the disclosure again and the kit's sonic sting.
 # Output: site_work/howto/howto_16x9.mp4 (master; build_media.py extras encodes it for the web at -16 LUFS).
 # Run: /usr/local/bin/python3 howto169.py
 import os, re, subprocess
@@ -11,7 +11,7 @@ WORK = f"{S}/launch/site_work"; OUTD = f"{WORK}/howto"; TMP = "/dev/shm/bd_howto
 os.makedirs(OUTD, exist_ok=True); os.makedirs(TMP, exist_ok=True)
 FPS = 24; Wd, Ht = 1280, 720
 FILM = f"{S}/final_music/timelapse_construction.mp4"; FILM_SS = 28.70
-LOGO_SEG = f"{S}/launch/video/_work/seg/outro_16x9.mp4"                # still lockup + tagline fading in (outro_still.py)
+LOGO_SEG = f"{S}/launch/video/_work/seg/outro_16x9.mp4"                # AI logo render + wordmark + tagline (outro_ai.py)
 STING = (f"{S}/music/ace_final/8_showreel.mp3", 50.04)                  # same sting as the reels' outro
 DISC = "Видео изработено со вештачка интелигенција · AI-generated video"
 T0, T1, T2, T3, T4 = 2.2, 3.2, 3.6, 4.6, 3.0                           # title, step 1, step 2, step 3, outro

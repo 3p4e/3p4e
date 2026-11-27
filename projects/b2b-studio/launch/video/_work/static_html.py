@@ -136,16 +136,25 @@ add("howto_title_9x16_t", 1080, 1920,
     f'<div class="abs c" style="top:1075px;font-size:44px;font-weight:600;letter-spacing:2px;color:var(--gold);text-shadow:0 2px 16px rgba(0,0,0,.9)">ГРАДЕЖНИШТВО · ТАЈМЛАПС</div>'
     f'<div class="abs c" style="top:1300px;font-size:31px;font-weight:600;color:#e2ddd2;letter-spacing:.4px;line-height:1.45;text-shadow:0 2px 10px rgba(0,0,0,.9)">{DISC_MK}<br><span class="gold">{DISC_EN}</span></div>', transparent=True)
 
-# ---------- still outro (owner 2026-11-27: the drawn logo ignition is gone): background, lockup and tagline as separate layers,
-# composed and faded in by outro_still.py into seg/outro_16x9.mp4 and seg/outro_9x16.mp4
-outro_bg = f'<div class="abs" style="inset:0;background:{glow}"></div><div class="abs" style="inset:0;background:{vign}"></div><div class="grain"></div>'
-add("outro_bg_16x9", 1920, 1080, outro_bg.replace("at 50% 32%", "at 50% 42%"))   # glow behind the lockup
-add("outro_bg_9x16", 1080, 1920, outro_bg.replace("at 50% 32%", "at 50% 47%"))
-add("outro_logo_16x9", 1920, 1080, f'<img class="abs" src="{LOGO}" style="width:1000px;left:460px;top:330px;filter:drop-shadow(0 0 30px rgba(242,193,78,.3))">', transparent=True)
-add("outro_tag_16x9", 1920, 1080, tagline(668, 40, 12), transparent=True)
-add("outro_logo_9x16", 1080, 1920, f'<img class="abs" src="{LOGO}" style="width:860px;left:110px;top:780px;filter:drop-shadow(0 0 30px rgba(242,193,78,.3))">', transparent=True)
-# reel outro overlay: tagline + disclosure under the 9:16 lockup (outro_logo_9x16 ends near y 1013)
-add("outro_disc_9x16", 1080, 1920, tagline(1075, 40, 12) + f'<div class="abs c" style="top:1175px;font-size:31px;font-weight:600;color:#cfcabf;letter-spacing:.4px;line-height:1.45">{DISC_MK}<br>{DISC_EN}</div>', transparent=True)
+# ---------- AI outro (owner 2026-11-27: no drawn logo ignition; the outro uses the AI logo render smoke_reveal instead).
+# outro_ai.py lays the film (feathered by outro_mask_*) over the background, then these text layers fade in:
+#   16:9 film 1400x770 at y 0 -> wordmark 768, studio line 878, tagline 944 (the how-to's disclosure sits at the bottom)
+#   9:16 film 1240x682 at y 380 -> wordmark 1084, studio line 1196; tagline + disclosure from outro_disc_9x16
+outro_bg = f'<div class="abs" style="inset:0;background:#030304"></div><div class="abs" style="inset:0;background:{glow}"></div><div class="abs" style="inset:0;background:{vign}"></div><div class="grain"></div>'
+add("outro_bg_16x9", 1920, 1080, outro_bg.replace("at 50% 32%", "at 50% 36%"))
+add("outro_bg_9x16", 1080, 1920, outro_bg.replace("at 50% 32%", "at 50% 38%"))
+def wordmark(top, fs, sub_gap, sub_fs):
+    return (f'<div class="abs c russo" style="top:{top}px;font-size:{fs}px;line-height:1;letter-spacing:2px;color:#fbf8f1;'
+            f'text-shadow:0 0 26px rgba(242,193,78,.45),0 3px 18px rgba(0,0,0,.7)">BIG DOGMA</div>'
+            f'<div class="abs c russo" style="top:{top + fs + sub_gap}px;font-size:{sub_fs}px;letter-spacing:{sub_fs * .22:.0f}px;color:var(--gold);'
+            f'text-shadow:0 2px 12px rgba(0,0,0,.7)">AI STUDIO&nbsp;&nbsp;|&nbsp;&nbsp;Skopje</div>')
+add("outro_word_16x9", 1920, 1080, wordmark(768, 96, 18, 30) + tagline(944, 38, 12), transparent=True)
+add("outro_word_9x16", 1080, 1920, wordmark(1084, 104, 16, 30), transparent=True)
+def mask(w, h): return f'<div class="abs" style="inset:0;background:radial-gradient(ellipse 50% 50% at 50% 50%,#fff 58%,#000 100%)"></div>'
+add("outro_mask_16x9", 1400, 770, mask(1400, 770))
+add("outro_mask_9x16", 1240, 682, mask(1240, 682))
+# reel outro overlay: tagline + disclosure under the 9:16 wordmark (outro_word_9x16 ends near y 1230)
+add("outro_disc_9x16", 1080, 1920, tagline(1272, 40, 12) + f'<div class="abs c" style="top:1348px;font-size:31px;font-weight:600;color:#cfcabf;letter-spacing:.4px;line-height:1.45">{DISC_MK}<br>{DISC_EN}</div>', transparent=True)
 
 # ---------- posts 1080x1350
 PW, PH = 1080, 1350
