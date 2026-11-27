@@ -23,13 +23,13 @@
   const store = { get(k) { try { return JSON.parse(localStorage.getItem('bdchat.' + k)); } catch (e) { return null; } },
                   set(k, v) { try { localStorage.setItem('bdchat.' + k, JSON.stringify(v)); } catch (e) {} } };
   const css = `
-#bdc-l{position:fixed;right:18px;bottom:18px;z-index:2147483000;width:64px;height:64px;border-radius:50%;border:1px solid rgba(242,193,78,.55);background:radial-gradient(circle at 50% 40%,#1b1810,#07070a 70%);box-shadow:0 8px 28px rgba(0,0,0,.55),0 0 0 0 rgba(242,193,78,.35);cursor:pointer;display:grid;place-items:center;padding:0;transition:transform .2s,border-color .2s}#bdc-l:hover{transform:translateY(-2px);border-color:rgba(242,193,78,.9)}
+#bdc-l{position:fixed;right:18px;bottom:18px;z-index:2147483000;width:64px;height:64px;border-radius:50%;border:1px solid rgba(242,193,78,.55);background:radial-gradient(circle at 50% 40%,#1b1810,#07070a 70%);box-shadow:0 8px 28px rgba(0,0,0,.55),0 0 0 0 rgba(242,193,78,.35);cursor:pointer;display:grid;place-items:center;padding:0;animation:bdc-ring 3.2s ease-in-out infinite}
 #bdc-l svg{width:40px;height:33px;overflow:visible;filter:drop-shadow(0 0 6px rgba(242,193,78,.45))}
 #bdc-l .bdc-n{position:absolute;top:-2px;right:-2px;min-width:18px;height:18px;border-radius:9px;background:#e5484d;color:#fff;font:700 11px/18px system-ui;text-align:center;padding:0 4px}
 @keyframes bdc-ring{0%,100%{box-shadow:0 8px 28px rgba(0,0,0,.55),0 0 0 0 rgba(242,193,78,.32)}50%{box-shadow:0 8px 28px rgba(0,0,0,.55),0 0 0 9px rgba(242,193,78,0)}}
-.bdc-mark .bdc-sh{display:none}
-.bdc-mark{transform-origin:50% 50%}
-.bdc-talk .bdc-mark{filter:brightness(1.18)}
+.bdc-mark .bdc-sh{animation:bdc-sh 3.6s linear infinite}@keyframes bdc-sh{from{transform:translateX(-120%)}to{transform:translateX(120%)}}
+.bdc-mark{animation:bdc-br 4s ease-in-out infinite;transform-origin:50% 50%}@keyframes bdc-br{0%,100%{transform:scale(1)}50%{transform:scale(1.045)}}
+.bdc-talk .bdc-mark{animation:bdc-tk .42s ease-in-out infinite alternate}@keyframes bdc-tk{from{transform:scale(.97);filter:brightness(1)}to{transform:scale(1.06);filter:brightness(1.35)}}
 #bdc-tz{position:fixed;right:92px;bottom:30px;z-index:2147483000;max-width:230px;background:#141418;color:#f4efe2;border:1px solid rgba(242,193,78,.4);border-radius:14px 14px 4px 14px;padding:10px 30px 10px 13px;font:500 14px/1.35 system-ui,sans-serif;box-shadow:0 10px 30px rgba(0,0,0,.5);cursor:pointer;animation:bdc-in .35s ease-out}
 #bdc-tz button{position:absolute;top:4px;right:6px;background:none;border:0;color:#999;font-size:16px;cursor:pointer}
 @keyframes bdc-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}

@@ -392,6 +392,7 @@ PAGE = f"""<!doctype html>
 <link rel="preload" href="{u('media/hero.jpg')}" as="image">
 <link rel="stylesheet" href="fx.css?v={{V}}">
 <link rel="stylesheet" href="site.css?v={{V}}">
+<script>try{{if(!sessionStorage.getItem('dogma_pre')&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&!(navigator.connection&&navigator.connection.saveData))document.documentElement.classList.add('reel1')}}catch(e){{}}</script>
 <noscript><style>.reel1 body::after{{display:none}}.pre{{display:none}}.rv{{opacity:1;transform:none}}#qf{{display:none}}</style></noscript>
 <script>try{{var l=new URLSearchParams(location.search).get('lang')||localStorage.getItem('bd_lang');if(l&&l!=='mk'&&['en','sq','sr','hr','sl','bg','zh'].indexOf(l)>=0){{var d=document.documentElement;d.classList.add('l-en');setTimeout(function(){{d.classList.add('i18n')}},2500)}}}}catch(e){{}}</script>
 </head>
@@ -403,7 +404,7 @@ PAGE = f"""<!doctype html>
 
 <nav class="nav" @a="aria-label:nav.label">
  <div class="wrap">
-  <a class="brand" href="#top" @a="aria-label:nav.home"><span class="lfx" aria-hidden="true"><img class="lfx-mark" src="media/bd_mark.svg" alt="" width="80" height="65"></span><span class="bt"><b>BIG</b><b>DOGMA</b><small>AI STUDIO<i class="sep"></i>MK</small></span></a>
+  <a class="brand" href="#top" @a="aria-label:nav.home"><span class="lfx" aria-hidden="true"><span class="lfx-in"></span></span><span class="bt"><b>BIG</b><b>DOGMA</b><small>AI STUDIO<i class="sep"></i>MK</small></span></a>
   <div class="links" id="menu">
    <a href="#showreel" @="nav.reel"></a><a href="#films" @="nav.work"></a><a href="#gallery" @="nav.gal"></a><a href="#process" @="nav.how"></a><a href="#pricing" @="nav.price"></a><a href="#faq" @="nav.faq"></a><a href="#contact" @="nav.contact"></a>
    <a class="btn a mcta" href="#contact" @="nav.cta"></a>
@@ -415,6 +416,7 @@ PAGE = f"""<!doctype html>
 </nav>
 
 <header class="hero" id="top">
+ <canvas class="embers" aria-hidden="true"></canvas>
  <div class="hud" aria-hidden="true"><i class="c c1"></i><i class="c c2"></i><i class="c c3"></i><i class="c c4"></i><div class="scan"></div>
   <div class="tag"><span class="rec"></span><span @="hud.tag"></span></div><div class="tc">TC 00:00:00:00</div>
   <div class="prompt"><div class="lbl"><span @="hud.prompt"></span><span class="st" @a="data-gen:hud.gen;data-done:hud.done">{E(mk('hud.gen'))}</span></div><div class="txt" @a="data-text:hud.text"></div><div class="bar"><i></i></div></div>
@@ -579,7 +581,8 @@ PAGE = f"""<!doctype html>
 
 <section id="contact" class="contact alt">
  <div class="wrap">
-  <img class="logo-still rv" src="media/lockup.png" alt="" width="1252" height="339" loading="lazy" decoding="async">
+  <!-- AI logo render instead of the drawn canvas ignition (owner 2026-11-27); loads when scrolled into view (fx.js video[data-src]) -->
+  <video class="logo-film" muted loop playsinline preload="none" poster="media/intro/smoke_reveal.jpg" data-src="media/lite/intro/smoke_reveal.mp4" aria-hidden="true"></video>
   <div class="eyebrow rv" @="c.e"></div>
   <h2 class="sh rv" @="c.h"></h2>
   <p class="sp rv" @="c.p"></p>
@@ -632,8 +635,8 @@ PAGE = f"""<!doctype html>
 
 <script>window.BD_FILMS={FILM_JSON};window.BD_CONTACT={CT_JS};</script>
 <script src="i18n.js?v={{V}}"></script>
-<script src="fx.js?v={{V}}"></script><script src="vplay.js?v={{V}}"></script><script src="site.js?v={{V}}"></script>
-<script src="logo_fx/mark_data.js?v={{V}}"></script>
+<script src="dogma_logo.js?v={{V}}"></script><script src="mark.js?v={{V}}"></script><script src="fx.js?v={{V}}"></script><script src="reel.js?v={{V}}"></script><script src="vplay.js?v={{V}}"></script><script src="site.js?v={{V}}"></script>
+<script src="logo_fx/mark_data.js?v={{V}}"></script><script src="logo_fx/logo_fx.js?v={{V}}"></script><script src="logo_fx/hdr/list.js?v={{V}}"></script><script src="logo_fx/reel_bb.js?v={{V}}"></script><script src="logo_fx/hdr.js?v={{V}}"></script>
 <script>window.DOGMA_HERO={HERO_JSON};</script><script src="logo_fx/hero_bg.js?v={{V}}"></script><script src="chat.js?v={{V}}" defer></script>
 </body>
 </html>
@@ -706,16 +709,6 @@ os.makedirs(f"{OUT}/logo_fx", exist_ok=True)
 for f in ("mark_data.js", "logo_fx.js", "skins.js", "hdr.js", "hero_bg.js", "reel_bb.js"): shutil.copy(f"{WORK}/logo_fx/{f}", f"{OUT}/logo_fx/{f}")
 shutil.rmtree(f"{OUT}/logo_fx/hdr", ignore_errors=True); shutil.copytree(f"{WORK}/logo_fx/hdr", f"{OUT}/logo_fx/hdr")
 shutil.copy(f"{S}/brand/fonts/RussoOne-400.ttf", f"{OUT}/russo.ttf")
-# still brand assets (owner 2026-11-27, no drawn logo animations): the gold mark for the header (also used by the company pages)
-# and the horizontal lockup for the Contact section
-import re as _re
-_md = open(f"{WORK}/logo_fx/mark_data.js", encoding="utf-8").read()
-_vb = " ".join(str(int(float(x))) for x in _re.search(r'"viewBox":\[([^\]]*)\]', _md).group(1).split(","))
-_d = _re.search(r'"d":"([^"]*)"', _md).group(1)
-open(f"{OUT}/media/bd_mark.svg", "w").write(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{_vb}"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">'
-    f'<stop offset="0" stop-color="#f7d980"/><stop offset=".55" stop-color="#f2c14e"/><stop offset="1" stop-color="#b8862a"/></linearGradient></defs>'
-    f'<path fill="url(#g)" d="{_d}"/></svg>')
-shutil.copy(f"{S}/launch/video/_work/stills/logo_crop.png", f"{OUT}/media/lockup.png")
 for f in ("manrope-cyr.woff2", "manrope-lat.woff2", "manrope-latx.woff2"): shutil.copy(f"{WORK}/fonts/{f}", f"{OUT}/{f}")
 for f in ("site.css", "site.js", "reel.js", "vplay.js", "robots.txt", "404.html"): shutil.copy(f"{WORK}/{f}", f"{OUT}/{f}")
 shutil.copy("/home/user/3p4e/projects/b2b-studio/chat/chat.js", f"{OUT}/chat.js")   # chat avatar widget (chat/chat.py serves /api/chat)

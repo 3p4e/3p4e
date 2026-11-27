@@ -169,7 +169,7 @@ body.lock{{overflow:hidden}}a{{color:inherit}}img,video{{max-width:100%;display:
 /* nav + header logo (same engine as bigdogma.tech) */
 .nav{{position:fixed;top:0;left:0;right:0;z-index:30;transition:background .3s}}.nav.s{{background:rgba(11,11,13,.86);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}}
 .nav .wrap{{display:flex;align-items:center;gap:18px;height:72px}}
-.brand{{display:flex;align-items:center;gap:8px;text-decoration:none;flex:none}}.brand .lfx{{position:relative;display:block;width:80px;height:52px}}.brand .lfx-mark{{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 0 8px rgba(242,193,78,.22))}}.brand .lfx-in{{position:absolute;inset:-6px -10px;pointer-events:none;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent),linear-gradient(180deg,transparent,#000 10%,#000 90%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent),linear-gradient(180deg,transparent,#000 10%,#000 90%,transparent);mask-composite:intersect}}
+.brand{{display:flex;align-items:center;gap:8px;text-decoration:none;flex:none}}.brand .lfx{{position:relative;display:block;width:80px;height:52px}}.brand .lfx-in{{position:absolute;inset:-6px -10px;pointer-events:none;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent),linear-gradient(180deg,transparent,#000 10%,#000 90%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent),linear-gradient(180deg,transparent,#000 10%,#000 90%,transparent);mask-composite:intersect}}
 .brand .bt{{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;text-align:left;line-height:.92;gap:1px}}.brand .bt b{{font:400 19px R,sans-serif;letter-spacing:.11em}}
 .brand .bt small{{font:700 8.5px/1.2 M,sans-serif;letter-spacing:.2em;color:var(--ac);margin-top:3px;white-space:nowrap}}.sep{{display:inline-block;width:1px;height:.95em;background:currentColor;opacity:.7;margin:0 .55em;vertical-align:-.12em}}
 .links{{display:flex;gap:20px;margin-left:auto;font-weight:600;font-size:14.5px}}.links a{{text-decoration:none;opacity:.86}}.links a:hover{{opacity:1;color:var(--ac)}}
@@ -232,7 +232,7 @@ dialog .x{{position:absolute;right:0;top:-44px;background:none;border:0;color:#f
 .rv{{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}}.rv.in{{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){{.rv{{opacity:1;transform:none}}.btn.a{{animation:none}}}}
 </style></head><body class="lock"><div id="bdbg" aria-hidden="true"><video muted playsinline preload="none"></video></div>
-<nav class="nav"><div class="wrap"><a class="brand" href="#top" aria-label="BIG DOGMA"><span class="lfx" aria-hidden="true"><img class="lfx-mark" src="{SITE}/media/bd_mark.svg" alt="" width="80" height="65"></span><span class="bt"><b>BIG</b><b>DOGMA</b><small>AI STUDIO<i class="sep"></i>MK</small></span></a>
+<nav class="nav"><div class="wrap"><a class="brand" href="#top" aria-label="BIG DOGMA"><span class="lfx" aria-hidden="true"><span class="lfx-in"></span></span><span class="bt"><b>BIG</b><b>DOGMA</b><small>AI STUDIO<i class="sep"></i>MK</small></span></a>
 <div class="links">{navl}</div><a class="btn a" href="{mailto}">{E(s["cta"])}</a></div></nav>
 <div id="splash" role="dialog" aria-label="BIG DOGMA × {name}"><video muted playsinline autoplay></video><video muted playsinline style="opacity:0"></video><div class="shade"></div>
 <div class="sp-in"><p class="for">{E(s["for_"])}</p><h1>{name}</h1><p class="lead">{E(s["lead"])}</p><ul class="pts">{pts}</ul>
@@ -263,7 +263,7 @@ dialog .x{{position:absolute;right:0;top:-44px;background:none;border:0;color:#f
 <dialog id="lb"><button class="x" type="button" aria-label="{E(s["close"])}">×</button><video controls playsinline controlslist="nodownload noplaybackrate" disablepictureinpicture></video><p></p></dialog>
 <script>window.H3V=false;window.H3T={json.dumps({"ad": s["h3_ad"], "film": s["h3_film"], "ai": s["ai_film"], "mark": SITE + "/media/h3_mark.png"}, ensure_ascii=False)};</script>
 <script src="{SITE}/vplay.js"></script><script>window.DOGMA_HDR_BASE="{SITE}/logo_fx/hdr/";window.DOGMA_INTRO={json.dumps(intro)};(function(){{var c=navigator.connection||{{}};if(innerWidth<760||/(^|-)2g|3g/.test(c.effectiveType||""))window.DOGMA_INTRO=window.DOGMA_INTRO.map(function(u){{return u.replace("/lite/intro/","/lite480/intro/")}})}})();window.DOGMA_HERO={{intro:window.DOGMA_INTRO}};window.BDBG_WAIT=true;window.BD_CHAT={{company:{json.dumps(name)}}};</script><script src="{SITE}/logo_fx/hero_bg.js"></script><script src="{SITE}/chat.js" defer></script>
-<script src="{SITE}/logo_fx/mark_data.js"></script>
+<script src="{SITE}/logo_fx/mark_data.js"></script><script src="{SITE}/logo_fx/logo_fx.js"></script><script src="{SITE}/logo_fx/hdr/list.js"></script><script src="{SITE}/logo_fx/hdr.js"></script>
 <script>
 (function(){{
 var $=function(q,e){{return(e||document).querySelector(q)}},$$=function(q,e){{return[].slice.call((e||document).querySelectorAll(q))}};
@@ -283,7 +283,7 @@ function burst(done){{var W=bc.width=innerWidth*Math.min(2,devicePixelRatio||1),
   P.forEach(function(p){{var r=R*p[1]*q,a=1-q;b.fillStyle=p[2]>.5?'rgba(255,255,255,'+a+')':'rgba(242,193,78,'+a+')';b.beginPath();b.arc(cx+Math.cos(p[0])*r,cy+Math.sin(p[0])*r*.8,p[3]*W/900,0,6.283);b.fill()}});
   b.strokeStyle='rgba(255,230,170,'+(1-q)+')';b.lineWidth=W/300*(1-q);b.beginPath();b.ellipse(cx,cy,Math.max(0,R*q*.9),Math.max(0,R*q*.55),0,0,6.283);b.stroke();
   if(q>.3&&!sw){{sw=true;done()}}if(q<1)requestAnimationFrame(f);else b.clearRect(0,0,W,H)}})(t0)}}
-function enter(){{if(sp.classList.contains('out'))return;var go=function(){{sp.classList.add('out');document.body.classList.remove('lock');if(window.BDBG_START)BDBG_START();sv.forEach(function(v){{setTimeout(function(){{v.pause();v.removeAttribute('src');v.load()}},1300)}})}};go()}}
+function enter(){{if(sp.classList.contains('out'))return;var go=function(){{sp.classList.add('out');document.body.classList.remove('lock');if(window.BDBG_START)BDBG_START();sv.forEach(function(v){{setTimeout(function(){{v.pause();v.removeAttribute('src');v.load()}},1300)}})}};RM?go():burst(go)}}
 $('#enter').addEventListener('click',enter);sp.addEventListener('click',function(e){{if(e.target===sp||e.target.classList.contains('shade'))enter()}});
 addEventListener('keydown',function(e){{if((e.key==='Enter'||e.key===' ')&&!sp.classList.contains('out')&&document.activeElement===document.body){{e.preventDefault();enter()}}}});
 /* films are for viewing on this page only (owner, 2026-11-26): no context menu on videos, no drag */

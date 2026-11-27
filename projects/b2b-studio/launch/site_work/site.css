@@ -478,6 +478,5 @@ main>section:not(.hero),body>section:not(.hero){background:rgba(13,13,15,.58)}
 main>section:not(.hero) :is(h2,h3,p,.eyebrow,.sh,.sp,li){text-shadow:0 1px 14px rgba(0,0,0,.55),0 1px 2px rgba(0,0,0,.4)}
 .foot{background:rgba(13,13,15,.82)}
 
-/* still brand marks (owner 2026-11-27: no drawn logo animations) */
-.brand .lfx-mark{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 0 8px rgba(242,193,78,.22))}
-.contact .logo-still{display:block;width:min(520px,82%);height:auto;margin:0 auto 34px}
+/* Contact: the AI logo render (smoke_reveal) instead of the drawn ignition, edges dissolved into the section (owner 2026-11-27) */
+.contact .logo-film{width:min(640px,100%);aspect-ratio:16/9;margin:-40px auto -10px;display:block;object-fit:cover;pointer-events:none;mix-blend-mode:screen;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 62%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 62%,transparent 100%)}
