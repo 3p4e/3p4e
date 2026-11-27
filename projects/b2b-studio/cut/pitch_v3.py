@@ -342,6 +342,9 @@ var ro=new IntersectionObserver(function(es){{es.forEach(function(e){{if(e.isInt
 </script></body></html>'''
     os.makedirs(out, exist_ok=True)
     if not os.path.exists(f"{out}/classic.html"): open(f"{out}/classic.html", "w", encoding="utf-8").write(old)
+    WANT_CSS = '<style id="wantfix">html{scroll-behavior:smooth}#offer .card .btn.want{margin-top:14px;display:block;text-align:center;width:100%}#offer{scroll-margin-top:70px}</style>'
+    WANT_JS = '<script id="wantfix-js">(function(){try{var nav=document.querySelector(\'nav .btn.want\');if(!nav)return;var m=(nav.getAttribute(\'href\')||\'\').match(/^mailto:([^?]+)\\\\?subject=([^&]*)/);var to=m?m[1]:\'inf.unit@bigdogma.tech\';var co=m?decodeURIComponent(m[2]).split(\' - \')[0]:\'\';var label=nav.textContent.trim();nav.setAttribute(\'href\',\'#offer\');nav.addEventListener(\'click\',function(e){var o=document.getElementById(\'offer\');if(o){e.preventDefault();o.scrollIntoView({behavior:\'smooth\',block:\'start\'})}});document.querySelectorAll(\'#offer .card\').forEach(function(c){if(c.querySelector(\'.btn\'))return;var h=c.querySelector(\'h3\');if(!h)return;var a=document.createElement(\'a\');a.className=\'btn a want\';a.textContent=label;a.href=\'mailto:\'+to+\'?subject=\'+encodeURIComponent((co?co+\' - \':\'\')+h.textContent.trim());c.appendChild(a)})}catch(e){}})();</script>'
+    page = page.replace('</head>', WANT_CSS + '</head>', 1).replace('</body>', WANT_JS + '</body>', 1)
     open(f"{out}/index.html", "w", encoding="utf-8").write(page)
     print("ok", key, len(page), "films", n_f, "bd", len(bd), "industry", len(ind))
 
