@@ -21,7 +21,7 @@ OFFER_TXT = {
 }
 CO = {
  "autonesi": dict(key="autonesi", name="AutoNesi", lang="mk", accent="#e0b04a", cats=["automotive", "product_launch"], tags="#AutoNesi #Скопје #Македонија #половниАвтомобили", site="autonesi.mk", pk=["b5"],
-    to=["info@autonesi.mk"], cc=[], dur=19, films=[
+    to=["info@autonesi.mk"], cc=[], dur={"an_evoque": 19, "an_jaguar": 19, "an_discovery": 19}, films=[
      ("autonesi_evoque", "an_evoque", "Range Rover Evoque: добрите возила имаат адреса", "Проверен Evoque, директно од Европа."),
      ("autonesi_jaguar", "an_jaguar", "Jaguar E-Pace: тивка моќ", "Градот ноќе, секој детал проверен."),
      ("autonesi_discovery", "an_discovery", "Discovery Sport: секое време, секој пат", "Снег, магла, есен: проверено возило од Европа.")],
@@ -32,7 +32,7 @@ CO = {
     cta="Погледнете ги филмовите", note="Приватна страница само за AutoNesi: филмовите, предлог-распоред за објава и понуда во PDF.", role="Основач и креативен директор", sec="сек.", voice="глас на македонски",
     optout="Оваа порака е испратена само до AutoNesi. Ако не сакате повеќе пораки од нас, одговорете со „не, благодарам“ и нема повторно да ви пишеме.", closing="Со почит,", vw="видео"),
  "drugitir": dict(key="drugitir", name="Drugi tir (2TDK)", lang="sl", accent="#2f8fe0", cats=["construction", "steel_cement"], tags="#DrugiTir #2TDK #Slovenija #Koper #Divača", site=None, pk=["b4", "b6"],
-    to=["info@2-tdk.si"], cc=["drugitir@2-tdk.si"], dur=39, films=[
+    to=["info@2-tdk.si"], cc=["drugitir@2-tdk.si"], dur={"dt_povezava": 39, "dt_gradnja": 31}, films=[
      ("drugitir_povezava", "dt_povezava", "Povezava do morja", "Med Divačo in Koprom raste nova železnica."),
      ("drugitir_gradnja", "dt_gradnja", "Korak za korakom", "Skozi kras, od predora do prvega vlaka.")],
     subject="Drugi tir: dva kratka AI-filma, narejena samo za vas (koncept)", greeting="Spoštovani,",
@@ -76,7 +76,8 @@ def main(key):
     # email
     page = f"https://pitch.bigdogma.tech/{tok}/"
     x = dict(mk=dict(pre="Три кратки AI филма направени само за {n}, без снимање. Приватна страница, 2 минути."), sl=dict(pre="Dva kratka AI-filma, narejena samo za {n}, brez snemanja. Zasebna stran, 2 minuti."))[c["lang"]]
-    items = [dict(title=f["t"], meta=f'{c["dur"]} {c["sec"]} · {c["voice"]}', img=f"{page}email/{f['id']}.jpg", href=page + "#films") for f in films]
+    src_of = {fid: src for fid, src, _, _ in c["films"]}
+    items = [dict(title=f["t"], meta=f'{c["dur"][src_of[f["id"]]]} {c["sec"]} · {c["voice"]}', img=f"{page}email/{f['id']}.jpg", href=page + "#films") for f in films]
     content = dict(lang=c["lang"], subject=c["subject"], preheader=x["pre"].format(n=c["name"]), greeting=c["greeting"], paras=c["paras"], films=items, cta=dict(label=c["cta"], href=page), note=c["note"],
                    sign=dict(name="Blagoj N.", role=c["role"]), closing=c["closing"], optout=c["optout"], video_word=c["vw"])
     h, t = M.render(content)
