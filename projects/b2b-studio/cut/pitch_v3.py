@@ -149,6 +149,9 @@ def build(key, out):
     vert = "".join(f'<li><video data-src="{f["v"]}" poster="{f.get("vposter", f["poster"])}" muted loop playsinline preload="none"></video><span>{E(f["t"])}</span></li>' for f in c["films"] if f.get("v"))
     vert += "".join(f'<li class="gif"><img src="x/t{i}.gif" alt="" loading="lazy"><span>{E(s["gif"])}</span></li>' for i in range(1, c["gifs"] + 1))
     SHOTS = [i for i in range(1, c["shots"] + 1) if i not in c.get("skip_shots", ())]
+    # page background (owner 2026-11-27): the company's own AI shots rotating at random, no BD logo films (those only in the splash);
+    # pages without shots fall back to their own films
+    bg_clips = [f"x/c{i:02d}.mp4" for i in SHOTS] or [f["src"] for f in c["films"] if f.get("src")]
     shots = "".join(f'<li><video data-src="x/c{i:02d}.mp4" poster="x/c{i:02d}.jpg" muted loop playsinline preload="none"></video><span><b>{E(c["caps"].get(f"c{i:02d}", ["", ""])[1] if len(c["caps"].get(f"c{i:02d}", [])) > 1 else f"{i:02d}")}</b> {E(c["caps"].get(f"c{i:02d}", ["", "", ""])[-1])}</span></li>' for i in SHOTS)
     pairs = "".join(f'<li class="cmp" style="--x:50%"><video data-src="x/c{i:02d}.mp4" muted loop playsinline preload="none" poster="x/c{i:02d}.jpg"></video><img src="x/k{i:02d}.jpg" alt="" loading="lazy"><input type="range" min="0" max="100" value="50" aria-label="{E(s["img"])} / {E(s["vid"])}"><span class="l">{E(s["img"])}</span><span class="r">{E(s["vid"])}</span></li>' for i in [x for x in (1, 4, 7, 10, 13, 16) if x <= c.get("keys", 27)])
     stills = "".join(f'<li><img src="x/a{i:02d}.jpg" alt="" loading="lazy"></li>' for i in range(1, c["stills"] + 1))
@@ -267,7 +270,7 @@ dialog .x{{position:absolute;right:0;top:-44px;background:none;border:0;color:#f
 <footer><div class="wrap">{E(s["legal"])}<br>© 2026 BIG DOGMA · AI STUDIO | MK · <a href="{SITE}">bigdogma.tech</a> · <a href="classic.html">classic</a></div></footer>
 <dialog id="lb"><button class="x" type="button" aria-label="{E(s["close"])}">×</button><video controls playsinline controlslist="nodownload noplaybackrate" disablepictureinpicture></video><p></p></dialog>
 <script>window.H3V=false;window.H3T={json.dumps({"ad": s["h3_ad"], "film": s["h3_film"], "ai": s["ai_film"], "mark": SITE + "/media/h3_mark.png"}, ensure_ascii=False)};</script>
-<script src="{SITE}/vplay.js"></script><script>window.DOGMA_HDR_BASE="{SITE}/logo_fx/hdr/";window.DOGMA_INTRO={json.dumps(intro)};(function(){{var c=navigator.connection||{{}};if(innerWidth<760||/(^|-)2g|3g/.test(c.effectiveType||""))window.DOGMA_INTRO=window.DOGMA_INTRO.map(function(u){{return u.replace("/lite/intro/","/lite480/intro/")}})}})();window.DOGMA_HERO={{intro:window.DOGMA_INTRO}};window.BDBG_WAIT=true;window.BD_CHAT={{company:{json.dumps(name)}}};</script><script src="{SITE}/logo_fx/hero_bg.js"></script><script src="{SITE}/chat.js" defer></script>
+<script src="{SITE}/vplay.js"></script><script>window.DOGMA_HDR_BASE="{SITE}/logo_fx/hdr/";window.DOGMA_INTRO={json.dumps(intro)};(function(){{var c=navigator.connection||{{}};if(innerWidth<760||/(^|-)2g|3g/.test(c.effectiveType||""))window.DOGMA_INTRO=window.DOGMA_INTRO.map(function(u){{return u.replace("/lite/intro/","/lite480/intro/")}})}})();window.DOGMA_HERO={{intro:{json.dumps(bg_clips)}}};window.BDBG_WAIT=true;window.BD_CHAT={{company:{json.dumps(name)}}};</script><script src="{SITE}/logo_fx/hero_bg.js"></script><script src="{SITE}/chat.js" defer></script>
 <script src="{SITE}/logo_fx/mark_data.js"></script><script src="{SITE}/logo_fx/logo_fx.js"></script><script src="{SITE}/logo_fx/hdr/list.js"></script><script src="{SITE}/logo_fx/hdr.js"></script>
 <script>
 (function(){{
