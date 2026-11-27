@@ -161,7 +161,7 @@ def build(key, out):
 @font-face{{font-family:M;src:url({SITE}/manrope-cyr.woff2) format("woff2");unicode-range:U+0400-04FF;font-display:swap}}
 @font-face{{font-family:M;src:url({SITE}/manrope-lat.woff2) format("woff2");font-display:swap}}
 :root{{--bg:#0b0b0d;--sf:#141418;--sf2:#1b1b21;--fg:#f2f2f4;--mu:#a2a2ad;--ac:#f2c14e;--co:{c["accent"]};--line:rgba(255,255,255,.1)}}
-*{{box-sizing:border-box}}html{{scroll-behavior:smooth}}body{{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 M,system-ui,sans-serif;-webkit-font-smoothing:antialiased}}
+*{{box-sizing:border-box}}html{{scroll-behavior:smooth}}html{{background:var(--bg)}}body{{margin:0;background:transparent;color:var(--fg);font:16px/1.55 M,system-ui,sans-serif;-webkit-font-smoothing:antialiased}}
 body.lock{{overflow:hidden}}a{{color:inherit}}img,video{{max-width:100%;display:block}}
 .wrap{{max-width:1240px;margin:0 auto;padding:0 20px}}
 /* MiniMax H3 mark on H3 thumbnails (the only H3 attribution on the page) */
@@ -191,7 +191,9 @@ body.lock{{overflow:hidden}}a{{color:inherit}}img,video{{max-width:100%;display:
 .note{{font-size:12.5px;color:var(--mu);margin-top:22px}}#burst{{position:fixed;inset:0;width:100%;height:100%;z-index:40;pointer-events:none}}
 /* sections */
 .hero{{position:relative;min-height:92vh;display:flex;align-items:flex-end;overflow:hidden}}.hero video{{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none}}
-.hero::after{{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,13,.2),rgba(11,11,13,.35) 50%,var(--bg))}}
+.hero::after{{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,13,.2),rgba(11,11,13,.35) 50%,rgba(11,11,13,.62))}}
+#bdbg{{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none;background:#000}}#bdbg video{{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none}}
+section{{background:rgba(11,11,13,.58)}}section.alt{{background:rgba(20,20,24,.66)}}section :is(h2,h3,p,.eyebrow,.sh,.sp){{text-shadow:0 1px 14px rgba(0,0,0,.55),0 1px 2px rgba(0,0,0,.4)}}
 .hero .wrap{{position:relative;z-index:2;padding-bottom:70px}}.hero h1{{font:400 clamp(30px,4.6vw,62px)/1.08 R,sans-serif;margin:0 0 14px;max-width:18ch}}
 .hero h1 em,.sh em{{font-style:normal;color:var(--ac)}}.hero p{{max-width:56ch;font-size:clamp(16px,1.6vw,19px);margin:0 0 24px;color:#eee}}.btns{{display:flex;gap:12px;flex-wrap:wrap}}
 section{{padding:84px 0}}section.alt{{background:var(--sf)}}.eyebrow{{text-transform:uppercase;letter-spacing:.24em;color:var(--ac);font-weight:800;font-size:12.5px;margin-bottom:12px}}
@@ -224,12 +226,12 @@ section{{padding:84px 0}}section.alt{{background:var(--sf)}}.eyebrow{{text-trans
 .card p{{color:var(--mu);margin:0}}.tag{{position:absolute;top:-11px;right:16px;background:var(--ac);color:#111;font-size:11px;font-weight:800;border-radius:999px;padding:4px 10px}}.terms{{color:var(--mu);font-size:13.5px;margin-top:18px}}
 .chips{{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 22px}}.chips button{{background:transparent;color:var(--fg);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:8px 15px;font:600 14px M,sans-serif;cursor:pointer}}.chips button[aria-pressed=true]{{background:var(--ac);color:#111;border-color:var(--ac)}}
 .end{{text-align:center;background:radial-gradient(ellipse at center,rgba(242,193,78,.12),transparent 70%)}}.end .btns{{justify-content:center}}
-footer{{padding:30px 0 50px;color:var(--mu);font-size:13px;border-top:1px solid var(--line)}}
+footer{{padding:30px 0 50px;color:var(--mu);font-size:13px;border-top:1px solid var(--line);background:rgba(11,11,13,.82)}}
 dialog{{border:0;padding:0;background:transparent;max-width:min(1100px,94vw);width:100%}}dialog::backdrop{{background:rgba(0,0,0,.9)}}dialog video{{width:100%;max-height:84vh;border-radius:12px;background:#000}}
 dialog .x{{position:absolute;right:0;top:-44px;background:none;border:0;color:#fff;font-size:34px;cursor:pointer}}dialog p{{margin:10px 2px;font-weight:700}}
 .rv{{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}}.rv.in{{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){{.rv{{opacity:1;transform:none}}.btn.a{{animation:none}}}}
-</style></head><body class="lock">
+</style></head><body class="lock"><div id="bdbg" aria-hidden="true"><video muted playsinline preload="none"></video></div>
 <nav class="nav"><div class="wrap"><a class="brand" href="#top" aria-label="BIG DOGMA"><span class="lfx" aria-hidden="true"><span class="lfx-in"></span></span><span class="bt"><b>BIG</b><b>DOGMA</b><small>AI STUDIO<i class="sep"></i>MK</small></span></a>
 <div class="links">{navl}</div><a class="btn a" href="{mailto}">{E(s["cta"])}</a></div></nav>
 <div id="splash" role="dialog" aria-label="BIG DOGMA × {name}"><video muted playsinline autoplay></video><video muted playsinline style="opacity:0"></video><div class="shade"></div>
@@ -260,7 +262,7 @@ dialog .x{{position:absolute;right:0;top:-44px;background:none;border:0;color:#f
 <footer><div class="wrap">{E(s["legal"])}<br>© 2026 BIG DOGMA · AI STUDIO | MK · <a href="{SITE}">bigdogma.tech</a> · <a href="classic.html">classic</a></div></footer>
 <dialog id="lb"><button class="x" type="button" aria-label="{E(s["close"])}">×</button><video controls playsinline controlslist="nodownload noplaybackrate" disablepictureinpicture></video><p></p></dialog>
 <script>window.H3V=false;window.H3T={json.dumps({"ad": s["h3_ad"], "film": s["h3_film"], "ai": s["ai_film"], "mark": SITE + "/media/h3_mark.png"}, ensure_ascii=False)};</script>
-<script>window.DOGMA_HDR_BASE="{SITE}/logo_fx/hdr/";window.DOGMA_INTRO={json.dumps(intro)};</script>
+<script>window.DOGMA_HDR_BASE="{SITE}/logo_fx/hdr/";window.DOGMA_INTRO={json.dumps(intro)};window.DOGMA_HERO={{intro:window.DOGMA_INTRO}};window.BDBG_WAIT=true;</script><script src="{SITE}/logo_fx/hero_bg.js"></script>
 <script src="{SITE}/logo_fx/mark_data.js"></script><script src="{SITE}/logo_fx/logo_fx.js"></script><script src="{SITE}/logo_fx/hdr/list.js"></script><script src="{SITE}/logo_fx/hdr.js"></script>
 <script>
 (function(){{
@@ -281,7 +283,7 @@ function burst(done){{var W=bc.width=innerWidth*Math.min(2,devicePixelRatio||1),
   P.forEach(function(p){{var r=R*p[1]*q,a=1-q;b.fillStyle=p[2]>.5?'rgba(255,255,255,'+a+')':'rgba(242,193,78,'+a+')';b.beginPath();b.arc(cx+Math.cos(p[0])*r,cy+Math.sin(p[0])*r*.8,p[3]*W/900,0,6.283);b.fill()}});
   b.strokeStyle='rgba(255,230,170,'+(1-q)+')';b.lineWidth=W/300*(1-q);b.beginPath();b.ellipse(cx,cy,R*q*.9,R*q*.55,0,0,6.283);b.stroke();
   if(q>.3&&!sw){{sw=true;done()}}if(q<1)requestAnimationFrame(f);else b.clearRect(0,0,W,H)}})(t0)}}
-function enter(){{if(sp.classList.contains('out'))return;var go=function(){{sp.classList.add('out');document.body.classList.remove('lock');sv.forEach(function(v){{setTimeout(function(){{v.pause();v.removeAttribute('src');v.load()}},1300)}})}};RM?go():burst(go)}}
+function enter(){{if(sp.classList.contains('out'))return;var go=function(){{sp.classList.add('out');document.body.classList.remove('lock');if(window.BDBG_START)BDBG_START();sv.forEach(function(v){{setTimeout(function(){{v.pause();v.removeAttribute('src');v.load()}},1300)}})}};RM?go():burst(go)}}
 $('#enter').addEventListener('click',enter);sp.addEventListener('click',function(e){{if(e.target===sp||e.target.classList.contains('shade'))enter()}});
 addEventListener('keydown',function(e){{if((e.key==='Enter'||e.key===' ')&&!sp.classList.contains('out')&&document.activeElement===document.body){{e.preventDefault();enter()}}}});
 /* films are for viewing on this page only (owner, 2026-11-26): no context menu on videos, no drag */

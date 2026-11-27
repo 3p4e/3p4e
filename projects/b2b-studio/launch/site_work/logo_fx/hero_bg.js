@@ -39,6 +39,6 @@
   document.addEventListener('visibilitychange', function () {
     if (document.hidden) vs.forEach(function (v) { v.pause(); }); else { busy = false; play(vs[cur]); }
   });
-  all = (D.intro || []).slice(); if (!all.length) return;
-  preload(); swap();
+  function start() { if (start.done) return; start.done = true; all = (D.intro || []).slice(); if (!all.length) return; preload(); swap(); }
+  if (window.BDBG_WAIT) window.BDBG_START = start; else start();   // company pages start it when their splash ends
 })();
