@@ -60,7 +60,7 @@ CO = {
     optout="To sporočilo je bilo poslano samo Drugemu tiru (2TDK). Če ne želite več sporočil od nas, odgovorite z »ne, hvala« in vam ne bomo več pisali.", closing="Lep pozdrav,", vw="video"),
 }
 
-CO.update({k: _led(k, n, t) for k, n, t in (("nexnovo", "Nexnovo", "sale@nexnovo.com"), ("muxwave", "Muxwave", "info@muxwave.com"), ("sostron", "SoStron", "info@sostron.com"), ("gloshine", "Gloshine", "international@gloshine.cn"), ("yestech", "YES TECH", "yestech@yes-led.com"))})
+CO.update({k: _led(k, n, t) for k, n, t in (("nexnovo", "Nexnovo", "sale@nexnovo.com"), ("muxwave", "Muxwave", "info@muxwave.com"), ("sostron", "SoStron", "info@sostron.com"), ("gloshine", "Gloshine", "international@gloshine.cn"), ("yestech", "YES TECH", "yestech@yes-led.com"), ("aoto", "AOTO", "led@aoto.com"), ("ledman", "Ledman", "marketing@ledman.com"), ("qiangli", "Qiangli Jucai", "sales@qiangliled.com"), ("esdlumen", "ESDlumen", "sale@esdled.com"))})
 
 def offer_section(c):
     t = OFFER_TXT[c["lang"]]; pr = PRICES[c["lang"]]; mo = t["mo"]
