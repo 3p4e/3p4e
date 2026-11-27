@@ -1,7 +1,9 @@
 # Web encodes of the finished category films for bigdogma.tech: launch/site/films/<id>.mp4 (720p, crf 26, AAC 128k) + <id>.jpg poster
 # (taken from the middle of the film, before the end card). Only films that are cut are encoded; re-runs skip done ones.
 import os, glob, subprocess
-S = "/tmp/claude-0/-home-user-3p4e/50442171-da10-52d9-9948-b5cc07f6bc8a/scratchpad"; CUTS = os.environ.get("CUTS", f"{S}/catfilms/cuts")   # v3 masters are cut in RAM (/dev/shm/vall/v3cut): the root disk is nearly full; OUT = f"{S}/launch/site/films"
+S = "/tmp/claude-0/-home-user-3p4e/50442171-da10-52d9-9948-b5cc07f6bc8a/scratchpad"
+# CUTS: the v3 masters are cut in RAM (/dev/shm/vall/v3cut) because the root disk is nearly full
+CUTS = os.environ.get("CUTS", f"{S}/catfilms/cuts"); OUT = f"{S}/launch/site/films"
 os.makedirs(OUT, exist_ok=True)
 def dur(f): return float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", f], capture_output=True, text=True).stdout)
 n = 0
