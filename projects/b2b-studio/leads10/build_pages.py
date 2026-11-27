@@ -45,3 +45,4 @@ for c in CFG["companies"]:
         subject=t["subject"].format(n=n), greeting=t["greeting"], paras=[t["p1"].format(n=n), t["p2"], t["p3"]], cta=t["cta"], note=t["note"].format(n=n), role=t["role"], sec=t["sec"], voice=t["voice"],
         optout=t["optout"].format(n=n), closing=t["closing"], vw=t["vw"], pre=t["pre"])
     N.main(k)
+    sys.path.insert(0, "/home/user/3p4e/projects/b2b-studio/cut"); import offer_pdf; offer_pdf.render([k])
