@@ -127,7 +127,7 @@ def build(key, out):
     # BD gallery and splash playlist (public files on bigdogma.tech)
     tl = lambda key, v: (v if c["lang"] == "mk" else (XL.get(c["lang"], {}).get(key, "BD · " + v[1])[5:], v[1]))
     live = lambda rel: os.path.exists(f"{SCR}/launch/site/{rel}.mp4")
-    bd = [(f"{SITE}/media/intro/{k}", tl(f"bd_{k}.t", v), "f") for k, v in BDT.FILMS.items() if live(f"media/intro/{k}")] + [(f"{SITE}/media/bd/{k}", tl(f"bdx_{k}.t", v), "x") for k, v in BDT.FX.items()]
+    bd = [(f"{SITE}/media/intro/{k}", tl(f"bd_{k}.t", v), "f") for k, v in BDT.FILMS.items() if live(f"media/intro/{k}")] + [(f"{SITE}/media/bd/{k}", tl(f"bdx_{k}.t", v), "x") for k, v in BDT.FX.items() if live(f"media/bd/{k}")]
     intro = [f"{SITE}/media/lite/intro/{k}.mp4" for k in BDT.FILMS if os.path.exists(f"{SCR}/launch/site/media/lite/intro/{k}.mp4")]   # light copies
     # industry films (bigdogma.tech, category films v2)
     ind = []
@@ -193,7 +193,7 @@ body.lock{{overflow:hidden}}a{{color:inherit}}img,video{{max-width:100%;display:
 .hero{{position:relative;min-height:92vh;display:flex;align-items:flex-end;overflow:hidden}}.hero video{{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none}}
 .hero::after{{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,13,.2),rgba(11,11,13,.35) 50%,rgba(11,11,13,.62))}}
 #bdbg{{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none;background:#000}}#bdbg video{{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none}}
-section{{background:rgba(11,11,13,.58)}}section.alt{{background:rgba(20,20,24,.66)}}section :is(h2,h3,p,.eyebrow,.sh,.sp){{text-shadow:0 1px 14px rgba(0,0,0,.55),0 1px 2px rgba(0,0,0,.4)}}
+section{{background:rgba(11,11,13,.58)}}.more-wrap{{display:flex;justify-content:center;margin-top:24px}}section.alt{{background:rgba(20,20,24,.66)}}section :is(h2,h3,p,.eyebrow,.sh,.sp){{text-shadow:0 1px 14px rgba(0,0,0,.55),0 1px 2px rgba(0,0,0,.4)}}
 .hero .wrap{{position:relative;z-index:2;padding-bottom:70px}}.hero h1{{font:400 clamp(30px,4.6vw,62px)/1.08 R,sans-serif;margin:0 0 14px;max-width:18ch}}
 .hero h1 em,.sh em{{font-style:normal;color:var(--ac)}}.hero p{{max-width:56ch;font-size:clamp(16px,1.6vw,19px);margin:0 0 24px;color:#eee}}.btns{{display:flex;gap:12px;flex-wrap:wrap}}
 section{{padding:84px 0}}section.alt{{background:var(--sf)}}.eyebrow{{text-transform:uppercase;letter-spacing:.24em;color:var(--ac);font-weight:800;font-size:12.5px;margin-bottom:12px}}
@@ -256,7 +256,7 @@ dialog .x{{position:absolute;right:0;top:-44px;background:none;border:0;color:#f
 <section class="alt"><div class="wrap"><div class="eyebrow rv">{E(s["i_e"])}</div><h2 class="sh rv">{E(s["i_h"])}</h2><p class="sp rv">{E(s["i_p"])}</p><ul class="grid">{indc}</ul></div></section>
 <section id="bd"><div class="wrap"><div class="eyebrow rv">{E(s["b_e"])}</div><h2 class="sh rv">{E(s["b_h"])}</h2><p class="sp rv">{E(s["b_p"].format(n=len(bd)))}</p>
 <div class="chips" role="group"><button type="button" data-k="all" aria-pressed="true">{E(s["b_all"])} {len(bd)}</button><button type="button" data-k="f" aria-pressed="false">{E(s["b_f"])} {sum(1 for x in bd if x[2] == "f")}</button><button type="button" data-k="x" aria-pressed="false">{E(s["b_x"])} {len(BDT.FX)}</button></div>
-<ul class="grid" id="bdg">{bdc}</ul></div></section>
+<ul class="grid" id="bdg">{bdc}</ul><div class="more-wrap"><button type="button" class="btn b bdmore" hidden>{ {"mk": "Покажи уште", "sr": "Prikaži još", "sq": "Shfaq më shumë"}.get(c["lang"], "Show more") } <b></b></button></div></div></section>
 <section class="end"><div class="wrap"><h2 class="sh rv">{E(s["end_h"])}</h2><p class="sp rv" style="margin:0 auto 26px">{E(s["end_p"])}</p><div class="btns"><a class="btn a" href="{mailto}">{E(s["cta"])}</a><a class="btn b" href="mailto:{MAIL}">{E(s["mail"])}: {MAIL}</a></div></div></section>
 </main>
 <footer><div class="wrap">{E(s["legal"])}<br>© 2026 BIG DOGMA · AI STUDIO | MK · <a href="{SITE}">bigdogma.tech</a> · <a href="classic.html">classic</a></div></footer>
@@ -281,7 +281,7 @@ function burst(done){{var W=bc.width=innerWidth*Math.min(2,devicePixelRatio||1),
  var sw=false;(function f(now){{var q=Math.max(0,Math.min(1,(now-t0)/1100)),pk=Math.sin(Math.PI*Math.min(1,q*1.6));b.clearRect(0,0,W,H);b.globalCompositeOperation='lighter';
   var g=b.createRadialGradient(cx,cy,0,cx,cy,R*(.2+q));g.addColorStop(0,'rgba(255,250,235,'+pk+')');g.addColorStop(.3,'rgba(242,193,78,'+(.7*pk)+')');g.addColorStop(1,'rgba(242,120,40,0)');b.fillStyle=g;b.fillRect(0,0,W,H);
   P.forEach(function(p){{var r=R*p[1]*q,a=1-q;b.fillStyle=p[2]>.5?'rgba(255,255,255,'+a+')':'rgba(242,193,78,'+a+')';b.beginPath();b.arc(cx+Math.cos(p[0])*r,cy+Math.sin(p[0])*r*.8,p[3]*W/900,0,6.283);b.fill()}});
-  b.strokeStyle='rgba(255,230,170,'+(1-q)+')';b.lineWidth=W/300*(1-q);b.beginPath();b.ellipse(cx,cy,R*q*.9,R*q*.55,0,0,6.283);b.stroke();
+  b.strokeStyle='rgba(255,230,170,'+(1-q)+')';b.lineWidth=W/300*(1-q);b.beginPath();b.ellipse(cx,cy,Math.max(0,R*q*.9),Math.max(0,R*q*.55),0,0,6.283);b.stroke();
   if(q>.3&&!sw){{sw=true;done()}}if(q<1)requestAnimationFrame(f);else b.clearRect(0,0,W,H)}})(t0)}}
 function enter(){{if(sp.classList.contains('out'))return;var go=function(){{sp.classList.add('out');document.body.classList.remove('lock');if(window.BDBG_START)BDBG_START();sv.forEach(function(v){{setTimeout(function(){{v.pause();v.removeAttribute('src');v.load()}},1300)}})}};RM?go():burst(go)}}
 $('#enter').addEventListener('click',enter);sp.addEventListener('click',function(e){{if(e.target===sp||e.target.classList.contains('shade'))enter()}});
@@ -311,7 +311,10 @@ document.addEventListener('click',function(e){{var a=e.target.closest&&e.target.
 $$('.fmt button').forEach(function(x){{x.onclick=function(){{fmt=x.dataset.fmt;$$('.fmt button').forEach(function(y){{y.setAttribute('aria-pressed',String(y===x))}});
  $$('#fg a[data-v]').forEach(function(a){{$('img',a).src=fmt==='v'?a.dataset.vp:a.dataset.p}})}}}});
 /* BD gallery filter */
-$$('#bd .chips button').forEach(function(x){{x.onclick=function(){{var k=x.dataset.k;$$('#bd .chips button').forEach(function(y){{y.setAttribute('aria-pressed',String(y===x))}});$$('#bdg li').forEach(function(li){{li.hidden=!(k==='all'||li.dataset.k===k)}})}}}});
+var bdK='all',bdStep=matchMedia('(max-width:700px)').matches?8:12,bdLim=bdStep,bdM=document.querySelector('.bdmore');
+function bdApply(){{var n=0,t=0;$$('#bdg li').forEach(function(li){{var ok=bdK==='all'||li.dataset.k===bdK;if(ok)t++;var sh=ok&&n<bdLim;if(sh)n++;li.hidden=!sh}});if(bdM){{bdM.hidden=t<=bdLim;bdM.querySelector('b').textContent='('+Math.max(0,t-bdLim)+')'}}}}
+$$('#bd .chips button').forEach(function(x){{x.onclick=function(){{bdK=x.dataset.k;bdLim=bdStep;$$('#bd .chips button').forEach(function(y){{y.setAttribute('aria-pressed',String(y===x))}});bdApply()}}}});
+if(bdM)bdM.onclick=function(){{bdLim+=bdStep*2;bdApply()}};bdApply();
 /* in-view muted loops + hover */
 var io=new IntersectionObserver(function(es){{es.forEach(function(e){{var v=e.target;if(e.isIntersecting){{if(RM)return;if(!v.getAttribute('src'))v.src=v.dataset.src;v.play().catch(function(){{}})}}else if(!v.paused)v.pause()}})}},{{rootMargin:'100px'}});
 $$('video[data-src]').forEach(function(v){{io.observe(v)}});

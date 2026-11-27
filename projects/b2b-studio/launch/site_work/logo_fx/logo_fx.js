@@ -261,7 +261,7 @@
   add('Lightning strike', 'magic', E => { const c = E.c, q = E.p, hit = ss(.3, .32, q) * (1 - ss(.45, .7, q)); E.fx.mark(1, hit > .3 ? '#e9e2ff' : undefined, c, 40 * hit);
     if (q > .28 && q < .5) { const [x, y] = E.fx.px(DC.x1, DC.cy); seed = 17 + Math.floor(q * 60); c.save(); c.strokeStyle = '#f1ecff'; c.shadowColor = '#9f7bff'; c.shadowBlur = 24; bolt(c, x + rr(-50, 50), 0, x, y, 7, 4 * E.fx.dpr); c.restore(); c.save(); c.fillStyle = `rgba(200,180,255,${hit * .3})`; c.fillRect(0, 0, E.W, E.H); c.restore(); } }, 6);
   add('Water ripple rings', 'magic', E => { const c = E.c; E.fx.mark(1); c.save(); E.fx.mt(c); c.strokeStyle = '#8fdcff'; c.lineWidth = VB[2] * .004;
-    for (let k = 0; k < 6; k++) { const q = (E.t * .35 + k / 6) % 1; c.globalAlpha = (1 - q) * E.f; c.beginPath(); c.ellipse(DC.cx, DC.cy, q * VB[2] * .7, q * VB[3] * .5, 0, 0, TAU); c.stroke(); } c.restore(); });
+    for (let k = 0; k < 6; k++) { const q = (E.t * .35 + k / 6) % 1; c.globalAlpha = (1 - q) * E.f; c.beginPath(); c.ellipse(DC.cx, DC.cy, Math.max(0, q * VB[2] * .7), Math.max(0, q * VB[3] * .5), 0, 0, TAU); c.stroke(); } c.restore(); });
 
   // ===== TEXT =====
   add('Wordmark light sweep', 'text', E => { E.fx.mark(1); const c = E.c, a = ss(.05, .25, E.p) * (1 - ss(.85, 1, E.p)); E.fx.text(E, a, '#fff'); const x = lerp(-.2, 1.2, ss(.25, .75, E.p)) * E.W;

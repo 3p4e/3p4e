@@ -230,9 +230,10 @@ html.l-en:not(.i18n) [data-i],html.l-en:not(.i18n) [data-ih]{visibility:hidden}
 @media(min-width:900px){.fg{grid-template-columns:1.6fr 1fr 1fr}}
 .foot img{width:240px;height:auto;margin-bottom:16px}
 .foot .ai{margin:0;max-width:62ch;font-size:13.5px}
-.fc2,.fl{display:grid;gap:8px;align-content:start}
-.fc2 a,.fl a{text-decoration:none;color:var(--fg)}
-.fc2 a:hover,.fl a:hover,.fb a:hover{color:var(--ac)}
+.fc2,.fnl{display:grid;gap:8px;align-content:start}
+.fc2 a,.fnl a{text-decoration:none;color:var(--fg)}
+.fc2 a:hover,.fnl a:hover,.fb a:hover{color:var(--ac)}
+.more-wrap{display:flex;justify-content:center;margin-top:28px}
 .fb{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px}
 .fb a{text-decoration:none}
 

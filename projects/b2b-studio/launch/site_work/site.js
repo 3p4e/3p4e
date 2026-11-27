@@ -55,11 +55,19 @@
     const f = c.dataset.f; $$('.chip[data-f]').forEach(x => x.setAttribute('aria-pressed', String(x === c)));
     $$('#grid .fc').forEach(li => { li.hidden = !(f === 'all' || li.dataset.cat === f); if (!li.hidden) li.classList.add('in'); });
   }));
-  // industry films (category films v2): same pattern, own grid
+  // industry films: own grid, 12 cards at a time (8 on phones) with "show more" (250+ films would make an endless page)
+  const CSTEP = matchMedia('(max-width:700px)').matches ? 8 : 12, cMore = $('.cmore'); let cLim = CSTEP, cF = 'all';
+  const applyCf = () => {
+    let n = 0, total = 0;
+    $$('#cgrid .fc').forEach(li => { const ok = cF === 'all' || li.dataset.c === cF; if (ok) total++; const show = ok && n < cLim; if (show) n++; li.hidden = !show; if (show) li.classList.add('in'); });
+    if (cMore) { cMore.hidden = total <= cLim; const b = $('b', cMore); if (b) b.textContent = '(' + Math.max(0, total - cLim) + ')'; }
+  };
+  window.BD_applyCf = applyCf;
   $$('.chip[data-c]').forEach(c => c.addEventListener('click', () => {
-    const f = c.dataset.c; $$('.chip[data-c]').forEach(x => x.setAttribute('aria-pressed', String(x === c)));
-    $$('#cgrid .fc').forEach(li => { li.hidden = !(f === 'all' || li.dataset.c === f); if (!li.hidden) li.classList.add('in'); });
+    cF = c.dataset.c; cLim = CSTEP; $$('.chip[data-c]').forEach(x => x.setAttribute('aria-pressed', String(x === c))); applyCf();
   }));
+  if (cMore) cMore.addEventListener('click', () => { cLim += CSTEP * 2; applyCf(); });
+  applyCf();
 
   // ---------- lightbox
   const lb = $('#lb'), v = $('video', lb), ttl = $('#lbT'), line = $('.mt p', lb);
@@ -112,8 +120,8 @@
       // and in its industry in the category grid (#cgrid, chips by data-c)
       const cat = id === 'showreel_macedonian_industry' ? 'industry_showreel' : id.replace(/^(sector|timelapse)_/, ''), cg = $('#cgrid'), src0 = $('a[data-film="' + hid + '"]');
       const last = cg && [...cg.querySelectorAll('li[data-c="' + cat + '"]')].pop();
-      if (last && src0) { const li = src0.closest('li').cloneNode(true), a = $('a', li); li.removeAttribute('data-cat'); li.dataset.c = cat; li.hidden = last.hidden;
-        a.addEventListener('click', e => { if (e.metaKey || e.ctrlKey || e.shiftKey || e.button) return; e.preventDefault(); openFilm(hid, a); }); last.after(li); }
+      if (last && src0) { const li = src0.closest('li').cloneNode(true), a = $('a', li); li.removeAttribute('data-cat'); li.dataset.c = cat;
+        a.addEventListener('click', e => { if (e.metaKey || e.ctrlKey || e.shiftKey || e.button) return; e.preventDefault(); openFilm(hid, a); }); last.after(li); if (window.BD_applyCf) BD_applyCf(); }
     });
   }).catch(() => {});
 

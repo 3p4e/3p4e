@@ -83,8 +83,8 @@ TX = {
  "st3": ("формати: 16:9 и 9:16", "formats: 16:9 and 9:16"), "st4": ("јазици: MK · SR · SQ", "languages: MK · SR · SQ"),
  "reel.e": ("Шоурил", "Showreel"),
  "reel.h": ("56 секунди. Ниту еден снимен кадар.", "56 seconds. Not a single filmed shot."),
- "reel.p": ("Индустрија, градба, храна, вино, енергија: сè што ќе видите е генерирано со вештачка интелигенција. Без камера, без екипа, без локација.",
-            "Industry, construction, food, wine, energy: everything you see is generated with artificial intelligence. No camera, no crew, no location. (On-screen text in Macedonian.)"),
+ "reel.p": ("Градба, недвижности, ентериери, храна, вино, челик, енергија, производи, туризам: сè што ќе видите е генерирано со вештачка интелигенција. Без камера, без екипа, без локација.",
+            "Construction, real estate, interiors, food, wine, steel, energy, products, tourism: everything you see is generated with artificial intelligence. No camera, no crew, no location. (On-screen text in Macedonian.)"),
  "reel.t": ("Шоурил на студиото", "Studio showreel"),
  "reel.h169": ("16:9 хоризонтално", "16:9 landscape"), "reel.v916": ("9:16 вертикално", "9:16 vertical"),
  "reel.fmt": ("Формат на видеото", "Video format"),
@@ -268,8 +268,8 @@ BD = [("bd_" + k, f"media/intro/{k}", BDT.FILMS[k], "bdfilm") for k in BDT.FILMS
 for _id, _p, (_m, _e), _t in BD:
     TX[f"{_id}.t"] = (f"BD · {_m}", f"BD · {_e}"); TX[f"{_id}.l"] = (("AI лого филм" if _t == "bdfilm" else "AI ефект на логото"), ("AI logo film" if _t == "bdfilm" else "AI logo effect"))
     TX[f"{_id}.alt"] = (f"Логото BD: {_m}", f"The BD logo: {_e}")
-TX.update({"cc.bd": ("BD лого", "BD logo"), "ty.bdfilm": ("Лого филм", "Logo film"), "ty.bdfx": ("Лого ефект", "Logo effect")})
-CF_CATS.insert(0, ("bd", "BD лого", "BD logo", len(BD)))
+TX.update({"cf.more": ("Покажи уште", "Show more"), "cc.bd": ("BD лого", "BD logo"), "ty.bdfilm": ("Лого филм", "Logo film"), "ty.bdfx": ("Лого ефект", "Logo effect")})
+CF_CATS.append(("bd", "BD лого", "BD logo", len(BD)))   # industry chips first, the BD logo chip last
 CF_CHIPS = f'<button type="button" class="chip" data-c="all" aria-pressed="true"><span @="f.all"></span> <b>{len(CF) + len(BD)}</b></button>' + "".join(
     f'<button type="button" class="chip" data-c="{k}" aria-pressed="false"><span @="cc.{k}"></span> <b>{n}</b></button>' for k, _m, _e, n in CF_CATS)
 FILM_CARDS = "\n".join(f"""<li class="fc rv" data-cat="{cat}"><a href="{u(f'films/{fid}.mp4')}" data-film="{fid}">
@@ -282,9 +282,9 @@ def _cfdur(fid): return _probe(f"{OUT}/films/{fid}.mp4")
 CF_CARDS = "\n".join(f"""<li class="fc rv{' vt' if f['type'] == 'social' else ''}" data-c="{f['cat']}"><a href="{u(f'films/{f["id"]}.mp4')}" data-film="{f['id']}">
 <span class="im"><img src="{u(f'films/{f["id"]}.jpg')}" @a="alt:{f['id']}.alt" loading="lazy" decoding="async"><span class="ct" @="ty.{f['type']}"></span><span class="pl" aria-hidden="true"></span><span class="du">{mmss(_cfdur(f['id']))}</span></span>
 <span class="tx"><span class="h3" @="{f['id']}.t"></span><span class="ln" @="{f['id']}.l"></span></span><span class="sr" @="work.play"></span></a></li>""" for f in CF)
-CF_CARDS = "\n".join(f"""<li class="fc rv" data-c="bd"><a href="{u(p + '.mp4')}" data-film="{i}">
+CF_CARDS = CF_CARDS + "\n" + "\n".join(f"""<li class="fc rv" data-c="bd"><a href="{u(p + '.mp4')}" data-film="{i}">
 <span class="im"><img src="{u(p + '.jpg')}" @a="alt:{i}.alt" loading="lazy" decoding="async"><span class="ct" @="ty.{t}"></span><span class="pl" aria-hidden="true"></span><span class="du">{mmss(_probe(f"{OUT}/{p}.mp4"))}</span></span>
-<span class="tx"><span class="h3" @="{i}.t"></span><span class="ln" @="{i}.l"></span></span><span class="sr" @="work.play"></span></a></li>""" for i, p, _n, t in BD) + "\n" + CF_CARDS
+<span class="tx"><span class="h3" @="{i}.t"></span><span class="ln" @="{i}.l"></span></span><span class="sr" @="work.play"></span></a></li>""" for i, p, _n, t in BD)
 FILM_JSON = FILM_JSON[:-1] + "".join(", " + json.dumps({"id": i, "src": u(p + ".mp4"), "poster": u(p + ".jpg"), "sub": {}}) for i, p, _n, _t in BD) + "]"
 FILM_JSON = FILM_JSON[:-1] + "".join(", " + json.dumps({"id": f["id"], "src": u(f"films/{f['id']}.mp4"), "poster": u(f"films/{f['id']}.jpg"), "sub": {}}) for f in CF) + "]"
 MARQ = "".join(f'<span @="m{i}"></span>' for i in range(1, 10))
@@ -482,6 +482,7 @@ PAGE = f"""<!doctype html>
   <ul class="grid" id="cgrid">
 {CF_CARDS}
   </ul>
+  <div class="more-wrap"><button type="button" class="btn b cmore" hidden><span @="cf.more"></span> <b></b></button></div>
  </div>
 </section>
 
@@ -615,7 +616,7 @@ PAGE = f"""<!doctype html>
    <div class="fc2">
     {FOOT_CT}
    </div>
-   <div class="fl"><a href="#showreel" @="nav.reel"></a><a href="#films" @="nav.work"></a><a href="#gallery" @="nav.gal"></a><a href="#process" @="nav.how"></a><a href="#pricing" @="nav.price"></a><a href="#faq" @="nav.faq"></a><a href="#contact" @="nav.contact"></a></div>
+   <div class="fnl"><a href="#showreel" @="nav.reel"></a><a href="#films" @="nav.work"></a><a href="#gallery" @="nav.gal"></a><a href="#process" @="nav.how"></a><a href="#pricing" @="nav.price"></a><a href="#faq" @="nav.faq"></a><a href="#contact" @="nav.contact"></a></div>
   </div>
   <div class="fb"><span @="ft.rights"></span><a href="#top" @="ft.top"></a></div>
  </div>
