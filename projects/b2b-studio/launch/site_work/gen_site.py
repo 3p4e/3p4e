@@ -141,8 +141,8 @@ TX = {
  "bund.p": ("Готови пакети за најчестите проекти. Секој почнува со вашите фотографии, планови или рендери.", "Ready-made packages for the most common projects. Each one starts from your own photos, plans or renders."),
  "b1.n": ("Девелопер", "Developer"), "b1.a": ("€1.500–4.000", "€1,500–4,000"), "b1.u": ("по проект", "per project"),
  "b1.l1": ("Тајмлапс на градбата, од ископ до клучеви", "Construction timelapse, from excavation to keys"), "b1.l2": ("Продажен филм за станови пред изградба", "Sales film for off-plan apartments"), "b1.l3": ("Формати за огласи, мрежи и продажна канцеларија", "Formats for ads, social media and the sales office"),
- "b2.n": ("Опремување станови", "Apartment staging"), "b2.a": ("€300–800", "€300–800"), "b2.u": ("по стан", "per apartment"),
- "b2.l1": ("Од празен до целосно опремен стан", "From an empty to a fully furnished apartment"), "b2.l2": ("Од фотографиите на вашите станови", "From photos of your apartments"), "b2.l3": ("Пакет од 5 станови: €1.500", "Bundle of 5 apartments: €1,500"),
+ "b2.n": ("Опремување станови", "Apartment staging"), "b2.a": ("€200–600", "€200–600"), "b2.u": ("по стан", "per apartment"),
+ "b2.l1": ("Од празен до целосно опремен стан", "From an empty to a fully furnished apartment"), "b2.l2": ("Од фотографиите на вашите станови", "From photos of your apartments"), "b2.l3": ("Пакет од 5 станови: €1.200", "Bundle of 5 apartments: €1,200"),
  "b3.n": ("Ентериер и реновирање", "Interiors and renovation"), "b3.a": ("€300–1.000", "€300–1,000"), "b3.u": ("по простор", "per space"),
  "b3.l1": ("Пред и потоа, во еден тајмлапс", "Before and after in one timelapse"), "b3.l2": ("Од голи ѕидови до готов простор", "From bare walls to a finished space"), "b3.l3": ("За студија за ентериер, кујни и бањи", "For interior studios, kitchens and bathrooms"),
  "b4.n": ("Тајмлапс проект", "Project timelapse"), "b4.a": ("€500–2.000", "€500–2,000"), "b4.u": ("по проект", "per project"),
@@ -152,8 +152,8 @@ TX = {
  "b6.n": ("Бренд на работодавач", "Employer branding"), "b6.a": ("€1.500–3.500", "€1,500–3,500"), "b6.u": ("по пакет", "per package"),
  "b6.l1": ("Филм за вработување", "A recruitment film"), "b6.l2": ("Филм за вашиот тим и процес", "A film about your team and process"), "b6.l3": ("Кратки клипови за огласи за работа", "Short clips for job ads"),
  "price.cta": ("Побарајте понуда", "Get a quote"),
- "price.terms": ("Цените се во евра, без ДДВ. Рок 7–10 дена од одобрувањето на клучните кадри · 1 рунда корекции · права за веб, социјални мрежи и екрани (ТВ и платени кампањи по договор) · секое видео е означено како изработено со AI.",
-                 "Prices in euro, excluding VAT. Delivery 7–10 days after key-frame approval · 1 round of revisions · usage rights for web, social media and screens (TV and paid campaigns by agreement) · every video is labelled as AI-generated."),
+ "price.terms": ("Цените се во евра, без ДДВ. Рок 7–10 дена од одобрувањето на клучните кадри · 2 рунди корекции · права за веб, социјални мрежи и екрани (ТВ и платени кампањи по договор) · секое видео е означено како изработено со AI.",
+                 "Prices in euro, excluding VAT. Delivery 7–10 days after key-frame approval · 2 rounds of revisions · usage rights for web, social media and screens (TV and paid campaigns by agreement) · every video is labelled as AI-generated."),
  "faq.e": ("Прашања", "FAQ"), "faq.h": ("Често поставувани прашања", "Frequently asked questions"),
  "q1": ("Што е AI видео?", "What is AI video?"),
  "a1": ("Видео во кое кадрите не се снимаат со камера, туку се генерираат со модели за вештачка интелигенција. Ние го пишуваме сценариото, ги создаваме клучните кадри, ги анимираме и додаваме глас, музика и титлови, па монтираме готов филм со вашиот бренд.",
@@ -677,6 +677,10 @@ i18n = {"mk": {k: v[0] for k, v in TX.items()}, "en": {k: v[1] for k, v in TX.it
 json.dump({k: list(v) for k, v in TX.items()}, open(f"{WORK}/tx_src.json", "w", encoding="utf-8"), ensure_ascii=False, indent=0)
 _X = json.load(open(f"{WORK}/i18n_extra.json", encoding="utf-8")) if os.path.exists(f"{WORK}/i18n_extra.json") else {}
 for _l in ("sq", "sr", "hr", "sl", "bg", "zh"): i18n[_l] = {k: _X.get(_l, {}).get(k) or v[1] for k, v in TX.items()}
+# per-market prices (owner 2026-11-27, prices_by_lang.json): each language shows its own country's prices, over the translations
+_P = json.load(open(f"{WORK}/prices_by_lang.json", encoding="utf-8")) if os.path.exists(f"{WORK}/prices_by_lang.json") else {}
+for _l, _kv in _P.items():
+    if _l in i18n: i18n[_l].update({k: v for k, v in _kv.items() if k in TX})
 open(f"{OUT}/i18n.js", "w", encoding="utf-8").write("window.BD_I18N=" + json.dumps(i18n, ensure_ascii=False, separators=(",", ":")) + ";\n")
 
 # fx layer: copy, with three small adaptations (re-read the HUD prompt per run so the language toggle reaches it,

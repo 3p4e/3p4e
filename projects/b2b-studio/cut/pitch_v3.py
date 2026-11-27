@@ -124,6 +124,11 @@ def build(key, out):
     old = open(f"{SCRP}/{key}/classic.html", encoding="utf-8").read() if key != "foton" else open(f"{out}/classic.html", encoding="utf-8").read() if os.path.exists(f"{out}/classic.html") else open(f"{out}/index.html", encoding="utf-8").read()
     import re
     offer = re.search(r'<section id="offer".*?</section>', old, re.S).group(0)
+    # price plan 2026-11-27 (outreach/PRICE_CHECK_2026-11.md): apartment staging €200–600 (5 for €1,200), 2 revision rounds
+    for _a, _b in (('€300–800', '€200–600'), ('€350–900', '€200–600'), ('Пакет од 5 станови: €1.500', 'Пакет од 5 станови: €1.200'),
+                   ('Paket od 5 stanova: €1.700', 'Paket od 5 stanova: €1.200'), ('Paketa prej 5 apartamentesh: €1.500', 'Paketa prej 5 apartamentesh: €1.200'),
+                   ('1 рунда корекции', '2 рунди корекции'), ('1 runda izmena', '2 runde izmena'), ('1 raund korrigjimesh', '2 raunde korrigjimesh')):
+        offer = offer.replace(_a, _b)
     # BD gallery and splash playlist (public files on bigdogma.tech)
     tl = lambda key, v: (v if c["lang"] == "mk" else (XL.get(c["lang"], {}).get(key, "BD · " + v[1])[5:], v[1]))
     live = lambda rel: os.path.exists(f"{SCR}/launch/site/{rel}.mp4")

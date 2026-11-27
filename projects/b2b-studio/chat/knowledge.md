@@ -28,12 +28,19 @@ Every film is generated with AI (no camera, no crew, no location) and carries an
 - Launch: €1,800–3,500  - Hero film, 45–60 seconds; 3 ad spots; 10 short clips for social media; Every format for the campaign
 - Monthly content: €400–900 per month - 6–8 new clips every month; Formats for Reels, TikTok and Stories; Minimum 3 months; A consistent visual style
 - excl. VAT
-- Prices in euro, excluding VAT. Delivery 7–10 days after key-frame approval · 1 round of revisions · usage rights for web, social media and screens (TV and paid campaigns by agreement) · every video is labelled as AI-generated.
+- Prices in euro, excluding VAT. Delivery 7–10 days after key-frame approval · 2 rounds of revisions · usage rights for web, social media and screens (TV and paid campaigns by agreement) · every video is labelled as AI-generated.
+
+## Prices by market (the same plans, local price levels; quote the visitor's market, ask if unsure)
+- North Macedonia, Albania, Kosovo, Bulgaria: pilot €600–900, launch €1.800–3.500, monthly €400–900 per month, developer package €1.500–4.000, apartment staging €200–600 per apartment
+- Serbia: pilot €700–1.000, launch €2.100–4.000, monthly €450–1.000 per month, developer package €1.700–4.600, apartment staging €200–600 per apartment
+- Croatia: pilot €800–1.200, launch €2.400–4.500, monthly €600–1.200 per month, developer package €2.000–5.200, apartment staging €200–600 per apartment
+- Slovenia: pilot €900–1.300, launch €2.800–5.000, monthly €700–1.400 per month, developer package €2.100–5.600, apartment staging €200–600 per apartment
+- Other countries / international: pilot €900–1,500, launch €3,500–6,000, monthly €900–1,800 per month, developer package €3,000–7,000, apartment staging €200–600 per apartment
 
 ## Ready-made packages
 Ready-made packages for the most common projects. Each one starts from your own photos, plans or renders.
 - Developer: €1,500–4,000 per project - Construction timelapse, from excavation to keys; Sales film for off-plan apartments; Formats for ads, social media and the sales office
-- Apartment staging: €300–800 per apartment - From an empty to a fully furnished apartment; From photos of your apartments; Bundle of 5 apartments: €1,500
+- Apartment staging: €200–600 per apartment - From an empty to a fully furnished apartment; From photos of your apartments; Bundle of 5 apartments: €1,200
 - Interiors and renovation: €300–1,000 per space - Before and after in one timelapse; From bare walls to a finished space; For interior studios, kitchens and bathrooms
 - Project timelapse: €500–2,000 per project - Solar plants, roads and gardens; Shop fit-outs and exhibition stands; Stage by stage, with your logo
 - Seasonal campaign: €2,500–6,000 per campaign - A family ad film; A film from your production; Seasonal spots for holidays and promotions

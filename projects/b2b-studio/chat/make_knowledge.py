@@ -5,6 +5,7 @@ import json, os, re, html
 S = "/tmp/claude-0/-home-user-3p4e/50442171-da10-52d9-9948-b5cc07f6bc8a/scratchpad"
 src = json.load(open(f"{S}/launch/site_work/tx_src.json", encoding="utf-8"))
 brand = json.load(open(f"{S}/brand/brand.json", encoding="utf-8"))
+P = json.load(open(f"{S}/launch/site_work/prices_by_lang.json", encoding="utf-8"))   # per-market prices (owner 2026-11-27)
 def en(k): return re.sub(r"<[^>]+>", "", html.unescape(src[k][1])).strip() if k in src else ""
 def block(title, keys): return f"## {title}\n" + "\n".join(f"- {en(k)}" for k in keys if en(k)) + "\n"
 out = ["# BIG DOGMA - studio facts for the chat assistant\n",
@@ -15,6 +16,9 @@ out = ["# BIG DOGMA - studio facts for the chat assistant\n",
        "## Prices (only these; every quote is confirmed by the team)\n" +
        "\n".join(f"- {en(f'p{i}.n')}: {en(f'p{i}.a')} {en(f'p{i}.per')} - " + "; ".join(en(f"p{i}.l{j}") for j in range(1, 5) if en(f"p{i}.l{j}")) for i in (1, 2, 3)) +
        f"\n- {en('price.vat')}\n- {en('price.terms')}\n",
+       "## Prices by market (the same plans, local price levels; quote the visitor's market, ask if unsure)\n" +
+       "\n".join(f"- {M}: pilot {P[l]['p1.a']}, launch {P[l]['p2.a']}, monthly {P[l]['p3.a']} per month, developer package {P[l]['b1.a']}, apartment staging {P[l]['b2.a']} per apartment"
+                 for l, M in (("mk", "North Macedonia, Albania, Kosovo, Bulgaria"), ("sr", "Serbia"), ("hr", "Croatia"), ("sl", "Slovenia"), ("en", "Other countries / international"))) + "\n",
        "## Ready-made packages\n" + en("bund.p") + "\n" +
        "\n".join(f"- {en(f'b{i}.n')}: {en(f'b{i}.a')} {en(f'b{i}.u')} - " + "; ".join(en(f"b{i}.l{j}") for j in range(1, 4) if en(f"b{i}.l{j}")) for i in range(1, 7) if en(f"b{i}.n")) + "\n",
        "## FAQ\n" + "\n".join(f"Q: {en(f'q{i}')}\nA: {en(f'a{i}')}" for i in range(1, 10) if en(f"q{i}")) + "\n",
