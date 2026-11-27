@@ -13,6 +13,12 @@ def esc(t): return t.replace("\\", "\\\\").replace("'", "’").replace(":", "\\:
 def card(f, W, H, d, out):
     v = H > W; cy = H // 2 - (60 if v else 40)
     t = f["line_mk"]; fs = 66 if v else 64; L = []; top = cy
+    maxw = (W - 80)                       # review 2026-11-27: long slogans were clipped at the frame edges: shrink to fit, then wrap
+    if len(t) * 0.55 * fs > maxw and not v:
+        fs = max(40, int(maxw / (0.55 * len(t))))
+        if len(t) * 0.55 * fs > maxw:   # still too wide: two lines at the space nearest the middle
+            sp = [i for i, ch in enumerate(t) if ch == " "]; k = min(sp, key=lambda i: abs(i - len(t) / 2)) if sp else len(t)
+            L.append((FH, t[:k], 48, "white", cy - 56, .15)); t = t[k + 1:]; fs = 48; top = cy - 56
     if v and len(t) > 15:   # vertical: wrap the slogan on two lines at the space nearest the middle
         sp = [i for i, ch in enumerate(t) if ch == " "]; k = min(sp, key=lambda i: abs(i - len(t) / 2)) if sp else len(t)
         L.append((FH, t[:k], 56, "white", cy - 70, .15)); t = t[k + 1:]; fs = 56; top = cy - 70

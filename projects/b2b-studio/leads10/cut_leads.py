@@ -27,7 +27,7 @@ for c in CFG["companies"]:
     if ONLY and c["key"] not in ONLY: continue
     for n, (fx, sub) in enumerate((("a", c["titles"][0]), ("b", c["titles"][2]))):
         FILMS[f"l_{c['key']}_{fx}"] = dict(title=sub, company=c["name"], lang=c["lang"], music=MUSIC[c["sector"]], voice="Charon" if n == 0 else "Orus",
-            clips=[f"{c['key']}_{3*n+k+1}" for k in range(3)], vo=[(k, c["vo"][3*n+k]) for k in range(3)])
+            clips=[f"{c['key']}_{3*n+k+1}" for k in range(3)], vo=[] if c["lang"] == "sq" else [(k, c["vo"][3*n+k]) for k in range(3)])   # Albanian TTS failed the speech check (2026-11-27): music only
 def run(a): subprocess.run(a, check=True)
 def dur(f): return float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", f], capture_output=True, text=True).stdout)
 ENC = ["-c:v", "libx264", "-preset", "medium", "-crf", "17", "-pix_fmt", "yuv420p"]
@@ -53,10 +53,12 @@ for fid, f in FILMS.items():
         silent = f"{T}/{fid}_{ar}_v.mp4"; run(["ffmpeg", "-v", "error", "-y"] + ins + ["-filter_complex", fc.rstrip(";"), "-map", last, "-an"] + ENC + [silent]); total = dur(silent)
         step = (total - 4) / len(f["clips"]); vin = []; vf2 = []
         for i, (k, line) in enumerate(f["vo"]): vin += ["-i", f"{OUT}/vo/{fid}_{i}.wav"]
-        am = "".join(f"[{i+2}:a]adelay={int((k*step+0.4)*1000)}|{int((k*step+0.4)*1000)},volume=1.6[v{i}];" for i, (k, line) in enumerate(f["vo"]))
-        vm = "".join(f"[v{i}]" for i in range(len(f["vo"])))
         fin = f"{OUT}/{fid}_{ar}.mp4"
-        run(["ffmpeg", "-v", "error", "-y", "-i", silent, "-i", f"{M}/{f['music']}.wav"] + vin + ["-filter_complex",
-             f"[1:a]atrim=0:{total},volume=0.45,afade=t=out:st={total-2}:d=2[m];{am}{vm}amix=inputs={len(f['vo'])}:normalize=0[vo];[m][vo]amix=inputs=2:normalize=0,loudnorm=I=-14:TP=-1.5[a]",
-             "-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-t", f"{total:.2f}", fin])
+        if f["vo"]:
+            am = "".join(f"[{i+2}:a]adelay={int((k*step+0.4)*1000)}|{int((k*step+0.4)*1000)},volume=1.6[v{i}];" for i, (k, line) in enumerate(f["vo"]))
+            vm = "".join(f"[v{i}]" for i in range(len(f["vo"])))
+            fc = f"[1:a]atrim=0:{total},volume=0.45,afade=t=out:st={total-2}:d=2[m];{am}{vm}amix=inputs={len(f['vo'])}:normalize=0[vo];[m][vo]amix=inputs=2:normalize=0,loudnorm=I=-14:TP=-1.5[a]"
+        else:
+            vin = []; fc = f"[1:a]atrim=0:{total},volume=0.8,afade=t=out:st={total-2}:d=2,loudnorm=I=-14:TP=-1.5[a]"
+        run(["ffmpeg", "-v", "error", "-y", "-i", silent, "-i", f"{M}/{f['music']}.wav"] + vin + ["-filter_complex", fc, "-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-t", f"{total:.2f}", fin])
         print(fid, ar, round(total, 1), "s", flush=True)
