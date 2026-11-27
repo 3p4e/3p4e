@@ -636,7 +636,7 @@ PAGE = f"""<!doctype html>
 <script src="i18n.js?v={{V}}"></script>
 <script src="dogma_logo.js?v={{V}}"></script><script src="mark.js?v={{V}}"></script><script src="fx.js?v={{V}}"></script><script src="reel.js?v={{V}}"></script><script src="vplay.js?v={{V}}"></script><script src="site.js?v={{V}}"></script>
 <script src="logo_fx/mark_data.js?v={{V}}"></script><script src="logo_fx/logo_fx.js?v={{V}}"></script><script src="logo_fx/hdr/list.js?v={{V}}"></script><script src="logo_fx/reel_bb.js?v={{V}}"></script><script src="logo_fx/hdr.js?v={{V}}"></script>
-<script>window.DOGMA_HERO={HERO_JSON};</script><script src="logo_fx/hero_bg.js?v={{V}}"></script>
+<script>window.DOGMA_HERO={HERO_JSON};</script><script src="logo_fx/hero_bg.js?v={{V}}"></script><script src="chat.js?v={{V}}" defer></script>
 </body>
 </html>
 """
@@ -710,6 +710,7 @@ shutil.rmtree(f"{OUT}/logo_fx/hdr", ignore_errors=True); shutil.copytree(f"{WORK
 shutil.copy(f"{S}/brand/fonts/RussoOne-400.ttf", f"{OUT}/russo.ttf")
 for f in ("manrope-cyr.woff2", "manrope-lat.woff2", "manrope-latx.woff2"): shutil.copy(f"{WORK}/fonts/{f}", f"{OUT}/{f}")
 for f in ("site.css", "site.js", "reel.js", "vplay.js", "robots.txt", "404.html"): shutil.copy(f"{WORK}/{f}", f"{OUT}/{f}")
+shutil.copy("/home/user/3p4e/projects/b2b-studio/chat/chat.js", f"{OUT}/chat.js")   # chat avatar widget (chat/chat.py serves /api/chat)
 os.makedirs(f"{OUT}/vendor", exist_ok=True)   # hls.js for adaptive streaming (Apache-2.0)
 for f in ("hls.light.min.js", "README.txt"): shutil.copy(f"{WORK}/vendor/{f}", f"{OUT}/vendor/{f}")
 os.makedirs(f"{OUT}/media", exist_ok=True); shutil.copy(f"{WORK}/h3_mark.png", f"{OUT}/media/h3_mark.png")   # the MiniMax H3 mark for H3 thumbnails (site + pitch pages)
