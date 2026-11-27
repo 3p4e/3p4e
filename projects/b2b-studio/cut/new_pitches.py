@@ -76,7 +76,7 @@ def thumb(src, dst):
     d.polygon([(cx - r * 0.3, cy - r * 0.5), (cx - r * 0.3, cy + r * 0.5), (cx + r * 0.55, cy)], fill=(17, 17, 17, 255)); im.save(dst, quality=88)
 
 def main(key):
-    c = CO[key]; FIN = {"autonesi": "/dev/shm/vall/an/final", "drugitir": "/dev/shm/vall/dt/final"}.get(key, "/dev/shm/vall/cn/final")
+    c = CO[key]; FIN = os.environ.get("PITCH_FIN") or {"autonesi": "/dev/shm/vall/an/final", "drugitir": "/dev/shm/vall/dt/final"}.get(key, "/dev/shm/vall/cn/final")
     tokf = f"{S}/cut/page_tokens_new.json"; T = json.load(open(tokf)) if os.path.exists(tokf) else {}
     tok = T.setdefault(key, secrets.token_urlsafe(12)); json.dump(T, open(tokf, "w"))
     pub = f"/dev/shm/pub/{tok}"; shutil.rmtree(pub, ignore_errors=True); os.makedirs(f"{pub}/email")
@@ -96,10 +96,10 @@ def main(key):
     PV.build(key, pub)
     # email
     page = f"https://pitch.bigdogma.tech/{tok}/"
-    x = dict(en=dict(pre="Two short AI films made only for {n}, with no shoot. Private page, 2 minutes."), mk=dict(pre="Три кратки AI филма направени само за {n}, без снимање. Приватна страница, 2 минути."), sl=dict(pre="Dva kratka AI-filma, narejena samo za {n}, brez snemanja. Zasebna stran, 2 minuti."))[c["lang"]]
+    x = dict(en=dict(pre="Two short AI films made only for {n}, with no shoot. Private page, 2 minutes."), mk=dict(pre="Три кратки AI филма направени само за {n}, без снимање. Приватна страница, 2 минути."), sl=dict(pre="Dva kratka AI-filma, narejena samo za {n}, brez snemanja. Zasebna stran, 2 minuti.")).get(c["lang"], dict(pre=""))
     src_of = {fid: src for fid, src, _, _ in c["films"]}
     items = [dict(title=f["t"], meta=f'{c["dur"][src_of[f["id"]]]} {c["sec"]} · {c["voice"]}', img=f"{page}email/{f['id']}.jpg", href=page + "#films") for f in films]
-    content = dict(lang=c["lang"], subject=c["subject"], preheader=x["pre"].format(n=c["name"]), greeting=c["greeting"], paras=c["paras"], films=items, cta=dict(label=c["cta"], href=page), note=c["note"],
+    content = dict(lang=c["lang"], subject=c["subject"], preheader=(c.get("pre") or x["pre"]).format(n=c["name"]), greeting=c["greeting"], paras=c["paras"], films=items, cta=dict(label=c["cta"], href=page), note=c["note"],
                    sign=dict(name="Blagoj N.", role=c["role"]), closing=c["closing"], optout=c["optout"], video_word=c["vw"])
     h, t = M.render(content)
     for ext, body in (("html", h), ("txt", t)): open(f"/tmp/claude-0/-home-user-3p4e/50442171-da10-52d9-9948-b5cc07f6bc8a/scratchpad/email_new/email_{key}.{ext}", "w", encoding="utf-8").write(body)
