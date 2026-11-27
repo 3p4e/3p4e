@@ -36,9 +36,9 @@ T = {"mk": dict(
   close="Затвори", subj="{c} - Закажи 15 минути", dl_e="Преземање", dl_h="Понуда за преземање",
   dl_p="Деталната понуда во PDF. Филмовите ги гледате на оваа страница.", dl_pdf="Понуда (PDF)", dl_zip="Сите филмови (ZIP, {s} MB)", b_f1="Лого филм", b_x1="Лого ефект", days=["Пон", "Вто", "Сре", "Чет", "Пет", "Саб", "Нед"], more="Повеќе на",
   ind_types={"social": "9:16", "explainer": "Објаснувачки", "story": "Приказна", "transform": "Пред / потоа", "commercial": "Реклама"}, ai_film="AI филм")}
-for _l in ("sr", "sq"): T[_l] = json.load(open(f"{HERE}/pitch_v3_data/strings_{_l}.json", encoding="utf-8"))   # written by hand 2026-11-26
+for _l in ("sr", "sq", "sl"): T[_l] = json.load(open(f"{HERE}/pitch_v3_data/strings_{_l}.json", encoding="utf-8"))   # written by hand 2026-11-26
 # H3 section strings (geo-gated, see cut/h3_geo)
-H3S = {"mk": {"h3_e": "Made with MiniMax H3", "h3_h": "Уште филмови за {c}", "h3_p": "Дополнителни AI филмови направени со моделот MiniMax H3, хоризонтално и вертикално. Се прикажуваат само во региони каде што лиценцата на моделот го дозволува тоа.", "h3_ad": "Реклама", "h3_film": "Филм", "h3_lbl": "AI · Made with MiniMax H3"}, "sr": {"h3_e": "Made with MiniMax H3", "h3_h": "Još filmova za {c}", "h3_p": "Dodatni AI filmovi napravljeni modelom MiniMax H3, horizontalno i vertikalno. Prikazuju se samo u regionima u kojima licenca modela to dozvoljava.", "h3_ad": "Reklama", "h3_film": "Film", "h3_lbl": "AI · Made with MiniMax H3"}, "sq": {"h3_e": "Made with MiniMax H3", "h3_h": "Më shumë filma për {c}", "h3_p": "Filma shtesë AI të krijuar me modelin MiniMax H3, horizontalisht dhe vertikalisht. Shfaqen vetëm në rajonet ku licenca e modelit e lejon.", "h3_ad": "Reklamë", "h3_film": "Film", "h3_lbl": "AI · Made with MiniMax H3"}}
+H3S = {"mk": {"h3_e": "Made with MiniMax H3", "h3_h": "Уште филмови за {c}", "h3_p": "Дополнителни AI филмови направени со моделот MiniMax H3, хоризонтално и вертикално. Се прикажуваат само во региони каде што лиценцата на моделот го дозволува тоа.", "h3_ad": "Реклама", "h3_film": "Филм", "h3_lbl": "AI · Made with MiniMax H3"}, "sr": {"h3_e": "Made with MiniMax H3", "h3_h": "Još filmova za {c}", "h3_p": "Dodatni AI filmovi napravljeni modelom MiniMax H3, horizontalno i vertikalno. Prikazuju se samo u regionima u kojima licenca modela to dozvoljava.", "h3_ad": "Reklama", "h3_film": "Film", "h3_lbl": "AI · Made with MiniMax H3"}, "sl": {"h3_e": "Made with MiniMax H3", "h3_h": "Še filmi za {c}", "h3_p": "", "h3_ad": "Oglas", "h3_film": "Film", "h3_lbl": "AI · Made with MiniMax H3"}, "sq": {"h3_e": "Made with MiniMax H3", "h3_h": "Më shumë filma për {c}", "h3_p": "Filma shtesë AI të krijuar me modelin MiniMax H3, horizontalisht dhe vertikalisht. Shfaqen vetëm në rajonet ku licenca e modelit e lejon.", "h3_ad": "Reklamë", "h3_film": "Film", "h3_lbl": "AI · Made with MiniMax H3"}}
 for _l in H3S: T[_l].update(H3S[_l])
 XL = json.load(open(f"{P}/launch/site_work/i18n_extra.json", encoding="utf-8"))   # site translations (BD and industry film titles)
 
@@ -159,9 +159,11 @@ def build(key, out):
     bdc = "".join(f'<li class="fc" data-k="{k}"><a href="{u}.mp4" data-play="{u}.mp4" data-t="BD · {E(m)}" data-p="{u}.jpg"><span class="im"><img src="{u}.jpg" alt="" loading="lazy"><span class="ct">{s["b_f1"] if k == "f" else s["b_x1"]}</span><span class="pl"></span></span><span class="tx"><b>BD · {E(m)}</b></span></a></li>' for u, (m, e), k in bd)
     stills_sec = (f'<section><div class="wrap"><div class="eyebrow rv">{E(s["a_e"])}</div><h2 class="sh rv">{E(s["a_h"])}</h2><p class="sp rv">{E(s["a_p"])}</p><ul class="stills">{stills}</ul></div></section>') if c["stills"] else ""
     mont = '<div class="mont rv"><video controls muted playsinline controlslist="nodownload" disablepictureinpicture preload="none" poster="x/m.jpg"><source src="x/m.mp4" type="video/mp4"></video></div>' if c["shots"] else ""
+    SHOTSKEYS_OPEN, SHOTSKEYS_CLOSE = ("", "") if c["shots"] else ("<!--", "-->")   # companies without AI shots: no shots / key-frame sections
     mailto = f"mailto:{MAIL}?subject=" + urllib.parse.quote(s["subj"].format(c=c["name"]))
     pts = "".join(f"<li>{E(x.format(n=n_f))}</li>" for x in s["pts"])
-    navl = "".join(f'<a href="#{a}">{E(b)}</a>' for a, b in s["nav"])
+    _nav = [x for x in s['nav'] if x[0] != 'shots' or c['shots']]
+    navl = "".join(f'<a href="#{a}">{E(b)}</a>' for a, b in _nav)
     page = f'''<!doctype html><html lang="{c["lang"]}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow"><title>BIG DOGMA × {name}</title><link rel="icon" href="icon.png">
 <style>
@@ -253,10 +255,10 @@ dialog .x{{position:absolute;right:0;top:-44px;background:none;border:0;color:#f
 {f'<div class="fmt rv" role="group"><button type="button" data-fmt="h" aria-pressed="true">{s["h169"]}</button><button type="button" data-fmt="v" aria-pressed="false">{s["v916"]}</button></div>' if has_v else ""}
 <ul class="grid" id="fg">{films}</ul></div></section>
 {f'<section class="alt"><div class="wrap"><div class="eyebrow rv">{E(s["v_e"])}</div><h2 class="sh rv">{E(s["v_h"])}</h2><p class="sp rv">{E(s["v_p"])}</p><ul class="vrow">{vert}</ul></div></section>' if has_v else ""}
-<section id="shots"><div class="wrap"><div class="eyebrow rv">{E(s["s_e"])}</div><h2 class="sh rv">{E(s["s_h"])}</h2><p class="sp rv">{E(s["s_p"].format(n=len(SHOTS), c=c["name"]))}</p>
+{SHOTSKEYS_OPEN}<section id="shots"><div class="wrap"><div class="eyebrow rv">{E(s["s_e"])}</div><h2 class="sh rv">{E(s["s_h"])}</h2><p class="sp rv">{E(s["s_p"].format(n=len(SHOTS), c=c["name"]))}</p>
 {mont}<ul class="shots">{shots}</ul></div></section>
 <section class="alt"><div class="wrap"><div class="eyebrow rv">{E(s["k_e"])}</div><h2 class="sh rv">{E(s["k_h"])}</h2><p class="sp rv">{E(s["k_p"])}</p><ul class="cmps">{pairs}</ul></div></section>
-{stills_sec}
+{SHOTSKEYS_CLOSE}{stills_sec}
 <section id="campaign" class="alt"><div class="wrap"><div class="eyebrow rv">{E(s["c_e"])}</div><h2 class="sh rv">{E(s["c_h"])}</h2><p class="sp rv">{E(s["c_p"])}</p>{campaign(c, s)}</div></section>
 {offer.replace('<section id="offer"', '<section id="offer" ')}
 <section id="dl" class="alt"><div class="wrap"><div class="eyebrow rv">{E(s["dl_e"])}</div><h2 class="sh rv">{E(s["dl_h"])}</h2><p class="sp rv">{E(s["dl_p"])}</p>
