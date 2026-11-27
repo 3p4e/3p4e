@@ -262,7 +262,7 @@ dialog .x{{position:absolute;right:0;top:-44px;background:none;border:0;color:#f
 <footer><div class="wrap">{E(s["legal"])}<br>© 2026 BIG DOGMA · AI STUDIO | MK · <a href="{SITE}">bigdogma.tech</a> · <a href="classic.html">classic</a></div></footer>
 <dialog id="lb"><button class="x" type="button" aria-label="{E(s["close"])}">×</button><video controls playsinline controlslist="nodownload noplaybackrate" disablepictureinpicture></video><p></p></dialog>
 <script>window.H3V=false;window.H3T={json.dumps({"ad": s["h3_ad"], "film": s["h3_film"], "ai": s["ai_film"], "mark": SITE + "/media/h3_mark.png"}, ensure_ascii=False)};</script>
-<script>window.DOGMA_HDR_BASE="{SITE}/logo_fx/hdr/";window.DOGMA_INTRO={json.dumps(intro)};window.DOGMA_HERO={{intro:window.DOGMA_INTRO}};window.BDBG_WAIT=true;</script><script src="{SITE}/logo_fx/hero_bg.js"></script>
+<script src="{SITE}/vplay.js"></script><script>window.DOGMA_HDR_BASE="{SITE}/logo_fx/hdr/";window.DOGMA_INTRO={json.dumps(intro)};(function(){{var c=navigator.connection||{{}};if(innerWidth<760||/(^|-)2g|3g/.test(c.effectiveType||""))window.DOGMA_INTRO=window.DOGMA_INTRO.map(function(u){{return u.replace("/lite/intro/","/lite480/intro/")}})}})();window.DOGMA_HERO={{intro:window.DOGMA_INTRO}};window.BDBG_WAIT=true;</script><script src="{SITE}/logo_fx/hero_bg.js"></script>
 <script src="{SITE}/logo_fx/mark_data.js"></script><script src="{SITE}/logo_fx/logo_fx.js"></script><script src="{SITE}/logo_fx/hdr/list.js"></script><script src="{SITE}/logo_fx/hdr.js"></script>
 <script>
 (function(){{
@@ -304,8 +304,8 @@ fetch('h3/',{{cache:'no-store'}}).then(function(r){{return r.ok?r.json():[]}}).t
 var nav=$('.nav');addEventListener('scroll',function(){{nav.classList.toggle('s',scrollY>40)}},{{passive:true}});
 /* lightbox */
 var lb=$('#lb'),lv=$('video',lb),lt=$('p',lb),fmt='h';
-function open(src,t,p){{if(typeof lb.showModal!=='function'){{location.href=src;return}}lv.poster=p||'';lv.src=src;lt.textContent=t||'';lb.showModal();lv.play().catch(function(){{}})}}
-lb.addEventListener('close',function(){{lv.pause();lv.removeAttribute('src');lv.load()}});$('.x',lb).onclick=function(){{lb.close()}};lb.addEventListener('click',function(e){{if(e.target===lb)lb.close()}});
+function open(src,t,p){{if(typeof lb.showModal!=='function'){{location.href=src;return}}lv.poster=p||'';lt.textContent=t||'';lb.showModal();if(window.BDV)BDV.attach(lv,src,true);else{{lv.src=src;lv.play().catch(function(){{}})}}}}
+lb.addEventListener('close',function(){{lv.pause();if(window.BDV)BDV.detach(lv);lv.removeAttribute('src');lv.load()}});$('.x',lb).onclick=function(){{lb.close()}};lb.addEventListener('click',function(e){{if(e.target===lb)lb.close()}});
 document.addEventListener('click',function(e){{var a=e.target.closest&&e.target.closest('[data-play]');if(!a)return;e.preventDefault();
  var src=a.dataset.play,p=a.dataset.p;if(fmt==='v'&&a.dataset.v){{src=a.dataset.v;p=a.dataset.vp}}open(src,a.dataset.t,p)}});
 $$('.fmt button').forEach(function(x){{x.onclick=function(){{fmt=x.dataset.fmt;$$('.fmt button').forEach(function(y){{y.setAttribute('aria-pressed',String(y===x))}});

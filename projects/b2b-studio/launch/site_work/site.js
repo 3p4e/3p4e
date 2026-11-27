@@ -32,7 +32,7 @@
   // only (reel.js). No logo-effect animations and no screensaver (owner: "discontinue the screensaver"); the logo films play behind the whole
   // page instead (logo_fx/hero_bg.js).
   if (window.BDReel) {
-    const reelList = () => FILMS.filter(f => /^bd_/.test(f.id)).map(f => f.src.replace(/\?.*$/, '')).map(u => ({ src: u.replace('media/intro/', 'media/lite/intro/'), poster: u.replace(/\.mp4$/, '.jpg') }));   // light copies (the gallery keeps full quality)
+    const reelList = () => FILMS.filter(f => /^bd_/.test(f.id)).map(f => f.src.replace(/\?.*$/, '')).map(u => ({ src: u.replace('media/intro/', (innerWidth < 760 || /(^|-)2g|3g/.test((navigator.connection || {}).effectiveType || '')) ? 'media/lite480/intro/' : 'media/lite/intro/'), poster: u.replace(/\.mp4$/, '.jpg') }));   // light copies (the gallery keeps full quality)
     const H = document.documentElement;
     const whenReady = f => document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', f) : setTimeout(f, 0);
     if (H.classList.contains('reel1')) whenReady(() => {   // after every script (mark geometry, effect boxes) and the initial language
@@ -85,8 +85,9 @@
   function show(i) {
     cur = i; const id = ids[i];
     ttl.textContent = t(id + '.t'); ttl.dataset.i = id + '.t'; line.textContent = t(id + '.l'); line.dataset.i = id + '.l';
-    v.poster = FILMS[i].poster; v.src = FILMS[i].src; setTracks();
-    const p = v.play(); if (p && p.catch) p.catch(() => {});
+    v.poster = FILMS[i].poster;   // adaptive streaming (vplay.js) when the film has an HLS copy, else the 720p MP4
+    if (window.BDV) BDV.attach(v, FILMS[i].src, true); else { v.src = FILMS[i].src; const p = v.play(); if (p && p.catch) p.catch(() => {}); }
+    setTracks();
   }
   function openFilm(id, from) {
     opener = from || null; const i = ids.indexOf(id); if (i < 0) return;
@@ -94,7 +95,7 @@
     document.body.classList.add('lb-open'); show(i); $('.x', lb).focus({ preventScroll: true });
   }
   function closeFilm() { if (lb.open) lb.close(); }
-  lb.addEventListener('close', () => { v.pause(); v.removeAttribute('src'); $$('track', v).forEach(tr => tr.remove()); v.load(); cur = -1; document.body.classList.remove('lb-open'); if (opener) opener.focus({ preventScroll: true }); });
+  lb.addEventListener('close', () => { v.pause(); if (window.BDV) BDV.detach(v); v.removeAttribute('src'); $$('track', v).forEach(tr => tr.remove()); v.load(); cur = -1; document.body.classList.remove('lb-open'); if (opener) opener.focus({ preventScroll: true }); });
   lb.addEventListener('click', e => { if (e.target === lb || e.target.closest('[data-close]')) closeFilm(); });
   $$('.pn button', lb).forEach(b => b.addEventListener('click', () => step(+b.dataset.step)));
   function step(d) { const vis = visible(); if (!vis.length) return; let k = vis.indexOf(ids[cur]); k = (k + d + vis.length) % vis.length; show(ids.indexOf(vis[k])); }
@@ -125,6 +126,8 @@
     });
   }).catch(() => {});
 
+  // the other players (showreel, how-to film) switch to adaptive streaming on their first play
+  if (window.BDV) $$('video[controls]').forEach(x => { if (!x.closest('#lb')) BDV.lazy(x); });
   // only one video with sound at a time
   document.addEventListener('play', e => { $$('video').forEach(x => { if (x !== e.target && !x.muted && !x.paused) x.pause(); }); }, true);
 

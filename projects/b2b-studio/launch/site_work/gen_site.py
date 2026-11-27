@@ -634,7 +634,7 @@ PAGE = f"""<!doctype html>
 
 <script>window.BD_FILMS={FILM_JSON};window.BD_CONTACT={CT_JS};</script>
 <script src="i18n.js?v={{V}}"></script>
-<script src="dogma_logo.js?v={{V}}"></script><script src="mark.js?v={{V}}"></script><script src="fx.js?v={{V}}"></script><script src="reel.js?v={{V}}"></script><script src="site.js?v={{V}}"></script>
+<script src="dogma_logo.js?v={{V}}"></script><script src="mark.js?v={{V}}"></script><script src="fx.js?v={{V}}"></script><script src="reel.js?v={{V}}"></script><script src="vplay.js?v={{V}}"></script><script src="site.js?v={{V}}"></script>
 <script src="logo_fx/mark_data.js?v={{V}}"></script><script src="logo_fx/logo_fx.js?v={{V}}"></script><script src="logo_fx/hdr/list.js?v={{V}}"></script><script src="logo_fx/reel_bb.js?v={{V}}"></script><script src="logo_fx/hdr.js?v={{V}}"></script>
 <script>window.DOGMA_HERO={HERO_JSON};</script><script src="logo_fx/hero_bg.js?v={{V}}"></script>
 </body>
@@ -692,7 +692,7 @@ b1 = ("st = hp.querySelector('.st'); let tok = 0, tm = 0;\n"
 a4 = "let L = null; fontReady.then(() => { L = logo(cv, { lite: innerWidth < 800, transparent: true }); L.play(0); setTimeout(hide, 4700); });"
 b4 = "let L = null; fontReady.then(() => { setTimeout(hide, 4700); try { L = logo(cv, { lite: innerWidth < 800, transparent: true }); L.play(0); } catch (e) { hide(); } });"
 a5 = "setTimeout(() => { L && L.stop(); pre.remove(); }, 1000); };"; b5 = "setTimeout(() => { try { L && L.stop(); } catch (e) {} pre.remove(); }, 1000); };"
-a2 = "v.src = b.dataset.src;"; b2 = "if (b.dataset.poster) v.poster = b.dataset.poster; v.src = b.dataset.src;"
+a2 = "v.src = b.dataset.src;"; b2 = "if (b.dataset.poster) v.poster = b.dataset.poster; if (window.BDV) BDV.attach(v, b.dataset.src, true); else v.src = b.dataset.src;"
 a3 = "const nav = $('nav');"; b3 = "const nav = $('.nav');"
 # reveal: .rv is hidden only under html.rvjs, set here once the IntersectionObserver exists, so a failed fx.js leaves everything visible
 a6 = "$$('.rv,[data-to],video[data-src],[data-type]').forEach(el => io.observe(el));"; b6 = "document.documentElement.classList.add('rvjs');\n  " + a6
@@ -709,7 +709,9 @@ for f in ("mark_data.js", "logo_fx.js", "skins.js", "hdr.js", "hero_bg.js", "ree
 shutil.rmtree(f"{OUT}/logo_fx/hdr", ignore_errors=True); shutil.copytree(f"{WORK}/logo_fx/hdr", f"{OUT}/logo_fx/hdr")
 shutil.copy(f"{S}/brand/fonts/RussoOne-400.ttf", f"{OUT}/russo.ttf")
 for f in ("manrope-cyr.woff2", "manrope-lat.woff2", "manrope-latx.woff2"): shutil.copy(f"{WORK}/fonts/{f}", f"{OUT}/{f}")
-for f in ("site.css", "site.js", "reel.js", "robots.txt", "404.html"): shutil.copy(f"{WORK}/{f}", f"{OUT}/{f}")
+for f in ("site.css", "site.js", "reel.js", "vplay.js", "robots.txt", "404.html"): shutil.copy(f"{WORK}/{f}", f"{OUT}/{f}")
+os.makedirs(f"{OUT}/vendor", exist_ok=True)   # hls.js for adaptive streaming (Apache-2.0)
+for f in ("hls.light.min.js", "README.txt"): shutil.copy(f"{WORK}/vendor/{f}", f"{OUT}/vendor/{f}")
 os.makedirs(f"{OUT}/media", exist_ok=True); shutil.copy(f"{WORK}/h3_mark.png", f"{OUT}/media/h3_mark.png")   # the MiniMax H3 mark for H3 thumbnails (site + pitch pages)
 import datetime
 open(f"{OUT}/sitemap.xml", "w").write(f'''<?xml version="1.0" encoding="UTF-8"?>
