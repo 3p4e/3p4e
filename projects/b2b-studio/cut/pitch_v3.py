@@ -19,7 +19,7 @@ T = {"mk": dict(
   f_p_nv="Филмовите се во 16:9 за YouTube, веб и екрани.", enter="Отворете ја презентацијата",
   scroll="Сите кадри на оваа страница се генерирани со AI.",
   nav=[("films", "Филмови"), ("shots", "Кадри"), ("campaign", "Распоред"), ("offer", "Понуда"), ("dl", "Преземање"), ("bd", "BD галерија")], cta="Закажи 15 минути",
-  h1="Концепт-видео за <em>{c}</em>", sub="Сè на оваа страница е направено со AI специјално за вас: филмови, кадри, клучни кадри и предлог-распоред за објава.",
+  sub_ns="Сè на оваа страница е направено со AI специјално за вас: филмови и предлог-распоред за објава.", h1="Концепт-видео за <em>{c}</em>", sub="Сè на оваа страница е направено со AI специјално за вас: филмови, кадри, клучни кадри и предлог-распоред за објава.",
   f_e="Филмови", f_h="{n} филмови за {c}", f_p="Филмовите се во 16:9 (YouTube, веб, екрани). Со копчето 9:16 ги гледате вертикалните верзии: секој кадар е генериран одново за телефон, не исечен од хоризонталниот филм.",
   h169="16:9", v916="9:16", play="Пушти",
   v_e="9:16 за Reels, TikTok и Stories", v_h="Генерирано за телефон", v_p="Секој кадар е генериран одново во вертикален формат: главниот мотив е блиску и го полни екранот, а текстовите стојат над копчињата на апликациите. Истиот глас и музика.", gif="Тизер · GIF",
@@ -250,7 +250,7 @@ dialog .x{{position:absolute;right:0;top:-44px;background:none;border:0;color:#f
 <canvas id="burst" aria-hidden="true"></canvas>
 <main id="top">
 <header class="hero"><video autoplay muted loop playsinline poster="hero.jpg"><source src="hero.mp4" type="video/mp4"></video>
-<div class="wrap"><h1>{s["h1"].format(c=name)}</h1><p>{E(s["sub"])}</p><div class="btns"><a class="btn a" href="#films">{E(s["f_e"])}</a><a class="btn b" href="#campaign">{E(s["c_e"])}</a></div></div></header>
+<div class="wrap"><h1>{s["h1"].format(c=name)}</h1><p>{E(s["sub_ns"] if (not c["shots"] and "sub_ns" in s) else s["sub"])}</p><div class="btns"><a class="btn a" href="#films">{E(s["f_e"])}</a><a class="btn b" href="#campaign">{E(s["c_e"])}</a></div></div></header>
 <section id="films"><div class="wrap"><div class="eyebrow rv">{E(s["f_e"])}</div><h2 class="sh rv">{E(s["f_h"].format(n=n_f, c=c["name"]))}</h2><p class="sp rv">{E(s["f_p"])}</p>
 {f'<div class="fmt rv" role="group"><button type="button" data-fmt="h" aria-pressed="true">{s["h169"]}</button><button type="button" data-fmt="v" aria-pressed="false">{s["v916"]}</button></div>' if has_v else ""}
 <ul class="grid" id="fg">{films}</ul></div></section>
