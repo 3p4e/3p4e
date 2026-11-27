@@ -59,7 +59,8 @@ def hero():
     print("hero", dur(f"{OUT}/media/hero.mp4"), flush=True)
 
 def showreel():
-    src = f"{S}/launch/video/bigdogma_showreel_16x9.mp4"; src9 = f"{S}/launch/video/bigdogma_showreel_9x16.mp4"
+    v = "_v2" if os.path.exists(f"{S}/launch/video/bigdogma_showreel_v2_16x9.mp4") else ""   # v2: re-cut from the category films v2 (showreel2.py)
+    src = f"{S}/launch/video/bigdogma_showreel{v}_16x9.mp4"; src9 = f"{S}/launch/video/bigdogma_showreel{v}_9x16.mp4"
     run(FF + av(src, "showreel") + ["-vf", "scale=1280:-2", "-crf", "25"] + X264 + AAC + ["-shortest", f"{OUT}/media/showreel.mp4"])
     run(FF + ["-ss", "1.6", "-i", src, "-frames:v", "1", "-vf", "scale=1280:-2", "-q:v", "3", f"{OUT}/media/showreel.jpg"])
     if os.path.exists(src9):
