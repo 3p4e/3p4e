@@ -1,0 +1,21 @@
+name: bigdogma-site
+services:
+  web:
+    image: nginx:alpine
+    container_name: bigdogma-site
+    restart: unless-stopped
+    volumes:
+      - /opt/stacks/bigdogma-site/site:/usr/share/nginx/html:ro
+      - /opt/stacks/bigdogma-site/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    mem_limit: 128m
+    pids_limit: 64
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.bigdogma-site.rule=Host(`bigdogma.tech`) || Host(`www.bigdogma.tech`)
+      - traefik.http.routers.bigdogma-site.entrypoints=websecure
+      - traefik.http.routers.bigdogma-site.tls.certresolver=letsencrypt
+      - traefik.http.routers.bigdogma-site.middlewares=bd-www
+      - traefik.http.middlewares.bd-www.redirectregex.regex=^https://www\.bigdogma\.tech/(.*)
+      - traefik.http.middlewares.bd-www.redirectregex.replacement=https://bigdogma.tech/$${1}
+      - traefik.http.middlewares.bd-www.redirectregex.permanent=true
+      - traefik.http.services.bigdogma-site.loadbalancer.server.port=80

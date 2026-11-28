@@ -1,0 +1,230 @@
+{
+ "key": "it",
+ "mk": "ИТ и технологија",
+ "en": "IT and technology",
+ "films": [
+  {
+   "type": "story",
+   "title_mk": "Код и Иднина",
+   "title_en": "Code and Future",
+   "line_mk": "Ние ја градиме утрешнината.",
+   "line_en": "We build tomorrow.",
+   "desc_en": "A cinematic exploration of the quiet, focused moments behind Skopje's thriving software development scene.",
+   "music": "Soft ambient piano with deep cello swells, cinematic, 60 bpm",
+   "voice": "female, warm inspiring soft",
+   "vo_mk": [
+    "Тивка ноќ во Скопје, каде идеите се раѓаат.",
+    "Секоја линија код е нов почеток.",
+    "Ние ја градиме иднината."
+   ],
+   "shots": [
+    {
+     "kf": "Wide shot of the Skopje city skyline at dawn, with the silhouette of Mount Vodno in the distant background. Thick morning mist rolls gently over the Vardar river. Soft blue and warm orange morning light illuminates the mix of brutalist and modern architecture. Premium cinematic 35mm lens, atmospheric, highly detailed, photorealistic.",
+     "motion": "Slow pan right across the cityscape, while the thick morning mist rolls gently above the river surface."
+    },
+    {
+     "kf": "Over-the-shoulder shot of a silhouette of a person standing by a large glass window in a modern office, looking out at the waking city. Soft interior warm lighting contrasts with the cool blue hour outside. Shot on a 50mm lens, shallow depth of field, premium cinematic lighting, highly detailed, photorealistic.",
+     "motion": "Slow push-in toward the person's silhouette, with subtle light reflections shifting slowly on the glass surface."
+    },
+    {
+     "kf": "Close-up of a steaming ceramic coffee mug resting on a clean wooden desk. In the beautifully blurred background, glowing monitor screens cast a soft blue and green light across the room. High-end commercial lighting, 85mm macro lens, rich colors, deep shadows, cinematic atmosphere, highly detailed, perfectly photorealistic.",
+     "motion": "Steam rises gently and naturally from the coffee cup, while the camera executes a slow, smooth slide to the left."
+    },
+    {
+     "kf": "Medium shot of a sleek server rack inside a clean, modern data room. Glowing blue and teal indicator lights blink rhythmically in the shadows. Cold, precise studio lighting, 24mm lens, perfect geometric and symmetrical composition, conveying stability and power, highly detailed textures, completely photorealistic.",
+     "motion": "Slow tilt up the server rack, as the indicator lights softly glow and shift intensity in a rhythmic pattern."
+    },
+    {
+     "kf": "Wide shot of an empty modern lounge area in a Skopje tech hub. Sleek minimalist furniture, a large green potted plant, and warm morning sunlight streaming through massive floor-to-ceiling windows. 24mm lens, architectural photography style, clean lines, serene atmosphere, high dynamic range, highly detailed, photorealistic.",
+     "motion": "Sunbeams slowly move across the wooden floor, while the camera executes a slow dolly back through the empty room."
+    },
+    {
+     "kf": "Medium shot of an abstract glowing optical fiber bundle in a completely dark room. Warm gold and bright blue lights are traveling through the thick clear cables. Macro lens, deep shadows, high contrast, cinematic corporate aesthetic, conveying data and connectivity, highly detailed, photorealistic.",
+     "motion": "Slow rotation around the fiber cables, with the golden and blue light pulsing gently and traveling inside them."
+    }
+   ],
+   "id": "cf_it_1_story",
+   "cat": "it"
+  },
+  {
+   "type": "social",
+   "title_mk": "Новиот тимски спринт",
+   "title_en": "Your Next Team Sprint",
+   "line_mk": "Кодирај со нас.",
+   "line_en": "Code with us.",
+   "desc_en": "Vertical recruitment spot set in Skopje’s Old Bazaar at night: one recurring hero developer walks from the cobblestone street into a small studio corner and turns a messy bug into a working app demo. Same hoodie, same backpack, same laptop across shots; no logos, no readable text, no signage.",
+   "music": "Tight modern electronic beat with warm Balkan percussion accents, 124 bpm, minimal and driving",
+   "voice": "male, calm confident, conversational, modern",
+   "vo_mk": [
+    "Скопје, доцна. Идеја што не чека.",
+    "Еден баг. Еден фокус. Пет минути.",
+    "Кога ќе проработи — славиме заедно.",
+    "Кодирај со нас."
+   ],
+   "shots": [
+    {
+     "kf": "Vertical 9:16, Skopje Old Bazaar cobblestone lane at night, signage-free stone walls and warm street lamps, wet pavement reflections. One hero: Macedonian male, 28, short dark hair, light stubble, same olive hoodie and dark jeans, carrying a black backpack and closed laptop under arm. Medium-wide 28mm, eye-level, photorealistic, warm amber palette with deep blues, soft mist in air.",
+     "motion": "Hero walks toward camera then passes frame-left, tightening his backpack strap. Camera does a slow handheld follow-in, keeping him centered for five seconds, street lamps streaking gently in the background.",
+     "char": true
+    },
+    {
+     "kf": "Vertical 9:16, interior of a small studio corner carved in old stone, consistent warm tungsten desk lamp, same wooden desk, same chair, same black laptop, same ceramic cup, same cables. Hero sits down, hoodie unchanged, opens laptop with both hands. Medium shot 35mm, slight top light from lamp, shadows soft, color palette warm amber and charcoal, photorealistic, no readable text on screen.",
+     "motion": "Hero flips the laptop open and leans in, shoulders settling. Camera makes a subtle push-in on a slider from mid shot to tighter framing, stopping as his hands reach the keyboard.",
+     "char": true
+    },
+    {
+     "kf": "Vertical 9:16, same desk, same lamp, same hero and outfit. Tight close-up on hands typing on the black laptop keyboard; a faintly lit screen glow reflects on fingers, but screen content is abstract and unreadable. 50mm macro-like close framing, shallow depth of field, warm tungsten mixed with cool screen light, photorealistic, clean simple hands, no logos, no text.",
+     "motion": "Hands type rapidly, then pause for one decisive key press. Camera performs a gentle lateral slide right-to-left, staying locked on the fingers while the background lamp bokeh drifts slightly.",
+     "char": true
+    }
+   ],
+   "id": "cf_it_2_social",
+   "cat": "it",
+   "batch": "v3",
+   "regen": true
+  },
+  {
+   "type": "explainer",
+   "title_mk": "Софтвер што стигнува до вас",
+   "title_en": "Software Delivered to You",
+   "line_mk": "Од идеја до апликација.",
+   "line_en": "From idea to app.",
+   "desc_en": "One coherent, step-by-step software delivery story with a single recurring hero in a real Skopje setting. We stay in one location (a small studio workspace near the Old Bazaar), showing brief, build, test/security, deploy, and real-world handoff to a client on Vardar quay. No stock metaphors, no blank screens, no logos or readable text.",
+   "music": "Modern warm minimal electronic, light Balkan percussion accents, steady 92 bpm, confident and human",
+   "voice": "female, warm confident conversational, natural Macedonian cadence",
+   "vo_mk": [
+    "Почнуваме со краток бриф, лице в лице.",
+    "Ја градиме апликацијата чекор по чекор.",
+    "Тестираме и ја заклучуваме безбедноста.",
+    "Пуштаме верзија и ја носиме кај вас.",
+    "Од идеја до апликација."
+   ],
+   "shots": [
+    {
+     "kf": "Inside a small Skopje studio workspace near the Old Bazaar, warm afternoon window light and soft tungsten practicals. Our single hero, a Macedonian woman in her early 30s with dark bob hair, black crewneck and olive jacket, sits at a wooden desk. She points to a sketchbook with simple wireframes (no readable text) beside a closed laptop. Medium-wide, 35mm lens, earthy palette, photorealistic, clean hands and clear face.",
+     "motion": "She slides the sketchbook toward camera and taps one box decisively; camera makes a gentle handheld push-in of about 30 cm, settling on her hands and the page in one smooth move.",
+     "char": true
+    },
+    {
+     "kf": "Same room, same desk and props, matching warm color palette. The hero now types on the laptop while a second screen shows abstract code-like blocks that are intentionally unreadable. A small ceramic coffee cup, the same sketchbook, and a coiled cable sit exactly where they were. Medium shot from over her right shoulder, 50mm lens, shallow depth of field, photorealistic textures, no logos, no readable UI text, calm focused expression.",
+     "motion": "She writes a short burst of code and hits a single key with intent; camera performs a slow lateral slider move left about 20 cm, maintaining over-shoulder framing and ending on the keyboard and her concentrated face profile.",
+     "char": true
+    },
+    {
+     "kf": "Same room and angle family, evening-blue light outside the window with the same warm desk lamp on. The hero runs a test on the laptop: on-screen are simple colored bars and check icons that are not readable as text. She picks up her smartphone and uses her thumb to confirm a security step (no text visible). Tight medium, 65mm lens, higher contrast but still warm, photorealistic, hands clear, face calm and assured.",
+     "motion": "She taps the phone once to approve, then places it down beside the laptop; camera tilts down subtly from her eyes to her hands, ending on the phone landing next to the trackpad in one continuous 5-second move.",
+     "char": true
+    },
+    {
+     "kf": "Transform moment in the same exact room and camera angle as Shot 1: the desk layout is identical, but now the laptop is open and the phone lies beside it, both showing a clean app interface with no readable text. The hero sits in the same position, posture more relaxed. Warm afternoon light returns to match Shot 1, same earthy palette. Medium-wide, 35mm lens, photorealistic, no signage, no logos, no readable screens.",
+     "motion": "She rotates the open laptop slightly toward camera to present the finished app; camera performs a slow pull-back of about 40 cm, revealing the unchanged desk setup while emphasizing the single new difference: the app is now live on both devices.",
+     "char": true,
+     "end_kf": "Same room, same camera angle and desk placement, unchanged props and lighting continuity. The hero smiles subtly as she closes the sketchbook gently, leaving the laptop and phone open with the app visible (still no readable text). Photorealistic, warm inviting palette, 35mm lens, clean uncluttered composition focused on the delivered result."
+    },
+    {
+     "kf": "Exterior on Vardar quay at golden hour, Skopje skyline softly blurred, no readable signs anywhere. The same hero in the same black crewneck and olive jacket stands beside a client (only client hands visible, no face) near the stone railing. She holds her smartphone showing the app interface without readable text. Medium shot, 50mm lens, warm sun rim light, natural skin tones, photorealistic, real Balkan street feel without branding.",
+     "motion": "She hands the phone to the client and nods once; camera pans gently right to follow the phone transfer, ending on the client’s hands holding the device against the glowing river background.",
+     "char": true
+    }
+   ],
+   "id": "cf_it_3_explainer",
+   "cat": "it",
+   "batch": "v3",
+   "regen": true
+  },
+  {
+   "type": "commercial",
+   "title_mk": "Софтверски Решенија",
+   "title_en": "Software Solutions",
+   "line_mk": "Вашиот софтверски партнер од доверба.",
+   "line_en": "Your trusted software partner.",
+   "desc_en": "A sleek, corporate commercial highlighting custom enterprise software development through clean, modern visuals and glowing abstract data.",
+   "music": "Ambient electronic pulsing synth, calm, 90 bpm",
+   "voice": "female, confident, calm, professional",
+   "vo_mk": [
+    "Визијата бара цврста основа за успех.",
+    "Комплексните предизвици бараат паметни решенија.",
+    "Ние го градиме вашиот дигитален свет.",
+    "Поврзувајќи ги идеите со реалноста.",
+    "Вашиот софтверски партнер од доверба."
+   ],
+   "shots": [
+    {
+     "kf": "Wide shot. A 30-year-old woman named Elena, short dark bob hair, silver glasses, navy blue turtleneck. She stands in a high-rise office looking out at the foggy Skopje skyline and Mount Vodno at dawn. Soft natural window light, cinematic depth of field, cool blue color palette, photorealistic.",
+     "motion": "Elena slowly turns her head towards the camera as the camera pushes in very smoothly.",
+     "char": true
+    },
+    {
+     "kf": "Medium shot. Elena (30-year-old woman, short dark bob hair, silver glasses, navy blue turtleneck) stands in a minimalist white office. Abstract floating digital wireframes glow in the air around her. Soft overhead lighting, 50mm lens, shallow focus, cool blue and cyan color palette, photorealistic.",
+     "motion": "The glowing abstract wireframes slowly rotate in mid-air while the camera slowly pans to the right.",
+     "char": true
+    },
+    {
+     "kf": "Close-up. Elena (30-year-old woman, short dark bob hair, silver glasses, navy blue turtleneck) looks intently forward. The reflection of moving digital code glows bright blue on the lenses of her silver glasses. Dark background, dramatic rim lighting, macro lens, high contrast color palette, photorealistic.",
+     "motion": "The blue light reflections on Elena's glasses shift dynamically as the camera slowly dollies left.",
+     "char": true
+    },
+    {
+     "kf": "Medium shot. A different young male developer with neat blonde hair sits in a dark room. Warm golden light from an off-screen monitor beautifully illuminates his smiling, relaxed face. Defocused office background, 85mm lens, soft cinematic lighting, warm amber and dark shadow color palette, photorealistic.",
+     "motion": "The young man smiles gently and nods once while the camera slowly pushes in forward.",
+     "char": false
+    },
+    {
+     "kf": "Wide shot. Elena (30-year-old woman, short dark bob hair, silver glasses, navy blue turtleneck) stands confidently with arms crossed in a sleek, modern server room. Rows of servers glow with soft white LEDs. Symmetrical composition, leading lines, 35mm lens, crisp and bright color palette, photorealistic.",
+     "motion": "Elena stands perfectly still, projecting confidence, as the camera slowly pedestals up to reveal the room.",
+     "char": true
+    }
+   ],
+   "id": "cf_it_4_commercial",
+   "cat": "it",
+   "batch": "v3"
+  },
+  {
+   "type": "commercial",
+   "title_mk": "Сигурна Инфраструктура",
+   "title_en": "Secure Infrastructure",
+   "line_mk": "Иновации што ве водат напред.",
+   "line_en": "Innovations that drive you forward.",
+   "desc_en": "A striking, brutalist-inspired commercial showcasing robust local cloud infrastructure and cybersecurity services in a modern tech landscape.",
+   "music": "Dark synthwave driving bass, intense, 110 bpm",
+   "voice": "male, deep, authoritative, modern",
+   "vo_mk": [
+    "Иднината се гради тука и сега.",
+    "Безбедноста на вашите податоци е приоритет.",
+    "Имплементираме системи што носат промени.",
+    "Заштитени, брзи и секогаш достапни.",
+    "Иновации што ве водат напред."
+   ],
+   "shots": [
+    {
+     "kf": "Wide shot. A 25-year-old man named Marko, curly brown hair, yellow hoodie under a black denim jacket. He stands inside the iconic raw concrete interior of the Skopje Post Office. Atmospheric dust, dramatic shafts of sunlight piercing through skylights, wide-angle lens, grey and yellow color palette, photorealistic.",
+     "motion": "Marko walks forward in slow motion as the camera slowly pulls back through the concrete arches.",
+     "char": true
+    },
+    {
+     "kf": "Low angle wide shot. Marko (25-year-old man, curly brown hair, yellow hoodie, black denim jacket) looks up in awe at towering, monolithic black server racks stretching to a dark ceiling. Moody industrial lighting, glowing amber indicator lights, 24mm lens, brutalist composition, dark grey and amber color palette, photorealistic.",
+     "motion": "Marko tilts his head back slowly as the camera tilts up the massive server racks.",
+     "char": true
+    },
+    {
+     "kf": "Medium shot. Marko (25-year-old man, curly brown hair, yellow hoodie, black denim jacket) stands motionless as a sleek, glowing orange drone hovers slowly past his shoulder. Heavy shadows, cinematic rim light from the drone, 50mm lens, gritty texture, high contrast black and neon orange color palette, photorealistic.",
+     "motion": "The glowing drone glides smoothly past Marko's shoulder while the camera slowly dollies to the right.",
+     "char": true
+    },
+    {
+     "kf": "Wide shot. Thick, abstract streams of glowing orange light flow elegantly like water around thick brutalist concrete pillars in an empty, dark hall. No people. Long exposure aesthetic, moody atmospheric fog, 35mm lens, symmetrical composition, stark grey and vibrant orange color palette, photorealistic.",
+     "motion": "The glowing orange light streams pulse and flow smoothly around the pillars with a slow pan.",
+     "char": false
+    },
+    {
+     "kf": "Medium wide shot. Marko (25-year-old man, curly brown hair, yellow hoodie, black denim jacket) stands proudly on a rooftop. The blurred city lights of Skopje glow warmly in the night background. Crisp focus on his calm face, neon street light illumination, 50mm lens, cyberpunk aesthetic, photorealistic.",
+     "motion": "Marko looks calmly at the lens as the camera slowly orbits left around his position.",
+     "char": true
+    }
+   ],
+   "id": "cf_it_5_commercial",
+   "cat": "it",
+   "batch": "v3"
+  }
+ ]
+}

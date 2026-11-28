@@ -1,0 +1,7 @@
+[Unit]
+Description=BIG DOGMA outreach reminders, weekdays mid-morning Skopje time
+[Timer]
+OnCalendar=Mon..Fri *-*-* 10:23:00 Europe/Skopje
+Persistent=false
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,22 @@
+name: bd-chat
+services:
+  chat:
+    image: python:3.12-alpine
+    container_name: bd-chat
+    restart: unless-stopped
+    command: ["python", "-u", "/app/chat.py"]
+    environment:
+      - DATA=/data
+    env_file: .env
+    volumes:
+      - /opt/stacks/bd-chat/app:/app:ro
+      - /opt/stacks/bd-chat/data:/data
+    mem_limit: 128m
+    pids_limit: 64
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.bd-chat.rule=(Host(`bigdogma.tech`) || Host(`pitch.bigdogma.tech`)) && PathPrefix(`/api/chat`)
+      - traefik.http.routers.bd-chat.entrypoints=websecure
+      - traefik.http.routers.bd-chat.tls.certresolver=letsencrypt
+      - traefik.http.routers.bd-chat.priority=1000
+      - traefik.http.services.bd-chat.loadbalancer.server.port=8080

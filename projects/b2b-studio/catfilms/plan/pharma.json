@@ -1,0 +1,188 @@
+{
+ "key": "pharma",
+ "mk": "Фармација",
+ "en": "Pharma",
+ "films": [
+  {
+   "type": "explainer",
+   "title_mk": "Од лабораторија до вас",
+   "title_en": "From Lab to You",
+   "line_mk": "Чисто. Точно. Ваше.",
+   "line_en": "Clean. Precise. Yours.",
+   "desc_en": "One coherent, step-by-step journey of a single medicine box: filled and inspected in a sterile lab, packaged, then handed to a customer in a real Skopje Old Bazaar pharmacy. Same hero technician throughout; warm-to-clean palette shift that stays Balkan-real and signage-free.",
+   "music": "Minimal ambient pulse with soft percussion, clean and human, 92 bpm",
+   "voice": "female, calm, trustworthy, Macedonian accent",
+   "vo_mk": [
+    "Сè почнува во стерилна, контролирана просторија.",
+    "Го полниме секое шишенце прецизно, без допир.",
+    "Потоа, рачно ја проверуваме секоја серија.",
+    "Го пакуваме и го носиме до аптеката во Скопје.",
+    "Чисто. Точно. Ваше."
+   ],
+   "shots": [
+    {
+     "kf": "Interior, sterile pharmaceutical cleanroom in Skopje outskirts, stainless steel filling line and enclosed conveyor behind clear safety glass. A single female technician, early 30s, dark hair in a tight bun under a white hood, blue nitrile gloves, white gown and mask, stands camera-left monitoring the line. Cool white light, pale blue-gray palette, 35mm lens, medium-wide framing, photorealistic, no readable text or logos.",
+     "motion": "Technician taps a single green-lit start button and watches vials begin moving. Camera makes a slow, steady dolly-in through the glass, stopping as the first empty vial reaches the filling station.",
+     "char": true
+    },
+    {
+     "kf": "Tight close-up of the filling station: a clear glass vial held in a metal nest under a stainless nozzle, transparent liquid forming a clean meniscus inside. The same technician’s blue-gloved hands appear at frame edge only, steadying the tray without blocking the view. Clinical overhead diffuse light, crisp reflections, shallow depth of field, 85mm macro look, cool whites and steel tones, photorealistic, no labels or text visible.",
+     "motion": "Liquid dispenses in one continuous stream until it reaches a marked level, then stops cleanly. Camera performs a gentle micro push-in and slight tilt to keep the rising liquid level centered.",
+     "char": true
+    },
+    {
+     "kf": "Medium close-up at an inspection bench inside the same cleanroom: the technician, same outfit and bun, holds one filled vial up to a circular inspection lamp, rotating it slowly between thumb and forefinger. Background shows softly blurred stainless equipment and clean surfaces. Neutral-cool lighting with a focused highlight through the vial, 50mm lens, eye-level framing, restrained blue-gray palette, photorealistic, face simple and unambiguous, no text anywhere.",
+     "motion": "She rotates the vial once, then places it into a clean tray with a single decisive movement. Camera pans slightly right to follow the vial from lamp to tray, staying smooth and realistic.",
+     "char": true
+    },
+    {
+     "kf": "Packaging area connected to the cleanroom: the same technician stands beside a compact, enclosed packaging machine feeding plain, matte-white medicine cartons (no printing). She slides one carton into a clear tray; next to it, a few identical cartons stack neatly. Bright, even overhead light, cool neutral palette with a small warm accent from a safety beacon, 35mm lens, medium framing, photorealistic, no readable markings or logos.",
+     "motion": "She closes the tray lid with one click and pushes it forward onto the conveyor. Camera makes a slow lateral move left-to-right, revealing the neat stack of identical cartons without showing any text.",
+     "char": true
+    },
+    {
+     "kf": "Interior, small neighborhood pharmacy in Skopje Old Bazaar, stone and wood textures, warm tungsten practicals, shelves softly out of focus with unbranded white boxes and glass jars, absolutely no readable signage. The same technician now without mask but still in clean white coat, dark hair bun unchanged, stands behind the counter. She gently hands one plain white carton to a customer’s hands (customer mostly off-frame). 50mm lens, medium shot, warm-beige and amber palette, photorealistic, natural Balkan atmosphere.",
+     "motion": "She slides the carton across the counter into the customer’s hands, then gives a small reassuring nod. Camera performs a slow push-in toward the handover moment, stopping on the carton centered between hands.",
+     "char": true
+    }
+   ],
+   "id": "cf_pharma_1_explainer",
+   "cat": "pharma",
+   "batch": "v3",
+   "regen": true
+  },
+  {
+   "type": "transform",
+   "title_mk": "Еволуција на Фармацијата",
+   "title_en": "Evolution of Pharmacy",
+   "line_mk": "Традицијата се среќава со иднината.",
+   "line_en": "Tradition meets the future.",
+   "desc_en": "A seamless timelapse transformation showing the modernization of a pharmacy, blending historical apothecary elements with cutting-edge medical technology.",
+   "music": "Sweeping orchestral strings evolving into modern synth, 110 bpm",
+   "voice": "male, deep, authoritative",
+   "vo_mk": [
+    "Од старите билни аптеки до модерните центри за здравје.",
+    "Иднината на фармацијата е веќе тука, побрза и побезбедна."
+   ],
+   "shots": [
+    {
+     "kf": "Wide shot of a traditional, dusty apothecary interior in an old Skopje bazaar. Dark carved wooden shelves, amber glass apothecary bottles, scattered dried herbs, warm dim sunlight streaming through a small window. Sepia and gold tones, 24mm lens, photorealistic.",
+     "end_kf": "The exact same wide shot framing, but now a modern, ultra-clean automated pharmacy. Sleek white shelving, glowing LED lights, perfectly aligned generic white medicine boxes, bright diffused daylight. Crisp white and cool blue tones, 24mm lens, photorealistic.",
+     "motion": "A slow, seamless visual crossfade morphing the old apothecary into the modern pharmacy. The camera slowly pushes forward continuously through both states."
+    },
+    {
+     "kf": "Close-up of an old, tarnished brass mortar and pestle resting on a heavily scratched wooden counter. Deep dark shadows, rich antique textures, a few dried medicinal leaves placed carefully beside it. Warm, dramatic chiaroscuro lighting, macro lens, earthy brown palette, photorealistic.",
+     "end_kf": "The exact same close-up framing, but the mortar is now a sleek, glowing white scientific centrifuge on a pristine white Corian countertop. Clean, shadowless clinical lighting, macro lens, pure white and silver palette, photorealistic.",
+     "motion": "The brass mortar seamlessly morphs into the modern centrifuge. A very slow, subtle camera tilt up during the transformation."
+    },
+    {
+     "kf": "Medium shot of a messy, handwritten paper prescription pad with a vintage fountain pen on top, sitting on a dark mahogany desk. Soft, warm desk lamp lighting, shallow depth of field, 50mm lens, vintage sepia aesthetic, deeply textured and photorealistic.",
+     "end_kf": "The exact same medium shot framing, showing a sleek, glowing, transparent digital tablet displaying abstract holographic data graphs on a brushed metal desk. Cool blue LED lighting, shallow depth of field, 50mm lens, futuristic aesthetic, photorealistic.",
+     "motion": "The paper pad slowly morphs into the glowing digital tablet. A very slow camera pan to the left connects the sequence."
+    },
+    {
+     "kf": "Exterior wide shot of a classic, old brick pharmacy storefront in Skopje during an overcast afternoon. A generic wooden sign, intricate wrought iron details, dull gray cobblestone street. Muted, desaturated earthy colors, 35mm lens, historical architecture, photorealistic.",
+     "end_kf": "The exact same exterior framing, but the storefront is now a futuristic, glowing glass medical pavilion at dusk. Seamless curved glass, bright internal neon blue lighting, smooth modern pavement. High-contrast twilight colors, 35mm lens, photorealistic.",
+     "motion": "The old brick storefront morphs into the glowing glass architecture. A slow, steady camera pull-back reveals the dramatic architectural change."
+    }
+   ],
+   "id": "cf_pharma_2_transform",
+   "cat": "pharma"
+  },
+  {
+   "type": "commercial",
+   "title_mk": "Вашата аптека",
+   "title_en": "Your Pharmacy",
+   "line_mk": "Вашата доверлива локална аптека.",
+   "line_en": "Your trusted local pharmacy.",
+   "desc_en": "A warm, character-driven commercial highlighting the premium and caring experience at a modern local pharmacy.",
+   "music": "Warm, uplifting acoustic corporate ambient, 110 bpm",
+   "voice": "female, warm reassuring professional",
+   "vo_mk": [
+    "Здравјето е вашето најголемо богатство.",
+    "Кога ви е потребна вистинска грижа.",
+    "Ние нудиме сигурност и врвен квалитет.",
+    "За вас и за вашите најблиски.",
+    "Вашата доверлива локална аптека."
+   ],
+   "shots": [
+    {
+     "kf": "A female pharmacist in her 30s with short brown hair, wearing a crisp white lab coat over a light blue silk blouse. She stands in a modern, sunlit pharmacy in Skopje. Soft natural lighting, 50mm lens, shallow depth of field. Clean, premium, photorealistic.",
+     "motion": "The pharmacist turns her head slowly toward the camera with a warm smile, gentle slow zoom.",
+     "char": true
+    },
+    {
+     "kf": "Close-up of pristine, unbranded white medicine bottles neatly arranged on an illuminated glass shelf inside a premium pharmacy. Warm ambient lighting, soft reflections on the glass, 85mm lens, macro detail, beautiful blurred background. Clean, modern, highly detailed, photorealistic.",
+     "motion": "The camera slides slowly and smoothly along the glass shelf, highlighting the pristine medicine bottles.",
+     "char": false
+    },
+    {
+     "kf": "A female pharmacist in her 30s with short brown hair, wearing a crisp white lab coat over a light blue silk blouse. She stands behind a bright glass counter, looking warmly and professionally towards the camera. Cinematic lighting, 35mm lens, photorealistic.",
+     "motion": "Subtle movement of the pharmacist breathing while maintaining eye contact, paired with a slow camera push-in.",
+     "char": true
+    },
+    {
+     "kf": "A female pharmacist in her 30s with short brown hair, wearing a crisp white lab coat over a light blue silk blouse. She gently holds a blank, pristine white medicine box in front of her. Soft glowing backlight, 50mm lens, photorealistic.",
+     "motion": "The white box remains steady in her gentle grip while the camera slowly tracks to the right.",
+     "char": true
+    },
+    {
+     "kf": "Wide shot of the female pharmacist in her 30s with short brown hair, wearing a crisp white lab coat over a light blue silk blouse. She stands proudly in the center of a spacious, glowing modern pharmacy with large windows. Photorealistic.",
+     "motion": "The camera slowly pans from left to right, revealing the sleek and clean pharmacy interior around her.",
+     "char": true
+    }
+   ],
+   "id": "cf_pharma_3_commercial",
+   "cat": "pharma",
+   "batch": "v3"
+  },
+  {
+   "type": "commercial",
+   "title_mk": "Ладен ланец, сигурна нега",
+   "title_en": "Cold Chain, Safe Care",
+   "line_mk": "Ладен ланец. Живот.",
+   "line_en": "Cold chain. Life.",
+   "desc_en": "A grounded cold-chain delivery story in one coherent route: dawn loading at Vardar quay in Skopje, drive to Lake Ohrid road, handover to a nurse. One hero courier, one realistic insulated medical case with a small temperature display; step-by-step process shown clearly, no sci-fi gimmicks.",
+   "music": "Tense but warm cinematic pulse with subtle Balkan percussion, 112 bpm",
+   "voice": "male, calm, trustworthy, mid-low",
+   "vo_mk": [
+    "Секоја минута го чува ладниот ланец.",
+    "Кутијата е запечатена, температурата е под контрола.",
+    "Тргнуваме пред изгрејсонце, без застој.",
+    "Во Охрид, испорака директно до сестрата.",
+    "Ладен ланец. Живот."
+   ],
+   "shots": [
+    {
+     "kf": "Dawn at Vardar quay in Skopje, quiet riverside cobblestones and soft mist, signage-free. A single courier, early 30s, short dark hair, clean-shaven, wearing the same navy jacket and grey pants, kneels beside a white unbranded insulated medical case with a small digital temperature window (numbers not readable). Medium-wide, 35mm, cool blue-grey palette, soft natural dawn light, photorealistic.",
+     "motion": "Courier closes the lid and snaps two latches shut; camera makes a slow 30 cm push-in from waist height to emphasize the seal and steady hands, staying physically stable in 5 seconds.",
+     "char": true
+    },
+    {
+     "kf": "Same dawn location and hero. Close-up on the courier’s hands applying a plain tamper-evident seal strip across the case latch, no text on the strip. The case surface is matte white with light scuffs, realistic. Shallow depth of field, 85mm lens, cool dawn light with gentle rim from the river, restrained palette, photorealistic, simple unambiguous hands.",
+     "motion": "Courier presses the seal firmly with his thumb along the latch; camera slides laterally 20 cm left-to-right in a smooth macro move, keeping the seal centered and in focus.",
+     "char": true
+    },
+    {
+     "kf": "Cut to a narrow Balkan side street near the quay, still signage-free. The same courier lifts the same sealed case into the back of an unbranded white panel van. The van interior is clean but utilitarian with tie-down straps; the case sits flat. Medium shot, 40mm lens, cool early morning light, muted blues and whites, photorealistic realism.",
+     "motion": "Courier sets the case down and pulls one strap tight; camera tilts down slightly and follows the case’s descent, then settles as the strap clicks into tension within 5 seconds.",
+     "char": true
+    },
+    {
+     "kf": "Exterior on the Lake Ohrid road: a curving lakeside stretch with water to one side and rocky hillside to the other, no visible signs or logos. The same unbranded white van drives steadily; through the windshield we glimpse the same courier in navy jacket. Wide tracking shot, 24mm, late morning clean sunlight, natural color palette of stone, blue water, and white van, photorealistic.",
+     "motion": "Van continues forward around the bend; camera tracks parallel on a smooth vehicle-to-vehicle move, maintaining constant distance and speed for 5 seconds, no impossible acceleration.",
+     "char": true
+    },
+    {
+     "kf": "Outside a small clinic-style entrance near Ohrid, neutral walls, signage-free. The same courier hands the sealed white medical case to a nurse in light blue scrubs; both faces simple and clear. Medium close-up, 50mm lens, soft midday shade, calm cool palette. We see the nurse’s hands open the latches and lift the lid to reveal neatly packed vials in a foam insert with cold packs; no labels readable, photorealistic.",
+     "motion": "Courier passes the case into the nurse’s hands; camera makes a gentle 15 cm push-in as the nurse flips both latches and lifts the lid, revealing the vials in one continuous, plausible 5-second action.",
+     "char": true
+    }
+   ],
+   "id": "cf_pharma_4_commercial",
+   "cat": "pharma",
+   "batch": "v3",
+   "regen": true
+  }
+ ]
+}

@@ -1,0 +1,53 @@
+{
+ "type": "transform",
+ "title_mk": "Од Празно До Штанд",
+ "title_en": "From Empty to Stand",
+ "line_mk": "Од празно до штанд.",
+ "line_en": "From empty to stand.",
+ "desc_en": "A locked-off transformation inside a real Skopje fair warehouse: one recurring build lead turns an empty bay into a finished, premium exhibition stand in five clear steps, ending with real visitors. Same room, same camera height and angle, consistent palette, no readable text or logos anywhere.",
+ "music": "Tight Balkan-influenced percussion with modern synth pulse, 112 bpm, builds in layers to a confident finish",
+ "voice": "male, warm, grounded, Skopje accent",
+ "vo_mk": [
+  "Празен агол. Утре тука ќе биде вашиот штанд.",
+  "Прво мериме точно, па обележуваме чисто.",
+  "Потоа се крева конструкцијата, стабилна и права.",
+  "Облога, светло, детали—сè се склопува во место.",
+  "Од празно до штанд."
+ ],
+ "shots": [
+  {
+   "kf": "Locked-off wide shot inside a real Skopje fair warehouse bay: raw concrete floor, pale grey walls, exposed ceiling trusses, one high window throwing soft morning light. Center frame is an empty rectangular build zone marked only by faint tape lines, no readable markings. Our hero—a 35-year-old man with short dark hair, light stubble, black hoodie, dark work pants—stands alone with a closed tape measure, calm and focused. Photorealistic, neutral-cool palette, 24mm lens, eye-level.",
+   "motion": "Hero steps into the taped rectangle and snaps open the tape measure to full length. Camera makes a slow 20 cm dolly-in on a slider, staying perfectly centered and level, 5 seconds.",
+   "char": true,
+   "end_kf": "Same locked-off wide angle, same warehouse bay and lighting direction. The floor is still bare, but the rectangular area is now clearly laid out with clean tape corners and a few neatly placed aluminum base tracks aligned on the tape. The hero in the same clothes kneels at the front-left corner, tape measure extended, checking alignment. No tools scattered, no readable text, no logos. Photorealistic, 24mm lens, eye-level, cool morning tones."
+  },
+  {
+   "kf": "Same camera position and framing in the Skopje warehouse bay, now mid-build: aluminum base tracks are fixed on the concrete, and a few vertical studs rise waist-high in the center. The hero, same outfit and hairstyle, stands slightly right of center holding a cordless driver with both hands, looking at the joint. Soft daylight from the window plus a single work light adds gentle highlights, no harsh glare. Photorealistic, 24mm lens, steady composition, grey-blue palette with metallic accents.",
+   "motion": "Hero lifts one vertical stud into place and drives two screws to lock it. Camera performs a slow pan left-to-right about 15 degrees, keeping the structure centered, physically plausible within 5 seconds.",
+   "char": true,
+   "end_kf": "Same framing and camera height. The structure is now full height: a clean rectangular frame with cross-bracing, evenly spaced verticals, and a simple overhead header. The hero, unchanged, tightens the last fastener at shoulder height, body turned three-quarters to camera. Light remains consistent, with subtle metallic reflections. Floor stays uncluttered, no readable text, no branding. Photorealistic, 24mm lens, cool neutral palette."
+  },
+  {
+   "kf": "Same locked-off wide shot, same warehouse bay. The frame is standing, and plain matte wall panels (warm light wood tone) are stacked neatly on the floor at the right edge, ready to mount. The hero in the same black hoodie holds a single panel upright, fingers visible and simple, face clear and unambiguous. Late afternoon light warms the scene slightly through the high window, balancing with soft work lights. Photorealistic, 24mm lens, warm-neutral palette, no readable markings.",
+   "motion": "Hero pivots the panel and clicks it onto the frame, pressing along the edge to seat it. Camera executes a gentle 30 cm dolly-right while maintaining the same height and horizon, 5 seconds.",
+   "char": true,
+   "end_kf": "Same camera position and angle. The stand is now clad on two sides with smooth, warm wood panels, clean seams, and a recessed niche opening on the front. A small, unbranded counter block sits centered at the front edge. The hero, unchanged, runs his palm once along the panel seam to check it flush. Lighting is warmer, still natural and realistic, no readable text or logos anywhere. Photorealistic, 24mm lens."
+  },
+  {
+   "kf": "Same wide shot in the Skopje warehouse bay, now near-finish. The stand has cladding installed, but the lighting is still off; loose cables are neatly coiled on the floor behind the counter, and a compact ladder stands to the left. The hero, same clothing and hair, stands beside the ladder holding a small handheld remote or switch, looking up toward the ceiling line. Early evening blue light mixes with dim work lights, creating a calm pre-launch mood. Photorealistic, 24mm lens, cool-to-warm transition palette.",
+   "motion": "Hero presses the switch and looks up as the integrated LED lines power on. Camera makes a slow 10-degree tilt up then back to level, emphasizing the light reveal within 5 seconds.",
+   "char": true,
+   "end_kf": "Same framing and camera height. The stand lighting is on: soft continuous LED lines outlining the niche and ceiling edge, warm and premium without glare. The counter surface is clean, with a neutral decorative object (no logo, no text) and a small plant. The ladder and cables are gone, floor cleared. The hero, unchanged, steps back half a step, satisfied, hands relaxed at his sides. Photorealistic, 24mm lens, warm amber highlights against grey concrete."
+  },
+  {
+   "kf": "Same locked-off wide hero shot, identical warehouse bay and stand placement, now fully finished and lit. The stand features warm wood panels, a clean counter, a seating nook with two simple chairs, and soft accent lighting—no signage, no readable text, no logos. The hero in the same black hoodie stands behind the counter, welcoming posture, simple smile. Night outside the high window; interior lighting carries the scene with warm tones and realistic shadows. Photorealistic, 24mm lens, cinematic but natural color.",
+   "motion": "Two visitors (blur-free, simple faces) enter from frame left and stop at the counter; the hero extends his hand to greet. Camera performs a slow 40 cm dolly-in, ending centered on the stand, 5 seconds.",
+   "char": true,
+   "end_kf": "Same framing and camera position. The hero is mid-greeting at the counter, and three visitors now occupy the foreground, calmly exploring the nook and counter area. Lighting remains warm and even, with subtle reflections on surfaces and clean lines. The warehouse background stays real and unstyled, emphasizing authenticity in Skopje. No readable text, no logos, no signage. Photorealistic, 24mm lens, warm premium palette."
+  }
+ ],
+ "id": "cf_expo_stand_1_transform",
+ "cat": "expo_stand",
+ "batch": "v3",
+ "regen": true
+}

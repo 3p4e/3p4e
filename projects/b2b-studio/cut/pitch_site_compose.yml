@@ -1,0 +1,17 @@
+name: ai-studio-pitch
+services:
+  web:
+    image: nginx:alpine
+    container_name: ai-studio-pitch
+    restart: unless-stopped
+    volumes:
+      - /opt/stacks/ai-studio-pitch/site:/usr/share/nginx/html:ro
+      - /opt/stacks/ai-studio-pitch/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    mem_limit: 128m
+    pids_limit: 64
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.ai-studio-pitch.rule=Host(`pitch.bigdogma.tech`)
+      - traefik.http.routers.ai-studio-pitch.entrypoints=websecure
+      - traefik.http.routers.ai-studio-pitch.tls.certresolver=letsencrypt
+      - traefik.http.services.ai-studio-pitch.loadbalancer.server.port=80

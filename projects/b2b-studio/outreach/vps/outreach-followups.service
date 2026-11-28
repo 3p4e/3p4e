@@ -1,0 +1,7 @@
+[Unit]
+Description=BIG DOGMA outreach: send due day-4 / day-10 reminders (skips anyone who replied)
+After=network-online.target
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/outreach
+ExecStart=/usr/bin/python3 /opt/outreach/outreach.py followups
