@@ -130,6 +130,7 @@ NATIVE_V = {"foton_tunland_v9_specs": ("foton_tunland_v9_specs_9x16.mp4", "foton
             "foton_showreel_v2": ("foton_showreel_v2_9x16.mp4", "foton_showreel_v2_9x16.jpg")}
 _NV = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "vertical", "native_v.json")   # the 11 other companies' films, as uploaded (vertical/upload_v.py)
 if os.path.exists(_NV): NATIVE_V.update({k: (f"{k}_9x16.mp4", f"{k}_9x16.jpg") for k in json.load(open(_NV))})
+ENTER_FX = open(f"{HERE}/enter_fx.js", encoding="utf-8").read()   # five random enter transitions (owner 2026-11-28)
 def build(key, out):
     c = COMPANIES[key](); s = dict(T[c["lang"]]); n_f = len(c["films"]); name = E(c["name"])
     s.update(c.get("ui", {}))
@@ -308,15 +309,7 @@ function pre(){{if(!L.length)return;var n=sv[1-cur];n.src=L[k++%L.length];n.prel
 function nx(){{if(!L.length)return;var n=sv[1-cur],o=sv[cur],go=function(){{n.removeEventListener('playing',go);n.style.opacity=1;o.style.opacity=0;cur=1-cur;setTimeout(function(){{o.pause();if(!sp.classList.contains('out'))pre()}},900)}};
  n.addEventListener('playing',go);n.currentTime=0;n.play().catch(function(){{}})}}   /* fade only once the next film really plays */
 sv.forEach(function(v){{v.addEventListener('ended',function(){{if(v===sv[cur])nx()}})}});if(!RM){{sv[0].src=L[k++];sv[0].play().catch(function(){{}});setTimeout(pre,300)}}
-/* enter: burst + flash, then the content */
-var bc=$('#burst'),b=bc.getContext('2d');
-function burst(done){{var W=bc.width=innerWidth*Math.min(2,devicePixelRatio||1),H=bc.height=innerHeight*Math.min(2,devicePixelRatio||1),cx=W/2,cy=H/2,R=Math.hypot(W,H)/2,t0=performance.now(),P=[];
- for(var i=0;i<180;i++)P.push([Math.random()*6.283,.25+Math.random()*.9,Math.random(),1+Math.random()*3]);
- var sw=false;(function f(now){{var q=Math.max(0,Math.min(1,(now-t0)/1100)),pk=Math.sin(Math.PI*Math.min(1,q*1.6));b.clearRect(0,0,W,H);b.globalCompositeOperation='lighter';
-  var g=b.createRadialGradient(cx,cy,0,cx,cy,R*(.2+q));g.addColorStop(0,'rgba(255,250,235,'+pk+')');g.addColorStop(.3,'rgba(242,193,78,'+(.7*pk)+')');g.addColorStop(1,'rgba(242,120,40,0)');b.fillStyle=g;b.fillRect(0,0,W,H);
-  P.forEach(function(p){{var r=R*p[1]*q,a=1-q;b.fillStyle=p[2]>.5?'rgba(255,255,255,'+a+')':'rgba(242,193,78,'+a+')';b.beginPath();b.arc(cx+Math.cos(p[0])*r,cy+Math.sin(p[0])*r*.8,p[3]*W/900,0,6.283);b.fill()}});
-  b.strokeStyle='rgba(255,230,170,'+(1-q)+')';b.lineWidth=W/300*(1-q);b.beginPath();b.ellipse(cx,cy,Math.max(0,R*q*.9),Math.max(0,R*q*.55),0,0,6.283);b.stroke();
-  if(q>.3&&!sw){{sw=true;done()}}if(q<1)requestAnimationFrame(f);else b.clearRect(0,0,W,H)}})(t0)}}
+{ENTER_FX}
 function enter(){{if(sp.classList.contains('out'))return;var go=function(){{sp.classList.add('out');document.body.classList.remove('lock');if(window.BDBG_START)BDBG_START();sv.forEach(function(v){{setTimeout(function(){{v.pause();v.removeAttribute('src');v.load()}},1300)}})}};RM?go():burst(go)}}
 $('#enter').addEventListener('click',enter);sp.addEventListener('click',function(e){{if(e.target===sp||e.target.classList.contains('shade'))enter()}});
 addEventListener('keydown',function(e){{if((e.key==='Enter'||e.key===' ')&&!sp.classList.contains('out')&&document.activeElement===document.body){{e.preventDefault();enter()}}}});
