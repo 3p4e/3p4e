@@ -227,6 +227,45 @@ film("fv11_pelisterski_oci", "Пелистерски Очи", "V7", None, 120, "
       (5, f"Golden hour hero shot from behind and above {v} parked at a rocky mountain viewpoint on Pelister, looking down at the two small glacial lakes, Pelister Eyes (the Big Lake and the Small Lake), dark blue water in a granite cirque far below, peaks around.",
        "Slow crane up over the pickup, revealing the two glacial lakes in the granite cirque below as golden light spreads across the peaks. The view of the lakes beyond the pickup holds on the final frame.", N(0.5, 4.7), 9, "hit")], accent="0x6ec6ff")
 
+# 12-15: made from existing keyframes only (no new image credits); generic motion as rendered
+GM = "The pickup moves smoothly through the scene, or stays parked while the camera glides slowly around it; natural dust, water or light; the truck keeps its exact shape and badges."
+v = veh("V7")
+film("fv12_patuvanje", "Патување", "V7", None, 128, "fv_river",
+     ("TUNLAND V7", "Секој пат е твој.", "2.0 L турбо дизел · 48V хибрид · 450 Nm · 4×4"),
+     [("l1", 1), ("l2", 11), ("l3", 25), ("cta", 35)], [
+      (1, f"Dawn on an open country road, {v} driving toward the camera, soft mist and warm low sun.", GM, N(0.2, 4.4), 7),
+      (2, f"{v} on a winding mountain road, forested slopes and peaks behind.", GM, N(0.2, 4.4), 7),
+      (3, f"{v} crossing an old stone bridge over a mountain river.", GM, SLOW(0.4, 2.8), 7, "hit"),
+      (4, f"{v} on a lakeside road, calm water and mountains behind.", GM, N(0.2, 4.4), 7),
+      (5, f"Hero shot of {v} parked by a lake at golden hour.", GM, N(0.5, 4.7), 9, "hit")], accent="0x6ec6ff")
+v = veh("V9", "black")
+film("fv13_sumrak", "Самрак", "V9", "black", 124, "fv_night",
+     ("TUNLAND V9", "Градот е твој.", "2.0 L турбо дизел · 48V хибрид · 8-степен автоматик"),
+     [("l1", 1), ("l2", 9), ("l3", 23), ("cta", 35)], [
+      (1, f"{v} on a city street at dusk, lit facades and glowing street lights.", GM, N(0.2, 4.4), 7),
+      (2, f"{v} crossing a lit bridge at night, reflections on the river.", GM, N(0.2, 4.4), 7, "hit"),
+      (3, f"{v} driving through the city at night, light streaks.", GM, RAMP(0.0, 1.4, 2.4, 3.8), 7),
+      (4, f"{v} with the night skyline behind.", GM, N(0.2, 4.4), 7),
+      (5, f"Hero shot of {v} parked above the city lights at night.", GM, N(0.5, 4.7), 9, "hit")], accent="0xb9c2d0")
+v = veh("V9", "red")
+film("fv14_ekspedicija", "Експедиција", "V9", "red", 124, "fv_dust",
+     ("TUNLAND V9", "Таму каде што патот исчезнува.", "450 Nm · погон 4×4 · блокада на диференцијал"),
+     [("l1", 1), ("l2", 11), ("l3", 25), ("cta", 35)], [
+      (1, f"{v} driving through a dusty canyon, dust trail behind.", GM, RAMP(0.0, 1.4, 2.4, 3.8), 7, "hit"),
+      (2, f"{v} on a high ridge track, wide sky.", GM, N(0.2, 4.4), 7),
+      (3, f"{v} crossing a river, water splashing from the wheels.", GM, SLOW(0.4, 2.8), 7, "hit"),
+      (4, f"{v} climbing a rocky trail toward the summit.", GM, N(0.2, 4.4), 7),
+      (5, f"Hero shot of {v} on the summit at golden hour.", GM, N(0.5, 4.7), 9, "hit")], accent="0xff5a4e")
+v = veh("G7")
+film("fv15_nosivost", "Носивост", "G7", None, 122, "fv_work",
+     ("TUNLAND G7", "Товари повеќе. Стигни подалеку.", "2.0 L турбо дизел · 4×4 · голема товарна површина"),
+     [("l1", 1), ("l2", 9), ("l3", 23), ("cta", 35)], [
+      (1, f"{v} with a loaded cargo bed, ready for the road.", GM, N(0.2, 4.4), 7),
+      (2, f"{v} on the highway with cargo in the bed.", GM, RAMP(0.0, 1.4, 2.4, 3.8), 7),
+      (3, f"{v} at a port container terminal, stacked containers.", GM, N(0.2, 4.4), 7, "hit"),
+      (4, f"{v} at dusk, long shadows, cargo secured.", GM, N(0.2, 4.4), 7),
+      (5, f"Hero shot of {v} under the port cranes.", GM, N(0.5, 4.7), 9, "hit")], accent="0x4aa3ff")
+
 # ---- Skopje setting (owner's request): city and nearby-nature shots placed in and around Skopje, plus three QC fixes
 SKP = "in Skopje, North Macedonia"
 SKOPJE = {

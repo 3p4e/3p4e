@@ -39,6 +39,8 @@ T = {"mk": dict(
 for _l in ("sr", "sq", "sl", "en"): T[_l] = json.load(open(f"{HERE}/pitch_v3_data/strings_{_l}.json", encoding="utf-8"))   # written by hand 2026-11-26
 # H3 section strings (geo-gated, see cut/h3_geo)
 H3S = {"mk": {"h3_e": "Made with MiniMax H3", "h3_h": "Уште филмови за {c}", "h3_p": "Дополнителни AI филмови направени со моделот MiniMax H3, хоризонтално и вертикално. Се прикажуваат само во региони каде што лиценцата на моделот го дозволува тоа.", "h3_ad": "Реклама", "h3_film": "Филм", "h3_lbl": "AI · Made with MiniMax H3"}, "sr": {"h3_e": "Made with MiniMax H3", "h3_h": "Još filmova za {c}", "h3_p": "Dodatni AI filmovi napravljeni modelom MiniMax H3, horizontalno i vertikalno. Prikazuju se samo u regionima u kojima licenca modela to dozvoljava.", "h3_ad": "Reklama", "h3_film": "Film", "h3_lbl": "AI · Made with MiniMax H3"}, "en": {"h3_e": "Made with MiniMax H3", "h3_h": "More films for {c}", "h3_p": "", "h3_ad": "Commercial", "h3_film": "Film", "h3_lbl": "AI · Made with MiniMax H3"}, "sl": {"h3_e": "Made with MiniMax H3", "h3_h": "Še filmi za {c}", "h3_p": "", "h3_ad": "Oglas", "h3_film": "Film", "h3_lbl": "AI · Made with MiniMax H3"}, "sq": {"h3_e": "Made with MiniMax H3", "h3_h": "Më shumë filma për {c}", "h3_p": "Filma shtesë AI të krijuar me modelin MiniMax H3, horizontalisht dhe vertikalisht. Shfaqen vetëm në rajonet ku licenca e modelit e lejon.", "h3_ad": "Reklamë", "h3_film": "Film", "h3_lbl": "AI · Made with MiniMax H3"}}
+T["zh"] = json.load(open(f"{HERE}/pitch_v3_data/strings_zh.json", encoding="utf-8"))   # Foton Motor (manufacturer) page, 2026-11-28
+H3S["zh"] = json.load(open(f"{HERE}/pitch_v3_data/strings_zh_extra.json", encoding="utf-8"))["H3S"]
 for _l in H3S: T[_l].update(H3S[_l])
 XL = json.load(open(f"{P}/launch/site_work/i18n_extra.json", encoding="utf-8"))   # site translations (BD and industry film titles)
 
@@ -52,7 +54,22 @@ def foton():
     caps = json.load(open(f"{HERE}/pitch_v3_data/foton_caps.json", encoding="utf-8"))
     return dict(key="foton", name="Foton Македонија", lang="mk", accent="#d71920", films=films, caps=caps, shots=27, stills=10, gifs=2,
                 industry=["automotive", "product_launch"], tags="#Foton #Tunland #4x4 #Пикап #Македонија #Скопје", cta_site="foton.mk",
-                skip_shots={19, 20, 21, 22}, skip_ind={"cf_automotive_1_social"})   # Auman, Aumark, EME4, cargo van; a sports car: Tunland only (owner)
+                skip_shots={19, 20, 21, 22}, skip_ind={"cf_automotive_1_social"},
+                no_h3=True)   # owner 2026-11-28: no H3 films and no H3 model credit on the Foton pages (dealer + manufacturer)   # Auman, Aumark, EME4, cargo van; a sports car: Tunland only (owner)
+def fotonmotor(lang):   # Foton Motor, Beijing (manufacturer): EN and ZH pages built from the dealer page's Tunland films
+    FM = json.load(open(f"{HERE}/pitch_v3_data/fotonmotor.json", encoding="utf-8")); base = foton()
+    films = []
+    for f in base["films"]:
+        if not f["id"].startswith("fv"): continue   # owner 2026-11-28: no Macedonian-language films on the manufacturer page (specs + showreel are MK)
+        t = FM["films"].get(f["id"])
+        if t: f = dict(f, t=t[f"t_{lang}"], l=t[f"l_{lang}"])
+        i = f["id"]; f = dict(f, src=f"v2/f/{i}_{lang}.mp4", v=f"v2/f/{i}_{lang}_9x16.mp4", poster=f"v2/f/{i}_{lang}.jpg", vposter=f"v2/f/{i}_{lang}_9x16.jpg")
+        NATIVE_V[i] = (f["v"], f["vposter"])   # language-specific vertical versions
+        films.append(f)
+    ui = dict(FM["ui_en"]) if lang == "en" else {}
+    return dict(base, industry=[], key=f"fotonmotor_{lang}", name=FM[f"name_{lang}"], lang=lang, films=films, caps=FM[f"caps_{lang}"], ui=ui,
+                tags="#Foton #Tunland #4x4 #Pickup" if lang == "en" else "#福田汽车 #Foton #Tunland #皮卡", cta_site="fotonmotor.com",
+                offer_html=FM[f"offer_{lang}"], lsw=("EN", "中文", "zh.html") if lang == "en" else ("中文", "EN", "./"))
 import re
 CO = {  # key: (industry categories on bigdogma.tech, hashtags)
  "01_zito_marketi_MK": (["food", "horeca"], "#Жито #Маркети #Македонија #Скопје"), "02_alkaloid_MK": (["pharma", "health"], "#Алкалоид #Здравје #Македонија"),
@@ -82,7 +99,7 @@ def generic(cid):
     ind, tags = CO[cid]
     return dict(key=cid, name=name, lang=lang, accent=acc, films=films, caps=caps, shots=n("c", r"\.mp4"), stills=n("a", r"\.jpg"), gifs=len([f for f in files if re.fullmatch(r"t\d\.gif", f)]),
                 keys=n("k", r"\.jpg"), industry=ind, tags=tags, cta_site=None)
-COMPANIES = {"foton": foton, **{k: (lambda k=k: generic(k)) for k in CO}}
+COMPANIES = {"foton": foton, "fotonmotor_en": lambda: fotonmotor("en"), "fotonmotor_zh": lambda: fotonmotor("zh"), **{k: (lambda k=k: generic(k)) for k in CO}}
 
 # ------------------------------------------------------------------ campaign: 4 weeks from the company's films
 def campaign(c, s):
@@ -113,17 +130,19 @@ NATIVE_V = {"foton_tunland_v9_specs": ("foton_tunland_v9_specs_9x16.mp4", "foton
             "foton_showreel_v2": ("foton_showreel_v2_9x16.mp4", "foton_showreel_v2_9x16.jpg")}
 _NV = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "vertical", "native_v.json")   # the 11 other companies' films, as uploaded (vertical/upload_v.py)
 if os.path.exists(_NV): NATIVE_V.update({k: (f"{k}_9x16.mp4", f"{k}_9x16.jpg") for k in json.load(open(_NV))})
+ENTER_FX = open(f"{HERE}/enter_fx.js", encoding="utf-8").read()   # five random enter transitions (owner 2026-11-28)
 def build(key, out):
     c = COMPANIES[key](); s = dict(T[c["lang"]]); n_f = len(c["films"]); name = E(c["name"])
+    s.update(c.get("ui", {}))
     for f in c["films"]:   # drop blur-fill 9:16 files
         nv = NATIVE_V.get(f.get("id") or os.path.basename(f["src"])[:-4])
         if nv: f["v"], f["vposter"] = nv
         else: f.pop("v", None); f.pop("vposter", None)
     has_v = any(f.get("v") for f in c["films"])
     if not has_v: s["pts"] = s["pts"][:2] + [s["pt_nv"]]; s["f_p"] = s["f_p_nv"]
-    old = open(f"{SCRP}/{key}/classic.html", encoding="utf-8").read() if key != "foton" else open(f"{out}/classic.html", encoding="utf-8").read() if os.path.exists(f"{out}/classic.html") else open(f"{out}/index.html", encoding="utf-8").read()
+    old = "" if c.get("offer_html") else open(f"{SCRP}/{key}/classic.html", encoding="utf-8").read() if key != "foton" else open(f"{out}/classic.html", encoding="utf-8").read() if os.path.exists(f"{out}/classic.html") else open(f"{out}/index.html", encoding="utf-8").read()
     import re
-    offer = re.search(r'<section id="offer".*?</section>', old, re.S).group(0)
+    offer = c.get("offer_html") or re.search(r'<section id="offer".*?</section>', old, re.S).group(0)
     # price plan 2026-11-27 (outreach/PRICE_CHECK_2026-11.md): apartment staging €200–600 (5 for €1,200), 2 revision rounds
     for _a, _b in (('€300–800', '€200–600'), ('€350–900', '€200–600'), ('Пакет од 5 станови: €1.500', 'Пакет од 5 станови: €1.200'),
                    ('Paket od 5 stanova: €1.700', 'Paket od 5 stanova: €1.200'), ('Paketa prej 5 apartamentesh: €1.500', 'Paketa prej 5 apartamentesh: €1.200'),
@@ -272,12 +291,12 @@ dialog .x{{position:absolute;right:0;top:-44px;background:none;border:0;color:#f
 <section class="alt"><div class="wrap"><div class="eyebrow rv">{E(s["i_e"])}</div><h2 class="sh rv">{E(s["i_h"])}</h2><p class="sp rv">{E(s["i_p"])}</p><ul class="grid">{indc}</ul></div></section>
 <section id="bd"><div class="wrap"><div class="eyebrow rv">{E(s["b_e"])}</div><h2 class="sh rv">{E(s["b_h"])}</h2><p class="sp rv">{E(s["b_p"].format(n=len(bd)))}</p>
 <div class="chips" role="group"><button type="button" data-k="all" aria-pressed="true">{E(s["b_all"])} {len(bd)}</button><button type="button" data-k="f" aria-pressed="false">{E(s["b_f"])} {sum(1 for x in bd if x[2] == "f")}</button><button type="button" data-k="x" aria-pressed="false">{E(s["b_x"])} {len(BDT.FX)}</button></div>
-<ul class="grid" id="bdg">{bdc}</ul><div class="more-wrap"><button type="button" class="btn b bdmore" hidden>{ {"mk": "Покажи уште", "sr": "Prikaži još", "sq": "Shfaq më shumë"}.get(c["lang"], "Show more") } <b></b></button></div></div></section>
+<ul class="grid" id="bdg">{bdc}</ul><div class="more-wrap"><button type="button" class="btn b bdmore" hidden>{ {"mk": "Покажи уште", "sr": "Prikaži još", "sq": "Shfaq më shumë", "zh": "显示更多"}.get(c["lang"], "Show more") } <b></b></button></div></div></section>
 <section class="end"><div class="wrap"><h2 class="sh rv">{E(s["end_h"])}</h2><p class="sp rv" style="margin:0 auto 26px">{E(s["end_p"])}</p><div class="btns"><a class="btn a want" href="{mailto}">{E(s["cta"])}</a><a class="btn b" href="mailto:{MAIL}">{E(s["mail"])}: {MAIL}</a></div></div></section>
 </main>
 <footer><div class="wrap">{E(s["legal"])}<br>© 2026 BIG DOGMA · AI STUDIO | MK · <a href="{SITE}">bigdogma.tech</a> · <a href="classic.html">classic</a></div></footer>
 <dialog id="lb"><button class="x" type="button" aria-label="{E(s["close"])}">×</button><video controls playsinline controlslist="nodownload noplaybackrate" disablepictureinpicture></video><p></p></dialog>
-<script>window.H3V=false;window.H3T={json.dumps({"ad": s["h3_ad"], "film": s["h3_film"], "ai": s["ai_film"], "mark": SITE + "/media/h3_mark.png"}, ensure_ascii=False)};</script>
+<script>window.H3V=false;{"window.NOH3=true;window.H3T={};" if c.get("no_h3") else "window.H3T=" + json.dumps({"ad": s["h3_ad"], "film": s["h3_film"], "ai": s["ai_film"], "mark": SITE + "/media/h3_mark.png"}, ensure_ascii=False) + ";"}</script>
 <script src="{SITE}/vplay.js"></script><script>window.DOGMA_HDR_BASE="{SITE}/logo_fx/hdr/";window.DOGMA_INTRO={json.dumps(intro)};(function(){{var c=navigator.connection||{{}};if(innerWidth<760||/(^|-)2g|3g/.test(c.effectiveType||""))window.DOGMA_INTRO=window.DOGMA_INTRO.map(function(u){{return u.replace("/lite/intro/","/lite480/intro/")}})}})();window.DOGMA_HERO={{intro:{json.dumps(bg_clips)}}};window.BDBG_WAIT=true;window.BD_CHAT={{company:{json.dumps(name)}}};</script><script src="{SITE}/logo_fx/hero_bg.js"></script><script src="{SITE}/chat.js" defer></script>
 <script src="{SITE}/logo_fx/mark_data.js"></script><script src="{SITE}/logo_fx/logo_fx.js"></script><script src="{SITE}/logo_fx/hdr/list.js"></script><script src="{SITE}/logo_fx/hdr.js"></script>
 <script>
@@ -290,15 +309,7 @@ function pre(){{if(!L.length)return;var n=sv[1-cur];n.src=L[k++%L.length];n.prel
 function nx(){{if(!L.length)return;var n=sv[1-cur],o=sv[cur],go=function(){{n.removeEventListener('playing',go);n.style.opacity=1;o.style.opacity=0;cur=1-cur;setTimeout(function(){{o.pause();if(!sp.classList.contains('out'))pre()}},900)}};
  n.addEventListener('playing',go);n.currentTime=0;n.play().catch(function(){{}})}}   /* fade only once the next film really plays */
 sv.forEach(function(v){{v.addEventListener('ended',function(){{if(v===sv[cur])nx()}})}});if(!RM){{sv[0].src=L[k++];sv[0].play().catch(function(){{}});setTimeout(pre,300)}}
-/* enter: burst + flash, then the content */
-var bc=$('#burst'),b=bc.getContext('2d');
-function burst(done){{var W=bc.width=innerWidth*Math.min(2,devicePixelRatio||1),H=bc.height=innerHeight*Math.min(2,devicePixelRatio||1),cx=W/2,cy=H/2,R=Math.hypot(W,H)/2,t0=performance.now(),P=[];
- for(var i=0;i<180;i++)P.push([Math.random()*6.283,.25+Math.random()*.9,Math.random(),1+Math.random()*3]);
- var sw=false;(function f(now){{var q=Math.max(0,Math.min(1,(now-t0)/1100)),pk=Math.sin(Math.PI*Math.min(1,q*1.6));b.clearRect(0,0,W,H);b.globalCompositeOperation='lighter';
-  var g=b.createRadialGradient(cx,cy,0,cx,cy,R*(.2+q));g.addColorStop(0,'rgba(255,250,235,'+pk+')');g.addColorStop(.3,'rgba(242,193,78,'+(.7*pk)+')');g.addColorStop(1,'rgba(242,120,40,0)');b.fillStyle=g;b.fillRect(0,0,W,H);
-  P.forEach(function(p){{var r=R*p[1]*q,a=1-q;b.fillStyle=p[2]>.5?'rgba(255,255,255,'+a+')':'rgba(242,193,78,'+a+')';b.beginPath();b.arc(cx+Math.cos(p[0])*r,cy+Math.sin(p[0])*r*.8,p[3]*W/900,0,6.283);b.fill()}});
-  b.strokeStyle='rgba(255,230,170,'+(1-q)+')';b.lineWidth=W/300*(1-q);b.beginPath();b.ellipse(cx,cy,Math.max(0,R*q*.9),Math.max(0,R*q*.55),0,0,6.283);b.stroke();
-  if(q>.3&&!sw){{sw=true;done()}}if(q<1)requestAnimationFrame(f);else b.clearRect(0,0,W,H)}})(t0)}}
+{ENTER_FX}
 function enter(){{if(sp.classList.contains('out'))return;var go=function(){{sp.classList.add('out');document.body.classList.remove('lock');if(window.BDBG_START)BDBG_START();sv.forEach(function(v){{setTimeout(function(){{v.pause();v.removeAttribute('src');v.load()}},1300)}})}};RM?go():burst(go)}}
 $('#enter').addEventListener('click',enter);sp.addEventListener('click',function(e){{if(e.target===sp||e.target.classList.contains('shade'))enter()}});
 addEventListener('keydown',function(e){{if((e.key==='Enter'||e.key===' ')&&!sp.classList.contains('out')&&document.activeElement===document.body){{e.preventDefault();enter()}}}});
@@ -306,7 +317,7 @@ addEventListener('keydown',function(e){{if((e.key==='Enter'||e.key===' ')&&!sp.c
 document.addEventListener('contextmenu',function(e){{if(e.target.closest&&e.target.closest('video,.im,.vrow,.shots,.cmp'))e.preventDefault()}});
 document.addEventListener('dragstart',function(e){{if(e.target.tagName==='VIDEO'||e.target.tagName==='IMG')e.preventDefault()}});
 /* H3 versions sit next to the same film (grid + 9:16 row); the server only answers h3/ outside the EU, UK, USA and South Korea */
-fetch('h3/',{{cache:'no-store'}}).then(function(r){{return r.ok?r.json():[]}}).then(function(d){{var N={{}},T=window.H3T,fg=$('#fg'),vr=$('.vrow');
+if(!window.NOH3)fetch('h3/',{{cache:'no-store'}}).then(function(r){{return r.ok?r.json():[]}}).then(function(d){{var N={{}},T=window.H3T,fg=$('#fg'),vr=$('.vrow');
  (d||[]).forEach(function(f){{var m=/^(.+?)(_9x16)?\\.mp4$/.exec(f.name);if(m){{N[m[1]]=N[m[1]]||{{}};if(!m[2]||window.H3V)N[m[1]][m[2]?'v':'h']=1}}}});
  var nice=function(k){{return k.replace(/^[a-z0-9]+_/,'').replace(/_/g,' ').replace(/\\b\\w/g,function(c){{return c.toUpperCase()}})}};
  Object.keys(N).sort().forEach(function(k){{var h='h3/'+k,x=N[k],tw=fg&&fg.querySelector('a[data-play="'+k+'.mp4"]'),t=tw?tw.dataset.t:nice(k),ln=(tw&&tw.querySelector('.tx span'))?tw.querySelector('.tx span').textContent:'',li;
@@ -345,6 +356,14 @@ var ro=new IntersectionObserver(function(es){{es.forEach(function(e){{if(e.isInt
     WANT_CSS = '<style id="wantfix">html{scroll-behavior:smooth}#offer .card .btn.want{margin-top:14px;display:block;text-align:center;width:100%}#offer{scroll-margin-top:70px}</style>'
     WANT_JS = '<script id="wantfix-js">(function(){try{var nav=document.querySelector(\'nav .btn.want\');if(!nav)return;var m=(nav.getAttribute(\'href\')||\'\').match(/^mailto:([^?]+)\\\\?subject=([^&]*)/);var to=m?m[1]:\'inf.unit@bigdogma.tech\';var co=m?decodeURIComponent(m[2]).split(\' - \')[0]:\'\';var label=nav.textContent.trim();nav.setAttribute(\'href\',\'#offer\');nav.addEventListener(\'click\',function(e){var o=document.getElementById(\'offer\');if(o){e.preventDefault();o.scrollIntoView({behavior:\'smooth\',block:\'start\'})}});document.querySelectorAll(\'#offer .card\').forEach(function(c){if(c.querySelector(\'.btn\'))return;var h=c.querySelector(\'h3\');if(!h)return;var a=document.createElement(\'a\');a.className=\'btn a want\';a.textContent=label;a.href=\'mailto:\'+to+\'?subject=\'+encodeURIComponent((co?co+\' - \':\'\')+h.textContent.trim());c.appendChild(a)})}catch(e){}})();</script>'
     page = page.replace('</head>', WANT_CSS + '</head>', 1).replace('</body>', WANT_JS + '</body>', 1)
+    if c.get("lsw"):   # one page, two languages (owner 2026-11-28: Foton Motor, English by default): EN | 中文 switch in the nav
+        cur, other, href = c["lsw"]
+        sw = (f'<span class="lsw" style="display:inline-flex;gap:8px;align-items:center;white-space:nowrap;flex:none;margin-right:12px;font:600 13px/1 Inter,system-ui,sans-serif">'
+              f'<b style="color:var(--ac)">{cur}</b><span style="opacity:.4">|</span><a href="{href}" lang="{"zh" if other == "中文" else "en"}" style="color:var(--fg);text-decoration:none">{other}</a></span>')
+        page = page.replace('<a class="btn a want"', sw + '<a class="btn a want"', 1)
+        if c["lang"] == "en":   # ?lang=zh (the Chinese email's link) opens the Chinese version of the same page
+            page = page.replace("</head>", "<script>if(/[?&]lang=zh/.test(location.search))location.replace('zh.html'+location.hash)</script></head>", 1)
+    if c.get("no_h3"): page = page.replace('alt="MiniMax H3"', 'alt=""').replace('/* MiniMax H3 mark', '/* model mark')
     open(f"{out}/index.html", "w", encoding="utf-8").write(page)
     print("ok", key, len(page), "films", n_f, "bd", len(bd), "industry", len(ind))
 

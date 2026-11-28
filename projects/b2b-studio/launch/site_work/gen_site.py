@@ -250,7 +250,10 @@ LANG_OPTS = "".join(f'<option value="{l}" lang="{l}">{l.upper()}</option>' for l
 CF_PLAN = "/home/user/3p4e/projects/b2b-studio/catfilms/plan"
 CF_CATS, CF = [], []
 for _p in sorted(glob.glob(f"{CF_PLAN}/*.json"), key=lambda p: json.load(open(p))["mk"]):
-    _d = json.load(open(_p)); _fs = [f for f in _d["films"] if os.path.exists(f"{OUT}/films/{f['id']}.mp4")]
+    _d = json.load(open(_p))
+    # round-2 sector films (catfilms/plan_more, local only: prompts stay out of git) join their category once cut and encoded
+    _d["films"] = _d["films"] + [json.load(open(q, encoding="utf-8")) for q in sorted(glob.glob(f"{CF_PLAN}_more/cf_{_d['key']}_*.json"))]
+    _fs = [f for f in _d["films"] if os.path.exists(f"{OUT}/films/{f['id']}.mp4")]
     if not _fs: continue
     CF_CATS.append((_d["key"], _d["mk"], _d["en"], len(_fs))); TX[f"cc.{_d['key']}"] = (_d["mk"], _d["en"])
     for f in _fs:
