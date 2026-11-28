@@ -43,6 +43,12 @@ def cut(f):
     for i, l in enumerate(lines):
         t = max(t, 0.6 + i * main / max(1, len(lines))); starts.append(t); t += dur(l) + 0.35
     cd = max(3.0, t - main + 0.8); total = main + cd - 0.5
+    # subtitles (WebVTT) from the exact VO timing: Macedonian, and English when vo_en.json has the film
+    def ts(x): return f"{int(x // 3600):02d}:{int(x % 3600 // 60):02d}:{x % 60:06.3f}"
+    en = (json.load(open(f"{VO}/vo_en.json", encoding="utf-8")) if os.path.exists(f"{VO}/vo_en.json") else {}).get(f["id"])
+    for lg, txt in (("mk", f["vo_mk"]), ("en", en)):
+        if txt: open(f"{OUT}/{f['id']}.{lg}.vtt", "w", encoding="utf-8").write("WEBVTT\n\n" + "".join(
+            f"{i + 1}\n{ts(s0)} --> {ts(min(total, s0 + dur(l) + 0.3))}\n{x}\n\n" for i, (s0, l, x) in enumerate(zip(starts, lines, txt))))
     card(f, W, H, cd, f"{T}/{f['id']}_card.mp4")
     a = ["ffmpeg", "-v", "error", "-y"]
     for c in clips: a += ["-i", c]
