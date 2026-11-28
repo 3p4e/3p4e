@@ -4,7 +4,10 @@
 import os, sys, json, glob, subprocess
 HERE = os.path.dirname(os.path.abspath(__file__)); S = "/tmp/claude-0/-home-user-3p4e/50442171-da10-52d9-9948-b5cc07f6bc8a/scratchpad"
 CLIPS, OUT = sys.argv[1], sys.argv[2]; ONLY = set(sys.argv[3:]); os.makedirs(OUT, exist_ok=True); T = f"{OUT}/tmp"; os.makedirs(T, exist_ok=True)
-REGEN = bool(os.environ.get("REGEN")); VO, MUS = f"{S}/catfilms/" + ("vo_regen" if REGEN else "vo"), f"{S}/catfilms/music"
+REGEN = bool(os.environ.get("REGEN")); MORE = bool(os.environ.get("MORE")); VO, MUS = f"{S}/catfilms/" + ("vo_regen" if REGEN else "vo"), f"{S}/catfilms/music"
+FREE = bool(os.environ.get("FREE"))
+if FREE: VO, MUS = "/dev/shm/r2/vo_free", "/dev/shm/r2/music_free"   # three remade site films (plan_free)
+if MORE: VO, MUS = "/dev/shm/r2/vo_more", "/dev/shm/r2/music"   # the 74 new sector films (plan_more), round-2 render
 FH = f"{S}/brand/fonts/Oswald-600.ttf"; FR = f"{S}/brand/fonts/Oswald-400.ttf"
 ENC = ["-c:v", "libx264", "-crf", "20", "-preset", "medium", "-pix_fmt", "yuv420p", "-r", "24"]
 def run(a): subprocess.run(a, check=True)
@@ -64,10 +67,10 @@ def cut(f):
          "-shortest", "-movflags", "+faststart", f"{OUT}/{f['id']}.mp4"])
     for x in ("_card.mp4", "_v.mp4", "_a.wav"): os.remove(f"{T}/{f['id']}{x}")
     return f"OK {total:.1f}s"
-films = [json.load(open(p, encoding="utf-8")) for p in sorted(glob.glob(f"{HERE}/plan_regen/*.json"))] if REGEN else [f for p in sorted(glob.glob(f"{HERE}/plan/*.json")) for f in json.load(open(p))["films"]]
+films = [json.load(open(p, encoding="utf-8")) for p in sorted(glob.glob(f"{HERE}/plan_free/*.json"))] if FREE else [json.load(open(p, encoding="utf-8")) for p in sorted(glob.glob(f"{HERE}/plan_more/cf_*.json"))] if MORE else [json.load(open(p, encoding="utf-8")) for p in sorted(glob.glob(f"{HERE}/plan_regen/*.json"))] if REGEN else [f for p in sorted(glob.glob(f"{HERE}/plan/*.json")) for f in json.load(open(p))["films"]]
 for f in films:
     if ONLY and f["id"] not in ONLY: continue
     if os.path.exists(f"{OUT}/{f['id']}.mp4"): continue
     r = cut(f)
     if r.startswith("OK"): print(r, f["id"], flush=True)
-print("CUT_DONE", len(glob.glob(f"{OUT}/cf_*.mp4")), "/", len(films))
+print("CUT_DONE", sum(os.path.exists(f"{OUT}/{f['id']}.mp4") for f in films), "/", len(films))
