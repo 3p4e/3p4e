@@ -66,7 +66,7 @@ def fotonmotor(lang):   # Foton Motor, Beijing (manufacturer): EN and ZH pages b
     ui = dict(FM["ui_en"]) if lang == "en" else {}
     return dict(base, key=f"fotonmotor_{lang}", name=FM[f"name_{lang}"], lang=lang, films=films, caps=FM[f"caps_{lang}"], ui=ui,
                 tags="#Foton #Tunland #4x4 #Pickup" if lang == "en" else "#福田汽车 #Foton #Tunland #皮卡", cta_site="fotonmotor.com",
-                offer_html=FM[f"offer_{lang}"])
+                offer_html=FM[f"offer_{lang}"], lsw=("EN", "中文", "zh.html") if lang == "en" else ("中文", "EN", "./"))
 import re
 CO = {  # key: (industry categories on bigdogma.tech, hashtags)
  "01_zito_marketi_MK": (["food", "horeca"], "#Жито #Маркети #Македонија #Скопје"), "02_alkaloid_MK": (["pharma", "health"], "#Алкалоид #Здравје #Македонија"),
@@ -360,6 +360,13 @@ var ro=new IntersectionObserver(function(es){{es.forEach(function(e){{if(e.isInt
     WANT_CSS = '<style id="wantfix">html{scroll-behavior:smooth}#offer .card .btn.want{margin-top:14px;display:block;text-align:center;width:100%}#offer{scroll-margin-top:70px}</style>'
     WANT_JS = '<script id="wantfix-js">(function(){try{var nav=document.querySelector(\'nav .btn.want\');if(!nav)return;var m=(nav.getAttribute(\'href\')||\'\').match(/^mailto:([^?]+)\\\\?subject=([^&]*)/);var to=m?m[1]:\'inf.unit@bigdogma.tech\';var co=m?decodeURIComponent(m[2]).split(\' - \')[0]:\'\';var label=nav.textContent.trim();nav.setAttribute(\'href\',\'#offer\');nav.addEventListener(\'click\',function(e){var o=document.getElementById(\'offer\');if(o){e.preventDefault();o.scrollIntoView({behavior:\'smooth\',block:\'start\'})}});document.querySelectorAll(\'#offer .card\').forEach(function(c){if(c.querySelector(\'.btn\'))return;var h=c.querySelector(\'h3\');if(!h)return;var a=document.createElement(\'a\');a.className=\'btn a want\';a.textContent=label;a.href=\'mailto:\'+to+\'?subject=\'+encodeURIComponent((co?co+\' - \':\'\')+h.textContent.trim());c.appendChild(a)})}catch(e){}})();</script>'
     page = page.replace('</head>', WANT_CSS + '</head>', 1).replace('</body>', WANT_JS + '</body>', 1)
+    if c.get("lsw"):   # one page, two languages (owner 2026-11-28: Foton Motor, English by default): EN | 中文 switch in the nav
+        cur, other, href = c["lsw"]
+        sw = (f'<span class="lsw" style="display:inline-flex;gap:8px;align-items:center;white-space:nowrap;flex:none;margin-right:12px;font:600 13px/1 Inter,system-ui,sans-serif">'
+              f'<b style="color:var(--ac)">{cur}</b><span style="opacity:.4">|</span><a href="{href}" lang="{"zh" if other == "中文" else "en"}" style="color:var(--fg);text-decoration:none">{other}</a></span>')
+        page = page.replace('<a class="btn a want"', sw + '<a class="btn a want"', 1)
+        if c["lang"] == "en":   # ?lang=zh (the Chinese email's link) opens the Chinese version of the same page
+            page = page.replace("</head>", "<script>if(/[?&]lang=zh/.test(location.search))location.replace('zh.html'+location.hash)</script></head>", 1)
     if c.get("no_h3"): page = page.replace('alt="MiniMax H3"', 'alt=""').replace('/* MiniMax H3 mark', '/* model mark')
     open(f"{out}/index.html", "w", encoding="utf-8").write(page)
     print("ok", key, len(page), "films", n_f, "bd", len(bd), "industry", len(ind))
