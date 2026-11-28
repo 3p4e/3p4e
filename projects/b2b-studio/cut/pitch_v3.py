@@ -54,7 +54,8 @@ def foton():
     caps = json.load(open(f"{HERE}/pitch_v3_data/foton_caps.json", encoding="utf-8"))
     return dict(key="foton", name="Foton Македонија", lang="mk", accent="#d71920", films=films, caps=caps, shots=27, stills=10, gifs=2,
                 industry=["automotive", "product_launch"], tags="#Foton #Tunland #4x4 #Пикап #Македонија #Скопје", cta_site="foton.mk",
-                skip_shots={19, 20, 21, 22}, skip_ind={"cf_automotive_1_social"})   # Auman, Aumark, EME4, cargo van; a sports car: Tunland only (owner)
+                skip_shots={19, 20, 21, 22}, skip_ind={"cf_automotive_1_social"},
+                no_h3=True)   # owner 2026-11-28: no H3 films and no H3 model credit on the Foton pages (dealer + manufacturer)   # Auman, Aumark, EME4, cargo van; a sports car: Tunland only (owner)
 def fotonmotor(lang):   # Foton Motor, Beijing (manufacturer): EN and ZH pages built from the dealer page's Tunland films
     FM = json.load(open(f"{HERE}/pitch_v3_data/fotonmotor.json", encoding="utf-8")); base = foton()
     films = []
@@ -291,7 +292,7 @@ dialog .x{{position:absolute;right:0;top:-44px;background:none;border:0;color:#f
 </main>
 <footer><div class="wrap">{E(s["legal"])}<br>© 2026 BIG DOGMA · AI STUDIO | MK · <a href="{SITE}">bigdogma.tech</a> · <a href="classic.html">classic</a></div></footer>
 <dialog id="lb"><button class="x" type="button" aria-label="{E(s["close"])}">×</button><video controls playsinline controlslist="nodownload noplaybackrate" disablepictureinpicture></video><p></p></dialog>
-<script>window.H3V=false;window.H3T={json.dumps({"ad": s["h3_ad"], "film": s["h3_film"], "ai": s["ai_film"], "mark": SITE + "/media/h3_mark.png"}, ensure_ascii=False)};</script>
+<script>window.H3V=false;{"window.NOH3=true;window.H3T={};" if c.get("no_h3") else "window.H3T=" + json.dumps({"ad": s["h3_ad"], "film": s["h3_film"], "ai": s["ai_film"], "mark": SITE + "/media/h3_mark.png"}, ensure_ascii=False) + ";"}</script>
 <script src="{SITE}/vplay.js"></script><script>window.DOGMA_HDR_BASE="{SITE}/logo_fx/hdr/";window.DOGMA_INTRO={json.dumps(intro)};(function(){{var c=navigator.connection||{{}};if(innerWidth<760||/(^|-)2g|3g/.test(c.effectiveType||""))window.DOGMA_INTRO=window.DOGMA_INTRO.map(function(u){{return u.replace("/lite/intro/","/lite480/intro/")}})}})();window.DOGMA_HERO={{intro:{json.dumps(bg_clips)}}};window.BDBG_WAIT=true;window.BD_CHAT={{company:{json.dumps(name)}}};</script><script src="{SITE}/logo_fx/hero_bg.js"></script><script src="{SITE}/chat.js" defer></script>
 <script src="{SITE}/logo_fx/mark_data.js"></script><script src="{SITE}/logo_fx/logo_fx.js"></script><script src="{SITE}/logo_fx/hdr/list.js"></script><script src="{SITE}/logo_fx/hdr.js"></script>
 <script>
@@ -320,7 +321,7 @@ addEventListener('keydown',function(e){{if((e.key==='Enter'||e.key===' ')&&!sp.c
 document.addEventListener('contextmenu',function(e){{if(e.target.closest&&e.target.closest('video,.im,.vrow,.shots,.cmp'))e.preventDefault()}});
 document.addEventListener('dragstart',function(e){{if(e.target.tagName==='VIDEO'||e.target.tagName==='IMG')e.preventDefault()}});
 /* H3 versions sit next to the same film (grid + 9:16 row); the server only answers h3/ outside the EU, UK, USA and South Korea */
-fetch('h3/',{{cache:'no-store'}}).then(function(r){{return r.ok?r.json():[]}}).then(function(d){{var N={{}},T=window.H3T,fg=$('#fg'),vr=$('.vrow');
+if(!window.NOH3)fetch('h3/',{{cache:'no-store'}}).then(function(r){{return r.ok?r.json():[]}}).then(function(d){{var N={{}},T=window.H3T,fg=$('#fg'),vr=$('.vrow');
  (d||[]).forEach(function(f){{var m=/^(.+?)(_9x16)?\\.mp4$/.exec(f.name);if(m){{N[m[1]]=N[m[1]]||{{}};if(!m[2]||window.H3V)N[m[1]][m[2]?'v':'h']=1}}}});
  var nice=function(k){{return k.replace(/^[a-z0-9]+_/,'').replace(/_/g,' ').replace(/\\b\\w/g,function(c){{return c.toUpperCase()}})}};
  Object.keys(N).sort().forEach(function(k){{var h='h3/'+k,x=N[k],tw=fg&&fg.querySelector('a[data-play="'+k+'.mp4"]'),t=tw?tw.dataset.t:nice(k),ln=(tw&&tw.querySelector('.tx span'))?tw.querySelector('.tx span').textContent:'',li;
@@ -359,6 +360,7 @@ var ro=new IntersectionObserver(function(es){{es.forEach(function(e){{if(e.isInt
     WANT_CSS = '<style id="wantfix">html{scroll-behavior:smooth}#offer .card .btn.want{margin-top:14px;display:block;text-align:center;width:100%}#offer{scroll-margin-top:70px}</style>'
     WANT_JS = '<script id="wantfix-js">(function(){try{var nav=document.querySelector(\'nav .btn.want\');if(!nav)return;var m=(nav.getAttribute(\'href\')||\'\').match(/^mailto:([^?]+)\\\\?subject=([^&]*)/);var to=m?m[1]:\'inf.unit@bigdogma.tech\';var co=m?decodeURIComponent(m[2]).split(\' - \')[0]:\'\';var label=nav.textContent.trim();nav.setAttribute(\'href\',\'#offer\');nav.addEventListener(\'click\',function(e){var o=document.getElementById(\'offer\');if(o){e.preventDefault();o.scrollIntoView({behavior:\'smooth\',block:\'start\'})}});document.querySelectorAll(\'#offer .card\').forEach(function(c){if(c.querySelector(\'.btn\'))return;var h=c.querySelector(\'h3\');if(!h)return;var a=document.createElement(\'a\');a.className=\'btn a want\';a.textContent=label;a.href=\'mailto:\'+to+\'?subject=\'+encodeURIComponent((co?co+\' - \':\'\')+h.textContent.trim());c.appendChild(a)})}catch(e){}})();</script>'
     page = page.replace('</head>', WANT_CSS + '</head>', 1).replace('</body>', WANT_JS + '</body>', 1)
+    if c.get("no_h3"): page = page.replace('alt="MiniMax H3"', 'alt=""').replace('/* MiniMax H3 mark', '/* model mark')
     open(f"{out}/index.html", "w", encoding="utf-8").write(page)
     print("ok", key, len(page), "films", n_f, "bd", len(bd), "industry", len(ind))
 
