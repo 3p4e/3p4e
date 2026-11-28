@@ -168,7 +168,10 @@ ANGLE = {"wine_tour": "For a winery we focus on what can be shown everywhere: th
 def tok_for(k):
     if k not in TOK:
         a = string.ascii_letters + string.digits + "_-"
-        TOK[k] = "".join(secrets.choice(a) for _ in range(14)); json.dump(TOK, open(TOKF, "w"), indent=1)
+        while True:   # a random token must not happen to contain a model name (e.g. "H3")
+            TOK[k] = "".join(secrets.choice(a) for _ in range(14))
+            if not any(b.strip() in TOK[k] for b in BAD): break
+        json.dump(TOK, open(TOKF, "w"), indent=1)
     return TOK[k]
 
 def ftitle(lang, f):
