@@ -39,6 +39,8 @@ T = {"mk": dict(
 for _l in ("sr", "sq", "sl", "en"): T[_l] = json.load(open(f"{HERE}/pitch_v3_data/strings_{_l}.json", encoding="utf-8"))   # written by hand 2026-11-26
 # H3 section strings (geo-gated, see cut/h3_geo)
 H3S = {"mk": {"h3_e": "Made with MiniMax H3", "h3_h": "Уште филмови за {c}", "h3_p": "Дополнителни AI филмови направени со моделот MiniMax H3, хоризонтално и вертикално. Се прикажуваат само во региони каде што лиценцата на моделот го дозволува тоа.", "h3_ad": "Реклама", "h3_film": "Филм", "h3_lbl": "AI · Made with MiniMax H3"}, "sr": {"h3_e": "Made with MiniMax H3", "h3_h": "Još filmova za {c}", "h3_p": "Dodatni AI filmovi napravljeni modelom MiniMax H3, horizontalno i vertikalno. Prikazuju se samo u regionima u kojima licenca modela to dozvoljava.", "h3_ad": "Reklama", "h3_film": "Film", "h3_lbl": "AI · Made with MiniMax H3"}, "en": {"h3_e": "Made with MiniMax H3", "h3_h": "More films for {c}", "h3_p": "", "h3_ad": "Commercial", "h3_film": "Film", "h3_lbl": "AI · Made with MiniMax H3"}, "sl": {"h3_e": "Made with MiniMax H3", "h3_h": "Še filmi za {c}", "h3_p": "", "h3_ad": "Oglas", "h3_film": "Film", "h3_lbl": "AI · Made with MiniMax H3"}, "sq": {"h3_e": "Made with MiniMax H3", "h3_h": "Më shumë filma për {c}", "h3_p": "Filma shtesë AI të krijuar me modelin MiniMax H3, horizontalisht dhe vertikalisht. Shfaqen vetëm në rajonet ku licenca e modelit e lejon.", "h3_ad": "Reklamë", "h3_film": "Film", "h3_lbl": "AI · Made with MiniMax H3"}}
+T["zh"] = json.load(open(f"{HERE}/pitch_v3_data/strings_zh.json", encoding="utf-8"))   # Foton Motor (manufacturer) page, 2026-11-28
+H3S["zh"] = json.load(open(f"{HERE}/pitch_v3_data/strings_zh_extra.json", encoding="utf-8"))["H3S"]
 for _l in H3S: T[_l].update(H3S[_l])
 XL = json.load(open(f"{P}/launch/site_work/i18n_extra.json", encoding="utf-8"))   # site translations (BD and industry film titles)
 
@@ -53,6 +55,17 @@ def foton():
     return dict(key="foton", name="Foton Македонија", lang="mk", accent="#d71920", films=films, caps=caps, shots=27, stills=10, gifs=2,
                 industry=["automotive", "product_launch"], tags="#Foton #Tunland #4x4 #Пикап #Македонија #Скопје", cta_site="foton.mk",
                 skip_shots={19, 20, 21, 22}, skip_ind={"cf_automotive_1_social"})   # Auman, Aumark, EME4, cargo van; a sports car: Tunland only (owner)
+def fotonmotor(lang):   # Foton Motor, Beijing (manufacturer): EN and ZH pages built from the dealer page's Tunland films
+    FM = json.load(open(f"{HERE}/pitch_v3_data/fotonmotor.json", encoding="utf-8")); base = foton()
+    films = []
+    for f in base["films"]:
+        t = FM["films"].get(f["id"])
+        if t: f = dict(f, t=t[f"t_{lang}"], l=t[f"l_{lang}"])
+        films.append(f)
+    ui = dict(FM["ui_en"]) if lang == "en" else {}
+    return dict(base, key=f"fotonmotor_{lang}", name=FM[f"name_{lang}"], lang=lang, films=films, caps=FM[f"caps_{lang}"], ui=ui,
+                tags="#Foton #Tunland #4x4 #Pickup" if lang == "en" else "#福田汽车 #Foton #Tunland #皮卡", cta_site="fotonmotor.com",
+                offer_html=FM[f"offer_{lang}"])
 import re
 CO = {  # key: (industry categories on bigdogma.tech, hashtags)
  "01_zito_marketi_MK": (["food", "horeca"], "#Жито #Маркети #Македонија #Скопје"), "02_alkaloid_MK": (["pharma", "health"], "#Алкалоид #Здравје #Македонија"),
@@ -82,7 +95,7 @@ def generic(cid):
     ind, tags = CO[cid]
     return dict(key=cid, name=name, lang=lang, accent=acc, films=films, caps=caps, shots=n("c", r"\.mp4"), stills=n("a", r"\.jpg"), gifs=len([f for f in files if re.fullmatch(r"t\d\.gif", f)]),
                 keys=n("k", r"\.jpg"), industry=ind, tags=tags, cta_site=None)
-COMPANIES = {"foton": foton, **{k: (lambda k=k: generic(k)) for k in CO}}
+COMPANIES = {"foton": foton, "fotonmotor_en": lambda: fotonmotor("en"), "fotonmotor_zh": lambda: fotonmotor("zh"), **{k: (lambda k=k: generic(k)) for k in CO}}
 
 # ------------------------------------------------------------------ campaign: 4 weeks from the company's films
 def campaign(c, s):
@@ -115,15 +128,16 @@ _NV = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "vertical",
 if os.path.exists(_NV): NATIVE_V.update({k: (f"{k}_9x16.mp4", f"{k}_9x16.jpg") for k in json.load(open(_NV))})
 def build(key, out):
     c = COMPANIES[key](); s = dict(T[c["lang"]]); n_f = len(c["films"]); name = E(c["name"])
+    s.update(c.get("ui", {}))
     for f in c["films"]:   # drop blur-fill 9:16 files
         nv = NATIVE_V.get(f.get("id") or os.path.basename(f["src"])[:-4])
         if nv: f["v"], f["vposter"] = nv
         else: f.pop("v", None); f.pop("vposter", None)
     has_v = any(f.get("v") for f in c["films"])
     if not has_v: s["pts"] = s["pts"][:2] + [s["pt_nv"]]; s["f_p"] = s["f_p_nv"]
-    old = open(f"{SCRP}/{key}/classic.html", encoding="utf-8").read() if key != "foton" else open(f"{out}/classic.html", encoding="utf-8").read() if os.path.exists(f"{out}/classic.html") else open(f"{out}/index.html", encoding="utf-8").read()
+    old = "" if c.get("offer_html") else open(f"{SCRP}/{key}/classic.html", encoding="utf-8").read() if key != "foton" else open(f"{out}/classic.html", encoding="utf-8").read() if os.path.exists(f"{out}/classic.html") else open(f"{out}/index.html", encoding="utf-8").read()
     import re
-    offer = re.search(r'<section id="offer".*?</section>', old, re.S).group(0)
+    offer = c.get("offer_html") or re.search(r'<section id="offer".*?</section>', old, re.S).group(0)
     # price plan 2026-11-27 (outreach/PRICE_CHECK_2026-11.md): apartment staging €200–600 (5 for €1,200), 2 revision rounds
     for _a, _b in (('€300–800', '€200–600'), ('€350–900', '€200–600'), ('Пакет од 5 станови: €1.500', 'Пакет од 5 станови: €1.200'),
                    ('Paket od 5 stanova: €1.700', 'Paket od 5 stanova: €1.200'), ('Paketa prej 5 apartamentesh: €1.500', 'Paketa prej 5 apartamentesh: €1.200'),
@@ -272,7 +286,7 @@ dialog .x{{position:absolute;right:0;top:-44px;background:none;border:0;color:#f
 <section class="alt"><div class="wrap"><div class="eyebrow rv">{E(s["i_e"])}</div><h2 class="sh rv">{E(s["i_h"])}</h2><p class="sp rv">{E(s["i_p"])}</p><ul class="grid">{indc}</ul></div></section>
 <section id="bd"><div class="wrap"><div class="eyebrow rv">{E(s["b_e"])}</div><h2 class="sh rv">{E(s["b_h"])}</h2><p class="sp rv">{E(s["b_p"].format(n=len(bd)))}</p>
 <div class="chips" role="group"><button type="button" data-k="all" aria-pressed="true">{E(s["b_all"])} {len(bd)}</button><button type="button" data-k="f" aria-pressed="false">{E(s["b_f"])} {sum(1 for x in bd if x[2] == "f")}</button><button type="button" data-k="x" aria-pressed="false">{E(s["b_x"])} {len(BDT.FX)}</button></div>
-<ul class="grid" id="bdg">{bdc}</ul><div class="more-wrap"><button type="button" class="btn b bdmore" hidden>{ {"mk": "Покажи уште", "sr": "Prikaži još", "sq": "Shfaq më shumë"}.get(c["lang"], "Show more") } <b></b></button></div></div></section>
+<ul class="grid" id="bdg">{bdc}</ul><div class="more-wrap"><button type="button" class="btn b bdmore" hidden>{ {"mk": "Покажи уште", "sr": "Prikaži još", "sq": "Shfaq më shumë", "zh": "显示更多"}.get(c["lang"], "Show more") } <b></b></button></div></div></section>
 <section class="end"><div class="wrap"><h2 class="sh rv">{E(s["end_h"])}</h2><p class="sp rv" style="margin:0 auto 26px">{E(s["end_p"])}</p><div class="btns"><a class="btn a want" href="{mailto}">{E(s["cta"])}</a><a class="btn b" href="mailto:{MAIL}">{E(s["mail"])}: {MAIL}</a></div></div></section>
 </main>
 <footer><div class="wrap">{E(s["legal"])}<br>© 2026 BIG DOGMA · AI STUDIO | MK · <a href="{SITE}">bigdogma.tech</a> · <a href="classic.html">classic</a></div></footer>
