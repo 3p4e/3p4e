@@ -60,11 +60,14 @@ def fotonmotor(lang):   # Foton Motor, Beijing (manufacturer): EN and ZH pages b
     FM = json.load(open(f"{HERE}/pitch_v3_data/fotonmotor.json", encoding="utf-8")); base = foton()
     films = []
     for f in base["films"]:
+        if not f["id"].startswith("fv"): continue   # owner 2026-11-28: no Macedonian-language films on the manufacturer page (specs + showreel are MK)
         t = FM["films"].get(f["id"])
         if t: f = dict(f, t=t[f"t_{lang}"], l=t[f"l_{lang}"])
+        i = f["id"]; f = dict(f, src=f"v2/f/{i}_{lang}.mp4", v=f"v2/f/{i}_{lang}_9x16.mp4", poster=f"v2/f/{i}_{lang}.jpg", vposter=f"v2/f/{i}_{lang}_9x16.jpg")
+        NATIVE_V[i] = (f["v"], f["vposter"])   # language-specific vertical versions
         films.append(f)
     ui = dict(FM["ui_en"]) if lang == "en" else {}
-    return dict(base, key=f"fotonmotor_{lang}", name=FM[f"name_{lang}"], lang=lang, films=films, caps=FM[f"caps_{lang}"], ui=ui,
+    return dict(base, industry=[], key=f"fotonmotor_{lang}", name=FM[f"name_{lang}"], lang=lang, films=films, caps=FM[f"caps_{lang}"], ui=ui,
                 tags="#Foton #Tunland #4x4 #Pickup" if lang == "en" else "#福田汽车 #Foton #Tunland #皮卡", cta_site="fotonmotor.com",
                 offer_html=FM[f"offer_{lang}"], lsw=("EN", "中文", "zh.html") if lang == "en" else ("中文", "EN", "./"))
 import re

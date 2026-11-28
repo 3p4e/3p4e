@@ -10,6 +10,13 @@ TMP = f"{OUT}/tmp"; os.makedirs(TMP, exist_ok=True)
 S = "/tmp/claude-0/-home-user-3p4e/50442171-da10-52d9-9948-b5cc07f6bc8a/scratchpad"
 FONT_H = f"{S}/brand/fonts/Oswald-700.ttf"; FONT_M = f"{S}/brand/fonts/Oswald-600.ttf"; FONT_R = f"{S}/brand/fonts/Oswald-400.ttf"
 ENC = ["-c:v", "libx264", "-preset", "medium", "-crf", "17", "-pix_fmt", "yuv420p"]
+# FLANG=en|zh (owner 2026-11-28): Foton Motor (manufacturer) versions: English or Chinese VO, cards and disclosure; files <id>_<lang>[_9x16].mp4
+import json as _json
+FLANG = os.environ.get("FLANG", "mk"); VODIR = f"{HERE}/vo" if FLANG == "mk" else f"{HERE}/vo_{FLANG}"
+I18N = _json.load(open(f"{HERE}/films_i18n.json", encoding="utf-8"))[FLANG] if FLANG != "mk" else None
+if I18N: DISCLOSURE = I18N["disclosure"]
+FONT_ZH = "/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc"
+TXT = (lambda f: FONT_ZH) if FLANG == "zh" else (lambda f: f)   # Chinese text needs a CJK font
 AENC = ["-c:a", "aac", "-b:a", "192k", "-ar", "48000"]
 
 
@@ -60,11 +67,14 @@ def card(out, d, film, vertical):
     W, H = (1080, 1920) if vertical else (1280, 720); cy = H // 2 - (150 if vertical else 95)
     acc = film.get("accent", "0xf2c14e")
     head, tag, spec = film["card"]
-    L = [(FONT_H, head, 86 if vertical else 74, "white", cy, 0.15), (FONT_M, tag, 46 if vertical else 40, acc, cy + (118 if vertical else 96), 0.45),
-         (FONT_R, spec, 32 if vertical else 26, "0xd8d8d8", cy + (196 if vertical else 160), 0.7),
-         (FONT_M, "Закажи тест возење · foton.mk", 36 if vertical else 30, "white", cy + (290 if vertical else 228), 0.9),
-         (FONT_R, "Концепт за презентација на Foton Македонија. Не е објавен без нивно писмено одобрение.", 24 if vertical else 17, "0x9a9a9a", H - (170 if vertical else 60), 0.3),
-         (FONT_R, DISCLOSURE, 24 if vertical else 17, "0x9a9a9a", H - (134 if vertical else 36), 0.3)]
+    if I18N: tag, spec = I18N["films"][film["id"]]["card"]
+    cta_t = I18N["cta_card"] if I18N else "Закажи тест возење · foton.mk"
+    con_t = I18N["concept"] if I18N else "Концепт за презентација на Foton Македонија. Не е објавен без нивно писмено одобрение."
+    L = [(FONT_H, head, 86 if vertical else 74, "white", cy, 0.15), (TXT(FONT_M), tag, 46 if vertical else 40, acc, cy + (118 if vertical else 96), 0.45),
+         (TXT(FONT_R), spec, 32 if vertical else 26, "0xd8d8d8", cy + (196 if vertical else 160), 0.7),
+         (TXT(FONT_M), cta_t, 36 if vertical else 30, "white", cy + (290 if vertical else 228), 0.9),
+         (TXT(FONT_R), con_t, 24 if vertical else 17, "0x9a9a9a", H - (170 if vertical else 60), 0.3),
+         (TXT(FONT_R), DISCLOSURE, 24 if vertical else 17, "0x9a9a9a", H - (134 if vertical else 36), 0.3)]
     vf = ",".join(f"drawtext=fontfile={f}:text='{esc(t)}':fontsize={s}:fontcolor={c}:x=(w-tw)/2:y={y}:alpha='min(1,max(0,(t-{a})/0.25))'"
                   for f, t, s, c, y, a in L)
     bar = f"drawbox=x=(iw-{220 if vertical else 180})/2:y={cy - 34}:w={220 if vertical else 180}:h=5:color={acc}:t=fill"
@@ -82,7 +92,7 @@ def music_start(music, beat):
 
 
 def build(film, vertical):
-    beat = 60.0 / film["bpm"]; tag = film["id"] + ("_9x16" if vertical else "")
+    beat = 60.0 / film["bpm"]; tag = film["id"] + ("" if FLANG == "mk" else "_" + FLANG) + ("_9x16" if vertical else "")
     parts = [shot(tag, s[0], s[1], s[2], beat, (s[3] if len(s) > 3 else 0.5) if vertical else None) for s in film["shots"]]
     cb = film.get("card_beats", 6); cp = f"{TMP}/{tag}_card.mp4"; card(cp, cb * beat, film, vertical); parts.append(cp)
     starts = np.cumsum([0] + [s[2] for s in film["shots"]]) * beat; total = starts[-1] + cb * beat
@@ -90,7 +100,7 @@ def build(film, vertical):
     # disclosure on frame 1 (first 2.6 s), small, bottom centre
     W, H = (1080, 1920) if vertical else (1280, 720)
     disc = (f"drawbox=x=0:y={H - (150 if vertical else 46)}:w=iw:h={70 if vertical else 46}:color=black@0.35:t=fill:enable='lt(t,2.6)',"
-            f"drawtext=fontfile={FONT_R}:text='{esc(DISCLOSURE)}':fontsize={26 if vertical else 18}:fontcolor=white@0.92:x=(w-tw)/2:"
+            f"drawtext=fontfile={TXT(FONT_R)}:text='{esc(DISCLOSURE)}':fontsize={26 if vertical else 18}:fontcolor=white@0.92:x=(w-tw)/2:"
             f"y={H - (126 if vertical else 32)}:enable='lt(t,2.6)'")
     music = f"{HERE}/music/{film['music']}.wav"; ms = music_start(music, beat); w, h = sfx()
     ins = ["-i", pic, "-ss", f"{ms:.3f}", "-i", music]; fc = [f"[0:v]{disc}[v]"]; tags = []
@@ -101,7 +111,7 @@ def build(film, vertical):
         fc.append(f"[{n}:a]adelay={ms_}|{ms_},volume={0.55 if kind == 'whoosh' else 0.8}[s{k}]"); tags.append(f"[s{k}]")
     vo_tags = []; base = 2 + len(cuts)
     for k, (vid, bpos) in enumerate(film["vo"]):
-        vf = f"{HERE}/vo/{film['id']}_{vid}.wav"
+        vf = f"{VODIR}/{film['id']}_{vid}.wav"
         if not os.path.exists(vf): print("MISSING VO", film["id"], vid, flush=True); continue
         if vid == "cta": bpos = sum(s[2] for s in film["shots"]) + 1.5   # always just after the end card appears
         ins += ["-i", vf]; n = base + len(vo_tags); ms_ = int(bpos * beat * 1000)
