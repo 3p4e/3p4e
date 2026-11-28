@@ -54,11 +54,12 @@ ACC = {"wine": "#8e2b45", "wine_hotel": "#8e2b45", "wine_tour": "#8e2b45", "led"
 LOCAL = re.compile(r"tikve|vranec|macedon|makedon|skopj|skoplj|shkup|resen|strumic|ohrid|kavadar|bazaa?r|тиквеш|вранец|македон|скопј|ресен|струмиц|охрид|чаршија|пазар", re.I)
 def visible(fid, lang):
     f = PLAN[fid]; return " ".join([f["title_en"], f["line_en"], f.get("title_mk", ""), f.get("line_mk", "")] + [XL.get(l, {}).get(f"{fid}.{x}", "") for l in ("sr", "sq") for x in "tl"])
-def recipe(r, local_ok=False, live=None):
+def recipe(r, local_ok=False, live=None, own=None):
     ids = []
     for x in REC[r]:
         for fid in (CATS[x] if x in CATS else [x]):
             if fid in ids or (live is not None and not live.get(fid)) or (not local_ok and LOCAL.search(visible(fid, "en"))): continue
+            if own and own.search(visible(fid, "en") + " " + json.dumps(PLAN[fid], ensure_ascii=False)): continue   # owner 2026-11-28: never show a studio film that names the company itself (uncommissioned)
             ids.append(fid)
     ids = ids[:8]; assert len(ids) >= 4, (r, ids)
     return sorted(ids, key=lambda i: PLAN[i]["type"] == "social")   # landscape films first (hero, email thumbs), vertical social clips last
@@ -205,7 +206,8 @@ LIVE = {}
 def build(c, live=None):
     k = c["key"]; lang = c["lang"]; name = c["name"]; tok = tok_for(k); pub = f"{OUT}/{tok}"; page_url = f"https://pitch.bigdogma.tech/{tok}/"
     shutil.rmtree(pub, ignore_errors=True); os.makedirs(f"{pub}/email")
-    ids = recipe(c["recipe"], c["country"] == "MK", LIVE); c["pk"] = PK.get(c["recipe"], ["b5", "b6"])
+    _stem = re.sub(r"[^\w]+", " ", c["name"]).split()[0][:5]; _own = re.compile(r"\b" + re.escape(_stem), re.I) if len(_stem) >= 4 and _stem.lower() not in ("mount", "grand", "royal", "green", "group", "sport", "hotel", "energ", "solar", "wine", "city") else None
+    ids = recipe(c["recipe"], c["country"] == "MK", LIVE, _own); c["pk"] = PK.get(c["recipe"], ["b5", "b6"])
     films = []
     for fid in ids:
         u = f"{SITE}/films/{fid}"; assert LIVE[fid], fid
