@@ -212,6 +212,14 @@ def build(c, live=None):
     for fid in ids:
         u = f"{SITE}/films/{fid}"; assert LIVE[fid], fid
         t, l = ftitle(lang, PLAN[fid]); films.append(dict(id=fid, t=t, l=l, src=u + ".mp4", poster=u + ".jpg", type=PLAN[fid]["type"]))
+    # owner 2026-11-28: on request, the company's own uncommissioned studio concepts go back on its page, after the examples, clearly labelled
+    if c.get("own_concept") and _own:
+        CL = {"mk": ("Концепт · неофицијално", "Направено од нашето студио, без нарачка од {n}."), "sr": ("Koncept · nezvanično", "Napravio naš studio, bez narudžbe {n}."),
+              "sq": ("Koncept · jozyrtar", "Krijuar nga studioja jonë, pa porosi nga {n}."), "en": ("Concept · unofficial", "Made by our studio, not commissioned by {n}.")}[lang]
+        for fid in [x for x in recipe(c["recipe"], c["country"] == "MK", LIVE) if x not in ids]:
+            if any(f["id"] == fid for f in films) or not _own.search(visible(fid, "en") + " " + json.dumps(PLAN[fid], ensure_ascii=False)): continue
+            u = f"{SITE}/films/{fid}"; t, l = ftitle(lang, PLAN[fid])
+            films.append(dict(id=fid, t=f"{CL[0]}: {t}", l=CL[1].format(n=name), src=u + ".mp4", poster=u + ".jpg", type=PLAN[fid]["type"], concept=True))
     led = c["recipe"] == "led"
     ui = dict(UI_LED if led else UI[lang])
     for x in ("sub_ns", "f_h", "f_p_nv"): ui[x] = ui[x].replace("{sect}", c["sect"]).replace("{name}", name)
@@ -224,7 +232,7 @@ def build(c, live=None):
     page = strip(open(f"{pub}/index.html", encoding="utf-8").read()); open(f"{pub}/index.html", "w", encoding="utf-8").write(page)
     # small local assets: icon, font, hero loop (8 s of the first landscape film), email thumbnails
     for f in ("icon.png", "russo.ttf"): shutil.copy(f"{S}/launch/site/{f}", f"{pub}/{f}")
-    land = [f for f in films if f["type"] != "social"]
+    land = [f for f in films if f["type"] != "social" and not f.get("concept")]   # hero and email thumbnails: never a concept film
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", "3", "-t", "8", "-i", land[0]["src"], "-an", "-vf", "scale=1280:-2", "-c:v", "libx264", "-crf", "27", "-preset", "medium", "-movflags", "+faststart", f"{pub}/hero.mp4"], check=True)
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", "3", "-i", land[0]["src"], "-frames:v", "1", "-vf", "scale=1280:-2", f"{pub}/hero.jpg"], check=True)
     e = dict(EM_LED if led else EM[lang]); fm = lambda s: s.format(n=name, sect=c["sect"], p=PILOT[lang], series=c.get("series", ""))
